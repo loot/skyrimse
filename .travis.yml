@@ -1,0 +1,20 @@
+sudo: false
+language: ruby
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++6
+
+install: wget https://bintray.com/wrinklyninja/loot/download_file?file_path=metadata-validator_0.9.2-17-gac7a7cf_dev.tar.xz -O - | tar -xJ --strip-components=1
+
+script: ./metadata-validator $TRAVIS_BUILD_DIR/masterlist.yaml
+
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#loot"
+    use_notice: true
+    skip_join: true

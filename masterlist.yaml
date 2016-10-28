@@ -1,0 +1,26 @@
+globals:
+  - type: say
+    content:
+      - lang: en
+        text: 'A [new release](%1%) of LOOT is available.'
+      - lang: zh_CN
+        text: '一个[新版本](%1%)的LOOT已发布。'
+      - lang: da
+        text: 'En [ny version](%1%) af LOOT er tilgængelig.'
+    subs: [ 'https://github.com/loot/loot/releases/latest' ]
+    condition: 'version("LOOT", "0.9.2.0", <)'
+  - type: say
+    content:
+      - lang: en
+        text: '[Latest LOOT thread](%1%).'
+      - lang: ru
+        text: '[Обсуждение LOOT "(Eng)"](%1%).'
+      - lang: es
+        text: '[Forum de LOOT](%1%).'
+      - lang: ko
+        text: '[최신 LOOT 스레드](%1%).'
+      - lang: zh_CN
+        text: '[最新的LOOT版本](%1%)。'
+      - lang: da
+        text: '[Seneste LOOT-tråd](%1%).'
+    subs: [ 'https://loot.github.io/latest-thread/' ]
