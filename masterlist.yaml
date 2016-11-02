@@ -24,3 +24,62 @@ globals:
       - lang: da
         text: '[Seneste LOOT-tråd](%1%).'
     subs: [ 'https://loot.github.io/latest-thread/' ]
+  - name: 'Update.esm'
+    global_priority: -127
+    tag:
+      - Delev
+    dirty:
+      - crc: 0x8a234131
+        util: *dirtyUtil
+        itm: 235
+        udr: 91
+  - name: 'Dawnguard.esm'
+    global_priority: -120
+    tag:
+      - Delev
+      - Invent
+      - Relev
+    dirty:
+      - <<: *dirtyUtil
+        crc: 0x051fcdc8
+        itm: 628
+        udr: 82
+        nav: 57
+      - <<: *dirtyUtil
+        crc: 0x0d2cf128
+        itm: 6
+        nav: 57
+  - name: 'Hearthfires.esm'
+    global_priority: -120
+    after:
+      - 'Dawnguard.esm'
+    tag:
+      - Invent
+    dirty:
+      - crc: 0xfbd3fb4c
+        util: *dirtyUtil
+        itm: 178
+        udr: 11
+        nav: 5
+  - name: 'Dragonborn.esm'
+    global_priority: -120
+    after:
+      - 'Dawnguard.esm'
+      - 'Hearthfires.esm'
+    tag:
+      - Invent
+      - Relev
+    dirty:
+      - crc: 0xc7e30215
+        util: *dirtyUtil
+        itm: 69
+        udr: 8
+  - name: 'SSEMerged.esp'
+    global_priority: 80
+    tag:
+      - NoMerge
+  - name: 'Bashed Patch.*\.esp'
+    global_priority: 80
+    after:
+      - 'SSEMerged.esp'
+        nav: 1
