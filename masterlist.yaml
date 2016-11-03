@@ -28,8 +28,6 @@ globals:
         text: 'A [new release](%1%) of LOOT is available.'
       - lang: zh_CN
         text: '一个[新版本](%1%)的LOOT已发布。'
-      - lang: da
-        text: 'En [ny version](%1%) af LOOT er tilgængelig.'
     subs: [ 'https://github.com/loot/loot/releases/latest' ]
     condition: 'version("LOOT", "0.9.2.0", <)'
   - type: say
@@ -44,8 +42,6 @@ globals:
         text: '[최신 LOOT 스레드](%1%).'
       - lang: zh_CN
         text: '[最新的LOOT版本](%1%)。'
-      - lang: da
-        text: '[Seneste LOOT-tråd](%1%).'
     subs: [ 'https://loot.github.io/latest-thread/' ]
 
 plugins:
@@ -53,39 +49,18 @@ plugins:
     global_priority: -127
     tag:
       - Delev
-    dirty:
-      - crc: 0x8a234131
-        util: *dirtyPlugin
-        itm: 235
-        udr: 91
   - name: 'Dawnguard.esm'
     global_priority: -120
     tag:
       - Delev
       - Invent
       - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x051fcdc8
-        itm: 628
-        udr: 82
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x0d2cf128
-        itm: 6
-        nav: 57
   - name: 'Hearthfires.esm'
     global_priority: -120
     after:
       - 'Dawnguard.esm'
     tag:
       - Invent
-    dirty:
-      - crc: 0xfbd3fb4c
-        util: *dirtyPlugin
-        itm: 178
-        udr: 11
-        nav: 5
   - name: 'Dragonborn.esm'
     global_priority: -120
     after:
@@ -94,12 +69,6 @@ plugins:
     tag:
       - Invent
       - Relev
-    dirty:
-      - crc: 0xc7e30215
-        util: *dirtyPlugin
-        itm: 69
-        udr: 8
-        nav: 1
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
   - name: 'Riftrun_HF_v_2_0.esp'
