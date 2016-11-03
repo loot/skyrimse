@@ -49,18 +49,39 @@ plugins:
     global_priority: -127
     tag:
       - Delev
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8a234131
+        itm: 235
+        udr: 91
   - name: 'Dawnguard.esm'
     global_priority: -120
     tag:
       - Delev
       - Invent
       - Relev
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x051fcdc8
+        itm: 628
+        udr: 82
+        nav: 57
+      - <<: *dirtyPlugin
+        crc: 0x0d2cf128
+        itm: 6
+        nav: 57
   - name: 'Hearthfires.esm'
     global_priority: -120
     after:
       - 'Dawnguard.esm'
     tag:
       - Invent
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xfbd3fb4c
+        itm: 178
+        udr: 11
+        nav: 5
   - name: 'Dragonborn.esm'
     global_priority: -120
     after:
@@ -69,6 +90,12 @@ plugins:
     tag:
       - Invent
       - Relev
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xc7e30215
+        itm: 69
+        udr: 8
+        nav: 1
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
   - name: 'Riftrun_HF_v_2_0.esp'
