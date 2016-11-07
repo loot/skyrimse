@@ -90,6 +90,22 @@ plugins:
         nav: 1
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
+  - name: 'TouringCarriages.esp'
+    global_priority: -90
+  - name: 'Cutting Room Floor.esp'
+    global_priority: -90
+    after:
+      - 'TouringCarriages.esp'
+      - 'WhiterunHoldForest.esp'
+    tag:
+      - C.Location
+      - C.Owner
+      - C.RecordFlags
+      - Delev
+      - Graphics
+      - Invent
+      - Names
+      - Stats
   - name: 'Riftrun_HF_v_2_0.esp'
     after:
       - 'Hideout_Main.esp'
@@ -101,6 +117,21 @@ plugins:
     after:
       - 'Hideout_HF_Main.esp'
       - 'Hideout_Main.esp'
+  - name: 'Open Cities Skyrim.esp'
+    global_priority: 70
+    after:
+      - 'Unique Region Names.esp'
+      - 'URN+CoT Patch.esp'
+      - 'Atlas Map Markers.esp'
+      - 'The Horkerpocalypse.esp'
+    tag:
+      - C.Location
+  - name: 'Alternate Start - Live Another Life.esp'
+    global_priority: 70
+    after:
+      - 'Open Cities Skyrim.esp'
+    tag:
+      - C.Location
   - name: 'SSEMerged.esp'
     global_priority: 80
     tag:
@@ -109,3 +140,7 @@ plugins:
     global_priority: 80
     after:
       - 'SSEMerged.esp'
+  - name: 'Dawnguard Map Markers.esp'
+    global_priority: 95
+    after:
+      - 'Bashed Patch.*\.esp'
