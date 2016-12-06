@@ -104,86 +104,161 @@ globals:
     subs: [ 'https://loot.github.io/latest-thread/' ]
 
 plugins:
-  - name: 'Update.esm'
-    global_priority: -127
+  - name: "Aonghus' House.esp"
+		tag:
+      - C.Acoustic
+      - C.Location
+      - C.Water
+      - Graphics
+      - Invent
+  - name: "Shor's Stone.esp"
+	  tag:
+      - C.Light
+  - name: "Soljund's Sinkhole.esp"
+	  tag:
+      - Actors.AIPackages
+      - C.Location
+      - C.Name
+      - Names
+  - name: '00MarzWindhelmHome.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: '3rdEraWeapMoS-lvlList.esp'
     tag:
       - Delev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8a234131
-        itm: 235
-        udr: 91
-  - name: 'Dawnguard.esm'
-    global_priority: -120
+      - Relev
+  - name: 'AK Northern Star Retreat family-SSE-smim.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'AbanFarm.esp'
+    tag:
+      - C.Regions
+  - name: 'Alternate Start - Live Another Life.esp'
+    global_priority: 70
+    after:
+      - 'Open Cities Skyrim.esp'
+    tag:
+      - C.Location
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.Music
+      - C.Owner
+      - C.Regions
+      - C.Water
+  - name: 'Alternate Start -- New Beginnings.esp'
+    tag:
+      - C.Climate
+  - name: 'AmazingFollowerTweaks.esp'
+    tag:
+      - Graphics
+  - name: 'Ambriel.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'ApachiiHelmetWigs.esp'
+    tag:
+      - C.Water
+  - name: 'Bashed Patch.*\.esp'
+    global_priority: 80
+    after:
+      - 'SSEMerged.esp'
+  - name: 'Better Harvesting (animal loot version).esp'
     tag:
       - Delev
       - Invent
+      - Names
       - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x051fcdc8
-        itm: 628
-        udr: 82
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x0d2cf128
-        itm: 6
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x1b95f26b
-        itm: 6
-        nav: 57
-  - name: 'Hearthfires.esm'
-    global_priority: -120
-    after:
-      - 'Dawnguard.esm'
-    tag:
-      - Invent
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfbd3fb4c
-        itm: 178
-        udr: 11
-        nav: 5
-  - name: 'Dragonborn.esm'
-    global_priority: -120
-    after:
-      - 'Dawnguard.esm'
-      - 'Hearthfires.esm'
-    tag:
-      - Invent
-      - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc7e30215
-        itm: 69
-        udr: 8
-        nav: 1
-  - name: 'Unofficial Skyrim Special Edition Patch.esp'
-    global_priority: -120
+  - name: 'Better Horses 3.0.esp'
     tag:
       - Actors.ACBS
       - Actors.AIData
       - Actors.AIPackages
       - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Stats
-      - Body-Size-F
-      - Body-Size-M
-      - C.Acoustic
-      - C.RecordFlags
+  - name: 'Better Vampires.esp'
+    after:
+      - 'EBM_UnlimitedPower.esp'
+      - 'EBM_UnlimitedPower_Vampire.esp'
+  - name: 'BetterMagicLights.esp'
+    tag:
+      - Stats
+  - name: 'BetterQuestObjectives.esp'
+    tag:
+      - NoMerge
+      - Names
+  - name: 'Bijin Warmaidens.esp'
+    tag:
+      - Actors.ACBS
+  - name: 'BijinAIO_SSE-3.1.1.esp'
+    tag:
+      - Actors.ACBS
+  - name: 'BirdsOfSkyrim_SSE.esp'
+    tag:
+      - Actors.AiPackages
+      - C.Location
       - C.Regions
-      - NPC.Class
-      - NPC.Race
-    url:
-      - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/266/?'
-        name: 'Nexus SSE'
-  - name: 'static mesh improvement mod se.esp'
-    global_priority: -90
-  - name: 'SMIM-SE-*.esp'
-    global_priority: -90
-  - name: 'TouringCarriages.esp'
-    global_priority: -90
+      - C.Water
+  - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
+    tag:
+      - C.Climate
+      - C.Encounter
+      - C.Owner
+      - C.Regions
+      - C.Water
+  - name: 'BlackthornManor.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'Book Covers Skyrim.esp'
+    tag:
+      - C.Acoustic
+      - C.Climate
+      - C.Music
+      - C.Owner
+      - Graphics
+      - Names
+  - name: 'BooksOfSkyrim.esp'
+    tag:
+      - C.Location
+      - C.Regions
+  - name: 'Bridge Farm Hearthfire version.esp'
+    tag:
+      - C.Location
+      - Graphics
+  - name: 'Candle Pond Ranch Hearthfire.esp'
+    tag:
+      - C.Location
+  - name: 'CiceroFemaleSE.esp'
+    tag:
+      - Actors.ACBS
+  - name: 'CliffsideCottage.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+      - Names
+  - name: 'College_of_Winterhold_Shop_Fixes_and_Extras.esp'
+    tag:
+      - Graphics
+      - Invent
+      - Names
+      - Stats
+  - name: 'CollegeofWinterholdUpgrraded.esp'
+    tag:
+      - C.Water
+  - name: 'Crafting Materials.esp'
+    tag:
+      - C.Regions
+      - C.Water
+  - name: 'Crossroads Inn.esp'
+    tag:
+      - C.Location
   - name: 'Cutting Room Floor.esp'
     global_priority: -90
     after:
@@ -201,30 +276,79 @@ plugins:
       - Actors.CombatStyle
       - Actors.Stats
       - NPC.Class
-    url:
+			url:
       - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/276/?'
-        name: 'Nexus SSE'
-  - name: 'BetterQuestObjectives.esp'
+				name: 'Nexus SSE'
+  - name: 'Darkwater Crossing.esp'
     tag:
-      - NoMerge
       - Names
-  - name: 'Better Vampires.esp'
+  - name: 'Dawnguard Map Markers.esp'
+    global_priority: 95
     after:
-      - 'EBM_UnlimitedPower.esp'
-      - 'EBM_UnlimitedPower_Vampire.esp'
-  - name: 'Riftrun_HF_v_2_0.esp'
-    after:
-      - 'Hideout_Main.esp'
-      - 'Hideout_HF_Main.esp'
-      - 'Hideout_DLC_Main.esp'
-      - 'Hideout_Compact.esp'
-      - 'Hideout_HF_Compact.esp'
+      - 'Bashed Patch.*\.esp'
+  - name: 'Dawnguard.esm'
+		global_priority: -120
+		tag:
+      - Delev
+      - Invent
+      - Relev
+    dirty:
+      - <<: *dirtyPlugin
+				crc: 0x051fcdc8
+				itm: 628
+				udr: 82
+				nav: 57
+      - <<: *dirtyPlugin
+				crc: 0x0d2cf128
+				itm: 6
+				nav: 57
+      - <<: *dirtyPlugin
+				crc: 0x1b95f26b
+				itm: 6
+				nav: 57
+  - name: 'Deadly Wenches.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'DetailedMineMarkers.esp'
+    tag:
+      - C.Water
+  - name: 'Dezicrah.esp'
+    tag:
+      - C.Water
   - name: 'Dovahkiin_Retreat.esp'
     after:
       - 'Hideout_HF_Main.esp'
       - 'Hideout_Main.esp'
+  - name: 'Dragonborn.esm'
+		global_priority: -120
+    after:
+      - 'Dawnguard.esm'
+      - 'Hearthfires.esm'
+		tag:
+      - Invent
+      - Relev
+    dirty:
+      - <<: *dirtyPlugin
+				crc: 0xc7e30215
+				itm: 69
+				udr: 8
+				nav: 1
+  - name: 'DragonsKeep.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+      - Graphics
+      - Names
+      - Stats
+  - name: 'Dragonstead.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
   - name: 'EBM_UnlimitedPower.esp'
-    inc:
+     inc:
       - 'EBM_UnlimitedPower_DarkBrotherhood.esp'
       - 'EBM_UnlimitedPower_DragonAspect.esp'
       - 'EBM_UnlimitedPower_HermaMora.esp'
@@ -233,6 +357,155 @@ plugins:
       - 'EBM_UnlimitedPower_StandingStone.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
       - 'EBM_UnlimitedPower_Werewolf.esp'
+  - name: 'Elemental_Staffs.esp'
+    tag:
+      - Graphics
+  - name: 'Eli_Breezehome.esp'
+    tag:
+      - C.Light
+      - C.Water
+  - name: 'ElysiumEstate.esp'
+    tag:
+      - C.Location
+      - C.Regions
+  - name: 'Folkstead.esp'
+    tag:
+      - C.Acoustic
+      - C.Location
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Invent
+  - name: 'FrostvaleEstate.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'GMG0050HF.esp'
+    tag:
+      - Actors.AIPackages
+      - C.Location
+      - C.Water
+      - Invent
+  - name: 'Gildergreen Regrown.esp'
+    tag:
+      - C.Location
+  - name: 'GoldToSeptims.esp'
+    tag:
+      - Names
+  - name: 'GruntTheBear.esp'
+    tag:
+      - C.Water
+  - name: 'HearthFires Roads.esp'
+    tag:
+      - C.Water
+  - name: 'Hearthfire Warehouse.esp'
+    tag:
+      - Graphics
+      - Stats
+  - name: 'HearthfireMultiKid.esp'
+    tag:
+      - C.Owner
+  - name: 'Hearthfires.esm'
+		global_priority: -120
+    after:
+      - 'Dawnguard.esm'
+		tag:
+      - Invent
+    dirty:
+      - <<: *dirtyPlugin
+				crc: 0xfbd3fb4c
+				itm: 178
+				udr: 11
+				nav: 5
+  - name: 'Holidays.esp'
+    tag:
+      - C.Climate
+      - C.Location
+      - C.Regions
+  - name: 'Hothtrooper44_ArmorCompilation.esp'
+    tag:
+      - Delev
+  - name: 'Immersive Sounds - Compendium.esp'
+    tag:
+      - Graphics
+      - Names
+      - Sound
+      - Stats
+  - name: 'Immersive Wenches.esp'
+    tag:
+      - C.Acoustic
+      - C.Climate
+      - C.Location
+      - C.Music
+      - C.Regions
+      - C.Water
+  - name: 'Imperial Estate.esp'
+    tag:
+      - C.Location
+      - Stats
+  - name: 'Infinite Torch.esp'
+    tag:
+      - Stats
+  - name: 'Ivarstead.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - Invent
+  - name: 'JKs Whiterun exterior.esp'
+    tag:
+      - C.Regions
+  - name: 'JKs Whiterun.esp'
+    tag:
+      - C.Location
+      - C.Water
+  - name: 'JS Armored Circlets SE.esp'
+    tag:
+      - Relev
+  - name: 'Jehanna.esp'
+    tag:
+      - C.Acoustic
+      - C.Location
+      - C.Music
+      - C.RecordFlags
+      - C.Regions
+  - name: 'Karthwasten.esp'
+    tag:
+      - C.Location
+      - C.Name
+      - C.Owner
+      - C.Regions
+  - name: 'LakeHaven.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+      - Names
+  - name: 'Lanterns of Skyrim Light Balance Patch.esp'
+    tag:
+      - Stats
+  - name: 'Lydia Face Preset 64bit.esp'
+    tag:
+      - Actors.ACBS
+  - name: 'MoreBanditCamps.esp'
+    tag:
+      - C.Location
+      - C.Water
+  - name: 'Morrowloot.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'NASB(Before)-BCS-BQMBN.esp'
+    tag:
+      - Graphics
+      - Names
+  - name: 'Nyhus.esp'
+    tag:
+      - C.Acoustic
+      - C.Music
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
   - name: 'Open Cities Skyrim.esp'
     global_priority: 70
     after:
@@ -242,41 +515,13 @@ plugins:
       - 'The Horkerpocalypse.esp'
     tag:
       - C.Location
-  - name: 'Alternate Start - Live Another Life.esp'
-    global_priority: 70
-    after:
-      - 'Open Cities Skyrim.esp'
+  - name: 'OpulentThievesGuild.esp'
     tag:
-      - C.Location
-      - C.Acoustic
-      - C.Climate
-      - C.Encounter
+      - Actors.AIPackages
       - C.Music
-      - C.Owner
-      - C.Regions
-      - C.Water
-  - name: '3rdEraWeapMoS-lvlList.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'Morrowloot.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'SSEMerged.esp'
-    global_priority: 80
-    tag:
-      - NoMerge
-  - name: 'Bashed Patch.*\.esp'
-    global_priority: 80
-    after:
-      - 'SSEMerged.esp'
-  - name: 'Dawnguard Map Markers.esp'
-    global_priority: 95
-    after:
-      - 'Bashed Patch.*\.esp'
+      - Invent
   - name: 'Ordinator - Perks of Skyrim.esp'
-    inc:
+     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
     tag:
       - C.Regions
@@ -284,18 +529,198 @@ plugins:
       - Graphics
       - Names
       - Sound
-  - name: 'RSkyrimChildren.esm'
+  - name: 'Point The Way.esp'
     tag:
+      - C.Location
+      - C.Water
+  - name: 'Potions.esp'
+           tag:
+      - Graphics
+      - Names
+  - name: 'ProudspiremanorTNFBP.esp'
+    tag:
+      - C.Water
+  - name: 'RSChildren - Complete.esp'
+    tag:
+      - Invent
+      - NPC.Race
+  - name: 'RSkyrimChildren.esm'
+		tag:
       - Names
       - R.Description
       - Voice-F
       - Voice-M
+  - name: 'RealisticWaterTwo.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+      - Graphics
+  - name: 'RealmOfKianXavior.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'Rebalanced Leveled Lists.esp'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+  - name: 'RedoranManor.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'RedspireManor.esp'
+    tag:
+      - C.Location
   - name: 'Relationship Dialogue Overhaul.esp'
     tag:
       - C.Climate
       - Names
-  - name: 'CollegeofWinterholdUpgrraded.esp'
+  - name: 'RichMerchantsSkyrim_x10.esp'
     tag:
+      - Relev
+  - name: 'Riftrun_HF_v_2_0.esp'
+    after:
+      - 'Hideout_Main.esp'
+      - 'Hideout_HF_Main.esp'
+      - 'Hideout_DLC_Main.esp'
+      - 'Hideout_Compact.esp'
+      - 'Hideout_HF_Compact.esp'
+  - name: 'SMIM-SE-*.esp'
+    global_priority: -90
+  - name: 'SMIM-SE-Merged-All.esp'
+    tag:
+      - C.Location
+      - Graphics
+  - name: 'SSEMerged.esp'
+    global_priority: 80
+		tag:
+      - NoMerge
+  - name: 'Serana.esp'
+    tag:
+      - Actors.ACBS
+  - name: 'SexyMannequinsFemaleHF_SSE.esp'
+    tag:
+      - Actors.Stats
+  - name: 'SexyMannequinsFemale_SSE.esp'
+    tag:
+      - Actors.Stats
+  - name: 'Signs_of_Skyrim.esp'
+    tag:
+      - C.Water
+  - name: 'SilianManor.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'SilvermoonMansion.esp'
+    tag:
+      - C.Location
+      - C.Music
+      - C.Regions
+      - Relev
+  - name: 'Silverstead.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+      - Graphics
+  - name: 'SkyfallEstateBuildable.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'Skyrim Better Roads and Bridges - All In One - Merged.esp'
+    tag:
+      - C.Location
+      - C.Regions
+  - name: 'Skyrim Flora Overhaul.esp'
+    tag:
+      - Graphics
+  - name: 'Skyrim Sizes.esp'
+    tag:
+      - Body-Size-F
+      - Body-Size-M
+  - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
+    tag:
+      - C.Music
+      - C.Regions
+  - name: 'SofiaFollower.esp'
+    tag:
+      - C.Regions
+  - name: 'Solar.esp'
+    tag:
+      - C.Water
+  - name: 'Spells Emit Light - Bright.esp'
+    tag:
+      - Stats
+  - name: 'Storefront.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'TLE Extreme Vanilla.esp'
+    tag:
+      - Stats
+  - name: 'TW3MO.esp'
+    tag:
+      - C.Music
+  - name: 'The Paarthurnax Dilemma.esp'
+    tag:
+      - C.Regions
+  - name: 'ThistleLodge.esp'
+    tag:
+      - C.Water
+      - Graphics
+  - name: 'Thunderchild - Epic Shout Package.esp'
+    tag:
+      - C.Regions
+      - Sound
+  - name: 'TouringCarriages.esp'
+    global_priority: -90
+  - name: 'Unique Uniques.esp'
+    tag:
+      - Stats
+  - name: 'Unofficial Skyrim Special Edition Patch.esp'
+    global_priority: -120
+		tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Stats
+      - Body-Size-F
+      - Body-Size-M
+      - C.Acoustic
+      - C.RecordFlags
+      - C.Regions
+      - NPC.Class
+      - NPC.Race
+			url:
+      - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/266/?'
+				name: 'Nexus SSE'
+  - name: 'Update.esm'
+		global_priority: -127
+		tag:
+      - Delev
+    dirty:
+      - <<: *dirtyPlugin
+				crc: 0x8a234131
+				itm: 235
+				udr: 91
+  - name: 'Valdmire.esp'
+    tag:
+      - C.Light
+      - C.Location
+      - C.Regions
+      - C.Water
+  - name: 'ValkyrjaRiverwood.esp'
+    tag:
+      - C.Location
+      - C.Regions
       - C.Water
   - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
@@ -303,92 +728,43 @@ plugins:
       - C.Regions
       - C.Water
       - Graphics
-  - name: 'Folkstead.esp'
+  - name: 'Vivid WeathersSE.esp'
     tag:
-      - C.Acoustic
-      - C.Location
-      - C.RecordFlags
-      - C.Regions
+      - Sound
+  - name: 'WeightLessTrueAll.esp'
+    tag:
+      - Graphics
+      - Stats
+  - name: 'Whistling Mine.esp'
+    tag:
+      - Actors.ACBS
+      - AIPackages
+      - Actors.Stats
+  - name: 'WindstadMine.esp'
+    tag:
+      - C.Water
+  - name: 'armored-horses.esp'
+    tag:
+      - Actors.ACBS
+  - name: 'bettercompanionliving.esp'
+    tag:
+      - C.Encounter
+  - name: 'enhancedskyforge.esp'
+    tag:
       - C.Water
       - Invent
-  - name: 'Immersive Sounds - Compendium.esp'
-    tag:
-      - Graphics
-      - Names
-      - Sound
-      - Stats
-  - name: 'ProudspiremanorTNFBP.esp'
-    tag:
-      - C.Water
-  - name: 'RealisticWaterTwo.esp'
-    tag:
-      - C.Location
-      - C.Regions
-      - C.Water
-      - Graphics
-  - name: 'Book Covers Skyrim.esp'
-    tag:
-      - C.Acoustic
-      - C.Climate
-      - C.Music
-      - C.Owner
-      - Graphics
-      - Names
-  - name: 'MoreBanditCamps.esp'
-    tag:
-      - C.Location
-      - C.Water
-  - name: 'Nyhus.esp'
-    tag:
-      - C.Acoustic
-      - C.Music
-      - C.RecordFlags
-      - C.Regions
-      - C.Water
-  - name: 'Jehanna.esp'
-    tag:
-      - C.Acoustic
-      - C.Location
-      - C.Music
-      - C.RecordFlags
-      - C.Regions
-  - name: 'BlackthornManor.esp'
-    tag:
-      - C.Location
-      - C.Regions
-      - C.Water
   - name: 'goodbrother.esp'
     tag:
       - C.Water
       - Invent
       - Names
       - Stats
-  - name: 'Eli_Breezehome.esp'
-    tag:
-      - C.Light
-      - C.Water
-  - name: 'Elemental_Staffs.esp'
-    tag:
-      - Graphics
-  - name: 'WeightLessTrueAll.esp'
-    tag:
-      - Graphics
-      - Stats
-  - name: 'ElysiumEstate.esp'
+  - name: 'kankaraya.esp'
     tag:
       - C.Location
-      - C.Regions
-  - name: 'OpulentThievesGuild.esp'
+  - name: 'morningstarstone.esp'
     tag:
-      - Actors.AIPackages
-      - C.Music
-      - Invent
-  - name: 'BirdsOfSkyrim_SSE.esp'
-    tag:
-      - Actors.AiPackages
-      - C.Location
       - C.Regions
-      - C.Water
   - name: 'mrbs-uniqueloot-se.esp'
     tag:
       - Delev
@@ -396,392 +772,16 @@ plugins:
       - Names
       - Relev
       - Stats
-  - name: 'Thunderchild - Epic Shout Package.esp'
-    tag:
+  - name: 'schools of the holds.esp'
+     tag:
+      - Actors.AIData
       - C.Regions
-      - Sound
+      - C.Water
   - name: 'skyBirds_SSE.esp'
     tag:
       - Graphics
-  - name: 'HearthFires Roads.esp'
-    tag:
-      - C.Water
-  - name: 'Hothtrooper44_ArmorCompilation.esp'
-    tag:
-      - Delev
-  - name: 'GMG0050HF.esp'
-    tag:
-      - Actors.AIPackages
-      - C.Location
-      - C.Water
-      - Invent
-  - name: 'Better Harvesting (animal loot version).esp'
-    tag:
-        - Delev
-        - Invent
-        - Names
-        - Relev
-  - name: 'Rebalanced Leveled Lists.esp'
-    tag:
-        - Delev
-        - Invent
-        - Relev
-  - name: 'Vivid WeathersSE.esp'
-    tag:
-        - Sound
-  - name: 'Unique Uniques.esp'
-    tag:
-        - Stats
-  - name: 'SexyMannequinsFemale_SSE.esp'
-    tag:
-        - Actors.Stats
-  - name: 'SexyMannequinsFemaleHF_SSE.esp'
-    tag:
-        - Actors.Stats
-  - name: 'Holidays.esp'
-    tag:
-        - C.Climate
-        - C.Location
-        - C.Regions
-  - name: 'DragonsKeep.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-        - Graphics
-        - Names
-        - Stats
-  - name: 'College_of_Winterhold_Shop_Fixes_and_Extras.esp'
-    tag:
-        - Graphics
-        - Invent
-        - Names
-        - Stats
-  - name: 'HearthfireMultiKid.esp'
-    tag:
-        - C.Owner
+  - name: 'static mesh improvement mod se.esp'
+    global_priority: -90
   - name: 'usable lantern.esp'
     tag:
-        - Stats
-  - name: 'Potions.esp'        
-    tag:
-        - Graphics
-        - Names
-  - name: 'NASB(Before)-BCS-BQMBN.esp'
-    tag:
-        - Graphics
-        - Names
-  - name: 'Candle Pond Ranch Hearthfire.esp'
-    tag:
-        - C.Location
-  - name: 'Point The Way.esp'
-    tag:
-        - C.Location
-        - C.Water
-  - name: 'schools of the holds.esp'  
-    tag:
-        - Actors.AIData
-        - C.Regions
-        - C.Water
-  - name: 'AK Northern Star Retreat family-SSE-smim.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: "Aonghus' House.esp"
-    tag:
-        - C.Acoustic
-        - C.Location
-        - C.Water
-        - Graphics
-        - Invent
-  - name: 'JS Armored Circlets SE.esp'
-    tag:
-        - Relev
-  - name: 'Ambriel.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'SilianManor.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'JKs Whiterun.esp'
-    tag:
-        - C.Location
-        - C.Water
-  - name: 'Skyrim Better Roads and Bridges - All In One - Merged.esp'
-    tag:
-        - C.Location
-        - C.Regions
-  - name: 'SMIM-SE-Merged-All.esp'
-    tag:
-        - C.Location
-        - Graphics
-  - name: 'morningstarstone.esp'
-    tag:
-        - C.Regions
-  - name: 'Silverstead.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-        - Graphics
-  - name: 'Darkwater Crossing.esp'
-    tag:
-        - Names
-  - name: 'RealmOfKianXavior.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'CliffsideCottage.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-        - Names
-  - name: 'WindstadMine.esp'
-    tag:
-        - C.Water
-  - name: 'Imperial Estate.esp'
-    tag:
-        - C.Location
-        - Stats
-  - name: 'BijinAIO_SSE-3.1.1.esp'
-    tag:
-        - Actors.ACBS
-  - name: 'Bijin Warmaidens.esp'
-    tag:
-        - Actors.ACBS
-  - name: 'Serana.esp'
-    tag:
-        - Actors.ACBS
-  - name: 'LakeHaven.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-        - Names
-  - name: 'Valdmire.esp'
-    tag:
-        - C.Light
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'Bridge Farm Hearthfire version.esp'
-    tag:
-        - C.Location
-        - Graphics
-  - name: 'ThistleLodge.esp'
-    tag:
-        - C.Water
-        - Graphics
-  - name: 'Immersive Wenches.esp'
-    tag:
-        - C.Acoustic
-        - C.Climate
-        - C.Location
-        - C.Music
-        - C.Regions
-        - C.Water
-  - name: "Shor's Stone.esp"
-    tag:
-        - C.Light
-  - name: 'FrostvaleEstate.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water}
-  - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
-    tag:
-        - C.Music
-        - C.Regions
-  - name: 'Ivarstead.esp'
-    tag:
-        - Actors.ACBS
-        - Actors.AIPackages
-        - Invent
-  - name: 'SofiaFollower.esp'
-    tag:
-        - C.Regions
-  - name: 'Dragonstead.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'AmazingFollowerTweaks.esp'
-    tag:
-        - Graphics
-  - name: 'SilvermoonMansion.esp'
-    tag:
-        - C.Location
-        - C.Music
-        - C.Regions
-        - Relev
-  - name: 'Crossroads Inn.esp'
-    tag:
-        - C.Location
-  - name: 'TW3MO.esp'
-    tag:
-        - C.Music
-  - name: 'Signs_of_Skyrim.esp'
-    tag:
-        - C.Water
-  - name: 'Skyrim Sizes.esp'
-    tag:
-        - Body-Size-F
-        - Body-Size-M
-  - name: 'enhancedskyforge.esp'
-    tag:
-        - C.Water
-        - Invent
-  - name: 'Whistling Mine.esp'
-    tag:
-        - Actors.ACBS
-        - AIPackages
-        - Actors.Stats
-  - name: 'Skyrim Flora Overhaul.esp'
-    tag:
-        - Graphics
-  - name: 'RedspireManor.esp'
-    tag:
-        - C.Location
-  - name: 'CiceroFemaleSE.esp'
-    tag:
-        - Actors.ACBS
-  - name: 'Karthwasten.esp'
-    tag:
-        - C.Location
-        - C.Name
-        - C.Owner
-        - C.Regions
-  - name: "Soljund's Sinkhole.esp"
-    tag:
-        - Actors.AIPackages
-        - C.Location
-        - C.Name
-        - Names
-  - name: 'Storefront.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'bettercompanionliving.esp'
-    tag:
-        - C.Encounter
-  - name: '00MarzWindhelmHome.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'Solar.esp'
-    tag:
-        - C.Water
-  - name: 'kankaraya.esp'
-    tag:
-        - C.Location
-  - name: 'SkyfallEstateBuildable.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'RedoranManor.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
-    tag:
-        - C.Climate
-        - C.Encounter
-        - C.Owner
-        - C.Regions
-        - C.Water
-  - name: 'armored-horses.esp'
-    tag:
-        - Actors.ACBS
-  - name: 'DetailedMineMarkers.esp'
-    tag:
-        - C.Water
-  - name: 'AbanFarm.esp'
-    tag:
-        - C.Regions
-  - name: 'JKs Whiterun exterior.esp'
-    tag:
-        - C.Regions
-  - name: 'The Paarthurnax Dilemma.esp'
-    tag:
-        - C.Regions
-  - name: 'ValkyrjaRiverwood.esp'
-    tag:
-        - C.Location
-        - C.Regions
-        - C.Water
-  - name: 'BooksOfSkyrim.esp'
-    tag:
-        - C.Location
-        - C.Regions
-  - name: 'GruntTheBear.esp'
-    tag:
-        - C.Water
-  - name: 'Dezicrah.esp'
-    tag:
-        - C.Water
-  - name: 'Crafting Materials.esp'
-    tag:
-        - C.Regions
-        - C.Water
-  - name: 'Gildergreen Regrown.esp'
-    tag:
-        - C.Location
-  - name: 'Hearthfire Warehouse.esp'
-    tag:
-        - Graphics
-        - Stats
-  - name: 'ApachiiHelmetWigs.esp'
-    tag:
-        - C.Water
-  - name: 'Deadly Wenches.esp'
-    tag:
-        - Delev
-        - Relev
-  - name: 'Lanterns of Skyrim Light Balance Patch.esp'
-    tag:
-        - Stats
-  - name: 'RichMerchantsSkyrim_x10.esp'
-    tag:
-        - Relev
-  - name: 'GoldToSeptims.esp'
-    tag:
-        - Names
-  - name: 'Infinite Torch.esp'
-    tag:
-        - Stats
-  - name: 'Spells Emit Light - Bright.esp'
-    tag:
-        - Stats
-  - name: 'BetterMagicLights.esp'
-    tag:
-        - Stats
-  - name: 'TLE Extreme Vanilla.esp'
-    tag:
-        - Stats
-  - name: 'RSChildren - Complete.esp'
-    tag:
-        - Invent
-        - NPC.Race
-  - name: 'Lydia Face Preset 64bit.esp'
-    tag:
-        - Actors.ACBS
-  - name: 'Better Horses 3.0.esp'
-    tag:
-        - Actors.ACBS
-        - Actors.AIData
-        - Actors.AIPackages
-        - Actors.CombatStyle
-  - name: 'Alternate Start -- New Beginnings.esp'
-    tag:
-        - C.Climate
+      - Stats
