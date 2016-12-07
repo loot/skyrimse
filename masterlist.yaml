@@ -104,6 +104,116 @@ globals:
     subs: [ 'https://loot.github.io/latest-thread/' ]
 
 plugins:
+  - name: 'Update.esm'
+    global_priority: -127
+    tag:
+      - Delev
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8a234131
+        itm: 235
+        udr: 91
+  - name: 'Dawnguard.esm'
+    global_priority: -120
+    tag:
+      - Delev
+      - Invent
+      - Relev
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x051fcdc8
+        itm: 628
+        udr: 82
+        nav: 57
+      - <<: *dirtyPlugin
+        crc: 0x0d2cf128
+        itm: 6
+        nav: 57
+      - <<: *dirtyPlugin
+        crc: 0x1b95f26b
+        itm: 6
+        nav: 57
+  - name: 'Hearthfires.esm'
+    global_priority: -120
+    after:
+      - 'Dawnguard.esm'
+    tag:
+      - Invent
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xfbd3fb4c
+        itm: 178
+        udr: 11
+        nav: 5
+  - name: 'Dragonborn.esm'
+    global_priority: -120
+    after:
+      - 'Dawnguard.esm'
+      - 'Hearthfires.esm'
+    tag:
+      - Invent
+      - Relev
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xc7e30215
+        itm: 69
+        udr: 8
+        nav: 1
+  - name: 'Unofficial Skyrim Special Edition Patch.esp'
+    global_priority: -120
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Stats
+      - Body-Size-F
+      - Body-Size-M
+      - C.Acoustic
+      - C.RecordFlags
+      - C.Regions
+      - NPC.Class
+      - NPC.Race
+    url:
+      - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/266/?'
+        name: 'Nexus SSE'
+  - name: 'RSkyrimChildren.esm'
+    tag:
+      - Names
+      - R.Description
+      - Voice-F
+      - Voice-M
+  - name: 'static mesh improvement mod se.esp'
+    global_priority: -90
+  - name: 'usable lantern.esp'
+    tag:
+      - Stats
+  - name: 'Cutting Room Floor.esp'
+    global_priority: -90
+    after:
+      - 'TouringCarriages.esp'
+      - 'WhiterunHoldForest.esp'
+    tag:
+      - C.Location
+      - Delev
+      - Graphics
+      - Invent
+      - Names
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Stats
+      - NPC.Class
+    url:
+      - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/276/?'
+        name: 'Nexus SSE'
+  - name: 'TouringCarriages.esp'
+    global_priority: -90
+  - name: 'Unique Uniques.esp'
+    tag:
+      - Stats
   - name: "Aonghus' House.esp"
     tag:
       - C.Acoustic
@@ -111,6 +221,8 @@ plugins:
       - C.Water
       - Graphics
       - Invent
+  - name: 'SMIM-SE-*.esp'
+    global_priority: -90
   - name: "Shor's Stone.esp"
     tag:
       - C.Light
@@ -137,19 +249,7 @@ plugins:
   - name: 'AbanFarm.esp'
     tag:
       - C.Regions
-  - name: 'Alternate Start - Live Another Life.esp'
-    global_priority: 70
-    after:
-      - 'Open Cities Skyrim.esp'
-    tag:
-      - C.Location
-      - C.Acoustic
-      - C.Climate
-      - C.Encounter
-      - C.Music
-      - C.Owner
-      - C.Regions
-      - C.Water
+
   - name: 'Alternate Start -- New Beginnings.esp'
     tag:
       - C.Climate
@@ -164,16 +264,6 @@ plugins:
   - name: 'ApachiiHelmetWigs.esp'
     tag:
       - C.Water
-  - name: 'Bashed Patch.*\.esp'
-    global_priority: 80
-    after:
-      - 'SSEMerged.esp'
-  - name: 'Better Harvesting (animal loot version).esp'
-    tag:
-      - Delev
-      - Invent
-      - Names
-      - Relev
   - name: 'Better Horses 3.0.esp'
     tag:
       - Actors.ACBS
@@ -259,53 +349,9 @@ plugins:
   - name: 'Crossroads Inn.esp'
     tag:
       - C.Location
-  - name: 'Cutting Room Floor.esp'
-    global_priority: -90
-    after:
-      - 'TouringCarriages.esp'
-      - 'WhiterunHoldForest.esp'
-    tag:
-      - C.Location
-      - Delev
-      - Graphics
-      - Invent
-      - Names
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.CombatStyle
-      - Actors.Stats
-      - NPC.Class
-    url:
-      - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/276/?'
-        name: 'Nexus SSE'
   - name: 'Darkwater Crossing.esp'
     tag:
       - Names
-  - name: 'Dawnguard Map Markers.esp'
-    global_priority: 95
-    after:
-      - 'Bashed Patch.*\.esp'
-  - name: 'Dawnguard.esm'
-    global_priority: -120
-    tag:
-      - Delev
-      - Invent
-      - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x051fcdc8
-        itm: 628
-        udr: 82
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x0d2cf128
-        itm: 6
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x1b95f26b
-        itm: 6
-        nav: 57
   - name: 'Deadly Wenches.esp'
     tag:
       - Delev
@@ -320,20 +366,6 @@ plugins:
     after:
       - 'Hideout_HF_Main.esp'
       - 'Hideout_Main.esp'
-  - name: 'Dragonborn.esm'
-    global_priority: -120
-    after:
-      - 'Dawnguard.esm'
-      - 'Hearthfires.esm'
-    tag:
-      - Invent
-      - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc7e30215
-        itm: 69
-        udr: 8
-        nav: 1
   - name: 'DragonsKeep.esp'
     tag:
       - C.Location
@@ -406,18 +438,6 @@ plugins:
   - name: 'HearthfireMultiKid.esp'
     tag:
       - C.Owner
-  - name: 'Hearthfires.esm'
-    global_priority: -120
-    after:
-      - 'Dawnguard.esm'
-    tag:
-      - Invent
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfbd3fb4c
-        itm: 178
-        udr: 11
-        nav: 5
   - name: 'Holidays.esp'
     tag:
       - C.Climate
@@ -506,15 +526,6 @@ plugins:
       - C.RecordFlags
       - C.Regions
       - C.Water
-  - name: 'Open Cities Skyrim.esp'
-    global_priority: 70
-    after:
-      - 'Unique Region Names.esp'
-      - 'URN+CoT Patch.esp'
-      - 'Atlas Map Markers.esp'
-      - 'The Horkerpocalypse.esp'
-    tag:
-      - C.Location
   - name: 'OpulentThievesGuild.esp'
     tag:
       - Actors.AIPackages
@@ -544,12 +555,6 @@ plugins:
     tag:
       - Invent
       - NPC.Race
-  - name: 'RSkyrimChildren.esm'
-    tag:
-      - Names
-      - R.Description
-      - Voice-F
-      - Voice-M
   - name: 'RealisticWaterTwo.esp'
     tag:
       - C.Location
@@ -588,16 +593,10 @@ plugins:
       - 'Hideout_DLC_Main.esp'
       - 'Hideout_Compact.esp'
       - 'Hideout_HF_Compact.esp'
-  - name: 'SMIM-SE-*.esp'
-    global_priority: -90
   - name: 'SMIM-SE-Merged-All.esp'
     tag:
       - C.Location
       - Graphics
-  - name: 'SSEMerged.esp'
-    global_priority: 80
-    tag:
-      - NoMerge
   - name: 'Serana.esp'
     tag:
       - Actors.ACBS
@@ -678,39 +677,6 @@ plugins:
     tag:
       - C.Regions
       - Sound
-  - name: 'TouringCarriages.esp'
-    global_priority: -90
-  - name: 'Unique Uniques.esp'
-    tag:
-      - Stats
-  - name: 'Unofficial Skyrim Special Edition Patch.esp'
-    global_priority: -120
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Stats
-      - Body-Size-F
-      - Body-Size-M
-      - C.Acoustic
-      - C.RecordFlags
-      - C.Regions
-      - NPC.Class
-      - NPC.Race
-    url:
-      - link: 'http://www.nexusmods.com/skyrimspecialedition/mods/266/?'
-        name: 'Nexus SSE'
-  - name: 'Update.esm'
-    global_priority: -127
-    tag:
-      - Delev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8a234131
-        itm: 235
-        udr: 91
   - name: 'Valdmire.esp'
     tag:
       - C.Light
@@ -780,8 +746,43 @@ plugins:
   - name: 'skyBirds_SSE.esp'
     tag:
       - Graphics
-  - name: 'static mesh improvement mod se.esp'
-    global_priority: -90
-  - name: 'usable lantern.esp'
+  - name: 'Open Cities Skyrim.esp'
+    global_priority: 70
+    after:
+      - 'Unique Region Names.esp'
+      - 'URN+CoT Patch.esp'
+      - 'Atlas Map Markers.esp'
+      - 'The Horkerpocalypse.esp'
     tag:
-      - Stats
+      - C.Location
+  - name: 'Alternate Start - Live Another Life.esp'
+    global_priority: 70
+    after:
+      - 'Open Cities Skyrim.esp'
+    tag:
+      - C.Location
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.Music
+      - C.Owner
+      - C.Regions
+      - C.Water
+  - name: 'Bashed Patch.*\.esp'
+    global_priority: 80
+    after:
+      - 'SSEMerged.esp'
+  - name: 'SSEMerged.esp'
+    global_priority: 80
+    tag:
+      - NoMerge
+  - name: 'Better Harvesting (animal loot version).esp'
+    tag:
+      - Delev
+      - Invent
+      - Names
+      - Relev
+  - name: 'Dawnguard Map Markers.esp'
+    global_priority: 95
+    after:
+      - 'Bashed Patch.*\.esp'
