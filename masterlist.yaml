@@ -161,6 +161,8 @@ plugins:
         nav: 1
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
+    after:
+      - 'Lanterns Of Skyrim - All In One - Main.esm'
   - name: 'static mesh improvement mod se.esp'
     global_priority: -90
   - name: 'SMIM-SE-*.esp'
@@ -294,3 +296,66 @@ plugins:
     tag:
       - R.Description
       - R.Skills
+  - name: 'ElysiumEstate-HF.esp'
+    inc:
+      - name: 'ElysiumEstate-HFNoKids.esp'
+        display: 'Elysium Estate No Kids'
+  - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    after:
+      - name: 'Skyrim Flora Overhaul.esp'
+        display: 'Skyrim Flora Overhaul'
+  - name: 'Valerica.esp'
+    msg:
+      - type: error
+        content: 'Disable ESP'
+        condition: 'active("Valerica.esp")'
+  - name: 'Bijin Wives.esp'
+    msg:
+      - type: error
+        content: 'Disable ESP'
+        condition: 'active("Bijin Wives.esp")'
+  - name: 'Bijin NPCs.esp'
+    msg:
+      - type: error
+        content: 'Disable ESP'
+        condition: 'active("Bijin NPCs.esp")'
+  - name: 'Bijin Warmaidens.esp'
+    msg:
+      - type: error
+        content: 'Disable ESP'
+        condition: 'active("Bijin Warmaidens.esp")'
+  - name: 'ElysiumEstate-HFNoKids.esp'
+    inc:
+      - name: 'ElysiumEstate-HF.esp'
+        display: 'Elsium Estate With Kids'
+  - name: 'Serana.esp'
+    msg:
+      - type: error
+        content: 'Disable ESP'
+        condition: 'active("Serana.esp")'
+  - name: 'Eli_Breezehome.esp'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Relationship Dialogue Overhaul.esp'
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'AmazingFollowerTweaks.esp'
+      - 'BijinAIO_SSE-3.1.1.esp'
+      - 'Cutting Room Floor.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Immersive Horses.esp'
+      - 'Open Cities Skyrim.esp'
+      - 'Unofficial Skyrim Legendary Edition Path.esp'
+  - name: 'RDO - CRF + USSEP Patch.esp'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - USSEP Patch.esp'
+  - name: 'RDO - USSEP Patch.esp'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - CRF + USSEP Patch.esp'
+  - name: 'RDO - AFT v1.66 Patch.esp'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
