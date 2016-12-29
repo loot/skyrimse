@@ -493,3 +493,72 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
+  - name: 'Severa_CharPreset.esp'
+    global_priority: -1
+    inc:
+      - 'Kayla_CharPreset.esp'
+      - 'Lagertha_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Severa_CharPreset.esp")'
+    tag:
+      - NoMerge
+  - name: 'Lydia Face Preset 64bit.esp'
+    global_priority: -1
+    inc:
+      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+      - 'Kayla_CharPreset.esp'
+      - 'Lagertha_CharPreset.esp'
+      - 'Severa_CharPreset.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Lydia Face Preset 64bit.esp")'
+    tag:
+      - NoMerge
+  - name: 'Lagertha_CharPreset.esp'
+    global_priority: -1
+    inc:
+      - 'Kayla_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+      - 'Severa_CharPreset.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Lagertha_CharPreset.esp")'
+    tag:
+      - NoMerge
+  - name: 'Kayla_CharPreset.esp'
+    global_priority: -1
+    inc:
+      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+      - 'Lagertha_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+      - 'Severa_CharPreset.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Kayla_CharPreset.esp")'
+    tag:
+      - NoMerge
+  - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
+    inc:
+      - 'Better_Male_Presets.esp'
+      - 'Kayla_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
+  - name: 'Better_Male_Presets.esp'
+    global_priority: -1
+    inc:
+      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Better_Male_Presets.esp")'
+    tag:
+      - NoMerge
