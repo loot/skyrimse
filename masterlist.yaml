@@ -415,20 +415,29 @@ plugins:
         content: 'Disable ESP'
         condition: 'active("Valerica.esp")'
   - name: 'Bijin Wives.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin Wives.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'Bijin NPCs.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin NPCs.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin NPC.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'Bijin Warmaidens.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin Warmaidens.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'ElysiumEstate-HFNoKids.esp'
     inc:
       - name: 'ElysiumEstate-HF.esp'
