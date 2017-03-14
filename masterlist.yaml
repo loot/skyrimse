@@ -410,34 +410,64 @@ plugins:
       - name: 'Skyrim Flora Overhaul.esp'
         display: 'Skyrim Flora Overhaul'
   - name: 'Valerica.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Valerica.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+  - name: 'Serana.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    msg:
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Serana.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'Bijin Wives.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    - name: 'BijinAIO_SSE-3.1.1.esp'
+      display: 'Bijin AIO Legendary SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin Wives.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'Bijin NPCs.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    - name: 'BijinAIO_SSE-3.1.1.esp'
+      display: 'Bijin AIO Legendary SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin NPCs.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'Bijin Warmaidens.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    - name: 'BijinAIO_SSE-3.1.1.esp'
+      display: 'Bijin AIO Legendary SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin Warmaidens.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'ElysiumEstate-HFNoKids.esp'
     inc:
       - name: 'ElysiumEstate-HF.esp'
         display: 'Elsium Estate With Kids'
-  - name: 'Serana.esp'
-    msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Serana.esp")'
   - name: 'Immersive Citizens - AI Overhaul.esp'
     global_priority: 40
     after:
