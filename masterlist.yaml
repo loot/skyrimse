@@ -247,6 +247,26 @@ plugins:
     after:
       - 'Hideout_HF_Main.esp'
       - 'Hideout_Main.esp'
+  - name: 'EBM_Train10x.esp'
+    inc:
+      - 'EBM_Train25x.esp'
+      - 'EBM_Train50x.esp'
+      - 'EBM_Train99x.esp'
+  - name: 'EBM_Train25x.esp'
+    inc:
+      - 'EBM_Train10x.esp'
+      - 'EBM_Train50x.esp'
+      - 'EBM_Train99x.esp'
+  - name: 'EBM_Train50x.esp'
+    inc:
+      - 'EBM_Train10x.esp'
+      - 'EBM_Train25x.esp'
+      - 'EBM_Train99x.esp'
+  - name: 'EBM_Train99x.esp'
+    inc:
+      - 'EBM_Train10x.esp'
+      - 'EBM_Train25x.esp'
+      - 'EBM_Train50x.esp'
   - name: 'EBM_UnlimitedPower.esp'
     inc:
       - 'EBM_UnlimitedPower_DarkBrotherhood.esp'
@@ -377,6 +397,10 @@ plugins:
       - 'Soljund''s Sinkhole.esp'
       - 'Whistling Mine.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+      - 'SoundsofSkyrimComplete.esp'
+      - 'SoS - The Wilds.esp'
+      - 'SoS - The Dungeons.esp'
+      - 'SoS - Civilization.esp'
   - name: 'SSEMerged.esp'
     global_priority: 80
     tag:
@@ -406,34 +430,64 @@ plugins:
       - name: 'Skyrim Flora Overhaul.esp'
         display: 'Skyrim Flora Overhaul'
   - name: 'Valerica.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Valerica.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+  - name: 'Serana.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    msg:
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Serana.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'Bijin Wives.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    - name: 'BijinAIO_SSE-3.1.1.esp'
+      display: 'Bijin AIO Legendary SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin Wives.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'Bijin NPCs.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    - name: 'BijinAIO_SSE-3.1.1.esp'
+      display: 'Bijin AIO Legendary SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin NPCs.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'Bijin Warmaidens.esp'
+    after:
+    - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      display: 'Bijin AIO Legendary plus Serana and Valerica'
+    - name: 'BijinAIO_SSE-3.1.1.esp'
+      display: 'Bijin AIO Legendary SSE'
     msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Bijin Warmaidens.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+    - type: warn
+      content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
+      condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'ElysiumEstate-HFNoKids.esp'
     inc:
       - name: 'ElysiumEstate-HF.esp'
         display: 'Elsium Estate With Kids'
-  - name: 'Serana.esp'
-    msg:
-      - type: error
-        content: 'Disable ESP'
-        condition: 'active("Serana.esp")'
   - name: 'Immersive Citizens - AI Overhaul.esp'
     global_priority: 40
     after:
@@ -634,6 +688,23 @@ plugins:
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'My Home Is Your Home.esp'
-    global_priority: 60 
+    global_priority: 60
     after:
       - 'AmazingFollowerTweaks.esp'
+  - name: 'CFTO.esp'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'FlowerGirls SE.esp'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'Honeyside.esp'
+    after:
+      - 'ELFX - NoHoneyside.esp'
+      - 'Alternate Start - Live Another Life.esp'
+  - name: 'Immersive Sounds - Compendium.esp'
+    after:
+      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
+  - name: 'Landscape Fixes For Grass Mods.esp'
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+
