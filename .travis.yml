@@ -8,9 +8,13 @@ addons:
     packages:
       - libstdc++6
 
-install: wget https://github.com/loot/loot/releases/download/0.10.1/metadata-validator.tar.xz -O - | tar -xJ --strip-components=1
+install:
+  - wget https://github.com/loot/loot/releases/download/0.10.1/metadata-validator.tar.xz -O - | tar -xJ --strip-components=1
+  - npm install -g js-yaml
 
-script: ./metadata-validator $TRAVIS_BUILD_DIR/masterlist.yaml
+script:
+  - ./metadata-validator $TRAVIS_BUILD_DIR/masterlist.yaml
+  - js-yaml $TRAVIS_BUILD_DIR/masterlist.yaml > /dev/null
 
 notifications:
   irc:

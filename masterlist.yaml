@@ -11,6 +11,8 @@ common:
         text: 'No limpiar las referencias ITM (iguales al master), ya que son intencionales y necesarias para que el Mod funcione. Sí es seguro restaurar las UDR (referencias borradas), pero no haga más que eso.'
       - lang: zh_CN
         text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
+      - lang: ja
+        text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
 # Cleaning data
   - &dirtyPlugin
     util: '[SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164)'
@@ -101,6 +103,8 @@ globals:
         text: '[최신 LOOT 스레드](%1%).'
       - lang: zh_CN
         text: '[最新的LOOT版本](%1%)。'
+      - lang: ja
+        text: '[LOOTの最新スレッドを開く](%1%)（英語）'
     subs: [ 'https://loot.github.io/latest-thread/' ]
 
 plugins:
@@ -349,6 +353,9 @@ plugins:
   - name: 'JKs Whiterun.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    tag:
+      - C.Location
+      - C.Water
   - name: 'JKs Whiterun exterior.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -401,6 +408,11 @@ plugins:
       - 'SoS - The Wilds.esp'
       - 'SoS - The Dungeons.esp'
       - 'SoS - Civilization.esp'
+    tag:
+      - C.Location
+      - C.Regions
+      - C.Water
+      - Graphics
   - name: 'SSEMerged.esp'
     global_priority: 80
     tag:
@@ -712,3 +724,68 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
         udr: 1
+  - name: 'AyleidCitadel.esp'
+    tag:
+      - C.Regions
+  - name: '3DNPC.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Owner
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Invent
+  - name: 'Beasts of Tamriel.esp'
+    tag:
+      - Actors.ACBS
+      - C.Encounter
+      - C.Location
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Invent
+      - Relev
+  - name: 'Solitude Expansion.esp'
+    tag:
+      - C.Location
+      - C.Regions
+  - name: 'JK''s SkyHaven Forge.esp'
+    tag:
+      - C.Regions
+  - name: 'TrueStormsSE.esp'
+    tag:
+      - Sound
+  - name: 'DLCIntegration.esp'
+    tag:
+      - Delev
+      - Invent
+  - name: 'SexLab-AmorousAdventures.esp'
+    tag:
+      - C.Climate
+      - C.Water
+  - name: 'ULRiverwoodForestJKPatch.esp'
+    tag:
+      - C.Water
+  - name: 'LADX_SSE.esp'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+  - name: 'DBM_CRF_Patch.esp'
+    tag:
+      - Factions
+      - Names
+  - name: 'DBM_SkyrimUnderground_Patch.esp'
+    tag:
+      - Invent
+  - name: 'DBM_HelgenReborn_Patch.esp'
+    tag:
+      - Factions
+
