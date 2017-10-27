@@ -122,7 +122,9 @@ plugins:
         itm: 234
         udr: 91
   - name: 'Dawnguard.esm'
-    global_priority: -120
+    global_priority: -127
+    after:
+      - 'Update.esm'
     tag:
       - Delev
       - Invent
@@ -151,7 +153,7 @@ plugins:
         udr: 82
         nav: 57
   - name: 'Hearthfires.esm'
-    global_priority: -120
+    global_priority: -127
     after:
       - 'Dawnguard.esm'
     tag:
@@ -168,7 +170,7 @@ plugins:
         udr: 11
         nav: 5
   - name: 'Dragonborn.esm'
-    global_priority: -120
+    global_priority: -127
     after:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
@@ -186,6 +188,91 @@ plugins:
         itm: 69
         udr: 8
         nav: 1
+  - name: 'ccBGSSSE002-ExoticArrows.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+  - name: 'ccBGSSSE003-Zombies.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+  - name: 'ccBGSSSE004-RuinsEdge.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+  - name: 'ccBGSSSE006-StendarsHammer.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+  - name: 'ccBGSSSE007-Chrysamere.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+  - name: 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+  - name: 'ccBGSSSE014-SpellPack01.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+  - name: 'ccBGSSSE019-StaffofSheogorath.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+  - name: 'ccMTYSSE001-KnightsoftheNine.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+  - name: 'ccQDRSSE001-SurvivalMode.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
     after:
@@ -811,4 +898,3 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2829' ]
     after:
       - 'JKs Whiterun.esp'
-
