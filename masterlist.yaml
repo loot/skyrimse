@@ -1,4 +1,12 @@
 common:
+# Files
+  - &SKSE64
+    name: '../skse64_loader.exe'
+    display: '[SKSE64](http://skse.silverlock.org)'
+  - &SkyUI
+    name: 'SkyUI_SE.esp'
+    display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+
 # Messages
   - &doNotClean
     type: say
@@ -13,6 +21,7 @@ common:
         text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
       - lang: ja
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
+
 # Cleaning data
   - &dirtyPlugin
     util: '[SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164)'
@@ -406,6 +415,9 @@ plugins:
       - 'EBM_UnlimitedPower_StandingStone.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
       - 'EBM_UnlimitedPower_Werewolf.esp'
+  - name: 'SkyUI_SE.esp'
+    req:
+      - *SKSE64
   - name: 'Open Cities Skyrim.esp'
     global_priority: 70
     after:
