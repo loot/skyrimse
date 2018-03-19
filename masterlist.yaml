@@ -116,9 +116,49 @@ globals:
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
     subs: [ 'https://loot.github.io/latest-thread/' ]
 
+
+groups:
+  - name: &dlcGroup DLC
+
+  - name: &unofficialPatchGroup Unofficial Patches
+    after: [ *dlcGroup ]
+
+  - name: &hairReplacerGroup Hair Replacer
+    after: [ *unofficialPatchGroup ]
+
+  - name: &lowPriorityGroup Low Priority Overrides
+    after: [ *hairReplacerGroup ]
+
+  - name: &facePresetGroup Face Presets
+    after: [ *lowPriorityGroup ]
+
+  - name: default
+    after: [ *facePresetGroup ]
+
+  - name: &raceGroup Races
+    after: [ default ]
+
+  - name: &immersiveCitizensGroup Immersive Citizens
+    after: [ *raceGroup ]
+
+  - name: &followerGroup Followers
+    after: [ *immersiveCitizensGroup ]
+
+  - name: &alternateStartGroup Alternate Start
+    after: [ *followerGroup ]
+
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *alternateStartGroup ]
+
+  - name: &mapMarkersGroup Map Markers
+    after: [ *dynamicPatchGroup ]
+
+  - name: &dynamicLODGroup Dynamic LOD
+    after: [ *mapMarkersGroup ]
+
 plugins:
   - name: 'Update.esm'
-    global_priority: -127
+    group: *dlcGroup
     tag:
       - Delev
     dirty:
@@ -135,7 +175,7 @@ plugins:
         itm: 230
         udr: 91
   - name: 'Dawnguard.esm'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Update.esm'
     tag:
@@ -171,7 +211,7 @@ plugins:
         udr: 82
         nav: 57
   - name: 'Hearthfires.esm'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dawnguard.esm'
     tag:
@@ -193,7 +233,7 @@ plugins:
         udr: 11
         nav: 5
   - name: 'Dragonborn.esm'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
@@ -217,29 +257,29 @@ plugins:
         udr: 8
         nav: 1
   - name: 'ccBGSSSE002-ExoticArrows.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
   - name: 'ccBGSSSE003-Zombies.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
   - name: 'ccBGSSSE004-RuinsEdge.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
   - name: 'ccBGSSSE006-StendarsHammer.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
   - name: 'ccBGSSSE007-Chrysamere.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -247,7 +287,7 @@ plugins:
       - 'ccBGSSSE004-RuinsEdge.esl'
       - 'ccBGSSSE006-StendarsHammer.esl'
   - name: 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -256,7 +296,7 @@ plugins:
       - 'ccBGSSSE006-StendarsHammer.esl'
       - 'ccBGSSSE007-Chrysamere.esl'
   - name: 'ccBGSSSE014-SpellPack01.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -266,7 +306,7 @@ plugins:
       - 'ccBGSSSE007-Chrysamere.esl'
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
   - name: 'ccBGSSSE019-StaffofSheogorath.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -277,7 +317,7 @@ plugins:
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
       - 'ccBGSSSE014-SpellPack01.esl'
   - name: 'ccMTYSSE001-KnightsoftheNine.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -289,7 +329,7 @@ plugins:
       - 'ccBGSSSE014-SpellPack01.esl'
       - 'ccBGSSSE019-StaffofSheogorath.esl'
   - name: 'ccQDRSSE001-SurvivalMode.esl'
-    global_priority: -127
+    group: *dlcGroup
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -302,17 +342,17 @@ plugins:
       - 'ccBGSSSE019-StaffofSheogorath.esl'
       - 'ccMTYSSE001-KnightsoftheNine.esl'
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
   - name: 'static mesh improvement mod se.esp'
-    global_priority: -90
+    group: *lowPriorityGroup
   - name: 'SMIM-SE-.*.esp'
-    global_priority: -90
+    group: *lowPriorityGroup
   - name: 'TouringCarriages.esp'
-    global_priority: -90
+    group: *lowPriorityGroup
   - name: 'Cutting Room Floor.esp'
-    global_priority: -90
+    group: *lowPriorityGroup
     after:
       - 'TouringCarriages.esp'
       - 'WhiterunHoldForest.esp'
@@ -371,9 +411,9 @@ plugins:
     tag:
       - NoMerge
   - name: 'Hair Replacer.esp'
-    global_priority: -100
+    group: *hairReplacerGroup
   - name: 'Hair Replacer Assets.esp'
-    global_priority: -100
+    group: *hairReplacerGroup
     after:
       - 'Hair Replacer.esp'
   - name: 'Better Vampires.esp'
@@ -425,7 +465,7 @@ plugins:
     req:
       - *SKSE64
   - name: 'Open Cities Skyrim.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
@@ -434,7 +474,7 @@ plugins:
     tag:
       - C.Location
   - name: 'Alternate Start - Live Another Life.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     after:
       - 'Open Cities Skyrim.esp'
       - 'My Home Is Your Home.esp'
@@ -489,7 +529,7 @@ plugins:
       - Delev
       - Relev
   - name: 'MLU.esp'
-    global_priority: 60
+    group: *followerGroup
   - name: 'JK''s Riverwood.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -505,7 +545,7 @@ plugins:
   - name: 'Bring Out Your Dead.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    global_priority: -90
+    group: *lowPriorityGroup
   - name: 'Darkwater Crossing.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -560,22 +600,22 @@ plugins:
       - C.Water
       - Graphics
   - name: 'SSEMerged.esp'
-    global_priority: 80
+    group: *dynamicPatchGroup
     tag:
       - NoMerge
   - name: 'Bashed Patch.*\.esp'
-    global_priority: 80
+    group: *dynamicPatchGroup
     after:
       - 'SSEMerged.esp'
   - name: 'Dawnguard Map Markers.esp'
-    global_priority: 95
+    group: *mapMarkersGroup
     after:
       - 'Bashed Patch.*\.esp'
   - name: 'Ordinator - Perks of Skyrim.esp'
     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
   - name: 'Imperious - Races of Skyrim.esp'
-    global_priority: 20
+    group: *raceGroup
     tag:
       - R.Description
       - R.Skills
@@ -647,7 +687,7 @@ plugins:
       - name: 'ElysiumEstate-HF.esp'
         display: 'Elsium Estate With Kids'
   - name: 'Immersive Citizens - AI Overhaul.esp'
-    global_priority: 40
+    group: *immersiveCitizensGroup
     after:
       - 'Eli_Breezehome.esp'
       - 'Eli_Routa.esp'
@@ -721,7 +761,7 @@ plugins:
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
   - name: 'Severa_CharPreset.esp'
-    global_priority: -1
+    group: *facePresetGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lagertha_CharPreset.esp'
@@ -733,7 +773,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Lydia Face Preset 64bit.esp'
-    global_priority: -1
+    group: *facePresetGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -746,7 +786,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Lagertha_CharPreset.esp'
-    global_priority: -1
+    group: *facePresetGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -758,7 +798,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Kayla_CharPreset.esp'
-    global_priority: -1
+    group: *facePresetGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -780,7 +820,7 @@ plugins:
         content: 'After Character Creation you should deactivate and/or uninstall.'
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
-    global_priority: -1
+    group: *facePresetGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
     msg:
@@ -831,7 +871,7 @@ plugins:
     tag:
       - Invent
   - name: 'Ducks and Swans.esp'
-    global_priority: -90
+    group: *lowPriorityGroup
   - name: 'BirdsOfSkyrim_SSE.esp'
     after:
       - 'SkyTEST-RealisticAnimals&Predators.esp'
@@ -843,7 +883,7 @@ plugins:
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'My Home Is Your Home.esp'
-    global_priority: 60
+    group: *followerGroup
     after:
       - 'AmazingFollowerTweaks.esp'
   - name: 'CFTO.esp'
@@ -863,7 +903,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'DynDOLOD.esp'
-    global_priority: 115
+    group: *dynamicLODGroup
   - name: 'ULALPatch.esp'
     dirty:
       - crc: 0xdde49e20
