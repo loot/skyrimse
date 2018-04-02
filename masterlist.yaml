@@ -146,7 +146,22 @@ globals:
         text: '你的SKSE是最新的。'
       - lang: ja
         text: 'SKSEは最新版です。'
-
+# SKSE requirement Warnings
+  - type: warn
+    condition: 'file("SKSE/Plugins/SkyrimUncapper.dll") and not file("../skse64_loader.exe")'
+    content:
+      - lang: en
+        text: 'You have installed Skyrim Skill Uncapper but SKSE not found! See SKSE download page: [SKSE](http://skse.silverlock.org/).'
+      - lang: ru
+        text: 'У вас установлен Skyrim Skill Uncapper, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org/).'
+      - lang: es
+        text: 'Tienes Skyrim Skill Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org/)'
+      - lang: ko
+        text: 'Skyrim Skill Uncapper가 설치되었지만 SKSE를 찾을 수 없습니다! SKSE 다운로드 페이지를 참조하십시오: [SKSE](http://skse.silverlock.org/).'
+      - lang: zh_CN
+        text: '你已经安装了Skyrim Skill Uncapper，但是未发现SKSE！请查看SKSE的下载页面：[SKSE](http://skse.silverlock.org/)。'
+      - lang: ja
+        text: 'Skyrim Community Uncapperはインストールされていますが、SKSEが見つかりません！SKSEのダウンロードページを確認してください。[SKSE](http://skse.silverlock.org/)'
 groups:
   - name: &dlcGroup DLC
 
