@@ -189,14 +189,14 @@ groups:
   - name: &followerGroup Followers
     after: [ *immersiveCitizensGroup ]
 
-  - name: &morrowlootGroup Morrowloot
-    after: [ *followerGroup ]
-    
   - name: &alternateStartGroup Alternate Start
-    after: [ *morrowlootGroup ]
+   after: [ *followerGroup ]
+
+  - name: &morrowlootGroup Morrowloot
+    after: [ *alternateStartGroup ] 
 
   - name: &lightingGroup Lighting
-    after: [ *alternateStartGroup ]
+    after: [ *morrowlootGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lightingGroup ]
