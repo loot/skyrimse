@@ -189,8 +189,11 @@ groups:
   - name: &followerGroup Followers
     after: [ *immersiveCitizensGroup ]
 
-  - name: &alternateStartGroup Alternate Start
+  - name: &morrowlootGroup Morrowloot
     after: [ *followerGroup ]
+    
+  - name: &alternateStartGroup Alternate Start
+    after: [ *morrowlootGroup ]
 
   - name: &lightingGroup Lighting
     after: [ *alternateStartGroup ]
@@ -577,7 +580,7 @@ plugins:
       - Delev
       - Relev
   - name: 'MLU.esp'
-    group: *followerGroup
+    group: *morrowlootGroup
   - name: 'JK''s Riverwood.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
