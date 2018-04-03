@@ -192,8 +192,11 @@ groups:
   - name: &alternateStartGroup Alternate Start
     after: [ *followerGroup ]
 
-  - name: &dynamicPatchGroup Dynamic Patches
+  - name: &lightingGroup Lighting
     after: [ *alternateStartGroup ]
+
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *lightingGroup ]
 
   - name: &mapMarkersGroup Map Markers
     after: [ *dynamicPatchGroup ]
@@ -877,12 +880,18 @@ plugins:
     tag:
       - NoMerge
   - name: 'ELFXEnhancer.esp'
+    group: *lightingGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELFX - Hardcore.esp'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'ELE_.+_Lite\.esp'
+    group: *lightingGroup
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELE_SSE.esp'
+    group: *lightingGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'MLU.esp'
