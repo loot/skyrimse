@@ -115,8 +115,53 @@ globals:
       - lang: ja
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
     subs: [ 'https://loot.github.io/latest-thread/' ]
-
-
+# SKSE Latest
+  - type: say
+    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.6", <)'
+    content:
+      - lang: en
+        text: 'It appears you do not have the [latest version of SKSE](http://skse.silverlock.org). Some mods may require functionality added in the latest version of SKSE to work.'
+      - lang: ru
+        text: 'Возможно у вас не установлена [новейшая версия SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последней версии SKSE'
+      - lang: es
+        text: 'Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar [aquí](http://skse.silverlock.org/).'
+      - lang: ko
+        text: '[SKSE의 최신 버전](http://skse.silverlock.org)이 설치 되지 않은 것같습니다. 일부 모드가 동작하려면 SKSE의 최신 버전에서 추가된 기능을 필요로 할 수도 있습니다.'
+      - lang: zh_CN
+        text: '你的[SKSE](http://skse.silverlock.org)似乎不是最新的。有些插件可能需要最新的SKSE才能工作。'
+      - lang: ja
+        text: '[SKSE](http://skse.silverlock.org)が最新版ではないようです。一部のModを動作させるには最新版のSKSEで追加された機能が必要となる場合があります。'
+  - type: say
+    condition: 'not version("../skse64_loader.exe", "0.2.0.6", <)'
+    content:
+      - lang: en
+        text: 'Your SKSE is up-to-date.'
+      - lang: ru
+        text: 'Ваш SKSE обновлен.'
+      - lang: es
+        text: 'Tienes la última versión de SKSE'
+      - lang: ko
+        text: 'SKSE가 최신버전입니다.'
+      - lang: zh_CN
+        text: '你的SKSE是最新的。'
+      - lang: ja
+        text: 'SKSEは最新版です。'
+# SKSE requirement Warnings
+  - type: warn
+    condition: 'file("SKSE/Plugins/SkyrimUncapper.dll") and not file("../skse64_loader.exe")'
+    content:
+      - lang: en
+        text: 'You have installed Skyrim Skill Uncapper but SKSE not found! See SKSE download page: [SKSE](http://skse.silverlock.org/).'
+      - lang: ru
+        text: 'У вас установлен Skyrim Skill Uncapper, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org/).'
+      - lang: es
+        text: 'Tienes Skyrim Skill Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org/)'
+      - lang: ko
+        text: 'Skyrim Skill Uncapper가 설치되었지만 SKSE를 찾을 수 없습니다! SKSE 다운로드 페이지를 참조하십시오: [SKSE](http://skse.silverlock.org/).'
+      - lang: zh_CN
+        text: '你已经安装了Skyrim Skill Uncapper，但是未发现SKSE！请查看SKSE的下载页面：[SKSE](http://skse.silverlock.org/)。'
+      - lang: ja
+        text: 'Skyrim Community Uncapperはインストールされていますが、SKSEが見つかりません！SKSEのダウンロードページを確認してください。[SKSE](http://skse.silverlock.org/)'
 groups:
   - name: &dlcGroup DLC
 
@@ -147,8 +192,14 @@ groups:
   - name: &alternateStartGroup Alternate Start
     after: [ *followerGroup ]
 
+  - name: &morrowlootGroup Morrowloot
+    after: [ *alternateStartGroup ] 
+
+  - name: &lightingGroup Lighting
+    after: [ *morrowlootGroup ]
+
   - name: &dynamicPatchGroup Dynamic Patches
-    after: [ *alternateStartGroup ]
+    after: [ *lightingGroup ]
 
   - name: &mapMarkersGroup Map Markers
     after: [ *dynamicPatchGroup ]
@@ -529,7 +580,7 @@ plugins:
       - Delev
       - Relev
   - name: 'MLU.esp'
-    group: *followerGroup
+    group: *morrowlootGroup
   - name: 'JK''s Riverwood.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -579,10 +630,12 @@ plugins:
       - 'JKs Whiterun exterior.esp'
       - 'Bring Out Your Dead.esp'
       - 'Darkwater Crossing.esp'
+      - 'ELE_SSE.esp'
       - 'Helarchen Creek.esp'
       - 'Ivarstead.esp'
       - 'Karthwasten.esp'
       - 'Kynesgrove.esp'
+      - 'MLU.esp'
       - 'Shor''s Stone.esp'
       - 'Soljund''s Sinkhole.esp'
       - 'Whistling Mine.esp'
@@ -830,14 +883,21 @@ plugins:
     tag:
       - NoMerge
   - name: 'ELFXEnhancer.esp'
+    group: *lightingGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELFX - Hardcore.esp'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'ELE_SSE.esp'
+  - name: 'ELE_.+_Lite\.esp'
+    group: *lightingGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'ELE_SSE.esp'
+    group: *lightingGroup
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'MLU.esp'
   - name: 'HarvestOverhaul_Redone.esp'
     tag:
       - Delev
@@ -984,3 +1044,13 @@ plugins:
   - name: 'Convenient Horses.esp'
     after:
       - 'Open Cities Skyrim.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'   
+  - name: 'Serana Dialogue Edit.esp'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'TheChoiceIsYours.esp'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'UnlimitedBookshelves.esp'
+    group: *lowPriorityGroup
