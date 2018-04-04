@@ -138,7 +138,7 @@ globals:
     subs: [ 'https://loot.github.io/latest-thread/' ]
 # SKSE Latest
   - type: say
-    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.6", <)'
+    condition: 'version("../skse64_loader.exe", "0.2.0.6", !=)'
     content:
       - lang: en
         text: 'It appears you do not have the [latest version of SKSE64](http://skse.silverlock.org). Some mods may require functionality added in the latest version of SKSE64 to work.'
