@@ -8,84 +8,6 @@ common:
     display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
 
 # Messages
-  - &obsolete
-    type: say
-    content:
-      - lang: en
-        text: 'Obsolete. Update to latest version.'
-      - lang: ru
-        text: 'Устарело. Обновите до последней версии.'
-      - lang: es
-        text: 'Obsoleto. Actualizar a la última versión.'
-      - lang: ko
-        text: '사용되지 않습니다. 최신 버전으로 업데이트하십시오.'
-      - lang: zh_CN
-        text: '已过时。请升级到最新版本。'
-      - lang: da
-        text: 'Forældet. Opdatér til den nyeste version.'
-      - lang: ja
-        text: '旧式のプラグインです。最新版に更新してください。'
-  - &AlreadyInSSE
-    type: error
-    content:
-      - lang: en
-        text: 'Delete. Already patched in Skyrim Special Edition by Bethesda.'
-      - lang: da
-        text: 'Slet. Allerede rettet i Skyrim Special Edition af Bethesda.'
-      - lang: ja
-        text: '削除してください。既にBethesdaによってSkyrim Special Editionのパッチが当てられています。'
-  - &AlreadyInUSSEP
-    type: error
-    content:
-      - lang: en
-        text: 'Delete. Already included in Unofficial Skyrim Special Edition Patch.esp.'
-      - lang: ru
-        text: 'Удалите. Уже включено в Unofficial Skyrim Special Edition Patch.esp.'
-      - lang: es
-        text: 'Borrar. Esta incluido en Unofficial Skyrim Special Edition Patch.esp.'
-      - lang: ko
-        text: '삭제하십시오. 이미 Unofficial Skyrim Special Edition Patch.esp에 포함되어 있습니다.'
-      - lang: zh_CN
-        text: '删除。已包含在Unofficial Skyrim Special Edition Patch.esp中。'
-      - lang: da
-        text: 'Slet. Allerede inkluderet i Unofficial Skyrim Special Edition Patch.esp.'
-      - lang: ja
-        text: '削除してください。既にUnofficial Skyrim Special Edition Patch.espに含まれています。'
-    condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
-  - &AlreadyInX
-    type: error
-    content:
-      - lang: en
-        text: 'Delete. Already included in %1%.'
-      - lang: ru
-        text: 'Удалите. Уже включено в %1%.'
-      - lang: es
-        text: 'Borrar. Esta incluido en %1%.'
-      - lang: ko
-        text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
-      - lang: zh_CN
-        text: '删除。已包含在%1%中。'
-      - lang: da
-        text: 'Slet. Allerede inkluderet i %1%.'
-      - lang: ja
-        text: '削除してください。既に%1%に含まれています。'
-  - &useOnlyOneX
-    type: warn
-    content:
-      - lang: en
-        text: 'Use only one %1%.'
-      - lang: ru
-        text: 'Используйте только один %1%.'
-      - lang: es
-        text: 'Utilizar solo un %1%.'
-      - lang: ko
-        text: '%1%을 한개만 사용하십시오.'
-      - lang: zh_CN
-        text: '只使用一个%1%。'
-      - lang: da
-        text: 'Brug kun én %1%.'
-      - lang: ja
-        text: '%1%は一つだけ使用してください。'
   - &doNotClean
     type: say
     content:
@@ -101,24 +23,6 @@ common:
         text: 'Rengør ikke ITM-poster: de er forsætlige og krævede for at mod’en fungerer. Det er sikkert at gendanne poster, men gør ikke andet end dét.'
       - lang: ja
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
-  - &patchAvailable
-    type: say
-    content:
-      - lang: en
-        text: 'This plugin conflicts with plugin "%1%", however a patch is available.'
-      - lang: da
-        text: 'Dette plugin er i konflikt med pluginnet “%1%”, men en lap er tilgængelig.'
-      - lang: ja
-        text: 'このプラグインは"%1%"と競合していますが、パッチが利用可能です。'
-  - &hasPluginPatch
-    type: warn
-    content:
-      - lang: en
-        text: "You seem to be using %1%, but you haven't enabled the %1% patch for this plugin: %2%"
-      - lang: da
-        text: "Du ser ud til at bruge %1%, men du bruger ikke “%1%”-lappen for dette plugin: %2%"
-      - lang: ja
-        text: "%1%が使用されていますが、このプラグイン用の%1%のパッチが有効になっていません: %2%"
   - &requireSKSE64
     type: error
     content:
@@ -136,18 +40,7 @@ common:
         text: 'Du har installeret %1% men SKSE64 blev ikke fundet! Se SKSE64-downloadsiden: [SKSE64](http://skse.silverlock.org).'
       - lang: ja
         text: '%1%はインストールされていますが、SKSE64が見つかりません！SKSEのダウンロードページを確認してください。[SKSE64](http://skse.silverlock.org)'
-  - &SmashedVsBashedPatch
-    type: say
-    content:
-      - lang: en
-        text: 'Can be used with a %1% but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
-      - lang: es
-        text: 'Se puede utilizar con un %1% pero requeriría un trabajo adicional. Deben de estar utilizado un Smashed Patch o un Bash Patch independiente del uno el otro.'
-      - lang: da
-        text: 'Kan bruges sammen med %1% men det vil kræve ekstra arbejde. Smashed Patch og Bash Patch bør bruges uafhængigt af hinanden.'
-      - lang: ja
-        text: '%1%と同時に使用できますが、追加作業が必要となります。Smashed PatchかBash Patchはそれぞれ単独で使用してください。'
-
+        
 # Cleaning data
   - &dirtyPlugin
     util: '[SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164)'
@@ -243,16 +136,6 @@ globals:
       - lang: ja
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
     subs: [ 'https://loot.github.io/latest-thread/' ]
-# SKYRIM SE Latest
-  - type: say
-    condition: 'file("../SkyrimSE.exe") and version("../SkyrimSE.exe", "1.0.0.0", <)'
-    content:
-      - lang: en
-        text: 'It appears you do not have the latest version of Skyrim Special Edition.'
-      - lang: da
-        text: 'Det ser ikke ud til at du har den seneste version af Skyrim Special Edition.'
-      - lang: ja
-        text: 'Skyrim Special Editionが最新版ではないようです。'
 # SKSE Latest
   - type: say
     condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.6", <)'
@@ -286,19 +169,9 @@ globals:
         text: 'Din SKSE64 er opdateret.'
       - lang: ja
         text: 'SKSE64は最新版です。'
-  - type: error
-    condition: 'version("../skse64_loader.exe", "0.2.0.6", ==) and version("../SkyrimSE.exe", "1.0.0.0", !=)'
-    content:
-      - lang: en
-        text: 'Your version of skse64 is not compatible with your version of Skyrim Special Edition.'
-      - lang: da
-        text: 'Din version af skse64 er ikke kompatibel med din version af Skyrim Special Edition.'
-      - lang: ja
-        text: 'このバージョンのskse64は使用中のSkyrim Special Edition との互換性がありません。'
 # SKSE64 plugins requirement
   - <<: *requireSKSE64
-    subs: [ 'Achievements Mods Enabler' ]
-    # url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/245' ]
+    subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
  
 
