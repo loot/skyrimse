@@ -384,6 +384,40 @@ plugins:
     global_priority: -120
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
+  - name: 'BSAssets.esm'
+    clean:
+      - crc: 0x1D0648B6
+        util: SSEEdit v3.2.1
+  - name: 'BSHeartland.esm'
+    dirty:
+    - <<: *dirtyPlugin
+      crc: 0x0B12B4E7
+      itm: 485
+      udr: 3
+      nav: 0
+    tag:
+    - Actors.ACBS 
+    - Actors.CombatStyle
+    - Actors.DeathItem 
+    - Actors.Stats 
+    - C.Light
+    - C.RecordFlags
+    - C.Regions
+    - Delev 
+    - Factions
+    - Graphics
+    - Invent
+    - Names
+  - name: 'BS_DLC_patch.esp'
+    inc: 
+      - 'DLCIntegration.esp'
+    clean:
+      - crc: 0x2BC2FECB
+        util: SSEEdit v3.2.1
+    tag:
+      - Delev
+      - Invent
+    
   - name: 'static mesh improvement mod se.esp'
     global_priority: -90
   - name: 'SMIM-SE-.*.esp'
