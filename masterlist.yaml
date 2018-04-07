@@ -392,17 +392,6 @@ plugins:
       - crc: 0x1D0648B6
         util: SSEEdit v3.2.1
   - name: 'BSHeartland.esm'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x0B12B4E7
-        itm: 485
-        udr: 3
-        nav: 0
-    clean:
-      - crc: 0x32285268
-        util: SSEEdit v3.2.1
-      - crc: 0x6F103898
-        util: SSEEdit v3.2.1
     tag:
       - Actors.ACBS 
       - Actors.CombatStyle
@@ -416,15 +405,27 @@ plugins:
       - Graphics
       - Invent
       - Names
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x0B12B4E7
+        itm: 485
+        udr: 3
+        nav: 0
+    clean:
+      - crc: 0x32285268
+        util: SSEEdit v3.2.1
+      - crc: 0x6F103898
+        util: SSEEdit v3.2.1
   - name: 'BS_DLC_patch.esp'
     inc: 
       - 'DLCIntegration.esp'
-    clean:
-      - crc: 0x2BC2FECB
-        util: SSEEdit v3.2.1
     tag:
       - Delev
       - Invent
+    clean:
+      - crc: 0x2BC2FECB
+        util: SSEEdit v3.2.1
+
     
   - name: 'static mesh improvement mod se.esp'
     global_priority: -90
@@ -1033,6 +1034,11 @@ plugins:
     tag:
       - Delev
       - Invent
+      - Names
+      - Relev
+    clean:
+      - crc: 0xA3FB0FAD
+        util: SSEEdit v3.2.1
   - name: 'SexLab-AmorousAdventures.esp'
     tag:
       - C.Climate
