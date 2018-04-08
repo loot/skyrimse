@@ -451,11 +451,6 @@ plugins:
         content:
           - lang: en
             text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
-      - type: warn
-        condition: 'active("imp_helm_legend.esp") and not active("Improved closefaced helmets for Undeath SSE")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "imp_helm_legend.esp". Consider using the Improved closefaced helmets for Undeath SSE patch found [here](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
     tag:
       - C.Regions
       - C.Water
@@ -479,7 +474,31 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0xB98044B4
         util: SSEEdit v3.2.1
-
+  - name: 'imp_helm_legend.esp'
+    after: 
+      - 'MLU.esp'
+    msg:
+      - type: warn
+        condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
+      - type: warn
+        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+    tag:
+      - Graphics
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8491D752
+        itm: 5
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x17CF8EB8
+        util: SSEEdit v3.2.1
   - name: 'static mesh improvement mod se.esp'
     global_priority: -90
   - name: 'SMIM-SE-.*.esp'
