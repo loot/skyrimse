@@ -425,8 +425,118 @@ plugins:
     clean:
       - crc: 0x2BC2FECB
         util: SSEEdit v3.2.1
-
-    
+  - name: 'MoonAndStar_MAS.esp'
+    after:
+      - 'AuroraVillage.esp'
+    tag:
+      - C.Location
+      - C.Water
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xEB5AEFAF
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x1DA470CB
+        util: SSEEdit v3.2.1
+  - name: 'Undeath.esp'
+    after:
+      - 'MoonAndStar_MAS.esp'
+    inc:
+      - 'AuroraVillage.esp'
+    msg:
+      - type: say
+        condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
+        content:
+          - lang: en
+            text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
+    tag:
+      - C.Regions
+      - C.Water
+      - Graphics
+      - Invent
+      - -Names
+      - Sound
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xEB75A960
+        itm: 18
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x6E988E26
+        itm: 17
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x8249EC41
+        util: SSEEdit v3.2.1
+      - crc: 0xB98044B4
+        util: SSEEdit v3.2.1
+  - name: 'imp_helm_legend.esp'
+    after: 
+      - 'MLU.esp'
+    msg:
+      - type: warn
+        condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
+      - type: warn
+        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+    tag:
+      - Graphics
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8491D752
+        itm: 5
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x17CF8EB8
+        util: SSEEdit v3.2.1
+  - name: 'Improved closefaced helmets for Undeath SSE.esp'
+    clean:
+      - crc: 0xCC6D50A9
+        util: SSEEdit v3.2.1
+  - name: 'MLU.esp'
+    global_priority: 60
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.Stats
+      - C.Location
+      - C.Name
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Delev
+      - Graphics
+      - Invent
+      - Names
+      - Relev
+      - Stats
+    clean:
+      - crc: 0x89111F8E
+        util: SSEEdit v3.2.1
+  - name: 'MLU - Immersive Armors.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'MLU - Improved Closefaced Helmets.esp'
+    # missing master.
+    req:
+      - 'MLU.esp'
+    tag:
+      - Stats
+      - -Names
+    clean:
+      - crc: 0xB8A1EE4E
+        util: SSEEdit v3.2.1
   - name: 'static mesh improvement mod se.esp'
     global_priority: -90
   - name: 'SMIM-SE-.*.esp'
@@ -599,10 +709,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'MLU - Immersive Armors.esp'
-    tag:
-      - Delev
-      - Relev
   - name: 'RichMerchantsSkyrim_x\d+.esp'
     tag:
       - Relev
@@ -610,8 +716,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'MLU.esp'
-    global_priority: 60
   - name: 'JK''s Riverwood.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
