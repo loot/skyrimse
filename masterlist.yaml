@@ -426,6 +426,8 @@ plugins:
       - crc: 0x2BC2FECB
         util: SSEEdit v3.2.1
   - name: 'MoonAndStar_MAS.esp'
+    after:
+      - 'AuroraVillage.esp'
     tag:
       - C.Location
       - C.Water
@@ -441,12 +443,19 @@ plugins:
   - name: 'Undeath.esp'
     after:
       - 'MoonAndStar_MAS.esp'
+    inc:
+      - 'AuroraVillage.esp'
     msg:
       - type: say
         condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
         content:
           - lang: en
             text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
+      - type: warn
+        condition: 'active("imp_helm_legend.esp") and not active("Improved closefaced helmets for Undeath SSE")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "imp_helm_legend.esp". Consider using the Improved closefaced helmets for Undeath SSE patch found [here](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
     tag:
       - C.Regions
       - C.Water
