@@ -817,6 +817,13 @@ plugins:
     global_priority: 95
     after:
       - 'Bashed Patch.*\.esp'
+  
+  - name: 'Apocalypse - Magic of Skyrim.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
   - name: 'Ordinator - Perks of Skyrim.esp'
     after: 
       - 'Phenderix Magic Evolved.esp'
@@ -830,11 +837,6 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
     msg:
-      - type: warn
-        condition: 'active("Apocalypse - Magic of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-        content:
-          - lang: en
-            text: '"Apocalypse - Magic of Skyrim.esp" has compatibility issues with this mod. Consider using the [Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090).'
       - type: warn
         condition: 'active("BSHeartland.esm") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
         content:
