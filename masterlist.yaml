@@ -387,6 +387,11 @@ plugins:
         util: SSEEdit v3.2.1
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
+  - name: 'unofficial skyrim survival patch.esp'
+    clean: 0xF7B1A347
+    util: SSEEdit v3.2.1
+    tag:
+      - Graphics
   - name: 'BSAssets.esm'
     clean:
       - crc: 0x1D0648B6
@@ -798,8 +803,63 @@ plugins:
     after:
       - 'Bashed Patch.*\.esp'
   - name: 'Ordinator - Perks of Skyrim.esp'
+    after: 
+      - 'Phenderix Magic Evolved.esp'
+      - 'Phenderix Magic World.esp'
+      - 'Undeath.esp'
     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
+      - 'PerkusMaximus_Mage.esp'
+      - 'PerkusMaximus_Master.esp'
+      - 'PerkusMaximus_Thief.esp'
+      - 'PerkusMaximus_Warrior.esp'
+      - 'PerkusMaximus_CombatPlus.esp'
+    msg:
+      - type: warn
+        condition: 'active("Apocalypse - Magic of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
+        content:
+          - lang: en
+            text: '"Apocalypse - Magic of Skyrim.esp" has compatibility issues with this mod. Consider using the [Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090).'
+      - type: warn
+        condition: 'active("BSHeartland.esm") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
+        content:
+          - lang: en
+            text: 'This mod has a conflict with "BSHeartland.esm". Consider using the [Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/) to fix this conflict.'
+      - type: info
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("unofficial skyrim survival patch.esp")'
+        content:
+          - lang: en
+            text: '"ccqdrsse001-survivalmode.esl" has a Known bug (Peckish debuff grants +70% attack speed instead of the expected -30% if you have any other source of bonus attack speed). Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
+      - type: info
+        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
+        content:
+          - lang: en
+            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+      - type: warn
+        condition: 'active("Elemental Destruction.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
+        content:
+          - lang: en
+            text: '"Elemental Destruction.esp" has compatibility issues with this mod. Consider using the [Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/).'  
+      - type: warn
+        condition: 'active("MultipleEnchantments.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
+        content:
+          - lang: en
+            text: '"MultipleEnchantments.esp" has compatibility issues with this mod. Consider using the [Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/).'
+      - type: info
+        condition: 'active("Open Cities Skyrim.esp")'
+        content:
+          - lang: en
+            text: 'The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'  
+    
+    tag:
+      - C.Regions
+      - C.Water
+      - Graphics
+      - Names
+      - Sound
+    clean:
+      - crc: 0x38670BC4
+        util: SSEEdit v3.2.1
   - name: 'Imperious - Races of Skyrim.esp'
     global_priority: 20
     tag:
