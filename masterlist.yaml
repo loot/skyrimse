@@ -388,8 +388,9 @@ plugins:
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
   - name: 'unofficial skyrim survival patch.esp'
-    clean: 0xF7B1A347
-    util: SSEEdit v3.2.1
+    clean: 
+      - crc: 0xF7B1A347
+        util: SSEEdit v3.2.1
     tag:
       - Graphics
   - name: 'BSAssets.esm'
@@ -850,7 +851,6 @@ plugins:
         content:
           - lang: en
             text: 'The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'  
-    
     tag:
       - C.Regions
       - C.Water
