@@ -423,8 +423,13 @@ plugins:
       - crc: 0x6F103898
         util: SSEEdit v3.2.1
   - name: 'BS_DLC_patch.esp'
-    inc: 
-      - 'DLCIntegration.esp'
+    # Simple patch can fix conflict with "DLCIntegration.esp", none available at this time.
+    msg:
+      - type: warn
+        condition: 'active("DLCIntegration.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "DLCIntegration.esp". Consider patching this conflict using [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164).'
     tag:
       - Delev
       - Invent
