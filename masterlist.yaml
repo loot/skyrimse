@@ -826,7 +826,7 @@ plugins:
         content:
           - lang: en
             text: 'This mod has a conflict with "BSHeartland.esm". Consider using the [Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/) to fix this conflict.'
-      - type: info
+      - type: warn
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("unofficial skyrim survival patch.esp")'
         content:
           - lang: en
@@ -842,6 +842,11 @@ plugins:
           - lang: en
             text: '"Elemental Destruction.esp" has compatibility issues with this mod. Consider using the [Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/).'  
       - type: warn
+        condition: 'active("HarvestOverhaul_Redone.esp")and not active("HOR_OrdinatorPatch.esp")'
+        content:
+          - lang: en
+            text: '"HarvestOverhaul_Redone.esp" has compatibility issues with this mod. Consider using the [HarvestOverhaul - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/2398/) to fix this conflict.'
+      - type: warn
         condition: 'active("MultipleEnchantments.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
         content:
           - lang: en
@@ -851,6 +856,16 @@ plugins:
         content:
           - lang: en
             text: '"Open Cities Skyrim.esp" The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'  
+      - type: warn
+        condition: 'active("Skyrim Alchemy Fixed.esp")'
+        content:
+          - lang: en
+            text: '"Skyrim Alchemy Fixed.esp" has compatibility issues with this mod. Consider using the [Skyrim Alchemy Fixed - Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/2262) version.'
+      - type: warn
+        condition: 'active("UndeathClassicalLichdom SSE.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
+        content:
+          - lang: en
+            text: '"UndeathClassicalLichdom SSE.esp" has compatibility issues with this mod. Consider using the [Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823).' 
     tag:
       - C.Regions
       - C.Water
