@@ -389,6 +389,12 @@ plugins:
       - 'ccBGSSSE014-SpellPack01.esl'
       - 'ccBGSSSE019-StaffofSheogorath.esl'
       - 'ccMTYSSE001-KnightsoftheNine.esl'
+    msg:
+      - type: warn
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("unofficial skyrim survival patch.esp")'
+        content:
+          - lang: en
+            text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
     clean:
@@ -407,6 +413,12 @@ plugins:
       - crc: 0x1D0648B6
         util: SSEEdit v3.2.1
   - name: 'BSHeartland.esm'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
     tag:
       - Actors.ACBS 
       - Actors.CombatStyle
@@ -494,6 +506,13 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0xB98044B4
         util: SSEEdit v3.2.1
+  - name: 'UndeathClassicalLichdom SSE.esp")'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
   - name: 'imp_helm_legend.esp'
     after: 
       - 'MLU.esp'
@@ -683,6 +702,12 @@ plugins:
       - 'URN+CoT Patch.esp'
       - 'Atlas Map Markers.esp'
       - 'The Horkerpocalypse.esp'
+    msg:
+      - type: info
+        condition: 'active("Ordinator - Perks of Skyrim.esp")'
+        content:
+          - lang: en
+            text: '"Ordinator - Perks of Skyrim.esp" The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
     tag:
       - C.Location
   - name: 'Alternate Start - Live Another Life.esp'
@@ -825,6 +850,34 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
+    tag:
+      - C.Water
+      - C.Regions
+    clean:
+      # Version 9.45SSE
+      - crc: 0x266B3B3B
+        util: SSEEdit v3.2.1
+  - name: 'DeadlyCombat.esp'
+    msg:
+      - type: info
+        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
+        content:
+          - lang: en
+            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+  - name: 'Elemental Destruction.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
+  - name: 'MultipleEnchantments.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
   - name: 'Ordinator - Perks of Skyrim.esp'
     after: 
       - 'Phenderix Magic Evolved.esp'
@@ -837,52 +890,6 @@ plugins:
       - 'PerkusMaximus_Thief.esp'
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
-    msg:
-      - type: warn
-        condition: 'active("BSHeartland.esm") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
-        content:
-          - lang: en
-            text: 'This mod has a conflict with "BSHeartland.esm". Consider using the [Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/) to fix this conflict.'
-      - type: warn
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("unofficial skyrim survival patch.esp")'
-        content:
-          - lang: en
-            text: '"ccqdrsse001-survivalmode.esl" has a Known bug (Peckish debuff grants +70% attack speed instead of the expected -30% if you have any other source of bonus attack speed). Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
-      - type: info
-        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
-        content:
-          - lang: en
-            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
-      - type: warn
-        condition: 'active("Elemental Destruction.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
-        content:
-          - lang: en
-            text: '"Elemental Destruction.esp" has compatibility issues with this mod. Consider using the [Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/).'  
-      - type: warn
-        condition: 'active("HarvestOverhaul_Redone.esp")and not active("HOR_OrdinatorPatch.esp")'
-        content:
-          - lang: en
-            text: '"HarvestOverhaul_Redone.esp" has compatibility issues with this mod. Consider using the [HarvestOverhaul - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/2398/) to fix this conflict.'
-      - type: warn
-        condition: 'active("MultipleEnchantments.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
-        content:
-          - lang: en
-            text: '"MultipleEnchantments.esp" has compatibility issues with this mod. Consider using the [Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/).'
-      - type: info
-        condition: 'active("Open Cities Skyrim.esp")'
-        content:
-          - lang: en
-            text: '"Open Cities Skyrim.esp" The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'  
-      - type: warn
-        condition: 'active("Skyrim Alchemy Fixed.esp")'
-        content:
-          - lang: en
-            text: '"Skyrim Alchemy Fixed.esp" has compatibility issues with this mod. Consider using the [Skyrim Alchemy Fixed - Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/2262) version.'
-      - type: warn
-        condition: 'active("UndeathClassicalLichdom SSE.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
-        content:
-          - lang: en
-            text: '"UndeathClassicalLichdom SSE.esp" has compatibility issues with this mod. Consider using the [Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823).' 
     tag:
       - C.Regions
       - C.Water
@@ -1123,6 +1130,12 @@ plugins:
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'HarvestOverhaul_Redone.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[HarvestOverhaul - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/2398/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
     tag:
       - Delev
       - Invent
