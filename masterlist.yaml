@@ -397,19 +397,24 @@ plugins:
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     global_priority: -120
-    clean:
-      - crc: 0xAE28DBE3
-        util: SSEEdit v3.2.1
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
+    clean:
+    # Version 4.1.2alpha
+      - crc: 0xAE28DBE3
+        util: SSEEdit v3.2.1
   - name: 'unofficial skyrim survival patch.esp'
+    tag:
+      - Graphics
     clean: 
       - crc: 0xF7B1A347
         util: SSEEdit v3.2.1
-    tag:
-      - Graphics
   - name: 'BSAssets.esm'
+    tag: 
+      - C.Light
+      - C.RecordFlags
     clean:
+    # version 1.3.3
       - crc: 0x1D0648B6
         util: SSEEdit v3.2.1
   - name: 'BSHeartland.esm'
@@ -804,6 +809,7 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'RealisticWaterTwo.esp'
+    #global_priority: 72
     after:
       - 'JK''s Riverwood.esp'
       - 'JKs Whiterun.esp'
@@ -826,10 +832,13 @@ plugins:
       - 'CFTO.esp'
       - 'Honeyside.esp'
     tag:
-      - C.Location
-      - C.Regions
       - C.Water
       - Graphics
+      - Sound
+    clean:
+      # Version 1.4.4
+      - crc: 0xB2812DAF
+        util: SSEEdit v3.2.1
   - name: 'SSEMerged.esp'
     global_priority: 80
     tag:
@@ -850,9 +859,6 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-    tag:
-      - C.Water
-      - C.Regions
     clean:
       # Version 9.45SSE
       - crc: 0x266B3B3B
@@ -891,8 +897,6 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
     tag:
-      - C.Regions
-      - C.Water
       - Graphics
       - Names
       - Sound
@@ -902,8 +906,6 @@ plugins:
   - name: 'Imperious - Races of Skyrim.esp'
     global_priority: 20
     tag:
-      - Body-Size-F
-      - Body-Size-M
       - Names
       - R.Description
       - R.Skills
