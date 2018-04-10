@@ -769,9 +769,15 @@ plugins:
       - 'EBM_UnlimitedPower_Vampire.esp'
       - 'EBM_UnlimitedPower_Werewolf.esp'
   - name: 'SkyUI_SE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12604/']
     req:
       - *SKSE64
+    clean:
+      # Version 5.2
+      - crc: 0x79ACE179
+        util: SSEEdit v3.2.1
   - name: 'Open Cities Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/281/']
     global_priority: 70
     after:
       - 'Unique Region Names.esp'
@@ -787,6 +793,10 @@ plugins:
     tag:
       - C.Location
       - C.Regions
+    clean:
+      # Version 3.0.4
+      - crc: 0xD16C3B49
+        util: SSEEdit v3.2.1
   - name: 'Alternate Start - Live Another Life.esp'
     global_priority: 70
     after:
