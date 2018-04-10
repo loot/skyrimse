@@ -498,12 +498,14 @@ plugins:
     tag:
       - C.Location
     dirty:
+      # Version 3.2
       - <<: *dirtyPlugin
         crc: 0xEB5AEFAF
         itm: 1
         udr: 0
         nav: 0
     clean:
+      # Version 3.2
       - crc: 0x1DA470CB
         util: SSEEdit v3.2.1
   - name: 'Undeath.esp'
@@ -527,19 +529,20 @@ plugins:
       - Graphics
       - Sound
     dirty:
+      # Version 3.2
       - <<: *dirtyPlugin
         crc: 0xEB75A960
         itm: 18
         udr: 0
         nav: 0
+      # Version 3.2 without wild edits
       - <<: *dirtyPlugin
         crc: 0x6E988E26
         itm: 17
         udr: 0
         nav: 0
     clean:
-      - crc: 0x8249EC41
-        util: SSEEdit v3.2.1
+      # Version 3.2 Cleaned without wild edits
       - crc: 0xB98044B4
         util: SSEEdit v3.2.1
   - name: 'UndeathClassicalLichdom SSE.esp'
@@ -904,10 +907,10 @@ plugins:
   - name: 'DeadlyCombat.esp'
     msg:
       - type: info
-        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
         content:
           - lang: en
-            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+            text: 'An optional compatibility patch is available for Ordinator. The patch alters a few perks to match Deadly Combats design, it is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
   - name: 'Elemental Destruction.esp'
     msg:
       - <<: *hasPluginPatch
@@ -1328,6 +1331,7 @@ plugins:
     after:
       - 'Open Cities Skyrim.esp'
   - name: 'TheChoiceIsYours.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3850/']
     after:
       - 'BetterQuestObjectives.esp'
       - 'Book Covers Skyrim.esp'
@@ -1343,5 +1347,6 @@ plugins:
       - Actors.AIPackages
       - Names
     clean:
+      # Version 3.2
       - crc: 0x9F3FDA79
         util: SSEEdit v3.2.1
