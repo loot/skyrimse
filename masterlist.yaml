@@ -1327,3 +1327,21 @@ plugins:
   - name: 'Convenient Horses.esp'
     after:
       - 'Open Cities Skyrim.esp'
+  - name: 'TheChoiceIsYours.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'Book Covers Skyrim.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Book Covers SE'
+          - '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
+        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY_BCS Patch.esp")'
+    tag:
+      - Actors.AIPackages
+      - Names
+    clean:
+      - crc: 0x9F3FDA79
+        util: SSEEdit v3.2.1
