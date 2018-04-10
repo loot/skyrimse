@@ -483,7 +483,6 @@ plugins:
       - 'AuroraVillage.esp'
     tag:
       - C.Location
-      - C.Water
     dirty:
       - <<: *dirtyPlugin
         crc: 0xEB5AEFAF
@@ -506,7 +505,6 @@ plugins:
             text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
     tag:
       - C.Regions
-      - C.Water
       - Graphics
       - Invent
       - -Names
@@ -597,8 +595,14 @@ plugins:
     clean:
       - crc: 0xB8A1EE4E
         util: SSEEdit v3.2.1
-  - name: 'static mesh improvement mod se.esp'
+  - name: 'SMIM-SE.esp'
     global_priority: -90
+    tag:
+      - Graphics
+    clean:
+    # BSA VERSION 2.07
+      - crc: 0x35C26177
+        util: SSEEdit v3.2.1
   - name: 'SMIM-SE-.*.esp'
     global_priority: -90
   - name: 'TouringCarriages.esp'
