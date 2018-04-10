@@ -617,23 +617,48 @@ plugins:
     tag:
       - Graphics
   - name: 'SMIM-SE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
+    # Static Mesh Improvement Mod SE - BSA version
     global_priority: -90
     tag:
       - Graphics
     clean:
-      # VERSION BSA 2.07
+      # VERSION 2.07
       - crc: 0x35C26177
         util: SSEEdit v3.2.1
   - name: 'SMIM-SE-.*.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
+    # Static Mesh Improvement Mod SE - Modular installer
     global_priority: -90
+    tag:
+      - Graphics
   - name: 'TouringCarriages.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/15948/']
     global_priority: -90
+    tag:
+      - C.Location
+    clean:
+      # Version 3.0.0
+      - crc: 0x07E8D176
+        util: SSEEdit v3.2.1
   - name: 'Cutting Room Floor.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/276/']
     global_priority: -90
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'RS Children Overhaul'
+          - '[RS Children Overhaul - CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/276/)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
     after:
       - 'TouringCarriages.esp'
       - 'WhiterunHoldForest.esp'
     tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Stats
       - C.Location
       - C.Owner
       - C.RecordFlags
@@ -641,7 +666,12 @@ plugins:
       - Graphics
       - Invent
       - Names
+      - NPC.Class
       - Stats
+    clean:
+      # Version 3.0.6
+      crc: 0x699BC58C
+      util: SSEEdit v3.2.1
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
