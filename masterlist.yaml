@@ -513,6 +513,11 @@ plugins:
     inc:
       - 'AuroraVillage.esp'
     msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Improved Closefaced Helmets'
+          - '[Improved closefaced helmets for Undeath](https://www.nexusmods.com/skyrimspecialedition/mods/14614/)'
+        condition: 'active("imp_helm_legend.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
       - type: say
         condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
         content:
@@ -549,12 +554,6 @@ plugins:
     # Improved closeface helmets
     after:
       - 'MLU.esp'
-    msg:
-      - type: warn
-        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
     tag:
       - Graphics
     dirty:
