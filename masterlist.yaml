@@ -409,10 +409,18 @@ plugins:
     tag:
       - Graphics
   - name: 'BSAssets.esm'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/10917/']
+    # Beyond Skyrim - Bruma SE
+    tag: 
+      - C.Light
+      - C.RecordFlags
     clean:
+      # version 1.3.3
       - crc: 0x1D0648B6
         util: SSEEdit v3.2.1
   - name: 'BSHeartland.esm'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/10917/']
+    # Beyond Skyrim - Bruma SE
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -433,6 +441,7 @@ plugins:
       - Invent
       - Names
     dirty:
+      # Version 1.3.3
       - <<: *dirtyPlugin
         crc: 0x0B12B4E7
         itm: 485
@@ -444,17 +453,13 @@ plugins:
       - crc: 0x6F103898
         util: SSEEdit v3.2.1
   - name: 'BS_DLC_patch.esp'
-    # Simple patch can fix conflict with "DLCIntegration.esp", none available at this time.
-    msg:
-      - type: warn
-        condition: 'active("DLCIntegration.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "DLCIntegration.esp". Consider patching this conflict using [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164).'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/10917/']
+    # Beyond Skyrim - DLC Integration Patch
     tag:
       - Delev
       - Invent
     clean:
+      # Version 1.1.2
       - crc: 0x2BC2FECB
         util: SSEEdit v3.2.1
   - name: 'MoonAndStar_MAS.esp'
@@ -1246,13 +1251,27 @@ plugins:
     tag:
       - Sound
   - name: 'DLCIntegration.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8032/']
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Beyond Skyrim DLC Integration'
+          - '[DLCIntegration Beyond Skyrim Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/8032/)'
+        condition: 'active("BS_DLC_patch.esp") and not active("DLCIntegration Beyond Skyrim Compatibility Patch.esp")'
     tag:
       - Delev
       - Invent
       - Names
       - Relev
     clean:
+      # Version 1.1
       - crc: 0xA3FB0FAD
+        util: SSEEdit v3.2.1
+  - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8032/']
+    clean:
+      # version 1.1
+      - crc: 0x32F4BBE5
         util: SSEEdit v3.2.1
   - name: 'SexLab-AmorousAdventures.esp'
     tag:
