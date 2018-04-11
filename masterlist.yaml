@@ -396,18 +396,22 @@ plugins:
           - lang: en
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/266/']
     global_priority: -120
-    clean:
-      - crc: 0xAE28DBE3
-        util: SSEEdit v3.2.1
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
-  - name: 'unofficial skyrim survival patch.esp'
-    clean: 
-      - crc: 0xF7B1A347
+    clean:
+      # Version 4.1.2alpha
+      - crc: 0xAE28DBE3
         util: SSEEdit v3.2.1
+  - name: 'unofficial skyrim survival patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12655']
     tag:
       - Graphics
+    clean:
+      # Version 2.9
+      - crc: 0xF7B1A347
+        util: SSEEdit v3.2.1
   - name: 'BSAssets.esm'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/10917/']
     # Beyond Skyrim - Bruma SE
