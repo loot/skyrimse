@@ -49,6 +49,23 @@ common:
         text: 'Du har installeret %1% men SKSE64 blev ikke fundet! Se SKSE64-downloadsiden: [SKSE64](http://skse.silverlock.org).'
       - lang: ja
         text: '%1%はインストールされていますが、SKSE64が見つかりません！SKSEのダウンロードページを確認してください。[SKSE64](http://skse.silverlock.org)'
+  - &AlreadyInX
+    type: error
+    content:
+      - lang: en
+        text: 'Delete. Already included in %1%.'
+      - lang: ru
+        text: 'Удалите. Уже включено в %1%.'
+      - lang: es
+        text: 'Borrar. Esta incluido en %1%.'
+      - lang: ko
+        text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
+      - lang: zh_CN
+        text: '删除。已包含在%1%中。'
+      - lang: da
+        text: 'Slet. Allerede inkluderet i %1%.'
+      - lang: ja
+        text: '削除してください。既に%1%に含まれています。'
         
 # Cleaning data
   - &dirtyPlugin
@@ -1645,6 +1662,10 @@ plugins:
         name: 'Book Covers Skyrim - Original on Bethesda.net'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
         name: 'Book Covers Skyrim - Desaturated on Bethesda.net'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
     after:
       - 'UnlimitedBookshelves.esp'
       - 'Weightless Books.esp'
@@ -1664,6 +1685,10 @@ plugins:
         name: 'BCS Lost Library - Original on Bethesda.net'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
         name: 'BCS Lost Library - Desaturated on Bethesda.net'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("Book Covers Skyrim - Lost Library.esp") and active("LegacyoftheDragonborn.esm")'
     tag:
       - Delev
     clean:
