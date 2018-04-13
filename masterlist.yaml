@@ -49,6 +49,23 @@ common:
         text: 'Du har installeret %1% men SKSE64 blev ikke fundet! Se SKSE64-downloadsiden: [SKSE64](http://skse.silverlock.org).'
       - lang: ja
         text: '%1%はインストールされていますが、SKSE64が見つかりません！SKSEのダウンロードページを確認してください。[SKSE64](http://skse.silverlock.org)'
+  - &AlreadyInX
+    type: error
+    content:
+      - lang: en
+        text: 'Delete. Already included in %1%.'
+      - lang: ru
+        text: 'Удалите. Уже включено в %1%.'
+      - lang: es
+        text: 'Borrar. Esta incluido en %1%.'
+      - lang: ko
+        text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
+      - lang: zh_CN
+        text: '删除。已包含在%1%中。'
+      - lang: da
+        text: 'Slet. Allerede inkluderet i %1%.'
+      - lang: ja
+        text: '削除してください。既に%1%に含まれています。'
         
 # Cleaning data
   - &dirtyPlugin
@@ -493,7 +510,6 @@ plugins:
       - 'AuroraVillage.esp'
     tag:
       - C.Location
-      - C.Water
     dirty:
       - <<: *dirtyPlugin
         crc: 0xEB5AEFAF
@@ -520,11 +536,7 @@ plugins:
           - lang: en
             text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
     tag:
-      - C.Regions
-      - C.Water
       - Graphics
-      - Invent
-      - -Names
       - Sound
     dirty:
       - <<: *dirtyPlugin
@@ -602,11 +614,6 @@ plugins:
       - Actors.ACBS
       - Actors.AIData
       - Actors.Stats
-      - C.Location
-      - C.Name
-      - C.RecordFlags
-      - C.Regions
-      - C.Water
       - Delev
       - Graphics
       - Invent
@@ -642,6 +649,16 @@ plugins:
   # Static Mesh Improvement Mod - Modular installer
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
     global_priority: -90
+  - name: 'SMIM-SE.esp'
+  # Static Mesh Improvement Mod SE - BSA version
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
+    global_priority: -90
+    tag:
+      - Graphics
+    clean:
+      # 2.07
+      - crc: 0x35C26177
+        util: SSEEdit v3.2.1
   - name: 'TouringCarriages.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/15948/']
     global_priority: -90
@@ -1031,10 +1048,13 @@ plugins:
       - 'CFTO.esp'
       - 'Honeyside.esp'
     tag:
-      - C.Location
-      - C.Regions
       - C.Water
       - Graphics
+      - Sound
+    clean:
+      # Version 1.4.4
+      - crc: 0xB2812DAF
+        util: SSEEdit v3.2.1
   - name: 'SSEMerged.esp'
     global_priority: 80
     tag:
@@ -1061,9 +1081,6 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-    tag:
-      - C.Water
-      - C.Regions
     clean:
       # Version 9.45SSE
       - crc: 0x266B3B3B
@@ -1111,7 +1128,6 @@ plugins:
       - 'PerkusMaximus_CombatPlus.esp'
     tag:
       - C.Regions
-      - C.Water
       - Graphics
       - Names
       - Sound
@@ -1635,6 +1651,10 @@ plugins:
         name: 'Book Covers Skyrim - Original on Bethesda.net'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
         name: 'Book Covers Skyrim - Desaturated on Bethesda.net'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
     after:
       - 'UnlimitedBookshelves.esp'
       - 'Weightless Books.esp'
@@ -1654,6 +1674,10 @@ plugins:
         name: 'BCS Lost Library - Original on Bethesda.net'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
         name: 'BCS Lost Library - Desaturated on Bethesda.net'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("Book Covers Skyrim - Lost Library.esp") and active("LegacyoftheDragonborn.esm")'
     tag:
       - Delev
     clean:
@@ -1667,4 +1691,24 @@ plugins:
     clean:
       # Version 0.9
       - crc: 0x586D2620
+  - name: 'TheChoiceIsYours.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3850/']
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'BetterQuestObjectives - BCS Patch.esp'
+      - 'Book Covers Skyrim.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Book Covers SE'
+          - '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
+        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY_BCS Patch.esp")'
+    tag:
+      - Actors.AIPackages
+      - Names
+    clean:
+      # 3.2
+      - crc: 0x9F3FDA79
         util: SSEEdit v3.2.1
