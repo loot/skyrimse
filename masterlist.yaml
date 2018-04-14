@@ -139,10 +139,10 @@ groups:
     after: [ default ]
 
   - name: &immersiveCitizensGroup Immersive Citizens
-    after: [ *raceGroup ]
+    after: [ default ]
 
   - name: &followerGroup Followers
-    after: [ *immersiveCitizensGroup ]
+    after: [ *raceGroup ]
 
   - name: &mluGroup MorroLoot Ultimate
     after: [ default ]
@@ -692,11 +692,17 @@ plugins:
   - name: 'Immersive Citizens - AI Overhaul.esp'
     group: *immersiveCitizensGroup
     after:
+      - '3DNPC.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Bridges of Skyrim.esp'
+      - 'Civil War Repairs.esp'
       - 'Eli_Breezehome.esp'
       - 'Eli_Routa.esp'
       - 'Eli_Routa - Non-Stormcloak.esp'
+      - 'ESFCompanions.esp'
       - 'EnhancedLightsandFX.esp'
       - 'Open Cities Skyrim.esp'
+      - 'Requiem.esp'
       - 'SkyfallEstate.esp'
   - name: 'Relationship Dialogue Overhaul.esp'
     after:
