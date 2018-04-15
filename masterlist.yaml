@@ -1219,6 +1219,32 @@ plugins:
     clean:
       - crc: 0xE889ADEB
         util: SSEEdit v3.2.1
+  - name: 'Sacrosanct - Vampires of Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3928']
+    inc:
+      - 'better vampires.esp'
+      - 'mslVampiricThirst.esp'
+      - 'SanguinairVampirism.esp'
+      - 'VampireLordPerksExpanded.esp'
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'DVA - Dynamic Vampire Appearance.esp'
+      - 'Volkihar Knight.esp'
+    tag:
+      - Graphics
+      - Names
+      - Sound
+    dirty:
+        # version 5.11SSE
+      - crc: 0x93553BD1
+        <<: *dirtyPlugin
+        itm: 20
+        udr: 0
+        nav: 0
+    clean:
+        # version 5.11SSE post-cleaning
+      - crc: 0x7443BF2E
+        util: SSEEdit v3.2.1
   - name: 'ElysiumEstate-HF.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4119/']
     inc:
