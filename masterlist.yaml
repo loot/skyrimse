@@ -197,6 +197,9 @@ globals:
         text: 'SKSE64は最新版です。'
 # SKSE64 plugins requirement
   - <<: *requireSKSE64
+    subs: [ 'a SKSE Plugin' ]
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
+  - <<: *requireSKSE64
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
  
