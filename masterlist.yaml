@@ -461,6 +461,11 @@ plugins:
     msg:
       - <<: *hasPluginPatch
         subs:
+          - 'Convenient Horses'
+          - '[Bruma patch for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
+        condition: 'active("Convenient Horses.esp") and not active("CH Bruma Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
           - 'Flora Respawn Fix'
           - '[Flora Respawn Fix SE for Beyond Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/11072/)'
         condition: 'active("FloraRespawnFix.esp") and not active("BSHeartlandFRF.esp")'
