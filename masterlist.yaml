@@ -1580,6 +1580,12 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2398/']
     after:
       - 'Ars Metallica.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Flora Respawn Fix'
+          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
+        condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
     tag:
       - Delev
       - Invent
