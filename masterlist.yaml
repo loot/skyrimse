@@ -949,7 +949,7 @@ plugins:
   - name: "JKs Skyrim.esp"
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/6289/']
     inc:
-      - 'Blues Skyrim.esp' # DAWN OF SKYRIM, patch is planned
+      - 'Blues Skyrim.esp'
       - 'Open Cities Skyrim.esp'
       - 'Paradise_City_Merged.esp'
       - 'Paradise_City_MergedNoWindhelm.esp'
@@ -978,17 +978,17 @@ plugins:
         subs:
           - 'Dawnstar'
           - '[JK''s Skyrim SE Arthmoor''s Dawnstar Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: '(active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp")) or ((active("Dawnstar.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp"))'
+        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Dragon Bridge'
           - '[JK''s Skyrim SE Arthmoor''s Dragon Bridge Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: '(active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp")) or ((active("Dragon Bridge.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp"))'
+        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Ivarstead'
           - '[JK''s Skyrim SE Arthmoor''s Ivarstead Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: '(active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp")) or ((active("Ivarstead.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp"))'
+        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Holidays'
