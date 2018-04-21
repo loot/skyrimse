@@ -950,6 +950,87 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2259/']
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: "JKs Skyrim.esp"
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/6289/']
+    inc:
+      - name: 'Friendlier Taverns.esp'
+        condition: 'checksum("Friendlier Taverns.esp",0C38A36A)'
+        display: 'Friendlier Taverns with Baths and Barns SSE'
+      - name: 'Blues Skyrim.esp'
+        display: 'Dawn of Skyrim (Director''s Cut) for SSE'
+      - 'Open Cities Skyrim.esp'
+      - 'Paradise_City_Merged.esp'
+      - 'Paradise_City_MergedNoWindhelm.esp'
+      - 'Paradise_City_MergedSummerWindhelm.esp'
+      - 'Paradise_City_Rorikstead.esp'
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'WhiterunHoldForest.esp'
+    msg:
+      - type: warn
+        condition: 'checksum("Friendlier Taverns.esp",0C38A36A)'
+        content:
+          - lang: en
+            text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) is incompatible with JK''s Skyrim.  Please use [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506) instead.'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Better City Entrances'
+          - '[JK''s Skyrim SE Better City Entrances Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Better Docks'
+          - '[JK''s Skyrim SE Better Docks Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Carriage and Ferry Travel Overhaul'
+          - '[JK''s Skyrim SE CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Dawnstar'
+          - '[JK''s Skyrim SE Arthmoor''s Dawnstar Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Dragon Bridge'
+          - '[JK''s Skyrim SE Arthmoor''s Dragon Bridge Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ivarstead'
+          - '[JK''s Skyrim SE Arthmoor''s Ivarstead Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Holidays'
+          - '[JK''s Skyrim SE Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Leaf Rest'
+          - '[JK''s Skyrim SE Leaf Rest Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("LeafRest OnePiece.esp") and not active("JKs Skryim Leafrest Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Mirai'
+          - '[JK''s Skyrim SE Mirai Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("zMirai.esp") and not active("JKs Skyrim_Mirai_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Realistic Water Two'
+          - '[JK''s Skyrim SE Realistic Water Two Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Thunderchild'
+          - '[JK''s Skyrim SE Thunderchild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
+    clean:
+      # Version 1.2
+      - crc: 0x39DAE47D
+        util: SSEEdit v3.2.1  
   - name: 'Bring Out Your Dead.esp'
     url: 
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
@@ -959,6 +1040,7 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
         name: 'Bring Out Your Dead on Bethesda.net'
     after:
+      - 'JKs Skyrim.esp' 
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     global_priority: -90
   - name: 'Darkwater Crossing.esp'
