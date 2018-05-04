@@ -957,6 +957,7 @@ plugins:
         condition: 'checksum("Friendlier Taverns.esp",0C38A36A)'
         display: 'Friendlier Taverns with Baths and Barns SSE'
       - name: 'Blues Skyrim.esp'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
         display: 'Dawn of Skyrim (Director''s Cut) for SSE'
       - 'Open Cities Skyrim.esp'
       - 'Paradise_City_Merged.esp'
@@ -987,6 +988,11 @@ plugins:
           - 'Carriage and Ferry Travel Overhaul'
           - '[JK''s Skyrim SE CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Dawn of Skyrim'
+          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Dawnstar'
