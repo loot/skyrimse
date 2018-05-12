@@ -233,10 +233,10 @@ groups:
     after: [ *raceGroup ]
 
   - name: &mluGroup MorroLoot Ultimate
-    after: [ default ]
+    after: [ *followerGroup ]
 
   - name: &alternateStartGroup Alternate Start
-    after: [ *followerGroup ]
+    after: [ *mluGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *alternateStartGroup ]
