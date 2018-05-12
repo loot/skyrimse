@@ -1000,6 +1000,7 @@ plugins:
         condition: 'checksum("Friendlier Taverns.esp",0C38A36A)'
         display: 'Friendlier Taverns with Baths and Barns SSE'
       - name: 'Blues Skyrim.esp'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
         display: 'Dawn of Skyrim (Director''s Cut) for SSE'
       - 'Open Cities Skyrim.esp'
       - 'Paradise_City_Merged.esp'
@@ -1030,6 +1031,11 @@ plugins:
           - 'Carriage and Ferry Travel Overhaul'
           - '[JK''s Skyrim SE CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Dawn of Skyrim'
+          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Dawnstar'
@@ -1952,6 +1958,23 @@ plugins:
       - 'Open Cities Skyrim.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
+  - name: 'KrittaKittyHorsesForSSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7685/'
+        name: 'Realistic Horse Breeds by KrittaKitty on Nexus Mods'
+    after:
+      - 'Convenient Horses.esp'
+    dirty:
+        # version 2.4D
+      - crc: 0x6E242E9E
+        <<: *dirtyPlugin
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+        # version 2.4D
+      - crc: 0x16CF39A0
+        util: SSEEdit v3.2.1
   - name: 'Book Covers Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
