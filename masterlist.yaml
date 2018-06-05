@@ -23,6 +23,11 @@ common:
         text: 'Rengør ikke ITM-poster: de er forsætlige og krævede for at mod’en fungerer. Det er sikkert at gendanne poster, men gør ikke andet end dét.'
       - lang: ja
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
+  - &hasWildEdits
+    type: say
+    content:
+      - lang: en
+        text: "This plug-in %1% contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available here: %2%"
   - &hasPluginPatch
     type: warn
     content:
@@ -279,6 +284,12 @@ plugins:
       - Delev
       - Invent
       - Relev
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - 'Dawnguard.esm'
+          - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
+        condition: 'checksum("Dawnguard.esm",6061bcff)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x051fcdc8
@@ -735,11 +746,11 @@ plugins:
     inc:
       - 'AuroraVillage.esp'
     msg:
-      - type: say
+      - <<: *hasWildEdits
+        subs:
+          - 'Undeath.esp'
+          - '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
         condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
-        content:
-          - lang: en
-            text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
     tag:
       - Graphics
       - Sound
