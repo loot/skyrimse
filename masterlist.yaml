@@ -1613,7 +1613,12 @@ plugins:
       - name: 'ElysiumEstate-HFNoKids.esp'
         display: 'Elysium Estate No Kids'
   - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2296/']
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
+        name: 'Verdant - A Skyrim Grass Plugin on Nexus Mods'
+        # Tweaks for Verdant esp Replacer
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
+        name: 'Landscape Fixes For Grass Mods on Nexus Mods'
     after:
       - name: 'Skyrim Flora Overhaul.esp'
         display: 'Skyrim Flora Overhaul'
@@ -1636,6 +1641,12 @@ plugins:
         itm: 11
         udr: 0
         nav: 0
+        # v1.5 - Tweaks for Verdant
+      - crc: 0x93E44E78
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0
     clean:
         # v1.5
       - crc: 0x102BBC11
@@ -1648,6 +1659,9 @@ plugins:
         util: SSEEdit v3.2.1
         # v1.5 - W.A.T.E.R version
       - crc: 0xB3D0DC65
+        util: SSEEdit v3.2.1
+        # v1.5 - Tweaks for Verdant
+      - crc: 0xDA6D8DC2
         util: SSEEdit v3.2.1
   - name: 'SimplyBiggerTreesSE.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5281/']
