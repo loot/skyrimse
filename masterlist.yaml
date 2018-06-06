@@ -1617,9 +1617,37 @@ plugins:
     after:
       - name: 'Skyrim Flora Overhaul.esp'
         display: 'Skyrim Flora Overhaul'
+    dirty:
+        # v1.5 - main file
+      - crc: 0x730EF406
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0 
+        # v1.5 - OCS Version
+      - crc: 0x05D653F7
+        <<: *dirtyPlugin
+        itm: 13
+        udr: 0
+        nav: 0
+        # v1.5 - W.A.T.E.R version
+      - crc: 0x0040F980
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0
     clean:
         # v1.5
       - crc: 0x102BBC11
+        util: SSEEdit v3.2.1
+        # v1.5 - main file
+      - crc: 0x76E6CE3C
+        util: SSEEdit v3.2.1
+        # v1.5 - OCS Version
+      - crc: 0x99AC1D1B
+        util: SSEEdit v3.2.1
+        # v1.5 - W.A.T.E.R version
+      - crc: 0xB3D0DC65
         util: SSEEdit v3.2.1
   - name: 'SimplyBiggerTreesSE.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2296/']
