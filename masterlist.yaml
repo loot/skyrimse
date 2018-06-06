@@ -240,8 +240,11 @@ groups:
   - name: &alternateStartGroup Alternate Start
     after: [ *mluGroup ]
 
-  - name: &dynamicPatchGroup Dynamic Patches
+  - name: &lateLoadersGroup Late Loaders
     after: [ *alternateStartGroup ]
+
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *lateLoadersGroup ]
 
   - name: &mapMarkersGroup Map Markers
     after: [ *dynamicPatchGroup ]
@@ -1430,12 +1433,12 @@ plugins:
   # Catch all for Patches included in installer
   - name: 'RealisticWaterTwo.*\.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *alternateStartGroup
+    group: *lateLoadersGroup
   - name: 'RWT.*\.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *alternateStartGroup
+    group: *lateLoadersGroup
   - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
-    group: *alternateStartGroup
+    group: *lateLoadersGroup
   - name: 'SSEMerged.esp'
     group: *dynamicPatchGroup
     tag:
