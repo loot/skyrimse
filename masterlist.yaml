@@ -2485,3 +2485,37 @@ plugins:
         name: 'Master Trader SE - Merchants Never Run Out Of Gold on Nexus Mods'
     after:
       - 'Relationship Dialogue Overhaul.esp'
+  - name: 'ShezrieOldHroldanVer2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
+        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
+    tag:
+      - C.Light
+      - Graphics
+      - Invent
+      - -C.Water
+      - -C.Acoustic
+      - -C.Regions
+    dirty:
+        # v2.2
+      - <<: *dirtyPlugin
+        crc: 0x9E66B431
+        itm: 1
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x6E988E26
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      # v2.2 post cleaning - no master sort
+      - crc: 0x4735D188
+        util: SSEEdit v3.2.1
+      # v2.2 post cleaning - with masters sorted
+      - crc: 0x22DAD810
+        util: SSEEdit v3.2.1
