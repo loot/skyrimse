@@ -912,8 +912,20 @@ plugins:
     group: *lowPriorityGroup
     after:
       - 'TouringCarriages.esp'
+      - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'RS Children Overhaul'
+          - '[RSChildren - CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
     tag:
+      - Actors.ACBS
+      - Actors.AIData 
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Stats
       - C.Location
       - C.Owner
       - C.RecordFlags
@@ -921,7 +933,12 @@ plugins:
       - Graphics
       - Invent
       - Names
+      - NPC.Class
       - Stats
+    clean:
+      # v3.0.7
+      - crc: 0x7752174D
+        util: SSEEdit v3.2.1
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/844/']
     after:
