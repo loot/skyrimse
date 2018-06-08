@@ -1088,6 +1088,9 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
         name: 'Open Cities Skyrim on Bethesda.net'
     group: *alternateStartGroup
+    inc:
+      - 'JKs Skyrim.esp'
+      - 'Oblivion Gates in Cities.esp'
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
@@ -1095,6 +1098,16 @@ plugins:
       - 'The Horkerpocalypse.esp'
       - 'Landscape Fixes For Grass Mods.esp'
     msg:
+      - <<: *hasPluginPatch
+        subs:
+          - '[Skyrim Sewers 4](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
+          - '[Open Cities Skyrim Patches](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Drinking fountains of Skyrim for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10971)'
+          - '[Open Cities Skyrim Patches](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+        condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
       - type: info
         condition: 'active("Ordinator - Perks of Skyrim.esp")'
         content:
@@ -1102,6 +1115,15 @@ plugins:
             text: '"Ordinator - Perks of Skyrim.esp" The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
     tag:
       - C.Location
+      - C.Owner
+      - C.Regions
+    clean:
+      # v3.0.5
+      - crc: 0xF3E88F7D
+        util: SSEEdit v3.2.1
+      # v3.0.6
+      - crc: 0xD6B49D54
+        util: SSEEdit v3.2.1
   - name: 'Alternate Start - Live Another Life.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
