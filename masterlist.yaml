@@ -207,54 +207,11 @@ globals:
   - <<: *requireSKSE64
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
-
-
-
-groups:
-  - name: &dlcGroup DLC
-
-  - name: &unofficialPatchGroup Unofficial Patches
-    after: [ *dlcGroup ]
-
-  - name: &hairReplacerGroup Hair Replacer
-    after: [ *unofficialPatchGroup ]
-
-  - name: &lowPriorityGroup Low Priority Overrides
-    after: [ *hairReplacerGroup ]
-
-  - name: &facePresetGroup Face Presets
-    after: [ *lowPriorityGroup ]
-
-  - name: default
-    after: [ *facePresetGroup ]
-
-  - name: &raceGroup Races
-    after: [ default ]
-
-  - name: &followerGroup Followers
-    after: [ *raceGroup ]
-
-  - name: &mluGroup MorroLoot Ultimate
-    after: [ *followerGroup ]
-
-  - name: &alternateStartGroup Alternate Start
-    after: [ *mluGroup ]
-
-  - name: &lateLoadersGroup Late Loaders
-    after: [ *alternateStartGroup ]
-
-  - name: &dynamicPatchGroup Dynamic Patches
-    after: [ *lateLoadersGroup ]
-
-  - name: &mapMarkersGroup Map Markers
-    after: [ *dynamicPatchGroup ]
-
-  - name: &dynamicLODGroup Dynamic LOD
-    after: [ *mapMarkersGroup ]
+ 
 
 plugins:
   - name: 'Update.esm'
-    group: *dlcGroup
+    global_priority: -127
     tag:
       - Delev
     dirty:
@@ -280,7 +237,7 @@ plugins:
       - crc: 0xc18ee18c
         util: SSEEdit v3.2.1
   - name: 'Dawnguard.esm'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Update.esm'
     tag:
@@ -340,7 +297,7 @@ plugins:
       - crc: 0x141be1e5
         util: SSEEdit v3.2.1
   - name: 'Hearthfires.esm'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dawnguard.esm'
     tag:
@@ -371,7 +328,7 @@ plugins:
       - crc: 0x0ed37282
         util: SSEEdit v3.2.1
   - name: 'Dragonborn.esm'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
@@ -408,29 +365,29 @@ plugins:
     after:
       - 'Dragonborn.esm'
   - name: 'ccBGSSSE002-ExoticArrows.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
   - name: 'ccBGSSSE003-Zombies.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
   - name: 'ccBGSSSE004-RuinsEdge.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
   - name: 'ccBGSSSE006-StendarsHammer.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
   - name: 'ccBGSSSE007-Chrysamere.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -438,7 +395,7 @@ plugins:
       - 'ccBGSSSE004-RuinsEdge.esl'
       - 'ccBGSSSE006-StendarsHammer.esl'
   - name: 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -447,7 +404,7 @@ plugins:
       - 'ccBGSSSE006-StendarsHammer.esl'
       - 'ccBGSSSE007-Chrysamere.esl'
   - name: 'ccBGSSSE014-SpellPack01.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -457,7 +414,7 @@ plugins:
       - 'ccBGSSSE007-Chrysamere.esl'
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
   - name: 'ccBGSSSE019-StaffofSheogorath.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -468,7 +425,7 @@ plugins:
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
       - 'ccBGSSSE014-SpellPack01.esl'
   - name: 'ccBGSSSE021-LordsMail.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -480,7 +437,7 @@ plugins:
       - 'ccBGSSSE014-SpellPack01.esl'
       - 'ccBGSSSE019-StaffofSheogorath.esl'
   - name: 'ccMTYSSE001-KnightsoftheNine.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -493,7 +450,7 @@ plugins:
       - 'ccBGSSSE019-StaffofSheogorath.esl'
       - 'ccBGSSSE021-LordsMail.esl'
   - name: 'ccQDRSSE001-SurvivalMode.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -513,7 +470,7 @@ plugins:
           - lang: en
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
   - name: 'ccTWBSSE001-PuzzleDungeon.esm'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -528,7 +485,7 @@ plugins:
       - 'ccMTYSSE001-KnightsoftheNine.esl'
       - 'ccQDRSSE001-SurvivalMode.esl'
   - name: 'ccEEJSSE001-Hstead.esm'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -544,7 +501,7 @@ plugins:
       - 'ccQDRSSE001-SurvivalMode.esl'
       - 'ccTWBSSE001-PuzzleDungeon.esm'
   - name: 'ccqdrsse002-firewood.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -561,7 +518,7 @@ plugins:
       - 'ccTWBSSE001-PuzzleDungeon.esm'
       - 'ccEEJSSE001-Hstead.esm'
   - name: 'ccBGSSSE018-Shadowrend.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -579,7 +536,7 @@ plugins:
       - 'ccEEJSSE001-Hstead.esm'
       - 'ccqdrsse002-firewood.esl'
   - name: 'ccBGSSSE035-PetNHound.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -598,7 +555,7 @@ plugins:
       - 'ccqdrsse002-firewood.esl'
       - 'ccBGSSSE018-Shadowrend.esl'
   - name: 'ccfsvsse001-backpacks.esl'
-    group: *dlcGroup
+    global_priority: -127
     after:
       - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
@@ -626,7 +583,7 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
         name: 'Unofficial Skyrim Special Edition Patch on Bethesda.net'
-    group: *unofficialPatchGroup
+    global_priority: -120
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
     clean:
@@ -848,7 +805,7 @@ plugins:
         # ESP Replacer with name changes added.
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod on Nexus Mods'
-    group: *mluGroup
+    global_priority: 60
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -883,15 +840,15 @@ plugins:
       - crc: 0xB8A1EE4E
         util: SSEEdit v3.2.1
   - name: 'static mesh improvement mod se.esp'
-    group: *lowPriorityGroup
+    global_priority: -90
   - name: 'SMIM-SE-.*.esp'
   # Static Mesh Improvement Mod - Modular installer
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
-    group: *lowPriorityGroup
+    global_priority: -90
   - name: 'SMIM-SE.esp'
   # Static Mesh Improvement Mod SE - BSA version
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
-    group: *lowPriorityGroup
+    global_priority: -90
     tag:
       - Graphics
     clean:
@@ -900,7 +857,7 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'TouringCarriages.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/15948/']
-    group: *lowPriorityGroup
+    global_priority: -90
   - name: 'Cutting Room Floor.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
@@ -909,7 +866,7 @@ plugins:
         name: 'Cutting Room Floor on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
         name: 'Cutting Room Floor on Bethesda.net'
-    group: *lowPriorityGroup
+    global_priority: -90
     after:
       - 'TouringCarriages.esp'
       - 'UnlimitedBookshelves.esp'
@@ -998,10 +955,10 @@ plugins:
       - NoMerge
   - name: 'Hair Replacer.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7409/']
-    group: *hairReplacerGroup
+    global_priority: -100
   - name: 'Hair Replacer Assets.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7409/']
-    group: *hairReplacerGroup
+    global_priority: -100
     after:
       - 'Hair Replacer.esp'
   - name: 'Better Vampires.esp'
@@ -1087,7 +1044,7 @@ plugins:
         name: 'Open Cities Skyrim on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
         name: 'Open Cities Skyrim on Bethesda.net'
-    group: *alternateStartGroup
+    global_priority: 70
     inc:
       - 'JKs Skyrim.esp'
       - 'Oblivion Gates in Cities.esp'
@@ -1132,7 +1089,7 @@ plugins:
         name: 'Alternate Start - Live Another Life on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
         name: 'Alternate Start - Live Another Life on Bethesda.net'
-    group: *alternateStartGroup
+    global_priority: 70
     inc:
       - 'Original Opening Scene.esp'
       - 'Random Alternate Start.esp'
@@ -1357,7 +1314,7 @@ plugins:
         name: 'Bring Out Your Dead on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
         name: 'Bring Out Your Dead on Bethesda.net'
-    group: *lowPriorityGroup
+    global_priority: -90
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
@@ -1450,7 +1407,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'RealisticWaterTwo.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *lateLoadersGroup
+    global_priority: 72
     after:
       - 'JK''s Riverwood.esp'
       - 'JKs Whiterun.esp'
@@ -1507,36 +1464,24 @@ plugins:
       # Version 1.4.4
       - crc: 0xB2812DAF
         util: SSEEdit v3.2.1
-      # Version 1.5.2
-      - crc: 0xCF76C1B9
-        util: SSEEdit v3.2.1
-  # Catch all for Patches included in installer
-  - name: 'RealisticWaterTwo.*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *lateLoadersGroup
-  - name: 'RWT.*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *lateLoadersGroup
-  - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
-    group: *lateLoadersGroup
   - name: 'SSEMerged.esp'
-    group: *dynamicPatchGroup
+    global_priority: 80
     tag:
       - NoMerge
   - name: 'Bashed Patch.*\.esp'
-    group: *dynamicPatchGroup
+    global_priority: 80
     after:
       - 'SSEMerged.esp'
   - name: 'Smashed Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/90987'
         name: 'Mator Smash on Nexus Mods'
-    group: *dynamicPatchGroup
+    global_priority: 80
     after:
       - 'Bashed Patch.*\.esp'
   - name: 'Dawnguard Map Markers.esp'
     url: ['https://afkmods.iguanadons.net/index.php?/files/file/1896-dawnguard-map-markers/']
-    group: *mapMarkersGroup
+    global_priority: 95
     after:
       - 'Bashed Patch.*\.esp'
     clean:
@@ -1582,7 +1527,7 @@ plugins:
     # Many mods that were found to trigger the brawl bug come with an included copy of the (obsolete)Brawl Bugs Patch.
     # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
     # (This will not impede the functionality of said other mods.)
-    group: *mapMarkersGroup
+    global_priority: 95
     after:
       - 'Bashed Patch.*\.esp'
     msg:
@@ -1655,7 +1600,7 @@ plugins:
         name: 'Imperious - Races of Skyrim on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
         name: 'Imperious - Races of Skyrim [PC] on Bethesda.net'
-    group: *raceGroup
+    global_priority: 20
     tag:
       - Body-Size-F
       - Body-Size-M
@@ -1843,7 +1788,7 @@ plugins:
         name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
         name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
-    group: *alternateStartGroup
+    global_priority: 40
     after:
       - '3DNPC.esp'
       - 'Alternate Start - Live Another Life.esp'
@@ -1934,7 +1879,7 @@ plugins:
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
   - name: 'Severa_CharPreset.esp'
-    group: *facePresetGroup
+    global_priority: -1
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lagertha_CharPreset.esp'
@@ -1947,7 +1892,7 @@ plugins:
       - NoMerge
   - name: 'Lydia Face Preset 64bit.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1080/']
-    group: *facePresetGroup
+    global_priority: -1
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -1961,7 +1906,7 @@ plugins:
       - NoMerge
   - name: 'Lagertha_CharPreset.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2629/']
-    group: *facePresetGroup
+    global_priority: -1
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -1974,7 +1919,7 @@ plugins:
       - NoMerge
   - name: 'Kayla_CharPreset.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3851/']
-    group: *facePresetGroup
+    global_priority: -1
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -1998,7 +1943,7 @@ plugins:
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2001/']
-    group: *facePresetGroup
+    global_priority: -1
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
     msg:
@@ -2031,7 +1976,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
         name: 'Enhanced Lighting for ENB (ELE) - Special Edition on Nexus Mods'
-    group: *alternateStartGroup
+    global_priority: 55
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Ars Metallica.esp'
@@ -2144,7 +2089,7 @@ plugins:
       - Invent
   - name: 'Ducks and Swans.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2149/']
-    group: *lowPriorityGroup
+    global_priority: -90
   - name: 'BirdsOfSkyrim_SSE.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3097/']
     after:
@@ -2162,7 +2107,7 @@ plugins:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'My Home Is Your Home.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7096/']
-    group: *followerGroup
+    global_priority: 60
     after:
       - 'AmazingFollowerTweaks.esp'
   - name: 'CFTO.esp'
@@ -2224,7 +2169,7 @@ plugins:
         name: 'Dynamic Distant Objects LOD - DynDOLOD on Nexus Mods'
       - link: 'http://forum.step-project.com/topic/13029-dyndolod-236-skyrim-se-beta-with-dynamic-lod/'
         name: 'Dynamic Distant Objects LOD - DynDOLOD SE BETA on Step-Project Forum'
-    group: *dynamicLODGroup
+    global_priority: 115
   - name: 'ULALPatch.esp'
     # Unique Locations - Alternate Start Patch
     url:
@@ -2429,7 +2374,7 @@ plugins:
   - name: 'UnlimitedBookshelves.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2885/']
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
-    group: *lowPriorityGroup
+    global_priority: -100
     clean:
       # 2.0
       - crc: 0x86CF0F2B
