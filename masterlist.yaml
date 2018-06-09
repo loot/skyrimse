@@ -23,6 +23,11 @@ common:
         text: 'Rengør ikke ITM-poster: de er forsætlige og krævede for at mod’en fungerer. Det er sikkert at gendanne poster, men gør ikke andet end dét.'
       - lang: ja
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
+  - &hasWildEdits
+    type: say
+    content:
+      - lang: en
+        text: "This plug-in %1% contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available here: %2%"
   - &hasPluginPatch
     type: warn
     content:
@@ -66,7 +71,7 @@ common:
         text: 'Slet. Allerede inkluderet i %1%.'
       - lang: ja
         text: '削除してください。既に%1%に含まれています。'
-        
+
 # Cleaning data
   - &dirtyPlugin
     util: '[SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164)'
@@ -198,7 +203,7 @@ globals:
 # SKSE64 plugins requirement
   - <<: *requireSKSE64
     subs: [ 'a SKSE Plugin' ]
-    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../sksevr_loader.exe")'
   - <<: *requireSKSE64
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
@@ -227,6 +232,10 @@ plugins:
         itm: 239
         udr: 91
         nav: 2
+    clean:
+      # Version 1.59.39.0 - Auto Clean
+      - crc: 0xc18ee18c
+        util: SSEEdit v3.2.1
   - name: 'Dawnguard.esm'
     global_priority: -127
     after:
@@ -235,6 +244,12 @@ plugins:
       - Delev
       - Invent
       - Relev
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - 'Dawnguard.esm'
+          - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
+        condition: 'checksum("Dawnguard.esm",6061bcff)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x051fcdc8
@@ -268,6 +283,19 @@ plugins:
         itm: 621
         udr: 82
         nav: 57
+        # Version 1.59.39.0 - Auto Clean First pass
+      - <<: *dirtyPlugin
+        crc: 0x6f162d5e
+        itm: 6
+        udr: 0
+        nav: 57
+    clean:
+      # Version 1.59.39.0 - Auto Clean Second pass
+      - crc: 0x6061bcff
+        util: SSEEdit v3.2.1
+      # Version 1.59.39.0 - Auto + Manual Cleaning
+      - crc: 0x141be1e5
+        util: SSEEdit v3.2.1
   - name: 'Hearthfires.esm'
     global_priority: -127
     after:
@@ -295,6 +323,10 @@ plugins:
         itm: 178
         udr: 11
         nav: 5
+    clean:
+      # Version 1.59.39.0 - Auto Clean
+      - crc: 0x0ed37282
+        util: SSEEdit v3.2.1
   - name: 'Dragonborn.esm'
     global_priority: -127
     after:
@@ -324,6 +356,14 @@ plugins:
         itm: 69
         udr: 8
         nav: 1
+    clean:
+      # Version 1.59.39.0 - Auto Clean
+      - crc: 0x5eb9eade
+        util: SSEEdit v3.2.1
+  - name: 'SkyrimVR.esm'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
   - name: 'ccBGSSSE002-ExoticArrows.esl'
     global_priority: -127
     after:
@@ -384,6 +424,18 @@ plugins:
       - 'ccBGSSSE007-Chrysamere.esl'
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
       - 'ccBGSSSE014-SpellPack01.esl'
+  - name: 'ccBGSSSE021-LordsMail.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
   - name: 'ccMTYSSE001-KnightsoftheNine.esl'
     global_priority: -127
     after:
@@ -396,6 +448,7 @@ plugins:
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
       - 'ccBGSSSE014-SpellPack01.esl'
       - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
   - name: 'ccQDRSSE001-SurvivalMode.esl'
     global_priority: -127
     after:
@@ -408,6 +461,7 @@ plugins:
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
       - 'ccBGSSSE014-SpellPack01.esl'
       - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
       - 'ccMTYSSE001-KnightsoftheNine.esl'
     msg:
       - type: warn
@@ -415,9 +469,114 @@ plugins:
         content:
           - lang: en
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
+  - name: 'ccTWBSSE001-PuzzleDungeon.esm'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
+      - 'ccQDRSSE001-SurvivalMode.esl'
+  - name: 'ccEEJSSE001-Hstead.esm'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
+      - 'ccQDRSSE001-SurvivalMode.esl'
+      - 'ccTWBSSE001-PuzzleDungeon.esm'
+  - name: 'ccqdrsse002-firewood.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
+      - 'ccQDRSSE001-SurvivalMode.esl'
+      - 'ccTWBSSE001-PuzzleDungeon.esm'
+      - 'ccEEJSSE001-Hstead.esm'
+  - name: 'ccBGSSSE018-Shadowrend.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
+      - 'ccQDRSSE001-SurvivalMode.esl'
+      - 'ccTWBSSE001-PuzzleDungeon.esm'
+      - 'ccEEJSSE001-Hstead.esm'
+      - 'ccqdrsse002-firewood.esl'
+  - name: 'ccBGSSSE035-PetNHound.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
+      - 'ccQDRSSE001-SurvivalMode.esl'
+      - 'ccTWBSSE001-PuzzleDungeon.esm'
+      - 'ccEEJSSE001-Hstead.esm'
+      - 'ccqdrsse002-firewood.esl'
+      - 'ccBGSSSE018-Shadowrend.esl'
+  - name: 'ccfsvsse001-backpacks.esl'
+    global_priority: -127
+    after:
+      - 'Dragonborn.esm'
+      - 'ccBGSSSE002-ExoticArrows.esl'
+      - 'ccBGSSSE003-Zombies.esl'
+      - 'ccBGSSSE004-RuinsEdge.esl'
+      - 'ccBGSSSE006-StendarsHammer.esl'
+      - 'ccBGSSSE007-Chrysamere.esl'
+      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+      - 'ccBGSSSE014-SpellPack01.esl'
+      - 'ccBGSSSE019-StaffofSheogorath.esl'
+      - 'ccBGSSSE021-LordsMail.esl'
+      - 'ccMTYSSE001-KnightsoftheNine.esl'
+      - 'ccQDRSSE001-SurvivalMode.esl'
+      - 'ccTWBSSE001-PuzzleDungeon.esm'
+      - 'ccEEJSSE001-Hstead.esm'
+      - 'ccqdrsse002-firewood.esl'
+      - 'ccBGSSSE018-Shadowrend.esl'
+      - 'ccBGSSSE035-PetNHound.esl'
 
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
         name: 'Unofficial Skyrim Special Edition Patch on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
@@ -425,6 +584,8 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
         name: 'Unofficial Skyrim Special Edition Patch on Bethesda.net'
     global_priority: -120
+    after:
+      - 'Lanterns Of Skyrim - All In One - Main.esm'
     clean:
       # Version 4.1.2a
       - crc: 0xAE28DBE3
@@ -432,23 +593,24 @@ plugins:
       # Version 4.1.3
       - crc: 0x8BB1A815
         util: SSEEdit v3.2.1
-    after:
-      - 'Lanterns Of Skyrim - All In One - Main.esm'
+      # Version 4.1.3b
+      - crc: 0xFD8D6035
+        util: SSEEdit v3.2.1
   - name: 'unofficial skyrim survival patch.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12655/']
-    clean: 
+    clean:
       - crc: 0xF7B1A347
         util: SSEEdit v3.2.1
     tag:
       - Graphics
   - name: 'BSAssets.esm'
   # Beyond Skyrim - Bruma SE
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835'
         name: 'Beyond Skyrim: Bruma SE Assets on Bethesda.net'
-    tag: 
+    tag:
       - C.Light
       - C.RecordFlags
     clean:
@@ -457,7 +619,7 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'BSHeartland.esm'
   # Beyond Skyrim - Bruma SE
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831'
@@ -479,14 +641,14 @@ plugins:
           - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
     tag:
-      - Actors.ACBS 
+      - Actors.ACBS
       - Actors.CombatStyle
-      - Actors.DeathItem 
-      - Actors.Stats 
+      - Actors.DeathItem
+      - Actors.Stats
       - C.Light
       - C.RecordFlags
       - C.Regions
-      - Delev 
+      - Delev
       - Factions
       - Graphics
       - Invent
@@ -505,7 +667,7 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'BS_DLC_patch.esp'
   # Beyond Skyrim - DLC Integration Patch
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167'
@@ -516,6 +678,22 @@ plugins:
     clean:
       # Version 1.1.2
       - crc: 0x2BC2FECB
+        util: SSEEdit v3.2.1
+  - name: 'Skyrim Project Optimization - Full Version.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
+        name: 'Skyrim Project Optimization SE on Nexus Mods'
+    clean:
+      # Version 1.3
+      - crc: 0x45374C76
+        util: SSEEdit v3.2.1
+  - name: 'Skyrim Project Optimization - Full Version.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
+        name: 'Skyrim Project Optimization SE on Nexus Mods'
+    clean:
+      # Version 1.3
+      - crc: 0x137A03B3
         util: SSEEdit v3.2.1
   - name: 'MoonAndStar_MAS.esp'
     url:
@@ -537,7 +715,7 @@ plugins:
       - crc: 0x1DA470CB
         util: SSEEdit v3.2.1
   - name: 'Undeath.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
         name: 'Undeath Remastered SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
@@ -547,11 +725,11 @@ plugins:
     inc:
       - 'AuroraVillage.esp'
     msg:
-      - type: say
+      - <<: *hasWildEdits
+        subs:
+          - 'Undeath.esp'
+          - '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
         condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
-        content:
-          - lang: en
-            text: 'This mod contains wild edits. A manual [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available [here](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
     tag:
       - Graphics
       - Sound
@@ -581,7 +759,7 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
   - name: 'imp_helm_legend.esp'
   # Improved Closefaced Helmets
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/824/'
         name: 'Improved closefaced helmets on Nexus Mods'
     after:
@@ -618,7 +796,7 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'MLU.esp'
   # MorrowLoot Ultimate
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
         # Alt Version
@@ -626,7 +804,7 @@ plugins:
         name: 'Morrowloot Ultimate Simplified on Nexus Mods'
         # ESP Replacer with name changes added.
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
-        name: 'Another Sorting Mod on Nexus Mods' 
+        name: 'Another Sorting Mod on Nexus Mods'
     global_priority: 60
     tag:
       - Actors.ACBS
@@ -642,14 +820,14 @@ plugins:
       - crc: 0x89111F8E
         util: SSEEdit v3.2.1
   - name: 'MLU - Immersive Armors.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
     tag:
       - Delev
       - Relev
   - name: 'MLU - Improved Closefaced Helmets.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
     req:
@@ -691,8 +869,20 @@ plugins:
     global_priority: -90
     after:
       - 'TouringCarriages.esp'
+      - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'RS Children Overhaul'
+          - '[RSChildren - CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
     tag:
+      - Actors.ACBS
+      - Actors.AIData 
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Stats
       - C.Location
       - C.Owner
       - C.RecordFlags
@@ -700,7 +890,12 @@ plugins:
       - Graphics
       - Invent
       - Names
+      - NPC.Class
       - Stats
+    clean:
+      # v3.0.7
+      - crc: 0x7752174D
+        util: SSEEdit v3.2.1
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/844/']
     after:
@@ -751,7 +946,7 @@ plugins:
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
   - name: 'BetterQuestObjectives.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/159/'
         name: 'Even Better Quest Objectives on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
@@ -767,7 +962,7 @@ plugins:
     after:
       - 'Hair Replacer.esp'
   - name: 'Better Vampires.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
         name: 'Better Vampires SE 8.2 on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
@@ -789,7 +984,7 @@ plugins:
       - 'Hideout_HF_Main.esp'
       - 'Hideout_Main.esp'
   - name: 'EBM_Train10x.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
         name: 'ExE Boss''s Mods - Train More on Nexus Mods'
     inc:
@@ -797,7 +992,7 @@ plugins:
       - 'EBM_Train50x.esp'
       - 'EBM_Train99x.esp'
   - name: 'EBM_Train25x.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
         name: 'ExE Boss''s Mods - Train More on Nexus Mods'
     inc:
@@ -805,7 +1000,7 @@ plugins:
       - 'EBM_Train50x.esp'
       - 'EBM_Train99x.esp'
   - name: 'EBM_Train50x.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
         name: 'ExE Boss''s Mods - Train More on Nexus Mods'
     inc:
@@ -813,7 +1008,7 @@ plugins:
       - 'EBM_Train25x.esp'
       - 'EBM_Train99x.esp'
   - name: 'EBM_Train99x.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
         name: 'ExE Boss''s Mods - Train More on Nexus Mods'
     inc:
@@ -821,7 +1016,7 @@ plugins:
       - 'EBM_Train25x.esp'
       - 'EBM_Train50x.esp'
   - name: 'EBM_UnlimitedPower.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/'
         name: 'ExE Boss''s Mods - UNLIMITED POWER on Nexus Mods'
     inc:
@@ -837,8 +1032,12 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12604/']
     req:
       - *SKSE64
+    clean:
+      # Version 5.2SE
+      - crc: 0x79ACE179
+        util: SSEEdit v3.2.1
   - name: 'Open Cities Skyrim.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
         name: 'Open Cities Skyrim on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1905-open-cities-skyrim/'
@@ -846,12 +1045,26 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
         name: 'Open Cities Skyrim on Bethesda.net'
     global_priority: 70
+    inc:
+      - 'JKs Skyrim.esp'
+      - 'Oblivion Gates in Cities.esp'
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
       - 'Atlas Map Markers.esp'
       - 'The Horkerpocalypse.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
     msg:
+      - <<: *hasPluginPatch
+        subs:
+          - '[Skyrim Sewers 4](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
+          - '[Open Cities Skyrim Patches](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Drinking fountains of Skyrim for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10971)'
+          - '[Open Cities Skyrim Patches](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+        condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
       - type: info
         condition: 'active("Ordinator - Perks of Skyrim.esp")'
         content:
@@ -859,8 +1072,17 @@ plugins:
             text: '"Ordinator - Perks of Skyrim.esp" The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
     tag:
       - C.Location
+      - C.Owner
+      - C.Regions
+    clean:
+      # v3.0.5
+      - crc: 0xF3E88F7D
+        util: SSEEdit v3.2.1
+      # v3.0.6
+      - crc: 0xD6B49D54
+        util: SSEEdit v3.2.1
   - name: 'Alternate Start - Live Another Life.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
         name: 'Alternate Start - Live Another Life on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/270-alternate-start-live-another-life/'
@@ -868,13 +1090,27 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
         name: 'Alternate Start - Live Another Life on Bethesda.net'
     global_priority: 70
+    inc:
+      - 'Original Opening Scene.esp'
+      - 'Random Alternate Start.esp'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Skyrim Unbound.esp'
     after:
       - 'Open Cities Skyrim.esp'
       - 'My Home Is Your Home.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
     tag:
       - C.Location
+      - Names
+    clean:
+      # v4.0.3
+      - crc: 0xD107745B
+        util: SSEEdit v3.2.1
+      # v4.0.4
+      - crc: 0xBD2B9643
+        util: SSEEdit v3.2.1
   - name: '3rdEraWeapMoS-lvlList.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/'
         name: 'Weapons of the Third Era on Nexus Mods'
     tag:
@@ -901,7 +1137,7 @@ plugins:
     tag:
       - Delev
   - name: 'aMidianBorn_ContentAddon.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24909/'
         name: 'aMidianBorn Book of Silence on Nexus Mods'
     after:
@@ -918,7 +1154,7 @@ plugins:
       - Delev
       - Relev
   - name: 'Hothtrooper44_ArmorCompilation.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
         name: 'Immersive Armors on Nexus Mods'
     after:
@@ -963,6 +1199,18 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2259/']
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/'
+        name: 'JK''s Skyrim - Dawn of Skyrim - Patch on Nexus Mods'
+    inc:
+      - 'JKs Skyrim_Holidays_Patch.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Holidays'
+          - '[JK''s Skyrim - Dawn of Skyrim - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Holidays.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
   - name: "JKs Skyrim.esp"
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/6289/']
     inc:
@@ -998,6 +1246,11 @@ plugins:
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
+          - 'Bring Out Your Dead'
+          - '[JK''s Skyrim - Arthmoor''s Patch Pack](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+        condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_BOYD_Patch.esp")  and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
           - 'Carriage and Ferry Travel Overhaul'
           - '[JK''s Skyrim SE CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
@@ -1010,22 +1263,22 @@ plugins:
         subs:
           - 'Dawnstar'
           - '[JK''s Skyrim SE Arthmoor''s Dawnstar Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
+        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Dragon Bridge'
           - '[JK''s Skyrim SE Arthmoor''s Dragon Bridge Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
+        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Ivarstead'
           - '[JK''s Skyrim SE Arthmoor''s Ivarstead Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp")'
+        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Holidays'
           - '[JK''s Skyrim SE Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-        condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp")'
+        condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp") and not active("Blues Skyrim.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Leaf Rest'
@@ -1049,21 +1302,29 @@ plugins:
     clean:
       # Version 1.2
       - crc: 0x39DAE47D
-        util: SSEEdit v3.2.1  
+        util: SSEEdit v3.2.1
+      # Version 1.4
+      - crc: 0xDECAFE32
+        util: SSEEdit v3.2.1
   - name: 'Bring Out Your Dead.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
         name: 'Bring Out Your Dead on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/273-bring-out-your-dead/'
         name: 'Bring Out Your Dead on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
         name: 'Bring Out Your Dead on Bethesda.net'
-    after:
-      - 'JKs Skyrim.esp' 
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     global_priority: -90
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    tag:
+      - C.Location
+    clean:
+      # v4.0.2 
+      - crc: 0xE14997CA
+        util: SSEEdit v3.2.1
   - name: 'Darkwater Crossing.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
         name: 'Darkwater Crossing on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1895-darkwater-crossing/'
@@ -1074,7 +1335,7 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'Helarchen Creek.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4043'
         name: 'Helarchen Creek on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1927-helarchen-creek/'
@@ -1084,7 +1345,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Ivarstead.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/349'
         name: 'Ivarstead on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1583-ivarstead/'
@@ -1094,7 +1355,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Karthwasten.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/350/'
         name: 'Karthwasten on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1768-karthwasten/'
@@ -1104,7 +1365,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Kynesgrove.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/351/'
         name: 'Kynesgrove on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1576-kynesgrove/'
@@ -1114,7 +1375,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Shor''s Stone.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
         name: 'Shor''s Stone on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1908-shors-stone/'
@@ -1124,7 +1385,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Soljund''s Sinkhole.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/358/'
         name: 'Soljund''s Sinkhole on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1909-soljunds-sinkhole/'
@@ -1134,7 +1395,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Whistling Mine.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
         name: 'Whistling Mine on Nexus Mods'
       - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1912-whistling-mine/'
@@ -1173,6 +1434,7 @@ plugins:
       - 'EmbersHD.esp'
       - 'Gildergreen Regrown.esp'
       - 'Inigo.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
       - 'MajesticMountains_Moss.esp'
       - 'MLU.esp'
       - 'NotSoFast-MageGuild.esp'
@@ -1210,14 +1472,25 @@ plugins:
     global_priority: 80
     after:
       - 'SSEMerged.esp'
+  - name: 'Smashed Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/90987'
+        name: 'Mator Smash on Nexus Mods'
+    global_priority: 80
+    after:
+      - 'Bashed Patch.*\.esp'
   - name: 'Dawnguard Map Markers.esp'
     url: ['https://afkmods.iguanadons.net/index.php?/files/file/1896-dawnguard-map-markers/']
     global_priority: 95
     after:
       - 'Bashed Patch.*\.esp'
+    clean:
+      # v1.0.1 
+      - crc: 0x3B3FE8B6
+        util: SSEEdit v3.2.1
 
   - name: 'Apocalypse - Magic of Skyrim.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
         name: 'Apocalypse - Magic of Skyrim on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
@@ -1255,7 +1528,7 @@ plugins:
     # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
     # (This will not impede the functionality of said other mods.)
     global_priority: 95
-    after: 
+    after:
       - 'Bashed Patch.*\.esp'
     msg:
       - <<: *AlreadyInX
@@ -1297,12 +1570,12 @@ plugins:
           - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
   - name: 'Ordinator - Perks of Skyrim.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
         name: 'Ordinator - Perks of Skyrim on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
         name: 'Ordinator - Perks Of Skyrim [PC] on Bethesda.net'
-    after: 
+    after:
       - 'Phenderix Magic Evolved.esp'
       - 'Phenderix Magic World.esp'
       - 'Undeath.esp'
@@ -1322,7 +1595,7 @@ plugins:
       - crc: 0x38670BC4
         util: SSEEdit v3.2.1
   - name: 'Imperious - Races of Skyrim.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
         name: 'Imperious - Races of Skyrim on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
@@ -1369,12 +1642,67 @@ plugins:
       - name: 'ElysiumEstate-HFNoKids.esp'
         display: 'Elysium Estate No Kids'
   - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2296/']
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
+        name: 'Verdant - A Skyrim Grass Plugin on Nexus Mods'
+        # Tweaks for Verdant esp Replacer
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
+        name: 'Landscape Fixes For Grass Mods on Nexus Mods'
     after:
       - name: 'Skyrim Flora Overhaul.esp'
         display: 'Skyrim Flora Overhaul'
+    dirty:
+        # v1.5 - main file
+      - crc: 0x730EF406
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0 
+        # v1.5 - OCS Version
+      - crc: 0x05D653F7
+        <<: *dirtyPlugin
+        itm: 13
+        udr: 0
+        nav: 0
+        # v1.5 - W.A.T.E.R version
+      - crc: 0x0040F980
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0
+        # v1.5 - Tweaks for Verdant
+      - crc: 0x93E44E78
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0
+    clean:
+        # v1.5
+      - crc: 0x102BBC11
+        util: SSEEdit v3.2.1
+        # v1.5 - main file
+      - crc: 0x76E6CE3C
+        util: SSEEdit v3.2.1
+        # v1.5 - OCS Version
+      - crc: 0x99AC1D1B
+        util: SSEEdit v3.2.1
+        # v1.5 - W.A.T.E.R version
+      - crc: 0xB3D0DC65
+        util: SSEEdit v3.2.1
+        # v1.5 - Tweaks for Verdant
+      - crc: 0xDA6D8DC2
+        util: SSEEdit v3.2.1
+  - name: 'SimplyBiggerTreesSE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5281/']
+    clean:
+        # v1.0SE
+      - crc: 0xADC2F6AF
+        util: SSEEdit v3.2.1
+        # v1.0SE - floating tree moss fix version
+      - crc: 0x0BA34575
+        util: SSEEdit v3.2.1
   - name: 'Valerica.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
     after:
@@ -1385,7 +1713,7 @@ plugins:
         content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
         condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'Serana.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
     after:
@@ -1442,20 +1770,39 @@ plugins:
     inc:
       - name: 'ElysiumEstate-HF.esp'
         display: 'Elsium Estate With Kids'
+  - name: 'Run For Your Lives.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/'
+        name: 'Run For Your Lives on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Run For Your Lives SE now includes the old mod When Vampires Attack. You can uninstall When Vampires Attack.'
+        condition: 'active("When Vampires Attack.esp")'
+    clean:
+      # Version v4.0
+      - crc: 0xF3EF2798
+        util: SSEEdit v3.2.1
   - name: 'Immersive Citizens - AI Overhaul.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
-        name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'  
+        name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
     global_priority: 40
     after:
+      - '3DNPC.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Bridges of Skyrim.esp'
+      - 'Civil War Repairs.esp'
       - 'Eli_Breezehome.esp'
       - 'Eli_Routa.esp'
       - 'Eli_Routa - Non-Stormcloak.esp'
+      - 'ESFCompanions.esp'
       - 'EnhancedLightsandFX.esp'
       - 'Open Cities Skyrim.esp'
+      - 'Requiem.esp'
       - 'SkyfallEstate.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
   - name: 'Relationship Dialogue Overhaul.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
     after:
@@ -1605,20 +1952,28 @@ plugins:
         condition: 'active("Better_Male_Presets.esp")'
     tag:
       - NoMerge
+  - name: 'RelightingSkyrim_SSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
+        name: 'Relighting Skyrim - SSE on Nexus Mods'
+    clean:
+      # Version 1.0.2
+      - crc: 0xAD0407B5
+        util: SSEEdit v3.2.1
   - name: 'ELFXEnhancer.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELFX - Hardcore.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELE_SSE.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
         name: 'Enhanced Lighting for ENB (ELE) - Special Edition on Nexus Mods'
     global_priority: 55
@@ -1772,6 +2127,14 @@ plugins:
     after:
       - 'ELFX - NoHoneyside.esp'
       - 'Alternate Start - Live Another Life.esp'
+  - name: 'Audio Overhaul Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
+        name: 'Audio Overhaul for Skyrim SE on Nexus Mods'
+    clean:
+      # Version v3.0.0
+      - crc: 0x96BF25A6
+        util: SSEEdit v3.2.1
   - name: 'Immersive Sounds - Compendium.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/523/']
     after:
@@ -1780,6 +2143,26 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'Landscape Fixes For Grass Mods .*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Landscape Fixes For Grass Mods.esp'
+  - name: 'Landscape For Grass Mods .*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Landscape Fixes For Grass Mods.esp'
+  - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Landscape For Grass Mods Arthmoor''s Shor''s Stone PATCH.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'shor''s stone.esp'
   - name: 'DynDOLOD.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/59721/'
@@ -1801,8 +2184,16 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11307/']
     tag:
       - C.Regions
+  - name: 'inigo.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/'
+        name: 'INIGO on Nexus Mods'
+    clean:
+      # Version 2.4c
+      - crc: 0x9CCE987C
+        util: SSEEdit v3.2.1
   - name: '3DNPC.esp'
-    url: 
+    url:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
         name: 'Interesting NPCs SSE on 3dnpc.com'
     tag:
@@ -1872,13 +2263,13 @@ plugins:
       - C.Climate
       - C.Water
   - name: 'ULRiverwoodForestJKPatch.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9258/'
         name: 'Unique Locations - Riverwood Forest on Nexus Mods'
     tag:
       - C.Water
   - name: 'LADX_SSE.esp'
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2314/'
         name: 'Legendary Armors - DeserterX Collection SSE on Nexus Mods'
     tag:
@@ -1887,7 +2278,7 @@ plugins:
       - Relev
   - name: 'DBM_CRF_Patch.esp'
   # Legacy of the Dragonborn(AKA Dragonborn Museum)
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn SSE on Nexus Mods'
     tag:
@@ -1895,14 +2286,14 @@ plugins:
       - Names
   - name: 'DBM_SkyrimUnderground_Patch.esp'
   # Legacy of the Dragonborn(AKA Dragonborn Museum)
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn SSE on Nexus Mods'
     tag:
       - Invent
   - name: 'DBM_HelgenReborn_Patch.esp'
   # Legacy of the Dragonborn(AKA Dragonborn Museum)
-    url: 
+    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn SSE on Nexus Mods'
     tag:
@@ -2093,4 +2484,138 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8210/']
     tag:
       - Relev
-    
+  # Qwinn's Bottomless Bag of Patches
+  - name: 'Qw_ELE_.*\.esp'
+    # Patches for Enhanced Lighting for ENB
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/16923/']
+  - name: 'TTR_Master_Trader.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/'
+        name: 'Master Trader SE - Merchants Never Run Out Of Gold on Nexus Mods'
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'ShezrieOldHroldanVer2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
+        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
+    tag:
+      - C.Light
+      - Graphics
+      - Invent
+      - -C.Water
+      - -C.Acoustic
+      - -C.Regions
+    dirty:
+        # v2.2
+      - <<: *dirtyPlugin
+        crc: 0x9E66B431
+        itm: 1
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x600E8FE9
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      # v2.2 post cleaning - no master sort
+      - crc: 0x4735D188
+        util: SSEEdit v3.2.1
+      # v2.2 post cleaning - with masters sorted
+      - crc: 0x22DAD810
+        util: SSEEdit v3.2.1
+  - name: 'Castle Volkihar Rebuilt.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/324/'
+        name: 'Castle Volkihar Rebuilt on Nexus Mods'
+    tag:
+      - C.Encounter
+      - C.Location
+    clean:
+      # v2.0.1
+      - crc: 0x0D275CEA
+        util: SSEEdit v3.2.1
+  - name: 'Skyshards.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/'
+        name: 'ESO Skyshards on Nexus Mods'
+    clean:
+      # v2.0.3
+      - crc: 0xE729E39E
+        util: SSEEdit v3.2.1
+  - name: 'Gildergreen Regrown.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/348/'
+        name: 'Gildergreen Regrown on Nexus Mods'
+    clean:
+      # v2.0
+      - crc: 0xFFD6E910
+        util: SSEEdit v3.2.1
+  - name: 'Oblivion Gates in Cities.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/388/'
+        name: 'Oblivion Gates in Cities on Nexus Mods'
+    inc:
+      - 'Open Cities Skyrim.esp'
+    clean:
+      # v2.0.1
+      - crc: 0x85982F95
+        util: SSEEdit v3.2.1
+  - name: 'Provincial Courier Service.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/'
+        name: 'Provincial Courier Service on Nexus Mods'
+    after:
+      - Immersive Citizens - AI Overhaul.esp
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Location
+    clean:
+      # v4.0.1
+      - crc: 0x10CC6B4D
+        util: SSEEdit v3.2.1
+  - name: 'Shadowmarks.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
+        name: 'Shadowmarks on Nexus Mods'
+    clean:
+      # v2.0
+      - crc: 0x28E63EB9
+        util: SSEEdit v3.2.1
+  - name: 'Storefront.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/364/'
+        name: 'Storefront on Nexus Mods'
+    clean:
+      # v2.0
+      - crc: 0xBB8E454A 
+        util: SSEEdit v3.2.1
+  - name: 'The Paarthurnax Dilemma.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/365'
+        name: 'The Paarthurnax Dilemma on Nexus Mods'
+    clean:
+      # v2.0
+      - crc: 0xBBB08325
+        util: SSEEdit v3.2.1
+  - name: 'Dolmen Ruins.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
+        name: 'Dolmen Ruins - ESO Dark Anchors on Nexus Mods'
+    clean:
+      # v2.0.3
+      - crc: 0xCE522D51
+        util: SSEEdit v3.2.1
+  - name: 'Dragon Claw Stands.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/337'
+        name: 'Dragon Claw Stands on Nexus Mods'
+    clean:
+      # v2.0.1
+      - crc: 0x1A076EF7
+        util: SSEEdit v3.2.1
