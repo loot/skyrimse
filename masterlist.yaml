@@ -37,6 +37,16 @@ common:
         text: "Du ser ud til at bruge %1%, men du bruger ikke “%1%”-lappen for dette plugin: %2%"
       - lang: ja
         text: "%1%が使用されていますが、このプラグイン用の%1%のパッチが有効になっていません: %2%"
+  - &hasPatchIncluded
+    type: warn
+    content:
+      - lang: en
+        text: "A patch is included with the %2% installer, please make sure you have installed the %1% patch and have it activated"
+  - &hascompatibilityIssues
+    type: say
+    content:
+      - lang: en
+        text: '%1% is not fully compatibility with "%2%".%3%'
   - &requireSKSE64
     type: error
     content:
@@ -1843,21 +1853,130 @@ plugins:
         name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
         name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
-    group: *alternateStartGroup
+    inc:
+      - name: 'iWil_BelethorsGoodStore.esp'
+        display: 'Belethors Overrated Goods'
+      - 'BetterCitiesWhiterun.esp'
+      - name: 'Blues Skyrim.esp'
+        display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
+      - 'BosmericDrunkenHuntsmanReborn.esp'
+      - 'EEKs Arcadia''s Cauldron.esp'
+      - 'EEKs Arcadia''s - OCS.esp'
+      - name: 'Holds.esp'
+        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
+      - 'InnCredible.esp'
+      - name: 'iWil_UselessShopOverhaul.esp'
+        display: 'The Useless Shop and Interior Overhaul'
+      - 'NerniesCityandVillageExpansion.esp'
+      - 'Northern Bathhouses.esp'
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+        display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
+      - 'RealWarMaiden.esp'
+      - 'ScottishBanneredMare.esp'
+      - 'Skyrim Radioactive -.*\.esp'
+      - name: 'tpos_ultimate_esm.esp'
+        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
     after:
       - '3DNPC.esp'
-      - 'Alternate Start - Live Another Life.esp'
       - 'Bridges of Skyrim.esp'
       - 'Civil War Repairs.esp'
+      - 'EnhancedLightsandFX.esp'
       - 'Eli_Breezehome.esp'
       - 'Eli_Routa.esp'
       - 'Eli_Routa - Non-Stormcloak.esp'
-      - 'ESFCompanions.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Open Cities Skyrim.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
       - 'Requiem.esp'
       - 'SkyfallEstate.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
+      - 'Skyrim Project Optimization - Full Version'
+      - 'TouringCarriages.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Touring Carriages](https://www.nexusmods.com/skyrimspecialedition/mods/15948/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Enhancer] (https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("ELFXEnhancer.esp") and not active("Immersive Citizens - ELFXEnhancer patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
+      - <<: *hascompatibilityIssues
+        subs:
+          - 'Immersive Citizens - AI Overhaul.esp'
+          - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
+          - 'Partially Compatible. Possible NPC pathing issues and inaccessible Sewer entrances in Bannered Mare,JorrVaskrBasement,WH Hall of the Dead,Winking Skeever, Windhelm docks.'
+        condition: 'active("Skyrim Sewers.esp")'
+      - <<: *hascompatibilityIssues
+        subs:
+          - 'Immersive Citizens - AI Overhaul.esp'
+          - '[JKs Skyrim.esp](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+          - 'Partially Compatible. Possible NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
+        condition: 'active("JKs Skyrim.esp")'
+    tag:
+      - Actors.AIPackages
+      - C.Location
+      - C.Owner
+    clean:
+      # version 0.4
+      - crc: 0xA61F66AD
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - OCS patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - Open Cities patch on Nexus Mods'
+    clean:
+      # version 0.4
+      - crc: 0x6227D18D
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - TC patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - Touring Carriages patch on Nexus Mods'
+    clean:
+      # version 0.4
+      - crc: 0x75419F86
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - ELE patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - ELE patch on Nexus Mods'
+    clean:
+      # version 0.4
+      - crc: 0x9F0CBF8B
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - ELFXEnhancer patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - ELFXEnhancer patch on Nexus Mods'
+    clean:
+      # version 0.4
+      - crc: 0x4865A412
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - ELFXHardcore patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - ELFXHardcore patch on Nexus Mods'
+    clean:
+      # version 0.4
+      - crc: 0x834C7779
+        util: SSEEdit v3.2.1
   - name: 'Relationship Dialogue Overhaul.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
     inc:
