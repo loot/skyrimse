@@ -808,6 +808,16 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
+  - name: 'Circlets and Masks with all Robes and Hoods.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
+        name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
+    tags:
+      - Graphics
+      - Names
+    clean:
+      - crc: 0x17AE7063
+        util: SSEEdit v3.2.1
   - name: 'imp_helm_legend.esp'
   # Improved Closefaced Helmets
     url:
@@ -890,7 +900,7 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'static mesh improvement mod se.esp'
     group: *overhaulsGroup
-  - name: 'SMIM-SE-.*.esp'
+  - name: 'SMIM-SE-.*\.esp'
   # Static Mesh Improvement Mod - Modular installer
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/659/']
     group: *overhaulsGroup
@@ -1157,6 +1167,9 @@ plugins:
         util: SSEEdit v3.2.1
       # v4.0.4
       - crc: 0xBD2B9643
+        util: SSEEdit v3.2.1
+      # v4.0.5
+      - crc: 0x1509D2CE
         util: SSEEdit v3.2.1
   - name: '3rdEraWeapMoS-lvlList.esp'
     url:
@@ -1918,14 +1931,14 @@ plugins:
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
       - <<: *hascompatibilityIssues
         subs:
-          - 'Immersive Citizens - AI Overhaul.esp'
+          - 'Immersive Citizens - AI Overhaul'
           - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
           - 'Partially Compatible. Possible NPC pathing issues and inaccessible Sewer entrances in Bannered Mare,JorrVaskrBasement,WH Hall of the Dead,Winking Skeever, Windhelm docks.'
         condition: 'active("Skyrim Sewers.esp")'
       - <<: *hascompatibilityIssues
         subs:
-          - 'Immersive Citizens - AI Overhaul.esp'
-          - '[JKs Skyrim.esp](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+          - 'Immersive Citizens - AI Overhaul'
+          - '[JKs Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
           - 'Partially Compatible. Possible NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
         condition: 'active("JKs Skyrim.esp")'
     tag:
@@ -2850,6 +2863,14 @@ plugins:
       # v2.0
       - crc: 0xBBB08325
         util: SSEEdit v3.2.1
+  - name: 'Point The Way.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/352'
+        name: 'Point The Way on Nexus Mods'
+    clean:
+      # v2.0.3
+      - crc: 0xF370AD09
+        util: SSEEdit v3.2.1
   - name: 'Dolmen Ruins.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
@@ -2865,4 +2886,52 @@ plugins:
     clean:
       # v2.0.1
       - crc: 0x1A076EF7
+        util: SSEEdit v3.2.1
+  - name: 'Improved Traps.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/'
+        name: 'Improved Traps on Nexus Mods'
+    tags:
+      - Graphics
+      - Stats
+    clean:
+        # Version 2.3 - Normal Edition
+      - crc: 0xDAA5AC38
+        util: SSEEdit v3.2.1
+        # Version 2.3 - Dangerous Edition
+      - crc: 0xF718BAC1
+        util: SSEEdit v3.2.1
+  - name: 'Better Dynamic Snow.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
+        name: 'Better Dynamic Snow SE on Nexus Mods'
+    after:
+      - 'SMIM-SE-.*\.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Better Dynamic Snow SE](https://www.nexusmods.com/skyrimspecialedition/mods/9121/)'
+          - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
+      - <<: *hascompatibilityIssues
+        subs:
+          - 'Better Dynamic Snow'
+          - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
+          - 'Snow''s shader conflict: If the Better Dynamic Snow''s shader is preferred to the Majestic Mountain''s shader. Then set a rule to load Better Dynamic Snow after Majestic Mountain''s. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/9121?tab=description)'
+        condition: 'active("MajesticMountains.esp")'
+    tags:
+      - Graphics
+    clean:
+        # Version 2.7.2
+      - crc: 0xE0DFD47C
+        util: SSEEdit v3.2.1
+  - name: 'Better Dynamic Snow - NSUTR Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
+        name: 'Better Dynamic Snow SE - No snow under the roof Patch on Nexus Mods'
+    tags:
+      - Graphics
+    clean:
+        # Version 2.7.2
+      - crc: 0xA81E5289
         util: SSEEdit v3.2.1
