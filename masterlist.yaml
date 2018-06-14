@@ -865,6 +865,77 @@ plugins:
         # ESP Replacer with name changes added.
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod on Nexus Mods'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
+          - '[MLU - Advanced Adversary Encounters](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("AAE Ultimate Edition.esp") and not active("MLU - AAE Ultimate Edition.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Ars Metallica - Smithing Enhancement](https://www.nexusmods.com/skyrimspecialedition/mods/321/)'
+          - '[MLU - Ars Metallica](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Ars Metallica.esp") and not active("MLU - Ars Metallica Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Immersive Armors](http://www.nexusmods.com/skyrimspecialedition/mods/3479/)'
+          - '[MLU - Immersive Armors](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("MLU - Immersive Armors.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Improved closefaced helmets](http://www.nexusmods.com/skyrimspecialedition/mods/824/)'
+          - '[MLU - Improved Closefaced Helmets](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("imp_helm_legend.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Improved Daedric Artifacts SE](https://www.nexusmods.com/skyrimspecialedition/mods/2055/)'
+          - '[MLU - Improved Daedric Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("ImprovedDaedricArtifacts.esp") and not active("MLU - Improved Daedric Artifacts.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[InsanitySorrow Weapons Pack](https://www.nexusmods.com/skyrimspecialedition/mods/8206/)'
+          - '[MLU - InsanitySorrow Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("InsanitySorrow Weapons Pack.esp") and not active("MLU - InsanitySorrow Weapons Pack.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Lore Weapon Expansion SE](http://www.nexusmods.com/skyrimspecialedition/mods/9660/)'
+          - '[MLU - Lore Weapon Expansion](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Lore Weapon Expansion.esp") and not active("MLU - Lore Weapon Expansion.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Mainland Stalhrim - Stalhrim Outside Solstheim](http://www.nexusmods.com/skyrimspecialedition/mods/8307/)'
+          - '[MLU - Mainland Stalhrim](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("MainlandStalhrim.esp") and not active("MLU - Mainland Stalhrim.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Simple Magic Rebalance](https://www.nexusmods.com/skyrimspecialedition/mods/1982/)'
+          - '[MLU - Simple Magic Rebalance](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Simple Magic Rebalance.esp") and not active("MLU - Simple Magic Rebalance.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Summermyst - Enchantments of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6285/)'
+          - '[MLU - Summermyst](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Unique Uniques SE](https://www.nexusmods.com/skyrimspecialedition/mods/3334/)'
+          - '[MLU - Unique Uniques](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Unique Uniques.esp") and not active("MLU - Unique Uniques Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Wild World SE](https://www.nexusmods.com/skyrimspecialedition/mods/14616/)'
+          - '[MLU - Wild World](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("Wild World.esp") and not active("MLU - Wild World.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)'
+          - '[MLU - Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)'
+          - '[MLU - WICO](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        condition: 'active("WICO - Immersive People.esp") and not active("MLU - WICO.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -878,13 +949,32 @@ plugins:
     clean:
       - crc: 0x89111F8E
         util: SSEEdit v3.2.1
+  - name: 'MLU - AAE Ultimate Edition.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
+        name: 'MorrowLoot Ultimate on Nexus Mods'
+    after:
+      - 'MLU - Immersive Armors.esp'
+    tags:
+      - Invent
+    clean:
+      - crc: 0x448DF62B
+        util: SSEEdit v3.2.1
   - name: 'MLU - Immersive Armors.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
+    msg:
+      - <<: *doNotClean
     tag:
       - Delev
+      - Invent
+      - Names
       - Relev
+      - Stats
+    clean:
+      - crc: 0xCDB3B128
+        util: SSEEdit v3.2.1
   - name: 'MLU - Improved Closefaced Helmets.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
