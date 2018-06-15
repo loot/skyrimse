@@ -2481,11 +2481,141 @@ plugins:
       # Version v3.0.0
       - crc: 0x96BF25A6
         util: SSEEdit v3.2.1
+  - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/701/']
+    group: *earlyLoadersGroup
+    after:
+      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
+    tag: 
+      - Sound
   - name: 'Immersive Sounds - Compendium.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/523/']
     group: *overhaulsGroup
     after:
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
+    tag: 
+      - Sound
+    clean:
+      # Version v2.1
+      - crc: 0x854499E0
+        util: SSEEdit v3.2.1
+  - name: 'SoundsofSkyrimComplete.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8286/']
+    group: *overhaulsGroup
+    tag:
+      - C.Acoustic
+      - Sound
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Climates Of Tamriel Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2237/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ClimatesOfTamriel.esm") and not active("SoS_CoT_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Dolomite Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/7895/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("Dolomite Weathers.esp") and not active("SoS_DolomiteWeathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ELE_SSE.esp") and not active("SoS_ELE_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("SoS_ELFX_Patch.esp") and not active("SoS_ELFX+Enhancer_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp") and not active("SoS_ELFX+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Enhancer](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ELFXEnhancer.esp") and not active("SoS_ELFX+Enhancer_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ELFX - Hardcore.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ELFX - Weathers.esp") and not active("SoS_ELFX+Weathers_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[NAT - Natural and Atmospheric Tamriel](https://www.nexusmods.com/skyrimspecialedition/mods/12842/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("NAT.esp") and not active("SoS_NAT_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Northern Saga Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/14878/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("NorthernSWS.esp") and not active("SOS_NSWS_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Obsidian Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("Obsidian Weathers.esp") and not active("SoS_Obsidian_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("RLO - Interiors.esp") and not active("SOS_RLOInteriors_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[True Storms - Thunder Rain and Weather Redone](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Vivid Weathers - Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp")'
+    clean:
+      # Version v1.5.5
+      - crc: 0x854499E0
+        util: SSEEdit v3.2.1
+  - name: 'SoS - The Wilds.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
+        name: 'Sounds of Skyrim - The Wilds on Nexus Mods'
+    group: *overhaulsGroup
+    inc:
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - Sound
+    clean:
+      # Version v1.13
+      - crc: 0x0A8D0553
+        util: SSEEdit v3.2.1
+  - name: 'SoS - Civilization.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
+        name: 'Sounds of Skyrim - Civilization on Nexus Mods'
+    group: *overhaulsGroup
+    inc:
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - C.Acoustic
+      - Sound
+    clean:
+      # Version v1.02
+      - crc: 0xB76151E5
+        util: SSEEdit v3.2.1
+  - name: 'SoS - The Dungeons.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
+        name: 'Sounds of Skyrim - The Dungeons on Nexus Mods'
+    group: *overhaulsGroup
+    inc:
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - Sound
+    clean:
+      # Version v1.23
+      - crc: 0xB8611F94
+        util: SSEEdit v3.2.1
+
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
     group: *fixesResourcesGroup
