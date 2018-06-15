@@ -2492,6 +2492,98 @@ plugins:
       # Version v2.1
       - crc: 0x854499E0
         util: SSEEdit v3.2.1
+  - name: 'SoundsofSkyrimComplete.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8286/']
+    group: *overhaulsGroup
+    tag:
+      - C.Acoustic
+      - Sound
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Climates Of Tamriel Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2237/)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ClimatesOfTamriel.esm") and not active("SoS_CoT_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[  ]()'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("") and not active("SoS_DolomiteWeathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[  ]()'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("") and not active("SoS_ELE_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("SoS_ELFX_Patch.esp") and not active("SoS_ELFX+Enhancer_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp") and not active("SoS_ELFX+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Enhancer]()'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ELFXEnhancer.esp") and not active("SoS_ELFX+Enhancer_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Hardcore]()'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("ELFX - Hardcore.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[  ]()'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("") and not active(".esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[  ]()'
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+        condition: 'active("") and not active(".esp")'
+    clean:
+      # Version v1.5.5
+      - crc: 0x854499E0
+        util: SSEEdit v3.2.1
+  - name: 'SoS - The Wilds.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
+        name: 'Sounds of Skyrim - The Wilds on Nexus Mods'
+    group: *overhaulsGroup
+    inc:
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - Sound
+    clean:
+      # Version v1.13
+      - crc: 0x0A8D0553
+        util: SSEEdit v3.2.1
+  - name: 'SoS - Civilization.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
+        name: 'Sounds of Skyrim - Civilization on Nexus Mods'
+    group: *overhaulsGroup
+    inc:
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - C.Acoustic
+      - Sound
+    clean:
+      # Version v1.02
+      - crc: 0xB76151E5
+        util: SSEEdit v3.2.1
+  - name: 'SoS - The Dungeons.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
+        name: 'Sounds of Skyrim - The Dungeons on Nexus Mods'
+    group: *overhaulsGroup
+    inc:
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - Sound
+    clean:
+      # Version v1.23
+      - crc: 0xB8611F94
+        util: SSEEdit v3.2.1
+
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
     group: *fixesResourcesGroup
