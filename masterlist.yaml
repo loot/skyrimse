@@ -1967,17 +1967,21 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
         name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
     inc:
+      - 'Arthmoor''s Skyrim Villages - All In One.esp'
       - name: 'iWil_BelethorsGoodStore.esp'
         display: 'Belethors Overrated Goods'
       - 'BetterCitiesWhiterun.esp'
+      - 'Better Cities Solitude.esp'
       - name: 'Blues Skyrim.esp'
         display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
       - 'BosmericDrunkenHuntsmanReborn.esp'
+      - 'Dawnstar.esp'
       - 'EEKs Arcadia''s Cauldron.esp'
       - 'EEKs Arcadia''s - OCS.esp'
       - name: 'Holds.esp'
         display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
       - 'InnCredible.esp'
+      - 'JKs Skyrim.esp'
       - name: 'iWil_UselessShopOverhaul.esp'
         display: 'The Useless Shop and Interior Overhaul'
       - 'NerniesCityandVillageExpansion.esp'
@@ -1990,8 +1994,10 @@ plugins:
       - 'Skyrim Radioactive -.*\.esp'
       - name: 'tpos_ultimate_esm.esp'
         display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
+        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
     after:
       - '3DNPC.esp'
+      - 'Bells of Skyrim.esp'
       - 'Bridges of Skyrim.esp'
       - 'Civil War Repairs.esp'
       - 'EnhancedLightsandFX.esp'
@@ -2002,6 +2008,7 @@ plugins:
       - 'Requiem.esp'
       - 'SkyfallEstate.esp'
       - 'Skyrim Project Optimization - Full Version'
+      - 'Skyrim Sewers.esp'
       - 'TouringCarriages.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     msg:
@@ -2034,14 +2041,17 @@ plugins:
         subs:
           - 'Immersive Citizens - AI Overhaul'
           - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
-          - 'Partially Compatible. Possible NPC pathing issues and inaccessible Sewer entrances in Bannered Mare,JorrVaskrBasement,WH Hall of the Dead,Winking Skeever, Windhelm docks.'
+          - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
         condition: 'active("Skyrim Sewers.esp")'
-      - <<: *hascompatibilityIssues
-        subs:
-          - 'Immersive Citizens - AI Overhaul'
-          - '[JKs Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-          - 'Partially Compatible. Possible NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
-        condition: 'active("JKs Skyrim.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'It is recommended that your read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
+      - type: Warn
+        content:
+          - lang: en
+            text: '[Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) This patch is not supported by the Immersive Citizens author. Use at your own risk.'
+            condition: 'active("tpos_immersive_clit_patch_01.esp")'
     tag:
       - Actors.AIPackages
       - C.Location
@@ -2071,6 +2081,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELE patch on Nexus Mods'
+    group: *highPriorityGroup
     clean:
       # version 0.4
       - crc: 0x9F0CBF8B
@@ -2079,6 +2090,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELFXEnhancer patch on Nexus Mods'
+    group: *highPriorityGroup
     clean:
       # version 0.4
       - crc: 0x4865A412
@@ -2087,6 +2099,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELFXHardcore patch on Nexus Mods'
+    group: *highPriorityGroup
     clean:
       # version 0.4
       - crc: 0x834C7779
