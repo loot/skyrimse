@@ -2525,6 +2525,26 @@ plugins:
     group: *earlyLoadersGroup
     tag: 
       - Sound
+    clean:
+      # Version v2.1
+      - crc: 0xAA85D810
+        util: SSEEdit v3.2.1
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[RAO - Alternate Start](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("RAO - Alternate Start Patch.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Enhanced Lighting for ENB (ELE)'
+          - '[RAO - ELE patch SSE](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+        condition: 'active("ELE_SSE.esp") and not active("RAO - ELE patch SSE.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Enhanced Lights and FX'
+          - '[RAO - ELFX](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
   - name: 'Immersive Sounds - Compendium.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/523/']
     group: *overhaulsGroup
