@@ -649,6 +649,13 @@ plugins:
         util: SSEEdit v3.2.1
     tag:
       - Graphics
+  - name: 'Lanterns Of Skyrim - All In One - Main.esm'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2429']
+    group: *earlyLoadersGroup
+    clean:
+      # Version 1.01
+      - crc: 0xEB94B5F8
+        util: SSEEdit v3.2.1
   - name: 'BSAssets.esm'
   # Beyond Skyrim - Bruma SE
     url:
@@ -2518,6 +2525,26 @@ plugins:
     group: *earlyLoadersGroup
     tag: 
       - Sound
+    clean:
+      # Version v2.1
+      - crc: 0xAA85D810
+        util: SSEEdit v3.2.1
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[RAO - Alternate Start](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("RAO - Alternate Start Patch.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Enhanced Lighting for ENB (ELE)'
+          - '[RAO - ELE patch SSE](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+        condition: 'active("ELE_SSE.esp") and not active("RAO - ELE patch SSE.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Enhanced Lights and FX'
+          - '[RAO - ELFX](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
   - name: 'Immersive Sounds - Compendium.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/523/']
     group: *overhaulsGroup
@@ -2603,7 +2630,17 @@ plugins:
         condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp")'
     clean:
       # Version v1.5.5
-      - crc: 0x854499E0
+      - crc: 0x568EA435
+        util: SSEEdit v3.2.1
+  - name: 'SoS_VividWeathers_Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
+        name: 'Sounds of Skyrim - VividWeathers Patch on Nexus Mods'
+    inc:
+      - 'Vivid Weathers SE - SOS Patch.esp'
+    clean:
+      # Version v1.5.5
+      - crc: 0x4AB9834F
         util: SSEEdit v3.2.1
   - name: 'SoS - The Wilds.esp'
     url:
