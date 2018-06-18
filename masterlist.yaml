@@ -249,10 +249,10 @@ groups:
     after: [ *coreGroup,*ocsGroup ]
 
   - name: &iCitizenGroup Immersive Citizens
-    after: [ *coreGroup, *ocsGroup ]
+    after: [ *coreGroup, *altStartGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
-    after: [ *coreGroup ]
+    after: [ *coreGroup, *iCitizenGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
