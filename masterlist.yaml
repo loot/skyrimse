@@ -239,8 +239,20 @@ groups:
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
 
-  - name: &highPriorityGroup High Priority Overrides
+  - name: &coreGroup Core Mods
     after: [ *lowPriorityGroup ]
+
+  - name: &ocsGroup Open Cities
+    after: [ *coreGroup ]
+
+  - name: &altStartGroup Alternate Start
+    after: [ *coreGroup,*ocsGroup ]
+
+  - name: &iCitizenGroup Immersive Citizens
+    after: [ *coreGroup, *altStartGroup ]
+
+  - name: &highPriorityGroup High Priority Overrides
+    after: [ *coreGroup, *iCitizenGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -249,7 +261,7 @@ groups:
     after: [ *lateLoadersGroup ]
 
   - name: &rwtGroup Realistic Water
-    after: [ *eleGroup ]
+    after: [ *lateLoadersGroup, *eleGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lateLoadersGroup, *rwtGroup ]
@@ -1218,7 +1230,7 @@ plugins:
         name: 'Open Cities Skyrim on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
         name: 'Open Cities Skyrim on Bethesda.net'
-    group: *highPriorityGroup
+    group: *ocsGroup
     inc:
       - 'JKs Skyrim.esp'
       - 'Oblivion Gates in Cities.esp'
@@ -1263,7 +1275,7 @@ plugins:
         name: 'Alternate Start - Live Another Life on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
         name: 'Alternate Start - Live Another Life on Bethesda.net'
-    group: *highPriorityGroup
+    group: *altStartGroup
     inc:
       - 'Original Opening Scene.esp'
       - 'Random Alternate Start.esp'
@@ -1981,6 +1993,7 @@ plugins:
         name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
         name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
+    group: *iCitizenGroup
     inc:
       - 'Arthmoor''s Skyrim Villages - All In One.esp'
       - name: 'iWil_BelethorsGoodStore.esp'
