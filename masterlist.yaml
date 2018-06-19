@@ -227,11 +227,11 @@ groups:
   - name: &fixesResourcesGroup Fixes & Resources
     after: [ *earlyLoadersGroup ]
 
-  - name: &addonsGroup Add-ons & Expansions
-    after: [ *fixesResourcesGroup ]
-
   - name: &overhaulsGroup Large Overhauls
     after: [ *fixesResourcesGroup ]
+
+  - name: &addonsGroup Add-ons & Expansions
+    after: [ *overhaulsGroup ]
 
   - name: default
     after: [ *overhaulsGroup, *addonsGroup ]
