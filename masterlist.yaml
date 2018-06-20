@@ -2441,9 +2441,165 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
-
+###########
+## Items ##
+###########
+  - name: 'aMidianBorn_ContentAddon.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24909/'
+        name: 'aMidianBorn Book of Silence on Nexus Mods'
+    after:
+      - 'BetterQuestObjectives.esp'
+      - '1nivWICCloaks.esp'
+      - '1nivWICCloaksNoGuards.esp'
+      - 'WarmongerArmory_LeveledList.esp'
+  - name: 'Book Covers Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
+        name: 'Book Covers Skyrim on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
+        name: 'Book Covers Skyrim - Original on Bethesda.net'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
+        name: 'Book Covers Skyrim - Desaturated on Bethesda.net'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
+    after:
+      - 'UnlimitedBookshelves.esp'
+      - 'Weightless Books.esp'
+      - 'WeightlessOV - Book.esp'
+    tag:
+      - Graphics
+      - Names
+    clean:
+      # version 4.2
+      - crc: 0x32587221
+        util: SSEEdit v3.2.1
+  - name: 'Book Covers Skyrim - Lost Library.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+        name: 'Book Covers Skyrim on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
+        name: 'BCS Lost Library - Original on Bethesda.net'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
+        name: 'BCS Lost Library - Desaturated on Bethesda.net'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("Book Covers Skyrim - Lost Library.esp") and active("LegacyoftheDragonborn.esm")'
+    tag:
+      - Delev
+    clean:
+      # version 2.1
+      - crc: 0xDD84DD4C
+        util: SSEEdit v3.2.1
+  - name: 'Skyshards.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/'
+        name: 'ESO Skyshards on Nexus Mods'
+    clean:
+      # v2.0.3
+      - crc: 0xE729E39E
+        util: SSEEdit v3.2.1
+  - name: 'Circlets and Masks with all Robes and Hoods.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
+        name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
+    tags:
+      - Graphics
+      - Names
+    clean:
+      - crc: 0x17AE7063
+        util: SSEEdit v3.2.1
+  - name: 'Hothtrooper44_ArmorCompilation.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
+        name: 'Immersive Armors on Nexus Mods'
+    after:
+      - 'aMidianBorn_ContentAddon.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'Immersive Jewelry.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5336/']
+    tag:
+      - Invent
+      - Relev
+  - name: 'imp_helm_legend.esp'
+  # Improved Closefaced Helmets
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/824/'
+        name: 'Improved closefaced helmets on Nexus Mods'
+    after:
+      - 'Circlets and Masks with all Robes and Hoods.esp'
+    msg:
+      - type: warn
+        condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
+      - type: warn
+        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+    tag:
+      - Graphics
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8491D752
+        itm: 5
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x17CF8EB8
+        util: SSEEdit v3.2.1
+  - name: 'imp_helm_IDPM.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12405/'
+        name: 'Improved Closedfaced Helmets Patches on Nexus Mods'
+    after:
+      - 'imp_helm_USSEP.esp'
+  - name: 'Improved closefaced helmets for Undeath SSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14614/'
+        name: 'Lexy''s LOTD Special Edition Patches on Nexus Mods'
+    clean:
+      - crc: 0xCC6D50A9
+        util: SSEEdit v3.2.1
+  - name: 'JS Armored Circlets SE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2140/']
+    tag:
+      - Relev
+###################
+## Leveled Lists ##
+###################
+  - name: '3rdEraWeapMoS-lvlList.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/'
+        name: 'Weapons of the Third Era on Nexus Mods'
+    tag:
+      - Delev
+      - Relev
+  - name: 'Rebalanced Leveled Lists.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/26/']
+    tag:
+      - Delev
+      - Invent
+      - Relev
+  - name: 'WarmongerArmory_LeveledList.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4956/']
+    after:
+      - '1nivWICCloaks.esp'
+      - '1nivWICCloaksNoGuards.esp'
+    tag:
+      - Delev
+      - Relev
+###########################
+## Locations - New Lands ##
+###########################
   - name: 'BSAssets.esm'
-  # Beyond Skyrim - Bruma SE
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
@@ -2458,7 +2614,6 @@ plugins:
       - crc: 0x1D0648B6
         util: SSEEdit v3.2.1
   - name: 'BSHeartland.esm'
-  # Beyond Skyrim - Bruma SE
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
@@ -2505,7 +2660,6 @@ plugins:
       - crc: 0x4CC6CB6C
         util: SSEEdit v3.2.1
   - name: 'BS_DLC_patch.esp'
-  # Beyond Skyrim - DLC Integration Patch
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
@@ -2575,51 +2729,25 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0xB98044B4
         util: SSEEdit v3.2.1
-  - name: 'Circlets and Masks with all Robes and Hoods.esp'
+############################################
+## Locations - New Structures & Landmarks ##
+############################################
+  - name: 'Bring Out Your Dead.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
-        name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
-    tags:
-      - Graphics
-      - Names
-    clean:
-      - crc: 0x17AE7063
-        util: SSEEdit v3.2.1
-  - name: 'imp_helm_legend.esp'
-  # Improved Closefaced Helmets
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/824/'
-        name: 'Improved closefaced helmets on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
+        name: 'Bring Out Your Dead on Nexus Mods'
+      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/273-bring-out-your-dead/'
+        name: 'Bring Out Your Dead on Afk Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
+        name: 'Bring Out Your Dead on Bethesda.net'
+    group: *addonsGroup
     after:
-      - 'Circlets and Masks with all Robes and Hoods.esp'
-    msg:
-      - type: warn
-        condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
-      - type: warn
-        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
-      - Graphics
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8491D752
-        itm: 5
-        udr: 0
-        nav: 0
+      - C.Location
     clean:
-      - crc: 0x17CF8EB8
-        util: SSEEdit v3.2.1
-  - name: 'Improved closefaced helmets for Undeath SSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14614/'
-        name: 'Lexy''s LOTD Special Edition Patches on Nexus Mods'
-    clean:
-      - crc: 0xCC6D50A9
+      # v4.0.2 
+      - crc: 0xE14997CA
         util: SSEEdit v3.2.1
   - name: 'Cutting Room Floor.esp'
     url:
@@ -2659,65 +2787,92 @@ plugins:
       # v3.0.7
       - crc: 0x7752174D
         util: SSEEdit v3.2.1
-  - name: 'Riftrun_HF_v_2_0.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/757/']
-    after:
-      - 'Hideout_Main.esp'
-      - 'Hideout_HF_Main.esp'
-      - 'Hideout_DLC_Main.esp'
-      - 'Hideout_Compact.esp'
-      - 'Hideout_HF_Compact.esp'
-  - name: 'Dovahkiin_Retreat.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/746/']
-    after:
-      - 'Hideout_HF_Main.esp'
-      - 'Hideout_Main.esp'
-  - name: '3rdEraWeapMoS-lvlList.esp'
+  - name: 'Dolmen Ruins.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/'
-        name: 'Weapons of the Third Era on Nexus Mods'
-    tag:
-      - Delev
-      - Relev
-  - name: 'aMidianBorn_ContentAddon.esp'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
+        name: 'Dolmen Ruins - ESO Dark Anchors on Nexus Mods'
+    clean:
+      # v2.0.3
+      - crc: 0xCE522D51
+        util: SSEEdit v3.2.1
+  - name: 'Oblivion Gates in Cities.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/24909/'
-        name: 'aMidianBorn Book of Silence on Nexus Mods'
-    after:
-      - 'BetterQuestObjectives.esp'
-      - '1nivWICCloaks.esp'
-      - '1nivWICCloaksNoGuards.esp'
-      - 'WarmongerArmory_LeveledList.esp'
-  - name: 'WarmongerArmory_LeveledList.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4956/']
-    after:
-      - '1nivWICCloaks.esp'
-      - '1nivWICCloaksNoGuards.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'Hothtrooper44_ArmorCompilation.esp'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/388/'
+        name: 'Oblivion Gates in Cities on Nexus Mods'
+    inc:
+      - 'Open Cities Skyrim.esp'
+    clean:
+      # v2.0.1
+      - crc: 0x85982F95
+        util: SSEEdit v3.2.1
+  - name: 'Point The Way.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
-        name: 'Immersive Armors on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/352'
+        name: 'Point The Way on Nexus Mods'
+    clean:
+      # v2.0.3
+      - crc: 0xF370AD09
+        util: SSEEdit v3.2.1
+  - name: 'Provincial Courier Service.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/'
+        name: 'Provincial Courier Service on Nexus Mods'
     after:
-      - 'aMidianBorn_ContentAddon.esp'
+      - Immersive Citizens - AI Overhaul.esp
     tag:
-      - Delev
-      - Relev
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Location
+    clean:
+      # v4.0.1
+      - crc: 0x10CC6B4D
+        util: SSEEdit v3.2.1
+  - name: 'Storefront.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/364/'
+        name: 'Storefront on Nexus Mods'
+    group: *addonsGroup
+    clean:
+      # v2.0
+      - crc: 0xBB8E454A 
+        util: SSEEdit v3.2.1
+###########################
+## Locations - Overhauls ##
+###########################
+  - name: 'Darkwater Crossing.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
+        name: 'Darkwater Crossing on Nexus Mods'
+      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1895-darkwater-crossing/'
+        name: 'Darkwater Crossing on Afk Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2949694'
+        name: 'Darkwater Crossing on Bethesda.net'
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Helarchen Creek.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4043'
+        name: 'Helarchen Creek on Nexus Mods'
+      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1927-helarchen-creek/'
+        name: 'Helarchen Creek on Afk Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3090713'
+        name: 'Helarchen Creek on Bethesda.net'
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'Ivarstead.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/349'
+        name: 'Ivarstead on Nexus Mods'
+      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1583-ivarstead/'
+        name: 'Ivarstead on Afk Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2958352'
+        name: 'Ivarstead on Bethesda.net'
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+
   - name: 'JK''s Riverwood.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2013/']
-    after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-  - name: 'JKs Whiterun.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2259/']
-    after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    tag:
-      - C.Location
-      - C.Water
-  - name: 'JKs Whiterun exterior.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2259/']
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
@@ -2827,52 +2982,19 @@ plugins:
       # Version 1.4
       - crc: 0xDECAFE32
         util: SSEEdit v3.2.1
-  - name: 'Bring Out Your Dead.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
-        name: 'Bring Out Your Dead on Nexus Mods'
-      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/273-bring-out-your-dead/'
-        name: 'Bring Out Your Dead on Afk Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
-        name: 'Bring Out Your Dead on Bethesda.net'
-    group: *addonsGroup
+  - name: 'JK''s SkyHaven Forge.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8706/']
+    tag:
+      - C.Regions
+  - name: 'JKs Whiterun.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2259/']
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
       - C.Location
-    clean:
-      # v4.0.2 
-      - crc: 0xE14997CA
-        util: SSEEdit v3.2.1
-  - name: 'Darkwater Crossing.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
-        name: 'Darkwater Crossing on Nexus Mods'
-      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1895-darkwater-crossing/'
-        name: 'Darkwater Crossing on Afk Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2949694'
-        name: 'Darkwater Crossing on Bethesda.net'
-    after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'Helarchen Creek.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4043'
-        name: 'Helarchen Creek on Nexus Mods'
-      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1927-helarchen-creek/'
-        name: 'Helarchen Creek on Afk Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3090713'
-        name: 'Helarchen Creek on Bethesda.net'
-    after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-  - name: 'Ivarstead.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/349'
-        name: 'Ivarstead on Nexus Mods'
-      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/1583-ivarstead/'
-        name: 'Ivarstead on Afk Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2958352'
-        name: 'Ivarstead on Bethesda.net'
+      - C.Water
+  - name: 'JKs Whiterun exterior.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2259/']
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Karthwasten.esp'
@@ -2905,6 +3027,11 @@ plugins:
         name: 'Shor''s Stone on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'Solitude Expansion.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8/']
+    tag:
+      - C.Location
+      - C.Regions
   - name: 'Soljund''s Sinkhole.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/358/'
@@ -2926,6 +3053,20 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+
+  - name: 'Riftrun_HF_v_2_0.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/757/']
+    after:
+      - 'Hideout_Main.esp'
+      - 'Hideout_HF_Main.esp'
+      - 'Hideout_DLC_Main.esp'
+      - 'Hideout_Compact.esp'
+      - 'Hideout_HF_Compact.esp'
+  - name: 'Dovahkiin_Retreat.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/746/']
+    after:
+      - 'Hideout_HF_Main.esp'
+      - 'Hideout_Main.esp'
   - name: 'ElysiumEstate-HF.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4119/']
     inc:
@@ -2984,17 +3125,6 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
-  - name: 'Immersive Jewelry.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5336/']
-    tag:
-      - Invent
-      - Relev
-  - name: 'Rebalanced Leveled Lists.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/26/']
-    tag:
-      - Delev
-      - Invent
-      - Relev
   - name: 'Unique Loot Compatibility Patch.esp'
     tag:
       - Delev
@@ -3004,10 +3134,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5993/']
     tag:
       - Invent
-  - name: 'JS Armored Circlets SE.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2140/']
-    tag:
-      - Relev
   - name: 'CraftingSupplies_AIO_ALL.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2359/']
     tag:
@@ -3033,15 +3159,6 @@ plugins:
         udr: 1
   - name: 'AyleidCitadel.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11307/']
-    tag:
-      - C.Regions
-  - name: 'Solitude Expansion.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8/']
-    tag:
-      - C.Location
-      - C.Regions
-  - name: 'JK''s SkyHaven Forge.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8706/']
     tag:
       - C.Regions
   - name: 'DLCIntegration.esp'
@@ -3108,47 +3225,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2829/']
     after:
       - 'JKs Whiterun.esp'
-  - name: 'Book Covers Skyrim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
-        name: 'Book Covers Skyrim on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
-        name: 'Book Covers Skyrim - Original on Bethesda.net'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
-        name: 'Book Covers Skyrim - Desaturated on Bethesda.net'
-    msg:
-      - <<: *AlreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
-    after:
-      - 'UnlimitedBookshelves.esp'
-      - 'Weightless Books.esp'
-      - 'WeightlessOV - Book.esp'
-    tag:
-      - Graphics
-      - Names
-    clean:
-      # version 4.2
-      - crc: 0x32587221
-        util: SSEEdit v3.2.1
-  - name: 'Book Covers Skyrim - Lost Library.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
-        name: 'Book Covers Skyrim on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
-        name: 'BCS Lost Library - Original on Bethesda.net'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
-        name: 'BCS Lost Library - Desaturated on Bethesda.net'
-    msg:
-      - <<: *AlreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("Book Covers Skyrim - Lost Library.esp") and active("LegacyoftheDragonborn.esm")'
-    tag:
-      - Delev
-    clean:
-      # version 2.1
-      - crc: 0xDD84DD4C
-        util: SSEEdit v3.2.1
   - name: 'UnlimitedBookshelves.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2885/']
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
@@ -3157,10 +3233,6 @@ plugins:
       # 2.0
       - crc: 0x86CF0F2B
         util: SSEEdit v3.2.1
-  - name: 'imp_helm_IDPM.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12405/']
-    after:
-      - 'imp_helm_USSEP.esp'
   # Qwinn's Bottomless Bag of Patches
   - name: 'Qw_ELE_.*\.esp'
     # Patches for Enhanced Lighting for ENB
@@ -3210,38 +3282,6 @@ plugins:
       # v2.0.1
       - crc: 0x0D275CEA
         util: SSEEdit v3.2.1
-  - name: 'Skyshards.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/'
-        name: 'ESO Skyshards on Nexus Mods'
-    clean:
-      # v2.0.3
-      - crc: 0xE729E39E
-        util: SSEEdit v3.2.1
-  - name: 'Oblivion Gates in Cities.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/388/'
-        name: 'Oblivion Gates in Cities on Nexus Mods'
-    inc:
-      - 'Open Cities Skyrim.esp'
-    clean:
-      # v2.0.1
-      - crc: 0x85982F95
-        util: SSEEdit v3.2.1
-  - name: 'Provincial Courier Service.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/'
-        name: 'Provincial Courier Service on Nexus Mods'
-    after:
-      - Immersive Citizens - AI Overhaul.esp
-    tag:
-      - Actors.ACBS
-      - Actors.AIPackages
-      - C.Location
-    clean:
-      # v4.0.1
-      - crc: 0x10CC6B4D
-        util: SSEEdit v3.2.1
   - name: 'Shadowmarks.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
@@ -3249,31 +3289,6 @@ plugins:
     clean:
       # v2.0
       - crc: 0x28E63EB9
-        util: SSEEdit v3.2.1
-  - name: 'Storefront.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/364/'
-        name: 'Storefront on Nexus Mods'
-    group: *addonsGroup
-    clean:
-      # v2.0
-      - crc: 0xBB8E454A 
-        util: SSEEdit v3.2.1
-  - name: 'Point The Way.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/352'
-        name: 'Point The Way on Nexus Mods'
-    clean:
-      # v2.0.3
-      - crc: 0xF370AD09
-        util: SSEEdit v3.2.1
-  - name: 'Dolmen Ruins.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
-        name: 'Dolmen Ruins - ESO Dark Anchors on Nexus Mods'
-    clean:
-      # v2.0.3
-      - crc: 0xCE522D51
         util: SSEEdit v3.2.1
   - name: 'Dragon Claw Stands.esp'
     url:
