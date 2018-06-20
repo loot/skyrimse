@@ -1609,194 +1609,361 @@ plugins:
       # 1.2.0
       - crc: 0x4273E90C
         util: SSEEdit v3.2.1
-
-  - name: 'BSAssets.esm'
-  # Beyond Skyrim - Bruma SE
+##############
+## Gameplay ##
+##############
+  - name: 'Alternate Start - Live Another Life.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
-        name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835'
-        name: 'Beyond Skyrim: Bruma SE Assets on Bethesda.net'
-    group: *addonsGroup
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
+        name: 'Alternate Start - Live Another Life on Nexus Mods'
+      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/270-alternate-start-live-another-life/'
+        name: 'Alternate Start - Live Another Life on Afk Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
+        name: 'Alternate Start - Live Another Life on Bethesda.net'
+    group: *altStartGroup
+    inc:
+      - 'Original Opening Scene.esp'
+      - 'Random Alternate Start.esp'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Skyrim Unbound.esp'
+    after:
+      - 'Open Cities Skyrim.esp'
+      - 'My Home Is Your Home.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
     tag:
-      - C.Light
-      - C.RecordFlags
+      - C.Location
+      - Names
     clean:
-      # version 1.3.3
-      - crc: 0x1D0648B6
+      # v4.0.3
+      - crc: 0xD107745B
         util: SSEEdit v3.2.1
-  - name: 'BSHeartland.esm'
-  # Beyond Skyrim - Bruma SE
+      # v4.0.4
+      - crc: 0xBD2B9643
+        util: SSEEdit v3.2.1
+      # v4.0.5
+      - crc: 0x1509D2CE
+        util: SSEEdit v3.2.1
+  - name: 'Apocalypse - Magic of Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
-        name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831'
-        name: 'Beyond Skyrim: Bruma SE on Bethesda.net'
-    group: *addonsGroup
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
+        name: 'Apocalypse - Magic of Skyrim on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
+        name: 'Apocalypse - Magic Of Skyrim [PC] on Bethesda.net'
     msg:
       - <<: *hasPluginPatch
         subs:
-          - 'Convenient Horses'
-          - '[Bruma patch for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
-        condition: 'active("Convenient Horses.esp") and not active("CH Bruma Patch.esp")'
+          - 'Ordinator - Perks of Skyrim'
+          - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
+    clean:
+      # Version 9.45SSE
+      - crc: 0x266B3B3B
+        util: SSEEdit v3.2.1
+  - name: 'Ars Metallica.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/321/']
+    tag:
+      - Invent
+      - Relev
+    clean:
+      # version 2.0.3
+      - crc: 0x43FC5E84
+        util: SSEEdit v3.2.1
+  - name: 'Better Vampires.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
+        name: 'Better Vampires SE 8.2 on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
+        name: 'Better Vampires 8.1 PC on Bethesda.net'
+    after:
+      - 'EBM_UnlimitedPower.esp'
+      - 'EBM_UnlimitedPower_Vampire.esp'
+  - name: 'CFTO.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
+        name: 'Carriage and Ferry Travel Overhaul on Nexus Mods'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'TheChoiceIsYours.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3850/']
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'BetterQuestObjectives - BCS Patch.esp'
+      - 'Book Covers Skyrim.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Book Covers SE'
+          - '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
+        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY_BCS Patch.esp")'
+    tag:
+      - Actors.AIPackages
+      - Names
+    clean:
+      # 3.2
+      - crc: 0x9F3FDA79
+        util: SSEEdit v3.2.1
+  - name: 'Convenient Horses.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9519/']
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'DeadlyCombat.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8850/']
+    msg:
+      - type: info
+        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
+        content:
+          - lang: en
+            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+  - name: 'Economy.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8210/']
+    tag:
+      - Relev
+  - name: 'Elemental Destruction.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/440/']
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
+  - name: 'HarvestOverhaul_Redone.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2398/']
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[HarvestOverhaul - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/2398/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
       - <<: *hasPluginPatch
         subs:
           - 'Flora Respawn Fix'
-          - '[Flora Respawn Fix SE for Beyond Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/11072/)'
-        condition: 'active("FloraRespawnFix.esp") and not active("BSHeartlandFRF.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
+          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
+        condition: 'active("FloraRespawnFix.esp") and not active("HOR-Flora Respawn Fix Patch.esp")'
     tag:
-      - Actors.ACBS
-      - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Stats
-      - C.Light
-      - C.RecordFlags
-      - C.Regions
-      - Delev
-      - Factions
-      - Graphics
       - Invent
       - Names
-    dirty:
-      # Version 1.3.3
-      - <<: *dirtyPlugin
-        crc: 0x0B12B4E7
-        itm: 485
-        udr: 0
-        nav: 0
     clean:
-      - crc: 0x4CC6CB6C
+      # version 0.9.1
+      - crc: 0xF5BD56F5
         util: SSEEdit v3.2.1
-  - name: 'BS_DLC_patch.esp'
-  # Beyond Skyrim - DLC Integration Patch
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
-        name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167'
-        name: 'Beyond Skyrim: Bruma SE DLC Patch on Bethesda.net'
-    group: *addonsGroup
-    tag:
-      - Delev
-      - Invent
-    clean:
-      # Version 1.1.2
-      - crc: 0x2BC2FECB
-        util: SSEEdit v3.2.1
-  - name: 'MoonAndStar_MAS.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
-        name: 'Moon and Star on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
-        name: 'Moon And Star on Bethesda.net'
-    group: *addonsGroup
+  - name: 'HarvestOverhaul_Redone_Creatures.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2398/']
     after:
-      - 'AuroraVillage.esp'
-    tag:
-      - C.Location
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xEB5AEFAF
-        itm: 1
-        udr: 0
-        nav: 0
-    clean:
-      - crc: 0x1DA470CB
-        util: SSEEdit v3.2.1
-  - name: 'Undeath.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
-        name: 'Undeath Remastered SE on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
-        name: 'Undeath Remastered on Bethesda.net'
-    group: *addonsGroup
-    after:
-      - 'MoonAndStar_MAS.esp'
-    inc:
-      - 'AuroraVillage.esp'
-    msg:
-      - <<: *hasWildEdits
-        subs:
-          - 'Undeath.esp'
-          - '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
-        condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
-    tag:
-      - Graphics
-      - Sound
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xEB75A960
-        itm: 18
-        udr: 0
-        nav: 0
-      - <<: *dirtyPlugin
-        crc: 0x6E988E26
-        itm: 17
-        udr: 0
-        nav: 0
-    clean:
-      - crc: 0x8249EC41
-        util: SSEEdit v3.2.1
-      - crc: 0xB98044B4
-        util: SSEEdit v3.2.1
-  - name: 'UndeathClassicalLichdom SSE.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/14823']
+      - 'Ars Metallica.esp'
     msg:
       - <<: *hasPluginPatch
         subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
-  - name: 'Circlets and Masks with all Robes and Hoods.esp'
+          - 'Flora Respawn Fix'
+          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
+        condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+    clean:
+      # version 0.9.1
+      - crc: 0x3C5A5667
+        util: SSEEdit v3.2.1
+  - name: 'Hunters Not Bandits.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1547/']
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'Immersive Citizens - AI Overhaul.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
-        name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
+        name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
+    group: *iCitizenGroup
+    inc:
+      - 'Arthmoor''s Skyrim Villages - All In One.esp'
+      - name: 'iWil_BelethorsGoodStore.esp'
+        display: 'Belethors Overrated Goods'
+      - 'BetterCitiesWhiterun.esp'
+      - 'Better Cities Solitude.esp'
+      - name: 'Blues Skyrim.esp'
+        display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
+      - 'BosmericDrunkenHuntsmanReborn.esp'
+      - 'Dawnstar.esp'
+      - 'EEKs Arcadia''s Cauldron.esp'
+      - 'EEKs Arcadia''s - OCS.esp'
+      - name: 'Holds.esp'
+        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
+      - 'InnCredible.esp'
+      - 'JKs Skyrim.esp'
+      - name: 'iWil_UselessShopOverhaul.esp'
+        display: 'The Useless Shop and Interior Overhaul'
+      - 'NerniesCityandVillageExpansion.esp'
+      - 'Northern Bathhouses.esp'
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+        display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
+      - 'RealWarMaiden.esp'
+      - 'ScottishBanneredMare.esp'
+      - 'Skyrim Radioactive -.*\.esp'
+      - name: 'tpos_ultimate_esm.esp'
+        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
+        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
+    after:
+      - '3DNPC.esp'
+      - 'Bells of Skyrim.esp'
+      - 'Bridges of Skyrim.esp'
+      - 'Civil War Repairs.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Eli_Breezehome.esp'
+      - 'Eli_Routa.esp'
+      - 'Eli_Routa - Non-Stormcloak.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'Requiem.esp'
+      - 'SkyfallEstate.esp'
+      - 'Skyrim Project Optimization - Full Version'
+      - 'Skyrim Sewers.esp'
+      - 'TouringCarriages.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ASLAO - Front Porch (Breezehome).esp'
+      - 'BHTNFBP.esp'
+      - 'breezehome enhanced SSE.esp'
+      - 'Simpler Breezehome.esp'
+      - 'Wind District Breezehome - Replacer.esp'
+      - 'breezehome_basement.esp'
+      - 'BreezehomeSB.esp'
+      - 'breeze2.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Touring Carriages](https://www.nexusmods.com/skyrimspecialedition/mods/15948/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Enhancer] (https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("ELFXEnhancer.esp") and not active("Immersive Citizens - ELFXEnhancer patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
+          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+        condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
+      - <<: *hascompatibilityIssues
+        subs:
+          - 'Immersive Citizens - AI Overhaul'
+          - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
+          - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
+        condition: 'active("Skyrim Sewers.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'It is recommended that your read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
+      - type: Warn
+        condition: 'active("tpos_immersive_clit_patch_01.esp")'
+        content:
+          - lang: en
+            text: '[ Immersive Citizens SE: Compatibility Notes ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) is not supported by the Immersive Citizens author. Use at your own risk.'
+    tag:
+      - Actors.AIPackages
+      - C.Location
+      - C.Owner
+    clean:
+      # version 0.4
+      - crc: 0xA61F66AD
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - ELE patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - ELE patch on Nexus Mods'
+    group: *eleGroup
+    clean:
+      # version 0.4
+      - crc: 0x9F0CBF8B
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - ELFXEnhancer patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - ELFXEnhancer patch on Nexus Mods'
+    group: *eleGroup
+    clean:
+      # version 0.4
+      - crc: 0x4865A412
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - ELFXHardcore patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - ELFXHardcore patch on Nexus Mods'
+    group: *highPriorityGroup
+    clean:
+      # version 0.4
+      - crc: 0x834C7779
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - OCS patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - Open Cities patch on Nexus Mods'
+    group: *highPriorityGroup
+    clean:
+      # version 0.4
+      - crc: 0x6227D18D
+        util: SSEEdit v3.2.1
+  - name: 'Immersive Citizens - TC patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens - Touring Carriages patch on Nexus Mods'
+    clean:
+      # version 0.4
+      - crc: 0x75419F86
+        util: SSEEdit v3.2.1
+  - name: 'Imperious - Races of Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
+        name: 'Imperious - Races of Skyrim on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
+        name: 'Imperious - Races of Skyrim [PC] on Bethesda.net'
+    tag:
+      - Body-Size-F
+      - Body-Size-M
+      - Names
+      - R.Description
+      - R.Skills
+    clean:
+      - crc: 0xE889ADEB
+        util: SSEEdit v3.2.1
+  - name: 'Improved Traps.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/'
+        name: 'Improved Traps on Nexus Mods'
     tags:
       - Graphics
-      - Names
+      - Stats
     clean:
-      - crc: 0x17AE7063
+        # Version 2.3 - Normal Edition
+      - crc: 0xDAA5AC38
         util: SSEEdit v3.2.1
-  - name: 'imp_helm_legend.esp'
-  # Improved Closefaced Helmets
+        # Version 2.3 - Dangerous Edition
+      - crc: 0xF718BAC1
+        util: SSEEdit v3.2.1
+  - name: 'TTR_Master_Trader.*\.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/824/'
-        name: 'Improved closefaced helmets on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/'
+        name: 'Master Trader SE - Merchants Never Run Out Of Gold on Nexus Mods'
     after:
-      - 'Circlets and Masks with all Robes and Hoods.esp'
-    msg:
-      - type: warn
-        condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
-      - type: warn
-        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+      - 'Relationship Dialogue Overhaul.esp'
+  - name: 'Morrowloot.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1255/']
     tag:
-      - Graphics
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8491D752
-        itm: 5
-        udr: 0
-        nav: 0
-    clean:
-      - crc: 0x17CF8EB8
-        util: SSEEdit v3.2.1
-  - name: 'Improved closefaced helmets for Undeath SSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14614/'
-        name: 'Lexy''s LOTD Special Edition Patches on Nexus Mods'
-    clean:
-      - crc: 0xCC6D50A9
-        util: SSEEdit v3.2.1
+      - Delev
+      - Relev
   - name: 'MLU.esp'
   # MorrowLoot Ultimate
     url:
@@ -1932,118 +2099,24 @@ plugins:
     clean:
       - crc: 0xB8A1EE4E
         util: SSEEdit v3.2.1
-  - name: 'TouringCarriages.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/15948/']
-    group: *earlyLoadersGroup
-    clean:
-      # 3.0.0se
-      - crc: 0x07E8D176
-        util: SSEEdit v3.2.1
-  - name: 'Cutting Room Floor.esp'
+  - name: 'more idle markers.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
-        name: 'Cutting Room Floor on Nexus Mods'
-      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/978-cutting-room-floor/'
-        name: 'Cutting Room Floor on Afk Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
-        name: 'Cutting Room Floor on Bethesda.net'
-    group: *addonsGroup
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3211/'
+        name: 'More Tavern Idles on Nexus Mods'
     after:
-      - 'TouringCarriages.esp'
-      - 'UnlimitedBookshelves.esp'
-      - 'WhiterunHoldForest.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'MultipleEnchantments.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2694/']
     msg:
       - <<: *hasPluginPatch
         subs:
-          - 'RS Children Overhaul'
-          - '[RSChildren - CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/276/)'
-        condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
-    tag:
-      - Actors.ACBS
-      - Actors.AIData 
-      - Actors.AIPackages
-      - Actors.CombatStyle
-      - Actors.Stats
-      - C.Location
-      - C.Owner
-      - C.RecordFlags
-      - Delev
-      - Graphics
-      - Invent
-      - Names
-      - NPC.Class
-      - Stats
-    clean:
-      # v3.0.7
-      - crc: 0x7752174D
-        util: SSEEdit v3.2.1
-  - name: 'Better Vampires.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
-        name: 'Better Vampires SE 8.2 on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
-        name: 'Better Vampires 8.1 PC on Bethesda.net'
+          - 'Ordinator - Perks of Skyrim'
+          - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
+  - name: 'My Home Is Your Home.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7096/']
     after:
-      - 'EBM_UnlimitedPower.esp'
-      - 'EBM_UnlimitedPower_Vampire.esp'
-  - name: 'Riftrun_HF_v_2_0.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/757/']
-    after:
-      - 'Hideout_Main.esp'
-      - 'Hideout_HF_Main.esp'
-      - 'Hideout_DLC_Main.esp'
-      - 'Hideout_Compact.esp'
-      - 'Hideout_HF_Compact.esp'
-  - name: 'Dovahkiin_Retreat.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/746/']
-    after:
-      - 'Hideout_HF_Main.esp'
-      - 'Hideout_Main.esp'
-  - name: 'EBM_Train10x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
-    inc:
-      - 'EBM_Train25x.esp'
-      - 'EBM_Train50x.esp'
-      - 'EBM_Train99x.esp'
-  - name: 'EBM_Train25x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
-    inc:
-      - 'EBM_Train10x.esp'
-      - 'EBM_Train50x.esp'
-      - 'EBM_Train99x.esp'
-  - name: 'EBM_Train50x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
-    inc:
-      - 'EBM_Train10x.esp'
-      - 'EBM_Train25x.esp'
-      - 'EBM_Train99x.esp'
-  - name: 'EBM_Train99x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
-    inc:
-      - 'EBM_Train10x.esp'
-      - 'EBM_Train25x.esp'
-      - 'EBM_Train50x.esp'
-  - name: 'EBM_UnlimitedPower.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/'
-        name: 'ExE Boss''s Mods - UNLIMITED POWER on Nexus Mods'
-    inc:
-      - 'EBM_UnlimitedPower_DarkBrotherhood.esp'
-      - 'EBM_UnlimitedPower_DragonAspect.esp'
-      - 'EBM_UnlimitedPower_HermaMora.esp'
-      - 'EBM_UnlimitedPower_Nightingale.esp'
-      - 'EBM_UnlimitedPower_Racial.esp'
-      - 'EBM_UnlimitedPower_StandingStone.esp'
-      - 'EBM_UnlimitedPower_Vampire.esp'
-      - 'EBM_UnlimitedPower_Werewolf.esp'
+      - 'AmazingFollowerTweaks.esp'
   - name: 'Open Cities Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
@@ -2089,44 +2162,199 @@ plugins:
       # v3.0.6
       - crc: 0xD6B49D54
         util: SSEEdit v3.2.1
-  - name: 'Alternate Start - Live Another Life.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
-        name: 'Alternate Start - Live Another Life on Nexus Mods'
-      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/270-alternate-start-live-another-life/'
-        name: 'Alternate Start - Live Another Life on Afk Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
-        name: 'Alternate Start - Live Another Life on Bethesda.net'
-    group: *altStartGroup
-    inc:
-      - 'Original Opening Scene.esp'
-      - 'Random Alternate Start.esp'
-      - 'Random Alternate Start Reborn SE.esp'
-      - 'Skyrim Unbound.esp'
+  - name: 'NotSoFast-MainQuest.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2475/']
     after:
-      - 'Open Cities Skyrim.esp'
-      - 'My Home Is Your Home.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-    tag:
-      - C.Location
-      - Names
+      - 'Book Covers Skyrim.esp'
+      - 'MLU.esp'
     clean:
-      # v4.0.3
-      - crc: 0xD107745B
+      # version 1.6
+      - crc: 0x70426EF7
         util: SSEEdit v3.2.1
-      # v4.0.4
-      - crc: 0xBD2B9643
-        util: SSEEdit v3.2.1
-      # v4.0.5
-      - crc: 0x1509D2CE
-        util: SSEEdit v3.2.1
-  - name: '3rdEraWeapMoS-lvlList.esp'
+  - name: 'Ordinator - Perks of Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/'
-        name: 'Weapons of the Third Era on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
+        name: 'Ordinator - Perks of Skyrim on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
+        name: 'Ordinator - Perks Of Skyrim [PC] on Bethesda.net'
+    after:
+      - 'Phenderix Magic Evolved.esp'
+      - 'Phenderix Magic World.esp'
+      - 'Undeath.esp'
+    inc:
+      - 'ScopedBows_EagleEyeTweak.esp'
+      - 'PerkusMaximus_Mage.esp'
+      - 'PerkusMaximus_Master.esp'
+      - 'PerkusMaximus_Thief.esp'
+      - 'PerkusMaximus_Warrior.esp'
+      - 'PerkusMaximus_CombatPlus.esp'
     tag:
-      - Delev
+      - Graphics
+      - Names
+      - Sound
+    clean:
+      - crc: 0x38670BC4
+        util: SSEEdit v3.2.1
+  - name: 'The Paarthurnax Dilemma.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/365'
+        name: 'The Paarthurnax Dilemma on Nexus Mods'
+    clean:
+      # v2.0
+      - crc: 0xBBB08325
+        util: SSEEdit v3.2.1
+  - name: 'Realistic AI Detection 2 SE.*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2345/']
+    after:
+      - 'Combat Evolved.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
+      - 'Thief skills rebalance for Ordinator.esp'
+  - name: 'Relationship Dialogue Overhaul.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
+    inc:
+      - name: 'Immersive Horses.esp'
+        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+      - name: 'Amazing Follower Tweaks'
+        condition: 'checksum("AmazingFollowerTweaks.esp",88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
+      - name: 'Immersive Amazing Follower Tweaks'
+        condition: 'checksum("AmazingFollowerTweaks.esp",88C2EA38) and not active("RDO - iAFT Patch.esp")'
+      - name: 'Extensible Follower Framework'
+        condition: 'checksum("EFFDialogue.esp",E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
+    after:
+      - 'AmazingFollowerTweaks.esp'
+      - 'FCO - Follower Commentary Overhaul.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Amazing Follower Tweaks'
+          - '[RDO - AFT SE Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+        condition: 'checksum("AmazingFollowerTweaks.esp",88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Immersive Amazing Follower Tweaks'
+          - '[RDO - iAFT SE Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+        condition: 'checksum("AmazingFollowerTweaks.esp",88C2EA38) and not active("RDO - iAFT Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Extensible Follower Framework'
+          - '[RDO - EFF v4.0.3 Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+        condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Immersive Horses'
+          - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
+        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Cutting Room Floor'
+          - '[RDO - CRF and USSEP Patches Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+        condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[RDO - CRF and USSEP Patches Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("RDO - USSEP Patch.esp") and not active("RDO - CRF + USSEP Patch.esp")'
+    clean:
+      # Version Final
+      - crc: 0x20DC9B97
+        util: SSEEdit v3.2.1
+  - name: 'RDO - CRF + USSEP Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - USSEP Patch.esp'
+    clean:
+      # Version Final
+      - crc: 0xA2753357
+        util: SSEEdit v3.2.1
+  - name: 'RDO - USSEP Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - CRF + USSEP Patch.esp'
+    clean:
+      # Version Final
+      - crc: 0x44DE71B0
+        util: SSEEdit v3.2.1
+  - name: 'RDO - AFT v1.66 Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    clean:
+      # Version Final
+      - crc: 0x88F9C8B8
+        util: SSEEdit v3.2.1
+  - name: 'RDO - iAFT Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
+    clean:
+      # Version Final
+      - crc: 0x88C2EA38
+        util: SSEEdit v3.2.1
+  - name: 'RDO - EFF v4.0.2 Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
+    clean:
+      # Version Final
+      - crc: 0xAE1B1EDF
+        util: SSEEdit v3.2.1
+  - name: 'RichMerchantsSkyrim_x\d+.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1772/']
+    tag:
       - Relev
+  - name: 'Run For Your Lives.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/'
+        name: 'Run For Your Lives on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Run For Your Lives SE now includes the old mod When Vampires Attack. You can uninstall When Vampires Attack.'
+        condition: 'active("When Vampires Attack.esp")'
+    clean:
+      # Version v4.0
+      - crc: 0xF3EF2798
+        util: SSEEdit v3.2.1
+  - name: 'Sacrosanct - Vampires of Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3928']
+    inc:
+      - 'better vampires.esp'
+      - 'mslVampiricThirst.esp'
+      - 'SanguinairVampirism.esp'
+      - 'VampireLordPerksExpanded.esp'
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'DVA - Dynamic Vampire Appearance.esp'
+      - 'Volkihar Knight.esp'
+    tag:
+      - Graphics
+      - Names
+      - Sound
+    dirty:
+        # version 5.11SSE
+      - crc: 0x93553BD1
+        <<: *dirtyPlugin
+        itm: 20
+        udr: 0
+        nav: 0
+    clean:
+        # version 5.11SSE post-cleaning
+      - crc: 0x7443BF2E
+        util: SSEEdit v3.2.1
+  - name: 'Serana Dialogue Edit.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/16222/']
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    clean:
+      # Version 0.9
+      - crc: 0x586D2620
+        util: SSEEdit v3.2.1
+  - name: 'SexLab-AmorousAdventures.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7305/']
+    tag:
+      - C.Climate
+      - C.Water
   - name: 'Skyrim Alchemy Fixed.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2262/']
     tag:
@@ -2135,6 +2363,322 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2262/']
     tag:
       - Delev
+  - name: 'TouringCarriages.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/15948/']
+    group: *earlyLoadersGroup
+    clean:
+      # 3.0.0se
+      - crc: 0x07E8D176
+        util: SSEEdit v3.2.1
+  - name: 'TradeBarter.esp'
+    req:
+      - *SkyUI
+    url: ['https://www.nexusmods.com/skyrim/mods/34612/']
+    after:
+      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+  - name: 'TradeBarterLite.esp'
+    url: ['https://www.nexusmods.com/skyrim/mods/34612/']
+    after:
+      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+  - name: 'EBM_Train10x.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
+        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
+    inc:
+      - 'EBM_Train25x.esp'
+      - 'EBM_Train50x.esp'
+      - 'EBM_Train99x.esp'
+  - name: 'EBM_Train25x.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
+        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
+    inc:
+      - 'EBM_Train10x.esp'
+      - 'EBM_Train50x.esp'
+      - 'EBM_Train99x.esp'
+  - name: 'EBM_Train50x.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
+        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
+    inc:
+      - 'EBM_Train10x.esp'
+      - 'EBM_Train25x.esp'
+      - 'EBM_Train99x.esp'
+  - name: 'EBM_Train99x.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
+        name: 'ExE Boss''s Mods - Train More on Nexus Mods'
+    inc:
+      - 'EBM_Train10x.esp'
+      - 'EBM_Train25x.esp'
+      - 'EBM_Train50x.esp'
+  - name: 'EBM_UnlimitedPower.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/'
+        name: 'ExE Boss''s Mods - UNLIMITED POWER on Nexus Mods'
+    inc:
+      - 'EBM_UnlimitedPower_DarkBrotherhood.esp'
+      - 'EBM_UnlimitedPower_DragonAspect.esp'
+      - 'EBM_UnlimitedPower_HermaMora.esp'
+      - 'EBM_UnlimitedPower_Nightingale.esp'
+      - 'EBM_UnlimitedPower_Racial.esp'
+      - 'EBM_UnlimitedPower_StandingStone.esp'
+      - 'EBM_UnlimitedPower_Vampire.esp'
+      - 'EBM_UnlimitedPower_Werewolf.esp'
+  - name: 'UndeathClassicalLichdom SSE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/14823']
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
+
+  - name: 'BSAssets.esm'
+  # Beyond Skyrim - Bruma SE
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
+        name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835'
+        name: 'Beyond Skyrim: Bruma SE Assets on Bethesda.net'
+    group: *addonsGroup
+    tag:
+      - C.Light
+      - C.RecordFlags
+    clean:
+      # version 1.3.3
+      - crc: 0x1D0648B6
+        util: SSEEdit v3.2.1
+  - name: 'BSHeartland.esm'
+  # Beyond Skyrim - Bruma SE
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
+        name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831'
+        name: 'Beyond Skyrim: Bruma SE on Bethesda.net'
+    group: *addonsGroup
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Convenient Horses'
+          - '[Bruma patch for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
+        condition: 'active("Convenient Horses.esp") and not active("CH Bruma Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Flora Respawn Fix'
+          - '[Flora Respawn Fix SE for Beyond Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/11072/)'
+        condition: 'active("FloraRespawnFix.esp") and not active("BSHeartlandFRF.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Stats
+      - C.Light
+      - C.RecordFlags
+      - C.Regions
+      - Delev
+      - Factions
+      - Graphics
+      - Invent
+      - Names
+    dirty:
+      # Version 1.3.3
+      - <<: *dirtyPlugin
+        crc: 0x0B12B4E7
+        itm: 485
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x4CC6CB6C
+        util: SSEEdit v3.2.1
+  - name: 'BS_DLC_patch.esp'
+  # Beyond Skyrim - DLC Integration Patch
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
+        name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167'
+        name: 'Beyond Skyrim: Bruma SE DLC Patch on Bethesda.net'
+    group: *addonsGroup
+    tag:
+      - Delev
+      - Invent
+    clean:
+      # Version 1.1.2
+      - crc: 0x2BC2FECB
+        util: SSEEdit v3.2.1
+  - name: 'MoonAndStar_MAS.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
+        name: 'Moon and Star on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
+        name: 'Moon And Star on Bethesda.net'
+    group: *addonsGroup
+    after:
+      - 'AuroraVillage.esp'
+    tag:
+      - C.Location
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xEB5AEFAF
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x1DA470CB
+        util: SSEEdit v3.2.1
+  - name: 'Undeath.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
+        name: 'Undeath Remastered SE on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
+        name: 'Undeath Remastered on Bethesda.net'
+    group: *addonsGroup
+    after:
+      - 'MoonAndStar_MAS.esp'
+    inc:
+      - 'AuroraVillage.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - 'Undeath.esp'
+          - '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)'
+        condition: 'checksum("Undeath.esp",EB75A960) or checksum("Undeath.esp",8249EC41)'
+    tag:
+      - Graphics
+      - Sound
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xEB75A960
+        itm: 18
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x6E988E26
+        itm: 17
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x8249EC41
+        util: SSEEdit v3.2.1
+      - crc: 0xB98044B4
+        util: SSEEdit v3.2.1
+  - name: 'Circlets and Masks with all Robes and Hoods.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
+        name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
+    tags:
+      - Graphics
+      - Names
+    clean:
+      - crc: 0x17AE7063
+        util: SSEEdit v3.2.1
+  - name: 'imp_helm_legend.esp'
+  # Improved Closefaced Helmets
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/824/'
+        name: 'Improved closefaced helmets on Nexus Mods'
+    after:
+      - 'Circlets and Masks with all Robes and Hoods.esp'
+    msg:
+      - type: warn
+        condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
+      - type: warn
+        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+    tag:
+      - Graphics
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8491D752
+        itm: 5
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x17CF8EB8
+        util: SSEEdit v3.2.1
+  - name: 'Improved closefaced helmets for Undeath SSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14614/'
+        name: 'Lexy''s LOTD Special Edition Patches on Nexus Mods'
+    clean:
+      - crc: 0xCC6D50A9
+        util: SSEEdit v3.2.1
+  - name: 'Cutting Room Floor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
+        name: 'Cutting Room Floor on Nexus Mods'
+      - link: 'https://afkmods.iguanadons.net/index.php?/files/file/978-cutting-room-floor/'
+        name: 'Cutting Room Floor on Afk Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
+        name: 'Cutting Room Floor on Bethesda.net'
+    group: *addonsGroup
+    after:
+      - 'TouringCarriages.esp'
+      - 'UnlimitedBookshelves.esp'
+      - 'WhiterunHoldForest.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'RS Children Overhaul'
+          - '[RSChildren - CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/276/)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData 
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Stats
+      - C.Location
+      - C.Owner
+      - C.RecordFlags
+      - Delev
+      - Graphics
+      - Invent
+      - Names
+      - NPC.Class
+      - Stats
+    clean:
+      # v3.0.7
+      - crc: 0x7752174D
+        util: SSEEdit v3.2.1
+  - name: 'Riftrun_HF_v_2_0.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/757/']
+    after:
+      - 'Hideout_Main.esp'
+      - 'Hideout_HF_Main.esp'
+      - 'Hideout_DLC_Main.esp'
+      - 'Hideout_Compact.esp'
+      - 'Hideout_HF_Compact.esp'
+  - name: 'Dovahkiin_Retreat.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/746/']
+    after:
+      - 'Hideout_HF_Main.esp'
+      - 'Hideout_Main.esp'
+  - name: '3rdEraWeapMoS-lvlList.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/'
+        name: 'Weapons of the Third Era on Nexus Mods'
+    tag:
+      - Delev
+      - Relev
   - name: 'aMidianBorn_ContentAddon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24909/'
@@ -2158,15 +2702,6 @@ plugins:
         name: 'Immersive Armors on Nexus Mods'
     after:
       - 'aMidianBorn_ContentAddon.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'RichMerchantsSkyrim_x\d+.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1772/']
-    tag:
-      - Relev
-  - name: 'Morrowloot.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1255/']
     tag:
       - Delev
       - Relev
@@ -2391,111 +2926,6 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'Apocalypse - Magic of Skyrim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
-        name: 'Apocalypse - Magic of Skyrim on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
-        name: 'Apocalypse - Magic Of Skyrim [PC] on Bethesda.net'
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-    clean:
-      # Version 9.45SSE
-      - crc: 0x266B3B3B
-        util: SSEEdit v3.2.1
-  - name: 'DeadlyCombat.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8850/']
-    msg:
-      - type: info
-        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
-        content:
-          - lang: en
-            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
-  - name: 'Elemental Destruction.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/440/']
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
-  - name: 'MultipleEnchantments.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2694/']
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
-  - name: 'Ordinator - Perks of Skyrim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
-        name: 'Ordinator - Perks of Skyrim on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
-        name: 'Ordinator - Perks Of Skyrim [PC] on Bethesda.net'
-    after:
-      - 'Phenderix Magic Evolved.esp'
-      - 'Phenderix Magic World.esp'
-      - 'Undeath.esp'
-    inc:
-      - 'ScopedBows_EagleEyeTweak.esp'
-      - 'PerkusMaximus_Mage.esp'
-      - 'PerkusMaximus_Master.esp'
-      - 'PerkusMaximus_Thief.esp'
-      - 'PerkusMaximus_Warrior.esp'
-      - 'PerkusMaximus_CombatPlus.esp'
-    tag:
-      - Graphics
-      - Names
-      - Sound
-    clean:
-      - crc: 0x38670BC4
-        util: SSEEdit v3.2.1
-  - name: 'Imperious - Races of Skyrim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
-        name: 'Imperious - Races of Skyrim on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
-        name: 'Imperious - Races of Skyrim [PC] on Bethesda.net'
-    tag:
-      - Body-Size-F
-      - Body-Size-M
-      - Names
-      - R.Description
-      - R.Skills
-    clean:
-      - crc: 0xE889ADEB
-        util: SSEEdit v3.2.1
-  - name: 'Sacrosanct - Vampires of Skyrim.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3928']
-    inc:
-      - 'better vampires.esp'
-      - 'mslVampiricThirst.esp'
-      - 'SanguinairVampirism.esp'
-      - 'VampireLordPerksExpanded.esp'
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'DVA - Dynamic Vampire Appearance.esp'
-      - 'Volkihar Knight.esp'
-    tag:
-      - Graphics
-      - Names
-      - Sound
-    dirty:
-        # version 5.11SSE
-      - crc: 0x93553BD1
-        <<: *dirtyPlugin
-        itm: 20
-        udr: 0
-        nav: 0
-    clean:
-        # version 5.11SSE post-cleaning
-      - crc: 0x7443BF2E
-        util: SSEEdit v3.2.1
   - name: 'ElysiumEstate-HF.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4119/']
     inc:
@@ -2506,261 +2936,6 @@ plugins:
     inc:
       - name: 'ElysiumEstate-HF.esp'
         display: 'Elsium Estate With Kids'
-  - name: 'Run For Your Lives.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/'
-        name: 'Run For Your Lives on Nexus Mods'
-    msg:
-      - type: say
-        content: 'Run For Your Lives SE now includes the old mod When Vampires Attack. You can uninstall When Vampires Attack.'
-        condition: 'active("When Vampires Attack.esp")'
-    clean:
-      # Version v4.0
-      - crc: 0xF3EF2798
-        util: SSEEdit v3.2.1
-  - name: 'Immersive Citizens - AI Overhaul.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
-        name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
-    group: *iCitizenGroup
-    inc:
-      - 'Arthmoor''s Skyrim Villages - All In One.esp'
-      - name: 'iWil_BelethorsGoodStore.esp'
-        display: 'Belethors Overrated Goods'
-      - 'BetterCitiesWhiterun.esp'
-      - 'Better Cities Solitude.esp'
-      - name: 'Blues Skyrim.esp'
-        display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
-      - 'BosmericDrunkenHuntsmanReborn.esp'
-      - 'Dawnstar.esp'
-      - 'EEKs Arcadia''s Cauldron.esp'
-      - 'EEKs Arcadia''s - OCS.esp'
-      - name: 'Holds.esp'
-        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
-      - 'InnCredible.esp'
-      - 'JKs Skyrim.esp'
-      - name: 'iWil_UselessShopOverhaul.esp'
-        display: 'The Useless Shop and Interior Overhaul'
-      - 'NerniesCityandVillageExpansion.esp'
-      - 'Northern Bathhouses.esp'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-        display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
-      - 'RealWarMaiden.esp'
-      - 'ScottishBanneredMare.esp'
-      - 'Skyrim Radioactive -.*\.esp'
-      - name: 'tpos_ultimate_esm.esp'
-        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
-        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
-    after:
-      - '3DNPC.esp'
-      - 'Bells of Skyrim.esp'
-      - 'Bridges of Skyrim.esp'
-      - 'Civil War Repairs.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Eli_Breezehome.esp'
-      - 'Eli_Routa.esp'
-      - 'Eli_Routa - Non-Stormcloak.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Requiem.esp'
-      - 'SkyfallEstate.esp'
-      - 'Skyrim Project Optimization - Full Version'
-      - 'Skyrim Sewers.esp'
-      - 'TouringCarriages.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ASLAO - Front Porch (Breezehome).esp'
-      - 'BHTNFBP.esp'
-      - 'breezehome enhanced SSE.esp'
-      - 'Simpler Breezehome.esp'
-      - 'Wind District Breezehome - Replacer.esp'
-      - 'breezehome_basement.esp'
-      - 'BreezehomeSB.esp'
-      - 'breeze2.esp'
-    msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Touring Carriages](https://www.nexusmods.com/skyrimspecialedition/mods/15948/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
-        condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
-        condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Enhancer] (https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
-        condition: 'active("ELFXEnhancer.esp") and not active("Immersive Citizens - ELFXEnhancer patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
-        condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
-      - <<: *hascompatibilityIssues
-        subs:
-          - 'Immersive Citizens - AI Overhaul'
-          - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
-          - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
-        condition: 'active("Skyrim Sewers.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'It is recommended that your read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
-      - type: Warn
-        condition: 'active("tpos_immersive_clit_patch_01.esp")'
-        content:
-          - lang: en
-            text: '[ Immersive Citizens SE: Compatibility Notes ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) is not supported by the Immersive Citizens author. Use at your own risk.'
-    tag:
-      - Actors.AIPackages
-      - C.Location
-      - C.Owner
-    clean:
-      # version 0.4
-      - crc: 0xA61F66AD
-        util: SSEEdit v3.2.1
-  - name: 'Immersive Citizens - OCS patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - Open Cities patch on Nexus Mods'
-    group: *highPriorityGroup
-    clean:
-      # version 0.4
-      - crc: 0x6227D18D
-        util: SSEEdit v3.2.1
-  - name: 'Immersive Citizens - TC patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - Touring Carriages patch on Nexus Mods'
-    clean:
-      # version 0.4
-      - crc: 0x75419F86
-        util: SSEEdit v3.2.1
-  - name: 'Immersive Citizens - ELE patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - ELE patch on Nexus Mods'
-    group: *eleGroup
-    clean:
-      # version 0.4
-      - crc: 0x9F0CBF8B
-        util: SSEEdit v3.2.1
-  - name: 'Immersive Citizens - ELFXEnhancer patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - ELFXEnhancer patch on Nexus Mods'
-    group: *eleGroup
-    clean:
-      # version 0.4
-      - crc: 0x4865A412
-        util: SSEEdit v3.2.1
-  - name: 'Immersive Citizens - ELFXHardcore patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - ELFXHardcore patch on Nexus Mods'
-    group: *highPriorityGroup
-    clean:
-      # version 0.4
-      - crc: 0x834C7779
-        util: SSEEdit v3.2.1
-  - name: 'Relationship Dialogue Overhaul.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
-    inc:
-      - name: 'Immersive Horses.esp'
-        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - name: 'Amazing Follower Tweaks'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
-      - name: 'Immersive Amazing Follower Tweaks'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88C2EA38) and not active("RDO - iAFT Patch.esp")'
-      - name: 'Extensible Follower Framework'
-        condition: 'checksum("EFFDialogue.esp",E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
-    after:
-      - 'AmazingFollowerTweaks.esp'
-      - 'FCO - Follower Commentary Overhaul.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Amazing Follower Tweaks'
-          - '[RDO - AFT SE Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Immersive Amazing Follower Tweaks'
-          - '[RDO - iAFT SE Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88C2EA38) and not active("RDO - iAFT Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Extensible Follower Framework'
-          - '[RDO - EFF v4.0.3 Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
-        condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Immersive Horses'
-          - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
-        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Cutting Room Floor'
-          - '[RDO - CRF and USSEP Patches Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
-        condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[RDO - CRF and USSEP Patches Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("RDO - USSEP Patch.esp") and not active("RDO - CRF + USSEP Patch.esp")'
-    clean:
-      # Version Final
-      - crc: 0x20DC9B97
-        util: SSEEdit v3.2.1
-  - name: 'RDO - CRF + USSEP Patch.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - USSEP Patch.esp'
-    clean:
-      # Version Final
-      - crc: 0xA2753357
-        util: SSEEdit v3.2.1
-  - name: 'RDO - USSEP Patch.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - CRF + USSEP Patch.esp'
-    clean:
-      # Version Final
-      - crc: 0x44DE71B0
-        util: SSEEdit v3.2.1
-  - name: 'RDO - AFT v1.66 Patch.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-    clean:
-      # Version Final
-      - crc: 0x88F9C8B8
-        util: SSEEdit v3.2.1
-  - name: 'RDO - iAFT Patch.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
-    clean:
-      # Version Final
-      - crc: 0x88C2EA38
-        util: SSEEdit v3.2.1
-  - name: 'RDO - EFF v4.0.2 Patch.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1187/']
-    clean:
-      # Version Final
-      - crc: 0xAE1B1EDF
-        util: SSEEdit v3.2.1
   - name: 'SexyMannequinVyktoria_SSE.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2128/']
     inc:
@@ -2809,53 +2984,6 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
-  - name: 'Ars Metallica.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/321/']
-    tag:
-      - Invent
-      - Relev
-    clean:
-      # version 2.0.3
-      - crc: 0x43FC5E84
-        util: SSEEdit v3.2.1
-  - name: 'HarvestOverhaul_Redone.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2398/']
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[HarvestOverhaul - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/2398/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Flora Respawn Fix'
-          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
-        condition: 'active("FloraRespawnFix.esp") and not active("HOR-Flora Respawn Fix Patch.esp")'
-    tag:
-      - Invent
-      - Names
-    clean:
-      # version 0.9.1
-      - crc: 0xF5BD56F5
-        util: SSEEdit v3.2.1
-  - name: 'HarvestOverhaul_Redone_Creatures.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2398/']
-    after:
-      - 'Ars Metallica.esp'
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Flora Respawn Fix'
-          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
-        condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
-    tag:
-      - Delev
-      - Invent
-      - Relev
-    clean:
-      # version 0.9.1
-      - crc: 0x3C5A5667
-        util: SSEEdit v3.2.1
   - name: 'Immersive Jewelry.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5336/']
     tag:
@@ -2887,26 +3015,6 @@ plugins:
   - name: 'Ducks and Swans.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2149/']
     group: *earlyLoadersGroup
-  - name: 'more idle markers.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3211/'
-        name: 'More Tavern Idles on Nexus Mods'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'Hunters Not Bandits.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1547/']
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-  - name: 'My Home Is Your Home.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7096/']
-    after:
-      - 'AmazingFollowerTweaks.esp'
-  - name: 'CFTO.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
-        name: 'Carriage and Ferry Travel Overhaul on Nexus Mods'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'Honeyside.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/918/'
@@ -2960,11 +3068,6 @@ plugins:
       # version 1.1
       - crc: 0x32F4BBE5
         util: SSEEdit v3.2.1
-  - name: 'SexLab-AmorousAdventures.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7305/']
-    tag:
-      - C.Climate
-      - C.Water
   - name: 'ULRiverwoodForestJKPatch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9258/'
@@ -3005,11 +3108,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2829/']
     after:
       - 'JKs Whiterun.esp'
-  - name: 'Convenient Horses.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9519/']
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Relationship Dialogue Overhaul.esp'
   - name: 'Book Covers Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
@@ -3058,88 +3156,14 @@ plugins:
     clean:
       # 2.0
       - crc: 0x86CF0F2B
-        util: SSEEdit v3.2.1
-  - name: 'Serana Dialogue Edit.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/16222/']
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-    clean:
-      # Version 0.9
-      - crc: 0x586D2620
-        util: SSEEdit v3.2.1
-  - name: 'TheChoiceIsYours.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3850/']
-    after:
-      - 'BetterQuestObjectives.esp'
-      - 'BetterQuestObjectives - BCS Patch.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-    msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Book Covers SE'
-          - '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
-        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY_BCS Patch.esp")'
-    tag:
-      - Actors.AIPackages
-      - Names
-    clean:
-      # 3.2
-      - crc: 0x9F3FDA79
-        util: SSEEdit v3.2.1
-  - name: 'TradeBarter.esp'
-    req:
-      - *SkyUI
-    url: ['https://www.nexusmods.com/skyrim/mods/34612/']
-    after:
-      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    tag:
-      - Delev
-      - Invent
-      - Relev
-  - name: 'TradeBarterLite.esp'
-    url: ['https://www.nexusmods.com/skyrim/mods/34612/']
-    after:
-      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    tag:
-      - Delev
-      - Invent
-      - Relev
-  - name: 'NotSoFast-MainQuest.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2475/']
-    after:
-      - 'Book Covers Skyrim.esp'
-      - 'MLU.esp'
-    clean:
-      # version 1.6
-      - crc: 0x70426EF7
-        util: SSEEdit v3.2.1
-  - name: 'Realistic AI Detection 2 SE.*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2345/']
-    after:
-      - 'Combat Evolved.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Stealth Skills Rebalanced_COMPLETE.esp'
-      - 'Thief skills rebalance for Ordinator.esp'
   - name: 'imp_helm_IDPM.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12405/']
     after:
       - 'imp_helm_USSEP.esp'
-  - name: 'Economy.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8210/']
-    tag:
-      - Relev
   # Qwinn's Bottomless Bag of Patches
   - name: 'Qw_ELE_.*\.esp'
     # Patches for Enhanced Lighting for ENB
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/16923/']
-  - name: 'TTR_Master_Trader.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/'
-        name: 'Master Trader SE - Merchants Never Run Out Of Gold on Nexus Mods'
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
   - name: 'ShezrieOldHroldanVer2.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
@@ -3234,14 +3258,6 @@ plugins:
       # v2.0
       - crc: 0xBB8E454A 
         util: SSEEdit v3.2.1
-  - name: 'The Paarthurnax Dilemma.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/365'
-        name: 'The Paarthurnax Dilemma on Nexus Mods'
-    clean:
-      # v2.0
-      - crc: 0xBBB08325
-        util: SSEEdit v3.2.1
   - name: 'Point The Way.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/352'
@@ -3265,20 +3281,6 @@ plugins:
     clean:
       # v2.0.1
       - crc: 0x1A076EF7
-        util: SSEEdit v3.2.1
-  - name: 'Improved Traps.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/'
-        name: 'Improved Traps on Nexus Mods'
-    tags:
-      - Graphics
-      - Stats
-    clean:
-        # Version 2.3 - Normal Edition
-      - crc: 0xDAA5AC38
-        util: SSEEdit v3.2.1
-        # Version 2.3 - Dangerous Edition
-      - crc: 0xF718BAC1
         util: SSEEdit v3.2.1
   - name: 'ProudspiremanorTNFBP.esp'
     url:
