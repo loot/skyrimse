@@ -1315,6 +1315,300 @@ plugins:
         condition: 'active("Severa_CharPreset.esp")'
     tag:
       - NoMerge
+################
+## Encounters ##
+################
+  - name: '3DNPC.esp'
+    url:
+      - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
+        name: 'Interesting NPCs SSE on 3dnpc.com'
+    group: *addonsGroup
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Owner
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Invent
+  - name: 'Beasts of Tamriel.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5404/']
+    tag:
+      - Actors.ACBS
+      - C.Encounter
+      - C.Location
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Invent
+      - Relev
+  - name: 'BirdsOfSkyrim_SSE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3097/']
+    after:
+      - 'SkyTEST-RealisticAnimals&Predators.esp'
+      - 'skyBirds_SSE.esp'
+  - name: 'Deadly Wenches.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/599/']
+    tag:
+      - Delev
+      - Relev
+  - name: 'DIVERSE SKYRIM.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7707/']
+    tag:
+      - Delev
+      - Relev
+  - name: 'High Level Enemies.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3231/']
+    tag:
+      - Relev
+  - name: 'High Level Enemies - Dawnguard.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3231/']
+    tag:
+      - Relev
+  - name: 'High Level Enemies - Dragonborn.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3231/']
+    tag:
+      - Relev
+  - name: 'inigo.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/'
+        name: 'INIGO on Nexus Mods'
+    clean:
+      # Version 2.4c
+      - crc: 0x9CCE987C
+        util: SSEEdit v3.2.1
+  - name: 'KrittaKittyHorsesForSSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7685/'
+        name: 'Realistic Horse Breeds by KrittaKitty on Nexus Mods'
+    after:
+      - 'Convenient Horses.esp'
+    dirty:
+        # version 2.4D
+      - crc: 0x6E242E9E
+        <<: *dirtyPlugin
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+        # version 2.4D
+      - crc: 0x16CF39A0
+        util: SSEEdit v3.2.1
+####################################
+## Environment, Landscape & Flora ##
+####################################
+  - name: 'The Forest of Riverwood Project.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/16877/']
+    dirty:
+        # version 1.4.a
+      - crc: 0xDC6B06E4
+        <<: *dirtyPlugin
+        itm: 18
+        udr: 45
+        nav: 0
+    clean:
+        # version 1.4.a post-cleaning
+      - crc: 0x441524FC
+        util: SSEEdit v3.2.1
+  - name: 'Gildergreen Regrown.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/348/'
+        name: 'Gildergreen Regrown on Nexus Mods'
+    clean:
+      # v2.0
+      - crc: 0xFFD6E910
+        util: SSEEdit v3.2.1
+  - name: 'Landscape Fixes For Grass Mods.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    group: *fixesResourcesGroup
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'Landscape Fixes For Grass Mods .*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Landscape Fixes For Grass Mods.esp'
+  - name: 'Landscape For Grass Mods .*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Landscape Fixes For Grass Mods.esp'
+  - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Landscape For Grass Mods Arthmoor''s Shor''s Stone PATCH.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
+    after:
+      - 'shor''s stone.esp'
+  - name: 'Prometheus_No_snow_Under_the_roof.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/518/']
+    dirty:
+        # version 3.2
+      - crc: 0x87D18F2B
+        <<: *dirtyPlugin
+        itm: 59
+        udr: 5
+        nav: 0
+    clean:
+        # version 3.2
+      - crc: 0xA314B458
+        util: SSEEdit v3.2.1
+  - name: 'RealisticWaterTwo.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
+    after:
+      - 'JK''s Riverwood.esp'
+      - 'JKs Whiterun.esp'
+      - 'JKs Whiterun exterior.esp'
+      - 'Bring Out Your Dead.esp'
+      - 'Darkwater Crossing.esp'
+      - 'Helarchen Creek.esp'
+      - 'Ivarstead.esp'
+      - 'Karthwasten.esp'
+      - 'Kynesgrove.esp'
+      - 'Shor''s Stone.esp'
+      - 'Soljund''s Sinkhole.esp'
+      - 'Whistling Mine.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'SoundsofSkyrimComplete.esp'
+      - 'SoS - The Wilds.esp'
+      - 'SoS - The Dungeons.esp'
+      - 'SoS - Civilization.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'CFTO.esp'
+      - 'Honeyside.esp'
+      - 'Book Covers Skyrim - Lost Library.esp'
+      - 'Book Covers Skyrim.esp'
+      - 'EmbersHD.esp'
+      - 'Gildergreen Regrown.esp'
+      - 'Inigo.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'MajesticMountains_Moss.esp'
+      - 'MLU.esp'
+      - 'NotSoFast-MageGuild.esp'
+      - 'NotSoFast-MainQuest.esp'
+      - 'Oblivion Gates Remade - Map Markers.esp'
+      - 'Oblivion Gates Remade.esp'
+      - 'PilgrimsDelight.esp'
+      - 'Point The Way.esp'
+      - 'SkyrimImprovedPuddles-DG-HF-DB.esp'
+      - 'The Paarthurnax Dilemma.esp'
+      - 'TheChoiceIsYours.esp'
+      - 'FarmhouseChimneys.esp'
+      - 'FarmhouseChimneysDarkwaterCrossing.esp'
+      - 'FarmhouseChimneysExtrasMerged'
+      - 'FarmhouseChimneysHelarchenCreek.esp'
+      - 'FarmhouseChimneysIvarstead.esp'
+      - 'FarmhouseChimneysKynesgrove.esp'
+      - 'FarmhouseChimneysLAL+CRF.esp'
+      - 'FarmhouseChimneysLAL.esp'
+      - 'FarmhouseChimneysShorsStone.esp'
+      - 'FarmhouseChimneysWhistlingMine.esp'
+    group: *rwtGroup
+    tag:
+      - C.Water
+      - Graphics
+      - Sound
+    clean:
+      # Version 1.4.4
+      - crc: 0xB2812DAF
+        util: SSEEdit v3.2.1
+      # Version 1.5.2
+      - crc: 0xCF76C1B9
+        util: SSEEdit v3.2.1
+      # Version 1.5.3
+      - crc: 0x2BDAE302
+        util: SSEEdit v3.2.1
+  # Catch all for Patches included in installer
+  - name: 'RealisticWaterTwo.*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
+    group: *rwtGroup
+  - name: 'RWT.*\.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
+    group: *rwtGroup
+  - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
+    group: *rwtGroup
+  - name: 'SimplyBiggerTreesSE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5281/']
+    clean:
+        # v1.0SE
+      - crc: 0xADC2F6AF
+        util: SSEEdit v3.2.1
+        # v1.0SE - floating tree moss fix version
+      - crc: 0x0BA34575
+        util: SSEEdit v3.2.1
+  - name: 'SkyrimIsWindy - EVT patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5836/']
+    after:
+      - 'SkyrimIsWindy.esp'
+      - 'SRG Enhanced Trees Activator.esp'
+  - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
+        name: 'Verdant - A Skyrim Grass Plugin on Nexus Mods'
+        # Tweaks for Verdant esp Replacer
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
+        name: 'Landscape Fixes For Grass Mods on Nexus Mods'
+    group: *earlyLoadersGroup
+    after:
+      - name: 'Skyrim Flora Overhaul.esp'
+        display: 'Skyrim Flora Overhaul'
+    dirty:
+        # v1.5 - main file
+      - crc: 0x730EF406
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0 
+        # v1.5 - OCS Version
+      - crc: 0x05D653F7
+        <<: *dirtyPlugin
+        itm: 13
+        udr: 0
+        nav: 0
+        # v1.5 - W.A.T.E.R version
+      - crc: 0x0040F980
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0
+        # v1.5 - Tweaks for Verdant
+      - crc: 0x93E44E78
+        <<: *dirtyPlugin
+        itm: 11
+        udr: 0
+        nav: 0
+    clean:
+        # v1.5
+      - crc: 0x102BBC11
+        util: SSEEdit v3.2.1
+        # v1.5 - main file
+      - crc: 0x76E6CE3C
+        util: SSEEdit v3.2.1
+        # v1.5 - OCS Version
+      - crc: 0x99AC1D1B
+        util: SSEEdit v3.2.1
+        # v1.5 - W.A.T.E.R version
+      - crc: 0xB3D0DC65
+        util: SSEEdit v3.2.1
+        # v1.5 - Tweaks for Verdant
+      - crc: 0xDA6D8DC2
+        util: SSEEdit v3.2.1
+  - name: 'WhiterunHoldForest.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3212/']
+    group: *earlyLoadersGroup
+    clean:
+      # 1.2.0
+      - crc: 0x4273E90C
+        util: SSEEdit v3.2.1
 
   - name: 'BSAssets.esm'
   # Beyond Skyrim - Bruma SE
@@ -1638,13 +1932,6 @@ plugins:
     clean:
       - crc: 0xB8A1EE4E
         util: SSEEdit v3.2.1
-  - name: 'WhiterunHoldForest.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3212/']
-    group: *earlyLoadersGroup
-    clean:
-      # 1.2.0
-      - crc: 0x4273E90C
-        util: SSEEdit v3.2.1
   - name: 'TouringCarriages.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/15948/']
     group: *earlyLoadersGroup
@@ -1840,18 +2127,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'High Level Enemies.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3231/']
-    tag:
-      - Relev
-  - name: 'High Level Enemies - Dawnguard.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3231/']
-    tag:
-      - Relev
-  - name: 'High Level Enemies - Dragonborn.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3231/']
-    tag:
-      - Relev
   - name: 'Skyrim Alchemy Fixed.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2262/']
     tag:
@@ -1895,19 +2170,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'The Forest of Riverwood Project.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/16877/']
-    dirty:
-        # version 1.4.a
-      - crc: 0xDC6B06E4
-        <<: *dirtyPlugin
-        itm: 18
-        udr: 45
-        nav: 0
-    clean:
-        # version 1.4.a post-cleaning
-      - crc: 0x441524FC
-        util: SSEEdit v3.2.1
   - name: 'JK''s Riverwood.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2013/']
     after:
@@ -2129,80 +2391,6 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'RealisticWaterTwo.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    after:
-      - 'JK''s Riverwood.esp'
-      - 'JKs Whiterun.esp'
-      - 'JKs Whiterun exterior.esp'
-      - 'Bring Out Your Dead.esp'
-      - 'Darkwater Crossing.esp'
-      - 'Helarchen Creek.esp'
-      - 'Ivarstead.esp'
-      - 'Karthwasten.esp'
-      - 'Kynesgrove.esp'
-      - 'Shor''s Stone.esp'
-      - 'Soljund''s Sinkhole.esp'
-      - 'Whistling Mine.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'SoundsofSkyrimComplete.esp'
-      - 'SoS - The Wilds.esp'
-      - 'SoS - The Dungeons.esp'
-      - 'SoS - Civilization.esp'
-      - 'Alternate Start - Live Another Life.esp'
-      - 'CFTO.esp'
-      - 'Honeyside.esp'
-      - 'Book Covers Skyrim - Lost Library.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'EmbersHD.esp'
-      - 'Gildergreen Regrown.esp'
-      - 'Inigo.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MajesticMountains_Moss.esp'
-      - 'MLU.esp'
-      - 'NotSoFast-MageGuild.esp'
-      - 'NotSoFast-MainQuest.esp'
-      - 'Oblivion Gates Remade - Map Markers.esp'
-      - 'Oblivion Gates Remade.esp'
-      - 'PilgrimsDelight.esp'
-      - 'Point The Way.esp'
-      - 'SkyrimImprovedPuddles-DG-HF-DB.esp'
-      - 'The Paarthurnax Dilemma.esp'
-      - 'TheChoiceIsYours.esp'
-      - 'FarmhouseChimneys.esp'
-      - 'FarmhouseChimneysDarkwaterCrossing.esp'
-      - 'FarmhouseChimneysExtrasMerged'
-      - 'FarmhouseChimneysHelarchenCreek.esp'
-      - 'FarmhouseChimneysIvarstead.esp'
-      - 'FarmhouseChimneysKynesgrove.esp'
-      - 'FarmhouseChimneysLAL+CRF.esp'
-      - 'FarmhouseChimneysLAL.esp'
-      - 'FarmhouseChimneysShorsStone.esp'
-      - 'FarmhouseChimneysWhistlingMine.esp'
-    group: *rwtGroup
-    tag:
-      - C.Water
-      - Graphics
-      - Sound
-    clean:
-      # Version 1.4.4
-      - crc: 0xB2812DAF
-        util: SSEEdit v3.2.1
-      # Version 1.5.2
-      - crc: 0xCF76C1B9
-        util: SSEEdit v3.2.1
-      # Version 1.5.3
-      - crc: 0x2BDAE302
-        util: SSEEdit v3.2.1
-  # Catch all for Patches included in installer
-  - name: 'RealisticWaterTwo.*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *rwtGroup
-  - name: 'RWT.*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2182/']
-    group: *rwtGroup
-  - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
-    group: *rwtGroup
   - name: 'Apocalypse - Magic of Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
@@ -2313,67 +2501,6 @@ plugins:
     inc:
       - name: 'ElysiumEstate-HFNoKids.esp'
         display: 'Elysium Estate No Kids'
-  - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
-        name: 'Verdant - A Skyrim Grass Plugin on Nexus Mods'
-        # Tweaks for Verdant esp Replacer
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
-        name: 'Landscape Fixes For Grass Mods on Nexus Mods'
-    group: *earlyLoadersGroup
-    after:
-      - name: 'Skyrim Flora Overhaul.esp'
-        display: 'Skyrim Flora Overhaul'
-    dirty:
-        # v1.5 - main file
-      - crc: 0x730EF406
-        <<: *dirtyPlugin
-        itm: 11
-        udr: 0
-        nav: 0 
-        # v1.5 - OCS Version
-      - crc: 0x05D653F7
-        <<: *dirtyPlugin
-        itm: 13
-        udr: 0
-        nav: 0
-        # v1.5 - W.A.T.E.R version
-      - crc: 0x0040F980
-        <<: *dirtyPlugin
-        itm: 11
-        udr: 0
-        nav: 0
-        # v1.5 - Tweaks for Verdant
-      - crc: 0x93E44E78
-        <<: *dirtyPlugin
-        itm: 11
-        udr: 0
-        nav: 0
-    clean:
-        # v1.5
-      - crc: 0x102BBC11
-        util: SSEEdit v3.2.1
-        # v1.5 - main file
-      - crc: 0x76E6CE3C
-        util: SSEEdit v3.2.1
-        # v1.5 - OCS Version
-      - crc: 0x99AC1D1B
-        util: SSEEdit v3.2.1
-        # v1.5 - W.A.T.E.R version
-      - crc: 0xB3D0DC65
-        util: SSEEdit v3.2.1
-        # v1.5 - Tweaks for Verdant
-      - crc: 0xDA6D8DC2
-        util: SSEEdit v3.2.1
-  - name: 'SimplyBiggerTreesSE.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5281/']
-    clean:
-        # v1.0SE
-      - crc: 0xADC2F6AF
-        util: SSEEdit v3.2.1
-        # v1.0SE - floating tree moss fix version
-      - crc: 0x0BA34575
-        util: SSEEdit v3.2.1
   - name: 'ElysiumEstate-HFNoKids.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4119/']
     inc:
@@ -2753,11 +2880,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2140/']
     tag:
       - Relev
-  - name: 'Deadly Wenches.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/599/']
-    tag:
-      - Delev
-      - Relev
   - name: 'CraftingSupplies_AIO_ALL.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2359/']
     tag:
@@ -2765,11 +2887,6 @@ plugins:
   - name: 'Ducks and Swans.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2149/']
     group: *earlyLoadersGroup
-  - name: 'BirdsOfSkyrim_SSE.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3097/']
-    after:
-      - 'SkyTEST-RealisticAnimals&Predators.esp'
-      - 'skyBirds_SSE.esp'
   - name: 'more idle markers.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3211/'
@@ -2796,31 +2913,6 @@ plugins:
         name: 'Sweet as Honeyside on Nexus Mods'
     after:
       - 'ELFX - NoHoneyside.esp'
-  - name: 'Landscape Fixes For Grass Mods.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
-    group: *fixesResourcesGroup
-    after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-  - name: 'Landscape Fixes For Grass Mods .*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
-    after:
-      - 'Landscape Fixes For Grass Mods.esp'
-  - name: 'Landscape For Grass Mods .*\.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
-    after:
-      - 'Landscape Fixes For Grass Mods.esp'
-  - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'Landscape For Grass Mods Arthmoor''s Shor''s Stone PATCH.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
-    after:
-      - 'shor''s stone.esp'
   - name: 'ULALPatch.esp'
     # Unique Locations - Alternate Start Patch
     url:
@@ -2835,44 +2927,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11307/']
     tag:
       - C.Regions
-  - name: 'inigo.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/'
-        name: 'INIGO on Nexus Mods'
-    clean:
-      # Version 2.4c
-      - crc: 0x9CCE987C
-        util: SSEEdit v3.2.1
-  - name: '3DNPC.esp'
-    url:
-      - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
-        name: 'Interesting NPCs SSE on 3dnpc.com'
-    group: *addonsGroup
-    tag:
-      - Actors.ACBS
-      - Actors.AIPackages
-      - C.Acoustic
-      - C.Climate
-      - C.Encounter
-      - C.Light
-      - C.Location
-      - C.Music
-      - C.Owner
-      - C.RecordFlags
-      - C.Regions
-      - C.Water
-      - Invent
-  - name: 'Beasts of Tamriel.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5404/']
-    tag:
-      - Actors.ACBS
-      - C.Encounter
-      - C.Location
-      - C.RecordFlags
-      - C.Regions
-      - C.Water
-      - Invent
-      - Relev
   - name: 'Solitude Expansion.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8/']
     tag:
@@ -2951,33 +3005,11 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2829/']
     after:
       - 'JKs Whiterun.esp'
-  - name: 'SkyrimIsWindy - EVT patch.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5836/']
-    after:
-      - 'SkyrimIsWindy.esp'
-      - 'SRG Enhanced Trees Activator.esp'
   - name: 'Convenient Horses.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9519/']
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
-  - name: 'KrittaKittyHorsesForSSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7685/'
-        name: 'Realistic Horse Breeds by KrittaKitty on Nexus Mods'
-    after:
-      - 'Convenient Horses.esp'
-    dirty:
-        # version 2.4D
-      - crc: 0x6E242E9E
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 0
-        nav: 0
-    clean:
-        # version 2.4D
-      - crc: 0x16CF39A0
-        util: SSEEdit v3.2.1
   - name: 'Book Covers Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
@@ -3083,19 +3115,6 @@ plugins:
       # version 1.6
       - crc: 0x70426EF7
         util: SSEEdit v3.2.1
-  - name: 'Prometheus_No_snow_Under_the_roof.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/518/']
-    dirty:
-        # version 3.2
-      - crc: 0x87D18F2B
-        <<: *dirtyPlugin
-        itm: 59
-        udr: 5
-        nav: 0
-    clean:
-        # version 3.2
-      - crc: 0xA314B458
-        util: SSEEdit v3.2.1
   - name: 'Realistic AI Detection 2 SE.*\.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2345/']
     after:
@@ -3103,11 +3122,6 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Stealth Skills Rebalanced_COMPLETE.esp'
       - 'Thief skills rebalance for Ordinator.esp'
-  - name: 'DIVERSE SKYRIM.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7707/']
-    tag:
-      - Delev
-      - Relev
   - name: 'imp_helm_IDPM.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12405/']
     after:
@@ -3178,14 +3192,6 @@ plugins:
     clean:
       # v2.0.3
       - crc: 0xE729E39E
-        util: SSEEdit v3.2.1
-  - name: 'Gildergreen Regrown.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/348/'
-        name: 'Gildergreen Regrown on Nexus Mods'
-    clean:
-      # v2.0
-      - crc: 0xFFD6E910
         util: SSEEdit v3.2.1
   - name: 'Oblivion Gates in Cities.esp'
     url:
