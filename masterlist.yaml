@@ -246,13 +246,13 @@ groups:
     after: [ *coreGroup ]
 
   - name: &altStartGroup Alternate Start
-    after: [ *coreGroup,*ocsGroup ]
+    after: [ *ocsGroup ]
 
   - name: &iCitizenGroup Immersive Citizens
-    after: [ *coreGroup, *altStartGroup ]
+    after: [ *altStartGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
-    after: [ *coreGroup, *iCitizenGroup ]
+    after: [ *iCitizenGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -261,10 +261,10 @@ groups:
     after: [ *lateLoadersGroup ]
 
   - name: &rwtGroup Realistic Water
-    after: [ *lateLoadersGroup, *eleGroup ]
+    after: [ *eleGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
-    after: [ *lateLoadersGroup, *rwtGroup ]
+    after: [ *rwtGroup ]
 
   - name: &lateChangesGroup Late Fixes & Changes
     after: [ *dynamicPatchGroup ]
