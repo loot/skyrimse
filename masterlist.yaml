@@ -1153,6 +1153,168 @@ plugins:
       # Version v1.23
       - crc: 0xB8611F94
         util: SSEEdit v3.2.1
+###########################
+## AudioVisual - Weather ##
+###########################
+  - name: 'TrueStormsSE.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2472/']
+    tag:
+      - Sound
+######################
+## Body,face & hair ##
+######################
+  - name: 'Hair Replacer.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7409/']
+    group: *fixesResourcesGroup
+  - name: 'Hair Replacer Assets.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7409/']
+    group: *fixesResourcesGroup
+    after:
+      - 'Hair Replacer.esp'
+#################################
+## Character Appearance - NPCs ##
+#################################
+  - name: 'Bijin Wives.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11247/']
+    after:
+      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+        display: 'Bijin AIO Legendary plus Serana and Valerica'
+      - name: 'BijinAIO_SSE-3.1.1.esp'
+        display: 'Bijin AIO Legendary SSE'
+    msg:
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1.esp")'
+  - name: 'Bijin NPCs.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11287/']
+    after:
+      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+        display: 'Bijin AIO Legendary plus Serana and Valerica'
+      - name: 'BijinAIO_SSE-3.1.1.esp'
+        display: 'Bijin AIO Legendary SSE'
+    msg:
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1.esp")'
+  - name: 'Bijin Warmaidens.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1825/']
+    after:
+      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+        display: 'Bijin AIO Legendary plus Serana and Valerica'
+      - name: 'BijinAIO_SSE-3.1.1.esp'
+        display: 'Bijin AIO Legendary SSE'
+    msg:
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1.esp")'
+  - name: 'Serana.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
+        name: 'Seranaholic by rxkx22 on Nexus Mods'
+    after:
+      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+        display: 'Bijin AIO Legendary plus Serana and Valerica'
+    msg:
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Serana.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+  - name: 'Valerica.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
+        name: 'Seranaholic by rxkx22 on Nexus Mods'
+    after:
+      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+        display: 'Bijin AIO Legendary plus Serana and Valerica'
+    msg:
+      - type: warn
+        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
+        condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+####################################
+## Character Appearance - Presets ##
+####################################
+  - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2406/']
+    inc:
+      - 'Better_Male_Presets.esp'
+      - 'Kayla_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
+  - name: 'Better_Male_Presets.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2001/']
+    group: *fixesResourcesGroup
+    inc:
+      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Better_Male_Presets.esp")'
+    tag:
+      - NoMerge
+  - name: 'Kayla_CharPreset.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3851/']
+    group: *fixesResourcesGroup
+    inc:
+      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+      - 'Lagertha_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+      - 'Severa_CharPreset.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Kayla_CharPreset.esp")'
+    tag:
+      - NoMerge
+  - name: 'Lagertha_CharPreset.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2629/']
+    group: *fixesResourcesGroup
+    inc:
+      - 'Kayla_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+      - 'Severa_CharPreset.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Lagertha_CharPreset.esp")'
+    tag:
+      - NoMerge
+  - name: 'Lydia Face Preset 64bit.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1080/']
+    group: *fixesResourcesGroup
+    inc:
+      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+      - 'Kayla_CharPreset.esp'
+      - 'Lagertha_CharPreset.esp'
+      - 'Severa_CharPreset.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Lydia Face Preset 64bit.esp")'
+    tag:
+      - NoMerge
+  - name: 'Severa_CharPreset.esp'
+    group: *fixesResourcesGroup
+    inc:
+      - 'Kayla_CharPreset.esp'
+      - 'Lagertha_CharPreset.esp'
+      - 'Lydia Face Preset 64bit.esp'
+    msg:
+      - type: say
+        content: 'After Character Creation you should deactivate and/or uninstall.'
+        condition: 'active("Severa_CharPreset.esp")'
+    tag:
+      - NoMerge
 
   - name: 'BSAssets.esm'
   # Beyond Skyrim - Bruma SE
@@ -1528,14 +1690,6 @@ plugins:
       # v3.0.7
       - crc: 0x7752174D
         util: SSEEdit v3.2.1
-  - name: 'Hair Replacer.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7409/']
-    group: *fixesResourcesGroup
-  - name: 'Hair Replacer Assets.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/7409/']
-    group: *fixesResourcesGroup
-    after:
-      - 'Hair Replacer.esp'
   - name: 'Better Vampires.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
@@ -2220,70 +2374,6 @@ plugins:
         # v1.0SE - floating tree moss fix version
       - crc: 0x0BA34575
         util: SSEEdit v3.2.1
-  - name: 'Valerica.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
-        name: 'Seranaholic by rxkx22 on Nexus Mods'
-    after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-    msg:
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-  - name: 'Serana.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
-        name: 'Seranaholic by rxkx22 on Nexus Mods'
-    after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-    msg:
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Serana.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-  - name: 'Bijin Wives.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11247/']
-    after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-      - name: 'BijinAIO_SSE-3.1.1.esp'
-        display: 'Bijin AIO Legendary SSE'
-    msg:
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1.esp")'
-  - name: 'Bijin NPCs.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11287/']
-    after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-      - name: 'BijinAIO_SSE-3.1.1.esp'
-        display: 'Bijin AIO Legendary SSE'
-    msg:
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1.esp")'
-  - name: 'Bijin Warmaidens.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1825/']
-    after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-      - name: 'BijinAIO_SSE-3.1.1.esp'
-        display: 'Bijin AIO Legendary SSE'
-    msg:
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-      - type: warn
-        content: 'Bijin AIO SSE recomends that you deactivate this ESP.'
-        condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'ElysiumEstate-HFNoKids.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4119/']
     inc:
@@ -2592,80 +2682,6 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
-  - name: 'Severa_CharPreset.esp'
-    group: *fixesResourcesGroup
-    inc:
-      - 'Kayla_CharPreset.esp'
-      - 'Lagertha_CharPreset.esp'
-      - 'Lydia Face Preset 64bit.esp'
-    msg:
-      - type: say
-        content: 'After Character Creation you should deactivate and/or uninstall.'
-        condition: 'active("Severa_CharPreset.esp")'
-    tag:
-      - NoMerge
-  - name: 'Lydia Face Preset 64bit.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1080/']
-    group: *fixesResourcesGroup
-    inc:
-      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
-      - 'Kayla_CharPreset.esp'
-      - 'Lagertha_CharPreset.esp'
-      - 'Severa_CharPreset.esp'
-    msg:
-      - type: say
-        content: 'After Character Creation you should deactivate and/or uninstall.'
-        condition: 'active("Lydia Face Preset 64bit.esp")'
-    tag:
-      - NoMerge
-  - name: 'Lagertha_CharPreset.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2629/']
-    group: *fixesResourcesGroup
-    inc:
-      - 'Kayla_CharPreset.esp'
-      - 'Lydia Face Preset 64bit.esp'
-      - 'Severa_CharPreset.esp'
-    msg:
-      - type: say
-        content: 'After Character Creation you should deactivate and/or uninstall.'
-        condition: 'active("Lagertha_CharPreset.esp")'
-    tag:
-      - NoMerge
-  - name: 'Kayla_CharPreset.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3851/']
-    group: *fixesResourcesGroup
-    inc:
-      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
-      - 'Lagertha_CharPreset.esp'
-      - 'Lydia Face Preset 64bit.esp'
-      - 'Severa_CharPreset.esp'
-    msg:
-      - type: say
-        content: 'After Character Creation you should deactivate and/or uninstall.'
-        condition: 'active("Kayla_CharPreset.esp")'
-    tag:
-      - NoMerge
-  - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2406/']
-    inc:
-      - 'Better_Male_Presets.esp'
-      - 'Kayla_CharPreset.esp'
-      - 'Lydia Face Preset 64bit.esp'
-    msg:
-      - type: say
-        content: 'After Character Creation you should deactivate and/or uninstall.'
-        condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
-  - name: 'Better_Male_Presets.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2001/']
-    group: *fixesResourcesGroup
-    inc:
-      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
-    msg:
-      - type: say
-        content: 'After Character Creation you should deactivate and/or uninstall.'
-        condition: 'active("Better_Male_Presets.esp")'
-    tag:
-      - NoMerge
   - name: 'Ars Metallica.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/321/']
     tag:
@@ -2866,10 +2882,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8706/']
     tag:
       - C.Regions
-  - name: 'TrueStormsSE.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2472/']
-    tag:
-      - Sound
   - name: 'DLCIntegration.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8032/']
     group: *fixesResourcesGroup
