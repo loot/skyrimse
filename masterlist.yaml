@@ -659,6 +659,10 @@ plugins:
       # Version 4.1.3b
       - crc: 0xFD8D6035
         util: SSEEdit v3.2.1
+
+#############################################
+#####  Bug Fixes & Unofficial Patches   #####
+#############################################
   - name: 'unofficial skyrim survival patch.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12655/']
     group: *fixesResourcesGroup
@@ -667,6 +671,73 @@ plugins:
         util: SSEEdit v3.2.1
     tag:
       - Graphics
+  - name: 'Modern Brawl Bug Fix.esp'
+    url: ['http://www.nexusmods.com/skyrimspecialedition/mods/1473/']
+    # "This mod overwrites files from mod X, is it compatible?"
+    # Many mods that were found to trigger the brawl bug come with an included copy of the (obsolete)Brawl Bugs Patch.
+    # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
+    # (This will not impede the functionality of said other mods.)
+    group: *lateChangesGroup
+    after:
+      - 'Bashed Patch.*\.esp'
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'Andromeda - Unique Standing Stones of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Andromeda - Unique Standing Stones of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Apocalypse - Magic of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Apocalypse - Magic of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Imperious - Races of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Imperious - Races of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ordinator - Perks of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Ravengate - Riften Underground' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ravengate.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Sacrosanct - Vampires of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Sacrosanct - Vampires of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Smilodon - Combat of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Smilodon - Combat of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Thunderchild - Epic Shout Package' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Thunderchild - Epic Shout Package.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Wildcat - Combat of Skyrim' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("Wildcat - Combat of Skyrim.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Enhanced Blood Textures' ]
+        condition: 'active("Modern Brawl Bug Fix.esp") and active("dD - Enhanced Blood Main.esp")'
+
+#############################################
+#####  Modding Tools - Generated Files  #####
+#############################################
+  - name: 'Bashed Patch.*\.esp'
+    group: *dynamicPatchGroup
+    after:
+      - 'SSEMerged.esp'
+  - name: 'DynDOLOD.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/59721/'
+        name: 'Dynamic Distant Objects LOD - DynDOLOD on Nexus Mods'
+      - link: 'http://forum.step-project.com/topic/13029-dyndolod-236-skyrim-se-beta-with-dynamic-lod/'
+        name: 'Dynamic Distant Objects LOD - DynDOLOD SE BETA on Step-Project Forum'
+    group: *dynamicLODGroup
+  - name: 'Smashed Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/90987'
+        name: 'Mator Smash on Nexus Mods'
+    group: *dynamicPatchGroup
+    after:
+      - 'Bashed Patch.*\.esp'
+  - name: 'SSEMerged.esp'
+    group: *dynamicPatchGroup
+    tag:
+      - NoMerge
+
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2429']
     group: *earlyLoadersGroup
@@ -1669,21 +1740,6 @@ plugins:
   - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
     group: *rwtGroup
 
-  - name: 'SSEMerged.esp'
-    group: *dynamicPatchGroup
-    tag:
-      - NoMerge
-  - name: 'Bashed Patch.*\.esp'
-    group: *dynamicPatchGroup
-    after:
-      - 'SSEMerged.esp'
-  - name: 'Smashed Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/90987'
-        name: 'Mator Smash on Nexus Mods'
-    group: *dynamicPatchGroup
-    after:
-      - 'Bashed Patch.*\.esp'
   - name: 'Dawnguard Map Markers.esp'
     url: ['https://afkmods.iguanadons.net/index.php?/files/file/1896-dawnguard-map-markers/']
     group: *lateChangesGroup
@@ -1726,46 +1782,6 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
-  - name: 'Modern Brawl Bug Fix.esp'
-    url: ['http://www.nexusmods.com/skyrimspecialedition/mods/1473/']
-    # "This mod overwrites files from mod X, is it compatible?"
-    # Many mods that were found to trigger the brawl bug come with an included copy of the (obsolete)Brawl Bugs Patch.
-    # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
-    # (This will not impede the functionality of said other mods.)
-    group: *lateChangesGroup
-    after:
-      - 'Bashed Patch.*\.esp'
-    msg:
-      - <<: *AlreadyInX
-        subs: [ 'Andromeda - Unique Standing Stones of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Andromeda - Unique Standing Stones of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Apocalypse - Magic of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Apocalypse - Magic of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Imperious - Races of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Imperious - Races of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ordinator - Perks of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Ravengate - Riften Underground' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ravengate.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Sacrosanct - Vampires of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Sacrosanct - Vampires of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Smilodon - Combat of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Smilodon - Combat of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Thunderchild - Epic Shout Package' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Thunderchild - Epic Shout Package.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Wildcat - Combat of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Wildcat - Combat of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Enhanced Blood Textures' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("dD - Enhanced Blood Main.esp")'
   - name: 'MultipleEnchantments.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2694/']
     msg:
@@ -2727,13 +2743,6 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/9005/']
     after:
       - 'shor''s stone.esp'
-  - name: 'DynDOLOD.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/59721/'
-        name: 'Dynamic Distant Objects LOD - DynDOLOD on Nexus Mods'
-      - link: 'http://forum.step-project.com/topic/13029-dyndolod-236-skyrim-se-beta-with-dynamic-lod/'
-        name: 'Dynamic Distant Objects LOD - DynDOLOD SE BETA on Step-Project Forum'
-    group: *dynamicLODGroup
   - name: 'ULALPatch.esp'
     # Unique Locations - Alternate Start Patch
     url:
