@@ -1161,7 +1161,9 @@ plugins:
     tag:
       - Sound
   - name: 'Vivid WeathersSE.esp'
-    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/'
+        name: 'Vivid Weathers Definitive Edition on Nexus Mods'
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -1182,6 +1184,37 @@ plugins:
       - name: 'TrueStormsSE.esp'
         condition: 'active("TrueStormsSE.esp") and not active("Vivid_TS_Patch_.*\.esp") and not active("Vivid Weathers & True Storms.*\.esp")'
         display: 'True Storms Special Edition'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Audio Overhaul for Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
+          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Beyond Skyrim - Bruma SE](https://www.nexusmods.com/skyrimspecialedition/mods/10917/)'
+          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+        condition: 'active("BSHeartland.esm") and not active("Vivid Weathers SE - Bruma Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Falskaar](https://www.nexusmods.com/skyrimspecialedition/mods/2057/)'
+          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+        condition: 'active("Falskaar.esm") and not active("Vivid Weathers SE - Falskaar.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Lightning During Storms Sse (Minty lightning)](https://www.nexusmods.com/skyrimspecialedition/mods/8778/)'
+          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+        condition: 'active("LightngDuringStorm.esp") and not active("Vivid Weathers SE - LightingDuringStorm Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Lightning During Storms Sse (Minty lightning)](https://www.nexusmods.com/skyrimspecialedition/mods/8778/)'
+          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+        condition: 'active("MintyLightningMod.esp") and not active("Vivid Weathers SE - LightingDuringStorm Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x6065FD6C # v2.30
@@ -1206,11 +1239,15 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'Vivid Weathers SE - Summer Season.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
+    inc:
+      - 'Vivid Weathers SE - Winter.esp'
     clean:
       - crc: 0xFA5FFE09 # v2.30
         util: SSEEdit v3.2.1
   - name: 'Vivid Weathers SE - Winter.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
+    inc:
+      - 'Vivid Weathers SE - Summer Season.esp'
     clean:
       - crc: 0xBFCD0A7F # v2.30
         util: SSEEdit v3.2.1
@@ -1246,6 +1283,8 @@ plugins:
         util: SSEEdit v3.2.1
   - name: 'Vivid Weathers SE - SOS Patch.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
+    inc:
+      - 'SoS_VividWeathers_Patch.esp'
     clean:
       - crc: 0x2C48D46D # v2.30
         util: SSEEdit v3.2.1
