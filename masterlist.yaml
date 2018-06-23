@@ -1156,6 +1156,51 @@ plugins:
 ###########################
 ## AudioVisual - Weather ##
 ###########################
+  - name:  'NAT.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
+        name: 'NAT - Natural and Atmospheric Tamriel on Nexus Mods'
+    inc:
+      - 'Aequinoctium.esp'
+      - 'Autumn Skies.esp'
+      - 'ClimatesOfTamriel.esm'
+      - 'Dolomite Weathers.esp'
+      - 'ELFX - Weathers.esp'
+      - 'Foggy Weather 2.esp'
+      - 'Mythical Ages.esp'
+      - 'NorthernSWS.esp'
+      - 'Obsidian Mountain Fogs.esp'
+      - 'Obsidian Weathers.esp'
+      - 'Obscura Weather and Lighting.*\.esp'
+      - 'Realistic Lighting Overhaul - Weathers.esp'
+      - 'Rustic Weathers And Lighting.esp'
+      - 'Skyrim Legendary Weathers.esp'
+      - 'SolstitiumWeathersandSeasons.esp'
+      - 'surreal lighting.esp'
+      - name: 'TrueStormsSE.esp'
+        condition: 'active("TrueStormsSE.esp") and not active("NAT_TS_Patch_.*\.esp")'
+        display: 'True Storms Special Edition'
+      - 'Vivid WeathersSE.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
+          - '[NAT - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15025/)'
+        condition: 'active("TrueStormsSE.esp") and not active("NAT_TS_Patch_.*\.esp")'
+    tag:
+      - Graphics
+      - Sound
+      - Stats
+    dirty:
+      - <<: *dirtyPlugin
+      - crc: 0x8377D03C # 0.4.2c
+        util: SSEEdit v3.2.2
+        itm: 19
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0xD36DA497 # 0.4.2c
+        util: SSEEdit v3.2.2
   - name:  'Obsidian Weathers.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/'
