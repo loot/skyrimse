@@ -1322,6 +1322,11 @@ plugins:
           - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
           - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
         condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
+          - '[Vivid Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15135/?)'
+        condition: 'active("TrueStormsSE.esp") and not active("Vivid_TS_Patch_.*\.esp") and not active("Vivid Weathers & True Storms.*\.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x6065FD6C # v2.30
@@ -1360,11 +1365,15 @@ plugins:
         util: SSEEdit v3.2.2
   - name: 'Vivid Weathers - Extended Rain.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
+    inc:
+      - 'Vivid_TS_Patch_.*\.esp'
     clean:
       - crc: 0xD1472C2B # v2.30
         util: SSEEdit v3.2.2
   - name: 'Vivid Weathers SE - Extended Snow.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
+    inc:
+      - 'Vivid_TS_Patch_.*\.esp'
     clean:
       - crc: 0xDDF64958 # v2.30
         util: SSEEdit v3.2.2
