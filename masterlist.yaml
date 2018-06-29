@@ -679,7 +679,7 @@ plugins:
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
     after:
-      - 'Bashed Patch.*\.esp'
+      - 'Bashed Patch, 0.esp'
     msg:
       - <<: *AlreadyInX
         subs: [ 'Andromeda - Unique Standing Stones of Skyrim' ]
@@ -732,7 +732,7 @@ plugins:
         name: 'Mator Smash on Nexus Mods'
     group: *dynamicPatchGroup
     after:
-      - 'Bashed Patch.*\.esp'
+      - 'Bashed Patch, 0.esp'
   - name: 'SSEMerged.esp'
     group: *dynamicPatchGroup
     tag:
@@ -745,7 +745,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
         name: 'Better Dynamic Snow SE on Nexus Mods'
     after:
-      - 'SMIM-SE-.*\.esp'
+      - 'SMIM-SE-Merged-All.esp'
+      - 'SMIM-SE.esp'
     msg:
       - <<: *hasPatchIncluded
         subs:
@@ -831,7 +832,7 @@ plugins:
     url: ['https://afkmods.iguanadons.net/index.php?/files/file/1896-dawnguard-map-markers/']
     group: *lateChangesGroup
     after:
-      - 'Bashed Patch.*\.esp'
+      - 'Bashed Patch, 0.esp'
     clean:
       # v1.0.1 
       - crc: 0x3B3FE8B6
@@ -1170,7 +1171,11 @@ plugins:
       - 'Mythical Ages.esp'
       - 'NorthernSWS.esp'
       - 'Obsidian Weathers.esp'
-      - 'Obscura Weather and Lighting.*\.esp'
+      - 'Obscura Weather and Lighting.esp'
+      - 'Obscura Weather and Lighting - hazy.esp'
+      - 'Obscura Weather and Lighting - Vibrant.esp'
+      - 'Obscura Weather and Lighting - Vibrant with Haze.esp'
+      - 'Obscura Weather and Lighting - Skytoon.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Rustic Weathers And Lighting.esp'
       - 'Skyrim Legendary Weathers.esp'
@@ -1215,7 +1220,11 @@ plugins:
       - 'NAT.esp'
       - 'NorthernSWS.esp'
       - 'Obsidian Mountain Fogs.esp'
-      - 'Obscura Weather and Lighting.*\.esp'
+      - 'Obscura Weather and Lighting.esp'
+      - 'Obscura Weather and Lighting - hazy.esp'
+      - 'Obscura Weather and Lighting - Vibrant.esp'
+      - 'Obscura Weather and Lighting - Vibrant with Haze.esp'
+      - 'Obscura Weather and Lighting - Skytoon.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Rustic Weathers And Lighting.esp'
       - 'Skyrim Legendary Weathers.esp'
@@ -1252,7 +1261,11 @@ plugins:
   - name:  'True Storms - Obsidian Weathers - Patch .esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12125/']
     inc: 
-      - 'Obsidian_TS_Patch_.*\.esp'
+      - 'Obsidian_TS_Patch_Luminous.esp'
+      - 'Obsidian_TS_Patch_Spectral.esp'
+      - 'Obsidian_TS_Patch_Luminous_WaterFix.esp'
+      - 'Obsidian_TS_Patch_Spectral_WaterFix.esp '
+      - 'Obsidian_TS_Wet&Cold_Patch.esp'
     clean:
       - crc: 0x795E49B4 # TSPatch
         util: SSEEdit v3.2.2
@@ -1291,7 +1304,7 @@ plugins:
         subs:
           - '[Vivid Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
           - '[Vivid Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15135/?)'
-        condition: 'active("Vivid WeathersSE.esp") and not active("Vivid_TS_Patch_.*\.esp")'
+        condition: 'active("Vivid WeathersSE.esp") and not active("Vivid_TS_Patch_.*\.esp") and not active("Vivid Weathers & True Storms MCP")'
       - <<: *hasPluginPatch
         subs:
           - '[Wet and Cold](https://www.nexusmods.com/skyrimspecialedition/mods/644/)'
@@ -1325,7 +1338,11 @@ plugins:
       - 'Mythical Ages.esp'
       - 'NAT.esp'
       - 'NorthernSWS.esp'
-      - 'Obscura Weather and Lighting.*\.esp'
+      - 'Obscura Weather and Lighting.esp'
+      - 'Obscura Weather and Lighting - hazy.esp'
+      - 'Obscura Weather and Lighting - Vibrant.esp'
+      - 'Obscura Weather and Lighting - Vibrant with Haze.esp'
+      - 'Obscura Weather and Lighting - Skytoon.esp'
       - 'Obsidian Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Rustic Weathers And Lighting.esp'
@@ -1410,14 +1427,20 @@ plugins:
   - name: 'Vivid Weathers - Extended Rain.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
     inc:
-      - 'Vivid_TS_Patch_.*\.esp'
+      - 'Vivid_TS_Patch_Ominous.esp'
+      - 'Vivid_TS_Patch_Surreal.esp'
+      - 'Vivid_TS_Patch_Ominous_WaterFix.esp'
+      - 'Vivid_TS_Patch_Surreal_WaterFix.esp'
     clean:
       - crc: 0xD1472C2B # v2.30
         util: SSEEdit v3.2.2
   - name: 'Vivid Weathers SE - Extended Snow.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2187']
     inc:
-      - 'Vivid_TS_Patch_.*\.esp'
+      - 'Vivid_TS_Patch_Ominous.esp'
+      - 'Vivid_TS_Patch_Surreal.esp'
+      - 'Vivid_TS_Patch_Ominous_WaterFix.esp'
+      - 'Vivid_TS_Patch_Surreal_WaterFix.esp'
     clean:
       - crc: 0xDDF64958 # v2.30
         util: SSEEdit v3.2.2
@@ -2118,7 +2141,8 @@ plugins:
         display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
       - 'RealWarMaiden.esp'
       - 'ScottishBanneredMare.esp'
-      - 'Skyrim Radioactive -.*\.esp'
+      - 'Skyrim Radioactive - Solitude Docks.esp'
+      - 'Skyrim Radioactive - Windhelm Docks.esp'
       - name: 'tpos_ultimate_esm.esp'
         display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
         condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
