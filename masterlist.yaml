@@ -2895,6 +2895,45 @@ plugins:
       - Delev
       - Invent
       - Relev
+  - name: 'TheWulfPanda - City Teleport Spells.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/'
+        name: 'Teleport - City Spells on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
+    dirty:
+      # v1.01
+      - crc: 0xEC89CAD3
+        <<: *dirtyPlugin
+        itm: 19
+        udr: 0
+        nav: 0
+    clean:
+      # v1.01 ~ remove wild edits after cleaning:
+      #   - parent sub-block of 0000939D
+      #   - 00042249
+      #   - 00020EE7
+      #   - 0001A27F
+      #   - 00037EE9
+      - crc: 0xB63A3D6B
+        util: SSEEdit v3.2.1
+  - name: 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/'
+        name: 'Teleport - City Spells Less Magicka Increase Cast Time on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - City Teleport Spells.esp'
+    dirty:
+      # v1.01
+      - crc: 0x5AE957AB
+        <<: *dirtyPlugin
+        itm: 19
+        udr: 0
+        nav: 0
+    clean:
+      # v1.01 ~ for wild edits see 'TheWulfPanda - City Teleport Spells.esp'
+      - crc: 0x65674DC4
+        util: SSEEdit v3.2.1
 ###################
 ## Leveled Lists ##
 ###################
