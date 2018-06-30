@@ -2919,6 +2919,67 @@ plugins:
       - Delev
       - Invent
       - Relev
+  - name: 'TheWulfPanda - City Teleport Spells.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/'
+        name: 'Teleport - City Spells on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[TheWulfPanda - City Teleport Spells.esp](https://www.nexusmods.com/skyrimspecialedition/mods/7015/)'
+          - |+
+
+              #### Remove the following records with xEdit
+              - Parent Sub-Block 2,-2 of MorthalExterior04 [CELL:0000939D]
+              - SolitudeOrigin [CELL:00037EE9]
+              - WhiterunOrigin [CELL:0001A27F]
+              - MarkarthOrigin [CELL:00020EE7]
+              - RiftenCityNorth [CELL:00042249]
+        condition: 'checksum("TheWulfPanda - City Teleport Spells.esp",F4169312)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xEC89CAD3 # v1.01
+        itm: 19
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0xF4169312 # v1.01 With wild edits
+        util: SSEEdit v3.2.1
+      - crc: 0xB63A3D6B # v1.01 Without wild edits
+        util: SSEEdit v3.2.1
+  - name: 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/'
+        name: 'Teleport - City Spells Less Magicka Increase Cast Time on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - City Teleport Spells.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp](https://www.nexusmods.com/skyrimspecialedition/mods/7015/)'
+          - |+
+
+              #### Remove the following records with xEdit
+              - Parent Sub-Block 2,-2 of MorthalExterior04 [CELL:0000939D]
+              - SolitudeOrigin [CELL:00037EE9]
+              - WhiterunOrigin [CELL:0001A27F]
+              - MarkarthOrigin [CELL:00020EE7]
+              - RiftenCityNorth [CELL:00042249]
+        condition: 'checksum("TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp",DE73AD5C)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x5AE957AB # v1.01
+        util: SSEEdit v3.2.1
+        itm: 19
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0xDE73AD5C # v1.01 With wild edits
+        util: SSEEdit v3.2.1
+      - crc: 0x65674DC4 # v1.01 Without wild edits
+        util: SSEEdit v3.2.1
 ###################
 ## Leveled Lists ##
 ###################
