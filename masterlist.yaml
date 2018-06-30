@@ -1991,6 +1991,17 @@ plugins:
     after:
       - 'EBM_UnlimitedPower.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
+      - 'Sacrosanct - Vampires of Skyrim.esp'
+      - 'Tainted_Blood.esp'
+    tag:
+      - Graphics
+      - Names
+      - Relev
+      - Sound
+      - Stats
+    clean:
+      - crc: 0xEC44246A # v8.2
+        util: SSEEdit v3.2.1
   - name: 'CFTO.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
@@ -2658,7 +2669,9 @@ plugins:
   - name: 'Sacrosanct - Vampires of Skyrim.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/3928']
     inc:
-      - 'better vampires.esp'
+      - name: 'better vampires.esp'
+        condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
+        display: '[Better Vampires](https://www.nexusmods.com/skyrimspecialedition/mods/1925/)'
       - 'mslVampiricThirst.esp'
       - 'SanguinairVampirism.esp'
       - 'VampireLordPerksExpanded.esp'
@@ -2670,6 +2683,10 @@ plugins:
       - Graphics
       - Names
       - Sound
+    msg:
+      - type: warn
+        content: 'Better Vampires and Sacrosanct Patch is not recommended or supported by the Author of [Sacrosanct - Vampires of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3928)'
+        condition: 'active("better vampires.esp") and active("BVandSacrosanct_Patch.esp")'
     dirty:
         # version 5.11SSE
       - crc: 0x93553BD1
