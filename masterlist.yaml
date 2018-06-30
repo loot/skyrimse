@@ -2980,6 +2980,72 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0x65674DC4 # v1.01 Without wild edits
         util: SSEEdit v3.2.1
+  - name: 'TheWulfPanda - Faction Teleport Spells.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6991/'
+        name: 'Teleport - Faction Spells on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[TheWulfPanda - Faction Teleport Spells.esp](https://www.nexusmods.com/skyrimspecialedition/mods/6991/)'
+          - |+
+
+            #### Edit the following records with xEdit
+            - remove `[REFR:02010521]`
+            - remove `[REFR:02007320]`
+            - remove `[REFR:000CA72C]`
+            - remove `[REFR:000B3434]`
+            - remove `DBSanc_WestHall [REFR:000C0291]`
+            - remove Top Group `Worldspace [GRUP:WRLD]`
+            - remove the **XEZN** attribute in RiftenRaggedFlagon `[CELL:00016BCF]`
+            - add the value `WeatherPineForest [REGN:0002A72D]` to the **XCCM** attribute in DarkBrotherhoodSanctuary `[CELL:000AD5A1]`
+        condition: 'checksum("TheWulfPanda - Faction Teleport Spells.esp",BCE75EB1)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x6DA7BCF5 # v1.03
+        itm: 30
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0xBCE75EB1 # v1.03 With wild edits
+        util: SSEEdit v3.2.1
+      - crc: 0x2A2CF491 # v1.03 Without wild edits
+        util: SSEEdit v3.2.1
+  - name: 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6991/'
+        name: 'Teleport - Faction Spells Less Magicka Increased Cast Time on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - Faction Teleport Spells.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp](https://www.nexusmods.com/skyrimspecialedition/mods/6991/)'
+          - |+
+
+            #### Edit the following records with xEdit
+            - remove `[REFR:02010521]`
+            - remove `[REFR:02007320]`
+            - remove `[REFR:000CA72C]`
+            - remove `[REFR:000B3434]`
+            - remove `DBSanc_WestHall [REFR:000C0291]`
+            - remove Top Group `Worldspace [GRUP:WRLD]`
+            - remove the **XEZN** attribute in RiftenRaggedFlagon `[CELL:00016BCF]`
+            - add the value `WeatherPineForest [REGN:0002A72D]` to the **XCCM** attribute in DarkBrotherhoodSanctuary `[CELL:000AD5A1]`
+        condition: 'checksum("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp",BAD78620)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x3BEDC8A5 # v1.03
+        itm: 30
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0xBAD78620 # v1.03 With wild edits
+        util: SSEEdit v3.2.1
+      - crc: 0x7BD6C78A # v1.03 Without wild edits
+        util: SSEEdit v3.2.1
 ###################
 ## Leveled Lists ##
 ###################
