@@ -3046,6 +3046,64 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0x7BD6C78A # v1.03 Without wild edits
         util: SSEEdit v3.2.1
+  - name: 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7267/'
+        name: 'Teleport - Towns and Villages on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[TheWulfPanda - Teleport Spells Towns and Villages.esp](https://www.nexusmods.com/skyrimspecialedition/mods/7267/)'
+          - |+
+
+            #### Remove the following records with xEdit
+            - `DragonBridgeExterior03 [CELL:00009349]`
+            - `Riverwood [CELL:00009732]`
+            - Parent Sub-Block 2,-3 of `IvarsteadExterior02 [CELL:000097BF]`
+            - Remove the **XCWT** attribute of `Riverwood04 [CELL:00009731]`
+        condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages.esp",B63A3D6B)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xE614F5D7 # v1.00
+        itm: 17
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0xB63A3D6B # v1.00 With wild edits
+        util: SSEEdit v3.2.1
+      - crc: 0x6C66613A # v1.00 Without wild edits
+        util: SSEEdit v3.2.1
+  - name: 'TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7267/'
+        name: 'Teleport - Towns and Villages Less Magicka Increase Cast Time on Nexus Mods'
+    inc:
+      - 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp](https://www.nexusmods.com/skyrimspecialedition/mods/7267/)'
+          - |+
+
+            #### Remove the following records with xEdit
+            - `DragonBridgeExterior03 [CELL:00009349]`
+            - `Riverwood [CELL:00009732]`
+            - Parent Sub-Block 2,-3 of `IvarsteadExterior02 [CELL:000097BF]`
+            - Remove the **XCWT** attribute of `Riverwood04 [CELL:00009731]`
+        condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp",0A2034F1)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x2393970C # v1.00
+        itm: 17
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x0A2034F1 # v1.00 With wild edits
+        util: SSEEdit v3.2.1
+      - crc: 0x711550A4 # v1.00 Without wild edits
+        util: SSEEdit v3.2.1
 ###################
 ## Leveled Lists ##
 ###################
