@@ -230,8 +230,14 @@ groups:
   - name: &overhaulsGroup Large Overhauls
     after: [ *fixesResourcesGroup ]
 
-  - name: &addonsGroup Add-ons & Expansions
+  - name: &visualsGroup Weather & Lighting Overhauls
     after: [ *overhaulsGroup ]
+
+  - name: &audioGroup Audio Overhauls
+    after: [ *visualsGroup ]
+
+  - name: &addonsGroup Add-ons & Expansions
+    after: [ *audioGroup ]
 
   - name: default
     after: [ *addonsGroup ]
@@ -966,10 +972,34 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
         name: 'Relighting Skyrim - SSE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *visualsGroup
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
+      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'ImprovedHearthfireLighting.esp'
+      - name: 'Palaces Castles Enhanced.esp'
+        condition: 'active("Palaces Castles Enhanced.esp") and not active("PCE - Relighting Skyrim.esp")'
+        display: '[Palaces and Castles Enhanced SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+      - 'RealisticRoomRental.esp'
+      - 'RLO - Interiors.esp'
+      - 'RLO - Exteriors.esp'
+      - 'torch shadows.esp'
+    after:
+      - 'Obsidian Weathers.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xFAB62250  # v1.0.5
+        util: SSEEdit v3.2.2
+        itm: 3
+        udr: 0
+        nav: 0
     clean:
-      # Version 1.0.2
-      - crc: 0xAD0407B5
+      - crc: 0xAD0407B5 # v1.0.2
+        util: SSEEdit v3.2.1
+      - crc: 0x3B192F2E # v1.0.4
+        util: SSEEdit v3.2.1
+      - crc: 0x3EB86BF4 # v1.0.5
         util: SSEEdit v3.2.1
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/844/']
@@ -1027,7 +1057,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
         name: 'Audio Overhaul for Skyrim SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *audioGroup
     clean:
       # Version v3.0.0
       - crc: 0x96BF25A6
@@ -1038,7 +1068,7 @@ plugins:
       - 'RealisticWaterTwo.esp'
   - name: 'Immersive Sounds - Compendium.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/523/']
-    group: *overhaulsGroup
+    group: *audioGroup
     after:
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
     tag: 
@@ -1074,7 +1104,7 @@ plugins:
         condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
   - name: 'SoundsofSkyrimComplete.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8286/']
-    group: *overhaulsGroup
+    group: *audioGroup
     tag:
       - C.Acoustic
       - Sound
@@ -1162,7 +1192,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
         name: 'Sounds of Skyrim - The Wilds on Nexus Mods'
-    group: *overhaulsGroup
+    group: *audioGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1175,7 +1205,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
         name: 'Sounds of Skyrim - Civilization on Nexus Mods'
-    group: *overhaulsGroup
+    group: *audioGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1189,7 +1219,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
         name: 'Sounds of Skyrim - The Dungeons on Nexus Mods'
-    group: *overhaulsGroup
+    group: *audioGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1205,6 +1235,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
         name: 'NAT - Natural and Atmospheric Tamriel on Nexus Mods'
+    group: *visualsGroup
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -1253,6 +1284,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/'
         name: 'Obsidian Weathers and Seasons on Nexus Mods'
+    group: *visualsGroup
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -1315,6 +1347,7 @@ plugins:
         util: SSEEdit v3.2.2
   - name: 'TrueStormsSE.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2472/']
+    group: *visualsGroup
     after: 
       - 'ELFX - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
@@ -1372,6 +1405,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/'
         name: 'Vivid Weathers Definitive Edition on Nexus Mods'
+    group: *visualsGroup
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
