@@ -966,10 +966,34 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
         name: 'Relighting Skyrim - SSE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *fixesResourcesGroup
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
+      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'ImprovedHearthfireLighting.esp'
+      - name: 'Palaces Castles Enhanced.esp'
+        condition: 'active("Palaces Castles Enhanced.esp") and not active("PCE - Relighting Skyrim.esp")'
+        display: '[Palaces and Castles Enhanced SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+      - 'RealisticRoomRental.esp'
+      - 'RLO - Interiors.esp'
+      - 'RLO - Exteriors.esp'
+      - 'torch shadows.esp'
+    after:
+      - 'Obsidian Weathers.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xFAB62250  # v1.0.5
+        util: SSEEdit v3.2.2
+        itm: 3
+        udr: 0
+        nav: 0
     clean:
-      # Version 1.0.2
-      - crc: 0xAD0407B5
+      - crc: 0xAD0407B5 # v1.0.2
+        util: SSEEdit v3.2.1
+      - crc: 0x3B192F2E # v1.0.4
+        util: SSEEdit v3.2.1
+      - crc: 0x3EB86BF4 # v1.0.5
         util: SSEEdit v3.2.1
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/844/']
