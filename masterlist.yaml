@@ -2296,8 +2296,8 @@ plugins:
       - 'Skyrim Radioactive - Solitude Docks.esp'
       - 'Skyrim Radioactive - Windhelm Docks.esp'
       - name: 'tpos_ultimate_esm.esp'
-        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
         condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
+        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
     after:
       - '3DNPC.esp'
       - 'Bells of Skyrim.esp'
@@ -2607,6 +2607,7 @@ plugins:
     inc:
       - 'JKs Skyrim.esp'
       - 'Oblivion Gates in Cities.esp'
+      - 'OutlawsRefuges.esp'
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
@@ -2702,12 +2703,11 @@ plugins:
     inc:
       - name: 'Immersive Horses.esp'
         condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - name: 'Amazing Follower Tweaks'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
-      - name: 'Immersive Amazing Follower Tweaks'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88C2EA38) and not active("RDO - iAFT Patch.esp")'
-      - name: 'Extensible Follower Framework'
+      - name: 'AmazingFollowerTweaks.esp'
+        condition: 'active("AmazingFollowerTweaks.esp") and not active("RDO - AFT v1.66 Patch.esp") and not active("RDO - iAFT Patch.esp")'
+      - name: 'EFFDialogue.esp'
         condition: 'checksum("EFFDialogue.esp",E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
+        display: 'Extensible Follower Framework'
     after:
       - 'AmazingFollowerTweaks.esp'
       - 'FCO - Follower Commentary Overhaul.esp'
@@ -3482,6 +3482,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/'
         name: 'Provincial Courier Service on Nexus Mods'
+    inc:
+      - 'Eli_Halla.esp'
     after:
       - Immersive Citizens - AI Overhaul.esp
     tag:
@@ -3680,6 +3682,8 @@ plugins:
         name: 'Karthwasten on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2960640'
         name: 'Karthwasten on Bethesda.net'
+    inc:
+      - 'Karthwasten - Let The Silver Flow.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Kynesgrove.esp'
@@ -3692,6 +3696,45 @@ plugins:
         name: 'Kynesgrove on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'ShezrieOldHroldanVer2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
+        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
+    inc:
+      - name: 'Distinct Interiors.esp'
+        condition: 'checksum("Distinct Interiors.esp",52B7B288)' # v1.81
+        display: 'Distinct Interiors - All in One'
+      - 'Distinct Interiors - Inns.esp'
+    msg:
+      - type: info
+        content: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
+        condition: 'active("Distinct Interiors.esp")'
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
+    tag:
+      - C.Light
+      - Graphics
+      - Invent
+      - -C.Water
+      - -C.Acoustic
+      - -C.Regions
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x9E66B431 # v2.2
+        itm: 1
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x600E8FE9
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x4735D188 # v2.2 no master sort
+        util: SSEEdit v3.2.1
+      - crc: 0x22DAD810 # v2.2 with masters sorted
+        util: SSEEdit v3.2.1
   - name: 'Shor''s Stone.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
@@ -3716,7 +3759,11 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2959957'
         name: 'Soljund''s Sinkhole on Bethesda.net'
     after:
+      - 'Settlements Expanded SE.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    clean:
+      - crc: 0x1EA7B24A # v2.0.1
+        util: SSEEdit v3.2.1
   - name: 'Whistling Mine.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
@@ -3725,9 +3772,15 @@ plugins:
         name: 'Whistling Mine on AFK Mods'
       - link: 'https://mods.bethesda.net/#en/workshop/skyrim/mod-detail/2959645/'
         name: 'Whistling Mine on Bethesda.net'
+    inc:
+      - 'TES Arena Amol.esp'
     after:
+      - 'Settlements Expanded SE.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+    clean:
+      - crc: 0x4B4D5FD6 # v2.0.4
+        util: SSEEdit v3.2.1
 ##############################
 ## Locations - Player Homes ##
 ##############################
@@ -3906,37 +3959,6 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
-  - name: 'ShezrieOldHroldanVer2.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
-        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
-    msg:
-      - type: say
-        content: 'Plug-ins Masters require sorting.'
-        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
-    tag:
-      - C.Light
-      - Graphics
-      - Invent
-      - -C.Water
-      - -C.Acoustic
-      - -C.Regions
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9E66B431 # v2.2
-        itm: 1
-        udr: 0
-        nav: 0
-      - <<: *dirtyPlugin
-        crc: 0x600E8FE9
-        itm: 1
-        udr: 0
-        nav: 0
-    clean:
-      - crc: 0x4735D188 # v2.2 no master sort
-        util: SSEEdit v3.2.1
-      - crc: 0x22DAD810 # v2.2 with masters sorted
-        util: SSEEdit v3.2.1
   - name: 'Shadowmarks.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
