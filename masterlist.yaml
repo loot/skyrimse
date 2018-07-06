@@ -3690,6 +3690,37 @@ plugins:
         name: 'Kynesgrove on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'ShezrieOldHroldanVer2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
+        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
+    tag:
+      - C.Light
+      - Graphics
+      - Invent
+      - -C.Water
+      - -C.Acoustic
+      - -C.Regions
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x9E66B431 # v2.2
+        itm: 1
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x600E8FE9
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x4735D188 # v2.2 no master sort
+        util: SSEEdit v3.2.1
+      - crc: 0x22DAD810 # v2.2 with masters sorted
+        util: SSEEdit v3.2.1
   - name: 'Shor''s Stone.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
@@ -3904,37 +3935,6 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
-  - name: 'ShezrieOldHroldanVer2.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
-        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
-    msg:
-      - type: say
-        content: 'Plug-ins Masters require sorting.'
-        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
-    tag:
-      - C.Light
-      - Graphics
-      - Invent
-      - -C.Water
-      - -C.Acoustic
-      - -C.Regions
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9E66B431 # v2.2
-        itm: 1
-        udr: 0
-        nav: 0
-      - <<: *dirtyPlugin
-        crc: 0x600E8FE9
-        itm: 1
-        udr: 0
-        nav: 0
-    clean:
-      - crc: 0x4735D188 # v2.2 no master sort
-        util: SSEEdit v3.2.1
-      - crc: 0x22DAD810 # v2.2 with masters sorted
-        util: SSEEdit v3.2.1
   - name: 'Shadowmarks.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
