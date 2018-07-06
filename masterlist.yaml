@@ -2296,8 +2296,8 @@ plugins:
       - 'Skyrim Radioactive - Solitude Docks.esp'
       - 'Skyrim Radioactive - Windhelm Docks.esp'
       - name: 'tpos_ultimate_esm.esp'
-        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
         condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
+        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
     after:
       - '3DNPC.esp'
       - 'Bells of Skyrim.esp'
@@ -2700,12 +2700,11 @@ plugins:
     inc:
       - name: 'Immersive Horses.esp'
         condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - name: 'Amazing Follower Tweaks'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
-      - name: 'Immersive Amazing Follower Tweaks'
-        condition: 'checksum("AmazingFollowerTweaks.esp",88C2EA38) and not active("RDO - iAFT Patch.esp")'
-      - name: 'Extensible Follower Framework'
+      - name: 'AmazingFollowerTweaks.esp'
+        condition: 'active("AmazingFollowerTweaks.esp") and not active("RDO - AFT v1.66 Patch.esp") and not active("RDO - iAFT Patch.esp")'
+      - name: 'EFFDialogue.esp'
         condition: 'checksum("EFFDialogue.esp",E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
+        display: 'Extensible Follower Framework'
     after:
       - 'AmazingFollowerTweaks.esp'
       - 'FCO - Follower Commentary Overhaul.esp'
@@ -3690,6 +3689,37 @@ plugins:
         name: 'Kynesgrove on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'ShezrieOldHroldanVer2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
+        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
+    tag:
+      - C.Light
+      - Graphics
+      - Invent
+      - -C.Water
+      - -C.Acoustic
+      - -C.Regions
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x9E66B431 # v2.2
+        itm: 1
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x600E8FE9
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x4735D188 # v2.2 no master sort
+        util: SSEEdit v3.2.1
+      - crc: 0x22DAD810 # v2.2 with masters sorted
+        util: SSEEdit v3.2.1
   - name: 'Shor''s Stone.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
@@ -3904,37 +3934,6 @@ plugins:
       - 'SexyMannequinsImpGuards_SSE.esp'
       - 'SexyMannequinsVyktorVyktoria_SSE.esp'
       - 'SexyMannequinVyktoria_SSE.esp'
-  - name: 'ShezrieOldHroldanVer2.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
-        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
-    msg:
-      - type: say
-        content: 'Plug-ins Masters require sorting.'
-        condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
-    tag:
-      - C.Light
-      - Graphics
-      - Invent
-      - -C.Water
-      - -C.Acoustic
-      - -C.Regions
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9E66B431 # v2.2
-        itm: 1
-        udr: 0
-        nav: 0
-      - <<: *dirtyPlugin
-        crc: 0x600E8FE9
-        itm: 1
-        udr: 0
-        nav: 0
-    clean:
-      - crc: 0x4735D188 # v2.2 no master sort
-        util: SSEEdit v3.2.1
-      - crc: 0x22DAD810 # v2.2 with masters sorted
-        util: SSEEdit v3.2.1
   - name: 'Shadowmarks.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
