@@ -3695,7 +3695,15 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
         name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE on Nexus Mods'
+    inc:
+      - name: 'Distinct Interiors.esp'
+        condition: 'checksum("Distinct Interiors.esp",52B7B288)' # v1.81
+        display: 'Distinct Interiors - All in One'
+      - 'Distinct Interiors - Inns.esp'
     msg:
+      - type: info
+        content: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
+        condition: 'active("Distinct Interiors.esp")'
       - type: say
         content: 'Plug-ins Masters require sorting.'
         condition: 'checksum("ShezrieOldHroldanVer2.esp",9E66B431) or checksum("ShezrieOldHroldanVer2.esp",4735D188)'
