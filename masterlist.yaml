@@ -345,7 +345,7 @@ plugins:
         itm: 621
         udr: 82
         nav: 57
-      - <<: *dirtyPlugin 
+      - <<: *dirtyPlugin
         crc: 0x6f162d5e # v1.59.39.0 - Auto Clean First pass
         itm: 6
         udr: 0
@@ -851,7 +851,7 @@ plugins:
     after:
       - 'Bashed Patch, 0.esp'
     clean:
-      - crc: 0x3B3FE8B6 # v1.0.1 
+      - crc: 0x3B3FE8B6 # v1.0.1
         util: SSEEdit v3.2.1
 ########################################
 ## AudioVisual - Animations & Physics ##
@@ -964,7 +964,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
     group: *overhaulsGroup
-    inc: 
+    inc:
       - 'ELFX - NoBreezehome.esp'
       - 'ELFX - NoHjerim.esp'
       - 'ELFX - NoHoneyside.esp'
@@ -1164,7 +1164,7 @@ plugins:
     group: *overhaulsGroup
     after:
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
-    tag: 
+    tag:
       - Sound
     clean:
       - crc: 0x854499E0 # v2.1
@@ -1172,7 +1172,7 @@ plugins:
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/701/']
     group: *earlyLoadersGroup
-    tag: 
+    tag:
       - Sound
     clean:
       - crc: 0xAA85D810 # v2.1
@@ -1405,7 +1405,7 @@ plugins:
           - 'VIGILANT SE'
           - '[Obsidian Weathers for Vigilant](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)'
         condition: 'active("Vigilant.esp") and not active("Obsidian Weathers for Vigilant.esp")'
-    tag: 
+    tag:
       - Sound
       - Stats
     clean:
@@ -1413,14 +1413,14 @@ plugins:
         util: SSEEdit v3.2.2
   - name:  'Obsidian Weathers for Vigilant.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12125/']
-    tag: 
+    tag:
       - Sound
     clean:
       - crc: 0x6EAE613E # Vigilant 1.0
         util: SSEEdit v3.2.2
   - name:  'True Storms - Obsidian Weathers - Patch .esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12125/']
-    inc: 
+    inc:
       - 'Obsidian_TS_Patch_Luminous.esp'
       - 'Obsidian_TS_Patch_Spectral.esp'
       - 'Obsidian_TS_Patch_Luminous_WaterFix.esp'
@@ -1431,7 +1431,7 @@ plugins:
         util: SSEEdit v3.2.2
   - name: 'TrueStormsSE.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2472/']
-    after: 
+    after:
       - 'ELFX - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
     msg:
@@ -2029,7 +2029,7 @@ plugins:
         crc: 0x730EF406 # v1.5 - main file
         itm: 11
         udr: 0
-        nav: 0 
+        nav: 0
       - <<: *dirtyPlugin
         crc: 0x05D653F7 # v1.5 - OCS Version
         itm: 13
@@ -3413,7 +3413,7 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
       - C.Location
-    clean: 
+    clean:
       - crc: 0xE14997CA # v4.0.2
         util: SSEEdit v3.2.1
   - name: 'Cutting Room Floor.esp'
@@ -3437,7 +3437,7 @@ plugins:
         condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
     tag:
       - Actors.ACBS
-      - Actors.AIData 
+      - Actors.AIData
       - Actors.AIPackages
       - Actors.CombatStyle
       - Actors.Stats
@@ -3750,7 +3750,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     clean:
-      - crc: 0x98441177 # v2.0.2 
+      - crc: 0x98441177 # v2.0.2
         util: SSEEdit v3.2.2
   - name: 'Solitude Expansion.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/8/']
@@ -3985,6 +3985,27 @@ plugins:
 ##############################
   - name: 'LegacyoftheDragonborn.esm'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/11802/']
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/276/)'
+          - '[Legacy of the Dragonborn SSE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+        condition: 'active("Cutting Room Floor.esp") and not active("DBM_CRF_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Helgen Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/5673/)'
+          - '[Legacy of the Dragonborn SSE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+        condition: 'active("Helgen Reborn.esp") and not active("DBM_HelgenReborn_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Skyrim Underground](https://www.nexusmods.com/skyrimspecialedition/mods/131/)'
+          - '[Legacy of the Dragonborn SSE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+        condition: 'active("AKSkyrimUnderground.esp") and not active("DBM_SkyrimUnderground_Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+          - '[Legacy of the Dragonborn SSE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("DBM_OpenCities_Patch.esp")'
     tag:
       - C.Location
       - Delev
@@ -4004,6 +4025,7 @@ plugins:
         name: 'Legacy of the Dragonborn Patches SE on Nexus Mods'
     tag:
       - Actors.AIPackages
+      - Delev
       - -Factions
       - Graphics
       - Names
@@ -4035,6 +4057,10 @@ plugins:
     clean:
       - crc: 0xAD717340 # v4.1
         util: SSEEdit v3.2.2
+  - name: 'DBM_OCS_Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
+        name: 'Legacy of the Dragonborn Patches SE on Nexus Mods'
 ############################
 ## Patches - Compatibilty ##
 ############################
