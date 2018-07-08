@@ -4003,20 +4003,38 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn Patches SE on Nexus Mods'
     tag:
-      - Factions
+      - Actors.AIPackages
+      - -Factions
+      - Graphics
       - Names
+    dirty:
+      - <<: *dirtyPlugin # v4.1
+        crc: 0xC2E51A86
+        itm: 3
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x42A08405 # v4.1
+        util: SSEEdit v3.2.2
   - name: 'DBM_HelgenReborn_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn Patches SE on Nexus Mods'
     tag:
-      - Factions
+      - C.Location
+      - -Factions
+    clean:
+      - crc: 0xFD54504A # v4.1
+        util: SSEEdit v3.2.2
   - name: 'DBM_SkyrimUnderground_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn Patches SE on Nexus Mods'
     tag:
       - Invent
+    clean:
+      - crc: 0xAD717340 # v4.1
+        util: SSEEdit v3.2.2
 ############################
 ## Patches - Compatibilty ##
 ############################
