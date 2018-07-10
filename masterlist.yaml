@@ -263,8 +263,11 @@ groups:
   - name: &rwtGroup Realistic Water
     after: [ *eleGroup ]
 
-  - name: &dynamicPatchGroup Dynamic Patches
+  - name: &lvlListsGroup Leveled List Modifiers
     after: [ *rwtGroup ]
+
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *lvlListsGroup ]
 
   - name: &lateChangesGroup Late Fixes & Changes
     after: [ *dynamicPatchGroup ]
@@ -3259,6 +3262,13 @@ plugins:
       - Delev
       - Invent
       - Relev
+  - name: 'Scarcity SE - Less Loot Mod.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
+    group: *lvlListsGroup
+  - name: 'Scarcity SE - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
+    group: *lvlListsGroup
+    after: [ 'Scarcity SE - Less Loot Mod.esp' ]
   - name: 'WarmongerArmory_LeveledList.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/4956/']
     after:
