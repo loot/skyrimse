@@ -221,8 +221,11 @@ globals:
 groups:
   - name: &dlcGroup DLC
 
-  - name: &earlyLoadersGroup Early Loaders
+  - name: &eslmGroup Light Masters # Non DLC - Has Header Flags (ESM & ESL)
     after: [ *dlcGroup ]
+
+  - name: &earlyLoadersGroup Early Loaders
+    after: [ *eslmGroup ]
 
   - name: &fixesResourcesGroup Fixes & Resources
     after: [ *earlyLoadersGroup ]
@@ -1314,6 +1317,19 @@ plugins:
     clean:
       - crc: 0xB8611F94 # v1.23
         util: SSEEdit v3.2.1
+  - name: 'UHDAP -.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
+        name: 'Unofficial High Definition Audio Project on Nexus Mods'
+    group: *eslmGroup
+  - name: 'UHDAP - MusicHQ.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
+        name: 'Unofficial High Definition Audio Project on Nexus Mods'
+    group: *eslmGroup
+    inc:
+      - 'UHDAP - MusicUHQ1.esp'
+      - 'UHDAP - MusicUHQ2.esp'
 ###########################
 ## AudioVisual - Weather ##
 ###########################
