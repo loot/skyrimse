@@ -649,6 +649,7 @@ plugins:
     group: *fixesResourcesGroup
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
+      - 'RSkyrimChildren.esm'
     clean:
       - crc: 0xAE28DBE3 # v4.1.2a
         util: SSEEdit v3.2.1
@@ -2968,6 +2969,20 @@ plugins:
         nav: 0
     clean:
       - crc: 0x8757A209 # v2.1
+  - name: 'SL01AmuletsSkyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/487/'
+        name: 'Amulets of Skyrim SSE on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("SL01AmuletsSkyrim.esp",C77B2B42)'
+    tag:
+      - Delev
+    clean:
+      - crc: 0xC77B2B42 # v4.061
+        util: SSEEdit v3.2.2
+      - crc: 0xA66ABCA9 # v4.061
         util: SSEEdit v3.2.2
   - name: 'Book Covers Skyrim.esp'
     url:
@@ -3025,6 +3040,25 @@ plugins:
     clean:
       - crc: 0x17AE7063 # v1.31
         util: SSEEdit v3.2.1
+  - name: 'PrvtI_HeavyArmory.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
+        name: 'Heavy Armory - New Weapons on Nexus Mods'
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("PrvtI_HeavyArmory.esp",E42DCB02)'
+    tag:
+      - Delev
+      - Invent
+      - Names
+      - Relev
+      - Stats
+    clean:
+      - crc: 0xE42DCB02 # v3.3 no master sort
+        util: SSEEdit v3.2.2
+      - crc: 0x832DEAAB # v3.3 with masters sorted
+        util: SSEEdit v3.2.2
   - name: 'Hothtrooper44_ArmorCompilation.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
@@ -3039,6 +3073,18 @@ plugins:
     tag:
       - Invent
       - Relev
+  - name: 'Immersive Weapons.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/5336/']
+    after:
+      - AmazingFollowerTweaks.esp
+    tag:
+      - Delev
+      - Graphics
+      - Invent
+      - Relev
+    clean:
+      - crc: 0x5B38977B # v2
+        util: SSEEdit v3.2.2
   - name: 'imp_helm_legend.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/824/'
