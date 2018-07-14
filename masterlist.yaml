@@ -3149,6 +3149,33 @@ plugins:
     clean:
       - crc: 0xDD84DD4C # v2.1
         util: SSEEdit v3.2.1
+  - name: 'Cloaks.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/'
+        name: 'Cloaks of Skyrim on Nexus Mods'
+    tag:
+      - name: Delev
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+      - Invent
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
+          - '[Cloaks - USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cloaks - USSEP Patch") and not active("Bashed Patch, 0.esp")'
+    clean:
+      - crc: 0x7A522F11 # v1.2.1
+        util: SSEEdit v3.2.2
+  - name: 'Cloaks - Dawnguard.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/6369/']
+    clean:
+      - crc: 0x60DE7658 # v1.2.1
+        util: SSEEdit v3.2.2
+  - name: 'Cloaks - USSEP Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/6369/']
+    clean:
+      - crc: 0x28F684DD # v1.2.1
+        util: SSEEdit v3.2.2
   - name: 'Skyshards.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/'
