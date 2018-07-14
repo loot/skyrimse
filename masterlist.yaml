@@ -3273,6 +3273,37 @@ plugins:
       - Delev
       - Invent
       - Relev
+  - name: 'Summermyst - Enchantments of Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/6285/']
+    inc:
+      - 'Classic Elder Scrolls Attributes.esp'
+      - 'SkyRe_Main.esp'
+      - 'Wintermyst - Enchantments of Skyrim.esp'
+      - 'Worlds Dawn.esp'
+    after:
+      - 'Weapons & Armor Fixes_Remade.esp'
+    tag:
+      - Delev
+      - Graphics
+      - Invent
+      - Relev
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'Animated Weapon Enchants.esp' ]
+        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("Animated Weapon Enchants.esp")'
+      - <<: *hascompatibilityIssues
+        subs:
+          - 'Summermyst - Enchantments of Skyrim.esp'
+          - 'EnchantingAwakened.esp'
+          - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
+        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: '[Summermyst Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
+    clean:
+      - crc: 0x1F17FC44 # v3.07SSE
+        util: SSEEdit v3.2.2
   - name: 'TheWulfPanda - City Teleport Spells.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/'
