@@ -3572,6 +3572,39 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0x711550A4 # v1.00 Without wild edits
         util: SSEEdit v3.2.1
+  - name: 'Wintermyst - Enchantments of Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/18603/']
+    inc:
+      - 'Animated Weapon Enchants.esp'
+      - 'Summermyst - Enchantments of Skyrim.esp'
+    tag:
+      - Delev
+      - Graphics
+      - Names
+      - Relev
+    msg:
+      - <<: *hascompatibilityIssues
+        subs:
+          - 'Wintermyst - Enchantments of Skyrim.esp'
+          - 'EnchantingAwakened.esp'
+          - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Wintermyst enchantments.'
+        condition: 'active("Wintermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x24B9E639 # v4.06SE
+        itm: 2
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x16736E69 # v4.06SE
+        util: SSEEdit v3.2.2
+  - name: 'Wintermyst - Increased Damage.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/18603/']
+    tag:
+      - Names
+    clean:
+      - crc: 0x65AFCE11 # v4.06SE
+        util: SSEEdit v3.2.2
 ###################
 ## Leveled Lists ##
 ###################
