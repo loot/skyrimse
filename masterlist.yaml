@@ -2113,6 +2113,45 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0x1509D2CE # v4.0.5
         util: SSEEdit v3.2.1
+  - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/14910/']
+    inc:
+      - 'Aurora - Standing Stones of Skyrim.esp'
+      - 'Better_Standing_Stones.esp'
+      - 'BetterStandingStonesMW.esp'
+      - 'CCO - Permanent Birthsigns'
+      - 'DoomstoneRebalanced.esp'
+      - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Informative Standing Stones.esp'
+      - 'PS_StandingStones.esp'
+      - 'StandingStonesAlternative.esp'
+      - 'standingstoneoverhaul.esp'
+      - 'Standing Stones Overhaul.esp'
+      - 'Superior Standing Stones.esp'
+    after:
+      - 'Convenient Horses.esp'
+      - 'Disparity.esp'
+    tag:
+      - -Names
+    msg:
+      - type: info
+        content:
+          - lang: en
+            text: 'Make sure the Disparity option "Use Modified Blessings" is disabled'
+        condition: 'active("Disparity.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: '[Andromeda Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x16C0E8CB # v1.05SSE
+        itm: 1
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x13A9CA21 # v1.05SSE
+        util: SSEEdit v3.2.2
   - name: 'Apocalypse - Magic of Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
