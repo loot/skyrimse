@@ -794,6 +794,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE on Nexus Mods'
     group: *fixesResourcesGroup
+    tag:
+      - Graphics
   - name: 'SMIM-SE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
@@ -801,8 +803,20 @@ plugins:
     group: *fixesResourcesGroup
     tag:
       - Graphics
+  - name: 'SMIM-SE-Merged-All.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
+        name: 'Static Mesh Improvement Mod SE on Nexus Mods'
+    group: *fixesResourcesGroup
+    inc:
+      - 'SMIM-SE-DragonbornTernFix.esp'
+      - 'SMIM-SE-DungeonsCliffsIceSkirts.esp'
+      - 'SMIM-SE-FarmhouseFlickeringFix.esp'
+      - 'SMIM-SE-Merged-NoRiftenRopes-NoSolitudeRopes.esp'
+    tag:
+      - Graphics
     clean:
-      - crc: 0x35C26177 # v2.07
+      - crc: 0x35C26177 # v2.07 & v2.08
         util: SSEEdit v3.2.1
 #############################
 ## AudioVisual - Interface ##
