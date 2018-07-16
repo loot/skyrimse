@@ -1166,6 +1166,12 @@ plugins:
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12466/']
     after:
       - 'RealisticWaterTwo.esp'
+  - name: 'DeadlySpellImpacts.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/12939/']
+    group: *earlyLoadersGroup
+    clean:
+      - crc: 0x72B9103C # v1.70
+        util: SSEEdit v3.2.2
   - name: 'Immersive Sounds - Compendium.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/523/']
     group: *overhaulsGroup
@@ -3131,6 +3137,27 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
+  - name: 'Wildcat - Combat of Skyrim.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/1368/']
+    inc:
+      - 'Smilodon - Combat of Skyrim.esp'
+    after:
+      - 'Animal Tweaks.esp'
+      - 'Immersive NPC in the dark.esp'
+      - 'New Weapon Parry.esp'
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Combat.esp'
+      - 'SkyRe_EnemyAI.esp'
+      - 'SkyTEST-RealisticAnimals&Predators.esp'
+      - 'UltimateCombat.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: '[Wildcat Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
+    clean:
+      - crc: 0xE6A87461 # v7.00SSE
+        util: SSEEdit v3.2.2
 ###########
 ## Items ##
 ###########
