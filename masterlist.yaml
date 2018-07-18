@@ -282,7 +282,18 @@ plugins:
   - name: 'Update.esm'
     group: *dlcGroup
     tag:
+      - Actors.ACBS
+      - Actors.CombatStyle
+      - Actors.Stats
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
       - Delev
+      - Graphics
+      - Invent
+      - Names
+      - NPC.Class
+      - Stats
     dirty:
       - <<: *dirtyPlugin
         crc: 0x8a234131
@@ -309,9 +320,20 @@ plugins:
     after:
       - 'Update.esm'
     tag:
+      - Actors.AIData
+      - Actors.DeathItem
+      - C.Location
+      - C.RecordFlags
+      - C.Regions
       - Delev
+      - Graphics
       - Invent
+      - Names
+      - NPC.Class
+      - NPC.Race
+      - Relations
       - Relev
+      - Stats
     msg:
       - <<: *hasWildEdits
         subs:
@@ -366,7 +388,12 @@ plugins:
     after:
       - 'Dawnguard.esm'
     tag:
+      - Actors.AIPackages
+      - C.Location
+      - Factions
+      - Graphics
       - Invent
+      - Sound
     dirty:
       - <<: *dirtyPlugin
         crc: 0xfbd3fb4c
@@ -397,8 +424,16 @@ plugins:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
     tag:
+      - Actors.ACBS
+      - Actors.Stats
+      - C.Location
+      - C.RecordFlags
+      - Factions
+      - Graphics
       - Invent
+      - Names
       - Relev
+      - Stats
     dirty:
       - <<: *dirtyPlugin
         crc: 0xc7e30215
@@ -650,6 +685,44 @@ plugins:
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
       - 'RSkyrimChildren.esm'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Skeleton
+      - Actors.Spells
+      - Actors.Stats
+      - Body-Size-F
+      - Body-Size-M
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
+      - C.Owner
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
+      - Delev
+      - Factions
+      - Graphics
+      - Invent
+      - Names
+      - NPC.Class
+      - NPC.Race
+      - R.AddSpells
+      - R.Description
+      - Relations
+      - Relev
+      - Scripts
+      - Sound
+      - SpellStats
+      - Stats
     clean:
       - crc: 0xAE28DBE3 # v4.1.2a
         util: SSEEdit v3.2.1
