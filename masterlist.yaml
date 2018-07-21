@@ -160,6 +160,13 @@ bash_tags:
   - 'Voice-M'
 
 globals:
+  - type: warn
+    content:
+      - lang: en
+        text: 'This version of LOOT has inferior handling of Creation Club plugins. Support for these are therefore limited in versions prior to LOOT 0.13.1. It is recommended to update as soon as possible.'
+      - lang: da
+        text: 'Denne version af LOOT har begrænset understøttelse af Creation Club-plugins. Det er derfor anbefalet at opdatere til LOOT 0.13.1 eller senere hurtigst muligt.'
+    condition: 'version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}FO4[0-9]{3}-[a-zA-Z0-9()]+\.es(l|m)")'
   - type: say
     content:
       - lang: en
