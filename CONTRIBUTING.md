@@ -11,7 +11,7 @@ LOOT's masterlists are [versioned](https://loot.github.io/docs/contributing/Mast
 
 If you are new to contributing to projects on GitHub, the [How To Contribute](https://loot.github.io/docs/contributing/How-To-Contribute) wiki page is a good starting point.
 
-The format and syntax of the masterlist is [fully documented](http://loot.github.io/docs/0.8.1/LOOT%20Metadata%20Syntax.html) (an offline copy is also available in the `docs` folder of each LOOT release), and other information on how to edit the masterlist can be found on the [Masterlist Editing](https://loot.github.io/docs/contributing/Masterlist-Editing) wiki page.
+The format and syntax of the masterlist is [fully documented](https://loot-api.readthedocs.io/en/stable/metadata/introduction.html) (an offline copy is also available in the `docs` folder of each LOOT release), and other information on how to edit the masterlist can be found on the [Masterlist Editing](https://loot.github.io/docs/contributing/Masterlist-Editing) wiki page.
 
 If you send a pull request, then discover that you have made a mistake and make additional commits to fix it, please squash those additional commits to keep the commit history tidy. If you squash your commits, you don't need to open a new pull request. If you don't know how to squash commits, whoever merges your pull request can do it for you.
 
