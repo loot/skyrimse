@@ -160,6 +160,13 @@ bash_tags:
   - 'Voice-M'
 
 globals:
+  - type: warn
+    content:
+      - lang: en
+        text: 'This version of LOOT has inferior handling of Creation Club plugins. Support for these are therefore limited in versions prior to LOOT 0.13.1. It is recommended to update as soon as possible.'
+      - lang: da
+        text: 'Denne version af LOOT har begrænset understøttelse af Creation Club-plugins. Det er derfor anbefalet at opdatere til LOOT 0.13.1 eller senere hurtigst muligt.'
+    condition: 'version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}FO4[0-9]{3}-[a-zA-Z0-9()]+\.es(l|m)")'
   - type: say
     content:
       - lang: en
@@ -221,8 +228,11 @@ globals:
 groups:
   - name: &dlcGroup DLC
 
-  - name: &eslmGroup Light Masters # Non DLC - Has Header Flags (ESM & ESL)
+  - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
+
+  - name: &eslmGroup Light Masters # Non DLC - Has Header Flags (ESM & ESL)
+    after: [ *ccGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
     after: [ *eslmGroup ]
@@ -428,48 +438,40 @@ plugins:
     after:
       - 'Dragonborn.esm'
   - name: 'ccBGSSSE002-ExoticArrows.esl'
-    group: *dlcGroup
-    after:
-      - 'Dragonborn.esm'
+    group: *ccGroup
   - name: 'ccBGSSSE003-Zombies.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
   - name: 'ccBGSSSE004-RuinsEdge.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
   - name: 'ccBGSSSE006-StendarsHammer.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
   - name: 'ccBGSSSE007-Chrysamere.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
       - 'ccBGSSSE006-StendarsHammer.esl'
   - name: 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
       - 'ccBGSSSE006-StendarsHammer.esl'
       - 'ccBGSSSE007-Chrysamere.esl'
   - name: 'ccBGSSSE014-SpellPack01.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -477,9 +479,8 @@ plugins:
       - 'ccBGSSSE007-Chrysamere.esl'
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
   - name: 'ccBGSSSE019-StaffofSheogorath.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -488,9 +489,8 @@ plugins:
       - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
       - 'ccBGSSSE014-SpellPack01.esl'
   - name: 'ccBGSSSE021-LordsMail.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -500,9 +500,8 @@ plugins:
       - 'ccBGSSSE014-SpellPack01.esl'
       - 'ccBGSSSE019-StaffofSheogorath.esl'
   - name: 'ccMTYSSE001-KnightsoftheNine.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -513,9 +512,8 @@ plugins:
       - 'ccBGSSSE019-StaffofSheogorath.esl'
       - 'ccBGSSSE021-LordsMail.esl'
   - name: 'ccQDRSSE001-SurvivalMode.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -533,9 +531,8 @@ plugins:
           - lang: en
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
   - name: 'ccTWBSSE001-PuzzleDungeon.esm'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -548,9 +545,8 @@ plugins:
       - 'ccMTYSSE001-KnightsoftheNine.esl'
       - 'ccQDRSSE001-SurvivalMode.esl'
   - name: 'ccEEJSSE001-Hstead.esm'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -563,10 +559,9 @@ plugins:
       - 'ccMTYSSE001-KnightsoftheNine.esl'
       - 'ccQDRSSE001-SurvivalMode.esl'
       - 'ccTWBSSE001-PuzzleDungeon.esm'
-  - name: 'ccqdrsse002-firewood.esl'
-    group: *dlcGroup
+  - name: 'ccQDRSSE002-Firewood.esl'
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -581,9 +576,8 @@ plugins:
       - 'ccTWBSSE001-PuzzleDungeon.esm'
       - 'ccEEJSSE001-Hstead.esm'
   - name: 'ccBGSSSE018-Shadowrend.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -597,11 +591,10 @@ plugins:
       - 'ccQDRSSE001-SurvivalMode.esl'
       - 'ccTWBSSE001-PuzzleDungeon.esm'
       - 'ccEEJSSE001-Hstead.esm'
-      - 'ccqdrsse002-firewood.esl'
+      - 'ccQDRSSE002-Firewood.esl'
   - name: 'ccBGSSSE035-PetNHound.esl'
-    group: *dlcGroup
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -615,12 +608,11 @@ plugins:
       - 'ccQDRSSE001-SurvivalMode.esl'
       - 'ccTWBSSE001-PuzzleDungeon.esm'
       - 'ccEEJSSE001-Hstead.esm'
-      - 'ccqdrsse002-firewood.esl'
+      - 'ccQDRSSE002-Firewood.esl'
       - 'ccBGSSSE018-Shadowrend.esl'
-  - name: 'ccfsvsse001-backpacks.esl'
-    group: *dlcGroup
+  - name: 'ccFSVSSE001-Backpacks.esl'
+    group: *ccGroup
     after:
-      - 'Dragonborn.esm'
       - 'ccBGSSSE002-ExoticArrows.esl'
       - 'ccBGSSSE003-Zombies.esl'
       - 'ccBGSSSE004-RuinsEdge.esl'
@@ -634,7 +626,7 @@ plugins:
       - 'ccQDRSSE001-SurvivalMode.esl'
       - 'ccTWBSSE001-PuzzleDungeon.esm'
       - 'ccEEJSSE001-Hstead.esm'
-      - 'ccqdrsse002-firewood.esl'
+      - 'ccQDRSSE002-Firewood.esl'
       - 'ccBGSSSE018-Shadowrend.esl'
       - 'ccBGSSSE035-PetNHound.esl'
 
