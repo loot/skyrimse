@@ -255,17 +255,17 @@ groups:
   - name: &coreGroup Core Mods
     after: [ *lowPriorityGroup ]
 
-  - name: &ocsGroup Open Cities
-    after: [ *coreGroup ]
-
   - name: &altStartGroup Alternate Start
-    after: [ *ocsGroup ]
+    after: [ *coreGroup ]
 
   - name: &iCitizenGroup Immersive Citizens
     after: [ *altStartGroup ]
 
-  - name: &highPriorityGroup High Priority Overrides
+  - name: &ocsGroup Open Cities
     after: [ *iCitizenGroup ]
+
+  - name: &highPriorityGroup High Priority Overrides
+    after: [ *ocsGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -2113,7 +2113,6 @@ plugins:
       - 'Random Alternate Start Reborn SE.esp'
       - 'Skyrim Unbound.esp'
     after:
-      - 'Open Cities Skyrim.esp'
       - 'My Home Is Your Home.esp'
       - 'Landscape Fixes For Grass Mods.esp'
     tag:
@@ -2681,6 +2680,7 @@ plugins:
       - 'Oblivion Gates in Cities.esp'
       - 'OutlawsRefuges.esp'
     after:
+      - 'Alternate Start - Live Another Life.esp'
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
       - 'Atlas Map Markers.esp'
