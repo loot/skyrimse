@@ -64,6 +64,11 @@ common:
         text: 'Du har installeret %1% men SKSE64 blev ikke fundet! Se SKSE64-downloadsiden: [SKSE64](http://skse.silverlock.org).'
       - lang: ja
         text: '%1%はインストールされていますが、SKSE64が見つかりません！SKSEのダウンロードページを確認してください。[SKSE64](http://skse.silverlock.org)'
+  - &requireSKYUI
+    type: warn
+    content:
+      - lang: en
+        text: 'You have installed %1% but [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) is not installed. Some mod features or functionality may be disabled.'
   - &AlreadyInX
     type: error
     content:
@@ -649,6 +654,8 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0xFD8D6035 # v4.1.3b
         util: SSEEdit v3.2.1
+      - crc: 0xF171A9B5 # v4.1.4
+        util: SSEEdit v3.2.1
 
 #############################################
 #####  Bug Fixes & Unofficial Patches   #####
@@ -710,6 +717,8 @@ plugins:
     clean:
       - crc: 0x23CE2105 # v1.0
         util: SSEEdit v3.2.2
+      - crc: 0x64D44D00 # v1.0.1
+        util: SSEEdit v3.2.2
   - name: 'WACCF_BashedPatchLvlListFix.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/'
@@ -723,10 +732,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/'
         name: 'Armor and Clothing Extension on Nexus Mods'
     group: *fixesResourcesGroup
-    req:
-      - *SkyUI
     msg:
+      - <<: *requireSKSE64
+        subs: [ '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002/)' ]
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("SkyUI_SE.esp")'
       - <<: *doNotClean
+        condition: 'active("WACCF_Armor and Clothing Extension.esp")'
     clean:
       - crc: 0x832B2C99 # v1.0
         util: SSEEdit v3.2.2
@@ -2156,6 +2167,8 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0xA71426C7 # v4.0.6
         util: SSEEdit v3.2.1
+      - crc: 0xCACAFF0F # v4.0.7
+        util: SSEEdit v3.2.2
   - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/14910/']
     inc:
@@ -2741,6 +2754,8 @@ plugins:
         util: SSEEdit v3.2.1
       - crc: 0x3750E0C4 # v3.0.7
         util: SSEEdit v3.2.1
+      - crc: 0x37E038D9 # v3.0.8
+        util: SSEEdit v3.2.2
   - name: 'NotSoFast-MainQuest.esp'
     url: ['https://www.nexusmods.com/skyrimspecialedition/mods/2475/']
     after:
