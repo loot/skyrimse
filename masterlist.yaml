@@ -297,7 +297,16 @@ plugins:
   - name: 'Update.esm'
     group: *dlcGroup
     tag:
+      - C.Encounter
+      - C.Location
+      - C.RecordFlags
+      - C.Regions
+      - C.Water
       - Delev
+      - Graphics
+      - Invent
+      - Names
+      - Stats
     dirty:
       - <<: *dirtyPlugin
         crc: 0x8a234131
@@ -324,9 +333,15 @@ plugins:
     after:
       - 'Update.esm'
     tag:
+      - C.Location
+      - C.RecordFlags
+      - C.Regions
       - Delev
       - Invent
+      - Names
       - Relev
+      - Sound
+      - Stats
     msg:
       - <<: *hasWildEdits
         subs:
@@ -381,7 +396,9 @@ plugins:
     after:
       - 'Dawnguard.esm'
     tag:
+      - Graphics
       - Invent
+      - Sound
     dirty:
       - <<: *dirtyPlugin
         crc: 0xfbd3fb4c
@@ -412,8 +429,12 @@ plugins:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
     tag:
+      - C.Location
+      - Graphics
       - Invent
+      - Names
       - Relev
+      - Stats
     dirty:
       - <<: *dirtyPlugin
         crc: 0xc7e30215
