@@ -297,15 +297,22 @@ plugins:
   - name: 'Update.esm'
     group: *dlcGroup
     tag:
+      - Actors.CombatStyle
+      - Actors.Stats
       - C.Encounter
       - C.Location
       - C.RecordFlags
       - C.Regions
       - C.Water
       - Delev
+      - Factions
       - Graphics
       - Invent
       - Names
+      - NPC.Class
+      - NpcFaces
+      - Scripts
+      - SpellStats
       - Stats
     dirty:
       - <<: *dirtyPlugin
@@ -333,14 +340,22 @@ plugins:
     after:
       - 'Update.esm'
     tag:
+      - Actors.DeathItem
+      - Actors.Spells
       - C.Location
       - C.RecordFlags
       - C.Regions
       - Delev
       - Invent
       - Names
+      - NpcFaces
+      - NPC.Class
+      - NPC.Race
+      - Relations
       - Relev
+      - Scripts
       - Sound
+      - SpellStats
       - Stats
     msg:
       - <<: *hasWildEdits
@@ -396,8 +411,12 @@ plugins:
     after:
       - 'Dawnguard.esm'
     tag:
+      - Actors.AIPackages
+      - Factions
       - Graphics
       - Invent
+      - NpcFaces
+      - Scripts
       - Sound
     dirty:
       - <<: *dirtyPlugin
@@ -429,11 +448,17 @@ plugins:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
     tag:
+      - Actors.AIData
+      - Actors.Stats
       - C.Location
+      - Factions
       - Graphics
       - Invent
       - Names
+      - NpcFaces
       - Relev
+      - Scripts
+      - SpellStats
       - Stats
     dirty:
       - <<: *dirtyPlugin
