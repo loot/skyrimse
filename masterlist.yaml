@@ -4198,6 +4198,315 @@ plugins:
     clean:
       - crc: 0x6BD4ACD3 # v2.0.2
         util: SSEEdit v3.2.2
+  - name: 'ETaC - RESOURCES.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
+        name: 'Expanded Towns and Cities (SSE) on Nexus Mods'
+    group: *earlyLoadersGroup
+    tag:
+      - Graphics
+    clean:
+      - crc: 0x0A40D177 # v0.3.4 SkyUI
+        util: SSEEdit v3.2.2
+      - crc: 0x91DD76A9 # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Complete.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
+        name: 'Expanded Towns and Cities (SSE) on Nexus Mods'
+    inc:
+      - 'Darkwater Crossing.esp'
+      - 'Dawnstar.esp'
+      - 'Eli_RiverwoodShack.esp'
+      - 'HogorTheGiant_V1.esp'
+      - 'JK''s Riverwood.esp'
+      - '01NobleWarriorCottage2.0.esp'
+    after:
+      - '3DNPC.esp'
+      - 'BetterDocks-MP-DLC-Compatible.esp'
+      - 'CLARALUX SSE.esp'
+      - 'ELFX - Exteriors.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'LeafRest OnePiece.esp'
+      - 'Prometheus_No_snow_Under_the_roof.esp'
+      - 'QaxeQuestorium.esp'
+      - 'RiverwoodHuntingCabinSE.esp'
+      - 'S3DLandscapes NextGenerationForests.esp'
+      - 'UniqueLocationsRiverwoodForest.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Complete Better Docks Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Carriage and Ferry Travel Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/8379/)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Complete ELFX Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Hunters Cabin of Riverwood SE](https://www.nexusmods.com/skyrimspecialedition/mods/1783)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Complete Hunting Cabin Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Complete LoS Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Leaf Rest SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15191)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Complete Leaf Rest Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Complete RLO Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Complete RSC Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Complete S3D Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Unique Locations - Riverwood Forest](https://www.nexusmods.com/skyrimspecialedition/mods/9258)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
+    tag:
+      - C.Location
+    clean:
+      - crc: 0xC0118C3B # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Complete LoS Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/13552']
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ETaC - Complete LoS Patch.esp",54BB4D26)'
+    clean:
+      - crc: 0x76C471C2 # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Darkwater Crossing.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
+        name: 'Expanded Towns and Cities (SSE) on Nexus Mods'
+    inc:
+      - 'Darkwater Crossing.esp'
+    after:
+      - '3DNPC.esp'
+      - 'CLARALUX SSE.esp'
+      - 'ELFX - Exteriors.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'QaxeQuestorium.esp'
+      - 'S3DLandscapes NextGenerationForests.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Complete ELFX Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Complete LoS Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Complete S3D Patch.esp")'
+    tag:
+      - C.Location
+    clean:
+      - crc: 0x7E3B8E1B # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Darkwater Crossing LoS Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/13552']
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ETaC - Darkwater Crossing LoS Patch.esp",343067D8)'
+    clean:
+      - crc: 0x910911B5 # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Dawnstar.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
+        name: 'Expanded Towns and Cities (SSE) on Nexus Mods'
+    inc:
+      - 'Dawnstar.esp'
+    after:
+      - '3DNPC.esp'
+      - 'BetterDocks-MP-DLC-Compatible.esp'
+      - 'CLARALUX SSE.esp'
+      - 'ELFX - Exteriors.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'Prometheus_No_snow_Under_the_roof.esp'
+      - 'QaxeQuestorium.esp'
+      - 'S3DLandscapes NextGenerationForests.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Dawnstar Better Docks Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Carriage and Ferry Travel Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/8379/)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("CFTO.esp") and not active("ETaC - Dawnstar CFTO Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Dawnstar Claralux Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Dawnstar ELFX Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Dawnstar LoS Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Dawnstar No Snow Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Rigmor.esp") and not active("ETaC - Dawnstar Rigmor Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
+    clean:
+      - crc: 0xB663D101 # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Riverwood.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
+        name: 'Expanded Towns and Cities (SSE) on Nexus Mods'
+    inc:
+      - 'Eli_RiverwoodShack.esp'
+      - 'HogorTheGiant_V1.esp'
+      - 'JK''s Riverwood.esp'
+      - '01NobleWarriorCottage2.0.esp'
+    after:
+      - '3DNPC.esp'
+      - 'CLARALUX SSE.esp'
+      - 'ELFX - Exteriors.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'LeafRest OnePiece.esp'
+      - 'QaxeQuestorium.esp'
+      - 'RiverwoodHuntingCabinSE.esp'
+      - 'S3DLandscapes NextGenerationForests.esp'
+      - 'UniqueLocationsRiverwoodForest.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Riverwood Claralux Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Riverwood ELFX Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Hunters Cabin of Riverwood SE](https://www.nexusmods.com/skyrimspecialedition/mods/1783)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Riverwood Hunting Cabin Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Riverwood LoS Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Leaf Rest SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15191)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Riverwood Leaf Rest Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("Rigmor.esp") and not active("ETaC - Riverwood Rigmor Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Riverwood RLO Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Riverwood S3D Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Unique Locations - Riverwood Forest](https://www.nexusmods.com/skyrimspecialedition/mods/9258)'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
+    tag:
+      - C.Location
+    clean:
+      - crc: 0xA31406D7 # v0.3.4
+        util: SSEEdit v3.2.2
+  - name: 'ETaC - Riverwood LoS Patch.esp'
+    url: ['https://www.nexusmods.com/skyrimspecialedition/mods/13552']
+    msg:
+      - type: say
+        content: 'Plug-ins Masters require sorting.'
+        condition: 'checksum("ETaC - Riverwood LoS Patch.esp",C723AA51)'
+    clean:
+      - crc: 0x477159F2 # v0.3.4
+        util: SSEEdit v3.2.2
   - name: 'Helarchen Creek.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4043'
