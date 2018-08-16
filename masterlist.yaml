@@ -4932,6 +4932,27 @@ plugins:
     clean:
       - crc: 0x46098BA9 # v1.6
         util: 'SSEEdit v3.2.35'
+  - name: 'Eli_RiverwoodShack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xF8FD2B2D # v1.2
+        itm: 9
+        udr: 0
+        nav: 0
+      - <<: *dirtyPlugin
+        crc: 0x15C60692 # v1.2 with master sort
+        itm: 9
+        udr: 0
+        nav: 0
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_RiverwoodShack.esp", F8FD2B2D) or checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
+    clean:
+      - crc: 0x4F7566D8 # v1.2
+        util: 'SSEEdit v3.2.35'
+      - crc: 0xA84FD4FB # v1.2 with master sort
+        util: 'SSEEdit v3.2.35'
   - name: 'ElysiumEstate-HF.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4119/' ]
     inc:
