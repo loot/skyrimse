@@ -2625,13 +2625,14 @@ plugins:
     inc:
       - 'Alduin V1.esp'
       - 'Elemental_Dragons.esp'
+      - 'KS Dragon Overhaul 2.esp'
       - 'Simply Stronger Dragons.esp'
     msg:
       - <<: *hasPluginPatch
         subs:
           - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
           - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
-        condition: 'active("AAE Ultimate Edition.esp") and not active("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
+        condition: 'active("AAE Ultimate Edition.esp") and not file("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
       - <<: *hasPluginPatch
         subs:
           - '[Enhanced Mighty Dragons V4](https://www.nexusmods.com/skyrimspecialedition/mods/5982/)'
@@ -2653,6 +2654,36 @@ plugins:
       - SpellStats
     clean:
       - crc: 0x7E338364
+        util: 'SSEEdit v3.2.2'
+  - name: 'KS Dragon Overhaul 2.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/' ]
+    after:
+      - 'Mortal Enemies.esp'
+      - 'Serio''s Enhanced Dragons.esp'
+    inc:
+      - 'Alduin V1.esp'
+      - 'Elemental_Dragons.esp'
+      - 'ERSO 03 - Soft Slighty Mighty Dragons.esp'
+      - 'KS Dragon Overhaul.esp'
+      - 'Mighty Dragons SE Medium Cooked.esp'
+      - 'Simply Stronger Dragons.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
+          - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19051/)'
+        condition: 'active("AAE Ultimate Edition.esp") and not file("KSDO2 - AAE Ultimate Edition Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Thunderchild - Epic Shouts and Immersion](https://www.nexusmods.com/skyrimspecialedition/mods/1460/)'
+          - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19051/)'
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
+    tag:
+      - R.ChangeSpells
+      - Scripts
+      - SpellStats
+    clean:
+      - crc: 0xED643590
         util: 'SSEEdit v3.2.2'
   - name: 'TTR_Master_Trader.*\.esp'
     url:
