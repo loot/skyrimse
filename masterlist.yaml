@@ -2617,6 +2617,43 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0xF718BAC1 # v2.3 - Dangerous Edition
         util: 'SSEEdit v3.2.1'
+  - name: 'KS Dragon Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
+    after:
+      - 'Mortal Enemies.esp'
+      - 'Serio''s Enhanced Dragons.esp'
+    inc:
+      - 'Alduin V1.esp'
+      - 'Elemental_Dragons.esp'
+      - 'Simply Stronger Dragons.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
+          - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+        condition: 'active("AAE Ultimate Edition.esp") and not active("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Enhanced Mighty Dragons V4](https://www.nexusmods.com/skyrimspecialedition/mods/5982/)'
+          - '[KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+        condition: 'active("Mighty Dragons SE Medium Cooked.esp") and not active("KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Enhanced Slightly Mighty Dragons](https://www.nexusmods.com/skyrimspecialedition/mods/9274/)'
+          - '[KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp") and not active("KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - '[Thunderchild - Epic Shouts and Immersion](https://www.nexusmods.com/skyrimspecialedition/mods/1460/)'
+          - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
+    tag:
+      - R.ChangeSpells
+      - Scripts
+      - SpellStats
+    clean:
+      - crc: 0x7E338364
+        util: 'SSEEdit v3.2.2'
   - name: 'TTR_Master_Trader.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/'
