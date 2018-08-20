@@ -957,6 +957,28 @@ plugins:
     clean:
       - crc: 0x3B3FE8B6 # v1.0.1
         util: 'SSEEdit v3.2.1'
+  - name: 'RaceMenu.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
+        name: 'RaceMenu Special Edition on Nexus Mods'
+    req:
+      - *SKSE64
+    inc:
+      - 'CharacterMakingExtender.esp'
+      - 'EnhancedCharacterEdit.esp'
+    clean:
+      - crc: 0xEC081487 # v0.2.3
+        util: 'SSEEdit v3.2.40'
+  - name: 'RaceMenuPlugin.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/' ]
+    req:
+      - 'RaceMenu.esp'
+    msg:
+      - type: say
+        content: 'This plugin is optional.'
+    clean:
+      - crc: 0x982D2FF8 # v0.2.3
+        util: 'SSEEdit v3.2.40'
 ########################################
 ## AudioVisual - Animations & Physics ##
 ########################################
