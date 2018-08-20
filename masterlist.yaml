@@ -234,6 +234,22 @@ globals:
   - <<: *requireSKSE64
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
+# Other
+  - type: say
+    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
+    content:
+      - lang: en
+        text: 'It appears you have [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installed. Remember to run GenerateFNISforUsers.exe every time you have installed or un-installed FNIS, or a FNIS based mod.'
+      - lang: ru
+        text: 'У вас установлен [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038). Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.'
+      - lang: es
+        text: 'Parece que [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
+      - lang: ko
+        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)이 설치된 것같습니다. FNIS나 FNIS 기반 모드를 설치하거나 제거할때마다 GenerateFNISforUsers.exe를 실행하는 것을 잊지마세요.'
+      - lang: zh_CN
+        text: '你安装了[FNIS SE](http://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
+      - lang: ja
+        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
 
 groups:
   - name: &dlcGroup DLC
