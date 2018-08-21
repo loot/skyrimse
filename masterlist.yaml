@@ -1023,14 +1023,13 @@ plugins:
         name: 'XP32 Maximum Skeleton Special Extended - XPMSSE on Nexus Mods'
     req:
       - <<: *SkyUI
-        condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
+        condition: 'file("scripts/XPMSEMCM.pex")'
       - <<: *FNIS
-        condition: 'file("meshes/actors/character/character assets/skeleton.hkx") and not file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
+        condition: 'file("meshes/actors/character/character assets/skeleton.hkx")'
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
-        condition: 'file("scripts/RaceMenuPluginXPMSE.pex") and not active("RaceMenu.esp")'
-    msg:
-      - <<: *doNotClean
+        condition: 'file("scripts/RaceMenuPluginXPMSE.pex")'
+    msg: [ *doNotClean ]
 ############################
 ## AudioVisual - Lighting ##
 ############################
