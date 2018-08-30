@@ -393,7 +393,7 @@ plugins:
         subs:
           - 'Dawnguard.esm'
           - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
-        condition: 'checksum("Dawnguard.esm", 6061bcff)'
+        condition: 'checksum("Dawnguard.esm", 6061bcff) or checksum("Dawnguard.esm", 1CF3CECB)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x051fcdc8
@@ -423,19 +423,33 @@ plugins:
         udr: 82
         nav: 57
       - <<: *dirtyPlugin
-        crc: 0x81a481e8 # v1.59.39.0
+        crc: 0x81a481e8 # v1.5.39.0
         itm: 621
         udr: 82
         nav: 57
       - <<: *dirtyPlugin
-        crc: 0x6f162d5e # v1.59.39.0 - Auto Clean First pass
+        crc: 0x6f162d5e # v1.5.39.0 - Auto Clean First pass
+        itm: 6
+        udr: 0
+        nav: 57
+      - <<: *dirtyPlugin
+        crc: 0xCFBEE94B # v1.5.50.0
+        itm: 621
+        udr: 82
+        nav: 57
+      - <<: *dirtyPlugin
+        crc: 0x2F6EF0B8 # v1.5.50.0 - Auto Clean First pass
         itm: 6
         udr: 0
         nav: 57
     clean:
-      - crc: 0x6061bcff # v1.59.39.0 - Auto Clean Second pass
+      - crc: 0x6061bcff # v1.5.39.0 - Auto Clean Second pass
         util: 'SSEEdit v3.2.1'
-      - crc: 0x141be1e5 # v1.59.39.0 - Auto + Manual Cleaning
+      - crc: 0x141be1e5 # v1.5.39.0 - Auto + Manual Cleaning
+        util: 'SSEEdit v3.2.1'
+      - crc: 0x1CF3CECB # v1.5.50.0 - Auto Clean Second pass
+        util: 'SSEEdit v3.2.1'
+      - crc: 0xBB5C7D7C # v1.5.50.0 - Auto + Manual Cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'Hearthfires.esm'
     group: *dlcGroup
