@@ -3108,7 +3108,9 @@ plugins:
         name: 'Open Cities Skyrim on Bethesda.net'
     group: *ocsGroup
     inc:
-      - 'JKs Skyrim.esp'
+      - name: 'JKs Skyrim.esp'
+        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
+        display: 'JKs Skyrim'
       - 'Oblivion Gates in Cities.esp'
       - 'OutlawsRefuges.esp'
     after:
