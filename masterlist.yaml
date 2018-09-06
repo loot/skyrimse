@@ -240,6 +240,15 @@ globals:
         text: 'Din SKSE64 er opdateret.'
       - lang: ja
         text: 'SKSE64は最新版です。'
+  - type: error
+    condition: 'version("../skse64_loader.exe", "0.2.0.8", ==) and version("../SkyrimSE.exe", "1.5.50.0", !=)'
+    content:
+      - lang: en
+        text: 'Your version of SKSE64 is not compatible with your version of Skyrim SE.'
+      - lang: da
+        text: 'Din version af SKSE64 er ikke kompatibel med din version af Skyrim SE.'
+      - lang: ja
+        text: 'このバージョンのSKSE64は使用中のSkyrim SEとの互換性がありません。'
 # SKSE64 plugins requirement
   - <<: *requireSKSE64
     subs: [ 'a SKSE Plugin' ]
