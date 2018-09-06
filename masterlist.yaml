@@ -197,6 +197,16 @@ globals:
       - lang: ja
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
     subs: [ 'https://loot.github.io/latest-thread/' ]
+# Skyrim SE latest
+  - type: say
+    condition: 'file("../SkyrimSE.exe") and version("../SkyrimSE.exe", "1.5.50.0", <)'
+    content:
+      - lang: en
+        text: 'It appears you do not have the latest version of Skyrim SE.'
+      - lang: da
+        text: 'Det ser ikke ud til at du har den seneste version af Skyrim SE.'
+      - lang: ja
+        text: 'Skyrim SEが最新版ではないようです。'
 # SKSE Latest
   - type: say
     condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.8", <)'
