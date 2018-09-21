@@ -2596,6 +2596,23 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
+  - name: 'EFFCore.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
+        name: 'Extensible Follower Framework on Nexus Mods'
+    clean:
+      - crc: 0x9A583BDE # v4.0.3
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+  - name: 'EFFDialogue.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
+        name: 'Extensible Follower Framework on Nexus Mods'
+    group: [ *iCitizenGroup ]
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    clean:
+      - crc: 0xE0305B2C # v4.0.3
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
   - name: 'HarvestOverhaul_Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
     msg:
