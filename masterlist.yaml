@@ -971,8 +971,33 @@ plugins:
         name: 'Even Better Quest Objectives on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
         name: 'Even Better Quest Objectives on Bethesda.net'
+    group: *addonsGroup
+    msg:
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Book Covers Skyrim]('https://www.nexusmods.com/skyrimspecialedition/mods/901/')'
+          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+        condition: 'active("Book Covers Skyrim.esp") and not file("BetterQuestObjectives - BCS Patch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrimspecialedition/mods/272)'
+          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not file("BetterQuestObjectives-AlternateStartPatch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/272)'
+          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+        condition: 'active("Cutting Room Floor.esp") and not file("BetterQuestObjectives-CRFPatch.esp")'
+      - <<: *hasPatchIncluded
+        subs:
+          - '[The Paarthurnax Dilemma](https://www.nexusmods.com/skyrimspecialedition/mods/365)'
+          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+        condition: 'active("The Paarthurnax Dilemma.esp") and not file("BetterQuestObjectives-PaarDilemmaPatch.esp")'
     tag:
       - NoMerge
+    clean:
+      - crc: 0x7872FD91
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Dawnguard Map Markers.esp'
     url: [ 'https://afkmods.iguanadons.net/index.php?/files/file/1896-dawnguard-map-markers/' ]
     group: *lateChangesGroup
