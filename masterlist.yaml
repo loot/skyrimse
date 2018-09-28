@@ -1960,6 +1960,17 @@ plugins:
       - type: warn
         content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
         condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+  - name: 'The Ordinary Women.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12376' ]
+    after:
+      - 'Cutting Room Floor.esp'
+    msg:
+      - type: Warn
+        content: 'Third party patch available here: [ Qwinn''s UASIP Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF.esp")'
+    clean:
+      - crc: 0xE10633B8
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Toccata as Elisif.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/'
