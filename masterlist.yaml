@@ -1965,8 +1965,11 @@ plugins:
     after:
       - 'Cutting Room Floor.esp'
     msg:
-      - type: Warn
-        content: 'Third party patch available here: [ Qwinn''s UASIP Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs: 
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF.esp")'
     clean:
       - crc: 0xE10633B8
@@ -2786,7 +2789,7 @@ plugins:
         content:
           - lang: en
             text: 'It is recommended that your read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
-      - type: Warn
+      - type: warn
         condition: 'active("tpos_immersive_clit_patch_01.esp")'
         content:
           - lang: en
