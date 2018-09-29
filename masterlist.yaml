@@ -1053,14 +1053,16 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1988/'
         name: 'XP32 Maximum Skeleton Special Extended - XPMSSE on Nexus Mods'
     req:
-      - <<: *SkyUI
-        condition: 'file("scripts/XPMSEMCM.pex")'
       - <<: *FNIS
         condition: 'file("meshes/actors/character/character assets/skeleton.hkx")'
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
         condition: 'file("scripts/RaceMenuPluginXPMSE.pex")'
-    msg: [ *doNotClean ]
+    msg:
+      - <<: *requireSKYUI
+        subs: [ 'XP32 Maximum Skeleton' ]
+        condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
+      - *doNotClean
 ############################
 ## AudioVisual - Lighting ##
 ############################
@@ -2159,7 +2161,10 @@ plugins:
         name: 'Toccata Follower SE (With Elisif Replacer Option) on Nexus Mods'
     req:
       - *SKSE64
-      - *SkyUI
+    msg:
+      - <<: *requireSKYUI
+        subs: [ 'Toccata Follower' ]
+        condition: 'active("Toccata.esp") and not active("SkyUI_SE.esp")'
     clean:
       - crc: 0xAA9D9F35
         util: 'SSEEdit v3.2.44'
@@ -2861,9 +2866,12 @@ plugins:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
       - *SKSE64
-      - *SkyUI
     inc:
       - 'Convenient Horses.esp'
+    msg:
+      - <<: *requireSKYUI
+        subs: [ 'Immersive Horses' ]
+        condition: 'active("Immersive Horses.esp") and not active("SkyUI_SE.esp")'
     tag:
       - Actors.AIData
       - Actors.AIPackages
@@ -3631,11 +3639,13 @@ plugins:
       - crc: 0x07E8D176 # v3.0.0se
         util: 'SSEEdit v3.2.1'
   - name: 'TradeBarter.esp'
-    req:
-      - *SkyUI
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
+    msg:
+      - <<: *requireSKYUI
+        subs: [ 'Trade & Barter' ]
+        condition: 'active("TradeBarter.esp") and not active("SkyUI_SE.esp")'
     tag:
       - Delev
       - Invent
