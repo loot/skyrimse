@@ -277,17 +277,19 @@ groups:
 
   - name: &addonsGroup Add-ons & Expansions
 
-  - name: &lowPriorityGroup Low Priority Overrides
+  - name: &iCitizenGroup Immersive Citizens
     after: [ default ]
+
+  - name: &lowPriorityGroup Low Priority Overrides
+    after: 
+      - default
+      - *addonsGroup
 
   - name: &coreGroup Core Mods
     after: [ *lowPriorityGroup ]
 
   - name: &altStartGroup Alternate Start
     after: [ *coreGroup ]
-
-  - name: &iCitizenGroup Immersive Citizens
-    after: [ *altStartGroup ]
 
   - name: &ocsGroup Open Cities
     after: [ *iCitizenGroup ]
