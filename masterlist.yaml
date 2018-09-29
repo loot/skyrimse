@@ -272,11 +272,10 @@ groups:
   - name: &overhaulsGroup Large Overhauls
     after: [ *fixesResourcesGroup ]
 
-  - name: &addonsGroup Add-ons & Expansions
+  - name: default
     after: [ *overhaulsGroup ]
 
-  - name: default
-    after: [ *addonsGroup ]
+  - name: &addonsGroup Add-ons & Expansions
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
