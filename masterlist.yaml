@@ -3091,7 +3091,7 @@ plugins:
         subs:
           - '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)'
           - '[MLU - Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
-        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp") and not active("MLU Patches Merged.esp") and not active("ScopedBows.esp")'
       - <<: *hasPluginPatch
         subs:
           - '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)'
@@ -4080,6 +4080,55 @@ plugins:
     clean:
       - crc: 0xA5763C46 # v1.0
         util: 'SSEEdit v3.2.2'
+  - name: 'ScopedBows.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/912/' ]
+    msg:
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs: 
+          - ' `Bijin All in One` '
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp") and not file("ScopedBows_Bijin Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs: 
+          - ' `Bijin Warmaidens` '
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Bijin Warmaidens.esp") and not file("ScopedBows_Bijin Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs: 
+          - ' `MorrowLoot Ultimate` '
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("MLU.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs: 
+          - ' `Weapons Armor Clothing & Clutter Fixes` '
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("ScopedBows.esp", 5E29053A)'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs: 
+          - ' `Zim''s Immersive Artifacts` '
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU.esp") and not file("ScopedBows_ZIA Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for both %1% and %2% here: %3%'
+        subs:
+          - ' `Zim''s Immersive Artifacts` '
+          - ' `MorrowLoot Ultimate` '
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("ZIA_Complete Pack_V4.esp") and active("MLU.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+    clean:
+      - crc: 0x5E29053A
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+      - crc: 0x32D9BEC3
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Summermyst - Enchantments of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6285/' ]
     inc:
