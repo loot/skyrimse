@@ -272,14 +272,17 @@ groups:
   - name: &overhaulsGroup Large Overhauls
     after: [ *fixesResourcesGroup ]
 
-  - name: default
-    after: [ *overhaulsGroup ]
-
   - name: &addonsGroup Add-ons & Expansions
     after: [ *overhaulsGroup ]
 
-  - name: &iCitizenGroup Immersive Citizens
+  - name: default
+    after: [ *overhaulsGroup ]
+  
+  - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
+  
+  - name: &iCitizenGroup Immersive Citizens
+    after: [ *lowPriorityGroup ]
 
   - name: &altStartGroup Alternate Start
     after:
@@ -289,11 +292,8 @@ groups:
   - name: &ocsGroup Open Cities
     after: [ *altStartGroup ]
 
-  - name: &lowPriorityGroup Low Priority Overrides
-    after: [ *ocsGroup ]
-
   - name: &coreGroup Core Mods
-    after: [ *lowPriorityGroup ]
+    after: [ *ocsGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *coreGroup ]
