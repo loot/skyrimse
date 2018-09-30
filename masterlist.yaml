@@ -1897,6 +1897,33 @@ plugins:
 #################################
 ## Character Appearance - NPCs ##
 #################################
+  - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp'
+    group: *addonsGroup
+    after:
+      - 'BUVARP.esp'
+      - 'CollegeOfWinterholdImmersive.esp'
+      - 'Cutting Room Floor.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+      - 'ScopedBows.esp'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Use only one version of %1%.'
+        condition: 'many("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
+        subs: [ 'Bijin All in One' ]
+  - name: 'Bijin_Frea-Iona.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11'
+        name: 'Bijin All in One 2018 on Nexus Mods'
+    group: *addonsGroup
+    after:
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
+    clean:
+      - crc: 0x27234EF5
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Bijin Wives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
     after:
