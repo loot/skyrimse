@@ -2205,6 +2205,11 @@ plugins:
     after:
       - 'BSHeartland.esm'
       - 'Unofficial Skyrim Special Edition Patch.esp'
+    msg:
+      - type: warn
+        content: '%1% is already included in this mod.'
+        subs: '`Realistic High Altitude Treeline`'
+        condition: 'active("Realistic Treeline.esp")'
     clean:
       - crc: 0xBD798EA8
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
