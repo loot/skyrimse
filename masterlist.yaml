@@ -2168,6 +2168,35 @@ plugins:
     clean:
       - crc: 0x16CF39A0 # v2.4D
         util: 'SSEEdit v3.2.1'
+  - name: 'zMirai.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/'
+        name: 'Mirai - the Girl with the Dragon Heart on Nexus Mods'
+    group: *addonsGroup
+    after:
+      - 'DragonsKeep.esp'
+      - 'S3DTrees NextGenerationForests.esp'
+    inc:
+      - 'DragonsKeep.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Open Cities Skyrim'
+          - '[SkyMirai OCS](https://www.nexusmods.com/skyrimspecialedition/mods/10908/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("zMirai_OCS_Patch.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xB77667C4
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+        itm: 1
+    clean:
+      - crc: 0x6EE1676E
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'zMirai_OCS_Patch.esp'
+    group: *ocsGroup
+    clean:
+      - crc: 0x1F2A30C3
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'SofiaFollower.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/'
