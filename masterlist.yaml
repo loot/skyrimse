@@ -1046,6 +1046,7 @@ plugins:
         condition: 'active("beltfastenedquivers.esp") and active("XPMSSE.esp")'
   - name: 'FlowerGirls SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5941/' ]
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'XPMSE.esp'
@@ -1211,6 +1212,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
         name: 'Enhanced Lighting for ENB (ELE) - Special Edition on Nexus Mods'
+    group: *eleGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Ars Metallica.esp'
@@ -1232,7 +1234,6 @@ plugins:
       - 'Soljund''s Sinkhole.esp'
       - 'TheChoiceIsYours.esp'
       - 'Whistling Mine.esp'
-    group: *eleGroup
     inc:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
@@ -1897,7 +1898,7 @@ plugins:
 #################################
 ## Character Appearance - NPCs ##
 #################################
-  - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp'
+  - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018|_Frea-Iona| NPCs| Warmaidens| Wives)\.esp'
     group: *addonsGroup
     after:
       - 'BUVARP.esp'
@@ -1926,6 +1927,7 @@ plugins:
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Bijin Wives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
+    group: *addonsGroup
     after:
       - name: 'BijinAIO_SSE-3.1.1-SV.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
@@ -1940,6 +1942,7 @@ plugins:
         condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'Bijin NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/' ]
+    group: *addonsGroup
     after:
       - name: 'BijinAIO_SSE-3.1.1-SV.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
@@ -1954,6 +1957,7 @@ plugins:
         condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1.esp")'
   - name: 'Bijin Warmaidens.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1825/' ]
+    group: *addonsGroup
     after:
       - name: 'BijinAIO_SSE-3.1.1-SV.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
@@ -1970,6 +1974,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
+    group: *addonsGroup
     after:
       - name: 'BijinAIO_SSE-3.1.1-SV.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
@@ -1981,6 +1986,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
+    group: *addonsGroup
     after:
       - name: 'BijinAIO_SSE-3.1.1-SV.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
@@ -1990,6 +1996,7 @@ plugins:
         condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
   - name: 'The Ordinary Women.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12376' ]
+    group: *addonsGroup
     after:
       - 'Cutting Room Floor.esp'
     msg:
@@ -2006,6 +2013,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/'
         name: 'Toccata Follower SE (With Elisif Replacer Option) on Nexus Mods'
+    group: *addonsGroup
     tag:
       - Actors.CombatStyle
       - NpcFaces
@@ -2168,6 +2176,35 @@ plugins:
     clean:
       - crc: 0x16CF39A0 # v2.4D
         util: 'SSEEdit v3.2.1'
+  - name: 'zMirai.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/'
+        name: 'Mirai - the Girl with the Dragon Heart on Nexus Mods'
+    group: *addonsGroup
+    after:
+      - 'DragonsKeep.esp'
+      - 'S3DTrees NextGenerationForests.esp'
+    inc:
+      - 'DragonsKeep.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Open Cities Skyrim'
+          - '[SkyMirai OCS](https://www.nexusmods.com/skyrimspecialedition/mods/10908/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("zMirai_OCS_Patch.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xB77667C4
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+        itm: 1
+    clean:
+      - crc: 0x6EE1676E
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'zMirai_OCS_Patch.esp'
+    group: *ocsGroup
+    clean:
+      - crc: 0x1F2A30C3
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'SofiaFollower.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/'
@@ -2605,6 +2642,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'TheChoiceIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
+    group: *addonsGroup
     after:
       - 'BetterQuestObjectives.esp'
       - 'BetterQuestObjectives - BCS Patch.esp'
@@ -2654,6 +2692,7 @@ plugins:
         util: 'SSEEdit v3.2.67'
   - name: 'Convenient Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
+    group: *addonsGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
@@ -2719,7 +2758,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
         name: 'Extensible Follower Framework on Nexus Mods'
-    group: *iCitizenGroup
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
     clean:
@@ -2763,6 +2802,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Hunters Not Bandits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1547/' ]
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -2894,7 +2934,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELFXHardcore patch on Nexus Mods'
-    group: *highPriorityGroup
+    group: *eleGroup
     clean:
       - crc: 0x834C7779 # v0.4
         util: 'SSEEdit v3.2.1'
@@ -2902,7 +2942,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - Open Cities patch on Nexus Mods'
-    group: *highPriorityGroup
+    group: *ocsGroup
     clean:
       - crc: 0x6227D18D # v0.4
         util: 'SSEEdit v3.2.1'
@@ -2910,6 +2950,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - Touring Carriages patch on Nexus Mods'
+    group: *iCitizenGroup
     clean:
       - crc: 0x75419F86 # v0.4
         util: 'SSEEdit v3.2.1'
@@ -2917,6 +2958,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
         name: 'Immersive Horses on Nexus Mods'
+    group: *addonsGroup
     req:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
@@ -2948,6 +2990,7 @@ plugins:
         name: 'Imperious - Races of Skyrim on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
         name: 'Imperious - Races of Skyrim [PC] on Bethesda.net'
+    group: *lowPriorityGroup
     tag:
       - Body-Size-F
       - Body-Size-M
@@ -3061,6 +3104,8 @@ plugins:
         name: 'Morrowloot Ultimate Simplified on Nexus Mods'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod - MLU.esp Replacer on Nexus Mods'
+    after:
+      - 'Imperious - Races of Skyrim.esp'
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -3149,6 +3194,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
+    group: *lowPriorityGroup
     after:
       - 'MLU - Immersive Armors.esp'
     tags:
@@ -3160,6 +3206,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
+    group: *lowPriorityGroup
     msg:
       - <<: *doNotClean
     tag:
@@ -3175,6 +3222,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
+    group: *lowPriorityGroup
     req:
       - 'MLU.esp' # missing master
     tag:
@@ -3197,6 +3245,7 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
   - name: 'My Home Is Your Home.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
+    group: *addonsGroup
     after:
       - 'AmazingFollowerTweaks.esp'
   - name: 'Open Cities Skyrim.esp'
@@ -3241,16 +3290,13 @@ plugins:
       - C.Location
       - C.Regions
     clean:
-      - crc: 0xF3E88F7D # v3.0.5
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xD6B49D54 # v3.0.6
-        util: 'SSEEdit v3.2.1'
-      - crc: 0x3750E0C4 # v3.0.7
-        util: 'SSEEdit v3.2.1'
       - crc: 0x37E038D9 # v3.0.8
         util: 'SSEEdit v3.2.2'
+      - crc: 0x17DA550F # v3.0.9
+        util: 'SSEEdit v3.2.71'
   - name: 'NotSoFast-MainQuest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2475/' ]
+    group: *addonsGroup
     after:
       - 'Book Covers Skyrim.esp'
       - 'MLU.esp'
@@ -3318,7 +3364,7 @@ plugins:
       - 'Thief skills rebalance for Ordinator.esp'
   - name: 'Relationship Dialogue Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    group: *iCitizenGroup
+    group: *addonsGroup
     inc:
       - name: 'Immersive Horses.esp'
         condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
@@ -3366,11 +3412,12 @@ plugins:
       - crc: 0x20DC9B97 # vFinal
         util: 'SSEEdit v3.2.1'
   - name: '(RDO|Relationship Dialogue Overhaul) - *\Patch.esp'
-    group: *iCitizenGroup
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'RDO - CRF + USSEP Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
     inc:
@@ -3380,6 +3427,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - USSEP Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
     inc:
@@ -3389,6 +3437,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - AFT v1.66 Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
     clean:
@@ -3457,6 +3506,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Serana Dialogue Edit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16222/' ]
+    group: *addonsGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
     clean:
@@ -4454,7 +4504,6 @@ plugins:
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835'
         name: 'Beyond Skyrim: Bruma SE Assets on Bethesda.net'
-    group: *addonsGroup
     tag:
       - C.Light
       - C.RecordFlags
@@ -4467,7 +4516,6 @@ plugins:
         name: 'Beyond Skyrim - Bruma SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831'
         name: 'Beyond Skyrim: Bruma SE on Bethesda.net'
-    group: *addonsGroup
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -4735,6 +4783,7 @@ plugins:
     group: *addonsGroup
     after:
       - 'Book Covers Skyrim.esp'
+      - 'Cutting Room Floor.esp'
       - 'TheWulfPanda - Faction Teleport Spells.esp'
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     tag:
@@ -4776,6 +4825,17 @@ plugins:
     clean:
       - crc: 0x6BD4ACD3 # v2.0.2
         util: 'SSEEdit v3.2.2'
+  - name: 'Dawnstar.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13607/'
+        name: 'Dawnstar on Nexus Mods'
+    group: *addonsGroup
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+    clean:
+      - crc: 0x4E4A0351 # v2.0.3
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'ETaC - RESOURCES.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
@@ -5099,9 +5159,8 @@ plugins:
         name: 'Helarchen Creek on Bethesda.net'
     group: *addonsGroup
     after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    inc:
       - 'HammetDungeons.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
       - C.Location
     clean:
@@ -5481,6 +5540,19 @@ plugins:
     clean:
       - crc: 0x1A076EF7 # v2.0.1
         util: 'SSEEdit v3.2.1'
+  - name: 'DragonsKeep.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/271'
+        name: 'Dragons Keep SSE on Nexus Mods'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x43AF2572 # 1.9.7
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+        itm: 28
+        nav: 32
+    clean:
+      - crc: 0x3A5D0115 # 1.9.7
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'Eli_Breezehome.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/' ]
     after:
@@ -6079,17 +6151,17 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
         name: 'Bells of Skyrim on Nexus Mods'
-    group: *highPriorityGroup
+    group: *ocsGroup
   - name: 'Bells of Skyrim - OCS Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
         name: 'Bells of Skyrim on Nexus Mods'
-    group: *highPriorityGroup
+    group: *ocsGroup
   - name: 'Bells of Skyrim - ICAIO Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
         name: 'Bells of Skyrim on Nexus Mods'
-    group: *highPriorityGroup
+    group: *iCitizenGroup
   - name: 'Qw_ELE_.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16923/'
