@@ -2560,6 +2560,8 @@ plugins:
         name: 'Apocalypse - Magic of Skyrim on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
         name: 'Apocalypse - Magic Of Skyrim [PC] on Bethesda.net'
+    after:
+      - 'Ordinator - Perks of Skyrim.esp'
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -3419,6 +3421,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Sacrosanct - Vampires of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
+    group: *coreGroup
     inc:
       - name: 'better vampires.esp'
         condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
@@ -3426,10 +3429,10 @@ plugins:
       - 'mslVampiricThirst.esp'
       - 'SanguinairVampirism.esp'
       - 'VampireLordPerksExpanded.esp'
-    group: *coreGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'DVA - Dynamic Vampire Appearance.esp'
+      - 'Ordinator - Perks of Skyrim.esp'
       - 'Volkihar Knight.esp'
     tag:
       - Graphics
