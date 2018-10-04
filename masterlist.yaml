@@ -1970,6 +1970,31 @@ plugins:
       - type: warn
         content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
         condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+  - name: 'CosmeticVampireOverhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
+    after:
+      - 'Better Vampire NPCs.esp'
+      - 'Cutting Room Floor.esp'
+      - name: 'ethereal_elven_overhaul.esp'
+        condition: 'file("ethereal_elven_overhaul.esp") and file("ethereal_elven_overhaul\.bsa")'
+    inc:
+      - name: 'BVFE.esp'
+        display: 'Fangs and Eyes - A Vampire Appearance Mod'
+      - 'EnhancedCharacterEdit.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Cutting Room Floor'
+          - '[Cutting Room Floor Patch](https://www.nexusmods.com/skyrimspecialedition/mods/8695/)'
+        condition: 'active("Cutting Room Floor.esp") and not active("CosmeticVampireOverhaul - Cutting Room Floor Patch.esp")'
+    tag:
+      - NpcFaces
+      - R.Head
+    clean:
+      - crc: 0xB03219D0 # v6.2
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+      - crc: 0x4224072F # v6.2 Better Vampire NPCs
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'ethereal_elven_overhaul.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7351/'
