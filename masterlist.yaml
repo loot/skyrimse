@@ -960,6 +960,35 @@ plugins:
     clean:
       - crc: 0x3B3FE8B6 # v1.0.1
         util: 'SSEEdit v3.2.1'
+  - name: 'Joy of Perspective.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358' ]
+    group: *earlyLoadersGroup
+    msg:
+      - type: say
+        content: '%1% patcher script available here: %2%'
+        subs:
+          - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+          - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
+        condition: 'active("Joy of Perspective.esp")'
+      - type: say
+        content: 'Third party patches available: %1%'
+        subs:
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009?tab=files)'
+        condition: 'active("Joy of Perspective.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002)'
+          - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
+        condition: 'active("Joy of Perspective.esp") and active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x292F204E
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+        itm: 2
+    clean:
+      - crc: 0x6E4431D8
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'RaceMenu.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
