@@ -670,6 +670,15 @@ plugins:
         util: 'SSEEdit v3.2.1'
     tag:
       - Graphics
+  - name: 'JRMoonpathtoElsweyrPatch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15882'
+        name: 'Unofficial Moonpath to Elsweyr Patch'
+    tag:
+      - Names
+    clean:
+      - crc: 0x3161E919
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
     # "This mod overwrites files from mod X, is it compatible?"
@@ -4605,6 +4614,18 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0xB98044B4 # v1.7
         util: 'SSEEdit v3.2.1'
+  - name: 'moonpath.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
+        name: 'Moonpath to Elsweyr SSE on Nexus Mods'
+    msg:
+      - type: warn
+        content: 'Update Patch available: %1%'
+        subs: [ '[Unofficial Moonpath to Elsweyr Patch](https://www.nexusmods.com/skyrimspecialedition/mods/15882/)' ]
+        condition: 'active("moonpath.esp") and checksum("moonpath.esp", 18577F3E) and not active("JRMoonpathtoElsweyrPatch.esp")'
+    clean:
+      - crc: 0x18577F3E #v1.16.1
+        util: 'SSEEdit v3.2.71'
 ############################################
 ## Locations - New Structures & Landmarks ##
 ############################################
