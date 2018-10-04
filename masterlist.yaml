@@ -963,6 +963,13 @@ plugins:
   - name: 'Joy of Perspective.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358' ]
     group: *earlyLoadersGroup
+    msg:
+      - type: say
+        content: '%1% patcher script available here: %2%'
+        subs:
+          - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+          - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
+        condition: 'active("Joy of Perspective.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x292F204E
