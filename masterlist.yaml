@@ -2126,6 +2126,25 @@ plugins:
     clean:
       - crc: 0x16CF39A0 # v2.4D
         util: 'SSEEdit v3.2.1'
+  - name: 'Skyrim Immersive Creatures Special Edition.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
+        name: 'Skyrim Immersive Creatures on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18639/'
+        name: 'Skyrim Immersive Creatures - Official Patch and Patch Central on Nexus Mods'
+    tag:
+      - -C.Location
+      - Delev
+      - Invent
+      - Relev
+    msg:
+      - type: warn
+        content: 'Update Patch available: %1%'
+        subs: [ '[Skyrim Immersive Creatures - Official Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
+    clean:
+      - crc: 0xA43CAEE3 # v0.22 Official patch
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'SofiaFollower.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/'
