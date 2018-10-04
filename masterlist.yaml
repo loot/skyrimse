@@ -1981,6 +1981,12 @@ plugins:
       - name: 'BVFE.esp'
         display: 'Fangs and Eyes - A Vampire Appearance Mod'
       - 'EnhancedCharacterEdit.esp'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Cutting Room Floor'
+          - '[Cutting Room Floor Patch](https://www.nexusmods.com/skyrimspecialedition/mods/8695/)'
+        condition: 'active("Cutting Room Floor.esp") and not active("CosmeticVampireOverhaul - Cutting Room Floor Patch.esp")'
   - name: 'ethereal_elven_overhaul.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7351/'
