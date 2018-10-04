@@ -4892,6 +4892,76 @@ plugins:
     clean:
       - crc: 0x4E4A0351 # v2.0.3
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'Distinct Interiors.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *addonsGroup
+    after:
+      - 'EnhancedLightsandFX.esp'
+      - 'ELFX - NoPlayerHomes.esp'
+      - 'Snazzy Furniture and Clutter Overhaul.esp'
+    inc:
+    # CRC for Modular - Core - Always Needed Version
+    # v1.81 B337055B,
+      - name: 'Enhanced Lights and FX'
+        condition: 'not checksum("Distinct Interiors.esp",B337055B) and active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+      - name: 'InnCredible.esp'
+        condition: 'not checksum("Distinct Interiors.esp",B337055B)'
+      - name: 'OpulentThievesGuild.esp'
+        condition: 'not checksum("Distinct Interiors.esp",B337055B)'
+      - 'Snazzy Furniture and Clutter Overhaul.esp'
+    msg:
+      - type: warn
+        content: 'ELFX - NoPlayerHomes module required.'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x6977340A # AIO v1.82
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+        udr: 1
+        nav: 1
+    clean:
+      - crc: 0xB337055B # Modular - Core v1.81
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'Distinct Interiors - Guilds.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *addonsGroup
+    inc:
+      - 'OpulentThievesGuild.esp'
+    clean:
+      - crc: 0x16EC9185 #v1.7
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'Distinct Interiors - Inns.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *addonsGroup
+    after:
+     - 'EnhancedLightsandFX.esp'
+    inc:
+      - 'InnCredible.esp'
+    clean:
+      - crc: 0x99012024 #v1.7
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'Distinct Interiors - Miscellaneous.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *addonsGroup
+    clean:
+      - crc: 0xE45A43C7 #v1.81
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+  - name: 'Distinct Interiors - Player Homes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *addonsGroup
+    inc:
+      - name: 'Enhanced Lights and FX'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+    msg:
+      - type: warn
+        content: 'ELFX - NoPlayerHomes module required.'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+  - name: 'Distinct Interiors - Shops.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *addonsGroup
+    clean:
+      - crc: 0x9DA76663 #v1.7
+        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'ETaC - RESOURCES.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
