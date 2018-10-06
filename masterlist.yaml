@@ -280,10 +280,10 @@ groups:
 
   - name: default
     after: [ *overhaulsGroup ]
-  
+
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
-  
+
   - name: &iCitizenGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
@@ -340,11 +340,18 @@ plugins:
         itm: 239
         udr: 91
         nav: 2
+      - <<: *dirtyPlugin
+        crc: 0x2B2E516B # v1.5.53.0
+        itm: 246
+        udr: 91
+        nav: 2
     clean:
       - crc: 0xc18ee18c # v1.5.39.0 - Auto Clean
         util: 'SSEEdit v3.2.1'
       - crc: 0x03649E73 # v1.5.50.0 - Auto Clean
         util: 'SSEEdit v3.2.54'
+      - crc: 0x5B1B2D50 # v1.5.53.0 - Auto Clean
+        util: 'SSEEdit v3.2.72'
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -358,7 +365,7 @@ plugins:
         subs:
           - 'Dawnguard.esm'
           - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
-        condition: 'checksum("Dawnguard.esm", 6061bcff) or checksum("Dawnguard.esm", 1CF3CECB)'
+        condition: 'checksum("Dawnguard.esm", 6061bcff) or checksum("Dawnguard.esm", 1CF3CECB) or checksum("Dawnguard.esm", 05205D68)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x81a481e8 # v1.5.39.0
@@ -380,6 +387,16 @@ plugins:
         itm: 6
         udr: 0
         nav: 57
+      - <<: *dirtyPlugin
+        crc: 0x07CE5FCE # v1.5.53.0
+        itm: 626
+        udr: 82
+        nav: 57
+      - <<: *dirtyPlugin
+        crc: 0xEBF57FD9 # v1.5.53.0 - Auto Clean First pass
+        itm: 6
+        udr: 0
+        nav: 57
     clean:
       - crc: 0x6061bcff # v1.5.39.0 - Auto Clean Second pass
         util: 'SSEEdit v3.2.1'
@@ -389,6 +406,10 @@ plugins:
         util: 'SSEEdit v3.2.54'
       - crc: 0xBB5C7D7C # v1.5.50.0 - Auto + Manual Cleaning
         util: 'SSEEdit v3.2.54'
+      - crc: 0x05205D68 # v1.5.53.0 - Second pass
+        util: 'SSEEdit v3.2.72'
+      - crc: 0x86C558B7 # v1.5.53.0 - Auto + Manual Cleaning
+        util: 'SSEEdit v3.2.72'
   - name: 'Hearthfires.esm'
     group: *dlcGroup
     after:
@@ -407,11 +428,18 @@ plugins:
         itm: 178
         udr: 11
         nav: 5
+      - <<: *dirtyPlugin
+        crc: 0x463D25B7 # v1.5.53.0
+        itm: 178
+        udr: 11
+        nav: 5
     clean:
       - crc: 0x0ED37282 # v1.5.39.0 - Auto Clean
         util: 'SSEEdit v3.2.1'
       - crc: 0x22840A68 # v1.5.50.0 - Auto Clean
         util: 'SSEEdit v3.2.54'
+      - crc: 0xD569B4AC # v1.5.53.0 - Auto Clean
+        util: 'SSEEdit v3.2.72'
   - name: 'Dragonborn.esm'
     group: *dlcGroup
     after:
@@ -431,11 +459,18 @@ plugins:
         itm: 69
         udr: 8
         nav: 1
+      - <<: *dirtyPlugin
+        crc: 0xE0B5DB91 # v1.5.53.0
+        itm: 69
+        udr: 8
+        nav: 1
     clean:
       - crc: 0x5eb9eade # v1.5.39.0 - Auto Clean
         util: 'SSEEdit v3.2.1'
       - crc: 0xE6E5895B # v1.5.50.0 - Auto Clean
         util: 'SSEEdit v3.2.54'
+      - crc: 0xC2F4AD77 # v1.5.53.0 - Auto Clean
+        util: 'SSEEdit v3.2.72'
   - name: 'SkyrimVR.esm'
     group: *dlcGroup
     after:
@@ -2016,7 +2051,7 @@ plugins:
     msg:
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - 'Cutting Room Floor'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF.esp")'
@@ -2275,7 +2310,7 @@ plugins:
     msg:
       - type: warn
         content: '%1% is already included in this mod.'
-        subs: 
+        subs:
           - '`Realistic High Altitude Treeline`'
         condition: 'active("Realistic Treeline.esp")'
     clean:
@@ -4241,31 +4276,31 @@ plugins:
     msg:
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Bijin All in One` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp") and not file("ScopedBows_Bijin Patch.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Bijin Warmaidens` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Bijin Warmaidens.esp") and not file("ScopedBows_Bijin Patch.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `MorrowLoot Ultimate` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("MLU.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Weapons Armor Clothing & Clutter Fixes` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("ScopedBows.esp", 5E29053A)'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Zim''s Immersive Artifacts` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU.esp") and not file("ScopedBows_ZIA Patch.esp")'
