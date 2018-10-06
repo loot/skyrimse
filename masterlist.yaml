@@ -280,10 +280,10 @@ groups:
 
   - name: default
     after: [ *overhaulsGroup ]
-  
+
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
-  
+
   - name: &iCitizenGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
@@ -2016,7 +2016,7 @@ plugins:
     msg:
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - 'Cutting Room Floor'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF.esp")'
@@ -2275,7 +2275,7 @@ plugins:
     msg:
       - type: warn
         content: '%1% is already included in this mod.'
-        subs: 
+        subs:
           - '`Realistic High Altitude Treeline`'
         condition: 'active("Realistic Treeline.esp")'
     clean:
@@ -4241,31 +4241,31 @@ plugins:
     msg:
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Bijin All in One` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp") and not file("ScopedBows_Bijin Patch.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Bijin Warmaidens` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Bijin Warmaidens.esp") and not file("ScopedBows_Bijin Patch.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `MorrowLoot Ultimate` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("MLU.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Weapons Armor Clothing & Clutter Fixes` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("ScopedBows.esp", 5E29053A)'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
-        subs: 
+        subs:
           - ' `Zim''s Immersive Artifacts` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU.esp") and not file("ScopedBows_ZIA Patch.esp")'
@@ -6381,4 +6381,3 @@ plugins:
       - 'Ordinator - Perks of Skyrim.esp'
       - 'Smithing Perks Overhaul SE.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
-
