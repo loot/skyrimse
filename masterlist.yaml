@@ -4787,6 +4787,9 @@ plugins:
     group: *lvlListsGroup
     after:
       - 'WACCF_BashedPatchLvlListFix.esp'
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB)' # v1 0x41BB8CCB
     tag:
       - Delev
       - Relev
