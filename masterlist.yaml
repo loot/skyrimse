@@ -93,6 +93,11 @@ common:
         text: 'Slet. Allerede inkluderet i %1%.'
       - lang: ja
         text: '削除してください。既に%1%に含まれています。'
+  - &includesMBBF
+    type: say
+    content:
+      - lang: en
+        text: '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/) is included with this mod.'
 
 # Cleaning data
   - &dirtyPlugin
@@ -905,40 +910,6 @@ plugins:
     # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
-    after:
-      - 'Bashed Patch, 0.esp'
-    msg:
-      - <<: *AlreadyInX
-        subs: [ 'Andromeda - Unique Standing Stones of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Andromeda - Unique Standing Stones of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Apocalypse - Magic of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Apocalypse - Magic of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Imperious - Races of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Imperious - Races of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ordinator - Perks of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Ravengate - Riften Underground' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ravengate.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Sacrosanct - Vampires of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Sacrosanct - Vampires of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Smilodon - Combat of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Smilodon - Combat of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Thunderchild - Epic Shout Package' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Thunderchild - Epic Shout Package.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Wildcat - Combat of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Wildcat - Combat of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Enhanced Blood Textures' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("dD - Enhanced Blood Main.esp")'
-
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/'
@@ -2822,6 +2793,7 @@ plugins:
     tag:
       - -Names
     msg:
+      - *includesMBBF
       - type: info
         content:
           - lang: en
@@ -2849,6 +2821,7 @@ plugins:
     after:
       - 'Ordinator - Perks of Skyrim.esp'
     msg:
+      - *includesMBBF
       - <<: *hasPluginPatch
         subs:
           - 'Ordinator - Perks of Skyrim'
@@ -3252,6 +3225,7 @@ plugins:
       - R.Description
       - R.Skills
     msg:
+      - *includesMBBF
       - type: say
         content:
           - lang: en
@@ -3586,6 +3560,7 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
     msg:
+      - *includesMBBF
       - type: say
         content:
           - lang: en
@@ -3774,6 +3749,7 @@ plugins:
       - Names
       - Sound
     msg:
+      - *includesMBBF
       - type: warn
         content: 'Better Vampires and Sacrosanct Patch is not recommended or supported by the Author of [Sacrosanct - Vampires of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3928)'
         condition: 'active("better vampires.esp") and active("BVandSacrosanct_Patch.esp")'
@@ -4117,6 +4093,7 @@ plugins:
       - 'SkyRe_EnemyAI.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
     msg:
+      - *includesMBBF
       - type: say
         content:
           - lang: en
@@ -4514,6 +4491,7 @@ plugins:
       - Invent
       - Relev
     msg:
+      - *includesMBBF
       - <<: *hascompatibilityIssues
         subs:
           - 'Summermyst - Enchantments of Skyrim.esp'
