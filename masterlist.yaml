@@ -67,11 +67,15 @@ common:
         text: 'Du har installeret %1% men SKSE64 blev ikke fundet! Se SKSE64-downloadsiden: [SKSE64](http://skse.silverlock.org).'
       - lang: ja
         text: '%1%はインストールされていますが、SKSE64が見つかりません！SKSEのダウンロードページを確認してください。[SKSE64](http://skse.silverlock.org)'
-  - &requireSKYUI
+  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
+  - &reqSkyUI
     type: warn
     content:
       - lang: en
-        text: 'You have installed %1% but [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) is not active\installed. Some mod features or functionality may be disabled.'
+        text: 'SkyUI_SE.esp is not active in your load order. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) is required for this mod to be fully functional.'
+      - lang: ja
+        text: 'SkyUI_SE.espがアクティブになっていません。このModを完全に機能させるには[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)が必要です。'
+    condition: 'not active("SkyUI_SE.esp")'
   - &requiresMasterSort
     type: say
     content:
@@ -979,11 +983,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/'
         name: 'Armor and Clothing Extension on Nexus Mods'
     msg:
-      - <<: *requireSKYUI
-        subs: [ '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002/)' ]
-        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("SkyUI_SE.esp")'
-      - <<: *doNotClean
-        condition: 'active("WACCF_Armor and Clothing Extension.esp")'
+      - *reqSkyUI
+      - *doNotClean
     clean:
       - crc: 0x832B2C99 # v1.0
         util: 'SSEEdit v3.2.2'
@@ -1266,11 +1267,9 @@ plugins:
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
         condition: 'file("scripts/RaceMenuPluginXPMSE.pex")'
-    msg:
-      - <<: *requireSKYUI
-        subs: [ 'XP32 Maximum Skeleton' ]
+      - <<: *SkyUI
         condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
-      - *doNotClean
+    msg: [ *doNotClean ]
 ############################
 ## AudioVisual - Lighting ##
 ############################
@@ -2454,10 +2453,7 @@ plugins:
         name: 'Toccata Follower SE (With Elisif Replacer Option) on Nexus Mods'
     req:
       - *SKSE64
-    msg:
-      - <<: *requireSKYUI
-        subs: [ 'Toccata Follower' ]
-        condition: 'active("Toccata.esp") and not active("SkyUI_SE.esp")'
+      - *SkyUI
     clean:
       - crc: 0xAA9D9F35
         util: 'SSEEdit v3.2.44'
@@ -3230,12 +3226,9 @@ plugins:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
       - *SKSE64
+      - *SkyUI
     inc:
       - 'Convenient Horses.esp'
-    msg:
-      - <<: *requireSKYUI
-        subs: [ 'Immersive Horses' ]
-        condition: 'active("Immersive Horses.esp") and not active("SkyUI_SE.esp")'
     tag:
       - Actors.AIData
       - Actors.AIPackages
@@ -3472,8 +3465,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
         name: 'MorrowLoot Ultimate on Nexus Mods'
-    msg:
-      - <<: *doNotClean
+    msg: [ *doNotClean ]
     tag:
       - Delev
       - Invent
@@ -4052,10 +4044,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    msg:
-      - <<: *requireSKYUI
-        subs: [ 'Trade & Barter' ]
-        condition: 'active("TradeBarter.esp") and not active("SkyUI_SE.esp")'
+    msg: [ *reqSkyUI ]
     tag:
       - Delev
       - Invent
