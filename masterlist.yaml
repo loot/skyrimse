@@ -93,6 +93,11 @@ common:
         text: 'Slet. Allerede inkluderet i %1%.'
       - lang: ja
         text: '削除してください。既に%1%に含まれています。'
+  - &includesMBBF
+    type: say
+    content:
+      - lang: en
+        text: '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/) is included with this mod.'
 
 # Cleaning data
   - &dirtyPlugin
@@ -905,40 +910,6 @@ plugins:
     # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
-    after:
-      - 'Bashed Patch, 0.esp'
-    msg:
-      - <<: *AlreadyInX
-        subs: [ 'Andromeda - Unique Standing Stones of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Andromeda - Unique Standing Stones of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Apocalypse - Magic of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Apocalypse - Magic of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Imperious - Races of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Imperious - Races of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ordinator - Perks of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Ravengate - Riften Underground' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Ravengate.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Sacrosanct - Vampires of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Sacrosanct - Vampires of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Smilodon - Combat of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Smilodon - Combat of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Thunderchild - Epic Shout Package' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Thunderchild - Epic Shout Package.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Wildcat - Combat of Skyrim' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("Wildcat - Combat of Skyrim.esp")'
-      - <<: *AlreadyInX
-        subs: [ 'Enhanced Blood Textures' ]
-        condition: 'active("Modern Brawl Bug Fix.esp") and active("dD - Enhanced Blood Main.esp")'
-
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/'
@@ -1040,6 +1011,34 @@ plugins:
     clean:
       - crc: 0xA81E5289 # v2.7.2
         util: 'SSEEdit v3.2.1'
+  - name: 'dD - Enhanced Blood Main.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
+        name: 'Enhanced Blood Textures SE on Nexus Mods'
+    group: *overhaulsGroup
+    inc: [ 'dD - Enhanced Blood Main LITE.esp' ]
+    msg: [ *includesMBBF ]
+    clean:
+      - crc: 0xC57CF1EF # v3.75
+        util: 'SSEEdit v3.2.72d EXPERIMENTAL'
+  - name: 'dD - Enhanced Blood Main LITE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
+        name: 'Enhanced Blood Textures SE on Nexus Mods'
+    group: *overhaulsGroup
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x8EC95C4C # v1.1 Lite
+        util: 'SSEEdit v3.2.72d EXPERIMENTAL'
+        itm: 25
+    clean:
+      - crc: 0x6CF176EC # v1.1 Lite
+        util: 'SSEEdit v3.2.72d EXPERIMENTAL'
+  - name: 'dD-((Larger|Medium|Reduced|Short) (Script|Splatter|Wound) (Range|Size))\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
+        name: 'Enhanced Blood Textures SE on Nexus Mods'
+    group: *overhaulsGroup
   - name: 'Skyrim Project Optimization - Full Version.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
@@ -2822,6 +2821,7 @@ plugins:
     tag:
       - -Names
     msg:
+      - *includesMBBF
       - type: info
         content:
           - lang: en
@@ -2849,6 +2849,7 @@ plugins:
     after:
       - 'Ordinator - Perks of Skyrim.esp'
     msg:
+      - *includesMBBF
       - <<: *hasPluginPatch
         subs:
           - 'Ordinator - Perks of Skyrim'
@@ -3252,6 +3253,7 @@ plugins:
       - R.Description
       - R.Skills
     msg:
+      - *includesMBBF
       - type: say
         content:
           - lang: en
@@ -3586,6 +3588,7 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
     msg:
+      - *includesMBBF
       - type: say
         content:
           - lang: en
@@ -3643,6 +3646,15 @@ plugins:
     clean:
       - crc: 0xBBB08325 # v2.0
         util: 'SSEEdit v3.2.1'
+  - name: 'Ravengate.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12617'
+        name: 'Ravengate - Riften Underground on Nexus Mods'
+    msg:
+      - *includesMBBF
+    clean:
+      - crc: 0xBFAFCD0B # v0.06BTASSE
+        util: 'SSEEdit v3.2.72d EXPERIMENTAL'
   - name: 'Realistic AI Detection 2 SE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2345/' ]
     after:
@@ -3774,6 +3786,7 @@ plugins:
       - Names
       - Sound
     msg:
+      - *includesMBBF
       - type: warn
         content: 'Better Vampires and Sacrosanct Patch is not recommended or supported by the Author of [Sacrosanct - Vampires of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3928)'
         condition: 'active("better vampires.esp") and active("BVandSacrosanct_Patch.esp")'
@@ -4026,6 +4039,17 @@ plugins:
     clean:
       - crc: 0x725F1E2E # v1.7
         util: 'SSEEdit v3.2.1'
+  - name: 'Thunderchild - Epic Shout Package.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
+    msg: [ *includesMBBF ]
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x5D3C94B4 # v4.11SSE
+        util: 'SSEEdit v3.2.72d'
+        itm: 62
+    clean:
+      - crc: 0x305D135F # v4.11SSE
+        util: 'SSEEdit v3.2.72d'
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     group: *earlyLoadersGroup
@@ -4117,6 +4141,7 @@ plugins:
       - 'SkyRe_EnemyAI.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
     msg:
+      - *includesMBBF
       - type: say
         content:
           - lang: en
@@ -4514,6 +4539,7 @@ plugins:
       - Invent
       - Relev
     msg:
+      - *includesMBBF
       - <<: *hascompatibilityIssues
         subs:
           - 'Summermyst - Enchantments of Skyrim.esp'
