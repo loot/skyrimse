@@ -5918,6 +5918,7 @@ plugins:
       - 'ExpandedWinterholdRuins.esp'
       - 'Less desolate Winterhold.esp'
       - 'QaxeWinterholdRebuild.esp'
+      - 'sm_jobasha_bookshop.esp'
       - 'sm_winterholdtemple.esp'
       - 'The Great City of Winterhold.esp'
       - 'Winterholdtruecapitalruins.esp'
@@ -5937,12 +5938,6 @@ plugins:
       - 'Thunderchild - Epic Shout Package.esp'
       - 'TKAA.esp'
     msg:
-      - type: warn
-        condition: 'active("sm_jobasha_bookshop.esp")'
-        content: 'Jobasha''s Books SE is only compatible with its Winterhold Restored version.'
-        subs:
-          - 'Jobasha''s Books SE'
-          - '[Jobasha''s Books and Winterhold Restored Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
       - <<: *hasPluginPatch
         subs:
           - 'Ambriel - The Lost Princess'
@@ -5976,7 +5971,7 @@ plugins:
     tag:
       - C.Location
     clean:
-      - crc: E649AE58
+      - crc: 0xE649AE58 # v1.9
         util: SSEEdit v3.2.77
         
       
