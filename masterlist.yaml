@@ -3341,6 +3341,25 @@ plugins:
     clean:
       - crc: 0xED643590
         util: 'SSEEdit v3.2.2'
+  - name: 'Lock_Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
+    group: *coreGroup
+    inc:
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and checksum("Lock_Overhaul.esp", B7986707)'
+        display: 'Ordinator - Perks of Skyriml'
+    req:
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
+    msg:
+      - type: error
+        content: 'Lock Overhaul - Ordinator Version is required.'
+        condition: 'active("Lock_Overhaul.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
+    clean:
+      - crc: 0xB7986707 # v1.6
+        util: 'SSEEdit v3.2.79 EXPERIMENTAL'
+      - crc: 0xCD2D19F5 # v1.6 Ordinator version 
+        util: 'SSEEdit v3.2.79 EXPERIMENTAL'
   - name: 'TTR_Master_Trader.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/'
