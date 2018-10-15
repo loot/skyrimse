@@ -5938,40 +5938,40 @@ plugins:
       - 'TKAA.esp'
     msg:
       - type: warn
+        condition: 'active("sm_jobasha_bookshop.esp")'
         content: 'Jobasha''s Books SE is only compatible with its Winterhold Restored version.'
         subs:
-          - '[Jobasha''s Books SE](https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
-        condition: 'active("sm_jobasha_bookshop.esp")'
-      - type: warn
+          - 'Jobasha''s Books SE'
+          - '[Jobasha''s Books and Winterhold Restored Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
+      - <<: *hasPluginPatch
         subs:
-          - '[JK''s Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
-        condition: 'active("JKs Skyrim.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp")'
-      - type: warn
-        subs:
-          - '[Ambriel - The Lost Princess](https://www.nexusmods.com/skyrimspecialedition/mods/969/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+          - 'Ambriel - The Lost Princess'
+          - '[Winterhold Restored Ambriel the Lost Princess Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
         condition: 'active("Ambriel.esp") and not active("Winterhold Restored - Ambriel Patch.esp")'
-      - type: warn
+      - <<: *hasPluginPatch
         subs:
-          - '[Azura''s Shield](https://www.nexusmods.com/skyrimspecialedition/mods/12998/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+          - 'Azura''s Shield'
+          - '[Winterhold Restored - Azura''s Shield SE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
         condition: 'active("AzurasShield_SE_Eng.esp") and not active("Winterhold Restored - Azura''s Shield Patch.esp")'
-      - type: warn
+      - <<: *hasPluginPatch
         subs:
-          - '[Holds - The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+          - 'Holds - The City Overhaul'
+          - '[Winterhold Restored - Holds Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
         condition: 'active("Holds.esp") and not active("Winterhold Restored - Holds Patch.esp")'
-      - type: warn
+      - <<: *hasPluginPatch
         subs:
-          - '[No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+          - 'JK''s Skyrim'
+          - '[Winterhold Restored - JKs Skyrim Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("JKs Skyrim.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'No Snow Under the Roof'
+          - '[Winterhold Restored - No Snow Under the Roof Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Winterhold Restored - NSUTR Patch.esp")'
-      - type: warn
+      - <<: *hasPluginPatch
         subs:
-          - '[Windyridge - Player Home In Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/8046/)'
-          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+          - 'Windyridge - Player Home In Winterhold'
+          - '[Winterhold Restored - Windyridge Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
         condition: 'active("windyridge.esp") and not active("Winterhold Restored - Windyridge Patch.esp")'
     tag:
       - C.Location
