@@ -5846,13 +5846,6 @@ plugins:
     tag:
       - C.Location
       - C.Regions
-    inc:
-      - 'Real Solitude Rocks.esp'
-    after:
-      - 'EnhancedLightsandFX.esp'
-      - 'Hole in the Wall - Solitude.esp'
-      - 'Solitude Exterior Addon.esp'
-      - 'Tamriel Reloaded HD SE.esp'
   - name: 'Soljund''s Sinkhole.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/358/'
@@ -5909,6 +5902,83 @@ plugins:
         util: 'SSEEdit v3.2.2'
       - crc: 0x98AD850B # vLITE
         util: 'SSEEdit v3.2.2'
+  - name: 'Winterhold Restored.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12811/'
+        name: 'Winterhold Restored on Nexus Mods'
+    group: 'Add-ons & Expansions'
+    inc:
+      - 'ExpandedWinterholdRuins.esp'
+      - 'Less desolate Winterhold.esp'
+      - 'QaxeWinterholdRebuild.esp'
+      - 'sm_winterholdtemple.esp'
+      - 'The Great City of Winterhold.esp'
+      - 'Winterholdtruecapitalruins.esp'
+      - 'Winterholdtruecapitalruinsjkversion.esp'
+      - 'WinterholdDestruction.esm'
+      - 'Winterhold Fully Restored.esp'
+    after:
+      - 'Bring Our Your Dead.esp'
+      - 'CFTO.esp'
+      - 'Clockwork.esp'
+      - 'CollegeOfWinterholdImmersive.esp'
+      - 'Cutting Room Floor.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'MagicalCollegeofWinterhold.esp'
+      - 'Skyrim Better Roads - Winterhold.esp'
+      - 'sm_winterholdgate.esp'
+      - 'Thunderchild - Epic Shout Package.esp'
+      - 'TKAA.esp'
+    msg:
+      - type: warn
+        content: 'Jobasha''s Books SE is only compatible with its Winterhold Restored version.'
+        subs:
+          - '[Jobasha''s Books SE](https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("sm_jobasha_bookshop.esp")'
+      - type: warn
+        content: *ref_0
+        subs:
+          - '[JK''s Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("JKs Skyrim.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp")'
+      - type: warn
+        content: *ref_0
+        subs:
+          - '[Ambriel - The Lost Princess](https://www.nexusmods.com/skyrimspecialedition/mods/969/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("Ambriel.esp") and not active("Winterhold Restored - Ambriel Patch.esp")'
+      - type: warn
+        content: *ref_0
+        subs:
+          - '[Azura''s Shield](https://www.nexusmods.com/skyrimspecialedition/mods/12998/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("AzurasShield_SE_Eng.esp") and not active("Winterhold Restored - Azura''s Shield Patch.esp")'
+      - type: warn
+        content: *ref_0
+        subs:
+          - '[Holds - The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("Holds.esp") and not active("Winterhold Restored - Holds Patch.esp")'
+      - type: warn
+        content: *ref_0
+        subs:
+          - '[No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Winterhold Restored - NSUTR Patch.esp")'
+      - type: warn
+        content: *ref_0
+        subs:
+          - '[Windyridge - Player Home In Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/8046/)'
+          - '[Winterhold Restored](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+        condition: 'active("windyridge.esp") and not active("Winterhold Restored - Windyridge Patch.esp")'
+    tag:
+      - C.Location
+    clean:
+      - crc: E649AE58
+        util: SSEEdit v3.2.77
+        
+      
 ##############################
 ## Locations - Player Homes ##
 ##############################
