@@ -26,6 +26,8 @@ common:
         text: 'Rengør ikke ITM-poster: de er forsætlige og krævede for at mod’en fungerer. Det er sikkert at gendanne poster, men gør ikke andet end dét.'
       - lang: ja
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
+      - lang: de
+        text: 'Die ITM-Einträge nicht säubern, diese sind absichtlich enthalten und sind vorausgesetzt dass die Mod funktioniert. Es ist ungefährlich Einträge wiederherzustellen, aber unternehme nicht anderes.'
   - &hasPluginPatch
     type: warn
     content:
@@ -35,16 +37,22 @@ common:
         text: "Du ser ud til at bruge %1%, men du bruger ikke “%1%”-lappen for dette plugin: %2%"
       - lang: ja
         text: "%1%が使用されていますが、このプラグイン用の%1%のパッチが有効になっていません: %2%"
+      - lang: de
+        text: "Sie nutzen anscheinend %1%, haben aber nicht den %1% Patch aktiviert für dieses Plugin: %2%"
   - &hasPatchIncluded
     type: warn
     content:
       - lang: en
         text: "A patch is included with the %2% installer, please make sure you have installed the %1% patch and have it activated"
+      - lang: de
+        text: "Ein Patch ist enthalten mit der %2% Installation, bitte stellen Sie sicher das Sie den %1% Patch installiert und aktiviert haben"
   - &hascompatibilityIssues
     type: say
     content:
       - lang: en
         text: '%1% is not fully compatibility with "%2%".%3%'
+      - lang: de
+        text: '%1% ist nicht vollständig kompatibel mit "%2%".%3%'
   - &requireSKSE64
     type: error
     content:
@@ -62,6 +70,8 @@ common:
         text: 'Du har installeret %1% men SKSE64 blev ikke fundet! Se SKSE64-downloadsiden: [SKSE64](http://skse.silverlock.org).'
       - lang: ja
         text: '%1%はインストールされていますが、SKSE64が見つかりません！SKSEのダウンロードページを確認してください。[SKSE64](http://skse.silverlock.org)'
+      - lang: de
+        text: 'Sie haben %1% installiert, aber SKSE64 wurde nicht gefunden! Siehe SKSE64 Download-Seite: [SKSE64](http://skse.silverlock.org).'
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &reqSkyUI
     type: warn
@@ -70,12 +80,16 @@ common:
         text: 'SkyUI_SE.esp is not active in your load order. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) is required for this mod to be fully functional.'
       - lang: ja
         text: 'SkyUI_SE.espがアクティブになっていません。このModを完全に機能させるには[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)が必要です。'
+      - lang: de
+        text: 'SkyUI_SE.esp ist nicht aktiv in Ihrer Ladereihenfolge. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) is required for this mod to be fully functional.'
     condition: 'not active("SkyUI_SE.esp")'
   - &requiresMasterSort
     type: say
     content:
       - lang: en
         text: 'Plugin''s Masters require sorting.'
+      - lang: de
+        text: 'Plugin Master benötigen Sortierung.'
   - &AlreadyInX
     type: error
     content:
@@ -93,11 +107,15 @@ common:
         text: 'Slet. Allerede inkluderet i %1%.'
       - lang: ja
         text: '削除してください。既に%1%に含まれています。'
+      - lang: de
+        text: 'Löschen. Schon enthalten in %1%.'
   - &includesMBBF
     type: say
     content:
       - lang: en
         text: '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/) is included with this mod.'
+      - lang: de
+        text: '[ Modern Brawl Fehlerbehebung ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/) ist enthalten in dieser Mod.'
 
 # Cleaning data
   - &dirtyPlugin
@@ -108,6 +126,8 @@ common:
     content:
       - lang: en
         text: "This plugin contains wild edits. A manual [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available here: %1%"
+      - lang: de
+        text: "Dieses Plugin enthält wilde Modifikationen. Eine manuelle [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) Säuberungsanleitung ist hier verfügbar: %1%"
 
 bash_tags:
   - 'Actors.ACBS'
@@ -191,6 +211,8 @@ globals:
         text: 'This version of LOOT has inferior handling of Creation Club plugins. Support for these are therefore limited in versions prior to LOOT 0.13.1. It is recommended to update as soon as possible.'
       - lang: da
         text: 'Denne version af LOOT har begrænset understøttelse af Creation Club-plugins. Det er derfor anbefalet at opdatere til LOOT 0.13.1 eller senere hurtigst muligt.'
+      - lang: de
+        text: 'Diese Version von LOOT hat eine minderwertige Handhabung von Creation Club-Plugins. Unterstützung für diese ist daher limitiert in Versionen älter als LOOT 0.13.1. Es wird empfohlen so bald wie möglich zu Updaten.'
     condition: 'version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}FO4[0-9]{3}-[a-zA-Z0-9()]+\.es(l|m)")'
   - type: say
     content:
@@ -208,6 +230,8 @@ globals:
         text: '[Seneste LOOT-tråd](%1%).'
       - lang: ja
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
+      - lang: de
+        text: '[Aktuelles LOOT Thema](%1%).'
     subs: [ 'https://loot.github.io/latest-thread/' ]
 # SKSE Latest
   - type: say
@@ -225,6 +249,8 @@ globals:
         text: '你的[SKSE64](http://skse.silverlock.org)似乎不是最新的。有些插件可能需要最新的SKSE才能工作。'
       - lang: ja
         text: '[SKSE64](http://skse.silverlock.org)が最新版ではないようです。一部のModを動作させるには最新版のSKSEで追加された機能が必要となる場合があります。'
+      - lang: de
+        text: 'Es erscheint als hätten Sie nicht die [aktuellste Version von SKSE64](http://skse.silverlock.org). Einige Mods könnten Funktionalitäten benötigen die nur in der aktuellsten Version von SKSE64 enthalten sind, um zu funktionieren.'
   - type: say
     condition: 'not version("../skse64_loader.exe", "0.2.0.8", <)'
     content:
@@ -242,6 +268,8 @@ globals:
         text: 'Din SKSE64 er opdateret.'
       - lang: ja
         text: 'SKSE64は最新版です。'
+      - lang: de
+        text: 'Ihr SKSE64 ist aktuell.'
 # SKSE64 plugins requirement
   - <<: *requireSKSE64
     subs: [ 'a SKSE Plugin' ]
@@ -265,6 +293,8 @@ globals:
         text: '你安装了[FNIS SE](https://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
       - lang: ja
         text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
+      - lang: de
+        text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Nicht vergessen GenerateFNISforUsers.exe jedes mal zu starten wenn sie FNIS oder eine auf FNIS basierende Mod installiert oder deinstalliert haben.'
 
 groups:
   - name: &dlcGroup DLC
@@ -569,6 +599,8 @@ plugins:
         content:
           - lang: en
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial skyrim survival patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
+          - lang: de
+            text: '"ccqdrsse001-survivalmode.esl" hat einen [bekannten Fehler](https://www.nexusmods.com/skyrimspecialedition/articles/22/) welcher inkompatibel ist mit "Ordinator - Perks of Skyrim.esp". Erwäge die Nutzung von dem [Unofficial skyrim survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) um diesen Fehler zu beheben.'
   - name: 'ccTWBSSE001-PuzzleDungeon.esm'
     group: *ccGroup
     after:
@@ -926,6 +958,8 @@ plugins:
         content:
           - lang: en
             text: '[WACCF Compatibility Notes & Patches](https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162)'
+          - lang: de
+            text: '[WACCF Kompatibilitätsnotizen & Patches](https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162)'
     tag:
       - Sound
     clean:
@@ -2108,6 +2142,8 @@ plugins:
         content:
           - lang: en
             text: 'Use only one version of %1%.'
+          - lang: de
+            text: 'Nutze nur eine Version von %1%.'
         condition: 'many("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
         subs: [ 'Bijin All in One' ]
   - name: 'Bijin_Frea-Iona.esp'
@@ -2826,11 +2862,15 @@ plugins:
         content:
           - lang: en
             text: 'Make sure the Disparity option "Use Modified Blessings" is disabled'
+          - lang: de
+            text: 'Stelle sicher die Option "Use Modified Blessings" (übers. "Nutze modifizierte Segen") ist deaktiviert'
         condition: 'active("Disparity.esp")'
       - type: say
         content:
           - lang: en
             text: '[Andromeda Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
+          - lang: de
+            text: '[Andromeda Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x16C0E8CB # v1.05SSE
@@ -2859,6 +2899,8 @@ plugins:
         content:
           - lang: en
             text: '[Apocalypse Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/136/?)'
+          - lang: de
+            text: '[Apocalypse Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/136/?)'
     clean:
       - crc: 0x266B3B3B # v9.45SSE
         util: 'SSEEdit v3.2.1'
@@ -2940,6 +2982,8 @@ plugins:
         content:
           - lang: en
             text: '[CACO Compatibility Notes & Patches](https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286)'
+          - lang: de
+            text: '[CACO Kompatibilitätsnotizen & Patches](https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286)'
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
@@ -2964,7 +3008,9 @@ plugins:
         condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
         content:
           - lang: en
-            text: 'An optional compatibility patch, which changes  a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+            text: 'An optional compatibility patch, which changes a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+          - lang: de
+            text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert um Deadly Combats Design zu entsprechen, ist verfügbar auf der [Deadly Combat Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *fixesResourcesGroup
@@ -3158,12 +3204,16 @@ plugins:
       - type: say
         content:
           - lang: en
-            text: 'It is recommended that your read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
+            text: 'It is recommended that you read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
+          - lang: de
+            text: 'Es wird empfohlen das Sie sich die [Immersive Citizens SE: Kompatibilitätsnotizen](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) durchlesen und für Konflikte überprüfen mit [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) nach einer Sortierung mit LOOT.'
       - type: warn
         condition: 'active("tpos_immersive_clit_patch_01.esp")'
         content:
           - lang: en
             text: '[ Immersive Citizens SE: Compatibility Notes ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) is not supported by the Immersive Citizens author. Use at your own risk.'
+          - lang: de
+            text: '[ Immersive Citizens SE: Kompatibilitätsnotizen ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) wird nicht unterstützt vom Immersive Citizens Autor. Nutzung auf eigene Gefahr.'
     tag:
       - Actors.AIPackages
       - C.Location
@@ -3258,6 +3308,8 @@ plugins:
         content:
           - lang: en
             text: '[Imperious Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/127/?)'
+          - lang: de
+            text: '[Imperious Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/127/?)'
     clean:
       - crc: 0xE889ADEB # v7.24SSE
         util: 'SSEEdit v3.2.1'
@@ -3555,7 +3607,9 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp")'
         content:
           - lang: en
-            text: '"Ordinator - Perks of Skyrim.esp" The Thiefs Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
+            text: '"Ordinator - Perks of Skyrim.esp" The Thief''s Eye perk will not work because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
+          - lang: de
+            text: '"Ordinator - Perks of Skyrim.esp" Der Thief''s Eye Perk wird nicht funktionieren weil sie sich technisch nicht eine Stadt betreten. Um dies zu beheben, öffne die Konsole und setze ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly auf 1. Tun Sie dies nicht wenn Sie nicht Open Cities verwenden.[Quellennotizen](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
     tag:
       - C.Location
       - C.Regions
@@ -3612,6 +3666,8 @@ plugins:
         content:
           - lang: en
             text: '[Ordinator Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/?)'
+          - lang: de
+            text: '[Ordinator Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/22/?)'
     tag:
       - Graphics
       - Names
@@ -3813,6 +3869,8 @@ plugins:
         content:
           - lang: en
             text: '[Sacrosanct Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/54/?)'
+          - lang: de
+            text: '[Sacrosanct Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/54/?)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x93553BD1 # v5.11SSE
@@ -4165,6 +4223,8 @@ plugins:
         content:
           - lang: en
             text: '[Wildcat Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
+          - lang: de
+            text: '[Wildcat Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
     clean:
       - crc: 0xE6A87461 # v7.00SSE
         util: 'SSEEdit v3.2.2'
@@ -4417,11 +4477,15 @@ plugins:
         content:
           - lang: en
             text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
+          - lang: de
+            text: 'Diese Mod hat bestimmte Konflikte mit "MLU.esp". Erwäge den [MLU - Improved Closefaced Helmets Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/) zu nutzen.'
       - type: warn
         condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
         content:
           - lang: en
             text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved closefaced helmets for Undeath SSE patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+          - lang: de
+            text: 'Diese Mod hat bestimmte Konflikte mit "Undeath.esp". Erwäge den [Improved closefaced helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/) zu nutzen.'
     tag:
       - Graphics
     dirty:
@@ -4569,6 +4633,8 @@ plugins:
         content:
           - lang: en
             text: '[Summermyst Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
+          - lang: de
+            text: '[Summermyst Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
     clean:
       - crc: 0x1F17FC44 # v3.07SSE
         util: 'SSEEdit v3.2.2'
@@ -5642,6 +5708,8 @@ plugins:
         content:
           - lang: en
             text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) is incompatible with JK''s Skyrim.  Please use [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506) instead.'
+          - lang: de
+            text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) ist inkompatibel mit JK''s Skyrim.  Bitte nutze [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506) stattdessen.'
       - <<: *hasPluginPatch
         subs:
           - 'Better City Entrances'
@@ -5730,6 +5798,8 @@ plugins:
         content:
           - lang: en
             text: 'Use only one %1%.'
+          - lang: de
+            text: 'Nutze nur einen %1%.'
         condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
         subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
   - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
