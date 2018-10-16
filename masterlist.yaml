@@ -3347,14 +3347,14 @@ plugins:
     inc:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and checksum("Lock_Overhaul.esp", B7986707)'
-        display: 'Ordinator - Perks of Skyriml'
+        display: 'Ordinator - Perks of Skyrim'
     req:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
     msg:
       - type: error
         content: 'Lock Overhaul - Ordinator Version is required.'
-        condition: 'active("Lock_Overhaul.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
     clean:
       - crc: 0xB7986707 # v1.6
         util: 'SSEEdit v3.2.79 EXPERIMENTAL'
