@@ -1612,10 +1612,32 @@ plugins:
     clean:
       - crc: 0x96BF25A6 # v3.0.0
         util: 'SSEEdit v3.2.1'
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Immersive Sounds - Compendium'
+          - '[Immersive Sounds Compendium Synergy Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
     after:
       - 'RealisticWaterTwo.esp'
+  - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
+        name: 'Immersive Sounds Compendium Synergy Patch on Nexus Mods'
+    tag:
+      - Sound
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x4A185E27 # v3.0.0
+        util: 'SSEEdit 3.2.84 EXPERIMENTAL'
+        itm: 37
+        udr: 0
+        nav: 0
+    clean:
+      - crc: 0x93126285 # v3.0.0
+        util: 'SSEEdit 3.2.84 EXPERIMENTAL'
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
     group: *earlyLoadersGroup
@@ -1640,6 +1662,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/523/' ]
     group: *overhaulsGroup
     after:
+      - 'Audio Overhaul Skyrim.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
     tag:
       - Sound
