@@ -6184,13 +6184,26 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 39
         nav: 2
+  - name: 'Eli_Halla.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_Halla.esp", 9D21AAB4)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA312951A # v2.3
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 9
+    clean:
+      - crc: 0xE744B19A # v2.3
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
     msg:
       - <<: *requiresMasterSort
         condition: 'checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0xF8FD2B2D # v1.2
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 9
