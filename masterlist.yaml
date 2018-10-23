@@ -6210,6 +6210,27 @@ plugins:
     clean:
       - crc: 0xA84FD4FB # v1.2
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Eli_Routa.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
+        name: 'Routa - Stormcloak and Warrior cabin on Nexus Mods'
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_Breezehome.esp", E3505570) or checksum("Eli_Breezehome.esp", E6250224)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC5035942 # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 10
+      - <<: *quickClean
+        crc: 0x89C6605C # v1.0 non stormcloak
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 10
+    clean:
+      - crc: 0xB194F162 # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x642A0C3C # v1.0 non stormcloak
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'ElysiumEstate-HF.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4119/' ]
     inc:
