@@ -6175,36 +6175,69 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/' ]
     after:
       - 'JKs Whiterun.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4768B826 # v1.6
-        itm: 28
-        udr: 0
-        nav: 2
-    clean:
-      - crc: 0x46098BA9 # v1.6
-        util: 'SSEEdit v3.2.35'
-  - name: 'Eli_RiverwoodShack.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xF8FD2B2D # v1.2
-        itm: 9
-        udr: 0
-        nav: 0
-      - <<: *dirtyPlugin
-        crc: 0x15C60692 # v1.2 with master sort
-        itm: 9
-        udr: 0
-        nav: 0
     msg:
       - <<: *requiresMasterSort
-        condition: 'checksum("Eli_RiverwoodShack.esp", F8FD2B2D) or checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
+        condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4768B826
+        itm: 39
+        nav: 2
+  - name: 'Eli_Halla.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_Halla.esp", 9D21AAB4)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA312951A # v2.3
+        itm: 9
     clean:
-      - crc: 0x4F7566D8 # v1.2
-        util: 'SSEEdit v3.2.35'
-      - crc: 0xA84FD4FB # v1.2 with master sort
-        util: 'SSEEdit v3.2.35'
+      - crc: 0xE744B19A # v2.3
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Eli_RiverwoodShack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xF8FD2B2D # v1.2
+        itm: 9
+    clean:
+      - crc: 0xA84FD4FB # v1.2
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Eli_Routa.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
+        name: 'Routa - Stormcloak and Warrior cabin on Nexus Mods'
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa.esp", E6250224)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC5035942 # v1.0
+        itm: 10
+      - <<: *quickClean
+        crc: 0x89C6605C # v1.0 non stormcloak
+        itm: 10
+    clean:
+      - crc: 0xB194F162 # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x642A0C3C # v1.0 non stormcloak
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Eli_Ruska.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
+        name: 'Ruska - Riften Player Home on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0xD1CC4A86 # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 7
+    clean:
+      - crc: 0x8D0B7D5F # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'ElysiumEstate-HF.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4119/' ]
     inc:
