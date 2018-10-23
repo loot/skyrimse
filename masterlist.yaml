@@ -6175,15 +6175,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/' ]
     after:
       - 'JKs Whiterun.esp'
+    msg:
+      - <<: *requiresMasterSort
+        condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4768B826 # v1.6
-        itm: 28
-        udr: 0
+      - <<: *quickClean
+        crc: 0x4768B826
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 39
         nav: 2
-    clean:
-      - crc: 0x46098BA9 # v1.6
-        util: 'SSEEdit v3.2.35'
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
     dirty:
