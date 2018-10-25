@@ -362,8 +362,12 @@ groups:
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *rwtGroup ]
 
+  - name: &dispersedGroup Dispersed
+
   - name: &dynamicPatchGroup Dynamic Patches
-    after: [ *lvlListsGroup ]
+    after:
+    - *dispersedGroup
+    - *lvlListsGroup
 
   - name: &lateChangesGroup Late Fixes & Changes
     after: [ *dynamicPatchGroup ]
@@ -1283,6 +1287,11 @@ plugins:
     clean:
       - crc: 0x982D2FF8 # v0.2.3
         util: 'SSEEdit v3.2.40'
+  - name: 'Yot -.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
+        name: 'YOT - Your Own Thoughts SE on Nexus Mods'
+    group: *dispersedGroup
 ########################################
 ## AudioVisual - Animations & Physics ##
 ########################################
