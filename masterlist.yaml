@@ -362,8 +362,12 @@ groups:
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *rwtGroup ]
 
+  - name: &dispersedGroup Dispersed
+
   - name: &dynamicPatchGroup Dynamic Patches
-    after: [ *lvlListsGroup ]
+    after:
+    - *dispersedGroup
+    - *lvlListsGroup
 
   - name: &lateChangesGroup Late Fixes & Changes
     after: [ *dynamicPatchGroup ]
