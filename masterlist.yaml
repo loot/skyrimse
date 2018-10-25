@@ -120,16 +120,13 @@ common:
 # Cleaning data
   - &dirtyPlugin
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-    info: 'A cleaning guide is available [here](https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
+    info: 'A cleaning guide is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-B).'
   - &quickClean
-    util: '[SSEEdit Experimental](https://github.com/TES5Edit/TES5Edit/releases)'
+    util: '[SSEEdit](https://github.com/TES5Edit/TES5Edit/releases) **Quick Auto Clean**'
     info: |+
 
-          >**Quick Clean** is a xEdit startup option which will automatically clean a selected plugin.
-          >
-          >A guide for running **Quick Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-C).
-          >
-          >The latest version of [SSEEdit Experimental](https://github.com/TES5Edit/TES5Edit/releases) is required to use **Quick Clean**.
+          >A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean).
+          >The latest version of [SSEEdit Experimental](https://github.com/TES5Edit/TES5Edit/releases) is required to use **Quick Auto Clean**.
 
   - &hasWildEdits
     type: warn
@@ -383,28 +380,21 @@ plugins:
       - C.Water
       - Delev
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfe610a99 # v1.5.39.0
-        itm: 239
+      - <<: *quickClean
+        crc: 0xE95F6A98 # v1.5.50.0 - Quick Auto Clean
+        itm: 256
         udr: 91
         nav: 2
-      - <<: *dirtyPlugin
-        crc: 0xE95F6A98 # v1.5.50.0
-        itm: 239
-        udr: 91
-        nav: 2
-      - <<: *dirtyPlugin
-        crc: 0x2B2E516B # v1.5.53.0
-        itm: 246
+      - <<: *quickClean
+        crc: 0x2B2E516B # v1.5.53.0 - Quick Auto Clean
+        itm: 275
         udr: 91
         nav: 2
     clean:
-      - crc: 0xc18ee18c # v1.5.39.0 - Auto Clean
-        util: 'SSEEdit v3.2.1'
-      - crc: 0x03649E73 # v1.5.50.0 - Auto Clean
-        util: 'SSEEdit v3.2.54'
-      - crc: 0x5B1B2D50 # v1.5.53.0 - Auto Clean
-        util: 'SSEEdit v3.2.72'
+      - crc: 0x49BFB6A9 # v1.5.50.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x708AB774 # v1.5.53.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -416,45 +406,31 @@ plugins:
     msg:
       - <<: *hasWildEdits
         subs: [ '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
-        condition: 'checksum("Dawnguard.esm", 6061bcff) or checksum("Dawnguard.esm", 1CF3CECB) or checksum("Dawnguard.esm", F596786A)'
+        condition: 'checksum("Dawnguard.esm", 51982F10) or checksum("Dawnguard.esm", 15DFF74A)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x81a481e8 # v1.5.39.0
-        itm: 621
+      - <<: *quickClean
+        crc: 0xCFBEE94B # v1.5.50.0 - Quick Auto Clean
+        itm: 764
         udr: 82
         nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x6f162d5e # v1.5.39.0 - Auto Clean First pass
-        itm: 6
-        udr: 0
+      - <<: *quickClean
+        crc: 0xFCDA9FA7 # v1.5.50.0 - Quick Auto Clean
+        itm: 4
         nav: 57
-      - <<: *dirtyPlugin
-        crc: 0xCFBEE94B # v1.5.50.0
-        itm: 621
+      - <<: *quickClean
+        crc: 0x07CE5FCE # v1.5.53.0 - Quick Auto Clean
+        itm: 763
         udr: 82
         nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x2F6EF0B8 # v1.5.50.0 - Auto Clean First pass
-        itm: 6
-        udr: 0
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x07CE5FCE # v1.5.53.0
-        itm: 626
-        udr: 82
-        nav: 57
-      - <<: *dirtyPlugin
-        crc: 0xEBF57FD9 # v1.5.53.0 - Auto Clean First pass
-        itm: 6
-        udr: 0
+      - <<: *quickClean
+        crc: 0x98134D3A # v1.5.53.0 - Quick Auto Clean
+        itm: 4
         nav: 57
     clean:
-      - crc: 0x141be1e5 # v1.5.39.0 - Auto + Manual Cleaning
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xBB5C7D7C # v1.5.50.0 - Auto + Manual Cleaning
-        util: 'SSEEdit v3.2.54'
-      - crc: 0x86C558B7 # v1.5.53.0 - Auto + Manual Cleaning
-        util: 'SSEEdit v3.2.72'
+      - crc: 0x37A33247 # v1.5.50.0 - Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xCF2F6C14 # v1.5.53.0 - Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Hearthfires.esm'
     group: *dlcGroup
     after:
@@ -463,28 +439,21 @@ plugins:
       - C.Location
       - Invent
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa631401b # v1.5.39.0
-        itm: 178
+      - <<: *quickClean
+        crc: 0x20B605D1 # v1.5.50.0 - Quick Auto Clean
+        itm: 221
         udr: 11
         nav: 5
-      - <<: *dirtyPlugin
-        crc: 0x20B605D1 # v1.5.50.0
-        itm: 178
-        udr: 11
-        nav: 5
-      - <<: *dirtyPlugin
-        crc: 0x463D25B7 # v1.5.53.0
-        itm: 178
+      - <<: *quickClean
+        crc: 0x463D25B7 # v1.5.53.0 - Quick Auto Clean
+        itm: 221
         udr: 11
         nav: 5
     clean:
-      - crc: 0x0ED37282 # v1.5.39.0 - Auto Clean
-        util: 'SSEEdit v3.2.1'
-      - crc: 0x22840A68 # v1.5.50.0 - Auto Clean
-        util: 'SSEEdit v3.2.54'
-      - crc: 0xD569B4AC # v1.5.53.0 - Auto Clean
-        util: 'SSEEdit v3.2.72'
+      - crc: 0xA3A830A4 # v1.5.50.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xD7EFB0D4 # v1.5.53.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dragonborn.esm'
     group: *dlcGroup
     after:
@@ -494,28 +463,21 @@ plugins:
       - Invent
       - Relev
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x64625bcd # v1.5.39.0
-        itm: 69
+      - <<: *quickClean
+        crc: 0xA1BF01BD # v1.5.50.0 - Quick Auto Clean
+        itm: 81
         udr: 8
         nav: 1
-      - <<: *dirtyPlugin
-        crc: 0xA1BF01BD # v1.5.50.0
-        itm: 69
-        udr: 8
-        nav: 1
-      - <<: *dirtyPlugin
-        crc: 0xE0B5DB91 # v1.5.53.0
-        itm: 69
+      - <<: *quickClean
+        crc: 0xE0B5DB91 # v1.5.53.0 - Quick Auto Clean
+        itm: 81
         udr: 8
         nav: 1
     clean:
-      - crc: 0x5eb9eade # v1.5.39.0 - Auto Clean
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xE6E5895B # v1.5.50.0 - Auto Clean
-        util: 'SSEEdit v3.2.54'
-      - crc: 0xC2F4AD77 # v1.5.53.0 - Auto Clean
-        util: 'SSEEdit v3.2.72'
+      - crc: 0x7996AF1B # v1.5.50.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x0EDA7DF8 # v1.5.53.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'SkyrimVR.esm'
     group: *dlcGroup
     after:
