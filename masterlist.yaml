@@ -390,9 +390,9 @@ plugins:
         itm: 239
         udr: 91
         nav: 2
-      - <<: *dirtyPlugin
-        crc: 0x2B2E516B # v1.5.53.0
-        itm: 246
+      - <<: *quickClean
+        crc: 0x2B2E516B # v1.5.53.0 - Quick Auto Clean
+        itm: 275
         udr: 91
         nav: 2
     clean:
@@ -400,8 +400,8 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0x03649E73 # v1.5.50.0 - Auto Clean
         util: 'SSEEdit v3.2.54'
-      - crc: 0x5B1B2D50 # v1.5.53.0 - Auto Clean
-        util: 'SSEEdit v3.2.72'
+      - crc: 0x708AB774 # v1.5.53.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -413,7 +413,7 @@ plugins:
     msg:
       - <<: *hasWildEdits
         subs: [ '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
-        condition: 'checksum("Dawnguard.esm", 6061bcff) or checksum("Dawnguard.esm", 1CF3CECB) or checksum("Dawnguard.esm", F596786A)'
+        condition: 'checksum("Dawnguard.esm", 6061bcff) or checksum("Dawnguard.esm", 1CF3CECB) or checksum("Dawnguard.esm", 15DFF74A)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x81a481e8 # v1.5.39.0
@@ -435,23 +435,22 @@ plugins:
         itm: 6
         udr: 0
         nav: 57
-      - <<: *dirtyPlugin
-        crc: 0x07CE5FCE # v1.5.53.0
-        itm: 626
+      - <<: *quickClean
+        crc: 0x07CE5FCE # v1.5.53.0 - Quick Auto Clean
+        itm: 763
         udr: 82
         nav: 57
-      - <<: *dirtyPlugin
-        crc: 0xEBF57FD9 # v1.5.53.0 - Auto Clean First pass
-        itm: 6
-        udr: 0
+      - <<: *quickClean
+        crc: 0x98134D3A # v1.5.53.0 - Quick Auto Clean
+        itm: 4
         nav: 57
     clean:
       - crc: 0x141be1e5 # v1.5.39.0 - Auto + Manual Cleaning
         util: 'SSEEdit v3.2.1'
       - crc: 0xBB5C7D7C # v1.5.50.0 - Auto + Manual Cleaning
         util: 'SSEEdit v3.2.54'
-      - crc: 0x86C558B7 # v1.5.53.0 - Auto + Manual Cleaning
-        util: 'SSEEdit v3.2.72'
+      - crc: 0xCF2F6C14 # v1.5.53.0 - Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Hearthfires.esm'
     group: *dlcGroup
     after:
@@ -470,9 +469,9 @@ plugins:
         itm: 178
         udr: 11
         nav: 5
-      - <<: *dirtyPlugin
-        crc: 0x463D25B7 # v1.5.53.0
-        itm: 178
+      - <<: *quickClean
+        crc: 0x463D25B7 # v1.5.53.0 - Quick Auto Clean
+        itm: 221
         udr: 11
         nav: 5
     clean:
@@ -480,8 +479,8 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0x22840A68 # v1.5.50.0 - Auto Clean
         util: 'SSEEdit v3.2.54'
-      - crc: 0xD569B4AC # v1.5.53.0 - Auto Clean
-        util: 'SSEEdit v3.2.72'
+      - crc: 0xD7EFB0D4 # v1.5.53.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dragonborn.esm'
     group: *dlcGroup
     after:
@@ -501,9 +500,9 @@ plugins:
         itm: 69
         udr: 8
         nav: 1
-      - <<: *dirtyPlugin
-        crc: 0xE0B5DB91 # v1.5.53.0
-        itm: 69
+      - <<: *quickClean
+        crc: 0xE0B5DB91 # v1.5.53.0 - Quick Auto Clean
+        itm: 81
         udr: 8
         nav: 1
     clean:
@@ -511,8 +510,8 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0xE6E5895B # v1.5.50.0 - Auto Clean
         util: 'SSEEdit v3.2.54'
-      - crc: 0xC2F4AD77 # v1.5.53.0 - Auto Clean
-        util: 'SSEEdit v3.2.72'
+      - crc: 0x0EDA7DF8 # v1.5.53.0 - Quick Auto Clean
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'SkyrimVR.esm'
     group: *dlcGroup
     after:
