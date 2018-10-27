@@ -109,6 +109,23 @@ common:
         text: '削除してください。既に%1%に含まれています。'
       - lang: de
         text: 'Löschen. Bereits in %1% enthalten.'
+  - &useOnlyOneX
+    type: error
+    content:
+      - lang: en
+        text: 'Use only one %1%.'
+      - lang: ru
+        text: 'Используйте только один %1%.'
+      - lang: es
+        text: 'Utilizar solo un %1%.'
+      - lang: ko
+        text: '%1%을 한개만 사용하십시오.'
+      - lang: zh_CN
+        text: '只使用一个%1%。'
+      - lang: ja
+        text: '%1%は一つだけ使用してください。'
+      - lang: de
+        text: 'Nutzen Sie nur einen %1%.'
   - &includesMBBF
     type: say
     content:
@@ -2152,12 +2169,7 @@ plugins:
       - 'Relationship Dialogue Overhaul.esp'
       - 'ScopedBows.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use only one version of %1%.'
-          - lang: de
-            text: 'Nutzen Sie nur eine Version von %1%.'
+      - <<: *useOnlyOneX
         condition: 'many("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
         subs: [ 'Bijin All in One' ]
   - name: 'Bijin_Frea-Iona.esp'
@@ -5834,12 +5846,7 @@ plugins:
     after:
       - 'NSUTR_groundsnow_mesh_fixes.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use only one %1%.'
-          - lang: de
-            text: 'Nutzen Sie nur einen %1%.'
+      - <<: *useOnlyOneX
         condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
         subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
   - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
