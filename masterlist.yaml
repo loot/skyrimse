@@ -2637,6 +2637,42 @@ plugins:
     clean:
       - crc: 0xAA9D9F35
         util: 'SSEEdit v3.2.44'
+  - name: 'WheelsOfLull.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/748'
+        name: 'The Wheels Of Lull on Nexus Mods'
+    clean:
+      - crc: 0xC191A3F9 # v1.3a, unofficial patch
+        util: 'SSEEdit v3.3.4 BETA'
+    msg:
+      - type: warn
+        content: 'Update Patch available: %1%'
+        subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
+        condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", 6771AF29)' # first is before, second is after cleaning
+      # These three are mutually exclusive, which is handled further down
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim Bruma'
+          - '[Wheels of Lull Bruma Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("BSHeartland.esm") and not active("ForgottenCity.esp") and not active("WheelsOfLull - Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Forgotten City'
+          - '[Wheels of Lull Forgotten City Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'not active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim Bruma and Forgotten City'
+          - '[Wheels of Lull Forgotten City and Bruma Merged Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp")'
+  - name: 'WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19734'
+        name: 'Wheels of Lull Unofficial Patch on Nexus Mods'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp")'
+        subs: [ 'Wheels Of Lull Bruma / Forgotten City Patch' ]
   - name: 'zMirai.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/'
