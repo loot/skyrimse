@@ -899,15 +899,8 @@ plugins:
       - Delev
       - Relev
     clean:
-      - crc: 0xAE28DBE3 # v4.1.2a
-        util: 'SSEEdit v3.2.1'
-      - crc: 0x8BB1A815 # v4.1.3
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xFD8D6035 # v4.1.3b
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xF171A9B5 # v4.1.4
-        util: 'SSEEdit v3.2.1'
-
+      - crc: 0x0895EDFE # v4.1.5
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
 #############################################
 #####  Bug Fixes & Unofficial Patches   #####
 #############################################
@@ -4230,13 +4223,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
     msg: [ *includesMBBF ]
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x5D3C94B4 # v4.11SSE
-        util: 'SSEEdit v3.2.72d'
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 62
     clean:
-      - crc: 0x305D135F # v4.11SSE
-        util: 'SSEEdit v3.2.72d'
+      - crc: 0xE23961C7 # v4.11SSE
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     group: *earlyLoadersGroup
@@ -5291,10 +5284,8 @@ plugins:
       - NPC.Class
       - Stats
     clean:
-      - crc: 0x7752174D # v3.0.7
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xC9B5A501 # v3.0.8
-        util: 'SSEEdit v3.2.2'
+      - crc: 0x17D6674E # v3.0.9
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dolmen Ruins.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
@@ -6886,6 +6877,42 @@ plugins:
     clean:
       - crc: 0xDB1C2215 # v4.1.5
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+      - crc: 0xCB82480D # v4.1.6
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+
+  ## LOTD Patches
+  - name: 'DBM_AmuletsOfSkyrim_Patch.esp'
+    clean:
+      - crc: 0xBF135657
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_AOS_Patch.esp'
+    clean:
+      - crc: 0xD43EC9DA
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_Apophysis_Patch.esp'
+    clean:
+      - crc: 0x038CD4F9
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_ArsMetallica_Patch.esp'
+    clean:
+      - crc: 0x358AB5B9
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_ArtifactsOfBoethiah_Patch.esp'
+    clean:
+      - crc: 0xC49790C5
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_Bruma_Patch.esp'
+    clean:
+      - crc: 0x045E16CB
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_CACO_Patch.esp'
+    clean:
+      - crc: 0x97885D53
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_Cloaks_Patch.esp'
+    clean:
+      - crc: 0x8199EF41
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_CRF_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
@@ -6895,15 +6922,21 @@ plugins:
       - -Factions
       - Graphics
       - Names
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xC2E51A86 # v4.1
-        itm: 3
-        udr: 0
-        nav: 0
     clean:
-      - crc: 0x42A08405 # v4.1
-        util: 'SSEEdit v3.2.2'
+      - crc: 0x6C2FDC26 # v4.1.6
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_CWIPatch.esp'
+    clean:
+      - crc: 0x70BE996D
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_DGE_Patch.esp'
+    clean:
+      - crc: 0x9C33EA9F
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_HA_Patch.esp'
+    clean:
+      - crc: 0x908142EB
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_HelgenReborn_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
@@ -6912,8 +6945,50 @@ plugins:
       - C.Location
       - -Factions
     clean:
-      - crc: 0xFD54504A # v4.1
-        util: 'SSEEdit v3.2.2'
+      - crc: 0xFD54504A # v4.1.6 
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x50A5FA0E # v4.1.6 ESL
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_IA_Patch.esp'
+    clean:
+      - crc: 0xB44C42BC
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_ImmersiveCreatures_Patch.esp'
+    clean:
+      - crc: 0xE6A9311F
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_ISC_Patch.esp'
+    clean:
+      - crc: 0xA585CA15
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_IW_Patch.esp'
+    clean:
+      - crc: 0xE9EF836D
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_KeepitClean_Patch.esp'
+    clean:
+      - crc: 0xF9CE0AB5
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_MAS_Patch.esp'
+    clean:
+      - crc: 0x311DC580
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_MLU_Patch.esp'
+    clean:
+      - crc: 0xD291518D
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_MysticCondenser_Patch.esp'
+    clean:
+      - crc: 0xA11A4125
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_OBIS_Patch.esp'
+    clean:
+      - crc: 0x962DEC5E
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_OblivionArtifacts_Patch.esp'
+    clean:
+      - crc: 0x6FB6FBA6
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_OpenCities_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
@@ -6923,6 +6998,18 @@ plugins:
     clean:
       - crc: 0x851E2621 # v4.1
         util: 'SSEEdit v3.2.2'
+  - name: 'DBM_RoyalArmory_Patch.esp'
+    clean:
+      - crc: 0xAB99D3F9
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_RSChildren.esp'
+    clean:
+      - crc: 0x36010159
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_RuinsEdge_Patch.esp'
+    clean:
+      - crc: 0x5E8D03EC
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_SkyrimUnderground_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
@@ -6932,6 +7019,52 @@ plugins:
     clean:
       - crc: 0xAD717340 # v4.1
         util: 'SSEEdit v3.2.2'
+  - name: 'DBM_SkyTEST_Patch.esp'
+    clean:
+      - crc: 0xF956A161
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_Skyway_Patch.esp'
+    clean:
+      - crc: 0x014216EE
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_SRCEO_Patch.esp'
+    clean:
+      - crc: 0x339576F5
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_StaffofSheogorath_Patch.esp'
+    clean:
+      - crc: 0x2AA9A2EB
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_Vigilant_Patch.esp'
+    clean:
+      - crc: 0xEE1DB401
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_WACCF_Patch.esp'
+    clean:
+      - crc: 0xAC41AB80
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_ZimsImmersiveArtifacts_Patch.esp'
+    clean:
+      - crc: 0x078E4A8E
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'DBM_ZimsThaneWeapons_Patch.esp'
+    clean:
+      - crc: 0xF10EC41E
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+
+  ## LOTD ADD-ONS
+  - name: 'DBM_RelicHunter.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/'
+        name: 'Relic Hunter (Legacy and ASLAL addon) on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDCB16218 # v1.4.1
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 16
+    clean:
+      - crc: 0x632134D0 # v1.4.1
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
 ############################
 ## Patches - Compatibilty ##
 ############################
