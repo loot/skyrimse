@@ -5061,6 +5061,10 @@ plugins:
     group: *earlyLoadersGroup
     after:
       - 'AuroraVillage.esp'
+      - 'Tel_Nalta.esp'
+    inc:
+      - name: 'Tel_Nalta.esp'
+        condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     tag:
       - C.Location
     dirty:
@@ -6453,6 +6457,22 @@ plugins:
     clean:
       - crc: 0x28E63EB9 # v2.0
         util: 'SSEEdit v3.2.1'
+  - name: 'Tel_Nalta.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/'
+        name: 'Tel Nalta SE - Telvanni Home on Nexus Mods'
+    group: *earlyLoadersGroup
+    inc:
+      - name: 'MoonAndStar_MAS.esp'
+        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xDB9E70DA # v1.00
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 6
+    clean:
+      - crc: 0xCA11DFA7 # v1.00
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
