@@ -5095,7 +5095,7 @@ plugins:
         name: 'Undeath Remastered SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
         name: 'Undeath Remastered on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'MoonAndStar_MAS.esp'
     inc:
@@ -5103,20 +5103,18 @@ plugins:
     msg:
       - <<: *hasWildEdits
         subs: [ '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
-        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", 8249EC41)'
+        condition: 'checksum("Undeath.esp", EB75A960)'
     tag:
       - Graphics
       - Sound
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xEB75A960 # v1.7
-        itm: 18
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x6E988E26 # v1.7
-        itm: 17
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 40
     clean:
-      - crc: 0xB98044B4 # v1.7
-        util: 'SSEEdit v3.2.1'
+      - crc: 0xB204EE9A # v1.7 - QAC & Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'moonpath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
