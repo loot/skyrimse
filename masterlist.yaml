@@ -5115,6 +5115,10 @@ plugins:
     group: *earlyLoadersGroup
     after:
       - 'AuroraVillage.esp'
+      - 'Tel_Nalta.esp'
+    inc:
+      - name: 'Tel_Nalta.esp'
+        condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     tag:
       - C.Location
     dirty:
@@ -6528,6 +6532,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/'
         name: 'Tel Nalta SE - Telvanni Home on Nexus Mods'
+    group: *earlyLoadersGroup
+    inc:
+      - name: 'MoonAndStar_MAS.esp'
+        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xDB9E70DA # v1.00
