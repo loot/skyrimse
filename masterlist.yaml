@@ -5066,13 +5066,29 @@ plugins:
     inc:
       - name: 'Tel_Nalta.esp'
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - |+
+
+              #### Description of Wild Edit
+              - Moon & Star reverts a change made by HearthFires DLC to Breezehome Nav Mesh.
+              - This can cause your game to (CTD) crash to desktop.
+
+              #### Modify the following with xEdit
+              - Forward Changes made by `HearthFires.esm` in Record `000166A9` to `MoonAndStar_MAS.esp`
+              - Navigation Mesh & Teleport Triangle
+        condition: 'checksum("MoonAndStar_MAS.esp", EB5AEFAF) or checksum("MoonAndStar_MAS.esp", 09207832)'
     tag:
       - C.Location
     dirty:
       - <<: *quickClean
-        crc: 0xEB5AEFAF # v3.2
+        crc: 0x925B5F57 # v3.2 - Wild Edits Cleaned
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 3
+    clean:
+      - crc: 0x8BFE9BAF # v3.2 - QAC & Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Undeath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
