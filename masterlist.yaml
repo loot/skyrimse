@@ -50,9 +50,9 @@ common:
     type: say
     content:
       - lang: en
-        text: '%1% is not fully compatibility with "%2%".%3%'
+        text: '%1% is not fully compatibility with this mod.%2%'
       - lang: de
-        text: '%1% ist nicht komplett kompatibel mit "%2%".%3%'
+        text: '%1% ist nicht komplett kompatibel mit diesem Mod.%2%'
   - &requireSKSE64
     type: error
     content:
@@ -1017,7 +1017,6 @@ plugins:
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
       - <<: *semiCompatible
         subs:
-          - 'Better Dynamic Snow'
           - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - 'Snow''s shader conflict: If the Better Dynamic Snow''s shader is preferred to the Majestic Mountain''s shader. Then set a rule to load Better Dynamic Snow after Majestic Mountain''s. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/9121?tab=description)'
         condition: 'active("MajesticMountains.esp")'
@@ -2683,7 +2682,6 @@ plugins:
     msg:
       - <<: *semiCompatible
         subs:
-          - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)'
           - 'Moss Rocks can be used with Majestic Mountains. But Majestic Mountains meshes without snow will not be used. [Source](https://forums.nexusmods.com/index.php?/topic/5838597-majestic-mountains/?p=52271673)'
         condition: 'active("Moss Rocks.esp")'
@@ -3332,7 +3330,6 @@ plugins:
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
       - <<: *semiCompatible
         subs:
-          - 'Immersive Citizens - AI Overhaul'
           - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
           - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
         condition: 'active("Skyrim Sewers.esp")'
@@ -4778,7 +4775,6 @@ plugins:
       - *includesMBBF
       - <<: *semiCompatible
         subs:
-          - 'Summermyst - Enchantments of Skyrim.esp'
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
@@ -4958,7 +4954,6 @@ plugins:
     msg:
       - <<: *semiCompatible
         subs:
-          - 'Wintermyst - Enchantments of Skyrim.esp'
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Wintermyst enchantments.'
         condition: 'active("Wintermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
