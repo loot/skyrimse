@@ -53,7 +53,7 @@ common:
         text: '%1% is not fully compatibility with this mod.%2%'
       - lang: de
         text: '%1% ist nicht komplett kompatibel mit diesem Mod.%2%'
-  - &requireSKSE64
+  - &reqSKSE
     type: error
     content:
       - lang: en
@@ -298,10 +298,10 @@ globals:
       - lang: de
         text: 'Ihr SKSE64 ist aktuell.'
 # SKSE64 plugins requirement
-  - <<: *requireSKSE64
+  - <<: *reqSKSE
     subs: [ 'a SKSE Plugin' ]
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../sksevr_loader.exe")'
-  - <<: *requireSKSE64
+  - <<: *reqSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
 # Other
