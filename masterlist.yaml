@@ -1019,7 +1019,7 @@ plugins:
         subs:
           - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - 'Snow''s shader conflict: If the Better Dynamic Snow''s shader is preferred to the Majestic Mountain''s shader. Then set a rule to load Better Dynamic Snow after Majestic Mountain''s. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/9121?tab=description)'
-        condition: 'active("MajesticMountains.esp")'
+        condition: 'active("Better Dynamic Snow.esp") and active("MajesticMountains.esp")'
     tag:
       - Graphics
     clean:
@@ -2684,7 +2684,7 @@ plugins:
         subs:
           - '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)'
           - 'Moss Rocks can be used with Majestic Mountains. But Majestic Mountains meshes without snow will not be used. [Source](https://forums.nexusmods.com/index.php?/topic/5838597-majestic-mountains/?p=52271673)'
-        condition: 'active("Moss Rocks.esp")'
+        condition: 'active("MajesticMountains.esp") and active("Moss Rocks.esp")'
     clean:
       - crc: 0x70426681 # v1.82
         util: 'SSEEdit v3.2.40'
@@ -3332,7 +3332,7 @@ plugins:
         subs:
           - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
           - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
-        condition: 'active("Skyrim Sewers.esp")'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("Skyrim Sewers.esp")'
       - type: say
         content:
           - lang: en
