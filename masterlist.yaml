@@ -144,6 +144,9 @@ common:
 
           >A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean).
           >The latest version of [SSEEdit Experimental](https://github.com/TES5Edit/TES5Edit/releases) is required to use **Quick Auto Clean**.
+  - &reqManualFix
+    util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) **Quick Auto Clean**'
+    info: 'A cleaning guide is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-B). It is strongly recommended not to use mods that contain **Deleted navmeshes** are they''re known to cause crashes. **Deleted navmeshes** must be corrected manually.'
 
   - &hasWildEdits
     type: warn
@@ -5182,14 +5185,15 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5266/'
         name: 'The Haven From The Cold And Dark 2.0 on Nexus Mods'
     dirty:
-      - <<: *quickClean
+      - <<: *reqManualFix
         crc: 0xC53D3A5B # v2.4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 3996
         nav: 3
-    clean:
-      - crc: 0xDA83BB85 # v2.4
+      - <<: *reqManualFix
+        crc: 0xDA83BB85 # v2.4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        nav: 3
   - name: Vigilant.esp
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11849'
@@ -6324,9 +6328,14 @@ plugins:
       - <<: *requiresMasterSort
         condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
     dirty:
-      - <<: *quickClean
+      - <<: *reqManualFix
         crc: 0x4768B826
+        util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 39
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xCBA83065
+        util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 2
   - name: 'Eli_Halla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
