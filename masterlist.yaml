@@ -3117,6 +3117,22 @@ plugins:
     clean:
       - crc: 0x373951A5 # v7.0
         util: 'SSEEdit v3.2.1'
+  - name: 'The Brotherhood of Old.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
+    group: 'Add-ons & Expansions'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'SkyrimSewers.esp'
+    msg:
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - ' `Skyrim Sewers` '
+          - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
+        condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
+    clean:
+      - crc: 0x24B281F2 # v0.9.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DeadlyCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
     msg:
