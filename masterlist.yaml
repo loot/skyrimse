@@ -46,7 +46,7 @@ common:
         text: "A patch is included with the %2% installer, please make sure you have installed the %1% patch and have it activated."
       - lang: de
         text: "Ein Patch ist in dem %2% Installer enthalten, bitte stellen Sie sicher, dass Sie den %1% Patch installiert und aktiviert haben."
-  - &hascompatibilityIssues
+  - &semiCompatible
     type: say
     content:
       - lang: en
@@ -1015,7 +1015,7 @@ plugins:
           - '[Better Dynamic Snow SE](https://www.nexusmods.com/skyrimspecialedition/mods/9121/)'
           - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
           - 'Better Dynamic Snow'
           - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
@@ -2681,7 +2681,7 @@ plugins:
     tag:
       - Graphics
     msg:
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
           - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)'
@@ -3330,7 +3330,7 @@ plugins:
           - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
           - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
           - 'Immersive Citizens - AI Overhaul'
           - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
@@ -4776,7 +4776,7 @@ plugins:
       - Relev
     msg:
       - *includesMBBF
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
           - 'Summermyst - Enchantments of Skyrim.esp'
           - 'EnchantingAwakened.esp'
@@ -4956,7 +4956,7 @@ plugins:
       - Names
       - Relev
     msg:
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
           - 'Wintermyst - Enchantments of Skyrim.esp'
           - 'EnchantingAwakened.esp'
