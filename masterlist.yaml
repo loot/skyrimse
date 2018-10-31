@@ -3122,6 +3122,13 @@ plugins:
     group: 'Add-ons & Expansions'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - ' `Skyrim Sewers` '
+          - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
+        condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
     clean:
       - crc: 0x24B281F2 # v0.9.7
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
