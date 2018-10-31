@@ -83,7 +83,7 @@ common:
       - lang: de
         text: 'SkyUI_SE.esp ist nicht aktiv in Ihrer Ladereihenfolge. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) wird benötigt damit diese Mod voll funktional ist.'
     condition: 'not active("SkyUI_SE.esp")'
-  - &requiresMasterSort
+  - &reqMasterSort
     type: say
     content:
       - lang: en
@@ -4219,7 +4219,7 @@ plugins:
       - Delev
       - Relev
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Skyrim Revamped - Summermyst Patch.esp", 86F771B4)'
     clean:
       - crc: 0x86F771B4 # v1.0
@@ -4413,7 +4413,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/487/'
         name: 'Amulets of Skyrim SSE on Nexus Mods'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
     tag:
       - Delev
@@ -4572,7 +4572,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
         name: 'Heavy Armory - New Weapons on Nexus Mods'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
     tag:
       - Delev
@@ -5021,7 +5021,7 @@ plugins:
     after:
       - 'WACCF_BashedPatchLvlListFix.esp'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB)' # v1 0x41BB8CCB
     tag:
       - Delev
@@ -5645,7 +5645,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     group: *addonsGroup
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ETaC - Complete LoS Patch.esp", 54BB4D26)'
     clean:
       - crc: 0x76C471C2 # v0.3.4
@@ -5696,7 +5696,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     group: *addonsGroup
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ETaC - Darkwater Crossing LoS Patch.esp", 343067D8)'
     clean:
       - crc: 0x910911B5 # v0.3.4
@@ -5840,7 +5840,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     group: *addonsGroup
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ETaC - Riverwood LoS Patch.esp", C723AA51)'
     clean:
       - crc: 0x477159F2 # v0.3.4
@@ -6133,7 +6133,7 @@ plugins:
       - type: info
         content: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
         condition: 'active("Distinct Interiors.esp")'
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ShezrieOldHroldanVer2.esp", 9E66B431) or checksum("ShezrieOldHroldanVer2.esp", 4735D188)'
     tag:
       - C.Light
@@ -6351,7 +6351,7 @@ plugins:
     after:
       - 'JKs Whiterun.esp'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
     dirty:
       - <<: *reqManualFix
@@ -6366,7 +6366,7 @@ plugins:
   - name: 'Eli_Halla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_Halla.esp", 9D21AAB4)'
     dirty:
       - <<: *quickClean
@@ -6378,7 +6378,7 @@ plugins:
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
     dirty:
       - <<: *quickClean
@@ -6392,7 +6392,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
         name: 'Routa - Stormcloak and Warrior cabin on Nexus Mods'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa.esp", E6250224)'
     dirty:
       - <<: *quickClean
