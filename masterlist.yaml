@@ -5185,14 +5185,15 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5266/'
         name: 'The Haven From The Cold And Dark 2.0 on Nexus Mods'
     dirty:
-      - <<: *quickClean
+      - <<: *reqManualFix
         crc: 0xC53D3A5B # v2.4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 3996
         nav: 3
-    clean:
-      - crc: 0xDA83BB85 # v2.4
+      - <<: *reqManualFix
+        crc: 0xDA83BB85 # v2.4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        nav: 3
   - name: Vigilant.esp
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11849'
