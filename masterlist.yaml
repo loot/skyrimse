@@ -46,14 +46,14 @@ common:
         text: "A patch is included with the %2% installer, please make sure you have installed the %1% patch and have it activated."
       - lang: de
         text: "Ein Patch ist in dem %2% Installer enthalten, bitte stellen Sie sicher, dass Sie den %1% Patch installiert und aktiviert haben."
-  - &hascompatibilityIssues
+  - &semiCompatible
     type: say
     content:
       - lang: en
-        text: '%1% is not fully compatibility with "%2%".%3%'
+        text: '%1% is not fully compatibility with this mod.%2%'
       - lang: de
-        text: '%1% ist nicht komplett kompatibel mit "%2%".%3%'
-  - &requireSKSE64
+        text: '%1% ist nicht komplett kompatibel mit diesem Mod.%2%'
+  - &reqSKSE
     type: error
     content:
       - lang: en
@@ -83,7 +83,7 @@ common:
       - lang: de
         text: 'SkyUI_SE.esp ist nicht aktiv in Ihrer Ladereihenfolge. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) wird benötigt damit diese Mod voll funktional ist.'
     condition: 'not active("SkyUI_SE.esp")'
-  - &requiresMasterSort
+  - &reqMasterSort
     type: say
     content:
       - lang: en
@@ -144,6 +144,9 @@ common:
 
           >A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean).
           >The latest version of [SSEEdit Experimental](https://github.com/TES5Edit/TES5Edit/releases) is required to use **Quick Auto Clean**.
+  - &reqManualFix
+    util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) **Quick Auto Clean**'
+    info: 'A cleaning guide is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-B). It is strongly recommended not to use mods that contain **Deleted navmeshes** are they''re known to cause crashes. **Deleted navmeshes** must be corrected manually.'
 
   - &hasWildEdits
     type: warn
@@ -295,10 +298,10 @@ globals:
       - lang: de
         text: 'Ihr SKSE64 ist aktuell.'
 # SKSE64 plugins requirement
-  - <<: *requireSKSE64
+  - <<: *reqSKSE
     subs: [ 'a SKSE Plugin' ]
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../sksevr_loader.exe")'
-  - <<: *requireSKSE64
+  - <<: *reqSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
 # Other
@@ -1012,12 +1015,11 @@ plugins:
           - '[Better Dynamic Snow SE](https://www.nexusmods.com/skyrimspecialedition/mods/9121/)'
           - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
-          - 'Better Dynamic Snow'
           - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - 'Snow''s shader conflict: If the Better Dynamic Snow''s shader is preferred to the Majestic Mountain''s shader. Then set a rule to load Better Dynamic Snow after Majestic Mountain''s. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/9121?tab=description)'
-        condition: 'active("MajesticMountains.esp")'
+        condition: 'active("Better Dynamic Snow.esp") and active("MajesticMountains.esp")'
     tag:
       - Graphics
     clean:
@@ -2678,12 +2680,11 @@ plugins:
     tag:
       - Graphics
     msg:
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
-          - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)'
           - 'Moss Rocks can be used with Majestic Mountains. But Majestic Mountains meshes without snow will not be used. [Source](https://forums.nexusmods.com/index.php?/topic/5838597-majestic-mountains/?p=52271673)'
-        condition: 'active("Moss Rocks.esp")'
+        condition: 'active("MajesticMountains.esp") and active("Moss Rocks.esp")'
     clean:
       - crc: 0x70426681 # v1.82
         util: 'SSEEdit v3.2.40'
@@ -2711,13 +2712,50 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *earlyLoadersGroup
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x87D18F2B # v3.2
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 59
         udr: 5
+    msg:
+      - type: warn
+        content: 'Update Patch available: %1%'
+        subs: [ '[No Snow Under the roof - Bug fixes](https://www.nexusmods.com/skyrimspecialedition/mods/15064/)' ]
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("NSUTR_bugfixes.esp")'
     clean:
-      - crc: 0xA314B458 # v3.2
-        util: 'SSEEdit v3.2.1'
+      - crc: 0xA45FD694 # v3.2
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'NSUTR_bugfixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
+        name: 'No snow under the roof - Bug fixes on Nexus Mods'
+    clean:
+      - crc: 0x58D99419 # v1.4
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'NSUTR_groundsnow_mesh_fixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
+        name: 'No snow under the roof - Bug fixes on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2EE577A0 # v1.4
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 33
+    clean:
+      - crc: 0x6A1DF988 # v1.4
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'NSUTR_improvements.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
+        name: 'No snow under the roof - Bug fixes on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0xBE9E7F5F # v1.4
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 3
+    clean:
+      - crc: 0x8E47790E # v1.4
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'RealisticWaterTwo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
     group: *rwtGroup
@@ -2859,6 +2897,19 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0xDA6D8DC2 # v1.5 - Tweaks for Verdant
         util: 'SSEEdit v3.2.1'
+  - name: 'WGT.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11010/'
+        name: 'Imperial City LOD fix for custom lods (Beyond skyrim Bruma) on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0x1735A889 # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 22
+        udr: 9
+    clean:
+      - crc: 0x71572057 # v1.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'WhiterunHoldForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3212/' ]
     group: *earlyLoadersGroup
@@ -3064,6 +3115,22 @@ plugins:
     clean:
       - crc: 0x373951A5 # v7.0
         util: 'SSEEdit v3.2.1'
+  - name: 'The Brotherhood of Old.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
+    group: 'Add-ons & Expansions'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'SkyrimSewers.esp'
+    msg:
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - ' `Skyrim Sewers` '
+          - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
+        condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
+    clean:
+      - crc: 0x24B281F2 # v0.9.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DeadlyCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
     msg:
@@ -3261,12 +3328,11 @@ plugins:
           - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
           - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
-          - 'Immersive Citizens - AI Overhaul'
           - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
           - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
-        condition: 'active("Skyrim Sewers.esp")'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("Skyrim Sewers.esp")'
       - type: say
         content:
           - lang: en
@@ -4150,7 +4216,7 @@ plugins:
       - Delev
       - Relev
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Skyrim Revamped - Summermyst Patch.esp", 86F771B4)'
     clean:
       - crc: 0x86F771B4 # v1.0
@@ -4344,7 +4410,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/487/'
         name: 'Amulets of Skyrim SSE on Nexus Mods'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
     tag:
       - Delev
@@ -4503,7 +4569,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
         name: 'Heavy Armory - New Weapons on Nexus Mods'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
     tag:
       - Delev
@@ -4707,9 +4773,8 @@ plugins:
       - Relev
     msg:
       - *includesMBBF
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
-          - 'Summermyst - Enchantments of Skyrim.esp'
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
@@ -4887,9 +4952,8 @@ plugins:
       - Names
       - Relev
     msg:
-      - <<: *hascompatibilityIssues
+      - <<: *semiCompatible
         subs:
-          - 'Wintermyst - Enchantments of Skyrim.esp'
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Wintermyst enchantments.'
         condition: 'active("Wintermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
@@ -4952,7 +5016,7 @@ plugins:
     after:
       - 'WACCF_BashedPatchLvlListFix.esp'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB)' # v1 0x41BB8CCB
     tag:
       - Delev
@@ -5058,29 +5122,44 @@ plugins:
         name: 'Moon and Star on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
         name: 'Moon And Star on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'AuroraVillage.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
       - 'Tel_Nalta.esp'
     inc:
       - name: 'Tel_Nalta.esp'
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - |+
+
+              #### Description of Wild Edit
+              - Moon & Star reverts a change made by HearthFires DLC to Breezehome Nav Mesh.
+              - This can cause your game to (CTD) crash to desktop.
+
+              #### Modify the following with xEdit
+              - Forward Changes made by `HearthFires.esm` in Record `000166A9` to `MoonAndStar_MAS.esp`
+              - Navigation Mesh & Teleport Triangle
+        condition: 'checksum("MoonAndStar_MAS.esp", EB5AEFAF) or checksum("MoonAndStar_MAS.esp", 09207832)'
     tag:
       - C.Location
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xEB5AEFAF # v3.2
-        itm: 1
+      - <<: *quickClean
+        crc: 0x925B5F57 # v3.2 - Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 3
     clean:
-      - crc: 0x1DA470CB # v3.2
-        util: 'SSEEdit v3.2.1'
+      - crc: 0x8BFE9BAF # v3.2 - QAC & Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Undeath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
         name: 'Undeath Remastered SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
         name: 'Undeath Remastered on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'MoonAndStar_MAS.esp'
     inc:
@@ -5088,20 +5167,18 @@ plugins:
     msg:
       - <<: *hasWildEdits
         subs: [ '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
-        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", 8249EC41)'
+        condition: 'checksum("Undeath.esp", EB75A960)'
     tag:
       - Graphics
       - Sound
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xEB75A960 # v1.7
-        itm: 18
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x6E988E26 # v1.7
-        itm: 17
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 40
     clean:
-      - crc: 0xB98044B4 # v1.7
-        util: 'SSEEdit v3.2.1'
+      - crc: 0xB204EE9A # v1.7 - QAC & Wild Edits Cleaned
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'moonpath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
@@ -5119,14 +5196,15 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5266/'
         name: 'The Haven From The Cold And Dark 2.0 on Nexus Mods'
     dirty:
-      - <<: *quickClean
+      - <<: *reqManualFix
         crc: 0xC53D3A5B # v2.4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         itm: 3996
         nav: 3
-    clean:
-      - crc: 0xDA83BB85 # v2.4
+      - <<: *reqManualFix
+        crc: 0xDA83BB85 # v2.4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        nav: 3
   - name: Vigilant.esp
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11849'
@@ -5295,6 +5373,16 @@ plugins:
     clean:
       - crc: 0x10CC6B4D # v4.0.1
         util: 'SSEEdit v3.2.1'
+  - name: 'SkyrimSewers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9320/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x78AB4E62 # v4.1.3 main
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 10
+    clean:
+      - crc: 0x6FD571B1 # v4.1.3 main
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Storefront.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/364/'
@@ -5552,7 +5640,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     group: *addonsGroup
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ETaC - Complete LoS Patch.esp", 54BB4D26)'
     clean:
       - crc: 0x76C471C2 # v0.3.4
@@ -5603,7 +5691,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     group: *addonsGroup
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ETaC - Darkwater Crossing LoS Patch.esp", 343067D8)'
     clean:
       - crc: 0x910911B5 # v0.3.4
@@ -5747,7 +5835,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     group: *addonsGroup
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ETaC - Riverwood LoS Patch.esp", C723AA51)'
     clean:
       - crc: 0x477159F2 # v0.3.4
@@ -6040,7 +6128,7 @@ plugins:
       - type: info
         content: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
         condition: 'active("Distinct Interiors.esp")'
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("ShezrieOldHroldanVer2.esp", 9E66B431) or checksum("ShezrieOldHroldanVer2.esp", 4735D188)'
     tag:
       - C.Light
@@ -6258,17 +6346,22 @@ plugins:
     after:
       - 'JKs Whiterun.esp'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
     dirty:
-      - <<: *quickClean
+      - <<: *reqManualFix
         crc: 0x4768B826
+        util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 39
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xCBA83065
+        util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 2
   - name: 'Eli_Halla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_Halla.esp", 9D21AAB4)'
     dirty:
       - <<: *quickClean
@@ -6280,7 +6373,7 @@ plugins:
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
     dirty:
       - <<: *quickClean
@@ -6294,7 +6387,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
         name: 'Routa - Stormcloak and Warrior cabin on Nexus Mods'
     msg:
-      - <<: *requiresMasterSort
+      - <<: *reqMasterSort
         condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa.esp", E6250224)'
     dirty:
       - <<: *quickClean
