@@ -5329,6 +5329,18 @@ plugins:
     clean:
       - crc: 0xCE522D51 # v2.0.3
         util: 'SSEEdit v3.2.1'
+  - name: 'DragonsKeep.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/271' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x43AF2572 # v1.9.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 28
+        nav: 32
+      - <<: *reqManualFix
+        crc: 0x59E1AD72 # v1.9.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        nav: 32
   - name: 'HammetDungeons.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/'
@@ -6550,6 +6562,20 @@ plugins:
     clean:
       - crc: 0x28E63EB9 # v2.0
         util: 'SSEEdit v3.2.1'
+  - name: 'SkaalManor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10042' ]
+    inc:
+      - 'Skaal Village.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xC7128A38
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 53
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0xCFB38E04
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        nav: 3
   - name: 'Tel_Nalta.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/'
@@ -7026,6 +7052,8 @@ plugins:
       - crc: 0xF9CE0AB5
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_MAS_Patch.esp'
+    after:
+      - 'MoonAndStar_ImmersionPatch.esp'
     clean:
       - crc: 0x311DC580
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -7096,6 +7124,9 @@ plugins:
       - crc: 0xEE1DB401
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_WACCF_Patch.esp'
+    after:
+      - 'DBM_CRF_Patch.esp'
+      - 'Qw_WACCF_CRF Patch.esp'
     clean:
       - crc: 0xAC41AB80
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -7113,13 +7144,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/'
         name: 'Relic Hunter (Legacy and ASLAL addon) on Nexus Mods'
-    dirty:
-      - <<: *quickClean
-        crc: 0xDCB16218 # v1.4.1
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        itm: 16
     clean:
-      - crc: 0x632134D0 # v1.4.1
+      - crc: 0x26558CDC # v1.4.2
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
 ############################
 ## Patches - Compatibilty ##
