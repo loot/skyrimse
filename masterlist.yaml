@@ -5491,14 +5491,15 @@ plugins:
         content: 'ELFX - NoPlayerHomes module required.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *reqManualFix
         crc: 0x6977340A # AIO v1.82
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
         udr: 1
         nav: 1
-    clean:
-      - crc: 0xB337055B # Modular - Core v1.81
+      - <<: *reqManualFix
+        crc: 0xB337055B # Modular - Core v1.81
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+        nav: 1
   - name: 'Distinct Interiors - Guilds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
