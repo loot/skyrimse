@@ -1570,9 +1570,6 @@ plugins:
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
       - 'EnhancedLightsandFX.esp'
       - 'ImprovedHearthfireLighting.esp'
-      - name: 'Palaces Castles Enhanced.esp'
-        condition: 'active("Palaces Castles Enhanced.esp") and not active("PCE - Relighting Skyrim.esp")'
-        display: '[Palaces and Castles Enhanced SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
       - 'RealisticRoomRental.esp'
       - 'RLO - Interiors.esp'
       - 'RLO - Exteriors.esp'
@@ -6166,18 +6163,6 @@ plugins:
     clean:
       - crc: 0xAF9E4D9C # v1.2
         util: 'SSEEdit v3.2.2'
-  - name: 'Palaces Castles Enhanced.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
-        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
-    dirty:
-      - <<: *quickClean
-        crc: 0xD291FEF2 # v2.1
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        itm: 18
-    clean:
-      - crc: 0xEBD35943 # v2.1
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Rorikstead.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16881/'
@@ -7220,6 +7205,184 @@ plugins:
     clean:
       - crc: 0x26558CDC # v1.4.2
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+
+##################################
+## Palaces and Castles Enhanced ##
+##################################
+  - name: 'Palaces Castles Enhanced.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    group: *addonsGroup
+    after:
+      - 'Cutting Room Floor.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+      - 'RLO - Interiors.esp'
+      - 'SkyrimSewers.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xD291FEF2 # v2.1
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 18
+    clean:
+      - crc: 0xEBD35943 # v2.1
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.LockList
+      - C.Music
+      - C.Name
+      - C.Water
+      - NPC.Class
+      - NPC.Race
+    msg:
+      - <<: *hasPluginPatch
+        subs:
+          - 'Interesting NPCs'
+          - '[Palaces and Castles Enhanced Interesting NPCs Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[Palaces and Castles Enhanced Live Another Life Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("PCE - Live Another Life Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Art of Magicka'
+          - '[Palaces and Castles Enhanced Art of Magicka Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("AOM.esm") and not active("PCE - Art of Magicka Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Cutting Room Floor'
+          - '[Palaces and Castles Enhanced USSEP + CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Cutting Room Floor.esp") and not active("PCE - USSEP+CRF Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Enhanced Lights and FX'
+          - '[Palaces and Castles Enhanced ELFX Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("PCE - ELFX PATCH.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'ELFX Enhancer'
+          - '[Palaces and Castles Enhanced ELFX Enhancer Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("ELFXEnhancer.esp") and not active("PCE - ELFXEnhancer Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Holidays'
+          - '[Palaces and Castles Enhanced Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Holidays.esp") and not active("PCE - Holidays Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Immersive Citizens - AI Overhaul'
+          - '[Palaces and Castles Enhanced Immersive Citizens AI Overhaul Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("PCE - Immersive Citizens AI Overhaul Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Open Cities Skyrim'
+          - '[Palaces and Castles Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[Palaces and Castles Enhanced RDO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("PCE - RDO Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Relighting Skyrim'
+          - '[Palaces and Castles Enhanced Relighting Skyrim Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("RelightingSkyrim_SSE.esp") and not active("PCE - Relighting Skyrim.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Skyrim Project Optimization'
+          - '[Palaces and Castles Enhanced SPO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Skyrim Project Optimization - Full Version.esm") or active("Skyrim Project Optimization - Full Version.esp") and not active("PCE - SPO Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Skyrim Sewers'
+          - '[Palaces and Castles Enhanced Skyrim Sewers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("SkyrimSewers.esp") and not active("PCE - Skyrim Sewers Patch.esp")'
+      - <<: *hasPluginPatch
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[Palaces and Castles Enhanced USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("PCE - USSEP Patch.esp")'
+  - name: 'PCE - Live Another Life Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    after:
+      - 'Palaces Castles Enhanced.esp'
+    clean:
+      - crc: 0xE9702C6F # v2.0, esp
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xC1FADCFD # v2.0, esl
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'PCE - RDO Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    clean:
+      - crc: 0x9D9CB603 # v2.0, esp
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x60B51729 # v2.0, esl
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    msg:
+      - <<: *reqMasterSort
+        # first is ESP, second is ESL
+        condition: 'checksum("PCE - RDO Patch.esp", 0BE94F17) or checksum("PCE - RDO Patch.esp", F6C0EE3D)'
+  - name: 'PCE - RLO Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB3A9C620 # v2.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 15
+    clean:
+      - crc: 0x3FFBD831 # v2.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'PCE - Relighting Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4F51E71E # v2.0, esp, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 7
+      - <<: *quickClean
+        crc: 0x8F55949E # v2.0, esp, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 7
+      - <<: *quickClean
+        crc: 0x66BACB32 # v2.0, esl, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 7
+      - <<: *quickClean
+        crc: 0xA6BEB8B2 # v2.0, esl, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 7
+    clean:
+      - crc: 0x5EA8C3EC # v2.0, esp, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xC4A5850C # v2.0, esp, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x88EE4B3A # v2.0, esl, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x12E30DDA # v2.0, esl, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    msg:
+      - <<: *reqMasterSort
+        # first is ESP, second is ESL
+        condition: 'checksum("PCE - Relighting Skyrim.esp", 5EA8C3EC) or checksum("PCE - Relighting Skyrim.esp", 88EE4B3A)'
+
 ############################
 ## Patches - Compatibilty ##
 ############################
