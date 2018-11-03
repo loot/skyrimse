@@ -5486,27 +5486,38 @@ plugins:
       - name: 'OpulentThievesGuild.esp'
         condition: 'not checksum("Distinct Interiors.esp",B337055B)'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xCB0F62A8 # All In One v1.82, after removing wild edits
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        udr: 1
+    clean:
+      - crc: 0xAD2C8F21 # All In One v1.82, after Quick Auto Clean and removing wild edits
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xB337055B # Modular - Core v1.81
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
     msg:
+      - <<: *hasWildEdits
+        subs:
+          - |+
+
+              - Open SSEEdit and load **Distinct Interiors.esp**.
+              - On the left side, expand **Distinct Interiors.esp > Cell > Block 0 > Sub-Block 6 > 000165A8 > Temporary**.
+              - Right click on the first entry in the resulting list (with the ID **000CB4F3**) and click **Remove**.
+              - Confirm that you know what you're doing and save the plugin by exiting SSEEdit.
+        # These two checksums are necessary to make sure the user sees this message if they cleaned first
+        condition: 'checksum("Distinct Interiors.esp", 6977340A) or checksum("Distinct Interiors.esp", EFC71875)'
       - type: warn
         content: 'ELFX - NoPlayerHomes module required.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6977340A # AIO v1.82
-        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
-        udr: 1
-        nav: 1
-    clean:
-      - crc: 0xB337055B # Modular - Core v1.81
-        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'Distinct Interiors - Guilds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
     inc:
       - 'OpulentThievesGuild.esp'
     clean:
-      - crc: 0x16EC9185 #v1.7
-        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+      - crc: 0x16EC9185 # Modular - Guilds v1.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Distinct Interiors - Inns.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
@@ -5515,21 +5526,33 @@ plugins:
     inc:
       - 'InnCredible.esp'
     clean:
-      - crc: 0x99012024 #v1.7
-        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+      - crc: 0x99012024 # Modular - Inns v1.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Distinct Interiors - Miscellaneous.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
     clean:
-      - crc: 0xE45A43C7 #v1.81
-        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+      - crc: 0xE45A43C7 # Modular - Miscellaneous v1.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Distinct Interiors - Player Homes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
+    clean:
+      - crc: 0xBE5B4F4A # Modular - Player Homes v1.81, after cleaning wild edits
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
     inc:
       - name: 'Enhanced Lights and FX'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     msg:
+      - <<: *hasWildEdits
+        subs:
+          - |+
+
+              - Open SSEEdit and load **Distinct Interiors - Player Homes.esp**.
+              - On the left side, expand **Distinct Interiors - Player Homes.esp > Cell > Block 0 > Sub-Block 6 > 000165A8 > Temporary**.
+              - Right click on the first entry in the resulting list (with the ID **000CB4F3**) and click **Remove**.
+              - Confirm that you know what you're doing and save the plugin by exiting SSEEdit.
+        condition: 'checksum("Distinct Interiors - Player Homes.esp", 289785CC)'
       - type: warn
         content: 'ELFX - NoPlayerHomes module required.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
@@ -5537,8 +5560,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
     clean:
-      - crc: 0x9DA76663 #v1.7
-        util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+      - crc: 0x9DA76663 # Modular - Shops v1.7
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'ETaC - RESOURCES.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
