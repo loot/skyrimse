@@ -4274,15 +4274,9 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Thunderchild - Epic Shout Package.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
-    msg: [ *includesMBBF ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x5D3C94B4 # v4.11SSE
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        itm: 62
-    clean:
-      - crc: 0xE23961C7 # v4.11SSE
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    msg:
+      - *includesMBBF
+      - *doNotClean
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     group: *earlyLoadersGroup
