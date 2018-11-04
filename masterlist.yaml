@@ -7548,6 +7548,22 @@ plugins:
       - <<: *reqMasterSort
         # first is ESP, second is ESL
         condition: 'checksum("PCE - Relighting Skyrim.esp", 5EA8C3EC) or checksum("PCE - Relighting Skyrim.esp", 88EE4B3A)'
+  - name: 'PCE - SPO Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    clean:
+      - crc: 0x405431BC # v2.0, ESM version, esp
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xE6575F1E # v2.0, ESM version, esl
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xE22B3045 # v2.0, ESP version, esp
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x44285EE7 # v2.0, ESP version, esl
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    tag:
+      - C.Music
+      - C.Water
   - name: 'PCE - USSEP Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
