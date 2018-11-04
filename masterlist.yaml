@@ -7458,6 +7458,24 @@ plugins:
       - C.ImageSpace
       - C.Light
       - C.Water
+  - name: 'PCE - ELFXEnhancer Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    req:
+      - 'PCE - ELFX PATCH.esp'
+    clean:
+      - crc: 0xC90E32F4 # v2.0, esp, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x92AAB3B8 # v2.0, esl, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    tag:
+      - C.Light
+      - C.ImageSpace
+    msg:
+      - <<: *reqMasterSort
+        # first is ESP, second is ESL
+        condition: 'checksum("PCE - ELFXEnhancer Patch.esp", 5BBA4313) or checksum("PCE - ELFXEnhancer Patch.esp", 001EC25F)'
   - name: 'PCE - Live Another Life Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
