@@ -7436,6 +7436,34 @@ plugins:
       - <<: *reqMasterSort
         # first is ESP, second is ESL
         condition: 'checksum("PCE - Relighting Skyrim.esp", 5EA8C3EC) or checksum("PCE - Relighting Skyrim.esp", 88EE4B3A)'
+  - name: 'PCE - Skyrim Sewers Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4C194215 # v2.0, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 5
+      - <<: *quickClean
+        crc: 0x1AB8F3CC # v2.0, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 5
+    clean:
+      - crc: 0x5DBBB5B7 # v2.0, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xA1586060 # v2.0, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    msg:
+      - type: warn
+        content: 'This plugin has not yet been converted to SSE and therefore still uses FormID 43. Please open it in the SSE CK and save it again to convert it.'
+        # 1st: fresh from the download, user has done nothing yet
+        # 2nd: user has already sorted masters
+        # 3rd: user has already cleaned
+        # 4th: user has already done both
+        condition: 'checksum("PCE - Skyrim Sewers Patch.esp", 85F32021) or checksum("PCE - Skyrim Sewers Patch.esp", C3C555CA) or checksum("PCE - Skyrim Sewers Patch.esp", 78B722BE) or checksum("PCE - Skyrim Sewers Patch.esp", 032B4167)'
+      - <<: *reqMasterSort
+        condition: 'checksum("PCE - Skyrim Sewers Patch.esp", 5DBBB5B7)'
   - name: 'PCE - SPO Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
