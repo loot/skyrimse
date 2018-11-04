@@ -7441,6 +7441,18 @@ plugins:
           - '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
           - '[Palaces and Castles Enhanced SSE - Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("PCE - USSEP Patch.esp")'
+  - name: 'PCE - 3DNPC Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0x36E0D427 # v2.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 4
+    clean:
+      - crc: 0x06DF0DF4 # v2.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'PCE - ELFX PATCH.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
