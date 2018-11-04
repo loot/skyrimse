@@ -7513,6 +7513,17 @@ plugins:
       - <<: *reqMasterSort
         # first is ESP, second is ESL
         condition: 'checksum("PCE - Relighting Skyrim.esp", 5EA8C3EC) or checksum("PCE - Relighting Skyrim.esp", 88EE4B3A)'
+  - name: 'PCE - USSEP Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    inc:
+      - PCE - USSEP+CRF Patch.esp
+    clean:
+      - crc: 0x81EBBA4D # v2.0, esp
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x5BE1BA8B # v2.0, esl
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'PCE - USSEP+CRF Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
