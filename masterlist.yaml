@@ -7216,6 +7216,7 @@ plugins:
     group: *addonsGroup
     after:
       - 'Cutting Room Floor.esp'
+      - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Interiors.esp'
       - 'SkyrimSewers.esp'
     dirty:
@@ -7380,6 +7381,16 @@ plugins:
       - <<: *reqMasterSort
         # first is ESP, second is ESL
         condition: 'checksum("PCE - Relighting Skyrim.esp", 5EA8C3EC) or checksum("PCE - Relighting Skyrim.esp", 88EE4B3A)'
+  - name: 'PCE - USSEP+CRF Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    clean:
+      - crc: 0x912BB288 # v2.0
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    tag:
+      - C.Light
+      - C.Owner
 
 ############################
 ## Patches - Compatibilty ##
