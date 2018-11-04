@@ -7323,6 +7323,23 @@ plugins:
     clean:
       - crc: 0x06DF0DF4 # v2.0
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'PCE - Art of Magicka Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    clean:
+      - crc: 0xBFBCEB65 # v2.0, esp, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x9C88B355 # v2.0, esl, unsorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xFE16FC23 # v2.0, esp, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0xDD22A413 # v2.0, esl, sorted masters
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+    msg:
+      - <<: *reqMasterSort
+        # first is esp, second is esl
+        condition: 'checksum("PCE - Art of Magicka Patch.esp", BFBCEB65) or checksum("PCE - Art of Magicka Patch.esp", 9C88B355)'
   - name: 'PCE - ELFX PATCH.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
