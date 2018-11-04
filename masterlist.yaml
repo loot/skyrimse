@@ -7346,6 +7346,24 @@ plugins:
       - <<: *reqMasterSort
         # first is ESP, second is ESL
         condition: 'checksum("PCE - ELFXEnhancer Patch.esp", 5BBA4313) or checksum("PCE - ELFXEnhancer Patch.esp", 001EC25F)'
+  - name: 'PCE - Holidays Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
+        name: 'Palaces and Castles Enhanced SSE on Nexus Mods'
+    dirty:
+      - <<: *quickClean
+        crc: 0x43A3473D # v2.0, masters: PCE, then Holidays
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 5
+      - <<: *quickClean
+        crc: 0xE3DC57B1 # v2.0, masters: Holidays, then PCE
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        itm: 5
+    clean:
+      - crc: 0x9390B2D8 # v2.0, masters: PCE, then Holidays
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x441FF064 # v2.0, masters: Holidays, then PCE
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'PCE - Live Another Life Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
