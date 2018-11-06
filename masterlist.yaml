@@ -335,11 +335,8 @@ groups:
   - name: &earlyLoadersGroup Early Loaders
     after: [ *eslmGroup ]
 
-  - name: &fixesResourcesGroup Fixes & Resources
-    after: [ *earlyLoadersGroup ]
-
   - name: &overhaulsGroup Large Overhauls
-    after: [ *fixesResourcesGroup ]
+    after: [ *earlyLoadersGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
     after: [ *overhaulsGroup ]
@@ -893,6 +890,7 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
         name: 'Unofficial Skyrim Special Edition Patch on Bethesda.net'
+    group: *earlyLoadersGroup
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
       - 'RSkyrimChildren.esm'
@@ -911,7 +909,7 @@ plugins:
 #############################################
   - name: 'unofficial skyrim survival patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12655/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0xF7B1A347 # v2.9
         util: 'SSEEdit v3.2.1'
@@ -1118,7 +1116,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x45374C76 # v1.3
         util: 'SSEEdit v3.2.1'
@@ -1126,31 +1124,31 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x137A03B3 # v1.3
         util: 'SSEEdit v3.2.1'
   - name: 'static mesh improvement mod se.esp'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
   - name: 'SMIM-SE-.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     tag:
       - Graphics
   - name: 'SMIM-SE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     tag:
       - Graphics
   - name: 'SMIM-SE-Merged-All.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'SMIM-SE-DragonbornTernFix.esp'
       - 'SMIM-SE-DungeonsCliffsIceSkirts.esp'
@@ -1352,7 +1350,7 @@ plugins:
 ############################
   - name: 'CinematicFireFX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x4CF60EE4 # v2.0
         util: 'SSEEdit v3.2.1'
@@ -1527,7 +1525,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'EmbersHD.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     after:
       - 'CinematicFireFX.esp'
     clean:
@@ -1564,7 +1562,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
         name: 'Relighting Skyrim - SSE on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'ClimatesOfTamriel-Dungeons-Darker.esp'
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
@@ -2181,10 +2179,10 @@ plugins:
 ######################
   - name: 'Hair Replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
   - name: 'Hair Replacer Assets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     after:
       - 'Hair Replacer.esp'
 #################################
@@ -2356,7 +2354,7 @@ plugins:
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
     msg:
@@ -2367,7 +2365,7 @@ plugins:
       - NoMerge
   - name: 'Kayla_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3851/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -2381,7 +2379,7 @@ plugins:
       - NoMerge
   - name: 'Lagertha_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2629/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -2394,7 +2392,7 @@ plugins:
       - NoMerge
   - name: 'Lydia Face Preset 64bit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1080/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -2407,7 +2405,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Severa_CharPreset.esp'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lagertha_CharPreset.esp'
@@ -2665,7 +2663,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/348/'
         name: 'Gildergreen Regrown on Nexus Mods'
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0xFFD6E910 # v2.0
         util: 'SSEEdit v3.2.1'
@@ -3160,7 +3158,7 @@ plugins:
             text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *fixesResourcesGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *hasPluginPatch
         subs:
