@@ -335,14 +335,11 @@ groups:
   - name: &earlyLoadersGroup Early Loaders
     after: [ *eslmGroup ]
 
-  - name: &overhaulsGroup Large Overhauls
+  - name: &addonsGroup Add-ons & Expansions
     after: [ *earlyLoadersGroup ]
 
-  - name: &addonsGroup Add-ons & Expansions
-    after: [ *overhaulsGroup ]
-
   - name: default
-    after: [ *overhaulsGroup ]
+    after: [ *earlyLoadersGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
@@ -1036,7 +1033,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     inc: [ 'dD - Enhanced Blood Main LITE.esp' ]
     msg:
       - <<: *includesMBBF
@@ -1052,7 +1049,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     dirty:
       - <<: *dirtyPlugin
         crc: 0x8EC95C4C # v1.1 Lite
@@ -1065,7 +1062,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x35D96F84
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -1073,7 +1070,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Larger|Reduced) Splatter Size\.esp")'
@@ -1086,7 +1083,7 @@ plugins:
       - 'EBT - skyBirds Patch.esp'
       - 'EBT - skyBirds Patch (mid).esp'
       - 'EBT - skyBirds Patch (short).esp'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Medium|Short) Script Range\.esp")'
@@ -1095,7 +1092,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("EBT - skyBirds Patch( \((mid|short)\))?\.esp")'
@@ -1358,7 +1355,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     inc:
       - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Interiors.esp'
@@ -1377,7 +1374,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x9B390393 # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1385,7 +1382,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x16B967BB # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1393,7 +1390,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0xEFC3B86E # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1401,7 +1398,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x636D8DC1 # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1409,7 +1406,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x378FA7EE # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1417,7 +1414,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x328328C8 # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1425,7 +1422,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0xB88AC75D # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1433,7 +1430,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     inc:
       - 'ELFX - NoBreezehome.esp'
       - 'ELFX - NoHjerim.esp'
@@ -1452,7 +1449,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x0F02A920 # v3.06
         util: 'SSEEdit v3.2.1'
@@ -1642,7 +1639,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
         name: 'Audio Overhaul for Skyrim SE on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -1690,7 +1687,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Immersive Sounds - Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/523/' ]
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
@@ -1733,7 +1730,7 @@ plugins:
         condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     tag:
       - C.Acoustic
       - Sound
@@ -1819,7 +1816,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
         name: 'Sounds of Skyrim - The Wilds on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1831,7 +1828,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
         name: 'Sounds of Skyrim - Civilization on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1844,7 +1841,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
         name: 'Sounds of Skyrim - The Dungeons on Nexus Mods'
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -2669,7 +2666,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
-    group: *overhaulsGroup
+    group: *earlyLoadersGroup
     after:
       - 'Cutting Room Floor.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
