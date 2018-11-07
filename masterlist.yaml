@@ -583,6 +583,8 @@ plugins:
       - 'ccBGSSSE019-StaffofSheogorath.esl'
       - 'ccBGSSSE021-LordsMail.esl'
       - 'ccMTYSSE001-KnightsoftheNine.esl'
+    inc:
+      - 'UnlimitedBookshelves.esp'
     msg:
       - type: warn
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("unofficial skyrim survival patch.esp")'
@@ -938,6 +940,7 @@ plugins:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Joy of Perspective.esp'
       - 'ScopedBows_ArrowTweaks.esp'
+      - 'UnlimitedBookshelves.esp'
     msg:
       - type: say
         content:
@@ -1640,6 +1643,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
         name: 'Audio Overhaul for Skyrim SE on Nexus Mods'
     group: *earlyLoadersGroup
+    after:
+      - 'UnlimitedBookshelves.esp'
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -1691,6 +1696,7 @@ plugins:
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
+      - 'UnlimitedBookshelves.esp'
     tag:
       - Sound
     clean:
@@ -6674,6 +6680,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/' ]
     after:
       - 'Unofficial Skyrim Special Edition Patch.esp'
+    inc:
+      - 'UnlimitedBookshelves.esp'
     msg:
       - <<: *hasPatchIncluded
         subs:
