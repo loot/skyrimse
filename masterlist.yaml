@@ -1644,7 +1644,18 @@ plugins:
         name: 'Audio Overhaul for Skyrim SE on Nexus Mods'
     group: *earlyLoadersGroup
     after:
+      - 'DeadlySpellImpacts.esp'
+      - 'LSFX-SSE-Audiosettings.esp'
+      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
+      - 'SoundsofSkyrimComplete.esp'
+      - 'SoS - The Dungeons.esp'
       - 'UnlimitedBookshelves.esp'
+    inc:
+      - name: '../x3daudio1_7.dll'
+        display: 'True 3D Sound for Headphones'
+      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
+      - 'SoundsofSkyrimComplete.esp'
+      - 'SoS - The Wilds.esp'
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -1672,6 +1683,14 @@ plugins:
     clean:
       - crc: 0x93126285 # v3.0.0
         util: 'SSEEdit 3.2.84 EXPERIMENTAL'
+  - name: 'Audio Overhaul Skyrim - Obsidian Weathers.esp'
+    after:
+      - 'Audio Overhaul Skyrim - True Storms.esp'
+      - 'Obsidian Weathers - True Storms - Patch.esp'
+  - name: 'Audio Overhaul Skyrim - True Storms.esp'
+    after:
+      - 'Obsidian_TS_Patch_.*\.esp'
+      - 'Obsidian Weathers - True Storms - Patch.esp'
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
     group: *earlyLoadersGroup
@@ -1695,6 +1714,8 @@ plugins:
     group: *earlyLoadersGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
+      - 'DeadlySpellImpacts.esp'
+      - 'LSFX-SSE-Audiosettings.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
       - 'UnlimitedBookshelves.esp'
     tag:
@@ -1737,6 +1758,12 @@ plugins:
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
     group: *earlyLoadersGroup
+    after:
+      - 'LSFX-SSE-Audiosettings.esp'
+    inc:
+      - 'SoS - Civilization.esp'
+      - 'SoS - The Dungeons.esp'
+      - 'SoS - The Wilds.esp'
     tag:
       - C.Acoustic
       - Sound
@@ -1822,6 +1849,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
         name: 'Sounds of Skyrim - The Wilds on Nexus Mods'
+    after:
+      - 'LSFX-SSE-Audiosettings.esp'
     group: *earlyLoadersGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
@@ -1835,6 +1864,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
         name: 'Sounds of Skyrim - Civilization on Nexus Mods'
     group: *earlyLoadersGroup
+    after:
+      - 'LSFX-SSE-Audiosettings.esp'
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1848,6 +1879,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
         name: 'Sounds of Skyrim - The Dungeons on Nexus Mods'
     group: *earlyLoadersGroup
+    after:
+      - 'LSFX-SSE-Audiosettings.esp'
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1875,6 +1908,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
         name: 'NAT - Natural and Atmospheric Tamriel on Nexus Mods'
+    after:
+      - 'Audio Overhaul Skyrim.esp'
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -1920,6 +1955,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/'
         name: 'Obsidian Weathers and Seasons on Nexus Mods'
+    after:
+      - 'Audio Overhaul Skyrim.esp'
+      - 'TrueStormsSE.esp'
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -1964,6 +2002,8 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name:  'Obsidian Weathers for Vigilant.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
+    after:
+      - 'Audio Overhaul Skyrim.esp'
     tag:
       - Sound
     clean:
@@ -1987,6 +2027,7 @@ plugins:
   - name: 'TrueStormsSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2472/' ]
     after:
+      - 'Audio Overhaul Skyrim.esp'
       - 'ELFX - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
     msg:
@@ -2040,6 +2081,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/'
         name: 'Vivid Weathers Definitive Edition on Nexus Mods'
+    after:
+      - 'Audio Overhaul Skyrim.esp'
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -2109,6 +2152,8 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Vivid Weathers SE - Classic.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
+    after:
+      - 'Audio Overhaul Skyrim.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xF1A0B710 # v2.30
