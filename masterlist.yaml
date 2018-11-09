@@ -1267,17 +1267,48 @@ plugins:
           - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
         condition: 'active("Joy of Perspective.esp")'
-      - type: say
-        content: 'Third party patches available: %1%'
-        subs:
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009?tab=files)'
-        condition: 'active("Joy of Perspective.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
         subs:
-          - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002)'
+          - 'Beyond Skyrim: Bruma'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("BSHeartland.esm") and not active("Jop - BrumaPatch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Common Clothes'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("CommonClothes.esp") and not active("Jop - CommonClothes.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Immersive Armors'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("JoP - Immersive Armors Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'The Final Cataclysm'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("INFERNAL FLAME.esp") and not active("Jop - INFL.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Legacy Of the Dragonborn'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("Jop - LegacyOfDragonborn.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Weapons Armor Clothing and Clutter Fixes'
+          - '[QUARK - Qwinn''s Ultimate Amulet Restoration Kit](https://www.nexusmods.com/skyrimspecialedition/mods/18177)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("AmuletsShowOnEverything-JOP.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'WACCF - Armor and Clothing Extension'
           - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
-        condition: 'active("Joy of Perspective.esp") and active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x292F204E
@@ -1666,6 +1697,12 @@ plugins:
           - 'Immersive Sounds - Compendium'
           - '[Immersive Sounds Compendium Synergy Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - ' `Deadly Spell Impacts` '
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
     clean:
       - crc: 0x96BF25A6 # v3.0.0
         util: 'SSEEdit v3.2.1'
@@ -1722,6 +1759,13 @@ plugins:
       - 'LSFX-SSE-Audiosettings.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
       - 'UnlimitedBookshelves.esp'
+    msg:
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - ' `Deadly Spell Impacts` '
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_ISC Patch.esp")'
     tag:
       - Sound
     clean:
@@ -7102,6 +7146,9 @@ plugins:
       - crc: 0xBF135657
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_AOS_Patch.esp'
+    tag:
+      - Graphics
+      - Sound
     clean:
       - crc: 0xD43EC9DA
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -7135,9 +7182,9 @@ plugins:
         name: 'Legacy of the Dragonborn Patches SE on Nexus Mods'
     tag:
       - Actors.AIPackages
-      - -Factions
       - Graphics
       - Names
+      - Stats
     clean:
       - crc: 0x6C2FDC26 # v4.1.6
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -7174,6 +7221,8 @@ plugins:
       - crc: 0xE6A9311F
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_ISC_Patch.esp'
+    tag:
+      - Sound
     clean:
       - crc: 0xA585CA15
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -7260,6 +7309,7 @@ plugins:
   - name: 'DBM_WACCF_Patch.esp'
     after:
       - 'DBM_CRF_Patch.esp'
+      - 'DBM_ISC_Patch.esp'
       - 'Qw_WACCF_CRF Patch.esp'
     clean:
       - crc: 0xAC41AB80
@@ -7324,6 +7374,27 @@ plugins:
       - Invent
       - Relev
 ## Qwinn's Unified Automated Self Installing Patch Compendium
+  - name: 'Qw_DeadlySpellImpacts_AOS Patch.esp'
+    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
+    tag:
+      - Graphics
+      - Sound
+    clean:
+      - crc: 0xAD94325D
+        util: '[SSEEdit v3.3.2 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+  - name: 'Qw_DeadlySpellImpacts_ISC Patch.esp'
+    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
+    after:
+      - 'Qw_DeadlySpellImpacts_AOS Patch.esp'
+    tag:
+      - Graphics
+      - Sound
+    clean:
+      - crc: 0xCB4A70D5
+        util: '[SSEEdit v3.3.2 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+  - name: 'Qw_ISC_USSEP Patch.esp'
+    tag:
+      - Sound
   - name: 'Qw_TheOrdinaryWomen_CRF Patch.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     tag:
@@ -7331,6 +7402,17 @@ plugins:
     clean:
       - crc: 0xEB23A7B7
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'Qw_WACCF_AOS Patch.esp'
+    tag:
+      - Sound
+  - name: 'Qw_WACCF_CRF Patch.esp'
+    tag:
+      - Stats
+  - name: 'Qw_WACCF_ISC Patch.esp'
+    after:
+      - 'Qw_ISC_USSEP Patch.esp'
+    tag:
+      - Sound
 ## Scoped Bows Compatibility Kit - SBCK
   - name: 'ScopedBows_MLU_ZIA Patch.esp'
     url:
