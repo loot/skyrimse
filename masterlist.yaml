@@ -1267,17 +1267,48 @@ plugins:
           - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
         condition: 'active("Joy of Perspective.esp")'
-      - type: say
-        content: 'Third party patches available: %1%'
-        subs:
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009?tab=files)'
-        condition: 'active("Joy of Perspective.esp")'
       - type: warn
         content: 'Third party patch available for %1% here: %2%'
         subs:
-          - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002)'
+          - 'Beyond Skyrim: Bruma'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("BSHeartland.esm") and not active("Jop - BrumaPatch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Common Clothes'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("CommonClothes.esp") and not active("Jop - CommonClothes.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Immersive Armors'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("JoP - Immersive Armors Patch.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'The Final Cataclysm'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("INFERNAL FLAME.esp") and not active("Jop - INFL.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Legacy Of the Dragonborn'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("Jop - LegacyOfDragonborn.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'Weapons Armor Clothing and Clutter Fixes'
+          - '[QUARK - Qwinn''s Ultimate Amulet Restoration Kit](https://www.nexusmods.com/skyrimspecialedition/mods/18177)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("AmuletsShowOnEverything-JOP.esp")'
+      - type: warn
+        content: 'Third party patch available for %1% here: %2%'
+        subs:
+          - 'WACCF - Armor and Clothing Extension'
           - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
-        condition: 'active("Joy of Perspective.esp") and active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x292F204E
