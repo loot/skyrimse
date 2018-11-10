@@ -329,11 +329,11 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &eslmGroup Light Masters # Non DLC - Has Header Flags (ESM & ESL)
+  - name: &fixesGroup Fixes & Resources
     after: [ *ccGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after: [ *eslmGroup ]
+    after: [ *fixesGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
     after: [ *earlyLoadersGroup ]
@@ -1208,7 +1208,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'SkyUI_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
-    group: *eslmGroup
+    group: *fixesGroup
     req:
       - *SKSE64
     clean:
@@ -1940,12 +1940,12 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
         name: 'Unofficial High Definition Audio Project on Nexus Mods'
-    group: *eslmGroup
+    group: *fixesGroup
   - name: 'UHDAP - MusicHQ.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
         name: 'Unofficial High Definition Audio Project on Nexus Mods'
-    group: *eslmGroup
+    group: *fixesGroup
     inc:
       - 'UHDAP - MusicUHQ1.esp'
       - 'UHDAP - MusicUHQ2.esp'
