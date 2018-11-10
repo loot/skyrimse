@@ -329,11 +329,11 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &eslmGroup Light Masters # Non DLC - Has Header Flags (ESM & ESL)
+  - name: &fixesGroup Fixes & Resources
     after: [ *ccGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after: [ *eslmGroup ]
+    after: [ *fixesGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
     after: [ *earlyLoadersGroup ]
@@ -889,7 +889,7 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
         name: 'Unofficial Skyrim Special Edition Patch on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
       - 'RSkyrimChildren.esm'
@@ -908,7 +908,7 @@ plugins:
 #############################################
   - name: 'unofficial skyrim survival patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12655/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     clean:
       - crc: 0xF7B1A347 # v2.9
         util: 'SSEEdit v3.2.1'
@@ -1120,7 +1120,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     clean:
       - crc: 0x45374C76 # v1.3
         util: 'SSEEdit v3.2.1'
@@ -1128,7 +1128,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     clean:
       - crc: 0x137A03B3 # v1.3
         util: 'SSEEdit v3.2.1'
@@ -1208,7 +1208,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'SkyUI_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
-    group: *eslmGroup
+    group: *fixesGroup
     req:
       - *SKSE64
     clean:
@@ -1775,7 +1775,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/'
         name: 'Lucidity Sound FX SSE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     clean:
       - crc: 0x8018F548
         util: 'SSEEdit v3.2.44 EXTRA EXPERIMENTAL'
@@ -1940,12 +1940,12 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
         name: 'Unofficial High Definition Audio Project on Nexus Mods'
-    group: *eslmGroup
+    group: *fixesGroup
   - name: 'UHDAP - MusicHQ.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
         name: 'Unofficial High Definition Audio Project on Nexus Mods'
-    group: *eslmGroup
+    group: *fixesGroup
     inc:
       - 'UHDAP - MusicUHQ1.esp'
       - 'UHDAP - MusicUHQ2.esp'
@@ -2275,10 +2275,10 @@ plugins:
 ######################
   - name: 'Hair Replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
   - name: 'Hair Replacer Assets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     after:
       - 'Hair Replacer.esp'
 #################################
@@ -2440,6 +2440,7 @@ plugins:
 ####################################
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2406/' ]
+    group: *fixesGroup
     inc:
       - 'Better_Male_Presets.esp'
       - 'Kayla_CharPreset.esp'
@@ -2450,7 +2451,7 @@ plugins:
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
     msg:
@@ -2461,7 +2462,7 @@ plugins:
       - NoMerge
   - name: 'Kayla_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3851/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -2475,7 +2476,7 @@ plugins:
       - NoMerge
   - name: 'Lagertha_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2629/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -2488,7 +2489,7 @@ plugins:
       - NoMerge
   - name: 'Lydia Face Preset 64bit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1080/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -2501,7 +2502,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Severa_CharPreset.esp'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lagertha_CharPreset.esp'
@@ -2551,7 +2552,7 @@ plugins:
       - Relev
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     clean:
       - crc: 0xA66B30B5 # v1.6
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -2564,7 +2565,7 @@ plugins:
       - Relev
   - name: 'Ducks and Swans.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
   - name: 'High Level Enemies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3231/' ]
     tag:
@@ -2957,7 +2958,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/'
         name: 'Realistic High Altitude Treeline on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     dirty:
       - <<: *dirtyPlugin
         crc: 0xE7403486
@@ -2968,7 +2969,7 @@ plugins:
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
   - name: 'SkyrimIsWindy - EVT patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
     after:
@@ -2976,7 +2977,7 @@ plugins:
       - 'SRG Enhanced Trees Activator.esp'
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
   - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
@@ -3263,7 +3264,7 @@ plugins:
             text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     msg:
       - <<: *hasPluginPatch
         subs:
@@ -3280,6 +3281,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
+    group: *fixesGroup
     clean:
       - crc: 0x32F4BBE5 # v1.1
         util: 'SSEEdit v3.2.1'
@@ -4664,6 +4666,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
         name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
+    group: *fixesGroup
     tag:
       - Graphics
       - Names
@@ -6771,7 +6774,7 @@ plugins:
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     clean:
       - crc: 0x86CF0F2B # v2.0
         util: 'SSEEdit v3.2.1'
