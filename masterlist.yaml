@@ -38,6 +38,11 @@ common:
     content:
       - lang: en
         text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugins installer.'
+  - &patch3rdParty
+    type: warn
+    content:
+      - lang: en
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
   - &semiCompatible
     type: say
     content:
@@ -1232,44 +1237,37 @@ plugins:
           - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
         condition: 'active("Joy of Perspective.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim: Bruma'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("BSHeartland.esm") and not active("Jop - BrumaPatch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Common Clothes'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("CommonClothes.esp") and not active("Jop - CommonClothes.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Immersive Armors'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("JoP - Immersive Armors Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'The Final Cataclysm'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("INFERNAL FLAME.esp") and not active("Jop - INFL.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Legacy Of the Dragonborn'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("LegacyoftheDragonborn.esm") and not active("Jop - LegacyOfDragonborn.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Weapons Armor Clothing and Clutter Fixes'
           - '[QUARK - Qwinn''s Ultimate Amulet Restoration Kit](https://www.nexusmods.com/skyrimspecialedition/mods/18177)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("AmuletsShowOnEverything-JOP.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'WACCF - Armor and Clothing Extension'
           - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
@@ -1569,26 +1567,22 @@ plugins:
       - 'Luminosity - Lightweight Lighting.esp'
       - 'RLO - Interiors.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Cutting Room Floor` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_Luminosity_CRF Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Immersive Citizens - AI Overhaul` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Qw_Luminosity_ImmersiveCitizens Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Immersive College of Winterhold` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_Luminosity_ICoWinterhold Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Realistic Water Two` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -1697,8 +1691,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Immersive Sounds - Compendium' ]
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Deadly Spell Impacts` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -1760,8 +1753,7 @@ plugins:
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
       - 'UnlimitedBookshelves.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Deadly Spell Impacts` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -1951,8 +1943,7 @@ plugins:
         display: 'True Storms Special Edition'
       - 'Vivid WeathersSE.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
           - '[NAT - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15025/)'
@@ -2004,8 +1995,7 @@ plugins:
       - <<: *patchProvided
         subs: [ '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)' ]
         condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
           - '[ Obsidian Weathers - TrueStorms Merged Compatibility SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
@@ -2050,44 +2040,37 @@ plugins:
       - 'ELFX - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[Dolomite Weathers - Natural Lighting Vivid Atmospherics II](https://www.nexusmods.com/skyrimspecialedition/mods/7895/)'
           - '[Dolomite - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15044/)'
         condition: 'active("Dolomite Weathers.esp") and not active("Dolomite_TS_Patch_.*\.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[Mythical Ages - weathers and lighting overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/11578/)'
           - '[Mythical Ages - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15617/)'
         condition: 'active("Mythical Ages.esp") and not active("Mythical_TS_Patch_.*\.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[NAT - Natural and Atmospheric Tamriel](https://www.nexusmods.com/skyrimspecialedition/mods/12842/)'
           - '[NAT - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15025/)'
         condition: 'active("NAT.esp") and not active("NAT_TS_Patch_.*\.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[Obsidian Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)'
           - '[Obsidian Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
         condition: 'active("Obsidian Weathers.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[Rustic Weathers and Lighting](https://www.nexusmods.com/skyrimspecialedition/mods/8398/)'
           - '[Rustic Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15621/?)'
         condition: 'active("Rustic Weathers And Lighting.esp") and not active("Rustic_TS_Patch_.*\.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[Vivid Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
           - '[Vivid Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15135/?)'
         condition: 'active("Vivid WeathersSE.esp") and not active("Vivid_TS_Patch_.*\.esp") and not active("Vivid Weathers & True Storms MCP.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[Wet and Cold](https://www.nexusmods.com/skyrimspecialedition/mods/644/)'
           - '[TrueStorms - Wet and Cold Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15632/?)'
@@ -2152,8 +2135,7 @@ plugins:
       - <<: *patchIncluded
         subs: [ '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)' ]
         condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
           - '[Vivid Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15135/?)'
@@ -2381,8 +2363,7 @@ plugins:
     after:
       - 'Cutting Room Floor.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Cutting Room Floor'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -3158,8 +3139,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Book Covers SE'
           - '[kryptopyr''s Patch Hub - Book Covers Skyrim TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
@@ -3216,8 +3196,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'SkyrimSewers.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Skyrim Sewers` '
           - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
@@ -3263,8 +3242,7 @@ plugins:
   - name: 'Elemental Destruction.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/440/' ]
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
@@ -3303,8 +3281,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
           - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
@@ -3321,8 +3298,7 @@ plugins:
       - 'Ars Metallica.esp'
       - 'skyBirds_SSE.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
           - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
@@ -4693,41 +4669,34 @@ plugins:
   - name: 'ScopedBows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/912/' ]
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Bijin All in One` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Bijin Warmaidens` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("Bijin Warmaidens.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `MorrowLoot Ultimate` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("MLU.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Weapons Armor Clothing & Clutter Fixes` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("ScopedBows.esp", 5E29053A)'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Zim''s Immersive Artifacts` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU.esp") and not file("ScopedBows_ZIA Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for both %1% and %2% here: %3%'
+      - <<: *patch3rdParty
         subs:
-          - ' `Zim''s Immersive Artifacts` '
-          - ' `MorrowLoot Ultimate` '
+          - ' both `MorrowLoot Ultimate` and `Zim''s Immersive Artifacts` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("ZIA_Complete Pack_V4.esp") and active("MLU.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
