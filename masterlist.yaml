@@ -4961,16 +4961,6 @@ plugins:
       - 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              #### Remove the following records with xEdit
-              - Parent Sub-Block 2,-2 of MorthalExterior04 [CELL:0000939D]
-              - SolitudeOrigin [CELL:00037EE9]
-              - WhiterunOrigin [CELL:0001A27F]
-              - MarkarthOrigin [CELL:00020EE7]
-              - RiftenCityNorth [CELL:00042249]
         condition: 'checksum("TheWulfPanda - City Teleport Spells.esp", F4169312)'
     dirty:
       - <<: *dirtyPlugin
@@ -4987,16 +4977,6 @@ plugins:
       - 'TheWulfPanda - City Teleport Spells.esp'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              #### Remove the following records with xEdit
-              - Parent Sub-Block 2,-2 of MorthalExterior04 [CELL:0000939D]
-              - SolitudeOrigin [CELL:00037EE9]
-              - WhiterunOrigin [CELL:0001A27F]
-              - MarkarthOrigin [CELL:00020EE7]
-              - RiftenCityNorth [CELL:00042249]
         condition: 'checksum("TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp", DE73AD5C)'
     dirty:
       - <<: *dirtyPlugin
@@ -5013,19 +4993,6 @@ plugins:
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              #### Edit the following records with xEdit
-              - remove `[REFR:02010521]`
-              - remove `[REFR:02007320]`
-              - remove `[REFR:000CA72C]`
-              - remove `[REFR:000B3434]`
-              - remove `DBSanc_WestHall [REFR:000C0291]`
-              - remove Top Group `Worldspace [GRUP:WRLD]`
-              - remove the **XEZN** attribute in RiftenRaggedFlagon `[CELL:00016BCF]`
-              - add the value `WeatherPineForest [REGN:0002A72D]` to the **XCCM** attribute in DarkBrotherhoodSanctuary `[CELL:000AD5A1]`
         condition: 'checksum("TheWulfPanda - Faction Teleport Spells.esp", BCE75EB1)'
     dirty:
       - <<: *dirtyPlugin
@@ -5042,19 +5009,6 @@ plugins:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              #### Edit the following records with xEdit
-              - remove `[REFR:02010521]`
-              - remove `[REFR:02007320]`
-              - remove `[REFR:000CA72C]`
-              - remove `[REFR:000B3434]`
-              - remove `DBSanc_WestHall [REFR:000C0291]`
-              - remove Top Group `Worldspace [GRUP:WRLD]`
-              - remove the **XEZN** attribute in RiftenRaggedFlagon `[CELL:00016BCF]`
-              - add the value `WeatherPineForest [REGN:0002A72D]` to the **XCCM** attribute in DarkBrotherhoodSanctuary `[CELL:000AD5A1]`
         condition: 'checksum("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp", BAD78620)'
     dirty:
       - <<: *dirtyPlugin
@@ -5071,15 +5025,6 @@ plugins:
       - 'TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-            #### Remove the following records with xEdit
-            - `DragonBridgeExterior03 [CELL:00009349]`
-            - `Riverwood [CELL:00009732]`
-            - Parent Sub-Block 2,-3 of `IvarsteadExterior02 [CELL:000097BF]`
-            - Remove the **XCWT** attribute of `Riverwood04 [CELL:00009731]`
         condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages.esp", B63A3D6B)'
     dirty:
       - <<: *dirtyPlugin
@@ -5096,15 +5041,6 @@ plugins:
       - 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-            #### Remove the following records with xEdit
-            - `DragonBridgeExterior03 [CELL:00009349]`
-            - `Riverwood [CELL:00009732]`
-            - Parent Sub-Block 2,-3 of `IvarsteadExterior02 [CELL:000097BF]`
-            - Remove the **XCWT** attribute of `Riverwood04 [CELL:00009731]`
         condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp", 0A2034F1)'
     dirty:
       - <<: *dirtyPlugin
@@ -5339,17 +5275,6 @@ plugins:
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              #### Description of Wild Edit
-              - Moon & Star reverts a change made by HearthFires DLC to Breezehome Nav Mesh.
-              - This can cause your game to (CTD) crash to desktop.
-
-              #### Modify the following with xEdit
-              - Forward Changes made by `HearthFires.esm` in Record `000166A9` to `MoonAndStar_MAS.esp`
-              - Navigation Mesh & Teleport Triangle
         condition: 'checksum("MoonAndStar_MAS.esp", EB5AEFAF) or checksum("MoonAndStar_MAS.esp", 09207832)'
     tag:
       - C.Location
@@ -5707,15 +5632,6 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              - Open SSEEdit and load **Distinct Interiors.esp**.
-              - On the left side, expand **Distinct Interiors.esp > Cell > Block 0 > Sub-Block 6 > 000165A8 > Temporary**.
-              - Right click on the first entry in the resulting list (with the ID **000CB4F3**) and click **Remove**.
-              - Confirm that you know what you're doing and save the plugin by exiting SSEEdit.
-        # These two checksums are necessary to make sure the user sees this message if they cleaned first
         condition: 'checksum("Distinct Interiors.esp", 6977340A) or checksum("Distinct Interiors.esp", EFC71875)'
       - type: warn
         content: 'ELFX - NoPlayerHomes module required.'
@@ -5755,14 +5671,6 @@ plugins:
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     msg:
       - <<: *wildEdits
-      - <<: *cleaningGuide
-        subs:
-          - |+
-
-              - Open SSEEdit and load **Distinct Interiors - Player Homes.esp**.
-              - On the left side, expand **Distinct Interiors - Player Homes.esp > Cell > Block 0 > Sub-Block 6 > 000165A8 > Temporary**.
-              - Right click on the first entry in the resulting list (with the ID **000CB4F3**) and click **Remove**.
-              - Confirm that you know what you're doing and save the plugin by exiting SSEEdit.
         condition: 'checksum("Distinct Interiors - Player Homes.esp", 289785CC)'
       - type: warn
         content: 'ELFX - NoPlayerHomes module required.'
