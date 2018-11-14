@@ -145,13 +145,20 @@ common:
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) **Quick Auto Clean**'
     info: 'A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean). It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. More information on **Deleted navmeshes** is provided [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
 
-  - &hasWildEdits
+  - &wildEdits
     type: warn
     content:
       - lang: en
-        text: "This plugin contains wild edits. A manual [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available here: %1%"
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods.'
+      - lang: da
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods.'
       - lang: de
-        text: "Dieses Plugin enthält unbeabsichtigte Änderungen. Eine manuelle [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)-Säuberungsanleitung ist hier verfügbar: %1%"
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen.'
+  - &cleaningGuide
+    type: info
+    content:
+      - lang: en
+        text: "A manaul [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is provided here: %1%"
 
 bash_tags:
   - 'Actors.ACBS'
@@ -410,7 +417,8 @@ plugins:
       - Invent
       - Relev
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs: [ '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
         condition: 'checksum("Dawnguard.esm", 51982F10) or checksum("Dawnguard.esm", 15DFF74A)'
     dirty:
@@ -4952,7 +4960,8 @@ plugins:
     inc:
       - 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -4977,7 +4986,8 @@ plugins:
     inc:
       - 'TheWulfPanda - City Teleport Spells.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5002,7 +5012,8 @@ plugins:
     inc:
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5030,7 +5041,8 @@ plugins:
     inc:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5058,7 +5070,8 @@ plugins:
     inc:
       - 'TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5082,7 +5095,8 @@ plugins:
     inc:
       - 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5324,7 +5338,8 @@ plugins:
       - name: 'Tel_Nalta.esp'
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5358,7 +5373,8 @@ plugins:
     inc:
       - 'AuroraVillage.esp'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs: [ '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
         condition: 'checksum("Undeath.esp", EB75A960)'
     tag:
@@ -5690,7 +5706,8 @@ plugins:
       - crc: 0xB337055B # Modular - Core v1.81
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
@@ -5737,7 +5754,8 @@ plugins:
       - name: 'Enhanced Lights and FX'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+      - <<: *cleaningGuide
         subs:
           - |+
 
