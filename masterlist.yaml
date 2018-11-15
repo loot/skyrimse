@@ -43,6 +43,11 @@ common:
     content:
       - lang: en
         text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
+  - &compatNotes
+    type: say
+    content:
+      - lang: en
+        text: 'It is recommended that you read this mods [Compatibility Notes](%1%).'
   - &semiCompatible
     type: say
     content:
@@ -931,12 +936,8 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '[WACCF Compatibility Notes & Patches](https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162)'
-          - lang: de
-            text: '[WACCF-Kompatibilitätsnotizen & Patches](https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162)'
+      - <<: *compatNotes
+        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
     clean:
       - crc: 0x23CE2105 # v1.0
         util: 'SSEEdit v3.2.2'
@@ -3048,6 +3049,8 @@ plugins:
     tag:
       - -Names
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
       - *includesMBBF
       - type: info
         content:
@@ -3056,12 +3059,6 @@ plugins:
           - lang: de
             text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
         condition: 'active("Disparity.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Andromeda Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
-          - lang: de
-            text: '[Andromeda-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xAF52C3D7 # v1.07SSE
@@ -3079,16 +3076,12 @@ plugins:
     after:
       - 'Ordinator - Perks of Skyrim.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
       - *includesMBBF
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Apocalypse Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/136/?)'
-          - lang: de
-            text: '[Apocalypse-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/136/?)'
     clean:
       - crc: 0x266B3B3B # v9.45SSE
         util: 'SSEEdit v3.2.1'
@@ -3174,12 +3167,8 @@ plugins:
       - 'Radiant and Unique Potions Poisons and Booze.esp'
       - 'YOT - Your Own Thoughts.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '[CACO Compatibility Notes & Patches](https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286)'
-          - lang: de
-            text: '[CACO-Kompatibilitätsnotizen & Patches](https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286)'
+      - <<: *compatNotes
+        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
@@ -3376,6 +3365,8 @@ plugins:
       - 'BreezehomeSB.esp'
       - 'breeze2.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
       - <<: *patchIncluded
         subs: [ '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
@@ -3391,24 +3382,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)' ]
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
-          - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("Skyrim Sewers.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'It is recommended that you read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
-          - lang: de
-            text: 'Es wird empfohlen, dass Sie sich die [Immersive Citizens SE-Kompatibilitätsnotizen](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) durchlesen und mit [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) nach einer Sortierung mit LOOT nach Konflikten suchen.'
-      - type: warn
-        condition: 'active("tpos_immersive_clit_patch_01.esp")'
-        content:
-          - lang: en
-            text: '[ Immersive Citizens SE: Compatibility Notes ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) is not supported by the Immersive Citizens author. Use at your own risk.'
-          - lang: de
-            text: '[ Immersive Citizens SE-Kompatibilitätsnotizen ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) wird vom Immersive Citizens Autor nicht unterstützt. Nutzung auf eigene Gefahr.'
     tag:
       - Actors.AIPackages
       - C.Location
@@ -3498,13 +3471,9 @@ plugins:
       - R.Description
       - R.Skills
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
-      - type: say
-        content:
-          - lang: en
-            text: '[Imperious Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/127/?)'
-          - lang: de
-            text: '[Imperious-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/127/?)'
     clean:
       - crc: 0xE889ADEB # v7.24SSE
         util: 'SSEEdit v3.2.1'
@@ -3754,13 +3723,6 @@ plugins:
       - <<: *patchProvided
         subs: [ '[Drinking fountains of Skyrim for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10971)' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
-      - type: info
-        condition: 'active("Ordinator - Perks of Skyrim.esp")'
-        content:
-          - lang: en
-            text: 'The Thief''s Eye perk from Ordinator will not work, because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
-          - lang: de
-            text: 'Der Thief''s Eye Perk von Ordinator wird nicht funktionieren, weil Sie rein technisch gesehen keine Stadt betreten. Um dies zu beheben, müssen Sie die Konsole öffnen und ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly auf 1 setzen. Dies sollte nur dann getan werden, wenn auch wirklich Open Cities verwendet wird.[Quelle](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
     tag:
       - C.Location
       - C.Regions
@@ -3806,13 +3768,9 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
       - *includesMBBF
-      - type: say
-        content:
-          - lang: en
-            text: '[Ordinator Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/?)'
-          - lang: de
-            text: '[Ordinator-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/22/?)'
     tag:
       - Graphics
       - Names
@@ -4011,16 +3969,9 @@ plugins:
       - Names
       - Sound
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
       - *includesMBBF
-      - type: warn
-        content: 'Better Vampires and Sacrosanct Patch is not recommended or supported by the Author of [Sacrosanct - Vampires of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3928)'
-        condition: 'active("better vampires.esp") and active("BVandSacrosanct_Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Sacrosanct Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/54/?)'
-          - lang: de
-            text: '[Sacrosanct-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/54/?)'
     clean:
       - crc: 0x92620FD6 # v5.15SSE
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -4332,13 +4283,9 @@ plugins:
       - 'SkyRe_EnemyAI.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/21' ]
       - *includesMBBF
-      - type: say
-        content:
-          - lang: en
-            text: '[Wildcat Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
-          - lang: de
-            text: '[Wildcat-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
     clean:
       - crc: 0xE6A87461 # v7.00SSE
         util: 'SSEEdit v3.2.2'
@@ -4724,18 +4671,14 @@ plugins:
       - Invent
       - Relev
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/116' ]
       - *includesMBBF
       - <<: *semiCompatible
         subs:
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Summermyst Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
-          - lang: de
-            text: '[Summermyst-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
     clean:
       - crc: 0x1F17FC44 # v3.07SSE
         util: 'SSEEdit v3.2.2'
