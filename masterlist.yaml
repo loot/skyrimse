@@ -1841,7 +1841,7 @@ plugins:
         condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp")'
       - <<: *patchIncluded
         subs: [ '[Vivid Weathers - Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)' ]
-        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp")'
+        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
     clean:
       - crc: 0x568EA435 # v1.5.5
         util: 'SSEEdit v3.2.1'
@@ -1849,8 +1849,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
         name: 'Sounds of Skyrim - VividWeathers Patch on Nexus Mods'
-    inc:
-      - 'Vivid Weathers SE - SOS Patch.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("(SoS_VividWeathers_Patch|Vivid Weathers SE - SOS Patch)\.esp")'
+        subs: [ 'Vivid Weathers & Sounds of Skyrim compatibility patch' ]
     clean:
       - crc: 0x4AB9834F # v1.5.5
         util: 'SSEEdit v3.2.1'
@@ -2135,7 +2137,7 @@ plugins:
         condition: 'active("MintyLightningMod.esp") and not active("Vivid Weathers SE - LightingDuringStorm Patch.esp")'
       - <<: *patchIncluded
         subs: [ '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)' ]
-        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp") and not active("SoS_VividWeathers_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
@@ -2215,8 +2217,10 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Vivid Weathers SE - SOS Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
-    inc:
-      - 'SoS_VividWeathers_Patch.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("(SoS_VividWeathers_Patch|Vivid Weathers SE - SOS Patch)\.esp")'
+        subs: [ 'Vivid Weathers & Sounds of Skyrim compatibility patch' ]
     clean:
       - crc: 0x2C48D46D # v2.30
         util: 'SSEEdit v3.2.2'
