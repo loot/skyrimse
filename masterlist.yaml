@@ -32,12 +32,12 @@ common:
     type: warn
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugins mod page.'
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
   - &patchIncluded
     type: warn
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugins installer.'
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
   - &patch3rdParty
     type: warn
     content:
@@ -47,7 +47,7 @@ common:
     type: say
     content:
       - lang: en
-        text: 'It is recommended that you read this mods [Compatibility Notes](%1%).'
+        text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
   - &semiCompatible
     type: say
     content:
@@ -151,16 +151,12 @@ common:
     type: warn
     content:
       - lang: en
-        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods.'
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
       - lang: da
-        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods.'
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
       - lang: de
-        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen.'
-  - &cleaningGuide
-    type: info
-    content:
-      - lang: en
-        text: "A guide for cleaning this plugin using [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) is provided [here](%1%)"
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+    subs: [ '' ]
 
 bash_tags:
   - 'Actors.ACBS'
@@ -420,9 +416,7 @@ plugins:
       - Relev
     msg:
       - <<: *wildEdits
-        condition: 'checksum("Dawnguard.esm", 51982F10) or checksum("Dawnguard.esm", 15DFF74A)'
-      - <<: *cleaningGuide
-        subs: [ '(https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
+        subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
         condition: 'checksum("Dawnguard.esm", 51982F10) or checksum("Dawnguard.esm", 15DFF74A)'
     dirty:
       - <<: *quickClean
@@ -4897,14 +4891,20 @@ plugins:
         name: 'Beyond Skyrim: Bruma SE on Bethesda.net'
     group: *addonsGroup
     msg:
-      - <<: *patchProvided
-        subs: [ 'Convenient Horses' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Convenient Horses'
+          - '[Bruma patch for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH Bruma Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Flora Respawn Fix' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Flora Respawn Fix'
+          - '[Flora Respawn Fix SE for Beyond Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/11072/)'
         condition: 'active("FloraRespawnFix.esp") and not active("BSHeartlandFRF.esp")'
-      - <<: *patchProvided
-        subs: [ 'Ordinator - Perks of Skyrim' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
     tag:
       - Actors.ACBS
@@ -5026,9 +5026,7 @@ plugins:
       - 'AuroraVillage.esp'
     msg:
       - <<: *wildEdits
-        condition: 'checksum("Undeath.esp", EB75A960)'
-      - <<: *cleaningGuide
-        subs: [ '(https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
+        subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
         condition: 'checksum("Undeath.esp", EB75A960)'
     tag:
       - Graphics
@@ -5748,8 +5746,10 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Dawn of Skyrim' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Dawn of Skyrim'
+          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
         condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Dawnstar' ]
