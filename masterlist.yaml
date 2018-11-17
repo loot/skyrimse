@@ -28,24 +28,26 @@ common:
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
       - lang: de
         text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit der Mod richtig funktioniert. Gelöschte Eintrage wiederherzustellen ist in Ordung, alles andere aber nicht.'
-  - &hasPluginPatch
+  - &patchProvided
     type: warn
     content:
       - lang: en
-        text: "You seem to be using %1%, but you haven't enabled the patch for this plugin: %2%"
-      - lang: da
-        text: "Du ser ud til at bruge %1%, men du bruger ikke “%1%”-lappen for dette plugin: %2%"
-      - lang: ja
-        text: "%1%が使用されていますが、このプラグイン用の%1%のパッチが有効になっていません: %2%"
-      - lang: de
-        text: "Sie nutzen anscheinend %1%, haben aber nicht den %1% Patch für dieses Plugin aktiviert: %2%"
-  - &hasPatchIncluded
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+  - &patchIncluded
     type: warn
     content:
       - lang: en
-        text: "A patch is included with the %2% installer, please make sure you have installed the %1% patch and have it activated."
-      - lang: de
-        text: "Ein Patch ist in dem %2% Installer enthalten, bitte stellen Sie sicher, dass Sie den %1% Patch installiert und aktiviert haben."
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
+  - &patch3rdParty
+    type: warn
+    content:
+      - lang: en
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
+  - &compatNotes
+    type: say
+    content:
+      - lang: en
+        text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
   - &semiCompatible
     type: say
     content:
@@ -139,22 +141,22 @@ common:
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
     info: 'A cleaning guide is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-B).'
   - &quickClean
-    util: '[SSEEdit](https://github.com/TES5Edit/TES5Edit/releases) **Quick Auto Clean**'
-    info: |+
-
-          >A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean).
-          >The latest version of [SSEEdit Experimental](https://github.com/TES5Edit/TES5Edit/releases) is required to use **Quick Auto Clean**.
+    util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) **Quick Auto Clean**'
+    info: 'A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean).'
   - &reqManualFix
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) **Quick Auto Clean**'
-    info: 'A cleaning guide is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-B). It is strongly recommended not to use mods that contain **Deleted navmeshes** are they''re known to cause crashes. **Deleted navmeshes** must be corrected manually.'
+    info: 'A guide for running **Quick Auto Clean** can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#quickautoclean). It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. More information on **Deleted navmeshes** is provided [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
 
-  - &hasWildEdits
+  - &wildEdits
     type: warn
     content:
       - lang: en
-        text: "This plugin contains wild edits. A manual [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164) cleaning guide is available here: %1%"
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
+      - lang: da
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
       - lang: de
-        text: "Dieses Plugin enthält unbeabsichtigte Änderungen. Eine manuelle [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)-Säuberungsanleitung ist hier verfügbar: %1%"
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+    subs: [ '' ]
 
 bash_tags:
   - 'Actors.ACBS'
@@ -404,11 +406,6 @@ plugins:
         itm: 275
         udr: 91
         nav: 2
-    clean:
-      - crc: 0x49BFB6A9 # v1.5.50.0 - Quick Auto Clean
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      - crc: 0x708AB774 # v1.5.53.0 - Quick Auto Clean
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -418,8 +415,8 @@ plugins:
       - Invent
       - Relev
     msg:
-      - <<: *hasWildEdits
-        subs: [ '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
+      - <<: *wildEdits
+        subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
         condition: 'checksum("Dawnguard.esm", 51982F10) or checksum("Dawnguard.esm", 15DFF74A)'
     dirty:
       - <<: *quickClean
@@ -440,11 +437,6 @@ plugins:
         crc: 0x98134D3A # v1.5.53.0 - Quick Auto Clean
         itm: 4
         nav: 57
-    clean:
-      - crc: 0x37A33247 # v1.5.50.0 - Wild Edits Cleaned
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      - crc: 0xCF2F6C14 # v1.5.53.0 - Wild Edits Cleaned
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Hearthfires.esm'
     group: *dlcGroup
     after:
@@ -463,11 +455,6 @@ plugins:
         itm: 221
         udr: 11
         nav: 5
-    clean:
-      - crc: 0xA3A830A4 # v1.5.50.0 - Quick Auto Clean
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      - crc: 0xD7EFB0D4 # v1.5.53.0 - Quick Auto Clean
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Dragonborn.esm'
     group: *dlcGroup
     after:
@@ -487,11 +474,6 @@ plugins:
         itm: 81
         udr: 8
         nav: 1
-    clean:
-      - crc: 0x7996AF1B # v1.5.50.0 - Quick Auto Clean
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      - crc: 0x0EDA7DF8 # v1.5.53.0 - Quick Auto Clean
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'SkyrimVR.esm'
     group: *dlcGroup
     after:
@@ -948,12 +930,8 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '[WACCF Compatibility Notes & Patches](https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162)'
-          - lang: de
-            text: '[WACCF-Kompatibilitätsnotizen & Patches](https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162)'
+      - <<: *compatNotes
+        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
     clean:
       - crc: 0x23CE2105 # v1.0
         util: 'SSEEdit v3.2.2'
@@ -1012,10 +990,8 @@ plugins:
       - 'SMIM-SE-Merged-All.esp'
       - 'SMIM-SE.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Better Dynamic Snow SE](https://www.nexusmods.com/skyrimspecialedition/mods/9121/)'
-          - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)'
+      - <<: *patchIncluded
+        subs: [ '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518/)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
       - <<: *semiCompatible
         subs:
@@ -1044,10 +1020,8 @@ plugins:
     inc: [ 'dD - Enhanced Blood Main LITE.esp' ]
     msg:
       - <<: *includesMBBF
-      - <<: *hasPatchIncluded
-        subs:
-          - '[SkyBirds SSE Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2315)'
-          - '[Enhanced Blood Textures SE](https://www.nexusmods.com/skyrimspecialedition/mods/2357)'
+      - <<: *patchIncluded
+        subs: [ '[SkyBirds SSE Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2315)' ]
         condition: 'active("skyBirds_SSE.esp") and not active("EBT - skyBirds Patch.esp") and not active("EBT - skyBirds Patch (mid).esp") and not active("EBT - skyBirds Patch (short).esp")'
     clean:
       - crc: 0x70E9C0E7 # v3.8
@@ -1223,25 +1197,17 @@ plugins:
         name: 'Even Better Quest Objectives on Bethesda.net'
     group: *addonsGroup
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/901/)'
-          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+      - <<: *patchIncluded
+        subs: [ '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/901/)' ]
         condition: 'active("Book Covers Skyrim.esp") and not file("BetterQuestObjectives - BCS Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrimspecialedition/mods/272)'
-          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+      - <<: *patchIncluded
+        subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrimspecialedition/mods/272)' ]
         condition: 'active("Alternate Start - Live Another Life.esp") and not file("BetterQuestObjectives-AlternateStartPatch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/276)'
-          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+      - <<: *patchIncluded
+        subs: [ '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/276)' ]
         condition: 'active("Cutting Room Floor.esp") and not file("BetterQuestObjectives-CRFPatch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[The Paarthurnax Dilemma](https://www.nexusmods.com/skyrimspecialedition/mods/365)'
-          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
+      - <<: *patchIncluded
+        subs: [ '[The Paarthurnax Dilemma](https://www.nexusmods.com/skyrimspecialedition/mods/365)' ]
         condition: 'active("The Paarthurnax Dilemma.esp") and not file("BetterQuestObjectives-PaarDilemmaPatch.esp")'
     tag:
       - NoMerge
@@ -1266,44 +1232,37 @@ plugins:
           - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
         condition: 'active("Joy of Perspective.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim: Bruma'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("BSHeartland.esm") and not active("Jop - BrumaPatch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Common Clothes'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("CommonClothes.esp") and not active("Jop - CommonClothes.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Immersive Armors'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("JoP - Immersive Armors Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'The Final Cataclysm'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("INFERNAL FLAME.esp") and not active("Jop - INFL.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Legacy Of the Dragonborn'
           - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009)'
         condition: 'active("LegacyoftheDragonborn.esm") and not active("Jop - LegacyOfDragonborn.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Weapons Armor Clothing and Clutter Fixes'
           - '[QUARK - Qwinn''s Ultimate Amulet Restoration Kit](https://www.nexusmods.com/skyrimspecialedition/mods/18177)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("AmuletsShowOnEverything-JOP.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'WACCF - Armor and Clothing Extension'
           - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
@@ -1603,26 +1562,22 @@ plugins:
       - 'Luminosity - Lightweight Lighting.esp'
       - 'RLO - Interiors.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Cutting Room Floor` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_Luminosity_CRF Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Immersive Citizens - AI Overhaul` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Qw_Luminosity_ImmersiveCitizens Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Immersive College of Winterhold` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_Luminosity_ICoWinterhold Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Realistic Water Two` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -1728,13 +1683,10 @@ plugins:
       - 'SoundsofSkyrimComplete.esp'
       - 'SoS - The Wilds.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Immersive Sounds - Compendium'
-          - '[Immersive Sounds Compendium Synergy Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
+      - <<: *patchProvided
+        subs: [ 'Immersive Sounds - Compendium' ]
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Deadly Spell Impacts` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -1796,8 +1748,7 @@ plugins:
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
       - 'UnlimitedBookshelves.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Deadly Spell Impacts` '
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -1824,20 +1775,14 @@ plugins:
       - crc: 0xAA85D810 # v2.1
         util: 'SSEEdit v3.2.1'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Alternate Start - Live Another Life'
-          - '[RAO - Alternate Start](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+      - <<: *patchProvided
+        subs: [ 'Alternate Start - Live Another Life' ]
         condition: 'active("Alternate Start - Live Another Life.esp") and not active("RAO - Alternate Start Patch.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Enhanced Lighting for ENB (ELE)'
-          - '[RAO - ELE patch SSE](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+      - <<: *patchProvided
+        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
         condition: 'active("ELE_SSE.esp") and not active("RAO - ELE patch SSE.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Enhanced Lights and FX'
-          - '[RAO - ELFX](https://www.nexusmods.com/skyrimspecialedition/mods/701/)'
+      - <<: *patchProvided
+        subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
@@ -1852,71 +1797,45 @@ plugins:
       - C.Acoustic
       - Sound
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Climates Of Tamriel Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2237/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Climates Of Tamriel Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2237/)' ]
         condition: 'active("ClimatesOfTamriel.esm") and not active("SoS_CoT_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Dolomite Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/7895/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Dolomite Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/7895/)' ]
         condition: 'active("Dolomite Weathers.esp") and not active("SoS_DolomiteWeathers_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)' ]
         condition: 'active("ELE_SSE.esp") and not active("SoS_ELE_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("SoS_ELFX_Patch.esp") and not active("SoS_ELFX+Enhancer_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp") and not active("SoS_ELFX+Weathers_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Enhancer](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[ELFX - Enhancer](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFXEnhancer.esp") and not active("SoS_ELFX+Enhancer_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFX - Hardcore.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[ELFX - Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFX - Weathers.esp") and not active("SoS_ELFX+Weathers_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[NAT - Natural and Atmospheric Tamriel](https://www.nexusmods.com/skyrimspecialedition/mods/12842/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[NAT - Natural and Atmospheric Tamriel](https://www.nexusmods.com/skyrimspecialedition/mods/12842/)' ]
         condition: 'active("NAT.esp") and not active("SoS_NAT_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Northern Saga Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/14878/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Northern Saga Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/14878/)' ]
         condition: 'active("NorthernSWS.esp") and not active("SOS_NSWS_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Obsidian Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Obsidian Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)' ]
         condition: 'active("Obsidian Weathers.esp") and not active("SoS_Obsidian_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844/)' ]
         condition: 'active("RLO - Interiors.esp") and not active("SOS_RLOInteriors_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[True Storms - Thunder Rain and Weather Redone](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
+      - <<: *patchIncluded
+        subs: [ '[True Storms - Thunder Rain and Weather Redone](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)' ]
         condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Vivid Weathers - Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
-        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ '[Vivid Weathers - Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)' ]
+        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
     clean:
       - crc: 0x568EA435 # v1.5.5
         util: 'SSEEdit v3.2.1'
@@ -1924,8 +1843,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
         name: 'Sounds of Skyrim - VividWeathers Patch on Nexus Mods'
-    inc:
-      - 'Vivid Weathers SE - SOS Patch.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("(SoS_VividWeathers_Patch|Vivid Weathers SE - SOS Patch)\.esp")'
+        subs: [ 'Vivid Weathers & Sounds of Skyrim compatibility patch' ]
     clean:
       - crc: 0x4AB9834F # v1.5.5
         util: 'SSEEdit v3.2.1'
@@ -2019,7 +1940,7 @@ plugins:
         display: 'True Storms Special Edition'
       - 'Vivid WeathersSE.esp'
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
           - '[NAT - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15025/)'
@@ -2068,15 +1989,16 @@ plugins:
         display: 'True Storms Special Edition'
       - 'Vivid WeathersSE.esp'
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patchProvided
+        subs: [ '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)' ]
+        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
+      - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
-          - '[Obsidian Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
+          - '[ Obsidian Weathers - TrueStorms Merged Compatibility SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
         condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'VIGILANT SE'
-          - '[Obsidian Weathers for Vigilant](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)'
+      - <<: *patchProvided
+        subs: [ 'VIGILANT SE' ]
         condition: 'active("Vigilant.esp") and not active("Obsidian Weathers for Vigilant.esp")'
     tag:
       - Sound
@@ -2115,37 +2037,37 @@ plugins:
       - 'ELFX - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[Dolomite Weathers - Natural Lighting Vivid Atmospherics II](https://www.nexusmods.com/skyrimspecialedition/mods/7895/)'
           - '[Dolomite - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15044/)'
         condition: 'active("Dolomite Weathers.esp") and not active("Dolomite_TS_Patch_.*\.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[Mythical Ages - weathers and lighting overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/11578/)'
           - '[Mythical Ages - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15617/)'
         condition: 'active("Mythical Ages.esp") and not active("Mythical_TS_Patch_.*\.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[NAT - Natural and Atmospheric Tamriel](https://www.nexusmods.com/skyrimspecialedition/mods/12842/)'
           - '[NAT - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15025/)'
         condition: 'active("NAT.esp") and not active("NAT_TS_Patch_.*\.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[Obsidian Weathers and Seasons](https://www.nexusmods.com/skyrimspecialedition/mods/12125/)'
           - '[Obsidian Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
         condition: 'active("Obsidian Weathers.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[Rustic Weathers and Lighting](https://www.nexusmods.com/skyrimspecialedition/mods/8398/)'
           - '[Rustic Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15621/?)'
         condition: 'active("Rustic Weathers And Lighting.esp") and not active("Rustic_TS_Patch_.*\.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[Vivid Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
           - '[Vivid Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15135/?)'
         condition: 'active("Vivid WeathersSE.esp") and not active("Vivid_TS_Patch_.*\.esp") and not active("Vivid Weathers & True Storms MCP.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - '[Wet and Cold](https://www.nexusmods.com/skyrimspecialedition/mods/644/)'
           - '[TrueStorms - Wet and Cold Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15632/?)'
@@ -2192,37 +2114,25 @@ plugins:
         condition: 'active("TrueStormsSE.esp") and not active("Vivid_TS_Patch_.*\.esp") and not active("Vivid Weathers & True Storms.*\.esp")'
         display: 'True Storms Special Edition'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Audio Overhaul for Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
-          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+      - <<: *patchIncluded
+        subs: [ '[Audio Overhaul for Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)' ]
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Beyond Skyrim - Bruma SE](https://www.nexusmods.com/skyrimspecialedition/mods/10917/)'
-          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+      - <<: *patchIncluded
+        subs: [ '[Beyond Skyrim - Bruma SE](https://www.nexusmods.com/skyrimspecialedition/mods/10917/)' ]
         condition: 'active("BSHeartland.esm") and not active("Vivid Weathers SE - Bruma Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Falskaar](https://www.nexusmods.com/skyrimspecialedition/mods/2057/)'
-          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+      - <<: *patchIncluded
+        subs: [ '[Falskaar](https://www.nexusmods.com/skyrimspecialedition/mods/2057/)' ]
         condition: 'active("Falskaar.esm") and not active("Vivid Weathers SE - Falskaar.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Lightning During Storms Sse (Minty lightning)](https://www.nexusmods.com/skyrimspecialedition/mods/8778/)'
-          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+      - <<: *patchIncluded
+        subs: [ '[Lightning During Storms Sse (Minty lightning)](https://www.nexusmods.com/skyrimspecialedition/mods/8778/)' ]
         condition: 'active("LightngDuringStorm.esp") and not active("Vivid Weathers SE - LightingDuringStorm Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Lightning During Storms Sse (Minty lightning)](https://www.nexusmods.com/skyrimspecialedition/mods/8778/)'
-          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
+      - <<: *patchIncluded
+        subs: [ '[Lightning During Storms Sse (Minty lightning)](https://www.nexusmods.com/skyrimspecialedition/mods/8778/)' ]
         condition: 'active("MintyLightningMod.esp") and not active("Vivid Weathers SE - LightingDuringStorm Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)'
-          - '[Vivid Weathers Definitive Edition](https://www.nexusmods.com/skyrimspecialedition/mods/2187/)'
-        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patchIncluded
+        subs: [ '[Sounds of Skyrim Complete SE](https://www.nexusmods.com/skyrimspecialedition/mods/8286/)' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp") and not active("SoS_VividWeathers_Patch.esp")'
+      - <<: *patch3rdParty
         subs:
           - '[True Storms SE](https://www.nexusmods.com/skyrimspecialedition/mods/2472/)'
           - '[Vivid Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15135/?)'
@@ -2301,8 +2211,10 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Vivid Weathers SE - SOS Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
-    inc:
-      - 'SoS_VividWeathers_Patch.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("(SoS_VividWeathers_Patch|Vivid Weathers SE - SOS Patch)\.esp")'
+        subs: [ 'Vivid Weathers & Sounds of Skyrim compatibility patch' ]
     clean:
       - crc: 0x2C48D46D # v2.30
         util: 'SSEEdit v3.2.2'
@@ -2420,10 +2332,8 @@ plugins:
         display: 'Fangs and Eyes - A Vampire Appearance Mod'
       - 'EnhancedCharacterEdit.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Cutting Room Floor'
-          - '[Cutting Room Floor Patch](https://www.nexusmods.com/skyrimspecialedition/mods/8695/)'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("CosmeticVampireOverhaul - Cutting Room Floor Patch.esp")'
     tag:
       - NpcFaces
@@ -2452,8 +2362,7 @@ plugins:
     after:
       - 'Cutting Room Floor.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Cutting Room Floor'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
@@ -2739,10 +2648,8 @@ plugins:
     inc:
       - 'DragonsKeep.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Open Cities Skyrim'
-          - '[SkyMirai OCS](https://www.nexusmods.com/skyrimspecialedition/mods/10908/)'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("zMirai_OCS_Patch.esp")'
     dirty:
       - <<: *dirtyPlugin
@@ -3140,6 +3047,8 @@ plugins:
     tag:
       - -Names
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
       - *includesMBBF
       - type: info
         content:
@@ -3148,12 +3057,6 @@ plugins:
           - lang: de
             text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
         condition: 'active("Disparity.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Andromeda Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
-          - lang: de
-            text: '[Andromeda-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/365/?)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xAF52C3D7 # v1.07SSE
@@ -3171,18 +3074,12 @@ plugins:
     after:
       - 'Ordinator - Perks of Skyrim.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
       - *includesMBBF
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Apocalypse - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/1090/)'
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Apocalypse Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/136/?)'
-          - lang: de
-            text: '[Apocalypse-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/136/?)'
     clean:
       - crc: 0x266B3B3B # v9.45SSE
         util: 'SSEEdit v3.2.1'
@@ -3233,7 +3130,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Book Covers SE'
           - '[kryptopyr''s Patch Hub - Book Covers Skyrim TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
@@ -3268,12 +3165,8 @@ plugins:
       - 'Radiant and Unique Potions Poisons and Booze.esp'
       - 'YOT - Your Own Thoughts.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '[CACO Compatibility Notes & Patches](https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286)'
-          - lang: de
-            text: '[CACO-Kompatibilitätsnotizen & Patches](https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286)'
+      - <<: *compatNotes
+        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
@@ -3290,8 +3183,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'SkyrimSewers.esp'
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Skyrim Sewers` '
           - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
@@ -3313,10 +3205,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *fixesGroup
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Beyond Skyrim DLC Integration'
-          - '[DLCIntegration Beyond Skyrim Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/8032/)'
+      - <<: *patchProvided
+        subs: [ 'Beyond Skyrim DLC Integration' ]
         condition: 'active("BS_DLC_patch.esp") and not active("DLCIntegration Beyond Skyrim Compatibility Patch.esp")'
     tag:
       - Delev
@@ -3339,7 +3229,7 @@ plugins:
   - name: 'Elemental Destruction.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/440/' ]
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
@@ -3375,12 +3265,10 @@ plugins:
     after:
       - 'skyBirds_SSE.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[HarvestOverhaul - Ordinator Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/2398/)'
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
           - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
@@ -3397,7 +3285,7 @@ plugins:
       - 'Ars Metallica.esp'
       - 'skyBirds_SSE.esp'
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
           - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
@@ -3475,49 +3363,23 @@ plugins:
       - 'BreezehomeSB.esp'
       - 'breeze2.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+      - <<: *compatNotes
+        subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
+      - <<: *patchIncluded
+        subs: [ '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Touring Carriages](https://www.nexusmods.com/skyrimspecialedition/mods/15948/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+      - <<: *patchIncluded
+        subs: [ '[Touring Carriages](https://www.nexusmods.com/skyrimspecialedition/mods/15948/)' ]
         condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lighting for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/1377/)' ]
         condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Enhancer] (https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+      - <<: *patchIncluded
+        subs: [ '[ELFX - Enhancer] (https://www.nexusmods.com/skyrimspecialedition/mods/2424/)' ]
         condition: 'active("ELFXEnhancer.esp") and not active("Immersive Citizens - ELFXEnhancer patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)'
-          - '[Immersive Citizens](https://www.nexusmods.com/skyrimspecialedition/mods/173/)'
+      - <<: *patchIncluded
+        subs: [ '[ELFX - Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/2424/)' ]
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - '[Skyrim Sewers](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
-          - 'Partially Compatible. Source: [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/)'
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("Skyrim Sewers.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'It is recommended that you read the [Immersive Citizens SE: Compatibility Notes](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) and to check for conflicts in [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) after sorting with LOOT.'
-          - lang: de
-            text: 'Es wird empfohlen, dass Sie sich die [Immersive Citizens SE-Kompatibilitätsnotizen](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/) durchlesen und mit [SSEEdit](http://www.nexusmods.com/skyrimspecialedition/mods/164) nach einer Sortierung mit LOOT nach Konflikten suchen.'
-      - type: warn
-        condition: 'active("tpos_immersive_clit_patch_01.esp")'
-        content:
-          - lang: en
-            text: '[ Immersive Citizens SE: Compatibility Notes ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) is not supported by the Immersive Citizens author. Use at your own risk.'
-          - lang: de
-            text: '[ Immersive Citizens SE-Kompatibilitätsnotizen ](http://nextgen-ai.com/immersive-citizens-se-compatibility-support/).[ THE PEOPLE OF SKYRIM COMPLETE IMMERSIVE CITIZENS PATCH ](https://www.nexusmods.com/skyrimspecialedition/mods/14206) wird vom Immersive Citizens Autor nicht unterstützt. Nutzung auf eigene Gefahr.'
     tag:
       - Actors.AIPackages
       - C.Location
@@ -3607,13 +3469,9 @@ plugins:
       - R.Description
       - R.Skills
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
-      - type: say
-        content:
-          - lang: en
-            text: '[Imperious Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/127/?)'
-          - lang: de
-            text: '[Imperious-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/127/?)'
     clean:
       - crc: 0xE889ADEB # v7.24SSE
         util: 'SSEEdit v3.2.1'
@@ -3640,25 +3498,17 @@ plugins:
       - 'KS Dragon Overhaul 2.esp'
       - 'Simply Stronger Dragons.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
-          - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+      - <<: *patchProvided
+        subs: [ '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)' ]
         condition: 'active("AAE Ultimate Edition.esp") and not file("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Enhanced Mighty Dragons V4](https://www.nexusmods.com/skyrimspecialedition/mods/5982/)'
-          - '[KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+      - <<: *patchProvided
+        subs: [ '[Enhanced Mighty Dragons V4](https://www.nexusmods.com/skyrimspecialedition/mods/5982/)' ]
         condition: 'active("Mighty Dragons SE Medium Cooked.esp") and not active("KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Enhanced Slightly Mighty Dragons](https://www.nexusmods.com/skyrimspecialedition/mods/9274/)'
-          - '[KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+      - <<: *patchProvided
+        subs: [ '[Enhanced Slightly Mighty Dragons](https://www.nexusmods.com/skyrimspecialedition/mods/9274/)' ]
         condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp") and not active("KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Thunderchild - Epic Shouts and Immersion](https://www.nexusmods.com/skyrimspecialedition/mods/1460/)'
-          - '[KS Dragon Overhaul - Thunderchild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12641/)'
+      - <<: *patchProvided
+        subs: [ '[Thunderchild - Epic Shouts and Immersion](https://www.nexusmods.com/skyrimspecialedition/mods/1460/)' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
     tag:
       - R.ChangeSpells
@@ -3680,15 +3530,11 @@ plugins:
       - 'Mighty Dragons SE Medium Cooked.esp'
       - 'Simply Stronger Dragons.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
-          - '[KS Dragon Overhaul - AAE Ultimate Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19051/)'
+      - <<: *patchProvided
+        subs: [ '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)' ]
         condition: 'active("AAE Ultimate Edition.esp") and not file("KSDO2 - AAE Ultimate Edition Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Thunderchild - Epic Shouts and Immersion](https://www.nexusmods.com/skyrimspecialedition/mods/1460/)'
-          - '[KS Dragon Overhaul - Thunderchild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19051/)'
+      - <<: *patchProvided
+        subs: [ '[Thunderchild - Epic Shouts and Immersion](https://www.nexusmods.com/skyrimspecialedition/mods/1460/)' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
     tag:
       - R.ChangeSpells
@@ -3736,75 +3582,47 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod - MLU.esp Replacer on Nexus Mods'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
-          - '[MLU - Advanced Adversary Encounters](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)' ]
         condition: 'active("AAE Ultimate Edition.esp") and not active("MLU - AAE Ultimate Edition.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Ars Metallica - Smithing Enhancement](https://www.nexusmods.com/skyrimspecialedition/mods/321/)'
-          - '[MLU - Ars Metallica](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Ars Metallica - Smithing Enhancement](https://www.nexusmods.com/skyrimspecialedition/mods/321/)' ]
         condition: 'active("Ars Metallica.esp") and not active("MLU - Ars Metallica Patch.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Immersive Armors](https://www.nexusmods.com/skyrimspecialedition/mods/3479/)'
-          - '[MLU - Immersive Armors](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Immersive Armors](https://www.nexusmods.com/skyrimspecialedition/mods/3479/)' ]
         condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("MLU - Immersive Armors.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Improved closefaced helmets](https://www.nexusmods.com/skyrimspecialedition/mods/824/)'
-          - '[MLU - Improved Closefaced Helmets](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Improved closefaced helmets](https://www.nexusmods.com/skyrimspecialedition/mods/824/)' ]
         condition: 'active("imp_helm_legend.esp") and not active("MLU - Improved Closefaced Helmets.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Improved Daedric Artifacts SE](https://www.nexusmods.com/skyrimspecialedition/mods/2055/)'
-          - '[MLU - Improved Daedric Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Improved Daedric Artifacts SE](https://www.nexusmods.com/skyrimspecialedition/mods/2055/)' ]
         condition: 'active("ImprovedDaedricArtifacts.esp") and not active("MLU - Improved Daedric Artifacts.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[InsanitySorrow Weapons Pack](https://www.nexusmods.com/skyrimspecialedition/mods/8206/)'
-          - '[MLU - InsanitySorrow Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[InsanitySorrow Weapons Pack](https://www.nexusmods.com/skyrimspecialedition/mods/8206/)' ]
         condition: 'active("InsanitySorrow Weapons Pack.esp") and not active("MLU - InsanitySorrow Weapons Pack.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Lore Weapon Expansion SE](https://www.nexusmods.com/skyrimspecialedition/mods/9660/)'
-          - '[MLU - Lore Weapon Expansion](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Lore Weapon Expansion SE](https://www.nexusmods.com/skyrimspecialedition/mods/9660/)' ]
         condition: 'active("Lore Weapon Expansion.esp") and not active("MLU - Lore Weapon Expansion.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Mainland Stalhrim - Stalhrim Outside Solstheim](https://www.nexusmods.com/skyrimspecialedition/mods/8307/)'
-          - '[MLU - Mainland Stalhrim](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Mainland Stalhrim - Stalhrim Outside Solstheim](https://www.nexusmods.com/skyrimspecialedition/mods/8307/)' ]
         condition: 'active("MainlandStalhrim.esp") and not active("MLU - Mainland Stalhrim.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Simple Magic Rebalance](https://www.nexusmods.com/skyrimspecialedition/mods/1982/)'
-          - '[MLU - Simple Magic Rebalance](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Simple Magic Rebalance](https://www.nexusmods.com/skyrimspecialedition/mods/1982/)' ]
         condition: 'active("Simple Magic Rebalance.esp") and not active("MLU - Simple Magic Rebalance.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Summermyst - Enchantments of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6285/)'
-          - '[MLU - Summermyst](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Summermyst - Enchantments of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6285/)' ]
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Unique Uniques SE](https://www.nexusmods.com/skyrimspecialedition/mods/3334/)'
-          - '[MLU - Unique Uniques](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Unique Uniques SE](https://www.nexusmods.com/skyrimspecialedition/mods/3334/)' ]
         condition: 'active("Unique Uniques.esp") and not active("MLU - Unique Uniques Patch.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Wild World SE](https://www.nexusmods.com/skyrimspecialedition/mods/14616/)'
-          - '[MLU - Wild World](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Wild World SE](https://www.nexusmods.com/skyrimspecialedition/mods/14616/)' ]
         condition: 'active("Wild World.esp") and not active("MLU - Wild World.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)'
-          - '[MLU - Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)' ]
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp") and not active("MLU Patches Merged.esp") and not active("ScopedBows.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)'
-          - '[MLU - WICO](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - <<: *patchProvided
+        subs: [ '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)' ]
         condition: 'active("WICO - Immersive People.esp") and not active("MLU - WICO.esp") and not active("MLU Patches Merged.esp")'
     tag:
       - Actors.ACBS
@@ -3863,10 +3681,8 @@ plugins:
   - name: 'MultipleEnchantments.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2694/' ]
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
+      - <<: *patchProvided
+        subs: [ '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
   - name: 'My Home Is Your Home.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
@@ -3899,23 +3715,12 @@ plugins:
       - 'The Horkerpocalypse.esp'
       - 'Landscape Fixes For Grass Mods.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - '[Skyrim Sewers 4](https://www.nexusmods.com/skyrimspecialedition/mods/9320)'
-          - '[Open Cities Skyrim Patches](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Sewers 4](https://www.nexusmods.com/skyrimspecialedition/mods/9320)' ]
         condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Drinking fountains of Skyrim for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10971)'
-          - '[Open Cities Skyrim Patches](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
+      - <<: *patchProvided
+        subs: [ '[Drinking fountains of Skyrim for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10971)' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
-      - type: info
-        condition: 'active("Ordinator - Perks of Skyrim.esp")'
-        content:
-          - lang: en
-            text: 'The Thief''s Eye perk from Ordinator will not work, because you are technically not entering a city. To fix this, open the console and type set ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly to 1. Do not do this if you are not using Open Cities.[Source notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
-          - lang: de
-            text: 'Der Thief''s Eye Perk von Ordinator wird nicht funktionieren, weil Sie rein technisch gesehen keine Stadt betreten. Um dies zu beheben, müssen Sie die Konsole öffnen und ORD_Pic_ThiefsEye_Global_DisableCityWorldspaceOnly auf 1 setzen. Dies sollte nur dann getan werden, wenn auch wirklich Open Cities verwendet wird.[Quelle](https://www.nexusmods.com/skyrimspecialedition/articles/22/).'
     tag:
       - C.Location
       - C.Regions
@@ -3961,13 +3766,9 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
       - *includesMBBF
-      - type: say
-        content:
-          - lang: en
-            text: '[Ordinator Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/22/?)'
-          - lang: de
-            text: '[Ordinator-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/22/?)'
     tag:
       - Graphics
       - Names
@@ -4070,35 +3871,23 @@ plugins:
       - 'FCO - Follower Commentary Overhaul.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Amazing Follower Tweaks'
-          - '[RDO - AFT SE Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+      - <<: *patchProvided
+        subs: [ 'Amazing Follower Tweaks' ]
         condition: 'checksum("AmazingFollowerTweaks.esp", 88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Immersive Amazing Follower Tweaks'
-          - '[RDO - iAFT SE Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+      - <<: *patchProvided
+        subs: [ 'Immersive Amazing Follower Tweaks' ]
         condition: 'checksum("AmazingFollowerTweaks.esp", 88C2EA38) and not active("RDO - iAFT Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Extensible Follower Framework'
-          - '[RDO - EFF v4.0.3 Patch Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+      - <<: *patchProvided
+        subs: [ 'Extensible Follower Framework' ]
         condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Immersive Horses'
-          - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
+      - <<: *patchProvided
+        subs: [ '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)' ]
         condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Cutting Room Floor'
-          - '[RDO - CRF and USSEP Patches Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[RDO - CRF and USSEP Patches Final](https://www.nexusmods.com/skyrimspecialedition/mods/1187/)'
+      - <<: *patchProvided
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("RDO - USSEP Patch.esp") and not active("RDO - CRF + USSEP Patch.esp")'
     clean:
       - crc: 0x20DC9B97 # vFinal
@@ -4178,16 +3967,9 @@ plugins:
       - Names
       - Sound
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
       - *includesMBBF
-      - type: warn
-        content: 'Better Vampires and Sacrosanct Patch is not recommended or supported by the Author of [Sacrosanct - Vampires of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/3928)'
-        condition: 'active("better vampires.esp") and active("BVandSacrosanct_Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Sacrosanct Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/54/?)'
-          - lang: de
-            text: '[Sacrosanct-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/54/?)'
     clean:
       - crc: 0x92620FD6 # v5.15SSE
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -4245,50 +4027,32 @@ plugins:
       - Relev
       - Stats
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Another Sorting Mod](https://www.nexusmods.com/skyrimspecialedition/mods/10/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchIncluded
+        subs: [ '[Another Sorting Mod](https://www.nexusmods.com/skyrimspecialedition/mods/10/)' ]
         condition: 'active("AnotherSortingMod_2017-SSE.esp") and not active("SAFO - Another Sorting Mod.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[AWESOME POTIONS](https://www.nexusmods.com/skyrimspecialedition/mods/5077/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
+      - <<: *patchIncluded
+        subs: [ '[AWESOME POTIONS](https://www.nexusmods.com/skyrimspecialedition/mods/5077/)' ]
         condition: 'active("Potions.esp") and not file("SAFO - Awesome Potions.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Frostfall](https://www.nexusmods.com/skyrimspecialedition/mods/671/)'
-          - '[SAFO - Frostfall Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
+      - <<: *patchIncluded
+        subs: [ '[Frostfall](https://www.nexusmods.com/skyrimspecialedition/mods/671/)' ]
         condition: 'active("Frostfall.esp") and not file("SAFO - Frostfall.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Imperious - Races of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1315/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchIncluded
+        subs: [ '[Imperious - Races of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1315/)' ]
         condition: 'active("Imperious - Races of Skyrim.esp") and not active("SAFO - Imperious.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[iNeed](https://www.nexusmods.com/skyrimspecialedition/mods/645/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
+      - <<: *patchIncluded
+        subs: [ '[iNeed](https://www.nexusmods.com/skyrimspecialedition/mods/645/)' ]
         condition: 'active("iNeed - Extended.esp") and not file("SAFO - iNeed.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Realistic Needs and Diseases](https://www.nexusmods.com/skyrimspecialedition/mods/3487/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
+      - <<: *patchIncluded
+        subs: [ '[Realistic Needs and Diseases](https://www.nexusmods.com/skyrimspecialedition/mods/3487/)' ]
         condition: 'active("RealisticNeedsandDiseases.esp") and not file("SAFO - RND.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
+      - <<: *patchIncluded
+        subs: [ '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)' ]
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not file("SAFO - SkyTEST RAP.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Creation Club Survival Mode'
-          - '[SAFO - Survival Overhaul Patch](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Survival Mode' ]
         condition: 'active("ccqdrsse001-survivalmode.esp") and not active("SAFO - Survival Overhaul.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Valdacil''s Item Sorting](https://www.nexusmods.com/skyrimspecialedition/mods/5224/)'
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
+      - <<: *patchIncluded
+        subs: [ '[Valdacil''s Item Sorting](https://www.nexusmods.com/skyrimspecialedition/mods/5224/)' ]
         condition: 'active("ValdacilsItemSorting.esp") and not file("SAFO - Valdacil.esp")'
     clean:
       - crc: 0x71C54257 # v2.5 No Regen
@@ -4314,30 +4078,20 @@ plugins:
       - Invent
       - Relev
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Expanded Skyrim Weaponry'
-          - '[Skyrim Revamped - Skyrim Expanded Weaponry NPC Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14338)'
+      - <<: *patchProvided
+        subs: [ 'Expanded Skyrim Weaponry' ]
         condition: 'active("LrsamwaysExpandedSkyrimWeaponry.esp") and not active("Skyrim Revamped - Skyrim Expanded Weaponry NPC Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'InsanitySorrow Weapon''s Pack'
-          - '[SR - InsanitySorrow Weapon''s Pack](https://www.nexusmods.com/skyrimspecialedition/mods/14338)'
+      - <<: *patchProvided
+        subs: [ 'InsanitySorrow Weapon''s Pack' ]
         condition: 'active("InsanitySorrow Weapons Pack.esp") and not active("SR - InsanitySorrow Weapon''s Pack.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Summermyst - Enchantments of Skyrim'
-          - '[Skyrim Revamped - Summermyst Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14338)'
+      - <<: *patchProvided
+        subs: [ 'Summermyst - Enchantments of Skyrim' ]
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("Skyrim Revamped - Summermyst Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Lore Weapon Expansion'
-          - '[SR - Lore Weapon Expansion Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14338)'
+      - <<: *patchProvided
+        subs: [ 'Lore Weapon Expansion' ]
         condition: 'active("Lore Weapon Expansion.esp") and not active("SR - Lore Weapon Expansion Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Unique Loot - An Immersive Looting Experience'
-          - '[Skyrim Revamped - Unique Loot Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14338)'
+      - <<: *patchProvided
+        subs: [ 'Unique Loot - An Immersive Looting Experience' ]
         condition: 'active("mrbs-uniqueloot-se.esp") and not active("Skyrim Revamped - Unique Loot Patch.esp")'
     clean:
       - crc: 0x7F17C725 # v1.2
@@ -4402,15 +4156,11 @@ plugins:
       - 'Skyrim Immersive Creatures Special Edition.esp'
       - 'WICO - Immersive People.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - '[Skyrim Immersive Creatures](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)'
-          - '[SRCEO - SIC patch](https://www.nexusmods.com/skyrimspecialedition/mods/14598/)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Immersive Creatures](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SRCEO - SIC patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)'
-          - '[SRCEO - WICO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14598/)'
+      - <<: *patchProvided
+        subs: [ '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)' ]
         condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
     tag:
       - Actors.ACBS
@@ -4506,10 +4256,8 @@ plugins:
   - name: 'UndeathClassicalLichdom SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14823' ]
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Undeath Classical Lichdom Patch For Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/14823)'
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
   - name: 'UltimateCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17196/' ]
@@ -4533,13 +4281,9 @@ plugins:
       - 'SkyRe_EnemyAI.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/21' ]
       - *includesMBBF
-      - type: say
-        content:
-          - lang: en
-            text: '[Wildcat Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
-          - lang: de
-            text: '[Wildcat-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/21/?)'
     clean:
       - crc: 0xE6A87461 # v7.00SSE
         util: 'SSEEdit v3.2.2'
@@ -4690,10 +4434,8 @@ plugins:
     tag:
       - Invent
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
-          - '[Cloaks - USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchIncluded
+        subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cloaks - USSEP Patch.esp") and not active("Bashed Patch, 0.esp")'
     clean:
       - crc: 0x7A522F11 # v1.2.1
@@ -4872,41 +4614,34 @@ plugins:
   - name: 'ScopedBows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/912/' ]
     msg:
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Bijin All in One` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Bijin Warmaidens` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("Bijin Warmaidens.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `MorrowLoot Ultimate` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("MLU.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Weapons Armor Clothing & Clutter Fixes` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("ScopedBows.esp", 5E29053A)'
-      - type: warn
-        content: 'Third party patch available for %1% here: %2%'
+      - <<: *patch3rdParty
         subs:
           - ' `Zim''s Immersive Artifacts` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU.esp") and not file("ScopedBows_ZIA Patch.esp")'
-      - type: warn
-        content: 'Third party patch available for both %1% and %2% here: %3%'
+      - <<: *patch3rdParty
         subs:
-          - ' `Zim''s Immersive Artifacts` '
-          - ' `MorrowLoot Ultimate` '
+          - ' both `MorrowLoot Ultimate` and `Zim''s Immersive Artifacts` '
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("ZIA_Complete Pack_V4.esp") and active("MLU.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
@@ -4934,18 +4669,14 @@ plugins:
       - Invent
       - Relev
     msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/116' ]
       - *includesMBBF
       - <<: *semiCompatible
         subs:
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: '[Summermyst Compatibility Notes](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
-          - lang: de
-            text: '[Summermyst-Kompatibilitätsnotizen](https://www.nexusmods.com/skyrimspecialedition/articles/116/?)'
     clean:
       - crc: 0x1F17FC44 # v3.07SSE
         util: 'SSEEdit v3.2.2'
@@ -4956,23 +4687,15 @@ plugins:
     inc:
       - 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              #### Remove the following records with xEdit
-              - Parent Sub-Block 2,-2 of MorthalExterior04 [CELL:0000939D]
-              - SolitudeOrigin [CELL:00037EE9]
-              - WhiterunOrigin [CELL:0001A27F]
-              - MarkarthOrigin [CELL:00020EE7]
-              - RiftenCityNorth [CELL:00042249]
-        condition: 'checksum("TheWulfPanda - City Teleport Spells.esp", F4169312)'
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-teleport---city-spells-)' ]
+        condition: 'checksum("TheWulfPanda - City Teleport Spells.esp", 8157E158)'
     dirty:
       - <<: *dirtyPlugin
-        crc: 0xEC89CAD3 # v1.01
+        crc: 0xEC89CAD3 # v1.01 Before Cleaning
         itm: 19
     clean:
-      - crc: 0xB63A3D6B # v1.01 Without wild edits
+      - crc: 0x1602F687 # v1.01 after manual cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp'
     url:
@@ -4981,23 +4704,15 @@ plugins:
     inc:
       - 'TheWulfPanda - City Teleport Spells.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              #### Remove the following records with xEdit
-              - Parent Sub-Block 2,-2 of MorthalExterior04 [CELL:0000939D]
-              - SolitudeOrigin [CELL:00037EE9]
-              - WhiterunOrigin [CELL:0001A27F]
-              - MarkarthOrigin [CELL:00020EE7]
-              - RiftenCityNorth [CELL:00042249]
-        condition: 'checksum("TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp", DE73AD5C)'
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-teleport---city-spells-)' ]
+        condition: 'checksum("TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp", A3348C29)'
     dirty:
       - <<: *dirtyPlugin
-        crc: 0x5AE957AB # v1.01
+        crc: 0x5AE957AB # v1.01 Before Cleaning
         itm: 19
     clean:
-      - crc: 0x65674DC4 # v1.01 Without wild edits
+      - crc: 0x90A332BB # v1.01 after manual cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'TheWulfPanda - Faction Teleport Spells.esp'
     url:
@@ -5006,26 +4721,16 @@ plugins:
     inc:
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              #### Edit the following records with xEdit
-              - remove `[REFR:02010521]`
-              - remove `[REFR:02007320]`
-              - remove `[REFR:000CA72C]`
-              - remove `[REFR:000B3434]`
-              - remove `DBSanc_WestHall [REFR:000C0291]`
-              - remove Top Group `Worldspace [GRUP:WRLD]`
-              - remove the **XEZN** attribute in RiftenRaggedFlagon `[CELL:00016BCF]`
-              - add the value `WeatherPineForest [REGN:0002A72D]` to the **XCCM** attribute in DarkBrotherhoodSanctuary `[CELL:000AD5A1]`
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-teleport---faction-spells-)' ]
         condition: 'checksum("TheWulfPanda - Faction Teleport Spells.esp", BCE75EB1)'
     dirty:
       - <<: *dirtyPlugin
-        crc: 0x6DA7BCF5 # v1.03
+        crc: 0x6DA7BCF5 # v1.03 Before Cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 30
     clean:
-      - crc: 0x2A2CF491 # v1.03 Without wild edits
+      - crc: 0x2A2CF491 # v1.03 after manual cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     url:
@@ -5034,26 +4739,15 @@ plugins:
     inc:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              #### Edit the following records with xEdit
-              - remove `[REFR:02010521]`
-              - remove `[REFR:02007320]`
-              - remove `[REFR:000CA72C]`
-              - remove `[REFR:000B3434]`
-              - remove `DBSanc_WestHall [REFR:000C0291]`
-              - remove Top Group `Worldspace [GRUP:WRLD]`
-              - remove the **XEZN** attribute in RiftenRaggedFlagon `[CELL:00016BCF]`
-              - add the value `WeatherPineForest [REGN:0002A72D]` to the **XCCM** attribute in DarkBrotherhoodSanctuary `[CELL:000AD5A1]`
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-teleport---faction-spells-)' ]
         condition: 'checksum("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp", BAD78620)'
     dirty:
       - <<: *dirtyPlugin
-        crc: 0x3BEDC8A5 # v1.03
+        crc: 0x3BEDC8A5 # v1.03 Before Cleaning
         itm: 30
     clean:
-      - crc: 0x7BD6C78A # v1.03 Without wild edits
+      - crc: 0x358AB625 # v1.03 after manual cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
     url:
@@ -5062,22 +4756,15 @@ plugins:
     inc:
       - 'TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-            #### Remove the following records with xEdit
-            - `DragonBridgeExterior03 [CELL:00009349]`
-            - `Riverwood [CELL:00009732]`
-            - Parent Sub-Block 2,-3 of `IvarsteadExterior02 [CELL:000097BF]`
-            - Remove the **XCWT** attribute of `Riverwood04 [CELL:00009731]`
-        condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages.esp", B63A3D6B)'
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-teleport---towns-and-villages-)' ]
+        condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages.esp", 63548DCE)'
     dirty:
       - <<: *dirtyPlugin
-        crc: 0xE614F5D7 # v1.00
+        crc: 0xE614F5D7 # v1.00 Before Cleaning
         itm: 17
     clean:
-      - crc: 0x6C66613A # v1.00 Without wild edits
+      - crc: 0xB0624FF5 # v1.00 after manual cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp'
     url:
@@ -5086,22 +4773,15 @@ plugins:
     inc:
       - 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-            #### Remove the following records with xEdit
-            - `DragonBridgeExterior03 [CELL:00009349]`
-            - `Riverwood [CELL:00009732]`
-            - Parent Sub-Block 2,-3 of `IvarsteadExterior02 [CELL:000097BF]`
-            - Remove the **XCWT** attribute of `Riverwood04 [CELL:00009731]`
-        condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp", 0A2034F1)'
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-teleport---towns-and-villages-)' ]
+        condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp", D9048712)'
     dirty:
       - <<: *dirtyPlugin
-        crc: 0x2393970C # v1.00
+        crc: 0x2393970C # v1.00 Before Cleaning
         itm: 17
     clean:
-      - crc: 0x711550A4 # v1.00 Without wild edits
+      - crc: 0xE12512E0 # v1.00 after manual cleaning
         util: 'SSEEdit v3.2.1'
   - name: 'Wintermyst - Enchantments of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
@@ -5218,17 +4898,17 @@ plugins:
         name: 'Beyond Skyrim: Bruma SE on Bethesda.net'
     group: *addonsGroup
     msg:
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Convenient Horses'
           - '[Bruma patch for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH Bruma Patch.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
           - '[Flora Respawn Fix SE for Beyond Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/11072/)'
         condition: 'active("FloraRespawnFix.esp") and not active("BSHeartlandFRF.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Ordinator - Perks of Skyrim'
           - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
@@ -5328,28 +5008,19 @@ plugins:
       - name: 'Tel_Nalta.esp'
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              #### Description of Wild Edit
-              - Moon & Star reverts a change made by HearthFires DLC to Breezehome Nav Mesh.
-              - This can cause your game to (CTD) crash to desktop.
-
-              #### Modify the following with xEdit
-              - Forward Changes made by `HearthFires.esm` in Record `000166A9` to `MoonAndStar_MAS.esp`
-              - Navigation Mesh & Teleport Triangle
+      - <<: *wildEdits
+        subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-moon-and-star-)' ]
         condition: 'checksum("MoonAndStar_MAS.esp", EB5AEFAF) or checksum("MoonAndStar_MAS.esp", 09207832)'
     tag:
       - C.Location
     dirty:
       - <<: *quickClean
-        crc: 0x925B5F57 # v3.2 - Wild Edits Cleaned
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        crc: 0xEB5AEFAF # v3.2 - Before Cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
     clean:
-      - crc: 0x8BFE9BAF # v3.2 - QAC & Wild Edits Cleaned
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      - crc: 0x695161E0 # v3.2 after manual cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
   - name: 'Undeath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
@@ -5362,8 +5033,8 @@ plugins:
     inc:
       - 'AuroraVillage.esp'
     msg:
-      - <<: *hasWildEdits
-        subs: [ '[Manual Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
+      - <<: *wildEdits
+        subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
         condition: 'checksum("Undeath.esp", EB75A960)'
     tag:
       - Graphics
@@ -5496,10 +5167,8 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'RS Children Overhaul'
-          - '[RSChildren - CRF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/276/)'
+      - <<: *patchProvided
+        subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
     tag:
       - Actors.ACBS
@@ -5683,30 +5352,24 @@ plugins:
       - name: 'OpulentThievesGuild.esp'
         condition: 'not checksum("Distinct Interiors.esp",B337055B)'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0xCB0F62A8 # All In One v1.82, after removing wild edits
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        udr: 1
-    clean:
-      - crc: 0xAD2C8F21 # All In One v1.82, after Quick Auto Clean and removing wild edits
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      - crc: 0xB337055B # Modular - Core v1.81
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              - Open SSEEdit and load **Distinct Interiors.esp**.
-              - On the left side, expand **Distinct Interiors.esp > Cell > Block 0 > Sub-Block 6 > 000165A8 > Temporary**.
-              - Right click on the first entry in the resulting list (with the ID **000CB4F3**) and click **Remove**.
-              - Confirm that you know what you're doing and save the plugin by exiting SSEEdit.
-        # These two checksums are necessary to make sure the user sees this message if they cleaned first
-        condition: 'checksum("Distinct Interiors.esp", 6977340A) or checksum("Distinct Interiors.esp", EFC71875)'
       - type: warn
         content: 'ELFX - NoPlayerHomes module required.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x6977340A # v1.82 before Quick Auto Clean
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 1
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xEFC71875 # v1.82  after QAC & before manual cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        info: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. A manual cleaning guide is available [here](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-)'
+        nav: 1
+    clean:
+      - crc: 0xAD2C8F21 # v1.82 after QAC & manual cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
   - name: 'Distinct Interiors - Guilds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
@@ -5734,25 +5397,22 @@ plugins:
   - name: 'Distinct Interiors - Player Homes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
-    clean:
-      - crc: 0xBE5B4F4A # Modular - Player Homes v1.81, after cleaning wild edits
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
     inc:
       - name: 'Enhanced Lights and FX'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - |+
-
-              - Open SSEEdit and load **Distinct Interiors - Player Homes.esp**.
-              - On the left side, expand **Distinct Interiors - Player Homes.esp > Cell > Block 0 > Sub-Block 6 > 000165A8 > Temporary**.
-              - Right click on the first entry in the resulting list (with the ID **000CB4F3**) and click **Remove**.
-              - Confirm that you know what you're doing and save the plugin by exiting SSEEdit.
-        condition: 'checksum("Distinct Interiors - Player Homes.esp", 289785CC)'
       - type: warn
         content: 'ELFX - NoPlayerHomes module required.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x289785CC # v1.82 before manual cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        info: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. A manual cleaning guide is available [here](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-)'
+        nav: 1
+    clean:
+      - crc: 0xBE5B4F4A # v1.82 after manual cleaning
+        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
   - name: 'Distinct Interiors - Shops.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
@@ -5798,70 +5458,44 @@ plugins:
       - 'UniqueLocationsRiverwoodForest.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)' ]
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Complete Better Docks Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Carriage and Ferry Travel Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/8379/)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Carriage and Ferry Travel Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/8379/)' ]
         condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Complete ELFX Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Hunters Cabin of Riverwood SE](https://www.nexusmods.com/skyrimspecialedition/mods/1783)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Hunters Cabin of Riverwood SE](https://www.nexusmods.com/skyrimspecialedition/mods/1783)' ]
         condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Complete Hunting Cabin Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Complete LoS Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Leaf Rest SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15191)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Leaf Rest SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15191)' ]
         condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Complete Leaf Rest Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844)' ]
         condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Complete RLO Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650)' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Complete RSC Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)' ]
         condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Complete S3D Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Unique Locations - Riverwood Forest](https://www.nexusmods.com/skyrimspecialedition/mods/9258)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Unique Locations - Riverwood Forest](https://www.nexusmods.com/skyrimspecialedition/mods/9258)' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
     tag:
       - C.Location
@@ -5894,25 +5528,17 @@ plugins:
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Darkwater Crossing ELFX Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Darkwater Crossing LoS Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)' ]
         condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Darkwater Crossing S3D Patch.esp")'
     tag:
       - C.Location
@@ -5947,45 +5573,29 @@ plugins:
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)' ]
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Dawnstar Better Docks Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Carriage and Ferry Travel Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/8379/)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Carriage and Ferry Travel Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/8379/)' ]
         condition: 'active("CFTO.esp") and not active("ETaC - Dawnstar CFTO Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Dawnstar Claralux Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Dawnstar ELFX Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Dawnstar LoS Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[No snow under the roof](https://www.nexusmods.com/skyrimspecialedition/mods/518)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Dawnstar No Snow Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Dawnstar Rigmor Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650)' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
     clean:
       - crc: 0xB663D101 # v0.3.4
@@ -6013,50 +5623,32 @@ plugins:
       - 'UniqueLocationsRiverwoodForest.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Riverwood Claralux Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Riverwood ELFX Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Hunters Cabin of Riverwood SE](https://www.nexusmods.com/skyrimspecialedition/mods/1783)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Hunters Cabin of Riverwood SE](https://www.nexusmods.com/skyrimspecialedition/mods/1783)' ]
         condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Riverwood Hunting Cabin Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Lanterns of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/2429)' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Riverwood LoS Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Leaf Rest SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15191)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Leaf Rest SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15191)' ]
         condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Riverwood Leaf Rest Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Rigmor of Bruma](https://www.nexusmods.com/skyrimspecialedition/mods/5271)' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Riverwood Rigmor Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Realistic Lighting Overhaul SSE](https://www.nexusmods.com/skyrimspecialedition/mods/844)' ]
         condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Riverwood RLO Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Skyrim 3D Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18247)' ]
         condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Riverwood S3D Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Unique Locations - Riverwood Forest](https://www.nexusmods.com/skyrimspecialedition/mods/9258)'
-          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+      - <<: *patchIncluded
+        subs: [ '[Unique Locations - Riverwood Forest](https://www.nexusmods.com/skyrimspecialedition/mods/9258)' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
     tag:
       - C.Location
@@ -6126,10 +5718,8 @@ plugins:
     inc:
       - 'JKs Skyrim_Holidays_Patch.esp'
     msg:
-      - <<: *hasPluginPatch
-        subs:
-          - 'Holidays'
-          - '[JK''s Skyrim - Dawn of Skyrim - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+      - <<: *patchProvided
+        subs: [ 'Holidays' ]
         condition: 'active("Holidays.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
   - name: "JKs Skyrim.esp"
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
@@ -6158,75 +5748,49 @@ plugins:
             text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) is incompatible with JK''s Skyrim. Please use [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506) instead.'
           - lang: de
             text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) ist inkompatibel mit JK''s Skyrim. Bitte nutzen Sie stattdessen [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506).'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Better City Entrances'
-          - '[JK''s Skyrim SE Better City Entrances Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Better Docks'
-          - '[JK''s Skyrim SE Better Docks Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Better Docks' ]
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Bring Out Your Dead'
-          - '[JK''s Skyrim - Arthmoor''s Patch Pack](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Bring Out Your Dead' ]
         condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_BOYD_Patch.esp")  and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Carriage and Ferry Travel Overhaul'
-          - '[JK''s Skyrim SE CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
-      - <<: *hasPluginPatch
+      - <<: *patch3rdParty
         subs:
           - 'Dawn of Skyrim'
           - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
         condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Dawnstar'
-          - '[JK''s Skyrim SE Arthmoor''s Dawnstar Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Dawnstar' ]
         condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Dragon Bridge'
-          - '[JK''s Skyrim SE Arthmoor''s Dragon Bridge Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Dragon Bridge' ]
         condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ivarstead'
-          - '[JK''s Skyrim SE Arthmoor''s Ivarstead Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Ivarstead' ]
         condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Holidays'
-          - '[JK''s Skyrim SE Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Holidays' ]
         condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp") and not active("Blues Skyrim.esp")'
-      # - <<: *hasPluginPatch
-      #   subs:
-      #     - 'Leaf Rest'
-      #     - '[JK''s Skyrim SE Leaf Rest Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      # - <<: *patchProvided
+      #   subs: [ 'Leaf Rest' ]
       #   condition: 'active("LeafRest OnePiece.esp") and not active("JKs Skryim Leafrest Patch.esp") and not active("JKs Skyrim Leafrest Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Mirai'
-          - '[JK''s Skyrim SE Mirai Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Mirai' ]
         condition: 'active("zMirai.esp") and not active("JKs Skyrim_Mirai_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Open Cities Skyrim'
-          - '[JK''s Skyrim Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Realistic Water Two'
-          - '[JK''s Skyrim SE Realistic Water Two Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two']
         condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Thunderchild'
-          - '[JK''s Skyrim SE Thunderchild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/6289/)'
+      - <<: *patchProvided
+        subs: ['Thunderchild']
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
     clean:
       - crc: 0x39DAE47D # v1.2
@@ -6511,35 +6075,23 @@ plugins:
         subs:
           - '[Jobasha''s Books and WinterHold Restored Patch] (https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
         condition: 'active("sm_jobasha_bookshop.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Ambriel - The Lost Princess'
-          - '[Winterhold Restored Ambriel the Lost Princess Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+      - <<: *patchProvided
+        subs: [ 'Ambriel - The Lost Princess' ]
         condition: 'active("Ambriel.esp") and not active("Winterhold Restored - Ambriel Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Azura''s Shield'
-          - '[Winterhold Restored - Azura''s Shield SE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+      - <<: *patchProvided
+        subs: [ 'Azura''s Shield' ]
         condition: 'active("AzurasShield_SE_Eng.esp") and not active("Winterhold Restored - Azura''s Shield Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Holds - The City Overhaul'
-          - '[Winterhold Restored - Holds Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+      - <<: *patchProvided
+        subs: [ 'Holds - The City Overhaul' ]
         condition: 'active("Holds.esp") and not active("Winterhold Restored - Holds Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'JK''s Skyrim'
-          - '[Winterhold Restored - JKs Skyrim Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+      - <<: *patchProvided
+        subs: [ 'JK''s Skyrim' ]
         condition: 'active("JKs Skyrim.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'No Snow Under the Roof'
-          - '[Winterhold Restored - No Snow Under the Roof Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+      - <<: *patchProvided
+        subs: [ 'No Snow Under the Roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Winterhold Restored - NSUTR Patch.esp")'
-      - <<: *hasPluginPatch
-        subs:
-          - 'Windyridge - Player Home In Winterhold'
-          - '[Winterhold Restored - Windyridge Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12811/)'
+      - <<: *patchProvided
+        subs: [ 'Windyridge - Player Home In Winterhold' ]
         condition: 'active("windyridge.esp") and not active("Winterhold Restored - Windyridge Patch.esp")'
     tag:
       - C.Location
@@ -6841,345 +6393,209 @@ plugins:
     inc:
       - 'UnlimitedBookshelves.esp'
     msg:
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)' ]
         condition: 'active("AAE Ultimate Edition.esp") and not active("DBM_AAE_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Amulets of Skyrim SSE](https://www.nexusmods.com/skyrimspecialedition/mods/487/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Amulets of Skyrim SSE](https://www.nexusmods.com/skyrimspecialedition/mods/487/)' ]
         condition: 'active("SL01AmuletsSkyrim.esp") and not active("DBM_AmuletsOfSkyrim_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Apophysis Dragon Priest Masks SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Apophysis Dragon Priest Masks SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)' ]
         condition: 'active("Apophysis_DPM_SE.esp") and not active("DBM_Apophysis_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Artifacts - The Ice Blade of the Monarch](https://www.nexusmods.com/skyrimspecialedition/mods/13972/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Artifacts - The Ice Blade of the Monarch](https://www.nexusmods.com/skyrimspecialedition/mods/13972/)' ]
         condition: 'active("IceBladeOfTheMonarch.esp") and not active("DBM_IceBladeMonarch_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Artifacts - The Tournament of the Ten Bloods](https://www.nexusmods.com/skyrimspecialedition/mods/15264/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Artifacts - The Tournament of the Ten Bloods](https://www.nexusmods.com/skyrimspecialedition/mods/15264/)' ]
         condition: 'active("ArtifactsOfBoethiah.esp") and not active("DBM_ArtifactsOfBoethiah_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Artificer - Artifacts of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6674/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Artificer - Artifacts of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6674/)' ]
         condition: 'active("Artificer - Artifacts of Skyrim.esp") and not active("DBM_Artificer_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Audio Overhaul Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Audio Overhaul Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/12466/)' ]
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("DBM_AOS_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Better Skill and Quest Books Names SE](https://www.nexusmods.com/skyrimspecialedition/mods/5260/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Better Skill and Quest Books Names SE](https://www.nexusmods.com/skyrimspecialedition/mods/5260/)' ]
         condition: 'active("Better Skill and Quest Books Names SE.esp") and not active("BCS_BSQBN _Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Beyond Reach](https://www.nexusmods.com/skyrimspecialedition/mods/3008/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Beyond Reach](https://www.nexusmods.com/skyrimspecialedition/mods/3008/)' ]
         condition: 'active("arnima.esm") and not active("DBM_BeyondReach_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Beyond Skyrim - Bruma SE](https://www.nexusmods.com/skyrimspecialedition/mods/10917/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Beyond Skyrim - Bruma SE](https://www.nexusmods.com/skyrimspecialedition/mods/10917/)' ]
         condition: 'active("BSHeartland.esm") and not active("DBM_Bruma_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[BUVARP SE - Barely Used Vanilla Actors Recycle Project For SE](https://www.nexusmods.com/skyrimspecialedition/mods/13562/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[BUVARP SE - Barely Used Vanilla Actors Recycle Project For SE](https://www.nexusmods.com/skyrimspecialedition/mods/13562/)' ]
         condition: 'active("BUVARP.esp") and not active("DBM_BUVARP_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Cloaks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6369/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Cloaks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/6369/)' ]
         condition: 'active("Cloaks.esp") and not active("DBM_Cloaks_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/276/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/276/)' ]
         condition: 'active("Cutting Room Floor.esp") and not active("DBM_CRF_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Daedric Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/9530/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Daedric Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/9530/)' ]
         condition: 'active("DaedricCloaks.esp") and not active("DBM_DaedricCloaks_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Daedric Realms - Volume I The Hunting Grounds](https://www.nexusmods.com/skyrimspecialedition/mods/3140/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Daedric Realms - Volume I The Hunting Grounds](https://www.nexusmods.com/skyrimspecialedition/mods/3140/)' ]
         condition: 'active("StagPrinceBow.esp") and not active("DBM_StagPrinceBow_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Dark Brotherhood for Good Guys](https://www.nexusmods.com/skyrimspecialedition/mods/519/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Dark Brotherhood for Good Guys](https://www.nexusmods.com/skyrimspecialedition/mods/519/)' ]
         condition: 'active("goodbrother.esp") and not active("DBM_GoodBrother_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Dawnguard and Clan Volkihar Epilogues](https://www.nexusmods.com/skyrimspecialedition/mods/12098/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Dawnguard and Clan Volkihar Epilogues](https://www.nexusmods.com/skyrimspecialedition/mods/12098/)' ]
         condition: 'active("Dawnguard&VolkiharArtifactsQuests.esp") and not active("Legendary Skyrim Crossbows.esp") and not active("DBM_DGE_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Dawnguard and Clan Volkihar Epilogues](https://www.nexusmods.com/skyrimspecialedition/mods/12098/) & [Legendary Skyrim Crossbows SSE](https://www.nexusmods.com/skyrimspecialedition/mods/8273/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Dawnguard and Clan Volkihar Epilogues](https://www.nexusmods.com/skyrimspecialedition/mods/12098/) & [Legendary Skyrim Crossbows SSE](https://www.nexusmods.com/skyrimspecialedition/mods/8273/)' ]
         condition: 'active("Dawnguard&VolkiharArtifactsQuests.esp") and active("Legendary Skyrim Crossbows.esp") and not active("DBM_DGE_Crossbow_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Dynamic Dungeon Loot](https://www.nexusmods.com/skyrimspecialedition/mods/10308/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Dynamic Dungeon Loot](https://www.nexusmods.com/skyrimspecialedition/mods/10308/)' ]
         condition: 'active("DynamicDungeonLoot.esp") and not active("DBM_DDL_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Elemental Dragons Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/8394/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Elemental Dragons Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/8394/)' ]
         condition: 'active("Elemental_Dragons.esp") and not active("DBM_ElementalDragons_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Even Better Quest Objectives](https://www.nexusmods.com/skyrimspecialedition/mods/159/)' ]
         condition: 'active("BetterQuestObjectives.esp") and not active("BetterQuestObjectives - BCS Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Heavy Armory - New Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/6308/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Heavy Armory - New Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/6308/)' ]
         condition: 'active("Prvtl_HeavyArmory.esp") and not active("DBM_HA_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Helgen Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/5673/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Helgen Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/5673/)' ]
         condition: 'active("Helgen Reborn.esp") and not active("DBM_HelgenReborn_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Holds the City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Holds the City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609/)' ]
         condition: 'active("Holds.esp") and not active("DBM_Holds_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Immersive Armors](https://www.nexusmods.com/skyrimspecialedition/mods/3479/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Immersive Armors](https://www.nexusmods.com/skyrimspecialedition/mods/3479/)' ]
         condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("DBM_IA_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Immersive Jewelry SSE](https://www.nexusmods.com/skyrimspecialedition/mods/5336/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Immersive Jewelry SSE](https://www.nexusmods.com/skyrimspecialedition/mods/5336/)' ]
         condition: 'active("Immersive Jewelry.esp") and not active("DBM_ImmersiveJewelry_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Immersive Sounds - Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/523/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Immersive Sounds - Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/523/)' ]
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("DBM_ISC_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Immersive Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/16788/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Immersive Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/16788/)' ]
         condition: 'active("Immersive Weapons.esp") and not active("DBM_IW_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[iNeed - Food Water and Sleep](https://www.nexusmods.com/skyrimspecialedition/mods/645/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[iNeed - Food Water and Sleep](https://www.nexusmods.com/skyrimspecialedition/mods/645/)' ]
         condition: 'active("iNeed - Extended.esp") and not active("DBM_iNeed_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Legendary Skyrim Crossbows SSE](https://www.nexusmods.com/skyrimspecialedition/mods/8273/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Legendary Skyrim Crossbows SSE](https://www.nexusmods.com/skyrimspecialedition/mods/8273/)' ]
         condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Dawnguard&VolkiharArtifactsQuests.esp") and not active("DBM_KelCrossbowPatch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Moon and Star](https://www.nexusmods.com/skyrimspecialedition/mods/4301/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Moon and Star](https://www.nexusmods.com/skyrimspecialedition/mods/4301/)' ]
         condition: 'active("MoonAndStar_MAS.esp") and not active("DBM_MAS_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)' ]
         condition: 'active("MLU.esp") and not active("DBM_MLU_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Mystic Condenser SE](https://www.nexusmods.com/skyrimspecialedition/mods/10176/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Mystic Condenser SE](https://www.nexusmods.com/skyrimspecialedition/mods/10176/)' ]
         condition: 'active("Mystic Condenser.esp") and not active("DBM_MysticCondenser_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Namira for Good Guys](https://www.nexusmods.com/skyrimspecialedition/mods/336/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Namira for Good Guys](https://www.nexusmods.com/skyrimspecialedition/mods/336/)' ]
         condition: 'active("AK- Namira for Good Guys.esp") and not active("DBM_Namira_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Not So Fast - Main Quest](https://www.nexusmods.com/skyrimspecialedition/mods/2475/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Not So Fast - Main Quest](https://www.nexusmods.com/skyrimspecialedition/mods/2475/)' ]
         condition: 'active("NotSoFast-MainQuest.esp") and not active("BCS_NotSoFast_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Oblivion Artifact Pack SE](https://www.nexusmods.com/skyrimspecialedition/mods/10644/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Oblivion Artifact Pack SE](https://www.nexusmods.com/skyrimspecialedition/mods/10644/)' ]
         condition: 'active("WZOblivionArtifacts.esp") and not active("DBM_OblivionArtifacts_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281/)' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("DBM_OpenCities_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Opulent Outfits AIO](https://www.nexusmods.com/skyrimspecialedition/mods/861/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Opulent Outfits AIO](https://www.nexusmods.com/skyrimspecialedition/mods/861/)' ]
         condition: 'active("OpulentOutfits_2017-SSE AIO.esp") and not active("DBM_OpulentAIO_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Opulent Outfits Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/861/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Opulent Outfits Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/861/)' ]
         condition: 'active("OpulentOutfits_2017-SSE Replacer.esp") and not active("DBM_OpulentREP_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Path of the Revenant](https://www.nexusmods.com/skyrimspecialedition/mods/2352/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Path of the Revenant](https://www.nexusmods.com/skyrimspecialedition/mods/2352/)' ]
         condition: 'active("bloodworm.esp") and not active("DBM_Bloodworm_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Palaces and Castles Enhanced](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Palaces and Castles Enhanced](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)' ]
         condition: 'active("Palaces Castles Enhanced.esp") and not active("PCE - Legacy of the Dragonborn Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Project AHO](https://www.nexusmods.com/skyrimspecialedition/mods/15996/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Project AHO](https://www.nexusmods.com/skyrimspecialedition/mods/15996/)' ]
         condition: 'active("Dwarfsphere.esp") and not active("DBM_AHO_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Reach Magic](https://www.nexusmods.com/skyrimspecialedition/mods/5209/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Reach Magic](https://www.nexusmods.com/skyrimspecialedition/mods/5209/)' ]
         condition: 'active("ReachMage.esp") and not active("DBM_ReachMage_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Realistic Needs and Diseases All-In-One for USSEP](https://www.nexusmods.com/skyrimspecialedition/mods/3487/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Realistic Needs and Diseases All-In-One for USSEP](https://www.nexusmods.com/skyrimspecialedition/mods/3487/)' ]
         condition: 'active("RealisticNeedsandDiseases.esp") and not active("DBM_RND_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Relics of Hyrule SE - A DLC Scale Zelda Mod](https://www.nexusmods.com/skyrimspecialedition/mods/12244/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Relics of Hyrule SE - A DLC Scale Zelda Mod](https://www.nexusmods.com/skyrimspecialedition/mods/12244/)' ]
         condition: 'active("RelicsofHyruleDragonborn.esp") and not active("DBM_RelicsofHyrule_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Royal Armory - New Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/6994/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Royal Armory - New Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/6994/)' ]
         condition: 'active("PrvtlRoyalArmory.esp") and not active("DBM_RoyalArmory_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)' ]
         condition: 'active("RSChildren.esp") and not active("DBM_RSChildren.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Ruin''s Edge](https://www.nexusmods.com/skyrimspecialedition/mods/12792/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Ruin''s Edge](https://www.nexusmods.com/skyrimspecialedition/mods/12792/)' ]
         condition: 'active("RuinsEdge.esp") and not active("DBM_RuinsEdge_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Alchemy and Food Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/12343/)' ]
         condition: 'active("SAFO.esp") and not active("DBM_SAFO_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("DBM_ImmersiveCreatures_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim Revamped - Loot and Encounter Zones](https://www.nexusmods.com/skyrimspecialedition/mods/14338/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Revamped - Loot and Encounter Zones](https://www.nexusmods.com/skyrimspecialedition/mods/14338/)' ]
         condition: 'active("Skyrim Revamped.esp") and not active("DBM_SRLEZ_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim Revamped - Complete Enemy Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/14598/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Revamped - Complete Enemy Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/14598/)' ]
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("DBM_SRCEO_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Skyrim Underground](https://www.nexusmods.com/skyrimspecialedition/mods/131/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Skyrim Underground](https://www.nexusmods.com/skyrimspecialedition/mods/131/)' ]
         condition: 'active("AKSkyrimUnderground.esp") and not active("DBM_SkyrimUnderground_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[SkyTEST - Harder Creatures](https://www.nexusmods.com/skyrimspecialedition/mods/789/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[SkyTEST - Harder Creatures](https://www.nexusmods.com/skyrimspecialedition/mods/789/)' ]
         condition: 'active("SkyTEST-HarderCreatures.esp") and not active("DBM_STHC_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Snazzy Furniture and Clutter Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2414/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Snazzy Furniture and Clutter Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2414/)' ]
         condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("SFCO - LotD Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Solitude Skyway](https://www.nexusmods.com/skyrimspecialedition/mods/8250/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Solitude Skyway](https://www.nexusmods.com/skyrimspecialedition/mods/8250/)' ]
         condition: 'active("Solitude Skyway SE.esp") and not active("DBM_Skyway_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Tamrielic Culture](https://www.nexusmods.com/skyrimspecialedition/mods/11418/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Tamrielic Culture](https://www.nexusmods.com/skyrimspecialedition/mods/11418/)' ]
         condition: 'active("WZTamrielic Culture.esp") and not active("DBM_TamrielicCulture_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[The Choice is Yours](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[The Choice is Yours](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)' ]
         condition: 'active("TheChoiceIsYours.esp") and not active("BCS_TCIY_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[The Men of Winter SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10902/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[The Men of Winter SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10902/)' ]
         condition: 'active("Men of Winter.esp") and not active("DBM_MenofWinter_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[The Staff of Sheogorath](https://www.nexusmods.com/skyrimspecialedition/mods/14468/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[The Staff of Sheogorath](https://www.nexusmods.com/skyrimspecialedition/mods/14468/)' ]
         condition: 'active("StaffOfSheogorath.esp") and not active("DBM_StaffofSheogorath_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[True Artifacts of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/8832/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[True Artifacts of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/8832/)' ]
         condition: 'active("TrueArtifactsofSkyrim.esp") and not active("DBM_TAS_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Ultimate Deadly Encounters](https://www.nexusmods.com/skyrimspecialedition/mods/3093/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Ultimate Deadly Encounters](https://www.nexusmods.com/skyrimspecialedition/mods/3093/)' ]
         condition: 'active("SOTFull.esp") and not active("DBM_SoT_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Undeath Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/6180/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Undeath Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/6180/)' ]
         condition: 'active("Undeath.esp") and not active("DBM_Undeath_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Unique Loot - An Immersive Looting Experience](https://www.nexusmods.com/skyrimspecialedition/mods/734/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Unique Loot - An Immersive Looting Experience](https://www.nexusmods.com/skyrimspecialedition/mods/734/)' ]
         condition: 'active("mrbs-uniqueloot-se.esp") and not active("DBM_UniqueLoot_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[VIGILANT SE](https://www.nexusmods.com/skyrimspecialedition/mods/11849/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[VIGILANT SE](https://www.nexusmods.com/skyrimspecialedition/mods/11849/)' ]
         condition: 'active("Vigilant.esp") and not active("DBM_Vigilant_Patch.esp") and not active("LOTD Patches Merged.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Wild World](https://www.nexusmods.com/skyrimspecialedition/mods/14616/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Wild World](https://www.nexusmods.com/skyrimspecialedition/mods/14616/)' ]
         condition: 'active("Wild World.esp") and not active("DBM_WildWorld_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[YASH - Yet Another Skyrim Hardcore Mod](https://www.nexusmods.com/skyrimspecialedition/mods/2430/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[YASH - Yet Another Skyrim Hardcore Mod](https://www.nexusmods.com/skyrimspecialedition/mods/2430/)' ]
         condition: 'active("YASH2.esp") and not active("DBM_YASH_Patch.esp")'
-      - <<: *hasPatchIncluded
-        subs:
-          - '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)'
-          - '[Legacy of the Dragonborn Patches SE](https://www.nexusmods.com/skyrimspecialedition/mods/11802)'
+      - <<: *patchProvided
+        subs: [ '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)' ]
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("DBM_ZimsImmersiveArtifacts_Patch.esp")'
     tag:
       - C.Location
