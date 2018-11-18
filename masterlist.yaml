@@ -111,6 +111,11 @@ common:
         text: '削除してください。既に%1%に含まれています。'
       - lang: de
         text: 'Löschen. Bereits in %1% enthalten.'
+  - &deletePlugin
+    type: warn
+    content:
+      - lang: en
+        text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
   - &useOnlyOneX
     type: error
     content:
@@ -2232,13 +2237,13 @@ plugins:
 #################################
 ## Character Appearance - NPCs ##
 #################################
-  - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp'
+  - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018| Warmaidens)\.esp'
     group: *addonsGroup
     after:
       - 'BUVARP.esp'
       - 'CollegeOfWinterholdImmersive.esp'
       - 'Cutting Room Floor.esp'
-      - 'Relationship Dialogue Overhaul.esp'
+      - 'Immersive Weapons.esp'
       - 'ScopedBows.esp'
     msg:
       - <<: *useOnlyOneX
@@ -2253,73 +2258,68 @@ plugins:
       - 'Bijin AIO.esp'
       - 'Bijin_AIO 2018.esp'
       - 'Bijin_AIO-SV 2018.esp'
+      - 'Bijin Warmaidens.esp'
     clean:
       - crc: 0x27234EF5
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Bijin Wives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
+    group: *addonsGroup
     after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-      - name: 'BijinAIO_SSE-3.1.1.esp'
-        display: 'Bijin AIO Legendary SSE'
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
     msg:
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Bijin Wives.esp") and active("BijinAIO_SSE-3.1.1.esp")'
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SSE' ]
+        condition: 'active("Bijin Wives.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: 'Bijin NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/' ]
+    group: *addonsGroup
     after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-      - name: 'BijinAIO_SSE-3.1.1.esp'
-        display: 'Bijin AIO Legendary SSE'
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
+      - 'Immersive Weapons.esp'
     msg:
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Bijin NPCs.esp") and active("BijinAIO_SSE-3.1.1.esp")'
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SSE' ]
+        condition: 'active("Bijin NPCs.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: 'Bijin Warmaidens.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1825/' ]
+    group: *addonsGroup
     after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-      - name: 'BijinAIO_SSE-3.1.1.esp'
-        display: 'Bijin AIO Legendary SSE'
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
     msg:
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Bijin Warmaidens.esp") and active("BijinAIO_SSE-3.1.1.esp")'
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SSE' ]
+        condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: 'Serana.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
+    group: *addonsGroup
     after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      - name: 'Bijin_AIO-SV 2018.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
     msg:
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Serana.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SV SSE' ]
+        condition: 'active("Serana.esp") and active("Bijin_AIO-SV 2018.esp")'
   - name: 'Valerica.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
+    group: *addonsGroup
     after:
-      - name: 'BijinAIO_SSE-3.1.1-SV.esp'
+      - name: 'Bijin_AIO-SV 2018.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
     msg:
-      - type: warn
-        content: 'Bijin AIO SSE recommends that you deactivate this ESP.'
-        condition: 'active("Valerica.esp") and active("BijinAIO_SSE-3.1.1-SV.esp")'
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SV SSE' ]
+        condition: 'active("Valerica.esp") and active("Bijin_AIO-SV 2018.esp")'
   - name: 'CosmeticVampireOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
     after:
@@ -2988,7 +2988,7 @@ plugins:
         itm: 6
     clean:
       - crc: 0xE147B0BB # v2.0
-        util: '[SSEEdit v3.3.0 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.0 BETA'
 ##############
 ## Gameplay ##
 ##############
@@ -5020,7 +5020,7 @@ plugins:
         itm: 3
     clean:
       - crc: 0x695161E0 # v3.2 after manual cleaning
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.4 BETA'
   - name: 'Undeath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
@@ -5369,7 +5369,7 @@ plugins:
         nav: 1
     clean:
       - crc: 0xAD2C8F21 # v1.82 after QAC & manual cleaning
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.4 BETA'
   - name: 'Distinct Interiors - Guilds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
@@ -5412,7 +5412,7 @@ plugins:
         nav: 1
     clean:
       - crc: 0xBE5B4F4A # v1.82 after manual cleaning
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.4 BETA'
   - name: 'Distinct Interiors - Shops.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *addonsGroup
@@ -5906,7 +5906,7 @@ plugins:
         itm: 18
     clean:
       - crc: 0xEBD35943 # v2.1
-        util: '[SSEEdit v3.3.0 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.0 BETA'
   - name: 'PCE - RLO Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
@@ -6867,7 +6867,7 @@ plugins:
       - Sound
     clean:
       - crc: 0xAD94325D
-        util: '[SSEEdit v3.3.2 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.2 BETA'
   - name: 'Qw_DeadlySpellImpacts_ISC Patch.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     after:
@@ -6877,7 +6877,7 @@ plugins:
       - Sound
     clean:
       - crc: 0xCB4A70D5
-        util: '[SSEEdit v3.3.2 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: 'SSEEdit v3.3.2 BETA'
   - name: 'Qw_ISC_USSEP Patch.esp'
     tag:
       - Sound
