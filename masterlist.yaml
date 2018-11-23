@@ -2772,6 +2772,34 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Alternate Start' ]
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Landscape Fixes For Grass mods - Alternate start Locations.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("Landscape Fixes For Grass mods - Cutting Room Floor Locations.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Dragon Bridge' ]
+        condition: 'active("Dragon Bridge.esp") and not active("Landscape For Grass Mods - Arthmoor''s Dragon Bridge PATCH.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Shor''s Stone' ]
+        condition: 'active("Shor''s Stone.esp") and not active("Landscape For Grass Mods Arthmoor''s Shor''s Stone PATCH.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Landscape For Grass Mods -Immersive Citizens PATCH.esp")'
+      - <<: *patchProvided
+        subs: [ 'JK''S Skyrim' ]
+        condition: 'active("JKs Skyrim.esp") and not active("Landscape For Grass Mods JK''S Skyrim.esp")'
+      - <<: *patchProvided
+        subs: [ 'Moon and Star' ]
+        condition: 'active("MoonAndStar_MAS.esp") and not active("Landscape For Grass Mods - Moon and Star PATCH.esp")'
+      - <<: *patchProvided
+        subs: [ 'Provincial Courier Service' ]
+        condition: 'active("Provincial Courier Service.esp") and not active("Landscape For Grass Mods -Provincial Courier PATCH.esp")'
+      - <<: *patchProvided
+        subs: [ 'Valkyrja Estate' ]
+        condition: 'active("ValkyrjaEstate.esp") and not active("Landscape For Grass Mods - Valkyrja Estate PATCH.esp")'
   - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
