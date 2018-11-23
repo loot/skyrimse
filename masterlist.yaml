@@ -5224,9 +5224,11 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
     msg:
-      - <<: *patchProvided
-        subs: [ 'RS Children Overhaul' ]
-        condition: 'active("RSkyrimChildren.esm") and not active("RSChildren - CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs: 
+          - 'RS Children Overhaul' 
+          - '[ RS Children Overhaul Cutting Room Floor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/8753)'
+        condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
