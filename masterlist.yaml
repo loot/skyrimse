@@ -354,16 +354,13 @@ groups:
   - name: &iCitizenGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
-  - name: &altStartGroup Alternate Start
-    after:
-      - *iCitizenGroup
-      - *addonsGroup
-
   - name: &coreGroup Core Mods
-    after: [ *altStartGroup ]
+    after: [ *iCitizenGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
-    after: [ *coreGroup ]
+    after:
+      - *coreGroup
+      - *addonsGroup
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -1466,6 +1463,7 @@ plugins:
         name: 'Enhanced Lights and FX on Nexus Mods'
     group: *highPriorityGroup
     after:
+      - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Citizens - OCS patch.esp'
       - 'Open Cities Skyrim.esp'
     inc:
@@ -1539,6 +1537,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     group: *highPriorityGroup
     after:
+      - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Citizens - OCS patch.esp'
       - 'Open Cities Skyrim.esp'
     inc:
@@ -1556,6 +1555,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     group: *highPriorityGroup
     after:
+      - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Citizens - OCS patch.esp'
       - 'Open Cities Skyrim.esp'
     inc:
@@ -3133,7 +3133,7 @@ plugins:
         name: 'Alternate Start - Live Another Life on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
         name: 'Alternate Start - Live Another Life on Bethesda.net'
-    group: *altStartGroup
+    group: *highPriorityGroup
     inc:
       - 'Original Opening Scene.esp'
       - 'Random Alternate Start.esp'
@@ -3152,7 +3152,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/'
         name: 'Alternate Start - LAL Extension - New Beginnings on Nexus Mods'
-    group: *altStartGroup
     tag:
       - Scripts
       - -Sound
