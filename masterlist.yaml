@@ -351,11 +351,8 @@ groups:
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
 
-  - name: &iCitizenGroup Immersive Citizens
-    after: [ *lowPriorityGroup ]
-
   - name: &coreGroup Core Mods
-    after: [ *iCitizenGroup ]
+    after: [ *lowPriorityGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after:
@@ -3377,7 +3374,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
         name: 'Extensible Follower Framework on Nexus Mods'
-    group: *iCitizenGroup
+    group: *lowPriorityGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
     clean:
@@ -3439,7 +3436,7 @@ plugins:
         name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
         name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
-    group: *iCitizenGroup
+    group: *lowPriorityGroup
     inc:
       - 'Arthmoor''s Skyrim Villages - All In One.esp'
       - name: 'iWil_BelethorsGoodStore.esp'
@@ -3976,7 +3973,7 @@ plugins:
       - 'Thief skills rebalance for Ordinator.esp'
   - name: 'Relationship Dialogue Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    group: *iCitizenGroup
+    group: *lowPriorityGroup
     inc:
       - name: 'Immersive Horses.esp'
         condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
@@ -4012,7 +4009,7 @@ plugins:
       - crc: 0x20DC9B97 # vFinal
         util: 'SSEEdit v3.2.1'
   - name: '(RDO|Relationship Dialogue Overhaul) - *\Patch.esp'
-    group: *iCitizenGroup
+    group: *lowPriorityGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'RDO - CRF + USSEP Patch.esp'
