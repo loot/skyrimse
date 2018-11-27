@@ -351,34 +351,19 @@ groups:
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ default ]
 
-  - name: &iCitizenGroup Immersive Citizens
+  - name: &coreGroup Core Mods
     after: [ *lowPriorityGroup ]
 
-  - name: &altStartGroup Alternate Start
-    after:
-      - *iCitizenGroup
-      - *addonsGroup
-
-  - name: &coreGroup Core Mods
-    after: [ *altStartGroup ]
-
-  - name: &ocsGroup Open Cities
-    after: [ *coreGroup ]
-
   - name: &highPriorityGroup High Priority Overrides
-    after: [ *coreGroup ]
+    after:
+      - *coreGroup
+      - *addonsGroup
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
 
-  - name: &eleGroup Enhanced Lighting
-    after: [ *lateLoadersGroup ]
-
-  - name: &rwtGroup Realistic Water
-    after: [ *eleGroup ]
-
   - name: &lvlListsGroup Leveled List Modifiers
-    after: [ *rwtGroup ]
+    after: [ *lateLoadersGroup ]
 
   - name: &dispersedGroup Dispersed
 
@@ -1456,7 +1441,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *eleGroup
+    group: *highPriorityGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFX - Hardcore.esp'
@@ -1474,6 +1459,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
     group: *highPriorityGroup
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Immersive Citizens - OCS patch.esp'
+      - 'Open Cities Skyrim.esp'
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
@@ -1506,7 +1495,7 @@ plugins:
       - 'Soljund''s Sinkhole.esp'
       - 'TheChoiceIsYours.esp'
       - 'Whistling Mine.esp'
-    group: *eleGroup
+    group: *highPriorityGroup
     inc:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
@@ -1543,7 +1532,11 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Luminosity - Lightweight Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *eleGroup
+    group: *highPriorityGroup
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Immersive Citizens - OCS patch.esp'
+      - 'Open Cities Skyrim.esp'
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
@@ -1557,7 +1550,11 @@ plugins:
         util: 'SSEEdit v3.2.44'
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *eleGroup
+    group: *highPriorityGroup
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Immersive Citizens - OCS patch.esp'
+      - 'Open Cities Skyrim.esp'
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
@@ -2706,7 +2703,6 @@ plugins:
       - crc: 0x6EE1676E
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'zMirai_OCS_Patch.esp'
-    group: *ocsGroup
     clean:
       - crc: 0x1F2A30C3
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
@@ -2956,7 +2952,7 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'RealisticWaterTwo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
-    group: *rwtGroup
+    group: *lateLoadersGroup
     tag:
       - C.Water
       - Graphics
@@ -2970,7 +2966,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'RealisticWaterTwo.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
-    group: *rwtGroup
+    group: *lateLoadersGroup
     after:
       - 'JK''s Riverwood.esp'
       - 'JKs Whiterun.esp'
@@ -3024,9 +3020,9 @@ plugins:
       - 'FarmhouseChimneysWhistlingMine.esp'
   - name: 'RWT.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
-    group: *rwtGroup
+    group: *lateLoadersGroup
   - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
-    group: *rwtGroup
+    group: *lateLoadersGroup
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
     clean:
@@ -3134,7 +3130,7 @@ plugins:
         name: 'Alternate Start - Live Another Life on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
         name: 'Alternate Start - Live Another Life on Bethesda.net'
-    group: *altStartGroup
+    group: *highPriorityGroup
     inc:
       - 'Original Opening Scene.esp'
       - 'Random Alternate Start.esp'
@@ -3153,7 +3149,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/'
         name: 'Alternate Start - LAL Extension - New Beginnings on Nexus Mods'
-    group: *altStartGroup
     tag:
       - Scripts
       - -Sound
@@ -3379,8 +3374,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
         name: 'Extensible Follower Framework on Nexus Mods'
-    group: *iCitizenGroup
     after:
+      - 'BUVARP.esp'
       - 'Relationship Dialogue Overhaul.esp'
     clean:
       - crc: 0xE0305B2C # v4.0.3
@@ -3441,7 +3436,7 @@ plugins:
         name: 'Immersive Citizens - AI Overhaul SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
         name: 'Immersive Citizens - AI Overhaul [PC] on Bethesda.net'
-    group: *iCitizenGroup
+    group: *lowPriorityGroup
     inc:
       - 'Arthmoor''s Skyrim Villages - All In One.esp'
       - name: 'iWil_BelethorsGoodStore.esp'
@@ -3526,7 +3521,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELE patch on Nexus Mods'
-    group: *eleGroup
     clean:
       - crc: 0x9F0CBF8B # v0.4
         util: 'SSEEdit v3.2.1'
@@ -3534,7 +3528,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELFXEnhancer patch on Nexus Mods'
-    group: *eleGroup
     clean:
       - crc: 0x4865A412 # v0.4
         util: 'SSEEdit v3.2.1'
@@ -3542,7 +3535,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - ELFXHardcore patch on Nexus Mods'
-    group: *highPriorityGroup
     clean:
       - crc: 0x834C7779 # v0.4
         util: 'SSEEdit v3.2.1'
@@ -3550,7 +3542,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
         name: 'Immersive Citizens - Open Cities patch on Nexus Mods'
-    group: *highPriorityGroup
     clean:
       - crc: 0x6227D18D # v0.4
         util: 'SSEEdit v3.2.1'
@@ -3595,6 +3586,7 @@ plugins:
         name: 'Imperious - Races of Skyrim [PC] on Bethesda.net'
     group: *lowPriorityGroup
     after:
+      - 'Immersive Citizens - AI Overhaul.esp'
       - 'Joy of Perspective.esp'
     tag:
       - Body-Size-F
@@ -3678,19 +3670,10 @@ plugins:
       - crc: 0xED643590
         util: 'SSEEdit v3.2.2'
   - name: 'Lock_Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
-    group: *coreGroup
-    inc:
-      - name: 'Ordinator - Perks of Skyrim.esp'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and checksum("Lock_Overhaul.esp", B7986707)'
-        display: 'Ordinator - Perks of Skyrim'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]  
     req:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
-    msg:
-      - type: error
-        content: 'Lock Overhaul - Ordinator Version is required.'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
     clean:
       - crc: 0xB7986707 # v1.6
         util: 'SSEEdit v3.2.79 EXPERIMENTAL'
@@ -3830,7 +3813,7 @@ plugins:
         name: 'Open Cities Skyrim on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
         name: 'Open Cities Skyrim on Bethesda.net'
-    group: *ocsGroup
+    group: *highPriorityGroup
     inc:
       - name: 'JKs Skyrim.esp'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
@@ -3991,7 +3974,6 @@ plugins:
       - 'Thief skills rebalance for Ordinator.esp'
   - name: 'Relationship Dialogue Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    group: *iCitizenGroup
     inc:
       - name: 'Immersive Horses.esp'
         condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
@@ -4027,7 +4009,6 @@ plugins:
       - crc: 0x20DC9B97 # vFinal
         util: 'SSEEdit v3.2.1'
   - name: '(RDO|Relationship Dialogue Overhaul) - *\Patch.esp'
-    group: *iCitizenGroup
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'RDO - CRF + USSEP Patch.esp'
@@ -4407,6 +4388,7 @@ plugins:
       - 'Smilodon - Combat of Skyrim.esp'
     after:
       - 'Animal Tweaks.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive NPC in the dark.esp'
       - 'Imperious - Races of Skyrim.esp'
       - 'New Weapon Parry.esp'
@@ -7000,17 +6982,14 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
         name: 'Bells of Skyrim on Nexus Mods'
-    group: *highPriorityGroup
   - name: 'Bells of Skyrim - OCS Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
         name: 'Bells of Skyrim on Nexus Mods'
-    group: *highPriorityGroup
   - name: 'Bells of Skyrim - ICAIO Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
         name: 'Bells of Skyrim on Nexus Mods'
-    group: *highPriorityGroup
   - name: 'Qw_ELE_.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16923/'
@@ -7106,7 +7085,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19518'
         name: 'kryptopyr''s Patch Hub on Nexus Mods'
-    group: *coreGroup
     clean:
       - crc: 0x4D49E27E
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
