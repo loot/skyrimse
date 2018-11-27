@@ -368,11 +368,8 @@ groups:
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
 
-  - name: &eleGroup Enhanced Lighting
-    after: [ *lateLoadersGroup ]
-
   - name: &rwtGroup Realistic Water
-    after: [ *eleGroup ]
+    after: [ *highPriorityGroup ]
 
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *rwtGroup ]
@@ -1453,7 +1450,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *eleGroup
+    group: *highPriorityGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFX - Hardcore.esp'
@@ -1503,7 +1500,7 @@ plugins:
       - 'Soljund''s Sinkhole.esp'
       - 'TheChoiceIsYours.esp'
       - 'Whistling Mine.esp'
-    group: *eleGroup
+    group: *highPriorityGroup
     inc:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
@@ -1540,7 +1537,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Luminosity - Lightweight Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *eleGroup
+    group: *highPriorityGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
@@ -1554,7 +1551,7 @@ plugins:
         util: 'SSEEdit v3.2.44'
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *eleGroup
+    group: *highPriorityGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
