@@ -3600,6 +3600,11 @@ plugins:
       - *includesMBBF
       - <<: *patch3rdParty
         subs:
+          - 'Ethereal Elven Overhaul'
+          - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
+        condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Skyrim Sizes Lore Edition'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
