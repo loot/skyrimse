@@ -3598,6 +3598,11 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Sizes Lore Edition'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
     clean:
       - crc: 0xE889ADEB # v7.24SSE
         util: 'SSEEdit v3.2.1'
