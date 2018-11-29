@@ -983,9 +983,14 @@ plugins:
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
       - <<: *semiCompatible
         subs:
-          - '[MajesticMountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
+          - '[Majestic Mountains](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
           - 'Snow''s shader conflict: If the Better Dynamic Snow''s shader is preferred to the Majestic Mountain''s shader. Then set a rule to load Better Dynamic Snow after Majestic Mountain''s. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/9121?tab=description)'
-        condition: 'active("Better Dynamic Snow.esp") and active("MajesticMountains.esp")'
+        condition: 'active("Better Dynamic Snow.esp") and active("MajesticMountains.esp")  and not active("BDS - MM Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Majestic Mountains'
+          - '[ Better Dynamic Majestic Mountains ](https://www.nexusmods.com/skyrimspecialedition/mods/20102)'
+        condition: 'active("MajesticMountains.esp")  and not active("BDS - MM Patch.esp")'
     tag:
       - Graphics
     clean:
@@ -1000,6 +1005,15 @@ plugins:
     clean:
       - crc: 0xA81E5289 # v2.7.2
         util: 'SSEEdit v3.2.1'
+  - name: 'BDS - MM Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
+        name: 'Better Dynamic Majestic Mountains on Nexus Mods'
+    tag:
+      - Graphics
+    clean:
+      - crc: 0x48663487 #1
+        util: 'SSEEdit v3.3.8a BETA'
   - name: 'dD - Enhanced Blood Main.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
@@ -2566,6 +2580,16 @@ plugins:
     clean:
       - crc: 0xF0576FC2 # v1.6
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Rebalanced Encounter Zones.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25/' ]
+    after:
+      - 'MLU.esp'
+      - 'MLU_EZupdate.esp'
+      - 'MLU - Vanilla Encounter Zones.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Rebalanced Encounter Zones.*\.esp")'
+        subs: [ 'Rebalanced Encounter Zones' ]
   - name: 'Rigmor.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5271/'
@@ -2786,14 +2810,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Valkyrja Estate' ]
         condition: 'active("ValkyrjaEstate.esp") and not active("Landscape For Grass Mods - Valkyrja Estate PATCH.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x335C75A5 # v4.3
-        util: 'SSEEdit v3.3.6 BETA'
-        itm: 3
     clean:
-      - crc: 0xAFDD11B7 # v4.3
-        util: 'SSEEdit v3.3.6 BETA'
+      - crc: 0x1B69D20B # v4.4
+        util: 'SSEEdit v3.3.8a BETA'
   - name: 'Landscape Fixes For Grass mods - Alternate start Locations.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
@@ -3588,6 +3607,16 @@ plugins:
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Joy of Perspective.esp'
+    inc:
+      - name: 'GRACE.esp'
+        display: 'SkyGrace - Skyrim Gender Race And Class Enhancements'
+      - 'Morroblivion Racial Traits.esp'
+      - 'Racial Body Morphs.esp'
+      - 'Racial Body Morphs - Extreme Morphs.esp'
+      - 'Racial Body Morphs - Subtle.esp'
+      - 'SkyRe_Races.esp'
+      - 'Subtle but Classless.esp'
+      - 'TsunPassiveRacialAbilities.esp'
     tag:
       - Body-Size-F
       - Body-Size-M
@@ -3598,6 +3627,21 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
+      - <<: *patch3rdParty
+        subs:
+          - 'Disparity - Player Character Class, Race and Gender Diversity'
+          - '[ Imperious and Disparity Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/13127/)'
+        condition: 'active("Disparity.esp") and not active("Imperious Disparity Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Ethereal Elven Overhaul'
+          - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
+        condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Sizes Lore Edition'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
     clean:
       - crc: 0xE889ADEB # v7.24SSE
         util: 'SSEEdit v3.2.1'
@@ -3698,6 +3742,12 @@ plugins:
         name: 'Morrowloot Ultimate Simplified on Nexus Mods'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod - MLU.esp Replacer on Nexus Mods'
+    after:
+      - 'Weapon AF.esp'
+      - 'WACCF_Armor and Clothing Extension.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+    inc:
+      - 'WACCF_BashedPatchLvlListFix.esp'
     msg:
       - <<: *patchProvided
         subs: [ '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)' ]
@@ -4292,6 +4342,21 @@ plugins:
     clean:
       - crc: 0x725F1E2E # v1.7
         util: 'SSEEdit v3.2.1'
+  - name: 'SwiftPotion.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/'
+        name: 'Swift Potion Reborn on Nexus Mods'
+    req:
+      - name: 'SKSE/Plugins/JContainers64.dll'
+        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+        condition: 'file("scripts/_AP_Main.pex")'
+      - *SKSE64
+      - *SkyUI
+    clean:
+      - crc: 0x5DEC1D9A # V3.1 - No JContainers
+        util: 'SSEEdit v3.3.8a BETA'
+      - crc: 0x73CA3AE4 # V4.0
+        util: 'SSEEdit v3.3.8a BETA'
   - name: 'Thunderchild - Epic Shout Package.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
     msg:
