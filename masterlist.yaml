@@ -1800,7 +1800,6 @@ plugins:
         condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
-    group: *earlyLoadersGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
     inc:
@@ -1870,7 +1869,6 @@ plugins:
         name: 'Sounds of Skyrim - The Wilds on Nexus Mods'
     after:
       - 'LSFX-SSE-Audiosettings.esp'
-    group: *earlyLoadersGroup
     inc:
       - 'SoundsofSkyrimComplete.esp'
     tag:
@@ -1882,7 +1880,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
         name: 'Sounds of Skyrim - Civilization on Nexus Mods'
-    group: *earlyLoadersGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
     inc:
@@ -1897,7 +1894,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
         name: 'Sounds of Skyrim - The Dungeons on Nexus Mods'
-    group: *earlyLoadersGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
     inc:
@@ -2972,76 +2968,38 @@ plugins:
   - name: 'RealisticWaterTwo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
     group: *lateLoadersGroup
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Immersive Citizens - OCS patch.esp'
+      - 'Open Cities Skyrim.esp'
+      - 'SoundsofSkyrimComplete.esp'
     tag:
       - C.Water
       - Graphics
       - Sound
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'iNeed - Food, Water and Sleep' ]
+        condition: 'active("iNeed.esp") and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Realistic Needs and Diseases' ]
+        condition: 'active("RealisticNeedsandDiseases.esp") and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("RealisticWaterTwo - Open Cities.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Paper World Map' ]
+        condition: 'active("Paper World Map.esp") and not active("RealisticWaterTwo - Paper Wold Map Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The People Of Skyrim Complete' ]
+        condition: 'active("tpos_ultimate_esm.esp") and not active("RWT - People of Skyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Wyrmstooth' ]
+        condition: 'active("Wyrmstooth.esp") and not active("RealisticWaterTwo - Wyrmstooth.esp")'
     clean:
-      - crc: 0xB2812DAF # v1.4.4
-        util: 'SSEEdit v3.2.1'
-      - crc: 0xCF76C1B9 # v1.5.2
-        util: 'SSEEdit v3.2.1'
-      - crc: 0x2BDAE302 # v1.5.3
-        util: 'SSEEdit v3.2.1'
-  - name: 'RealisticWaterTwo.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
-    group: *lateLoadersGroup
-    after:
-      - 'JK''s Riverwood.esp'
-      - 'JKs Whiterun.esp'
-      - 'JKs Whiterun exterior.esp'
-      - 'Bring Out Your Dead.esp'
-      - 'CWIOCSSEPatch.esp'
-      - 'Darkwater Crossing.esp'
-      - 'Helarchen Creek.esp'
-      - 'Ivarstead.esp'
-      - 'Karthwasten.esp'
-      - 'Kynesgrove.esp'
-      - 'Shor''s Stone.esp'
-      - 'Soljund''s Sinkhole.esp'
-      - 'Whistling Mine.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'SoundsofSkyrimComplete.esp'
-      - 'SoS - The Wilds.esp'
-      - 'SoS - The Dungeons.esp'
-      - 'SoS - Civilization.esp'
-      - 'Alternate Start - Live Another Life.esp'
-      - 'CFTO.esp'
-      - 'Honeyside.esp'
-      - 'Book Covers Skyrim - Lost Library.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'EmbersHD.esp'
-      - 'Gildergreen Regrown.esp'
-      - 'Inigo.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MajesticMountains_Moss.esp'
-      - 'MLU.esp'
-      - 'NotSoFast-MageGuild.esp'
-      - 'NotSoFast-MainQuest.esp'
-      - 'Oblivion Gates Remade - Map Markers.esp'
-      - 'Oblivion Gates Remade.esp'
-      - 'Open Cities Skyrim.esp'
-      - 'PilgrimsDelight.esp'
-      - 'Point The Way.esp'
-      - 'SkyrimImprovedPuddles-DG-HF-DB.esp'
-      - 'The Paarthurnax Dilemma.esp'
-      - 'TheChoiceIsYours.esp'
-      - 'FarmhouseChimneys.esp'
-      - 'FarmhouseChimneysDarkwaterCrossing.esp'
-      - 'FarmhouseChimneysExtrasMerged'
-      - 'FarmhouseChimneysHelarchenCreek.esp'
-      - 'FarmhouseChimneysIvarstead.esp'
-      - 'FarmhouseChimneysKynesgrove.esp'
-      - 'FarmhouseChimneysLAL+CRF.esp'
-      - 'FarmhouseChimneysLAL.esp'
-      - 'FarmhouseChimneysShorsStone.esp'
-      - 'FarmhouseChimneysWhistlingMine.esp'
-  - name: 'RWT.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
-    group: *lateLoadersGroup
-  - name: 'RealisticWaterTwo+-+Verdant+Patch.esp'
-    group: *lateLoadersGroup
+      - crc: 0x4E75FEF9 #v1.8.2
+        util: 'SSEEdit v3.3.8 BETA'
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
     clean:
@@ -6063,6 +6021,7 @@ plugins:
       - 'Karthwasten - Let The Silver Flow.esp'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     clean:
       - crc: 0x4C61FC8C # v2.0.3
@@ -6139,7 +6098,9 @@ plugins:
         name: 'Rorikstead on Nexus Mods'
     group: *addonsGroup
     after:
+      - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
     inc:
       - 'Rorikstead Revised.esp'
     clean:
@@ -6190,6 +6151,7 @@ plugins:
     group: *addonsGroup
     after:
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     clean:
       - crc: 0x69F4FE74 # v2.0.3
@@ -6218,6 +6180,7 @@ plugins:
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Settlements Expanded SE.esp'
+      - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     clean:
       - crc: 0x1E57B75A # v2.0.2
