@@ -2554,6 +2554,9 @@ plugins:
   - name: 'LessDragons(10|25|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
     msg:
+      - <<: *AlreadyInX
+        subs: [ 'Timing is Everything - Quest Delay and Timing Control' ]
+        condition: 'active("LessDragons(10|25|50)\.esp") and active("TimingIsEverything.esp")'
       - <<: *useOnlyOneX
         condition: 'many("LessDragons(10|25|50)\.esp")'
         subs: [ 'Less Dragons SSE' ]
