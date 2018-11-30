@@ -348,15 +348,15 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
-  - name: &lowPriorityGroup Low Priority Overrides
+  - name: &coreGroup Core Mods
     after: [ default ]
 
-  - name: &coreGroup Core Mods
-    after: [ *lowPriorityGroup ]
+  - name: &lowPriorityGroup Low Priority Overrides
+    after: [ *coreGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after:
-      - *coreGroup
+      - *lowPriorityGroup
       - *addonsGroup
 
   - name: &lateLoadersGroup Late Loaders
