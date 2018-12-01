@@ -2551,6 +2551,15 @@ plugins:
     clean:
       - crc: 0x9CCE987C # v2.4C
         util: 'SSEEdit v3.2.1'
+  - name: 'LessDragons(10|25|50)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'Timing is Everything - Quest Delay and Timing Control' ]
+        condition: 'active("LessDragons(10|25|50)\.esp") and active("TimingIsEverything.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("LessDragons(10|25|50)\.esp")'
+        subs: [ 'Less Dragons SSE' ]
   - name: 'KrittaKittyHorsesForSSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7685/'
