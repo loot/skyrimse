@@ -475,6 +475,8 @@ plugins:
     group: *dlcGroup
     after:
       - 'Dragonborn.esm'
+
+###### Creation Club ######
   - name: 'ccBGSSSE002-ExoticArrows.esl'
     group: *ccGroup
   - name: 'ccBGSSSE003-Zombies.esl'
@@ -860,6 +862,7 @@ plugins:
       - 'ccBGSSSE045-Hasedoki.esl'
       - 'ccBGSSSE008-Wraithguard.esl'
 
+###### Bug Fixes & Unofficial Patches ######
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
@@ -880,9 +883,7 @@ plugins:
     clean:
       - crc: 0x34E99421 # v4.1.5a
         util: 'SSEEdit v3.3.6'
-#############################################
-#####  Bug Fixes & Unofficial Patches   #####
-#############################################
+
   - name: 'unofficial skyrim survival patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12655/' ]
     group: *fixesGroup
@@ -951,9 +952,7 @@ plugins:
       - crc: 0x832B2C99 # v1.0
         util: 'SSEEdit v3.2.2'
 
-#############################################
-#####  Modding Tools - Generated Files  #####
-#############################################
+###### Modding Tools - Generated Files ######
   - name: 'Bashed Patch.*\.esp'
     group: *dynamicPatchGroup
     after:
@@ -974,9 +973,8 @@ plugins:
     group: *dynamicPatchGroup
     tag:
       - NoMerge
-#########################
-## AudioVisual - Fixes ##
-#########################
+
+###### AudioVisual - Fixes ######
   - name: 'Better Dynamic Snow.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
@@ -1145,9 +1143,8 @@ plugins:
     clean:
       - crc: 0x35C26177 # v2.07 & v2.08
         util: 'SSEEdit v3.2.1'
-#############################
-## AudioVisual - Interface ##
-#############################
+
+###### AudioVisual - Interface ######
   - name: 'AnotherSortingMod_2017-SSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10/'
@@ -1315,9 +1312,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
         name: 'YOT - Your Own Thoughts SE on Nexus Mods'
     group: *dispersedGroup
-########################################
-## AudioVisual - Animations & Physics ##
-########################################
+
+###### AudioVisual - Animations & Physics ######
   - name: 'beltfastenedquivers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1182/' ]
     msg:
@@ -1347,9 +1343,8 @@ plugins:
       - <<: *SkyUI
         condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
     msg: [ *doNotClean ]
-############################
-## AudioVisual - Lighting ##
-############################
+
+###### AudioVisual - Lighting ######
   - name: 'CinematicFireFX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
     group: *earlyLoadersGroup
@@ -1682,9 +1677,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-#################################
-## AudioVisual - Sound & Music ##
-#################################
+
+###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
@@ -1923,9 +1917,8 @@ plugins:
     inc:
       - 'UHDAP - MusicUHQ1.esp'
       - 'UHDAP - MusicUHQ2.esp'
-###########################
-## AudioVisual - Weather ##
-###########################
+
+###### AudioVisual - Weather ######
   - name:  'NAT.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
@@ -2235,9 +2228,8 @@ plugins:
     clean:
       - crc: 0x2C48D46D # v2.30
         util: 'SSEEdit v3.2.2'
-######################
-## Body,face & hair ##
-######################
+
+###### Character Appearance - Body,face & hair ######
   - name: 'Hair Replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
     group: *fixesGroup
@@ -2246,9 +2238,8 @@ plugins:
     group: *fixesGroup
     after:
       - 'Hair Replacer.esp'
-#################################
-## Character Appearance - NPCs ##
-#################################
+
+###### Character Appearance - NPCs ######
   - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018| Warmaidens)\.esp'
     group: *addonsGroup
     after:
@@ -2392,9 +2383,8 @@ plugins:
     clean:
       - crc: 0xC2C81AD6
         util: 'SSEEdit v3.2.44'
-####################################
-## Character Appearance - Presets ##
-####################################
+
+###### Character Appearance - Presets ######
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2406/' ]
     group: *fixesGroup
@@ -2470,9 +2460,8 @@ plugins:
         condition: 'active("Severa_CharPreset.esp")'
     tag:
       - NoMerge
-################
-## Encounters ##
-################
+
+###### Encounters ######
   - name: '3DNPC.esp'
     url:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
@@ -2742,9 +2731,8 @@ plugins:
     clean:
       - crc: 0x1F2A30C3
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
-####################################
-## Environment, Landscape & Flora ##
-####################################
+
+###### Environment, Landscape & Flora ######
   - name: 'Alpine Forest of Whiterun Valley.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18866/' ]
     after:
@@ -2896,7 +2884,6 @@ plugins:
     clean:
       - crc: 0xB46777D2
         util: 'SSEEdit v3.3.6 BETA'
-
   - name: 'MajesticMountains.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
     after:
@@ -3112,9 +3099,8 @@ plugins:
     clean:
       - crc: 0xE147B0BB # v2.0
         util: 'SSEEdit v3.3.0 BETA'
-##############
-## Gameplay ##
-##############
+
+###### Gameplay ######
   - name: 'Alternate Start - Live Another Life.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
@@ -3689,14 +3675,14 @@ plugins:
       - crc: 0xED643590
         util: 'SSEEdit v3.2.2'
   - name: 'Lock_Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]  
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
     req:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
     clean:
       - crc: 0xB7986707 # v1.6
         util: 'SSEEdit v3.2.79 EXPERIMENTAL'
-      - crc: 0xCD2D19F5 # v1.6 Ordinator version 
+      - crc: 0xCD2D19F5 # v1.6 Ordinator version
         util: 'SSEEdit v3.2.79 EXPERIMENTAL'
   - name: 'TTR_Master_Trader.*\.esp'
     url:
@@ -4447,9 +4433,8 @@ plugins:
     clean:
       - crc: 0xE6A87461 # v7.00SSE
         util: 'SSEEdit v3.2.2'
-###########
-## Items ##
-###########
+
+###### Items ######
   - name: 'aMidianBorn_ContentAddon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24909/'
@@ -4975,9 +4960,8 @@ plugins:
     clean:
       - crc: 0x65AFCE11 # v4.06SE
         util: 'SSEEdit v3.2.2'
-###################
-## Leveled Lists ##
-###################
+
+###### Leveled List Modifiers ######
   - name: '3rdEraWeapMoS-lvlList.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/'
@@ -5036,9 +5020,8 @@ plugins:
     tag:
       - Delev
       - Relev
-###########################
-## Locations - New Lands ##
-###########################
+
+###### Locations - New Lands ######
   - name: 'BSAssets.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
@@ -5262,9 +5245,8 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
       - crc: 0xB4D712AB # v1.3.0, replacer from Vigilant Voiced
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-############################################
-## Locations - New Structures & Landmarks ##
-############################################
+
+###### Locations - New Structures & Landmarks ######
   - name: 'AHZBetterDGEntranceSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4126/'
@@ -5337,13 +5319,13 @@ plugins:
       - 'WhiterunHoldForest.esp'
     msg:
       - <<: *patch3rdParty
-        subs: 
-          - 'RS Children Overhaul' 
+        subs:
+          - 'RS Children Overhaul'
           - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
         condition: 'active("RSkyrimChildren.esm") and not active("RSC CRF Patch.esp") and not file("CRF_RSChildrenPatch.esp")'
       - <<: *patch3rdParty
-        subs: 
-          - 'RS Children Overhaul' 
+        subs:
+          - 'RS Children Overhaul'
           - '[ RS Children Overhaul Cutting Room Floor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/8753)'
         condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp") and not file("RSC CRF Patch.esp")'
     tag:
@@ -5448,9 +5430,8 @@ plugins:
     clean:
       - crc: 0x26D5C1B3 # v2.0.2
         util: 'SSEEdit v3.3.6'
-###########################
-## Locations - Overhauls ##
-###########################
+
+###### Location - Overhauls ######
   - name: 'CollegeOfWinterholdImmersive.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/'
@@ -6318,11 +6299,8 @@ plugins:
     clean:
       - crc: 0xE649AE58 # v1.9
         util: SSEEdit v3.2.77
-        
-      
-##############################
-## Locations - Player Homes ##
-##############################
+
+###### Locations - Player Homes ######
   - name: 'AyleidCitadel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11307/' ]
     tag:
@@ -6604,9 +6582,8 @@ plugins:
     clean:
       - crc: 0x86CF0F2B # v2.0
         util: 'SSEEdit v3.2.1'
-##############################
-## Legacy of the Dragonborn ##
-##############################
+
+###### Legacy of the Dragonborn ######
   - name: 'LegacyoftheDragonborn.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/' ]
     after:
@@ -6833,7 +6810,7 @@ plugins:
       - crc: 0xCB82480D # v4.1.6
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
 
-  ## LOTD Patches
+###### Legacy of the Dragonborn - Patches ######
   - name: 'DBM_AmuletsOfSkyrim_Patch.esp'
     clean:
       - crc: 0xBF135657
@@ -6901,7 +6878,7 @@ plugins:
       - C.Location
       - -Factions
     clean:
-      - crc: 0xFD54504A # v4.1.6 
+      - crc: 0xFD54504A # v4.1.6
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
       - crc: 0x50A5FA0E # v4.1.6 ESL
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -7016,7 +6993,7 @@ plugins:
       - crc: 0xF10EC41E
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
 
-  ## LOTD ADD-ONS
+###### Legacy of the Dragonborn ADD-ONS ######
   - name: 'DBM_RelicHunter.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/'
@@ -7024,9 +7001,8 @@ plugins:
     clean:
       - crc: 0x26558CDC # v1.4.2
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-############################
-## Patches - Compatibilty ##
-############################
+
+###### Patches - Compatibilty ######
   - name: 'Bells of Skyrim - OCS+ICAIO Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
@@ -7063,7 +7039,8 @@ plugins:
       - Delev
       - Invent
       - Relev
-## Qwinn's Unified Automated Self Installing Patch Compendium
+
+###### Patches - Qwinn's Unified Automated Self Installing Patch Compendium ######
   - name: 'Qw_DeadlySpellImpacts_AOS Patch.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     tag:
@@ -7103,7 +7080,8 @@ plugins:
       - 'Qw_ISC_USSEP Patch.esp'
     tag:
       - Sound
-## Scoped Bows Compatibility Kit - SBCK
+
+###### Patches - Scoped Bows Compatibility Kit - SBCK ######
   - name: 'ScopedBows_MLU_ZIA Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19495/'
@@ -7121,7 +7099,8 @@ plugins:
     clean:
       - crc: 0x5C12FE22 # v1.0
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
-## kryptopyr's Patch Hub
+
+###### Patches - kryptopyr's Patch Hub ######
   - name: 'AwesomePotions_CACO_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19518'
