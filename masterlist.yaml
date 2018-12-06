@@ -2240,8 +2240,16 @@ plugins:
       - 'Hair Replacer.esp'
 
 ###### Character Appearance - NPCs ######
+  - name: 'AelaStandalone.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12916'
+        name: 'The Huntress Reborn - Aela replacer and Eleanor Follower by Plooshy on Nexus Mods'
+    after:
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
+      - 'Bijin Warmaidens.esp'
   - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018| Warmaidens)\.esp'
-    group: *addonsGroup
     after:
       - 'BUVARP.esp'
       - 'CollegeOfWinterholdImmersive.esp'
@@ -2256,7 +2264,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11'
         name: 'Bijin All in One 2018 on Nexus Mods'
-    group: *addonsGroup
     after:
       - 'Bijin AIO.esp'
       - 'Bijin_AIO 2018.esp'
@@ -2267,7 +2274,6 @@ plugins:
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Bijin Wives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
-    group: *addonsGroup
     after:
       - 'Bijin AIO.esp'
       - 'Bijin_AIO 2018.esp'
@@ -2278,7 +2284,6 @@ plugins:
         condition: 'active("Bijin Wives.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: 'Bijin NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/' ]
-    group: *addonsGroup
     after:
       - 'Bijin AIO.esp'
       - 'Bijin_AIO 2018.esp'
@@ -2290,7 +2295,6 @@ plugins:
         condition: 'active("Bijin NPCs.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: 'Bijin Warmaidens.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1825/' ]
-    group: *addonsGroup
     after:
       - 'Bijin AIO.esp'
       - 'Bijin_AIO 2018.esp'
@@ -2303,10 +2307,12 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
-    group: *addonsGroup
     after:
       - name: 'Bijin_AIO-SV 2018.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
+    inc:
+      - 'Serana - Hellraiser.esp'
+      - 'SuperbSerana.esp'
     msg:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SV SSE' ]
@@ -2315,7 +2321,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
         name: 'Seranaholic by rxkx22 on Nexus Mods'
-    group: *addonsGroup
     after:
       - name: 'Bijin_AIO-SV 2018.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
@@ -2373,6 +2378,22 @@ plugins:
     clean:
       - crc: 0xE10633B8
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'Serana - Hellraiser.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
+    inc:
+      - name: 'Bijin_AIO-SV 2018.esp'
+        display: 'Bijin AIO 2018 - Serana Valerica'
+      - name: 'Serana.esp'
+        display: 'Seranaholic'
+      - 'SuperbSerana.esp'
+  - name: 'SuperbSerana.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2409' ]
+    inc:
+      - name: 'Bijin_AIO-SV 2018.esp'
+        display: 'Bijin AIO 2018 - Serana Valerica'
+      - name: 'Serana.esp'
+        display: 'Seranaholic'
+      - 'Serana - Hellraiser.esp'
   - name: 'Toccata as Elisif.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/'
