@@ -3073,6 +3073,21 @@ plugins:
     after:
       - 'SkyrimIsWindy.esp'
       - 'SRG Enhanced Trees Activator.esp'
+  - name: 'SmoothShores.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10624/'
+        name: 'Smooth Shores (Grass and Ground Remastered) on Nexus Mods'
+    group: *earlyLoadersGroup
+    dirty:
+      # version: 0.7 before Quick Auto Clean
+      - <<: *quickClean
+        crc: 0x8A99CCE9
+        util: '[SSEEdit v3.3.11 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 15
+    clean:
+      # version: 0.7
+      - crc: 0xE7F146C7
+        util: 'SSEEdit v3.3.11 BETA'
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
     group: *fixesGroup
