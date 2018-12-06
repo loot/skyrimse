@@ -2780,6 +2780,20 @@ plugins:
         util: 'SSEEdit v3.2.2'
       - crc: 0x8C9C032E # v1.45 REALly Blended ROADS
         util: 'SSEEdit v3.2.2'
+  - name: 'Enhanced Landscapes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18162/' ]
+    group: *earlyLoadersGroup
+    inc:
+      - name: 'tpos_ultimate_esm.esp'
+        display: 'The People Of Skyrim Complete SSE'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Immersive Citizens' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Enhanced Landscapes - IC Patch.esp")'
+    clean:
+      # version: 1.65
+      - crc: 0x9B2A145A
+        util: 'SSEEdit v3.3.11 BETA'
   - name: 'The Forest of Riverwood Project.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16877/' ]
     dirty:
