@@ -269,7 +269,7 @@ globals:
     subs: [ 'https://loot.github.io/latest-thread/' ]
 # SKSE Latest
   - type: say
-    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.8", <)'
+    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", <)'
     content:
       - lang: en
         text: 'It appears you do not have the [latest version of SKSE64](http://skse.silverlock.org). Some mods may require functionality added in the latest version of SKSE64 to work.'
@@ -286,7 +286,7 @@ globals:
       - lang: de
         text: 'Sie haben anscheinend nicht die [aktuellste Version von SKSE64](http://skse.silverlock.org) installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von SKSE64 enthalten sind, um zu funktionieren.'
   - type: say
-    condition: 'not version("../skse64_loader.exe", "0.2.0.8", <)'
+    condition: 'not version("../skse64_loader.exe", "0.2.0.11", <)'
     content:
       - lang: en
         text: 'Your SKSE64 is up-to-date.'
@@ -304,6 +304,12 @@ globals:
         text: 'SKSE64は最新版です。'
       - lang: de
         text: 'Ihr SKSE64 ist aktuell.'
+# SKSE64 Scripts Installed Check
+  - type: warn
+    condition: 'file("../skse64_loader.exe") and not file("scripts/skse.pex")'
+    content:
+      - lang: en
+        text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE64](http://skse.silverlock.org)** installation archive.'
 # SKSE64 plugins requirement
   - <<: *reqSKSE
     subs: [ 'a SKSE Plugin' ]
@@ -329,7 +335,6 @@ globals:
         text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
       - lang: de
         text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
-
 groups:
   - name: &dlcGroup DLC
 
