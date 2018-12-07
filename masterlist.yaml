@@ -2794,6 +2794,30 @@ plugins:
       # version: 1.65
       - crc: 0x9B2A145A
         util: 'SSEEdit v3.3.11 BETA'
+  - name: 'Enhanced Landscapes - Barren Marsh.esp'
+    group: *fixesGroup
+  - name: 'Enhanced Landscapes - Dead Marsh.esp'
+    group: *fixesGroup
+    after:
+      - 'Enhanced Landscapes - Barren Marsh.esp'
+  - name: 'Enhanced Landscapes - Grass.esp'
+    group: *fixesGroup
+    after:
+      - 'Enhanced Landscapes.esp'
+      - 'Skyrim Flora Overhaul.esp'
+  - name: 'Enhanced Landscapes - Green Fields.esp'
+    group: *fixesGroup
+    after:
+      - 'Enhanced Landscapes.esp'
+      - 'Enhanced Landscapes - Grass.esp'
+  - name: 'SRG Enhanced Trees Activator.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11008'
+        name: 'Enhanced Vanilla Trees on Nexus Mods'
+    group: *fixesGroup
+    inc:
+      - 'SimplyBiggerTreesSE.esp'
+      - 'Skyrim Flora Overhaul.esp'
   - name: 'The Forest of Riverwood Project.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16877/' ]
     dirty:
@@ -2812,11 +2836,18 @@ plugins:
     clean:
       - crc: 0xFFD6E910 # v2.0
         util: 'SSEEdit v3.3.6'
+  - name: 'Grass Field.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17909' ]
+    group: *ccGroup
+  - name: 'HearthfireGrassFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13461/' ]
+    group: *earlyLoadersGroup
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     group: *earlyLoadersGroup
     after:
       - 'Enhanced Landscapes.esp'
+      - 'S3DLandscapes NextGenerationForests.esp'
       - 'Whiterun Forest Borealis.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     msg:
@@ -3045,6 +3076,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/'
         name: 'Realistic High Altitude Treeline on Nexus Mods'
     group: *fixesGroup
+    after:
+      - 'Enhanced Landscapes.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xE7403486
@@ -3063,8 +3096,17 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Skyrim Flora Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
+    group: *fixesGroup
     after:
       - 'SimplyBiggerTreesSE.esp'
+  - name: 'S3DLandscapes NextGenerationForests.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18247/'
+        name: 'Skyrim 3D Landscapes on Nexus Mods'
+    group: 'Early Loaders'
+    inc:
+      - 'Enhanced Landscapes.esp'
+      - 'waterplants.esp'
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
     group: *fixesGroup
@@ -3097,7 +3139,7 @@ plugins:
         name: 'Verdant - A Skyrim Grass Plugin on Nexus Mods'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
         name: 'Landscape Fixes For Grass Mods - Tweaks for Verdant on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *fixesGroup
     inc:
       - name: 'Open Cities Skyrim.esp'
         condition: 'checksum("Verdant - A Skyrim Grass Plugin SSE Version.esp", 9AB5147C)'
@@ -3128,6 +3170,24 @@ plugins:
         util: 'SSEEdit v3.2.1'
       - crc: 0xDA6D8DC2 # v1.5 - Tweaks for Verdant
         util: 'SSEEdit v3.2.1'
+  - name: 'Verdant - Altered(( Forest| Rift| Snow) Grass( Only| Green Rift|))\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14601/'
+        name: 'Verdant - Altered Forest Grass on Nexus Mods'
+    group: *fixesGroup
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+  - name: 'Unbelievable Grass Two.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4082/' ]
+    group: *fixesGroup
+  - name: 'p_vegetation_overhaul.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7627/'
+        name: 'Vanilla Vegetation Overhaul on Nexus Mods'
+    group: *fixesGroup
+  - name: 'Veydosebrom - Grasses and Groundcover.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10543/' ]
+    group: *fixesGroup
   - name: 'WGT.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11010/'
@@ -3141,6 +3201,14 @@ plugins:
     clean:
       - crc: 0x71572057 # v1.0
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'ViscousGrass.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/'
+        name: 'Viscous Grass Plus Tweaks on Nexus Mods'
+    group: *fixesGroup
+  - name: 'waterplants.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/' ]
+    group: 'Creation Club'
   - name: 'WhiterunHoldForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3212/' ]
     after:
