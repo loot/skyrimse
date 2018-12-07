@@ -304,6 +304,12 @@ globals:
         text: 'SKSE64は最新版です。'
       - lang: de
         text: 'Ihr SKSE64 ist aktuell.'
+# SKSE64 Scripts Installed Check
+  - type: warn
+    condition: 'file("../skse64_loader.exe") and not file("scripts/skse.pex")'
+    content:
+      - lang: en
+        text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE64](http://skse.silverlock.org)** installation archive.'
 # SKSE64 plugins requirement
   - <<: *reqSKSE
     subs: [ 'a SKSE Plugin' ]
