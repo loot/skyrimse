@@ -322,6 +322,18 @@ globals:
       - lang: de
         text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
 # SKSE Latest
+  - <<: *hasOldVersionOfX
+    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
+    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", <)'
+  - <<: *hasLatestVersionOfX
+    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
+    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", ==)'
+  - <<: *hasOldVersionOfX
+    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
+    condition: 'file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", <)'
+  - <<: *hasLatestVersionOfX
+    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
+    condition: 'file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", ==)'
 # SKSE64 Scripts Installed Check
   - type: warn
     condition: 'file("../skse64_loader.exe") and not file("scripts/skse.pex")'
