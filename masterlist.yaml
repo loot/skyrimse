@@ -267,6 +267,24 @@ globals:
       - lang: de
         text: '[Aktueller LOOT-Thread](%1%).'
     subs: [ 'https://loot.github.io/latest-thread/' ]
+# Fores New Idles
+  - type: say
+    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
+    content:
+      - lang: en
+        text: 'It appears you have [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installed. Remember to run GenerateFNISforUsers.exe every time you have installed or un-installed FNIS, or a FNIS based mod.'
+      - lang: ru
+        text: 'У вас установлен [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038). Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.'
+      - lang: es
+        text: 'Parece que [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
+      - lang: ko
+        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)이 설치된 것같습니다. FNIS나 FNIS 기반 모드를 설치하거나 제거할때마다 GenerateFNISforUsers.exe를 실행하는 것을 잊지마세요.'
+      - lang: zh_CN
+        text: '你安装了[FNIS SE](https://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
+      - lang: ja
+        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
+      - lang: de
+        text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
 # SKSE Latest
   - type: say
     condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", <)'
@@ -317,24 +335,77 @@ globals:
   - <<: *reqSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe")'
-# Other
-  - type: say
-    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
-    content:
-      - lang: en
-        text: 'It appears you have [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installed. Remember to run GenerateFNISforUsers.exe every time you have installed or un-installed FNIS, or a FNIS based mod.'
-      - lang: ru
-        text: 'У вас установлен [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038). Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.'
-      - lang: es
-        text: 'Parece que [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
-      - lang: ko
-        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)이 설치된 것같습니다. FNIS나 FNIS 기반 모드를 설치하거나 제거할때마다 GenerateFNISforUsers.exe를 실행하는 것을 잊지마세요.'
-      - lang: zh_CN
-        text: '你安装了[FNIS SE](https://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
-      - lang: ja
-        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
-      - lang: de
-        text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
+  - <<: *reqSKSE
+    subs: [ '[Better Jumping SE](https://www.nexusmods.com/skyrimspecialedition/mods/18967/)' ]
+    condition: 'file("SKSE/Plugins/BetterJumpingSE.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[CBP Physics](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
+    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Classic Sprinting Redone](https://www.nexusmods.com/skyrimspecialedition/mods/20166/)' ]
+    condition: 'file("SKSE/Plugins/ClassicSprinting.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Display Enemy Level](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
+    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Encounter Zones Unlocked](https://www.nexusmods.com/skyrimspecialedition/mods/19608/)' ]
+    condition: 'file("SKSE/Plugins/encounter_zones_unlocked.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
+    condition: 'file("SKSE/Plugins/EngineFixes64.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
+    condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Enchantment Reload Fix SE](https://www.nexusmods.com/skyrimspecialedition/mods/21055/)' ]
+    condition: 'file("SKSE/Plugins/EnchantmentReloadFixSE.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Experience](https://www.nexusmods.com/skyrimspecialedition/mods/17751/)' ]
+    condition: 'file("SKSE/Plugins/Experience.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
+    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Floating Damage](https://www.nexusmods.com/skyrimspecialedition/mods/14332/)' ]
+    condition: 'file("SKSE/Plugins/FloatingDamage.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
+    condition: 'file("SKSE/Plugins/Fuz Ro D''oh.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Havok Fix](https://www.nexusmods.com/skyrimspecialedition/mods/18160/)' ]
+    condition: 'file("SKSE/Plugins/HavokFix64.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
+    condition: 'file("SKSE/Plugins/HookShareSSE.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
+    condition: 'file("SKSE/Plugins/JContainers64.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[ModifyFaceGen Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
+    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
+    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Quick Loot RE](https://www.nexusmods.com/skyrimspecialedition/mods/21085/)' ]
+    condition: 'file("SKSE/Plugins/QuickLootRE.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Simple Face to Face Conversation - Updated](https://www.nexusmods.com/skyrimspecialedition/mods/21220/)' ]
+    condition: 'file("SKSE/Plugins/SimpleFace2FaceKiwami.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Skyrim Skill Uncapper](https://www.nexusmods.com/skyrimspecialedition/mods/8889/)' ]
+    condition: 'file("SKSE/Plugins/SkyrimUncapper.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[SkyriimSouls - Unpaused Game Menus](https://www.nexusmods.com/skyrimspecialedition/mods/15170/)' ]
+    condition: 'file("SKSE/Plugins/SkyrimSouls.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Stay At The System Page - Updated](https://www.nexusmods.com/skyrimspecialedition/mods/19832/)' ]
+    condition: 'file("SKSE/Plugins/StayAtSystemPageSE.dll") and not file("../skse64_loader.exe")'
+  - <<: *reqSKSE
+    subs: [ '[To Your Face - Sensible NPC commenting](https://www.nexusmods.com/skyrimspecialedition/mods/13373/)' ]
+    condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../skse64_loader.exe")'
+
+
 groups:
   - name: &dlcGroup DLC
 
