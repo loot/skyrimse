@@ -116,6 +116,42 @@ common:
     content:
       - lang: en
         text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
+  - &hasOldVersionOfX
+    type: say
+    content:
+      - lang: en
+        text: 'It appears you do not have the latest version of %1%. Some mods may require functionality added in the latest version of %1% to work.'
+      - lang: ru
+        text: 'Возможно у вас не установлена новейшая версия %1%. Для работы некоторых модов может требоваться функционал, добавленный в последней версии %1%'
+      - lang: es
+        text: 'Parece que no tienes la última versión de %1%. Algunos mods pueden requerir funcionalidad añadida en la última versión de %1% para funcionar.'
+      - lang: ko
+        text: '%1%의 최신 버전이없는 것 같습니다. 일부 개조자는 작동하기 위해 %1%의 최신 버전에 추가 된 기능이 필요할 수 있습니다.'
+      - lang: zh_CN
+        text: '你的%1%似乎不是最新的。有些插件可能需要最新的%1%才能工作。'
+      - lang: ja
+        text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
+      - lang: de
+        text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
+  - &hasLatestVersionOfX
+    type: say
+    content:
+      - lang: en
+        text: 'Your %1% is up-to-date.'
+      - lang: ru
+        text: 'Ваш %1% обновлен.'
+      - lang: es
+        text: 'Tienes la última versión de %1%'
+      - lang: ko
+        text: '%1%가 최신버전입니다.'
+      - lang: zh_CN
+        text: '你的%1%是最新的。'
+      - lang: da
+        text: 'Din %1% er opdateret.'
+      - lang: ja
+        text: '%1%は最新版です。'
+      - lang: de
+        text: 'Ihr %1% ist aktuell.'
   - &useOnlyOneX
     type: error
     content:
@@ -286,42 +322,6 @@ globals:
       - lang: de
         text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
 # SKSE Latest
-  - &hasOldVersionOfX
-    type: say
-    content:
-      - lang: en
-        text: 'It appears you do not have the latest version of %1%. Some mods may require functionality added in the latest version of %1% to work.'
-      - lang: ru
-        text: 'Возможно у вас не установлена новейшая версия %1%. Для работы некоторых модов может требоваться функционал, добавленный в последней версии %1%'
-      - lang: es
-        text: 'Parece que no tienes la última versión de %1%. Algunos mods pueden requerir funcionalidad añadida en la última versión de %1% para funcionar.'
-      - lang: ko
-        text: '%1%의 최신 버전이없는 것 같습니다. 일부 개조자는 작동하기 위해 %1%의 최신 버전에 추가 된 기능이 필요할 수 있습니다.'
-      - lang: zh_CN
-        text: '你的%1%似乎不是最新的。有些插件可能需要最新的%1%才能工作。'
-      - lang: ja
-        text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
-      - lang: de
-        text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
-  - &hasLatestVersionOfX
-    type: say
-    content:
-      - lang: en
-        text: 'Your %1% is up-to-date.'
-      - lang: ru
-        text: 'Ваш %1% обновлен.'
-      - lang: es
-        text: 'Tienes la última versión de %1%'
-      - lang: ko
-        text: '%1%가 최신버전입니다.'
-      - lang: zh_CN
-        text: '你的%1%是最新的。'
-      - lang: da
-        text: 'Din %1% er opdateret.'
-      - lang: ja
-        text: '%1%は最新版です。'
-      - lang: de
-        text: 'Ihr %1% ist aktuell.'
 # SKSE64 Scripts Installed Check
   - type: warn
     condition: 'file("../skse64_loader.exe") and not file("scripts/skse.pex")'
