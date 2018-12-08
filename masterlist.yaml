@@ -485,12 +485,18 @@ plugins:
       - C.Water
       - Delev
     dirty:
-      # version: 1.5.62.0
+      # version: 1.5.62.0 - first Pass of Quick Clean
       - <<: *quickClean
         crc: 0xFF60257A
-        util: '[SSEEdit v3.3.11 BETA](https://github.com/TES5Edit/TES5Edit/releases)'
-        itm: 294
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 291
         udr: 91
+        nav: 2
+      # version: 1.5.62.0 - 2nd Pass of Quick Clean
+      - <<: *quickClean
+        crc: 0xA3AEB4CA
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
         nav: 2
   - name: 'Dawnguard.esm'
     group: *dlcGroup
@@ -501,17 +507,23 @@ plugins:
       - Invent
       - Relev
     msg:
-      # (v1.5.62.0, 0x7BE07C9A) after quick clean
+      # (v1.5.62.0, 0x7BE07C9A) after 2nd Pass of Quick Clean
       - <<: *wildEdits
         subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
         condition: 'checksum("Dawnguard.esm", 7BE07C9A)'
     dirty:
-      # version: 1.5.62.0
+      # version: 1.5.62.0 - first Pass of Quick Clean
       - <<: *quickClean
         crc: 0x0252FADA
-        util: '[SSEEdit v3.3.11 BETA](https://github.com/TES5Edit/TES5Edit/releases)'
-        itm: 766
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 759
         udr: 82
+        nav: 57
+      # version: 1.5.62.0 - 2nd Pass of Quick Clean
+      - <<: *quickClean
+        crc: 0x0252FADA
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
         nav: 57
   - name: 'Hearthfires.esm'
     group: *dlcGroup
@@ -524,7 +536,7 @@ plugins:
       # version: 1.5.62.0
       - <<: *quickClean
         crc: 0xC5D99405
-        util: '[SSEEdit v3.3.11 BETA](https://github.com/TES5Edit/TES5Edit/releases)'
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 221
         udr: 11
         nav: 5
@@ -540,7 +552,7 @@ plugins:
       # version: 1.5.62.0
       - <<: *quickClean
         crc: 0x3AC8FA72
-        util: '[SSEEdit v3.3.11 BETA](https://github.com/TES5Edit/TES5Edit/releases)'
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 81
         udr: 8
         nav: 1
