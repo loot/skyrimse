@@ -3090,51 +3090,58 @@ plugins:
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *earlyLoadersGroup
-    dirty:
-      - <<: *quickClean
-        crc: 0x87D18F2B # v3.2
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        itm: 59
-        udr: 5
     msg:
       - type: warn
         content: 'Update Patch available: %1%'
         subs: [ '[No Snow Under the roof - Bug fixes](https://www.nexusmods.com/skyrimspecialedition/mods/15064/)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("NSUTR_bugfixes.esp")'
+    dirty:
+      # version: 3.2
+      - <<: *quickClean
+        crc: 0x87D18F2B
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 59
+        udr: 5
     clean:
-      - crc: 0xA45FD694 # v3.2
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 3.2
+      - crc: 0xC22A5329
+        util: 'SSEEdit v4.0.0'
   - name: 'NSUTR_bugfixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes on Nexus Mods'
     clean:
-      - crc: 0x58D99419 # v1.4
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.4
+      - crc: 0x58D99419
+        util: 'SSEEdit v4.0.0'
   - name: 'NSUTR_groundsnow_mesh_fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes on Nexus Mods'
     dirty:
+      # version: 1.4
       - <<: *quickClean
-        crc: 0x2EE577A0 # v1.4
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        crc: 0x2EE577A0
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 33
     clean:
-      - crc: 0x6A1DF988 # v1.4
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.4
+      - crc: 0x6A1DF988
+        util: 'SSEEdit v4.0.0'
   - name: 'NSUTR_improvements.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes on Nexus Mods'
     dirty:
+      # version: 1.4
       - <<: *quickClean
-        crc: 0xBE9E7F5F # v1.4
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        crc: 0xBE9E7F5F
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
     clean:
-      - crc: 0x8E47790E # v1.4
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.4
+      - crc: 0x8E47790E
+        util: 'SSEEdit v4.0.0'
   - name: 'RealisticWaterTwo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
     group: *lateLoadersGroup
