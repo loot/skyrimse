@@ -2678,6 +2678,19 @@ plugins:
     clean:
       - crc: 0x650A7363 # v1.2.1
         util: 'SSEEdit v4.0.0'
+    msg:
+      - <<: *patchProvided
+        condition: 'active("Lucien.esp") and active("Holds.esp") and not active("Lucien-Holds-Patch.esp")'
+        subs: [ 'Holds The City Overhaul' ]
+      - <<: *patchProvided
+        condition: 'active("Lucien.esp") and active("MoonAndStar_MAS.esp") and not active("Lucien-MoonandStar-Patch.esp")'
+        subs: [ 'Moon and Star' ]
+      - <<: *patchProvided
+        condition: 'active("Lucien.esp") and active("moonpath.esp") and not active("Lucien-Moonpath-Patch.esp")'
+        subs: [ 'Moonpath to Elsweyr' ]
+      - <<: *patchProvided
+        condition: 'active("Lucien.esp") and active("Shiva's Vanilla Clothing Replacer.esp") and not active("Lucien-ShivaVanillaClothing-Patch.esp")'
+        subs: [ 'Shiva''s Vanilla Clothing Replacer' ]
   - name: 'MrissiTailOfTroubles.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9666/'
