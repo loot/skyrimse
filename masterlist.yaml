@@ -2691,20 +2691,22 @@ plugins:
         subs: [ 'Timing is Everything - Quest Delay and Timing Control' ]
         condition: 'active("LessDragons(10|25|50)\.esp") and active("TimingIsEverything.esp")'
       - <<: *useOnlyOneX
-        condition: 'many("LessDragons(10|25|50)\.esp")'
         subs: [ 'Less Dragons SSE' ]
+        condition: 'many("LessDragons(10|25|50)\.esp")'
   - name: 'MrissiTailOfTroubles.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9666/'
         name: 'M''rissi''s Tails of Troubles SE on Nexus Mods'
     dirty:
+      # version: 1.6
       - <<: *quickClean
-        crc: 0x8897007A # v1.6
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        crc: 0x8897007A
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 34
     clean:
-      - crc: 0xF0576FC2 # v1.6
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.6
+      - crc: 0x1713C743
+        util: 'SSEEdit v4.0.0'
   - name: 'Rebalanced Encounter Zones.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25/' ]
     after:
