@@ -5382,6 +5382,22 @@ plugins:
     clean:
       - crc: 0xF48A5310 # v1.1
         util: 'SSEEdit v3.2.80 EXPERIMENTAL'
+  - name: 'MoonAndStar_ImmersionPatch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
+        name: 'Moon and Star on Nexus Mods'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
+        name: 'Moon And Star on Bethesda.net'
+    dirty:
+      # version: 2.0
+      - <<: *quickClean
+        crc: 0x2D753507
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 2.0
+      - crc: 0xD14F7D61
+        util: 'SSEEdit v4.0.0'
   - name: 'MoonAndStar_MAS.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
@@ -5397,19 +5413,22 @@ plugins:
       - name: 'Tel_Nalta.esp'
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     msg:
+      # version: 3.2, after automatic cleaning
       - <<: *wildEdits
         subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-moon-and-star-)' ]
-        condition: 'checksum("MoonAndStar_MAS.esp", EB5AEFAF) or checksum("MoonAndStar_MAS.esp", 09207832)'
+        condition: 'checksum("MoonAndStar_MAS.esp", 2A2488C0)'
     tag:
       - C.Location
     dirty:
+      # version: 3.2, before any cleaning
       - <<: *quickClean
-        crc: 0xEB5AEFAF # v3.2 - Before Cleaning
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        crc: 0xEB5AEFAF
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
     clean:
-      - crc: 0x695161E0 # v3.2 after manual cleaning
-        util: 'SSEEdit v3.3.4 BETA'
+      # version: 3.2, after automatic & manual cleaning
+      - crc: 0xAF91987E
+        util: 'SSEEdit v4.0.0'
   - name: 'Undeath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
