@@ -1819,8 +1819,9 @@ plugins:
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
     clean:
-      - crc: 0x96BF25A6 # v3.0.0
-        util: 'SSEEdit v3.2.1'
+      # version: 3.0.0
+      - crc: 0x96BF25A6
+        util: 'SSEEdit v4.0.0'
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
     after:
@@ -1832,13 +1833,15 @@ plugins:
     tag:
       - Sound
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4A185E27 # v3.0.0
-        util: 'SSEEdit 3.2.84 EXPERIMENTAL'
+      # version: 3.0.0
+      - <<: *quickClean
+        crc: 0xE92BAF20
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 37
     clean:
-      - crc: 0x93126285 # v3.0.0
-        util: 'SSEEdit 3.2.84 EXPERIMENTAL'
+      # version: 3.0.0
+      - crc: 0x4C3AB96C
+        util: 'SSEEdit v4.0.0'
   - name: 'Audio Overhaul Skyrim - Obsidian Weathers.esp'
     after:
       - 'Audio Overhaul Skyrim - True Storms.esp'
