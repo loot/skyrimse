@@ -2791,6 +2791,31 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Less Dragons SSE' ]
         condition: 'many("LessDragons(10|25|50)\.esp")'
+  - name: 'Lucien.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20035' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)' ]
+        condition: 'active("Lucien.esp") and active("Holds.esp") and not active("Lucien-Holds-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ '[Moon and Star](https://www.nexusmods.com/skyrimspecialedition/mods/4301)' ]
+        condition: 'active("Lucien.esp") and active("MoonAndStar_MAS.esp") and not active("Lucien-MoonandStar-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ '[Moonpath to Elsweyr](https://www.nexusmods.com/skyrimspecialedition/mods/4341)' ]
+        condition: 'active("Lucien.esp") and active("moonpath.esp") and not active("Lucien-Moonpath-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ '[Shiva''s Vanilla Clothing Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/9241)' ]
+        condition: 'active("Lucien.esp") and active("Shiva''s Vanilla Clothing Replacer.esp") and not active("Lucien-ShivaVanillaClothing-Patch.esp")'
+    dirty:
+      # version: 1.2.1
+      - <<: *quickClean
+        crc: 0x00E539F0
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 13
+    clean:
+      # version: 1.2.1
+      - crc: 0x650A7363
+        util: 'SSEEdit v4.0.0'
   - name: 'MrissiTailOfTroubles.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9666/'
