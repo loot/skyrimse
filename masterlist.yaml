@@ -7081,13 +7081,15 @@ plugins:
       - name: 'MoonAndStar_MAS.esp'
         condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xDB9E70DA # v1.00
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0xDB9E70DA
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
     clean:
-      - crc: 0xCA11DFA7 # v1.00
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.0
+      - crc: 0x67A6845B
+        util: 'SSEEdit v4.0.0'
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
