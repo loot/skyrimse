@@ -347,7 +347,7 @@ globals:
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe")'
 # SKSE required scripts
   - type: warn
-    condition: 'file("../skse(64|vr)_loader.exe") and not file("scripts/skse.pex")'
+    condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("../sksevr_loader.exe")))'
     content:
       - lang: en
         text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
