@@ -7573,22 +7573,30 @@ plugins:
 
 ###### Patches - Scoped Bows Compatibility Kit - SBCK ######
   - name: 'ScopedBows_MLU_ZIA Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19495/'
-        name: 'Scoped Bows Compatibility Kit - SBCK on Nexus Mods'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19495/' ]
     group: *addonsGroup
     tag:
       - Graphics
       - Names
       - Stats
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3F1501F1 # v1.0
-        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+      # version: 1.1.0, esp
+      - <<: *quickClean
+        crc: 0x3F1501F1
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+      # version: 1.1.0, esp - ESL flagged
+      - <<: *quickClean
+        crc: 0xFA9ADDF9
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
     clean:
-      - crc: 0x5C12FE22 # v1.0
-        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+      # version: 1.1.0, esp
+      - crc: 0x5C12FE22
+        util: 'SSEEdit v4.0.0'
+      # version: 1.1.0, esp - ESL flagged
+      - crc: 0x57124060
+        util: 'SSEEdit v4.0.0'
 
 ###### Patches - kryptopyr's Patch Hub ######
   - name: 'AwesomePotions_CACO_Patch.esp'
