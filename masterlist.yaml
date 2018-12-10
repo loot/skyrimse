@@ -329,7 +329,7 @@ globals:
 # SKSE Version Checks
   - <<: *hasOldVersionOfX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
-    condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", <)'
+    condition: 'file("../SkyrimSE.exe") and file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", <)'
   - <<: *hasLatestVersionOfX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
     condition: 'file("../SkyrimSE.exe") and file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", ==)'
@@ -338,7 +338,7 @@ globals:
     condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe")'
   - <<: *hasOldVersionOfX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
-    condition: 'file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", <)'
+    condition: 'file("../SkyrimVR.exe") and file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", <)'
   - <<: *hasLatestVersionOfX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'file("../SkyrimVR.exe") and file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", ==)'
