@@ -6560,7 +6560,7 @@ plugins:
         content: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
         condition: 'active("Distinct Interiors.esp")'
       - <<: *reqMasterSort
-        condition: 'checksum("ShezrieOldHroldanVer2.esp", 9E66B431) or checksum("ShezrieOldHroldanVer2.esp", 4735D188)'
+        condition: 'checksum("ShezrieOldHroldanVer2.esp", A8297990)'
     tag:
       - C.Light
       - Graphics
@@ -6569,17 +6569,15 @@ plugins:
       - -C.Acoustic
       - -C.Regions
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9E66B431 # v2.2
-        itm: 1
-      - <<: *dirtyPlugin
-        crc: 0x600E8FE9
-        itm: 1
+      # version: 2.2
+      - <<: *quickClean
+        crc: 0x9E66B431
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
     clean:
-      - crc: 0x4735D188 # v2.2 no master sort
-        util: 'SSEEdit v3.2.1'
-      - crc: 0x22DAD810 # v2.2 with masters sorted
-        util: 'SSEEdit v3.2.1'
+      # version: 2.2, after cleaning & master sort
+      - crc: 0x06E66E36
+        util: 'SSEEdit v4.0.0'
   - name: 'Shor''s Stone.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
