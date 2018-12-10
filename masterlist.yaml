@@ -326,32 +326,36 @@ globals:
         text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
       - lang: de
         text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
-# SKSE Version Checks
+# Skyrim Script Extender
+  # SKSE 64 Version
   - <<: *hasOldVersionOfX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.11", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *hasLatestVersionOfX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.11", ==) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
-  - <<: *hasIncorrectVersionOfX
-    subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe")'
+  # SKSE VR Version
   - <<: *hasOldVersionOfX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
   - <<: *hasLatestVersionOfX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", ==) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
+  # Check to make sure the SKSE64 version and not LE or VR are installed
+  - <<: *hasIncorrectVersionOfX
+    subs: [ '[SKSE](http://skse.silverlock.org)' ]
+    condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe")'
+  # Check to make sure the SKSEVR version and not LE or 64 are installed
   - <<: *hasIncorrectVersionOfX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe")'
-# SKSE required scripts
+  # SKSE - Required Scripts
   - type: warn
     condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("../sksevr_loader.exe")))'
     content:
       - lang: en
         text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
-# SKSE64 plugins requirement
+# SKSE Plugins - Requirements
   - <<: *reqSKSE
     subs: [ 'a SKSE Plugin' ]
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
