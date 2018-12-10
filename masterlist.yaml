@@ -335,7 +335,7 @@ globals:
     condition: 'file("../skse64_loader.exe") and version("../skse64_loader.exe", "0.2.0.11", ==)'
   - <<: *hasIncorrectVersionOfX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimSE.exe") and file("../skse(|VR)_loader.exe")'
+    condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe")'
   - <<: *hasOldVersionOfX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", <)'
@@ -344,7 +344,7 @@ globals:
     condition: 'file("../skseVR_loader.exe") and version("../skseVR_loader.exe", "0.2.0.10", ==)'
   - <<: *hasIncorrectVersionOfX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimVR.exe") and file("../skse(|64)_loader.exe")'
+    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe")'
 # SKSE required scripts
   - type: warn
     condition: 'file("../skse(64|vr)_loader.exe") and not file("scripts/skse.pex")'
