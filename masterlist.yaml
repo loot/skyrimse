@@ -6909,13 +6909,18 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12158/'
         name: 'Proudspire Crypt on Nexus Mods'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x64A2DD93 # v1.0
-        itm: 15
+      # version: 1.0
+      - <<: *reqManualFix
+        crc: 0x64A2DD93
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
         udr: 9
-    clean:
-      - crc: 0x967FE323 # v1.0
-        util: 'SSEEdit v3.2.1'
+        nav: 1
+      # version: 1.0, after Quick Clean
+      - <<: *reqManualFix
+        crc: 0x8B514AE0
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
   - name: 'pmoutsideplanters.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13160/'
