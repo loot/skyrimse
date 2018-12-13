@@ -1740,6 +1740,22 @@ plugins:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
       - 'RLO - Interiors.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ELE_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_ELE_ICoWinterhold Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Realistic Water Two'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("RealisticWaterTwo.esp") and not active("Qw_ELE_RW2 Patch.esp")'
     tag:
       - C.ImageSpace
       - C.Light
