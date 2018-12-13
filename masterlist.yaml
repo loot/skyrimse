@@ -2698,6 +2698,7 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SV SSE' ]
         condition: 'active("Valerica.esp") and active("Bijin_AIO-SV 2018.esp")'
+
   - name: 'CosmeticVampireOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
     after:
@@ -2760,6 +2761,26 @@ plugins:
     clean:
       - crc: 0xE10633B8
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'PAN_NPCs.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/'
+        name: 'Pandorable''s NPCs on Nexus Mods'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'AI Overhaul'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("AI Overhaul.esp") and not active("Qw_PANNPCs_AIOverhaul Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_PANNPCs_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp")'
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
     inc:
