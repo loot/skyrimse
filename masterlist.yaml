@@ -3894,6 +3894,14 @@ plugins:
       # version: 2.0.3
       - crc: 0x43FC5E84
         util: 'SSEEdit v3.3.6'
+  - name: 'BarenziahQuestMarkers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/684/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
   - name: 'Better Harvesting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
     after:
