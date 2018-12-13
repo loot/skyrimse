@@ -1852,6 +1852,12 @@ plugins:
       - 'RLO - Interiors.esp'
       - 'RLO - Exteriors.esp'
       - 'torch shadows.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_RelightingSkyrim_CRF Patch.esp")'
     dirty:
       # version: 1.0.6
       - <<: *quickClean
