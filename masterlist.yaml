@@ -2716,9 +2716,19 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
+          - 'AI Overhaul'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul Patch.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Cutting Room Floor'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp") and not active("Qw_PANNPCs_CRF Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
     clean:
       - crc: 0xE10633B8
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
