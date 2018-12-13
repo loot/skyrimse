@@ -5296,9 +5296,16 @@ plugins:
     tag:
       - Invent
     msg:
-      - <<: *patchIncluded
-        subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cloaks - USSEP Patch.esp") and not active("Bashed Patch, 0.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_CloaksOfSkyrim_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksOfSkyrim_USSEP Patch.esp")'
     clean:
       # version: 1.2.1
       - crc: 0x7A522F11
@@ -5311,6 +5318,13 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Cloaks - USSEP Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'Qw_CloaksOfSkyrim_CRF Patch.esp' ]
+        condition: 'active("Qw_CloaksOfSkyrim_CRF Patch.esp")'
+      - <<: *AlreadyInX
+        subs: [ 'Qw_CloaksOfSkyrim_USSEP Patch.esp' ]
+        condition: 'active("Qw_CloaksOfSkyrim_USSEP Patch.esp")'
     clean:
       # version: 1.2.1
       - crc: 0x28F684DD
