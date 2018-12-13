@@ -4106,17 +4106,6 @@ plugins:
         name: 'Guard Dialogue Overhaul (GDO) SSE on Nexus Mods'
     after:
       - 'Hothtrooper44_ArmorCompilation.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_GuardDialogueOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_GuardDialogueOverhaul_USSEP Patch.esp")'
     clean:
       # version: 1.6
       - crc: 0xF9B972F2
@@ -8199,6 +8188,12 @@ plugins:
     clean:
       - crc: 0xCB4A70D5
         util: 'SSEEdit v3.3.2 BETA'
+  - name: 'Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp'
+    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'Guard Dialogue Overhaul' ]
+        condition: 'active("Guard Dialogue Overhaul.esp") and active("Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp")'
   - name: 'Qw_ISC_USSEP Patch.esp'
     tag:
       - Sound
