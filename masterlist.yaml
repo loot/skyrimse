@@ -5461,6 +5461,19 @@ plugins:
       # version: 1.2.1
       - crc: 0x28F684DD
         util: 'SSEEdit v3.2.2'
+  - name: 'Cloaks&Capes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2019/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
   - name: 'Skyshards.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/'
