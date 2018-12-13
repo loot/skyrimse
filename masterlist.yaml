@@ -3940,6 +3940,26 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Ars Metallica'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Ars Metallica.esp") and not active("Qw_CACO_ArsMetallica Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Audio Overhaul for Skyrim'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_CACO_AOS Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Qw_CACO_RDO Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim 3D Trees and Plants'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_CACO_S3DTrees Patch.esp")'
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
