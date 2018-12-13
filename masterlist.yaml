@@ -1001,6 +1001,19 @@ plugins:
       # version: 1.5
       - crc: 0x3161E919
         util: 'SSEEdit v4.0.0'
+  - name: 'FloraRespawnFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Ars Metallica'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Ars Metallica.esp") and not active("Qw_ArsMetallica_FloraRespawnFix Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim 3D Trees and Plants'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_Skyrim3DTrees_FloraRespawnFix Patch.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
     # "This mod overwrites files from mod X, is it compatible?"
