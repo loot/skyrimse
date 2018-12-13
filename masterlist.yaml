@@ -1105,6 +1105,31 @@ plugins:
     msg:
       - *reqSkyUI
       - *doNotClean
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim: Bruma'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("BSHeartland.esp") and not active("Qw_ACE_BSHeartland Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cloaks and Capes'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cloaks&Capes.esp") and not active("Qw_ACE_CloaksAndCapes Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cloaks of Skyrim'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ACE_CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Immersive Creatures'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("Qw_ACE_SkyrimImmersiveCreatures Patch.esp")'
     clean:
       # version: 1.0
       - crc: 0x832B2C99
