@@ -2772,6 +2772,22 @@ plugins:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
         name: 'Interesting NPCs SSE on 3dnpc.com'
     group: *earlyLoadersGroup
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy and Cooking Overhaul'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_3DNPC Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Ordinary Women'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("The Ordinary Women.esp") and not active("Qw_3DNPC_TheOrdinaryWomen Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIPackages
