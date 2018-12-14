@@ -2593,9 +2593,14 @@ plugins:
         condition: 'active("AI Overhaul.esp") and not active("Qw_AelaStandalone_AIOverhaul Patch.esp")'
       - <<: *patch3rdParty
         subs:
+          - 'Scoped Bows'
+          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_AelaStandalone_USSEP Patch.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("AI Overhaul.esp") and not active("ScopedBows.esp") and not active("Qw_AelaStandalone_USSEP Patch.esp")'
   - name: 'Bijin AIO.esp'
     msg:
       - <<: *patch3rdParty
