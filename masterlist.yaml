@@ -344,11 +344,11 @@ globals:
   # Check to make sure the SKSE64 version and not LE or VR are installed
   - <<: *hasIncorrectVersionOfX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe")'
+    condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe") and not file("../skse64_loader.exe")'
   # Check to make sure the SKSEVR version and not LE or 64 are installed
   - <<: *hasIncorrectVersionOfX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe")'
+    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../skseVR_loader.exe")'
   # SKSE - Required Scripts
   - type: warn
     condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("../sksevr_loader.exe")))'
