@@ -4117,7 +4117,14 @@ plugins:
         name: 'GIST - Genuinely Intelligent Soul Trap SE on Nexus Mods'
     inc:
       - 'AcquisitiveSoulGemMultithreaded.esp'
-    msg: [ *reqSkyUI ]
+    msg:
+      - <<: *patchProvided
+        subs: [ '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrim/mods/65531/)' ]
+        condition: 'active("MLPSoulGems.esp") and not active("GIST-MLPSoulGems-patch.esp")'
+      - <<: *patchProvided
+        subs: [ '[Rustic Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/5785/)' ]
+        condition: 'active("RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp") and not active("GIST-RusticSoulGems-patch.esp")'
+      - *reqSkyUI
   - name: 'GIST-MLPSoulGems-patch.esp'
     req:
       - name: 'MLPSoulGems.esp'
