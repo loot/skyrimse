@@ -5657,8 +5657,13 @@ plugins:
       # version: 1.0
       - crc: 0xA5763C46
         util: 'SSEEdit v3.2.2'
-  - name: 'RUSTIC SOULGEMS - Sorted.esp'
+  - name: 'RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5785' ]
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp")'
+        subs: [ 'RUSTIC SOULGEMS' ]
+  - name: 'RUSTIC SOULGEMS - Sorted.esp'
     clean:
       # version: 1.0
       - crc: 0x2F1715EC
@@ -5667,7 +5672,6 @@ plugins:
       - crc: 0x7AD6717B
         util: 'SSEEdit v4.0.0'
   - name: 'RUSTIC SOULGEMS - Unsorted.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5785' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
