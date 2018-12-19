@@ -174,13 +174,16 @@ common:
         text: '%1%は一つだけ使用してください。'
       - lang: de
         text: 'Nutzen Sie nur einen %1%.'
-  - &includesMBBF
+  - &includesX
     type: say
     content:
       - lang: en
-        text: '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/) is included with this mod.'
+        text: '%1% is included with this mod.'
       - lang: de
-        text: 'Der [ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/) ist in diesem Mod enthalten.'
+        text: 'Der %1% ist in diesem Mod enthalten.'
+  - &includesMBBF
+    <<: *includesX
+    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
 
 # Cleaning data
   - &dirtyPlugin
