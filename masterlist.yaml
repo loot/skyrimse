@@ -5279,9 +5279,16 @@ plugins:
   - name: 'Convenient Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
     after:
+      - 'AmazingFollowerTweaks.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
-    msg: [ *doNotClean ]
+    msg: 
+      - *doNotClean
+      - type: info
+        condition: 'active("AmazingFollowerTweaks.esp")'
+        content:
+          - lang: en
+            text: 'Amazing Follower Tweaks "horse features" and "follower teleport on weapon draw setting" must be disabled for Convenient Horses to function correctly.'
   - name: 'Immersive Horses.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
