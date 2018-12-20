@@ -4024,12 +4024,6 @@ plugins:
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
-  - name: 'Convenient Horses.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-    msg: [ *doNotClean ]
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
     after:
@@ -4090,25 +4084,6 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
-  - name: 'EFFCore.esm'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
-        name: 'Extensible Follower Framework on Nexus Mods'
-    clean:
-      # version: 4.0.3
-      - crc: 0x9A583BDE
-        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
-  - name: 'EFFDialogue.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
-        name: 'Extensible Follower Framework on Nexus Mods'
-    after:
-      - 'BUVARP.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-    clean:
-      # version: 4.0.3
-      - crc: 0xE0305B2C
-        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
   - name: 'UFD Enhanced Soultrap.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
     inc:
@@ -4352,33 +4327,6 @@ plugins:
       # version: 0.4
       - crc: 0x75419F86
         util: 'SSEEdit v3.2.1'
-  - name: 'Immersive Horses.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
-        name: 'Immersive Horses on Nexus Mods'
-    req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
-      - *SKSE64
-      - *SkyUI
-    inc:
-      - 'Convenient Horses.esp'
-    tag:
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.Spells
-      - Actors.Stats
-      - Factions
-      - Graphics
-      - Invent
-      - Names
-      - Scripts
-      - SpellStats
-      - Stats
-    clean:
-      # version: 3.0
-      - crc: 0xD5111397
-        util: 'SSEEdit v3.2.40'
   - name: 'Imperious - Races of Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
@@ -4649,10 +4597,6 @@ plugins:
       - <<: *patchProvided
         subs: [ '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
-  - name: 'My Home Is Your Home.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
-    after:
-      - 'AmazingFollowerTweaks.esp'
   - name: 'Open Cities Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
@@ -5330,6 +5274,65 @@ plugins:
       # version: 7.00SSE
       - crc: 0xE6A87461
         util: 'SSEEdit v3.2.2'
+
+###### Gameplay - Follower/Mount Managers ######
+  - name: 'Convenient Horses.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    msg: [ *doNotClean ]
+  - name: 'Immersive Horses.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
+        name: 'Immersive Horses on Nexus Mods'
+    req:
+      - name: 'SKSE/Plugins/PapyrusUtil.dll'
+        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+      - *SKSE64
+      - *SkyUI
+    inc:
+      - 'Convenient Horses.esp'
+    tag:
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.Spells
+      - Actors.Stats
+      - Factions
+      - Graphics
+      - Invent
+      - Names
+      - Scripts
+      - SpellStats
+      - Stats
+    clean:
+      # version: 3.0
+      - crc: 0xD5111397
+        util: 'SSEEdit v3.2.40'
+
+  - name: 'EFFCore.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
+        name: 'Extensible Follower Framework on Nexus Mods'
+    clean:
+      # version: 4.0.3
+      - crc: 0x9A583BDE
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+  - name: 'EFFDialogue.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
+        name: 'Extensible Follower Framework on Nexus Mods'
+    after:
+      - 'BUVARP.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    clean:
+      # version: 4.0.3
+      - crc: 0xE0305B2C
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+  - name: 'My Home Is Your Home.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
+    after:
+      - 'AmazingFollowerTweaks.esp'
 
 ###### Items ######
   - name: 'aMidianBorn_ContentAddon.esp'
