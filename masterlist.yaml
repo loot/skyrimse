@@ -4823,9 +4823,6 @@ plugins:
         subs: [ 'Extensible Follower Framework' ]
         condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
       - <<: *patchProvided
-        subs: [ '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)' ]
-        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
       - <<: *patchProvided
@@ -5293,6 +5290,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
         name: 'Immersive Horses on Nexus Mods'
+    after:
+      - 'AmazingFollowerTweaks.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
     req:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
@@ -5300,6 +5301,24 @@ plugins:
       - *SkyUI
     inc:
       - 'Convenient Horses.esp'
+      - name: 'Relationship Dialogue Overhaul.esp'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim - Bruma SE'
+          - '[Immersive Horses - Bruma Patch (BETA)](https://www.nexusmods.com/skyrimspecialedition/mods/21121/)'
+        condition: 'active("BSHeartland.esm") and not active("Immersive Horses - BS Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Book Covers Skyrim'
+          - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
+        condition: 'active("Book Covers Skyrim.esp") and not active("Book Covers Skyrim - Immersive Horses Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
     tag:
       - Actors.AIData
       - Actors.AIPackages
