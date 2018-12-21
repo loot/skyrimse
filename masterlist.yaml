@@ -4823,9 +4823,6 @@ plugins:
         subs: [ 'Extensible Follower Framework' ]
         condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
       - <<: *patchProvided
-        subs: [ '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)' ]
-        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
       - <<: *patchProvided
@@ -5305,6 +5302,12 @@ plugins:
     inc:
       - 'Convenient Horses.esp'
       - name: 'Relationship Dialogue Overhaul.esp'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
     tag:
       - Actors.AIData
