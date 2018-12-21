@@ -5391,6 +5391,29 @@ plugins:
       # version: 4.0.3
       - crc: 0xE0305B2C
         util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+  - name: 'nwsFollowerFramework.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/'
+        name: 'Nether''s Follower Framework SSE on Nexus Mods'
+    inc:
+      - 'AmazingFollowerTweaks.esp'
+      - 'EFFCore.esm'
+      - 'EFFDialogue.esp'
+    msg: 
+      - type: info
+        condition: 'active("Convenient Horses.esp")'
+        content:
+          - lang: en
+            text: '**Mount Support** must be switched to **No support** in Nether''s Follower Framework settings for Convenient Horses to function correctly with Nether''s Follower Framework.'
+      - type: info
+        condition: 'active("Immersive Horses.esp")'
+        content:
+          - lang: en
+            text: '**Mount Support** must be switched to **Riding Support Only** in Nether''s Follower Framework settings for Immersive Horses to function correctly with Nether''s Follower Framework.'
+    clean:
+      # version: 2.17beta
+      - crc: 0xF5416591
+        util: 'SSEEdit v4.0.0'
   - name: 'My Home Is Your Home.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
     after:
