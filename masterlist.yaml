@@ -2,7 +2,12 @@ common:
 # Files
   - &SKSE64
     name: '../skse64_loader.exe'
-    display: '[SKSE64](http://skse.silverlock.org)'
+    display: '**Skyrim Script Extender ([ SKSE 64 ](http://skse.silverlock.org))**'
+    condition: 'file("../SkyrimSE.exe") and not file("../skse64_loader.exe")'
+  - &SKSEVR
+    name: '../sksevr_loader.exe'
+    display: '**Skyrim Script Extender ([ SKSE VR ](http://skse.silverlock.org))**'
+    condition: 'file("../SkyrimVR.exe") and not file("../sksevr_loader.exe")'
   - &SkyUI
     name: 'SkyUI_SE.esp'
     display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
@@ -1400,6 +1405,7 @@ plugins:
     group: *fixesGroup
     req:
       - *SKSE64
+      - *SKSEVR
     clean:
       # version: 5.2SE
       - crc: 0x79ACE179
@@ -1502,6 +1508,7 @@ plugins:
         name: 'RaceMenu Special Edition on Nexus Mods'
     req:
       - *SKSE64
+      - *SKSEVR
     inc:
       - 'CharacterMakingExtender.esp'
       - 'EnhancedCharacterEdit.esp'
@@ -3186,6 +3193,7 @@ plugins:
         name: 'Toccata Follower SE (With Elisif Replacer Option) on Nexus Mods'
     req:
       - *SKSE64
+      - *SKSEVR
       - *SkyUI
     clean:
       - crc: 0xAA9D9F35
@@ -3977,6 +3985,7 @@ plugins:
     group: *coreGroup
     req:
       - *SKSE64
+      - *SKSEVR
     inc:
       - 'BullseyePerkParalyzeBugFixSE.esp'
       - 'FloraRespawnFix.esp'
@@ -5149,6 +5158,7 @@ plugins:
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
         condition: 'file("scripts/_AP_Main.pex")'
       - *SKSE64
+      - *SKSEVR
       - *SkyUI
     clean:
       # version: 3.1 - No JContainers
@@ -5298,6 +5308,7 @@ plugins:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
       - *SKSE64
+      - *SKSEVR
       - *SkyUI
     inc:
       - 'Convenient Horses.esp'
