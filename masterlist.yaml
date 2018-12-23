@@ -1,8 +1,8 @@
 common:
 # Files
-  - &SKSE
-    name: '../skse(64|vr)_loader.exe'
-    display: '[Skyrim Script Extender](http://skse.silverlock.org)'
+  - &SKSE64
+    name: '../skse64_loader.exe'
+    display: '[SKSE64](http://skse.silverlock.org)'
   - &SkyUI
     name: 'SkyUI_SE.esp'
     display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
@@ -1399,7 +1399,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
     group: *fixesGroup
     req:
-      - *SKSE
+      - *SKSE64
     clean:
       # version: 5.2SE
       - crc: 0x79ACE179
@@ -1501,7 +1501,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
         name: 'RaceMenu Special Edition on Nexus Mods'
     req:
-      - *SKSE
+      - *SKSE64
     inc:
       - 'CharacterMakingExtender.esp'
       - 'EnhancedCharacterEdit.esp'
@@ -3185,7 +3185,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/'
         name: 'Toccata Follower SE (With Elisif Replacer Option) on Nexus Mods'
     req:
-      - *SKSE
+      - *SKSE64
       - *SkyUI
     clean:
       - crc: 0xAA9D9F35
@@ -3976,7 +3976,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
     group: *coreGroup
     req:
-      - *SKSE
+      - *SKSE64
     inc:
       - 'BullseyePerkParalyzeBugFixSE.esp'
       - 'FloraRespawnFix.esp'
@@ -5145,10 +5145,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/'
         name: 'Swift Potion Reborn on Nexus Mods'
     req:
-      - name: 'SKSE/Plugins/JContainers(64|VR).dll'
+      - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
         condition: 'file("scripts/_AP_Main.pex")'
-      - *SKSE
+      - *SKSE64
       - *SkyUI
     clean:
       # version: 3.1 - No JContainers
@@ -5297,7 +5297,7 @@ plugins:
     req:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
-      - *SKSE
+      - *SKSE64
       - *SkyUI
     inc:
       - 'Convenient Horses.esp'
