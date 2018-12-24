@@ -396,27 +396,52 @@ globals:
       - lang: de
         text: 'Es erscheint als hätten Sie **Skyrim Script Extender** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher das Sie die Skripte korrekt mit installiert haben die mit dem **[SKSE](http://skse.silverlock.org)** Installationsarchiv enthalten sind.'
 
+# Skyrim SE - Latest Version
+  - <<: *versionOldX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", >=) and file("../SkyrimSE.exe")'
+# Skyrim VR - Latest Version
+  - <<: *versionOldX
+    subs: [ '**Skyrim VR**' ]
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", <) and file("../SkyrimVR.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim VR**' ]
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe")'
+
 # SKSE 64 - Latest Version (0.2.0.12)
   - <<: *versionOldX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.12", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.12", ==) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.12", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
 # SKSE VR - Latest Version (0.2.0.10)
   - <<: *versionOldX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
-    condition: 'version("../skseVR_loader.exe", "0.2.0.10", ==) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
+    condition: 'version("../skseVR_loader.exe", "0.2.0.10", >=) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
 
 # SKSE 64 - Compatibility
   - <<: *versionIncSSE
     condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
+  - <<: *versionIncSSE
+    condition: 'product_version("../SkyrimSE.exe", "1.5.50.0", ==) and version("../skse64_loader.exe", "0.2.0.8", <) and file("../skse64_loader.exe")'
+  - <<: *versionIncSSE
+    condition: 'product_version("../SkyrimSE.exe", "1.5.53.0", ==) and version("../skse64_loader.exe", "0.2.0.9", <) and file("../skse64_loader.exe")'
+  - <<: *versionIncSSE
+    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", ==) and version("../skse64_loader.exe", "0.2.0.11", <) and file("../skse64_loader.exe")'
 # SKSE VR - Compatibility
   - <<: *versionIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
+  - <<: *versionIncSVR
+    condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
+  - <<: *versionIncSVR
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
 
 # SKSE Plugins - Requirements
   # - <<: *reqSKSE
