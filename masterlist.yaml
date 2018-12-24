@@ -168,6 +168,16 @@ common:
         text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
       - lang: de
         text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
+  - &versionIncSSE
+    <<: *versionIncX
+    subs:
+      - '**Skyrim Script Extender ([ SKSE ](http://skse.silverlock.org))**'
+      - '**Skyrim SE**'
+  - &versionIncSVR
+    <<: *versionIncX
+    subs:
+      - '**Skyrim Script Extender ([ SKSE ](http://skse.silverlock.org))**'
+      - '**Skyrim VR**'
   - &useOnlyOneX
     type: error
     content:
