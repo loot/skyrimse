@@ -374,10 +374,16 @@ globals:
 
 # SKSE 64 - Compatibility
   - <<: *versionIncSSE
-    condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
+    condition: '((product_version("../SkyrimSE.exe", "1.5.50.0", ==) and version("../skse64_loader.exe", "0.2.0.8", <) and file("../skse64_loader.exe")) or (file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")))'
+  - <<: *versionIncSSE
+    condition: '((product_version("../SkyrimSE.exe", "1.5.53.0", ==) and version("../skse64_loader.exe", "0.2.0.9", <) and file("../skse64_loader.exe")) or (file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")))'
+  - <<: *versionIncSSE
+    condition: '((product_version("../SkyrimSE.exe", "1.5.62.0", ==) and version("../skse64_loader.exe", "0.2.0.11", <) and file("../skse64_loader.exe")) or (file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")))'
 # SKSE VR - Compatibility
   - <<: *versionIncSVR
-    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
+    condition: '((product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")) or (file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")))'
+  - <<: *versionIncSVR
+    condition: '((product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")) or (file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")))'
 
 # SKSE Plugins - Requirements
   # - <<: *reqSKSE
