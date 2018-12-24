@@ -357,6 +357,21 @@ globals:
       - lang: en
         text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
 
+# Skyrim SE - Latest Version
+  - <<: *versionOldX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", >=) and file("../SkyrimSE.exe")'
+# Skyrim VR - Latest Version
+  - <<: *versionOldX
+    subs: [ '**Skyrim VR**' ]
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", <) and file("../SkyrimVR.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim VR**' ]
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe")'
+
 # SKSE 64 - Latest Version (0.2.0.12)
   - <<: *versionOldX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
