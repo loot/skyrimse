@@ -121,7 +121,7 @@ common:
     content:
       - lang: en
         text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
-  - &hasOldVersionOfX
+  - &versionOldX
     type: say
     content:
       - lang: en
@@ -138,7 +138,7 @@ common:
         text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
       - lang: de
         text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
-  - &hasLatestVersionOfX
+  - &versionUpToDateX
     type: say
     content:
       - lang: en
@@ -157,7 +157,7 @@ common:
         text: '%1%は最新版です。'
       - lang: de
         text: 'Ihr %1% ist aktuell.'
-  - &hasIncorrectVersionOfX
+  - &versionIncX
     type: error
     content:
       - lang: en
@@ -339,22 +339,22 @@ globals:
   - <<: *hasOldVersionOfX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.12", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
-  - <<: *hasLatestVersionOfX
+  - <<: *versionUpToDateX
     subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.12", ==) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   # SKSE VR Version
-  - <<: *hasOldVersionOfX
+  - <<: *versionOldX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
-  - <<: *hasLatestVersionOfX
+  - <<: *versionUpToDateX
     subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", ==) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
   # Check to make sure the SKSE64 version and not LE or VR are installed
-  - <<: *hasIncorrectVersionOfX
+  - <<: *versionIncX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
     condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe") and not file("../skse64_loader.exe")'
   # Check to make sure the SKSEVR version and not LE or 64 are installed
-  - <<: *hasIncorrectVersionOfX
+  - <<: *versionIncX
     subs: [ '[SKSE](http://skse.silverlock.org)' ]
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../skseVR_loader.exe")'
   # SKSE - Required Scripts
