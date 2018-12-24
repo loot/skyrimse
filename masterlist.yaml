@@ -121,7 +121,7 @@ common:
     content:
       - lang: en
         text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
-  - &hasOldVersionOfX
+  - &versionOldX
     type: say
     content:
       - lang: en
@@ -138,7 +138,7 @@ common:
         text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
       - lang: de
         text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
-  - &hasLatestVersionOfX
+  - &versionUpToDateX
     type: say
     content:
       - lang: en
@@ -157,11 +157,27 @@ common:
         text: '%1%は最新版です。'
       - lang: de
         text: 'Ihr %1% ist aktuell.'
-  - &hasIncorrectVersionOfX
+  - &versionIncX
     type: error
     content:
       - lang: en
-        text: 'It appears you have the incorrect version of %1% installed. Please ensure you have a compatible version of %1% for your setup.'
+        text: 'Your installed version of %1% is not compatible with your version of %2%.'
+      - lang: da
+        text: 'Din installerede version af %1% er ikke kompatibel med din version af %2%.'
+      - lang: ja
+        text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
+      - lang: de
+        text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
+  - &versionIncSSE
+    <<: *versionIncX
+    subs:
+      - '**Skyrim Script Extender ([ SKSE ](http://skse.silverlock.org))**'
+      - '**Skyrim SE**'
+  - &versionIncSVR
+    <<: *versionIncX
+    subs:
+      - '**Skyrim Script Extender ([ SKSE ](http://skse.silverlock.org))**'
+      - '**Skyrim VR**'
   - &useOnlyOneX
     type: error
     content:
@@ -334,39 +350,40 @@ globals:
         text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
       - lang: de
         text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
-# Skyrim Script Extender
-  # SKSE 64 Version
-  - <<: *hasOldVersionOfX
-    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.12", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
-  - <<: *hasLatestVersionOfX
-    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.12", ==) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
-  # SKSE VR Version
-  - <<: *hasOldVersionOfX
-    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
-    condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
-  - <<: *hasLatestVersionOfX
-    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
-    condition: 'version("../skseVR_loader.exe", "0.2.0.10", ==) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
-  # Check to make sure the SKSE64 version and not LE or VR are installed
-  - <<: *hasIncorrectVersionOfX
-    subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimSE.exe") and file("../skse(?:VR)?_loader.exe") and not file("../skse64_loader.exe")'
-  # Check to make sure the SKSEVR version and not LE or 64 are installed
-  - <<: *hasIncorrectVersionOfX
-    subs: [ '[SKSE](http://skse.silverlock.org)' ]
-    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../skseVR_loader.exe")'
-  # SKSE - Required Scripts
+# Skyrim Script Extender - Required Scripts
   - type: warn
     condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("../sksevr_loader.exe")))'
     content:
       - lang: en
         text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
+
+# SKSE 64 - Latest Version (0.2.0.12)
+  - <<: *versionOldX
+    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
+    condition: 'version("../skse64_loader.exe", "0.2.0.12", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
+    condition: 'version("../skse64_loader.exe", "0.2.0.12", ==) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+# SKSE VR - Latest Version (0.2.0.10)
+  - <<: *versionOldX
+    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
+    condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
+    condition: 'version("../skseVR_loader.exe", "0.2.0.10", ==) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
+
+# SKSE 64 - Compatibility
+  - <<: *versionIncSSE
+    condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
+# SKSE VR - Compatibility
+  - <<: *versionIncSVR
+    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
+
 # SKSE Plugins - Requirements
-  - <<: *reqSKSE
-    subs: [ 'a SKSE Plugin' ]
-    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
+  # - <<: *reqSKSE
+  #   subs: [ 'a SKSE Plugin' ]
+  #   condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
+
   - <<: *reqSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
