@@ -7472,54 +7472,6 @@ plugins:
       # version: 2.2, after cleaning & master sort
       - crc: 0x06E66E36
         util: 'SSEEdit v4.0.0'
-  - name: 'Settlements Expanded SE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
-    dirty:
-      # version: 1.2
-      - <<: *quickClean
-        crc: 0xF5D3581B
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 71
-    clean:
-      # version: 1.2
-      - crc: 0x8FD6B6A1
-        util: 'SSEEdit v4.0.1'
-  - name: 'Settlements Expanded SE - Lanterns of Skyrim Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
-    clean:
-      # version: 1
-      - crc: 0x90370084
-        util: 'SSEEdit v4.0.1'
-  - name: 'Settlements Expanded SE - No Snow Under the Roof Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
-    clean:
-      # version: 1
-      - crc: 0x0DA07D4E
-        util: 'SSEEdit v4.0.1'
-  - name: 'Settlements Expanded SE - Soljunds Sinkhole Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0xA6148AA2
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-    clean:
-      # version: 1.0
-      - crc: 0x7E8DF1DB
-        util: 'SSEEdit v4.0.1'
-  - name: 'Settlements Expanded SE - Whistling Mine Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0x18207371
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-    clean:
-      # version: 1.0
-      - crc: 0x97CA663C
-        util: 'SSEEdit v4.0.1'
   - name: 'Shor''s Stone.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
@@ -8553,3 +8505,57 @@ plugins:
       - 'Ordinator - Perks of Skyrim.esp'
       - 'Smithing Perks Overhaul SE.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
+
+###### Settlements Expanded SE ######
+  - name: 'Settlements Expanded SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ '[Blackthorn](https://www.nexusmods.com/skyrimspecialedition/mods/2242/)' ]
+        condition: 'active("BlackthornManor.esp") and not active("Settlements Expanded SE - Blackthorn Patch.esp")'
+    dirty:
+      # version: 1.2
+      - <<: *quickClean
+        crc: 0xF5D3581B
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 71
+    clean:
+      # version: 1.2
+      - crc: 0x8FD6B6A1
+        util: 'SSEEdit v4.0.1'
+  - name: 'Settlements Expanded SE - Lanterns of Skyrim Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
+    clean:
+      # version: 1
+      - crc: 0x90370084
+        util: 'SSEEdit v4.0.1'
+  - name: 'Settlements Expanded SE - No Snow Under the Roof Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
+    clean:
+      # version: 1
+      - crc: 0x0DA07D4E
+        util: 'SSEEdit v4.0.1'
+  - name: 'Settlements Expanded SE - Soljunds Sinkhole Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0xA6148AA2
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      # version: 1.0
+      - crc: 0x7E8DF1DB
+        util: 'SSEEdit v4.0.1'
+  - name: 'Settlements Expanded SE - Whistling Mine Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x18207371
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      # version: 1.0
+      - crc: 0x97CA663C
+        util: 'SSEEdit v4.0.1'
