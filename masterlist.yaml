@@ -6476,6 +6476,24 @@ plugins:
       # version: 2.0
       - crc: 0xD20AF3E4
         util: 'SSEEdit v4.0.0'
+  - name: 'BlackthornManor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2242/' ]
+    msg:
+      - <<: *reqMasterSort
+        condition: 'checksum("BlackthornManor.esp", F0F0D623)'
+    dirty:
+      # version: 1.1
+      - <<: *quickClean
+        crc: 0x7E530609
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
+    clean:
+      # version: 1.1
+      - crc: 0xF0F0D623
+        util: 'SSEEdit v4.0.1'
+      # version: 1.1, sorted masters
+      - crc: 0xF471822F
+        util: 'SSEEdit v4.0.1'
   - name: 'Bring Out Your Dead.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
