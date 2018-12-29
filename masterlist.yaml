@@ -1067,6 +1067,12 @@ plugins:
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
       - 'RSkyrimChildren.esm'
+    msg:
+      - <<: *versionIncX
+        subs:
+          - '**Unofficial Skyrim Special Edition Patch**'
+          - '**Skyrim Special Edition**'
+        condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.6", >=)'
     tag:
       - C.Acoustic
       - C.Regions
