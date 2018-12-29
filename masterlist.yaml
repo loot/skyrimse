@@ -1428,17 +1428,35 @@ plugins:
     group: *earlyLoadersGroup
     msg:
       - <<: *patchIncluded
+        subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrimspecialedition/mods/272)' ]
+        condition: 'active("Alternate Start - Live Another Life.esp") and not file("BetterQuestObjectives-AlternateStartPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ '[Amazing Follower Tweaks SE](https://www.nexusmods.com/skyrimspecialedition/mods/6656) or [Immersive Amazing Follower Tweaks SE](https://www.nexusmods.com/skyrimspecialedition/mods/14722)' ]
+        condition: 'active("AmazingFollowerTweaks.esp") and not file("BetterQuestObjectives-AFTPatch.esp")'
+      - <<: *patchIncluded
         subs: [ '[Book Covers Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/901/)' ]
         condition: 'active("Book Covers Skyrim.esp") and not file("BetterQuestObjectives - BCS Patch.esp")'
       - <<: *patchIncluded
-        subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrimspecialedition/mods/272)' ]
-        condition: 'active("Alternate Start - Live Another Life.esp") and not file("BetterQuestObjectives-AlternateStartPatch.esp")'
+        subs: [ '[Better Skill and Quest Books Names SE](https://www.nexusmods.com/skyrimspecialedition/mods/5260)' ]
+        condition: 'active("Better Skill and Quest Books Names SE.esp") and not file("BetterQuestObjectives-BSaQBPatch.esp")'
       - <<: *patchIncluded
         subs: [ '[Cutting Room Floor](https://www.nexusmods.com/skyrimspecialedition/mods/276)' ]
         condition: 'active("Cutting Room Floor.esp") and not file("BetterQuestObjectives-CRFPatch.esp")'
       - <<: *patchIncluded
+        subs: [ '[Extensible Follower Framework](https://www.nexusmods.com/skyrimspecialedition/mods/7003)' ]
+        condition: 'active("EFFCore.esm") and not file("BetterQuestObjectives-EFFPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ '[T3nd0''s Perkus Maximus SSE](https://www.nexusmods.com/skyrimspecialedition/mods/11044)' ]
+        condition: 'active("PerkusMaximus_Mage.esp") and not file("BetterQuestObjectives-PerMaPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ '[T3nd0s Skyrim SE Redone](https://www.nexusmods.com/skyrimspecialedition/mods/17915)' ]
+        condition: 'active("SkyRe_Main.esp") and not file("BetterQuestObjectives-SkyRePatch.esp")'
+      - <<: *patchIncluded
         subs: [ '[The Paarthurnax Dilemma](https://www.nexusmods.com/skyrimspecialedition/mods/365)' ]
         condition: 'active("The Paarthurnax Dilemma.esp") and not file("BetterQuestObjectives-PaarDilemmaPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ '[YASH - Yet Another Skyrim Hardcore mod](https://www.nexusmods.com/skyrimspecialedition/mods/2430)' ]
+        condition: 'active("YASH2.esp") and not file("BetterQuestObjectives - YASH Patch.esp")'
     tag:
       - NoMerge
     clean:
