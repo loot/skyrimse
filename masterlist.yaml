@@ -681,9 +681,12 @@ plugins:
       - 'ccBGSSSE019-StaffofSheogorath.esl'
       - 'ccBGSSSE021-LordsMail.esl'
       - 'ccMTYSSE001-KnightsoftheNine.esl'
-    inc:
-      - 'UnlimitedBookshelves.esp'
     msg:
+      - <<: *semiCompatible
+        subs:
+          - '[Unlimited Bookshelves](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
+          - 'Unlimited Bookshelves reverts changes made in Update.esm which are required by Survival mode. A patch is recommended to ensure correct functionality.'
+        condition: 'active("UnlimitedBookshelves.esp")'
       - type: warn
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("unofficial skyrim survival patch.esp")'
         content:
@@ -8217,8 +8220,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/' ]
     after:
       - 'Unofficial Skyrim Special Edition Patch.esp'
-    inc:
-      - 'UnlimitedBookshelves.esp'
     msg:
       - <<: *patchProvided
         subs: [ '[Advanced Adversary Encounters - Ultimate SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6843/)' ]
@@ -8424,6 +8425,11 @@ plugins:
       - <<: *patchProvided
         subs: [ '[Zim''s Immersive Artifacts](https://www.nexusmods.com/skyrimspecialedition/mods/9138/)' ]
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("DBM_ZimsImmersiveArtifacts_Patch.esp")'
+      - <<: *semiCompatible
+        subs:
+          - '[Unlimited Bookshelves](https://www.nexusmods.com/skyrimspecialedition/mods/11052/)'
+          - 'Unlimited Bookshelves reverts changes made in Legacy of the Dragonborn. A patch is recommended to ensure correct functionality.'
+        condition: 'active("UnlimitedBookshelves.esp")'
     tag:
       - C.Location
       - Delev
