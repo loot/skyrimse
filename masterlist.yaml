@@ -4593,6 +4593,20 @@ plugins:
     after:
       - 'Wildcat - Combat of Skyrim.esp'
     msg: [ *doNotClean ]
+  - name: 'know_your_enemy.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13807/'
+        name: 'Know Your Enemy - Trait-based resistances and weaknesses on Nexus Mods'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - '[Elemental Destruction Magic](https://www.nexusmods.com/skyrimspecialedition/mods/440)'
+          - '[ Know Your Elements - A Patch for Know Your Enemy and Elemental Destruction Magic ](https://www.nexusmods.com/skyrimspecialedition/mods/22254)'
+        condition: 'active("Elemental Destruction.esp") and not active("Know Your Elements.esp")'
+    clean:
+      # version: 7.2.0
+      - crc: 0x82B40894
+        util: 'SSEEdit v4.0.1'
   - name: 'KS Dragon Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
     after:
