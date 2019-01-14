@@ -540,8 +540,12 @@ groups:
   - name: &addonsGroup Add-ons & Expansions
     after: [ *earlyLoadersGroup ]
 
+  - name: &underridesGroup Underrides
+
   - name: default
-    after: [ *earlyLoadersGroup ]
+    after: 
+      - *earlyLoadersGroup
+      - *underridesGroup
 
   - name: &coreGroup Core Mods
     after: [ default ]
