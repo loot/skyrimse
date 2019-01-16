@@ -6810,6 +6810,16 @@ plugins:
       # version: 1.3.0, replacer from Vigilant Voiced
       - crc: 0xB4D712AB
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Wyrmstooth.esp'
+    url:
+      - link: 'https://archive.org/details/Wyrmstooth1.17BSSE'
+        name: 'Wyrmstooth SE on Internet Archive'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Convenient Horses'
+          - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
+        condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?(Vigilant_)?Wyrm.*\.esp")'
 
 ###### Locations - New Structures & Landmarks ######
   - name: 'AHZBetterDGEntranceSE.esp'
