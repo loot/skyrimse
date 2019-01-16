@@ -57,6 +57,13 @@ common:
         text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
       - lang: de
         text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
+  - &patch3rdPartyQUASIPC
+    type: warn
+    content:
+      - lang: en
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - lang: de
+        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
   - &compatNotes
     type: say
     content:
@@ -1059,15 +1066,11 @@ plugins:
   - name: 'FloraRespawnFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Ars Metallica'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Ars Metallica' ]
         condition: 'active("Ars Metallica.esp") and not active("Qw_ArsMetallica_FloraRespawnFix Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim 3D Trees and Plants'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_Skyrim3DTrees_FloraRespawnFix Patch.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
@@ -1093,60 +1096,38 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
-      - <<: *patch3rdParty
-        subs:
-          - 'Audio Overhaul for Skyrim'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Audio Overhaul for Skyrim' ]
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_WACCF_AOS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Beyond Reach'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Beyond Reach' ]
         condition: 'active("arnima.esp") and not active("Qw_WACCF_arnima Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Beyond Skyrim: Bruma'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Beyond Skyrim: Bruma' ]
         condition: 'active("BSHeartland.esp") and not active("Qw_WACCF_BSHeartland Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cloaks of Skyrim'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cloaks of Skyrim' ]
         condition: 'active("Cloaks.esp") and not active("Qw_WACCF_CloaksOfSkyrim Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_WACCF_CRF Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive Sounds - Compendium'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive Sounds - Compendium' ]
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("Qw_WACCF_ISC Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Legendary Skyrim Crossbows'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Legendary Skyrim Crossbows' ]
         condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Qw_WACCF_LSCrossbows Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Face Guard Helmets'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Open Face Guard Helmets' ]
         condition: 'active("Open Face Guard Helmets.esp") and not active("Qw_WACCF_OpenFaceGuardHelmets Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Face Guard Helmets SSE'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Open Face Guard Helmets SSE' ]
         condition: 'active("OpenFaceGuardHelmetsSSE.esp") and not active("Qw_WACCF_OpenFaceGuardHelmetsSE Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSChildren.esp") and not active("Qw_WACCF_RSChildren Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'TMB Vanilla Armors and Clothes SSE'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'TMB Vanilla Armors and Clothes SSE' ]
         condition: 'active("TMBVanillaArmorandClothes.esp") and not active("Qw_WACCF_TMBVAC Patch.esp")'
     clean:
       # version: 1.0.1
@@ -1169,30 +1150,20 @@ plugins:
     msg:
       - *reqSkyUI
       - *doNotClean
-      - <<: *patch3rdParty
-        subs:
-          - 'Beyond Skyrim: Bruma'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Beyond Skyrim: Bruma' ]
         condition: 'active("BSHeartland.esp") and not active("Qw_ACE_BSHeartland Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cloaks and Capes'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cloaks and Capes' ]
         condition: 'active("Cloaks&Capes.esp") and not active("Qw_ACE_CloaksAndCapes Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cloaks of Skyrim'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cloaks of Skyrim' ]
         condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_ACE_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Immersive Creatures'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Skyrim Immersive Creatures' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("Qw_ACE_SkyrimImmersiveCreatures Patch.esp")'
     clean:
       # version: 1.0
@@ -1987,20 +1958,14 @@ plugins:
       - 'ELFX - Hardcore.esp'
       - 'RLO - Interiors.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_ELE_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive College of Winterhold'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_ELE_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Realistic Water Two'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("Qw_ELE_RW2 Patch.esp")'
     tag:
       - C.ImageSpace
@@ -2070,30 +2035,20 @@ plugins:
       - 'Luminosity - Lightweight Lighting.esp'
       - 'RLO - Interiors.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - ' `Castle Volkihar Rebuilt` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Castle Volkihar Rebuilt' ]
         condition: 'active("Castle Volkihar Rebuilt.esp") and not active("Qw_Luminosity_CastleVolkihar Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Cutting Room Floor` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_Luminosity_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Immersive Citizens - AI Overhaul` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Qw_Luminosity_ImmersiveCitizens Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Immersive College of Winterhold` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_Luminosity_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Realistic Water Two` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("Qw_Luminosity_RW2 Patch.esp")'
     tag:
       - C.Light
@@ -2115,10 +2070,8 @@ plugins:
       - 'RLO - Exteriors.esp'
       - 'torch shadows.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_RelightingSkyrim_CRF Patch.esp")'
     dirty:
       # version: 1.0.6
@@ -2203,10 +2156,8 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Immersive Sounds - Compendium' ]
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Deadly Spell Impacts` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
     clean:
       # version: 3.0.0
@@ -2279,25 +2230,17 @@ plugins:
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
       - 'UnlimitedBookshelves.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - ' `Deadly Spell Impacts` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_ISC Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `RUSTIC SOULGEMS - Sorted` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'RUSTIC SOULGEMS - Sorted' ]
         condition: 'active("RUSTIC SOULGEMS - Sorted.esp") and not file("Qw_RusticSoulgemsSorted_ISC Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `RUSTIC SOULGEMS - Unsorted` '
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'RUSTIC SOULGEMS - Unsorted' ]
         condition: 'active("RUSTIC SOULGEMS - Unsorted.esp") and not file("Qw_RusticSoulgemsUnsorted_ISC Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_ISC_USSEP Patch.esp")'
     tag:
       - Sound
@@ -2819,42 +2762,30 @@ plugins:
       - 'Bijin_AIO-SV 2018.esp'
       - 'Bijin Warmaidens.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'AI Overhaul SSE'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'AI Overhaul SSE' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_AelaStandalone_AIOverhaul Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Scoped Bows'
           - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("AI Overhaul.esp") and not active("ScopedBows.esp") and not active("Qw_AelaStandalone_USSEP Patch.esp")'
   - name: 'Bijin AIO.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'AI Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_BijinAIO_AIOverhaul Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_BijinAIO_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive College of Winterhold'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_BijinAIO_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BijinAIO_USSEP Patch.esp")'
   - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018| Warmaidens)\.esp'
     after:
@@ -2981,20 +2912,14 @@ plugins:
     after:
       - 'Cutting Room Floor.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'AI Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul Patch.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive College of Winterhold'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
     clean:
       - crc: 0xE10633B8
@@ -3004,20 +2929,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/'
         name: 'Pandorable''s NPCs on Nexus Mods'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'AI Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_PANNPCs_AIOverhaul Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_PANNPCs_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive College of Winterhold'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp")'
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
@@ -3154,20 +3073,14 @@ plugins:
         name: 'Interesting NPCs SSE on 3dnpc.com'
     group: *earlyLoadersGroup
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy and Cooking Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_3DNPC Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Ordinary Women'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'The Ordinary Women' ]
         condition: 'active("The Ordinary Women.esp") and not active("Qw_3DNPC_TheOrdinaryWomen Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
     tag:
       - Actors.ACBS
@@ -3428,20 +3341,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/'
         name: 'Sofia - The Funny Fully Voiced Follower on Nexus Mods'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Guard Dialogue Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Guard Dialogue Overhaul' ]
         condition: 'active("Guard Dialogue Overhaul.esp") and not active("Qw_SofiaFollower_GDO Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Relationship Dialogue Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Relationship Dialogue Overhaul' ]
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Qw_SofiaFollower_RDO Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_SofiaFollower_USSEP Patch.esp")'
       - type: warn
         content:
@@ -4204,10 +4111,8 @@ plugins:
   - name: 'BarenziahQuestMarkers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/684/' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
   - name: 'Better Harvesting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
@@ -4294,25 +4199,17 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
-      - <<: *patch3rdParty
-        subs:
-          - 'Ars Metallica'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Ars Metallica' ]
         condition: 'active("Ars Metallica.esp") and not active("Qw_CACO_ArsMetallica Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Audio Overhaul for Skyrim'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Audio Overhaul for Skyrim' ]
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_CACO_AOS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Relationship Dialogue Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Relationship Dialogue Overhaul' ]
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Qw_CACO_RDO Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim 3D Trees and Plants'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_CACO_S3DTrees Patch.esp")'
     clean:
       - crc: 0x479F529D
@@ -4673,10 +4570,8 @@ plugins:
           - 'Ethereal Elven Overhaul'
           - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
         condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Sizes Lore Edition'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Skyrim Sizes Lore Edition' ]
         condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
     clean:
       # version: 7.24SSE
@@ -5002,10 +4897,8 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
       - *includesMBBF
-      - <<: *patch3rdParty
-        subs:
-          - 'Audio Overhaul for Skyrim'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Audio Overhaul for Skyrim' ]
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_Ordinator_AOS Patch.esp")'
       - <<: *patch3rdParty
         subs:
@@ -5900,25 +5793,19 @@ plugins:
       - <<: *AlreadyInX
         subs: [ 'LegacyoftheDragonborn.esm' ]
         condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Complete Alchemy & Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_CRF Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'The Choice is Yours'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_USSEP Patch.esp")'
     after:
       - 'UnlimitedBookshelves.esp'
@@ -5958,15 +5845,11 @@ plugins:
     tag:
       - Invent
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_CloaksOfSkyrim_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksOfSkyrim_USSEP Patch.esp")'
     clean:
       # version: 1.2.1
@@ -5994,15 +5877,11 @@ plugins:
   - name: 'Cloaks&Capes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2019/' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
   - name: 'Skyshards.esp'
     url:
