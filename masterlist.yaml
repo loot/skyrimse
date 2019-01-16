@@ -6772,10 +6772,16 @@ plugins:
         crc: 0xDA83BB85
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         nav: 3
-  - name: Vigilant.esp
+  - name: 'Vigilant.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11849'
-        name: 'VIGILANT SE on Nexus Mods'
+        name: 'Vigilant SE on Nexus Mods'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Convenient Horses'
+          - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
+        condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?Vigilant(_Wyrm)?.*\.esp")'
     dirty:
       # version: 1.3.0
       - <<: *quickClean
