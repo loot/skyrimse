@@ -61,9 +61,14 @@ common:
     type: warn
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
       - lang: de
-        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+  - &patch3rdPartySBCK
+    <<: *patch3rdParty
+    subs:
+      - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
+      - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
   - &compatNotes
     type: say
     content:
@@ -1129,6 +1134,8 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'TMB Vanilla Armors and Clothes SSE' ]
         condition: 'active("TMBVanillaArmorandClothes.esp") and not active("Qw_WACCF_TMBVAC Patch.esp")'
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
     clean:
       # version: 1.0.1
       - crc: 0x64D44D00
@@ -2762,14 +2769,11 @@ plugins:
       - 'Bijin_AIO-SV 2018.esp'
       - 'Bijin Warmaidens.esp'
     msg:
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'AI Overhaul SSE' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_AelaStandalone_AIOverhaul Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Scoped Bows'
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("AI Overhaul.esp") and not active("ScopedBows.esp") and not active("Qw_AelaStandalone_USSEP Patch.esp")'
@@ -2795,6 +2799,8 @@ plugins:
       - 'Immersive Weapons.esp'
       - 'ScopedBows.esp'
     msg:
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
       - <<: *useOnlyOneX
         condition: 'many("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
         subs: [ 'Bijin All in One' ]
@@ -2842,6 +2848,8 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
   - name: 'Serana.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
@@ -4222,7 +4230,7 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
-          - ' `Skyrim Sewers` '
+          - 'Skyrim Sewers'
           - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
         condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
     clean:
@@ -4749,6 +4757,10 @@ plugins:
       - <<: *patchProvided
         subs: [ '[Windsong Immersive Character Overhaul - Immersive People](https://www.nexusmods.com/skyrimspecialedition/mods/2136/)' ]
         condition: 'active("WICO - Immersive People.esp") and not active("MLU - WICO.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and active("ZIA_Complete Pack_V4.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -6098,37 +6110,6 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'ScopedBows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/912/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - ' `Bijin All in One` '
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Bijin Warmaidens` '
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("Bijin Warmaidens.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `MorrowLoot Ultimate` '
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("MLU.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Weapons Armor Clothing & Clutter Fixes` '
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("ScopedBows.esp", 5E29053A)'
-      - <<: *patch3rdParty
-        subs:
-          - ' `Zim''s Immersive Artifacts` '
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU.esp") and not file("ScopedBows_ZIA Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - ' both `MorrowLoot Ultimate` and `Zim''s Immersive Artifacts` '
-          - '[ Scoped Bows Compatibility Kit - SBCK ](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-        condition: 'active("ZIA_Complete Pack_V4.esp") and active("MLU.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
       - Delev
       - Invent
@@ -6322,6 +6303,13 @@ plugins:
       # version: 4.06SE
       - crc: 0x65AFCE11
         util: 'SSEEdit v4.0.0'
+  - name: 'ZIA_Ancient Pack_V4.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
+    msg:
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not active("MLU.esp") and not active("ScopedBows_MLU Patch.esp")'
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and active("MLU.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
 
 ###### Leveled List Modifiers ######
   - name: '3rdEraWeapMoS-lvlList.esp'
