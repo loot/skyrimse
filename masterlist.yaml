@@ -8411,7 +8411,18 @@ plugins:
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
-    group: *fixesGroup
+    group: *ccGroup
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: '%1% patcher script available here: %2%'
+          - lang: de
+            text: '%1% Patch-Skript hier verfügbar: %2%'
+        subs:
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+          - '[Unlimited Bookshelves patch generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160)'
+        condition: 'active("UnlimitedBookshelves.esp")'
     clean:
       # version: 2.0
       - crc: 0x86CF0F2B
