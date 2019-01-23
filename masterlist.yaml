@@ -1110,7 +1110,7 @@ plugins:
         condition: 'active("Ars Metallica.esp") and not active("Qw_ArsMetallica_FloraRespawnFix Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_Skyrim3DTrees_FloraRespawnFix Patch.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
+        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_Skyrim3DTrees_FloraRespawnFix Patch.esp") and not active("HarvestOverhaul_Redone.esp")'
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
     # "This mod overwrites files from mod X, is it compatible?"
@@ -4411,7 +4411,10 @@ plugins:
         subs:
           - 'Flora Respawn Fix'
           - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
-        condition: 'active("FloraRespawnFix.esp") and not active("HOR-Flora Respawn Fix Patch.esp")'
+        condition: 'active("FloraRespawnFix.esp") and not active("S3DTrees NextGenerationForests.esp") and not active("HOR-Flora Respawn Fix Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Flora Respawn Fix & Skyrim 3D Trees and Plants' ]
+        condition: 'active("S3DTrees NextGenerationForests.esp") and active("FloraRespawnFix.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
     tag:
       - Invent
       - Names
