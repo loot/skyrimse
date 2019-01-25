@@ -1130,6 +1130,7 @@ plugins:
       - 'Cutting Room Floor.esp'
       - 'DLCIntegration.esp'
       - 'Immersive Sounds - Compendium.esp'
+      - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
     msg:
@@ -2098,6 +2099,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
         name: 'Relighting Skyrim - SSE on Nexus Mods'
     group: *earlyLoadersGroup
+    after:
+      - 'Undeath.esp'
     inc:
       - 'ClimatesOfTamriel-Dungeons-Darker.esp'
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
@@ -6680,6 +6683,8 @@ plugins:
         name: 'Undeath Remastered on Bethesda.net'
     group: *earlyLoadersGroup
     after:
+      - 'Enhanced Landscapes.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
       - 'MoonAndStar_MAS.esp'
     inc:
       - 'AuroraVillage.esp'
@@ -6687,6 +6692,11 @@ plugins:
       - <<: *wildEdits
         subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
         condition: 'checksum("Undeath.esp", EB75A960)'
+      - <<: *semiCompatible
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - 'Complete Alchemy & Cooking Overhaul adds a flora respawn fix to several records that Undeath modifies. A patch is recommended to ensure correct functionality for both mods.'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp")'
     tag:
       - Graphics
       - Sound
@@ -6879,6 +6889,7 @@ plugins:
     group: *earlyLoadersGroup
     after:
       - 'TouringCarriages.esp'
+      - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
     msg:
