@@ -2958,14 +2958,17 @@ plugins:
       - 'Cutting Room Floor.esp'
     msg:
       - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul Patch.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
+        subs: [ 'AI Overhaul SSE' ]
+        condition: 'active("AI Overhaul.esp") and not active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp") and not active("Qw_PANNPCs_CRF Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp") and not active("Qw_PANNPCs_CRF Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor and AI Overhaul SSE' ]
+        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp")'
     clean:
       - crc: 0xE10633B8
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
@@ -2975,14 +2978,17 @@ plugins:
         name: 'Pandorable''s NPCs on Nexus Mods'
     msg:
       - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_PANNPCs_AIOverhaul Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
+        subs: [ 'AI Overhaul SSE' ]
+        condition: 'active("AI Overhaul.esp") and not active("Cutting Room Floor.esp") and not active("Qw_PANNPCs_AIOverhaul Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_PANNPCs_CRF Patch.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("AI Overhaul.esp") and not active("Qw_PANNPCs_CRF Patch.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor and AI Overhaul SSE' ]
+        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp")'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
     inc:
@@ -4445,6 +4451,20 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1547/' ]
     after:
       - 'Relationship Dialogue Overhaul.esp'
+  - name: 'AI Overhaul.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654'
+        name: 'AI Overhaul SSE on Nexus Mods'
+    msg:
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("PAN_NPCs.esp") and not active ("The Ordinary Women.esp") and not active("Qw_AIOverhaul_CRF Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSChildren.esp") and not active("Qw_RSChildren_AIOverhaul Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Simple Children' ]
+        condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
   - name: 'Immersive Citizens - AI Overhaul.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
