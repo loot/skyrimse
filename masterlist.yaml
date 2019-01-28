@@ -538,11 +538,15 @@ groups:
       - *ccGroup
       - *preFixesGroup
 
+  - name: &landscapeGroup Landscape
+    description: 'A group for mods that alter location landscapes to fix issues and/or improve visuals.'
+    after: [ *fixesGroup ]
+
   - name: &preEarlyGroup Pre-Early (Patches/Add-ons)
 
   - name: &earlyLoadersGroup Early Loaders
     after:
-      - *fixesGroup
+      - *landscapeGroup
       - *preEarlyGroup
 
   - name: &addonsGroup Add-ons & Expansions
