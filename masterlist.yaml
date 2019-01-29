@@ -1490,6 +1490,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
         name: 'A Quality World Map on Nexus Mods'
+    after:
+      - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     inc:
       - 'icepenguinworldmapclassic.esp'
       - 'IcePenguinWorldMapPaper.esp'
@@ -1501,6 +1503,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
         name: 'A Quality World Map on Nexus Mods'
+    after:
+      - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     inc:
       - 'IcePenguinWorldMap.esp'
       - 'IcePenguinWorldMapPaper.esp'
@@ -1515,6 +1519,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
         name: 'A Quality World Map on Nexus Mods'
+    after:
+      - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     inc:
       - 'IcePenguinWorldMap.esp'
       - 'icepenguinworldmapclassic.esp'
@@ -2455,10 +2461,14 @@ plugins:
       - 'UHDAP - MusicUHQ2.esp'
 
 ###### AudioVisual - Weather ######
+  - name:  'Dolomite Weathers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7895/' ]
+    group: *underridesGroup
   - name:  'NAT.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
         name: 'NAT - Natural and Atmospheric Tamriel on Nexus Mods'
+    group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
     inc:
@@ -3542,6 +3552,20 @@ plugins:
       # version: 2.04
       - crc: 0x8EF0F5D1
         util: 'SSEEdit v4.0.0'
+  - name: 'Cathedral Concept - Lightweight Grass Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21954/' ]
+    group: *underridesGroup
+    after:
+      - 'Dolomite Weathers.esp'
+      - 'MajesticMountains.esp'
+      - 'NAT.esp'
+    msg:
+      - <<: *includesX
+        subs: [ '[ Blended Roads ](https://www.nexusmods.com/skyrimspecialedition/mods/8834/)' ]
+        condition: 'active("BlendedRoads.esp")'
+      - <<: *includesX
+        subs: [ '[ Terrain LOD Redone ](https://www.nexusmods.com/skyrimspecialedition/mods/9135/)' ]
+        condition: 'active("TerrainLODRedone.esp")'
   - name: 'Enhanced Landscapes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18162/' ]
     group: *earlyLoadersGroup
@@ -3717,6 +3741,7 @@ plugins:
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'MajesticMountains.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
+    group: *underridesGroup
     after:
       - 'Dolomite Weathers.esp'
       - 'NAT.esp'
