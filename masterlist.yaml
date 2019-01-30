@@ -534,8 +534,12 @@ groups:
   - name: &fixesGroup Fixes & Resources
     after: [ *ccGroup ]
 
+  - name: &preEarlyGroup Pre-Early (Patches/Add-ons)
+
   - name: &earlyLoadersGroup Early Loaders
-    after: [ *fixesGroup ]
+    after:
+      - *fixesGroup
+      - *preEarlyGroup
 
   - name: &addonsGroup Add-ons & Expansions
     after: [ *earlyLoadersGroup ]
