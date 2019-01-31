@@ -531,8 +531,12 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
+  - name: &preFixesGroup Pre-Fixes (Patches/Add-ons)
+
   - name: &fixesGroup Fixes & Resources
-    after: [ *ccGroup ]
+    after:
+      - *ccGroup
+      - *preFixesGroup
 
   - name: &preEarlyGroup Pre-Early (Patches/Add-ons)
 
