@@ -1383,11 +1383,17 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE on Nexus Mods'
-    group: *fixesGroup
+    group: *preFixesGroup
     clean:
       # version: 1.3
       - crc: 0x137A03B3
         util: 'SSEEdit v3.2.1'
+  - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/' ]
+    group: *fixesGroup
+  - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
+    url: [ 'Skyrim Project Optimization SE on Nexus Mods' ]
+    group: *preFixesGroup
   - name: 'static mesh improvement mod se.esp'
     group: *earlyLoadersGroup
   - name: 'SMIM-SE?.*\.esp'
@@ -1540,7 +1546,7 @@ plugins:
         util: 'SSEEdit v4.0.1'
   - name: 'SkyUI_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     req:
       - *SKSE
     clean:
@@ -2319,7 +2325,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/'
         name: 'Lucidity Sound FX SSE on Nexus Mods'
-    group: *fixesGroup
+    group: *preFixesGroup
     clean:
       # version: v2r
       - crc: 0x8018F548
@@ -2815,10 +2821,10 @@ plugins:
 ###### Character Appearance - Body,face & hair ######
   - name: 'Hair Replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
   - name: 'Hair Replacer Assets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     after:
       - 'Hair Replacer.esp'
 
@@ -3046,7 +3052,7 @@ plugins:
 ###### Character Appearance - Presets ######
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2406/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     inc:
       - 'Better_Male_Presets.esp'
       - 'Kayla_CharPreset.esp'
@@ -3061,7 +3067,7 @@ plugins:
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
     msg:
@@ -3076,7 +3082,7 @@ plugins:
       - NoMerge
   - name: 'Kayla_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3851/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -3094,7 +3100,7 @@ plugins:
       - NoMerge
   - name: 'Lagertha_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2629/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -3111,7 +3117,7 @@ plugins:
       - NoMerge
   - name: 'Lydia Face Preset 64bit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1080/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -3128,7 +3134,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Severa_CharPreset.esp'
-    group: *fixesGroup
+    group: *preFixesGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lagertha_CharPreset.esp'
@@ -3210,7 +3216,7 @@ plugins:
       - Relev
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     clean:
       # version: 1.6
       - crc: 0xA66B30B5
@@ -3225,7 +3231,7 @@ plugins:
       - Relev
   - name: 'Ducks and Swans.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
   - name: 'ForgottenCity.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1179'
@@ -3557,7 +3563,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Blowing in the Wind SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     clean:
       # version: 2.04
       - crc: 0x8EF0F5D1
@@ -3591,19 +3597,19 @@ plugins:
       - crc: 0x9B2A145A
         util: 'SSEEdit v3.3.11 BETA'
   - name: 'Enhanced Landscapes - Barren Marsh.esp'
-    group: *fixesGroup
+    group: *preEarlyGroup
   - name: 'Enhanced Landscapes - Dead Marsh.esp'
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'Enhanced Landscapes - Barren Marsh.esp'
   - name: 'Enhanced Landscapes - Grass.esp'
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'Skyrim Flora Overhaul.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Enhanced Landscapes - Green Fields.esp'
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'Enhanced Landscapes - Grass.esp'
@@ -3612,7 +3618,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11008'
         name: 'Enhanced Vanilla Trees on Nexus Mods'
-    group: *fixesGroup
+    group: *preEarlyGroup
     inc:
       - 'SimplyBiggerTreesSE.esp'
       - 'Skyrim Flora Overhaul.esp'
@@ -3620,7 +3626,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/348/'
         name: 'Gildergreen Regrown on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *preEarlyGroup
     clean:
       # version: 2.0
       - crc: 0xFFD6E910
@@ -3630,7 +3636,7 @@ plugins:
     group: *ccGroup
   - name: 'HearthfireGrassFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13461/' ]
-    group: *earlyLoadersGroup
+    group: *preEarlyGroup
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     group: *earlyLoadersGroup
@@ -3891,7 +3897,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/'
         name: 'Realistic High Altitude Treeline on Nexus Mods'
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'Enhanced Landscapes.esp'
     dirty:
@@ -3906,7 +3912,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
-    group: *fixesGroup
+    group: *preEarlyGroup
     clean:
       # version: 1.0SE
       - crc: 0xADC2F6AF
@@ -3916,7 +3922,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Skyrim Flora Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'SimplyBiggerTreesSE.esp'
   - name: 'S3DTrees NextGenerationForests.esp'
@@ -3945,7 +3951,7 @@ plugins:
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_S3DLandscapes_USSEP Patch.esp")'      
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
   - name: 'SkyrimIsWindy - EVT patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
     after:
@@ -3968,7 +3974,7 @@ plugins:
         util: 'SSEEdit v3.3.11 BETA'
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
   - name: 'UniqueLocationsRiverwoodForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9258/' ]
     dirty:
@@ -4033,7 +4039,7 @@ plugins:
         name: 'Verdant - A Skyrim Grass Plugin on Nexus Mods'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
         name: 'Landscape Fixes For Grass Mods - Tweaks for Verdant on Nexus Mods'
-    group: *fixesGroup
+    group: *preEarlyGroup
     inc:
       - name: 'Open Cities Skyrim.esp'
         condition: 'checksum("Verdant - A Skyrim Grass Plugin SSE Version.esp", 9AB5147C)'
@@ -4051,20 +4057,20 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14601/'
         name: 'Verdant - Altered Forest Grass on Nexus Mods'
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Unbelievable Grass Two.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4082/' ]
-    group: *fixesGroup
+    group: *preEarlyGroup
   - name: 'p_vegetation_overhaul.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7627/'
         name: 'Vanilla Vegetation Overhaul on Nexus Mods'
-    group: *fixesGroup
+    group: *preEarlyGroup
   - name: 'Veydosebrom - Grasses and Groundcover.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10543/' ]
-    group: *fixesGroup
+    group: *preEarlyGroup
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'WGT.esp'
@@ -4085,7 +4091,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/'
         name: 'Viscous Grass Plus Tweaks on Nexus Mods'
-    group: *fixesGroup
+    group: *preEarlyGroup
   - name: 'waterplants.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/' ]
     group: 'Creation Club'
@@ -4375,7 +4381,7 @@ plugins:
             text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim DLC Integration' ]
@@ -4391,7 +4397,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     clean:
       # version: 1.1
       - crc: 0x32F4BBE5
@@ -6057,7 +6063,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
         name: 'Circlets or Masks with all Robes and Hoods on Nexus Mods'
-    group: *fixesGroup
+    group: *preFixesGroup
     tag:
       - Graphics
       - Names
@@ -6880,7 +6886,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Bee Hives.esp'
     url: [ 'https://afkmods.iguanadons.net/index.php?/files/file/1891-bee-hives//' ]
-    group: *fixesGroup
+    group: *preFixesGroup
     clean:
       # version: 2.0
       - crc: 0xD20AF3E4
@@ -9055,6 +9061,8 @@ plugins:
     clean:
       - crc: 0xCB4A70D5
         util: 'SSEEdit v3.3.2 BETA'
+  - name: 'Qw_DucksAndSwans_USSEP Patch.esp'
+    group: *preFixesGroup
   - name: 'Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     msg:
