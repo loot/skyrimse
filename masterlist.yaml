@@ -1087,7 +1087,7 @@ plugins:
       - crc: 0x6182C9BA
         util: 'SSEEdit v4.0.1'
 
-  - name: 'unofficial skyrim survival patch.esp'
+  - name: 'unofficial skyrim survival patch.es(l|p)'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12655/' ]
     group: *fixesGroup
     clean:
@@ -1390,6 +1390,8 @@ plugins:
     tag:
       - Graphics
   - name: 'SMIM-SE-Merged-All.esp'
+    after:
+      - 'Blowing in the Wind SSE.esp'
     inc:
       - 'SMIM-SE-DragonbornTernFix.esp'
       - 'SMIM-SE-DungeonsCliffsIceSkirts.esp'
@@ -3591,11 +3593,13 @@ plugins:
     after:
       - 'Enhanced Landscapes.esp'
       - 'Skyrim Flora Overhaul.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Enhanced Landscapes - Green Fields.esp'
     group: *fixesGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'Enhanced Landscapes - Grass.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'SRG Enhanced Trees Activator.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11008'
@@ -4026,6 +4030,7 @@ plugins:
       - name: 'Open Cities Skyrim.esp'
         condition: 'checksum("Verdant - A Skyrim Grass Plugin SSE Version.esp", 9AB5147C)'
     after:
+      - 'Enhanced Landscapes.esp'
       - 'Skyrim Flora Overhaul.esp'
     clean:
       # version: 1.6.1
@@ -4052,6 +4057,8 @@ plugins:
   - name: 'Veydosebrom - Grasses and Groundcover.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10543/' ]
     group: *fixesGroup
+    after:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'WGT.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11010/'
@@ -6933,6 +6940,7 @@ plugins:
         name: 'Cutting Room Floor on Bethesda.net'
     group: *earlyLoadersGroup
     after:
+      - 'Enhanced Landscapes.esp'
       - 'TouringCarriages.esp'
       - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
