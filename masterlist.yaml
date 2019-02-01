@@ -2286,8 +2286,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
     group: *preFixesGroup
     after:
-      - 'Audio Overhaul Skyrim.esp'
-      - 'Immersive Sounds - Compendium.esp'
+      - name: 'Audio Overhaul Skyrim.esp'
+        condition: 'file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
+      - name: 'Immersive Sounds - Compendium.esp'
+        condition: 'file("Qw_DeadlySpellImpacts_ISC Patch.esp")'
     clean:
       # version: 1.70
       - crc: 0x72B9103C
