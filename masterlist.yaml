@@ -3602,6 +3602,9 @@ plugins:
   - name: 'Enhanced Landscapes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18162/' ]
     group: *landscapeGroup
+    after:
+      # For Group, to avoid cyclic errors
+      - 'MajesticMountains.esp'
     inc:
       - name: 'tpos_ultimate_esm.esp'
         display: 'The People Of Skyrim Complete SSE'
