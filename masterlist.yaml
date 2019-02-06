@@ -1084,7 +1084,7 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
         name: 'Unofficial Skyrim Special Edition Patch on Bethesda.net'
-    group: *fixesGroup
+    group: *earlyLoadersGroup
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
       - 'RSkyrimChildren.esm'
@@ -1405,12 +1405,12 @@ plugins:
     url: [ 'Skyrim Project Optimization SE on Nexus Mods' ]
     group: *preFixesGroup
   - name: 'static mesh improvement mod se.esp'
-    group: *preFixesGroup
+    group: *earlyLoadersGroup
   - name: 'SMIM-SE?.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE on Nexus Mods'
-    group: *preFixesGroup
+    group: *earlyLoadersGroup
     tag:
       - Graphics
   - name: 'SMIM-SE-Merged-All.esp'
@@ -1886,7 +1886,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
+    after:
+      - 'Blowing in the Wind SSE.esp'
+      - 'Prometheus_No_snow_Under_the_roof.esp'
+      - 'SMIM-SE-Merged-All.esp'
     clean:
       # version: 3.06
       - crc: 0x9B390393
@@ -2081,7 +2085,7 @@ plugins:
         util: 'SSEEdit v3.2.44'
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2429' ]
-    group: *fixesGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 1.01
       - crc: 0xEB94B5F8
@@ -3046,6 +3050,9 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
+  - name: 'RSkyrimChildren.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2650' ]
+    group: *earlyLoadersGroup
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
     inc:
@@ -3590,17 +3597,17 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Blowing in the Wind SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124' ]
-    group: *preFixesGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 2.04
       - crc: 0x8EF0F5D1
         util: 'SSEEdit v4.0.0'
   - name: 'Blowing in the Wind - ELFX Exteriors Patch SSE.esp'
-    group: *preFixesGroup
+    group: *preEarlyGroup
   - name: 'Blowing in the Wind - Lanterns of Skyrim Patch SSE.esp'
-    group: *preFixesGroup
+    group: *preEarlyGroup
   - name: 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
-    group: *preFixesGroup
+    group: *preEarlyGroup
   - name: 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21954/' ]
     group: *floraGroup
@@ -3878,7 +3885,10 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
+    after:
+      - 'Blowing in the Wind SSE.esp'
+      - 'SMIM-SE-Merged-All.esp'
     msg:
       - type: warn
         content:
@@ -3903,6 +3913,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes on Nexus Mods'
+    group: *preEarlyGroup
     clean:
       # version: 1.4
       - crc: 0x58D99419
@@ -3911,6 +3922,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes on Nexus Mods'
+    group: *preEarlyGroup
     dirty:
       # version: 1.4
       - <<: *quickClean
@@ -3925,6 +3937,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes on Nexus Mods'
+    group: *preEarlyGroup
     dirty:
       # version: 1.4
       - <<: *quickClean
