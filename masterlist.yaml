@@ -565,7 +565,7 @@ groups:
 
   - name: default
     after:
-      - *landscapeGroup
+      - *addonsGroup
       - *underridesGroup
 
   - name: &coreGroup Core Mods
@@ -575,9 +575,7 @@ groups:
     after: [ *coreGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
-    after:
-      - *lowPriorityGroup
-      - *addonsGroup
+    after: [ *lowPriorityGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
