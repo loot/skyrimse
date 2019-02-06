@@ -531,11 +531,18 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
+  - name: &preEarlyGroup Pre-Early (Patches/Add-ons)
+
+  - name: &earlyLoadersGroup Early Loaders
+    after:
+      - *ccGroup
+      - *preEarlyGroup
+
   - name: &preFixesGroup Pre-Fixes (Patches/Add-ons)
 
   - name: &fixesGroup Fixes & Resources
     after:
-      - *ccGroup
+      - *earlyLoadersGroup
       - *preFixesGroup
 
   - name: &floraGroup Flora
@@ -547,21 +554,14 @@ groups:
       - *fixesGroup
       - *floraGroup
 
-  - name: &preEarlyGroup Pre-Early (Patches/Add-ons)
-
-  - name: &earlyLoadersGroup Early Loaders
-    after:
-      - *landscapeGroup
-      - *preEarlyGroup
-
   - name: &addonsGroup Add-ons & Expansions
-    after: [ *earlyLoadersGroup ]
+    after: [ *landscapeGroup ]
 
   - name: &underridesGroup Underrides
 
   - name: default
     after:
-      - *earlyLoadersGroup
+      - *landscapeGroup
       - *underridesGroup
 
   - name: &coreGroup Core Mods
