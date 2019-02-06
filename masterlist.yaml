@@ -538,28 +538,28 @@ groups:
       - *ccGroup
       - *preEarlyGroup
 
-  - name: &preFixesGroup Pre-Fixes (Patches/Add-ons)
-
-  - name: &fixesGroup Fixes & Resources
-    after:
-      - *earlyLoadersGroup
-      - *preFixesGroup
-
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
 
   - name: &landscapeGroup Landscape
     description: 'A group for mods that alter location landscapes to fix issues and/or improve visuals.'
     after:
-      - *fixesGroup
+      - *earlyLoadersGroup
       - *floraGroup
+
+  - name: &preFixesGroup Pre-Fixes (Patches/Add-ons)
+
+  - name: &fixesGroup Fixes & Resources
+    after:
+      - *landscapeGroup
+      - *preFixesGroup
 
   - name: &preAddonsGroup Pre-Add-ons (Patches/Add-ons)
 
   - name: &addonsGroup Add-ons & Expansions
     after:
       - *preAddonsGroup
-      - *landscapeGroup
+      - *fixesGroup
 
   - name: &underridesGroup Underrides
 
