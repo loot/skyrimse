@@ -554,8 +554,12 @@ groups:
       - *fixesGroup
       - *floraGroup
 
+  - name: &preAddonsGroup Pre-Add-ons (Patches/Add-ons)
+
   - name: &addonsGroup Add-ons & Expansions
-    after: [ *landscapeGroup ]
+    after:
+      - *preAddonsGroup
+      - *landscapeGroup
 
   - name: &underridesGroup Underrides
 
