@@ -532,11 +532,10 @@ groups:
     after: [ *dlcGroup ]
 
   - name: &preEarlyGroup Pre-Early (Patches/Add-ons)
+    after: [ *ccGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after:
-      - *ccGroup
-      - *preEarlyGroup
+    after: [ *preEarlyGroup ]
 
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
