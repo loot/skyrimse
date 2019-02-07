@@ -2257,6 +2257,9 @@ plugins:
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
     group: *earlyLoadersGroup
+    after:
+      - name: 'Audio Overhaul Skyrim.esp'
+        condition: 'file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
     clean:
       # version: 1.70
       - crc: 0x72B9103C
