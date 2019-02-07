@@ -539,11 +539,12 @@ groups:
 
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
-    after: [ *earlyLoadersGroup ]
 
   - name: &landscapeGroup Landscape
     description: 'A group for mods that alter location landscapes to fix issues and/or improve visuals.'
-    after: [ *floraGroup ]
+    after:
+      - *floraGroup
+      - *earlyLoadersGroup
 
   - name: &preFixesGroup Pre-Fixes (Patches/Add-ons)
 
@@ -3616,6 +3617,7 @@ plugins:
       - 'MajesticMountains.esp'
       - 'NAT.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     msg:
       - <<: *includesX
         subs: [ '[ Blended Roads ](https://www.nexusmods.com/skyrimspecialedition/mods/8834/)' ]
@@ -3629,6 +3631,7 @@ plugins:
     after:
       # For Group, to avoid cyclic errors
       - 'MajesticMountains.esp'
+      - 'ViscousGrass.esp'
     inc:
       - name: 'tpos_ultimate_esm.esp'
         display: 'The People Of Skyrim Complete SSE'
@@ -3653,12 +3656,15 @@ plugins:
       - 'MajesticMountains.esp'
       - 'Skyrim Flora Overhaul.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
   - name: 'Enhanced Landscapes - Green Fields.esp'
     group: *floraGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'Enhanced Landscapes - Grass.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'Veydosebrom - Grasses and Groundcover.esp'
+      - 'ViscousGrass.esp'
   - name: 'Enhanced Landscapes Oaks Standalone.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/73161' ]
     group: *floraGroup
@@ -3698,6 +3704,8 @@ plugins:
     group: *floraGroup
     after:
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
   - name: 'HearthFires Roads.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/786/' ]
     group: *landscapeGroup
@@ -3705,6 +3713,7 @@ plugins:
       - 'Enhanced Landscapes.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     dirty:
       - <<: *reqManualFix
         crc: 0x9D7E8CA7
@@ -3724,6 +3733,7 @@ plugins:
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'Whiterun Forest Borealis.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
       # For Group, to avoid cyclic errors
       - 'MajesticMountains.esp'
     msg:
@@ -3845,6 +3855,7 @@ plugins:
       - 'Dolomite Weathers.esp'
       - 'NAT.esp'
       - 'Skyrim Flora Overhaul.esp'
+      - 'ViscousGrass.esp'
     tag:
       - Graphics
     msg:
@@ -4026,6 +4037,7 @@ plugins:
       - 'fallentreebridgesSSE.esp'
       - 'SmoothShores.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
       - 'Whiterun Forest Borealis.esp'
     inc:
@@ -4048,6 +4060,7 @@ plugins:
       - 'SmoothShores.esp'
       # For Group, to avoid cyclic errors
       - 'MajesticMountains.esp'
+      - 'ViscousGrass.esp'
     inc:
       - 'Enhanced Landscapes.esp'
       - 'waterplants.esp'
@@ -4075,6 +4088,7 @@ plugins:
       - 'Enhanced Landscapes.esp'
       # For Group, to avoid cyclic errors
       - 'MajesticMountains.esp'
+      - 'ViscousGrass.esp'
     dirty:
       # version: 0.7 before Quick Auto Clean
       - <<: *quickClean
@@ -4159,12 +4173,14 @@ plugins:
     inc:
       - name: 'Open Cities Skyrim.esp'
         condition: 'checksum("Verdant - A Skyrim Grass Plugin SSE Version.esp", 9AB5147C)'
+      - 'ViscousGrass.esp'
     after:
       - 'Enhanced Landscapes.esp'
       - 'MajesticMountains.esp'
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'Skyrim Flora Overhaul.esp'
       - 'SmoothShores.esp'
+      - 'waterplants.esp'
     clean:
       # version: 1.6.1
       - crc: 0x102BBC11
@@ -4180,6 +4196,8 @@ plugins:
     after:
       - 'MajesticMountains.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'Veydosebrom - Grasses and Groundcover.esp'
+      - 'ViscousGrass.esp'
   - name: 'Unbelievable Grass Two.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4082/' ]
     group: *floraGroup
@@ -4193,6 +4211,8 @@ plugins:
     group: *floraGroup
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
+      - 'waterplants.esp'
   - name: 'WGT.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11010/'
@@ -4218,9 +4238,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/'
         name: 'Viscous Grass Plus Tweaks on Nexus Mods'
     group: *floraGroup
+    inc:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'waterplants.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/' ]
-    group: 'Creation Club'
+    group: *floraGroup
   - name: 'WhiterunHoldForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3212/' ]
     after:
@@ -4731,6 +4753,7 @@ plugins:
       - 'Skyrim Sewers.esp'
       - 'TouringCarriages.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
       - 'ASLAO - Front Porch (Breezehome).esp'
       - 'BHTNFBP.esp'
       - 'breezehome enhanced SSE.esp'
@@ -5711,6 +5734,7 @@ plugins:
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     clean:
       # version: 3.0.0se
       - crc: 0x07E8D176
@@ -7071,6 +7095,7 @@ plugins:
         name: 'Bring Out Your Dead on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     tag:
       - C.Location
     clean:
@@ -7397,6 +7422,7 @@ plugins:
         name: 'Darkwater Crossing on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
     tag:
@@ -7574,6 +7600,7 @@ plugins:
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'UniqueLocationsRiverwoodForest.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     msg:
       - <<: *patchIncluded
         subs: [ '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)' ]
@@ -7644,6 +7671,7 @@ plugins:
       - 'QaxeQuestorium.esp'
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     msg:
       - <<: *patchIncluded
         subs: [ '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)' ]
@@ -7689,6 +7717,7 @@ plugins:
       - 'QaxeQuestorium.esp'
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     msg:
       - <<: *patchIncluded
         subs: [ '[Better Docks](https://www.nexusmods.com/skyrimspecialedition/mods/2384/)' ]
@@ -7739,6 +7768,7 @@ plugins:
       - 'S3DLandscapes NextGenerationForests.esp'
       - 'UniqueLocationsRiverwoodForest.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     msg:
       - <<: *patchIncluded
         subs: [ '[CLARALUX SSE](https://www.nexusmods.com/skyrimspecialedition/mods/2371)' ]
@@ -7802,6 +7832,7 @@ plugins:
         name: 'Helarchen Creek on Bethesda.net'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     tag:
       - C.Location
     clean:
@@ -7873,6 +7904,7 @@ plugins:
     after:
       - 'Landscape For Grass Mods JK''S Skyrim.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     clean:
       # version: 2.0.4
       - crc: 0x04788D6B
@@ -7882,6 +7914,7 @@ plugins:
     after:
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
   - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/'
@@ -7912,6 +7945,7 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
     msg:
       - type: warn
@@ -8005,6 +8039,7 @@ plugins:
     after:
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     tag:
       - C.Location
       - C.Water
@@ -8013,6 +8048,7 @@ plugins:
     after:
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
   - name: 'Karthwasten.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/350/'
@@ -8027,6 +8063,7 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     clean:
       # version: 2.0.3
       - crc: 0x4C61FC8C
@@ -8058,6 +8095,7 @@ plugins:
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     clean:
       # version: 2.0.4
       - crc: 0x2147A134
@@ -8246,6 +8284,7 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     clean:
       # version: 2.0.3
       - crc: 0x69F4FE74
@@ -8274,6 +8313,7 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
     clean:
       # version: 2.0.2
       - crc: 0x1E57B75A
@@ -8328,6 +8368,7 @@ plugins:
       - 'TES Arena Amol.esp'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
     clean:
       # version: 2.0.5
