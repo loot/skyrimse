@@ -531,20 +531,20 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &fixesGroup Fixes & Resources
+  - name: &earlyLoadersGroup Early Loaders
     after: [ *ccGroup ]
 
-  - name: &earlyLoadersGroup Early Loaders
-    after: [ *fixesGroup ]
+  - name: &fixesGroup Fixes & Resources
+    after: [ *earlyLoadersGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
-    after: [ *earlyLoadersGroup ]
+    after: [ *fixesGroup ]
 
   - name: &underridesGroup Underrides
 
   - name: default
     after: 
-      - *earlyLoadersGroup
+      - *addonsGroup
       - *underridesGroup
 
   - name: &coreGroup Core Mods
@@ -554,9 +554,7 @@ groups:
     after: [ *coreGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
-    after:
-      - *lowPriorityGroup
-      - *addonsGroup
+    after: [ *lowPriorityGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -1129,7 +1127,7 @@ plugins:
         name: 'Weapons Armor Clothing and Clutter Fixes on Nexus Mods'
     inc:
       - 'Race Scale Remover.esp'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'Cutting Room Floor.esp'
@@ -1193,7 +1191,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/'
         name: 'Armor and Clothing Extension on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - *reqSkyUI
       - *doNotClean
@@ -1291,7 +1289,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'Immersive Sounds - Compendium.esp'
@@ -1309,7 +1307,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 1.1
       - crc: 0x6CF176EC
@@ -1318,7 +1316,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       - crc: 0x35D96F84
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
@@ -1326,7 +1324,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Larger|Reduced) Splatter Size\.esp")'
@@ -1339,7 +1337,7 @@ plugins:
       - 'EBT - skyBirds Patch.esp'
       - 'EBT - skyBirds Patch (mid).esp'
       - 'EBT - skyBirds Patch (short).esp'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Medium|Short) Script Range\.esp")'
@@ -1385,12 +1383,12 @@ plugins:
       - crc: 0x137A03B3
         util: 'SSEEdit v3.2.1'
   - name: 'static mesh improvement mod se.esp'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
   - name: 'SMIM-SE?.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     tag:
       - Graphics
   - name: 'SMIM-SE-Merged-All.esp'
@@ -1468,7 +1466,7 @@ plugins:
 ###### AudioVisual - Interface ######
   - name: 'AnotherSortingMod_2017-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     tag:
       - Delev
       - Graphics
@@ -1553,7 +1551,7 @@ plugins:
         name: 'Even Better Quest Objectives on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
         name: 'Even Better Quest Objectives on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - <<: *patchIncluded
         subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrimspecialedition/mods/272)' ]
@@ -1694,7 +1692,7 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'Joy of Perspective.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - type: say
         content:
@@ -1829,7 +1827,7 @@ plugins:
 ###### AudioVisual - Lighting ######
   - name: 'CinematicFireFX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 2.0
       - crc: 0x4CF60EE4
@@ -1838,7 +1836,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     inc:
       - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Interiors.esp'
@@ -1860,7 +1858,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0x9B390393
@@ -1869,7 +1867,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0x16B967BB
@@ -1878,7 +1876,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0xEFC3B86E
@@ -1887,7 +1885,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0x636D8DC1
@@ -1896,7 +1894,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0x378FA7EE
@@ -1905,7 +1903,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0x328328C8
@@ -1914,7 +1912,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0xB88AC75D
@@ -1923,7 +1921,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     inc:
       - 'ELFX - NoBreezehome.esp'
       - 'ELFX - NoHjerim.esp'
@@ -1945,7 +1943,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 3.06
       - crc: 0x0F02A920
@@ -2034,7 +2032,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'EmbersHD.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'CinematicFireFX.esp'
     clean:
@@ -2048,7 +2046,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/721'
         name: 'Improved Hearthfire Lighting SE'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 1.1
       - crc: 0xFB4BCCC7
@@ -2114,7 +2112,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
         name: 'Relighting Skyrim - SSE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Undeath.esp'
     inc:
@@ -2198,7 +2196,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
         name: 'Audio Overhaul for Skyrim SE on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
@@ -2260,7 +2258,7 @@ plugins:
       - 'Obsidian Weathers - True Storms - Patch.esp'
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - name: 'Audio Overhaul Skyrim.esp'
         condition: 'file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
@@ -2286,7 +2284,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Immersive Sounds - Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/523/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'LSFX-SSE-Audiosettings.esp'
@@ -2328,7 +2326,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/701/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     tag:
       - Sound
     clean:
@@ -3148,7 +3146,7 @@ plugins:
     url:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
         name: 'Interesting NPCs SSE on 3dnpc.com'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
@@ -3582,7 +3580,7 @@ plugins:
         condition: 'active("TerrainLODRedone.esp")'
   - name: 'Enhanced Landscapes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18162/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'ELFX - Exteriors.esp'
       - 'Prometheus_No_snow_Under_the_roof.esp'
@@ -3681,7 +3679,7 @@ plugins:
         nav: 4
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'S3DLandscapes NextGenerationForests.esp'
@@ -3846,7 +3844,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - type: warn
         content:
@@ -3997,7 +3995,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18247/'
         name: 'Skyrim 3D Landscapes on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     inc:
       - 'Enhanced Landscapes.esp'
       - 'waterplants.esp'
@@ -5639,7 +5637,7 @@ plugins:
       - *doNotClean
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -5926,7 +5924,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24909/'
         name: 'aMidianBorn Book of Silence on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'BetterQuestObjectives.esp'
       - '1nivWICCloaks.esp'
@@ -6031,7 +6029,7 @@ plugins:
         name: 'Book Covers Skyrim - Original on Bethesda.net'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
         name: 'Book Covers Skyrim - Desaturated on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     msg:
       - <<: *AlreadyInX
         subs: [ 'LegacyoftheDragonborn.esm' ]
@@ -6172,7 +6170,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
         name: 'Immersive Armors on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     tag:
       - Delev
       - Relev
@@ -6284,21 +6282,21 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 1.0
       - crc: 0x524C6138
         util: 'SSEEdit v3.2.2'
   - name: 'Lore Weapon Expansion - Goldbrand.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 1.1
       - crc: 0x5587FCE6
         util: 'SSEEdit v3.2.2'
   - name: 'Lore Weapon Expansion - Relics of the Crusader.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 1.0
       - crc: 0xA5763C46
@@ -6793,7 +6791,7 @@ plugins:
         name: 'Moon and Star on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
         name: 'Moon And Star on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'AuroraVillage.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -6824,7 +6822,7 @@ plugins:
         name: 'Undeath Remastered SE on Nexus Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
         name: 'Undeath Remastered on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -7017,7 +7015,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10434/'
         name: 'Carriage Stops of Skyrim on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 1.0
       - crc: 0xF036353E
@@ -7030,7 +7028,7 @@ plugins:
         name: 'Cutting Room Floor on Afk Mods'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
         name: 'Cutting Room Floor on Bethesda.net'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'TouringCarriages.esp'
@@ -7466,7 +7464,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
         name: 'Expanded Towns and Cities (SSE) on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     tag:
       - Graphics
     clean:
@@ -8013,7 +8011,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20514' ]
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     after:
       - 'Cutting Room Floor.esp'
       - 'EnhancedLightsandFX.esp'
@@ -8635,7 +8633,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
         name: 'Shadowmarks on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     clean:
       # version: 2.0
       - crc: 0x28E63EB9
@@ -8658,7 +8656,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/'
         name: 'Tel Nalta SE - Telvanni Home on Nexus Mods'
-    group: *earlyLoadersGroup
+    group: *addonsGroup
     inc:
       - name: 'MoonAndStar_MAS.esp'
         condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
