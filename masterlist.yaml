@@ -531,8 +531,11 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &earlyLoadersGroup Early Loaders
+  - name: &preEarlyGroup Pre Early (Patches/Add-ons)
     after: [ *ccGroup ]
+
+  - name: &earlyLoadersGroup Early Loaders
+    after: [ *preEarlyGroup ]
 
   - name: &fixesGroup Fixes & Resources
     after: [ *earlyLoadersGroup ]
