@@ -531,20 +531,20 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &fixesGroup Fixes & Resources
+  - name: &earlyLoadersGroup Early Loaders
     after: [ *ccGroup ]
 
-  - name: &earlyLoadersGroup Early Loaders
-    after: [ *fixesGroup ]
+  - name: &fixesGroup Fixes & Resources
+    after: [ *earlyLoadersGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
-    after: [ *earlyLoadersGroup ]
+    after: [ *fixesGroup ]
 
   - name: &underridesGroup Underrides
 
   - name: default
     after: 
-      - *earlyLoadersGroup
+      - *fixesGroup
       - *underridesGroup
 
   - name: &coreGroup Core Mods
