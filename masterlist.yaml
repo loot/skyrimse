@@ -540,8 +540,12 @@ groups:
   - name: &fixesGroup Fixes & Resources
     after: [ *earlyLoadersGroup ]
 
-  - name: &addonsGroup Add-ons & Expansions
+  - name: &landscapeGroup Landscape
+    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
     after: [ *fixesGroup ]
+
+  - name: &addonsGroup Add-ons & Expansions
+    after: [ *landscapeGroup ]
 
   - name: &underridesGroup Underrides
 
