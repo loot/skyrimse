@@ -546,8 +546,12 @@ groups:
       - *earlyLoadersGroup
       - *floraGroup
 
+  - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
+
   - name: &fixesGroup Fixes & Resources
-    after: [ *landscapeGroup ]
+    after:
+      - *landscapeGroup
+      - *preFixesGroup
 
   - name: &addonsGroup Add-ons & Expansions
     after: [ *fixesGroup ]
