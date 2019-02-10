@@ -537,20 +537,20 @@ groups:
   - name: &earlyLoadersGroup Early Loaders
     after: [ *preEarlyGroup ]
 
-  - name: &fixesGroup Fixes & Resources
-    after: [ *earlyLoadersGroup ]
-
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
 
   - name: &landscapeGroup Landscape
     description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
     after:
-      - *fixesGroup
+      - *earlyLoadersGroup
       - *floraGroup
 
-  - name: &addonsGroup Add-ons & Expansions
+  - name: &fixesGroup Fixes & Resources
     after: [ *landscapeGroup ]
+
+  - name: &addonsGroup Add-ons & Expansions
+    after: [ *fixesGroup ]
 
   - name: &underridesGroup Underrides
 
