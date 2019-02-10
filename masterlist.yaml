@@ -553,8 +553,12 @@ groups:
       - *landscapeGroup
       - *preFixesGroup
 
+  - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
+
   - name: &addonsGroup Add-ons & Expansions
-    after: [ *fixesGroup ]
+    after:
+      - *preAddonsGroup
+      - *fixesGroup
 
   - name: &underridesGroup Underrides
 
