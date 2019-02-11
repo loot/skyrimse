@@ -547,11 +547,10 @@ groups:
       - *floraGroup
 
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
+    after: [ *preEarlyGroup ]
 
   - name: &fixesGroup Fixes & Resources
-    after:
-      - *landscapeGroup
-      - *preFixesGroup
+    after: [ *preFixesGroup ]
 
   - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
 
@@ -559,6 +558,7 @@ groups:
     after:
       - *preAddonsGroup
       - *fixesGroup
+      - *landscapeGroup
 
   - name: &underridesGroup Underrides
 
