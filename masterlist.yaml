@@ -7997,7 +7997,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Holidays' ]
         condition: 'active("Holidays.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
-  - name: "JKs Skyrim.esp"
+  - name: 'JKs Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
     inc:
       - name: 'Friendlier Taverns.esp'
@@ -8071,13 +8071,16 @@ plugins:
       - <<: *patchProvided
         subs: ['Thunderchild']
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
-    clean:
-      # version: 1.2
-      - crc: 0x39DAE47D
-        util: 'SSEEdit v3.2.1'
+    dirty:
       # version: 1.4
-      - crc: 0xDECAFE32
-        util: 'SSEEdit v3.2.1'
+      - <<: *quickClean
+        crc: 0xDECAFE32
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 190
+    clean:
+      # version: 1.4
+      - crc: 0xE76504EC
+        util: 'SSEEdit v4.0.1'
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17026'
