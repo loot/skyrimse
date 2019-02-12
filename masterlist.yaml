@@ -3632,6 +3632,22 @@ plugins:
       - <<: *includesX
         subs: [ '[ Terrain LOD Redone ](https://www.nexusmods.com/skyrimspecialedition/mods/9135/)' ]
         condition: 'active("TerrainLODRedone.esp")'
+  - name: 'cliffs.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4520'
+        name: 'Master The Summit on Nexus Mods'
+    dirty:
+      # version: 2.0
+      - <<: *reqManualFix
+        crc: 0xB806CCBD
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 137
+        nav: 10
+      # version: 2.0
+      - <<: *reqManualFix
+        crc: 0x0A46B3BE
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 10
   - name: 'Dark_Forests.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21934/' ]
     group: *floraGroup
