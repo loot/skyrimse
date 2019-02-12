@@ -8304,12 +8304,36 @@ plugins:
       - 'PCE - Skyrim Sewers Patch.esp'
       - 'PCE - USSEP Patch.esp'
       - 'PCE - USSEP+CRF Patch.esp'
+
   - name: 'Raven Rock.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/640' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("Raven Rock - Clockwork Patch.esp")'
+    dirty:
+      # version: 1.02
+      - <<: *quickClean
+        crc: 0x7F257FE6
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 15
+    clean:
+      # version: 1.02
+      - crc: 0xA271F411
+        util: 'SSEEdit v4.0.1'
+  - name: 'Raven Rock - Clockwork Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/640' ]
+    dirty:
+      # version: 1.00
+      - <<: *quickClean
+        crc: 0x42CE0509
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      # version: 1.00
+      - crc: 0x25A0C1EA
+        util: 'SSEEdit v4.0.1'
+
   - name: 'Rorikstead.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16881/'
