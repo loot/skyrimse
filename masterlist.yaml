@@ -1238,6 +1238,8 @@ plugins:
     group: *dynamicPatchGroup
     after:
       - 'SSEMerged.esp'
+      - 'One ImCh Patch.esp'
+      - 'One ImCh Patcher.esp'
   - name: 'DynDOLOD.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/59721/'
@@ -1252,6 +1254,9 @@ plugins:
     group: *dynamicPatchGroup
   - name: 'SSEMerged.esp'
     group: *dynamicPatchGroup
+    after:
+      - 'One ImCh Patch.esp'
+      - 'One ImCh Patcher.esp'
     tag:
       - NoMerge
 
@@ -3020,6 +3025,7 @@ plugins:
     clean:
       - crc: 0xD0F78346
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+
   - name: 'ImCh.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15001'
@@ -3031,6 +3037,9 @@ plugins:
         content:
           - lang: en
             text: 'Remember to run the included SSEEdit script **MXPF - One ImCh Patcher** every time you have installed or un-installed a mod. Use the recommended patch name **One ImCh Patch** or **One ImCh Patcher** for correct sorting. Instructions for running this patcher can be found on the [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001) description page.'
+  - name: 'One ImCh Patch?.*\.esp'
+    group: *dynamicPatchGroup
+
   - name: 'The Ordinary Women.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12376' ]
     after:
