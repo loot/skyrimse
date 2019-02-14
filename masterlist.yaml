@@ -1238,6 +1238,8 @@ plugins:
     group: *dynamicPatchGroup
     after:
       - 'SSEMerged.esp'
+      - 'One ImCh Patch.esp'
+      - 'One ImCh Patcher.esp'
   - name: 'DynDOLOD.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/59721/'
@@ -1252,6 +1254,9 @@ plugins:
     group: *dynamicPatchGroup
   - name: 'SSEMerged.esp'
     group: *dynamicPatchGroup
+    after:
+      - 'One ImCh Patch.esp'
+      - 'One ImCh Patcher.esp'
     tag:
       - NoMerge
 
@@ -1550,6 +1555,9 @@ plugins:
       # version: 9.0P
       - crc: 0x09706810
         util: 'SSEEdit v4.0.1'
+  - name: 'Paper World Map Unofficial Fix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
+    group: *lateLoadersGroup
   - name: 'SkyUI_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
     group: *underridesGroup
@@ -2983,6 +2991,7 @@ plugins:
     after:
       - 'Better Vampire NPCs.esp'
       - 'Cutting Room Floor.esp'
+      - 'DIVERSE SKYRIM.esp'
       - name: 'ethereal_elven_overhaul.esp'
         condition: 'file("ethereal_elven_overhaul.esp") and file("ethereal_elven_overhaul\.bsa")'
     inc:
@@ -3017,6 +3026,21 @@ plugins:
     clean:
       - crc: 0xD0F78346
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+
+  - name: 'ImCh.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15001'
+        name: 'Immersive Children SE - child mortality and burial and animation fixes on Nexus Mods'
+    after:
+      - 'SimpleChildren.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Remember to run the included SSEEdit script **MXPF - One ImCh Patcher** every time you have installed or un-installed a mod. Use the recommended patch name **One ImCh Patch** or **One ImCh Patcher** for correct sorting. Instructions for running this patcher can be found on the [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001) description page.'
+  - name: 'One ImCh Patch?.*\.esp'
+    group: *dynamicPatchGroup
+
   - name: 'The Ordinary Women.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12376' ]
     after:
@@ -3311,6 +3335,18 @@ plugins:
       # version: 2.4C
       - crc: 0x938CF2CD
         util: 'SSEEdit v4.0.0'
+  - name: 'konahrik_accoutrements.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
+    dirty:
+      # version: 5.5.3
+      - <<: *quickClean
+        crc: 0x93449BB7
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 47
+    clean:
+      # version: 5.5.3
+      - crc: 0x603FE7C9
+        util: 'SSEEdit v4.0.1'
   - name: 'KrittaKittyHorsesForSSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7685/'
@@ -3770,6 +3806,20 @@ plugins:
         crc: 0x709C5F3E
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 4
+  - name: 'Immersive Farms.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19026' ]
+    group: *floraGroup
+    dirty:
+      # version: 1.1
+      - <<: *quickClean
+        crc: 0xA293A648
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 130
+        udr: 218
+    clean:
+      # version: 1.1
+      - crc: 0x2EEBF517
+        util: 'SSEEdit v4.0.1'
   - name: 'Landscape Fixes For Grass Mods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     group: *landscapeGroup
@@ -3935,6 +3985,9 @@ plugins:
       # version: 1.82
       - crc: 0x2138ED5A
         util: 'SSEEdit v4.0.0'
+  - name: 'NoGrassINCaves.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
+    group: *lateLoadersGroup
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *earlyLoadersGroup
@@ -4256,6 +4309,9 @@ plugins:
   - name: 'Whiterun Forest Borealis.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11343/' ]
     group: *floraGroup
+  - name: 'Whiterun Landscape Fix For Grass Mods.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3185/' ]
+    group: *landscapeGroup
   - name: 'Whiterun Trees Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16230/' ]
     group: *floraGroup
@@ -7633,6 +7689,9 @@ plugins:
       # version: Modular - Shops v1.7
       - crc: 0x9DA76663
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+  - name: 'Enlightened College of Winterhold.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+    group: *underridesGroup
   - name: 'ETaC - RESOURCES.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
