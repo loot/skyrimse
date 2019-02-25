@@ -8095,6 +8095,11 @@ plugins:
             text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) is incompatible with JK''s Skyrim. Please use [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506) instead.'
           - lang: de
             text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) ist inkompatibel mit JK''s Skyrim. Bitte nutzen Sie stattdessen [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506).'
+      - <<: *patch3rdParty
+        subs:
+          - 'Dawn of Skyrim'
+          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -8103,33 +8108,34 @@ plugins:
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Bring Out Your Dead' ]
-        condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_BOYD_Patch.esp")  and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
+        condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_(BOYD)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Dawn of Skyrim'
-          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
-        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("JKs Skyrim_(Cutting Room Floor)?(Arth CRF DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Dawnstar' ]
-        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_Dawnstar_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
+        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_(Dawnstar)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Dragon Bridge' ]
-        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_Dragon Bridge_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
+        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_(Dragon Bridge)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Falkreath' ]
+        condition: 'active("Falkreath.esp") and not active("JKs Skyrim_(Falkreath)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Ivarstead' ]
-        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_Ivarstead_Patch.esp") and not active("JKs Skyrim_Arthmoor DS DB IV_Patch.esp") and not active("JKs Skyrim_Arth DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arth CRF DA DB IV RO_Patch.esp") and not active("JKs Skyrim_Arthmoor All_Patch.esp")'
+        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_(Ivarstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Holidays' ]
         condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp") and not active("Blues Skyrim.esp")'
-      # - <<: *patchProvided
-      #   subs: [ 'Leaf Rest' ]
-      #   condition: 'active("LeafRest OnePiece.esp") and not active("JKs Skryim Leafrest Patch.esp") and not active("JKs Skyrim Leafrest Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Mirai' ]
         condition: 'active("zMirai.esp") and not active("JKs Skyrim_Mirai_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Oblivion Gates' ]
+        condition: 'active("Oblivion Gates in Cities.esp") and not active("JKs Skyrim_(Oblivion Gates)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
@@ -8137,16 +8143,16 @@ plugins:
         subs: ['Realistic Water Two']
         condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'Rorikstead' ]
+        condition: 'active("Rorikstead.esp") and not active("JKs Skyrim_(Rorikstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Storefront' ]
+        condition: 'active("Storefront.esp") and not active("JKs Skyrim_(Storefront)?(Arthmoor All)?_Patch?.*\.esp")'
+      - <<: *patchProvided
         subs: ['Thunderchild']
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
-    dirty:
-      # version: 1.4
-      - <<: *quickClean
-        crc: 0xDECAFE32
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 190
     clean:
-      # version: 1.4
+      # version: 1.5
       - crc: 0xE76504EC
         util: 'SSEEdit v4.0.1'
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
