@@ -9774,3 +9774,56 @@ plugins:
         util: 'SSEEdit v4.0.1n RC4 for 4.0.2'
       - crc: 0xDA25CBFC
         util: 'SSEEdit v4.0.1n RC4 for 4.0.2'
+  - name: 'MissingEZs_AllExteriors.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
+        name: 'Missing Encounter Zones Fixed on Nexus Mods'
+    group: *lowPriorityGroup
+    after:
+      - 'RelightingSkyrim_SSE.esp'
+      - 'Populated Dungns Caves Ruins Legendary.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Alternate Start -- New Beginnings.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    tag:
+      - C.Encounter
+      - C.Location
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Realistic Water Two' ]
+        condition: 'active("RealisticWaterTwo.esp") and not active("MZEF_ExteriorsRW2Patch.esp")'
+  - name: 'MZEF_ExteriorsRW2Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
+        name: 'Missing Encounter Zones Fixed on Nexus Mods'
+    tag:
+      - C.Encounter
+      - C.Location  
+  - name: 'MissingEZsFixed.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
+        name: 'Missing Encounter Zones Fixed on Nexus Mods'
+    group: *lowPriorityGroup
+    after:
+      - 'RelightingSkyrim_SSE.esp'
+      - 'Populated Dungns Caves Ruins Legendary.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Alternate Start -- New Beginnings.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    tag:
+      - C.Encounter
+      - C.Location
+    msg:
+      - <<: *AlreadyInX
+        subs: [ 'MissingEZs_AllExteriors.esp']
+        condition: 'active("MissingEZs_AllExteriors.esp") and active("MissingEZsFixed.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Water Two' ]
+        condition: 'active("RealisticWaterTwo.esp") and not active("MissingEZsFixedRW2Patch.esp")'
+  - name: 'MissingEZsFixedRW2Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
+        name: 'Missing Encounter Zones Fixed on Nexus Mods'
+    tag:
+      - C.Encounter
+      - C.Location
