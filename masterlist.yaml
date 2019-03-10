@@ -4632,6 +4632,11 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_CACO_S3DTrees Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Rare Curios - Creation Club'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("ccbgssse037-curios.esl") and not active("CACO Rare Curios Patch.esp")'
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
