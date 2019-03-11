@@ -3374,6 +3374,24 @@ plugins:
       # version: 2.4C
       - crc: 0x938CF2CD
         util: 'SSEEdit v4.0.0'
+  - name: 'Janessa Half Argonian Companion.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Adds a script to levelled Bandits NPC Records which respawns those NPCs several times. This script will affect all references that place these NPCs. Remove these records from Janessa Half Argonian Companion.esp: LvlBanditMeleeTank 00015BE5, LvlBanditMissile 0001E79E, 00023AAD EncFrostbiteSpiderSnowGiant, LvlBanditMelee1H 0003DECB, LvlBanditMeleeBerserker 0003DECC.' ]
+        condition: 'checksum("Janessa Half Argonian Companion.esp", BC38732F)'
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x39D3BC6F
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      # version: 1.0
+      - crc: 0xBC38732F
+        util: 'SSEEdit v4.0.2'
+      # version: 1.0, wild edits cleaned.
+      - crc: 0x1A3E4FE1
+        util: 'SSEEdit v4.0.2'
   - name: 'konahrik_accoutrements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
     dirty:
