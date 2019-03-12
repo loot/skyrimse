@@ -3674,6 +3674,80 @@ plugins:
       - crc: 0x1F2A30C3
         util: 'SSEEdit v4.0.0'
 
+  - name: 'DeadlyDragons.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23723/' ]
+    req:
+      - *SKSE
+      - *SkyUI
+    inc:
+      - 'KS Dragon Overhaul.esp'
+      - 'KS Dragon Overhaul 2.esp'
+      - 'Serio''s Enhanced Dragons.esp'
+    msg:
+      - <<: *semiCompatible
+        subs:
+          - 'Elemental Dragons'
+          - 'Dragons added by Elemental Dragons will not be affected by Deadly Dragons'' settings, nor will they spawn from the Assault system''s spawning. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/23723)'
+        condition: 'active("Elemental_Dragons.esp")'
+      - <<: *semiCompatible
+        subs:
+          - 'Enhanced Mighty Dragons'
+          - 'Using Deadly Dragons and any mod like Enhanced Mighty Dragons can result in virtually un-killable dragons, so they are not recommended.. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/23723)'
+        condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
+      - <<: *patchProvided
+        subs: [ 'Diverse Dragons Collection' ]
+        condition: 'active("DiverseDragonsCollectionSE.esp") and not active("Deadly Dragons - Diverse Dragons Collection Patch.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
+      - <<: *patchProvided
+        subs: [ 'Splendor Dragon Variants' ]
+        condition: 'active("ogSplendorDragons.esp") and not active("Deadly Dragons - Splendor Dragon Variants.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wyrmstooth' ]
+        condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth Patch.esp")'
+    clean:
+      # version: 6.5.0 - Regular
+      - crc: 0x12604C5C
+        util: 'SSEEdit v4.0.2'
+      # version: 6.5.0 - Loremonger
+      - crc: 0xD68CDBDF
+        util: 'SSEEdit v4.0.2'
+  - name: 'Deadly Dragons - Main Towns Not Safe Zones.esp'
+    msg: [ *doNotClean ]
+    clean:
+      # version: 1.1
+      - crc: 0xB400186E
+        util: 'SSEEdit v4.0.2'
+  - name: 'Deadly Dragons - DDC and Splendor.esp'
+    inc:
+      - 'Deadly Dragons - Diverse Dragons Collection Patch.esp'
+      - 'Deadly Dragons - Splendor Dragon Variants.esp'
+    clean:
+      # version: 1.1 - Regular
+      - crc: 0x0B338313
+        util: 'SSEEdit v4.0.2'
+      # version: 1.1 - Loremonger
+      - crc: 0x153EB160
+        util: 'SSEEdit v4.0.2'
+  - name: 'Deadly Dragons - Diverse Dragons Collection Patch.esp'
+    clean:
+      # version: 1.1 - Regular
+      - crc: 0x790D1609
+        util: 'SSEEdit v4.0.2'
+      # version: 1.1 - Loremonger
+      - crc: 0xA37102A4
+        util: 'SSEEdit v4.0.2'
+  - name: 'Deadly Dragons - Splendor Dragon Variants.esp'
+    clean:
+      # version: 1.1 - Regular
+      - crc: 0x14F5845E
+        util: 'SSEEdit v4.0.2'
+      # version: 1.1 - Loremonger
+      - crc: 0xC4717FC4
+        util: 'SSEEdit v4.0.2'
+  - name: 'Deadly Dragons - Wyrmstooth Patch.esp'
+    clean:
+      - crc: 0xDBB1C256
+        util: 'SSEEdit v4.0.2'
+
 ###### Environment, Landscape & Flora ######
   - name: 'Alpine Forest of Whiterun Valley.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18866/' ]
