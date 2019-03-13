@@ -475,9 +475,6 @@ globals:
     subs: [ '[Experience](https://www.nexusmods.com/skyrimspecialedition/mods/17751/)' ]
     condition: 'file("SKSE/Plugins/Experience.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
-    subs: [ '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
-    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
     subs: [ '[Floating Damage](https://www.nexusmods.com/skyrimspecialedition/mods/14332/)' ]
     condition: 'file("SKSE/Plugins/FloatingDamage.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
@@ -525,9 +522,6 @@ globals:
     subs: [ '[Display Enemy Level VR](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
     condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
   - <<: *reqSKSE
-    subs: [ '[SSE Fixes VR](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
-    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
     subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
     condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
   - <<: *reqSKSE
@@ -536,6 +530,11 @@ globals:
   - <<: *reqSKSE
     subs: [ '[PapyrusUtil VR](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
     condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+
+# DLL Plugin Loader - Requirements
+  - type: warn
+    condition: 'file("DLLPlugins/FPSFixPlugin.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
+    content: 'It appears you have installed **[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)**.'
 
 groups:
   - name: &dlcGroup DLC
