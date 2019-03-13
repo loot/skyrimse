@@ -444,10 +444,10 @@ globals:
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
 
 # SKSE Plugins - Requirements
-  # - <<: *reqSKSE
-  #   subs: [ 'a SKSE Plugin' ]
-  #   condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
-
+  - <<: *reqSKSE
+    subs: [ 'an SKSE Plugin' ]
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
+  # SKSE 64 Plugins
   - <<: *reqSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -456,13 +456,13 @@ globals:
     condition: 'file("SKSE/Plugins/BetterJumpingSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[CBP Physics](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
-    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Classic Sprinting Redone](https://www.nexusmods.com/skyrimspecialedition/mods/20166/)' ]
     condition: 'file("SKSE/Plugins/ClassicSprinting.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Display Enemy Level](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
-    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Encounter Zones Unlocked](https://www.nexusmods.com/skyrimspecialedition/mods/19608/)' ]
     condition: 'file("SKSE/Plugins/encounter_zones_unlocked.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -480,7 +480,7 @@ globals:
     condition: 'file("SKSE/Plugins/Experience.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
-    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Floating Damage](https://www.nexusmods.com/skyrimspecialedition/mods/14332/)' ]
     condition: 'file("SKSE/Plugins/FloatingDamage.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -497,14 +497,11 @@ globals:
     subs: [ '[JContainers 64](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
     condition: 'file("SKSE/Plugins/JContainers64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
-    subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
-    condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
     subs: [ '[ModifyFaceGen Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
-    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
-    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Quick Loot RE](https://www.nexusmods.com/skyrimspecialedition/mods/21085/)' ]
     condition: 'file("SKSE/Plugins/QuickLootRE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -523,7 +520,26 @@ globals:
   - <<: *reqSKSE
     subs: [ '[To Your Face - Sensible NPC commenting](https://www.nexusmods.com/skyrimspecialedition/mods/13373/)' ]
     condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-
+  
+  # SKSE VR Plugins
+  - <<: *reqSKSE
+    subs: [ '[CBP Physics VR](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
+    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Display Enemy Level VR](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
+    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[SSE Fixes VR](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
+    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
+    condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[ModifyFaceGen Fix VR](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
+    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[PapyrusUtil VR](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
+    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
 
 groups:
   - name: &dlcGroup DLC
