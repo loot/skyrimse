@@ -4128,6 +4128,14 @@ plugins:
       # version: 1.82
       - crc: 0x2138ED5A
         util: 'SSEEdit v4.0.0'
+  - name: 'SunDaytime(South|North_MM_default)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
+    msg:
+      - <<: *semiCompatible
+        subs:
+          - 'ENBSeries'
+          - 'Sun direction MAY cause conflicts with future versions of ENBSeries. If you run into a 95 percent daytime issue you need to disable sun direction esp''s.'
+        condition: 'file("../d3d11.dll")'
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
     group: *lateLoadersGroup
