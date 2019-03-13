@@ -37,33 +37,33 @@ common:
       - lang: de
         text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit der Mod richtig funktioniert. Gelöschte Eintrage wiederherzustellen ist in Ordung, alles andere aber nicht.'
   - &patchProvided
-    type: warn
+    type: say
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
       - lang: de
-        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
+        text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
   - &patchIncluded
-    type: warn
+    type: say
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
       - lang: de
-        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit diesen Plugins Installer.'
+        text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit diesen Plugins Installer.'
   - &patch3rdParty
-    type: warn
+    type: say
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
       - lang: de
-        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
+        text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
   - &patch3rdPartyQUASIPC
-    type: warn
+    type: say
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
       - lang: de
-        text: 'Sie scheinen %1% zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+        text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
     subs:
@@ -103,15 +103,11 @@ common:
       - lang: de
         text: 'Sie haben %1% installiert, aber SKSE wurde nicht gefunden! SKSE kann hier heruntergeladen werden: [SKSE](http://skse.silverlock.org).'
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &reqSkyUI
+  - &requiresMCM
     type: warn
     content:
       - lang: en
-        text: 'SkyUI_SE.esp is not active in your load order. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) is required for this mod to be fully functional.'
-      - lang: ja
-        text: 'SkyUI_SE.espがアクティブになっていません。このModを完全に機能させるには[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)が必要です。'
-      - lang: de
-        text: 'SkyUI_SE.esp ist nicht aktiv in Ihrer Ladereihenfolge. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) wird benötigt damit diese Mod voll funktional ist.'
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
     condition: 'not active("SkyUI_SE.esp")'
   - &reqMasterSort
     type: say
@@ -120,7 +116,7 @@ common:
         text: 'Plugin''s Masters require sorting.'
       - lang: de
         text: 'Die Plugin Master müssen sortiert werden.'
-  - &AlreadyInX
+  - &alreadyInX
     type: error
     content:
       - lang: en
@@ -182,7 +178,7 @@ common:
         text: '%1%は最新版です。'
       - lang: de
         text: 'Ihr %1% ist aktuell.'
-  - &versionIncX
+  - &versionXIncY
     type: error
     content:
       - lang: en
@@ -193,15 +189,15 @@ common:
         text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
       - lang: de
         text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
-  - &versionIncSSE
-    <<: *versionIncX
+  - &versionSkseIncSSE
+    <<: *versionXIncY
     subs:
-      - '**Skyrim Script Extender ([ SKSE ](http://skse.silverlock.org))**'
+      - '**Script Extender ([SKSE](http://skse.silverlock.org))**'
       - '**Skyrim SE**'
-  - &versionIncSVR
-    <<: *versionIncX
+  - &versionSkseIncSVR
+    <<: *versionXIncY
     subs:
-      - '**Skyrim Script Extender ([ SKSE ](http://skse.silverlock.org))**'
+      - '**Script Extender ([SKSE](http://skse.silverlock.org))**'
       - '**Skyrim VR**'
   - &useOnlyOneX
     type: error
@@ -413,41 +409,41 @@ globals:
 
 # SKSE 64 - Latest Version (0.2.0.12)
   - <<: *versionOldX
-    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
+    subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.12", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '[SKSE 64](http://skse.silverlock.org)' ]
+    subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.12", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
 # SKSE VR - Latest Version (0.2.0.10)
   - <<: *versionOldX
-    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
+    subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '[SKSE VR](http://skse.silverlock.org)' ]
+    subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", >=) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
 
 # SKSE 64 - Compatibility
-  - <<: *versionIncSSE
+  - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
-  - <<: *versionIncSSE
+  - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.50.0", ==) and version("../skse64_loader.exe", "0.2.0.8", <) and file("../skse64_loader.exe")'
-  - <<: *versionIncSSE
+  - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.53.0", ==) and version("../skse64_loader.exe", "0.2.0.9", <) and file("../skse64_loader.exe")'
-  - <<: *versionIncSSE
+  - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", ==) and version("../skse64_loader.exe", "0.2.0.11", <) and file("../skse64_loader.exe")'
 # SKSE VR - Compatibility
-  - <<: *versionIncSVR
+  - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
-  - <<: *versionIncSVR
+  - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
-  - <<: *versionIncSVR
+  - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
 
 # SKSE Plugins - Requirements
-  # - <<: *reqSKSE
-  #   subs: [ 'a SKSE Plugin' ]
-  #   condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
-
+  - <<: *reqSKSE
+    subs: [ 'an SKSE Plugin' ]
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
+  # SKSE 64 Plugins
   - <<: *reqSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -456,13 +452,13 @@ globals:
     condition: 'file("SKSE/Plugins/BetterJumpingSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[CBP Physics](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
-    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Classic Sprinting Redone](https://www.nexusmods.com/skyrimspecialedition/mods/20166/)' ]
     condition: 'file("SKSE/Plugins/ClassicSprinting.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Display Enemy Level](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
-    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Encounter Zones Unlocked](https://www.nexusmods.com/skyrimspecialedition/mods/19608/)' ]
     condition: 'file("SKSE/Plugins/encounter_zones_unlocked.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -480,7 +476,7 @@ globals:
     condition: 'file("SKSE/Plugins/Experience.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
-    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Floating Damage](https://www.nexusmods.com/skyrimspecialedition/mods/14332/)' ]
     condition: 'file("SKSE/Plugins/FloatingDamage.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -497,14 +493,11 @@ globals:
     subs: [ '[JContainers 64](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
     condition: 'file("SKSE/Plugins/JContainers64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
-    subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
-    condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
     subs: [ '[ModifyFaceGen Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
-    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
-    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse(64|vr)_loader.exe")'
+    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Quick Loot RE](https://www.nexusmods.com/skyrimspecialedition/mods/21085/)' ]
     condition: 'file("SKSE/Plugins/QuickLootRE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -523,7 +516,26 @@ globals:
   - <<: *reqSKSE
     subs: [ '[To Your Face - Sensible NPC commenting](https://www.nexusmods.com/skyrimspecialedition/mods/13373/)' ]
     condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-
+  
+  # SKSE VR Plugins
+  - <<: *reqSKSE
+    subs: [ '[CBP Physics VR](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
+    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[Display Enemy Level VR](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
+    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[SSE Fixes VR](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)' ]
+    condition: 'file("SKSE/Plugins/FPSFixPlugin.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
+    condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[ModifyFaceGen Fix VR](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
+    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
+  - <<: *reqSKSE
+    subs: [ '[PapyrusUtil VR](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
+    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
 
 groups:
   - name: &dlcGroup DLC
@@ -1078,7 +1090,7 @@ plugins:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
       - 'RSkyrimChildren.esm'
     msg:
-      - <<: *versionIncX
+      - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
           - '**Skyrim Special Edition**'
@@ -1199,7 +1211,7 @@ plugins:
         name: 'Armor and Clothing Extension on Nexus Mods'
     group: *fixesGroup
     msg:
-      - *reqSkyUI
+      - *requiresMCM
       - *doNotClean
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Beyond Skyrim: Bruma' ]
@@ -1820,7 +1832,7 @@ plugins:
   - name: 'beltfastenedquivers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1182/' ]
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'XP32 Maximum Skeleton Special Extended' ]
         condition: 'active("beltfastenedquivers.esp") and active("XPMSSE.esp")'
   - name: 'dD - Realistic Ragdoll Force -.*.esp'
@@ -1828,7 +1840,7 @@ plugins:
     after:
       - 'Requiem.esp'
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'XP32 Maximum Skeleton Special Extended' ]
         condition: 'active("beltfastenedquivers.esp") and active("XPMSSE.esp")'
   - name: 'FlowerGirls SE.esp'
@@ -3423,7 +3435,7 @@ plugins:
   - name: 'LessDragons(10|25|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'Timing is Everything - Quest Delay and Timing Control' ]
         condition: 'active("TimingIsEverything.esp")'
       - <<: *useOnlyOneX
@@ -4575,7 +4587,7 @@ plugins:
     inc:
       - 'GIST soul trap.esp'
       - 'UFD Enhanced Soultrap.esp'
-    msg: [ *reqSkyUI ]
+    msg: [ *requiresMCM ]
     clean:
       # version: 4.6.5
       - crc: 0x615A80B8
@@ -4816,7 +4828,7 @@ plugins:
       - 'GIST soul trap.esp'
     msg:
       - *doNotClean
-      - *reqSkyUI
+      - *requiresMCM
   - name: 'Finding_VelehkSain(_MAQF)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19815/' ]
     after:
@@ -4851,7 +4863,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Rustic Soul Gems' ]
         condition: 'active("RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp") and not active("GIST-RusticSoulGems-patch.esp")'
-      - *reqSkyUI
+      - *requiresMCM
     clean:
       # version: 1.3
       - crc: 0xC9D0A414
@@ -5987,7 +5999,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    msg: [ *reqSkyUI ]
+    msg: [ *requiresMCM ]
     tag:
       - Delev
       - Invent
@@ -6389,7 +6401,7 @@ plugins:
         name: 'Book Covers Skyrim - Desaturated on Bethesda.net'
     group: *underridesGroup
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'LegacyoftheDragonborn.esm' ]
         condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
       - <<: *patch3rdPartyQUASIPC
@@ -6429,7 +6441,7 @@ plugins:
         name: 'BCS Lost Library - Desaturated on Bethesda.net'
     group: *underridesGroup
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'LegacyoftheDragonborn.esm' ]
         condition: 'active("Book Covers Skyrim - Lost Library.esp") and active("LegacyoftheDragonborn.esm")'
     tag:
@@ -6464,10 +6476,10 @@ plugins:
   - name: 'Cloaks - USSEP Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'Qw_CloaksOfSkyrim_CRF Patch.esp' ]
         condition: 'active("Qw_CloaksOfSkyrim_CRF Patch.esp")'
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'Qw_CloaksOfSkyrim_USSEP Patch.esp' ]
         condition: 'active("Qw_CloaksOfSkyrim_USSEP Patch.esp")'
     clean:
@@ -6535,7 +6547,7 @@ plugins:
       - Relev
   - name: 'Hothtrooper44_Armor_Ecksstra.esp'
     group: *underridesGroup
-    msg: [ *reqSkyUI ]
+    msg: [ *requiresMCM ]
   - name: 'Immersive Jewelry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5336/' ]
     inc:
@@ -9633,7 +9645,7 @@ plugins:
   - name: 'Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'Guard Dialogue Overhaul' ]
         condition: 'active("Guard Dialogue Overhaul.esp") and active("Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp")'
   - name: 'Qw_ISC_USSEP Patch.esp'
@@ -10010,7 +10022,7 @@ plugins:
       - C.Encounter
       - C.Location
     msg:
-      - <<: *AlreadyInX
+      - <<: *alreadyInX
         subs: [ 'MissingEZs_AllExteriors.esp']
         condition: 'active("MissingEZs_AllExteriors.esp") and active("MissingEZsFixed.esp")'
       - <<: *patchProvided
