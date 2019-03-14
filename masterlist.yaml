@@ -395,10 +395,10 @@ globals:
 # Skyrim SE - Latest Version
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", <) and file("../SkyrimSE.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", >=) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", >=) and file("../SkyrimSE.exe")'
 # Skyrim VR - Latest Version
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
@@ -431,6 +431,8 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.53.0", ==) and version("../skse64_loader.exe", "0.2.0.9", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", ==) and version("../skse64_loader.exe", "0.2.0.11", <) and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSSE
+    condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", ==) and version("../skse64_loader.exe", "0.2.0.13", <) and file("../skse64_loader.exe")'
 # SKSE VR - Compatibility
   - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
