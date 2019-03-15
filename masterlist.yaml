@@ -441,6 +441,13 @@ globals:
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
 
+# SKSE Plugins - Compatibility
+  - <<: *versionXIncY
+    subs:
+      - '**SKSE Plugin ([Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/))**'
+      - 'Skyrim SE'
+    condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
+
 # SKSE Plugins - Requirements
   - <<: *reqSKSE
     subs: [ 'an SKSE Plugin' ]
