@@ -452,6 +452,11 @@ globals:
       - '**SKSE Plugin ([Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/))**'
       - 'Skyrim SE'
     condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
+  - <<: *versionXIncY
+    subs:
+      - '**SKSE Plugin ([Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/))**'
+      - 'Skyrim SE'
+    condition: 'file("SKSE/Plugins/HookShareSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
 
 # SKSE Plugins - Requirements
   - <<: *reqSKSE
