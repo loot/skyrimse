@@ -576,7 +576,10 @@ globals:
     subs: [ '[PapyrusUtil VR](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
     condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
 
-# DLL Plugin Loader - Requirements
+# Other Requirements
+  - type: warn
+    condition: 'file("SKSE/Plugins/EngineFixes.dll") and (not file("../d3dx9_42.dll") or not file("../tbb.dll") or not file("../tbbmalloc.dll"))'
+    content: 'It appears you have installed **[SSE Engine Fixes - Part 1](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)**.'
   - type: warn
     condition: 'file("DLLPlugins/FPSFixPlugin.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
     content: 'It appears you have installed **[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)**.'
