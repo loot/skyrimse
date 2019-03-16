@@ -500,7 +500,7 @@ globals:
     condition: 'file("SKSE/Plugins/encounter_zones_unlocked.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
-    condition: 'file("SKSE/Plugins/EngineFixes64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
+    condition: 'file("SKSE/Plugins/EngineFixes.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
   - <<: *reqSKSE
     subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
     condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
@@ -1868,6 +1868,14 @@ plugins:
       # version: 2.0.2c
       - crc: 0x7BEE8346
         util: 'SSEEdit v4.0.0'
+  - name: 'NQS_NamedQuicksaves.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
+    req:
+      - *SKSE
+      - *SkyUI
+      - name: 'SKSE/Plugins/EngineFixes.dll'
+        display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/) or [Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245/)'
+        condition: 'not file("SKSE/Plugins/AchievementsModsEnablerLoader.dll") and not file("Plugins/Sumwunn/AchievementsModsEnabler.dll")'
   - name: 'RaceMenu.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
