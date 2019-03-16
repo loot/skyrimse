@@ -2489,10 +2489,6 @@ plugins:
     group: *preEarlyGroup
     tag:
       - Sound
-    clean:
-      # version: 2.1
-      - crc: 0xAA85D810
-        util: 'SSEEdit v3.2.1'
     msg:
       - <<: *patchProvided
         subs: [ 'Alternate Start - Live Another Life' ]
@@ -2503,6 +2499,16 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
+    dirty:
+      # version: 1.5
+      - <<: *quickClean
+        crc: 0xAA85D810
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 1.5
+      - crc: 0x99C3B788
+        util: 'SSEEdit v4.0.2'
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
     after:
