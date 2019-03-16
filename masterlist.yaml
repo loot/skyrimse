@@ -468,6 +468,9 @@ globals:
   - <<: *versionSksePluginIncSSE
     subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
     condition: 'file("SKSE/Plugins/HookShareSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Named Quicksaves - A Save Manager](https://www.nexusmods.com/skyrimspecialedition/mods/16840/)' ]
+    condition: 'file("SKSE/Plugins/NQS_NamedQuicksaves.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/NQS_NamedQuicksaves.dll", "2.3.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/NQS_NamedQuicksaves.dll", "2.3.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
 
 # SKSE Plugins - Requirements
   - <<: *reqSKSE
