@@ -447,6 +447,11 @@ globals:
       - '**SKSE Plugin ([Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/))**'
       - 'Skyrim SE'
     condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
+  - <<: *versionXIncY
+    subs:
+      - '**SKSE Plugin ([Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/))**'
+      - 'Skyrim SE'
+    condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
 
 # SKSE Plugins - Requirements
   - <<: *reqSKSE
