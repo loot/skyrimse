@@ -178,6 +178,17 @@ common:
         text: '%1%は最新版です。'
       - lang: de
         text: 'Ihr %1% ist aktuell.'
+  - &versionSksePluginIncSSE
+    type: error
+    content:
+      - lang: en
+        text: 'Your installed version of **SKSE Plugin (%1%)** is not compatible with your version of Skyrim SE.'
+      - lang: da
+        text: 'Din installerede version af **SKSE Plugin (%1%)** er ikke kompatibel med din version af Skyrim SE.'
+      - lang: ja
+        text: 'インストールされている**SKSE Plugin (%1%)**は使用中のバージョンのSkyrim SEとの互換性がありません。'
+      - lang: de
+        text: 'Ihre installierte Version von **SKSE Plugin (%1%)** ist nicht kompatibel mit Ihrer Version von Skyrim SE.'
   - &versionXIncY
     type: error
     content:
@@ -442,30 +453,20 @@ globals:
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
 
 # SKSE Plugins - Compatibility
-  - <<: *versionXIncY
-    subs:
-      - '**SKSE Plugin ([Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/))**'
-      - 'Skyrim SE'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/)' ]
     condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionXIncY
-    subs:
-      - '**SKSE Plugin ([Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/))**'
-      - 'Skyrim SE'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
     condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.2.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionXIncY
-    subs:
-      - '**SKSE Plugin ([Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/))**'
-      - 'Skyrim SE'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)' ]
     condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionXIncY
-    subs:
-      - '**SKSE Plugin ([Glow Be Gone](https://www.nexusmods.com/skyrimspecialedition/mods/21703/))**'
-      - 'Skyrim SE'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Glow Be Gone](https://www.nexusmods.com/skyrimspecialedition/mods/21703/)' ]
     condition: 'file("SKSE/Plugins/GlowBeGoneSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/GlowBeGoneSSE.dll", "1.3.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/GlowBeGoneSSE.dll", "1.3.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionXIncY
-    subs:
-      - '**SKSE Plugin ([Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/))**'
-      - 'Skyrim SE'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
     condition: 'file("SKSE/Plugins/HookShareSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
 
 # SKSE Plugins - Requirements
