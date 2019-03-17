@@ -1499,7 +1499,13 @@ plugins:
     clean:
       # version: 1.3
       - crc: 0x45374C76
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
+  - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
+    group: *fixesGroup
+    clean:
+      # version: 1.3
+      - crc: 0xD0948CCF
+        util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Project Optimization - Full Version.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
@@ -1508,7 +1514,13 @@ plugins:
     clean:
       # version: 1.3
       - crc: 0x137A03B3
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
+  - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
+    group: *ccGroup
+    clean:
+      # version: 1.3
+      - crc: 0x81A0DD15
+        util: 'SSEEdit v4.0.2'
   - name: 'static mesh improvement mod se.esp'
     group: *earlyLoadersGroup
   - name: 'SMIM-SE?.*\.esp'
@@ -2489,10 +2501,6 @@ plugins:
     group: *preEarlyGroup
     tag:
       - Sound
-    clean:
-      # version: 2.1
-      - crc: 0xAA85D810
-        util: 'SSEEdit v3.2.1'
     msg:
       - <<: *patchProvided
         subs: [ 'Alternate Start - Live Another Life' ]
@@ -2503,6 +2511,16 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
+    dirty:
+      # version: 1.5
+      - <<: *quickClean
+        crc: 0xAA85D810
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 1.5
+      - crc: 0x99C3B788
+        util: 'SSEEdit v4.0.2'
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
     after:
@@ -2557,7 +2575,7 @@ plugins:
     clean:
       # version: 1.6
       - crc: 0x3BB01F22
-        util: 'SSEEdit v4.0.0'
+        util: 'SSEEdit v4.0.2'
   - name: 'SoS_VividWeathers_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
@@ -2581,9 +2599,9 @@ plugins:
     tag:
       - Sound
     clean:
-      # version: 1.13
-      - crc: 0x0A8D0553
-        util: 'SSEEdit v3.2.1'
+      # version: 1.6
+      - crc: 0xEFF95481
+        util: 'SSEEdit v4.0.2'
   - name: 'SoS - Civilization.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
@@ -2596,9 +2614,9 @@ plugins:
       - C.Acoustic
       - Sound
     clean:
-      # version: 1.02
-      - crc: 0xB76151E5
-        util: 'SSEEdit v3.2.1'
+      # version: 1.6
+      - crc: 0xB8A64B7E
+        util: 'SSEEdit v4.0.2'
   - name: 'SoS - The Dungeons.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
@@ -2610,10 +2628,16 @@ plugins:
       - 'SoundsofSkyrimComplete.esp'
     tag:
       - Sound
+    dirty:
+      # version: 1.6
+      - <<: *quickClean
+        crc: 0x28EAF3CD
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
     clean:
-      # version: 1.23
-      - crc: 0xB8611F94
-        util: 'SSEEdit v3.2.1'
+      # version: 1.6, after QAC
+      - crc: 0x109281F0
+        util: 'SSEEdit v4.0.2'
   - name: 'UHDAP -.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
@@ -3602,24 +3626,13 @@ plugins:
         util: 'SSEEdit v4.0.1'
   - name: 'MoreBanditCamps.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1994' ]
-    dirty:
-      # version: 2.5 Regular
-      - <<: *quickClean
-        crc: 0xBF7AB025
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 264
-      # version: 2.5 Explorer
-      - <<: *quickClean
-        crc: 0xE7249911
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 264
     clean:
-      # version: 2.5 Regular
-      - crc: 0x79097B63
-        util: 'SSEEdit v4.0.1'
-      # version: 2.5 Explorer
-      - crc: 0xAE9561F3
-        util: 'SSEEdit v4.0.1'
+      # version: 2.6 Regular
+      - crc: 0x391181AF
+        util: 'SSEEdit v4.0.2'
+      # version: 2.6 Explorer
+      - crc: 0x1A75777B
+        util: 'SSEEdit v4.0.2'
   - name: 'Rebalanced Encounter Zones.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25/' ]
     after:
@@ -4376,10 +4389,7 @@ plugins:
     clean:
       # version: 1.0SE
       - crc: 0xADC2F6AF
-        util: 'SSEEdit v3.2.1'
-      # version: 1.0SE
-      - crc: 0x0BA34575
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Flora Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
     group: *floraGroup
@@ -4629,6 +4639,9 @@ plugins:
       # version: 4.0.8
       - crc: 0xFFBA79AE
         util: 'SSEEdit v4.0.0'
+      # version: 4.0.9
+      - crc: 0xCDDFC16E
+        util: 'SSEEdit v4.0.2'
   - name: 'Alternate Start -- New Beginnings.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/'
@@ -4699,7 +4712,7 @@ plugins:
     clean:
       # version: 9.45SSE
       - crc: 0x266B3B3B
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'AcquisitiveSoulGemMultithreaded.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
     inc:
@@ -4769,7 +4782,7 @@ plugins:
     clean:
       # version: 8.2
       - crc: 0xEC44246A
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'Bounty Gold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
     after:
@@ -4798,9 +4811,9 @@ plugins:
       - Actors.AIPackages
       - Names
     clean:
-      # version: 3.2
+      # version: 2.0
       - crc: 0x9F3FDA79
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
     group: *coreGroup
@@ -4867,9 +4880,9 @@ plugins:
           - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
         condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
     clean:
-      # version: 0.9.7
-      - crc: 0x24B281F2
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.0.2
+      - crc: 0x88D27F37
+        util: 'SSEEdit v4.0.2'
   - name: 'Clairvoyance.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
     after:
@@ -4915,7 +4928,10 @@ plugins:
     clean:
       # version: 1.1
       - crc: 0xA3FB0FAD
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
+      # version: 1.1 - No Crossbows
+      - crc: 0x651A9B3E
+        util: 'SSEEdit v4.0.2'
   - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *preEarlyGroup
@@ -5557,9 +5573,9 @@ plugins:
       - C.Location
       - C.Regions
     clean:
-      # version: 3.1.0
-      - crc: 0x118AE92F
-        util: 'SSEEdit v4.0.0'
+      # version: 3.1.2
+      - crc: 0x4873B942
+        util: 'SSEEdit v4.0.2'
   - name: 'NotSoFast-MageGuild.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5686/' ]
     after:
@@ -6110,9 +6126,9 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
     clean:
-      # version: 3.0.0se
-      - crc: 0x07E8D176
-        util: 'SSEEdit v3.2.1'
+      # version: 3.0.3
+      - crc: 0x3CDD869D
+        util: 'SSEEdit v4.0.2'
   - name: 'TradeBarter.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
@@ -6760,7 +6776,7 @@ plugins:
     clean:
       # version: 1.7
       - crc: 0x082F3A95
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'JS Armored Circlets SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2140/' ]
     tag:
@@ -7078,7 +7094,7 @@ plugins:
     clean:
       # version: 1.1
       - crc: 0x34C78E0F
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'Scarcity SE - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
     group: *lvlListsGroup
@@ -7133,7 +7149,7 @@ plugins:
     clean:
       # version: 1.3.3
       - crc: 0x1D0648B6
-        util: 'SSEEdit v4.0.0'
+        util: 'SSEEdit v4.0.2'
   - name: 'BSHeartland.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
@@ -7173,37 +7189,37 @@ plugins:
       # version: 1.3.3
       - <<: *quickClean
         crc: 0x0B12B4E7
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 514
     clean:
       # version: 1.3.3, after cleaning
       - crc: 0x2F3CF5FA
-        util: 'SSEEdit v4.0.0'
+        util: 'SSEEdit v4.0.2'
       # version: 1.3.3, after cleaning & correcting the (unused) circular leveled list
-      - crc: 0x15B7059A
-        util: 'SSEEdit v4.0.0'
+      - crc: 0x2BD82405
+        util: 'SSEEdit v4.0.2'
   - name: 'BSHeartland - Unofficial Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19374'
         name: 'Beyond Skyrim - Bruma - Tweaks Enhancements and Patches SSE on Nexus Mods'
     dirty:
-      # version: 1.2
+      # version: 1.5
       - <<: *quickClean
-        crc: 0xB283D3E0
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        itm: 173
-        # version: 1.2 - ESL flagged
+        crc: 0x05F86AF6
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 24
+        # version: 1.5 - ESL flagged
       - <<: *quickClean
-        crc: 0x76842224
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-        itm: 173
+        crc: 0x787070C1
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 24
     clean:
-      # version: 1.2
-      - crc: 0xF838E3BE
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      # version: 1.2 - ESL flagged
-      - crc: 0xA75B7111
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.5
+      - crc: 0x86745B7A
+        util: 'SSEEdit v4.0.2'
+      # version: 1.5 - ESL flagged
+      - crc: 0xA4762EF8
+        util: 'SSEEdit v4.0.2'
     tag:
       - C.Location
       - C.Name
@@ -7213,12 +7229,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19374'
         name: 'Beyond Skyrim - Bruma - Tweaks Enhancements and Patches SSE on Nexus Mods'
     clean:
-      # version: 1.2
+      # version: 1.5
       - crc: 0x3332482F
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      # version: 1.2 - ESL flagged
+        util: 'SSEEdit v4.0.2'
+      # version: 1.5 - ESL flagged
       - crc: 0x4F219DBA
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        util: 'SSEEdit v4.0.2'
     tag:
       - Names
   - name: 'BS_DLC_patch.esp'
@@ -7233,7 +7249,7 @@ plugins:
     clean:
       # version: 1.1.2
       - crc: 0x2BC2FECB
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
   - name: 'Clockwork.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4155' ]
     dirty:
@@ -7600,12 +7616,9 @@ plugins:
       - NPC.Class
       - Stats
     clean:
-      # version: 3.0.9
-      - crc: 0x17D6674E
-        util: 'SSEEdit v4.0.0'
-      # version: 3.1.0
-      - crc: 0xA78A321D
-        util: 'SSEEdit v4.0.0'
+      # version: 3.1.2
+      - crc: 0x056F60DD
+        util: 'SSEEdit v4.0.2'
   - name: 'Dolmen Ruins.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
@@ -7744,9 +7757,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/364/'
         name: 'Storefront on Nexus Mods'
     clean:
-      # version: 2.0.2
-      - crc: 0x26D5C1B3
-        util: 'SSEEdit v3.3.6'
+      # version: 2.0.3
+      - crc: 0xBF061809
+        util: 'SSEEdit v4.0.2'
   - name: 'Tes Arena - Skyrim Frontier Fortress.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     inc:
@@ -7868,10 +7881,16 @@ plugins:
       - Factions
       - Invent
       - Names
+    dirty:
+      # version: 5.3
+      - <<: *quickClean
+        crc: 0xA935628A
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
     clean:
-      # version: 2.1
-      - crc: 0xDA086763
-        util: 'SSEEdit v3.2.1'
+      # version: 5.3
+      - crc: 0x8AEC2250
+        util: 'SSEEdit v4.0.2'
   - name: 'Darkwater Crossing.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
@@ -8564,9 +8583,9 @@ plugins:
     tag:
       - C.Location
     clean:
-      # version: 2.0.2
-      - crc: 0xA860A5F5
-        util: 'SSEEdit v3.3.6'
+      # version: 2.0.3
+      - crc: 0xE4CE7376
+        util: 'SSEEdit v4.0.2'
   - name: 'Kynesgrove.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/351/'
@@ -9302,7 +9321,7 @@ plugins:
     clean:
       # version: 2.0
       - crc: 0x86CF0F2B
-        util: 'SSEEdit v3.2.1'
+        util: 'SSEEdit v4.0.2'
 
 ###### Legacy of the Dragonborn ######
   - name: 'LegacyoftheDragonborn.esm'
