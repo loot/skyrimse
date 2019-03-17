@@ -6385,11 +6385,17 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/'
         name: 'Nether''s Follower Framework SSE on Nexus Mods'
+    req:
+      - *SKSE
+      - *SkyUI
     inc:
       - 'AmazingFollowerTweaks.esp'
       - 'EFFCore.esm'
       - 'EFFDialogue.esp'
     msg:
+      - type: say
+        condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
+        content: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
       - type: say
         condition: 'active("Convenient Horses.esp")'
         content:
