@@ -622,20 +622,20 @@ groups:
 
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
+    after: [ *earlyLoadersGroup ]
 
   - name: &landscapeGroup Landscape
     description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-    after:
-      - *earlyLoadersGroup
-      - *floraGroup
+    after: [ *floraGroup ]
 
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
-    after: [ *preEarlyGroup ]
+    after: [ *earlyLoadersGroup ]
 
   - name: &fixesGroup Fixes & Resources
     after: [ *preFixesGroup ]
 
   - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
+    after: [ *earlyLoadersGroup ]
 
   - name: &addonsGroup Add-ons & Expansions
     after:
@@ -644,6 +644,7 @@ groups:
       - *landscapeGroup
 
   - name: &underridesGroup Underrides
+    after: [ *earlyLoadersGroup ]
 
   - name: default
     after:
