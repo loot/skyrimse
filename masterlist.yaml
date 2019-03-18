@@ -1361,6 +1361,10 @@ plugins:
     group: *dynamicLODGroup
   - name: 'DynDOLOD.esm'
     group: *dynamicLODGroup
+    req:
+      - name: 'SKSE/Plugins/PapyrusUtil.dll'
+        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/) or [DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)'
+        condition: 'version("DynDOLOD.esm", "2.45", >=) and not file("SKSE/Plugins/DynDOLOD.DLL")'
   - name: 'Smashed Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/90987'
