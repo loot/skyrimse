@@ -609,8 +609,8 @@ globals:
     condition: 'file("DLLPlugins/FPSFixPlugin.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
     content: 'It appears you have installed **[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)**.'
   - type: warn
-    condition: 'file("DLLPlugins/NetScriptFramework.Runtime.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
-    content: 'It appears you have installed **[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)**.'
+    condition: 'file("DLLPlugins/NetScriptFramework.Runtime.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
+    content: 'It appears you have installed **[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)**.'
 
 groups:
   - name: &dlcGroup DLC
