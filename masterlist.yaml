@@ -5223,7 +5223,6 @@ plugins:
       - name: 'Holds.esp'
         display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
       - 'InnCredible.esp'
-      - 'JKs Skyrim.esp'
       - name: 'iWil_UselessShopOverhaul.esp'
         display: 'The Useless Shop and Interior Overhaul'
       - 'NerniesCityandVillageExpansion.esp'
@@ -8661,6 +8660,11 @@ plugins:
       - <<: *patchProvided
         subs: ['Thunderchild']
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
+      - <<: *semiCompatible
+        subs:
+          - 'Immersive Citizens - AI Overhaul'
+          - 'Semi-Compatible. NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
     clean:
       # version: 1.5
       - crc: 0xE76504EC
