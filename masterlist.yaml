@@ -4082,6 +4082,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Immersive Citizens' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Enhanced Landscapes - IC Patch.esp")'
+      - <<: *semiCompatible
+        subs:
+          - 'Simply Bigger Trees'
+          - 'Semi-Compatible. Enhanced Landscape adds and increases a lot of trees by hand. When used together with Simply Bigger Trees you may end up with massive trees. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/18162/)'
+        condition: 'active("SimplyBiggerTreesSE.esp")'
     clean:
       # version: 1.65
       - crc: 0x9B2A145A
