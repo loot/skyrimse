@@ -402,6 +402,8 @@ globals:
         text: 'Denne version af LOOT har begrænset understøttelse af Creation Club-plugins. Det er derfor anbefalet at opdatere til LOOT 0.13.1 eller senere hurtigst muligt.'
       - lang: de
         text: 'Diese Version von LOOT kann nicht richtig mit Creation Club-Plugins umgehen. Unterstützung für diese ist daher limitiert in Versionen älter als LOOT 0.13.1. Ein Update ist stark empfohlen.'
+      - lang: pt
+        text: 'Esta versão do LOOT contém uma manipulação inferior de plugins do Creation Club. Suporte a estes é então limitado nas versões posteriors a LOOT 0.13.1. É recomendado realizar uma atualização assim que possível. '
     condition: 'version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}FO4[0-9]{3}-[a-zA-Z0-9()]+\.es(l|m)")'
   - type: say
     content:
@@ -421,6 +423,8 @@ globals:
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
       - lang: de
         text: '[Aktueller LOOT-Thread](%1%).'
+      - lang: pt
+        text: '[Postagem mais recente do LOOT](%1%).'
     subs: [ 'https://loot.github.io/latest-thread/' ]
 # Fores New Idles
   - type: say
@@ -440,6 +444,8 @@ globals:
         text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
       - lang: de
         text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierenden Mod installiert oder deinstalliert haben.'
+      - lang: pt
+        text: 'Você aparenta ter [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) instalado. Lembre-se de correr GenerateFNISforUsers.exe cada vez que instale ou desinstale FNIS, ou um mod baseado em FNIS.'
 # Skyrim Script Extender - Required Scripts
   - type: warn
     condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("../sksevr_loader.exe")))'
@@ -448,6 +454,8 @@ globals:
         text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
       - lang: de
         text: 'Es erscheint als hätten Sie **Skyrim Script Extender** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher das Sie die Skripte korrekt mit installiert haben die mit dem **[SKSE](http://skse.silverlock.org)** Installationsarchiv enthalten sind.'
+      - lang: pt
+        text: 'Você aparenta ter instalado **Skyrim Script Extender**, mas os seus scripts necessário estão em falta. Por favor, garanta que tem os devidamente instalados os scripts the acompanham o arquivo de instalação do **[SKSE](http://skse.silverlock.org)**'
 
 # Skyrim SE - Latest Version
   - <<: *versionOldX
@@ -930,6 +938,8 @@ plugins:
             text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
           - lang: de
             text: '"ccqdrsse001-survivalmode.esl" hat einen [bekannten Fehler](https://www.nexusmods.com/skyrimspecialedition/articles/22/), welcher es inkompatibel mit "Ordinator - Perks of Skyrim.esp" macht. Der [Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) behebt diesen Fehler.'
+          - lang: pt
+            text: '"ccqdrsse001-survivalmode.esl" contém um [erro identificado](https://www.nexusmods.com/skyrimspecialedition/articles/22/) em que é incompatível com "Ordinator - Perks of Skyrim.esp". Considere utilizar o [Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) para reparar este erro.'
     dirty:
       - <<: *quickClean
         crc: 0x611D6AA2
@@ -1914,6 +1924,8 @@ plugins:
             text: '%1% patcher script available here: %2%'
           - lang: de
             text: '%1% Patch-Skript hier verfügbar: %2%'
+          - lang: pt
+            text: 'O script de atualização para %1% está disponível aqui: %2%'
         subs:
           - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
@@ -1998,6 +2010,8 @@ plugins:
             text: 'This plugin is optional.'
           - lang: de
             text: 'Dieses Plugin ist optional.'
+          - lang: de
+            text: 'Este plugin é opcional.'
     clean:
       # version: 0.2.7 - 0.2.10
       - crc: 0x8FF336FE
@@ -3231,6 +3245,8 @@ plugins:
         content:
           - lang: en
             text: 'Remember to run the included SSEEdit script **MXPF - One ImCh Patcher** every time you have installed or un-installed a mod. Use the recommended patch name **One ImCh Patch** or **One ImCh Patcher** for correct sorting. Instructions for running this patcher can be found on the [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001) description page.'
+          - lang: pt
+            text: 'Recorde-se de executar o script SSEEdit incluído **MXPF - One ImCh Patcher** cada vez que você instale ou desinstale um mod. Use o nome recomendado de patch **One ImCh Patch** ou **One ImCh Patcher** para ordenação correta. Instruções para correr este patcher podem ser encontrada na página de descrição de [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001). '
   - name: 'One ImCh Patch?.*\.esp'
     group: *dynamicPatchGroup
 
@@ -3367,6 +3383,8 @@ plugins:
             text: 'After Character Creation you should deactivate and/or uninstall this.'
           - lang: de
             text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
+          - lang: pt
+            text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
@@ -3380,6 +3398,8 @@ plugins:
             text: 'After Character Creation you should deactivate and/or uninstall this.'
           - lang: de
             text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
+          - lang: pt
+          text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Better_Male_Presets.esp")'
     tag:
       - NoMerge
@@ -3398,6 +3418,8 @@ plugins:
             text: 'After Character Creation you should deactivate and/or uninstall this.'
           - lang: de
             text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
+          - lang: pt
+            text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Kayla_CharPreset.esp")'
     tag:
       - NoMerge
@@ -3415,6 +3437,8 @@ plugins:
             text: 'After Character Creation you should deactivate and/or uninstall this.'
           - lang: de
             text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
+          - lang: pt
+            text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Lagertha_CharPreset.esp")'
     tag:
       - NoMerge
@@ -3433,6 +3457,8 @@ plugins:
             text: 'After Character Creation you should deactivate and/or uninstall this.'
           - lang: de
             text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
+          - lang: pt
+            text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Lydia Face Preset 64bit.esp")'
     tag:
       - NoMerge
@@ -3449,6 +3475,8 @@ plugins:
             text: 'After Character Creation you should deactivate and/or uninstall this.'
           - lang: de
             text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
+          - lang: pt
+            text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Severa_CharPreset.esp")'
     tag:
       - NoMerge
@@ -3760,6 +3788,8 @@ plugins:
             text: 'Update Patch available: %1%'
           - lang: de
             text: 'Update Patch verfügbar: %1%'
+          - lang: pt
+            text: 'Patch de atualização disponível: %1%'
         subs: [ '[Skyrim Immersive Creatures - Official Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
     clean:
@@ -3786,6 +3816,8 @@ plugins:
             text: 'Includes an old script from %1%. This script `%2%` must be deleted for %1% to function correctly.'
           - lang: de
             text: 'Enthält ein altes Skript von %1%. Dieses Skript `%2%` muss gelöscht werden damit %1% korrekt funktioniert.'
+          - lang: pt
+            text: 'Incluí um script antigo de %1%. Este script `%2%` deve ser apagado de forma a que %1% funcione corretamente.'
         subs:
           - '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)'
           - ' ski_playerloadgamealias.pex '
@@ -3819,6 +3851,8 @@ plugins:
             text: 'Update Patch available: %1%'
           - lang: de
             text: 'Update Patch verfügbar: %1%'
+          - lang: pt
+            text: 'Patch de atualização disponível: %1%'
         subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
         condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", 6771AF29)'
       # These three are mutually exclusive, which is handled further down
@@ -3955,6 +3989,8 @@ plugins:
             text: '%1% is already included in this mod.'
           - lang: de
             text: '%1% ist bereits enthalten in diesem Mod.'
+          - lang: pt
+            text: '%1% já está incluído neste mod.'
         subs:
           - '`Realistic High Altitude Treeline`'
         condition: 'active("Realistic Treeline.esp")'
@@ -4336,6 +4372,8 @@ plugins:
             text: 'Update Patch available: %1%'
           - lang: de
             text: 'Update Patch verfügbar: %1%'
+          - lang: pt
+            text: 'Patch de atualização disponível: %1%'
         subs: [ '[No Snow Under the roof - Bug fixes](https://www.nexusmods.com/skyrimspecialedition/mods/15064/)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("NSUTR_bugfixes.esp")'
     dirty:
@@ -4742,6 +4780,8 @@ plugins:
             text: 'Make sure the Disparity option "Use Modified Blessings" is disabled.'
           - lang: de
             text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
+          - lang: pt
+            text: 'Certifique-se que a opção de Disparity "Use Modified Blessings (trad. "Utilizar Benções Modificadas") está desativada.'
         condition: 'active("Disparity.esp")'
     dirty:
       # version: 1.07SSE
@@ -4974,6 +5014,8 @@ plugins:
             text: 'An optional compatibility patch, which changes a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
           - lang: de
             text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
+          - lang: pt
+            text: 'Um patch opcional de compatibilidade, que altera alguns Perks para combinar com o design de Deadly Combats está disponível na [página de Deadly Combat](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *preEarlyGroup
@@ -5910,6 +5952,8 @@ plugins:
             text: 'Run For Your Lives SE now includes the old mod When Vampires Attack. You can uninstall When Vampires Attack.'
           - lang: de
             text: 'Run For Your Lives SE enthält jetzt die ältere Mod When Vampires Attack. Sie können When Vampires Attack deinstallieren.'
+          - lang: pt
+            text: 'Run For Your Lives SE agora incluí o mod antigo When Vampires Attacj. Você pode desinstalar When Vampires Attack.'
         condition: 'active("When Vampires Attack.esp")'
     clean:
       # version:  4.0
@@ -6345,6 +6389,8 @@ plugins:
             text: 'Amazing Follower Tweaks "horse features" and "follower teleport on weapon draw setting" must be disabled for Convenient Horses to function correctly.'
           - lang: de
             text: 'Amating Follower Tweaks "horse features"(übers. "Pferdefunktionen) und "follower teleport on weapon draw setting" (übers. "Begleiter teleportieren sich beim Waffen ziehen") müssen deaktiviert sein damit Convenient Horses korrekt funktioniert'
+          - lang: pt
+            text: 'Amazing Follower Tweaks "horse features"(trad. "funções de cavalaria") e "follower teleport on weapon draw setting" (trad. "opção de teletransporte de seguidor ao sacar armas") devem estar desabilitadas para Convenient Horses'
   - name: 'Immersive Horses.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
@@ -6472,6 +6518,8 @@ plugins:
             text: '**Mount Support** must be switched to **Riding Support Only, OR disable horse on a per-follower basis** in Nether''s Follower Framework settings for Convenient Horses to function correctly with Nether''s Follower Framework.'
           - lang: de
             text: '**Mount Support** (übers. Pferde Unterstützung) muss auf **Riding Support Only, OR disable horse on a per-follower basis** (übers. **Keine Unterstützung**) gestellt sein in Nether''s Follower Framework Einstellungen damit Convenient Horses korrekt funktioniert mit Nether''s Follower Framework.'
+          - lang: pt
+            text: '**Mount Support** (trans. "Cavalos de Apoio") deve ser trocado por **Riding Support Only, OR disable horse on a per-follower basis** (trans. **Sem suporte**) nas opções da Nether''s Follower Framework de forma a que Convenient Horses funcione corretamente com a Nether''s Follower Framework.'
       - type: say
         condition: 'active("Immersive Horses.esp")'
         content:
@@ -6479,6 +6527,8 @@ plugins:
             text: '**Mount Support** must be switched to **Riding Support Only** in Nether''s Follower Framework settings for Immersive Horses to function correctly with Nether''s Follower Framework.'
           - lang: de
             text: '**Mount Support** (übers. Pferde Unterstützung) muss auf **Riding Support Only** (übers. **Nur reitende Unterstützung**) gestellt sein in Nether''s Follower Framework Einstellungen damit Immersive Horses korrekt funktioniert mit Nether''s Follower Framework.'
+          - lang: pt
+            text: '**Mount Support** (trans. "Cavalos de Apoio") deve ser trocado por **Riding Support Only** (trad. "Suporte a cavalo apenas") nas opções da Nether''s Follower Framework de forma a que Immersive Horses funcione corretamente com a Nether''s Follower Framework.'
     clean:
       # version: 2.17beta
       - crc: 0xF5416591
@@ -6802,6 +6852,8 @@ plugins:
             text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
           - lang: de
             text: 'Dieser Mod hat bestimmte Konflikte mit "MLU.esp". Erwägen Sie, den [MLU - Improved Closefaced Helmets Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/) zu nutzen.'
+          - lang: pt
+            text: 'Este mod tem certos conflitos com "MUL.esp". Considere utilizar [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
       - type: warn
         condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
         content:
@@ -6809,6 +6861,8 @@ plugins:
             text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
           - lang: de
             text: 'Dieser Mod hat bestimmte Konflikte mit "Undeath.esp". Erwägen Sie, den [Improved Closefaced Gelmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/) zu nutzen.'
+          - lang: pt
+            text: 'Este mod tem certos conflitos com "Undeath.esp". Considere utilizar [Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
     tag:
       - Graphics
     dirty:
@@ -7489,6 +7543,8 @@ plugins:
             text: 'Update Patch available: %1%'
           - lang: de
             text: 'Update Patch verfügbar: %1%'
+          - lang: pt
+            text: 'Patch de atualização disponível: %1%'
         subs: [ '[Unofficial Moonpath to Elsweyr Patch](https://www.nexusmods.com/skyrimspecialedition/mods/15882/)' ]
         condition: 'active("moonpath.esp") and checksum("moonpath.esp", 18577F3E) and not active("JRMoonpathtoElsweyrPatch.esp")'
     clean:
@@ -8044,6 +8100,8 @@ plugins:
             text: 'ELFX - NoPlayerHomes module required.'
           - lang: de
             text: 'ELFX - NoPlayerHomes Modul wird vorausgesetzt.'
+          - lang: pt
+            text: 'O módulo ELFX - NoPlayerHomes é necessário.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     dirty:
       # version 1.82
@@ -8061,6 +8119,8 @@ plugins:
             text: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. A manual cleaning guide is available [here](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-)'
           - lang: de
             text: 'Es wird streng empfohlen keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden. Eine manuelle Säuberungsanleitung ist [hier](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-) verfügbar.'
+          - lang: pt
+            text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente. Um guia manual de limpeza está disponível [aqui](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-).'
         nav: 1
     clean:
       # version: 1.82 after QAC & manual cleaning
@@ -8102,6 +8162,8 @@ plugins:
             text: 'ELFX - NoPlayerHomes module required.'
           - lang: de
             text: 'ELFX - NoPlayerHomes Modul wird vorausgesetzt.'
+          - lang: pt
+            text: 'O módulo ELFX - NoPlayerHomes é necessário.'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
     dirty:
       # version: 1.82 before manual cleaning
@@ -8113,6 +8175,8 @@ plugins:
             text: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. A manual cleaning guide is available [here](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-)'
           - lang: de
             text: 'Es wird streng empfohlen keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden. Eine manuelle Säuberungsanleitung ist [hier](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-) verfügbar.'
+          - lang: pt
+            text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente. Um guia manual de limpeza está disponível [aqui](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-).'
         nav: 1
     clean:
       # version: 1.82 after manual cleaning
@@ -8867,6 +8931,8 @@ plugins:
             text: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
           - lang: de
             text: 'Shezrie''s Old Hroldan Town ist nur kompatibel mit Distinct Interiors - Modular version without Inns.'
+          - lang: pt
+            text: 'Shezrie''s Old Hroldan Town é apenas compatível com Distinct Interiors - Modular version without Inns.'
         condition: 'active("Distinct Interiors.esp")'
       - <<: *reqMasterSort
         condition: 'checksum("ShezrieOldHroldanVer2.esp", A8297990)'
@@ -9048,6 +9114,8 @@ plugins:
             text: 'Use the Winterhold Restored version of Jobasha''s Books SE instead: %1%'
           - lang: de
             text: 'Benutze  die Winterhold Restored version of Jobasha''s Books SE stattdessen: %1%'
+          - lang: pt
+            text: 'Use em vez a versão do Winterhold Restored de Jobasha''s Books SE: %1%'
         subs:
           - '[Jobasha''s Books and WinterHold Restored Patch] (https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
         condition: 'active("sm_jobasha_bookshop.esp")'
@@ -9397,6 +9465,8 @@ plugins:
             text: '%1% patcher script available here: %2%'
           - lang: de
             text: '%1% Patch-Skript hier verfügbar: %2%'
+          - lang: pt
+            text: 'O script de atualização para %1% está disponível aqui: %2%'
         subs:
           - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[Unlimited Bookshelves patch generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160)'
