@@ -36,6 +36,8 @@ common:
         text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
       - lang: de
         text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit der Mod richtig funktioniert. Gelöschte Eintrage wiederherzustellen ist in Ordung, alles andere aber nicht.'
+      - lang: pt
+        text: 'Não apagar os registos ITM. São intencionais e necessárias para o funcionamento do mod. É seguro restaurar os registos, mas não faça nada mais que isso.'
   - &patchProvided
     type: say
     content:
@@ -43,6 +45,8 @@ common:
         text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
       - lang: de
         text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
   - &patchIncluded
     type: say
     content:
@@ -50,6 +54,8 @@ common:
         text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
       - lang: de
         text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit diesen Plugins Installer.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin'
   - &patch3rdParty
     type: say
     content:
@@ -57,6 +63,8 @@ common:
         text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
       - lang: de
         text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
   - &patch3rdPartyQUASIPC
     type: say
     content:
@@ -64,6 +72,8 @@ common:
         text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
       - lang: de
         text: 'Sie scheinen **%1%** zu nutzen, aber sie haben keinen Kompatibilitätspatch für diesen Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod.  Um patch feito por terceiros está disponível aqui: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
     subs:
@@ -76,6 +86,8 @@ common:
         text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
       - lang: de
         text: 'Es wird empfohlen das Sie die [Kompatibilitäts-Notizen](%1%) dieses Mods lesen'
+      - lang: pt
+        text: 'É recomendada leitura das [Notas de Compatibilidade](%1%) deste mod.'
   - &semiCompatible
     type: say
     content:
@@ -83,6 +95,8 @@ common:
         text: '%1% is not fully compatible with this mod. %2%'
       - lang: de
         text: '%1% ist nicht komplett kompatibel mit diesem Mod. %2%'
+      - lang: pt
+        text: '%1% não é totalmente compatível com este mod. %2%'
   - &reqSKSE
     type: error
     content:
@@ -102,12 +116,16 @@ common:
         text: '%1%はインストールされていますが、SKSEが見つかりません！SKSEのダウンロードページを確認してください。[SKSE](http://skse.silverlock.org)'
       - lang: de
         text: 'Sie haben %1% installiert, aber SKSE wurde nicht gefunden! SKSE kann hier heruntergeladen werden: [SKSE](http://skse.silverlock.org).'
+      - lang: pt
+        text: 'Você instalou %1% mas o SKSE não foi encontrado! Veja a página de download do SKSE: [SKSE](http://skse.silverlock.org).'
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &requiresMCM
     type: warn
     content:
       - lang: en
         text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+      - lang: pt
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
     condition: 'not active("SkyUI_SE.esp")'
   - &reqMasterSort
     type: say
@@ -116,6 +134,8 @@ common:
         text: 'Plugin''s Masters require sorting.'
       - lang: de
         text: 'Die Plugin Master müssen sortiert werden.'
+      - lang: pt
+        text: 'A Master deste Plugin necessita ordenação.'
   - &alreadyInX
     type: error
     content:
@@ -135,6 +155,8 @@ common:
         text: '削除してください。既に%1%に含まれています。'
       - lang: de
         text: 'Löschen. Bereits in %1% enthalten.'
+      - lang: pt
+        text: 'Apagar. Já incluído em %1%.'
   - &deletePlugin
     type: warn
     content:
@@ -142,6 +164,9 @@ common:
         text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
       - lang: de
         text: 'Beim nutzen von **%1%** ist es empfohlen das Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt'
+      - lang: pt
+        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
+
   - &versionOldX
     type: say
     content:
@@ -159,6 +184,9 @@ common:
         text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
       - lang: de
         text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
+      - lang: pt
+        text: 'Aparenta que você não tem a versão mais recente de %1%. Alguns mods podem requerir funcinalidades adicionadas na última versão de %1% para funcionar.'
+  
   - &versionUpToDateX
     type: say
     content:
@@ -178,6 +206,9 @@ common:
         text: '%1%は最新版です。'
       - lang: de
         text: 'Ihr %1% ist aktuell.'
+      - lang: pt
+        text: 'O seu %1% está atualizado.'
+
   - &versionSksePluginIncSSE
     type: error
     content:
@@ -189,6 +220,8 @@ common:
         text: 'インストールされている**SKSE Plugin (%1%)**は使用中のバージョンのSkyrim SEとの互換性がありません。'
       - lang: de
         text: 'Ihre installierte Version von **SKSE Plugin (%1%)** ist nicht kompatibel mit Ihrer Version von Skyrim SE.'
+      - lang: pt
+        text: 'A sua versão instalada de **SKSE Plugin (%1%)** não é compatível com a sua versão de Skyrim SE.'
   - &versionXIncY
     type: error
     content:
@@ -200,6 +233,8 @@ common:
         text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
       - lang: de
         text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
+      - lang: pt
+        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
   - &versionSkseIncSSE
     <<: *versionXIncY
     subs:
@@ -227,6 +262,8 @@ common:
         text: '%1%は一つだけ使用してください。'
       - lang: de
         text: 'Nutzen Sie nur einen %1%.'
+      - lang: pt
+        text: 'Utilizar apenas um %1%.'
   - &includesX
     type: say
     content:
@@ -234,6 +271,8 @@ common:
         text: '%1% is included with this mod.'
       - lang: de
         text: 'Der %1% ist in diesem Mod enthalten.'
+      - lang: pt
+        text: '%1% vem incluído com este mod.'
   - &includesMBBF
     <<: *includesX
     subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
