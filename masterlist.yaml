@@ -5542,6 +5542,8 @@ plugins:
         name: 'Morrowloot Ultimate Simplified on Nexus Mods'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod - MLU.esp Replacer on Nexus Mods'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17653/'
+        name: '(SJG) OMEGA - The Modular Gameplay Overhaul on Nexus Mods'
     group: *coreGroup
     after:
       - 'Weapon AF.esp'
@@ -5608,10 +5610,48 @@ plugins:
       - Names
       - Relev
       - Stats
+    dirty:
+      # version: Original 1.2
+      - <<: *quickClean
+        crc: 0x89111F8E
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      # version: Simplified Full 2.20
+      - <<: *quickClean
+        crc: 0x9081941D
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
+      # version: Simplified No Artifacts 2.20
+      - <<: *quickClean
+        crc: 0x4C720110
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
+      # version: Another Sorting Mod Replacer 1.2.26
+      - <<: *quickClean
+        crc: 0x0DE5BC76
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      # version: Omega Replacer 1.99.9
+      - <<: *quickClean
+        crc: 0xAB5FD735
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 271
     clean:
-      # version: 1.2
-      - crc: 0x89111F8E
-        util: 'SSEEdit v3.2.1'
+      # version: Original 1.2
+      - crc: 0x69197AB9
+        util: 'SSEEdit v4.0.2'
+      # version: Simplified Full 2.20
+      - crc: 0x36E134D7
+        util: 'SSEEdit v4.0.2'
+      # version: Simplified No Artifacts 2.20
+      - crc: 0x1997BC94
+        util: 'SSEEdit v4.0.2'
+      # version: Another Sorting Mod Replacer 1.2.26
+      - crc: 0xC74AE50C
+        util: 'SSEEdit v4.0.2'
+      # version: Omega Replacer 1.99.9
+      - crc: 0xB15D945C
+        util: 'SSEEdit v4.0.2'
   - name: 'MLU - AAE Ultimate Edition.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
