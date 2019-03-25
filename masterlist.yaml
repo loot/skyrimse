@@ -5763,6 +5763,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5686/' ]
     after:
       - 'CollegeOfWinterholdImmersive.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[Immersive College of Winterhold - Not so fast Mage Guild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18731/)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("CWIAIPATCH.esp")'
     clean:
       - crc: 0x838EA616
         util: 'SSEEdit v3.2.71'
