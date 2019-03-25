@@ -2082,6 +2082,12 @@ plugins:
       - 'Prometheus_No_snow_Under_the_roof.esp'
       - 'SMIM-SE-Merged-All.esp'
       - 'SMIM-SE.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Static Mesh Improvement Mod'
+          - '[Unofficial ELFX SMIM fps performance patch](https://www.nexusmods.com/skyrimspecialedition/mods/5520/)'
+        condition: 'active("SMIM-SE-Merged-All.esp") and not active("Skysan_ELFX_SMIM_Fix.esp")'
     dirty:
       # version: 3.06
       - <<: *quickClean
