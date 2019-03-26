@@ -2547,10 +2547,10 @@ plugins:
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_ISC Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'RUSTIC SOULGEMS - Sorted' ]
-        condition: 'active("RUSTIC SOULGEMS - Sorted.esp") and not file("Qw_RusticSoulgemsSorted_ISC Patch.esp")'
+        condition: 'file("RUSTIC SOULGEMS - Sorted.esp") and not file("Qw_RusticSoulgemsSorted_ISC Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'RUSTIC SOULGEMS - Unsorted' ]
-        condition: 'active("RUSTIC SOULGEMS - Unsorted.esp") and not file("Qw_RusticSoulgemsUnsorted_ISC Patch.esp")'
+        condition: 'file("RUSTIC SOULGEMS - Unsorted.esp") and not file("Qw_RusticSoulgemsUnsorted_ISC Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_ISC_USSEP Patch.esp")'
@@ -5126,10 +5126,10 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'MultiLayer Parallax Soul Gems' ]
-        condition: 'active("MLPSoulGems.esp") and not active("GIST-MLPSoulGems-patch.esp")'
+        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp")'
       - <<: *patchProvided
         subs: [ 'Rustic Soul Gems' ]
-        condition: 'active("RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp") and not active("GIST-RusticSoulGems-patch.esp")'
+        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
       - *requiresMCM
     clean:
       # version: 1.3
@@ -5138,7 +5138,8 @@ plugins:
   - name: 'GIST-MLPSoulGems-patch.esp'
     req:
       - name: 'MLPSoulGems.esp'
-        display: 'MultiLayer Parallax Soul Gems'
+        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrim/mods/65531/)'
+        condition: 'not file("MLPSoulGems.esp")'
     clean:
       # version: 1.1
       - crc: 0x87187AE1
@@ -5149,11 +5150,15 @@ plugins:
   - name: 'GIST-RusticSoulGems-patch.esp'
     req:
       - name: 'RUSTIC SOULGEMS - Sorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - Unsorted.esp")'
-        display: 'Rustic Soulgems'
+        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
+        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
       - name: 'RUSTIC SOULGEMS - Unsorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - Sorted.esp")'
-        display: 'Rustic Soulgems'
+        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
+        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Rustic Soulgems GIST' ]
+        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
     clean:
       # version: 1.1
       - crc: 0xEF0A2A16
@@ -7034,14 +7039,14 @@ plugins:
       # version: 1.0
       - crc: 0xA5763C46
         util: 'SSEEdit v3.2.2'
-  - name: 'RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp'
+  - name: 'RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5785' ]
     inc:
       - name: 'MLPSoulGems.esp'
         display: 'MultiLayer Parallax Soul Gems'
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("RUSTIC SOULGEMS - (Sorted|Unsorted)\.esp")'
+        condition: 'many("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
         subs: [ 'RUSTIC SOULGEMS' ]
   - name: 'RUSTIC SOULGEMS - Sorted.esp'
     clean:
