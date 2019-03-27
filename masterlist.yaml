@@ -10070,6 +10070,129 @@ plugins:
         name: 'Sweet as Honeyside on Nexus Mods'
     after:
       - 'ELFX - NoHoneyside.esp'
+
+  - name: 'Hidden Homes.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11058/' ]
+  - name: 'Hidden Homes Party Mix.esp'
+    dirty:
+      # version: 4
+      - <<: *reqManualFix
+        crc: 0xDEE8F044
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 169
+        nav: 7
+      # version: 4, after QAC
+      - <<: *reqManualFix
+        crc: 0x5542BCB2
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 7
+  - name: 'Hidden Homes- Eastmarch.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0x1168F6F7
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
+        udr: 8
+    clean:
+      # version: 3.1
+      - crc: 0x17FA99E1
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- Falkreath.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0xF2AAE996
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      # version: 3.1
+      - crc: 0x9AF6C7BF
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- Haafingar.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0xE6FE4819
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+        udr: 1
+    clean:
+      # version: 3.1
+      - crc: 0x7F4C4B37
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- Hjaalmarch.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0xF06F06D4
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+    clean:
+      # version: 3.1
+      - crc: 0x978F8DFD
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- The Pale.esp'
+    dirty:
+      # version: 3.1
+      - <<: *reqManualFix
+        crc: 0x9E1CD94F
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 13
+        nav: 4
+      # version: 3.1, after QAC
+      - <<: *reqManualFix
+        crc: 0xDF29C48F
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 4
+  - name: 'Hidden Homes- The Reach.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0x2490FF1B
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      # version: 3.1
+      - crc: 0x802B0D4D
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- The Rift.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0xCA506944
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 124
+    clean:
+      # version: 3.1
+      - crc: 0x4D21E0D1
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- Whiterun.esp'
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0xEDE18407
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+        udr: 3
+    clean:
+      # version: 3.1
+      - crc: 0x493B8883
+        util: 'SSEEdit v4.0.2'
+  - name: 'Hidden Homes- Winterhold.esp'
+    dirty:
+      # version: 3.1
+      - <<: *reqManualFix
+        crc: 0x738300F9
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+        nav: 3
+      # version: 3.1, after QAC
+      - <<: *reqManualFix
+        crc: 0x19CFE375
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 3
+
   - name: 'House by the river.esp'
     dirty:
       # version: 1.0
