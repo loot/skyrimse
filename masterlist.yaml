@@ -9399,6 +9399,149 @@ plugins:
       # version: 2.0.3
       - crc: 0x69F4FE74
         util: 'SSEEdit v3.3.6'
+
+  - name: 'SkyR .*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19432/'
+        name: 'Skyrim Radioactive SE'
+  - name: 'SkyR Mega Merge.esp'
+    dirty:
+      # version: 1.4
+      - <<: *reqManualFix
+        crc: 0x0EF183F3
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 15
+        nav: 9
+      # version: 1.4, after QAC
+      - <<: *reqManualFix
+        crc: 0x0A93015D
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 9
+  - name: 'SkyR - Riften Interiors.esp'
+    dirty:
+      # version: 1.4
+      - <<: *quickClean
+        crc: 0x6D0FDDF3
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 9
+      # version: 1.4 Open Cities
+      - <<: *quickClean
+        crc: 0x9022BD8E
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 10
+    clean:
+      # version: 1.4
+      - crc: 0x52D33A33
+        util: 'SSEEdit v4.0.2'
+      # version: 1.4 Open Cities
+      - crc: 0xFA4A0A6A
+        util: 'SSEEdit v4.0.2'
+  - name: 'SkyR - Riverwood Interiors.esp'
+    clean:
+      # version: 1.4
+      - crc: 0x65CD286C
+        util: 'SSEEdit v4.0.2'
+  - name: 'SkyR - Solitude Docks.esp'
+    dirty:
+      # version: 1.3
+      - <<: *reqManualFix
+        crc: 0xC6065A3D
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
+        nav: 4
+      # version: 1.3, after QAC
+      - <<: *reqManualFix
+        crc: 0x4A843C94
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 4
+  - name: 'SkyR - Solitude Dock fps patch.esp'
+    clean:
+      # version: 0.1
+      - crc: 0x6B57FD12
+        util: 'SSEEdit v4.0.2'
+  - name: 'SkyR - Solitude Dock CB patch.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x6DEDC899
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xB9DF9C04
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+  - name: 'SkyR - Solitude Dock MMC patch.esp'
+    clean:
+      - crc: 0xBE8C57C8
+        util: 'SSEEdit v4.0.2'
+  - name: 'SkyR - Solitude Interiors.esp'
+    dirty:
+      # version: 1.4, after QAC
+      - <<: *reqManualFix
+        crc: 0x93A6613B
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+        nav: 6
+      # version: 1.4, after QAC
+      - <<: *reqManualFix
+        crc: 0x73822AE1
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 6
+      # version: 1.4 Open Cities
+      - <<: *reqManualFix
+        crc: 0x412AC7C3
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 6
+  - name: 'SkyR - Whiterun Interiors.esp'
+    dirty:
+      # version: 1.4
+      - <<: *reqManualFix
+        crc: 0x4FAEE002
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 3
+      # version: 1.4 Open Cities
+      - <<: *reqManualFix
+        crc: 0xFA1ED63E
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 3
+  - name: 'SkyR - Windhelm Docks.esp'
+    dirty:
+      # version: 1.2.1, after QAC
+      - <<: *reqManualFix
+        crc: 0x72F49EC0
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 56
+        nav: 1
+      # version: 1.2.1, after QAC
+      - <<: *reqManualFix
+        crc: 0xCFF666F6
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+  - name: 'SkyR - Windhelm Interiors.esp'
+    dirty:
+      # version: 1.4
+      - <<: *quickClean
+        crc: 0x9889ECCA
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
+      # version: 1.4 Open Cities
+      - <<: *quickClean
+        crc: 0xDC243E1D
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+    clean:
+      # version: 1.4
+      - crc: 0x4FD1702D
+        util: 'SSEEdit v4.0.2'
+      # version: 1.4 Open Cities
+      - crc: 0xDB302CF5
+        util: 'SSEEdit v4.0.2'
+  - name: 'SkyR - Windhelm Interiors USP patch.esp'
+    clean:
+      # version: 1.4
+      - crc: 0xA4013100
+        util: 'SSEEdit v4.0.2'
+
   - name: 'Skyrim Reborn - Hjaalmarch Hold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23801/' ]
     dirty:
