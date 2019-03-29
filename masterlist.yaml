@@ -10097,16 +10097,12 @@ plugins:
       # version: 1.0
       - crc: 0x8D0B7D5F
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-  - name: 'ElysiumEstate-HF.esp'
+  - name: 'ElysiumEstate-HF(NoKids)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4119/' ]
-    inc:
-      - name: 'ElysiumEstate-HFNoKids.esp'
-        display: 'Elysium Estate No Kids'
-  - name: 'ElysiumEstate-HFNoKids.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4119/' ]
-    inc:
-      - name: 'ElysiumEstate-HF.esp'
-        display: 'Elsium Estate With Kids'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'ElysiumEstate-HF' ]
+        condition: 'many("ElysiumEstate-HF(NoKids)?\.esp")'
   - name: 'Honeyside.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/918/'
