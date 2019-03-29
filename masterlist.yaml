@@ -3177,31 +3177,21 @@ plugins:
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
-  - name: 'Serana.esp'
+  - name: '(Serana|Valerica)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
-        name: 'Seranaholic by rxkx22'
+        name: 'Seranaholic'
     after:
       - name: 'Bijin_AIO-SV 2018.esp'
         display: 'Bijin AIO Legendary plus Serana and Valerica'
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SV SSE' ]
+        condition: 'active("(Serana|Valerica)\.esp") and active("Bijin_AIO-SV 2018.esp")'
+  - name: 'Serana.esp'
     inc:
       - 'Serana - Hellraiser.esp'
       - 'SuperbSerana.esp'
-    msg:
-      - <<: *deletePlugin
-        subs: [ 'Bijin AIO SV SSE' ]
-        condition: 'active("Serana.esp") and active("Bijin_AIO-SV 2018.esp")'
-  - name: 'Valerica.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
-        name: 'Seranaholic by rxkx22'
-    after:
-      - name: 'Bijin_AIO-SV 2018.esp'
-        display: 'Bijin AIO Legendary plus Serana and Valerica'
-    msg:
-      - <<: *deletePlugin
-        subs: [ 'Bijin AIO SV SSE' ]
-        condition: 'active("Valerica.esp") and active("Bijin_AIO-SV 2018.esp")'
 
   - name: 'CosmeticVampireOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
