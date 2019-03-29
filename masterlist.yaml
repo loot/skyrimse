@@ -10346,54 +10346,13 @@ plugins:
       - 'Hideout_DLC_Main.esp'
       - 'Hideout_Compact.esp'
       - 'Hideout_HF_Compact.esp'
-  - name: 'SexyMannequinVyktoria_SSE.esp'
+
+  - name: 'SexyMannequin(s)?(Female|Guards|ImpGuards|VyktorVyktoria|Vyktor|Vyktoria)_SSE\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2128/' ]
-    inc:
-      - 'SexyMannequinsFemale_SSE.esp'
-      - 'SexyMannequinsGuards_SSE.esp'
-      - 'SexyMannequinsImpGuards_SSE.esp'
-      - 'SexyMannequinsVyktorVyktoria_SSE.esp'
-      - 'SexyMannequinVyktor_SSE.esp'
-  - name: 'SexyMannequinsFemale_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2128/' ]
-    inc:
-      - 'SexyMannequinsGuards_SSE.esp'
-      - 'SexyMannequinsImpGuards_SSE.esp'
-      - 'SexyMannequinsVyktorVyktoria_SSE.esp'
-      - 'SexyMannequinVyktoria_SSE.esp'
-      - 'SexyMannequinVyktor_SSE.esp'
-  - name: 'SexyMannequinsVyktorVyktoria_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2128/' ]
-    inc:
-      - 'SexyMannequinsFemale_SSE.esp'
-      - 'SexyMannequinsGuards_SSE.esp'
-      - 'SexyMannequinsImpGuards_SSE.esp'
-      - 'SexyMannequinVyktoria_SSE.esp'
-      - 'SexyMannequinVyktor_SSE.esp'
-  - name: 'SexyMannequinsGuards_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2128/' ]
-    inc:
-      - 'SexyMannequinsFemale_SSE.esp'
-      - 'SexyMannequinsImpGuards_SSE.esp'
-      - 'SexyMannequinsVyktorVyktoria_SSE.esp'
-      - 'SexyMannequinVyktoria_SSE.esp'
-      - 'SexyMannequinVyktor_SSE.esp'
-  - name: 'SexyMannequinsImpGuards_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2128/' ]
-    inc:
-      - 'SexyMannequinsFemale_SSE.esp'
-      - 'SexyMannequinsGuards_SSE.esp'
-      - 'SexyMannequinsVyktorVyktoria_SSE.esp'
-      - 'SexyMannequinVyktoria_SSE.esp'
-      - 'SexyMannequinVyktor_SSE.esp'
-  - name: 'SexyMannequinVyktor_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2128/' ]
-    inc:
-      - 'SexyMannequinsFemale_SSE.esp'
-      - 'SexyMannequinsGuards_SSE.esp'
-      - 'SexyMannequinsImpGuards_SSE.esp'
-      - 'SexyMannequinsVyktorVyktoria_SSE.esp'
-      - 'SexyMannequinVyktoria_SSE.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Sexy Mannequins' ]
+        condition: 'many("SexyMannequin(s)?(Female|Guards|ImpGuards|VyktorVyktoria|Vyktor|Vyktoria)_SSE\.esp")'
   - name: 'Shadowmarks.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
