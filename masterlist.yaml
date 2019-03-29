@@ -1239,12 +1239,9 @@ plugins:
 ###### Bug Fixes & Unofficial Patches ######
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
-        name: 'Unofficial Skyrim Special Edition Patch'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
-        name: 'Unofficial Skyrim Special Edition Patch'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
-        name: 'Unofficial Skyrim Special Edition Patch'
+      - 'https://www.afkmods.com/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
     group: *preEarlyGroup
     after:
       - 'Lanterns Of Skyrim - All In One - Main.esm'
@@ -1310,9 +1307,7 @@ plugins:
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/'
-        name: 'Weapons Armor Clothing and Clutter Fixes'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
     inc:
       - 'Race Scale Remover.esp'
     group: *fixesGroup
@@ -1365,18 +1360,14 @@ plugins:
       - crc: 0x64D44D00
         util: 'SSEEdit v4.0.0'
   - name: 'WACCF_BashedPatchLvlListFix.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/'
-        name: 'Weapons Armor Clothing and Clutter Fixes'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
     group: *lvlListsGroup
     clean:
       # version: 1.0.1
       - crc: 0xDDF0B797
         util: 'SSEEdit v4.0.0'
   - name: 'WACCF_Armor and Clothing Extension.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/'
-        name: 'Armor and Clothing Extension'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
     group: *fixesGroup
     after:
       - 'AmuletsShowOnEverything.esp'
@@ -1423,10 +1414,8 @@ plugins:
       - 'One ImCh Patcher.esp'
   - name: 'DynDOLOD.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/59721/'
-        name: 'Dynamic Distant Objects LOD - DynDOLOD'
-      - link: 'http://forum.step-project.com/topic/13029-dyndolod-236-skyrim-se-beta-with-dynamic-lod/'
-        name: 'Dynamic Distant Objects LOD - DynDOLOD SE BETA'
+      - 'https://www.nexusmods.com/skyrim/mods/59721/'
+      - 'http://forum.step-project.com/topic/13029-dyndolod-236-skyrim-se-beta-with-dynamic-lod/'
     group: *dynamicLODGroup
   - name: 'DynDOLOD.esm'
     req:
@@ -1434,9 +1423,7 @@ plugins:
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/) or [DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)'
         condition: 'version("DynDOLOD.esm", "2.45", >=) and not file("SKSE/Plugins/DynDOLOD.DLL")'
   - name: 'Smashed Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/90987'
-        name: 'Mator Smash'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/90987' ]
     group: *dynamicPatchGroup
   - name: 'SSEMerged.esp'
     group: *dynamicPatchGroup
@@ -1448,9 +1435,7 @@ plugins:
 
 ###### AudioVisual - Fixes ######
   - name: 'Better Dynamic Snow.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
-        name: 'Better Dynamic Snow SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
     after:
       - 'SMIM-SE-Merged-All.esp'
       - 'SMIM-SE.esp'
@@ -1475,9 +1460,7 @@ plugins:
       - crc: 0xE0DFD47C
         util: 'SSEEdit v4.0.0'
   - name: 'Better Dynamic Snow - NSUTR Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
-        name: 'Better Dynamic Snow SE - No snow under the roof Patch'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
     tag:
       - Graphics
     clean:
@@ -1487,17 +1470,18 @@ plugins:
   - name: 'BDS - MM Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
-        name: 'Better Dynamic Majestic Mountains'
+        name: 'Better Dynamic Majestic Mountains Patch'
     tag:
       - Graphics
     clean:
       # version: 1.0
       - crc: 0x48663487
         util: 'SSEEdit v4.0.0'
-  - name: 'dD - Enhanced Blood Main.esp'
+  - name: 'dD - Enhanced Blood Main.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE'
+  - name: 'dD - Enhanced Blood Main.esp'
     group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
@@ -1513,35 +1497,23 @@ plugins:
       - crc: 0x70E9C0E7
         util: 'SSEEdit v4.0.0'
   - name: 'dD - Enhanced Blood Main LITE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
-        name: 'Enhanced Blood Textures SE'
     group: *preEarlyGroup
     clean:
       # version: 1.1
       - crc: 0x6CF176EC
         util: 'SSEEdit v4.0.0'
   - name: 'dD-Reduced Wound Size.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
-        name: 'Enhanced Blood Textures SE'
     group: *underridesGroup
     clean:
       - crc: 0x35D96F84
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'dD-(Larger|Reduced) Splatter Size\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
-        name: 'Enhanced Blood Textures SE'
     group: *underridesGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Larger|Reduced) Splatter Size\.esp")'
         subs: [ 'EBT Splatter Size Modifier' ]
   - name: 'dD-(Medium|Short) Script Range\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
-        name: 'Enhanced Blood Textures SE'
     inc:
       - 'EBT - skyBirds Patch.esp'
       - 'EBT - skyBirds Patch (mid).esp'
@@ -1552,17 +1524,12 @@ plugins:
         condition: 'many("dD-(Medium|Short) Script Range\.esp")'
         subs: [ 'EBT Script Range Modifier' ]
   - name: 'EBT - skyBirds Patch( \((mid|short)\))?\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
-        name: 'Enhanced Blood Textures SE'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("EBT - skyBirds Patch( \((mid|short)\))?\.esp")'
         subs: [ 'EBT SkyBirds Patch' ]
   - name: 'Particle Patch for ENB SSE.esp'
-    url:
-      - link: 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499'
-        name: 'Particle Patch for ENB SSE'
+    url: [ 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499' ]
     tag:
       - C.Climate
       - C.ImageSpace
@@ -1573,10 +1540,11 @@ plugins:
       # version: 08/12/2018, ESL
       - crc: 0x7C9358E6
         util: 'SSEEdit v4.0.0'
-  - name: 'Skyrim Project Optimization - Full Version.esm'
+  - name: 'Skyrim Project Optimization.*\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE'
+  - name: 'Skyrim Project Optimization - Full Version.esm'
     group: *fixesGroup
     clean:
       # version: 1.3
@@ -1589,9 +1557,6 @@ plugins:
       - crc: 0xD0948CCF
         util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Project Optimization - Full Version.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
-        name: 'Skyrim Project Optimization SE'
     group: *ccGroup
     clean:
       # version: 1.3
@@ -1605,7 +1570,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'static mesh improvement mod se.esp'
     group: *earlyLoadersGroup
-  - name: 'SMIM-SE?.*\.esp'
+  - name: 'SMIM-SE.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE'
@@ -1708,10 +1673,11 @@ plugins:
       - Names
       - Stats
 
-  - name: 'IcePenguinWorldMap.esp'
+  - name: 'IcePenguinWorldMap(classic|Paper)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
         name: 'A Quality World Map'
+  - name: 'IcePenguinWorldMap.esp'
     after:
       - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     inc:
@@ -1722,9 +1688,6 @@ plugins:
       - crc: 0xAC5D1C02
         util: 'SSEEdit v4.0.1'
   - name: 'icepenguinworldmapclassic.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
-        name: 'A Quality World Map'
     after:
       - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     inc:
@@ -1738,9 +1701,6 @@ plugins:
       - crc: 0x6F004E0D
         util: 'SSEEdit v4.0.1'
   - name: 'IcePenguinWorldMapPaper.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
-        name: 'A Quality World Map'
     after:
       - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     inc:
@@ -1766,12 +1726,11 @@ plugins:
       - crc: 0xB8F8445F
         util: 'SSEEdit v4.0.0'
 
-  - name: 'BetterQuestObjectives.esp'
+  - name: 'BetterQuestObjectives.*\.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/159/'
-        name: 'Even Better Quest Objectives'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
-        name: 'Even Better Quest Objectives'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/159'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
+  - name: 'BetterQuestObjectives.esp'
     group: *underridesGroup
     msg:
       - <<: *patchIncluded
@@ -2080,10 +2039,11 @@ plugins:
       # version: 2.0
       - crc: 0x4CF60EE4
         util: 'SSEEdit v3.2.1'
-  - name: 'EnhancedLightsandFX.esp'
+  - name: '(EnhancedLightsandFX|ELFX - ).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX'
+  - name: 'EnhancedLightsandFX.esp'
     group: *addonsGroup
     inc:
       - 'RelightingSkyrim_SSE.esp'
@@ -2111,9 +2071,6 @@ plugins:
       - crc: 0x4F998F53
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - Exteriors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *earlyLoadersGroup
     after:
       - '3DNPC.esp'
@@ -2125,63 +2082,42 @@ plugins:
       - crc: 0x9B390393
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoBreezehome.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     clean:
       # version: 3.06
       - crc: 0x16B967BB
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoHjerim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     clean:
       # version: 3.06
       - crc: 0xEFC3B86E
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoHoneyside.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     clean:
       # version: 3.06
       - crc: 0x636D8DC1
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoProudspireManor.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     clean:
       # version: 3.06
       - crc: 0x378FA7EE
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoSeverinManor.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     clean:
       # version: 3.06
       - crc: 0x328328C8
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoVlindrelHall.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     clean:
       # version: 3.06
       - crc: 0xB88AC75D
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - NoPlayerHomes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *preAddonsGroup
     inc:
       - 'ELFX - NoBreezehome.esp'
@@ -2201,9 +2137,6 @@ plugins:
       - crc: 0xB39F6E89
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - Weathers.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
@@ -2212,9 +2145,6 @@ plugins:
       - crc: 0x0F02A920
         util: 'SSEEdit v4.0.0'
   - name: 'ELFXEnhancer.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *highPriorityGroup
     inc:
       - 'ELE_SSE.esp'
@@ -2230,9 +2160,6 @@ plugins:
       - crc: 0x06339952
         util: 'SSEEdit v4.0.0'
   - name: 'ELFX - Hardcore.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
     group: *highPriorityGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
@@ -2249,7 +2176,7 @@ plugins:
   - name: 'ELE_SSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
-        name: 'Enhanced Lighting for ENB (ELE) - Special Edition'
+        name: 'Enhanced Lighting for ENB'
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Ars Metallica.esp'
@@ -2306,9 +2233,7 @@ plugins:
       - crc: 0x3EFC9D16
         util: 'SSEEdit v4.0.0'
   - name: 'ImprovedHearthfireLighting.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/721'
-        name: 'Improved Hearthfire Lighting SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721' ]
     group: *underridesGroup
     clean:
       # version: 1.1
@@ -2372,9 +2297,7 @@ plugins:
     tag:
       - C.Light
   - name: 'RelightingSkyrim_SSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/'
-        name: 'Relighting Skyrim - SSE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
     group: *addonsGroup
     after:
       - 'Undeath.esp'
@@ -2404,8 +2327,9 @@ plugins:
       # version: 1.0.6
       - crc: 0x31A0B062
         util: 'SSEEdit v4.0.0'
-  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
+  - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
+  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
@@ -2415,7 +2339,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Realistic Lighting Overhaul - Dawnguard Weathers.esp'
   - name: 'Realistic Lighting Overhaul - Dawnguard Weathers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
@@ -2424,7 +2347,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
@@ -2432,33 +2354,28 @@ plugins:
       - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
       - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
       - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
       - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
   - name: 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
 
 ###### AudioVisual - Sound & Music ######
+  - name: 'Audio Overhaul Skyrim.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
   - name: 'Audio Overhaul Skyrim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
-        name: 'Audio Overhaul for Skyrim SE'
     group: *fixesGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
@@ -2483,13 +2400,9 @@ plugins:
       - crc: 0x96BF25A6
         util: 'SSEEdit v4.0.0'
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
     after:
       - 'RealisticWaterTwo.esp'
   - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
-        name: 'Immersive Sounds Compendium Synergy Patch'
     group: *preFixesGroup
     tag:
       - Sound
@@ -2568,9 +2481,7 @@ plugins:
       - crc: 0x854499E0
         util: 'SSEEdit v4.0.0'
   - name: 'LSFX-SSE-Audiosettings.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/'
-        name: 'Lucidity Sound FX SSE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/' ]
     group: *preEarlyGroup
     clean:
       # version: v2r
@@ -2660,9 +2571,7 @@ plugins:
       - crc: 0x3BB01F22
         util: 'SSEEdit v4.0.2'
   - name: 'SoS_VividWeathers_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/'
-        name: 'Sounds of Skyrim - VividWeathers Patch'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8092/' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("(SoS_VividWeathers_Patch|Vivid Weathers SE - SOS Patch)\.esp")'
@@ -2686,9 +2595,7 @@ plugins:
       - crc: 0xEFF95481
         util: 'SSEEdit v4.0.2'
   - name: 'SoS - Civilization.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/'
-        name: 'Sounds of Skyrim - Civilization'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/' ]
     after:
       - 'LSFX-SSE-Audiosettings.esp'
     inc:
@@ -2701,9 +2608,7 @@ plugins:
       - crc: 0xB8A64B7E
         util: 'SSEEdit v4.0.2'
   - name: 'SoS - The Dungeons.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/'
-        name: 'Sounds of Skyrim - The Dungeons'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/' ]
     group: *underridesGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
@@ -2727,9 +2632,6 @@ plugins:
         name: 'Unofficial High Definition Audio Project'
     group: *ccGroup
   - name: 'UHDAP - MusicHQ.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18115/'
-        name: 'Unofficial High Definition Audio Project'
     group: *ccGroup
     inc:
       - 'UHDAP - MusicUHQ1.esp'
@@ -2791,9 +2693,7 @@ plugins:
       - crc: 0xEAA28ADD
         util: 'SSEEdit v4.0.0'
   - name: 'Obsidian Weathers.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/'
-        name: 'Obsidian Weathers and Seasons'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'TrueStormsSE.esp'
@@ -2926,10 +2826,9 @@ plugins:
       # version: 1.01 - No Fog
       - crc: 0x9318EEA3
         util: 'SSEEdit v4.0.0'
+  - name: 'Vivid Weathers(SE| SE -| - ).*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/' ]
   - name: 'Vivid WeathersSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/'
-        name: 'Vivid Weathers Definitive Edition'
     after:
       - 'Audio Overhaul Skyrim.esp'
     inc:
@@ -2991,7 +2890,6 @@ plugins:
       - crc: 0x42F61B3D
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - Classic.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     after:
       - 'Audio Overhaul Skyrim.esp'
     dirty:
@@ -3005,7 +2903,6 @@ plugins:
       - crc: 0xF7A0E586
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - Summer Season.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     inc:
       - 'Vivid Weathers SE - Winter.esp'
     clean:
@@ -3013,7 +2910,6 @@ plugins:
       - crc: 0xFA5FFE09
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - Winter.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     inc:
       - 'Vivid Weathers SE - Summer Season.esp'
     clean:
@@ -3021,7 +2917,6 @@ plugins:
       - crc: 0xBFCD0A7F
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers - Extended Rain.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     inc:
       - 'Vivid_TS_Patch_Ominous.esp'
       - 'Vivid_TS_Patch_Surreal.esp'
@@ -3032,7 +2927,6 @@ plugins:
       - crc: 0xD1472C2B
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - Extended Snow.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     inc:
       - 'Vivid_TS_Patch_Ominous.esp'
       - 'Vivid_TS_Patch_Surreal.esp'
@@ -3043,31 +2937,26 @@ plugins:
       - crc: 0xDDF64958
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - AOS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     clean:
       # version: 2.30
       - crc: 0x168E70F9
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - Bruma Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     clean:
       # version: 2.30
       - crc: 0x0AFC72E9
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - Falskaar.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     clean:
       # version: 2.30
       - crc: 0x051BA358
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - LightingDuringStorm Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     clean:
       # version: 2.30
       - crc: 0xFB7F666E
         util: 'SSEEdit v4.0.0'
   - name: 'Vivid Weathers SE - SOS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("(SoS_VividWeathers_Patch|Vivid Weathers SE - SOS Patch)\.esp")'
@@ -3078,12 +2967,10 @@ plugins:
         util: 'SSEEdit v4.0.0'
 
 ###### Character Appearance - Body,face & hair ######
-  - name: 'Hair Replacer.esp'
+  - name: 'Hair Replacer( Assets)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
     group: *preEarlyGroup
   - name: 'Hair Replacer Assets.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *preEarlyGroup
     after:
       - 'Hair Replacer.esp'
 
@@ -3220,9 +3107,7 @@ plugins:
       - crc: 0x4224072F
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'ethereal_elven_overhaul.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7351/'
-        name: 'Ethereal Elven Overhaul'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7351/' ]
     after:
       - 'CollegeOfWinterholdImmersive.esp'
       - 'Cutting Room Floor.esp'
@@ -3288,9 +3173,7 @@ plugins:
         subs: [ 'Immersive College of Winterhold' ]
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
   - name: 'Diversity - An NPC Overhaul.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5291/'
-        name: 'Diversity - An NPC Overhaul'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5291/' ]
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
@@ -3331,9 +3214,7 @@ plugins:
         subs: [ 'Interesting NPCs' ]
         condition: 'active("3DNPC.esp") and not active("Qw_WICO_3DNPC Patch.esp")'
   - name: 'SPTConsistentOlderPeopleSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2977/'
-        name: 'Consistent Older People'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2977/' ]
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'AI Overhaul SSE' ]
@@ -3358,9 +3239,7 @@ plugins:
         display: 'Seranaholic'
       - 'Serana - Hellraiser.esp'
   - name: 'Toccata as Elisif.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/'
-        name: 'Toccata Follower SE (With Elisif Replacer Option)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
     tag:
       - Actors.CombatStyle
       - NpcFaces
@@ -3485,7 +3364,7 @@ plugins:
   - name: '3DNPC.esp'
     url:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
-        name: 'Interesting NPCs SSE on 3dnpc.com'
+        name: 'Interesting NPCs SSE'
     group: *earlyLoadersGroup
     after:
       # Group afters to avoid sorting errors.
@@ -3582,9 +3461,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
     group: *preEarlyGroup
   - name: 'ForgottenCity.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1179'
-        name: 'The Forgotten City'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
     dirty:
       # version: 1.8
       - <<: *quickClean
@@ -3600,9 +3477,7 @@ plugins:
     tag:
       - Relev
   - name: 'Inigo.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/'
-        name: 'INIGO'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/' ]
     dirty:
       # version: 2.4C
       - <<: *quickClean
@@ -3614,6 +3489,7 @@ plugins:
       - crc: 0x938CF2CD
         util: 'SSEEdit v4.0.0'
   - name: 'Janessa Half Argonian Companion.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24096']
     msg:
       - <<: *wildEdits
         subs: [ 'Adds a script to levelled Bandits NPC Records which respawns those NPCs several times. This script will affect all references that place these NPCs. Remove these records from Janessa Half Argonian Companion.esp: LvlBanditMeleeTank 00015BE5, LvlBanditMissile 0001E79E, 00023AAD EncFrostbiteSpiderSnowGiant, LvlBanditMelee1H 0003DECB, LvlBanditMeleeBerserker 0003DECC.' ]
@@ -3694,9 +3570,7 @@ plugins:
       - crc: 0xF205ED42
         util: 'SSEEdit v4.0.2'
   - name: 'MrissiTailOfTroubles.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9666/'
-        name: 'M''rissi''s Tails of Troubles SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9666/' ]
     dirty:
       # version: 1.6
       - <<: *quickClean
@@ -3737,9 +3611,7 @@ plugins:
         condition: 'many("Rebalanced Encounter Zones.*\.esp")'
         subs: [ 'Rebalanced Encounter Zones' ]
   - name: 'Rigmor.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5271/'
-        name: 'Rigmor of Bruma'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5271/' ]
     inc:
       - 'Open Cities Skyrim.esp'
     after:
@@ -3777,10 +3649,8 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Immersive Creatures Special Edition.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
-        name: 'Skyrim Immersive Creatures'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18639/'
-        name: 'Skyrim Immersive Creatures - Official Patch and Patch Central'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/18639/'
     tag:
       - -C.Location
       - Delev
@@ -3802,9 +3672,7 @@ plugins:
       - crc: 0xA43CAEE3
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
   - name: 'SofiaFollower.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/'
-        name: 'Sofia - The Funny Fully Voiced Follower'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/' ]
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Guard Dialogue Overhaul' ]
@@ -3831,9 +3699,7 @@ plugins:
       - crc: 0xD87DD508
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'Toccata.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/'
-        name: 'Toccata Follower SE (With Elisif Replacer Option)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
     req:
       - *SKSE
       - *SkyUI
@@ -3841,9 +3707,7 @@ plugins:
       - crc: 0xAA9D9F35
         util: 'SSEEdit v3.2.44'
   - name: 'WheelsOfLull.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/748'
-        name: 'The Wheels Of Lull'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748' ]
     clean:
        # version: 1.3a - unofficial patch
       - crc: 0xC191A3F9
@@ -3877,17 +3741,13 @@ plugins:
           - '[Wheels of Lull Forgotten City and Bruma Merged Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
         condition: 'active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp")'
   - name: 'WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19734'
-        name: 'Wheels of Lull Unofficial Patch'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19734' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp")'
         subs: [ 'Wheels Of Lull Bruma / Forgotten City Patch' ]
   - name: 'zMirai.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/'
-        name: 'Mirai - the Girl with the Dragon Heart'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/' ]
     after:
       - 'DragonsKeep.esp'
       - 'S3DTrees NextGenerationForests.esp'
@@ -4025,8 +3885,9 @@ plugins:
       # version: 1.45 REALly Blended Roads, ESL
       - crc: 0x05762FC2
         util: 'SSEEdit v4.0.0'
-  - name: 'Blowing in the Wind SSE.esp'
+  - name: 'Blowing in the Wind.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124' ]
+  - name: 'Blowing in the Wind SSE.esp'
     group: *earlyLoadersGroup
     clean:
       # version: 2.04
@@ -4144,9 +4005,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8767' ]
     group: *floraGroup
   - name: 'Gildergreen Regrown.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/348/'
-        name: 'Gildergreen Regrown'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/348/' ]
     group: *floraGroup
     clean:
       # version: 2.0
@@ -4196,8 +4055,9 @@ plugins:
       # version: 1.1
       - crc: 0x2EEBF517
         util: 'SSEEdit v4.0.1'
-  - name: 'Landscape Fixes For Grass Mods.esp'
+  - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
+  - name: 'Landscape Fixes For Grass Mods.esp'
     group: *landscapeGroup
     after:
       - 'Enhanced Landscapes.esp'
@@ -4238,7 +4098,6 @@ plugins:
       - crc: 0x1B69D20B
         util: 'SSEEdit v3.3.8a BETA'
   - name: 'Landscape Fixes For Grass mods - Alternate start Locations.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     clean:
@@ -4246,7 +4105,6 @@ plugins:
       - crc: 0xFF2C28E6
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape Fixes For Grass mods - Cutting Room Floor Locations.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     clean:
@@ -4254,7 +4112,6 @@ plugins:
       - crc: 0xD1A5D0FE
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods - Arthmoor''s Dragon Bridge PATCH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Dragon Bridge.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -4263,7 +4120,6 @@ plugins:
       - crc: 0x92327E79
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -4272,7 +4128,6 @@ plugins:
       - crc: 0x6ADC2C04
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'JKs Skyrim.esp'
@@ -4282,13 +4137,11 @@ plugins:
       - crc: 0xA058758D
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods - Moon and Star PATCH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     clean:
       # version: 1
       - crc: 0x51276D4D
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods -Provincial Courier PATCH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     clean:
@@ -4296,7 +4149,6 @@ plugins:
       - crc: 0xEF11FEC0
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods Arthmoor''s Shor''s Stone PATCH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Shor''s Stone.esp'
@@ -4305,20 +4157,20 @@ plugins:
       - crc: 0x70AC097E
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape For Grass Mods - Valkyrja Estate PATCH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
     clean:
       # version: 1
       - crc: 0xE2CE802E
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'RelicHunter_Grass_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     clean:
       - crc: 0xB46777D2
         util: 'SSEEdit v3.3.6 BETA'
-  - name: 'MajesticMountains.esp'
+  - name: 'MajesticMountains.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
+  - name: 'MajesticMountains.esp'
     group: *underridesGroup
     after:
       - 'Dolomite Weathers.esp'
@@ -4345,7 +4197,6 @@ plugins:
       - crc: 0x191C70BB
         util: 'SSEEdit v4.0.0'
   - name: 'MajesticMountains_Moss.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
     group: *floraGroup
     inc:
       - 'Moss Rocks.esp'
@@ -4448,8 +4299,9 @@ plugins:
       - crc: 0xCBC13761
         util: 'SSEEdit v4.0.2'
 
-  - name: 'RealisticWaterTwo.esp'
+  - name: 'RealisticWaterTwo.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
+  - name: 'RealisticWaterTwo.esp'
     group: *lateLoadersGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
@@ -4565,9 +4417,7 @@ plugins:
       - crc: 0x8B9AB35D
         util: 'SSEEdit v4.0.1'
   - name: 'S3DLandscapes NextGenerationForests.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18247/'
-        name: 'Skyrim 3D Landscapes'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18247/' ]
     group: *floraGroup
     inc:
       - 'Enhanced Landscapes.esp'
@@ -4588,9 +4438,7 @@ plugins:
       - 'SkyrimIsWindy.esp'
       - 'SRG Enhanced Trees Activator.esp'
   - name: 'SmoothShores.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10624/'
-        name: 'Smooth Shores (Grass and Ground Remastered)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10624/' ]
     group: *floraGroup
     dirty:
       # version: 0.7 before Quick Auto Clean
@@ -4605,6 +4453,9 @@ plugins:
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
     group: *preEarlyGroup
+  - name: 'Trees in Cities.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1941/' ]
+    group: *floraGroup
   - name: 'UniqueLocationsRiverwoodForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9258/' ]
     dirty:
@@ -4617,9 +4468,6 @@ plugins:
       # version: 1.3.3
       - crc: 0x28B9ECB9
         util: 'SSEEdit v4.0.0'
-  - name: 'Trees in Cities.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1941/' ]
-    group: *floraGroup
   # Unique Locations Riverwood - Alt Start Patch
   - name: 'ULALPatch.esp'
     dirty:
@@ -4668,10 +4516,8 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
-        name: 'Verdant - A Skyrim Grass Plugin'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
-        name: 'Landscape Fixes For Grass Mods - Tweaks for Verdant'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
     group: *landscapeGroup
     inc:
       - name: 'Open Cities Skyrim.esp'
@@ -4701,9 +4547,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4082/' ]
     group: *floraGroup
   - name: 'p_vegetation_overhaul.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7627/'
-        name: 'Vanilla Vegetation Overhaul'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7627/' ]
     group: *floraGroup
   - name: 'Veydosebrom - Grasses and Groundcover.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10543/' ]
@@ -4735,9 +4579,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16230/' ]
     group: *floraGroup
   - name: 'ViscousGrass.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/'
-        name: 'Viscous Grass Plus Tweaks'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/' ]
     group: *floraGroup
     inc:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -4765,12 +4607,9 @@ plugins:
 ###### Gameplay ######
   - name: 'Alternate Start - Live Another Life.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
-        name: 'Alternate Start - Live Another Life'
-      - link: 'https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/'
-        name: 'Alternate Start - Live Another Life'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
-        name: 'Alternate Start - Live Another Life'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
+      - 'https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
     group: *highPriorityGroup
     inc:
       - 'Original Opening Scene.esp'
@@ -4791,9 +4630,7 @@ plugins:
       - crc: 0xCDDFC16E
         util: 'SSEEdit v4.0.2'
   - name: 'Alternate Start -- New Beginnings.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/'
-        name: 'Alternate Start - LAL Extension - New Beginnings'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/' ]
     tag:
       - Scripts
       - -Sound
@@ -4846,10 +4683,8 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Apocalypse - Magic of Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
-        name: 'Apocalypse - Magic of Skyrim'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
-        name: 'Apocalypse - Magic Of Skyrim [PC]'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
     after:
       - 'Ordinator - Perks of Skyrim.esp'
     msg:
@@ -4903,20 +4738,14 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
-  - name: 'Better Harvesting.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
-    after:
-      - 'skyBirds_SSE.esp'
-  - name: 'Better Harvesting (animal loot version).esp'
+  - name: 'Better Harvesting( (animal loot version))?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
     after:
       - 'skyBirds_SSE.esp'
   - name: 'Better Vampires.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
-        name: 'Better Vampires SE 8.2'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
-        name: 'Better Vampires 8.1 PC'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
     after:
       - 'EBM_UnlimitedPower.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
@@ -5040,9 +4869,7 @@ plugins:
     after:
       - 'Requiem.esp'
   - name: 'Dawnguard - Radiant Quest Requirements.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16818/'
-        name: 'Dawnguard - Tweaks and Enhancements'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16818/' ]
     after:
       - 'BetterQuestObjectives.esp'
     dirty:
@@ -5128,8 +4955,7 @@ plugins:
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
   - name: 'Guard Dialogue Overhaul.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20791/'
-        name: 'Guard Dialogue Overhaul (GDO) SSE'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791/'
     after:
       - 'Cutting Room Floor.esp'
       - 'Hothtrooper44_ArmorCompilation.esp'
@@ -5138,9 +4964,7 @@ plugins:
       - crc: 0xF9B972F2
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'GIST soul trap.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/'
-        name: 'GIST - Genuinely Intelligent Soul Trap SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
     inc:
       - 'AcquisitiveSoulGemMultithreaded.esp'
       - 'UFD Enhanced Soultrap.esp'
@@ -5251,12 +5075,13 @@ plugins:
       # version: 1.0.91
       - crc: 0x9D6F5F62
         util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Immersive Citizens.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - AI Overhaul SE'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198'
-        name: 'Immersive Citizens - AI Overhaul [PC]'
+        name: 'Immersive Citizens AI Overhaul'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
+        name: 'Immersive Citizens AI Overhaul'
+  - name: 'Immersive Citizens - AI Overhaul.esp'
     group: *lowPriorityGroup
     inc:
       - 'Arthmoor''s Skyrim Villages - All In One.esp'
@@ -5346,33 +5171,21 @@ plugins:
       - crc: 0x539DB18D
         util: 'SSEEdit v4.0.2'
   - name: 'Immersive Citizens - ELE patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - ELE patch'
     clean:
       # version: 0.4
       - crc: 0x9F0CBF8B
         util: 'SSEEdit v4.0.2'
   - name: 'Immersive Citizens - ELFXEnhancer patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - ELFXEnhancer patch'
     clean:
       # version: 0.4
       - crc: 0x4865A412
         util: 'SSEEdit v4.0.2'
   - name: 'Immersive Citizens - ELFXHardcore patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - ELFXHardcore patch'
     clean:
       # version: 0.4
       - crc: 0x834C7779
         util: 'SSEEdit v4.0.2'
   - name: 'Immersive Citizens - OCS patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - Open Cities patch'
     dirty:
       # version: 0.4
       - <<: *quickClean
@@ -5384,25 +5197,18 @@ plugins:
       - crc: 0x3ED97678
         util: 'SSEEdit v4.0.2'
   - name: 'Immersive Citizens - TC patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens - Touring Carriages patch'
     clean:
       # version: 0.4
       - crc: 0x75419F86
         util: 'SSEEdit v4.0.2'
   - name: 'Immersive Ingestibles.esp'
-    url:
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3587775'
-        name: 'Turija Immersive Ingestibles'
+    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/3587775' ]
     after:
       - 'Requiem.esp'
   - name: 'Imperious - Races of Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
-        name: 'Imperious - Races of Skyrim'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
-        name: 'Imperious - Races of Skyrim [PC]'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
     group: *coreGroup
     after:
       - 'Joy of Perspective.esp'
@@ -5444,9 +5250,7 @@ plugins:
       - crc: 0xE889ADEB
         util: 'SSEEdit v3.2.1'
   - name: 'Improved Traps.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/'
-        name: 'Improved Traps'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/' ]
     tag:
       - Graphics
       - Stats
@@ -5490,9 +5294,7 @@ plugins:
       - 'Wildcat - Combat of Skyrim.esp'
     msg: [ *doNotClean ]
   - name: 'know_your_enemy.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13807/'
-        name: 'Know Your Enemy - Trait-based resistances and weaknesses'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13807/' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -5572,9 +5374,7 @@ plugins:
       - crc: 0xCD2D19F5
         util: 'SSEEdit v3.2.79 EXPERIMENTAL'
   - name: 'TTR_Master_Trader.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/'
-        name: 'Master Trader SE - Merchants Never Run Out Of Gold'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/' ]
     after:
       - 'Relationship Dialogue Overhaul.esp'
   - name: 'Morrowloot.esp'
@@ -5701,9 +5501,7 @@ plugins:
       - crc: 0xB15D945C
         util: 'SSEEdit v4.0.2'
   - name: 'MLU - AAE Ultimate Edition.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
-        name: 'MorrowLoot Ultimate'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
     after:
       - 'MLU - Immersive Armors.esp'
     tag:
@@ -5713,9 +5511,7 @@ plugins:
       - crc: 0x448DF62B
         util: 'SSEEdit v3.2.1'
   - name: 'MLU - Immersive Armors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
-        name: 'MorrowLoot Ultimate'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
     msg: [ *doNotClean ]
     tag:
       - Delev
@@ -5728,9 +5524,7 @@ plugins:
       - crc: 0xCDB3B128
         util: 'SSEEdit v3.2.1'
   - name: 'MLU - Improved Closefaced Helmets.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
-        name: 'MorrowLoot Ultimate'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
     req:
       - 'MLU.esp'
     tag:
@@ -5749,10 +5543,6 @@ plugins:
       # version: 1.4
       - crc: 0x059F28E6
         util: 'SSEEdit v4.0.1'
-  - name: 'more idle markers.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3211/'
-        name: 'More Tavern Idles'
   - name: 'MultipleEnchantments.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2694/' ]
     msg:
@@ -5763,12 +5553,9 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
   - name: 'Open Cities Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
-        name: 'Open Cities Skyrim'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
-        name: 'Open Cities Skyrim'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
-        name: 'Open Cities Skyrim'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
+      - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
     group: *highPriorityGroup
     inc:
       - name: 'JKs Skyrim.esp'
@@ -5825,10 +5612,8 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Ordinator - Perks of Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
-        name: 'Ordinator - Perks of Skyrim'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
-        name: 'Ordinator - Perks Of Skyrim [PC]'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
     group: *coreGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
@@ -5873,9 +5658,7 @@ plugins:
       - crc: 0x38670BC4
         util: 'SSEEdit v3.2.1'
   - name: 'PathOfSorcery.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/'
-        name: 'Path of Sorcery - Magic Perk Overhaul'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     after:
       - 'Ordinator - Perks of Skyrim.esp'
     clean:
@@ -5889,17 +5672,13 @@ plugins:
         subs: [ 'Remove the Navigation Mesh Info Map record 00012FB4 from Piercing Shot Perk - Bullseye perk replacer.esp with [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)' ]
         condition: 'checksum("Piercing Shot Perk - Bullseye perk replacer.esp", 01D2BE9A) or checksum("Piercing Shot Perk - Bullseye perk replacer.esp", 69200C44)'
   - name: 'Tainted_Blood.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/'
-        name: 'True Hybrid - Tainted Blood of the Dragonborn'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
     clean:
       # version: 5.7.9
       - crc: 0xF28D435D
         util: 'SSEEdit v4.0.2'
   - name: 'notice board.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3218/'
-        name: 'The Notice Board SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3218/' ]
     clean:
       # version: 1.4
       - crc: 0x06EF4166
@@ -5910,9 +5689,7 @@ plugins:
       - crc: 0x6498488A
         util: 'SSEEdit v4.0.0'
   - name: 'notice board - better solstheim quests.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15829/'
-        name: 'The Notice Board - Better Solstheim Quests'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15829/' ]
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Wenches.esp'
@@ -5930,9 +5707,7 @@ plugins:
       - crc: 0x505FDAEA
         util: 'SSEEdit v4.0.0'
   - name: 'The Paarthurnax Dilemma.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/365'
-        name: 'The Paarthurnax Dilemma'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/365' ]
     clean:
       # version: 2.0
       - crc: 0xBBB08325
@@ -5950,9 +5725,7 @@ plugins:
       - crc: 0x6202C837
         util: 'SSEEdit v4.0.2'
   - name: 'Ravengate.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12617'
-        name: 'Ravengate - Riften Underground'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12617' ]
     msg:
       - *includesMBBF
     clean:
@@ -6002,12 +5775,10 @@ plugins:
       - crc: 0x20DC9B97
         util: 'SSEEdit v3.2.1'
   - name: '(RDO|Relationship Dialogue Overhaul) - *\Patch.esp'
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-  - name: 'RDO - CRF + USSEP Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
     after:
       - 'Relationship Dialogue Overhaul.esp'
+  - name: 'RDO - CRF + USSEP Patch.esp'
     inc:
       - 'RDO - USSEP Patch.esp'
     clean:
@@ -6015,9 +5786,6 @@ plugins:
       - crc: 0xA2753357
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - USSEP Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
     inc:
       - 'RDO - CRF + USSEP Patch.esp'
     clean:
@@ -6025,21 +5793,16 @@ plugins:
       - crc: 0x44DE71B0
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - AFT v1.66 Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
     clean:
       # version: Final
       - crc: 0x88F9C8B8
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - iAFT Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
     clean:
       # version: Final
       - crc: 0x88C2EA38
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - EFF v4.0.2 Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
     clean:
       # version: Final
       - crc: 0xAE1B1EDF
@@ -6053,9 +5816,7 @@ plugins:
     tag:
       - Relev
   - name: 'Run For Your Lives.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/'
-        name: 'Run For Your Lives'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/' ]
     msg:
       - type: say
         content:
@@ -6321,9 +6082,7 @@ plugins:
       - crc: 0x725F1E2E
         util: 'SSEEdit v3.2.1'
   - name: 'SwiftPotion.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/'
-        name: 'Swift Potion Reborn'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
     req:
       - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
@@ -6492,9 +6251,7 @@ plugins:
           - lang: pt
             text: 'Amazing Follower Tweaks "horse features"(trad. "funções de cavalaria") e "follower teleport on weapon draw setting" (trad. "opção de teletransporte de seguidor ao sacar armas") devem estar desabilitadas para Convenient Horses'
   - name: 'Immersive Horses.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/'
-        name: 'Immersive Horses'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/' ]
     after:
       - 'AmazingFollowerTweaks.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -6543,10 +6300,8 @@ plugins:
 
   - name: 'AmazingFollowerTweaks.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6656/'
-        name: 'Amazing Follower Tweaks SE'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14722/'
-        name: 'Immersive Amazing Follower Tweaks SE'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6656/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14722/'
     inc:
       - 'EFFCore.esm'
       - 'EFFDialogue.esp'
@@ -6577,18 +6332,16 @@ plugins:
       # version: iAFT 3.09SE DLC & USSEP Patch
       - crc: 0x2CE005AD
         util: 'SSEEdit v4.0.0'
-  - name: 'EFFCore.esm'
+  - name: 'EFF(Core|Dialogue).es(m|p)'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7003/'
         name: 'Extensible Follower Framework'
+  - name: 'EFFCore.esm'
     clean:
       # version: 4.0.3
       - crc: 0x9A583BDE
         util: 'SSEEdit v3.2.68 EXPERIMENTAL'
   - name: 'EFFDialogue.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8379/'
-        name: 'Extensible Follower Framework'
     after:
       - 'BUVARP.esp'
       - 'Relationship Dialogue Overhaul.esp'
@@ -6597,9 +6350,7 @@ plugins:
       - crc: 0xE0305B2C
         util: 'SSEEdit v3.2.68 EXPERIMENTAL'
   - name: 'nwsFollowerFramework.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/'
-        name: 'Nether''s Follower Framework SSE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/' ]
     req:
       - *SKSE
       - *SkyUI
@@ -6658,9 +6409,7 @@ plugins:
       - '1nivWICCloaksNoGuards.esp'
       - 'WarmongerArmory_LeveledList.esp'
   - name: 'ArtifactsOfBoethiah.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15264/'
-        name: 'Artifacts - The Tournament of the ten Bloods'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15264/' ]
     dirty:
       # version: 2.1
       - <<: *quickClean
@@ -6677,9 +6426,7 @@ plugins:
         name: 'QUARK - Qwinn''s Ultimate Amulet Restoration Kit'
     group: *preFixesGroup
   - name: 'SL01AmuletsSkyrim.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/487/'
-        name: 'Amulets of Skyrim SSE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/487/' ]
     msg:
       - <<: *reqMasterSort
         condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
@@ -6692,10 +6439,11 @@ plugins:
       # version: 4.061 - sorted
       - crc: 0xA66ABCA9
         util: 'SSEEdit v3.2.2'
-  - name: 'BandolierForNPC.esp'
+  - name: 'BandolierForNPC.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
         name: 'Bandolier - Bags and Pouches for NPC'
+  - name: 'BandolierForNPC.esp'
     inc:
       - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
       - 'BandolierForNPC - Winter is Coming Patch.esp'
@@ -6704,9 +6452,6 @@ plugins:
       - Names
       - Stats
   - name: 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
-        name: 'Bandolier - Bags and Pouches for NPC'
     inc:
       - 'BandolierForNPC.esp'
       - 'BandolierForNPC - Winter is Coming Patch.esp'
@@ -6715,9 +6460,6 @@ plugins:
       - Names
       - Stats
   - name: 'BandolierForNPC - Winter is Coming Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
-        name: 'Bandolier - Bags and Pouches for NPC'
     inc:
       - 'BandolierForNPC.esp'
       - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
@@ -6726,9 +6468,6 @@ plugins:
       - Names
       - Stats
   - name: 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
-        name: 'Bandolier - Bags and Pouches for NPC'
     after:
       - '1nivWICSkyCloaksPatch.esp'
     inc:
@@ -6747,20 +6486,14 @@ plugins:
       - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
       - 'BandolierForNPC - Winter is Coming.esp'
       - 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
-        name: Bandolier - Bags and Pouches for NPC - Realistic Enchantements
     tag:
       - Names
       - Stats
   - name: 'Book Covers Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
-        name: 'Book Covers Skyrim'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
-        name: 'Book Covers Skyrim - Original'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
-        name: 'Book Covers Skyrim - Desaturated'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
     group: *underridesGroup
     msg:
       - <<: *alreadyInX
@@ -6795,12 +6528,9 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
-        name: 'Book Covers Skyrim'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
-        name: 'BCS Lost Library - Original'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
-        name: 'BCS Lost Library - Desaturated'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
     group: *underridesGroup
     msg:
       - <<: *alreadyInX
@@ -6812,10 +6542,9 @@ plugins:
       # version: 2.1
       - crc: 0xDD84DD4C
         util: 'SSEEdit v3.2.1'
+  - name: 'Cloaks( - Dawnguard| - USSEP Patch)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
   - name: 'Cloaks.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/'
-        name: 'Cloaks of Skyrim'
     tag:
       - Invent
     msg:
@@ -6830,13 +6559,11 @@ plugins:
       - crc: 0x7A522F11
         util: 'SSEEdit v3.2.2'
   - name: 'Cloaks - Dawnguard.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
     clean:
       # version: 1.2.1
       - crc: 0x60DE7658
         util: 'SSEEdit v3.2.2'
   - name: 'Cloaks - USSEP Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'Qw_CloaksOfSkyrim_CRF Patch.esp' ]
@@ -6858,9 +6585,7 @@ plugins:
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
   - name: 'Skyshards.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/'
-        name: 'ESO Skyshards'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/' ]
     after:
       - 'Landscape For Grass Mods - Moon and Star PATCH.esp'
     clean:
@@ -6868,9 +6593,7 @@ plugins:
       - crc: 0x61C5CB96
         util: 'SSEEdit v3.3.6'
   - name: 'Circlets and Masks with all Robes and Hoods.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/'
-        name: 'Circlets or Masks with all Robes and Hoods'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/' ]
     group: *preEarlyGroup
     tag:
       - Graphics
@@ -6902,16 +6625,18 @@ plugins:
       # version: 3.3 - masters sorted
       - crc: 0x832DEAAB
         util: 'SSEEdit v3.2.2'
-  - name: 'Hothtrooper44_ArmorCompilation.esp'
+  - name: 'Hothtrooper44_Armor(Compilation|_Ecksstra).esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
         name: 'Immersive Armors'
     group: *underridesGroup
+  - name: 'Hothtrooper44_ArmorCompilation.esp'
     tag:
       - Delev
       - Relev
   - name: 'Hothtrooper44_Armor_Ecksstra.esp'
-    group: *underridesGroup
+    req:
+      - 'Hothtrooper44_ArmorCompilation.esp'
     msg: [ *requiresMCM ]
   - name: 'Immersive Jewelry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5336/' ]
@@ -6992,20 +6717,13 @@ plugins:
       # version: 1.0
       - crc: 0xCC6D50A9
         util: 'SSEEdit v3.2.1'
-  - name: '1nivWICCloaks.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4933'
-        name: 'Winter Is Coming SSE - Cloaks'
-    group: *underridesGroup
-  - name: '1nivWICCloaksNoGuards.esp'
+  - name: '1nivWICCloaks(NoGuards)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4933'
         name: 'Winter Is Coming SSE - Cloaks'
     group: *underridesGroup
   - name: 'InsanitySorrow Weapons Pack.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/'
-        name: 'InsanitySorrow Weapons Pack'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/' ]
     tag:
       - Relev
     clean:
@@ -7038,23 +6756,20 @@ plugins:
       # version: 1.4a
       - crc: 0x0D7685E5
         util: 'SSEEdit v3.2.2'
-  - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
+  - name: 'Lore Weapon Expansion - (Daedric Crescent|Goldbrand|Relics of the Crusader)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
     group: *preEarlyGroup
+  - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
     clean:
       # version: 1.0
       - crc: 0x524C6138
         util: 'SSEEdit v3.2.2'
   - name: 'Lore Weapon Expansion - Goldbrand.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
-    group: *preEarlyGroup
     clean:
       # version: 1.1
       - crc: 0x5587FCE6
         util: 'SSEEdit v3.2.2'
   - name: 'Lore Weapon Expansion - Relics of the Crusader.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
-    group: *preEarlyGroup
     clean:
       # version: 1.0
       - crc: 0xA5763C46
@@ -7137,6 +6852,7 @@ plugins:
       - crc: 0x1F17FC44
         util: 'SSEEdit v3.2.2'
   - name: 'UNP Vanilla Outfits.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11136/' ]
     group: *underridesGroup
 
   - name: 'TheWulfPanda - City Teleport Spells( Less Magicka Increase Cast Time)?\.esp'
@@ -7232,15 +6948,17 @@ plugins:
       # version: 1.00 Fully cleaned
       - crc: 0x6A6995CB
         util: 'SSEEdit v4.0.0'
-  - name: 'Wintermyst - Enchantments of Skyrim.esp'
+  - name: 'Wintermyst - (Enchantments of Skyrim|Increased Damage).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
+    tag:
+      - Names
+  - name: 'Wintermyst - Enchantments of Skyrim.esp'
     inc:
       - 'Animated Weapon Enchants.esp'
       - 'Summermyst - Enchantments of Skyrim.esp'
     tag:
       - Delev
       - Graphics
-      - Names
       - Relev
     msg:
       - <<: *semiCompatible
@@ -7259,9 +6977,6 @@ plugins:
       - crc: 0x2D31CE29
         util: 'SSEEdit v4.0.0'
   - name: 'Wintermyst - Increased Damage.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
-    tag:
-      - Names
     clean:
       # version: 4.06SE
       - crc: 0x65AFCE11
@@ -7348,12 +7063,12 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?BeyondReach(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp")'
-  - name: 'BSAssets.esm'
+  - name: 'BS(Assets|Heartland|_DLC_patch).es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma SE'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835'
-        name: 'Beyond Skyrim: Bruma SE Assets'
+  - name: 'BSAssets.esm'
+    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835' ]
     tag:
       - C.Light
       - C.RecordFlags
@@ -7362,11 +7077,7 @@ plugins:
       - crc: 0x1D0648B6
         util: 'SSEEdit v4.0.2'
   - name: 'BSHeartland.esm'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
-        name: 'Beyond Skyrim - Bruma SE'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831'
-        name: 'Beyond Skyrim: Bruma SE'
+    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -7409,10 +7120,15 @@ plugins:
       # version: 1.3.3, after cleaning & correcting the (unused) circular leveled list
       - crc: 0x2BD82405
         util: 'SSEEdit v4.0.2'
-  - name: 'BSHeartland - Unofficial Patch.esp'
+  - name: 'BS(BSHeartland - Unofficial Patch|_Campfire)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19374'
         name: 'Beyond Skyrim - Bruma - Tweaks Enhancements and Patches SSE'
+  - name: 'BSHeartland - Unofficial Patch.esp'
+    tag:
+      - C.Location
+      - C.Name
+      - Names
     dirty:
       # version: 1.5
       - <<: *quickClean
@@ -7431,14 +7147,9 @@ plugins:
       # version: 1.5 - ESL flagged
       - crc: 0xA4762EF8
         util: 'SSEEdit v4.0.2'
-    tag:
-      - C.Location
-      - C.Name
-      - Names
   - name: 'BS_Campfire.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19374'
-        name: 'Beyond Skyrim - Bruma - Tweaks Enhancements and Patches SSE'
+    tag:
+      - Names
     clean:
       # version: 1.5
       - crc: 0x3332482F
@@ -7446,14 +7157,8 @@ plugins:
       # version: 1.5 - ESL flagged
       - crc: 0x4F219DBA
         util: 'SSEEdit v4.0.2'
-    tag:
-      - Names
   - name: 'BS_DLC_patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
-        name: 'Beyond Skyrim - Bruma SE'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167'
-        name: 'Beyond Skyrim: Bruma SE DLC Patch'
+    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167' ]
     tag:
       - Delev
       - Invent
@@ -7474,6 +7179,7 @@ plugins:
       - crc: 0xC4E7CC46
         util: 'SSEEdit v4.0.1'
   - name: 'Darkend.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10423' ]
     dirty:
       # version: 1.4
       - <<: *quickClean
@@ -7485,9 +7191,7 @@ plugins:
       - crc: 0x4E9A526A
         util: 'SSEEdit v4.0.0'
   - name: 'Falskaar.esm'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2057/'
-        name: 'Falskaar'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2057/' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -7539,12 +7243,12 @@ plugins:
       # version: 1.38
       - crc: 0x14FE49C6
         util: 'SSEEdit v4.0.2'
-  - name: 'MoonAndStar_ImmersionPatch.esp'
+  - name: 'MoonAndStar_(MAS|ImmersionPatch)\.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
-        name: 'Moon and Star'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
-        name: 'Moon And Star'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
+    group: *underridesGroup
+  - name: 'MoonAndStar_ImmersionPatch.esp'
     dirty:
       # version: 2.0
       - <<: *quickClean
@@ -7556,12 +7260,6 @@ plugins:
       - crc: 0xD14F7D61
         util: 'SSEEdit v4.0.0'
   - name: 'MoonAndStar_MAS.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
-        name: 'Moon and Star'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
-        name: 'Moon And Star'
-    group: *underridesGroup
     after:
       - 'AuroraVillage.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -7588,10 +7286,8 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Undeath.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
-        name: 'Undeath Remastered SE'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
-        name: 'Undeath Remastered'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
     group: *underridesGroup
     after:
       - 'Enhanced Landscapes.esp'
@@ -7671,10 +7367,9 @@ plugins:
         crc: 0xDA83BB85
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         nav: 3
+  - name: 'Vigilant.es(m|p)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11849' ]
   - name: 'Vigilant.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11849'
-        name: 'Vigilant SE'
     msg:
       - <<: *patch3rdParty
         subs:
@@ -7700,9 +7395,7 @@ plugins:
       - crc: 0xB4D712AB
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Wyrmstooth.esp'
-    url:
-      - link: 'https://archive.org/details/Wyrmstooth1.17BSSE'
-        name: 'Wyrmstooth SE on Internet Archive'
+    url: [ 'https://archive.org/details/Wyrmstooth1.17BSSE' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -7711,10 +7404,11 @@ plugins:
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?(Vigilant_)?Wyrm.*\.esp")'
 
 ###### Locations - New Structures & Landmarks ######
-  - name: 'AHZBetterDGEntranceSE.esp'
+  - name: 'AHZBetterDGEntranceSE( - BSHeartland Patch)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4126/'
         name: 'Immersive Dawnguard Dayspring Pass'
+  - name: 'AHZBetterDGEntranceSE.esp'
     after:
       - 'Immersive Patrols II.esp'
     tag:
@@ -7726,9 +7420,6 @@ plugins:
       - crc: 0xFC45B26D
         util: 'SSEEdit v3.2.2'
   - name: 'AHZBetterDGEntranceSE - BSHeartland Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4126/'
-        name: 'Immersive Dawnguard Dayspring Pass'
     req:
       - 'AHZBetterDGEntranceSE.esp'
       - 'BSHeartland.esm'
@@ -7736,8 +7427,9 @@ plugins:
       # version: 1.0.3
       - crc: 0x2B0E43FD
         util: 'SSEEdit v3.2.2'
-  - name: 'AuroraVillage.esp'
+  - name: 'Aurora(Village| - Moon and Star Patch).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17647' ]
+  - name: 'AuroraVillage.esp'
     dirty:
       # version: 1.1
       - <<: *quickClean
@@ -7749,7 +7441,6 @@ plugins:
       - crc: 0x77DFD69B
         util: 'SSEEdit v4.0.2'
   - name: 'Aurora - Moon and Star Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17647' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -7801,12 +7492,9 @@ plugins:
         util: 'SSEEdit v4.0.1'
   - name: 'Bring Out Your Dead.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
-        name: 'Bring Out Your Dead'
-      - link: 'https://www.afkmods.com/index.php?/files/file/273-bring-out-your-dead/'
-        name: 'Bring Out Your Dead'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
-        name: 'Bring Out Your Dead'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
+      - 'https://www.afkmods.com/index.php?/files/file/273-bring-out-your-dead/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
@@ -7863,12 +7551,9 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Cutting Room Floor.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
-        name: 'Cutting Room Floor'
-      - link: 'https://www.afkmods.com/index.php?/files/file/978-cutting-room-floor/'
-        name: 'Cutting Room Floor'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
-        name: 'Cutting Room Floor'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
+      - 'https://www.afkmods.com/index.php?/files/file/978-cutting-room-floor/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
     group: *addonsGroup
     after:
       - 'Enhanced Landscapes.esp'
@@ -7927,9 +7612,7 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 4
   - name: 'Dolmen Ruins.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/327'
-        name: 'Dolmen Ruins - ESO Dark Anchors'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/327' ]
     clean:
       # version: 2.0.4
       - crc: 0x28C9F420
@@ -7981,9 +7664,7 @@ plugins:
       - crc: 0x5CCCE61F
         util: 'SSEEdit v4.0.0'
   - name: 'HammetDungeons.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/'
-        name: 'Hammet''s Dungeon Packs for SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/' ]
     dirty:
       # version: 1.871
       - <<: *quickClean
@@ -8037,9 +7718,7 @@ plugins:
       - crc: 0xED8C7F77
         util: 'SSEEdit v4.0.2'
   - name: 'Oblivion Gates in Cities.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/388/'
-        name: 'Oblivion Gates in Cities'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/388/' ]
     inc:
       - 'Open Cities Skyrim.esp'
     clean:
@@ -8047,9 +7726,7 @@ plugins:
       - crc: 0x85982F95
         util: 'SSEEdit v3.3.6'
   - name: 'Point The Way.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/352'
-        name: 'Point The Way'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/352' ]
     clean:
       # version: 2.0.4
       - crc: 0x9B914135
@@ -8061,9 +7738,7 @@ plugins:
       - crc: 0x400082ED
         util: 'SSEEdit v4.0.2'
   - name: 'Provincial Courier Service.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/'
-        name: 'Provincial Courier Service'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/' ]
     inc:
       - 'Eli_Halla.esp'
     after:
@@ -8157,15 +7832,14 @@ plugins:
         util: 'SSEEdit v4.0.2'
 
   - name: 'Storefront.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/364/'
-        name: 'Storefront'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/364/' ]
     clean:
       # version: 2.0.3
       - crc: 0xBF061809
         util: 'SSEEdit v4.0.2'
-  - name: 'Tes Arena - Skyrim Frontier Fortress.esp'
+  - name: 'Tes Arena( Amol| Nimalten| NorthKeep| - Skyrim Frontier Fortress)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
+  - name: 'Tes Arena - Skyrim Frontier Fortress.esp'
     inc:
       - 'TES Arena Amol.esp'
       - 'Tes Arena Nimalten.esp'
@@ -8184,7 +7858,6 @@ plugins:
       - crc: 0x6684B2FF
         util: 'SSEEdit v4.0.1'
   - name: 'TES Arena Amol.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8196,7 +7869,6 @@ plugins:
       - crc: 0x36947B49
         util: 'SSEEdit v4.0.1'
   - name: 'Tes Arena Nimalten.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8208,7 +7880,6 @@ plugins:
       - crc: 0x9365E227
         util: 'SSEEdit v4.0.1'
   - name: 'Tes Arena NorthKeep.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8219,8 +7890,9 @@ plugins:
       # version: 5.01
       - crc: 0x9C623E34
         util: 'SSEEdit v4.0.1'
-  - name: 'TES DunstadGrove.esp'
+  - name: 'TES (DunstadGrove|Granite Hall|Pagran Village|Vernim Wood).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
+  - name: 'TES DunstadGrove.esp'
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8232,7 +7904,6 @@ plugins:
       - crc: 0x01D35219
         util: 'SSEEdit v4.0.1'
   - name: 'Tes Granite Hall.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8244,7 +7915,6 @@ plugins:
       - crc: 0x8B59AB56
         util: 'SSEEdit v4.0.1'
   - name: 'Tes Pagran Village.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8256,7 +7926,6 @@ plugins:
       - crc: 0x428913E5
         util: 'SSEEdit v4.0.1'
   - name: 'Tes Vernim Wood.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/318' ]
     dirty:
       # version: 5.01
       - <<: *quickClean
@@ -8304,8 +7973,9 @@ plugins:
       # version: 2.0
       - crc: 0x5DC395B3
         util: 'SSEEdit v4.0.2'
-  - name: 'Windhelm Docks Pathways SE.esp'
+  - name: 'Windhelm Docks Pathways SE( - Open Cities Skyrim Patch)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8697' ]
+  - name: 'Windhelm Docks Pathways SE.esp'
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -8340,9 +8010,7 @@ plugins:
 
 ###### Location - Overhauls ######
   - name: 'CollegeOfWinterholdImmersive.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/'
-        name: 'Immersive College of Winterhold'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/' ]
     after:
       - 'Book Covers Skyrim.esp'
       - 'Cutting Room Floor.esp'
@@ -8369,12 +8037,9 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Darkwater Crossing.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
-        name: 'Darkwater Crossing'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1895-darkwater-crossing/'
-        name: 'Darkwater Crossing'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2949694'
-        name: 'Darkwater Crossing'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
+      - 'https://www.afkmods.com/index.php?/files/file/1895-darkwater-crossing/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2949694'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
@@ -8387,9 +8052,7 @@ plugins:
       - crc: 0x3EDD0AA0
         util: 'SSEEdit v3.3.6'
   - name: 'Dragon Bridge.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8683/'
-        name: 'Dragon Bridge'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8683/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     inc:
@@ -8404,9 +8067,7 @@ plugins:
       - crc: 0x541C3337
         util: 'SSEEdit v3.3.6'
   - name: 'Dawnstar.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13607/'
-        name: 'Dawnstar'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13607/' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -8414,8 +8075,9 @@ plugins:
       # version: 2.0.4
       - crc: 0xBDF98E96
         util: 'SSEEdit v3.3.6'
-  - name: 'Distinct Interiors.esp'
+  - name: 'Distinct Interiors( - Guilds| - Inns| - Miscellaneous| - Player Homes| - Shops)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
+  - name: 'Distinct Interiors.esp'
     after:
       - 'EnhancedLightsandFX.esp'
       - 'ELFX - NoPlayerHomes.esp'
@@ -8464,7 +8126,6 @@ plugins:
       - crc: 0xAD2C8F21
         util: 'SSEEdit v3.3.4 BETA'
   - name: 'Distinct Interiors - Guilds.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     inc:
       - 'OpulentThievesGuild.esp'
     clean:
@@ -8472,7 +8133,6 @@ plugins:
       - crc: 0x16EC9185
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Distinct Interiors - Inns.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     after:
      - 'EnhancedLightsandFX.esp'
     inc:
@@ -8482,13 +8142,11 @@ plugins:
       - crc: 0x99012024
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Distinct Interiors - Miscellaneous.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     clean:
       # version: Modular - Miscellaneous v1.7
       - crc: 0xE45A43C7
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Distinct Interiors - Player Homes.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     inc:
       - name: 'Enhanced Lights and FX'
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
@@ -8520,7 +8178,6 @@ plugins:
       - crc: 0xBE5B4F4A
         util: 'SSEEdit v3.3.4 BETA'
   - name: 'Distinct Interiors - Shops.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     clean:
       # version: Modular - Shops v1.7
       - crc: 0x9DA76663
@@ -8528,10 +8185,11 @@ plugins:
   - name: 'Enlightened College of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *underridesGroup
-  - name: 'ETaC - RESOURCES.esm'
+  - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Riverwood).*\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
         name: 'Expanded Towns and Cities (SSE)'
+  - name: 'ETaC - RESOURCES.esm'
     group: *preEarlyGroup
     tag:
       - Graphics
@@ -8543,9 +8201,6 @@ plugins:
       - crc: 0x91DD76A9
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Complete.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
-        name: 'Expanded Towns and Cities (SSE)'
     inc:
       - 'Darkwater Crossing.esp'
       - 'Dawnstar.esp'
@@ -8615,7 +8270,6 @@ plugins:
       - crc: 0xC0118C3B
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Complete LoS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     msg:
       - <<: *reqMasterSort
         condition: 'checksum("ETaC - Complete LoS Patch.esp", 54BB4D26)'
@@ -8624,9 +8278,6 @@ plugins:
       - crc: 0x76C471C2
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Darkwater Crossing.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
-        name: 'Expanded Towns and Cities (SSE)'
     inc:
       - 'Darkwater Crossing.esp'
     after:
@@ -8659,7 +8310,6 @@ plugins:
       - crc: 0x7E3B8E1B
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Darkwater Crossing LoS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     msg:
       - <<: *reqMasterSort
         condition: 'checksum("ETaC - Darkwater Crossing LoS Patch.esp", 343067D8)'
@@ -8668,9 +8318,6 @@ plugins:
       - crc: 0x910911B5
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Dawnstar.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
-        name: 'Expanded Towns and Cities (SSE)'
     inc:
       - 'Dawnstar.esp'
     after:
@@ -8715,9 +8362,6 @@ plugins:
       - crc: 0xB663D101
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Riverwood.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
-        name: 'Expanded Towns and Cities (SSE)'
     inc:
       - 'Eli_RiverwoodShack.esp'
       - 'HogorTheGiant_V1.esp'
@@ -8771,7 +8415,6 @@ plugins:
       - crc: 0xA31406D7
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Riverwood LoS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13552' ]
     msg:
       - <<: *reqMasterSort
         condition: 'checksum("ETaC - Riverwood LoS Patch.esp", C723AA51)'
@@ -8791,12 +8434,9 @@ plugins:
         util: 'SSEEdit v4.0.1'
   - name: 'Helarchen Creek.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4043'
-        name: 'Helarchen Creek'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1927-helarchen-creek/'
-        name: 'Helarchen Creek'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3090713'
-        name: 'Helarchen Creek'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/4043'
+      - 'https://www.afkmods.com/index.php?/files/file/1927-helarchen-creek/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3090713'
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
@@ -8821,9 +8461,7 @@ plugins:
       - crc: 0x3D6A5454
         util: 'SSEEdit v4.0.2'
   - name: 'Holds.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/'
-        name: 'Holds The City Overhaul'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/' ]
     dirty:
       # version: 0.0.8
       - <<: *quickClean
@@ -8834,8 +8472,9 @@ plugins:
       # version: 0.0.8
       - crc: 0xA849CAA4
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-  - name: 'Inns and Taverns.esp'
+  - name: 'Inns and Taverns( - Heartwood Inn| - The Ghostly View)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12223' ]
+  - name: 'Inns and Taverns.esp'
     dirty:
       # version: 1.2
       - <<: *quickClean
@@ -8847,7 +8486,6 @@ plugins:
       - crc: 0x78A014E6
         util: 'SSEEdit v4.0.1'
   - name: 'Inns and Taverns - Heartwood Inn.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12223' ]
     inc:
       - 'Inns and Taverns.esp'
     dirty:
@@ -8861,7 +8499,6 @@ plugins:
       - crc: 0xC59F7380
         util: 'SSEEdit v4.0.1'
   - name: 'Inns and Taverns - The Ghostly View.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12223' ]
     inc:
       - 'Inns and Taverns.esp'
     dirty:
@@ -8876,12 +8513,9 @@ plugins:
         util: 'SSEEdit v4.0.1'
   - name: 'Ivarstead.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/349'
-        name: 'Ivarstead'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1583-ivarstead/'
-        name: 'Ivarstead'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2958352'
-        name: 'Ivarstead'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/349'
+      - 'https://www.afkmods.com/index.php?/files/file/1583-ivarstead/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2958352'
     after:
       - 'Landscape For Grass Mods JK''S Skyrim.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -8897,9 +8531,7 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
   - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/'
-        name: 'JK''s Skyrim - Dawn of Skyrim - Patch'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
     inc:
       - 'JKs Skyrim_Holidays_Patch.esp'
     msg:
@@ -9012,9 +8644,7 @@ plugins:
       - crc: 0xE76504EC
         util: 'SSEEdit v4.0.1'
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17026'
-        name: 'JK''s Skyrim - No Snow Under the Roof'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
     inc:
       - 'Dawnstar_No Snow Under the Roof_Patch.esp'
     after:
@@ -9056,12 +8686,9 @@ plugins:
       - 'ViscousGrass.esp'
   - name: 'Karthwasten.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/350/'
-        name: 'Karthwasten'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1768-karthwasten/'
-        name: 'Karthwasten'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2960640'
-        name: 'Karthwasten'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/350/'
+      - 'https://www.afkmods.com/index.php?/files/file/1768-karthwasten/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2960640'
     inc:
       - 'Karthwasten - Let The Silver Flow.esp'
     after:
@@ -9075,12 +8702,9 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'Keld-Nar.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14353'
-        name: 'Keld-Nar'
-      - link: 'https://www.afkmods.com/index.php?/files/file/2039-keld-nar/'
-        name: 'Keld-Nar'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4047950'
-        name: 'Keld-Nar'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14353'
+      - 'https://www.afkmods.com/index.php?/files/file/2039-keld-nar/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4047950'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     tag:
@@ -9091,12 +8715,9 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Kynesgrove.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/351/'
-        name: 'Kynesgrove'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1576-kynesgrove/'
-        name: 'Kynesgrove'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2948900'
-        name: 'Kynesgrove'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/351/'
+      - 'https://www.afkmods.com/index.php?/files/file/1576-kynesgrove/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2948900'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -9222,17 +8843,16 @@ plugins:
         nav: 1
 
   - name: 'Mixwater Mill Reborn.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13348/'
-        name: 'Mixwater Mill Reborn'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13348/' ]
     inc:
       - 'Checkpoints of Skyrim.esp'
     clean:
       # version: 1.2
       - crc: 0xAF9E4D9C
         util: 'SSEEdit v3.2.2'
-  - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+  - name: 'OCW_.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20514' ]
+  - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
     group: *addonsGroup
     after:
       - 'Cutting Room Floor.esp'
@@ -9272,10 +8892,11 @@ plugins:
     tag:
       - C.Climate
       - C.Light
-  - name: 'Palaces Castles Enhanced.esp'
+  - name: '(Palaces Castles Enhanced|PCE - ).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
         name: 'Palaces and Castles Enhanced SSE'
+  - name: 'Palaces Castles Enhanced.esp'
     after:
       - 'Cutting Room Floor.esp'
       - 'RelightingSkyrim_SSE.esp'
@@ -9336,9 +8957,6 @@ plugins:
       - crc: 0xEBD35943
         util: 'SSEEdit v3.3.0 BETA'
   - name: 'PCE - RLO Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
-        name: 'Palaces Castles Enhanced - Realistic Lighting Overhaul Patch'
     after:
       - 'PCE - Skyrim Sewers Patch.esp'
       - 'PCE - USSEP Patch.esp'
@@ -9386,9 +9004,7 @@ plugins:
       - crc: 0x6715AF54
         util: 'SSEEdit v4.0.2'
   - name: 'Rorikstead.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16881/'
-        name: 'Rorikstead'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16881/' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -9400,9 +9016,7 @@ plugins:
       - crc: 0xC93C6A02
         util: 'SSEEdit v4.0.1'
   - name: 'ShezrieOldHroldanVer2.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/'
-        name: 'Shezrie''s Old Hroldan Town Ver 2.2 SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/' ]
     inc:
       - name: 'Distinct Interiors.esp'
         condition: 'checksum("Distinct Interiors.esp", 52B7B288)' # v1.81
@@ -9439,12 +9053,9 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Shor''s Stone.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
-        name: 'Shor''s Stone'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1908-shors-stone/'
-        name: 'Shor''s Stone'
-      - link: 'https://bethesda.net/it/mods/skyrim/mod-detail/2958397'
-        name: 'Shor''s Stone'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
+      - 'https://www.afkmods.com/index.php?/files/file/1908-shors-stone/'
+      - 'https://bethesda.net/it/mods/skyrim/mod-detail/2958397'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
@@ -9623,12 +9234,9 @@ plugins:
       - 'Tamriel Reloaded HD SE.esp'
   - name: 'Soljund''s Sinkhole.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/358/'
-        name: 'Soljund''s Sinkhole'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1909-soljunds-sinkhole/'
-        name: 'Soljund''s Sinkhole'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2959957'
-        name: 'Soljund''s Sinkhole'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/358/'
+      - 'https://www.afkmods.com/index.php?/files/file/1909-soljunds-sinkhole/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2959957'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
@@ -9640,12 +9248,9 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'Telengard.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17423'
-        name: 'Telengard'
-      - link: 'https://www.afkmods.com/index.php?/files/file/2107-telengard/'
-        name: 'Telengard'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/4066247'
-        name: 'Telengard'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17423'
+      - 'https://www.afkmods.com/index.php?/files/file/2107-telengard/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4066247'
     tag:
       - C.Location
     clean:
@@ -9690,12 +9295,9 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Whistling Mine.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
-        name: 'Whistling Mine'
-      - link: 'https://www.afkmods.com/index.php?/files/file/1912-whistling-mine/'
-        name: 'Whistling Mine'
-      - link: 'https://mods.bethesda.net/#en/workshop/skyrim/mod-detail/2959645/'
-        name: 'Whistling Mine'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
+      - 'https://www.afkmods.com/index.php?/files/file/1912-whistling-mine/'
+      - 'https://mods.bethesda.net/#en/workshop/skyrim/mod-detail/2959645/'
     inc:
       - 'TES Arena Amol.esp'
     after:
@@ -9708,10 +9310,8 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'WhiterunValley.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11917/'
-        name: 'Whiterun Valley'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17611/'
-        name: 'Whiterun Valley LITE'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/11917/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17611/'
     inc:
       - name: 'Holds.esp'
         display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
@@ -9802,6 +9402,8 @@ plugins:
       # version: 1.3
       - crc: 0x35BA34A7
         util: 'SSEEdit v4.0.2'
+  - name: 'CEOWindhelm - .*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19400' ]
   - name: 'CEOWindhelm - Windhelm Exterior Altered Patch.esp'
     dirty:
       # version: 1.3
@@ -9896,9 +9498,7 @@ plugins:
         nav: 5
 
   - name: 'Winterhold Restored.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12811/'
-        name: 'Winterhold Restored'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12811/' ]
     inc:
       - 'ExpandedWinterholdRuins.esp'
       - 'Less desolate Winterhold.esp'
@@ -9977,9 +9577,7 @@ plugins:
       - crc: 0xEF776FE0
         util: 'SSEEdit v4.0.2'
   - name: 'Castle Volkihar Rebuilt.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/324/'
-        name: 'Castle Volkihar Rebuilt'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/324/' ]
     after:
       - 'Relationship Dialogue Overhaul.esp'
     tag:
@@ -10003,9 +9601,7 @@ plugins:
       - 'Hideout_HF_Main.esp'
       - 'Hideout_Main.esp'
   - name: 'Dragon Claw Stands.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/337'
-        name: 'Dragon Claw Stands'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/337' ]
     clean:
       # version: 2.0.1
       - crc: 0x1A076EF7
@@ -10062,9 +9658,7 @@ plugins:
       - crc: 0xA84FD4FB
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Eli_Routa.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
-        name: 'Routa - Stormcloak and Warrior cabin'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/' ]
     msg:
       - <<: *reqMasterSort
         condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa.esp", E6250224)'
@@ -10085,9 +9679,7 @@ plugins:
       - crc: 0x642A0C3C
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Eli_Ruska.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/'
-        name: 'Ruska - Riften Player Home'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/' ]
     dirty:
       - <<: *quickClean
         crc: 0xD1CC4A86
@@ -10104,9 +9696,7 @@ plugins:
         subs: [ 'ElysiumEstate-HF' ]
         condition: 'many("ElysiumEstate-HF(NoKids)?\.esp")'
   - name: 'Honeyside.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/918/'
-        name: 'Sweet as Honeyside'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/918/' ]
     after:
       - 'ELFX - NoHoneyside.esp'
 
@@ -10258,9 +9848,7 @@ plugins:
       - crc: 0xECB898FE
         util: 'SSEEdit v4.0.2'
   - name: 'ProudspiremanorTNFBP.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5276/'
-        name: 'Proudspire Manor TNF Beds Plus'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5276/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -10272,9 +9860,7 @@ plugins:
       - crc: 0x3FADCCE0
         util: 'SSEEdit v4.0.0'
   - name: 'ProudspireSmithingRoom.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6012/'
-        name: 'Proudspire Manor Smithing SE'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6012/' ]
     dirty:
       # version: 1.0
       - <<: *reqManualFix
@@ -10289,9 +9875,7 @@ plugins:
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
   - name: 'Proudspirexyz.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2336/'
-        name: 'Proudspire Storage'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2336/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -10303,9 +9887,7 @@ plugins:
       - crc: 0xA2C2A003
         util: 'SSEEdit v4.0.0'
   - name: 'proudspirebasementcrypt.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12158/'
-        name: 'Proudspire Crypt'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12158/' ]
     dirty:
       # version: 1.0
       - <<: *reqManualFix
@@ -10320,9 +9902,7 @@ plugins:
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
   - name: 'pmoutsideplanters.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13160/'
-        name: 'Proudspire Manor Garden'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13160/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -10350,9 +9930,7 @@ plugins:
         subs: [ 'Sexy Mannequins' ]
         condition: 'many("SexyMannequin(s)?(Female|Guards|ImpGuards|VyktorVyktoria|Vyktor|Vyktoria)_SSE\.esp")'
   - name: 'Shadowmarks.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/353/'
-        name: 'Shadowmarks'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/353/' ]
     group: *underridesGroup
     clean:
       # version: 2.0
@@ -10373,9 +9951,7 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
         nav: 3
   - name: 'Tel_Nalta.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/'
-        name: 'Tel Nalta SE - Telvanni Home'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/' ]
     group: *underridesGroup
     inc:
       - name: 'MoonAndStar_MAS.esp'
@@ -10665,6 +10241,8 @@ plugins:
         util: 'SSEEdit v4.0.0'
 
 ###### Legacy of the Dragonborn - Patches ######
+  - name: 'DBM_*.\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802' ]
   - name: 'DBM_AmuletsOfSkyrim_Patch.esp'
     clean:
       - crc: 0xBF135657
@@ -10701,9 +10279,6 @@ plugins:
       - crc: 0x8199EF41
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_CRF_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
-        name: 'Legacy of the Dragonborn Patches SE'
     tag:
       - Actors.AIPackages
       - Graphics
@@ -10726,9 +10301,6 @@ plugins:
       - crc: 0x908142EB
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_HelgenReborn_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
-        name: 'Legacy of the Dragonborn Patches SE'
     tag:
       - C.Location
       - -Factions
@@ -10784,9 +10356,6 @@ plugins:
       - crc: 0x6FB6FBA6
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_OpenCities_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
-        name: 'Legacy of the Dragonborn Patches SE'
     tag:
       - C.Location
     clean:
@@ -10805,9 +10374,6 @@ plugins:
       - crc: 0x5E8D03EC
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_SkyrimUnderground_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
-        name: 'Legacy of the Dragonborn Patches SE'
     tag:
       - Invent
     clean:
@@ -10852,27 +10418,13 @@ plugins:
 
 ###### Legacy of the Dragonborn ADD-ONS ######
   - name: 'DBM_RelicHunter.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/'
-        name: 'Relic Hunter (Legacy and ASLAL addon)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/' ]
     clean:
       # version: 1.4.2
       - crc: 0x26558CDC
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
 
 ###### Patches - Compatibilty ######
-  - name: 'Bells of Skyrim - OCS+ICAIO Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
-        name: 'Bells of Skyrim'
-  - name: 'Bells of Skyrim - OCS Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
-        name: 'Bells of Skyrim'
-  - name: 'Bells of Skyrim - ICAIO Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10495/'
-        name: 'Bells of Skyrim'
   - name: 'Unique Loot Compatibility Patch.esp'
     tag:
       - Delev
@@ -10880,6 +10432,8 @@ plugins:
       - Relev
 
 ###### Patches - Qwinn's Unified Automated Self Installing Patch Compendium ######
+  - name: 'Qw_.*\.esp'
+    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
   - name: 'Qw_3DNPC_USSEP Patch.esp'
     group: *preEarlyGroup
   - name: 'Qw_ACE_CRF Patch.esp'
@@ -10887,7 +10441,6 @@ plugins:
   - name: 'Qw_BookCoversSkyrim_CRF Patch.esp'
     group: *preAddonsGroup
   - name: 'Qw_DeadlySpellImpacts_AOS Patch.esp'
-    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     group: *preFixesGroup
     tag:
       - Graphics
@@ -10896,7 +10449,6 @@ plugins:
       - crc: 0xAD94325D
         util: 'SSEEdit v3.3.2 BETA'
   - name: 'Qw_DeadlySpellImpacts_ISC Patch.esp'
-    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     group: *preFixesGroup
     tag:
       - Graphics
@@ -10905,7 +10457,6 @@ plugins:
       - crc: 0xCB4A70D5
         util: 'SSEEdit v3.3.2 BETA'
   - name: 'Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp'
-    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     msg:
       - <<: *alreadyInX
         subs: [ 'Guard Dialogue Overhaul' ]
@@ -10915,7 +10466,6 @@ plugins:
     tag:
       - Sound
   - name: 'Qw_TheOrdinaryWomen_CRF Patch.esp'
-    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
     tag:
       - NoMerge
     clean:
@@ -10975,25 +10525,19 @@ plugins:
 
 ###### Patches - kryptopyr's Patch Hub ######
   - name: 'AwesomePotions_CACO_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19518'
-        name: 'kryptopyr''s Patch Hub'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     after:
       - 'Hunterborn_CACO-SE_Patch.esp'
     tag:
       - Graphics
   - name: 'CACO_Ordinator_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19518'
-        name: 'kryptopyr''s Patch Hub'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     clean:
       # version: 1.0
       - crc: 0x4D49E27E
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
   - name: 'TCIY BCS Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19518'
-        name: 'kryptopyr''s Patch Hub'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     tag:
       - Graphics
       - Names
@@ -11002,17 +10546,16 @@ plugins:
       - crc: 0xA545660C
         util: 'SSEEdit v3.2.72d'
   - name: 'SPO_Ordinator_Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19518'
-        name: 'kryptopyr''s Patch Hub'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     req:
       - 'Ordinator - Perks of Skyrim.esp'
       - 'Smithing Perks Overhaul SE.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
 
 ###### Settlements Expanded SE ######
-  - name: 'Settlements Expanded SE.esp'
+  - name: 'Settlements Expanded SE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
+  - name: 'Settlements Expanded SE.esp'
     after:
       - 'Soljund''s Sinkhole.esp'
       - 'Whistling Mine.esp'
@@ -11067,7 +10610,6 @@ plugins:
       - crc: 0x8FD6B6A1
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Blackthorn Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11079,13 +10621,11 @@ plugins:
       - crc: 0xB7D0E954
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - CFTO Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     clean:
       # version: 1.0
       - crc: 0x13B9E792
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Inns and Taverns AIO Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11097,7 +10637,6 @@ plugins:
       - crc: 0xDB68DB76
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Inns and Taverns Patch - Heartwood Inn.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11109,13 +10648,11 @@ plugins:
       - crc: 0x6DA27CE4
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Lanterns of Skyrim Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     clean:
       # version: 1
       - crc: 0x90370084
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Legendary Cities Patch - AIO.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11127,7 +10664,6 @@ plugins:
       - crc: 0xB1D2502E
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Legendary Cities Patch - Modular.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11139,31 +10675,26 @@ plugins:
       - crc: 0x3E75DC1B
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - No Snow Under the Roof Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     clean:
       # version: 1
       - crc: 0x0DA07D4E
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - RS Children Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     clean:
       # version: 1
       - crc: 0x2CC5D017
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Skyrim Better Roads and Bridges Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     clean:
       # version: 1.0
       - crc: 0x2FBE7BFE
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Skyrim Better Roads Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     clean:
       # version: 1.0
       - crc: 0x6943B799
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Soljunds Sinkhole Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11175,7 +10706,6 @@ plugins:
       - crc: 0x7E8DF1DB
         util: 'SSEEdit v4.0.1'
   - name: 'Settlements Expanded SE - Whistling Mine Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -11202,6 +10732,7 @@ plugins:
       - crc: 0x5BBC6D85
         util: 'SSEEdit v4.0.1'
   - name: 'LC_RevitalizedImperialArmory.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19690' ]
     dirty:
       - <<: *quickClean
         crc: 0xD941629D
@@ -11211,6 +10742,7 @@ plugins:
       - crc: 0x3A5293E1
         util: 'SSEEdit v4.0.1n RC4 for 4.0.2'
   - name: 'LC_LandLordArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13341' ]
     dirty:
       - <<: *quickClean
         crc: 0xD2B5C055
@@ -11220,6 +10752,7 @@ plugins:
       - crc: 0x028FF70C
         util: 'SSEEdit v4.0.1n RC4 for 4.0.2'
   - name: 'LC_BuildYourNobleHouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18308' ]
     dirty:
       - <<: *quickClean
         crc: 0x264ECFFC
@@ -11230,6 +10763,7 @@ plugins:
       - crc: 0xF2AC3820
         util: 'SSEEdit v4.0.1n RC4 for 4.0.2'
   - name: 'LC_FeudalKeep.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13320' ]
     dirty:
       - <<: *quickClean
         crc: 0x9564C596
@@ -11245,9 +10779,7 @@ plugins:
       - crc: 0xDA25CBFC
         util: 'SSEEdit v4.0.1n RC4 for 4.0.2'
   - name: 'MissingEZs_AllExteriors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
-        name: 'Missing Encounter Zones Fixed'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
     group: *lowPriorityGroup
     after:
       - 'RelightingSkyrim_SSE.esp'
@@ -11263,16 +10795,12 @@ plugins:
         subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("MZEF_ExteriorsRW2Patch.esp")'
   - name: 'MZEF_ExteriorsRW2Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
-        name: 'Missing Encounter Zones Fixed'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
     tag:
       - C.Encounter
       - C.Location
   - name: 'MissingEZsFixed.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
-        name: 'Missing Encounter Zones Fixed'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
     group: *lowPriorityGroup
     after:
       - 'RelightingSkyrim_SSE.esp'
@@ -11291,9 +10819,7 @@ plugins:
         subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("MissingEZsFixedRW2Patch.esp")'
   - name: 'MissingEZsFixedRW2Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23609'
-        name: 'Missing Encounter Zones Fixed'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
     tag:
       - C.Encounter
       - C.Location
