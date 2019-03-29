@@ -6373,38 +6373,15 @@ plugins:
       - Delev
       - Invent
       - Relev
-  - name: 'EBM_Train10x.esp'
+
+  - name: 'EBM_Train(10|25|50|99)x.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
         name: 'ExE Boss''s Mods - Train More'
-    inc:
-      - 'EBM_Train25x.esp'
-      - 'EBM_Train50x.esp'
-      - 'EBM_Train99x.esp'
-  - name: 'EBM_Train25x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More'
-    inc:
-      - 'EBM_Train10x.esp'
-      - 'EBM_Train50x.esp'
-      - 'EBM_Train99x.esp'
-  - name: 'EBM_Train50x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More'
-    inc:
-      - 'EBM_Train10x.esp'
-      - 'EBM_Train25x.esp'
-      - 'EBM_Train99x.esp'
-  - name: 'EBM_Train99x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More'
-    inc:
-      - 'EBM_Train10x.esp'
-      - 'EBM_Train25x.esp'
-      - 'EBM_Train50x.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'ExE Boss''s Mods - Train More' ]
+        condition: 'many("EBM_Train(10|25|50|99)x.esp")'
   - name: 'EBM_UnlimitedPower.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/'
