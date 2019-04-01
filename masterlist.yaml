@@ -4849,6 +4849,16 @@ plugins:
           - 'Wounds'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
         condition: 'active("Wounds.esp") and not active("CACO_Wounds_Patch.esp")'
+      - <<: *semiCompatible
+        subs:
+          - 'iNeed'
+          - 'Disable iNeed''s option to alter food weight, as this can result in some odd weight values when used with CACO. iNeed''s degradation system is not recognized by CACO''s food portion system, which results in some slight inconsistencies.'
+        condition: 'active("iNeed.esp")'
+      - <<: *semiCompatible
+        subs:
+          - 'iNeed - Extended'
+          - 'Only use the **No Food/Recipe Changes** version of **iNeed - Extended** with CACO.'
+        condition: 'active("iNeed - Extended.esp")'
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
