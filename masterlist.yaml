@@ -3671,6 +3671,12 @@ plugins:
             text: 'Patch de atualização disponível: %1%'
         subs: [ '[Skyrim Immersive Creatures - Official Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
     clean:
       # version: 0.22 Official patch
       - crc: 0xA43CAEE3
