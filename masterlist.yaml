@@ -2519,7 +2519,6 @@ plugins:
   - name: 'SoundsofSkyrimComplete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8286/' ]
     after:
-      - 'Alternate Start - Live Another Life.esp'
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'LSFX-SSE-Audiosettings.esp'
       - 'MLU.esp'
@@ -4620,15 +4619,20 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
       - 'https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
-    group: *lowPriorityGroup
+    group: *coreGroup
     inc:
       - 'Original Opening Scene.esp'
       - 'Random Alternate Start.esp'
       - 'Random Alternate Start Reborn SE.esp'
       - 'Skyrim Unbound.esp'
     after:
-      - 'My Home Is Your Home.esp'
+      - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'MLU.esp'
+      - 'My Home Is Your Home.esp'
+      - 'Ordinator - Perks of Skyrim.esp'
+      # For Group, to avoid cyclic errors
+      - 'Imperious - Races of Skyrim.esp'
     tag:
       - C.Location
       - Names
@@ -5147,7 +5151,6 @@ plugins:
         display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
     after:
       - '3DNPC.esp'
-      - 'Alternate Start - Live Another Life.esp'
       - 'Bells of Skyrim.esp'
       - 'Bridges of Skyrim.esp'
       - 'Civil War Repairs.esp'
@@ -5826,7 +5829,6 @@ plugins:
         condition: 'checksum("EFFDialogue.esp", E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
         display: 'Extensible Follower Framework'
     after:
-      - 'Alternate Start - Live Another Life.esp'
       - 'AmazingFollowerTweaks.esp'
       - 'FCO - Follower Commentary Overhaul.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -5925,6 +5927,7 @@ plugins:
       - 'Volkihar Knight.esp'
       - 'YOT - Your Own Thoughts.esp'
       # For Group, to avoid cyclic errors
+      - 'Alternate Start - Live Another Life.esp'
       - 'Imperious - Races of Skyrim.esp'
       - 'MLU.esp'
     tag:
