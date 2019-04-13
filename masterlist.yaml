@@ -4853,7 +4853,7 @@ plugins:
         subs:
           - 'Rare Curios - Creation Club'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ccbgssse037-curios.esl") and not active("CACO Rare Curios Patch.esp")'
+        condition: 'active("ccbgssse037-curios.esl") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
       - <<: *patch3rdParty
         subs:
           - 'Wounds'
@@ -7188,6 +7188,11 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul and Rare Curios'
+          - '[CACO, BS Bruma & Rare Curios Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24830)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("ccbgssse037-curios.esl") and not active("CACO_Bruma_Rare Curios_Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.CombatStyle
@@ -10657,6 +10662,11 @@ plugins:
       # version: 1.0
       - crc: 0x4D49E27E
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'CACO Rare Curios Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CACO, Bruma & Rare Curios Patch']
+        condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
   - name: 'TCIY BCS Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     tag:
