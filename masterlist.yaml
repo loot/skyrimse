@@ -3949,6 +3949,7 @@ plugins:
     after:
       - 'ELFX - Exteriors.esp'
       - 'Prometheus_No_snow_Under_the_roof.esp'
+      - 'Tamriel Reloaded HD SE.esp'
       - 'ViscousGrass.esp'
     inc:
       - name: 'tpos_ultimate_esm.esp'
@@ -4071,6 +4072,7 @@ plugins:
     after:
       - 'Enhanced Landscapes.esp'
       - 'S3DLandscapes NextGenerationForests.esp'
+      - 'Tamriel Reloaded HD SE.esp'
       - 'Whiterun Forest Borealis.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
@@ -4185,6 +4187,7 @@ plugins:
       - 'Dolomite Weathers.esp'
       - 'NAT.esp'
       - 'Skyrim Flora Overhaul.esp'
+      - 'Tamriel Reloaded HD SE.esp'
       - 'ViscousGrass.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
     tag:
@@ -4460,6 +4463,20 @@ plugins:
       # version: 0.7
       - crc: 0xE7F146C7
         util: 'SSEEdit v4.0.2'
+  - name: 'Tamriel Reloaded HD SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6372/' ]
+    group: *floraGroup
+    dirty:
+      # version: 1.01
+      - <<: *quickClean
+        crc: 0x88189197
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
+        udr: 5
+    clean:
+      # version: 1.01, after QAC
+      - crc: 0x42CB6BBA
+        util: 'SSEEdit v4.0.2'
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
     group: *preEarlyGroup
@@ -4536,6 +4553,7 @@ plugins:
     after:
       - 'Enhanced Landscapes.esp'
       - 'Skyrim Flora Overhaul.esp'
+      - 'Tamriel Reloaded HD SE.esp'
     clean:
       # version: 1.6.1
       - crc: 0x102BBC11
@@ -4584,6 +4602,8 @@ plugins:
   - name: 'Whiterun Landscape Fix For Grass Mods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3185/' ]
     group: *landscapeGroup
+    after:
+      - 'Tamriel Reloaded HD SE.esp'
   - name: 'Whiterun Trees Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16230/' ]
     group: *floraGroup
@@ -7659,6 +7679,7 @@ plugins:
       - 'Enhanced Landscapes.esp'
       - 'EnhancedLightsandFX.esp'
       - 'RelightingSkyrim_SSE.esp'
+      - 'Tamriel Reloaded HD SE.esp'
       - 'TouringCarriages.esp'
       - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
