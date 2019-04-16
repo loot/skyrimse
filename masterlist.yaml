@@ -38,6 +38,16 @@ common:
         text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit der Mod richtig funktioniert. Gelöschte Eintrage wiederherzustellen ist in Ordung, alles andere aber nicht.'
       - lang: pt
         text: 'Não apagar os registos ITM. São intencionais e necessárias para o funcionamento do mod. É seguro restaurar os registos, mas não faça nada mais que isso.'
+
+  - &patchUpdateAvailable
+    type: warn
+    content:
+      - lang: en
+        text: 'Update Patch available: %1%'
+      - lang: de
+        text: 'Update Patch verfügbar: %1%'
+      - lang: pt
+        text: 'Patch de atualização disponível: %1%'
   - &patchProvided
     type: say
     content:
@@ -3653,14 +3663,7 @@ plugins:
       - Invent
       - Relev
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Update Patch available: %1%'
-          - lang: de
-            text: 'Update Patch verfügbar: %1%'
-          - lang: pt
-            text: 'Patch de atualização disponível: %1%'
+      - <<: *patchUpdateAvailable
         subs: [ '[Skyrim Immersive Creatures - Official Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
       - <<: *patch3rdParty
@@ -3716,14 +3719,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
     msg:
       # first crc is before, second is after cleaning
-      - type: warn
-        content:
-          - lang: en
-            text: 'Update Patch available: %1%'
-          - lang: de
-            text: 'Update Patch verfügbar: %1%'
-          - lang: pt
-            text: 'Patch de atualização disponível: %1%'
+      - <<: *patchUpdateAvailable
         subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
         condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", 6771AF29)'
       # These three are mutually exclusive, which is handled further down
@@ -4238,14 +4234,7 @@ plugins:
       - 'Blowing in the Wind SSE.esp'
       - 'SMIM-SE-Merged-All.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Update Patch available: %1%'
-          - lang: de
-            text: 'Update Patch verfügbar: %1%'
-          - lang: pt
-            text: 'Patch de atualização disponível: %1%'
+      - <<: *patchUpdateAvailable
         subs: [ '[No Snow Under the roof - Bug fixes](https://www.nexusmods.com/skyrimspecialedition/mods/15064/)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("NSUTR_bugfixes.esp")'
     dirty:
@@ -7554,14 +7543,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
         name: 'Moonpath to Elsweyr SSE'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Update Patch available: %1%'
-          - lang: de
-            text: 'Update Patch verfügbar: %1%'
-          - lang: pt
-            text: 'Patch de atualização disponível: %1%'
+      - <<: *patchUpdateAvailable
         subs: [ '[Unofficial Moonpath to Elsweyr Patch](https://www.nexusmods.com/skyrimspecialedition/mods/15882/)' ]
         condition: 'active("moonpath.esp") and checksum("moonpath.esp", 18577F3E) and not active("JRMoonpathtoElsweyrPatch.esp")'
     clean:
