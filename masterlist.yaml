@@ -678,12 +678,19 @@ groups:
   - name: &veryEarlyGroup Very Early Loaders
     after: [ *preVeryEarlyGroup ]
 
+  - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
+
+  - name: &addonsGroup Add-ons & Expansions
+    after:
+      - *preAddonsGroup
+      - *veryEarlyGroup
+
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
 
   - name: &fixesGroup Fixes & Resources
     after:
       - *preFixesGroup
-      - *veryEarlyGroup
+      - *addonsGroup
 
   - name: &preEarlyGroup Pre Early (Patches/Add-ons)
 
@@ -700,18 +707,10 @@ groups:
     description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
     after: [ *floraGroup ]
 
-  - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
-
-  - name: &addonsGroup Add-ons & Expansions
-    after:
-      - *preAddonsGroup
-      - *landscapeGroup
-
   - name: &underridesGroup Underrides
 
   - name: default
     after:
-      - *addonsGroup
       - *earlyLoadersGroup
       - *underridesGroup
 
