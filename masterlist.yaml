@@ -4126,6 +4126,7 @@ plugins:
       - crc: 0xFF2C28E6
         util: 'SSEEdit v3.3.6 BETA'
   - name: 'Landscape Fixes For Grass mods - Cutting Room Floor Locations.esp'
+    group: *preFixesGroup
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     clean:
@@ -5616,6 +5617,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'Missing Apprentices CRF Quest Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6677/' ]
+    group: *preFixesGroup
     after:
       - 'BetterQuestObjectives-CRFPatch.esp'
       - 'Book Covers Skyrim.esp'
@@ -10411,6 +10413,7 @@ plugins:
       - crc: 0xBF135657
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_AOS_Patch.esp'
+    group: *preFixesGroup
     tag:
       - Graphics
       - Sound
@@ -10442,6 +10445,7 @@ plugins:
       - crc: 0x8199EF41
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_CRF_Patch.esp'
+    group: *preFixesGroup
     tag:
       - Actors.AIPackages
       - Graphics
@@ -10483,6 +10487,7 @@ plugins:
       - crc: 0xE6A9311F
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_ISC_Patch.esp'
+    group: *preFixesGroup
     tag:
       - Sound
     clean:
@@ -10563,6 +10568,7 @@ plugins:
       - crc: 0xEE1DB401
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'DBM_WACCF_Patch.esp'
+    group: *preFixesGroup
     after:
       - 'DBM_CRF_Patch.esp'
       - 'DBM_ISC_Patch.esp'
@@ -10629,6 +10635,8 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Guard Dialogue Overhaul' ]
         condition: 'active("Guard Dialogue Overhaul.esp") and active("Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp")'
+  - name: 'Qw_ISC_CRF Patch.esp'
+    group: *preFixesGroup
   - name: 'Qw_ISC_USSEP Patch.esp'
     group: *preFixesGroup
     tag:
