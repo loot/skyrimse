@@ -4446,11 +4446,19 @@ plugins:
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
     group: *preEarlyGroup
-  - name: 'SkyrimIsWindy - EVT patch.esp'
+  - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
-    after:
+    group: *floraGroup
+  - name: 'SkyrimIsWindy - EVT patch.esp'
+    group: *floraGroup
+    req:
       - 'SkyrimIsWindy.esp'
       - 'SRG Enhanced Trees Activator.esp'
+  - name: 'SkyrimIsWindy-SimplyBiggerTreesSE-Patch.esp'
+    group: *floraGroup
+    req:
+      - 'SkyrimIsWindy.esp'
+      - 'SimplyBiggerTreesSE.esp'
   - name: 'SmoothShores.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10624/' ]
     group: *floraGroup
