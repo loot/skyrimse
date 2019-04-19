@@ -715,7 +715,9 @@ groups:
       - *underridesGroup
 
   - name: &coreGroup Core Mods
-    after: [ default ]
+    after:
+      - default
+      - *landscapeGroup
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ *coreGroup ]
