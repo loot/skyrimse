@@ -672,11 +672,18 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &preEarlyGroup Pre Early (Patches/Add-ons)
+  - name: &preVeryEarlyGroup Pre Very Early (Patches/Add-ons)
     after: [ *ccGroup ]
 
+  - name: &veryEarlyGroup Very Early Loaders
+    after: [ *preVeryEarlyGroup ]
+
+  - name: &preEarlyGroup Pre Early (Patches/Add-ons)
+
   - name: &earlyLoadersGroup Early Loaders
-    after: [ *preEarlyGroup ]
+    after:
+      - *preEarlyGroup
+      - *veryEarlyGroup
 
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
@@ -1486,7 +1493,7 @@ plugins:
       - crc: 0x70E9C0E7
         util: 'SSEEdit v4.0.0'
   - name: 'dD - Enhanced Blood Main LITE.esp'
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: 1.1
       - crc: 0x6CF176EC
@@ -1558,13 +1565,13 @@ plugins:
       - crc: 0xD0948CCF
         util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Project Optimization - Full Version.esp'
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: 1.3
       - crc: 0x137A03B3
         util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: 1.3
       - crc: 0x81A0DD15
@@ -2486,7 +2493,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'LSFX-SSE-Audiosettings.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: v2r
       - crc: 0x8018F548
@@ -2496,7 +2503,7 @@ plugins:
         util: 'SSEEdit v4.0.0'
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/701/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     tag:
       - Sound
     msg:
@@ -2975,7 +2982,7 @@ plugins:
 ###### Character Appearance - Body,face & hair ######
   - name: 'Hair Replacer( Assets)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'Hair Replacer Assets.esp'
     after:
       - 'Hair Replacer.esp'
@@ -3256,7 +3263,7 @@ plugins:
 ###### Character Appearance - Presets ######
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2406/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     inc:
       - 'Better_Male_Presets.esp'
       - 'Kayla_CharPreset.esp'
@@ -3273,7 +3280,7 @@ plugins:
         condition: 'active("AsharaSkyrimCharacterPresetsReplacer.esp")'
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
     msg:
@@ -3290,7 +3297,7 @@ plugins:
       - NoMerge
   - name: 'Kayla_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3851/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -3310,7 +3317,7 @@ plugins:
       - NoMerge
   - name: 'Lagertha_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2629/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -3329,7 +3336,7 @@ plugins:
       - NoMerge
   - name: 'Lydia Face Preset 64bit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1080/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -3348,7 +3355,7 @@ plugins:
     tag:
       - NoMerge
   - name: 'Severa_CharPreset.esp'
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lagertha_CharPreset.esp'
@@ -3465,7 +3472,7 @@ plugins:
       - Relev
   - name: 'Ducks and Swans.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'ForgottenCity.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
     dirty:
@@ -4026,7 +4033,7 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'Grass Field.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17909' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'HearthfireGrassFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13461/' ]
     group: *floraGroup
@@ -4449,7 +4456,7 @@ plugins:
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_S3DLandscapes_USSEP Patch.esp")'
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
     group: *floraGroup
@@ -4492,7 +4499,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'Trees in Cities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1941/' ]
     group: *floraGroup
@@ -4955,7 +4962,7 @@ plugins:
             text: 'Um patch opcional de compatibilidade, que altera alguns Perks para combinar com o design de Deadly Combats está disponível na [página de Deadly Combat](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim DLC Integration' ]
@@ -4974,7 +4981,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: 1.1
       - crc: 0x32F4BBE5
@@ -6303,10 +6310,10 @@ plugins:
 
   - name: 'WARZONES - SSE - Civil Unrest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2360' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'WARZONES - SSE - DLC - Assault Attack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2365/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -6717,7 +6724,7 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'Circlets and Masks with all Robes and Hoods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     tag:
       - Graphics
       - Names
@@ -6727,7 +6734,7 @@ plugins:
         util: 'SSEEdit v3.2.1'
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
-    group: *underridesGroup
+    group: *veryEarlyGroup
   - name: 'PrvtI_HeavyArmory.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
@@ -6881,7 +6888,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'Lore Weapon Expansion - (Daedric Crescent|Goldbrand|Relics of the Crusader)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
   - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
     clean:
       # version: 1.0
@@ -7603,7 +7610,7 @@ plugins:
         nav: 1
   - name: 'Bee Hives.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1891-bee-hives//' ]
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: 2.0
       - crc: 0xD20AF3E4
@@ -7654,7 +7661,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10434/'
         name: 'Carriage Stops of Skyrim'
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     clean:
       # version: 1.0
       - crc: 0xF036353E
@@ -8322,13 +8329,13 @@ plugins:
         util: 'SSEEdit v3.2.84 EXPERIMENTAL'
   - name: 'Enlightened College of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
-    group: *underridesGroup
+    group: *veryEarlyGroup
   - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Riverwood).*\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
         name: 'Expanded Towns and Cities (SSE)'
   - name: 'ETaC - RESOURCES.esm'
-    group: *preEarlyGroup
+    group: *veryEarlyGroup
     tag:
       - Graphics
     clean:
@@ -10085,7 +10092,7 @@ plugins:
         condition: 'many("SexyMannequin(s)?(Female|Guards|ImpGuards|VyktorVyktoria|Vyktor|Vyktoria)_SSE\.esp")'
   - name: 'Shadowmarks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/353/' ]
-    group: *underridesGroup
+    group: *veryEarlyGroup
     clean:
       # version: 2.0
       - crc: 0x28E63EB9
@@ -10135,7 +10142,7 @@ plugins:
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
-    group: *preFixesGroup
+    group: *veryEarlyGroup
     msg:
       - type: say
         content:
@@ -10590,6 +10597,8 @@ plugins:
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
   - name: 'Qw_3DNPC_USSEP Patch.esp'
     group: *preEarlyGroup
+  - name: 'Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp'
+    group: *veryEarlyGroup
   - name: 'Qw_ACE_BSHeartland Patch.esp'
     after:
       - 'Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp'
