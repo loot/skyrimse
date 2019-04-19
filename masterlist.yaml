@@ -2081,7 +2081,6 @@ plugins:
   - name: 'ELFX - Exteriors.esp'
     group: *earlyLoadersGroup
     after:
-      - '3DNPC.esp'
       - 'Blowing in the Wind SSE.esp'
       - 'SMIM-SE-Merged-All.esp'
       - 'Prometheus_No_snow_Under_the_roof.esp'
@@ -2308,6 +2307,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
     group: *addonsGroup
     after:
+      - '3DNPC.esp'
       - 'Undeath.esp'
     inc:
       - 'ClimatesOfTamriel-Dungeons-Darker.esp'
@@ -3377,11 +3377,7 @@ plugins:
     url:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
         name: 'Interesting NPCs SSE'
-    group: *earlyLoadersGroup
-    after:
-      # Group afters to avoid sorting errors.
-      - 'Blowing in the Wind SSE.esp'
-      - 'SMIM-SE-Merged-All.esp'
+    group: *addonsGroup
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
@@ -4251,7 +4247,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *earlyLoadersGroup
     after:
-      - '3DNPC.esp'
       # Group afters to avoid sorting errors.
       - 'Blowing in the Wind SSE.esp'
       - 'SMIM-SE-Merged-All.esp'
@@ -7698,6 +7693,7 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
     group: *addonsGroup
     after:
+      - '3DNPC.esp'
       - 'Endgame NPC Overhaul.esp'
       - 'Enhanced Landscapes.esp'
       - 'EnhancedLightsandFX.esp'
@@ -8999,6 +8995,7 @@ plugins:
   - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
     group: *addonsGroup
     after:
+      - '3DNPC.esp'
       - 'Cutting Room Floor.esp'
       - 'Endgame NPC Overhaul.esp'
       - 'EnhancedLightsandFX.esp'
@@ -10595,7 +10592,7 @@ plugins:
   - name: 'Qw_.*\.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
   - name: 'Qw_3DNPC_USSEP Patch.esp'
-    group: *preEarlyGroup
+    group: *preAddonsGroup
   - name: 'Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp'
     group: *veryEarlyGroup
   - name: 'Qw_ACE_BSHeartland Patch.esp'
