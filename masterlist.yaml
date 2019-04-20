@@ -8396,7 +8396,7 @@ plugins:
         condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Complete Leaf Rest Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp")'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp")'
@@ -8757,6 +8757,16 @@ plugins:
           - 'Holidays, Dawn of Skyrim & ETAC Complete'
           - '[JK''s Skyrim - Dawn of Skyrim - ETaC - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
         condition: 'active("Holidays.esp") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Holidays_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'No Snow Under the Roof'
+          - '[JK''s Skyrim - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/17026/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("JKs Skyrim_No Snow Under the Roof_Patch.esp") and not active("ETaC - Complete.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'No Snow Under the Roof & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - NSUTR Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -8874,6 +8884,10 @@ plugins:
       - 'Dawn of Skyrim_Holidays_Patch.esp'
       - 'JKs Skyrim_Holidays_Patch.esp'
 
+  - name: 'ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp'
+    inc:
+      - 'ETaC - Complete No Snow Patch.esp'
+      - 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
     inc:
@@ -8885,6 +8899,8 @@ plugins:
         condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
         subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
   - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
+    inc:
+      - 'ETaC - Complete.esp'
     clean:
       - crc: 0xF5762CB3
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
