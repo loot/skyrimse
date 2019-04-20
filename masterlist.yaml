@@ -8378,7 +8378,7 @@ plugins:
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Complete Better Docks Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
-        condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp")'
+        condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
         subs: [ 'CLARALUX' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
@@ -8396,7 +8396,7 @@ plugins:
         condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Complete Leaf Rest Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp")'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp")'
@@ -8679,14 +8679,7 @@ plugins:
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-  - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
-    inc:
-      - 'JKs Skyrim_Holidays_Patch.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Holidays' ]
-        condition: 'active("Holidays.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
+
   - name: 'JKs Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
     inc:
@@ -8727,8 +8720,58 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Dawn of Skyrim'
-          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+          - '[JK''s Skyrim - Dawn of Skyrim - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
         condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Blowing in the Wind & Dawn of Skyrim'
+          - '[JK''s Skyrim - Dawn of Skyrim - Blowing in the Wind - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKS_DoS_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Holidays & Dawn of Skyrim'
+          - '[JK''s Skyrim - Dawn of Skyrim - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Holidays.esp") and active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Expanded Towns and Cities: Complete'
+          - '[JK''s Skyrim - ETaC Compatible Replacer File](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("ETaC - Complete.esp") and not checksum("JKs Skyrim.esp", 8E2CDE40)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Blowing in the Wind & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - Blowing in the Wind Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Blowing in the Wind, Dawn of Skyrim & ETAC Complete'
+          - '[JK''s Skyrim - Dawn of Skyrim - ETaC - Blowing in the Wind Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Blowing in the Wind_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Carriage and Ferry Travel Overhaul & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("CFTO.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_CFTO Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Holidays & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Holidays.esp") and not active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_Holidays_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Holidays, Dawn of Skyrim & ETAC Complete'
+          - '[JK''s Skyrim - Dawn of Skyrim - ETaC - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Holidays.esp") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Holidays_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'No Snow Under the Roof'
+          - '[JK''s Skyrim - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/17026/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("JKs Skyrim_No Snow Under the Roof_Patch.esp") and not active("ETaC - Complete.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'No Snow Under the Roof & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - NSUTR Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -8736,11 +8779,14 @@ plugins:
         subs: [ 'Better Docks' ]
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'Blowing in the Wind' ]
+        condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKs Skyrim Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Bring Out Your Dead' ]
         condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_(BOYD)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
-        condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp")'
+        condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp") and not active("ETaC - Complete.esp")'
       - <<: *patchProvided
         subs: ['Clockwork']
         condition: 'active("Clockwork.esp") and not active("JKs Skyrim_Clockwork_Patch.esp")'
@@ -8761,7 +8807,7 @@ plugins:
         condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_(Ivarstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Holidays' ]
-        condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp") and not active("Blues Skyrim.esp")'
+        condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp")'
       - <<: *patchProvided
         subs: [ 'Mirai' ]
         condition: 'active("zMirai.esp") and not active("JKs Skyrim_Mirai_Patch.esp")'
@@ -8789,9 +8835,74 @@ plugins:
           - 'Semi-Compatible. NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
         condition: 'active("Immersive Citizens - AI Overhaul.esp")'
     clean:
-      # version: 1.5
-      - crc: 0xE76504EC
-        util: 'SSEEdit v4.0.1'
+      # version: 1.0 ETaC Compatible Replacer File
+      - crc: 0x8E2CDE40
+        util: 'SSEEdit v4.0.2'
+      # version: 1.6
+      - crc: 0x09D90FD3
+        util: 'SSEEdit v4.0.2'
+  # JK's Skyrim Patches
+  - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2013/' ]
+    inc:
+      - 'Blues Skyrim.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'Blowing in the Wind - JKS_DoS_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'Blues Skyrim.esp'
+  - name: 'JKS_DoS_ETaC_Blowing in the Wind_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+
+  - name: 'CFTO-JK-Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2013/' ]
+    inc:
+      - 'ETaC - Complete.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_CFTO Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'CFTO-JK-Patch.esp'
+      - 'ETaC - Complete CFTO Patch.esp'
+
+  - name: 'JKs Skyrim_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2013/' ]
+    inc:
+      - 'Blues Skyrim.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+      - 'JKS_DoS_Holidays_Patch.esp'
+  - name: 'JKS_DoS_ETaC_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+      - 'JKS_DoS_Holidays_Patch.esp'
+  - name: 'JKS_DoS_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+
+  - name: 'ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp'
+    inc:
+      - 'ETaC - Complete No Snow Patch.esp'
+      - 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
     inc:
@@ -8803,6 +8914,8 @@ plugins:
         condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
         subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
   - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
+    inc:
+      - 'ETaC - Complete.esp'
     clean:
       - crc: 0xF5762CB3
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
@@ -8814,6 +8927,7 @@ plugins:
     clean:
       - crc: 0x69A3BB54
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+
   - name: 'JK''s SkyHaven Forge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8706/' ]
     tag:
