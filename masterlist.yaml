@@ -8729,6 +8729,11 @@ plugins:
           - 'Dawn of Skyrim'
           - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
         condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Expanded Towns and Cities: Complete'
+          - '[JK''s Skyrim - ETaC Compatible Replacer File](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("ETaC - Complete.esp") and not checksum("JKs Skyrim.esp", 8E2CDE40)'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
