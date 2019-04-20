@@ -8679,14 +8679,7 @@ plugins:
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-  - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
-    inc:
-      - 'JKs Skyrim_Holidays_Patch.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Holidays' ]
-        condition: 'active("Holidays.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
+
   - name: 'JKs Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
     inc:
@@ -8800,6 +8793,15 @@ plugins:
       # version: 1.6
       - crc: 0x09D90FD3
         util: 'SSEEdit v4.0.2'
+  - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'JKs Skyrim_Holidays_Patch.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Holidays' ]
+        condition: 'active("Holidays.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
+
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
     inc:
@@ -8822,6 +8824,7 @@ plugins:
     clean:
       - crc: 0x69A3BB54
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+
   - name: 'JK''s SkyHaven Forge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8706/' ]
     tag:
