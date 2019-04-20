@@ -8378,7 +8378,7 @@ plugins:
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Complete Better Docks Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
-        condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp")'
+        condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
         subs: [ 'CLARALUX' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
@@ -8749,6 +8749,11 @@ plugins:
         condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Blowing in the Wind_Patch.esp")'
       - <<: *patch3rdParty
         subs:
+          - 'Carriage and Ferry Travel Overhaul & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - CFTO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("CFTO.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_CFTO Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Holidays & ETAC Complete'
           - '[ETaC Complete - JK''s Skyrim - Holidays Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
         condition: 'active("Holidays.esp") and not active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_Holidays_Patch.esp")'
@@ -8859,6 +8864,16 @@ plugins:
       - 'Blowing in the Wind - JKs Skyrim Patch.esp'
       - 'Blowing in the Wind - JKS_DoS_Patch.esp'
       - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+
+  - name: 'CFTO-JK-Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2013/' ]
+    inc:
+      - 'ETaC - Complete.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_CFTO Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'CFTO-JK-Patch.esp'
+      - 'ETaC - Complete CFTO Patch.esp'
 
   - name: 'JKs Skyrim_Holidays_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2013/' ]
