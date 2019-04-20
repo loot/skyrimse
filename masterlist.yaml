@@ -8720,19 +8720,37 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Dawn of Skyrim'
-          - '[JKs Skyrim_Dawn of Skyrim_Patch.esp](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+          - '[JK''s Skyrim - Dawn of Skyrim - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
         condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Blowing in the Wind & Dawn of Skyrim'
+          - '[JK''s Skyrim - Dawn of Skyrim - Blowing in the Wind - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
+        condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKS_DoS_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Expanded Towns and Cities: Complete'
           - '[JK''s Skyrim - ETaC Compatible Replacer File](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
         condition: 'active("ETaC - Complete.esp") and not checksum("JKs Skyrim.esp", 8E2CDE40)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Blowing in the Wind & ETAC Complete'
+          - '[ETaC Complete - JK''s Skyrim - Blowing in the Wind Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Blowing in the Wind, Dawn of Skyrim & ETAC Complete'
+          - '[JK''s Skyrim - Dawn of Skyrim - ETaC - Blowing in the Wind Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Blowing in the Wind_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better Docks' ]
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Blowing in the Wind' ]
+        condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKs Skyrim Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Bring Out Your Dead' ]
         condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_(BOYD)?(Arthmoor All)?_Patch?.*\.esp")'
@@ -8793,6 +8811,30 @@ plugins:
       # version: 1.6
       - crc: 0x09D90FD3
         util: 'SSEEdit v4.0.2'
+  # JK's Skyrim Patches
+  - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8706/' ]
+    inc:
+      - 'Blues Skyrim.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'Blowing in the Wind - JKS_DoS_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'Blues Skyrim.esp'
+  - name: 'JKS_DoS_ETaC_Blowing in the Wind_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+
   - name: 'JKs Skyrim_Dawn of Skyrim_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
     inc:
