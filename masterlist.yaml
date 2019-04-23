@@ -9563,8 +9563,13 @@ plugins:
       - crc: 0x70CB4A4C
         util: 'SSEEdit v4.0.1'
 
-  - name: 'Vaults of Skyrim 1.0 NEXUS.esp'
+  - name: 'Vaults of Skyrim (1.0 NEXUS|Palaces Patch)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10386/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Vaults of Skyrim' ]
+        condition: 'many("Vaults of Skyrim (1.0 NEXUS|Palaces Patch)\.esp")'
+  - name: 'Vaults of Skyrim 1.0 NEXUS.esp'
     dirty:
       # version: 1.0
       - <<: *quickClean
