@@ -2333,15 +2333,15 @@ plugins:
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_RelightingSkyrim_CRF Patch.esp")'
     dirty:
-      # version: 1.0.6
+      # version: 2.2
       - <<: *quickClean
-        crc: 0x431CF3C5
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+        crc: 0x7260B6A1
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
     clean:
-      # version: 1.0.6
-      - crc: 0x31A0B062
-        util: 'SSEEdit v4.0.0'
+      # version: 2.2, after QAC
+      - crc: 0x08C6D0E7
+        util: 'SSEEdit v4.0.2'
   - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
@@ -9177,11 +9177,34 @@ plugins:
         name: 'Palaces and Castles Enhanced SSE'
   - name: 'Palaces Castles Enhanced.esp'
     after:
+      - 'AKSkyrimUnderground.esp'
+      - 'BGCollectables.esp'
+      - 'BGsomethingFishy.esp'
+      - 'Celtic and Germanic Armor and Weapons standalone.esp'
       - 'Cutting Room Floor.esp'
+      - 'Faction Crossbows.esp'
+      - 'Holds.esp'
+      - 'Inconsequential NPCs.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Legendary Skyrim Crossbows.esp'
+      - 'MLU.esp'
+      - 'Morrowloot.esp'
+      - 'OvensAndChurnsMain.esp'
+      - 'PerkusMaximus_Mage.esp'
+      - 'rbdThaneRooms.esp'
+      - 'Requiem.esp'
+      - 'RLO - Interiors.esp'
       - 'RelightingSkyrim_SSE.esp'
+      - 'Roman armor and weapons.esp'
+      - 'Roman armor and weapons replacer.esp'
       - 'SkyrimSewers.esp'
+      - 'SkyrimsUniqueTreasures.esp'
+      - 'Snazzy Furniture and Clutter Overhaul.esp'
+    inc:
+      - 'Vaults of Skyrim 1.0 NEXUS.esp'
     msg:
       - <<: *patchProvided
+        type: error
         subs: [ 'Interesting NPCs' ]
         condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
       - <<: *patchProvided
@@ -9194,6 +9217,7 @@ plugins:
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("PCE - USSEP+CRF Patch.esp")'
       - <<: *patchProvided
+        type: error
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("PCE - ELFX PATCH.esp")'
       - <<: *patchProvided
@@ -9203,21 +9227,26 @@ plugins:
         subs: [ 'Holidays' ]
         condition: 'active("Holidays.esp") and not active("PCE - Holidays Patch.esp")'
       - <<: *patchProvided
+        type: error
         subs: [ 'Immersive Citizens' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("PCE - Immersive Citizens AI Overhaul Patch.esp")'
       - <<: *patchProvided
+        type: error
         subs: [ 'Open Cities' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Relationship Dialogue Overhaul' ]
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("PCE - RDO Patch.esp")'
       - <<: *patchProvided
+        type: error
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("PCE - Relighting Skyrim.esp")'
       - <<: *patchProvided
+        type: error
         subs: [ 'Skyrim Project Optimization' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") or active("Skyrim Project Optimization - Full Version.esp") and not active("PCE - SPO Patch.esp")'
       - <<: *patchProvided
+        type: error
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("PCE - Skyrim Sewers Patch.esp")'
       - <<: *patchProvided
