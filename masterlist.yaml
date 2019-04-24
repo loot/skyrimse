@@ -11110,12 +11110,31 @@ plugins:
         subs: [ 'The People Of Skyrim 2' ]
         condition: 'many("(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp")'
   - name: 'tpos_complete02_RTCWG.esp'
+    after:
+      - 'SkyTEST-RealisticAnimals&Predators.esp'
+    inc:
+      - 'Alternate Start -- New Beginnings.esp'
+      - 'AncientLand.esp'
+      - 'Cutting Room Floor.esp'
+      - 'ElysiumEstate.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Immersive Patrols II.esp'
+      - 'Open Cities Skyrim.esp'
+      - 'SkyfallEstate.esp'
+      - name: 'SkyTEST-RealisticAnimals&Predators.esp'
+        condition: 'not active("tpos_SkyTESTpatch.esp")'
+      - 'The Ruins.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'WARZONES - SSE - Civil Unrest.esp'
+      - 'WARZONES - SSE - DLC - Assault Attack.esp'
     clean:
       #  version: 9.0.1 Full
       - crc: 0xAFF408A1
         util: 'SSEEdit v4.0.2'
   - name: 'thepeopleofskyrim.esp'
     group: *veryEarlyGroup
+    inc:
+      - 'Immersive Patrols II.esp'
     clean:
       #  version: 9.0.2 Partial
       - crc: 0x0834AB2F
