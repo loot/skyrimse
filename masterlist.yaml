@@ -11098,6 +11098,29 @@ plugins:
       # version: 8.1.8
       - crc: 0x5BBC6D85
         util: 'SSEEdit v4.0.1'
+
+  - name: '(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22392'
+        name: 'The People Of Skyrim 2'
+    inc:
+      - 'tpos_ultimate_esm.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'The People Of Skyrim 2' ]
+        condition: 'many("(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp")'
+  - name: 'tpos_complete02_RTCWG.esp'
+    clean:
+      #  version: 9.0.1 Full
+      - crc: 0xAFF408A1
+        util: 'SSEEdit v4.0.2'
+  - name: 'thepeopleofskyrim.esp'
+    group: *veryEarlyGroup
+    clean:
+      #  version: 9.0.2 Partial
+      - crc: 0x0834AB2F
+        util: 'SSEEdit v4.0.2'
+
   - name: 'LC_RevitalizedImperialArmory.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19690' ]
     dirty:
