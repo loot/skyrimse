@@ -845,93 +845,260 @@ plugins:
       - 'Dragonborn.esm'
 
 ###### Creation Club ######
-  - name: 'ccBGSSSE002-ExoticArrows.esl'
+  # Adventurer's Backpack
+  - name: 'ccfsvsse001-backpacks.esl'
     group: *ccGroup
-  - name: 'ccBGSSSE003-Zombies.esl'
+    clean:
+      - crc: 0x2D224C60
+        util: 'SSEEdit v4.0.2'
+  # Arcane Accessories
+  - name: 'ccbgssse014-spellpack01.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-  - name: 'ccBGSSSE004-RuinsEdge.esl'
+    clean:
+      - crc: 0x42978DC6
+        util: 'SSEEdit v4.0.2'
+  # Arcane Archer Pack
+  - name: 'ccbgssse002-exoticarrows.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-  - name: 'ccBGSSSE006-StendarsHammer.esl'
+    clean:
+      - crc: 0x3E964C17
+        util: 'SSEEdit v4.0.2'
+  # Arms of Chaos
+  - name: 'ccpewsse002-armsofchaos.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-  - name: 'ccBGSSSE007-Chrysamere.esl'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB359C671
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 9
+    clean:
+      - crc: 0x76637E1D
+        util: 'SSEEdit v4.0.2'
+  # Bone Wolf
+  - name: 'ccbgssse036-petbwolf.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-  - name: 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
+    tag:
+      - Delev
+      - Relev
+    clean:
+      - crc: 0x2FD1B184
+        util: 'SSEEdit v4.0.2'
+  # Camping
+  - name: 'ccqdrsse002-firewood.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-  - name: 'ccBGSSSE014-SpellPack01.esl'
+    clean:
+      - crc: 0x4A08F8A7
+        util: 'SSEEdit v4.0.2'
+  # Chrysamere
+  - name: 'ccbgssse007-chrysamere.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-  - name: 'ccBGSSSE019-StaffofSheogorath.esl'
+    clean:
+      - crc: 0xE9C713FE
+        util: 'SSEEdit v4.0.2'
+  # Civil War Champions
+  - name: 'ccffbsse001-imperialdragon.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-  - name: 'ccBGSSSE021-LordsMail.esl'
+    dirty:
+      - <<: *quickClean
+        crc: 0x46617891
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+    clean:
+      - crc: 0x22651F41
+        util: 'SSEEdit v4.0.2'
+  # Divine Crusader
+  - name: 'ccmtysse001-knightsofthenine.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-  - name: 'ccMTYSSE001-KnightsoftheNine.esl'
+    clean:
+      - crc: 0x3FB622B5
+        util: 'SSEEdit v4.0.2'
+  # Dwarven Armored Mudcrab
+  - name: 'ccbgssse010-petdwarvenarmoredmudcrab.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-  - name: 'ccQDRSSE001-SurvivalMode.esl'
+    clean:
+      - crc: 0x8CA9657B
+        util: 'SSEEdit v4.0.2'
+  # Elite Crossbows
+  - name: 'ccbgssse043-crosselv.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
+    tag:
+      - C.Acoustic
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Music
+      - C.Name
+    dirty:
+      - <<: *quickClean
+        crc: 0xA7CE6075
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 4
+    clean:
+      - crc: 0x1EE75A07
+        util: 'SSEEdit v4.0.2'
+  # Forgotten Seasons
+  - name: 'cctwbsse001-puzzledungeon.esm'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0xDCED37E8
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
+        udr: 1
+    clean:
+      - crc: 0x497905BA
+        util: 'SSEEdit v4.0.2'
+  # Lord's Mail
+  - name: 'ccbgssse021-lordsmail.esl'
+    group: *ccGroup
+    clean:
+      - crc: 0x62C31380
+        util: 'SSEEdit v4.0.2'
+  # Myrwatch
+  - name: 'cceejsse002-tower.esl'
+    group: *ccGroup
+    tag:
+      - C.Location
+    clean:
+      - crc: 0xEDF11166
+        util: 'SSEEdit v4.0.2'
+  # Nix-Hound
+  - name: 'ccbgssse035-petnhound.esl'
+    group: *ccGroup
+    clean:
+      - crc: 0xBE94B229
+        util: 'SSEEdit v4.0.2'
+  # Nordic Jewelry
+  - name: 'ccedhsse001-norjewel.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0xC2BB3D44
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
+    clean:
+      - crc: 0xBD1BCFF5
+        util: 'SSEEdit v4.0.2'
+  # Pets of Skyrim
+  - name: 'ccvsvsse002-pets.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0x286A8B5B
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 8
+    clean:
+      - crc: 0x8EE4DADE
+        util: 'SSEEdit v4.0.2'
+  # Plague of the Dead
+  - name: 'ccbgssse003-zombies.esl'
+    group: *ccGroup
+    tag:
+      - Delev
+      - Relev
+    dirty:
+      - <<: *quickClean
+        crc: 0x83983FC6
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      - crc: 0x7C65D56F
+        util: 'SSEEdit v4.0.2'
+  # Rare Curios
+  - name: 'ccbgssse037-curios.esl'
+    group: *ccGroup
+    clean:
+      - crc: 0x56996C5B
+        util: 'SSEEdit v4.0.2'
+  # Ruin's Edge
+  - name: 'ccbgssse004-ruinsedge.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0xAFAFB011
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      - crc: 0x9CABA454
+        util: 'SSEEdit v4.0.2'
+  # Saturalia Holiday Pack
+  - name: 'ccvsvsse001-winter.esl'
+    group: *ccGroup
+    clean:
+      - crc: 0xA1FB8343
+        util: 'SSEEdit v4.0.2'
+  # Shadowfoot Sanctum
+  - name: 'cceejsse003-hollow.esl'
+    group: *ccGroup
+    tag:
+      - C.Acoustic
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Name
+    clean:
+      - crc: 0x65B8F1B2
+        util: 'SSEEdit v4.0.2'
+  # Shadowrend
+  - name: 'ccbgssse018-shadowrend.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0xE9E660A8
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      - crc: 0xEDB6AFC0
+        util: 'SSEEdit v4.0.2'
+  # Spell Knight Armor
+  - name: 'ccedhsse002-splkntset.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0x021A90CA
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 11
+    clean:
+      - crc: 0x6997290A
+        util: 'SSEEdit v4.0.2'
+  # Staff of Hasedoki
+  - name: 'ccbgssse045-hasedoki.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0x21FAFBB0
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+    clean:
+      - crc: 0x4FA7B836
+        util: 'SSEEdit v4.0.2'
+  # Staff of Sheogorath
+  - name: 'ccbgssse019-staffofsheogorath.esl'
+    group: *ccGroup
+    clean:
+      - crc: 0x58D05E1C
+        util: 'SSEEdit v4.0.2'
+  # Stendarr's Hammer
+  - name: 'ccbgssse006-stendarshammer.esl'
+    group: *ccGroup
+    clean:
+      - crc: 0x0D94606D
+        util: 'SSEEdit v4.0.2'
+  # Sunder & Wraithguard
+  - name: 'ccbgssse008-wraithguard.esl'
+    group: *ccGroup
+    dirty:
+      - <<: *quickClean
+        crc: 0xE34F307C
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 20
+    clean:
+      - crc: 0x7AA24B95
+        util: 'SSEEdit v4.0.2'
+  # Survival Mode
+  - name: 'ccqdrsse001-survivalmode.esl'
+    group: *ccGroup
     msg:
       - <<: *semiCompatible
         subs:
@@ -950,298 +1117,65 @@ plugins:
     dirty:
       - <<: *quickClean
         crc: 0x611D6AA2
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
     clean:
       - crc: 0x15AFD14B
-        util: 'SSEEdit v4.0.0'
-  - name: 'ccTWBSSE001-PuzzleDungeon.esm'
+        util: 'SSEEdit v4.0.2'
+  # Tundra Homestead
+  - name: 'cceejsse001-hstead.esm'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-  - name: 'ccEEJSSE001-Hstead.esm'
+    tag:
+      - C.Location
+    dirty:
+      - <<: *quickClean
+        crc: 0xE371B3A9
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      - crc: 0x1D1F9622
+        util: 'SSEEdit v4.0.2'
+  # Umbra
+  - name: 'ccbgssse016-umbra.esm'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-  - name: 'ccQDRSSE002-Firewood.esl'
+    tag:
+      - C.Acoustic
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
+    dirty:
+      - <<: *quickClean
+        crc: 0x3433AA80
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 10
+    clean:
+      - crc: 0x316747AB
+        util: 'SSEEdit v4.0.2'
+  # Vigil Enforcer Armor Set
+  - name: 'ccmtysse002-ve.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-  - name: 'ccBGSSSE018-Shadowrend.esl'
+    dirty:
+      - <<: *quickClean
+        crc: 0x97B385FF
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 11
+    clean:
+      - crc: 0xFD62E00C
+        util: 'SSEEdit v4.0.2'
+  # Wild Horses
+  - name: 'ccbgssse034-mntuni.esl'
     group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-  - name: 'ccBGSSSE035-PetNHound.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-  - name: 'ccFSVSSE001-Backpacks.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-  - name: 'ccEEJSSE002-Tower.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-  - name: 'ccEDHSSE001-NorJewel.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-  - name: 'ccVSVSSE002-Pets.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-      - 'ccEDHSSE001-NorJewel.esl'
-  - name: 'ccBGSSSE037-Curios.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-      - 'ccEDHSSE001-NorJewel.esl'
-      - 'ccVSVSSE002-Pets.esl'
-  - name: 'ccBGSSSE034-MntUni.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-      - 'ccEDHSSE001-NorJewel.esl'
-      - 'ccVSVSSE002-Pets.esl'
-      - 'ccBGSSSE037-Curios.esl'
-  - name: 'ccBGSSSE045-Hasedoki.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-      - 'ccEDHSSE001-NorJewel.esl'
-      - 'ccVSVSSE002-Pets.esl'
-      - 'ccBGSSSE037-Curios.esl'
-      - 'ccBGSSSE034-MntUni.esl'
-  - name: 'ccBGSSSE008-Wraithguard.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-      - 'ccEDHSSE001-NorJewel.esl'
-      - 'ccVSVSSE002-Pets.esl'
-      - 'ccBGSSSE037-Curios.esl'
-      - 'ccBGSSSE034-MntUni.esl'
-      - 'ccBGSSSE045-Hasedoki.esl'
-  - name: 'ccBGSSSE036-PetBWolf.esl'
-    group: *ccGroup
-    after:
-      - 'ccBGSSSE002-ExoticArrows.esl'
-      - 'ccBGSSSE003-Zombies.esl'
-      - 'ccBGSSSE004-RuinsEdge.esl'
-      - 'ccBGSSSE006-StendarsHammer.esl'
-      - 'ccBGSSSE007-Chrysamere.esl'
-      - 'ccBGSSSE010-PetDwarvenArmoredMudcrab.esl'
-      - 'ccBGSSSE014-SpellPack01.esl'
-      - 'ccBGSSSE019-StaffofSheogorath.esl'
-      - 'ccBGSSSE021-LordsMail.esl'
-      - 'ccMTYSSE001-KnightsoftheNine.esl'
-      - 'ccQDRSSE001-SurvivalMode.esl'
-      - 'ccTWBSSE001-PuzzleDungeon.esm'
-      - 'ccEEJSSE001-Hstead.esm'
-      - 'ccQDRSSE002-Firewood.esl'
-      - 'ccBGSSSE018-Shadowrend.esl'
-      - 'ccBGSSSE035-PetNHound.esl'
-      - 'ccFSVSSE001-Backpacks.esl'
-      - 'ccEEJSSE002-Tower.esl'
-      - 'ccEDHSSE001-NorJewel.esl'
-      - 'ccVSVSSE002-Pets.esl'
-      - 'ccBGSSSE037-Curios.esl'
-      - 'ccBGSSSE034-MntUni.esl'
-      - 'ccBGSSSE045-Hasedoki.esl'
-      - 'ccBGSSSE008-Wraithguard.esl'
+    dirty:
+      - <<: *quickClean
+        crc: 0x7CBD33F1
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 26
+    clean:
+      - crc: 0xB7E407EA
+        util: 'SSEEdit v4.0.2'
 
 ###### Bug Fixes & Unofficial Patches ######
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
