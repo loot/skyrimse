@@ -107,6 +107,11 @@ common:
         text: '%1% ist nicht komplett kompatibel mit diesem Mod. %2%'
       - lang: pt
         text: '%1% não é totalmente compatível com este mod. %2%'
+  - &requirementsMissing
+    type: warn
+    content:
+      - lang: en
+        text: 'It appears you have installed **%1%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%2%**.'
   - &reqSKSE
     type: error
     content:
@@ -663,18 +668,26 @@ globals:
     condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
 
 # Other Requirements
-  - type: warn
+  - <<: *requirementsMissing
+    subs:
+      - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
+      - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
-    content: 'It appears you have installed **[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)**.'
-  - type: warn
+  - <<: *requirementsMissing
+    subs:
+      - '[SSE Engine Fixes - Part 1](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - '[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
     condition: 'file("SKSE/Plugins/EngineFixes.dll") and (not file("../d3dx9_42.dll") or not file("../tbb.dll") or not file("../tbbmalloc.dll"))'
-    content: 'It appears you have installed **[SSE Engine Fixes - Part 1](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)**.'
-  - type: warn
+  - <<: *requirementsMissing
+    subs:
+      - '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)'
+      - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)'
     condition: 'file("DLLPlugins/FPSFixPlugin.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
-    content: 'It appears you have installed **[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)**.'
-  - type: warn
+  - <<: *requirementsMissing
+    subs:
+      - '[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)'
+      - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
     condition: 'file("DLLPlugins/NetScriptFramework.Runtime.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
-    content: 'It appears you have installed **[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)**, but some of its requirements seem to be missing. Please ensure you have correctly installed **[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)**.'
 
 groups:
   - name: &dlcGroup DLC
