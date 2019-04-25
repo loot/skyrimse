@@ -4744,6 +4744,28 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
+  - name: 'BecomeKingofSkyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2152'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/4496'
+    dirty:
+      # version: 1.6 Immersive Edition
+      - <<: *quickClean
+        crc: 0xAD4F5609
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 68
+      # version: 7.4.1
+      - <<: *quickClean
+        crc: 0x91F8E094
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 31
+    clean:
+      # version: 1.6 Immersive Edition, after QAC
+      - crc: 0xBC83ECFA
+        util: 'SSEEdit v4.0.2'
+      # version: 7.4.1, after QAC
+      - crc: 0xF94EEA3A
+        util: 'SSEEdit v4.0.2'
   - name: 'Better Harvesting( (animal loot version))?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
     after:
