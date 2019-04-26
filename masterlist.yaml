@@ -880,6 +880,10 @@ plugins:
   # Arcane Accessories
   - name: 'ccbgssse014-spellpack01.esl'
     group: *ccGroup
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Unofficial Creation Club Updates - Arcane Accessories](https://www.nexusmods.com/skyrimspecialedition/mods/12748)' ]
+        condition: 'not active("JRSpellPackPatch.esp") and not active("JRCCPatches.esp")'
     clean:
       - crc: 0x42978DC6
         util: 'SSEEdit v4.0.2'
@@ -1255,6 +1259,8 @@ plugins:
   - name: 'JRSpellPackPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12748/' ]
     group: *preVeryEarlyGroup
+    inc:
+      - 'Unofficial Arcane Accessories Patch.esl'
   - name: 'JRStendarrsHammerPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12750/' ]
     group: *preVeryEarlyGroup
