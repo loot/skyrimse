@@ -1216,6 +1216,11 @@ plugins:
   - name: 'JRCCPatches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12951/' ]
     group: *preVeryEarlyGroup
+  - name: 'JR(SpellPack|ArcaneArcherPack|Chrysamere|KnightsOfTheNine|DwarvenMudcrab|Zombies|RuinsEdge|Shadowrend|StaffOfSheogorath|StendarrsHammer)(Patch)?\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Unofficial Creation Club Updates - All-In-One (Main)' ]
+        condition: 'active("JRCCPatches.esp")'
   - name: 'JR(LordsMail|NixHound)Patch.esp'
     msg:
       - <<: *alreadyInX
