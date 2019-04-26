@@ -5264,6 +5264,51 @@ plugins:
       # version: 0.4
       - crc: 0x75419F86
         util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15649/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Mortal Enemies' ]
+        condition: '(active("Mortal Enemies.esp") or active("Mortal Enemies - No RunWalk Changes.esp") or active("Mortal Enemies - Rival Remix.esp") or active("Mortal Enemies - Rival Remix - NoRunWalkChanges.esp") or active("Mortal Enemies - 2.0 Test Version.esp")) and not active("Immersive Movement - Mortal Enemies Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Smilodon' ]
+        condition: 'active("Smilodon - Combat of Skyrim.esp") and not active("Immersive Movement - Smilodon Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Wildcat' ]
+        condition: 'active("Wildcat - Combat of Skyrim.esp") and not active("Immersive Movement - Wildcat Patch.esp")'
+    clean:
+      # version: 1.3.2
+      - crc: 0xB91C4616
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement - Mortal Enemies Patch.esp'
+    req:
+      - 'Immersive Movement.esp'
+    after:
+      - 'Mortal Enemies.esp'
+      - 'Mortal Enemies - No RunWalk Changes.esp'
+      - 'Mortal Enemies - Rival Remix.esp'
+      - 'Mortal Enemies - Rival Remix - NoRunWalkChanges.esp'
+      - 'Mortal Enemies - 2.0 Test Version.esp'
+    clean:
+      # version: 1.3.2
+      - crc: 0xDCF50B37
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement - Smilodon Patch.esp'
+    req:
+      - 'Immersive Movement.esp'
+      - 'Smilodon - Combat of Skyrim.esp'
+    clean:
+      # version: 1.3.2
+      - crc: 0x9906E4A8
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement - Wildcat Patch.esp'
+    req:
+      - 'Immersive Movement.esp'
+      - 'Wildcat - Combat of Skyrim.esp'
+    clean:
+      # version: 1.3.2
+      - crc: 0x82AA7490
+        util: 'SSEEdit v4.0.2'
   - name: 'Immersive Ingestibles.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/3587775' ]
     after:
