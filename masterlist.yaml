@@ -3383,6 +3383,8 @@ plugins:
         name: 'Interesting NPCs SSE'
     group: *addonsGroup
     after:
+      - name: 'konahrik_accoutrements.esp'
+        condition: 'checksum("konahrik_accoutrements.esp", 93449BB7)'
       - 'WARZONES - SSE - Civil Unrest.esp'
       - 'WARZONES - SSE - DLC - Assault Attack.esp'
     msg:
@@ -3538,6 +3540,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'konahrik_accoutrements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
+    group: *underridesGroup
     dirty:
       # version: 5.5.3
       - <<: *quickClean
