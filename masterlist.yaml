@@ -11282,7 +11282,8 @@ plugins:
     inc:
       - 'Alternate Start -- New Beginnings.esp'
       - 'AncientLand.esp'
-      - 'Cutting Room Floor.esp'
+      - name: 'Cutting Room Floor.esp'
+        condition: 'not checksum("tpos_complete02_RTCWG.esp", 8585E798)'
       - 'ElysiumEstate.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Patrols II.esp'
@@ -11294,14 +11295,19 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'WARZONES - SSE - Civil Unrest.esp'
       - 'WARZONES - SSE - DLC - Assault Attack.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("tpos_Cutting_Room_Floorpatch.esp")'
     clean:
-      #  version: 9.0.1 Full
-      - crc: 0xAFF408A1
+      #  version: 9.0.8 Full
+      - crc: 0x8585E798
         util: 'SSEEdit v4.0.2'
   - name: 'thepeopleofskyrim.esp'
     group: *veryEarlyGroup
     inc:
       - 'Immersive Patrols II.esp'
+      - 'tpos_Cutting_Room_Floorpatch.esp'
     clean:
       #  version: 9.0.2 Partial
       - crc: 0x0834AB2F
