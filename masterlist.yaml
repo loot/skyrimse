@@ -11404,7 +11404,7 @@ plugins:
       - 'Alternate Start -- New Beginnings.esp'
       - 'AncientLand.esp'
       - name: 'Cutting Room Floor.esp'
-        condition: 'not checksum("tpos_complete02_RTCWG.esp", 8585E798)'
+        condition: 'not checksum("tpos_complete02_RTCWG.esp", 8585E798) or not checksum("tpos_complete02_RTCWG.esp", BFC88362)'
       - 'ElysiumEstate.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Patrols II.esp'
@@ -11423,6 +11423,9 @@ plugins:
     clean:
       #  version: 9.0.8 Full
       - crc: 0x8585E798
+        util: 'SSEEdit v4.0.2'
+      #  version: 9.0.9 Full
+      - crc: 0xBFC88362
         util: 'SSEEdit v4.0.2'
   - name: 'thepeopleofskyrim.esp'
     group: *veryEarlyGroup
