@@ -9207,8 +9207,13 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/2039-keld-nar/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4047950'
     after:
+      - 'Clockwork.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Watchtowers of Skyrim.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Clockwork' ]
+        condition: 'active("Clockwork.esp") and not active("Keld-Nar + Clockwork Patch.esp")'
     tag:
       - C.Location
     clean:
