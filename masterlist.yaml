@@ -108,11 +108,17 @@ common:
         text: '%1% ist nicht komplett kompatibel mit diesem Mod. %2%'
       - lang: pt
         text: '%1% não é totalmente compatível com este mod. %2%'
-  - &requirementsMissing
+  - &missingRequirementXforY
     type: warn
     content:
       - lang: en
-        text: 'It appears you have installed **%1%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%2%**.'
+        text: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+  - &missingRequirementXforPlugin
+    type: warn
+    content:
+      - lang: en
+        text: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+
   - &reqSKSE
     type: error
     content:
@@ -672,25 +678,25 @@ globals:
     condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
 
 # Other Requirements
-  - <<: *requirementsMissing
+  - <<: *missingRequirementXforY
     subs:
-      - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
       - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
+      - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
-  - <<: *requirementsMissing
+  - <<: *missingRequirementXforY
     subs:
-      - '[SSE Engine Fixes - Part 1](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
       - '[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - '[SSE Engine Fixes - Part 1](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
     condition: 'file("SKSE/Plugins/EngineFixes.dll") and (not file("../d3dx9_42.dll") or not file("../tbb.dll") or not file("../tbbmalloc.dll"))'
-  - <<: *requirementsMissing
+  - <<: *missingRequirementXforY
     subs:
-      - '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)'
       - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)'
+      - '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)'
     condition: 'file("DLLPlugins/FPSFixPlugin.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
-  - <<: *requirementsMissing
+  - <<: *missingRequirementXforY
     subs:
-      - '[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)'
       - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - '[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)'
     condition: 'file("DLLPlugins/NetScriptFramework.Runtime.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
 
 groups:
@@ -1659,10 +1665,8 @@ plugins:
   - name: 'VanillaWaterFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10808/' ]
     msg:
-      - <<: *requirementsMissing
-        subs:
-          - 'Water''s Edge Fix'
-          - '[Realistic Water Two](https://www.nexusmods.com/skyrimspecialedition/mods/2182)'
+      - <<: *missingRequirementXforPlugin
+        subs: [ '[Realistic Water Two](https://www.nexusmods.com/skyrimspecialedition/mods/2182)' ]
         condition: 'not active("RealisticWaterTwo.esp")'
 
 ###### AudioVisual - Interface ######
@@ -3269,10 +3273,8 @@ plugins:
   - name: 'SimpleChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789' ]
     msg:
-      - <<: *requirementsMissing
-        subs:
-          - 'Simple Children'
-          - '[TK Children SE](https://www.nexusmods.com/skyrimspecialedition/mods/5916). Only install the `*.tri files` inside the `Meshes/Actors/character/character assets/` folder'
+      - <<: *missingRequirementXforPlugin
+        subs: [ '[TK Children SE](https://www.nexusmods.com/skyrimspecialedition/mods/5916). Only install the `*.tri files` inside the `Meshes/Actors/character/character assets/` folder' ]
         condition: 'not checksum("Meshes/Actors/character/character assets/childhead.tri", 2FEDB034) or not checksum("Textures/Actors/Character/malechild/upperbodymale_sk.dds", D894ADB3)'
 
   - name: 'Serana - Hellraiser.esp'
