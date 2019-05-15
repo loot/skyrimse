@@ -7105,6 +7105,16 @@ plugins:
       - crc: 0xA5763C46
         util: 'SSEEdit v3.2.2'
 
+  - name: 'MLPSoulGems.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25709' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'GIST soul trap' ]
+        condition: 'file("GIST soul trap.esp") and not file("MLP + GIST Patch.esp") and not file("GIST-MLPSoulGems-patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Sounds Compendium' ]
+        condition: 'file("Immersive Sounds - Compendium.esp") and not file("MLP + ISC Patch.esp")'
+
   - name: 'OvensAndChurns(Main|MinorInns|PlayerHouses)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19941/' ]
   - name: 'OvensAndChurnsMain.esp'
