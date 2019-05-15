@@ -5152,7 +5152,7 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'MultiLayer Parallax Soul Gems' ]
-        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp")'
+        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp") and not file("MLP + GIST Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Rustic Soul Gems' ]
         condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
@@ -5162,9 +5162,11 @@ plugins:
       - crc: 0xC9D0A414
         util: 'SSEEdit v4.0.0'
   - name: 'GIST-MLPSoulGems-patch.esp'
+    inc:
+      - 'MLP + GIST Patch.esp'
     req:
       - name: 'MLPSoulGems.esp'
-        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrim/mods/65531/)'
+        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
         condition: 'not file("MLPSoulGems.esp")'
     clean:
       # version: 1.1
