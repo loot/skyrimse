@@ -113,11 +113,15 @@ common:
     content:
       - lang: en
         text: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+      - lang: de
+        text: 'Es erscheint so als hätten Sie **%2%** installiert, aber einige der Voraussetzungen scheinen zu fehlen. Bitte stellen Sie sicher das Sie **%1%** korrekt installiert haben.'
   - &missingRequirementXforPlugin
     type: warn
     content:
       - lang: en
         text: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+      - lang: de
+        text: 'Einige dieser Plugins Voraussetzungen scheinen zu fehlen. Bitte stellen Sie sicher das Sie **%1%** korrekt installiert haben.'
 
   - &reqSKSE
     type: error
@@ -127,7 +131,7 @@ common:
       - lang: ru
         text: 'У вас установлен %1%, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org).'
       - lang: es
-        text: 'Tienes %1% instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org)'
+        text: 'Tienes %1% instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org).'
       - lang: ko
         text: '%1%가 설치되었지만 SKSE를 찾을 수 없습니다! SKSE 다운로드 페이지를 참조하십시오: [SKSE](http://skse.silverlock.org).'
       - lang: zh_CN
@@ -145,9 +149,11 @@ common:
     type: warn
     content:
       - lang: en
-        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+      - lang: de
+        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden indem man [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) installiert.'
       - lang: pt
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
     condition: 'not active("SkyUI_SE.esp")'
   - &reqMasterSort
     type: say
@@ -185,7 +191,7 @@ common:
       - lang: en
         text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
       - lang: de
-        text: 'Beim nutzen von **%1%** ist es empfohlen das Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt'
+        text: 'Beim nutzen von **%1%** ist es empfohlen das Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
       - lang: pt
         text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
 
@@ -2016,7 +2022,7 @@ plugins:
             text: 'This plugin is optional.'
           - lang: de
             text: 'Dieses Plugin ist optional.'
-          - lang: de
+          - lang: pt
             text: 'Este plugin é opcional.'
     clean:
       # version: 0.2.7 - 0.2.10
@@ -3185,6 +3191,8 @@ plugins:
         content:
           - lang: en
             text: 'Remember to run the included SSEEdit script **MXPF - One ImCh Patcher** every time you have installed or un-installed a mod. Use the recommended patch name **One ImCh Patch** or **One ImCh Patcher** for correct sorting. Instructions for running this patcher can be found on the [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001) description page.'
+          - lang: de
+            text: 'Denken Sie dran dass SSEEdit Skript **MXPF - One ImCh Patcher** jedes mal auszuführen wenn Sie eine Mod installieren oder deinstallieren. Nutzen Sie den empfohlenen Patch **One ImCh Patch** oder **One ImCh Patcher** für eine korrekte Sortierung. Anleitungen zum Ausführen dieses Patchers können unter [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001) Beschreibung gefunden werden.'
           - lang: pt
             text: 'Recorde-se de executar o script SSEEdit incluído **MXPF - One ImCh Patcher** cada vez que você instale ou desinstale um mod. Use o nome recomendado de patch **One ImCh Patch** ou **One ImCh Patcher** para ordenação correta. Instruções para correr este patcher podem ser encontrada na página de descrição de [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001). '
   - name: 'One ImCh Patch?.*\.esp'
