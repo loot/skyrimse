@@ -7072,6 +7072,21 @@ plugins:
             text: 'Dieser Mod hat bestimmte Konflikte mit "Undeath.esp". Erwägen Sie, den [Improved Closefaced Gelmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/) zu nutzen.'
           - lang: pt
             text: 'Este mod tem certos conflitos com "Undeath.esp". Considere utilizar [Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Armors'
+          - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("imp_helm_Immersive_Armors.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Improved Dragon Priest Masks SE'
+          - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
+        condition: 'active("Improved Dragon Priest Masks.esp") and not active("imp_helm_IDPM.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp")'
     tag:
       - Graphics
     dirty:
@@ -7084,12 +7099,29 @@ plugins:
       # version: 1.58
       - crc: 0xD7423A4E
         util: 'SSEEdit v4.0.0'
-  - name: 'imp_helm_IDPM.esp'
+  - name: 'imp_helm_(Immersive_Armors|IDPM|USSEP)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12405/'
         name: 'Improved Closedfaced Helmets Patches'
+  - name: 'imp_helm_Immersive_Armors.esp'
+    clean:
+      # version: 1
+      - crc: 0x5C4A5C28
+        util: 'SSEEdit v4.0.2'
+  - name: 'imp_helm_IDPM.esp'
     after:
       - 'imp_helm_USSEP.esp'
+    clean:
+      # version: 1
+      - crc: 0x135E09DE
+        util: 'SSEEdit v4.0.2'
+  - name: 'imp_helm_USSEP.esp'
+    req:
+      - 'Unofficial Skyrim Special Edition Patch.esp'
+    clean:
+      # version: 1
+      - crc: 0x56ED0191
+        util: 'SSEEdit v4.0.2'
   - name: 'Improved closefaced helmets for Undeath SSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14614/'
