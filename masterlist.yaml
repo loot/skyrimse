@@ -2690,6 +2690,30 @@ plugins:
       - 'UHDAP - MusicUHQ1.esp'
       - 'UHDAP - MusicUHQ2.esp'
 
+###### AudioVisual - Water ######
+
+  - name: 'Wavy Waters.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
+    inc:
+      - 'Cathedral Water Overhaul.esp'
+      - 'Ilinalta.esp'
+      - 'Ilinalta - Realistic Water Two.esp'
+      - 'Purewaters.esp'
+      - 'RealisticWaterTwo.esp'
+    msg:
+      - <<: *versionXIncY
+        subs:
+          - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
+          - '[Wavy Waters](https://www.nexusmods.com/skyrimspecialedition/mods/25880)'
+        condition: 'product_version("../d3d11.dll", "0, 3, 7, 9", <) and file("../d3d11.dll")'
+    req:
+      - name: '../d3d11.dll'
+        display: '[ENBSeries v0.379+](http://enbdev.com/download_mod_tesskyrimse.html)'
+    clean:
+      # version: 1.0
+      - crc: 0x88A4D052
+        util: 'SSEEdit v4.0.2'
+
 ###### AudioVisual - Weather ######
   - name:  'Dolomite Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7895/' ]
