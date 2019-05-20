@@ -6218,15 +6218,8 @@ plugins:
   - name: 'Run For Your Lives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Run For Your Lives SE now includes the old mod When Vampires Attack. You can uninstall When Vampires Attack.'
-          - lang: de
-            text: 'Run For Your Lives SE enthält jetzt die ältere Mod When Vampires Attack. Sie können When Vampires Attack deinstallieren.'
-          - lang: pt
-            text: 'Run For Your Lives SE agora incluí o mod antigo When Vampires Attacj. Você pode desinstalar When Vampires Attack.'
-        condition: 'active("When Vampires Attack.esp")'
+      - <<: *includesX
+        subs: [ 'When Vampires Attack' ]
     clean:
       # version:  4.0
       - crc: 0xF3EF2798
@@ -6611,6 +6604,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1285/' ]
     after:
       - 'Requiem.esp'
+
+  - name: 'When Vampires Attack.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Run For Your Lives.esp' ]
+        condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
 
   - name: 'Wildcat - Combat of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1368/' ]
