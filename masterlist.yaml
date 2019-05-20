@@ -8673,11 +8673,9 @@ plugins:
   - name: 'Distinct Interiors.esp'
     after:
       - 'EnhancedLightsandFX.esp'
-      - 'ELFX - NoPlayerHomes.esp'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
     inc:
-    # CRC for Modular - Core - Always Needed Version
-    # version 1.81 B337055B,
+      # CRC: Modular Core (v1.81, 0xB337055B)
       - name: 'Enhanced Lights and FX'
         condition: 'not checksum("Distinct Interiors.esp",B337055B) and active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
       - name: 'InnCredible.esp'
@@ -8685,96 +8683,57 @@ plugins:
       - name: 'OpulentThievesGuild.esp'
         condition: 'not checksum("Distinct Interiors.esp",B337055B)'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'ELFX - NoPlayerHomes module required.'
-          - lang: de
-            text: 'ELFX - NoPlayerHomes Modul wird vorausgesetzt.'
-          - lang: pt
-            text: 'O módulo ELFX - NoPlayerHomes é necessário.'
-        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+    req:
+      - name: 'ELFX - NoPlayerHomes.esp'
+        condition: 'active("EnhancedLightsandFX.esp")'
     dirty:
       # version 1.82
       - <<: *reqManualFix
         crc: 0x6977340A
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 1
         nav: 1
-      # version: 1.82 QAC & before manual cleaning
+      # version 1.82, after QAC
       - <<: *reqManualFix
-        crc: 0xEFC71875
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        info:
-          - lang: en
-            text: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. A manual cleaning guide is available [here](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-)'
-          - lang: de
-            text: 'Es wird streng empfohlen keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden. Eine manuelle Säuberungsanleitung ist [hier](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-) verfügbar.'
-          - lang: pt
-            text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente. Um guia manual de limpeza está disponível [aqui](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-).'
+        crc: 0xC6A69F3C
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
-    clean:
-      # version: 1.82 after QAC & manual cleaning
-      - crc: 0xAD2C8F21
-        util: 'SSEEdit v3.3.4 BETA'
   - name: 'Distinct Interiors - Guilds.esp'
     inc:
       - 'OpulentThievesGuild.esp'
     clean:
-      # version: Modular - Guilds v1.7
+      # version: 1.7
       - crc: 0x16EC9185
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        util: 'SSEEdit v4.0.2'
   - name: 'Distinct Interiors - Inns.esp'
     after:
      - 'EnhancedLightsandFX.esp'
     inc:
       - 'InnCredible.esp'
     clean:
-      # version: Modular - Inns v1.7
+      # version: 1.7
       - crc: 0x99012024
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        util: 'SSEEdit v4.0.2'
   - name: 'Distinct Interiors - Miscellaneous.esp'
     clean:
-      # version: Modular - Miscellaneous v1.7
+      # version: 1.7
       - crc: 0xE45A43C7
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        util: 'SSEEdit v4.0.2'
   - name: 'Distinct Interiors - Player Homes.esp'
-    inc:
-      - name: 'Enhanced Lights and FX'
-        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'ELFX - NoPlayerHomes module required.'
-          - lang: de
-            text: 'ELFX - NoPlayerHomes Modul wird vorausgesetzt.'
-          - lang: pt
-            text: 'O módulo ELFX - NoPlayerHomes é necessário.'
-        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+    req:
+      - name: 'ELFX - NoPlayerHomes.esp'
+        condition: 'active("EnhancedLightsandFX.esp")'
     dirty:
-      # version: 1.82 before manual cleaning
+      # version: 1.82
       - <<: *reqManualFix
         crc: 0x289785CC
-        util: '[SSEEdit v3.3.4 BETA](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        info:
-          - lang: en
-            text: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. A manual cleaning guide is available [here](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-)'
-          - lang: de
-            text: 'Es wird streng empfohlen keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden. Eine manuelle Säuberungsanleitung ist [hier](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-) verfügbar.'
-          - lang: pt
-            text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente. Um guia manual de limpeza está disponível [aqui](https://cptmcsplody.github.io/xGuides/#-distinct-interiors-).'
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
-    clean:
-      # version: 1.82 after manual cleaning
-      - crc: 0xBE5B4F4A
-        util: 'SSEEdit v3.3.4 BETA'
   - name: 'Distinct Interiors - Shops.esp'
     clean:
-      # version: Modular - Shops v1.7
+      # version: 1.7
       - crc: 0x9DA76663
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+        util: 'SSEEdit v4.0.2'
   - name: 'Enlightened College of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
     group: *veryEarlyGroup
