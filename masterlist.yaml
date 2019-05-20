@@ -7091,24 +7091,16 @@ plugins:
     after:
       - 'Circlets and Masks with all Robes and Hoods.esp'
     msg:
-      - type: warn
+      - <<: *patch3rdParty
+        subs:
+          - 'Morrowloot Ultimate'
+          - '[MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
         condition: 'active("MLU.esp") and not active("MLU - Improved Closefaced Helmets.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "MLU.esp". Consider using the [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
-          - lang: de
-            text: 'Dieser Mod hat bestimmte Konflikte mit "MLU.esp". Erwägen Sie, den [MLU - Improved Closefaced Helmets Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/) zu nutzen.'
-          - lang: pt
-            text: 'Este mod tem certos conflitos com "MUL.esp". Considere utilizar [MLU - Improved Closefaced Helmets patch](https://www.nexusmods.com/skyrimspecialedition/mods/3058/).'
-      - type: warn
+      - <<: *patch3rdParty
+        subs:
+          - 'Undeath Remastered'
+          - '[Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/)'
         condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "Undeath.esp". Consider using the [Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
-          - lang: de
-            text: 'Dieser Mod hat bestimmte Konflikte mit "Undeath.esp". Erwägen Sie, den [Improved Closefaced Gelmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/) zu nutzen.'
-          - lang: pt
-            text: 'Este mod tem certos conflitos com "Undeath.esp". Considere utilizar [Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/).'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Armors'
