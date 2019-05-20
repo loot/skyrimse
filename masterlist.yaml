@@ -3987,16 +3987,9 @@ plugins:
       - 'BSHeartland.esm'
       - 'Unofficial Skyrim Special Edition Patch.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: '%1% is already included in this mod.'
-          - lang: de
-            text: '%1% ist bereits enthalten in diesem Mod.'
-          - lang: pt
-            text: '%1% já está incluído neste mod.'
-        subs:
-          - '`Realistic High Altitude Treeline`'
+      - <<: *includesX
+        type: warn
+        subs: [ 'Realistic High Altitude Treeline' ]
         condition: 'active("Realistic Treeline.esp")'
     clean:
       - crc: 0xBD798EA8
