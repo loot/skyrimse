@@ -5881,6 +5881,8 @@ plugins:
   - name: 'Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4881' ]
     group: *underridesGroup
+    after:
+      - 'Immersive Movement.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Mortal Enemies' ]
@@ -6615,26 +6617,39 @@ plugins:
         subs: [ 'Run For Your Lives.esp' ]
         condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
 
-  - name: 'Wildcat - Combat of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1368/' ]
-    inc:
-      - 'Smilodon - Combat of Skyrim.esp'
+  - name: '(Smilodon|Wildcat) - Combat of Skyrim\.esp'
     after:
       - 'Animal Tweaks.esp'
+      - 'Immersive Movement.esp'
       - 'Immersive NPC in the dark.esp'
       - 'New Weapon Parry.esp'
       - 'SkyRe_Main.esp'
       - 'SkyRe_Combat.esp'
       - 'SkyRe_EnemyAI.esp'
     msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Smilodon or Wildcat' ]
+        condition: 'many("(Smilodon|Wildcat) - Combat of Skyrim\.esp")'
+      - *includesMBBF
+  - name: 'Smilodon - Combat of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2824/' ]
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/119' ]
+    clean:
+      # version: 2.00SSE
+      - crc: 0x70092444
+        util: 'SSEEdit v4.0.2'
+  - name: 'Wildcat - Combat of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1368/' ]
+    msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/21' ]
-      - *includesMBBF
     clean:
       # version: 7.00SSE
       - crc: 0xE6A87461
         util: 'SSEEdit v3.2.2'
-  - name: 'Wildcat - Realistic Damage Plugin.esp'
+  - name: '(Smilodon|Wildcat) - Realistic Damage Plugin\.esp'
     after:
       - 'Combat Evolved.esp'
 
