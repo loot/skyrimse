@@ -9646,7 +9646,7 @@ plugins:
       - <<: *patchProvided
         type: error
         subs: [ 'Skyrim Project Optimization' ]
-        condition: 'active("Skyrim Project Optimization - Full Version.esm") or active("Skyrim Project Optimization - Full Version.esp") and not active("PCE - SPO Patch.esp")'
+        condition: 'not active("PCE - SPO Patch.esp") and (active("Skyrim Project Optimization - Full Version.esm") or active("Skyrim Project Optimization - Full Version.esp"))'
       - <<: *patchProvided
         type: error
         subs: [ 'Skyrim Sewers' ]
