@@ -6948,17 +6948,27 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'LegacyoftheDragonborn.esm' ]
         condition: 'active("Book Covers Skyrim.esp") and active("LegacyoftheDragonborn.esm")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Not So Fast - Main Quest'
+          - '[ Skylover''s Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/9849)'
+        condition: 'active("NotSoFast-MainQuest.esp") and not active("BCS_NotsoFast_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Choice is Yours'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY BCS Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Wintersun - Faiths of Skyrim'
+          - '[ Wintersun - Zim''s Immersive Artifacts and Book Covers Skyrim Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Choice is Yours'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY BCS Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_USSEP Patch.esp")'
