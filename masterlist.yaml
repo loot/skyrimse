@@ -6197,11 +6197,9 @@ plugins:
       # version: Final
       - crc: 0x20DC9B97
         util: 'SSEEdit v3.2.1'
-  - name: '(RDO|Relationship Dialogue Overhaul) - *\Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
   - name: 'RDO - CRF + USSEP Patch.esp'
+    req:
+      - 'Relationship Dialogue Overhaul.esp'
     inc:
       - 'RDO - USSEP Patch.esp'
     clean:
@@ -6209,6 +6207,8 @@ plugins:
       - crc: 0xA2753357
         util: 'SSEEdit v3.2.1'
   - name: 'RDO - USSEP Patch.esp'
+    req:
+      - 'Relationship Dialogue Overhaul.esp'
     inc:
       - 'RDO - CRF + USSEP Patch.esp'
     clean:
