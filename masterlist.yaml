@@ -5249,8 +5249,15 @@ plugins:
       - 'CollegeOfWinterholdImmersive.esp'
       - 'Immersive Weapons.esp'
       - 'MagicalCollegeofWinterhold.esp'
-      - 'OCW_Obscure''s_CollegeofWinterhold.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
+  - name: 'Finding_VelehkSain.esp'
+    after:
+      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+        condition: 'not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3)'
+  - name: 'Finding_VelehkSain_MAQF.esp'
+    after:
+      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+        condition: 'not checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) and not checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9)'
   - name: 'Guard Dialogue Overhaul.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791'
@@ -9618,6 +9625,10 @@ plugins:
       - 'Endgame NPC Overhaul.esp'
       - 'EnhancedLightsandFX.esp'
       - 'Enlightened College of Winterhold.esp'
+      - name: 'Finding_VelehkSain.esp'
+        condition: 'checksum("Finding_VelehkSain.esp", 63CC1662) or checksum("Finding_VelehkSain.esp", 596355B3)'
+      - name: 'Finding_VelehkSain_MAQF.esp'
+        condition: 'checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) or checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9)'
       - 'Immersive Music.esp'
       - 'konahrik_accoutrements.esp'
       - 'middenexpandedlitesse.esp'
