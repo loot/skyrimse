@@ -2444,8 +2444,17 @@ plugins:
       - 'SoS - The Wilds.esp'
     msg:
       - <<: *patchProvided
+        subs: [ 'Hunterborn' ]
+        condition: 'active("Hunterborn.esp") and not active("Audio Overhaul Skyrim - Hunterborn Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Immersive Sounds - Compendium' ]
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Weapons' ]
+        condition: 'active("Immersive Weapons.esp") and not active("Audio Overhaul Skyrim - Immersive Weapons Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Lore Weapon Expansion' ]
+        condition: 'active("Lore Weapon Expansion.esp") and not active("Audio Overhaul Skyrim - Lore Weapon Expansion Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
@@ -2453,6 +2462,9 @@ plugins:
       # version: 3.0.0
       - crc: 0x96BF25A6
         util: 'SSEEdit v4.0.0'
+      # version: 3.2.0
+      - crc: 0x747BD772
+        util: 'SSEEdit v4.0.2'
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     after:
       - 'RealisticWaterTwo.esp'
