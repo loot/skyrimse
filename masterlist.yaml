@@ -2455,6 +2455,11 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Lore Weapon Expansion' ]
         condition: 'active("Lore Weapon Expansion.esp") and not active("Audio Overhaul Skyrim - Lore Weapon Expansion Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cathedral Weathers and Seasons'
+          - '[Cathedral Weathers - Audio Overhaul Patch for Skyrim SE patch](https://www.nexusmods.com/skyrimspecialedition/mods/25420/)'
+        condition: 'active("Cathedral Weathers.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
