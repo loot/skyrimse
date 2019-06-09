@@ -2455,6 +2455,11 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Lore Weapon Expansion' ]
         condition: 'active("Lore Weapon Expansion.esp") and not active("Audio Overhaul Skyrim - Lore Weapon Expansion Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cathedral Weathers and Seasons'
+          - '[Cathedral Weathers - Audio Overhaul Patch for Skyrim SE patch](https://www.nexusmods.com/skyrimspecialedition/mods/25420/)'
+        condition: 'active("Cathedral Weathers.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
@@ -3648,6 +3653,10 @@ plugins:
     group: *veryEarlyGroup
     tag:
       - C.LockList
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Immersive Wenches -Immersive Citizens AI Overhaul Patch-.esp")'
     clean:
       # version: 1.6
       - crc: 0xA66B30B5
@@ -8214,6 +8223,16 @@ plugins:
         name: 'Carriage and Ferry Travel Overhaul'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Dawnstar' ]
+        condition: 'active("Dawnstar.esp") and not active("CFTO - Arthmoor Danwstar Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Hearthfire Extended' ]
+        condition: 'active("hearthfireextended.esp") and not active("HFE-CFTO-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("CFTO - Immersive Citizens Patch.esp")'
     clean:
       # version: 2.0
       - crc: 0xD2FF9967
