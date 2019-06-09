@@ -3653,6 +3653,10 @@ plugins:
     group: *veryEarlyGroup
     tag:
       - C.LockList
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Immersive Wenches -Immersive Citizens AI Overhaul Patch-.esp")'
     clean:
       # version: 1.6
       - crc: 0xA66B30B5
