@@ -8223,6 +8223,16 @@ plugins:
         name: 'Carriage and Ferry Travel Overhaul'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Dawnstar' ]
+        condition: 'active("Dawnstar.esp") and not active("CFTO - Arthmoor Danwstar Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Hearthfire Extended' ]
+        condition: 'active("hearthfireextended.esp") and not active("HFE-CFTO-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("CFTO - Immersive Citizens Patch.esp")'
     clean:
       # version: 2.0
       - crc: 0xD2FF9967
