@@ -6230,10 +6230,10 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
-        condition: 'checksum("AmazingFollowerTweaks.esp", 88F9C8B8) and not active("RDO - AFT v1.66 Patch.esp")'
+        condition: '(checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Immersive Amazing Follower Tweaks' ]
-        condition: 'checksum("AmazingFollowerTweaks.esp", 88C2EA38) and not active("RDO - iAFT Patch.esp")'
+        condition: '(checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Extensible Follower Framework' ]
         condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
