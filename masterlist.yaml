@@ -4926,6 +4926,11 @@ plugins:
       # version: 4.6.5
       - crc: 0x615A80B8
         util: 'SSEEdit v4.0.0'
+  - name: 'AlchemyAdjustments-AwesomePotionsPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
+    after:
+      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
+      - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
   - name: 'Arcanum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
     dirty:
@@ -5242,6 +5247,76 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8210/' ]
     tag:
       - Relev
+  - name: 'EconomyOverhaulandSpeechcraftImprovements(Lite)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9542/' ]
+    after:
+      - 'You Hunger.esp'
+  - name: 'EconomyOverhaulandSpeechcraftImprovements.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Complete Alchemy & Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("EconomyOverhaul CV - CACO Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cooking In Skyrim' ]
+        condition: 'active("Cooking_In_Skyrim.esp") and not active("EconomyOverhaul CV - CookingInSkyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("EconomyOverhaul CV - CuttingRoomFloor Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Dawn of Skyrim' ]
+        condition: 'active("Blues Skyrim.esp") and not active("EconomyOverhaul CV - DawnofSkyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Distinct Interiors' ]
+        condition: 'active("Distinct Interiors.esp") and not active("EconomyOverhaul CV - DistinctInteriors Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Even Better Quest Objectives' ]
+        condition: 'active("BetterQuestObjectives.esp") and not active("EconomyOverhaul CV - EvenBetterQuestObjectives Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Missives' ]
+        condition: 'active("Missives.esp") and not active("EconomyOverhaul CV - Missives Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Morrowloot Ultimate' ]
+        condition: 'active("MLU.esp") and not active("EconomyOverhaul CV - MorrowLootUltimate Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("EconomyOverhaul CV - Ordinator Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Quests Are In Skyrim' ]
+        condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("EconomyOverhaul CV - QuestsAreinSkyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Scarcity' ]
+        condition: 'active("Scarcity SE - Less Loot Mod.esp") and not active("EconomyOverhaul CV - Scarcity Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Trade and Barter' ]
+        condition: 'active("Trade & Barter.esp") and not active("EconomyOverhaul CV - TradeandBarter Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("EconomyOverhaul CV - WACCF Patch.esp")'
+    clean:
+      # version: 2.1
+      - crc: 0x146D569B
+        util: 'SSEEdit v4.0.2'
+  - name: 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("EconomyOverhaul LV - CuttingRoomFloor Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Even Better Quest Objectives' ]
+        condition: 'active("BetterQuestObjectives.esp") and not active("EconomyOverhaul LV - EvenBetterQuestObjectives Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Missives' ]
+        condition: 'active("Missives.esp") and not active("EconomyOverhaul LV - Missives Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Quests Are In Skyrim' ]
+        condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("EconomyOverhaul LV - QuestsAreinSkyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("EconomyOverhaul LV - WACCF Patch.esp")'
+    clean:
+      # version: 2.1
+      - crc: 0xBBA1C2CA
+        util: 'SSEEdit v4.0.2'
   - name: 'Elemental Destruction.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/440/' ]
     msg:
