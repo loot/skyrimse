@@ -3405,6 +3405,26 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("RSChildren Patch - BS Bruma.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Falskaar'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("Falskaar.esm") and not active("RSC Falskaar Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Forgotten City'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("ForgottenCity.esp") and not active("RSC Forgotten City Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Inconsequential NPCs'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("Inconsequential NPCs.esp") and not active("RSC IncNPC.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Interesting NPCs'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("3DNPC.esp") and not active("RSC 3DNPC Patch.esp")'
     clean:
       # version: 1.1.2
       - crc: 0xE8137869
