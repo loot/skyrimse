@@ -9635,6 +9635,11 @@ plugins:
           - 'Immersive Citizens - AI Overhaul'
           - 'Semi-Compatible. NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
         condition: 'active("Immersive Citizens - AI Overhaul.esp")'
+      - <<: *semiCompatible
+        subs:
+          - 'Paradise City - Great Trees for Cities'
+          - 'Partially Compatible. Use `Paradise_City_MergedNoRorikstead.esp` or the modular plugins without `Paradise_City_Rorikstead.esp`. Some minor clipping in Whiterun. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
+        condition: 'active("Paradise_City_Merged.esp") or active("Paradise_City_MergedNoWindhelm.esp") or active("Paradise_City_MergedSummerWindhelm.esp") or active("Paradise_City_Rorikstead.esp")'
     clean:
       # version: 1.0 ETaC Compatible Replacer File
       - crc: 0x8E2CDE40
