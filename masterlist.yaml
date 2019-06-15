@@ -2493,12 +2493,18 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
+    dirty:
+      # version: 3.2.0
+      - <<: *quickClean
+        crc: 0x747BD772
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
     clean:
       # version: 3.0.0
       - crc: 0x96BF25A6
         util: 'SSEEdit v4.0.0'
-      # version: 3.2.0
-      - crc: 0x747BD772
+      # version: 3.2.0, after QAC
+      - crc: 0x0CD5C85F
         util: 'SSEEdit v4.0.2'
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     after:
@@ -5076,13 +5082,17 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Campfire - Complete Camping System' ]
         condition: 'active("Campfire.esm") and not active("Archery_Campfire_Patch.esp")'
-    clean:
-      # version: 2.5
-      - crc: 0xB2AD660F
-        util: 'SSEEdit v4.0.2'
+    dirty:
       # version: 2.4
-      - crc: 0x0DDC51B6
-        util: 'SSEEdit v4.0.2'
+      - <<: *quickClean
+        crc: 0x0DDC51B6
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      # version: 2.5
+      - <<: *quickClean
+        crc: 0xB2AD660F
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
   - name: 'Archery_Bruma_Patch.esp'
     req:
       - 'ArcheryV2.esp'
