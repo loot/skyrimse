@@ -5367,6 +5367,16 @@ plugins:
           - 'iNeed'
           - 'Disable iNeed''s option to alter food weight, as this can result in some odd weight values when used with CACO. iNeed''s degradation system is not recognized by CACO''s food portion system, which results in some slight inconsistencies.'
         condition: 'active("iNeed.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'iNeed'
+          - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301)'
+        condition: 'active("iNeed.esp") and not active("iNeed CACO Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'iNeed - Dangerous Disease'
+          - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301)'
+        condition: 'active("iNeed - Dangerous Diseases.esp") and not active("CACO - iNeed DD Patch.esp")'
       - <<: *semiCompatible
         subs:
           - 'iNeed - Extended'
@@ -8031,6 +8041,11 @@ plugins:
           - 'Flora Respawn Fix'
           - '[Flora Respawn Fix SE for Beyond Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/11072/)'
         condition: 'active("FloraRespawnFix.esp") and not active("BSHeartlandFRF.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'iNeed'
+          - '[Beyond Skyrim - Bruma - Tweaks Enhancements and Patches SSE](https://www.nexusmods.com/skyrimspecialedition/mods/19374/)'
+        condition: 'active("iNeed.esp") and not active("Bruma - iNeed Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Ordinator - Perks of Skyrim'
