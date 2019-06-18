@@ -1810,8 +1810,7 @@ plugins:
       - crc: 0x6F004E0D
         util: 'SSEEdit v4.0.1'
   - name: 'IcePenguinWorldMapPaper.esp'
-    after:
-      - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
+    group: *lateLoadersGroup
     inc:
       - 'IcePenguinWorldMap.esp'
       - 'icepenguinworldmapclassic.esp'
@@ -1819,9 +1818,12 @@ plugins:
       # version: 9.0P
       - crc: 0x09706810
         util: 'SSEEdit v4.0.1'
-  - name: 'Paper World Map Unofficial Fix.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21237/' ]
+
+  - name: 'Paper World Map.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10836/' ]
     group: *lateLoadersGroup
+    after:
+      - 'RealisticWaterTwo.esp'
   - name: 'SkyUI_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
     group: *underridesGroup
@@ -2809,6 +2811,8 @@ plugins:
     group: *lateLoadersGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
+      # Todo: Review, if a Patch is Released for A Quality World Map - Paper.
+      - 'IcePenguinWorldMapPaper.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Citizens - OCS patch.esp'
       - 'Open Cities Skyrim.esp'
