@@ -4654,9 +4654,19 @@ plugins:
           - 'ENBSeries'
           - 'Sun direction MAY cause conflicts with future versions of ENBSeries. If you run into a 95 percent daytime issue you need to disable sun direction esp''s.'
         condition: 'file("../d3d11.dll")'
+
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
     group: *highPriorityGroup
+
+  - name: 'NoGrassINCities.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
+    group: *lateLoadersGroup
+    after:
+      - 'IcePenguinWorldMapPaper.esp'
+      - 'Paper World Map.esp'
+      - 'RealisticWaterTwo.esp'
+
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *veryEarlyGroup
