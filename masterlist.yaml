@@ -6408,6 +6408,19 @@ plugins:
       - crc: 0x472DDCD1
         util: 'SSEEdit v4.0.2'
 
+  - name: 'PathOfTheAntiMage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
+    dirty:
+      # version: 1.5.5.1
+      - <<: *quickClean
+        crc: 0xC238C832
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4226
+    clean:
+      # version: 1.5.5.1, after QAC
+      - crc: 0xAD2B40A5
+        util: 'SSEEdit v4.0.2'
+
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
     inc:
@@ -8147,6 +8160,29 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?BeyondReach(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp")'
+
+  - name: 'Black Marsh( North)?.es(m|p)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19027' ]
+  - name: 'Black Marsh.esm'
+    clean:
+      # version: 5
+      - crc: 0xBEE29EE4
+        util: 'SSEEdit v4.0.2'
+  - name: 'Black Marsh North.esp'
+    dirty:
+      # version: 5
+      - <<: *reqManualFix
+        crc: 0xC8E33B76
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 160
+        udr: 14019
+        nav: 129
+      # version: 5, after QAC
+      - <<: *reqManualFix
+        crc: 0xBA5B1367
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 129
+
   - name: 'BS(Assets|Heartland|_DLC_patch).es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
@@ -10989,6 +11025,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/342/' ]
     group: *preVeryEarlyGroup
 
+  - name: 'AnnaProudspireManor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23472/' ]
+    dirty:
+      # version: 1.2
+      - <<: *reqManualFix
+        crc: 0xC844057C
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
   - name: 'AyleidCitadel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11307/' ]
     tag:
@@ -11160,6 +11205,22 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 100
 
+  - name: 'Hermit Mountain Cottage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4093/' ]
+    dirty:
+      # version: 6.0a
+      - <<: *reqManualFix
+        crc: 0x928F3FA7
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+        udr: 5
+        nav: 4
+      # version: 6.0a, after QAC
+      - <<: *reqManualFix
+        crc: 0x743680C5
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 4
+
   - name: 'Honeyside.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/918/' ]
     after:
@@ -11313,6 +11374,38 @@ plugins:
       # version: 2.81, after QAC
       - <<: *reqManualFix
         crc: 0x50EB8B27
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
+  - name: 'MicroCave1.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10649/' ]
+    dirty:
+      # version: 2.5
+      - <<: *reqManualFix
+        crc: 0xCB0F39A8
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 52
+        udr: 4
+        nav: 2
+      # version: 2.5, after QAC
+      - <<: *reqManualFix
+        crc: 0x51D9FA90
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+
+  - name: 'Mixwater Retreat SSE - Vanilla.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15630/' ]
+    dirty:
+      # version: 1.0
+      - <<: *reqManualFix
+        crc: 0x3B4CFC87
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+        udr: 1
+        nav: 1
+      # version: 1.0, after QAC
+      - <<: *reqManualFix
+        crc: 0xAA52DFCD
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
