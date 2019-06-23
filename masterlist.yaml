@@ -8147,6 +8147,29 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?BeyondReach(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp")'
+
+  - name: 'Black Marsh( North)?.es(m|p)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19027' ]
+  - name: 'Black Marsh.esm'
+    clean:
+      # version: 5
+      - crc: 0xBEE29EE4
+        util: 'SSEEdit v4.0.2'
+  - name: 'Black Marsh North.esp'
+    dirty:
+      # version: 5
+      - <<: *reqManualFix
+        crc: 0xC8E33B76
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 160
+        udr: 14019
+        nav: 129
+      # version: 5, after QAC
+      - <<: *reqManualFix
+        crc: 0xBA5B1367
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 129
+
   - name: 'BS(Assets|Heartland|_DLC_patch).es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
