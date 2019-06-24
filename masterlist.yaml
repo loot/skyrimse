@@ -2905,11 +2905,23 @@ plugins:
       - 'UHDAP - MusicUHQ2.esp'
 
 ###### AudioVisual - Water ######
-  - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
+  - name: 'Blacksmith Forge Water Fix SE( USSEP)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1291/' ]
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Blacksmith Forge Water Fix SE' ]
+        condition: 'many("Blacksmith Forge Water Fix SE( USSEP)?.esp")'
+    tag:
+      - C.Water
+  - name: 'Blacksmith Forge Water Fix SE.esp'
+    inc:
+      - 'Unofficial Skyrim Special Edition Patch.esp'
+  - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
+    req:
+      - 'Unofficial Skyrim Special Edition Patch.esp'
 
   - name: 'RealisticWaterTwo.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
