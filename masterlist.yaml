@@ -10198,6 +10198,14 @@ plugins:
             text: 'Use %1% instead.'
         subs: [ 'MCWT_ErratumEtc_Lite.esp' ]
         condition: 'active("ApepiBetterCollege.esp") or active("CollegeOfWinterholdImmersive.esp") or active("CollegeofWinterholdUpgraded.esp") or active("MagicalCollegeofWinterhold.esp")'
+      - <<: *alreadyInX
+        subs: [ 'Obscure''s College of Winterhold' ]
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and active("MCWT_ErratumEtc.esp")'
+  - name: 'MCWT_ErratumEtc_Lite.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Obscure''s College of Winterhold' ]
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and active("MCWT_ErratumEtc_Lite.esp")'
   - name: 'MCWT_GovernableGatekeeper.esp'
     after:
       - 'CollegeOfWinterholdImmersive.esp'
@@ -10213,6 +10221,11 @@ plugins:
         display: 'College of Winterhold Light Pillars FIX'
       - 'Enlightened College of Winterhold.esp'
       - 'Enlightened College of Winterhold(Just Light Pillars).esp'
+  - name: 'MCWT_ScheduledSavos.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Obscure''s College of Winterhold' ]
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and active("MCWT_ScheduledSavos.esp")'
 
   - name: 'Mixwater Mill Reborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13348/' ]
