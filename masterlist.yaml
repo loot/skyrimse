@@ -334,6 +334,17 @@ common:
   - &includesMBBF
     <<: *includesX
     subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
+  - &corrupt
+    type: warn
+    content:
+      - lang: en
+        text: 'This file is corrupt and should not be used.'
+      - lang: ru
+        text: 'Файл испорчен и не должен использоваться.'
+      - lang: es
+        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - lang: ja
+        text: 'このファイルは壊れています。使用しないでください。'
 
 # Cleaning data
   - &dirtyPlugin
@@ -12519,3 +12530,7 @@ plugins:
     tag:
       - C.Encounter
       - C.Location
+  - name: 'BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2659' ]
+    msg: [ *corrupt ]
+     
