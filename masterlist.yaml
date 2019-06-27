@@ -3953,6 +3953,28 @@ plugins:
       - Delev
       - Relev
 
+  - name: 'DwemerSpectresLegendary.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8016' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Skyrim Immersive Creatures' ]
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Blood Textures'
+          - '[ Dwemer Spectres EBT No Bleeding and Other Fixes ](https://www.nexusmods.com/skyrimspecialedition/mods/26954)'
+        condition: '(active("dD - Enhanced Blood Main.esp") or active("dD - Enhanced Blood Main LITE.esp")) and not active("DwemerSpecterNoBlood.esp")'
+    dirty:
+      # version: 3.0
+      - <<: *quickClean
+        crc: 0x2AA82040
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+    clean:
+      # version: 3.0, after QAC
+      - crc: 0x4BE6CA87
+        util: 'SSEEdit v4.0.2'
+
   - name: 'Followers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10633' ]
     dirty:
