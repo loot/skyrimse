@@ -594,11 +594,9 @@ globals:
   - <<: *versionSksePluginIncSSE
     subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
     condition: 'file("SKSE/Plugins/EngineFixes.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EngineFixes.dll", "4.0.0.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EngineFixes.dll", "4.0.0.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  # https://github.com/loot/loot/issues/1124
-  # Removed until support for trying to read versions from DLLs with no version fields is added.
-  # - <<: *versionSksePluginIncSSE
-  #   subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
-  #   condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
+  - <<: *versionSksePluginIncSSE
+    subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
+    condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
   - <<: *versionSksePluginIncSSE
     subs: [ '[Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)' ]
     condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
