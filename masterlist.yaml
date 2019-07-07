@@ -20,6 +20,95 @@ common:
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
 
 # Messages
+  - &alreadyInX
+    type: error
+    content:
+      - lang: en
+        text: 'Delete. Already included in %1%.'
+      - lang: ru
+        text: 'Удалите. Уже включено в %1%.'
+      - lang: es
+        text: 'Borrar. Esta incluido en %1%.'
+      - lang: ko
+        text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
+      - lang: zh_CN
+        text: '删除。已包含在%1%中。'
+      - lang: da
+        text: 'Slet. Allerede inkluderet i %1%.'
+      - lang: ja
+        text: '削除してください。既に%1%に含まれています。'
+      - lang: de
+        text: 'Löschen. Bereits in %1% enthalten.'
+      - lang: pt
+        text: 'Apagar. Já incluído em %1%.'
+  - &includesX
+    type: say
+    content:
+      - lang: en
+        text: '%1% is included with this mod.'
+      - lang: de
+        text: 'Der %1% ist in diesem Mod enthalten.'
+      - lang: ko
+        text: '%1% 모드가 포함되어 있습니다.'
+      - lang: pt
+        text: '%1% vem incluído com este mod.'
+  - &includesMBBF
+    <<: *includesX
+    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
+  - &useOnlyOneX
+    type: error
+    content:
+      - lang: en
+        text: 'Use only one %1%.'
+      - lang: ru
+        text: 'Используйте только один %1%.'
+      - lang: es
+        text: 'Utilizar solo un %1%.'
+      - lang: ko
+        text: '%1%을 한 개만 사용하십시오.'
+      - lang: zh_CN
+        text: '只使用一个%1%。'
+      - lang: ja
+        text: '%1%は一つだけ使用してください。'
+      - lang: de
+        text: 'Nutzen Sie nur einen %1%.'
+      - lang: pt
+        text: 'Utilizar apenas um %1%.'
+
+  - &compatNotes
+    type: say
+    content:
+      - lang: en
+        text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
+      - lang: de
+        text: 'Es wird empfohlen das Sie die [Kompatibilitäts-Notizen](%1%) dieses Mods lesen'
+      - lang: ko
+        text: '이 모드의 [호환성 정보](%1%)를 읽어 보는 걸 권장합니다.'
+      - lang: pt
+        text: 'É recomendada leitura das [Notas de Compatibilidade](%1%) deste mod.'
+  - &semiCompatible
+    type: say
+    content:
+      - lang: en
+        text: '%1% is not fully compatible with this mod. %2%'
+      - lang: de
+        text: '%1% ist nicht komplett kompatibel mit diesem Mod. %2%'
+      - lang: ko
+        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
+      - lang: pt
+        text: '%1% não é totalmente compatível com este mod. %2%'
+
+  - &corrupt
+    type: warn
+    content:
+      - lang: en
+        text: 'This file is corrupt and should not be used.'
+      - lang: ru
+        text: 'Файл испорчен и не должен использоваться.'
+      - lang: es
+        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - lang: ja
+        text: 'このファイルは壊れています。使用しないでください。'
   - &doNotClean
     type: say
     content:
@@ -41,6 +130,29 @@ common:
         text: 'ITM 자료를 삭제하지 마십시오. 모드가 정상 작동하기 위해 의도적으로 남겨진 자료입니다. 삭제를 취소하는 것 이외에는 안전하지 않습니다.'
       - lang: pt
         text: 'Não apagar os registos ITM. São intencionais e necessárias para o funcionamento do mod. É seguro restaurar os registos, mas não faça nada mais que isso.'
+  - &reqMasterSort
+    type: say
+    content:
+      - lang: en
+        text: 'Plugin''s Masters require sorting.'
+      - lang: de
+        text: 'Die Plugin Master müssen sortiert werden.'
+      - lang: ko
+        text: '플러그인 마스터의 정렬이 필요합니다.'
+      - lang: pt
+        text: 'A Master deste Plugin necessita ordenação.'
+  - &wildEdits
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
+      - lang: da
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
+      - lang: de
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+      - lang: pt
+        text: 'Este plugin contém edições selvagens (Wild Edits) para além dos registros ITM e UDR, e Navmeshes apagadas. Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
+    subs: [ '' ]
 
   - &patchUpdateAvailable
     type: warn
@@ -102,28 +214,7 @@ common:
     subs:
       - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
       - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
-  - &compatNotes
-    type: say
-    content:
-      - lang: en
-        text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
-      - lang: de
-        text: 'Es wird empfohlen das Sie die [Kompatibilitäts-Notizen](%1%) dieses Mods lesen'
-      - lang: ko
-        text: '이 모드의 [호환성 정보](%1%)를 읽어 보는 걸 권장합니다.'
-      - lang: pt
-        text: 'É recomendada leitura das [Notas de Compatibilidade](%1%) deste mod.'
-  - &semiCompatible
-    type: say
-    content:
-      - lang: en
-        text: '%1% is not fully compatible with this mod. %2%'
-      - lang: de
-        text: '%1% ist nicht komplett kompatibel mit diesem Mod. %2%'
-      - lang: ko
-        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
-      - lang: pt
-        text: '%1% não é totalmente compatível com este mod. %2%'
+
   - &missingRequirementXforY
     type: warn
     content:
@@ -175,38 +266,7 @@ common:
       - lang: pt
         text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
     condition: 'not active("SkyUI_SE.esp")'
-  - &reqMasterSort
-    type: say
-    content:
-      - lang: en
-        text: 'Plugin''s Masters require sorting.'
-      - lang: de
-        text: 'Die Plugin Master müssen sortiert werden.'
-      - lang: ko
-        text: '플러그인 마스터의 정렬이 필요합니다.'
-      - lang: pt
-        text: 'A Master deste Plugin necessita ordenação.'
-  - &alreadyInX
-    type: error
-    content:
-      - lang: en
-        text: 'Delete. Already included in %1%.'
-      - lang: ru
-        text: 'Удалите. Уже включено в %1%.'
-      - lang: es
-        text: 'Borrar. Esta incluido en %1%.'
-      - lang: ko
-        text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
-      - lang: zh_CN
-        text: '删除。已包含在%1%中。'
-      - lang: da
-        text: 'Slet. Allerede inkluderet i %1%.'
-      - lang: ja
-        text: '削除してください。既に%1%に含まれています。'
-      - lang: de
-        text: 'Löschen. Bereits in %1% enthalten.'
-      - lang: pt
-        text: 'Apagar. Já incluído em %1%.'
+
   - &deletePlugin
     type: warn
     content:
@@ -238,7 +298,6 @@ common:
         text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
       - lang: pt
         text: 'Aparenta que você não tem a versão mais recente de %1%. Alguns mods podem requerir funcinalidades adicionadas na última versão de %1% para funcionar.'
-
   - &versionUpToDateX
     type: say
     content:
@@ -260,7 +319,6 @@ common:
         text: 'Ihr %1% ist aktuell.'
       - lang: pt
         text: 'O seu %1% está atualizado.'
-
   - &versionSksePluginIncSSE
     type: error
     content:
@@ -301,52 +359,8 @@ common:
     subs:
       - '**Script Extender ([SKSE](http://skse.silverlock.org))**'
       - '**Skyrim VR**'
-  - &useOnlyOneX
-    type: error
-    content:
-      - lang: en
-        text: 'Use only one %1%.'
-      - lang: ru
-        text: 'Используйте только один %1%.'
-      - lang: es
-        text: 'Utilizar solo un %1%.'
-      - lang: ko
-        text: '%1%을 한 개만 사용하십시오.'
-      - lang: zh_CN
-        text: '只使用一个%1%。'
-      - lang: ja
-        text: '%1%は一つだけ使用してください。'
-      - lang: de
-        text: 'Nutzen Sie nur einen %1%.'
-      - lang: pt
-        text: 'Utilizar apenas um %1%.'
-  - &includesX
-    type: say
-    content:
-      - lang: en
-        text: '%1% is included with this mod.'
-      - lang: de
-        text: 'Der %1% ist in diesem Mod enthalten.'
-      - lang: ko
-        text: '%1% 모드가 포함되어 있습니다.'
-      - lang: pt
-        text: '%1% vem incluído com este mod.'
-  - &includesMBBF
-    <<: *includesX
-    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
-  - &corrupt
-    type: warn
-    content:
-      - lang: en
-        text: 'This file is corrupt and should not be used.'
-      - lang: ru
-        text: 'Файл испорчен и не должен использоваться.'
-      - lang: es
-        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
-      - lang: ja
-        text: 'このファイルは壊れています。使用しないでください。'
 
-# Cleaning data
+# Dirty Aliases
   - &dirtyPlugin
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
     info:
@@ -376,18 +390,6 @@ common:
         text: 'Es wird streng empfohlen keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden(Ein komplexer Prozess der vom Mod-Autor erledigt werden sollte). Mehr Informationen über **Gelöschte Navmeshes** wird [hier](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial) geboten.'
       - lang: pt
         text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente(Um processo complexo que deve ser feito pelo autor do mod). Mais informação sobre **Navmeshes apagados** está disponível em inglês [aqui] (https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-  - &wildEdits
-    type: warn
-    content:
-      - lang: en
-        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
-      - lang: da
-        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
-      - lang: de
-        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
-      - lang: pt
-        text: 'Este plugin contém edições selvagens (Wild Edits) para além dos registros ITM e UDR, e Navmeshes apagadas. Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
-    subs: [ '' ]
 
 bash_tags:
   - 'Actors.ACBS'
