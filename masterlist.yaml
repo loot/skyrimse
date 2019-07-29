@@ -7386,6 +7386,47 @@ plugins:
         subs: [ 'Run For Your Lives.esp' ]
         condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
 
+  - name: 'Wild World.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14616/' ]
+    after:
+      - 'Combat Evolved.esp'
+      - 'MVABasic.esp'
+    inc:
+      - 'Animal Tweaks.esp'
+      - 'NARC SE for Animal Tweaks.esp'
+      - 'NARC SE for Falskaar + Animal Tweaks.esp'
+      - 'NARC SE for Falskaar + SkyTEST + Animal Tweaks.esp'
+      - 'NARC SE for Falskaar + SkyTEST.esp'
+      - 'NARC SE for Falskaar.esp'
+      - 'NARC SE for SkyTEST + Animal Tweaks.esp'
+      - 'NARC SE for SkyTEST.esp'
+      - 'NARC SE for Vanilla.esp'
+      - 'One With Nature.esp'
+      - name: 'Pacifist Mini-Mods Collection.esl'
+        display: 'Less Aggressive Animals'
+      - name: 'Pacifist Mini-Mods Collection.esp'
+        display: 'Less Aggressive Animals'
+      - 'Real Wildlife Behaviour.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Animallica - Skyrim Wildlife Overhaul' ]
+        condition: 'file("Animallica.esp") and not file("Wild World - Animallica.esp")'
+      - <<: *patchProvided
+        subs: [ 'Beasts of Tamriel' ]
+        condition: 'file("Beasts of Tamriel.esp") and not file("Wild World - Beasts of Tamriel.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Horses' ]
+        condition: 'file("Immersive Horses.esp") and not file("Wild World - Immersive Horses.esp")'
+      - <<: *patchProvided
+        subs: [ 'Revenge Of the Enemies' ]
+        condition: 'file("Rebirth Monster.esp") and not file("Wild World - Rebirth Monster.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim Immersive Creatures' ]
+        condition: 'file("Skyrim Immersive Creatures Special Edition.esp") and not file("Wild World - SIC.esp")'
+      - <<: *patchProvided
+        subs: [ 'SkyTEST - Realistic Animals and Predators' ]
+        condition: 'file("SkyTEST-RealisticAnimals&Predators.esp") and not file("Wild World - SkyTEST.esp")'
+
   - name: '(Smilodon|Wildcat) - Combat of Skyrim\.esp'
     after:
       - 'Animal Tweaks.esp'
