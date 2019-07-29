@@ -5536,6 +5536,10 @@ plugins:
 
   - name: 'Character Creation Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2725/' ]
+    clean:
+      # version: 1.3.3
+      - crc: 0x78C19143
+        util: 'SSEEdit v4.0.2'
   - name: 'CCO - Diverse Races And Genders.esp'
     req:
       - 'Character Creation Overhaul.esp'
@@ -5548,6 +5552,16 @@ plugins:
   - name: 'CCO - Permanent Birthsigns.esp'
     req:
       - 'Character Creation Overhaul.esp'
+    dirty:
+      # version: 1.3.3
+      - <<: *quickClean
+        crc: 0xF4EC1F03
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 24
+    clean:
+      # version: 1.3.3, after QAC
+      - crc: 0x9740479E
+        util: 'SSEEdit v4.0.2'
 
   - name: 'TheChoiceIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
