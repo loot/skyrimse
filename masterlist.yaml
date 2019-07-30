@@ -10520,6 +10520,10 @@ plugins:
       - crc: 0x116B6B2F
         util: 'SSEEdit v4.0.2'
   - name: 'MCWT_FriendlyFaralda.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Improved College Entry - Questline Tweaks' ]
+        condition: 'active("CollegeEntry.esp") and active("MCWT_FriendlyFaralda.esp")'
     clean:
       # version: 1.3.1
       - crc: 0x9F3D4AAA
@@ -10540,6 +10544,7 @@ plugins:
     after:
       - 'Alternate Start - Live Another Life.esp'
     inc:
+      - 'CollegeEntry.esp'
       - 'CollegeOfWinterholdImmersive.esp'
       - name: 'College Bridge Light Fix - Clean ITM and Remove Unnecessary Record.esp'
         display: 'College of Winterhold Light Pillars FIX'
@@ -10568,6 +10573,9 @@ plugins:
             text: 'Use %1% instead.'
         subs: [ 'MCWT_TheAugursAdmonishment_NSF-MG.esp' ]
         condition: 'active("NotSoFast-MageGuild.esp")'
+      - <<: *alreadyInX
+        subs: [ 'Improved College Entry - Questline Tweaks' ]
+        condition: 'active("CollegeEntry.esp") and active("MCWT_TheAugursAdmonishment.esp")'
     clean:
       # version: 1.3.1
       - crc: 0xE5C9654A
@@ -10577,6 +10585,10 @@ plugins:
       # version: 1.3.1
       - crc: 0xF85B1AFE
         util: 'SSEEdit v4.0.2'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Improved College Entry - Questline Tweaks' ]
+        condition: 'active("CollegeEntry.esp") and active("MCWT_TheAugursAdmonishment_NSF-MG.esp")'
   - name: 'MCWT_UnflappableFaculty.esp'
     clean:
       # version: 1.3.1
