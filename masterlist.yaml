@@ -4699,7 +4699,7 @@ plugins:
     group: *floraGroup
     inc:
       - 'Enhanced Landscapes.esp'
-  - name: 'SRG Enhanced Trees Activator.esp'
+  - name: '(SRG Enhanced Trees Activator|Enhanced Vanilla Trees SSE)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11008'
         name: 'Enhanced Vanilla Trees'
@@ -5065,6 +5065,7 @@ plugins:
       - 'Whiterun Forest Borealis.esp'
     inc:
       - 'Enhanced Landscapes.esp'
+      - 'Enhanced Vanilla Trees SSE.esp'
       - 'S3DPlants.esp'
       - 'SimplyBiggerTreesSE.esp'
       - 'Skyrim Flora Overhaul.esp'
@@ -5096,8 +5097,13 @@ plugins:
   - name: 'SkyrimIsWindy - EVT patch.esp'
     group: *floraGroup
     req:
+      - name: 'Enhanced Vanilla Trees SSE.esp'
+        display: '[Enhanced Vanilla Trees](https://www.nexusmods.com/skyrimspecialedition/mods/11008)'
+        condition: 'not file("SRG Enhanced Trees Activator.esp")'
       - 'SkyrimIsWindy.esp'
-      - 'SRG Enhanced Trees Activator.esp'
+      - name: 'SRG Enhanced Trees Activator.esp'
+        display: '[Enhanced Vanilla Trees](https://www.nexusmods.com/skyrimspecialedition/mods/11008)'
+        condition: 'not file("Enhanced Vanilla Trees SSE.esp")'
   - name: 'SkyrimIsWindy-SimplyBiggerTreesSE-Patch.esp'
     group: *floraGroup
     req:
