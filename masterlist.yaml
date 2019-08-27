@@ -10911,6 +10911,11 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
+      - <<: *semiCompatible
+        subs:
+          - '[Cloaks and Capes Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/19510/)'
+          - 'A tanning rack added by this mod is hidden behind some clutter which OCW adds.'
+        condition: 'active("Cloaks&Capes.esp")'
       - <<: *patchIncluded
         subs: [ 'Atlas Map Markers' ]
         condition: 'active("Atlas Legendary.esp") and not active("OCW_AMM_FEPatch.esp")'
