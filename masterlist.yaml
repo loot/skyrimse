@@ -1005,9 +1005,13 @@ groups:
     description: 'A group for modules that modify or expand crafting systems such as Alchemy, or Smithing.'
     after: [ *economyGroup ]
 
+  - name: &perksGroup Skills & Perks
+    description: 'A group for modules that modify or add new Skills and Perks.'
+    after: [ *craftingGroup ]
+
   - name: &coreGroup Core Mods
     after:
-      - *craftingGroup
+      - *perksGroup
       - *landscapeGroup
 
   - name: &lowPriorityGroup Low Priority Overrides
