@@ -997,9 +997,13 @@ groups:
     description: 'A group for mods that alter the Economy of the game.'
     after: [ default ]
 
+  - name: &craftingGroup Crafting
+    description: 'A group for modules that modify or expand crafting systems such as Alchemy, or Smithing.'
+    after: [ *economyGroup ]
+
   - name: &coreGroup Core Mods
     after:
-      - *economyGroup
+      - *craftingGroup
       - *landscapeGroup
 
   - name: &lowPriorityGroup Low Priority Overrides
