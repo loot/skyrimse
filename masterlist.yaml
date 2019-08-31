@@ -993,9 +993,13 @@ groups:
       - *earlyLoadersGroup
       - *underridesGroup
 
+  - name: &economyGroup Economy
+    description: 'A group for mods that alter the Economy of the game.'
+    after: [ default ]
+
   - name: &coreGroup Core Mods
     after:
-      - default
+      - *economyGroup
       - *landscapeGroup
 
   - name: &lowPriorityGroup Low Priority Overrides
