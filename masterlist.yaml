@@ -993,9 +993,13 @@ groups:
       - *earlyLoadersGroup
       - *underridesGroup
 
+  - name: &racesGroup Races & Classes
+    description: 'A group for modules that modify character Races & Classes.'
+    after: [ default ]
+
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
-    after: [ default ]
+    after: [ *racesGroup ]
 
   - name: &craftingGroup Crafting
     description: 'A group for modules that modify or expand crafting systems such as Alchemy, or Smithing.'
