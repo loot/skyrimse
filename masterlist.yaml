@@ -7706,6 +7706,24 @@ plugins:
       - crc: 0x8468D97D
         util: 'SSEEdit v4.0.1'
 
+  - name: 'You Hunger.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
+    after:
+      - 'iNeed.esp'
+      - 'iNeed - Extended.esp'
+      - 'RealisticNeedsandDiseases.esp'
+      - 'Super Simple Needs.esp'
+    tag:
+      - Delev
+      - Relev
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("You Hunger - CACO.esp")'
+      - <<: *patchProvided
+        subs: [ 'Falskaar' ]
+        condition: 'active("Falskaar.esm") and not active("You Hunger - Falskaar.esp")'
+
 ###### Gameplay - Follower/Mount Managers ######
   - name: 'Convenient Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
