@@ -190,7 +190,7 @@ common:
       - lang: ru
         text: 'Мастерфайлы плагина требуют сортировки.'
   - &wildEdits
-    type: say
+    type: warn
     content:
       - lang: en
         text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
@@ -211,7 +211,7 @@ common:
     subs: [ '' ]
 
   - &patchUpdateAvailable
-    type: warn
+    type: say
     content:
       - lang: en
         text: 'Update Patch available: %1%'
@@ -1077,6 +1077,7 @@ plugins:
     msg:
       # (v1.5.62.0, 0x40306E4E)(V1.5.73.0, 0x87E3D764)(V1.5.80.0, 0x0F49D87E) after Quick Auto Clean
       - <<: *wildEdits
+        type: say
         subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://www.afkmods.com/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
         condition: 'checksum("Dawnguard.esm", 40306E4E) or checksum("Dawnguard.esm", 87E3D764) or checksum("Dawnguard.esm", 0F49D87E)'
     dirty:
