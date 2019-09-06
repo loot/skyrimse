@@ -993,9 +993,25 @@ groups:
       - *earlyLoadersGroup
       - *underridesGroup
 
+  - name: &racesGroup Races & Classes
+    description: 'A group for modules that modify character Races & Classes.'
+    after: [ default ]
+
+  - name: &economyGroup Economy
+    description: 'A group for mods that alter the Economy of the game.'
+    after: [ *racesGroup ]
+
+  - name: &craftingGroup Crafting
+    description: 'A group for modules that modify or expand crafting systems such as Alchemy, or Smithing.'
+    after: [ *economyGroup ]
+
+  - name: &perksGroup Skills & Perks
+    description: 'A group for modules that modify or add new Skills and Perks.'
+    after: [ *craftingGroup ]
+
   - name: &coreGroup Core Mods
     after:
-      - default
+      - *perksGroup
       - *landscapeGroup
 
   - name: &lowPriorityGroup Low Priority Overrides
@@ -5545,9 +5561,6 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'MLU.esp'
       - 'My Home Is Your Home.esp'
-      - 'Ordinator - Perks of Skyrim.esp'
-      # For Group, to avoid cyclic errors
-      - 'Imperious - Races of Skyrim.esp'
     tag:
       - C.Location
       - Names
@@ -5832,7 +5845,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
-    group: *coreGroup
+    group: *craftingGroup
     req:
       - *SKSE
     inc:
@@ -5853,8 +5866,6 @@ plugins:
       - 'Radiant and Unique Potions Poisons and Booze.esp'
       - 'Skyrim Revamped - Complete Enemy Overhaul.esp'
       - 'YOT - Your Own Thoughts.esp'
-      # For Group, to avoid cyclic errors
-      - 'Imperious - Races of Skyrim.esp'
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
@@ -5953,6 +5964,11 @@ plugins:
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v3.2.67'
+
+  - name: 'Complete Crafting Overhaul_Remade.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/49791/' ]
+    group: *craftingGroup
+
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
     after:
@@ -6458,7 +6474,7 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
-    group: *coreGroup
+    group: *racesGroup
     after:
       - 'Joy of Perspective.esp'
     inc:
@@ -6645,14 +6661,11 @@ plugins:
         name: 'Another Sorting Mod - MLU.esp Replacer'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17653/'
         name: '(SJG) OMEGA - The Modular Gameplay Overhaul'
-    group: *coreGroup
+    group: *economyGroup
     after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'Weapon AF.esp'
       - 'WACCF_Armor and Clothing Extension.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
-      # For Group, to avoid cyclic errors
-      - 'Imperious - Races of Skyrim.esp'
     inc:
       - 'WACCF_BashedPatchLvlListFix.esp'
     msg:
@@ -6964,17 +6977,13 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
-    group: *coreGroup
+    group: *perksGroup
     after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'Phenderix Magic Evolved.esp'
       - 'Phenderix Magic World.esp'
       - 'SAFO.esp'
       - 'Undeath.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
-      # For Group, to avoid cyclic errors
-      - 'Imperious - Races of Skyrim.esp'
-      - 'MLU.esp'
     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
       - 'PerkusMaximus_Mage.esp'
@@ -7188,7 +7197,7 @@ plugins:
         util: 'SSEEdit v3.3.6'
   - name: 'Sacrosanct - Vampires of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
-    group: *coreGroup
+    group: *perksGroup
     inc:
       - name: 'better vampires.esp'
         condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
@@ -7204,10 +7213,6 @@ plugins:
       - 'Requiem.esp'
       - 'Volkihar Knight.esp'
       - 'YOT - Your Own Thoughts.esp'
-      # For Group, to avoid cyclic errors
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Imperious - Races of Skyrim.esp'
-      - 'MLU.esp'
     tag:
       - Graphics
       - Names
