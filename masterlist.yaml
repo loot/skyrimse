@@ -956,12 +956,20 @@ groups:
   - name: &veryEarlyGroup Very Early Loaders
     after: [ *preVeryEarlyGroup ]
 
+  - name: &floraGroup Flora
+    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
+    after: [ *veryEarlyGroup ]
+
+  - name: &landscapeGroup Landscape
+    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
+    after: [ *floraGroup ]
+
   - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
 
   - name: &addonsGroup Add-ons & Expansions
     after:
       - *preAddonsGroup
-      - *veryEarlyGroup
+      - *landscapeGroup
 
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
 
@@ -977,25 +985,17 @@ groups:
       - *preEarlyGroup
       - *fixesGroup
 
-  - name: &floraGroup Flora
-    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
-    after: [ *veryEarlyGroup ]
-
-  - name: &landscapeGroup Landscape
-    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-    after: [ *floraGroup ]
-
   - name: &underridesGroup Underrides
     after: [ *veryEarlyGroup ]
 
   - name: default
-    after:
-      - *earlyLoadersGroup
-      - *underridesGroup
+    after: [ *underridesGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after: [ default ]
+    after:
+      - default
+      - *earlyLoadersGroup
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
@@ -1010,9 +1010,7 @@ groups:
     after: [ *craftingGroup ]
 
   - name: &coreGroup Core Mods
-    after:
-      - *perksGroup
-      - *landscapeGroup
+    after: [ *perksGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ *coreGroup ]
@@ -1628,7 +1626,7 @@ plugins:
 
   - name: 'unofficial skyrim survival patch.es(l|p)'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12655/' ]
-    group: *fixesGroup
+    group: *underridesGroup
     clean:
       # version: 3.0
       - crc: 0x74DDAE7A
@@ -1666,7 +1664,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
     inc:
       - 'Race Scale Remover.esp'
-    group: *fixesGroup
+    group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'Immersive Sounds - Compendium.esp'
@@ -1906,13 +1904,13 @@ plugins:
     after:
       - 'Unofficial Skyrim Special Edition Patch.esp'
   - name: 'Skyrim Project Optimization - Full Version.esm'
-    group: *fixesGroup
+    group: *underridesGroup
     clean:
       # version: 1.3
       - crc: 0x45374C76
         util: 'SSEEdit v4.0.2'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-    group: *fixesGroup
+    group: *underridesGroup
     clean:
       # version: 1.3
       - crc: 0xD0948CCF
@@ -6163,7 +6161,7 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/22075'
-    group: *preFixesGroup
+    group: *veryEarlyGroup
     after:
       - 'Cutting Room Floor.esp'
       - 'Hothtrooper44_ArmorCompilation.esp'
@@ -8719,7 +8717,7 @@ plugins:
         name: 'Beyond Skyrim - Bruma SE'
   - name: 'BSAssets.esm'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835' ]
-    group: *addonsGroup
+    group: *underridesGroup
     tag:
       - C.Light
       - C.RecordFlags
@@ -8729,7 +8727,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'BSHeartland.esm'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831' ]
-    group: *addonsGroup
+    group: *underridesGroup
     msg:
       - <<: *patch3rdParty
         subs:
@@ -8789,7 +8787,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'BS_DLC_patch.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167' ]
-    group: *preAddonsGroup
+    group: *veryEarlyGroup
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
