@@ -1,5 +1,9 @@
 common:
 # Files
+  - &FNIS
+    name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
+    display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)'
+    condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
   - &SKSE64
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](http://skse.silverlock.org))**'
@@ -14,10 +18,6 @@ common:
   - &SkyUI
     name: 'SkyUI_SE.esp'
     display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
-  - &FNIS
-    name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
-    display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)'
-    condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
 
 # Messages
   - &alreadyInX
@@ -45,51 +45,6 @@ common:
         text: 'Удалите. Уже включено в %1%.'
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
-  - &includesX
-    type: say
-    content:
-      - lang: en
-        text: '%1% is included with this mod.'
-      - lang: de
-        text: '%1% ist in dieser Mod enthalten.'
-      - lang: ja
-        text: '%1%はこのmodに含まれています。'
-      - lang: ko
-        text: '%1% 모드가 포함되어 있습니다.'
-      - lang: pl
-        text: '%1% jest już zawarte z tym modem.'
-      - lang: pt
-        text: '%1% vem incluído com este mod.'
-      - lang: pt_BR
-        text: '%1% está incluído neste mod.'
-      - lang: ru
-        text: '%1% уже включен в этот мод.'
-  - &includesMBBF
-    <<: *includesX
-    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
-  - &useOnlyOneX
-    type: error
-    content:
-      - lang: en
-        text: 'Use only one %1%.'
-      - lang: de
-        text: 'Nutzen Sie nur einen %1%.'
-      - lang: es
-        text: 'Utilizar solo un %1%.'
-      - lang: ja
-        text: '%1%は一つだけ使用してください。'
-      - lang: ko
-        text: '%1%을 한 개만 사용하십시오.'
-      - lang: pl
-        text: 'Używa tylko jednego %1%'
-      - lang: pt
-        text: 'Utilizar apenas um %1%.'
-      - lang: pt_BR
-        text: 'Utilize apenas um %1%'
-      - lang: ru
-        text: 'Используйте только один %1%.'
-      - lang: zh_CN
-        text: '只使用一个%1%。'
 
   - &compatNotes
     type: say
@@ -110,23 +65,6 @@ common:
         text: 'É recomendada a leitura das [Notas de Compatibilidade](%1%) deste mod.'
       - lang: ru
         text: 'Рекомендуется прочесть [заметки о совместимости](%1%) мода.'
-  - &semiCompatible
-    type: say
-    content:
-      - lang: en
-        text: '%1% is not fully compatible with this mod. %2%'
-      - lang: de
-        text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
-      - lang: ja
-        text: '%1%は%2%と完全な互換性がありません。'
-      - lang: ko
-        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
-      - lang: pt
-        text: '%1% não é totalmente compatível com este mod. %2%'
-      - lang: pt_BR
-        text: '%1% não é completamente compatível com este mod. %2%'
-      - lang: ru
-        text: '%1% не полностью совместим с этим модом. %2%'
 
   - &corrupt
     type: warn
@@ -145,6 +83,27 @@ common:
         text: 'Este arquivo está corrompido e não deveria ser utilizado.'
       - lang: ru
         text: 'Файл испорчен и не должен использоваться.'
+
+  - &deletePlugin
+    type: warn
+    content:
+      - lang: en
+        text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
+      - lang: de
+        text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
+      - lang: ja
+        text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。これらは**%1%**によって引き続き必要とされてます。'
+      - lang: ko
+        text: '**%1%** 모드를 사용중일 떈, 이 ESP 파일을 삭제하고 함께 설치된 리소스(예: 메쉬, 텍스쳐)만 남겨두는 걸 권장합니다. 리소스는 **%1%** 모드에서 필요로 합니다.'
+      - lang: pl
+        text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem. Ponieważ są wciąż wymagane przez **%1%**.'
+      - lang: pt
+        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
+      - lang: pt_BR
+        text: 'Quando se usa **%1%**, é recomendado que você desative ou delete este arquivo ESP, mas que mantenha os recursos (ex. meshes, texturas) que vieram com esse mod.'
+      - lang: ru
+        text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (meshes, textures). Т.к. они все еще требуются для **%1%**.'
+
   - &doNotClean
     type: say
     content:
@@ -170,103 +129,64 @@ common:
         text: 'Не очищать ITM-записи. "Грязные" правки оставлены специально и требуются для функционирования мода. Восстановить удаленные записи (UDR) можно безопасно, но идентичные мастерфайлу лучше оставить.'
       - lang: zh_CN
         text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
-  - &reqMasterSort
-    type: say
-    content:
-      - lang: en
-        text: 'Plugin''s Masters require sorting.'
-      - lang: de
-        text: 'Die Plugin Master müssen sortiert werden.'
-      - lang: ja
-        text: 'このプラグインのマスターはソートが必要です。'
-      - lang: ko
-        text: '플러그인 마스터의 정렬이 필요합니다.'
-      - lang: pl
-        text: 'Wtyczki Główne tej wtyczki wymagają sortowania.'
-      - lang: pt
-        text: 'A Master deste Plugin necessita ordenação.'
-      - lang: pt_BR
-        text: 'Os Masters desse plugin necessitam de ordenação.'
-      - lang: ru
-        text: 'Мастерфайлы плагина требуют сортировки.'
-  - &wildEdits
-    type: say
-    content:
-      - lang: en
-        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
-      - lang: da
-        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
-      - lang: de
-        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
-      - lang: ja
-        text: 'このプラグインにはITMおよびUDRレコード以外の誤った編集(Wild Edit)が含まれており、navmeshが削除されています。他のmodと干渉しないように、追加の手動クリーニングが必要になる場合があります。%1%'
-      - lang: pl
-        text: 'Ta wtyczka zawiera dzikie edycje (Wild Edit) poza rekordami ITM i UDR oraz usunięte siatki nawigacyjne i może wymagać dodatkowego ręcznego czyszczenia aby nie kolidować z innymi modami. %1%'
-      - lang: pt
-        text: 'Este plugin contém edições selvagens (Wild Edits) para além dos registros ITM e UDR, e Navmeshes apagadas. Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
-      - lang: pt_BR
-        text: 'Este plugin contém edições não-intencionais (Wild Edits) além dos registros ITM e UDR e Navmeshes deletadas e pode requerer limpeza manual adicional de forma que não interfira com outros mods. %1%'
-      - lang: ru
-        text: 'Плагин содержит дикие правки, кроме ITM, UDR записей и удаленных навмешей и может потребовать дополнительной ручной чистки, чтобы не пересекаться с другими модами. %1%'
-    subs: [ '' ]
 
-  - &patchUpdateAvailable
+  - &includesX
+    type: say
+    content:
+      - lang: en
+        text: '%1% is included with this mod.'
+      - lang: de
+        text: '%1% ist in dieser Mod enthalten.'
+      - lang: ja
+        text: '%1%はこのmodに含まれています。'
+      - lang: ko
+        text: '%1% 모드가 포함되어 있습니다.'
+      - lang: pl
+        text: '%1% jest już zawarte z tym modem.'
+      - lang: pt
+        text: '%1% vem incluído com este mod.'
+      - lang: pt_BR
+        text: '%1% está incluído neste mod.'
+      - lang: ru
+        text: '%1% уже включен в этот мод.'
+  - &includesMBBF
+    <<: *includesX
+    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
+
+  - &missingRequirementXforY
     type: warn
     content:
       - lang: en
-        text: 'Update Patch available: %1%'
+        text: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
       - lang: de
-        text: 'Update Patch verfügbar: %1%'
+        text: 'Es erscheint so als hätten Sie **%2%** installiert, aber einige der Voraussetzungen scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
       - lang: ja
-        text: 'パッチの更新ができます: %1%'
+        text: '**%2%**がインストールされましたが、必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
       - lang: ko
-        text: '패치 업데이트 가능: %1%'
+        text: '**%2%** 모드를 실행하기 위한 필요 모드가 빠져 있습니다. **%1%** 모드를 제대로 설치하십시오.'
       - lang: pl
-        text: 'Dostępna Łatka Aktualizująca: %1%'
-      - lang: pt
-        text: 'Patch de atualização disponível: %1%'
+        text: 'Wygląda na to że zainstalowałeś **%2%**, ale wydaje się, że brakuje niektórych z jego wymagań. Upewnij się że poprawnie zainstalowałeś **%1%**.'
       - lang: pt_BR
-        text: 'Patch de Atualização disponível: %1%'
+        text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
       - lang: ru
-        text: 'Доступно обновление патча: %1%'
-  - &patchProvided
-    type: say
+        text: 'Похоже у вас установлен **%2%**, но некоторые его требования отсутствуют. Убедитесь, что правильно установили **%1%**.'
+
+  - &missingRequirementXforPlugin
+    type: warn
     content:
       - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+        text: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
       - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
+        text: 'Einige der Voraussetzungen dieses Plugins scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
       - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。.'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
+        text: 'このプラグインに必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
       - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
-      - lang: pt
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
+        text: 'Część wymagań dla tej wtyczki wydaje się być brakująca. Upewnij się że poprawnie zainstalowałeś **%1%**.'
       - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
+        text: 'Alguns dos requerimentos deste plugin estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
       - lang: ru
-        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти на странице плагина.'
-  - &patchIncluded
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
-      - lang: pt
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
-      - lang: ru
-        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти в установщике плагина.'
+        text: 'Некоторые его требования отсутствуют. Убедитесь, что правильно установили **%1%**.'
+
   - &patch3rdParty
     type: say
     content:
@@ -286,6 +206,12 @@ common:
         text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
       - lang: ru
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
+  - &patch3rdPartySBCK
+    <<: *patch3rdParty
+    subs:
+      - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
+      - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
+
   - &patch3rdPartyQUASIPC
     type: say
     content:
@@ -305,46 +231,90 @@ common:
         text: 'Você aparenta estar usando **%1%**, mas não habilitou um patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: [ Qwins''s Unified Automated Self Installing Patch Compandium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
       - lang: ru
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч доступен здесь: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-  - &patch3rdPartySBCK
-    <<: *patch3rdParty
-    subs:
-      - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
-      - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
 
-  - &missingRequirementXforY
-    type: warn
+  - &patchIncluded
+    type: say
     content:
       - lang: en
-        text: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
       - lang: de
-        text: 'Es erscheint so als hätten Sie **%2%** installiert, aber einige der Voraussetzungen scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
+        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
       - lang: ja
-        text: '**%2%**がインストールされましたが、必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
       - lang: ko
-        text: '**%2%** 모드를 실행하기 위한 필요 모드가 빠져 있습니다. **%1%** 모드를 제대로 설치하십시오.'
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
       - lang: pl
-        text: 'Wygląda na to że zainstalowałeś **%2%**, ale wydaje się, że brakuje niektórych z jego wymagań. Upewnij się że poprawnie zainstalowałeś **%1%**.'
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin'
       - lang: pt_BR
-        text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
       - lang: ru
-        text: 'Похоже у вас установлен **%2%**, но некоторые его требования отсутствуют. Убедитесь, что правильно установили **%1%**.'
-  - &missingRequirementXforPlugin
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти в установщике плагина.'
+
+  - &patchProvided
+    type: say
+    content:
+      - lang: en
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+      - lang: de
+        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
+      - lang: ja
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。.'
+      - lang: ko
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
+      - lang: pl
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
+      - lang: pt_BR
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
+      - lang: ru
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти на странице плагина.'
+
+  - &patchUpdateAvailable
+    type: say
+    content:
+      - lang: en
+        text: 'Update Patch available: %1%'
+      - lang: de
+        text: 'Update Patch verfügbar: %1%'
+      - lang: ja
+        text: 'パッチの更新ができます: %1%'
+      - lang: ko
+        text: '패치 업데이트 가능: %1%'
+      - lang: pl
+        text: 'Dostępna Łatka Aktualizująca: %1%'
+      - lang: pt
+        text: 'Patch de atualização disponível: %1%'
+      - lang: pt_BR
+        text: 'Patch de Atualização disponível: %1%'
+      - lang: ru
+        text: 'Доступно обновление патча: %1%'
+
+  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
+  - &requiresMCM
     type: warn
     content:
       - lang: en
-        text: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
       - lang: de
-        text: 'Einige der Voraussetzungen dieses Plugins scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
+        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) installiert.'
       - lang: ja
-        text: 'このプラグインに必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
+        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)を導入してください。'
+      - lang: ko
+        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
       - lang: pl
-        text: 'Część wymagań dla tej wtyczki wydaje się być brakująca. Upewnij się że poprawnie zainstalowałeś **%1%**.'
+        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+      - lang: pt
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
       - lang: pt_BR
-        text: 'Alguns dos requerimentos deste plugin estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
       - lang: ru
-        text: 'Некоторые его требования отсутствуют. Убедитесь, что правильно установили **%1%**.'
+        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+    condition: 'not active("SkyUI_SE.esp")'
 
-  - &reqSKSE
+  - &requiresSKSE
     type: error
     content:
       - lang: en
@@ -369,47 +339,68 @@ common:
         text: 'У вас установлен %1%, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org).'
       - lang: zh_CN
         text: '你已经安装了%1%，但是未发现SKSE！请查看SKSE的下载页面：[SKSE](http://skse.silverlock.org)。'
-  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &requiresMCM
-    type: warn
-    content:
-      - lang: en
-        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
-      - lang: de
-        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) installiert.'
-      - lang: ja
-        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)を導入してください。'
-      - lang: ko
-        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
-      - lang: pl
-        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
-      - lang: pt
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
-      - lang: pt_BR
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
-      - lang: ru
-        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
-    condition: 'not active("SkyUI_SE.esp")'
 
-  - &deletePlugin
-    type: warn
+  - &semiCompatible
+    type: say
     content:
       - lang: en
-        text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
+        text: '%1% is not fully compatible with this mod. %2%'
       - lang: de
-        text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
+        text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
       - lang: ja
-        text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。これらは**%1%**によって引き続き必要とされてます。'
+        text: '%1%は%2%と完全な互換性がありません。'
       - lang: ko
-        text: '**%1%** 모드를 사용중일 떈, 이 ESP 파일을 삭제하고 함께 설치된 리소스(예: 메쉬, 텍스쳐)만 남겨두는 걸 권장합니다. 리소스는 **%1%** 모드에서 필요로 합니다.'
-      - lang: pl
-        text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem. Ponieważ są wciąż wymagane przez **%1%**.'
+        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
       - lang: pt
-        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
+        text: '%1% não é totalmente compatível com este mod. %2%'
       - lang: pt_BR
-        text: 'Quando se usa **%1%**, é recomendado que você desative ou delete este arquivo ESP, mas que mantenha os recursos (ex. meshes, texturas) que vieram com esse mod.'
+        text: '%1% não é completamente compatível com este mod. %2%'
       - lang: ru
-        text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (meshes, textures). Т.к. они все еще требуются для **%1%**.'
+        text: '%1% не полностью совместим с этим модом. %2%'
+
+  - &sortMasters
+    type: say
+    content:
+      - lang: en
+        text: 'Plugin''s Masters require sorting.'
+      - lang: de
+        text: 'Die Plugin Master müssen sortiert werden.'
+      - lang: ja
+        text: 'このプラグインのマスターはソートが必要です。'
+      - lang: ko
+        text: '플러그인 마스터의 정렬이 필요합니다.'
+      - lang: pl
+        text: 'Wtyczki Główne tej wtyczki wymagają sortowania.'
+      - lang: pt
+        text: 'A Master deste Plugin necessita ordenação.'
+      - lang: pt_BR
+        text: 'Os Masters desse plugin necessitam de ordenação.'
+      - lang: ru
+        text: 'Мастерфайлы плагина требуют сортировки.'
+
+  - &useOnlyOneX
+    type: error
+    content:
+      - lang: en
+        text: 'Use only one %1%.'
+      - lang: de
+        text: 'Nutzen Sie nur einen %1%.'
+      - lang: es
+        text: 'Utilizar solo un %1%.'
+      - lang: ja
+        text: '%1%は一つだけ使用してください。'
+      - lang: ko
+        text: '%1%을 한 개만 사용하십시오.'
+      - lang: pl
+        text: 'Używa tylko jednego %1%'
+      - lang: pt
+        text: 'Utilizar apenas um %1%.'
+      - lang: pt_BR
+        text: 'Utilize apenas um %1%'
+      - lang: ru
+        text: 'Используйте только один %1%.'
+      - lang: zh_CN
+        text: '只使用一个%1%。'
 
   - &versionOldX
     type: say
@@ -434,6 +425,7 @@ common:
         text: 'Возможно у вас не установлена новейшая версия %1%. Для работы некоторых модов может требоваться функционал, добавленный в последней версии %1%'
       - lang: zh_CN
         text: '你的%1%似乎不是最新的。有些插件可能需要最新的%1%才能工作。'
+
   - &versionUpToDateX
     type: say
     content:
@@ -459,6 +451,7 @@ common:
         text: 'Ваш %1% обновлен.'
       - lang: zh_CN
         text: '你的%1%是最新的。'
+
   - &versionSksePluginIncSSE
     type: error
     content:
@@ -480,6 +473,7 @@ common:
         text: 'Sua versão instalada do **Plugin do SKSE (%1%)** não é compatível com a sua versão do Skyrim SE.'
       - lang: ru
         text: 'Установленная у вас версия плагина **SKSE (%1%)** несовместима с вашей версией Skyrim SE.'
+
   - &versionXIncY
     type: error
     content:
@@ -511,6 +505,27 @@ common:
     subs:
       - '**Script Extender ([SKSE](http://skse.silverlock.org))**'
       - '**Skyrim VR**'
+
+  - &wildEdits
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
+      - lang: da
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
+      - lang: de
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+      - lang: ja
+        text: 'このプラグインにはITMおよびUDRレコード以外の誤った編集(Wild Edit)が含まれており、navmeshが削除されています。他のmodと干渉しないように、追加の手動クリーニングが必要になる場合があります。%1%'
+      - lang: pl
+        text: 'Ta wtyczka zawiera dzikie edycje (Wild Edit) poza rekordami ITM i UDR oraz usunięte siatki nawigacyjne i może wymagać dodatkowego ręcznego czyszczenia aby nie kolidować z innymi modami. %1%'
+      - lang: pt
+        text: 'Este plugin contém edições selvagens (Wild Edits) para além dos registros ITM e UDR, e Navmeshes apagadas. Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
+      - lang: pt_BR
+        text: 'Este plugin contém edições não-intencionais (Wild Edits) além dos registros ITM e UDR e Navmeshes deletadas e pode requerer limpeza manual adicional de forma que não interfira com outros mods. %1%'
+      - lang: ru
+        text: 'Плагин содержит дикие правки, кроме ITM, UDR записей и удаленных навмешей и может потребовать дополнительной ручной чистки, чтобы не пересекаться с другими модами. %1%'
+    subs: [ '' ]
 
 # Dirty Aliases
   - &dirtyPlugin
@@ -819,106 +834,106 @@ globals:
 
 # SKSE Plugins - Requirements
   # SKSE 64
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ 'an SKSE Plugin' ]
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
 
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
     condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Better Jumping SE](https://www.nexusmods.com/skyrimspecialedition/mods/18967/)' ]
     condition: 'file("SKSE/Plugins/BetterJumpingSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[CBP Physics](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
     condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Classic Sprinting Redone](https://www.nexusmods.com/skyrimspecialedition/mods/20166/)' ]
     condition: 'file("SKSE/Plugins/ClassicSprinting.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Display Enemy Level](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
     condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/)' ]
     condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Encounter Zones Unlocked](https://www.nexusmods.com/skyrimspecialedition/mods/19608/)' ]
     condition: 'file("SKSE/Plugins/encounter_zones_unlocked.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
     condition: 'file("SKSE/Plugins/EngineFixes.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
     condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Enchantment Reload Fix SE](https://www.nexusmods.com/skyrimspecialedition/mods/21055/)' ]
     condition: 'file("SKSE/Plugins/EnchantmentReloadFixSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Experience](https://www.nexusmods.com/skyrimspecialedition/mods/17751/)' ]
     condition: 'file("SKSE/Plugins/Experience.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)' ]
     condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Floating Damage](https://www.nexusmods.com/skyrimspecialedition/mods/14332/)' ]
     condition: 'file("SKSE/Plugins/FloatingDamage.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
     condition: 'file("SKSE/Plugins/Fuz Ro D''oh.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Glow Be Gone](https://www.nexusmods.com/skyrimspecialedition/mods/21703/)' ]
     condition: 'file("SKSE/Plugins/GlowBeGoneSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Havok Fix](https://www.nexusmods.com/skyrimspecialedition/mods/18160/)' ]
     condition: 'file("SKSE/Plugins/HavokFix64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
     condition: 'file("SKSE/Plugins/HookShareSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[JContainers 64](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
     condition: 'file("SKSE/Plugins/JContainers64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[ModifyFaceGen Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
     condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
     condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Quick Loot RE](https://www.nexusmods.com/skyrimspecialedition/mods/21085/)' ]
     condition: 'file("SKSE/Plugins/QuickLootRE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Simple Face to Face Conversation - Updated](https://www.nexusmods.com/skyrimspecialedition/mods/21220/)' ]
     condition: 'file("SKSE/Plugins/SimpleFace2FaceKiwami.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Skyrim Skill Uncapper](https://www.nexusmods.com/skyrimspecialedition/mods/8889/)' ]
     condition: 'file("SKSE/Plugins/SkyrimUncapper.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[SkyriimSouls - Unpaused Game Menus](https://www.nexusmods.com/skyrimspecialedition/mods/15170/)' ]
     condition: 'file("SKSE/Plugins/SkyrimSouls.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Stay At The System Page - Updated](https://www.nexusmods.com/skyrimspecialedition/mods/19832/)' ]
     condition: 'file("SKSE/Plugins/StayAtSystemPageSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[To Your Face SE](https://www.nexusmods.com/skyrimspecialedition/mods/24720/)' ]
     condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
 
   # SKSE VR
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[CBP Physics VR](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
     condition: 'file("SKSE/Plugins/cbp.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[Display Enemy Level VR](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
     condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
     condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[ModifyFaceGen Fix VR](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
     condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[PapyrusUtil VR](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
     condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *reqSKSE
+  - <<: *requiresSKSE
     subs: [ '[To Your Face VR](https://www.nexusmods.com/skyrimspecialedition/mods/24720/)' ]
     condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
 
@@ -1077,6 +1092,7 @@ plugins:
     msg:
       # (v1.5.62.0, 0x40306E4E)(V1.5.73.0, 0x87E3D764)(V1.5.80.0, 0x0F49D87E) after Quick Auto Clean
       - <<: *wildEdits
+        type: say
         subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://www.afkmods.com/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
         condition: 'checksum("Dawnguard.esm", 40306E4E) or checksum("Dawnguard.esm", 87E3D764) or checksum("Dawnguard.esm", 0F49D87E)'
     dirty:
@@ -7396,7 +7412,7 @@ plugins:
       - Delev
       - Relev
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Skyrim Revamped - Summermyst Patch.esp", 86F771B4)'
     clean:
       # version: 1.0
@@ -7942,7 +7958,7 @@ plugins:
   - name: 'SL01AmuletsSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/487/' ]
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
     tag:
       - Delev
@@ -8145,7 +8161,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
         name: 'Heavy Armory - New Weapons'
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
     tag:
       - Delev
@@ -8657,7 +8673,7 @@ plugins:
     after:
       - 'WACCF_BashedPatchLvlListFix.esp'
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB)'
     tag:
       - Delev
@@ -8987,7 +9003,7 @@ plugins:
       - 'AuroraVillage.esp'
     msg:
       # CRC after QAC. (0xDF7EEFF1)
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Undeath.esp", DF7EEFF1)'
       # CRC after QAC & Sort Masters. (0x9B2BAA6A)
       - <<: *wildEdits
@@ -9212,7 +9228,7 @@ plugins:
   - name: 'BlackthornManor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2242/' ]
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("BlackthornManor.esp", F0F0D623)'
     dirty:
       # version: 1.1
@@ -10028,7 +10044,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Complete LoS Patch.esp'
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("ETaC - Complete LoS Patch.esp", 54BB4D26)'
     clean:
       # version: 0.3.4
@@ -10068,7 +10084,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Darkwater Crossing LoS Patch.esp'
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("ETaC - Darkwater Crossing LoS Patch.esp", 343067D8)'
     clean:
       # version: 0.3.4
@@ -10173,7 +10189,7 @@ plugins:
         util: 'SSEEdit v3.2.2'
   - name: 'ETaC - Riverwood LoS Patch.esp'
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("ETaC - Riverwood LoS Patch.esp", C723AA51)'
     clean:
       # version: 0.3.4
@@ -11283,7 +11299,7 @@ plugins:
           - lang: pt
             text: 'Shezrie''s Old Hroldan Town é apenas compatível com Distinct Interiors - Modular version without Inns.'
         condition: 'active("Distinct Interiors.esp")'
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("ShezrieOldHroldanVer2.esp", A8297990)'
     tag:
       - C.Light
@@ -11947,7 +11963,7 @@ plugins:
     after:
       - 'JKs Whiterun.esp'
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
     dirty:
       - <<: *reqManualFix
@@ -11962,7 +11978,7 @@ plugins:
   - name: 'Eli_Halla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Eli_Halla.esp", 9D21AAB4)'
     dirty:
       # version: 2.3
@@ -11976,7 +11992,7 @@ plugins:
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
     dirty:
       # version: 1.2
@@ -11990,7 +12006,7 @@ plugins:
   - name: 'Eli_Routa.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/' ]
     msg:
-      - <<: *reqMasterSort
+      - <<: *sortMasters
         condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa.esp", E6250224)'
     dirty:
       # version: 1.0
