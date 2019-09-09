@@ -4952,7 +4952,7 @@ plugins:
     group: *floraGroup
     inc:
       - 'Enhanced Landscapes.esp'
-  - name: '(SRG Enhanced Trees Activator|Enhanced Vanilla Trees SSE)\.esp'
+  - name: '(Enhanced Vanilla Trees SSE|SRG Enhanced Trees Activator)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11008'
         name: 'Enhanced Vanilla Trees'
@@ -5203,6 +5203,10 @@ plugins:
       - 'Paper World Map.esp'
       - 'RealisticWaterTwo.esp'
 
+  - name: 'NorthernGrass.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25459/' ]
+    group: *floraGroup
+
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *veryEarlyGroup
@@ -5271,10 +5275,6 @@ plugins:
       - crc: 0xCBC13761
         util: 'SSEEdit v4.0.2'
 
-  - name: 'NorthernGrass.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25459/' ]
-    group: *floraGroup
-
   - name: 'Realistic Treeline.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/'
@@ -5294,18 +5294,6 @@ plugins:
       - crc: 0xA208B2B1
         util: 'SSEEdit v4.0.0'
 
-  - name: 'SimplyBiggerTreesSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
-    group: *floraGroup
-    clean:
-      # version: 1.0SE
-      - crc: 0xADC2F6AF
-        util: 'SSEEdit v4.0.2'
-  - name: 'Skyrim Flora Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
-    group: *floraGroup
-    after:
-      - 'SimplyBiggerTreesSE.esp'
   - name: 'S3DTrees NextGenerationForests.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12371/' ]
     group: *floraGroup
@@ -5341,6 +5329,19 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_S3DLandscapes_USSEP Patch.esp")'
+  - name: 'SimplyBiggerTreesSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
+    group: *floraGroup
+    clean:
+      # version: 1.0SE
+      - crc: 0xADC2F6AF
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Skyrim Flora Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
+    group: *floraGroup
+    after:
+      - 'SimplyBiggerTreesSE.esp'
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
     group: *veryEarlyGroup
@@ -5497,8 +5498,16 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+  - name: 'ViscousGrass.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/' ]
+    group: *floraGroup
+    inc:
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
   - name: 'Voluptuous.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22437/' ]
+    group: *floraGroup
+  - name: 'waterplants.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/' ]
     group: *floraGroup
   - name: 'WGT.esp'
     url:
@@ -5524,14 +5533,6 @@ plugins:
       - 'Tamriel Reloaded HD SE.esp'
   - name: 'Whiterun Trees Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16230/' ]
-    group: *floraGroup
-  - name: 'ViscousGrass.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/' ]
-    group: *floraGroup
-    inc:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-  - name: 'waterplants.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/' ]
     group: *floraGroup
   - name: 'WhiterunHoldForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3212/' ]
