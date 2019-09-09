@@ -12916,14 +12916,65 @@ plugins:
       - crc: 0x384466AE
         util: 'SSEEdit v4.0.2'
 
-###### Patches - Compatibilty ######
+###### Patches ######
   - name: 'Unique Loot Compatibility Patch.esp'
     tag:
       - Delev
       - Invent
       - Relev
 
-###### Patches - Qwinn's Unified Automated Self Installing Patch Compendium ######
+  ### Patches - kryptopyr's Patch Hub ######
+  - name: 'AwesomePotions_CACO_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    after:
+      - 'Hunterborn_CACO-SE_Patch.esp'
+    tag:
+      - Graphics
+  - name: 'CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    req:
+      - name: 'Improved Fire Salts Frost Salts And Glow Dust.esp'
+        display: '[Improved Fire Salts Frost Salts and Glow Dust](https://www.nexusmods.com/skyrimspecialedition/mods/20572)'
+  - name: 'CACO_Ordinator_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    clean:
+      # version: 1.0
+      - crc: 0x4D49E27E
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'CACO Rare Curios Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CACO, Bruma & Rare Curios Patch']
+        condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
+  - name: 'CACO_USSEP_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
+        condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+  - name: 'TCIY BCS Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    tag:
+      - Graphics
+      - Names
+    clean:
+      # version: 1.0
+      - crc: 0xA545660C
+        util: 'SSEEdit v3.2.72d'
+  - name: 'SPO_Ordinator_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    req:
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'Smithing Perks Overhaul SE.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+  - name: 'WACCF_Survival Mode_Patch.esp'
+    inc:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
+        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+
+  ### Patches - (QUASIPC) Qwinn's Unified Automated Self Installing Patch Compendium ###
   - name: 'Qw_.*\.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
   - name: 'Qw_3DNPC_USSEP Patch.esp'
@@ -13007,7 +13058,7 @@ plugins:
     after:
       - 'Qw_PANNPCs_CRF Patch.esp'
 
-###### Patches - Scoped Bows Compatibility Kit - SBCK ######
+  ### Patches - (SBCK) Scoped Bows Compatibility Kit ###
   - name: 'ScopedBows_MLU_ZIA Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19495/' ]
     tag:
@@ -13032,57 +13083,6 @@ plugins:
       # version: 1.1.0, esp - ESL flagged
       - crc: 0x57124060
         util: 'SSEEdit v4.0.0'
-
-###### Patches - kryptopyr's Patch Hub ######
-  - name: 'AwesomePotions_CACO_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    after:
-      - 'Hunterborn_CACO-SE_Patch.esp'
-    tag:
-      - Graphics
-  - name: 'CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    req:
-      - name: 'Improved Fire Salts Frost Salts And Glow Dust.esp'
-        display: '[Improved Fire Salts Frost Salts and Glow Dust](https://www.nexusmods.com/skyrimspecialedition/mods/20572)'
-  - name: 'CACO_Ordinator_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    clean:
-      # version: 1.0
-      - crc: 0x4D49E27E
-        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
-  - name: 'CACO Rare Curios Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'CACO, Bruma & Rare Curios Patch']
-        condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
-  - name: 'CACO_USSEP_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
-        condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
-  - name: 'TCIY BCS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    tag:
-      - Graphics
-      - Names
-    clean:
-      # version: 1.0
-      - crc: 0xA545660C
-        util: 'SSEEdit v3.2.72d'
-  - name: 'SPO_Ordinator_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    req:
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'Smithing Perks Overhaul SE.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-  - name: 'WACCF_Survival Mode_Patch.esp'
-    inc:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
-        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
 
 ###### Settlements Expanded SE ######
   - name: 'Settlements Expanded SE.*\.esp'
