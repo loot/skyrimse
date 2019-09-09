@@ -8992,39 +8992,6 @@ plugins:
         name: 'Moon and Star - WARZONES Assault Attack Compatibility Patch'
     group: *underridesGroup
 
-  - name: 'Undeath.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
-    group: *underridesGroup
-    after:
-      - 'Enhanced Landscapes.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MoonAndStar_MAS.esp'
-    inc:
-      - 'AuroraVillage.esp'
-    msg:
-      # CRC after QAC. (0xDF7EEFF1)
-      - <<: *sortMasters
-        condition: 'checksum("Undeath.esp", DF7EEFF1)'
-      # CRC after QAC & Sort Masters. (0x9B2BAA6A)
-      - <<: *wildEdits
-        subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
-        condition: 'checksum("Undeath.esp", 9B2BAA6A)'
-      - <<: *semiCompatible
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - 'Complete Alchemy & Cooking Overhaul adds a flora respawn fix to several records that Undeath modifies. A patch is recommended to ensure correct functionality for both mods.'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp")'
-    tag:
-      - Graphics
-      - Sound
-    dirty:
-      # version: 1.7
-      - <<: *quickClean
-        crc: 0xEB75A960
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 41
   - name: 'moonpath.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
@@ -9080,6 +9047,39 @@ plugins:
         crc: 0x168EF727
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 3
+  - name: 'Undeath.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
+    group: *underridesGroup
+    after:
+      - 'Enhanced Landscapes.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'MoonAndStar_MAS.esp'
+    inc:
+      - 'AuroraVillage.esp'
+    msg:
+      # CRC after QAC. (0xDF7EEFF1)
+      - <<: *sortMasters
+        condition: 'checksum("Undeath.esp", DF7EEFF1)'
+      # CRC after QAC & Sort Masters. (0x9B2BAA6A)
+      - <<: *wildEdits
+        subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
+        condition: 'checksum("Undeath.esp", 9B2BAA6A)'
+      - <<: *semiCompatible
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - 'Complete Alchemy & Cooking Overhaul adds a flora respawn fix to several records that Undeath modifies. A patch is recommended to ensure correct functionality for both mods.'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp")'
+    tag:
+      - Graphics
+      - Sound
+    dirty:
+      # version: 1.7
+      - <<: *quickClean
+        crc: 0xEB75A960
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 41
   - name: 'Vigilant.es(m|p)'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11849' ]
   - name: 'Vigilant.esp'
