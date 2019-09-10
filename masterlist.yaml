@@ -6761,7 +6761,44 @@ plugins:
       - Delev
       - Relev
 
-###### Gameplay - Mount Managers ######
+###### Gameplay - Mount & Follower Managers ######
+  - name: 'AmazingFollowerTweaks.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6656/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14722/'
+    after:
+      - 'FCO - Follower Commentary Overhaul.esp'
+    inc:
+      - 'EFFCore.esm'
+      - 'EFFDialogue.esp'
+      - 'nwsFollowerFramework.esp'
+    dirty:
+      # version: AFT 1.66sse
+      - <<: *quickClean
+        crc: 0x88F9C8B8
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+      # version: iAFT 3.09SE
+      - <<: *quickClean
+        crc: 0x8B1BC915
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+      # version: iAFT 3.09SE DLC & USSEP Patch
+      - <<: *quickClean
+        crc: 0x3899F517
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: AFT 1.66sse
+      - crc: 0xF43B6124
+        util: 'SSEEdit v4.0.0'
+      # version: iAFT 3.09SE
+      - crc: 0xCB85EFD2
+        util: 'SSEEdit v4.0.0'
+      # version: iAFT 3.09SE DLC & USSEP Patch
+      - crc: 0x2CE005AD
+        util: 'SSEEdit v4.0.0'
+
   - name: 'Convenient Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
     after:
@@ -6781,6 +6818,29 @@ plugins:
             text: 'Convenient Horsesを正しく機能させるには、Amazing Follower Tweaksの「馬の機能」と「武器を抜いたときにフォロワーをテレポートさせる設定」を無効化してください。'
           - lang: pt
             text: 'Amazing Follower Tweaks "horse features"(trad. "funções de cavalaria") e "follower teleport on weapon draw setting" (trad. "opção de teletransporte de seguidor ao sacar armas") devem estar desabilitadas para Convenient Horses'
+
+  - name: 'EFF(Core|Dialogue).es(m|p)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7003/'
+        name: 'Extensible Follower Framework'
+  - name: 'EFFCore.esm'
+    clean:
+      # version: 4.0.3
+      - crc: 0x9A583BDE
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+  - name: 'EFFDialogue.esp'
+    after:
+      - 'BUVARP.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - EFF v3.5.6 Patch.esp'
+      - name: 'XFLDialogue.esp'
+        display: 'Extensible Follower Framework v3.5.6'
+    clean:
+      # version: 4.0.3
+      - crc: 0xE0305B2C
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+
   - name: 'Immersive Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/' ]
     after:
@@ -6829,68 +6889,11 @@ plugins:
       - crc: 0xD5111397
         util: 'SSEEdit v3.2.40'
 
-###### Gameplay - Follower Managers ######
-  - name: 'AmazingFollowerTweaks.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6656/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14722/'
-    after:
-      - 'FCO - Follower Commentary Overhaul.esp'
-    inc:
-      - 'EFFCore.esm'
-      - 'EFFDialogue.esp'
-      - 'nwsFollowerFramework.esp'
-    dirty:
-      # version: AFT 1.66sse
-      - <<: *quickClean
-        crc: 0x88F9C8B8
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 7
-      # version: iAFT 3.09SE
-      - <<: *quickClean
-        crc: 0x8B1BC915
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-      # version: iAFT 3.09SE DLC & USSEP Patch
-      - <<: *quickClean
-        crc: 0x3899F517
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-    clean:
-      # version: AFT 1.66sse
-      - crc: 0xF43B6124
-        util: 'SSEEdit v4.0.0'
-      # version: iAFT 3.09SE
-      - crc: 0xCB85EFD2
-        util: 'SSEEdit v4.0.0'
-      # version: iAFT 3.09SE DLC & USSEP Patch
-      - crc: 0x2CE005AD
-        util: 'SSEEdit v4.0.0'
-  - name: 'EFF(Core|Dialogue).es(m|p)'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7003/'
-        name: 'Extensible Follower Framework'
-  - name: 'EFFCore.esm'
-    clean:
-      # version: 4.0.3
-      - crc: 0x9A583BDE
-        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
-  - name: 'EFFDialogue.esp'
-    after:
-      - 'BUVARP.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - EFF v3.5.6 Patch.esp'
-      - name: 'XFLDialogue.esp'
-        display: 'Extensible Follower Framework v3.5.6'
-    clean:
-      # version: 4.0.3
-      - crc: 0xE0305B2C
-        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
   - name: 'My Home Is Your Home.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
     after:
       - 'AmazingFollowerTweaks.esp'
+
   - name: 'nwsFollowerFramework.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/' ]
     after:
@@ -6932,6 +6935,7 @@ plugins:
       # version: 2.17beta
       - crc: 0xF5416591
         util: 'SSEEdit v4.0.0'
+
   - name: 'SimpleFollowerManager.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19940' ]
     inc:
