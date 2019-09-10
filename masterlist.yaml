@@ -5391,101 +5391,11 @@ plugins:
       - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
 
-  - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
-    inc:
-      - 'Aurora - Standing Stones of Skyrim.esp'
-      - 'Better_Standing_Stones.esp'
-      - 'BetterStandingStonesMW.esp'
-      - 'CCO - Permanent Birthsigns.esp'
-      - 'DoomstoneRebalanced.esp'
-      - 'ERSO 20 - Standing Stones Overhaul.esp'
-      - 'Informative Standing Stones.esp'
-      - 'PS_StandingStones.esp'
-      - 'StandingStonesAlternative.esp'
-      - 'standingstoneoverhaul.esp'
-      - 'Standing Stones Overhaul.esp'
-      - 'Superior Standing Stones.esp'
-    after:
-      - 'Convenient Horses.esp'
-      - 'Disparity.esp'
-    tag:
-      - -Names
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
-      - *includesMBBF
-      - type: info
-        content:
-          - lang: en
-            text: 'Make sure the Disparity option "Use Modified Blessings" is disabled.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
-          - lang: ja
-            text: 'Disparityのオプション「変更された祝福の使用(Used Modified Blessings)」が無効になっているかを確認してください。'
-          - lang: pt
-            text: 'Certifique-se que a opção de Disparity "Use Modified Blessings (trad. "Utilizar Benções Modificadas") está desativada.'
-        condition: 'active("Disparity.esp")'
-    dirty:
-      # version: 1.07SSE
-      - <<: *quickClean
-        crc: 0xAF52C3D7
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-    clean:
-      # version: 1.07SSE
-      - crc: 0x2B3FF1BA
-        util: 'SSEEdit v4.0.0'
-  - name: 'Apocalypse - Magic of Skyrim.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
-    after:
-      - 'Ordinator - Perks of Skyrim.esp'
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
-      - *includesMBBF
-      - <<: *patchProvided
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
-        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Apocalypse - Vokrii Compatibility Patch.esp")'
-    clean:
-      # version: 9.45SSE
-      - crc: 0x266B3B3B
-        util: 'SSEEdit v4.0.2'
-  - name: 'AcquisitiveSoulGemMultithreaded.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
-    inc:
-      - 'GIST soul trap.esp'
-      - 'UFD Enhanced Soultrap.esp'
-    msg: [ *requiresMCM ]
-    clean:
-      # version: 4.6.5
-      - crc: 0x615A80B8
-        util: 'SSEEdit v4.0.0'
   - name: 'AlchemyAdjustments-AwesomePotionsPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
       - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
-  - name: 'Arcanum.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
-    dirty:
-      # version: 0.4b
-      - <<: *reqManualFix
-        crc: 0x52F24E48
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 10
-        udr: 1
-        nav: 1
-      # version: 0.4b second pass of cleaning
-      - <<: *reqManualFix
-        crc: 0x1D27B5D2
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
   - name: 'ArcheryV2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10926/' ]
     msg:
@@ -5539,26 +5449,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
     after:
       - 'skyBirds_SSE.esp'
-  - name: 'Better Vampires.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
-    after:
-      - 'EBM_UnlimitedPower.esp'
-      - 'EBM_UnlimitedPower_Vampire.esp'
-      - 'Requiem.esp'
-      - 'Sacrosanct - Vampires of Skyrim.esp'
-      - 'Tainted_Blood.esp'
-    tag:
-      - Graphics
-      - Names
-      - Relev
-      - Sound
-      - Stats
-    clean:
-      # version: 8.2
-      - crc: 0xEC44246A
-        util: 'SSEEdit v4.0.2'
   - name: 'Bounty Gold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
     after:
@@ -5719,10 +5609,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/49791/' ]
     group: *craftingGroup
 
-  - name: 'Clairvoyance.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
-    after:
-      - 'Requiem.esp'
   - name: 'DeadlyCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
     msg:
@@ -5837,64 +5723,6 @@ plugins:
       # version: 2.1
       - crc: 0xBBA1C2CA
         util: 'SSEEdit v4.0.2'
-  - name: 'UFD Enhanced Soultrap.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
-    inc:
-      - 'AcquisitiveSoulGemMultithreaded.esp'
-      - 'GIST soul trap.esp'
-    msg:
-      - *doNotClean
-      - *requiresMCM
-  - name: 'GIST soul trap.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
-    inc:
-      - 'AcquisitiveSoulGemMultithreaded.esp'
-      - 'UFD Enhanced Soultrap.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'MultiLayer Parallax Soul Gems' ]
-        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp") and not file("MLP + GIST Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Rustic Soul Gems' ]
-        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
-      - *requiresMCM
-    clean:
-      # version: 1.3
-      - crc: 0xC9D0A414
-        util: 'SSEEdit v4.0.0'
-  - name: 'GIST-MLPSoulGems-patch.esp'
-    inc:
-      - 'MLP + GIST Patch.esp'
-    req:
-      - name: 'MLPSoulGems.esp'
-        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
-        condition: 'not file("MLPSoulGems.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0x87187AE1
-        util: 'SSEEdit v4.0.0'
-      # version: 1.1, ESL flagged
-      - crc: 0xA570D868
-        util: 'SSEEdit v4.0.0'
-  - name: 'GIST-RusticSoulGems-patch.esp'
-    req:
-      - name: 'RUSTIC SOULGEMS - Sorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
-        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
-      - name: 'RUSTIC SOULGEMS - Unsorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
-        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Rustic Soulgems GIST' ]
-        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0xEF0A2A16
-        util: 'SSEEdit v4.0.0'
-      # version: 1.1, ESL flagged
-      - crc: 0x9C849474
-        util: 'SSEEdit v4.0.0'
   - name: 'HarvestOverhaul_Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
     after:
@@ -6267,41 +6095,6 @@ plugins:
     after:
       - 'UltimateCombat.esp'
 
-  - name: 'PatronGodsOfSkyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/155/' ]
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("PatronGodsOfSkyrim_CACO_Patch.esp")'
-    dirty:
-      # version: 1.0.5
-      - <<: *quickClean
-        crc: 0x647371BC
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 23
-    clean:
-      # version: 1.0.5
-      - crc: 0x472DDCD1
-        util: 'SSEEdit v4.0.2'
-
-  - name: 'PathOfTheAntiMage.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
-    dirty:
-      # version: 1.5.5.1
-      - <<: *quickClean
-        crc: 0xC238C832
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4226
-    clean:
-      # version: 1.5.5.1, after QAC
-      - crc: 0xAD2B40A5
-        util: 'SSEEdit v4.0.2'
-
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
     inc:
@@ -6312,18 +6105,6 @@ plugins:
       - Delev
       - Invent
       - Relev
-
-  - name: 'Predator Vision.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2777/' ]
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
 
   - name: 'Open Cities Skyrim.esp'
     url:
@@ -6376,24 +6157,6 @@ plugins:
     clean:
       # version: 3.1.4
       - crc: 0xAF265A7A
-        util: 'SSEEdit v4.0.2'
-  - name: 'Tainted_Blood.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
-    clean:
-      # version: 5.7.9
-      - crc: 0xF28D435D
-        util: 'SSEEdit v4.0.2'
-  - name: 'Randomized Word Walls.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0x48A567EA
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 42
-    clean:
-      # version: 1.0
-      - crc: 0x6202C837
         util: 'SSEEdit v4.0.2'
   - name: 'Ravengate.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12617' ]
@@ -6578,11 +6341,6 @@ plugins:
     after:
       - 'OCW_Obscure''s_CollegeofWinterhold.esp'
 
-  - name: 'Thunderchild - Epic Shout Package.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
-    msg:
-      - *includesMBBF
-      - *doNotClean
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     group: *underridesGroup
@@ -6633,12 +6391,6 @@ plugins:
       - 'EBM_UnlimitedPower_StandingStone.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
       - 'EBM_UnlimitedPower_Werewolf.esp'
-  - name: 'UndeathClassicalLichdom SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14823' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
   - name: 'UltimateCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17196/' ]
     after:
@@ -6712,6 +6464,290 @@ plugins:
     after:
       - 'Combat Evolved.esp'
 
+  - name: 'You Hunger.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
+    after:
+      - 'iNeed.esp'
+      - 'iNeed - Extended.esp'
+      - 'RealisticNeedsandDiseases.esp'
+      - 'Super Simple Needs.esp'
+    tag:
+      - Delev
+      - Relev
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("You Hunger - CACO.esp")'
+      - <<: *patchProvided
+        subs: [ 'Falskaar' ]
+        condition: 'active("Falskaar.esm") and not active("You Hunger - Falskaar.esp")'
+  - name: 'You Hunger - (CACO|Falskaar)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
+    tag:
+      - Delev
+      - Relev
+
+###### Gameplay - Magic & Abilities ######
+  - name: 'AcquisitiveSoulGemMultithreaded.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
+    inc:
+      - 'GIST soul trap.esp'
+      - 'UFD Enhanced Soultrap.esp'
+    msg: [ *requiresMCM ]
+    clean:
+      # version: 4.6.5
+      - crc: 0x615A80B8
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
+    inc:
+      - 'Aurora - Standing Stones of Skyrim.esp'
+      - 'Better_Standing_Stones.esp'
+      - 'BetterStandingStonesMW.esp'
+      - 'CCO - Permanent Birthsigns.esp'
+      - 'DoomstoneRebalanced.esp'
+      - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Informative Standing Stones.esp'
+      - 'PS_StandingStones.esp'
+      - 'StandingStonesAlternative.esp'
+      - 'standingstoneoverhaul.esp'
+      - 'Standing Stones Overhaul.esp'
+      - 'Superior Standing Stones.esp'
+    after:
+      - 'Convenient Horses.esp'
+      - 'Disparity.esp'
+    tag:
+      - -Names
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
+      - *includesMBBF
+      - type: info
+        content:
+          - lang: en
+            text: 'Make sure the Disparity option "Use Modified Blessings" is disabled.'
+          - lang: de
+            text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
+          - lang: ja
+            text: 'Disparityのオプション「変更された祝福の使用(Used Modified Blessings)」が無効になっているかを確認してください。'
+          - lang: pt
+            text: 'Certifique-se que a opção de Disparity "Use Modified Blessings (trad. "Utilizar Benções Modificadas") está desativada.'
+        condition: 'active("Disparity.esp")'
+    dirty:
+      # version: 1.07SSE
+      - <<: *quickClean
+        crc: 0xAF52C3D7
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 1.07SSE
+      - crc: 0x2B3FF1BA
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'Apocalypse - Magic of Skyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
+    after:
+      - 'Ordinator - Perks of Skyrim.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
+      - *includesMBBF
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
+        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Apocalypse - Vokrii Compatibility Patch.esp")'
+    clean:
+      # version: 9.45SSE
+      - crc: 0x266B3B3B
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Arcanum.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
+    dirty:
+      # version: 0.4b
+      - <<: *reqManualFix
+        crc: 0x52F24E48
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 10
+        udr: 1
+        nav: 1
+      # version: 0.4b second pass of cleaning
+      - <<: *reqManualFix
+        crc: 0x1D27B5D2
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
+  - name: 'Better Vampires.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
+    after:
+      - 'EBM_UnlimitedPower.esp'
+      - 'EBM_UnlimitedPower_Vampire.esp'
+      - 'Requiem.esp'
+      - 'Sacrosanct - Vampires of Skyrim.esp'
+      - 'Tainted_Blood.esp'
+    tag:
+      - Graphics
+      - Names
+      - Relev
+      - Sound
+      - Stats
+    clean:
+      # version: 8.2
+      - crc: 0xEC44246A
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Clairvoyance.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
+    after:
+      - 'Requiem.esp'
+
+  - name: 'GIST soul trap.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
+    inc:
+      - 'AcquisitiveSoulGemMultithreaded.esp'
+      - 'UFD Enhanced Soultrap.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'MultiLayer Parallax Soul Gems' ]
+        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp") and not file("MLP + GIST Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Rustic Soul Gems' ]
+        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
+      - *requiresMCM
+    clean:
+      # version: 1.3
+      - crc: 0xC9D0A414
+        util: 'SSEEdit v4.0.0'
+  - name: 'GIST-MLPSoulGems-patch.esp'
+    inc:
+      - 'MLP + GIST Patch.esp'
+    req:
+      - name: 'MLPSoulGems.esp'
+        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
+        condition: 'not file("MLPSoulGems.esp")'
+    clean:
+      # version: 1.1
+      - crc: 0x87187AE1
+        util: 'SSEEdit v4.0.0'
+      # version: 1.1, ESL flagged
+      - crc: 0xA570D868
+        util: 'SSEEdit v4.0.0'
+  - name: 'GIST-RusticSoulGems-patch.esp'
+    req:
+      - name: 'RUSTIC SOULGEMS - Sorted.esp'
+        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
+        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
+      - name: 'RUSTIC SOULGEMS - Unsorted.esp'
+        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
+        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Rustic Soulgems GIST' ]
+        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
+    clean:
+      # version: 1.1
+      - crc: 0xEF0A2A16
+        util: 'SSEEdit v4.0.0'
+      # version: 1.1, ESL flagged
+      - crc: 0x9C849474
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'PathOfTheAntiMage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
+    dirty:
+      # version: 1.5.5.1
+      - <<: *quickClean
+        crc: 0xC238C832
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4226
+    clean:
+      # version: 1.5.5.1, after QAC
+      - crc: 0xAD2B40A5
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'PatronGodsOfSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/155/' ]
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("PatronGodsOfSkyrim_CACO_Patch.esp")'
+    dirty:
+      # version: 1.0.5
+      - <<: *quickClean
+        crc: 0x647371BC
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 23
+    clean:
+      # version: 1.0.5
+      - crc: 0x472DDCD1
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Predator Vision.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2777/' ]
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
+
+  - name: 'Randomized Word Walls.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x48A567EA
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 42
+    clean:
+      # version: 1.0
+      - crc: 0x6202C837
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Tainted_Blood.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
+    clean:
+      # version: 5.7.9
+      - crc: 0xF28D435D
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Thunderchild - Epic Shout Package.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
+    msg:
+      - *includesMBBF
+      - *doNotClean
+
+  - name: 'UFD Enhanced Soultrap.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
+    inc:
+      - 'AcquisitiveSoulGemMultithreaded.esp'
+      - 'GIST soul trap.esp'
+    msg:
+      - *doNotClean
+      - *requiresMCM
+
+  - name: 'UndeathClassicalLichdom SSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14823' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
+
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
     inc:
@@ -6737,29 +6773,6 @@ plugins:
       # version: 1.3.0
       - crc: 0x8468D97D
         util: 'SSEEdit v4.0.1'
-
-  - name: 'You Hunger.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
-    after:
-      - 'iNeed.esp'
-      - 'iNeed - Extended.esp'
-      - 'RealisticNeedsandDiseases.esp'
-      - 'Super Simple Needs.esp'
-    tag:
-      - Delev
-      - Relev
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("You Hunger - CACO.esp")'
-      - <<: *patchProvided
-        subs: [ 'Falskaar' ]
-        condition: 'active("Falskaar.esm") and not active("You Hunger - Falskaar.esp")'
-  - name: 'You Hunger - (CACO|Falskaar)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
-    tag:
-      - Delev
-      - Relev
 
 ###### Gameplay - Mount & Follower Managers ######
   - name: 'AmazingFollowerTweaks.esp'
