@@ -7959,20 +7959,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18177'
         name: 'QUARK - Qwinn''s Ultimate Amulet Restoration Kit'
     group: *underridesGroup
-  - name: 'SL01AmuletsSkyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/487/' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
-    tag:
-      - Delev
-    clean:
-      # version: 4.061
-      - crc: 0xC77B2B42
-        util: 'SSEEdit v3.2.2'
-      # version: 4.061 - sorted
-      - crc: 0xA66ABCA9
-        util: 'SSEEdit v3.2.2'
   - name: 'BandolierForNPC.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
@@ -8088,6 +8074,16 @@ plugins:
       # version: 2.1
       - crc: 0xDD84DD4C
         util: 'SSEEdit v3.2.1'
+  - name: 'Circlets and Masks with all Robes and Hoods.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/' ]
+    group: *veryEarlyGroup
+    tag:
+      - Graphics
+      - Names
+    clean:
+      # version: 1.31
+      - crc: 0x17AE7063
+        util: 'SSEEdit v3.2.1'
   - name: 'Cloaks( - Dawnguard| - USSEP Patch)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
     group: *underridesGroup
@@ -8131,24 +8127,6 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
-  - name: 'Skyshards.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/' ]
-    after:
-      - 'Landscape For Grass Mods - Moon and Star PATCH.esp'
-    clean:
-      # version: 2.0.5
-      - crc: 0x745C47F8
-        util: 'SSEEdit v4.0.2'
-  - name: 'Circlets and Masks with all Robes and Hoods.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/' ]
-    group: *veryEarlyGroup
-    tag:
-      - Graphics
-      - Names
-    clean:
-      # version: 1.31
-      - crc: 0x17AE7063
-        util: 'SSEEdit v3.2.1'
 
   - name: 'GirlHeavyArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17843/' ]
@@ -8160,26 +8138,6 @@ plugins:
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
     group: *veryEarlyGroup
-  - name: 'PrvtI_HeavyArmory.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
-        name: 'Heavy Armory - New Weapons'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
-    tag:
-      - Delev
-      - Invent
-      - Names
-      - Relev
-      - Stats
-    clean:
-      # version: 3.3
-      - crc: 0xE42DCB02
-        util: 'SSEEdit v3.2.2'
-      # version: 3.3 - masters sorted
-      - crc: 0x832DEAAB
-        util: 'SSEEdit v3.2.2'
   - name: 'Hothtrooper44_Armor(Compilation|_Ecksstra).esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
@@ -8400,6 +8358,26 @@ plugins:
       - crc: 0xBB1402D2
         util: 'SSEEdit v4.0.2'
 
+  - name: 'PrvtI_HeavyArmory.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
+        name: 'Heavy Armory - New Weapons'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
+    tag:
+      - Delev
+      - Invent
+      - Names
+      - Relev
+      - Stats
+    clean:
+      # version: 3.3
+      - crc: 0xE42DCB02
+        util: 'SSEEdit v3.2.2'
+      # version: 3.3 - masters sorted
+      - crc: 0x832DEAAB
+        util: 'SSEEdit v3.2.2'
   - name: 'PsijicTeleportSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5643/' ]
     dirty:
@@ -8462,6 +8440,28 @@ plugins:
       # version: 1.3.1 ScopedBowsCompatKit 1.0 WACCF Replacer
       - crc: 0x32D9BEC3
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'SL01AmuletsSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/487/' ]
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
+    tag:
+      - Delev
+    clean:
+      # version: 4.061
+      - crc: 0xC77B2B42
+        util: 'SSEEdit v3.2.2'
+      # version: 4.061 - sorted
+      - crc: 0xA66ABCA9
+        util: 'SSEEdit v3.2.2'
+  - name: 'Skyshards.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/' ]
+    after:
+      - 'Landscape For Grass Mods - Moon and Star PATCH.esp'
+    clean:
+      # version: 2.0.5
+      - crc: 0x745C47F8
+        util: 'SSEEdit v4.0.2'
   - name: 'Summermyst - Enchantments of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6285/' ]
     inc:
@@ -8495,9 +8495,6 @@ plugins:
       # version: 3.07SSE
       - crc: 0x1F17FC44
         util: 'SSEEdit v3.2.2'
-  - name: 'UNP Vanilla Outfits.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11136/' ]
-    group: *underridesGroup
 
   - name: 'TheWulfPanda - City Teleport Spells( Less Magicka Increase Cast Time)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/' ]
@@ -8592,6 +8589,11 @@ plugins:
       # version: 1.00 Fully cleaned
       - crc: 0x6A6995CB
         util: 'SSEEdit v4.0.0'
+
+  - name: 'UNP Vanilla Outfits.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11136/' ]
+    group: *underridesGroup
+
   - name: 'Wintermyst - (Enchantments of Skyrim|Increased Damage).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
     tag:
