@@ -1671,6 +1671,37 @@ plugins:
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
 
+  - name: 'Skyrim Project Optimization.*\.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
+        name: 'Skyrim Project Optimization SE'
+    after:
+      - 'Unofficial Skyrim Special Edition Patch.esp'
+  - name: 'Skyrim Project Optimization - Full Version.esm'
+    group: *underridesGroup
+    clean:
+      # version: 1.3
+      - crc: 0x45374C76
+        util: 'SSEEdit v4.0.2'
+  - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
+    group: *underridesGroup
+    clean:
+      # version: 1.3
+      - crc: 0xD0948CCF
+        util: 'SSEEdit v4.0.2'
+  - name: 'Skyrim Project Optimization - Full Version.esp'
+    group: *veryEarlyGroup
+    clean:
+      # version: 1.3
+      - crc: 0x137A03B3
+        util: 'SSEEdit v4.0.2'
+  - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
+    group: *veryEarlyGroup
+    clean:
+      # version: 1.3
+      - crc: 0x81A0DD15
+        util: 'SSEEdit v4.0.2'
+
 ###### Modding Tools - Generated Files ######
   - name: 'Bashed Patch.*\.esp'
     group: *dynamicPatchGroup
@@ -1809,36 +1840,7 @@ plugins:
       # version: 08/12/2018, ESL
       - crc: 0x7C9358E6
         util: 'SSEEdit v4.0.0'
-  - name: 'Skyrim Project Optimization.*\.esm'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
-        name: 'Skyrim Project Optimization SE'
-    after:
-      - 'Unofficial Skyrim Special Edition Patch.esp'
-  - name: 'Skyrim Project Optimization - Full Version.esm'
-    group: *underridesGroup
-    clean:
-      # version: 1.3
-      - crc: 0x45374C76
-        util: 'SSEEdit v4.0.2'
-  - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-    group: *underridesGroup
-    clean:
-      # version: 1.3
-      - crc: 0xD0948CCF
-        util: 'SSEEdit v4.0.2'
-  - name: 'Skyrim Project Optimization - Full Version.esp'
-    group: *veryEarlyGroup
-    clean:
-      # version: 1.3
-      - crc: 0x137A03B3
-        util: 'SSEEdit v4.0.2'
-  - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    group: *veryEarlyGroup
-    clean:
-      # version: 1.3
-      - crc: 0x81A0DD15
-        util: 'SSEEdit v4.0.2'
+
   - name: 'static mesh improvement mod se.esp'
     group: *veryEarlyGroup
   - name: 'SMIM-SE.*\.esp'
