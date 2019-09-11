@@ -4390,6 +4390,76 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 4
 
+  - name: 'know_your_enemy.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13807/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Elemental Destruction Magic'
+          - '[ Know Your Elements - A Patch for Know Your Enemy and Elemental Destruction Magic ](https://www.nexusmods.com/skyrimspecialedition/mods/22254)'
+        condition: 'active("Elemental Destruction.esp") and not active("Know Your Elements.esp")'
+    clean:
+      # version: 7.2.0
+      - crc: 0x82B40894
+        util: 'SSEEdit v4.0.1'
+
+  - name: 'KS Dragon Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
+    after:
+      - 'Mortal Enemies.esp'
+      - 'Serio''s Enhanced Dragons.esp'
+    inc:
+      - 'Alduin V1.esp'
+      - 'Elemental_Dragons.esp'
+      - 'KS Dragon Overhaul 2.esp'
+      - 'Simply Stronger Dragons.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Advanced Adversary Encounters' ]
+        condition: 'active("AAE Ultimate Edition.esp") and not file("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Enhanced Mighty Dragons' ]
+        condition: 'active("Mighty Dragons SE Medium Cooked.esp") and not active("KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Enhanced Slightly Mighty Dragons' ]
+        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp") and not active("KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Thunderchild' ]
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
+    tag:
+      - R.ChangeSpells
+      - Scripts
+      - SpellStats
+    clean:
+      - crc: 0x7E338364
+        util: 'SSEEdit v3.2.2'
+  - name: 'KS Dragon Overhaul 2.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/' ]
+    after:
+      - 'Mortal Enemies.esp'
+      - 'Serio''s Enhanced Dragons.esp'
+    inc:
+      - 'Alduin V1.esp'
+      - 'Elemental_Dragons.esp'
+      - 'ERSO 03 - Soft Slighty Mighty Dragons.esp'
+      - 'KS Dragon Overhaul.esp'
+      - 'Mighty Dragons SE Medium Cooked.esp'
+      - 'Simply Stronger Dragons.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Advanced Adversary Encounters' ]
+        condition: 'active("AAE Ultimate Edition.esp") and not file("KSDO2 - AAE Ultimate Edition Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Thunderchild' ]
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
+    tag:
+      - R.ChangeSpells
+      - Scripts
+      - SpellStats
+    clean:
+      - crc: 0xED643590
+        util: 'SSEEdit v3.2.2'
+
   - name: 'LessDragons(10|20|25|35|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
     msg:
@@ -4455,6 +4525,39 @@ plugins:
       # version: 0.22 Official patch
       - crc: 0xA43CAEE3
         util: 'SSEEdit v3.2.71 EXPERIMENTAL'
+
+  - name: 'Skyrim Revamped - Complete Enemy Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14598/' ]
+    after:
+      - 'Cloaks.esp'
+      - 'Combat Evolved.esp'
+      - 'Immersive Weapons.esp'
+      - 'Skyrim Immersive Creatures Special Edition.esp'
+      - 'WICO - Immersive People.esp'
+      - 'Wildcat - Combat of Skyrim.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Skyrim Immersive Creatures' ]
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SRCEO - SIC patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Windsong Immersive Character Overhaul' ]
+        condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Spells
+      - Actors.Stats
+      - Delev
+      - Invent
+      - NPC.Class
+      - NPC.Race
+      - Relev
+    clean:
+      # version: 1.7
+      - crc: 0x725F1E2E
+        util: 'SSEEdit v3.2.1'
 
 ###### Encounters - Neutrals ######
   - name: 'BirdsOfSkyrim_SSE.esp'
@@ -6157,74 +6260,6 @@ plugins:
       - 'Combat Evolved.esp'
       - 'Wildcat - Combat of Skyrim.esp'
     msg: [ *doNotClean ]
-  - name: 'know_your_enemy.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13807/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Elemental Destruction Magic'
-          - '[ Know Your Elements - A Patch for Know Your Enemy and Elemental Destruction Magic ](https://www.nexusmods.com/skyrimspecialedition/mods/22254)'
-        condition: 'active("Elemental Destruction.esp") and not active("Know Your Elements.esp")'
-    clean:
-      # version: 7.2.0
-      - crc: 0x82B40894
-        util: 'SSEEdit v4.0.1'
-  - name: 'KS Dragon Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
-    after:
-      - 'Mortal Enemies.esp'
-      - 'Serio''s Enhanced Dragons.esp'
-    inc:
-      - 'Alduin V1.esp'
-      - 'Elemental_Dragons.esp'
-      - 'KS Dragon Overhaul 2.esp'
-      - 'Simply Stronger Dragons.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Advanced Adversary Encounters' ]
-        condition: 'active("AAE Ultimate Edition.esp") and not file("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Mighty Dragons' ]
-        condition: 'active("Mighty Dragons SE Medium Cooked.esp") and not active("KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Slightly Mighty Dragons' ]
-        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp") and not active("KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
-    tag:
-      - R.ChangeSpells
-      - Scripts
-      - SpellStats
-    clean:
-      - crc: 0x7E338364
-        util: 'SSEEdit v3.2.2'
-  - name: 'KS Dragon Overhaul 2.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/' ]
-    after:
-      - 'Mortal Enemies.esp'
-      - 'Serio''s Enhanced Dragons.esp'
-    inc:
-      - 'Alduin V1.esp'
-      - 'Elemental_Dragons.esp'
-      - 'ERSO 03 - Soft Slighty Mighty Dragons.esp'
-      - 'KS Dragon Overhaul.esp'
-      - 'Mighty Dragons SE Medium Cooked.esp'
-      - 'Simply Stronger Dragons.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Advanced Adversary Encounters' ]
-        condition: 'active("AAE Ultimate Edition.esp") and not file("KSDO2 - AAE Ultimate Edition Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
-    tag:
-      - R.ChangeSpells
-      - Scripts
-      - SpellStats
-    clean:
-      - crc: 0xED643590
-        util: 'SSEEdit v3.2.2'
   - name: 'Lock_Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
     req:
@@ -6933,38 +6968,6 @@ plugins:
       # version: 1.1
       - crc: 0x701B6795
         util: 'SSEEdit v3.2.2'
-  - name: 'Skyrim Revamped - Complete Enemy Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14598/' ]
-    after:
-      - 'Cloaks.esp'
-      - 'Combat Evolved.esp'
-      - 'Immersive Weapons.esp'
-      - 'Skyrim Immersive Creatures Special Edition.esp'
-      - 'WICO - Immersive People.esp'
-      - 'Wildcat - Combat of Skyrim.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SRCEO - SIC patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Windsong Immersive Character Overhaul' ]
-        condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Spells
-      - Actors.Stats
-      - Delev
-      - Invent
-      - NPC.Class
-      - NPC.Race
-      - Relev
-    clean:
-      # version: 1.7
-      - crc: 0x725F1E2E
-        util: 'SSEEdit v3.2.1'
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
     req:
