@@ -1666,66 +1666,6 @@ plugins:
     # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
-  - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
-    inc:
-      - 'Race Scale Remover.esp'
-    group: *fixesGroup
-    after:
-      - 'Audio Overhaul Skyrim.esp'
-      - 'Immersive Sounds - Compendium.esp'
-      - 'Undeath.esp'
-      - 'UnlimitedBookshelves.esp'
-      - 'unofficial skyrim survival patch.esp'
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_WACCF_AOS Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Beyond Reach' ]
-        condition: 'active("arnima.esp") and not active("Qw_WACCF_arnima Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Beyond Skyrim: Bruma' ]
-        condition: 'active("BSHeartland.esp") and not active("Qw_WACCF_BSHeartland Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("Qw_WACCF_CloaksOfSkyrim Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_WACCF_CRF Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive Sounds - Compendium' ]
-        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Qw_WACCF_ISC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Legendary Skyrim Crossbows' ]
-        condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Qw_WACCF_LSCrossbows Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Open Face Guard Helmets' ]
-        condition: 'active("Open Face Guard Helmets.esp") and not active("Qw_WACCF_OpenFaceGuardHelmets Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Open Face Guard Helmets SSE' ]
-        condition: 'active("OpenFaceGuardHelmetsSSE.esp") and not active("Qw_WACCF_OpenFaceGuardHelmetsSE Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'RS Children Overhaul' ]
-        condition: 'active("RSChildren.esp") and not active("Qw_WACCF_RSChildren Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'TMB Vanilla Armors and Clothes SSE' ]
-        condition: 'active("TMBVanillaArmorandClothes.esp") and not active("Qw_WACCF_TMBVAC Patch.esp")'
-      - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
-    clean:
-      # version: 1.0.1
-      - crc: 0x64D44D00
-        util: 'SSEEdit v4.0.0'
-  - name: 'WACCF_BashedPatchLvlListFix.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
-    group: *lvlListsGroup
-    clean:
-      # version: 1.0.1
-      - crc: 0xDDF0B797
-        util: 'SSEEdit v4.0.0'
   - name: 'WACCF_Armor and Clothing Extension.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
     group: *fixesGroup
@@ -6513,6 +6453,67 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/' ]
     after:
       - 'Relationship Dialogue Overhaul.esp'
+
+  - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
+    inc:
+      - 'Race Scale Remover.esp'
+    group: *fixesGroup
+    after:
+      - 'Audio Overhaul Skyrim.esp'
+      - 'Immersive Sounds - Compendium.esp'
+      - 'Undeath.esp'
+      - 'UnlimitedBookshelves.esp'
+      - 'unofficial skyrim survival patch.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Audio Overhaul for Skyrim' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_WACCF_AOS Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Beyond Reach' ]
+        condition: 'active("arnima.esp") and not active("Qw_WACCF_arnima Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Beyond Skyrim: Bruma' ]
+        condition: 'active("BSHeartland.esp") and not active("Qw_WACCF_BSHeartland Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cloaks of Skyrim' ]
+        condition: 'active("Cloaks.esp") and not active("Qw_WACCF_CloaksOfSkyrim Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_WACCF_CRF Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Immersive Sounds - Compendium' ]
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Qw_WACCF_ISC Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Legendary Skyrim Crossbows' ]
+        condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Qw_WACCF_LSCrossbows Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Open Face Guard Helmets' ]
+        condition: 'active("Open Face Guard Helmets.esp") and not active("Qw_WACCF_OpenFaceGuardHelmets Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Open Face Guard Helmets SSE' ]
+        condition: 'active("OpenFaceGuardHelmetsSSE.esp") and not active("Qw_WACCF_OpenFaceGuardHelmetsSE Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSChildren.esp") and not active("Qw_WACCF_RSChildren Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'TMB Vanilla Armors and Clothes SSE' ]
+        condition: 'active("TMBVanillaArmorandClothes.esp") and not active("Qw_WACCF_TMBVAC Patch.esp")'
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
+    clean:
+      # version: 1.0.1
+      - crc: 0x64D44D00
+        util: 'SSEEdit v4.0.0'
+  - name: 'WACCF_BashedPatchLvlListFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
+    group: *lvlListsGroup
+    clean:
+      # version: 1.0.1
+      - crc: 0xDDF0B797
+        util: 'SSEEdit v4.0.0'
 
   - name: 'You Hunger.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
