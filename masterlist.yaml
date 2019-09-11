@@ -5384,108 +5384,225 @@ plugins:
         util: 'SSEEdit v4.0.2'
 
 ###### Gameplay ######
-  - name: 'AlchemyAdjustments.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
-    after:
-      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-      - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
-      - 'SkyTEST-RealisticAnimals&Predators.esp'
-
-  - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
-    inc:
-      - 'Aurora - Standing Stones of Skyrim.esp'
-      - 'Better_Standing_Stones.esp'
-      - 'BetterStandingStonesMW.esp'
-      - 'CCO - Permanent Birthsigns.esp'
-      - 'DoomstoneRebalanced.esp'
-      - 'ERSO 20 - Standing Stones Overhaul.esp'
-      - 'Informative Standing Stones.esp'
-      - 'PS_StandingStones.esp'
-      - 'StandingStonesAlternative.esp'
-      - 'standingstoneoverhaul.esp'
-      - 'Standing Stones Overhaul.esp'
-      - 'Superior Standing Stones.esp'
-    after:
-      - 'Convenient Horses.esp'
-      - 'Disparity.esp'
+  - name: 'Improved Traps.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/' ]
     tag:
-      - -Names
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
-      - *includesMBBF
-      - type: info
-        content:
-          - lang: en
-            text: 'Make sure the Disparity option "Use Modified Blessings" is disabled.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
-          - lang: ja
-            text: 'Disparityのオプション「変更された祝福の使用(Used Modified Blessings)」が無効になっているかを確認してください。'
-          - lang: pt
-            text: 'Certifique-se que a opção de Disparity "Use Modified Blessings (trad. "Utilizar Benções Modificadas") está desativada.'
-        condition: 'active("Disparity.esp")'
-    dirty:
-      # version: 1.07SSE
-      - <<: *quickClean
-        crc: 0xAF52C3D7
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+      - Graphics
+      - Stats
     clean:
-      # version: 1.07SSE
-      - crc: 0x2B3FF1BA
-        util: 'SSEEdit v4.0.0'
-  - name: 'Apocalypse - Magic of Skyrim.esp'
+      # version: 2.3 - Normal Edition
+      - crc: 0xDAA5AC38
+        util: 'SSEEdit v3.2.1'
+      # version: 2.3 - Dangerous Edition
+      - crc: 0xF718BAC1
+        util: 'SSEEdit v3.2.1'
+
+  - name: 'Open Cities Skyrim.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
+      - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
+    group: *highPriorityGroup
+    inc:
+      - name: 'JKs Skyrim.esp'
+        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
+        display: 'JKs Skyrim'
+      - 'Oblivion Gates in Cities.esp'
+      - 'OutlawsRefuges.esp'
+      - 'Rigmor.esp'
     after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Atlas Map Markers.esp'
+      - 'Audio Overhaul Skyrim.esp'
+      - 'Clockwork.esp'
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'Gildergreen Regrown.esp'
+      - 'The Horkerpocalypse.esp'
+      - 'iNeed - Extended.esp'
+      - 'iNeed.esp'
+      - 'JKs Skyrim.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'MissingEZsFixed.esp'
+      - 'MissingEZs_AllExteriors.esp'
       - 'Ordinator - Perks of Skyrim.esp'
+      - 'Palaces Castles Enhanced.esp'
+      - 'Point The Way.esp'
+      - 'Rigmor.esp'
+      - 'Shadowmarks.esp'
+      - 'Storefront.esp'
+      - 'Unique Region Names.esp'
+      - 'Unique Region Names - Alternate Start Patch.esp'
+      - 'Unique Region Names - ASLAL & CRF Patch.esp'
+      - 'Unique Region Names - Cutting Room Floor Patch.esp'
+      - 'URN+CoT Patch.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Skyrim Sewers' ]
+        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
+      - <<: *patchProvided
+        subs: [ 'Drinking fountains of Skyrim' ]
+        condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
+    tag:
+      - C.Location
+      - C.Regions
+    clean:
+      # version: 3.1.4
+      - crc: 0xAF265A7A
+        util: 'SSEEdit v4.0.2'
+  - name: 'Ravengate.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12617' ]
+    msg:
+      - *includesMBBF
+    clean:
+      # version: 0.06BTASSE
+      - crc: 0xBFAFCD0B
+        util: 'SSEEdit v3.2.72d EXPERIMENTAL'
+  - name: 'SwiftPotion.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
+    req:
+      - name: 'SKSE/Plugins/JContainers64.dll'
+        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+        condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimVR.exe")'
+      - name: 'SKSE/Plugins/JContainersVR.dll'
+        display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+        condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimSE.exe")'
+      - *SKSE
+      - *SkyUI
+    clean:
+      # version: 3.1 - No JContainers
+      - crc: 0x5DEC1D9A
+        util: 'SSEEdit v3.3.8a BETA'
+      # version: 4.0
+      - crc: 0x73CA3AE4
+        util: 'SSEEdit v3.3.8a BETA'
+
+  - name: 'TouringCarriages.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
+    group: *underridesGroup
+    after:
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
+    clean:
+      # version: 3.0.3
+      - crc: 0x3CDD869D
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'EBM_Train(10|25|50|99)x.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
+        name: 'ExE Boss''s Mods - Train More'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'ExE Boss''s Mods - Train More' ]
+        condition: 'many("EBM_Train(10|25|50|99)x.esp")'
+  - name: 'EBM_UnlimitedPower.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/'
+        name: 'ExE Boss''s Mods - UNLIMITED POWER'
+    inc:
+      - 'EBM_UnlimitedPower_DarkBrotherhood.esp'
+      - 'EBM_UnlimitedPower_DragonAspect.esp'
+      - 'EBM_UnlimitedPower_HermaMora.esp'
+      - 'EBM_UnlimitedPower_Nightingale.esp'
+      - 'EBM_UnlimitedPower_Racial.esp'
+      - 'EBM_UnlimitedPower_StandingStone.esp'
+      - 'EBM_UnlimitedPower_Vampire.esp'
+      - 'EBM_UnlimitedPower_Werewolf.esp'
+
+  - name: 'WARZONES - SSE - Civil Unrest.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2360' ]
+    group: *veryEarlyGroup
+  - name: 'WARZONES - SSE - DLC - Assault Attack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2365/' ]
+    group: *veryEarlyGroup
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x32D1318D
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 773
+    clean:
+      # version: 1.0
+      - crc: 0x17DF49FE
+        util: 'SSEEdit v4.0.1'
+
+###### Gameplay - Character Classes & Races ######
+  - name: 'Character Creation Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2725/' ]
+    clean:
+      # version: 1.3.3
+      - crc: 0x78C19143
+        util: 'SSEEdit v4.0.2'
+  - name: 'CCO - Diverse Races And Genders.esp'
+    req:
+      - 'Character Creation Overhaul.esp'
+  - name: 'CCO - Dynamic Skill Progression.esp'
+    req:
+      - 'Character Creation Overhaul.esp'
+  - name: 'CCO - Oblivion Carry Weights.esp'
+    req:
+      - 'Character Creation Overhaul.esp'
+  - name: 'CCO - Permanent Birthsigns.esp'
+    req:
+      - 'Character Creation Overhaul.esp'
+    dirty:
+      # version: 1.3.3
+      - <<: *quickClean
+        crc: 0xF4EC1F03
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 24
+    clean:
+      # version: 1.3.3, after QAC
+      - crc: 0x9740479E
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Imperious - Races of Skyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
+    group: *racesGroup
+    after:
+      - 'Joy of Perspective.esp'
+    inc:
+      - name: 'GRACE.esp'
+        display: 'SkyGrace - Skyrim Gender Race And Class Enhancements'
+      - 'Morroblivion Racial Traits.esp'
+      - 'Racial Body Morphs.esp'
+      - 'Racial Body Morphs - Extreme Morphs.esp'
+      - 'Racial Body Morphs - Subtle.esp'
+      - 'SkyRe_Races.esp'
+      - 'Subtle but Classless.esp'
+      - 'TsunPassiveRacialAbilities.esp'
+    tag:
+      - Body-Size-F
+      - Body-Size-M
+      - Names
+      - R.Description
+      - R.Skills
     msg:
       - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
-      - <<: *patchProvided
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
-        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Apocalypse - Vokrii Compatibility Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Disparity - Player Character Class, Race and Gender Diversity'
+          - '[ Imperious and Disparity Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/13127/)'
+        condition: 'active("Disparity.esp") and not active("Imperious Disparity Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Ethereal Elven Overhaul'
+          - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
+        condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Skyrim Sizes Lore Edition' ]
+        condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
     clean:
-      # version: 9.45SSE
-      - crc: 0x266B3B3B
-        util: 'SSEEdit v4.0.2'
-  - name: 'AcquisitiveSoulGemMultithreaded.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
-    inc:
-      - 'GIST soul trap.esp'
-      - 'UFD Enhanced Soultrap.esp'
-    msg: [ *requiresMCM ]
-    clean:
-      # version: 4.6.5
-      - crc: 0x615A80B8
-        util: 'SSEEdit v4.0.0'
-  - name: 'AlchemyAdjustments-AwesomePotionsPatch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
-    after:
-      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-      - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
-  - name: 'Arcanum.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
-    dirty:
-      # version: 0.4b
-      - <<: *reqManualFix
-        crc: 0x52F24E48
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 10
-        udr: 1
-        nav: 1
-      # version: 0.4b second pass of cleaning
-      - <<: *reqManualFix
-        crc: 0x1D27B5D2
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
+      # version: 7.24SSE
+      - crc: 0xE889ADEB
+        util: 'SSEEdit v3.2.1'
+
+###### Gameplay - Combat ######
   - name: 'ArcheryV2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10926/' ]
     msg:
@@ -5526,6 +5643,153 @@ plugins:
       # version: 1.1 Realisitc Arrows
       - crc: 0x556C229B
         util: 'SSEEdit v4.0.2'
+
+  - name: 'DeadlyCombat.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
+    msg:
+      - type: info
+        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
+        content:
+          - lang: en
+            text: 'An optional compatibility patch, which changes a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+          - lang: de
+            text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
+          - lang: ja
+            text: 'オプションの互換性パッチがあります。Deadly Combatsのデザインに合わせていくつかのPerkが変更されています。このパッチは[Deadly Combatのページ](https://www.nexusmods.com/skyrimspecialedition/mods/8850/)から入手できます。'
+          - lang: pt
+            text: 'Um patch opcional de compatibilidade, que altera alguns Perks para combinar com o design de Deadly Combats está disponível na [página de Deadly Combat](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+
+  - name: 'Immersive Movement.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15649/' ]
+    group: *underridesGroup
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Mortal Enemies' ]
+        condition: '(active("Mortal Enemies.esp") or active("Mortal Enemies - No RunWalk Changes.esp") or active("Mortal Enemies - Rival Remix.esp") or active("Mortal Enemies - Rival Remix - NoRunWalkChanges.esp") or active("Mortal Enemies - 2.0 Test Version.esp")) and not active("Immersive Movement - Mortal Enemies Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Smilodon' ]
+        condition: 'active("Smilodon - Combat of Skyrim.esp") and not active("Immersive Movement - Smilodon Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Wildcat' ]
+        condition: 'active("Wildcat - Combat of Skyrim.esp") and not active("Immersive Movement - Wildcat Patch.esp")'
+    clean:
+      # version: 1.3.2
+      - crc: 0xB91C4616
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement - Mortal Enemies Patch.esp'
+    req:
+      - 'Immersive Movement.esp'
+    after:
+      - 'Mortal Enemies.esp'
+      - 'Mortal Enemies - No RunWalk Changes.esp'
+      - 'Mortal Enemies - Rival Remix.esp'
+      - 'Mortal Enemies - Rival Remix - NoRunWalkChanges.esp'
+      - 'Mortal Enemies - 2.0 Test Version.esp'
+    clean:
+      # version: 1.3.2
+      - crc: 0xDCF50B37
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement - Smilodon Patch.esp'
+    req:
+      - 'Immersive Movement.esp'
+      - 'Smilodon - Combat of Skyrim.esp'
+    clean:
+      # version: 1.3.2
+      - crc: 0x9906E4A8
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Movement - Wildcat Patch.esp'
+    req:
+      - 'Immersive Movement.esp'
+      - 'Wildcat - Combat of Skyrim.esp'
+    clean:
+      # version: 1.3.2
+      - crc: 0x82AA7490
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4881' ]
+    group: *underridesGroup
+    after:
+      - 'Immersive Movement.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Mortal Enemies' ]
+        condition: 'many("Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp")'
+
+  - name: 'NoBSAIProjectileDodge.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1763' ]
+    after:
+      - 'UltimateCombat.esp'
+
+  - name: '(Smilodon|Wildcat) - Combat of Skyrim\.esp'
+    after:
+      - 'Animal Tweaks.esp'
+      - 'Immersive Movement.esp'
+      - 'Immersive NPC in the dark.esp'
+      - 'New Weapon Parry.esp'
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Combat.esp'
+      - 'SkyRe_EnemyAI.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Smilodon or Wildcat' ]
+        condition: 'many("(Smilodon|Wildcat) - Combat of Skyrim\.esp")'
+      - *includesMBBF
+  - name: 'Smilodon - Combat of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2824/' ]
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/119' ]
+    clean:
+      # version: 2.00SSE
+      - crc: 0x70092444
+        util: 'SSEEdit v4.0.2'
+  - name: 'Wildcat - Combat of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1368/' ]
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/21' ]
+    clean:
+      # version: 7.00SSE
+      - crc: 0xE6A87461
+        util: 'SSEEdit v3.2.2'
+  - name: '(Smilodon|Wildcat) - Realistic Damage Plugin\.esp'
+    after:
+      - 'Combat Evolved.esp'
+
+  - name: 'UltimateCombat.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17196/' ]
+    after:
+      - 'Wildcat - Combat of Skyrim.esp'
+    clean:
+      # version: 3.33
+      - crc: 0x53BA7BF3
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+
+  - name: 'Vigor - Combat and Injuries (SE).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1876/' ]
+    after:
+      - 'Wildcat - Combat of Skyrim.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Vigor.esp")'
+
+###### Gameplay - Crafting & Harvesting ######
+  - name: 'AlchemyAdjustments.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
+    after:
+      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
+      - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
+      - 'SkyTEST-RealisticAnimals&Predators.esp'
+  - name: 'AlchemyAdjustments-AwesomePotionsPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
+    after:
+      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
+      - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
+
   - name: 'Ars Metallica.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/321/' ]
     tag:
@@ -5535,63 +5799,11 @@ plugins:
       # version: 2.0.5
       - crc: 0x7AFE3B56
         util: 'SSEEdit v4.0.2'
+
   - name: 'Better Harvesting( (animal loot version))?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
     after:
       - 'skyBirds_SSE.esp'
-  - name: 'Better Vampires.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
-    after:
-      - 'EBM_UnlimitedPower.esp'
-      - 'EBM_UnlimitedPower_Vampire.esp'
-      - 'Requiem.esp'
-      - 'Sacrosanct - Vampires of Skyrim.esp'
-      - 'Tainted_Blood.esp'
-    tag:
-      - Graphics
-      - Names
-      - Relev
-      - Sound
-      - Stats
-    clean:
-      # version: 8.2
-      - crc: 0xEC44246A
-        util: 'SSEEdit v4.0.2'
-  - name: 'Bounty Gold.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
-    after:
-      - 'Requiem.esp'
-
-  - name: 'Character Creation Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2725/' ]
-    clean:
-      # version: 1.3.3
-      - crc: 0x78C19143
-        util: 'SSEEdit v4.0.2'
-  - name: 'CCO - Diverse Races And Genders.esp'
-    req:
-      - 'Character Creation Overhaul.esp'
-  - name: 'CCO - Dynamic Skill Progression.esp'
-    req:
-      - 'Character Creation Overhaul.esp'
-  - name: 'CCO - Oblivion Carry Weights.esp'
-    req:
-      - 'Character Creation Overhaul.esp'
-  - name: 'CCO - Permanent Birthsigns.esp'
-    req:
-      - 'Character Creation Overhaul.esp'
-    dirty:
-      # version: 1.3.3
-      - <<: *quickClean
-        crc: 0xF4EC1F03
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 24
-    clean:
-      # version: 1.3.3, after QAC
-      - crc: 0x9740479E
-        util: 'SSEEdit v4.0.2'
 
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
@@ -5719,24 +5931,160 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/49791/' ]
     group: *craftingGroup
 
-  - name: 'Clairvoyance.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
+  - name: 'HarvestOverhaul_Redone.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
+    after:
+      - 'skyBirds_SSE.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Flora Respawn Fix & Skyrim 3D Trees and Plants' ]
+        condition: 'active("S3DTrees NextGenerationForests.esp") and active("FloraRespawnFix.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
+    tag:
+      - Invent
+      - Names
+    clean:
+      # version: 0.9.1
+      - crc: 0xF5BD56F5
+        util: 'SSEEdit v3.2.1'
+  - name: 'HarvestOverhaul_Redone_Creatures.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
+    after:
+      - 'Ars Metallica.esp'
+      - 'skyBirds_SSE.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Flora Respawn Fix'
+          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
+        condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
+    tag:
+      - Delev
+      - Invent
+      - Relev
+    clean:
+      # version: 0.9.1
+      - crc: 0x3C5A5667
+        util: 'SSEEdit v3.2.1'
+
+  - name: 'Hunterborn.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/7900'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17993'
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Hunterborn_CACO-SE_Patch.esp")'
+
+  - name: 'iNeed.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
+    group: *underridesGroup
+    after:
+      - 'SkyUI_SE.esp'
+    msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not file("scripts/_snplayeralias.pex")'
+    clean:
+      # Version: 1.90 Alpha
+      - crc: 0x346AD301
+        util: 'SSEEdit v4.0.1'
+  - name: 'iNeed - Extended.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
+    group: *underridesGroup
+    after:
+      - 'AnotherSortingMod_2017-SSE.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+    clean:
+      # Version: 1.90 Alpha
+      - crc: 0xAE4F44D4
+        util: 'SSEEdit v4.0.1'
+  - name: 'iNeed - Dangerous Diseases.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/' ]
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+
+  - name: 'SAFO.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12343/'
+        name: 'Skyrim Alchemy and Food Overhaul'
+    after:
+      - 'Betterfoodeffects.esp'
+    inc:
+      - 'Cooking_In_Skyrim.esp'
+      - 'Cooking_In_Skyrim_v_2_0.esp'
+      - 'Cooking_In_Skyrim_v_2_0_Salty_Edition.esp'
+    tag:
+      - Delev
+      - Invent
+      - Names
+      - Relev
+      - Stats
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Another Sorting Mod' ]
+        condition: 'active("AnotherSortingMod_2017-SSE.esp") and not active("SAFO - Another Sorting Mod.esp")'
+      - <<: *patchIncluded
+        subs: [ 'AWESOME POTIONS' ]
+        condition: 'active("Potions.esp") and not file("SAFO - Awesome Potions.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Frostfall' ]
+        condition: 'active("Frostfall.esp") and not file("SAFO - Frostfall.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Imperious' ]
+        condition: 'active("Imperious - Races of Skyrim.esp") and not active("SAFO - Imperious.esp")'
+      - <<: *patchIncluded
+        subs: [ 'iNeed' ]
+        condition: 'active("iNeed - Extended.esp") and not file("SAFO - iNeed.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Realistic Needs and Diseases' ]
+        condition: 'active("RealisticNeedsandDiseases.esp") and not file("SAFO - RND.esp")'
+      - <<: *patchIncluded
+        subs: [ 'SkyTEST - Realistic Animals and Predators' ]
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not file("SAFO - SkyTEST RAP.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Survival Mode' ]
+        condition: 'active("ccqdrsse001-survivalmode.esp") and not active("SAFO - Survival Overhaul.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Valdacil''s Item Sorting' ]
+        condition: 'active("ValdacilsItemSorting.esp") and not file("SAFO - Valdacil.esp")'
+    clean:
+      # version: 2.5 No Regen
+      - crc: 0x71C54257
+        util: 'SSEEdit v3.2.2'
+      # version: 2.5 With Health Regen
+      - crc: 0xBB12DA56
+        util: 'SSEEdit v3.2.2'
+
+  - name: 'Skyrim Alchemy Fixed.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
+    tag:
+      - Delev
+  - name: 'Skyrim Alchemy Fixed - Ordinator.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
+    tag:
+      - Delev
+
+  - name: '_tck_SpellCrafting.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19697' ]
+    after:
+      - 'OCW_Obscure''s_CollegeofWinterhold.esp'
+
+###### Gameplay - Economy & Item Balance ######
+  - name: 'Bounty Gold.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
     after:
       - 'Requiem.esp'
-  - name: 'DeadlyCombat.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
-    msg:
-      - type: info
-        condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
-        content:
-          - lang: en
-            text: 'An optional compatibility patch, which changes a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
-          - lang: de
-            text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
-          - lang: ja
-            text: 'オプションの互換性パッチがあります。Deadly Combatsのデザインに合わせていくつかのPerkが変更されています。このパッチは[Deadly Combatのページ](https://www.nexusmods.com/skyrimspecialedition/mods/8850/)から入手できます。'
-          - lang: pt
-            text: 'Um patch opcional de compatibilidade, que altera alguns Perks para combinar com o design de Deadly Combats está disponível na [página de Deadly Combat](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *veryEarlyGroup
@@ -5763,10 +6111,12 @@ plugins:
       # version: 1.1
       - crc: 0x32F4BBE5
         util: 'SSEEdit v3.2.1'
+
   - name: 'Economy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8210/' ]
     tag:
       - Relev
+
   - name: 'EconomyOverhaulandSpeechcraftImprovements(Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9542/' ]
     after:
@@ -5837,450 +6187,25 @@ plugins:
       # version: 2.1
       - crc: 0xBBA1C2CA
         util: 'SSEEdit v4.0.2'
-  - name: 'Elemental Destruction.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/440/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
-  - name: 'EnchantingAwakened.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18558/' ]
-    after:
-      - 'Requiem.esp'
-  - name: 'UFD Enhanced Soultrap.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
-    inc:
-      - 'AcquisitiveSoulGemMultithreaded.esp'
-      - 'GIST soul trap.esp'
-    msg:
-      - *doNotClean
-      - *requiresMCM
-  - name: 'Guard Dialogue Overhaul.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/22075'
-    group: *preFixesGroup
-    after:
-      - 'Cutting Room Floor.esp'
-      - 'Hothtrooper44_ArmorCompilation.esp'
-    clean:
-      # version: 1.6
-      - crc: 0xF9B972F2
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-  - name: 'GIST soul trap.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
-    inc:
-      - 'AcquisitiveSoulGemMultithreaded.esp'
-      - 'UFD Enhanced Soultrap.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'MultiLayer Parallax Soul Gems' ]
-        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp") and not file("MLP + GIST Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Rustic Soul Gems' ]
-        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
-      - *requiresMCM
-    clean:
-      # version: 1.3
-      - crc: 0xC9D0A414
-        util: 'SSEEdit v4.0.0'
-  - name: 'GIST-MLPSoulGems-patch.esp'
-    inc:
-      - 'MLP + GIST Patch.esp'
-    req:
-      - name: 'MLPSoulGems.esp'
-        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
-        condition: 'not file("MLPSoulGems.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0x87187AE1
-        util: 'SSEEdit v4.0.0'
-      # version: 1.1, ESL flagged
-      - crc: 0xA570D868
-        util: 'SSEEdit v4.0.0'
-  - name: 'GIST-RusticSoulGems-patch.esp'
-    req:
-      - name: 'RUSTIC SOULGEMS - Sorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
-        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
-      - name: 'RUSTIC SOULGEMS - Unsorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
-        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Rustic Soulgems GIST' ]
-        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0xEF0A2A16
-        util: 'SSEEdit v4.0.0'
-      # version: 1.1, ESL flagged
-      - crc: 0x9C849474
-        util: 'SSEEdit v4.0.0'
-  - name: 'HarvestOverhaul_Redone.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
-    after:
-      - 'skyBirds_SSE.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Flora Respawn Fix & Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and active("FloraRespawnFix.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
-    tag:
-      - Invent
-      - Names
-    clean:
-      # version: 0.9.1
-      - crc: 0xF5BD56F5
-        util: 'SSEEdit v3.2.1'
-  - name: 'HarvestOverhaul_Redone_Creatures.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
-    after:
-      - 'Ars Metallica.esp'
-      - 'skyBirds_SSE.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Flora Respawn Fix'
-          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
-        condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
-    tag:
-      - Delev
-      - Invent
-      - Relev
-    clean:
-      # version: 0.9.1
-      - crc: 0x3C5A5667
-        util: 'SSEEdit v3.2.1'
 
-  - name: 'Hunterborn.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/7900'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17993'
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Hunterborn_CACO-SE_Patch.esp")'
-
-  - name: 'Hunters Not Bandits.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1547/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-  - name: 'AI Overhaul.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654'
-        name: 'AI Overhaul SSE'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("PAN_NPCs.esp") and not active("The Ordinary Women.esp") and not active("WICO - Immersive People.esp") and not active("Diversity - An NPC Overhaul.esp") and not active("Qw_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'RS Children Overhaul' ]
-        condition: 'active("RSChildren.esp") and not active("Qw_RSChildren_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Simple Children' ]
-        condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
-    clean:
-      # version: 1.0.91
-      - crc: 0x9D6F5F62
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens AI Overhaul'
-      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
-        name: 'Immersive Citizens AI Overhaul'
-  - name: 'Immersive Citizens - AI Overhaul.esp'
-    group: *lowPriorityGroup
-    inc:
-      - 'Arthmoor''s Skyrim Villages - All In One.esp'
-      - name: 'iWil_BelethorsGoodStore.esp'
-        display: 'Belethors Overrated Goods'
-      - 'BetterCitiesWhiterun.esp'
-      - 'Better Cities Solitude.esp'
-      - name: 'Blues Skyrim.esp'
-        display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
-      - 'BosmericDrunkenHuntsmanReborn.esp'
-      - 'Dawnstar.esp'
-      - 'EEKs Arcadia''s Cauldron.esp'
-      - 'EEKs Arcadia''s - OCS.esp'
-      - name: 'Holds.esp'
-        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
-      - 'InnCredible.esp'
-      - name: 'iWil_UselessShopOverhaul.esp'
-        display: 'The Useless Shop and Interior Overhaul'
-      - 'NerniesCityandVillageExpansion.esp'
-      - 'Northern Bathhouses.esp'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-        display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
-      - 'RealWarMaiden.esp'
-      - 'ScottishBanneredMare.esp'
-      - 'Skyrim Radioactive - Solitude Docks.esp'
-      - 'Skyrim Radioactive - Windhelm Docks.esp'
-      - name: 'tpos_ultimate_esm.esp'
-        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
-        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
-    after:
-      - '3DNPC.esp'
-      - 'Bells of Skyrim.esp'
-      - 'Bridges of Skyrim.esp'
-      - 'Civil War Repairs.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Eli_Breezehome.esp'
-      - 'Eli_Routa.esp'
-      - 'Eli_Routa - Non-Stormcloak.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Requiem.esp'
-      - 'SkyfallEstate.esp'
-      - 'Skyrim Project Optimization - Full Version'
-      - 'Skyrim Sewers.esp'
-      - 'TouringCarriages.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
-      - 'ASLAO - Front Porch (Breezehome).esp'
-      - 'BHTNFBP.esp'
-      - 'breezehome enhanced SSE.esp'
-      - 'Simpler Breezehome.esp'
-      - 'Wind District Breezehome - Replacer.esp'
-      - 'breezehome_basement.esp'
-      - 'BreezehomeSB.esp'
-      - 'breeze2.esp'
-    msg:
-      - <<: *compatNotes
-        subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
-      - <<: *patchIncluded
-        subs: [ 'Open Cities' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Touring Carriages' ]
-        condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Enhanced Lighting for ENB' ]
-        condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'ELFX - Enhancer' ]
-        condition: 'active("ELFXEnhancer.esp") and not active("Immersive Citizens - ELFXEnhancer patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'ELFX - Hardcore' ]
-        condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
-    tag:
-      - Actors.AIPackages
-      - C.Location
-      - C.LockList
-      - C.Owner
-    dirty:
-      # version: 0.4
-      - <<: *quickClean
-        crc: 0xA61F66AD
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-    clean:
-      # version: 0.4
-      - crc: 0x539DB18D
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens - ELE patch.esp'
-    clean:
-      # version: 0.4
-      - crc: 0x9F0CBF8B
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens - ELFXEnhancer patch.esp'
-    clean:
-      # version: 0.4
-      - crc: 0x4865A412
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens - ELFXHardcore patch.esp'
-    clean:
-      # version: 0.4
-      - crc: 0x834C7779
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens - OCS patch.esp'
-    dirty:
-      # version: 0.4
-      - <<: *quickClean
-        crc: 0x6227D18D
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 17
-    clean:
-      # version: 0.4
-      - crc: 0x3ED97678
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Citizens - TC patch.esp'
-    clean:
-      # version: 0.4
-      - crc: 0x75419F86
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Movement.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15649/' ]
-    group: *underridesGroup
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Mortal Enemies' ]
-        condition: '(active("Mortal Enemies.esp") or active("Mortal Enemies - No RunWalk Changes.esp") or active("Mortal Enemies - Rival Remix.esp") or active("Mortal Enemies - Rival Remix - NoRunWalkChanges.esp") or active("Mortal Enemies - 2.0 Test Version.esp")) and not active("Immersive Movement - Mortal Enemies Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Smilodon' ]
-        condition: 'active("Smilodon - Combat of Skyrim.esp") and not active("Immersive Movement - Smilodon Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Wildcat' ]
-        condition: 'active("Wildcat - Combat of Skyrim.esp") and not active("Immersive Movement - Wildcat Patch.esp")'
-    clean:
-      # version: 1.3.2
-      - crc: 0xB91C4616
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Movement - Mortal Enemies Patch.esp'
-    req:
-      - 'Immersive Movement.esp'
-    after:
-      - 'Mortal Enemies.esp'
-      - 'Mortal Enemies - No RunWalk Changes.esp'
-      - 'Mortal Enemies - Rival Remix.esp'
-      - 'Mortal Enemies - Rival Remix - NoRunWalkChanges.esp'
-      - 'Mortal Enemies - 2.0 Test Version.esp'
-    clean:
-      # version: 1.3.2
-      - crc: 0xDCF50B37
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Movement - Smilodon Patch.esp'
-    req:
-      - 'Immersive Movement.esp'
-      - 'Smilodon - Combat of Skyrim.esp'
-    clean:
-      # version: 1.3.2
-      - crc: 0x9906E4A8
-        util: 'SSEEdit v4.0.2'
-  - name: 'Immersive Movement - Wildcat Patch.esp'
-    req:
-      - 'Immersive Movement.esp'
-      - 'Wildcat - Combat of Skyrim.esp'
-    clean:
-      # version: 1.3.2
-      - crc: 0x82AA7490
-        util: 'SSEEdit v4.0.2'
   - name: 'Immersive Ingestibles.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/3587775' ]
     after:
       - 'Requiem.esp'
-  - name: 'Imperious - Races of Skyrim.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
-    group: *racesGroup
-    after:
-      - 'Joy of Perspective.esp'
-    inc:
-      - name: 'GRACE.esp'
-        display: 'SkyGrace - Skyrim Gender Race And Class Enhancements'
-      - 'Morroblivion Racial Traits.esp'
-      - 'Racial Body Morphs.esp'
-      - 'Racial Body Morphs - Extreme Morphs.esp'
-      - 'Racial Body Morphs - Subtle.esp'
-      - 'SkyRe_Races.esp'
-      - 'Subtle but Classless.esp'
-      - 'TsunPassiveRacialAbilities.esp'
-    tag:
-      - Body-Size-F
-      - Body-Size-M
-      - Names
-      - R.Description
-      - R.Skills
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
-      - *includesMBBF
-      - <<: *patch3rdParty
-        subs:
-          - 'Disparity - Player Character Class, Race and Gender Diversity'
-          - '[ Imperious and Disparity Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/13127/)'
-        condition: 'active("Disparity.esp") and not active("Imperious Disparity Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Ethereal Elven Overhaul'
-          - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
-        condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim Sizes Lore Edition' ]
-        condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
-    clean:
-      # version: 7.24SSE
-      - crc: 0xE889ADEB
-        util: 'SSEEdit v3.2.1'
-  - name: 'Improved Traps.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/' ]
-    tag:
-      - Graphics
-      - Stats
-    clean:
-      # version: 2.3 - Normal Edition
-      - crc: 0xDAA5AC38
-        util: 'SSEEdit v3.2.1'
-      # version: 2.3 - Dangerous Edition
-      - crc: 0xF718BAC1
-        util: 'SSEEdit v3.2.1'
-  - name: 'iNeed.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
-    group: *underridesGroup
-    after:
-      - 'SkyUI_SE.esp'
-    msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not file("scripts/_snplayeralias.pex")'
-    clean:
-      # Version: 1.90 Alpha
-      - crc: 0x346AD301
-        util: 'SSEEdit v4.0.1'
-  - name: 'iNeed - Extended.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
-    group: *underridesGroup
-    after:
-      - 'AnotherSortingMod_2017-SSE.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-    clean:
-      # Version: 1.90 Alpha
-      - crc: 0xAE4F44D4
-        util: 'SSEEdit v4.0.1'
-  - name: 'iNeed - Dangerous Diseases.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/' ]
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
+
   - name: 'J42_ArmorRatingRedux.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17932/' ]
     after:
       - 'Combat Evolved.esp'
       - 'Wildcat - Combat of Skyrim.esp'
     msg: [ *doNotClean ]
-  - name: 'Lock_Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
-    req:
-      - name: 'Ordinator - Perks of Skyrim.esp'
-        condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
-    clean:
-      # version: 1.6
-      - crc: 0xB7986707
-        util: 'SSEEdit v3.2.79 EXPERIMENTAL'
-      # version: 1.6 Ordinator version
-      - crc: 0xCD2D19F5
-        util: 'SSEEdit v3.2.79 EXPERIMENTAL'
-  - name: 'TTR_Master_Trader.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
+
   - name: 'Morrowloot.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1255/' ]
     tag:
       - Delev
       - Relev
+
   - name: 'MLU.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/'
@@ -6436,65 +6361,6 @@ plugins:
       - crc: 0xB8A1EE4E
         util: 'SSEEdit v3.2.1'
 
-  - name: 'MultipleEnchantments.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2694/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Ordinator - Perks of Skyrim'
-          - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
-
-  - name: 'Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4881' ]
-    group: *underridesGroup
-    after:
-      - 'Immersive Movement.esp'
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'Mortal Enemies' ]
-        condition: 'many("Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp")'
-
-  - name: 'NoBSAIProjectileDodge.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1763' ]
-    after:
-      - 'UltimateCombat.esp'
-
-  - name: 'PatronGodsOfSkyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/155/' ]
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("PatronGodsOfSkyrim_CACO_Patch.esp")'
-    dirty:
-      # version: 1.0.5
-      - <<: *quickClean
-        crc: 0x647371BC
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 23
-    clean:
-      # version: 1.0.5
-      - crc: 0x472DDCD1
-        util: 'SSEEdit v4.0.2'
-
-  - name: 'PathOfTheAntiMage.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
-    dirty:
-      # version: 1.5.5.1
-      - <<: *quickClean
-        crc: 0xC238C832
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4226
-    clean:
-      # version: 1.5.5.1, after QAC
-      - crc: 0xAD2B40A5
-        util: 'SSEEdit v4.0.2'
-
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
     inc:
@@ -6506,380 +6372,11 @@ plugins:
       - Invent
       - Relev
 
-  - name: 'Predator Vision.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2777/' ]
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
-
-  - name: 'Open Cities Skyrim.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
-      - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
-    group: *highPriorityGroup
-    inc:
-      - name: 'JKs Skyrim.esp'
-        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
-        display: 'JKs Skyrim'
-      - 'Oblivion Gates in Cities.esp'
-      - 'OutlawsRefuges.esp'
-      - 'Rigmor.esp'
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Atlas Map Markers.esp'
-      - 'Audio Overhaul Skyrim.esp'
-      - 'Clockwork.esp'
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Gildergreen Regrown.esp'
-      - 'The Horkerpocalypse.esp'
-      - 'iNeed - Extended.esp'
-      - 'iNeed.esp'
-      - 'JKs Skyrim.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'Palaces Castles Enhanced.esp'
-      - 'Point The Way.esp'
-      - 'Rigmor.esp'
-      - 'Shadowmarks.esp'
-      - 'Storefront.esp'
-      - 'Unique Region Names.esp'
-      - 'Unique Region Names - Alternate Start Patch.esp'
-      - 'Unique Region Names - ASLAL & CRF Patch.esp'
-      - 'Unique Region Names - Cutting Room Floor Patch.esp'
-      - 'URN+CoT Patch.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Skyrim Sewers' ]
-        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
-      - <<: *patchProvided
-        subs: [ 'Drinking fountains of Skyrim' ]
-        condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
-    tag:
-      - C.Location
-      - C.Regions
-    clean:
-      # version: 3.1.4
-      - crc: 0xAF265A7A
-        util: 'SSEEdit v4.0.2'
-  - name: 'Ordinator - Perks of Skyrim.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
-    group: *perksGroup
-    after:
-      - 'Phenderix Magic Evolved.esp'
-      - 'Phenderix Magic World.esp'
-      - 'SAFO.esp'
-      - 'Undeath.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-    inc:
-      - 'ScopedBows_EagleEyeTweak.esp'
-      - 'PerkusMaximus_Mage.esp'
-      - 'PerkusMaximus_Master.esp'
-      - 'PerkusMaximus_Thief.esp'
-      - 'PerkusMaximus_Warrior.esp'
-      - 'PerkusMaximus_CombatPlus.esp'
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
-      - *includesMBBF
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_Ordinator_AOS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Ordinator_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Smithing Perks Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Smithing Perks Overhaul SE.esp") and not active("SPO_Ordinator_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Ordinator_WACCF_Patch.esp")'
-    tag:
-      - Graphics
-      - Names
-      - Sound
-    clean:
-      # version: 9.26SSE
-      - crc: 0x38670BC4
-        util: 'SSEEdit v3.2.1'
-  - name: 'PathOfSorcery.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
-    after:
-      - 'Ordinator - Perks of Skyrim.esp'
-    clean:
-      # version: 1.2
-      - crc: 0x992192E5
-        util: 'SSEEdit v3.2.80'
-  - name: 'Piercing Shot Perk - Bullseye perk replacer.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2698/' ]
-    msg:
-      - <<: *wildEdits
-        subs: [ 'Remove the Navigation Mesh Info Map record 00012FB4 from Piercing Shot Perk - Bullseye perk replacer.esp with [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)' ]
-        condition: 'checksum("Piercing Shot Perk - Bullseye perk replacer.esp", 01D2BE9A) or checksum("Piercing Shot Perk - Bullseye perk replacer.esp", 69200C44)'
-  - name: 'Tainted_Blood.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
-    clean:
-      # version: 5.7.9
-      - crc: 0xF28D435D
-        util: 'SSEEdit v4.0.2'
-  - name: 'Randomized Word Walls.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0x48A567EA
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 42
-    clean:
-      # version: 1.0
-      - crc: 0x6202C837
-        util: 'SSEEdit v4.0.2'
-  - name: 'Ravengate.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12617' ]
-    msg:
-      - *includesMBBF
-    clean:
-      # version: 0.06BTASSE
-      - crc: 0xBFAFCD0B
-        util: 'SSEEdit v3.2.72d EXPERIMENTAL'
-  - name: 'Realistic AI Detection 2 SE.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2345/' ]
-    after:
-      - 'Combat Evolved.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Requiem.esp'
-      - 'Stealth Skills Rebalanced_COMPLETE.esp'
-      - 'Thief skills rebalance for Ordinator.esp'
-  - name: 'Relationship Dialogue Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    inc:
-      - name: 'Immersive Horses.esp'
-        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - name: 'AmazingFollowerTweaks.esp'
-        condition: 'active("AmazingFollowerTweaks.esp") and not active("RDO - AFT v1.66 Patch.esp") and not active("RDO - iAFT Patch.esp")'
-      - name: 'EFFDialogue.esp'
-        condition: 'checksum("EFFDialogue.esp", E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
-        display: 'Extensible Follower Framework'
-    after:
-      - 'AmazingFollowerTweaks.esp'
-      - '018Auri.esp'
-      - 'FCO - Follower Commentary Overhaul.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Amazing Follower Tweaks' ]
-        condition: '(checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Immersive Amazing Follower Tweaks' ]
-        condition: '(checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Extensible Follower Framework (EFF) v4.0.2+' ]
-        condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")  and not active("Cutting Room Floor.esp") and not active("RDO - USSEP Patch.esp")'
-    clean:
-      # version: Final
-      - crc: 0x20DC9B97
-        util: 'SSEEdit v3.2.1'
-  - name: 'RDO - CRF + USSEP Patch.esp'
-    req:
-      - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - USSEP Patch.esp'
-    clean:
-      # version: Final
-      - crc: 0xA2753357
-        util: 'SSEEdit v3.2.1'
-  - name: 'RDO - USSEP Patch.esp'
-    req:
-      - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - CRF + USSEP Patch.esp'
-    clean:
-      # version: Final
-      - crc: 0x44DE71B0
-        util: 'SSEEdit v3.2.1'
-  - name: 'RDO - AFT v1.66 Patch.esp'
-    after:
-      - 'RDO-FCO Patch.esp'
-    clean:
-      # version: Final
-      - crc: 0x88F9C8B8
-        util: 'SSEEdit v3.2.1'
-  - name: 'RDO - iAFT Patch.esp'
-    after:
-      - 'RDO-FCO Patch.esp'
-    clean:
-      # version: Final
-      - crc: 0x88C2EA38
-        util: 'SSEEdit v3.2.1'
-  - name: 'RDO - EFF v4.0.2 Patch.esp'
-    after:
-      - 'RDO-FCO Patch.esp'
-    clean:
-      # version: Final
-      - crc: 0xAE1B1EDF
-        util: 'SSEEdit v3.2.1'
   - name: 'RichMerchantsSkyrim_x\d+.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1772/' ]
     tag:
       - Relev
-  - name: 'Run For Your Lives.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/' ]
-    msg:
-      - <<: *includesX
-        subs: [ 'When Vampires Attack' ]
-    clean:
-      # version:  4.0
-      - crc: 0xF3EF2798
-        util: 'SSEEdit v3.3.6'
-  - name: 'Sacrosanct - Vampires of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
-    group: *perksGroup
-    inc:
-      - name: 'better vampires.esp'
-        condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
-        display: '[Better Vampires](https://www.nexusmods.com/skyrimspecialedition/mods/1925/)'
-      - 'mslVampiricThirst.esp'
-      - 'SanguinairVampirism.esp'
-      - 'VampireLordPerksExpanded.esp'
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'DVA - Dynamic Vampire Appearance.esp'
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'RaceCompatibilityUSKPOverride.esp'
-      - 'Requiem.esp'
-      - 'Volkihar Knight.esp'
-      - 'YOT - Your Own Thoughts.esp'
-    tag:
-      - Graphics
-      - Names
-      - Sound
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
-      - *includesMBBF
-    clean:
-      # version: 5.15SSE
-      - crc: 0x92620FD6
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-  - name: 'Serana Dialogue Edit.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16222/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
-    clean:
-      # version: 0.9
-      - crc: 0x586D2620
-        util: 'SSEEdit v3.2.1'
-      # version: 1.02
-      - crc: 0x9097E85A
-        util: 'SSEEdit v3.2.1'
-  - name: 'SkyTEST-RealisticAnimals&Predators.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1104' ]
-    after:
-      - 'Mortal Enemies.esp'
-    inc:
-      - 'SkyTEST-RealisticAnimalsBehaviors_LightVersion.esp'
-      - 'SkyTEST-RealisticAnimals&Predators_ImAWussy.esp'
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.CombatStyle
-      - Actors.Stats
-      - Delev
-      - Factions
-      - NPC.Class
-      - NPC.Race
-      - Relev
-      - R.ChangeSpells
-      - Relations
-    clean:
-      # version: 1.65 No survival mode
-      - crc: 0xAE9687E1
-        util: 'SSEEdit v3.2.2'
-      # version: 1.65 CC Survival mode
-      - crc: 0x9F375906
-        util: 'SSEEdit v3.2.2'
-  - name: 'SAFO.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12343/'
-        name: 'Skyrim Alchemy and Food Overhaul'
-    after:
-      - 'Betterfoodeffects.esp'
-    inc:
-      - 'Cooking_In_Skyrim.esp'
-      - 'Cooking_In_Skyrim_v_2_0.esp'
-      - 'Cooking_In_Skyrim_v_2_0_Salty_Edition.esp'
-    tag:
-      - Delev
-      - Invent
-      - Names
-      - Relev
-      - Stats
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Another Sorting Mod' ]
-        condition: 'active("AnotherSortingMod_2017-SSE.esp") and not active("SAFO - Another Sorting Mod.esp")'
-      - <<: *patchIncluded
-        subs: [ 'AWESOME POTIONS' ]
-        condition: 'active("Potions.esp") and not file("SAFO - Awesome Potions.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Frostfall' ]
-        condition: 'active("Frostfall.esp") and not file("SAFO - Frostfall.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Imperious' ]
-        condition: 'active("Imperious - Races of Skyrim.esp") and not active("SAFO - Imperious.esp")'
-      - <<: *patchIncluded
-        subs: [ 'iNeed' ]
-        condition: 'active("iNeed - Extended.esp") and not file("SAFO - iNeed.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Realistic Needs and Diseases' ]
-        condition: 'active("RealisticNeedsandDiseases.esp") and not file("SAFO - RND.esp")'
-      - <<: *patchIncluded
-        subs: [ 'SkyTEST - Realistic Animals and Predators' ]
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not file("SAFO - SkyTEST RAP.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club Survival Mode' ]
-        condition: 'active("ccqdrsse001-survivalmode.esp") and not active("SAFO - Survival Overhaul.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Valdacil''s Item Sorting' ]
-        condition: 'active("ValdacilsItemSorting.esp") and not file("SAFO - Valdacil.esp")'
-    clean:
-      # version: 2.5 No Regen
-      - crc: 0x71C54257
-        util: 'SSEEdit v3.2.2'
-      # version: 2.5 With Health Regen
-      - crc: 0xBB12DA56
-        util: 'SSEEdit v3.2.2'
-  - name: 'Skyrim Alchemy Fixed.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
-    tag:
-      - Delev
-  - name: 'Skyrim Alchemy Fixed - Ordinator.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
-    tag:
-      - Delev
+
   - name: 'Skyrim Revamped.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14338/'
@@ -6968,46 +6465,7 @@ plugins:
       # version: 1.1
       - crc: 0x701B6795
         util: 'SSEEdit v3.2.2'
-  - name: 'SwiftPotion.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
-    req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
-        condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimVR.exe")'
-      - name: 'SKSE/Plugins/JContainersVR.dll'
-        display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
-        condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimSE.exe")'
-      - *SKSE
-      - *SkyUI
-    clean:
-      # version: 3.1 - No JContainers
-      - crc: 0x5DEC1D9A
-        util: 'SSEEdit v3.3.8a BETA'
-      # version: 4.0
-      - crc: 0x73CA3AE4
-        util: 'SSEEdit v3.3.8a BETA'
 
-  - name: '_tck_SpellCrafting.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19697' ]
-    after:
-      - 'OCW_Obscure''s_CollegeofWinterhold.esp'
-
-  - name: 'Thunderchild - Epic Shout Package.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
-    msg:
-      - *includesMBBF
-      - *doNotClean
-  - name: 'TouringCarriages.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
-    group: *underridesGroup
-    after:
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
-    clean:
-      # version: 3.0.3
-      - crc: 0x3CDD869D
-        util: 'SSEEdit v4.0.2'
   - name: 'TradeBarter.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
@@ -7026,185 +6484,294 @@ plugins:
       - Invent
       - Relev
 
-  - name: 'EBM_Train(10|25|50|99)x.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/'
-        name: 'ExE Boss''s Mods - Train More'
+  - name: 'TTR_Master_Trader.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/' ]
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+
+  - name: 'You Hunger.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
+    after:
+      - 'iNeed.esp'
+      - 'iNeed - Extended.esp'
+      - 'RealisticNeedsandDiseases.esp'
+      - 'Super Simple Needs.esp'
+    tag:
+      - Delev
+      - Relev
     msg:
-      - <<: *useOnlyOneX
-        subs: [ 'ExE Boss''s Mods - Train More' ]
-        condition: 'many("EBM_Train(10|25|50|99)x.esp")'
-  - name: 'EBM_UnlimitedPower.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/'
-        name: 'ExE Boss''s Mods - UNLIMITED POWER'
+      - <<: *patchProvided
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("You Hunger - CACO.esp")'
+      - <<: *patchProvided
+        subs: [ 'Falskaar' ]
+        condition: 'active("Falskaar.esm") and not active("You Hunger - Falskaar.esp")'
+  - name: 'You Hunger - (CACO|Falskaar)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
+    tag:
+      - Delev
+      - Relev
+
+###### Gameplay - Magic & Abilities ######
+  - name: 'AcquisitiveSoulGemMultithreaded.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
     inc:
-      - 'EBM_UnlimitedPower_DarkBrotherhood.esp'
-      - 'EBM_UnlimitedPower_DragonAspect.esp'
-      - 'EBM_UnlimitedPower_HermaMora.esp'
-      - 'EBM_UnlimitedPower_Nightingale.esp'
-      - 'EBM_UnlimitedPower_Racial.esp'
-      - 'EBM_UnlimitedPower_StandingStone.esp'
+      - 'GIST soul trap.esp'
+      - 'UFD Enhanced Soultrap.esp'
+    msg: [ *requiresMCM ]
+    clean:
+      # version: 4.6.5
+      - crc: 0x615A80B8
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
+    inc:
+      - 'Aurora - Standing Stones of Skyrim.esp'
+      - 'Better_Standing_Stones.esp'
+      - 'BetterStandingStonesMW.esp'
+      - 'CCO - Permanent Birthsigns.esp'
+      - 'DoomstoneRebalanced.esp'
+      - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Informative Standing Stones.esp'
+      - 'PS_StandingStones.esp'
+      - 'StandingStonesAlternative.esp'
+      - 'standingstoneoverhaul.esp'
+      - 'Standing Stones Overhaul.esp'
+      - 'Superior Standing Stones.esp'
+    after:
+      - 'Convenient Horses.esp'
+      - 'Disparity.esp'
+    tag:
+      - -Names
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
+      - *includesMBBF
+      - type: info
+        content:
+          - lang: en
+            text: 'Make sure the Disparity option "Use Modified Blessings" is disabled.'
+          - lang: de
+            text: 'Stellen Sie sicher, dass die Disparity-Option "Use Modified Blessings" (übers. "Modifizierte Segen Benutzen") deaktiviert ist.'
+          - lang: ja
+            text: 'Disparityのオプション「変更された祝福の使用(Used Modified Blessings)」が無効になっているかを確認してください。'
+          - lang: pt
+            text: 'Certifique-se que a opção de Disparity "Use Modified Blessings (trad. "Utilizar Benções Modificadas") está desativada.'
+        condition: 'active("Disparity.esp")'
+    dirty:
+      # version: 1.07SSE
+      - <<: *quickClean
+        crc: 0xAF52C3D7
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 1.07SSE
+      - crc: 0x2B3FF1BA
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'Apocalypse - Magic of Skyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2977857'
+    after:
+      - 'Ordinator - Perks of Skyrim.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
+      - *includesMBBF
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
+        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Apocalypse - Vokrii Compatibility Patch.esp")'
+    clean:
+      # version: 9.45SSE
+      - crc: 0x266B3B3B
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Arcanum.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
+    dirty:
+      # version: 0.4b
+      - <<: *reqManualFix
+        crc: 0x52F24E48
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 10
+        udr: 1
+        nav: 1
+      # version: 0.4b second pass of cleaning
+      - <<: *reqManualFix
+        crc: 0x1D27B5D2
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
+  - name: 'Better Vampires.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
+    after:
+      - 'EBM_UnlimitedPower.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
-      - 'EBM_UnlimitedPower_Werewolf.esp'
+      - 'Requiem.esp'
+      - 'Sacrosanct - Vampires of Skyrim.esp'
+      - 'Tainted_Blood.esp'
+    tag:
+      - Graphics
+      - Names
+      - Relev
+      - Sound
+      - Stats
+    clean:
+      # version: 8.2
+      - crc: 0xEC44246A
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Clairvoyance.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
+    after:
+      - 'Requiem.esp'
+
+  - name: 'GIST soul trap.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
+    inc:
+      - 'AcquisitiveSoulGemMultithreaded.esp'
+      - 'UFD Enhanced Soultrap.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'MultiLayer Parallax Soul Gems' ]
+        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp") and not file("MLP + GIST Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Rustic Soul Gems' ]
+        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
+      - *requiresMCM
+    clean:
+      # version: 1.3
+      - crc: 0xC9D0A414
+        util: 'SSEEdit v4.0.0'
+  - name: 'GIST-MLPSoulGems-patch.esp'
+    inc:
+      - 'MLP + GIST Patch.esp'
+    req:
+      - name: 'MLPSoulGems.esp'
+        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
+        condition: 'not file("MLPSoulGems.esp")'
+    clean:
+      # version: 1.1
+      - crc: 0x87187AE1
+        util: 'SSEEdit v4.0.0'
+      # version: 1.1, ESL flagged
+      - crc: 0xA570D868
+        util: 'SSEEdit v4.0.0'
+  - name: 'GIST-RusticSoulGems-patch.esp'
+    req:
+      - name: 'RUSTIC SOULGEMS - Sorted.esp'
+        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
+        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
+      - name: 'RUSTIC SOULGEMS - Unsorted.esp'
+        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
+        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785)'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Rustic Soulgems GIST' ]
+        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
+    clean:
+      # version: 1.1
+      - crc: 0xEF0A2A16
+        util: 'SSEEdit v4.0.0'
+      # version: 1.1, ESL flagged
+      - crc: 0x9C849474
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'PathOfTheAntiMage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
+    dirty:
+      # version: 1.5.5.1
+      - <<: *quickClean
+        crc: 0xC238C832
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4226
+    clean:
+      # version: 1.5.5.1, after QAC
+      - crc: 0xAD2B40A5
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'PatronGodsOfSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/155/' ]
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("PatronGodsOfSkyrim_CACO_Patch.esp")'
+    dirty:
+      # version: 1.0.5
+      - <<: *quickClean
+        crc: 0x647371BC
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 23
+    clean:
+      # version: 1.0.5
+      - crc: 0x472DDCD1
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Predator Vision.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2777/' ]
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
+
+  - name: 'Randomized Word Walls.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x48A567EA
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 42
+    clean:
+      # version: 1.0
+      - crc: 0x6202C837
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Tainted_Blood.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
+    clean:
+      # version: 5.7.9
+      - crc: 0xF28D435D
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Thunderchild - Epic Shout Package.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
+    msg:
+      - *includesMBBF
+      - *doNotClean
+
+  - name: 'UFD Enhanced Soultrap.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
+    inc:
+      - 'AcquisitiveSoulGemMultithreaded.esp'
+      - 'GIST soul trap.esp'
+    msg:
+      - *doNotClean
+      - *requiresMCM
+
   - name: 'UndeathClassicalLichdom SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14823' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
-  - name: 'mslVampiricThirst.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17610' ]
-    after:
-      - 'Requiem.esp'
-  - name: 'Vampiric Thirst Redone.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13549' ]
-    after:
-      - 'Requiem.esp'
-  - name: 'UltimateCombat.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17196/' ]
-    after:
-      - 'Wildcat - Combat of Skyrim.esp'
-    clean:
-      # version: 3.33
-      - crc: 0x53BA7BF3
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-
-  - name: 'Vigor - Combat and Injuries (SE).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1876/' ]
-    after:
-      - 'Wildcat - Combat of Skyrim.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Vigor.esp")'
-
-  - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176' ]
-    after:
-      - 'Trade & Barter.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Audio Overhaul Skyrim'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vokrii - AOS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Trade & Barter'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Trade & Barter.esp") and not active("Vokrii - Trade & Barter Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Vokrii - WACCF Patch.esp")'
-
-  - name: 'WARZONES - SSE - Civil Unrest.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2360' ]
-    group: *veryEarlyGroup
-  - name: 'WARZONES - SSE - DLC - Assault Attack.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2365/' ]
-    group: *veryEarlyGroup
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0x32D1318D
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 773
-    clean:
-      # version: 1.0
-      - crc: 0x17DF49FE
-        util: 'SSEEdit v4.0.1'
-  - name: 'WerewolfPerksExpanded.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1285/' ]
-    after:
-      - 'Requiem.esp'
-
-  - name: 'When Vampires Attack.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Run For Your Lives.esp' ]
-        condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
-
-  - name: 'Wild World.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14616/' ]
-    after:
-      - 'Combat Evolved.esp'
-      - 'MVABasic.esp'
-    inc:
-      - 'Animal Tweaks.esp'
-      - 'NARC SE for Animal Tweaks.esp'
-      - 'NARC SE for Falskaar + Animal Tweaks.esp'
-      - 'NARC SE for Falskaar + SkyTEST + Animal Tweaks.esp'
-      - 'NARC SE for Falskaar + SkyTEST.esp'
-      - 'NARC SE for Falskaar.esp'
-      - 'NARC SE for SkyTEST + Animal Tweaks.esp'
-      - 'NARC SE for SkyTEST.esp'
-      - 'NARC SE for Vanilla.esp'
-      - 'One With Nature.esp'
-      - name: 'Pacifist Mini-Mods Collection.esl'
-        display: 'Less Aggressive Animals'
-      - name: 'Pacifist Mini-Mods Collection.esp'
-        display: 'Less Aggressive Animals'
-      - 'Real Wildlife Behaviour.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Animallica - Skyrim Wildlife Overhaul' ]
-        condition: 'file("Animallica.esp") and not file("Wild World - Animallica.esp")'
-      - <<: *patchProvided
-        subs: [ 'Beasts of Tamriel' ]
-        condition: 'file("Beasts of Tamriel.esp") and not file("Wild World - Beasts of Tamriel.esp")'
-      - <<: *patchProvided
-        subs: [ 'Immersive Horses' ]
-        condition: 'file("Immersive Horses.esp") and not file("Wild World - Immersive Horses.esp")'
-      - <<: *patchProvided
-        subs: [ 'Revenge Of the Enemies' ]
-        condition: 'file("Rebirth Monster.esp") and not file("Wild World - Rebirth Monster.esp")'
-      - <<: *patchProvided
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'file("Skyrim Immersive Creatures Special Edition.esp") and not file("Wild World - SIC.esp")'
-      - <<: *patchProvided
-        subs: [ 'SkyTEST - Realistic Animals and Predators' ]
-        condition: 'file("SkyTEST-RealisticAnimals&Predators.esp") and not file("Wild World - SkyTEST.esp")'
-
-  - name: '(Smilodon|Wildcat) - Combat of Skyrim\.esp'
-    after:
-      - 'Animal Tweaks.esp'
-      - 'Immersive Movement.esp'
-      - 'Immersive NPC in the dark.esp'
-      - 'New Weapon Parry.esp'
-      - 'SkyRe_Main.esp'
-      - 'SkyRe_Combat.esp'
-      - 'SkyRe_EnemyAI.esp'
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'Smilodon or Wildcat' ]
-        condition: 'many("(Smilodon|Wildcat) - Combat of Skyrim\.esp")'
-      - *includesMBBF
-  - name: 'Smilodon - Combat of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2824/' ]
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/119' ]
-    clean:
-      # version: 2.00SSE
-      - crc: 0x70092444
-        util: 'SSEEdit v4.0.2'
-  - name: 'Wildcat - Combat of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1368/' ]
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/21' ]
-    clean:
-      # version: 7.00SSE
-      - crc: 0xE6A87461
-        util: 'SSEEdit v3.2.2'
-  - name: '(Smilodon|Wildcat) - Realistic Damage Plugin\.esp'
-    after:
-      - 'Combat Evolved.esp'
 
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
@@ -7232,30 +6799,44 @@ plugins:
       - crc: 0x8468D97D
         util: 'SSEEdit v4.0.1'
 
-  - name: 'You Hunger.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
+###### Gameplay - Mount & Follower Managers ######
+  - name: 'AmazingFollowerTweaks.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6656/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14722/'
     after:
-      - 'iNeed.esp'
-      - 'iNeed - Extended.esp'
-      - 'RealisticNeedsandDiseases.esp'
-      - 'Super Simple Needs.esp'
-    tag:
-      - Delev
-      - Relev
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("You Hunger - CACO.esp")'
-      - <<: *patchProvided
-        subs: [ 'Falskaar' ]
-        condition: 'active("Falskaar.esm") and not active("You Hunger - Falskaar.esp")'
-  - name: 'You Hunger - (CACO|Falskaar)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9143/' ]
-    tag:
-      - Delev
-      - Relev
+      - 'FCO - Follower Commentary Overhaul.esp'
+    inc:
+      - 'EFFCore.esm'
+      - 'EFFDialogue.esp'
+      - 'nwsFollowerFramework.esp'
+    dirty:
+      # version: AFT 1.66sse
+      - <<: *quickClean
+        crc: 0x88F9C8B8
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+      # version: iAFT 3.09SE
+      - <<: *quickClean
+        crc: 0x8B1BC915
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+      # version: iAFT 3.09SE DLC & USSEP Patch
+      - <<: *quickClean
+        crc: 0x3899F517
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: AFT 1.66sse
+      - crc: 0xF43B6124
+        util: 'SSEEdit v4.0.0'
+      # version: iAFT 3.09SE
+      - crc: 0xCB85EFD2
+        util: 'SSEEdit v4.0.0'
+      # version: iAFT 3.09SE DLC & USSEP Patch
+      - crc: 0x2CE005AD
+        util: 'SSEEdit v4.0.0'
 
-###### Gameplay - Mount Managers ######
   - name: 'Convenient Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9519/' ]
     after:
@@ -7275,6 +6856,29 @@ plugins:
             text: 'Convenient Horsesを正しく機能させるには、Amazing Follower Tweaksの「馬の機能」と「武器を抜いたときにフォロワーをテレポートさせる設定」を無効化してください。'
           - lang: pt
             text: 'Amazing Follower Tweaks "horse features"(trad. "funções de cavalaria") e "follower teleport on weapon draw setting" (trad. "opção de teletransporte de seguidor ao sacar armas") devem estar desabilitadas para Convenient Horses'
+
+  - name: 'EFF(Core|Dialogue).es(m|p)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7003/'
+        name: 'Extensible Follower Framework'
+  - name: 'EFFCore.esm'
+    clean:
+      # version: 4.0.3
+      - crc: 0x9A583BDE
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+  - name: 'EFFDialogue.esp'
+    after:
+      - 'BUVARP.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - EFF v3.5.6 Patch.esp'
+      - name: 'XFLDialogue.esp'
+        display: 'Extensible Follower Framework v3.5.6'
+    clean:
+      # version: 4.0.3
+      - crc: 0xE0305B2C
+        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
+
   - name: 'Immersive Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/' ]
     after:
@@ -7323,68 +6927,11 @@ plugins:
       - crc: 0xD5111397
         util: 'SSEEdit v3.2.40'
 
-###### Gameplay - Follower Managers ######
-  - name: 'AmazingFollowerTweaks.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6656/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14722/'
-    after:
-      - 'FCO - Follower Commentary Overhaul.esp'
-    inc:
-      - 'EFFCore.esm'
-      - 'EFFDialogue.esp'
-      - 'nwsFollowerFramework.esp'
-    dirty:
-      # version: AFT 1.66sse
-      - <<: *quickClean
-        crc: 0x88F9C8B8
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 7
-      # version: iAFT 3.09SE
-      - <<: *quickClean
-        crc: 0x8B1BC915
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-      # version: iAFT 3.09SE DLC & USSEP Patch
-      - <<: *quickClean
-        crc: 0x3899F517
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-    clean:
-      # version: AFT 1.66sse
-      - crc: 0xF43B6124
-        util: 'SSEEdit v4.0.0'
-      # version: iAFT 3.09SE
-      - crc: 0xCB85EFD2
-        util: 'SSEEdit v4.0.0'
-      # version: iAFT 3.09SE DLC & USSEP Patch
-      - crc: 0x2CE005AD
-        util: 'SSEEdit v4.0.0'
-  - name: 'EFF(Core|Dialogue).es(m|p)'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7003/'
-        name: 'Extensible Follower Framework'
-  - name: 'EFFCore.esm'
-    clean:
-      # version: 4.0.3
-      - crc: 0x9A583BDE
-        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
-  - name: 'EFFDialogue.esp'
-    after:
-      - 'BUVARP.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - EFF v3.5.6 Patch.esp'
-      - name: 'XFLDialogue.esp'
-        display: 'Extensible Follower Framework v3.5.6'
-    clean:
-      # version: 4.0.3
-      - crc: 0xE0305B2C
-        util: 'SSEEdit v3.2.68 EXPERIMENTAL'
   - name: 'My Home Is Your Home.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7096/' ]
     after:
       - 'AmazingFollowerTweaks.esp'
+
   - name: 'nwsFollowerFramework.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/' ]
     after:
@@ -7426,6 +6973,7 @@ plugins:
       # version: 2.17beta
       - crc: 0xF5416591
         util: 'SSEEdit v4.0.0'
+
   - name: 'SimpleFollowerManager.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19940' ]
     inc:
@@ -7434,6 +6982,352 @@ plugins:
       # version: 1.1
       - crc: 0x12897011
         util: 'SSEEdit v4.0.0'
+
+###### Gameplay - NPC Behaviour & Dialogue ######
+  - name: 'AI Overhaul.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654'
+        name: 'AI Overhaul SSE'
+    msg:
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("PAN_NPCs.esp") and not active("The Ordinary Women.esp") and not active("WICO - Immersive People.esp") and not active("Diversity - An NPC Overhaul.esp") and not active("Qw_AIOverhaul_CRF Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSChildren.esp") and not active("Qw_RSChildren_AIOverhaul Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Simple Children' ]
+        condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
+    clean:
+      # version: 1.0.91
+      - crc: 0x9D6F5F62
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Guard Dialogue Overhaul.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/22075'
+    group: *preFixesGroup
+    after:
+      - 'Cutting Room Floor.esp'
+      - 'Hothtrooper44_ArmorCompilation.esp'
+    clean:
+      # version: 1.6
+      - crc: 0xF9B972F2
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+
+  - name: 'Hunters Not Bandits.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1547/' ]
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+
+  - name: 'Immersive Citizens.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
+        name: 'Immersive Citizens AI Overhaul'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
+        name: 'Immersive Citizens AI Overhaul'
+  - name: 'Immersive Citizens - AI Overhaul.esp'
+    group: *lowPriorityGroup
+    inc:
+      - 'Arthmoor''s Skyrim Villages - All In One.esp'
+      - name: 'iWil_BelethorsGoodStore.esp'
+        display: 'Belethors Overrated Goods'
+      - 'BetterCitiesWhiterun.esp'
+      - 'Better Cities Solitude.esp'
+      - name: 'Blues Skyrim.esp'
+        display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
+      - 'BosmericDrunkenHuntsmanReborn.esp'
+      - 'Dawnstar.esp'
+      - 'EEKs Arcadia''s Cauldron.esp'
+      - 'EEKs Arcadia''s - OCS.esp'
+      - name: 'Holds.esp'
+        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
+      - 'InnCredible.esp'
+      - name: 'iWil_UselessShopOverhaul.esp'
+        display: 'The Useless Shop and Interior Overhaul'
+      - 'NerniesCityandVillageExpansion.esp'
+      - 'Northern Bathhouses.esp'
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+        display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
+      - 'RealWarMaiden.esp'
+      - 'ScottishBanneredMare.esp'
+      - 'Skyrim Radioactive - Solitude Docks.esp'
+      - 'Skyrim Radioactive - Windhelm Docks.esp'
+      - name: 'tpos_ultimate_esm.esp'
+        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
+        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
+    after:
+      - '3DNPC.esp'
+      - 'Bells of Skyrim.esp'
+      - 'Bridges of Skyrim.esp'
+      - 'Civil War Repairs.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Eli_Breezehome.esp'
+      - 'Eli_Routa.esp'
+      - 'Eli_Routa - Non-Stormcloak.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'Requiem.esp'
+      - 'SkyfallEstate.esp'
+      - 'Skyrim Project Optimization - Full Version'
+      - 'Skyrim Sewers.esp'
+      - 'TouringCarriages.esp'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
+      - 'ASLAO - Front Porch (Breezehome).esp'
+      - 'BHTNFBP.esp'
+      - 'breezehome enhanced SSE.esp'
+      - 'Simpler Breezehome.esp'
+      - 'Wind District Breezehome - Replacer.esp'
+      - 'breezehome_basement.esp'
+      - 'BreezehomeSB.esp'
+      - 'breeze2.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
+      - <<: *patchIncluded
+        subs: [ 'Open Cities' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Touring Carriages' ]
+        condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Lighting for ENB' ]
+        condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'ELFX - Enhancer' ]
+        condition: 'active("ELFXEnhancer.esp") and not active("Immersive Citizens - ELFXEnhancer patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'ELFX - Hardcore' ]
+        condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
+    tag:
+      - Actors.AIPackages
+      - C.Location
+      - C.LockList
+      - C.Owner
+    dirty:
+      # version: 0.4
+      - <<: *quickClean
+        crc: 0xA61F66AD
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 0.4
+      - crc: 0x539DB18D
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Citizens - ELE patch.esp'
+    clean:
+      # version: 0.4
+      - crc: 0x9F0CBF8B
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Citizens - ELFXEnhancer patch.esp'
+    clean:
+      # version: 0.4
+      - crc: 0x4865A412
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Citizens - ELFXHardcore patch.esp'
+    clean:
+      # version: 0.4
+      - crc: 0x834C7779
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Citizens - OCS patch.esp'
+    dirty:
+      # version: 0.4
+      - <<: *quickClean
+        crc: 0x6227D18D
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
+    clean:
+      # version: 0.4
+      - crc: 0x3ED97678
+        util: 'SSEEdit v4.0.2'
+  - name: 'Immersive Citizens - TC patch.esp'
+    clean:
+      # version: 0.4
+      - crc: 0x75419F86
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Realistic AI Detection 2 SE.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2345/' ]
+    after:
+      - 'Combat Evolved.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Requiem.esp'
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
+      - 'Thief skills rebalance for Ordinator.esp'
+
+  - name: 'Relationship Dialogue Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
+    inc:
+      - name: 'Immersive Horses.esp'
+        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+      - name: 'AmazingFollowerTweaks.esp'
+        condition: 'active("AmazingFollowerTweaks.esp") and not active("RDO - AFT v1.66 Patch.esp") and not active("RDO - iAFT Patch.esp")'
+      - name: 'EFFDialogue.esp'
+        condition: 'checksum("EFFDialogue.esp", E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
+        display: 'Extensible Follower Framework'
+    after:
+      - 'AmazingFollowerTweaks.esp'
+      - '018Auri.esp'
+      - 'FCO - Follower Commentary Overhaul.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Amazing Follower Tweaks' ]
+        condition: '(checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Amazing Follower Tweaks' ]
+        condition: '(checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Extensible Follower Framework (EFF) v4.0.2+' ]
+        condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")  and not active("Cutting Room Floor.esp") and not active("RDO - USSEP Patch.esp")'
+    clean:
+      # version: Final
+      - crc: 0x20DC9B97
+        util: 'SSEEdit v3.2.1'
+  - name: 'RDO - CRF + USSEP Patch.esp'
+    req:
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - USSEP Patch.esp'
+    clean:
+      # version: Final
+      - crc: 0xA2753357
+        util: 'SSEEdit v3.2.1'
+  - name: 'RDO - USSEP Patch.esp'
+    req:
+      - 'Relationship Dialogue Overhaul.esp'
+    inc:
+      - 'RDO - CRF + USSEP Patch.esp'
+    clean:
+      # version: Final
+      - crc: 0x44DE71B0
+        util: 'SSEEdit v3.2.1'
+  - name: 'RDO - AFT v1.66 Patch.esp'
+    after:
+      - 'RDO-FCO Patch.esp'
+    clean:
+      # version: Final
+      - crc: 0x88F9C8B8
+        util: 'SSEEdit v3.2.1'
+  - name: 'RDO - iAFT Patch.esp'
+    after:
+      - 'RDO-FCO Patch.esp'
+    clean:
+      # version: Final
+      - crc: 0x88C2EA38
+        util: 'SSEEdit v3.2.1'
+  - name: 'RDO - EFF v4.0.2 Patch.esp'
+    after:
+      - 'RDO-FCO Patch.esp'
+    clean:
+      # version: Final
+      - crc: 0xAE1B1EDF
+        util: 'SSEEdit v3.2.1'
+
+  - name: 'Run For Your Lives.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/' ]
+    msg:
+      - <<: *includesX
+        subs: [ 'When Vampires Attack' ]
+    clean:
+      # version:  4.0
+      - crc: 0xF3EF2798
+        util: 'SSEEdit v3.3.6'
+
+  - name: 'Serana Dialogue Edit.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16222/' ]
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+    clean:
+      # version: 0.9
+      - crc: 0x586D2620
+        util: 'SSEEdit v3.2.1'
+      # version: 1.02
+      - crc: 0x9097E85A
+        util: 'SSEEdit v3.2.1'
+
+  - name: 'SkyTEST-RealisticAnimals&Predators.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1104' ]
+    after:
+      - 'Mortal Enemies.esp'
+    inc:
+      - 'SkyTEST-RealisticAnimalsBehaviors_LightVersion.esp'
+      - 'SkyTEST-RealisticAnimals&Predators_ImAWussy.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Stats
+      - Delev
+      - Factions
+      - NPC.Class
+      - NPC.Race
+      - Relev
+      - R.ChangeSpells
+      - Relations
+    clean:
+      # version: 1.65 No survival mode
+      - crc: 0xAE9687E1
+        util: 'SSEEdit v3.2.2'
+      # version: 1.65 CC Survival mode
+      - crc: 0x9F375906
+        util: 'SSEEdit v3.2.2'
+
+  - name: 'When Vampires Attack.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Run For Your Lives.esp' ]
+        condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
+
+  - name: 'Wild World.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14616/' ]
+    after:
+      - 'Combat Evolved.esp'
+      - 'MVABasic.esp'
+    inc:
+      - 'Animal Tweaks.esp'
+      - 'NARC SE for Animal Tweaks.esp'
+      - 'NARC SE for Falskaar + Animal Tweaks.esp'
+      - 'NARC SE for Falskaar + SkyTEST + Animal Tweaks.esp'
+      - 'NARC SE for Falskaar + SkyTEST.esp'
+      - 'NARC SE for Falskaar.esp'
+      - 'NARC SE for SkyTEST + Animal Tweaks.esp'
+      - 'NARC SE for SkyTEST.esp'
+      - 'NARC SE for Vanilla.esp'
+      - 'One With Nature.esp'
+      - name: 'Pacifist Mini-Mods Collection.esl'
+        display: 'Less Aggressive Animals'
+      - name: 'Pacifist Mini-Mods Collection.esp'
+        display: 'Less Aggressive Animals'
+      - 'Real Wildlife Behaviour.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Animallica - Skyrim Wildlife Overhaul' ]
+        condition: 'file("Animallica.esp") and not file("Wild World - Animallica.esp")'
+      - <<: *patchProvided
+        subs: [ 'Beasts of Tamriel' ]
+        condition: 'file("Beasts of Tamriel.esp") and not file("Wild World - Beasts of Tamriel.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Horses' ]
+        condition: 'file("Immersive Horses.esp") and not file("Wild World - Immersive Horses.esp")'
+      - <<: *patchProvided
+        subs: [ 'Revenge Of the Enemies' ]
+        condition: 'file("Rebirth Monster.esp") and not file("Wild World - Rebirth Monster.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim Immersive Creatures' ]
+        condition: 'file("Skyrim Immersive Creatures Special Edition.esp") and not file("Wild World - SIC.esp")'
+      - <<: *patchProvided
+        subs: [ 'SkyTEST - Realistic Animals and Predators' ]
+        condition: 'file("SkyTEST-RealisticAnimals&Predators.esp") and not file("Wild World - SkyTEST.esp")'
 
 ###### Gameplay - Quests ######
   - name: 'Alternate Start - Live Another Life.esp'
@@ -7955,6 +7849,174 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp")'
         subs: [ 'Wheels Of Lull Bruma / Forgotten City Patch' ]
+
+###### Gameplay - Skills & Perks ######
+  - name: 'Elemental Destruction.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/440/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
+
+  - name: 'EnchantingAwakened.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18558/' ]
+    after:
+      - 'Requiem.esp'
+
+  - name: 'Lock_Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
+    req:
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
+    clean:
+      # version: 1.6
+      - crc: 0xB7986707
+        util: 'SSEEdit v3.2.79 EXPERIMENTAL'
+      # version: 1.6 Ordinator version
+      - crc: 0xCD2D19F5
+        util: 'SSEEdit v3.2.79 EXPERIMENTAL'
+
+  - name: 'MultipleEnchantments.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2694/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Ordinator - Perks of Skyrim'
+          - '[Multiple Enchantments - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/5267/)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Multiple Enchantments - Ordinator Patch.esp")'
+
+  - name: 'Ordinator - Perks of Skyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
+    group: *perksGroup
+    after:
+      - 'Phenderix Magic Evolved.esp'
+      - 'Phenderix Magic World.esp'
+      - 'SAFO.esp'
+      - 'Undeath.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+    inc:
+      - 'ScopedBows_EagleEyeTweak.esp'
+      - 'PerkusMaximus_Mage.esp'
+      - 'PerkusMaximus_Master.esp'
+      - 'PerkusMaximus_Thief.esp'
+      - 'PerkusMaximus_Warrior.esp'
+      - 'PerkusMaximus_CombatPlus.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
+      - *includesMBBF
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Audio Overhaul for Skyrim' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_Ordinator_AOS Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Ordinator_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Smithing Perks Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Smithing Perks Overhaul SE.esp") and not active("SPO_Ordinator_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Weapons Armor Clothing & Clutter Fixes'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Ordinator_WACCF_Patch.esp")'
+    tag:
+      - Graphics
+      - Names
+      - Sound
+    clean:
+      # version: 9.26SSE
+      - crc: 0x38670BC4
+        util: 'SSEEdit v3.2.1'
+
+  - name: 'PathOfSorcery.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
+    after:
+      - 'Ordinator - Perks of Skyrim.esp'
+    clean:
+      # version: 1.2
+      - crc: 0x992192E5
+        util: 'SSEEdit v3.2.80'
+
+  - name: 'Piercing Shot Perk - Bullseye perk replacer.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2698/' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove the Navigation Mesh Info Map record 00012FB4 from Piercing Shot Perk - Bullseye perk replacer.esp with [SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)' ]
+        condition: 'checksum("Piercing Shot Perk - Bullseye perk replacer.esp", 01D2BE9A) or checksum("Piercing Shot Perk - Bullseye perk replacer.esp", 69200C44)'
+
+  - name: 'Sacrosanct - Vampires of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
+    group: *perksGroup
+    inc:
+      - name: 'better vampires.esp'
+        condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
+        display: '[Better Vampires](https://www.nexusmods.com/skyrimspecialedition/mods/1925/)'
+      - 'mslVampiricThirst.esp'
+      - 'SanguinairVampirism.esp'
+      - 'VampireLordPerksExpanded.esp'
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'DVA - Dynamic Vampire Appearance.esp'
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'RaceCompatibilityUSKPOverride.esp'
+      - 'Requiem.esp'
+      - 'Volkihar Knight.esp'
+      - 'YOT - Your Own Thoughts.esp'
+    tag:
+      - Graphics
+      - Names
+      - Sound
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
+      - *includesMBBF
+    clean:
+      # version: 5.15SSE
+      - crc: 0x92620FD6
+        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+
+  - name: 'Vampiric Thirst Redone.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13549' ]
+    after:
+      - 'Requiem.esp'
+  - name: 'mslVampiricThirst.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17610' ]
+    after:
+      - 'Requiem.esp'
+
+  - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176' ]
+    after:
+      - 'Trade & Barter.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Audio Overhaul Skyrim'
+          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vokrii - AOS Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Trade & Barter'
+          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
+        condition: 'active("Trade & Barter.esp") and not active("Vokrii - Trade & Barter Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Weapons Armor Clothing & Clutter Fixes'
+          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Vokrii - WACCF Patch.esp")'
+
+  - name: 'WerewolfPerksExpanded.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1285/' ]
+    after:
+      - 'Requiem.esp'
 
 ###### Items ######
   - name: 'aMidianBorn_ContentAddon.esp'
