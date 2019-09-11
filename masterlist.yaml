@@ -13389,6 +13389,8 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'OCW_Obscure''s_CollegeofWinterhold.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'active("tpos_OCpatch.esp") and version("tpos_complete02_RTCWG.esp", "9.2.9", >=)'
     inc:
       - 'Alternate Start -- New Beginnings.esp'
       - 'AncientLand.esp'
@@ -13396,7 +13398,8 @@ plugins:
         condition: 'version("tpos_complete02_RTCWG.esp", "9.1.8", <)'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Patrols II.esp'
-      - 'Open Cities Skyrim.esp'
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'version("tpos_complete02_RTCWG.esp", "9.2.9", <)'
       - 'SkyfallEstate.esp'
       - name: 'SkyTEST-RealisticAnimals&Predators.esp'
         condition: 'not active("tpos_SkyTESTpatch.esp")'
@@ -13408,6 +13411,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("tpos_Cutting_Room_Floorpatch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("tpos_OCpatch.esp")'
     clean:
       #  version: 9.1.4 Full
       - crc: 0x579347B4
