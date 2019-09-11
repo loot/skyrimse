@@ -1666,44 +1666,6 @@ plugins:
     # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
-  - name: 'WACCF_Armor and Clothing Extension.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
-    group: *fixesGroup
-    after:
-      - 'AmuletsShowOnEverything.esp'
-      - 'AmuletsShowOnClothes.esp'
-      - 'AmuletsShowOnHeavyArmor.esp'
-      - 'AmuletsShowOnLightArmor.esp'
-      - 'AmuletsShowOnRobes.esp'
-      - 'AmuletsShowOnEverything-JOP.esp'
-      - 'AmuletsShowOnClothes-JOP.esp'
-      - 'AmuletsShowOnHeavyArmor-JOP.esp'
-      - 'AmuletsShowOnLightArmor-JOP.esp'
-      - 'AmuletsShowOnRobes-JOP.esp'
-      - 'AnotherSortingMod_2017-SSE.esp'
-      - 'WACCF_ASM-2019.esp'
-    msg:
-      - *requiresMCM
-      - *doNotClean
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Beyond Skyrim: Bruma' ]
-        condition: 'active("BSHeartland.esp") and not active("Qw_ACE_BSHeartland Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cloaks and Capes' ]
-        condition: 'active("Cloaks&Capes.esp") and not active("Qw_ACE_CloaksAndCapes Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ACE_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("Qw_ACE_SkyrimImmersiveCreatures Patch.esp")'
-    clean:
-      # version: 1.0
-      - crc: 0x832B2C99
-        util: 'SSEEdit v4.0.0'
 
 ###### Modding Tools - Generated Files ######
   - name: 'Bashed Patch.*\.esp'
@@ -8071,6 +8033,46 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18177'
         name: 'QUARK - Qwinn''s Ultimate Amulet Restoration Kit'
     group: *underridesGroup
+
+  - name: 'WACCF_Armor and Clothing Extension.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
+    group: *fixesGroup
+    after:
+      - 'AmuletsShowOnEverything.esp'
+      - 'AmuletsShowOnClothes.esp'
+      - 'AmuletsShowOnHeavyArmor.esp'
+      - 'AmuletsShowOnLightArmor.esp'
+      - 'AmuletsShowOnRobes.esp'
+      - 'AmuletsShowOnEverything-JOP.esp'
+      - 'AmuletsShowOnClothes-JOP.esp'
+      - 'AmuletsShowOnHeavyArmor-JOP.esp'
+      - 'AmuletsShowOnLightArmor-JOP.esp'
+      - 'AmuletsShowOnRobes-JOP.esp'
+      - 'AnotherSortingMod_2017-SSE.esp'
+      - 'WACCF_ASM-2019.esp'
+    msg:
+      - *requiresMCM
+      - *doNotClean
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Beyond Skyrim: Bruma' ]
+        condition: 'active("BSHeartland.esp") and not active("Qw_ACE_BSHeartland Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cloaks and Capes' ]
+        condition: 'active("Cloaks&Capes.esp") and not active("Qw_ACE_CloaksAndCapes Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cloaks of Skyrim' ]
+        condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ACE_CRF Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Skyrim Immersive Creatures' ]
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("Qw_ACE_SkyrimImmersiveCreatures Patch.esp")'
+    clean:
+      # version: 1.0
+      - crc: 0x832B2C99
+        util: 'SSEEdit v4.0.0'
+
   - name: 'BandolierForNPC.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
