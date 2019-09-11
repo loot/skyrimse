@@ -2176,154 +2176,6 @@ plugins:
     req:
       - 'Open Cities Skyrim.esp'
 
-  - name: 'BetterQuestObjectives.*\.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/159'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
-  - name: 'BetterQuestObjectives.esp'
-    group: *underridesGroup
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Alternate Start' ]
-        condition: 'active("Alternate Start - Live Another Life.esp") and not file("BetterQuestObjectives-AlternateStartPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Amazing Follower Tweaks or Immersive Amazing Follower Tweaks' ]
-        condition: 'active("AmazingFollowerTweaks.esp") and not file("BetterQuestObjectives-AFTPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Book Covers Skyrim' ]
-        condition: 'active("Book Covers Skyrim.esp") and not file("BetterQuestObjectives - BCS Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Better Skill and Quest Books Names' ]
-        condition: 'active("Better Skill and Quest Books Names SE.esp") and not file("BetterQuestObjectives-BSaQBPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not file("BetterQuestObjectives-CRFPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Extensible Follower Framework' ]
-        condition: 'active("EFFCore.esm") and not file("BetterQuestObjectives-EFFPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'T3nd0''s Perkus Maximus' ]
-        condition: 'active("PerkusMaximus_Mage.esp") and not file("BetterQuestObjectives-PerMaPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'T3nd0s Skyrim SE Redone' ]
-        condition: 'active("SkyRe_Main.esp") and not file("BetterQuestObjectives-SkyRePatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The Paarthurnax Dilemma' ]
-        condition: 'active("The Paarthurnax Dilemma.esp") and not file("BetterQuestObjectives-PaarDilemmaPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Yet Another Skyrim Hardcore mod' ]
-        condition: 'active("YASH2.esp") and not file("BetterQuestObjectives - YASH Patch.esp")'
-    tag:
-      - NoMerge
-    clean:
-      # Version: 1.7
-      - crc: 0x7872FD91
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x927BB110
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-DBForevertoMisc.esp'
-    group: *underridesGroup
-    after:
-      - 'BetterQuestObjectives.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x7ABE5D80
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0xB7F49B9D
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-AlternateStartPatch.esp'
-    after:
-      - 'BetterQuestObjectives.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x39107A37
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x4E02B7A3
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-AFTPatch.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x04DA7030
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0xCED07127
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives - BCS Patch.esp'
-    group: *underridesGroup
-    after:
-      - 'BetterQuestObjectives.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x18288DB2
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x9F7E0233
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-BSaQBPatch.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x5DDD74B3
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x3D710D33
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-CRFPatch.esp'
-    group: *underridesGroup
-    after:
-      - 'BetterQuestObjectives.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x74707400
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0xB144DCC6
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-EFFPatch.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0xAB575D22
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x5D8F1625
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-PerMaPatch.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0x67B03EE7
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x7203FFA2
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-SkyRePatch.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0xC56CDCC7
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x5AE54971
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives-PaarDilemmaPatch.esp'
-    after:
-      - 'BetterQuestObjectives.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0xE6018A5F
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x291AA87B
-        util: 'SSEEdit v4.0.1'
-  - name: 'BetterQuestObjectives - YASH Patch.esp'
-    clean:
-      # Version: 1.7
-      - crc: 0xBC91A263
-        util: 'SSEEdit v4.0.1'
-      # Version: 1.7, ESL flagged
-      - crc: 0x12AEC0DE
-        util: 'SSEEdit v4.0.1'
-
   - name: 'Dawnguard Map Markers.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
     group: *lateChangesGroup
@@ -4231,22 +4083,6 @@ plugins:
       - crc: 0x08ABC53D
         util: 'SSEEdit v4.0.0'
 
-  - name: 'CollegeDaysWinterhold.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12615'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/26611'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[College Days - Winterhold SSE - Voicing Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/26611)' ]
-        condition: 'active("CollegeDaysWinterhold.esp") and checksum("CollegeDaysWinterhold.esp", 99F1E78D)'
-    clean:
-      # Version: 5.56
-      - crc: 0x99F1E78D
-        util: 'SSEEdit v4.0.2'
-      # Version: 1.0, Voicing Fix Patch
-      - crc: 0xE32C44F4
-        util: 'SSEEdit v4.0.2'
-
   - name: '(CollegeStudents|ICNs_ImmersiveCollegeNPCs)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9252/' ]
     group: *underridesGroup
@@ -4336,36 +4172,10 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_DucksAndSwans_USSEP Patch.esp")'
-  - name: 'ForgottenCity.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
-    dirty:
-      # version: 1.8
-      - <<: *quickClean
-        crc: 0xE6DC78C3
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 7
-    clean:
-      # version: 1.8
-      - crc: 0x8F81344C
-        util: 'SSEEdit v4.0.0'
   - name: 'High Level Enemies( - Dawnguard| - Dragonborn)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3231/' ]
     tag:
       - Relev
-  - name: 'Immersive Encounters.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/' ]
-    req: [ *SkyUI ]
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'RS Children Overhaul' ]
-        condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
-    clean:
-      # version: 2.0.1
-      - crc: 0x869FDE8B
-        util: 'SSEEdit v4.0.2'
   - name: 'Inigo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/' ]
     dirty:
@@ -4397,19 +4207,6 @@ plugins:
       # version: 1.0, wild edits cleaned.
       - crc: 0x1A3E4FE1
         util: 'SSEEdit v4.0.2'
-  - name: 'konahrik_accoutrements.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
-    group: *underridesGroup
-    dirty:
-      # version: 5.5.3
-      - <<: *quickClean
-        crc: 0x93449BB7
-        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 47
-    clean:
-      # version: 5.5.3
-      - crc: 0x603FE7C9
-        util: 'SSEEdit v4.0.1'
   - name: 'KrittaKittyHorsesForSSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7685/'
@@ -4508,30 +4305,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4145' ]
     after:
       - 'DIVERSE SKYRIM.esp'
-
-  - name: 'quest_pitfighter.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22513' ]
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0xE1DCDD42
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 32
-    clean:
-      # version: 1.0, after QAC
-      - crc: 0xC8B74D51
-        util: 'SSEEdit v4.0.2'
-  - name: 'quest_pitfighter_dlc01.esp'
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0xE4C4B73B
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 6
-    clean:
-      # version: 1.0, after QAC
-      - crc: 0xCD63ACCB
-        util: 'SSEEdit v4.0.2'
 
   - name: 'Rebalanced Encounter Zones.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25/' ]
@@ -4648,17 +4421,6 @@ plugins:
     clean:
       - crc: 0xD87DD508
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
-  - name: 'Tools of Kagrenac.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
-    after:
-      - 'MLU.esp'
-      - 'ZIA_Ancient Pack.esp'
-      - 'ZIA_Complete Pack.esp'
-      - 'ZKN.esp'
-    clean:
-      # version: 1.21
-      - crc: 0x10B91EE9
-        util: 'SSEEdit v4.0.2'
   - name: 'Toccata.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
     req:
@@ -4667,39 +4429,6 @@ plugins:
     clean:
       - crc: 0xAA9D9F35
         util: 'SSEEdit v3.2.44'
-  - name: 'WheelsOfLull.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748' ]
-    clean:
-       # version: 1.3a - unofficial patch
-      - crc: 0xC191A3F9
-        util: 'SSEEdit v4.0.0'
-    msg:
-      # first crc is before, second is after cleaning
-      - <<: *patchUpdateAvailable
-        subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
-        condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", 6771AF29)'
-      # These three are mutually exclusive, which is handled further down
-      - <<: *patch3rdParty
-        subs:
-          - 'Beyond Skyrim Bruma'
-          - '[Wheels of Lull Bruma Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
-        condition: 'active("BSHeartland.esm") and not active("ForgottenCity.esp") and not active("WheelsOfLull - Bruma Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Forgotten City'
-          - '[Wheels of Lull Forgotten City Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
-        condition: 'not active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Beyond Skyrim Bruma and Forgotten City'
-          - '[Wheels of Lull Forgotten City and Bruma Merged Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
-        condition: 'active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp")'
-  - name: 'WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19734' ]
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp")'
-        subs: [ 'Wheels Of Lull Bruma / Forgotten City Patch' ]
   - name: 'zMirai.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/' ]
     after:
@@ -5560,41 +5289,6 @@ plugins:
       - 'EconomyOverhaulandSpeechcraftImprovementsLite.esp'
       - 'SkyTEST-RealisticAnimals&Predators.esp'
 
-  - name: 'Alternate Start - Live Another Life.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
-      - 'https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
-    group: *coreGroup
-    inc:
-      - 'Original Opening Scene.esp'
-      - 'Random Alternate Start.esp'
-      - 'Random Alternate Start Reborn SE.esp'
-      - 'Skyrim Unbound.esp'
-    after:
-      - 'BecomeKingofSkyrim.esp'
-      - 'BetterQuestObjectives.esp'
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Guard Dialogue Overhaul.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MLU.esp'
-      - 'My Home Is Your Home.esp'
-    tag:
-      - C.Location
-      - Names
-    clean:
-      # version: 4.0.9
-      - crc: 0xCDDFC16E
-        util: 'SSEEdit v4.0.2'
-  - name: 'Alternate Start -- New Beginnings.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/' ]
-    tag:
-      - Scripts
-      - -Sound
-    clean:
-      # version: 1.3.0
-      - crc: 0xD9A7F0A7
-        util: 'SSEEdit v4.0.2'
   - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
     inc:
@@ -5739,34 +5433,6 @@ plugins:
       # version: 2.0.5
       - crc: 0x7AFE3B56
         util: 'SSEEdit v4.0.2'
-  - name: 'BarenziahQuestMarkers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/684/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
-  - name: 'BecomeKingofSkyrim.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2152'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/4496'
-    dirty:
-      # version: 1.6 Immersive Edition
-      - <<: *quickClean
-        crc: 0xAD4F5609
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 68
-      # version: 7.4.1
-      - <<: *quickClean
-        crc: 0x91F8E094
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 31
-    clean:
-      # version: 1.6 Immersive Edition, after QAC
-      - crc: 0xBC83ECFA
-        util: 'SSEEdit v4.0.2'
-      # version: 7.4.1, after QAC
-      - crc: 0xF94EEA3A
-        util: 'SSEEdit v4.0.2'
   - name: 'Better Harvesting( (animal loot version))?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
     after:
@@ -5825,42 +5491,6 @@ plugins:
       - crc: 0x9740479E
         util: 'SSEEdit v4.0.2'
 
-  - name: 'TheChoiceIsYours.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
-    after:
-      - 'BetterQuestObjectives.esp'
-      - 'BetterQuestObjectives - BCS Patch.esp'
-      - 'BetterQuestObjectives-BSaQBPatch.esp'
-      - 'Better Skill and Quest Books Names SE.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'Cutting Room Floor.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-      - name: 'Wintersun - Faiths of Skyrim.esp'
-        condition: 'not file("TCIY_Wintersun_Patch.esp")'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Book Covers SE'
-          - '[kryptopyr''s Patch Hub - Book Covers Skyrim TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY( |_)BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Cutting Room Floor.esp") and not active("TCIY_CRF_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wintersun - Faiths of Skyrim'
-          - '[kryptopyr''s Patch Hub - Wintersun TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("TCIY_Wintersun_Patch.esp")'
-    tag:
-      - Actors.AIPackages
-      - Names
-    clean:
-      # version: 2.0
-      - crc: 0x9F3FDA79
-        util: 'SSEEdit v4.0.2'
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
     group: *craftingGroup
@@ -5987,46 +5617,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/49791/' ]
     group: *craftingGroup
 
-  - name: 'The Brotherhood of Old.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'SkyrimSewers.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Sewers'
-          - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
-        condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
-    clean:
-      # version: 1.0.2
-      - crc: 0x88D27F37
-        util: 'SSEEdit v4.0.2'
   - name: 'Clairvoyance.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
     after:
       - 'Requiem.esp'
-  - name: 'CollegeEntry.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22184' ]
-    after:
-      - 'WACCF_Armor and Clothing Extension.esp'
-    inc:
-      - 'CollegeApplication.esp'
-      - 'CollegeModifications.esp'
-  - name: 'Dawnguard - Radiant Quest Requirements.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16818/' ]
-    after:
-      - 'BetterQuestObjectives.esp'
-    dirty:
-      # version: 0.1
-      - <<: *quickClean
-        crc: 0x14593BAE
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 17
-    clean:
-      # version: 0.1
-      - crc: 0x3C052452
-        util: 'SSEEdit v4.0.2'
   - name: 'DeadlyCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
     msg:
@@ -6161,22 +5755,6 @@ plugins:
     msg:
       - *doNotClean
       - *requiresMCM
-  - name: 'Finding_VelehkSain(_MAQF)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19815/' ]
-    after:
-      - 'ApepiBetterCollege.esp'
-      - 'CollegeOfWinterholdImmersive.esp'
-      - 'Immersive Weapons.esp'
-      - 'MagicalCollegeofWinterhold.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-  - name: 'Finding_VelehkSain.esp'
-    after:
-      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not version("Finding_VelehkSain.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3))'
-  - name: 'Finding_VelehkSain_MAQF.esp'
-    after:
-      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not version("Finding_VelehkSain_MAQF.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) and not checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) and not checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C))'
   - name: 'Guard Dialogue Overhaul.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791'
@@ -6824,16 +6402,6 @@ plugins:
       - crc: 0xB8A1EE4E
         util: 'SSEEdit v3.2.1'
 
-  - name: 'Missing Apprentices CRF Quest Fix.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6677/' ]
-    group: *underridesGroup
-    after:
-      - 'BetterQuestObjectives-CRFPatch.esp'
-      - 'Book Covers Skyrim.esp'
-    clean:
-      # version: 1.4
-      - crc: 0x059F28E6
-        util: 'SSEEdit v4.0.1'
   - name: 'MultipleEnchantments.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2694/' ]
     msg:
@@ -6968,29 +6536,6 @@ plugins:
       # version: 3.1.4
       - crc: 0xAF265A7A
         util: 'SSEEdit v4.0.2'
-  - name: 'NotSoFast-MageGuild.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5686/' ]
-    after:
-      - 'CollegeEntry.esp'
-      - 'CollegeOfWinterholdImmersive.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive College of Winterhold'
-          - '[Immersive College of Winterhold - Not so fast Mage Guild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18731/)'
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("CWIAIPATCH.esp")'
-    clean:
-      - crc: 0x838EA616
-        util: 'SSEEdit v3.2.71'
-  - name: 'NotSoFast-MainQuest.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2475/' ]
-    after:
-      - 'Book Covers Skyrim.esp'
-      - 'MLU.esp'
-    clean:
-      # version: 1.6
-      - crc: 0x70426EF7
-        util: 'SSEEdit v3.2.1'
   - name: 'Ordinator - Perks of Skyrim.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
@@ -7058,41 +6603,6 @@ plugins:
     clean:
       # version: 5.7.9
       - crc: 0xF28D435D
-        util: 'SSEEdit v4.0.2'
-  - name: 'notice board.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3218/' ]
-    clean:
-      # version: 1.4
-      - crc: 0x06EF4166
-        util: 'SSEEdit v4.0.0'
-  - name: 'notice board - open cities patch.esp'
-    clean:
-      # version: 1.4
-      - crc: 0x6498488A
-        util: 'SSEEdit v4.0.0'
-  - name: 'notice board - better solstheim quests.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15829/' ]
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Immersive Wenches.esp'
-    tag:
-      - C.Encounter
-      - C.Music
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0x9985DFF3
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-    clean:
-      # version: 1.0
-      - crc: 0x505FDAEA
-        util: 'SSEEdit v4.0.0'
-  - name: 'The Paarthurnax Dilemma.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/365' ]
-    clean:
-      # version: 2.0.1
-      - crc: 0x36F5C5BD
         util: 'SSEEdit v4.0.2'
   - name: 'Randomized Word Walls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
@@ -7196,10 +6706,6 @@ plugins:
       # version: Final
       - crc: 0xAE1B1EDF
         util: 'SSEEdit v3.2.1'
-  - name: 'Religion.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/67663/' ]
-    after:
-      - 'Requiem.esp'
   - name: 'RichMerchantsSkyrim_x\d+.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1772/' ]
     tag:
@@ -7254,11 +6760,6 @@ plugins:
       # version: 1.02
       - crc: 0x9097E85A
         util: 'SSEEdit v3.2.1'
-  - name: 'SexLab-AmorousAdventures.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7305/' ]
-    tag:
-      - C.Climate
-      - C.Water
   - name: 'SkyTEST-RealisticAnimals&Predators.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1104' ]
     after:
@@ -7931,6 +7432,527 @@ plugins:
       # version: 1.1
       - crc: 0x12897011
         util: 'SSEEdit v4.0.0'
+
+###### Gameplay - Quests ######
+  - name: 'Alternate Start - Live Another Life.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
+      - 'https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918710'
+    group: *coreGroup
+    inc:
+      - 'Original Opening Scene.esp'
+      - 'Random Alternate Start.esp'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Skyrim Unbound.esp'
+    after:
+      - 'BecomeKingofSkyrim.esp'
+      - 'BetterQuestObjectives.esp'
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'Guard Dialogue Overhaul.esp'
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'MLU.esp'
+      - 'My Home Is Your Home.esp'
+    tag:
+      - C.Location
+      - Names
+    clean:
+      # version: 4.0.9
+      - crc: 0xCDDFC16E
+        util: 'SSEEdit v4.0.2'
+  - name: 'Alternate Start -- New Beginnings.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/' ]
+    tag:
+      - Scripts
+      - -Sound
+    clean:
+      # version: 1.3.0
+      - crc: 0xD9A7F0A7
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'BarenziahQuestMarkers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/684/' ]
+    msg:
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
+
+  - name: 'BecomeKingofSkyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2152'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/4496'
+    dirty:
+      # version: 1.6 Immersive Edition
+      - <<: *quickClean
+        crc: 0xAD4F5609
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 68
+      # version: 7.4.1
+      - <<: *quickClean
+        crc: 0x91F8E094
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 31
+    clean:
+      # version: 1.6 Immersive Edition, after QAC
+      - crc: 0xBC83ECFA
+        util: 'SSEEdit v4.0.2'
+      # version: 7.4.1, after QAC
+      - crc: 0xF94EEA3A
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'BetterQuestObjectives.*\.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/159'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
+  - name: 'BetterQuestObjectives.esp'
+    group: *underridesGroup
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Alternate Start' ]
+        condition: 'active("Alternate Start - Live Another Life.esp") and not file("BetterQuestObjectives-AlternateStartPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Amazing Follower Tweaks or Immersive Amazing Follower Tweaks' ]
+        condition: 'active("AmazingFollowerTweaks.esp") and not file("BetterQuestObjectives-AFTPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Book Covers Skyrim' ]
+        condition: 'active("Book Covers Skyrim.esp") and not file("BetterQuestObjectives - BCS Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Better Skill and Quest Books Names' ]
+        condition: 'active("Better Skill and Quest Books Names SE.esp") and not file("BetterQuestObjectives-BSaQBPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not file("BetterQuestObjectives-CRFPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Extensible Follower Framework' ]
+        condition: 'active("EFFCore.esm") and not file("BetterQuestObjectives-EFFPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'T3nd0''s Perkus Maximus' ]
+        condition: 'active("PerkusMaximus_Mage.esp") and not file("BetterQuestObjectives-PerMaPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'T3nd0s Skyrim SE Redone' ]
+        condition: 'active("SkyRe_Main.esp") and not file("BetterQuestObjectives-SkyRePatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Paarthurnax Dilemma' ]
+        condition: 'active("The Paarthurnax Dilemma.esp") and not file("BetterQuestObjectives-PaarDilemmaPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Yet Another Skyrim Hardcore mod' ]
+        condition: 'active("YASH2.esp") and not file("BetterQuestObjectives - YASH Patch.esp")'
+    tag:
+      - NoMerge
+    clean:
+      # Version: 1.7
+      - crc: 0x7872FD91
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x927BB110
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-DBForevertoMisc.esp'
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x7ABE5D80
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0xB7F49B9D
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-AlternateStartPatch.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x39107A37
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x4E02B7A3
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-AFTPatch.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x04DA7030
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0xCED07127
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives - BCS Patch.esp'
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x18288DB2
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x9F7E0233
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-BSaQBPatch.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x5DDD74B3
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x3D710D33
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-CRFPatch.esp'
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x74707400
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0xB144DCC6
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-EFFPatch.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0xAB575D22
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x5D8F1625
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-PerMaPatch.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0x67B03EE7
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x7203FFA2
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-SkyRePatch.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0xC56CDCC7
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x5AE54971
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives-PaarDilemmaPatch.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0xE6018A5F
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x291AA87B
+        util: 'SSEEdit v4.0.1'
+  - name: 'BetterQuestObjectives - YASH Patch.esp'
+    clean:
+      # Version: 1.7
+      - crc: 0xBC91A263
+        util: 'SSEEdit v4.0.1'
+      # Version: 1.7, ESL flagged
+      - crc: 0x12AEC0DE
+        util: 'SSEEdit v4.0.1'
+
+  - name: 'CollegeDaysWinterhold.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12615'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/26611'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[College Days - Winterhold SSE - Voicing Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/26611)' ]
+        condition: 'active("CollegeDaysWinterhold.esp") and checksum("CollegeDaysWinterhold.esp", 99F1E78D)'
+    clean:
+      # Version: 5.56
+      - crc: 0x99F1E78D
+        util: 'SSEEdit v4.0.2'
+      # Version: 1.0, Voicing Fix Patch
+      - crc: 0xE32C44F4
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'CollegeEntry.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22184' ]
+    after:
+      - 'WACCF_Armor and Clothing Extension.esp'
+    inc:
+      - 'CollegeApplication.esp'
+      - 'CollegeModifications.esp'
+
+  - name: 'Dawnguard - Radiant Quest Requirements.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16818/' ]
+    after:
+      - 'BetterQuestObjectives.esp'
+    dirty:
+      # version: 0.1
+      - <<: *quickClean
+        crc: 0x14593BAE
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
+    clean:
+      # version: 0.1
+      - crc: 0x3C052452
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Finding_VelehkSain(_MAQF)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19815/' ]
+    after:
+      - 'ApepiBetterCollege.esp'
+      - 'CollegeOfWinterholdImmersive.esp'
+      - 'Immersive Weapons.esp'
+      - 'MagicalCollegeofWinterhold.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+  - name: 'Finding_VelehkSain.esp'
+    after:
+      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+        condition: 'not version("Finding_VelehkSain.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3))'
+  - name: 'Finding_VelehkSain_MAQF.esp'
+    after:
+      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+        condition: 'not version("Finding_VelehkSain_MAQF.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) and not checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) and not checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C))'
+
+  - name: 'ForgottenCity.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
+    dirty:
+      # version: 1.8
+      - <<: *quickClean
+        crc: 0xE6DC78C3
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+    clean:
+      # version: 1.8
+      - crc: 0x8F81344C
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'Immersive Encounters.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/' ]
+    req: [ *SkyUI ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
+    clean:
+      # version: 2.0.1
+      - crc: 0x869FDE8B
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'konahrik_accoutrements.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
+    group: *underridesGroup
+    dirty:
+      # version: 5.5.3
+      - <<: *quickClean
+        crc: 0x93449BB7
+        util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 47
+    clean:
+      # version: 5.5.3
+      - crc: 0x603FE7C9
+        util: 'SSEEdit v4.0.1'
+
+  - name: 'Missing Apprentices CRF Quest Fix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6677/' ]
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives-CRFPatch.esp'
+      - 'Book Covers Skyrim.esp'
+    clean:
+      # version: 1.4
+      - crc: 0x059F28E6
+        util: 'SSEEdit v4.0.1'
+
+  - name: 'notice board.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3218/' ]
+    clean:
+      # version: 1.4
+      - crc: 0x06EF4166
+        util: 'SSEEdit v4.0.0'
+  - name: 'notice board - open cities patch.esp'
+    clean:
+      # version: 1.4
+      - crc: 0x6498488A
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'notice board - better solstheim quests.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15829/' ]
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Immersive Wenches.esp'
+    tag:
+      - C.Encounter
+      - C.Music
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x9985DFF3
+        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 1.0
+      - crc: 0x505FDAEA
+        util: 'SSEEdit v4.0.0'
+
+  - name: 'NotSoFast-MageGuild.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5686/' ]
+    after:
+      - 'CollegeEntry.esp'
+      - 'CollegeOfWinterholdImmersive.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[Immersive College of Winterhold - Not so fast Mage Guild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18731/)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("CWIAIPATCH.esp")'
+    clean:
+      - crc: 0x838EA616
+        util: 'SSEEdit v3.2.71'
+
+  - name: 'NotSoFast-MainQuest.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2475/' ]
+    after:
+      - 'Book Covers Skyrim.esp'
+      - 'MLU.esp'
+    clean:
+      # version: 1.6
+      - crc: 0x70426EF7
+        util: 'SSEEdit v3.2.1'
+
+  - name: 'quest_pitfighter.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22513' ]
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0xE1DCDD42
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 32
+    clean:
+      # version: 1.0, after QAC
+      - crc: 0xC8B74D51
+        util: 'SSEEdit v4.0.2'
+  - name: 'quest_pitfighter_dlc01.esp'
+    dirty:
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0xE4C4B73B
+        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+    clean:
+      # version: 1.0, after QAC
+      - crc: 0xCD63ACCB
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Religion.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/67663/' ]
+    after:
+      - 'Requiem.esp'
+
+  - name: 'SexLab-AmorousAdventures.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7305/' ]
+    tag:
+      - C.Climate
+      - C.Water
+
+  - name: 'The Brotherhood of Old.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'SkyrimSewers.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Sewers'
+          - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
+        condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
+    clean:
+      # version: 1.0.2
+      - crc: 0x88D27F37
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'TheChoiceIsYours.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'BetterQuestObjectives - BCS Patch.esp'
+      - 'BetterQuestObjectives-BSaQBPatch.esp'
+      - 'Better Skill and Quest Books Names SE.esp'
+      - 'Book Covers Skyrim.esp'
+      - 'Cutting Room Floor.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Relationship Dialogue Overhaul.esp'
+      - name: 'Wintersun - Faiths of Skyrim.esp'
+        condition: 'not file("TCIY_Wintersun_Patch.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Book Covers SE'
+          - '[kryptopyr''s Patch Hub - Book Covers Skyrim TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY( |_)BCS Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+        condition: 'active("Cutting Room Floor.esp") and not active("TCIY_CRF_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Wintersun - Faiths of Skyrim'
+          - '[kryptopyr''s Patch Hub - Wintersun TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("TCIY_Wintersun_Patch.esp")'
+    tag:
+      - Actors.AIPackages
+      - Names
+    clean:
+      # version: 2.0
+      - crc: 0x9F3FDA79
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'The Paarthurnax Dilemma.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/365' ]
+    clean:
+      # version: 2.0.1
+      - crc: 0x36F5C5BD
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'Tools of Kagrenac.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
+    after:
+      - 'MLU.esp'
+      - 'ZIA_Ancient Pack.esp'
+      - 'ZIA_Complete Pack.esp'
+      - 'ZKN.esp'
+    clean:
+      # version: 1.21
+      - crc: 0x10B91EE9
+        util: 'SSEEdit v4.0.2'
+
+  - name: 'WheelsOfLull.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748' ]
+    clean:
+       # version: 1.3a - unofficial patch
+      - crc: 0xC191A3F9
+        util: 'SSEEdit v4.0.0'
+    msg:
+      # first crc is before, second is after cleaning
+      - <<: *patchUpdateAvailable
+        subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
+        condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", 6771AF29)'
+      # These three are mutually exclusive, which is handled further down
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim Bruma'
+          - '[Wheels of Lull Bruma Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("BSHeartland.esm") and not active("ForgottenCity.esp") and not active("WheelsOfLull - Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Forgotten City'
+          - '[Wheels of Lull Forgotten City Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'not active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim Bruma and Forgotten City'
+          - '[Wheels of Lull Forgotten City and Bruma Merged Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp")'
+  - name: 'WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19734' ]
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp")'
+        subs: [ 'Wheels Of Lull Bruma / Forgotten City Patch' ]
 
 ###### Items ######
   - name: 'aMidianBorn_ContentAddon.esp'
