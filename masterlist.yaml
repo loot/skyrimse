@@ -3615,8 +3615,28 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("AI Overhaul.esp") and not active("ScopedBows.esp") and not active("Qw_AelaStandalone_USSEP Patch.esp")'
+
+  ### Bijin Series by rxkx22
   - name: 'Bijin AIO.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/'
+        name: 'Bijin NPCs SE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1825/'
+        name: 'Bijin Warmaidens SE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/'
+        name: 'Bijin Wives SE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
+        name: 'Seranaholic'
+    after:
+      - 'Cutting Room Floor.esp'
+      - 'Immersive Weapons.esp'
+      - 'ScopedBows.esp'
+    inc:
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
     msg:
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_BijinAIO_AIOverhaul Patch.esp")'
@@ -3629,40 +3649,6 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BijinAIO_USSEP Patch.esp")'
-  - name: 'Bijin( AIO|_AIO 2018|_AIO-SV 2018| Warmaidens)\.esp'
-    after:
-      - 'Cutting Room Floor.esp'
-      - 'Immersive Weapons.esp'
-      - 'ScopedBows.esp'
-    msg:
-      - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
-      - <<: *useOnlyOneX
-        condition: 'many("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
-        subs: [ 'Bijin All in One' ]
-  - name: 'Bijin_Frea-Iona.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11'
-        name: 'Bijin All in One 2018'
-    after:
-      - 'Bijin AIO.esp'
-      - 'Bijin_AIO 2018.esp'
-      - 'Bijin_AIO-SV 2018.esp'
-      - 'Bijin Warmaidens.esp'
-    clean:
-      # version: 4.0
-      - crc: 0x27234EF5
-        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
-  - name: 'Bijin Wives.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
-    after:
-      - 'Bijin AIO.esp'
-      - 'Bijin_AIO 2018.esp'
-      - 'Bijin_AIO-SV 2018.esp'
-    msg:
-      - <<: *deletePlugin
-        subs: [ 'Bijin AIO SSE' ]
-        condition: 'active("Bijin Wives.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: 'Bijin NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/' ]
     after:
@@ -3680,12 +3666,25 @@ plugins:
       - 'Bijin AIO.esp'
       - 'Bijin_AIO 2018.esp'
       - 'Bijin_AIO-SV 2018.esp'
+      - 'Cutting Room Floor.esp'
+      - 'Immersive Weapons.esp'
+      - 'ScopedBows.esp'
     msg:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
+  - name: 'Bijin Wives.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
+    after:
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Bijin AIO SSE' ]
+        condition: 'active("Bijin Wives.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
   - name: '(Serana|Valerica)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
@@ -3701,6 +3700,32 @@ plugins:
     inc:
       - 'Serana - Hellraiser.esp'
       - 'SuperbSerana.esp'
+
+  ### Bijin AIO by Mebantiza
+  - name: 'Bijin(_AIO 2018|_AIO-SV 2018|_Frea-Iona)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11'
+        name: 'Bijin All in One 2018'
+  - name: 'Bijin(_AIO 2018|_AIO-SV 2018)\.esp'
+    after:
+      - 'Cutting Room Floor.esp'
+      - 'Immersive Weapons.esp'
+      - 'ScopedBows.esp'
+    inc:
+      - 'Bijin AIO.esp'
+    msg:
+      - <<: *patch3rdPartySBCK
+        condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
+  - name: 'Bijin_Frea-Iona.esp'
+    after:
+      - 'Bijin AIO.esp'
+      - 'Bijin_AIO 2018.esp'
+      - 'Bijin_AIO-SV 2018.esp'
+      - 'Bijin Warmaidens.esp'
+    clean:
+      # version: 4.0
+      - crc: 0x27234EF5
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
 
   - name: 'CosmeticVampireOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
