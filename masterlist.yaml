@@ -6465,7 +6465,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Delev
       - Invent
@@ -8085,11 +8088,6 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1174' ]
       - *includesMBBF
-      - <<: *patch3rdParty
-        subs:
-          - 'Trade & Barter'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Trade & Barter.esp") and not active("Vokrii - Trade & Barter Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Weapons Armor Clothing & Clutter Fixes'
