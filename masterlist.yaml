@@ -6465,26 +6465,18 @@ plugins:
       - crc: 0x701B6795
         util: 'SSEEdit v3.2.2'
 
-  - name: 'TradeBarter.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
+  - name: 'Trade & Barter.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23081/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
     msg:
       - *requiresMCM
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
-    tag:
-      - Delev
-      - Invent
-      - Relev
-  - name: 'TradeBarterLite.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
-    after:
-      - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    tag:
-      - Delev
-      - Invent
-      - Relev
+    clean:
+      # version: 2.0
+      - crc: 0x09A56806
+        util: 'SSEEdit v4.0.2f'
 
   - name: 'TTR_Master_Trader.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/' ]
