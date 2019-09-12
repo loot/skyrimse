@@ -7874,43 +7874,17 @@ plugins:
         util: 'SSEEdit v4.0.0'
 
   - name: 'BandolierForNPC.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093'
-        name: 'Bandolier - Bags and Pouches for NPC'
-  - name: 'BandolierForNPC.esp'
-    inc:
-      - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
-      - 'BandolierForNPC - Winter is Coming Patch.esp'
-      - 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19093' ]
     tag:
       - Names
       - Stats
-  - name: 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
-    inc:
-      - 'BandolierForNPC.esp'
-      - 'BandolierForNPC - Winter is Coming Patch.esp'
-      - 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    tag:
-      - Names
-      - Stats
-  - name: 'BandolierForNPC - Winter is Coming Patch.esp'
-    inc:
-      - 'BandolierForNPC.esp'
-      - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
-      - 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    tag:
-      - Names
-      - Stats
+  - name: 'BandolierForNPC( - (Cloaks of Skyrim|Winter is Coming|Winter is Coming and Cloaks of Skyrim))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Bandolier - Bags and Pouches for NPC' ]
+        condition: 'many("BandolierForNPC( - (Cloaks of Skyrim|Winter is Coming|Winter is Coming and Cloaks of Skyrim))?\.esp")'
   - name: 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    after:
-      - '1nivWICSkyCloaksPatch.esp'
-    inc:
-      - 'BandolierForNPC.esp'
-      - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
-      - 'BandolierForNPC - Winter is Coming Patch.esp'
-    tag:
-      - Names
-      - Stats
+    after: [ '1nivWICSkyCloaksPatch.esp' ]
   - name: 'BandolierForNPC - Realistic Enchantements.esp'
     after:
       - 'Cloaks.esp'
@@ -7920,9 +7894,7 @@ plugins:
       - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
       - 'BandolierForNPC - Winter is Coming.esp'
       - 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    tag:
-      - Names
-      - Stats
+
   - name: 'Book Covers Skyrim.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
