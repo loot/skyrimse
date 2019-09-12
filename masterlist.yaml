@@ -211,6 +211,11 @@ common:
     subs:
       - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
       - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
+  - &patch3rdPartyUVCPC
+    <<: *patch3rdParty
+    subs:
+      - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
+      - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
 
   - &patch3rdPartyQUASIPC
     type: say
@@ -2650,6 +2655,8 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     dirty:
       # version: 3.2.0
       - <<: *quickClean
@@ -5921,6 +5928,8 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Flora Respawn Fix & Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and active("FloraRespawnFix.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - HOR Plants Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Invent
       - Names
@@ -5939,6 +5948,8 @@ plugins:
           - 'Flora Respawn Fix'
           - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
         condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - HOR Creatures Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Delev
       - Invent
@@ -6458,7 +6469,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/34612/' ]
     after:
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Delev
       - Invent
@@ -6526,6 +6540,8 @@ plugins:
         condition: 'active("TMBVanillaArmorandClothes.esp") and not active("Qw_WACCF_TMBVAC Patch.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - WACCF Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     clean:
       # version: 1.0.1
       - crc: 0x64D44D00
@@ -7929,6 +7945,8 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - Elemental Destruction Magic Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
 
   - name: 'EnchantingAwakened.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18558/' ]
@@ -7968,6 +7986,8 @@ plugins:
       - 'SAFO.esp'
       - 'Undeath.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
+      - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
+        condition: 'file("Vokriinator.esp")'
     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
       - 'PerkusMaximus_Mage.esp'
@@ -8038,6 +8058,8 @@ plugins:
       - 'Ordinator - Perks of Skyrim.esp'
       - 'RaceCompatibilityUSKPOverride.esp'
       - 'Requiem.esp'
+      # Group after for Vokrii, to prevent sorting errors
+      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
       - 'Volkihar Knight.esp'
       - 'YOT - Your Own Thoughts.esp'
     tag:
@@ -8064,24 +8086,22 @@ plugins:
 
   - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176' ]
-    after:
-      - 'Trade & Barter.esp'
+    group: *perksGroup
+    inc:
+      - 'PerkusMaximus_Mage.esp'
+      - 'PerkusMaximus_Master.esp'
+      - 'PerkusMaximus_Thief.esp'
+      - 'PerkusMaximus_Warrior.esp'
+      - 'PerkusMaximus_CombatPlus.esp'
+      - 'Requiem.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Audio Overhaul Skyrim'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vokrii - AOS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Trade & Barter'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Trade & Barter.esp") and not active("Vokrii - Trade & Barter Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Vokrii - WACCF Patch.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1174' ]
+      - *includesMBBF
+    clean:
+      # version: 2.0.1
+      - crc: 0xA9E7E94E
+        util: 'SSEEdit v4.0.2'
 
   - name: 'WerewolfPerksExpanded.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1285/' ]
@@ -9010,6 +9030,8 @@ plugins:
           - 'Complete Alchemy & Cooking Overhaul and Rare Curios'
           - '[CACO, BS Bruma & Rare Curios Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24830)'
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("ccbgssse037-curios.esl") and not active("CACO_Bruma_Rare Curios_Patch.esp")'
+      - <<: *patch3rdPartyUVCPC
+        condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Actors.ACBS
       - Actors.CombatStyle
