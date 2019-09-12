@@ -4116,7 +4116,6 @@ plugins:
       - *SkyUI
     inc:
       - 'KS Dragon Overhaul.esp'
-      - 'KS Dragon Overhaul 2.esp'
       - 'Serio''s Enhanced Dragons.esp'
     msg:
       - <<: *semiCompatible
@@ -4131,13 +4130,16 @@ plugins:
         condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
       - <<: *patchProvided
         subs: [ 'Diverse Dragons Collection' ]
-        condition: 'active("DiverseDragonsCollectionSE.esp") and not active("Deadly Dragons - Diverse Dragons Collection Patch.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
+        condition: 'active("DiverseDragonsCollectionSE.esp") and not active("Deadly Dragons - Diverse Dragons Collection.esp") and not active("Deadly Dragons - Diverse Dragons Collection Patch.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
+      - <<: *patchProvided
+        subs: [ 'KS Dragon Overhaul 2' ]
+        condition: 'active("KS Dragon Overhaul 2.esp") and not active("Deadly Dragons - KSDO2.esp")'
       - <<: *patchProvided
         subs: [ 'Splendor Dragon Variants' ]
         condition: 'active("ogSplendorDragons.esp") and not active("Deadly Dragons - Splendor Dragon Variants.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
-        condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth Patch.esp")'
+        condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth Patch.esp")'
     clean:
       # version: 6.5.0 - Regular
       - crc: 0x12604C5C
@@ -4243,6 +4245,7 @@ plugins:
   - name: 'KS Dragon Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
     after:
+      - 'DeadlyDragons.esp'
       - 'Mortal Enemies.esp'
       - 'Serio''s Enhanced Dragons.esp'
     inc:
