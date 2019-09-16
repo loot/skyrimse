@@ -7563,6 +7563,19 @@ plugins:
       - crc: 0x36F5C5BD
         util: 'SSEEdit v4.0.2'
 
+  - name: 'TimingIsEverything.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
+    after: [ 'BetterQuestObjectives.esp' ]
+    req:
+      - name: 'FISS.esp'
+        display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
+        condition: 'file("SKSE/Plugins/FISS/TimingIsEverythingPresets.xml")'
+    msg: [ *requiresMCM ]
+    clean:
+      # version: 2.2
+      - crc: 0x06689998
+        util: 'SSEEdit v4.0.2f'
+
   - name: 'Tools of Kagrenac.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
     after:
