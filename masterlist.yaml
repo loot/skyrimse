@@ -5294,6 +5294,19 @@ plugins:
       - 'SoS - The Dungeons.esp'
       - 'SoS - The Wilds.esp'
       - 'SoundsofSkyrimComplete.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("URN_Open Cities Skyrim_Patch.esp")'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two']
+        condition: 'active("RealisticWaterTwo.esp") and not active("URN_RealisticWaterTwo_Patch.esp")'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two - Open Cites Patch']
+        condition: 'active("RealisticWaterTwo - Open Cities.esp") and not active("URN_RWT - OCS_Patch.esp")'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two - Waves']
+        condition: 'active("RealisticWaterTwo - Waves.esp") and not active("URN_RWT - Waves_Patch.esp")'
     clean:
       # version: 5.0.1
       - crc: 0x368AFCD9
