@@ -187,6 +187,27 @@ common:
       - lang: ru
         text: 'Некоторые его требования отсутствуют. Убедитесь, что правильно установили **%1%**.'
 
+  - &obsolete
+    type: warn
+    content:
+      - lang: en
+        text: 'Obsolete. Update to latest version. %1%'
+      - lang: da
+        text: 'Forældet. Opdatér til den nyeste version. %1%'
+      - lang: de
+        text: 'Veraltet. Aktualisiere zur letzten Version. %1%'
+      - lang: es
+        text: 'Obsoleto. Actualizar a la última versión. %1%'
+      - lang: ja
+        text: '旧式のプラグインです。最新版に更新してください。 %1%'
+      - lang: ko
+        text: '사용되지 않습니다. 최신 버전으로 업데이트하십시오. %1%'
+      - lang: ru
+        text: 'Устарело. Обновите до последней версии. %1%'
+      - lang: zh_CN
+        text: '已过时。请升级到最新版本。 %1%'
+    subs: [ '' ]
+
   - &patch3rdParty
     type: say
     content:
@@ -5190,7 +5211,8 @@ plugins:
       - 'Rigmor.esp'
       - 'Shadowmarks.esp'
       - 'Storefront.esp'
-      - 'Unique Region Names.esp'
+      - name: 'Unique Region Names.esp'
+        condition: 'version("Unique Region Names.esp", "5.0.0", <) or not file("URN_Open Cities Skyrim_Patch.esp")'
       - 'Unique Region Names - Alternate Start Patch.esp'
       - 'Unique Region Names - ASLAL & CRF Patch.esp'
       - 'Unique Region Names - Cutting Room Floor Patch.esp'
@@ -5282,6 +5304,39 @@ plugins:
         crc: 0x32D1318D
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 773
+
+  - name: 'Unique Region Names.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11750/' ]
+    group: *lowPriorityGroup
+    after:
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
+      - 'SoS - Civilization.esp'
+      - 'SoS - The Dungeons.esp'
+      - 'SoS - The Wilds.esp'
+      - 'SoundsofSkyrimComplete.esp'
+    msg:
+      - <<: *obsolete
+        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
+      - <<: *obsolete
+        type: say
+        condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.1", >=)'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("URN_Open Cities Skyrim_Patch.esp")'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two']
+        condition: 'active("RealisticWaterTwo.esp") and not active("URN_RealisticWaterTwo_Patch.esp")'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two - Open Cites Patch']
+        condition: 'active("RealisticWaterTwo - Open Cities.esp") and not active("URN_RWT - OCS_Patch.esp")'
+      - <<: *patchProvided
+        subs: ['Realistic Water Two - Waves']
+        condition: 'active("RealisticWaterTwo - Waves.esp") and not active("URN_RWT - Waves_Patch.esp")'
+    clean:
+      # version: 5.0.1
+      - crc: 0x368AFCD9
+        util: 'SSEEdit v4.0.2f'
 
 ###### Gameplay - Character Classes & Races ######
   - name: 'Character Creation Overhaul.esp'
@@ -6860,6 +6915,8 @@ plugins:
       - 'breezehome_basement.esp'
       - 'BreezehomeSB.esp'
       - 'breeze2.esp'
+      - name: 'Unique Region Names.esp'
+        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
     msg:
       - <<: *compatNotes
         subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
