@@ -5318,6 +5318,9 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'version("Unique Region Names.esp", "5.0.0", <)'
+      - <<: *obsolete
+        type: say
+        condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.1", >=)'
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("URN_Open Cities Skyrim_Patch.esp")'
