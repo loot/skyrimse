@@ -5320,7 +5320,13 @@ plugins:
         condition: 'version("Unique Region Names.esp", "5.0.0", <)'
       - <<: *obsolete
         type: say
-        condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.1", >=)'
+        condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.2", >=)'
+      - <<: *patchProvided
+        subs: [ 'Alternate Start Live Another Life' ]
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("URN_ASLAL_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("URN_CRF_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("URN_Open Cities Skyrim_Patch.esp")'
@@ -5334,8 +5340,8 @@ plugins:
         subs: ['Realistic Water Two - Waves']
         condition: 'active("RealisticWaterTwo - Waves.esp") and not active("URN_RWT - Waves_Patch.esp")'
     clean:
-      # version: 5.0.1
-      - crc: 0x368AFCD9
+      # version: 5.0.2
+      - crc: 0xCB1F1FCD
         util: 'SSEEdit v4.0.2f'
 
 ###### Gameplay - Character Classes & Races ######
