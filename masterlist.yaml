@@ -3335,6 +3335,12 @@ plugins:
       - name: 'Unofficial Skyrim Special Edition Patch.esp'
         display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
         condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("Children.esp", EE60F522)'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **Children.esp**. A guide is available [here](https://cptmcsplody.github.io/xGuides/#-children-)'
+        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("Children.esp", EE60F522)'
 
   - name: 'ImCh.esm'
     url:
