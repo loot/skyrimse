@@ -3322,6 +3322,12 @@ plugins:
       - name: 'Unofficial Skyrim Special Edition Patch.esp'
         display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
         condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("aAxeRSCtweaks.esp", 26F29854)'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **aAxeRSCtweaks.esp**. A guide is available [here](https://cptmcsplody.github.io/xGuides/#-axes-rs-children-)'
+        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("aAxeRSCtweaks.esp", 26F29854)'
 
   - name: 'ImCh.esm'
     url:
