@@ -3384,7 +3384,7 @@ plugins:
         content:
           - lang: en
             text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **RSChildren.esp**. A guide is available [here](https://cptmcsplody.github.io/xGuides/#-rs-children-overhaul-)'
-        condition: '(checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418)) and not active("RSC_USSEP_AventusFix.esp")'
+        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418)) and not active("RSC_USSEP_AventusFix.esp")'
 
   - name: 'SimpleChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789' ]
