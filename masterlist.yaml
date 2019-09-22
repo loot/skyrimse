@@ -3580,6 +3580,22 @@ plugins:
     msg:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
+  - name: 'Bijin_AIO 2018.esp'
+    clean:
+      # version: 4.1
+      - crc: 0x6E756005
+        util: 'SSEEdit v4.0.2f'
+      # version: 4.1 AI Overhaul
+      - crc: 0x9400C7F1
+        util: 'SSEEdit v4.0.2f'
+  - name: 'Bijin_AIO-SV 2018.esp'
+    clean:
+      # version: 4.1
+      - crc: 0xB3579F07
+        util: 'SSEEdit v4.0.2f'
+      # version: 4.1 AI Overhaul
+      - crc: 0x788487F5
+        util: 'SSEEdit v4.0.2f'
   - name: 'Bijin_Frea-Iona.esp'
     after:
       - 'Bijin AIO.esp'
@@ -3587,9 +3603,9 @@ plugins:
       - 'Bijin_AIO-SV 2018.esp'
       - 'Bijin Warmaidens.esp'
     clean:
-      # version: 4.0
-      - crc: 0x27234EF5
-        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+      # version: 4.21
+      - crc: 0xB0B30C63
+        util: 'SSEEdit v4.0.2f'
 
   - name: 'CosmeticVampireOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
