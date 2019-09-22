@@ -11859,19 +11859,24 @@ plugins:
       - <<: *quickClean
         crc: 0xF8FD2B2D
         itm: 9
-  - name: 'Eli_Routa.esp'
+  - name: 'Eli_Routa( - Non-Stormcloak)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/' ]
     msg:
       - <<: *sortMasters
-        condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa.esp", E6250224)'
+        condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa - Non-Stormcloak.esp", E6250224)'
+  - name: 'Eli_Routa.esp'
     dirty:
       # version: 1.0
       - <<: *quickClean
         crc: 0xC5035942
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 10
-      # version: 1.0 non stormcloak
+  - name: 'Eli_Routa - Non-Stormcloak.esp'
+    dirty:
+      # version: 1.0
       - <<: *quickClean
         crc: 0x89C6605C
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 10
   - name: 'Eli_Ruska.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16177/' ]
