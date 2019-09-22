@@ -11507,13 +11507,23 @@ plugins:
       - Factions
       - Graphics
       - Invent
-    clean:
+    dirty:
       # version: Final
-      - crc: 0x9EECB03A
-        util: 'SSEEdit v3.2.2'
-       # version: LITE
-      - crc: 0x98AD850B
-        util: 'SSEEdit v3.2.2'
+      - <<: *reqManualFix
+        crc: 0x9EECB03A
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 167
+        nav: 10
+      # version: Final, after QAC
+      - <<: *reqManualFix
+        crc: 0xE5A65A7B
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 10
+      # version: LITE
+      - <<: *quickClean
+        crc: 0x98AD850B
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 107
   - name: 'Windhelm Bridge Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4246' ]
     dirty:
