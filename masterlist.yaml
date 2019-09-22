@@ -4670,13 +4670,24 @@ plugins:
         util: 'SSEEdit v4.0.2'
       # version: 1.65
       - crc: 0x9B2A145A
-        util: 'SSEEdit v3.3.11 BETA'
+        util: 'SSEEdit v4.0.2f'
   - name: 'Enhanced Landscapes - Barren Marsh.esp'
     group: *floraGroup
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("Enhanced Landscapes - Barren Marsh.esp", 7F364F31)'
+    clean:
+      # version: 1.65, after master sort
+      - crc: 0xF79F7E8C
+        util: 'SSEEdit v4.0.2f'
   - name: 'Enhanced Landscapes - Dead Marsh.esp'
     group: *floraGroup
     after:
       - 'Enhanced Landscapes - Barren Marsh.esp'
+    clean:
+      # version: 1.65
+      - crc: 0xC7FE363A
+        util: 'SSEEdit v4.0.2f'
   - name: 'Enhanced Landscapes - Grass.esp'
     group: *floraGroup
     after:
@@ -4685,6 +4696,10 @@ plugins:
       - 'Skyrim Flora Overhaul.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    clean:
+      # version: 1.65
+      - crc: 0xC0784AD8
+        util: 'SSEEdit v4.0.2f'
   - name: 'Enhanced Landscapes - Green Fields.esp'
     group: *floraGroup
     after:
@@ -4692,6 +4707,15 @@ plugins:
       - 'Enhanced Landscapes - Grass.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    clean:
+      # version: 1.65
+      - crc: 0x1AD91157
+        util: 'SSEEdit v4.0.2f'
+  - name: 'Enhanced Landscapes - IC Patch.esp'
+    clean:
+      # version: 1.65
+      - crc: 0x0757818E
+        util: 'SSEEdit v4.0.2f'
   - name: 'Enhanced Landscapes Oaks Standalone.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/73161' ]
     group: *floraGroup
