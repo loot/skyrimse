@@ -12384,12 +12384,29 @@ plugins:
         udr: 23
 
   - name: 'Undriel_Ebongrove.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17396/' ]
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17355'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17396/'
     dirty:
-      # version: 1.1.1
+      # version: 1.0
+      - <<: *quickClean
+        crc: 0x1DF5F77A
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 38
+      # version: 1.0 No mannequins
+      - <<: *quickClean
+        crc: 0x649BB2CE
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 38
+      # version: 1.1.1 Buyable Home Patch
       - <<: *quickClean
         crc: 0xF14C7BA7
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 38
+      # version: 1.1.1 Buyable Home Patch - Less items
+      - <<: *quickClean
+        crc: 0x65B90934
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 38
 
   - name: 'UnlimitedBookshelves.esp'
