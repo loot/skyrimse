@@ -3064,9 +3064,11 @@ plugins:
           - 'True Storms'
           - '[ Obsidian Weathers - TrueStorms Merged Compatibility SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
         condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
-      - <<: *patchProvided
-        subs: [ 'VIGILANT SE' ]
-        condition: 'active("Vigilant.esp") and not active("Obsidian Weathers for Vigilant.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'VIGILANT SE'
+          - '[Obsidian Weathers Updated Vigilant Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24357)'
+        condition: 'active("Vigilant.esm") and not active("Obsidian Weathers for Vigilant.esp")'
     tag:
       - Sound
       - Stats
@@ -3074,19 +3076,16 @@ plugins:
        # version: 1.06
       - crc: 0x2DAFB02F
         util: 'SSEEdit v4.0.0'
-  - name:  'Obsidian Weathers for Vigilant.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
+  - name: 'Obsidian Weathers for Vigilant.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24357/' ]
     after:
       - 'Audio Overhaul Skyrim.esp'
     tag:
       - Sound
     clean:
-      # version: Vigilant1.0
-      - crc: 0x6EAE613E
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
-      # version: Vigilant1.0 - ESL flagged
-      - crc: 0x6010B2D0
-        util: 'SSEEdit v3.2.84 EXPERIMENTAL'
+      # version: 1.07
+      - crc: 0x72EE17AE
+        util: 'SSEEdit v4.0.2f'
   - name:  'True Storms - Obsidian Weathers - Patch .esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
     inc:
