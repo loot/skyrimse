@@ -9849,12 +9849,12 @@ plugins:
     tag:
       - Graphics
     clean:
-      # version: 0.3.4 MCM
-      - crc: 0x0A40D177
-        util: 'SSEEdit v3.2.2'
-      # version: 0.3.4 No MCM
-      - crc: 0x91DD76A9
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4 MCM
+      - crc: 0xAD4F1F5E
+        util: 'SSEEdit v4.0.2f'
+      # version: 0.4.4 No MCM
+      - crc: 0xAB6247F1
+        util: 'SSEEdit v4.0.2f'
   - name: 'ETaC - Complete.esp'
     inc:
       - 'Darkwater Crossing.esp'
@@ -9921,17 +9921,16 @@ plugins:
     tag:
       - C.Location
     clean:
-      # version: 0.3.4
-      - crc: 0xC0118C3B
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4
+      - crc: 0x51D1C7C1
+        util: 'SSEEdit v4.0.2f'
   - name: 'ETaC - Complete LoS Patch.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("ETaC - Complete LoS Patch.esp", 54BB4D26)'
-    clean:
-      # version: 0.3.4
-      - crc: 0x76C471C2
-        util: 'SSEEdit v3.2.2'
+    dirty:
+      # version: 0.4.4
+      - <<: *quickClean
+        crc: 0x4407112E
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 16
   - name: 'ETaC - Darkwater Crossing.esp'
     inc:
       - 'Darkwater Crossing.esp'
@@ -9961,17 +9960,14 @@ plugins:
     tag:
       - C.Location
     clean:
-      # version: 0.3.4
-      - crc: 0x7E3B8E1B
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4
+      - crc: 0x05A0C452
+        util: 'SSEEdit v4.0.2f'
   - name: 'ETaC - Darkwater Crossing LoS Patch.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("ETaC - Darkwater Crossing LoS Patch.esp", 343067D8)'
     clean:
-      # version: 0.3.4
-      - crc: 0x910911B5
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4
+      - crc: 0x3D2CBE1B
+        util: 'SSEEdit v4.0.2f'
   - name: 'ETaC - Dawnstar.esp'
     inc:
       - 'Dawnstar.esp'
@@ -10013,9 +10009,9 @@ plugins:
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
     clean:
-      # version: 0.3.4
-      - crc: 0xB663D101
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4
+      - crc: 0x8B28A721
+        util: 'SSEEdit v4.0.2f'
   - name: 'ETaC - Riverwood.esp'
     inc:
       - 'Eli_RiverwoodShack.esp'
@@ -10066,17 +10062,19 @@ plugins:
     tag:
       - C.Location
     clean:
-      # version: 0.3.4
-      - crc: 0xA31406D7
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4
+      - crc: 0x53CFBC83
+        util: 'SSEEdit v4.0.2f'
   - name: 'ETaC - Riverwood LoS Patch.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("ETaC - Riverwood LoS Patch.esp", C723AA51)'
     clean:
-      # version: 0.3.4
-      - crc: 0x477159F2
-        util: 'SSEEdit v3.2.2'
+      # version: 0.4.4
+      - crc: 0x6950BECD
+        util: 'SSEEdit v4.0.2f'
+  - name: 'ETaC - Rorikstead.esp'
+    clean:
+      # version: 0.4.4
+      - crc: 0x5C33F555
+        util: 'SSEEdit v4.0.2f'
   - name: 'Falkreath.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21266' ]
     after:
