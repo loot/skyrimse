@@ -2484,6 +2484,29 @@ plugins:
 
   - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
+  - name: 'RLO - Effects.esp'
+    clean:
+      # version: 5.0.4
+      - crc: 0x1FD6BDD7
+        util: 'SSEEdit v4.0.2f'
+  - name: 'RLO - Exteriors.esp'
+    dirty:
+      # version: 5.0.4
+      - <<: *quickClean
+        crc: 0x0F92CA19
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+  - name: 'RLO - Illuminated Spells.esp'
+    clean:
+      # version: 5.0.4
+      - crc: 0x4D6D9B00
+        util: 'SSEEdit v4.0.2f'
+  - name: 'RLO - Interiors.esp'
+    clean:
+      # version: 5.0.4
+      - crc: 0xA2034302
+        util: 'SSEEdit v4.0.2f'
+
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
