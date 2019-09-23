@@ -2376,18 +2376,23 @@ plugins:
       # vesrion: 1.2.2
       - crc: 0x92A4011D
         util: 'SSEEdit v4.0.0'
+
   - name: 'EmbersHD.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368' ]
     group: *underridesGroup
     after:
       - 'CinematicFireFX.esp'
     clean:
-      # version: 1.398 Fireplaces Add-on
-      - crc: 0x3962335E
-        util: 'SSEEdit v4.0.0'
-      # version: 1.398 Fireplaces Add-on + Custom Fire Effect
-      - crc: 0x3EFC9D16
-        util: 'SSEEdit v4.0.0'
+      # version: 1.3993
+      - crc: 0x68222B4D
+        util: 'SSEEdit v4.0.2f'
+  - name: 'EmbersHD - RLO Patch.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
+    msg: [ *doNotClean ]
+    req:
+      - name: 'RLO - Interiors.esp'
+        condition: 'not file("Realistic Lighting Overhaul - Major City Interiors.esp")'
+
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721' ]
     group: *underridesGroup
