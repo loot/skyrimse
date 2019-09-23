@@ -2419,10 +2419,6 @@ plugins:
       - 'RLO - Interiors.esp'
     tag:
       - C.Light
-    clean:
-      # version: 1.12
-      - crc: 0xB9E17A00
-        util: 'SSEEdit v3.2.44'
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     group: *highPriorityGroup
@@ -2456,6 +2452,13 @@ plugins:
         condition: 'active("RealisticWaterTwo.esp") and not active("Qw_Luminosity_RW2 Patch.esp")'
     tag:
       - C.Light
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0x779942E9
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: 'RelightingSkyrim_SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
     group: *underridesGroup
