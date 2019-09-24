@@ -2518,26 +2518,25 @@ plugins:
       # version: 5.0.4
       - crc: 0xA2034302
         util: 'SSEEdit v4.0.2f'
-
-  - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    group: *underridesGroup
-    tag: [ Graphics ]
+  # RLO 4.1.1
+  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
       - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
   - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
     tag:
       - C.ImageSpace
       - C.Light
+  - name: 'Realistic Lighting Overhaul - Weathers.esp'
+    group: *underridesGroup
+    tag: [ Graphics ]
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     tag: [ Invent ]
 
