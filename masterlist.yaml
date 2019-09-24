@@ -2505,59 +2505,40 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
   - name: 'RLO - Illuminated Spells.esp'
+    after: [ 'RLO - Interiors.esp' ]
     clean:
       # version: 5.0.4
       - crc: 0x4D6D9B00
         util: 'SSEEdit v4.0.2f'
   - name: 'RLO - Interiors.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
     clean:
       # version: 5.0.4
       - crc: 0xA2034302
         util: 'SSEEdit v4.0.2f'
-
-  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Weathers.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Weathers.esp'
-  - name: 'Realistic Lighting Overhaul - Dawnguard Weathers.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Weathers.esp'
-  - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    group: *underridesGroup
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-  - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
+  # RLO 4.1.1
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-  - name: 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+  - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
+  - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+  - name: 'Realistic Lighting Overhaul - Weathers.esp'
+    group: *underridesGroup
+    tag: [ Graphics ]
+  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
+    tag: [ Invent ]
 
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
