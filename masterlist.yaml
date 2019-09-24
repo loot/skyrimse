@@ -1668,6 +1668,17 @@ plugins:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/) or [DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)'
         condition: 'version("DynDOLOD.esm", "2.45", >=) and not file("SKSE/Plugins/DynDOLOD.DLL")'
+
+  - name: 'Occlusion.esp'
+    url: [ 'https://forum.step-project.com/topic/13451-xlodgen-terrain-lod-beta-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal/' ]
+    group: *dynamicLODGroup
+    after: [ 'DynDOLOD.esp' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'If you add, remove or update plugins that alter WRLD/CELL records. Remember to update this module with **xLODGen.exe**.'
+
   - name: 'Smashed Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/90987' ]
     group: *dynamicPatchGroup
