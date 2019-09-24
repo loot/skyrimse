@@ -2510,6 +2510,9 @@ plugins:
       - crc: 0x4D6D9B00
         util: 'SSEEdit v4.0.2f'
   - name: 'RLO - Interiors.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
     clean:
       # version: 5.0.4
       - crc: 0xA2034302
@@ -2517,6 +2520,7 @@ plugins:
 
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
     group: *underridesGroup
+    tag: [ Graphics ]
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
@@ -2529,6 +2533,12 @@ plugins:
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     after:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+  - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
+    tag: [ Invent ]
 
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
