@@ -3063,12 +3063,12 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'True Storms' ]
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
       - <<: *patch3rdParty
         subs:
           - 'True Storms'
           - '[ Obsidian Weathers - TrueStorms Merged Compatibility SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
       - <<: *patch3rdParty
         subs:
           - 'VIGILANT SE'
@@ -3133,7 +3133,7 @@ plugins:
         subs:
           - 'Obsidian Weathers and Seasons'
           - '[Obsidian Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
-        condition: 'active("Obsidian Weathers.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
+        condition: 'active("Obsidian Weathers.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Rustic Weathers and Lighting'
