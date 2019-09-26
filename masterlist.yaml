@@ -8712,31 +8712,26 @@ plugins:
     group: *lvlListsGroup
     after: [ 'Scarcity SE - Less Loot Mod.esp' ]
 
-  - name: 'Sum_WACCF_Patch.esp'
+  - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500'
         name: 'WACCF & Summermyst Enchantments Consistency Patch'
     group: *lvlListsGroup
-    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
       - <<: *sortMasters
-        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB)'
-    req: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
+        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
     tag:
       - Delev
       - Relev
+  - name: 'Sum_WACCF_Patch.esp'
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    req: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
     clean:
       # version: 1, after master sort
       - crc: 0x3791ADB2
         util: 'SSEEdit v4.0.2f'
   - name: 'Weapon AF and Summermyst Patch.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
     req: [ 'Weapon AF.esp' ]
-    tag:
-      - Delev
-      - Relev
     clean:
       # version: 1, after master sort
       - crc: 0x18976F77
