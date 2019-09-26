@@ -8720,6 +8720,9 @@ plugins:
     msg:
       - <<: *sortMasters
         condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
+      - <<: *useOnlyOneX
+        subs: [ 'WACCF/WAF Summermyst Enchantments Consistency Patch' ]
+        condition: 'many("(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp")'
     tag:
       - Delev
       - Relev
