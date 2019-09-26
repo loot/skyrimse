@@ -8541,15 +8541,18 @@ plugins:
       # version: 2.0.5
       - crc: 0x745C47F8
         util: 'SSEEdit v4.0.2'
+
   - name: 'Summermyst - Enchantments of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6285/' ]
     inc:
       - 'Animated Weapon Enchants.esp'
       - 'Classic Elder Scrolls Attributes.esp'
+      - 'Immersive Jewelry.esp'
       - 'SkyRe_Main.esp'
       - 'Wintermyst - Enchantments of Skyrim.esp'
       - 'Worlds Dawn.esp'
     after:
+      - 'Weapon AF.esp'
       - 'Weapons & Armor Fixes_Remade.esp'
     tag:
       - Delev
@@ -8567,9 +8570,9 @@ plugins:
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'Weapons Armor Clothing and Clutter Fixes'
+          - 'Weapons Armor Clothing and Clutter Fixes or Weapon AF'
           - '[ Weapons Armor Clothing and Clutter Fixes (WACCF) and Summermyst Enchantments Consistency Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/19500)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Sum_WACCF_Patch.esp")'
+        condition: '(active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Sum_WACCF_Patch.esp")) or (active("Weapon AF.esp") and not active("Weapon AF and Summermyst Patch.esp"))'
     clean:
       # version: 3.07SSE
       - crc: 0x1F17FC44
