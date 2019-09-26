@@ -8711,13 +8711,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
     group: *lvlListsGroup
     after: [ 'Scarcity SE - Less Loot Mod.esp' ]
+
   - name: 'Sum_WACCF_Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500'
         name: 'WACCF & Summermyst Enchantments Consistency Patch'
     group: *lvlListsGroup
-    after:
-      - 'WACCF_BashedPatchLvlListFix.esp'
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
       - <<: *sortMasters
         condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB)'
@@ -8728,6 +8728,7 @@ plugins:
       # version: 1, after master sort
       - crc: 0x3791ADB2
         util: 'SSEEdit v4.0.2f'
+
   - name: 'WarmongerArmory_LeveledList.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4956/' ]
     group: *underridesGroup
