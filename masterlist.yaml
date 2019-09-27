@@ -592,21 +592,6 @@ common:
         text: 'Настоятельно не рекомендуется использовать моды с **удаленными навмешами** т.к. известно, что они вызывают вылеты. **удаленные навмеши** должны быть исправлены вручную(Комплексный процесс, который должен быть выполнен автором мода). Больше информации о **удаленных навмешах** можно найти [здесь](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
 
 bash_tags:
-  - 'Actors.ACBS'
-  - 'Actors.AIData'
-  - 'Actors.AIPackages'
-  - 'Actors.AIPackagesForceAdd'
-  - 'Actors.Anims'
-  - 'Actors.CombatStyle'
-  - 'Actors.DeathItem'
-  - 'Actors.Skeleton'
-  - 'Actors.Spells'
-  - 'Actors.SpellsForceAdd'
-  - 'Actors.Stats'
-  - 'Body-F'
-  - 'Body-M'
-  - 'Body-Size-F'
-  - 'Body-Size-M'
   - 'C.Acoustic'
   - 'C.Climate'
   - 'C.Encounter'
@@ -615,7 +600,6 @@ bash_tags:
   - 'C.Light'
   - 'C.Location'
   - 'C.LockList'
-  - 'C.MaxHeight'
   - 'C.Music'
   - 'C.Name'
   - 'C.Owner'
@@ -623,48 +607,17 @@ bash_tags:
   - 'C.Regions'
   - 'C.SkyLighting'
   - 'C.Water'
-  - 'Creatures.Blood'
   - 'Deactivate'
   - 'Delev'
-  - 'Eyes'
-  - 'Factions'
   - 'Filter'
   - 'Graphics'
-  - 'Hair'
-  - 'IIM'
   - 'Invent'
-  - 'InventOnly'
-  - 'Merge'
-  - 'MustBeActiveIfImported'
+  - 'Keywords'
   - 'Names'
-  - 'NoMerge'
-  - 'NpcFaces'
-  - 'NpcFacesForceFullImport'
-  - 'NPC.Class'
-  - 'Npc.EyesOnly'
-  - 'Npc.HairOnly'
-  - 'NPC.Race'
-  - 'Relations'
   - 'Relev'
-  - 'Roads'
-  - 'R.AddSpells'
-  - 'R.Attributes-F'
-  - 'R.Attributes-M'
-  - 'R.ChangeSpells'
-  - 'R.Description'
-  - 'R.Ears'
-  - 'R.Head'
-  - 'R.Mouth'
-  - 'R.Relations'
-  - 'R.Skills'
-  - 'R.Teeth'
-  - 'ScriptContents'
-  - 'Scripts'
   - 'Sound'
-  - 'SpellStats'
   - 'Stats'
-  - 'Voice-F'
-  - 'Voice-M'
+  - 'Text'
 
 globals:
   - type: warn
@@ -1323,8 +1276,7 @@ plugins:
   # Myrwatch
   - name: 'cceejsse002-tower.esl'
     group: *ccGroup
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       - crc: 0xEDF11166
         util: 'SSEEdit v4.0.2'
@@ -1483,8 +1435,7 @@ plugins:
   # Tundra Homestead
   - name: 'cceejsse001-hstead.esm'
     group: *ccGroup
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     dirty:
       - <<: *quickClean
         crc: 0xE371B3A9
@@ -1593,8 +1544,7 @@ plugins:
   - name: 'Unofficial Skyrim Survival Patch.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/' ]
     group: *underridesGroup
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     clean:
       # version: 4.0
       - crc: 0xECADC6AB
@@ -1687,8 +1637,7 @@ plugins:
     after:
       - 'One ImCh Patch.esp'
       - 'One ImCh Patcher.esp'
-    tag:
-      - NoMerge
+
   - name: 'zPatch.esp'
     url: [ 'https://github.com/z-edit/zedit' ]
     group: *dynamicPatchGroup
@@ -1703,8 +1652,7 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     clean:
       # version: 2.9.1
       - crc: 0xD4C6CEF5
@@ -1716,8 +1664,7 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'Better Dynamic Snow - NSUTR Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     clean:
       # version: 2.9.1
       - crc: 0xC52F51BB
@@ -1726,8 +1673,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
         name: 'Better Dynamic Majestic Mountains Patch'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     clean:
       # version: 1.0
       - crc: 0x48663487
@@ -1807,8 +1753,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE'
     group: *veryEarlyGroup
-    tag:
-      - Graphics
+    tag: [ Graphics ]
   - name: 'SMIM-SE-Merged-All.esp'
     after:
       - 'Blowing in the Wind SSE.esp'
@@ -2433,8 +2378,7 @@ plugins:
       - 'ELFX - Hardcore.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
-    tag:
-      - C.Light
+    tag: [ C.Light ]
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     group: *highPriorityGroup
@@ -2466,8 +2410,7 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("Qw_Luminosity_RW2 Patch.esp")'
-    tag:
-      - C.Light
+    tag: [ C.Light ]
     dirty:
       # version: 3.1
       - <<: *quickClean
@@ -2601,8 +2544,7 @@ plugins:
       - 'RealisticWaterTwo.esp'
   - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
     group: *underridesGroup
-    tag:
-      - Sound
+    tag: [ Sound ]
     dirty:
       # version: 3.0.1
       - <<: *quickClean
@@ -2637,8 +2579,7 @@ plugins:
 
   - name: 'Immersive Music( Replacer)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16402/' ]
-    tag:
-      - C.Music
+    tag: [ C.Music ]
   - name: 'Immersive Music.esp'
     dirty:
       # version: 3.2
@@ -2680,8 +2621,7 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_ISC_CRF Patch.esp")'
-    tag:
-      - Sound
+    tag: [ Sound ]
     clean:
       # version: 2.1
       - crc: 0x854499E0
@@ -2714,8 +2654,7 @@ plugins:
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/701/' ]
     group: *veryEarlyGroup
-    tag:
-      - Sound
+    tag: [ Sound ]
     msg:
       - <<: *patchProvided
         subs: [ 'Alternate Start - Live Another Life' ]
@@ -2834,8 +2773,7 @@ plugins:
       - 'LSFX-SSE-Audiosettings.esp'
     inc:
       - 'SoundsofSkyrimComplete.esp'
-    tag:
-      - Sound
+    tag: [ Sound ]
     clean:
       # version: 1.6
       - crc: 0xEFF95481
@@ -2860,8 +2798,7 @@ plugins:
       - 'LSFX-SSE-Audiosettings.esp'
     inc:
       - 'SoundsofSkyrimComplete.esp'
-    tag:
-      - Sound
+    tag: [ Sound ]
     dirty:
       # version: 1.6
       - <<: *quickClean
@@ -2879,8 +2816,7 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Blacksmith Forge Water Fix SE' ]
         condition: 'many("Blacksmith Forge Water Fix SE( USSEP)?.esp")'
-    tag:
-      - C.Water
+    tag: [ C.Water ]
   - name: 'Blacksmith Forge Water Fix SE.esp'
     inc:
       - 'Unofficial Skyrim Special Edition Patch.esp'
@@ -3085,8 +3021,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24357/' ]
     after:
       - 'Audio Overhaul Skyrim.esp'
-    tag:
-      - Sound
+    tag: [ Sound ]
     clean:
       # version: 1.07
       - crc: 0x72EE17AE
@@ -3149,8 +3084,7 @@ plugins:
           - 'Wet and Cold'
           - '[TrueStorms - Wet and Cold Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15632/?)'
         condition: 'active("WetandCold.esp") and not active("TrueStorms_Wet&Cold_Patch.esp") and not active("Mythical_TSPatch_Wet&Cold_AddOn.esp") and not active("Obsidian_TS_Wet&Cold_Patch.esp") and not active("Rustic_TSPatch_Wet&Cold_AddOn.esp") and not active("Vivid_TSPatch_Wet&Cold_AddOn.esp")'
-    tag:
-      - Sound
+    tag: [ Sound ]
     dirty:
       # version: 1.01 - No Fog
       - <<: *quickClean
@@ -3631,9 +3565,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("CosmeticVampireOverhaul - Cutting Room Floor Patch.esp")'
-    tag:
-      - NpcFaces
-      - R.Head
     clean:
       # version: A8, B8, C8
       - crc: 0x7DC951A8
@@ -3792,9 +3723,6 @@ plugins:
 
   - name: 'Toccata as Elisif.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
-    tag:
-      - Actors.CombatStyle
-      - NpcFaces
     clean:
       # version: 1.4.2
       - crc: 0xC2C81AD6
@@ -3859,8 +3787,6 @@ plugins:
           - lang: pt
             text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Better_Male_Presets.esp")'
-    tag:
-      - NoMerge
 
   - name: 'Kayla_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3851/' ]
@@ -3882,8 +3808,6 @@ plugins:
           - lang: pt
             text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Kayla_CharPreset.esp")'
-    tag:
-      - NoMerge
 
   - name: 'Lagertha_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2629/' ]
@@ -3904,8 +3828,6 @@ plugins:
           - lang: pt
             text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Lagertha_CharPreset.esp")'
-    tag:
-      - NoMerge
 
   - name: 'Lydia Face Preset 64bit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1080/' ]
@@ -3927,8 +3849,6 @@ plugins:
           - lang: pt
             text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Lydia Face Preset 64bit.esp")'
-    tag:
-      - NoMerge
 
   - name: 'Severa_CharPreset.esp'
     group: *veryEarlyGroup
@@ -3948,8 +3868,6 @@ plugins:
           - lang: pt
             text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Severa_CharPreset.esp")'
-    tag:
-      - NoMerge
 
 ###### Encounters - Allies ######
   - name: '018Auri.esp'
@@ -3984,11 +3902,7 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
-    tag:
-      - Actors.ACBS
-      - Actors.AIPackages
-      - Factions
-      - Invent
+    tag: [ Invent ]
     dirty:
       # version: 3.42
       - <<: *quickClean
@@ -4207,7 +4121,6 @@ plugins:
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
     tag:
-      - Actors.ACBS
       - C.Encounter
       - C.Location
       - C.RecordFlags
@@ -4318,8 +4231,7 @@ plugins:
 
   - name: 'High Level Enemies( - Dawnguard| - Dragonborn)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3231/' ]
-    tag:
-      - Relev
+    tag: [ Relev ]
 
   - name: 'HoH.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16918/' ]
@@ -4373,10 +4285,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
-    tag:
-      - R.ChangeSpells
-      - Scripts
-      - SpellStats
     clean:
       # version: 1.9.5
       - crc: 0x7E338364
@@ -4400,10 +4308,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
-    tag:
-      - R.ChangeSpells
-      - Scripts
-      - SpellStats
 
   - name: 'LessDragons(10|20|25|35|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
@@ -4488,16 +4392,8 @@ plugins:
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
     tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Spells
-      - Actors.Stats
       - Delev
       - Invent
-      - NPC.Class
-      - NPC.Race
       - Relev
     clean:
       # version: 2.3
@@ -4550,8 +4446,7 @@ plugins:
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
     group: *veryEarlyGroup
-    tag:
-      - C.LockList
+    tag: [ C.LockList ]
     msg:
       - <<: *patchProvided
         subs: [ 'Immersive Citizens - AI Overhaul' ]
@@ -4612,8 +4507,7 @@ plugins:
     inc:
       - 'immersive roads.esp'
       - 'Real Roads.esp'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     clean:
       # version: 1.5 Blended Roads
       - crc: 0x38FF2A83
@@ -4953,8 +4847,7 @@ plugins:
       - 'Tamriel Reloaded HD SE.esp'
       - 'ViscousGrass.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     msg:
       - <<: *semiCompatible
         subs:
@@ -4976,8 +4869,7 @@ plugins:
     group: *floraGroup
     inc:
       - 'Moss Rocks.esp'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     dirty:
       # version: 2.3
       - <<: *quickClean
@@ -5536,12 +5428,7 @@ plugins:
       - 'SkyRe_Races.esp'
       - 'Subtle but Classless.esp'
       - 'TsunPassiveRacialAbilities.esp'
-    tag:
-      - Body-Size-F
-      - Body-Size-M
-      - Names
-      - R.Description
-      - R.Skills
+    tag: [ Names ]
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
@@ -6054,12 +5941,10 @@ plugins:
 
   - name: 'Skyrim Alchemy Fixed.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
-    tag:
-      - Delev
+    tag: [ Delev ]
   - name: 'Skyrim Alchemy Fixed - Ordinator.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
-    tag:
-      - Delev
+    tag: [ Delev ]
 
   - name: '_tck_SpellCrafting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19697' ]
@@ -6101,8 +5986,7 @@ plugins:
 
   - name: 'Economy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8210/' ]
-    tag:
-      - Relev
+    tag: [ Relev ]
 
   - name: 'EconomyOverhaulandSpeechcraftImprovements(Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9542/' ]
@@ -6259,9 +6143,6 @@ plugins:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and active("ZIA_Complete Pack_V4.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.Stats
       - Delev
       - Graphics
       - Invent
@@ -6295,8 +6176,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
     after:
       - 'MLU - Immersive Armors.esp'
-    tag:
-      - Invent
+    tag: [ Invent ]
     clean:
       # version: 1.2
       - crc: 0x57E025A8
@@ -6345,8 +6225,7 @@ plugins:
 
   - name: 'RichMerchantsSkyrim_x\d+.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1772/' ]
-    tag:
-      - Relev
+    tag: [ Relev ]
 
   - name: 'Skyrim Revamped.esp'
     url:
@@ -6408,8 +6287,7 @@ plugins:
       - Relev
   - name: 'Skyrim Revamped - Unique Loot Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14338/' ]
-    tag:
-      - Invent
+    tag: [ Invent ]
 
   - name: 'Trade & Barter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23081/' ]
@@ -6548,8 +6426,7 @@ plugins:
     after:
       - 'Convenient Horses.esp'
       - 'Disparity.esp'
-    tag:
-      - -Names
+    tag: [ -Names ]
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
@@ -6884,16 +6761,9 @@ plugins:
           - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
     tag:
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.Spells
-      - Actors.Stats
-      - Factions
       - Graphics
       - Invent
       - Names
-      - Scripts
-      - SpellStats
       - Stats
     clean:
       # version: 3.0
@@ -7083,7 +6953,6 @@ plugins:
         subs: [ 'ELFX - Hardcore' ]
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
     tag:
-      - Actors.AIPackages
       - C.Location
       - C.LockList
       - C.Owner
@@ -7253,18 +7122,8 @@ plugins:
       - 'SkyTEST-RealisticAnimalsBehaviors_LightVersion.esp'
       - 'SkyTEST-RealisticAnimals&Predators_ImAWussy.esp'
     tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.CombatStyle
-      - Actors.Stats
       - Delev
-      - Factions
-      - NPC.Class
-      - NPC.Race
       - Relev
-      - R.ChangeSpells
-      - Relations
     clean:
       # version: 1.65 No survival mode
       - crc: 0xAE9687E1
@@ -7349,9 +7208,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'Alternate Start -- New Beginnings.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4939/' ]
-    tag:
-      - Scripts
-      - -Sound
+    tag: [ -Sound ]
     clean:
       # version: 1.3.0
       - crc: 0xD9A7F0A7
@@ -7417,8 +7274,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Yet Another Skyrim Hardcore mod' ]
         condition: 'active("YASH2.esp") and not file("BetterQuestObjectives - YASH Patch.esp")'
-    tag:
-      - NoMerge
     clean:
       # Version: 1.8.3alpha
       - crc: 0x8B33FD2B
@@ -7755,9 +7610,7 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[kryptopyr''s Patch Hub - Wintersun TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("TCIY_Wintersun_Patch.esp")'
-    tag:
-      - Actors.AIPackages
-      - Names
+    tag: [ Names ]
     clean:
       # version: 2.0
       - crc: 0x9F3FDA79
@@ -8164,8 +8017,7 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'LegacyoftheDragonborn.esm' ]
         condition: 'active("Book Covers Skyrim - Lost Library.esp") and active("LegacyoftheDragonborn.esm")'
-    tag:
-      - Delev
+    tag: [ Delev ]
     clean:
       # version: 2.2
       - crc: 0xDA570813
@@ -8184,8 +8036,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
     group: *underridesGroup
   - name: 'Cloaks.esp'
-    tag:
-      - Invent
+    tag: [ Invent ]
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
@@ -8313,8 +8164,7 @@ plugins:
           - 'Weapons Armor Clothing & Clutter Fixes'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
         condition: '(checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E)) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     dirty:
       # version: 1.58
       - <<: *quickClean
@@ -8351,16 +8201,14 @@ plugins:
     group: *underridesGroup
   - name: 'InsanitySorrow Weapons Pack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/' ]
-    tag:
-      - Relev
+    tag: [ Relev ]
     clean:
       # version: 1.7
       - crc: 0x082F3A95
         util: 'SSEEdit v4.0.2'
   - name: 'JS Armored Circlets SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2140/' ]
-    tag:
-      - Relev
+    tag: [ Relev ]
   - name: 'LADX_SSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2314/'
@@ -8524,8 +8372,7 @@ plugins:
     msg:
       - <<: *sortMasters
         condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
-    tag:
-      - Delev
+    tag: [ Delev ]
     clean:
       # version: 4.061
       - crc: 0xC77B2B42
@@ -8654,8 +8501,7 @@ plugins:
 
   - name: 'Wintermyst - (Enchantments of Skyrim|Increased Damage).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
-    tag:
-      - Names
+    tag: [ Names ]
   - name: 'Wintermyst - Enchantments of Skyrim.esp'
     inc:
       - 'Animated Weapon Enchants.esp'
@@ -8844,15 +8690,10 @@ plugins:
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
-      - Actors.ACBS
-      - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Stats
       - C.Light
       - C.RecordFlags
       - C.Regions
       - Delev
-      - Factions
       - Graphics
       - Invent
       - Names
@@ -8894,8 +8735,7 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 24
   - name: 'BS_Campfire.esp'
-    tag:
-      - Names
+    tag: [ Names ]
     clean:
       # version: 1.6
       - crc: 0x4F219DBA
@@ -9005,8 +8845,7 @@ plugins:
       - <<: *wildEdits
         subs: [ '[Cleaning Guide](https://cptmcsplody.github.io/xGuides/#-moon-and-star-)' ]
         condition: 'checksum("MoonAndStar_MAS.esp", 2A2488C0)'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     dirty:
       # version: 3.2, before any cleaning
       - <<: *quickClean
@@ -9040,8 +8879,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15882'
         name: 'Unofficial Moonpath to Elsweyr Patch'
-    tag:
-      - Names
+    tag: [ Names ]
     clean:
       # version: 1.5
       - crc: 0x3161E919
@@ -9260,8 +9098,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 4.0.5
       - crc: 0x6AA08149
@@ -9361,11 +9198,6 @@ plugins:
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_S3DTrees_CRF Patch.esp")'
     tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.AIPackages
-      - Actors.CombatStyle
-      - Actors.Stats
       - C.Location
       - C.Owner
       - C.RecordFlags
@@ -9373,7 +9205,6 @@ plugins:
       - Graphics
       - Invent
       - Names
-      - NPC.Class
       - Stats
     clean:
       # version: 3.1.3
@@ -9531,10 +9362,7 @@ plugins:
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
-    tag:
-      - Actors.ACBS
-      - Actors.AIPackages
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 4.0.4
       - crc: 0xCA14BFDB
@@ -9739,7 +9567,6 @@ plugins:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     tag:
-      - Factions
       - Invent
       - Names
     dirty:
@@ -9771,8 +9598,7 @@ plugins:
       - 'ViscousGrass.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
-    tag:
-      - Names
+    tag: [ Names ]
     clean:
       # version: 2.0.5
       - crc: 0x72E5EB54
@@ -9793,10 +9619,8 @@ plugins:
     inc:
       - 'DragonBridgeBoardwalk.esp'
     tag:
-      - Actors.AIPackages
       - C.Location
       - Invent
-      - NpcFaces
     clean:
       # version: 2.0.4
       - crc: 0x473EB74C
@@ -9876,8 +9700,7 @@ plugins:
         name: 'Expanded Towns and Cities (SSE)'
   - name: 'ETaC - RESOURCES.esm'
     group: *veryEarlyGroup
-    tag:
-      - Graphics
+    tag: [ Graphics ]
     clean:
       # version: 0.4.4 MCM
       - crc: 0xAD4F1F5E
@@ -9948,8 +9771,7 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 0.4.4
       - crc: 0x51D1C7C1
@@ -9987,8 +9809,7 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim 3D Landscapes' ]
         condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Darkwater Crossing S3D Patch.esp")'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 0.4.4
       - crc: 0x05A0C452
@@ -10089,8 +9910,7 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 0.4.4
       - crc: 0x53CFBC83
@@ -10141,8 +9961,7 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 2.0.6
       - crc: 0x1C8A2A3D
@@ -10232,8 +10051,7 @@ plugins:
 
   - name: 'JK''s SkyHaven Forge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8706/' ]
-    tag:
-      - C.Regions
+    tag: [ C.Regions ]
 
   - name: 'JKs Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
@@ -10558,8 +10376,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("Keld-Nar + Clockwork Patch.esp")'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 2.0.4
       - crc: 0xD6F19DE4
@@ -11095,8 +10912,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("PCE - USSEP Patch.esp")'
-    tag:
-      - C.Name
+    tag: [ C.Name ]
     dirty:
       # version: 2.2
       - <<: *quickClean
@@ -11425,8 +11241,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/17423'
       - 'https://www.afkmods.com/index.php?/files/file/2107-telengard/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4066247'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 1.0.5
       - crc: 0x3292D0F0
@@ -11525,8 +11340,6 @@ plugins:
       - 'simpleCarriageExpansion.esp'
       - 'The Ruins.esp'
     tag:
-      - Actors.AIPackages
-      - Factions
       - Graphics
       - Invent
     dirty:
@@ -11761,8 +11574,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Windyridge - Player Home In Winterhold' ]
         condition: 'active("windyridge.esp") and not active("Winterhold Restored - Windyridge Patch.esp")'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
     clean:
       # version: 2.2
       - crc: 0x1F75BEA8
@@ -11784,8 +11596,7 @@ plugins:
 
   - name: 'AyleidCitadel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11307/' ]
-    tag:
-      - C.Regions
+    tag: [ C.Regions ]
     dirty:
       # version: 1.1
       - <<: *quickClean
@@ -11823,12 +11634,10 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'CraftingSupplies_AIO_ALL.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2359/' ]
-    tag:
-      - Invent
+    tag: [ Invent ]
   - name: 'Definitive Hearthfire Supllies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5993/' ]
-    tag:
-      - Invent
+    tag: [ Invent ]
   - name: 'Dovahkiin_Retreat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/746/' ]
     after:
@@ -12714,27 +12523,21 @@ plugins:
   - name: 'DBM_CRF_Patch.esp'
     group: *underridesGroup
     tag:
-      - Actors.AIPackages
       - Graphics
       - Names
       - Stats
   - name: 'DBM_HelgenReborn_Patch.esp'
-    tag:
-      - C.Location
-      - -Factions
+    tag: [ C.Location ]
   - name: 'DBM_ISC_Patch.esp'
     group: *underridesGroup
-    tag:
-      - Sound
+    tag: [ Sound ]
   - name: 'DBM_MAS_Patch.esp'
     after:
       - 'MoonAndStar_ImmersionPatch.esp'
   - name: 'DBM_OpenCities_Patch.esp'
-    tag:
-      - C.Location
+    tag: [ C.Location ]
   - name: 'DBM_SkyrimUnderground_Patch.esp'
-    tag:
-      - Invent
+    tag: [ Invent ]
   - name: 'DBM_WACCF_Patch.esp'
     group: *underridesGroup
     after:
@@ -12787,8 +12590,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     after:
       - 'Hunterborn_CACO-SE_Patch.esp'
-    tag:
-      - Graphics
+    tag: [ Graphics ]
   - name: 'CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     req:
@@ -12882,30 +12684,23 @@ plugins:
     group: *underridesGroup
   - name: 'Qw_ISC_USSEP Patch.esp'
     group: *underridesGroup
-    tag:
-      - Sound
-  - name: 'Qw_TheOrdinaryWomen_CRF Patch.esp'
-    tag:
-      - NoMerge
+    tag: [ Sound ]
   - name: 'Qw_RelightingSkyrim_CRF Patch.esp'
     group: *underridesGroup
   - name: 'Qw_WACCF_AOS Patch.esp'
     group: *underridesGroup
-    tag:
-      - Sound
+    tag: [ Sound ]
   - name: 'Qw_WACCF_BSHeartland Patch.esp'
     after:
       - 'Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp'
   - name: 'Qw_WACCF_CRF Patch.esp'
     group: *underridesGroup
-    tag:
-      - Stats
+    tag: [ Stats ]
   - name: 'Qw_WACCF_ISC Patch.esp'
     group: *underridesGroup
     after:
       - 'Qw_ISC_USSEP Patch.esp'
-    tag:
-      - Sound
+    tag: [ Sound ]
   - name: 'Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp'
     after:
       - 'Qw_TheOrdinaryWomen_CRF Patch.esp'
