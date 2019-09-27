@@ -366,6 +366,24 @@ common:
       - lang: zh_CN
         text: '你已经安装了%1%，但是未发现SKSE！请查看SKSE的下载页面：[SKSE](http://skse.silverlock.org)。'
 
+  - &requiresX
+    type: warn
+    content:
+      - lang: en
+        text: 'Requires: %1%'
+      - lang: de
+        text: 'Benötigt: %1%'
+      - lang: es
+        text: 'Requiere: %1%'
+      - lang: ja
+        text: '要: %1%'
+      - lang: ru
+        text: 'Требуется: %1%'
+  - &requiresBashOrSmash
+    <<: *requiresX
+    subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
+    condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
+
   - &semiCompatible
     type: say
     content:
@@ -6365,9 +6383,18 @@ plugins:
   - name: 'WACCF_BashedPatchLvlListFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
     group: *lvlListsGroup
-    req:
-      - name: 'Bashed Patch, 0.esp'
-        display: '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) Bashed Patch'
+    msg:
+      - *requiresBashOrSmash
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin is optional.'
+          - lang: de
+            text: 'Dieses Plugin ist optional.'
+          - lang: ja
+            text: 'このプラグインはオプションです。'
+          - lang: pt
+            text: 'Este plugin é opcional.'
     clean:
       # version: 2.0.0
       - crc: 0xFC0B6550
@@ -8552,6 +8579,7 @@ plugins:
   - name: 'Scarcity SE - Less Loot Mod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
     group: *lvlListsGroup
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     clean:
       # version: 1.1
       - crc: 0x34C78E0F
