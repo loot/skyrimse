@@ -8597,6 +8597,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
     group: *lvlListsGroup
     after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Spell Research' ]
+        condition: 'active("SpellResearch.esp") and not active("Scarcity SE - Spell Research Compatibility Patch.esp")'
     clean:
       # version: 1.1
       - crc: 0x34C78E0F
