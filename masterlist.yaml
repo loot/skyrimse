@@ -8570,12 +8570,29 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'Rebalanced Leveled Lists.esp'
+
+  - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Scarcity SE - Less Loot Mod'
+          - '[Rebalanced Leveled Lists Scarcity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20812)'
+        condition: 'active("Scarcity SE - Less Loot Mod") and not active("rll(_lite)?_scarcity_patch\.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Rebalanced Leveled Lists' ]
+        condition: 'many("Rebalanced Leveled Lists( - Lite)?\.esp")'
     tag:
       - Delev
       - Invent
       - Relev
+
+  - name: 'rll(_lite)?_scarcity_patch\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20812/' ]
+    tag:
+      - Delev
+      - Relev
+
   - name: 'Scarcity SE - Less Loot Mod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
     group: *lvlListsGroup
