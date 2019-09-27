@@ -6705,6 +6705,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20983/' ]
     tag: [ Invent ]
 
+  - name: 'Spell Research - Patch Compendium.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28816/' ]
+    req: [ 'SpellResearch.esp' ]
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)' ]
+        condition: 'file("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+
   - name: 'Tainted_Blood.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
     clean:
