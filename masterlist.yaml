@@ -8572,6 +8572,12 @@ plugins:
       - Relev
   - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Scarcity SE - Less Loot Mod'
+          - '[Rebalanced Leveled Lists Scarcity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20812)'
+        condition: 'active("Scarcity SE - Less Loot Mod") and not active("rll(_lite)?_scarcity_patch\.esp")'
     tag:
       - Delev
       - Invent
