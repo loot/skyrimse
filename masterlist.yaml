@@ -232,6 +232,12 @@ common:
     subs:
       - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
       - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495)'
+  - &patch3rdPartySRPC
+    <<: *patch3rdParty
+    subs:
+      - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
+      - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
+    condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
   - &patch3rdPartyUVCPC
     <<: *patch3rdParty
     subs:
@@ -5224,6 +5230,10 @@ plugins:
         itm: 6
 
 ###### Gameplay ######
+  - name: 'Frostfall.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/671/' ]
+    msg: [ *patch3rdPartySRPC ]
+
   - name: 'Improved Traps.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/' ]
     tag:
@@ -5316,6 +5326,10 @@ plugins:
       # Version: 4.3
       - crc: 0x04D36F4B
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'Tentapalooza.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
@@ -5525,6 +5539,10 @@ plugins:
             text: 'オプションの互換性パッチがあります。Deadly Combatsのデザインに合わせていくつかのPerkが変更されています。このパッチは[Deadly Combatのページ](https://www.nexusmods.com/skyrimspecialedition/mods/8850/)から入手できます。'
           - lang: pt
             text: 'Um patch opcional de compatibilidade, que altera alguns Perks para combinar com o design de Deadly Combats está disponível na [página de Deadly Combat](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
+
+  - name: 'DSerArcheryGameplayOverhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24296/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'Immersive Movement.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15649/' ]
@@ -5785,6 +5803,7 @@ plugins:
           - 'iNeed - Dangerous Disease'
           - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301)'
         condition: 'active("iNeed - Dangerous Diseases.esp") and not active("CACO - iNeed DD Patch.esp")'
+      - *patch3rdPartySRPC
       - <<: *semiCompatible
         subs:
           - 'iNeed - Extended'
@@ -6424,6 +6443,10 @@ plugins:
       - Relev
 
 ###### Gameplay - Magic & Abilities ######
+  - name: 'Ace Blood Magic SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16995/' ]
+    msg: [ *patch3rdPartySRPC ]
+
   - name: 'AcquisitiveSoulGemMultithreaded.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
     inc:
@@ -6434,6 +6457,10 @@ plugins:
       # version: 4.6.5
       - crc: 0x615A80B8
         util: 'SSEEdit v4.0.0'
+
+  - name: 'AlterationWards.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28818/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
@@ -6486,6 +6513,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
       - *includesMBBF
+      - *patch3rdPartySRPC
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
@@ -6497,8 +6525,13 @@ plugins:
       - crc: 0x266B3B3B
         util: 'SSEEdit v4.0.2'
 
+  - name: 'Apocalypse - More Apocalypse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18578/' ]
+    msg: [ *patch3rdPartySRPC ]
+
   - name: 'Arcanum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
+    msg: [ *patch3rdPartySRPC ]
     dirty:
       # version: 0.4b
       - <<: *reqManualFix
@@ -6538,6 +6571,18 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
     after:
       - 'Requiem.esp'
+
+  - name: 'DetectLever.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/64196/' ]
+    msg: [ *patch3rdPartySRPC ]
+
+  - name: 'Druidessentials.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/37665/' ]
+    msg: [ *patch3rdPartySRPC ]
+
+  - name: 'ForgottenMagic_Redone.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12711/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'GIST soul trap.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
@@ -6584,6 +6629,22 @@ plugins:
       - crc: 0xEF0A2A16
         util: 'SSEEdit v4.0.0'
 
+  - name: 'IHarvest.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27789/' ]
+    msg: [ *patch3rdPartySRPC ]
+
+  - name: 'LoreFriendlySpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28533/' ]
+    msg: [ *patch3rdPartySRPC ]
+
+  - name: 'Magistrate Levitate.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24695/' ]
+    msg: [ *patch3rdPartySRPC ]
+
+  - name: 'Mining For Mages Redux.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4495/' ]
+    msg: [ *patch3rdPartySRPC ]
+
   - name: 'PathOfTheAntiMage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
     dirty:
@@ -6623,6 +6684,10 @@ plugins:
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
 
+  - name: 'QL_Stendarr''sLight.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22297/' ]
+    msg: [ *patch3rdPartySRPC ]
+
   - name: 'Randomized Word Walls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
     dirty:
@@ -6631,6 +6696,23 @@ plugins:
         crc: 0x48A567EA
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 42
+
+  - name: 'ShadowSpellPackage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13299/' ]
+    msg: [ *patch3rdPartySRPC ]
+
+  - name: 'SpellResearch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20983/' ]
+    tag: [ Invent ]
+
+  - name: 'Spell Research - Patch Compendium.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28816/' ]
+    req: [ 'SpellResearch.esp' ]
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)' ]
+        condition: 'file("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
 
   - name: 'Tainted_Blood.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
@@ -6644,6 +6726,10 @@ plugins:
     msg:
       - *includesMBBF
       - *doNotClean
+
+  - name: 'Tomebound.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21403/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'UFD Enhanced Soultrap.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
@@ -6660,6 +6746,10 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
+
+  - name: 'WardsFunctionalitiesExtended.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18664/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
@@ -7720,6 +7810,7 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - Elemental Destruction Magic Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
+      - *patch3rdPartySRPC
 
   - name: 'EnchantingAwakened.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18558/' ]
@@ -7911,6 +8002,7 @@ plugins:
 
   - name: 'ArtifactsOfBoethiah.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15264/' ]
+    msg: [ *patch3rdPartySRPC ]
     dirty:
       # version: 2.1
       - <<: *quickClean
@@ -8101,6 +8193,10 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
+
+  - name: 'DawnguardArsenal.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25094/' ]
+    msg: [ *patch3rdPartySRPC ]
 
   - name: 'GirlHeavyArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17843/' ]
@@ -8597,6 +8693,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
     group: *lvlListsGroup
     after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Spell Research' ]
+        condition: 'active("SpellResearch.esp") and not active("Scarcity SE - Spell Research Compatibility Patch.esp")'
     clean:
       # version: 1.1
       - crc: 0x34C78E0F
@@ -9011,6 +9111,7 @@ plugins:
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?Vigilant(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?(FAL_)?VIG(_WYR)?.*\.esp")'
   - name: 'Vigilant.esm'
+    msg: [ *patch3rdPartySRPC ]
     clean:
       # version: 1.4.5
       - crc: 0x84F0C376
@@ -9242,6 +9343,7 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_S3DTrees_CRF Patch.esp")'
+      - *patch3rdPartySRPC
     tag:
       - C.Location
       - C.Owner
@@ -9611,6 +9713,7 @@ plugins:
       - 'MLU.esp'
       - 'TheWulfPanda - Faction Teleport Spells.esp'
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
+    msg: [ *patch3rdPartySRPC ]
     tag:
       - Invent
       - Names
@@ -11659,6 +11762,7 @@ plugins:
 
   - name: 'CaranthirTowerReborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4269/' ]
+    msg: [ *patch3rdPartySRPC ]
     dirty:
       # version: 3.2
       - <<: *quickClean
