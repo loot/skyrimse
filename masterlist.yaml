@@ -3227,6 +3227,26 @@ plugins:
         subs: [ 'Mythical Ages - TrueStorms Merged Compatibility' ]
         condition: 'many("Mythical_TS_Patch_(Dusky|Overcast)(_WaterFix)?\.esp")'
 
+  ### True Storms & Obsidian Weathers Merged Compatibility ###
+  - name: 'Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17198/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - Obsidian Weathers Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_Obsidian_Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+      - 'True Storms - Obsidian Weathers - Patch .esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Obsidian_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Obsidian_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Obsidian Weathers - TrueStorms Merged Compatibility' ]
+        condition: 'many("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp")'
+
   ### True Storms & Rustic Weathers Merged Compatibility ###
   - name: 'Rustic_TS_Patch_(Horizons|Nimbus)(_WaterFix)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15621/' ]
