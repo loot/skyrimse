@@ -3238,6 +3238,27 @@ plugins:
         subs: [ 'Rustic Weathers - TrueStorms Merged Compatibility' ]
         condition: 'many("Rustic_TS_Patch_(Horizons|Nimbus)(_WaterFix)?\.esp")'
 
+  ### True Storms & Vivid Weathers Merged Compatibility ###
+  - name: 'Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15135/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'Audio Overhaul Skyrim - Vivid Weathers Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+      - 'SoS_VividWeathers_Patch.esp'
+      - 'Vivid Weathers SE - AOS Patch.esp'
+      - 'Vivid Weathers SE - SOS Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vivid_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Vivid Weathers - TrueStorms Merged Compatibility' ]
+        condition: 'many("Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp")'
+
   ### True Storms & Wet and Cold Compatibility ###
   - name: '(Aequinoctium_TS|Mythical_TS|Obsidian_TS|Rustic_TS|TrueStorms|Vivid_TS)_Wet&Cold_Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15632/' ]
