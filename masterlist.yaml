@@ -3180,6 +3180,26 @@ plugins:
       - crc: 0x49921FB9
         util: 'SSEEdit v4.0.0'
 
+  ### True Storms & Aequinoctium Merged Compatibility ###
+  - name: 'Aequinoctium_TS_Patch_(Abyssal|Obscured)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21645/' ]
+    inc:
+      - 'Aequinoctium - SOSComplete PATCH.esp'
+      - 'Aequinoctium - TrueStorms PATCH.esp'
+      - 'Audio Overhaul Skyrim - Aequinoctium Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Aequinoctium_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Aequinoctium_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Aequinoctium - TrueStorms Merged Compatibility SSE' ]
+        condition: 'many("Aequinoctium_TS_Patch_(Abyssal|Obscured)(_WaterFix)?\.esp")'
+
   ### True Storms & Wet and Cold Compatibility ###
   - name: '(Aequinoctium_TS|Mythical_TS|Obsidian_TS|Rustic_TS|TrueStorms|Vivid_TS)_Wet&Cold_Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15632/' ]
