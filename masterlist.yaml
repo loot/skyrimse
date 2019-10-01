@@ -3135,6 +3135,11 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
+          - 'Aequinoctium'
+          - '[Aequinoctium - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21645/)'
+        condition: 'active("Aequinoctium.esp") and not active("Aequinoctium_TS_Patch_.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Dolomite Weathers'
           - '[Dolomite - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15044/)'
         condition: 'active("Dolomite Weathers.esp") and not active("Dolomite_TS_Patch_.*\.esp")'
