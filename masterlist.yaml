@@ -15,9 +15,17 @@ common:
   - &SKSE
     <<: *SKSE64
     <<: *SKSEVR
-  - &SkyUI
+  - &SkyUI_SE
     name: 'SkyUI_SE.esp'
-    display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+    display: '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+    condition: 'file("../SkyrimSE.exe")'
+  - &SkyUI_VR
+    name: 'SkyUI_SE.esp'
+    display: '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)'
+    condition: 'file("../SkyrimVR.exe")'
+  - &SkyUI
+    <<: *SkyUI_SE
+    <<: *SkyUI_VR
 
 # Messages
   - &alreadyInX
