@@ -15,9 +15,17 @@ common:
   - &SKSE
     <<: *SKSE64
     <<: *SKSEVR
-  - &SkyUI
+  - &SkyUI_SE
     name: 'SkyUI_SE.esp'
-    display: '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+    display: '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
+    condition: 'file("../SkyrimSE.exe")'
+  - &SkyUI_VR
+    name: 'SkyUI_SE.esp'
+    display: '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)'
+    condition: 'file("../SkyrimVR.exe")'
+  - &SkyUI
+    <<: *SkyUI_SE
+    <<: *SkyUI_VR
 
 # Messages
   - &alreadyInX
@@ -325,26 +333,36 @@ common:
         text: 'Доступно обновление патча: %1%'
 
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &requiresMCM
+  - &requiresMCM_X
     type: warn
     content:
       - lang: en
-        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing %1%.'
       - lang: de
-        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604) installiert.'
+        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man %1% installiert.'
       - lang: ja
-        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)を導入してください。'
+        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには%1%を導入してください。'
       - lang: ko
-        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
+        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. %1%를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
       - lang: pl
-        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację %1%.'
       - lang: pt
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar %1%.'
       - lang: pt_BR
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar %1%.'
       - lang: ru
-        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с [SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604).'
-    condition: 'not active("SkyUI_SE.esp")'
+        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с %1%.'
+  - &requiresMCM_SE
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)' ]
+    condition: 'file("../SkyrimSE.exe") and not active("SkyUI_SE.esp")'
+  - &requiresMCM_VR
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
+    condition: 'file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
+  - &requiresMCM
+    <<: *requiresMCM_SE
+    <<: *requiresMCM_VR
 
   - &requiresSKSE
     type: error
@@ -1961,7 +1979,9 @@ plugins:
         condition: 'active("ELE_SSE.esp")'
 
   - name: 'SkyUI_SE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/'
+      - 'https://github.com/Odie/skyui-vr/releases/'
     group: *underridesGroup
     req:
       - *SKSE
