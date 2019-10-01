@@ -2779,7 +2779,7 @@ plugins:
         condition: 'active("ClimatesOfTamriel.esm") and not active("SoS_CoT_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Dolomite Weathers' ]
-        condition: 'active("Dolomite Weathers.esp") and not active("SoS_DolomiteWeathers_Patch.esp")'
+        condition: 'active("Dolomite Weathers.esp") and not active("SoS_DolomiteWeathers_Patch.esp") and not active("Dolomite_TS_Patch_(Heavy|Light)Fog\.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lighting for ENB' ]
         condition: 'active("ELE_SSE.esp") and not active("SoS_ELE_Patch.esp")'
@@ -2794,25 +2794,25 @@ plugins:
         condition: 'active("ELFX - Hardcore.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'ELFX - Weathers' ]
-        condition: 'active("ELFX - Weathers.esp") and not active("SoS_ELFX+Weathers_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
+        condition: 'active("ELFX - Weathers.esp") and not active("SoS_ELFX+Weathers_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp") and not active("ELFXWeathers_TS_Patch_(Lucid|Somber)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Natural and Atmospheric Tamriel' ]
-        condition: 'active("NAT.esp") and not active("SoS_NAT_Patch.esp")'
+        condition: 'active("NAT.esp") and not active("SoS_NAT_Patch.esp") and not active("NAT_TS_Patch_(DarkStormy|EerieSkies|TSPure)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Northern Saga Weathers and Seasons' ]
         condition: 'active("NorthernSWS.esp") and not active("SOS_NSWS_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Obsidian Weathers and Seasons' ]
-        condition: 'active("Obsidian Weathers.esp") and not active("SoS_Obsidian_Patch.esp")'
+        condition: 'active("Obsidian Weathers.esp") and not active("SoS_Obsidian_Patch.esp") and not active("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Realistic Lighting Overhaul' ]
         condition: 'active("RLO - Interiors.esp") and not active("SOS_RLOInteriors_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'True Storms' ]
-        condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp") and not active("(Aequinoctium|Dolomite|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp")'
       - <<: *patchIncluded
         subs: [ 'Vivid Weathers' ]
-        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
+        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid Weathers SE - SOS Patch.esp") and not active("Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp")'
     clean:
       # version: 1.9.5
       - crc: 0xACB6F6D7
