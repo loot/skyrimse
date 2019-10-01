@@ -3247,6 +3247,25 @@ plugins:
         subs: [ 'Mythical Ages - TrueStorms Merged Compatibility' ]
         condition: 'many("Mythical_TS_Patch_(Dusky|Overcast)(_WaterFix)?\.esp")'
 
+  ### True Storms & Natural and Atmospheric Tamriel Merged Compatibility ###
+  - name: 'NAT_TS_Patch_(DarkStormy|EerieSkies|TSPure)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15025/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - Natural Atmospheric Tamriel Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_NAT_Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("NAT_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("NAT_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'NAT - TrueStorms Merged Compatibility' ]
+        condition: 'many("NAT_TS_Patch_(DarkStormy|EerieSkies|TSPure)(_WaterFix)?\.esp")'
+
   ### True Storms & Obsidian Weathers Merged Compatibility ###
   - name: 'Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17198/' ]
