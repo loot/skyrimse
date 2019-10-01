@@ -3208,6 +3208,26 @@ plugins:
         subs: [ 'Dolomite - TrueStorms Merged Compatibility' ]
         condition: 'many("Dolomite_TS_Patch_(Heavy|Light)Fog\.esp")'
 
+  ### True Storms & ELFX Weathers Merged Compatibility ###
+  - name: 'ELFXWeathers_TS_Patch_(Lucid|Somber)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19837/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_ELFX+Weathers_Patch.esp'
+      - 'SoS_ELFX+Enhancer+Weathers_Patch.esp'
+      - 'SoS_ELFX+Hardcore+Weathers_Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("ELFXWeathers_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("ELFXWeathers_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Mythical Ages - TrueStorms Merged Compatibility' ]
+        condition: 'many("ELFXWeathers_TS_Patch_(Lucid|Somber)(_WaterFix)?\.esp")'
+
   ### True Storms & Mythical Ages Merged Compatibility ###
   - name: 'Mythical_TS_Patch_(Dusky|Overcast)(_WaterFix)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15617/' ]
