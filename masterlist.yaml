@@ -54,6 +54,18 @@ common:
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
 
+  - &alreadyInOrFixedByX
+    type: error
+    content:
+    - lang: en
+      text: 'Delete. Already included or otherwise fixed in %1%.'
+    - lang: de
+      text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
+    - lang: es
+      text: 'Borrar. Esta incluido, o de otra modo, arreglado en el %1%.'
+    - lang: ru
+      text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
+
   - &compatNotes
     type: say
     content:
@@ -1868,6 +1880,10 @@ plugins:
 
   - name: 'SPTKatlaSailReangleSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6651/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ DynDOLOD ]
+        condition: 'file("DynDOLOD.esp")'
 
   - name: '(Vanilla|Aequinoctium|Dolomite|Mythical|NAT|Obsidian|Rustic|Surreal|TrueStorms|Vivid)WaterFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10808/' ]
