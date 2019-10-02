@@ -4148,6 +4148,22 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 328
 
+  - name: 'Ambriel.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/969/' ]
+    group: *addonsGroup
+    dirty:
+      # version: AQSE1.06
+      - <<: *reqManualFix
+        crc: 0xA62DBDC9
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
+        nav: 1
+      # version: AQSE1.06, after QAC
+      - <<: *reqManualFix
+        crc: 0xC74BEFEF
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
   - name: 'BenDoonSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/274/' ]
     dirty:
@@ -7187,6 +7203,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/22075'
     group: *preFixesGroup
     after:
+      - 'Ambriel.esp'
       - 'Cutting Room Floor.esp'
       - 'Hothtrooper44_ArmorCompilation.esp'
     clean:
@@ -7527,6 +7544,7 @@ plugins:
       - 'Random Alternate Start Reborn SE.esp'
       - 'Skyrim Unbound.esp'
     after:
+      - 'Ambriel.esp'
       - 'BecomeKingofSkyrim.esp'
       - 'BetterQuestObjectives.esp'
       - 'Complete Alchemy & Cooking Overhaul.esp'
@@ -8432,6 +8450,8 @@ plugins:
         name: 'Immersive Armors'
     group: *underridesGroup
   - name: 'Hothtrooper44_ArmorCompilation.esp'
+    after:
+      - 'Ambriel.esp'
     tag:
       - Delev
       - Relev
