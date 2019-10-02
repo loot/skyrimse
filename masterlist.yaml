@@ -2621,9 +2621,7 @@ plugins:
       - 'Obsidian Weathers - True Storms - Patch.esp'
     inc: [ 'Obsidian Weathers - Wander Patch.esp' ]
   - name: 'Audio Overhaul Skyrim - True Storms Patch.esp'
-    after:
-      - 'Obsidian_TS_Patch_.*\.esp'
-      - 'Obsidian Weathers - True Storms - Patch.esp'
+    after: [ 'Obsidian Weathers - True Storms - Patch.esp' ]
     inc: [ 'Obsidian Weathers - Wander Patch.esp' ]
 
   - name: 'DeadlySpellImpacts.esp'
@@ -2779,7 +2777,7 @@ plugins:
         condition: 'active("ClimatesOfTamriel.esm") and not active("SoS_CoT_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Dolomite Weathers' ]
-        condition: 'active("Dolomite Weathers.esp") and not active("SoS_DolomiteWeathers_Patch.esp")'
+        condition: 'active("Dolomite Weathers.esp") and not active("SoS_DolomiteWeathers_Patch.esp") and not active("Dolomite_TS_Patch_(Heavy|Light)Fog\.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lighting for ENB' ]
         condition: 'active("ELE_SSE.esp") and not active("SoS_ELE_Patch.esp")'
@@ -2794,25 +2792,25 @@ plugins:
         condition: 'active("ELFX - Hardcore.esp") and not active("SoS_ELFX+Hardcore_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'ELFX - Weathers' ]
-        condition: 'active("ELFX - Weathers.esp") and not active("SoS_ELFX+Weathers_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp")'
+        condition: 'active("ELFX - Weathers.esp") and not active("SoS_ELFX+Weathers_Patch.esp") and not active("SoS_ELFX+Enhancer+Weathers_Patch.esp") and not active("SoS_ELFX+Hardcore+Weathers_Patch.esp") and not active("ELFXWeathers_TS_Patch_(Lucid|Somber)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Natural and Atmospheric Tamriel' ]
-        condition: 'active("NAT.esp") and not active("SoS_NAT_Patch.esp")'
+        condition: 'active("NAT.esp") and not active("SoS_NAT_Patch.esp") and not active("NAT_TS_Patch_(DarkStormy|EerieSkies|TSPure)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Northern Saga Weathers and Seasons' ]
         condition: 'active("NorthernSWS.esp") and not active("SOS_NSWS_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Obsidian Weathers and Seasons' ]
-        condition: 'active("Obsidian Weathers.esp") and not active("SoS_Obsidian_Patch.esp")'
+        condition: 'active("Obsidian Weathers.esp") and not active("SoS_Obsidian_Patch.esp") and not active("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Realistic Lighting Overhaul' ]
         condition: 'active("RLO - Interiors.esp") and not active("SOS_RLOInteriors_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'True Storms' ]
-        condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("SoS_TrueStorms_Patch.esp") and not active("(Aequinoctium|Dolomite|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp")'
       - <<: *patchIncluded
         subs: [ 'Vivid Weathers' ]
-        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid Weathers SE - SOS Patch.esp")'
+        condition: 'active("Vivid WeathersSE.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid Weathers SE - SOS Patch.esp") and not active("Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp")'
     clean:
       # version: 1.9.5
       - crc: 0xACB6F6D7
@@ -3041,7 +3039,7 @@ plugins:
     after:
       - 'Audio Overhaul Skyrim.esp'
       - name: 'TrueStormsSE.esp'
-        condition: 'not file("Obsidian Weathers - Wander Patch.esp")'
+        condition: 'not file("Obsidian Weathers - Wander Patch.esp") and not file("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp")'
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -3135,9 +3133,19 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
+          - 'Aequinoctium'
+          - '[Aequinoctium - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21645/)'
+        condition: 'active("Aequinoctium.esp") and not active("Aequinoctium_TS_Patch_.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Dolomite Weathers'
           - '[Dolomite - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/15044/)'
         condition: 'active("Dolomite Weathers.esp") and not active("Dolomite_TS_Patch_.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lights and FX Weather'
+          - '[ELFX Weathers - TrueStorms Merged Compatibility SSE](https://www.nexusmods.com/skyrimspecialedition/mods/19837/)'
+        condition: 'active("ELFX - Weathers.esp") and not active("ELFXWeathers_TS_Patch_.*\.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Mythical Ages'
@@ -3167,7 +3175,7 @@ plugins:
         subs:
           - 'Wet and Cold'
           - '[TrueStorms - Wet and Cold Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15632/?)'
-        condition: 'active("WetandCold.esp") and not active("TrueStorms_Wet&Cold_Patch.esp") and not active("Mythical_TSPatch_Wet&Cold_AddOn.esp") and not active("Obsidian_TS_Wet&Cold_Patch.esp") and not active("Rustic_TSPatch_Wet&Cold_AddOn.esp") and not active("Vivid_TSPatch_Wet&Cold_AddOn.esp")'
+        condition: 'active("WetandCold.esp") and not active("(Aequinoctium_TS|Mythical_TS|Obsidian_TS|Rustic_TS|TrueStorms|Vivid_TS)_Wet&Cold_Patch\.esp")'
     tag: [ Sound ]
     dirty:
       # version: 1.01 - No Fog
@@ -3179,6 +3187,154 @@ plugins:
       # version: 1.01
       - crc: 0x49921FB9
         util: 'SSEEdit v4.0.0'
+
+  ### True Storms Merged Compatibility Patches ###
+  # Aequinoctium & True Storms Merged Compatibility Patch
+  - name: 'Aequinoctium_TS_Patch_(Abyssal|Obscured)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21645/' ]
+    inc:
+      - 'Aequinoctium - SOSComplete PATCH.esp'
+      - 'Aequinoctium - TrueStorms PATCH.esp'
+      - 'Audio Overhaul Skyrim - Aequinoctium Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Aequinoctium_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Aequinoctium_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Aequinoctium - TrueStorms Merged Compatibility SSE' ]
+        condition: 'many("Aequinoctium_TS_Patch_(Abyssal|Obscured)(_WaterFix)?\.esp")'
+  # Dolomite & True Storms Merged Compatibility Patch
+  - name: 'Dolomite_TS_Patch_(Heavy|Light)Fog\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15044/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Dolomite - TrueStorms Merged Compatibility' ]
+        condition: 'many("Dolomite_TS_Patch_(Heavy|Light)Fog\.esp")'
+  # ELFX Weathers & True Storms Merged Compatibility Patch
+  - name: 'ELFXWeathers_TS_Patch_(Lucid|Somber)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19837/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_ELFX+Weathers_Patch.esp'
+      - 'SoS_ELFX+Enhancer+Weathers_Patch.esp'
+      - 'SoS_ELFX+Hardcore+Weathers_Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("ELFXWeathers_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("ELFXWeathers_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Mythical Ages - TrueStorms Merged Compatibility' ]
+        condition: 'many("ELFXWeathers_TS_Patch_(Lucid|Somber)(_WaterFix)?\.esp")'
+  # Mythical Ages & True Storms Merged Compatibility Patch
+  - name: 'Mythical_TS_Patch_(Dusky|Overcast)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15617/' ]
+    inc:
+      - 'Mythical Ages - SOSComplete Patch.esp'
+      - 'Audio Overhaul Skyrim - Mythical Ages Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Mythical_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Mythical_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Mythical Ages - TrueStorms Merged Compatibility' ]
+        condition: 'many("Mythical_TS_Patch_(Dusky|Overcast)(_WaterFix)?\.esp")'
+  # Natural and Atmospheric Tamriel & True Storms Merged Compatibility Patch
+  - name: 'NAT_TS_Patch_(DarkStormy|EerieSkies|TSPure)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15025/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - Natural Atmospheric Tamriel Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_NAT_Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("NAT_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("NAT_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'NAT - TrueStorms Merged Compatibility' ]
+        condition: 'many("NAT_TS_Patch_(DarkStormy|EerieSkies|TSPure)(_WaterFix)?\.esp")'
+  # Obsidian Weathers & True Storms Merged Compatibility Patch
+  - name: 'Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17198/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - Obsidian Weathers Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'SoS_Obsidian_Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+      - 'True Storms - Obsidian Weathers - Patch .esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Obsidian_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Obsidian_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Obsidian Weathers - TrueStorms Merged Compatibility' ]
+        condition: 'many("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp")'
+  # Rustic Weathers & True Storms Merged Compatibility Patch
+  - name: 'Rustic_TS_Patch_(Horizons|Nimbus)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15621/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - Rustic Weathers Patch.esp'
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'Rustic Weathers PATCH SOSComplete.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Rustic_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Rustic_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Rustic Weathers - TrueStorms Merged Compatibility' ]
+        condition: 'many("Rustic_TS_Patch_(Horizons|Nimbus)(_WaterFix)?\.esp")'
+  # Vivid Weathers & True Storms Merged Compatibility Patch
+  - name: 'Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15135/' ]
+    inc:
+      - 'Audio Overhaul Skyrim - True Storms Patch.esp'
+      - 'Audio Overhaul Skyrim - Vivid Weathers Patch.esp'
+      - 'SoS_TrueStorms_Patch.esp'
+      - 'SoS_VividWeathers_Patch.esp'
+      - 'Vivid Weathers SE - AOS Patch.esp'
+      - 'Vivid Weathers SE - SOS Patch.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vivid_TS_AOS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete' ]
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid_TS_SoS_Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Vivid Weathers - TrueStorms Merged Compatibility' ]
+        condition: 'many("Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp")'
+  # Wet and Cold & True Storms Merged Compatibility Patch
+  - name: '(Aequinoctium_TS|Mythical_TS|Obsidian_TS|Rustic_TS|TrueStorms|Vivid_TS)_Wet&Cold_Patch\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15632/' ]
+    inc: [ 'Vivid Weathers - Wet and Cold patch.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'True Storms & Wet and Cold Compatibility' ]
+        condition: 'many("(Aequinoctium_TS|Mythical_TS|Obsidian_TS|Rustic_TS|TrueStorms|Vivid_TS)_Wet&Cold_Patch\.esp")'
 
   - name: 'Vivid Weathers(SE| SE -| - ).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/' ]
@@ -3213,7 +3369,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Audio Overhaul' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp")'
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp") and not active("Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp")'
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("Vivid Weathers SE - Bruma Patch.esp")'
@@ -3228,7 +3384,7 @@ plugins:
         condition: 'active("MintyLightningMod.esp") and not active("Vivid Weathers SE - LightingDuringStorm Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Sounds of Skyrim Complete' ]
-        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp") and not active("SoS_VividWeathers_Patch.esp")'
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("Vivid Weathers SE - SOS Patch.esp") and not active("SoS_VividWeathers_Patch.esp") and not active("Vivid_TS_Patch_(Ominous|Surreal)(_WaterFix)?\.esp")'
       - <<: *patch3rdParty
         subs:
           - 'True Storms'
@@ -3322,7 +3478,7 @@ plugins:
         subs:
           - 'Vivid Weathers'
           - '[WiZkiD Patches Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/24046/)'
-        condition: 'active("Vivid WeathersSE.esp") and not active("Vivid Weathers - Wet and Cold patch.esp")'
+        condition: 'active("Vivid WeathersSE.esp") and not active("Vivid Weathers - Wet and Cold patch.esp") and not active("TrueStormsSE.esp")'
 
 ###### Character Appearance - Body,face & hair ######
   - name: 'Hair Replacer( Assets)?\.esp'
