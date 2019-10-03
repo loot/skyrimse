@@ -4118,17 +4118,12 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 16
 
+  ### Interesting NPCs ###
   - name: '3DNPC.esp'
     url:
-      - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
-        name: 'Interesting NPCs SSE'
+      - 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
     group: *underridesGroup
-    after:
-      - name: 'konahrik_accoutrements.esp'
-        condition: 'checksum("konahrik_accoutrements.esp", 93449BB7)'
-      - 'MoonAndStar_MAS.esp'
-      - 'WARZONES - SSE - Civil Unrest.esp'
-      - 'WARZONES - SSE - DLC - Assault Attack.esp'
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
@@ -4138,7 +4133,7 @@ plugins:
         condition: 'active("The Ordinary Women.esp") and not active("Qw_3DNPC_TheOrdinaryWomen Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
+        condition: 'version("3DNPC.esp", "4.0", <) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
     tag: [ Invent ]
     dirty:
       # version: 3.42
@@ -4146,6 +4141,15 @@ plugins:
         crc: 0x56EBF1FC
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 328
+      # version: 4.00 ESM
+      - <<: *quickClean
+        crc: 0xA4922651
+        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+    clean:
+      # version: 4.00
+      - crc: 0x9755586A
+        util: 'SSEEdit v4.0.2f'
 
   - name: 'Ambriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/969/' ]
