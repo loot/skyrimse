@@ -1000,7 +1000,7 @@ groups:
   - name: &addonsGroup Add-ons & Expansions
     after:
       - *preAddonsGroup
-      - *landscapeGroup
+      - *veryEarlyGroup
 
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
 
@@ -1020,13 +1020,15 @@ groups:
     after: [ *veryEarlyGroup ]
 
   - name: default
-    after: [ *underridesGroup ]
+    after:
+      - *earlyLoadersGroup
+      - *underridesGroup
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
     after:
       - default
-      - *earlyLoadersGroup
+      - *landscapeGroup
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
