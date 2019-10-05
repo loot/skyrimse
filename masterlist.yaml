@@ -4,17 +4,14 @@ common:
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
-  - &SKSE64
+  - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](http://skse.silverlock.org))**'
     condition: 'file("../SkyrimSE.exe") and not file("../skse64_loader.exe")'
-  - &SKSEVR
+  - &SKSE_VR
     name: '../sksevr_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE VR ](http://skse.silverlock.org))**'
     condition: 'file("../SkyrimVR.exe") and not file("../sksevr_loader.exe")'
-  - &SKSE
-    <<: *SKSE64
-    <<: *SKSEVR
   - &SkyUI_SE
     name: 'SkyUI_SE.esp'
     display: '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
