@@ -5349,21 +5349,13 @@ plugins:
   - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
     group: *floraGroup
+  - name: 'SkyrimIsWindy( - EVT patch|-SimplyBiggerTreesSE-Patch)\.esp'
+    group: *floraGroup
+    req: [ 'SkyrimIsWindy.esp' ]
   - name: 'SkyrimIsWindy - EVT patch.esp'
-    group: *floraGroup
-    req:
-      - name: 'Enhanced Vanilla Trees SSE.esp'
-        display: '[Enhanced Vanilla Trees](https://www.nexusmods.com/skyrimspecialedition/mods/11008)'
-        condition: 'not file("SRG Enhanced Trees Activator.esp")'
-      - 'SkyrimIsWindy.esp'
-      - name: 'SRG Enhanced Trees Activator.esp'
-        display: '[Enhanced Vanilla Trees](https://www.nexusmods.com/skyrimspecialedition/mods/11008)'
-        condition: 'not file("Enhanced Vanilla Trees SSE.esp")'
+    req: [ 'Enhanced Vanilla Trees SSE.esp' ]
   - name: 'SkyrimIsWindy-SimplyBiggerTreesSE-Patch.esp'
-    group: *floraGroup
-    req:
-      - 'SkyrimIsWindy.esp'
-      - 'SimplyBiggerTreesSE.esp'
+    req: [ 'SimplyBiggerTreesSE.esp' ]
 
   - name: 'SmoothShores.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10624/' ]
