@@ -5565,7 +5565,9 @@ plugins:
 
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCM_VR
     req:
       - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
@@ -5927,6 +5929,8 @@ plugins:
       - 'Skyrim Revamped - Complete Enemy Overhaul.esp'
       - 'YOT - Your Own Thoughts.esp'
     msg:
+      - *requiresMCM
+      - *requiresMCM_VR
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
       - <<: *patch3rdPartyQUASIPC
