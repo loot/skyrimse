@@ -12,17 +12,6 @@ common:
     name: '../sksevr_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE VR ](http://skse.silverlock.org))**'
     condition: 'file("../SkyrimVR.exe") and not file("../sksevr_loader.exe")'
-  - &SkyUI_SE
-    name: 'SkyUI_SE.esp'
-    display: '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)'
-    condition: 'file("../SkyrimSE.exe")'
-  - &SkyUI_VR
-    name: 'SkyUI_SE.esp'
-    display: '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)'
-    condition: 'file("../SkyrimVR.exe")'
-  - &SkyUI
-    <<: *SkyUI_SE
-    <<: *SkyUI_VR
 
 # Messages
   - &alreadyInX
@@ -361,7 +350,7 @@ common:
         text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar %1%.'
       - lang: ru
         text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с %1%.'
-  - &requiresMCM_SE
+  - &requiresMCM
     <<: *requiresMCM_X
     subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)' ]
     condition: 'file("../SkyrimSE.exe") and not active("SkyUI_SE.esp")'
@@ -369,9 +358,6 @@ common:
     <<: *requiresMCM_X
     subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
     condition: 'file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
-  - &requiresMCM
-    <<: *requiresMCM_SE
-    <<: *requiresMCM_VR
 
   - &requiresSKSE
     type: error
@@ -2044,19 +2030,19 @@ plugins:
 
   - name: 'Gamepad++.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007' ]
+    msg: [ *requiresMCM ]
     req:
       - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
       - *SKSE
-      - *SkyUI
 
   - name: 'iEquip.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008' ]
+    msg: [ *requiresMCM ]
     req:
       - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
       - *SKSE
-      - *SkyUI
 
   - name: 'Joy of Perspective.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358' ]
@@ -2123,9 +2109,9 @@ plugins:
 
   - name: 'NQS_NamedQuicksaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
+    msg: [ *requiresMCM ]
     req:
       - *SKSE
-      - *SkyUI
       - name: 'SKSE/Plugins/EngineFixes.dll'
         display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/) or [Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245/)'
         condition: 'not file("SKSE/Plugins/AchievementsModsEnablerLoader.dll") and not file("Plugins/Sumwunn/AchievementsModsEnabler.dll")'
@@ -2216,9 +2202,10 @@ plugins:
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
         condition: 'file("scripts/RaceMenuPluginXPMSE.pex")'
-      - <<: *SkyUI
+    msg:
+      - *doNotClean
+      - <<: *requiresMCM
         condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
-    msg: [ *doNotClean ]
 
 ###### AudioVisual - Lighting ######
   - name: 'CinematicFireFX.esp'
@@ -3141,14 +3128,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
     inc: [ 'mintylightningmod.esp' ]
     msg:
+      - *requiresMCM
       - <<: *semiCompatible
         subs:
           - 'Cathedral Weathers'
           - 'Install [Improved Rain and Fog for Cathedral Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/27831) or change Storm Lightning MCM Settings: Enable Compatibility Mode on the Advanced page. Then Disable Cloudy and Snowy Sheet and Fork lightning from the General page.'
         condition: 'active("Cathedral Weathers.esp") and not active("Obsidian In Cathedral.esp")'
-    req:
-      - *SKSE
-      - *SkyUI
+    req: [ *SKSE ]
 
   - name: 'TrueStormsSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2472/' ]
@@ -4376,9 +4362,8 @@ plugins:
 
   - name: 'Toccata.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
-    req:
-      - *SKSE
-      - *SkyUI
+    msg: [ *requiresMCM ]
+    req: [ *SKSE ]
     clean:
       # version: 1.4.2
       - crc: 0xAA9D9F35
@@ -4419,13 +4404,12 @@ plugins:
 
   - name: 'DeadlyDragons.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23723/' ]
-    req:
-      - *SKSE
-      - *SkyUI
+    req: [ *SKSE ]
     inc:
       - 'KS Dragon Overhaul.esp'
       - 'Serio''s Enhanced Dragons.esp'
     msg:
+      - *requiresMCM
       - <<: *semiCompatible
         subs:
           - 'Elemental Dragons'
@@ -5581,6 +5565,7 @@ plugins:
 
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
+    msg: [ *requiresMCM ]
     req:
       - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
@@ -5589,7 +5574,6 @@ plugins:
         display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
         condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimSE.exe")'
       - *SKSE
-      - *SkyUI
     clean:
       # version: 3.1 - No JContainers
       - crc: 0x5DEC1D9A
@@ -7055,12 +7039,12 @@ plugins:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
       - *SKSE
-      - *SkyUI
     inc:
       - 'Convenient Horses.esp'
       - name: 'Relationship Dialogue Overhaul.esp'
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
     msg:
+      - *requiresMCM
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim - Bruma SE'
@@ -7095,14 +7079,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/' ]
     after:
       - 'Qw_BeyondReach_USSEP Patch.esp'
-    req:
-      - *SKSE
-      - *SkyUI
+    req: [ *SKSE ]
     inc:
       - 'AmazingFollowerTweaks.esp'
       - 'EFFCore.esm'
       - 'EFFDialogue.esp'
     msg:
+      - *requiresMCM
       - type: say
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
         content: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
@@ -7753,8 +7736,8 @@ plugins:
 
   - name: 'Immersive Encounters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/' ]
-    req: [ *SkyUI ]
     msg:
+      - *requiresMCM
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
