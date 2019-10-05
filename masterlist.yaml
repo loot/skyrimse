@@ -5843,17 +5843,9 @@ plugins:
   - name: 'DeadlyCombat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8850/' ]
     msg:
-      - type: info
+      - <<: *patchProvided
+        subs: [ 'Ordinator' ]
         condition: 'active("DeadlyCombat.esp") and not active("DeadlyCombat_Ordinator_Patch.esp")'
-        content:
-          - lang: en
-            text: 'An optional compatibility patch, which changes a few perks to match Deadly Combats design is available on the [Deadly Combat page](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
-          - lang: de
-            text: 'Ein optionaler Kompatibilitätspatch, welcher einige Perks abändert, um Deadly Combats Design zu entsprechen, ist auf der [Deadly Combat-Seite](https://www.nexusmods.com/skyrimspecialedition/mods/8850/) verfügbar.'
-          - lang: ja
-            text: 'オプションの互換性パッチがあります。Deadly Combatsのデザインに合わせていくつかのPerkが変更されています。このパッチは[Deadly Combatのページ](https://www.nexusmods.com/skyrimspecialedition/mods/8850/)から入手できます。'
-          - lang: pt
-            text: 'Um patch opcional de compatibilidade, que altera alguns Perks para combinar com o design de Deadly Combats está disponível na [página de Deadly Combat](https://www.nexusmods.com/skyrimspecialedition/mods/8850/).'
 
   - name: 'DSerArcheryGameplayOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24296/' ]
