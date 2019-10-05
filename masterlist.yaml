@@ -1709,6 +1709,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Majestic Mountains'
+          - '[ Better Dynamic Majestic Mountains ](https://www.nexusmods.com/skyrimspecialedition/mods/20102)'
+        condition: 'active("MajesticMountains.esp")  and not active("BDS - MM Patch.esp")'
     tag: [ Graphics ]
     clean:
       # version: 2.9.1
