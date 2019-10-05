@@ -6527,17 +6527,16 @@ plugins:
       # version: Another Sorting Mod Replacer 1.2.9.1
       - crc: 0xB011CFC9
         util: 'SSEEdit v4.0.2f'
-  - name: 'MLU - AAE Ultimate Edition.esp'
+  - name: 'MLU - .*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
-    after:
-      - 'MLU - Immersive Armors.esp'
+  - name: 'MLU - AAE Ultimate Edition.esp'
+    after: [ 'MLU - Immersive Armors.esp' ]
     tag: [ Invent ]
     clean:
       # version: 1.2
       - crc: 0x57E025A8
         util: 'SSEEdit v4.0.2f'
   - name: 'MLU - Immersive Armors.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
     msg: [ *doNotClean ]
     tag:
       - Delev
@@ -6556,9 +6555,7 @@ plugins:
       - 'ImprovedDaedricArtifacts.esp'
       - 'MLU.esp'
   - name: 'MLU - Improved Closefaced Helmets.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
-    req:
-      - 'MLU.esp'
+    req: [ 'MLU.esp' ]
     tag:
       - Stats
       - -Names
