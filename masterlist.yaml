@@ -1997,6 +1997,7 @@ plugins:
     group: *underridesGroup
     req:
       - *SKSE
+      - *SKSE_VR
     clean:
       # version: 5.2SE
       - crc: 0x79ACE179
@@ -2120,8 +2121,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
         name: 'RaceMenu Special Edition'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     inc:
       - 'CharacterMakingExtender.esp'
       - 'EnhancedCharacterEdit.esp'
@@ -5574,6 +5574,7 @@ plugins:
         display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
         condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimSE.exe")'
       - *SKSE
+      - *SKSE_VR
     clean:
       # version: 3.1 - No JContainers
       - crc: 0x5DEC1D9A
@@ -5906,6 +5907,7 @@ plugins:
     group: *craftingGroup
     req:
       - *SKSE
+      - *SKSE_VR
     inc:
       - 'BullseyePerkParalyzeBugFixSE.esp'
       - 'FloraRespawnFix.esp'
