@@ -7241,8 +7241,14 @@ plugins:
 
   - name: 'Hunters Not Bandits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1547/' ]
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
+    after: [ 'Relationship Dialogue Overhaul.esp' ]
+    clean:
+      # version: 3.1
+      - crc: 0xC5DA5E76
+        util: 'SSEEdit v4.0.2f'
+      # version: 3.1 RDO
+      - crc: 0xAAA7D18A
+        util: 'SSEEdit v4.0.2f'
 
   - name: 'Immersive Citizens.*\.esp'
     url:
