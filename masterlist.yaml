@@ -2973,6 +2973,12 @@ plugins:
       - Graphics
       - Sound
     msg:
+      - <<: *requiresMCM
+        type: say
+        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and not active("SkyUI_SE.esp")'
+      - <<: *requiresMCM_VR
+        type: say
+        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and not active("SkyUI_SE.esp")'
       - <<: *patchIncluded
         subs: [ 'iNeed - Food, Water and Sleep' ]
         condition: 'active("iNeed.esp") and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
