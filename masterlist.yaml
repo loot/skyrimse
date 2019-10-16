@@ -37,6 +37,8 @@ common:
         text: 'Delete. Já icluído em %1%'
       - lang: ru
         text: 'Удалите. Уже включено в %1%.'
+      - lang: sv
+        text: 'Ta bort. Redan inkluderat i %1%'        
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
 
@@ -71,6 +73,8 @@ common:
         text: 'É recomendada a leitura das [Notas de Compatibilidade](%1%) deste mod.'
       - lang: ru
         text: 'Рекомендуется прочесть [заметки о совместимости](%1%) мода.'
+      - lang: sv
+        text: 'Det är rekommenderat att du läser denna mods [kompabilitetsanteckningar](%1%).' 
 
   - &corrupt
     type: warn
@@ -89,6 +93,8 @@ common:
         text: 'Este arquivo está corrompido e não deveria ser utilizado.'
       - lang: ru
         text: 'Файл испорчен и не должен использоваться.'
+      - lang: sv
+        text: 'Denna fil är korrupt och borde inte användas.'
 
   - &deletePlugin
     type: warn
@@ -133,6 +139,8 @@ common:
         text: 'Não apague os registros ITM. Eles são intencionais e necessários para que o mod funcione. É seguro restaurar os registros, mas nada mais além disso.'
       - lang: ru
         text: 'Не очищать ITM-записи. "Грязные" правки оставлены специально и требуются для функционирования мода. Восстановить удаленные записи (UDR) можно безопасно, но идентичные мастерфайлу лучше оставить.'
+      - lang: sv
+        text: 'Städa inte bort ITM records, de är avsiktliga och krävs för att modden ska fungera. Det är säkert att återställa records, men gör ingenting förutom det.'
       - lang: zh_CN
         text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
 
@@ -155,6 +163,8 @@ common:
         text: '%1% está incluído neste mod.'
       - lang: ru
         text: '%1% уже включен в этот мод.'
+      - lang: sv
+        text: '%1% är inluderat med denna mod.' 
   - &includesMBBF
     <<: *includesX
     subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
@@ -176,6 +186,8 @@ common:
         text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
       - lang: ru
         text: 'Похоже у вас установлен **%2%**, но некоторые его требования отсутствуют. Убедитесь, что правильно установили **%1%**.'
+      - lang: sv
+        text: 'Det verkar som om du har installerat **%2%**, men några av dess krav är inte uppfyllda. Var vänlig och se till att du har installerat **%1%**.'
 
   - &missingRequirementXforPlugin
     type: warn
@@ -233,6 +245,8 @@ common:
         text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
       - lang: ru
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
+      - lang: sv
+        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
     subs:
@@ -269,6 +283,8 @@ common:
         text: 'Você aparenta estar usando **%1%**, mas não habilitou um patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: [ Qwins''s Unified Automated Self Installing Patch Compandium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
       - lang: ru
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч доступен здесь: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
+      - lang: sv
+        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: [ Qwins''s Unified Automated Self Installing Patch Compandium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
 
   - &patchIncluded
     type: say
@@ -289,6 +305,8 @@ common:
         text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
       - lang: ru
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти в установщике плагина.'
+      - lang: sv
+        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En kompabilitetspatch är inkluderad i denna plugins installationsprogram.'
 
   - &patchProvided
     type: say
@@ -309,6 +327,8 @@ common:
         text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
       - lang: ru
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти на странице плагина.'
+      - lang: sv
+        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En kompabilitetspatch finns på denna plugins modsida.'
 
   - &patchUpdateAvailable
     type: say
@@ -329,6 +349,8 @@ common:
         text: 'Patch de Atualização disponível: %1%'
       - lang: ru
         text: 'Доступно обновление патча: %1%'
+      - lang: sv
+        text: 'Uppdateringspatch tillgänglig: %1%'
 
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &requiresMCM_X
@@ -420,6 +442,8 @@ common:
         text: '%1% não é completamente compatível com este mod. %2%'
       - lang: ru
         text: '%1% не полностью совместим с этим модом. %2%'
+      - lang: sv
+        text: '%1% är inte helt kompatibel med denna mod. %2%'
 
   - &sortMasters
     type: say
@@ -462,6 +486,8 @@ common:
         text: 'Utilize apenas um %1%'
       - lang: ru
         text: 'Используйте только один %1%.'
+      - lang: sv
+        text: 'Använd endast en %1%.' 
       - lang: zh_CN
         text: '只使用一个%1%。'
 
@@ -588,6 +614,8 @@ common:
         text: 'Este plugin contém edições não-intencionais (Wild Edits) além dos registros ITM e UDR e Navmeshes deletadas e pode requerer limpeza manual adicional de forma que não interfira com outros mods. %1%'
       - lang: ru
         text: 'Плагин содержит дикие правки, кроме ITM, UDR записей и удаленных навмешей и может потребовать дополнительной ручной чистки, чтобы не пересекаться с другими модами. %1%'
+      - lang: sv
+        text: 'Denna plugin innehåller vilda föränringar utanför ITM och UDR-records samt borttagna navmeshes och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
     subs: [ '' ]
 
 # Dirty Aliases
