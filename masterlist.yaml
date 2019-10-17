@@ -6666,8 +6666,14 @@ plugins:
         subs: [ 'Trade and Barter' ]
         condition: 'active("Trade & Barter.esp") and not active("EconomyOverhaul CV - TradeandBarter Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
+        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("EconomyOverhaul CV - Vokrii Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("EconomyOverhaul CV - WACCF Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Wet and Cold' ]
+        condition: 'active("WetandCold.esp") and not active("EconomyOverhaul CV - WetAndCold Patch.esp")'
     clean:
       # version: 2.1
       - crc: 0x146D569B
@@ -6693,6 +6699,9 @@ plugins:
       # version: 2.1
       - crc: 0xBBA1C2CA
         util: 'SSEEdit v4.0.2'
+  - name: 'EconomyOverhaul CV - (Vokrii|Ordinator) Patch.esp'
+    after:
+      - 'EconomyOverhaul CV - MorrowLootUltimate Patch.esp'
 
   - name: 'Immersive Ingestibles.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/3587775' ]
