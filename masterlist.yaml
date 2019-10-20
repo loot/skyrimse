@@ -8672,7 +8672,8 @@ plugins:
   - name: 'PathOfSorcery.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     after:
-      - 'Ordinator - Perks of Skyrim.esp'
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'not file("Vokriinator.esp")'
     clean:
       # version: 1.2
       - crc: 0x992192E5
@@ -8762,6 +8763,16 @@ plugins:
       # version: 2.0.1
       - crc: 0xA9E7E94E
         util: 'SSEEdit v4.0.2'
+
+  - name: 'Vokriinator.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
+    clean:
+      # version: 2.7
+      - crc: 0x64D3606F
+        util: 'SSEEdit v4.0.2i'
+      # version: 2.7 Plus
+      - crc: 0xCD12C4D0
+        util: 'SSEEdit v4.0.2i'
 
   - name: 'WerewolfPerksExpanded.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1285/' ]
