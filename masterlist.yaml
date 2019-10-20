@@ -8672,7 +8672,8 @@ plugins:
   - name: 'PathOfSorcery.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     after:
-      - 'Ordinator - Perks of Skyrim.esp'
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'not file("Vokriinator.esp")'
     clean:
       # version: 1.2
       - crc: 0x992192E5
