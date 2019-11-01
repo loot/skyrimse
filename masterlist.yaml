@@ -2065,10 +2065,12 @@ plugins:
       - Names
       - Relev
       - Stats
-    clean:
-      # version:  20.2
-      - crc: 0x22DBA012
-        util: 'SSEEdit v4.0.2'
+    dirty:
+      # version: 23.6
+      - <<: *quickClean
+        crc: 0x1F116C7C
+        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
   - name: 'Complete Alchemy & Cooking Overhaul_ASM-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10/' ]
     tag:
@@ -8953,13 +8955,13 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp")'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_CRF Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_CRF Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_USSEP Patch.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_USSEP Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
     after:
       - 'Cutting Room Floor.esp'
       - 'Tel_Nalta.esp'
