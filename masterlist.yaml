@@ -1758,6 +1758,10 @@ plugins:
 
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28197/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
     req: [ *SKSE ]
     clean:
       # version: 3.1
