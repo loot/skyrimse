@@ -8501,6 +8501,26 @@ plugins:
       - C.Climate
       - C.Water
 
+  - name: 'Skyrim Unbound.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27962/' ]
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'Diverse Character Creation.esp'
+      - 'Guard Dialogue Overhaul.esp'
+      - 'Requiem.esp'
+      - 'TheChoiceIsYours.esp'
+    inc:
+      - 'Dragon Stalking Fix.esp'
+      - 'NotSoFast-MainQuest.esp'
+      - 'ShoutsCostOneSoul.esp'
+    msg:
+      - <<: *includesX
+        subs: [ 'Dragon Stalking Fix' ]
+    clean:
+      # version: 1.3.0
+      - crc: 0x06942C61
+        util: 'SSEEdit v4.0.2k'
+
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
     after:
