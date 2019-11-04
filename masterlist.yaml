@@ -2104,6 +2104,8 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'IcePenguinWorldMapPaper.esp'
     group: *lateLoadersGroup
+    after:
+      - 'RealisticWaterTwo.esp'
     inc:
       - 'IcePenguinWorldMap.esp'
       - 'icepenguinworldmapclassic.esp'
@@ -2113,16 +2115,16 @@ plugins:
           - 'Atlas Map Markers'
           - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
         condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
-      - <<: *semiCompatible
+      - <<: *patch3rdParty
         subs:
           - 'Enhanced Lighting for ENB (ELE)'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
-        condition: 'active("ELE_SSE.esp")'
-      - <<: *semiCompatible
+          - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095)'
+        condition: 'active("ELE_SSE.esp") and not active("AQWMP_ELE_Patch.esp") and not active("AQWMP_ELE_RWT_Patch.esp")'
+      - <<: *patch3rdParty
         subs:
           - 'Realistic Water Two'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
-        condition: 'active("RealisticWaterTwo.esp")'
+          - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095)'
+        condition: 'active("RealisticWaterTwo.esp") and not active("AQWMP_RWT_Patch.esp") and not active("AQWMP_ELE_RWT_Patch.esp")'
     clean:
       # version: 9.0P
       - crc: 0x09706810
@@ -3076,8 +3078,6 @@ plugins:
     group: *lateLoadersGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
-      # Todo: Review, if a Patch is Released for A Quality World Map - Paper.
-      - 'IcePenguinWorldMapPaper.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Citizens - OCS patch.esp'
       - 'Open Cities Skyrim.esp'
