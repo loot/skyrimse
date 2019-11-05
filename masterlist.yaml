@@ -1949,6 +1949,7 @@ plugins:
   - name: 'SMIM-SE-Merged-All.esp'
     after:
       - 'Blowing in the Wind SSE.esp'
+      - 'Destructible Skyrim.esp'
     inc:
       - 'SMIM-SE-DragonbornTernFix.esp'
       - 'SMIM-SE-DungeonsCliffsIceSkirts.esp'
@@ -5217,6 +5218,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124' ]
   - name: 'Blowing in the Wind SSE.esp'
     group: *veryEarlyGroup
+    after: [ 'Destructible Skyrim.esp' ]
     clean:
       # version: 2.04
       - crc: 0x8EF0F5D1
@@ -5269,6 +5271,16 @@ plugins:
   - name: 'Dark_Forests.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21934/' ]
     group: *floraGroup
+
+  - name: 'Destructible Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28291/' ]
+    group: *veryEarlyGroup
+    dirty:
+      # version: 0.4
+      - <<: *quickClean
+        crc: 0xAF111F67
+        util: '[SSEEdit v4.0.2k](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 584
 
   - name: 'Enhanced Landscapes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18162/' ]
