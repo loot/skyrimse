@@ -825,10 +825,10 @@ globals:
 # Skyrim SE - Latest Version
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", <) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", >=) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe")'
 # Skyrim VR - Latest Version
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
@@ -840,10 +840,10 @@ globals:
 # SKSE 64 - Latest Version
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.16", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.17", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.16", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.17", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
 # SKSE VR - Latest Version
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
@@ -865,6 +865,8 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", ==) and version("../skse64_loader.exe", "0.2.0.13", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSSE
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
 # SKSE VR - Compatibility
   - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
