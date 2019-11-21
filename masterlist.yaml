@@ -825,10 +825,10 @@ globals:
 # Skyrim SE - Latest Version
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", <) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", >=) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe")'
 # Skyrim VR - Latest Version
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
@@ -840,10 +840,10 @@ globals:
 # SKSE 64 - Latest Version
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.16", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.17", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.16", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.17", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
 # SKSE VR - Latest Version
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
@@ -865,6 +865,8 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", ==) and version("../skse64_loader.exe", "0.2.0.13", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSSE
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
 # SKSE VR - Compatibility
   - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
@@ -1168,6 +1170,13 @@ plugins:
         itm: 325
         udr: 92
         nav: 2
+      # version: 1.5.97.0 - Quick Auto Clean
+      - <<: *quickClean
+        crc: 0x17AB5E20
+        util: '[SSEEdit v4.0.2n RC2 for 4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 334
+        udr: 92
+        nav: 3
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -1177,11 +1186,11 @@ plugins:
       - Invent
       - Relev
     msg:
-      # (v1.5.62.0, 0x40306E4E)(V1.5.73.0, 0x87E3D764)(V1.5.80.0, 0x0F49D87E) after Quick Auto Clean
+      # (v1.5.62.0, 0x40306E4E)(V1.5.73.0, 0x87E3D764)(V1.5.80.0, 0x0F49D87E)(V1.5.97.0, 0x955CCA77) after Quick Auto Clean
       - <<: *wildEdits
         type: say
         subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://www.afkmods.com/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)' ]
-        condition: 'checksum("Dawnguard.esm", 40306E4E) or checksum("Dawnguard.esm", 87E3D764) or checksum("Dawnguard.esm", 0F49D87E)'
+        condition: 'checksum("Dawnguard.esm", 40306E4E) or checksum("Dawnguard.esm", 87E3D764) or checksum("Dawnguard.esm", 0F49D87E) or checksum("Dawnguard.esm", 955CCA77)'
     dirty:
       # version: 1.5.62.0 - Quick Auto Clean
       - <<: *quickClean
@@ -1201,6 +1210,13 @@ plugins:
       - <<: *quickClean
         crc: 0x103E87B0
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 766
+        udr: 82
+        nav: 57
+      # version: 1.5.97.0 - Quick Auto Clean
+      - <<: *quickClean
+        crc: 0xCC81E5D8
+        util: '[SSEEdit v4.0.2n RC2 for 4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 766
         udr: 82
         nav: 57
@@ -1233,6 +1249,13 @@ plugins:
         itm: 221
         udr: 11
         nav: 5
+      # version: 1.5.97.0 - Quick Auto Clean
+      - <<: *quickClean
+        crc: 0xBAD9393A
+        util: '[SSEEdit v4.0.2n RC2 for 4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
   - name: 'Dragonborn.esm'
     group: *dlcGroup
     after:
@@ -1260,6 +1283,13 @@ plugins:
       - <<: *quickClean
         crc: 0xA5C6ED94
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 81
+        udr: 8
+        nav: 1
+      # version: 1.5.97.0 - Quick Auto Clean
+      - <<: *quickClean
+        crc: 0x0EB10E82
+        util: '[SSEEdit v4.0.2n RC2 for 4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 81
         udr: 8
         nav: 1
