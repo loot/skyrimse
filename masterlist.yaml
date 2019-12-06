@@ -6588,6 +6588,9 @@ plugins:
           - 'iNeed - Extended'
           - 'Only use the **No Food/Recipe Changes** version of **iNeed - Extended** with CACO.'
         condition: 'active("iNeed - Extended.esp")'
+      - <<: *patchProvided
+        subs: [ 'Complete Crafting Overhaul Remastered' ]
+        condition: 'version("Complete Alchemy & Cooking Overhaul.esp", "2.0", ==) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
     clean:
       # version: 2.0.1
       - crc: 0x479F529D
