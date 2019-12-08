@@ -274,6 +274,11 @@ common:
     subs:
       - 'The Choice Is Yours'
       - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+  - &patch3rdParty_KPH_WACCF
+    <<: *patch3rdParty
+    subs:
+      - 'Weapons Armor Clothing and Clutter Fixes'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
     subs:
@@ -1617,10 +1622,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing and Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
       - <<: *patch3rdParty
         subs:
@@ -8801,10 +8803,7 @@ plugins:
           - 'Smithing Perks Overhaul'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518) or [ Smithing Perks Overhaul and Ordinator Mashup ](https://www.nexusmods.com/skyrimspecialedition/mods/20605/)'
         condition: 'active("Smithing Perks Overhaul SE.esp") and not active("SPO_Ordinator_Patch.esp") and not active("SPO_Ordinated.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Ordinator_WACCF_Patch.esp")'
     tag:
       - Graphics
@@ -9290,11 +9289,8 @@ plugins:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
         condition: '(checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E)) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: '(checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E)) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and (checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E))'
     tag: [ Graphics ]
     dirty:
       # version: 1.58
