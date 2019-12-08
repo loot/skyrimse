@@ -269,6 +269,11 @@ common:
     subs:
       - 'Complete Crafting Overhaul Remastered'
       - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+  - &patch3rdParty_KPH_TCIY
+    <<: *patch3rdParty
+    subs:
+      - 'The Choice Is Yours'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
     subs:
@@ -7526,10 +7531,7 @@ plugins:
         condition: 'active("ZIA_Complete Pack.esp") and not active("Wintersun - ZIA Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Choice Is Yours'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+      - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *semiCompatible
         subs:
@@ -9040,10 +9042,7 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[ Wintersun - Zim''s Immersive Artifacts and Book Covers Skyrim Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Choice is Yours'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
@@ -10506,10 +10505,7 @@ plugins:
           - 'RS Children Overhaul'
           - '[ RS Children Overhaul Cutting Room Floor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/8753)'
         condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp") and not file("RSC CRF Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Choice Is Yours'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+      - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
