@@ -4016,26 +4016,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("RSChildren Patch - BS Bruma.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Falskaar'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
-        condition: 'active("Falskaar.esm") and not active("RSC Falskaar Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Forgotten City'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
-        condition: 'active("ForgottenCity.esp") and not active("RSC Forgotten City Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Inconsequential NPCs'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
-        condition: 'active("Inconsequential NPCs.esp") and not active("RSC IncNPC.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Interesting NPCs'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
-        condition: 'active("3DNPC.esp") and not active("RSC 3DNPC Patch.esp")'
     clean:
       # version: 1.1.2
       - crc: 0xE8137869
@@ -4588,6 +4568,11 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
     group: *underridesGroup
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'RS Children Overhaul'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_3DNPC Patch.esp")'
@@ -5207,6 +5192,15 @@ plugins:
       # version: 1.1
       - crc: 0x1BD494E8
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'Inconsequential NPCs.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/36334/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'RS Children Overhaul'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSC IncNPC.esp")'
 
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
@@ -8407,6 +8401,12 @@ plugins:
 
   - name: 'ForgottenCity.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'RS Children Overhaul'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSC Forgotten City Patch.esp")'
     dirty:
       # version: 1.8
       - <<: *quickClean
@@ -10079,6 +10079,11 @@ plugins:
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?Falskaar(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?FAL(_VIG)?(_WYR)?.*\.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Falskaar_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'RS Children Overhaul'
+          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+        condition: 'active("RSkyrimChildren.esm") and not active("RSC Falskaar Patch.esp")'
   - name: 'Falskaar - Bug Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19454/'
