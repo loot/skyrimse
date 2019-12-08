@@ -7526,6 +7526,11 @@ plugins:
         condition: 'active("ZIA_Complete Pack.esp") and not active("Wintersun - ZIA Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Choice Is Yours'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *semiCompatible
         subs:
           - 'Zim''s Immersive Artifacts'
@@ -8632,22 +8637,6 @@ plugins:
       - 'Relationship Dialogue Overhaul.esp'
       - name: 'Wintersun - Faiths of Skyrim.esp'
         condition: 'not file("TCIY_Wintersun_Patch.esp")'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Book Covers SE'
-          - '[kryptopyr''s Patch Hub - Book Covers Skyrim TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY( |_)BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Cutting Room Floor.esp") and not active("TCIY_CRF_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wintersun - Faiths of Skyrim'
-          - '[kryptopyr''s Patch Hub - Wintersun TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("TCIY_Wintersun_Patch.esp")'
     tag: [ Names ]
     clean:
       # version: 2.0
@@ -9048,14 +9037,14 @@ plugins:
         condition: 'active("NotSoFast-MainQuest.esp") and not active("BCS_NotsoFast_Patch.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'The Choice is Yours'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
           - 'Wintersun - Faiths of Skyrim'
           - '[ Wintersun - Zim''s Immersive Artifacts and Book Covers Skyrim Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Choice is Yours'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
@@ -10517,6 +10506,11 @@ plugins:
           - 'RS Children Overhaul'
           - '[ RS Children Overhaul Cutting Room Floor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/8753)'
         condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp") and not file("RSC CRF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Choice Is Yours'
+          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_S3DTrees_CRF Patch.esp")'
