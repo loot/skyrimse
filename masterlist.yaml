@@ -7192,7 +7192,7 @@ plugins:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
       - <<: *patch3rdPartyUVCPC
-        condition: 'not active("Vokrii - WACCF Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
+        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - WACCF Patch.esp") and not active("Complete Crafting Overhaul_Remastered.esp")'
     clean:
       # version: 2.0.0
       - crc: 0x16E46819
@@ -9207,6 +9207,9 @@ plugins:
   - name: 'Cloaks - USSEP Patch.esp'
     msg:
       - <<: *alreadyInX
+        subs: [ 'Cloaks_CCOR_Patch.esp' ]
+        condition: 'active("Cloaks_CCOR_Patch.esp")'
+      - <<: *alreadyInX
         subs: [ 'Qw_CloaksOfSkyrim_CRF Patch.esp' ]
         condition: 'active("Qw_CloaksOfSkyrim_CRF Patch.esp")'
       - <<: *alreadyInX
@@ -9410,6 +9413,11 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")'
       - <<: *patch3rdPartyKPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")'
+  - name: '1nivWICSkyCloaksPatch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp']
+        condition: 'active("1nivWICCloaks_COS_CCOR_Patch.esp")'
 
   - name: 'InsanitySorrow Weapons Pack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/' ]
@@ -14950,6 +14958,31 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
         condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+  - name: 'Immersive Weapons_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Immersive Weapons_CCOR_Patch.esp']
+        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
+  - name: '1nivWICCloaks_CCOR_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp']
+        condition: 'active("1nivWICCloaks.esp") and active("Cloaks.esp") and active("1nivWICCloaks_CCOR_Patch.esp") and active("1nivWICCloaks_COS_CCOR_Patch.esp")'
+  - name: 'KatanaCrafting_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'KatanaCrafting_CCOR_Patch.esp']
+        condition: 'active("KatanaCrafting_CCOR_Patch.esp")'
+  - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp']
+        condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
+  - name: 'Unique Uniques_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Unique Uniques_CCOR_Patch.esp']
+        condition: 'active("Unique Uniques_CCOR_Patch.esp")'
 
   ### Patches - Lexy''s LOTD Special Edition Patches ###
   - name: 'Improved closefaced helmets for Undeath SSE.esp'
@@ -15040,6 +15073,13 @@ plugins:
       - Names
       - Stats
 
+  ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
+  - name: 'Vokrii - WACCF Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CCOR_Vokrii.esp']
+        condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
 
   - name: 'Settlements Expanded SE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
