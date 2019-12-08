@@ -1523,6 +1523,12 @@ plugins:
         itm: 1
   # Rare Curios
   - name: 'ccbgssse037-curios.esl'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
     clean:
       - crc: 0x56996C5B
         util: 'SSEEdit v4.0.2'
@@ -1721,6 +1727,11 @@ plugins:
       - name: 'Lanterns Of Skyrim - All In One - Main.esm'
         condition: 'checksum("Lanterns Of Skyrim - All In One - Main.esm", EB94B5F8)'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
@@ -4318,6 +4329,12 @@ plugins:
       - 'Joy of Perspective.esp'
       - 'MLU.esp'
       - 'ScopedBows.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul.esp'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
     clean:
       # version: 2.0.1
       - crc: 0xD0F78346
@@ -4683,6 +4700,12 @@ plugins:
 
   - name: 'Inigo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul.esp'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Inigo_CACO_Patch.esp")'
     dirty:
       # version: 2.4C
       - <<: *quickClean
@@ -5856,6 +5879,12 @@ plugins:
   - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
     group: *floraGroup
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("SkyrimIsWindy_CACO_Patch.esp")'
   - name: 'SkyrimIsWindy( - EVT patch|-SimplyBiggerTreesSE-Patch)\.esp'
     group: *floraGroup
     req: [ 'SkyrimIsWindy.esp' ]
@@ -6457,6 +6486,15 @@ plugins:
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Vigor.esp")'
 
+  - name: 'Wounds.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17581/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wounds_Patch.esp")'
+
 ###### Gameplay - Crafting & Harvesting ######
   - name: 'AlchemyAdjustments(-AwesomePotionsPatch)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5877/' ]
@@ -6522,66 +6560,6 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_CACO_S3DTrees Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Elysium Estate'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ElysiumEstate.esp") and not active("ElysiumEstate_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Ethereal Elven Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ethereal_elven_overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Falskaar'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Falskaar.esm") and not active("CACO_Falskaar_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Gray Cowl of Nocturnal'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Gray Fox Cowl.esm") and not active("CACO_GrayCowl_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Inigo'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Inigo.esp") and not active("Inigo_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Moonpath to Elsweyr'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("moonpath.esp") and not active("CACO_Moonpath_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Rare Curios - Creation Club'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ccbgssse037-curios.esl") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyfall Estate'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("SkyfallEstate.esp") and not active("SkyfallEstate_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Is Windy'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("SkyrimIsWindy.esp") and not active("SkyrimIsWindy_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wounds'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Wounds.esp") and not active("CACO_Wounds_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wintersun'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("CACO_Wintersun.esp")'
       - <<: *semiCompatible
         subs:
           - 'iNeed'
@@ -7587,6 +7565,11 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[ Wintersun - Zim''s Immersive Artifacts Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
         condition: 'active("ZIA_Complete Pack.esp") and not active("Wintersun - ZIA Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
       - <<: *semiCompatible
         subs:
           - 'Zim''s Immersive Artifacts'
@@ -10133,6 +10116,11 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?Falskaar(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?FAL(_VIG)?(_WYR)?.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Falskaar_Patch.esp")'
   - name: 'Falskaar - Bug Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19454/'
@@ -10164,6 +10152,11 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH GrayFox(_Bruma)?(_Shire)?(_BeyondReach)?(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH GFC(_BRU)?(_SHI)?(_BRE)?(_FAL)?(_VIG)?(_WYR)?.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_GrayCowl_Patch.esp")'
 
   - name: 'Maslea.esm'
     url:
@@ -10229,6 +10222,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
         name: 'Moonpath to Elsweyr SSE'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Moonpath_Patch.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[Unofficial Moonpath to Elsweyr Patch](https://www.nexusmods.com/skyrimspecialedition/mods/15882/)' ]
         condition: 'active("moonpath.esp") and checksum("moonpath.esp", 18577F3E) and not active("JRMoonpathtoElsweyrPatch.esp")'
@@ -13479,6 +13477,12 @@ plugins:
         subs: [ 'ElysiumEstate-HF' ]
         condition: 'many("ElysiumEstate-HF(NoKids)?\.esp")'
   - name: 'ElysiumEstate.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("ElysiumEstate_CACO_Patch.esp")'
     clean:
       # version: 5.0.1
       - crc: 0xCDCBD5E8
@@ -14299,6 +14303,15 @@ plugins:
         crc: 0xCFB38E04
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 3
+
+  - name: 'SkyfallEstate.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2185' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Alchemy & Cooking Overhaul'
+          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("SkyfallEstate_CACO_Patch.esp")'
 
   - name: 'Snow Gate Farm.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24270' ]
