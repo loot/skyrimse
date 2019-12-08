@@ -289,6 +289,11 @@ common:
     subs:
       - 'Weapons Armor Clothing and Clutter Fixes'
       - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+  - &patch3rdParty_RSCPC
+    <<: *patch3rdParty
+    subs:
+      - 'RS Children Overhaul'
+      - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
     subs:
@@ -1715,6 +1720,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
+      - <<: *patch3rdParty_RSCPC
+        type: warn
+        condition: 'active("RSChildren.esp") and not active("RSC_USSEP_AventusFix.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2))'
       - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
@@ -4027,12 +4035,6 @@ plugins:
         display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
         condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2)) and not active("RSC_USSEP_AventusFix.esp")'
     msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
-          - '[ RS Children and USSEP Aventus fix ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
-        condition: 'not active("RSC_USSEP_AventusFix.esp") and (file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2))'
       - type: warn
         content:
           - lang: en
@@ -4568,10 +4570,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
     group: *underridesGroup
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+      - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
@@ -5196,10 +5195,7 @@ plugins:
   - name: 'Inconsequential NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/36334/' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+      - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC IncNPC.esp")'
 
   - name: 'Immersive Wenches.esp'
@@ -8402,10 +8398,7 @@ plugins:
   - name: 'ForgottenCity.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+      - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC Forgotten City Patch.esp")'
     dirty:
       # version: 1.8
@@ -10079,10 +10072,7 @@ plugins:
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?Falskaar(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?FAL(_VIG)?(_WYR)?.*\.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Falskaar_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+      - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC Falskaar Patch.esp")'
   - name: 'Falskaar - Bug Fixes.esp'
     url:
@@ -10510,10 +10500,7 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ RS Children Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/13409)'
+      - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC CRF Patch.esp") and not file("CRF_RSChildrenPatch.esp")'
       - <<: *patch3rdParty
         subs:
