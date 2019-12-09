@@ -4332,6 +4332,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'WACCF Armor and Clothing Extension'
+          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("ACE_EtherealElvenOverhaul_Patch.esp")'
     clean:
       # version: 2.0.1
       - crc: 0xD0F78346
