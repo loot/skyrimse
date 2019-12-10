@@ -259,10 +259,25 @@ common:
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
       - lang: sv
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
+  - &patch3rdParty_KPH_CACO
+    <<: *patch3rdParty
+    subs:
+      - 'Complete Alchemy & Cooking Overhaul'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
   - &patch3rdParty_KPH_CCOR
     <<: *patch3rdParty
     subs:
       - 'Complete Crafting Overhaul Remastered'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+  - &patch3rdParty_KPH_TCIY
+    <<: *patch3rdParty
+    subs:
+      - 'The Choice Is Yours'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+  - &patch3rdParty_KPH_WACCF
+    <<: *patch3rdParty
+    subs:
+      - 'Weapons Armor Clothing and Clutter Fixes'
       - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
   - &patch3rdPartySBCK
     <<: *patch3rdParty
@@ -1523,6 +1538,9 @@ plugins:
         itm: 1
   # Rare Curios
   - name: 'ccbgssse037-curios.esl'
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
     clean:
       - crc: 0x56996C5B
         util: 'SSEEdit v4.0.2'
@@ -1604,24 +1622,14 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
-          - 'Complete Alchemy and Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing and Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
-      - <<: *patch3rdParty
-        subs:
           - 'Cloaks of Skyrim'
           - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("Cloaks.esp") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp")'
+        condition: 'active("Cloaks.esp") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Winter Is Coming'
           - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("1nivWICCloaks.esp") and not active("Survival Mode Patches - Winter Is Coming.esp")'
+        condition: 'active("1nivWICCloaks.esp") and not active("Survival Mode Patches - Winter Is Coming.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Campfire'
@@ -1642,6 +1650,10 @@ plugins:
           - 'Google''s ESO Provisioning'
           - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
         condition: 'active("GPProvisioning.esp") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
       - <<: *semiCompatible
         subs:
           - '[Unlimited Bookshelves](https://www.nexusmods.com/skyrimspecialedition/mods/2885/)'
@@ -1721,6 +1733,8 @@ plugins:
       - name: 'Lanterns Of Skyrim - All In One - Main.esm'
         condition: 'checksum("Lanterns Of Skyrim - All In One - Main.esm", EB94B5F8)'
     msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
@@ -2008,10 +2022,7 @@ plugins:
   - name: 'Improved Fire Salts Frost Salts And Glow Dust.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20572' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp")'
 
   - name: 'Particle Patch for ENB SSE.esp'
@@ -4318,6 +4329,14 @@ plugins:
       - 'Joy of Perspective.esp'
       - 'MLU.esp'
       - 'ScopedBows.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'WACCF Armor and Clothing Extension'
+          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("ACE_EtherealElvenOverhaul_Patch.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
     clean:
       # version: 2.0.1
       - crc: 0xD0F78346
@@ -4683,6 +4702,9 @@ plugins:
 
   - name: 'Inigo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Inigo_CACO_Patch.esp")'
     dirty:
       # version: 2.4C
       - <<: *quickClean
@@ -5124,15 +5146,11 @@ plugins:
       - Invent
       - Relev
     msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[Skyrim Immersive Creatures - Official Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
     clean:
       # version: 0.27 Official patch
       - crc: 0x01764C6F
@@ -5856,6 +5874,9 @@ plugins:
   - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
     group: *floraGroup
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("SkyrimIsWindy_CACO_Patch.esp")'
   - name: 'SkyrimIsWindy( - EVT patch|-SimplyBiggerTreesSE-Patch)\.esp'
     group: *floraGroup
     req: [ 'SkyrimIsWindy.esp' ]
@@ -6451,11 +6472,14 @@ plugins:
       - 'Wildcat - Combat of Skyrim.esp'
       - 'Smilodon - Combat of Skyrim.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Vigor.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Vigor.esp") and not active("CACO_Vigor_Campfire.esp")'
+
+  - name: 'Wounds.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17581/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wounds_Patch.esp")'
 
 ###### Gameplay - Crafting & Harvesting ######
   - name: 'AlchemyAdjustments(-AwesomePotionsPatch)?\.esp'
@@ -6522,66 +6546,6 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_CACO_S3DTrees Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Elysium Estate'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ElysiumEstate.esp") and not active("ElysiumEstate_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Ethereal Elven Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ethereal_elven_overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Falskaar'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Falskaar.esm") and not active("CACO_Falskaar_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Gray Cowl of Nocturnal'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Gray Fox Cowl.esm") and not active("CACO_GrayCowl_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Inigo'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Inigo.esp") and not active("Inigo_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Moonpath to Elsweyr'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("moonpath.esp") and not active("CACO_Moonpath_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Rare Curios - Creation Club'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("ccbgssse037-curios.esl") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyfall Estate'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("SkyfallEstate.esp") and not active("SkyfallEstate_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Is Windy'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("SkyrimIsWindy.esp") and not active("SkyrimIsWindy_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wounds'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Wounds.esp") and not active("CACO_Wounds_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wintersun'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("CACO_Wintersun.esp")'
       - <<: *semiCompatible
         subs:
           - 'iNeed'
@@ -6696,10 +6660,7 @@ plugins:
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Hunterborn_CACO-SE_Patch.esp")'
 
   - name: 'iNeed.esp'
@@ -6708,11 +6669,7 @@ plugins:
     after:
       - 'SkyUI_SE.esp'
     msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not file("scripts/_snplayeralias.pex")'
     clean:
       # Version: 1.90 Alpha
@@ -7466,11 +7423,7 @@ plugins:
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
     msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("PatronGodsOfSkyrim_CACO_Patch.esp")'
     dirty:
       # version: 1.0.5
@@ -7484,11 +7437,7 @@ plugins:
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
     msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
 
   - name: 'QL_Stendarr''sLight.esp'
@@ -7587,6 +7536,10 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[ Wintersun - Zim''s Immersive Artifacts Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
         condition: 'active("ZIA_Complete Pack.esp") and not active("Wintersun - ZIA Patch.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
+      - <<: *patch3rdParty_KPH_TCIY
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *semiCompatible
         subs:
           - 'Zim''s Immersive Artifacts'
@@ -8501,6 +8454,9 @@ plugins:
   - name: 'konahrik_accoutrements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
     group: *underridesGroup
+    msg:
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_KonahriksAccoutrements.esp")'
     dirty:
       # version: 5.5.3
       - <<: *quickClean
@@ -8693,22 +8649,6 @@ plugins:
       - 'Relationship Dialogue Overhaul.esp'
       - name: 'Wintersun - Faiths of Skyrim.esp'
         condition: 'not file("TCIY_Wintersun_Patch.esp")'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Book Covers SE'
-          - '[kryptopyr''s Patch Hub - Book Covers Skyrim TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Book Covers Skyrim.esp") and not active("TCIY( |_)BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Cutting Room Floor.esp") and not active("TCIY_CRF_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wintersun - Faiths of Skyrim'
-          - '[kryptopyr''s Patch Hub - Wintersun TCIY](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("TCIY_Wintersun_Patch.esp")'
     tag: [ Names ]
     clean:
       # version: 2.0
@@ -8861,24 +8801,18 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
       - *includesMBBF
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_Ordinator_AOS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Ordinator_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Smithing Perks Overhaul'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518) or [ Smithing Perks Overhaul and Ordinator Mashup ](https://www.nexusmods.com/skyrimspecialedition/mods/20605/)'
         condition: 'active("Smithing Perks Overhaul SE.esp") and not active("SPO_Ordinator_Patch.esp") and not active("SPO_Ordinated.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Ordinator_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Ordinator_WACCF_Patch.esp")'
+      - <<: *patch3rdPartyQUASIPC
+        subs: [ 'Audio Overhaul for Skyrim' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_Ordinator_AOS Patch.esp")'
     tag:
       - Graphics
       - Names
@@ -8953,6 +8887,12 @@ plugins:
       # version: 1.0 New Perk Tree
       - crc: 0xC0A33704
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'SPERG-SSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
 
   - name: 'Vampiric Thirst Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13549' ]
@@ -9112,14 +9052,11 @@ plugins:
         condition: 'active("NotSoFast-MainQuest.esp") and not active("BCS_NotsoFast_Patch.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'The Choice is Yours'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY BCS Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
           - 'Wintersun - Faiths of Skyrim'
           - '[ Wintersun - Zim''s Immersive Artifacts and Book Covers Skyrim Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
+      - <<: *patch3rdParty_KPH_TCIY
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
@@ -9230,6 +9167,12 @@ plugins:
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
 
+  - name: 'CL Chillrend.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2916/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF CL Chillrend Patch.esp")'
+
   - name: 'DawnguardArsenal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25094/' ]
     msg: [ *patch3rdPartySRPC ]
@@ -9329,6 +9272,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Weapons_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Weapons_WACCF_Patch.esp")'
     tag:
       - Delev
       - Graphics
@@ -9350,27 +9295,24 @@ plugins:
         subs:
           - 'Undeath Remastered'
           - '[Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/)'
-        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp")'
+        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Armors'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
-        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("imp_helm_Immersive_Armors.esp")'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("imp_helm_Immersive_Armors.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Improved Dragon Priest Masks SE'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
-        condition: 'active("Improved Dragon Priest Masks.esp") and not active("imp_helm_IDPM.esp")'
+        condition: 'active("Improved Dragon Priest Masks.esp") and not active("imp_helm_IDPM.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405)'
-        condition: '(checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E)) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes'
-          - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
-        condition: '(checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E)) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and (checksum("imp_helm_legend.esp", 8491D752) or checksum("imp_helm_legend.esp", D7423A4E))'
     tag: [ Graphics ]
     dirty:
       # version: 1.58
@@ -9410,9 +9352,7 @@ plugins:
   - name: '1nivWICCloaks.esp'
     msg:
       - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")'
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
   - name: '1nivWICSkyCloaksPatch.esp'
     msg:
       - <<: *alreadyInX
@@ -9450,6 +9390,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
 
   - name: 'LADX_SSE.esp'
     url:
@@ -9554,6 +9496,12 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 26
 
+  - name: 'Potions.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5077/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("AwesomePotions_CACO_Patch.esp")'
+
   - name: 'PrvtI_HeavyArmory.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
@@ -9561,6 +9509,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
       - <<: *sortMasters
         condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
     tag:
@@ -9631,10 +9581,10 @@ plugins:
   - name: 'SL01AmuletsSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/487/' ]
     msg:
-      - <<: *sortMasters
-        condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SL01AmuletsSkyrim_CCOR_Patch.esp")'
+      - <<: *sortMasters
+        condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
     tag: [ Delev ]
     clean:
       # version: 4.061
@@ -9796,6 +9746,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
     clean:
       # version: 1.1
       - crc: 0x31DB2011
@@ -10133,6 +10085,8 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?Falskaar(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?FAL(_VIG)?(_WYR)?.*\.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Falskaar_Patch.esp")'
   - name: 'Falskaar - Bug Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19454/'
@@ -10164,6 +10118,8 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH GrayFox(_Bruma)?(_Shire)?(_BeyondReach)?(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH GFC(_BRU)?(_SHI)?(_BRE)?(_FAL)?(_VIG)?(_WYR)?.*\.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_GrayCowl_Patch.esp")'
 
   - name: 'Maslea.esm'
     url:
@@ -10229,6 +10185,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4341'
         name: 'Moonpath to Elsweyr SSE'
     msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Moonpath_Patch.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[Unofficial Moonpath to Elsweyr Patch](https://www.nexusmods.com/skyrimspecialedition/mods/15882/)' ]
         condition: 'active("moonpath.esp") and checksum("moonpath.esp", 18577F3E) and not active("JRMoonpathtoElsweyrPatch.esp")'
@@ -10363,6 +10321,8 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?(Vigilant_)?Wyrm.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?(FAL_)?(VIG_)?WYR.*\.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wyrmstooth_Patch.esp")'
     clean:
       # Version: 1.17B
       - crc: 0x97F8C8B4
@@ -10575,6 +10535,8 @@ plugins:
           - 'RS Children Overhaul'
           - '[ RS Children Overhaul Cutting Room Floor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/8753)'
         condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp") and not file("RSC CRF Patch.esp")'
+      - <<: *patch3rdParty_KPH_TCIY
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_S3DTrees_CRF Patch.esp")'
@@ -13479,6 +13441,9 @@ plugins:
         subs: [ 'ElysiumEstate-HF' ]
         condition: 'many("ElysiumEstate-HF(NoKids)?\.esp")'
   - name: 'ElysiumEstate.esp'
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("ElysiumEstate_CACO_Patch.esp")'
     clean:
       # version: 5.0.1
       - crc: 0xCDCBD5E8
@@ -14300,6 +14265,12 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 3
 
+  - name: 'SkyfallEstate.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2185' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("SkyfallEstate_CACO_Patch.esp")'
+
   - name: 'Snow Gate Farm.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24270' ]
     dirty:
@@ -14920,7 +14891,7 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 32
 
-  ### Patches - kryptopyr's Patch Hub ######
+  ### kryptopyr's Patch Hub ###
   - name: 'AwesomePotions_CACO_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     after:
@@ -14947,6 +14918,23 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
         condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+
+  - name: 'Cloaks_CCOR_Patch.esp'
+    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
+  - name: '1nivWICCloaks(_COS)?_CCOR_Patch\.esp'
+    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'CCOR & Winter Is Coming patch']
+        condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
+
+  - name: 'SPO_Ordinator_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    req:
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'Smithing Perks Overhaul SE.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+
   - name: 'TCIY BCS Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     tag:
@@ -14956,29 +14944,12 @@ plugins:
       # version: 1.0
       - crc: 0xA545660C
         util: 'SSEEdit v4.0.2f'
-  - name: 'SPO_Ordinator_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    req:
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'Smithing Perks Overhaul SE.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-  - name: 'WACCF_Survival Mode_Patch.esp'
-    inc:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
-        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+
   - name: 'Immersive Weapons_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
         subs: [ 'Immersive Weapons_CCOR_Patch.esp']
         condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
-  - name: '1nivWICCloaks_CCOR_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp']
-        condition: 'active("1nivWICCloaks.esp") and active("Cloaks.esp") and active("1nivWICCloaks_CCOR_Patch.esp") and active("1nivWICCloaks_COS_CCOR_Patch.esp")'
   - name: 'KatanaCrafting_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -14994,6 +14965,13 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Unique Uniques_CCOR_Patch.esp']
         condition: 'active("Unique Uniques_CCOR_Patch.esp")'
+  - name: 'WACCF_Survival Mode_Patch.esp'
+    inc:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
+        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
 
   ### Patches - Lexy''s LOTD Special Edition Patches ###
   - name: 'Improved closefaced helmets for Undeath SSE.esp'
