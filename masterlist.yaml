@@ -14921,14 +14921,12 @@ plugins:
 
   - name: 'Cloaks_CCOR_Patch.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
-  - name: '1nivWICCloaks_CCOR_Patch.esp'
+  - name: '1nivWICCloaks(_COS)?_CCOR_Patch\.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
     msg:
-      - <<: *alreadyInX
-        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp']
-        condition: 'active("1nivWICCloaks.esp") and active("Cloaks.esp") and active("1nivWICCloaks_CCOR_Patch.esp") and active("1nivWICCloaks_COS_CCOR_Patch.esp")'
-  - name: '1nivWICCloaks_COS_CCOR_Patch.esp'
-    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
+      - <<: *useOnlyOneX
+        subs: [ 'CCOR & Winter Is Coming patch']
+        condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
 
   - name: 'SPO_Ordinator_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
