@@ -14891,7 +14891,7 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 32
 
-  ### Patches - kryptopyr's Patch Hub ######
+  ### kryptopyr's Patch Hub ###
   - name: 'AwesomePotions_CACO_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     after:
@@ -14918,33 +14918,7 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
         condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
-  - name: 'TCIY BCS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    tag:
-      - Graphics
-      - Names
-    clean:
-      # version: 1.0
-      - crc: 0xA545660C
-        util: 'SSEEdit v4.0.2f'
-  - name: 'SPO_Ordinator_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
-    req:
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'Smithing Perks Overhaul SE.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-  - name: 'WACCF_Survival Mode_Patch.esp'
-    inc:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
-        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
-  - name: 'Immersive Weapons_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Immersive Weapons_CCOR_Patch.esp']
-        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
+
   - name: 'Cloaks_CCOR_Patch.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
   - name: '1nivWICCloaks_CCOR_Patch.esp'
@@ -14955,6 +14929,29 @@ plugins:
         condition: 'active("1nivWICCloaks.esp") and active("Cloaks.esp") and active("1nivWICCloaks_CCOR_Patch.esp") and active("1nivWICCloaks_COS_CCOR_Patch.esp")'
   - name: '1nivWICCloaks_COS_CCOR_Patch.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
+
+  - name: 'SPO_Ordinator_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    req:
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'Smithing Perks Overhaul SE.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+
+  - name: 'TCIY BCS Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
+    tag:
+      - Graphics
+      - Names
+    clean:
+      # version: 1.0
+      - crc: 0xA545660C
+        util: 'SSEEdit v4.0.2f'
+
+  - name: 'Immersive Weapons_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Immersive Weapons_CCOR_Patch.esp']
+        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
   - name: 'KatanaCrafting_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -14970,6 +14967,13 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Unique Uniques_CCOR_Patch.esp']
         condition: 'active("Unique Uniques_CCOR_Patch.esp")'
+  - name: 'WACCF_Survival Mode_Patch.esp'
+    inc:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
+        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
 
   ### Patches - Lexy''s LOTD Special Edition Patches ###
   - name: 'Improved closefaced helmets for Undeath SSE.esp'
