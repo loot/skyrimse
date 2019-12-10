@@ -1620,36 +1620,6 @@ plugins:
   # Survival Mode
   - name: 'ccqdrsse001-survivalmode.esl'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cloaks of Skyrim'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("Cloaks.esp") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Winter Is Coming'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("1nivWICCloaks.esp") and not active("Survival Mode Patches - Winter Is Coming.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Campfire'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("Campfire.esm") and not active("Survival Mode Patches - Campfire.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Beasts of Tamriel'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("Beasts of Tamriel.esp") and not active("Survival Mode Patches - Beasts Of Tamriel.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Be a Milk Drinker'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("MilkSSE.esp.esp") and not active("Survival Mode Patches - Be A Milk Drinker.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Google''s ESO Provisioning'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("GPProvisioning.esp") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
@@ -4907,6 +4877,12 @@ plugins:
 ###### Encounters - Enemies ######
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'CC Survival Mode'
+          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Beasts Of Tamriel.esp")'
     tag:
       - C.Encounter
       - C.Location
@@ -6063,6 +6039,11 @@ plugins:
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'CC Survival Mode'
+          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Campfire.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Campfire_Patch.esp")'
 
@@ -9124,6 +9105,11 @@ plugins:
   - name: 'Cloaks.esp'
     tag: [ Invent ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'CC Survival Mode'
+          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
@@ -9209,6 +9195,15 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_GirlHeavyArmor_USSEP Patch.esp") and not active("Qw_GirlHeavyArmorStandalone_USSEP Patch.esp")'
+
+  - name: 'GPProvisioning.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9533' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Google''s ESO Provisioning'
+          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+        condition: 'active("GPProvisioning.esp") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
 
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
@@ -9351,6 +9346,11 @@ plugins:
     group: *underridesGroup
   - name: '1nivWICCloaks.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'CC Survival Mode'
+          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Winter Is Coming.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
   - name: '1nivWICSkyCloaksPatch.esp'
@@ -9461,6 +9461,15 @@ plugins:
       # version: 1.4c
       - crc: 0xA5763C46
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'MilkSSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3230' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'CC Survival Mode'
+          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Be A Milk Drinker.esp")'
 
   - name: 'MLPSoulGems.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25709' ]
