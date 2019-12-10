@@ -8888,6 +8888,12 @@ plugins:
       - crc: 0xC0A33704
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'SPERG-SSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
+
   - name: 'Vampiric Thirst Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13549' ]
     after:
@@ -9491,6 +9497,12 @@ plugins:
         crc: 0x97224F16
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 26
+
+  - name: 'Potions.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5077/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("AwesomePotions_CACO_Patch.esp")'
 
   - name: 'PrvtI_HeavyArmory.esp'
     url:
@@ -10311,6 +10323,8 @@ plugins:
           - 'Convenient Horses'
           - '[Bruma and Other Patches for Convenient Horses](https://www.nexusmods.com/skyrimspecialedition/mods/13812/)'
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?(Vigilant_)?Wyrm.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?(FAL_)?(VIG_)?WYR.*\.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wyrmstooth_Patch.esp")'
     clean:
       # Version: 1.17B
       - crc: 0x97F8C8B4
