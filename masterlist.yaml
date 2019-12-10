@@ -259,6 +259,11 @@ common:
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
       - lang: sv
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
+  - &patch3rdParty_CCSMPC
+    <<: *patch3rdParty
+    subs:
+      - 'CC Survival Mode'
+      - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
   - &patch3rdParty_KPH_CACO
     <<: *patch3rdParty
     subs:
@@ -4878,10 +4883,7 @@ plugins:
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'CC Survival Mode'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+      - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Beasts Of Tamriel.esp")'
     tag:
       - C.Encounter
@@ -6039,10 +6041,7 @@ plugins:
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'CC Survival Mode'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+      - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Campfire.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Campfire_Patch.esp")'
@@ -9105,10 +9104,7 @@ plugins:
   - name: 'Cloaks.esp'
     tag: [ Invent ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'CC Survival Mode'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+      - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
@@ -9199,11 +9195,8 @@ plugins:
   - name: 'GPProvisioning.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9533' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Google''s ESO Provisioning'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
-        condition: 'active("GPProvisioning.esp") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
+      - <<: *patch3rdParty_CCSMPC
+        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
 
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
@@ -9346,10 +9339,7 @@ plugins:
     group: *underridesGroup
   - name: '1nivWICCloaks.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'CC Survival Mode'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+      - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Winter Is Coming.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
@@ -9465,10 +9455,7 @@ plugins:
   - name: 'MilkSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3230' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'CC Survival Mode'
-          - '[ Conner''s Survival Mode patches ](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+      - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Be A Milk Drinker.esp")'
 
   - name: 'MLPSoulGems.esp'
