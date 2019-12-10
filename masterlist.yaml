@@ -9352,9 +9352,7 @@ plugins:
   - name: '1nivWICCloaks.esp'
     msg:
       - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")'
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
   - name: '1nivWICSkyCloaksPatch.esp'
     msg:
       - <<: *alreadyInX
