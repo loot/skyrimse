@@ -10960,24 +10960,25 @@ plugins:
       - crc: 0x88C9CF62
         util: 'SSEEdit v4.0.2f'
 
-  - name: 'Distinct Interiors( - Guilds| - Inns| - Miscellaneous| - Player Homes| - Shops)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
   - name: 'Distinct Interiors.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/23831'
     after:
       - 'EnhancedLightsandFX.esp'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
     inc:
       # CRC: Modular Core (v1.81, 0xB337055B)
       - name: 'Enhanced Lights and FX'
-        condition: 'not checksum("Distinct Interiors.esp",B337055B) and active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
+        condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921) and active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
       - name: 'InnCredible.esp'
-        condition: 'not checksum("Distinct Interiors.esp",B337055B)'
+        condition: 'not checksum("Distinct Interiors.esp", B337055B)'
       - name: 'OpulentThievesGuild.esp'
-        condition: 'not checksum("Distinct Interiors.esp",B337055B)'
+        condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437)'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
     req:
       - name: 'ELFX - NoPlayerHomes.esp'
-        condition: 'active("EnhancedLightsandFX.esp")'
+        condition: 'active("EnhancedLightsandFX.esp") and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921)'
     dirty:
       # version 1.82
       - <<: *reqManualFix
@@ -10990,6 +10991,15 @@ plugins:
         crc: 0xC6A69F3C
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
+    clean:
+      # version: 1.1 Distinct Interiors Fixes
+      - crc: 0x81B0E921
+        util: 'SSEEdit v4.0.3'
+      # version: 1.1 Distinct Interiors Fixes without Thieves Guild
+      - crc: 0xA0B93437
+        util: 'SSEEdit v4.0.3'
+  - name: 'Distinct Interiors( - Guilds| - Inns| - Miscellaneous| - Player Homes| - Shops)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
   - name: 'Distinct Interiors - Guilds.esp'
     inc:
       - 'OpulentThievesGuild.esp'
