@@ -6197,6 +6197,9 @@ plugins:
       - 'SoS - The Dungeons.esp'
       - 'SoS - The Wilds.esp'
       - 'SoundsofSkyrimComplete.esp'
+      # Group after to prevent sorting errors
+      - name: 'nwsFollowerFramework.esp'
+        condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
     msg:
       - <<: *obsolete
         condition: 'version("Unique Region Names.esp", "5.0.0", <)'
@@ -7648,8 +7651,13 @@ plugins:
 
   - name: 'nwsFollowerFramework.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/' ]
+    group: *lowPriorityGroup
     after:
       - 'Qw_BeyondReach_USSEP Patch.esp'
+      # Group afters to prevent sorting errors
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - name: 'Unique Region Names.esp'
+        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
     req: [ *SKSE ]
     inc:
       - 'AmazingFollowerTweaks.esp'
