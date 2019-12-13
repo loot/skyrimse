@@ -3173,11 +3173,8 @@ plugins:
         type: say
         condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
       - <<: *patchIncluded
-        subs: [ 'iNeed - Food, Water and Sleep' ]
-        condition: 'active("iNeed.esp") and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Realistic Needs and Diseases' ]
-        condition: 'active("RealisticNeedsandDiseases.esp") and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
+        subs: [ 'Needs Mod' ]
+        condition: '(active("iNeed.esp") or active("RealisticNeedsandDiseases.esp")) and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Paper World Map' ]
         condition: 'active("Paper World Map.esp") and not active("RealisticWaterTwo - Paper Wold Map Patch.esp")'
