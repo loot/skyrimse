@@ -4114,7 +4114,7 @@ plugins:
       - 'Bijin_AIO-SV 2018.esp'
     msg:
       - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("Qw_BijinAIO_AIOverhaul Patch.esp")'
@@ -4152,7 +4152,7 @@ plugins:
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
       - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
   - name: 'Bijin Wives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
     after:
@@ -4193,7 +4193,7 @@ plugins:
       - 'Bijin AIO.esp'
     msg:
       - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and not file("ScopedBows_Bijin Patch.esp")'
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
   - name: 'Bijin_AIO 2018.esp'
     clean:
       # version: 4.1
@@ -6936,9 +6936,7 @@ plugins:
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("MLU - WICO.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and not active("ZIA_Complete Pack_V4.esp") and not active("ScopedBows_MLU Patch.esp")'
-      - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and active("ZIA_Complete Pack_V4.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_MLU Patch.esp") and not active("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
       - Delev
       - Graphics
@@ -9817,9 +9815,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
     msg:
       - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and not active("MLU.esp") and not active("ScopedBows_MLU Patch.esp")'
-      - <<: *patch3rdPartySBCK
-        condition: 'active("ScopedBows.esp") and active("MLU.esp") and not file("ScopedBows_MLU_ZIA Patch.esp")'
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_ZIA Patch") and not active("ScopedBows_MLU_ZIA Patch.esp")'
   - name: 'ZIA_(Ancient|Complete|Daedric) Pack\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
   - name: 'ZIA_Ancient Pack.esp'
