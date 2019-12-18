@@ -9241,6 +9241,7 @@ plugins:
 
   - name: 'Immersive Jewelry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5336/' ]
+    after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
     inc:
       - 'Lootification.esm'
     msg:
@@ -9630,7 +9631,8 @@ plugins:
     inc:
       - 'Animated Weapon Enchants.esp'
       - 'Classic Elder Scrolls Attributes.esp'
-      - 'Immersive Jewelry.esp'
+      - name: 'Immersive Jewelry.esp'
+        condition: 'not file("ImmersiveJewelryXSummermyst.esp") and not file("ImmersiveJewelryXSummermyst - Unrestricted.esp")'
       - 'SkyRe_Main.esp'
       - 'Wintermyst - Enchantments of Skyrim.esp'
       - 'Worlds Dawn.esp'
@@ -9651,6 +9653,11 @@ plugins:
           - 'EnchantingAwakened.esp'
           - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Jewelry'
+          - '[Summermyst X Immersive Jewelry](https://www.nexusmods.com/skyrimspecialedition/mods/30463)'
+        condition: 'active("Immersive Jewelry.esp") and not active("ImmersiveJewelryXSummermyst.esp") and not active("ImmersiveJewelryXSummermyst - Unrestricted.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Weapons Armor Clothing and Clutter Fixes or Weapon AF'
