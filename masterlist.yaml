@@ -41,6 +41,10 @@ common:
         text: 'Ta bort. Redan inkluderat i %1%'
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
+  - &alreadyInLotD
+    <<: *alreadyInX
+    subs: [ '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)' ]
+    condition: 'active("LegacyoftheDragonborn.esm")'
 
   - &alreadyInOrFixedByX
     type: error
@@ -9029,9 +9033,7 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
     group: *underridesGroup
     msg:
-      - <<: *alreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("LegacyoftheDragonborn.esm")'
+      - *alreadyInLotD
       - <<: *patch3rdParty
         subs:
           - 'Not So Fast - Main Quest'
@@ -9074,10 +9076,7 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
     group: *underridesGroup
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("LegacyoftheDragonborn.esm")'
+    msg: [ *alreadyInLotD ]
     tag: [ Delev ]
     clean:
       # version: 2.2
@@ -9570,10 +9569,7 @@ plugins:
 
   - name: 'Seashells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4492' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("LegacyoftheDragonborn.esm")'
+    msg: [ *alreadyInLotD ]
 
   - name: 'ScopedBows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/912/' ]
@@ -9677,10 +9673,7 @@ plugins:
 
   - name: 'ThaneWeaponsReborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8387/' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("LegacyoftheDragonborn.esm")'
+    msg: [ *alreadyInLotD ]
 
   - name: 'TheWulfPanda - City Teleport Spells( Less Magicka Increase Cast Time)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/' ]
@@ -9768,9 +9761,7 @@ plugins:
   - name: 'Unique Uniques.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3334/' ]
     msg:
-      - <<: *alreadyInX
-        subs: [ 'LegacyoftheDragonborn.esm' ]
-        condition: 'active("LegacyoftheDragonborn.esm")'
+      - *alreadyInLotD
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
