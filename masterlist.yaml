@@ -9568,6 +9568,13 @@ plugins:
         condition: 'many("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
         subs: [ 'RUSTIC SOULGEMS' ]
 
+  - name: 'Seashells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4492' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("LegacyoftheDragonborn.esm")'
+
   - name: 'ScopedBows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/912/' ]
     tag:
@@ -9668,6 +9675,13 @@ plugins:
       - crc: 0x1F17FC44
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'ThaneWeaponsReborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8387/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("LegacyoftheDragonborn.esm")'
+
   - name: 'TheWulfPanda - City Teleport Spells( Less Magicka Increase Cast Time)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/' ]
     msg:
@@ -9754,6 +9768,9 @@ plugins:
   - name: 'Unique Uniques.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3334/' ]
     msg:
+      - <<: *alreadyInX
+        subs: [ 'LegacyoftheDragonborn.esm' ]
+        condition: 'active("LegacyoftheDragonborn.esm")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
