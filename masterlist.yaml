@@ -2874,6 +2874,8 @@ plugins:
           - 'Cathedral Weathers and Seasons'
           - '[Cathedral Weathers - Audio Overhaul Patch for Skyrim SE patch](https://www.nexusmods.com/skyrimspecialedition/mods/25420/)'
         condition: 'active("Cathedral Weathers.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Deadly Spell Impacts' ]
         condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
@@ -8966,7 +8968,10 @@ plugins:
 
   - name: 'ArtifactsOfBoethiah.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15264/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ArtifactsOfBoethiah_Patch.esp")'
+      - *patch3rdPartySRPC
     dirty:
       # version: 2.1
       - <<: *quickClean
@@ -9595,6 +9600,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SL01AmuletsSkyrim_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AmuletsOfSkyrim_Patch.esp")'
       - <<: *sortMasters
         condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
     tag: [ Delev ]
