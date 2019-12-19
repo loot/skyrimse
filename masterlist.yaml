@@ -10724,13 +10724,13 @@ plugins:
     inc:
       - 'AuroraVillage.esp'
     msg:
-      # CRC after QAC. (0xDF7EEFF1)
+      # CRC after QAC. (0x482BBCA6)
       - <<: *sortMasters
-        condition: 'checksum("Undeath.esp", DF7EEFF1)'
-      # CRC after QAC & Sort Masters. (0x9B2BAA6A)
+        condition: 'checksum("Undeath.esp", 482BBCA6)'
+      # CRC after QAC & Sort Masters. (0x8D7A8440)
       - <<: *wildEdits
         subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
-        condition: 'checksum("Undeath.esp", 9B2BAA6A)'
+        condition: 'checksum("Undeath.esp", 8D7A8440)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Undeath_Patch.esp")'
       - <<: *semiCompatible
@@ -10745,7 +10745,7 @@ plugins:
       # version: 1.7
       - <<: *quickClean
         crc: 0xEB75A960
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
 
   - name: 'Vigilant.es(m|p)'
