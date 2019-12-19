@@ -9501,6 +9501,22 @@ plugins:
       - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
 
+  - name: 'Guards_Armor_Replacer.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22671/' ]
+    dirty:
+      # version: 5.5a Minimal
+      - <<: *quickClean
+        crc: 0x1BAE0BEC
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+    clean:
+      # version: 5.5a
+      - crc: 0x876D9DF2
+        util: 'SSEEdit v4.0.3'
+      # version: 5.5a Minimal, after QAC
+      - crc: 0x8CE68B5F
+        util: 'SSEEdit v4.0.3'
+
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
     group: *veryEarlyGroup
