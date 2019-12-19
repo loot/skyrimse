@@ -6716,6 +6716,11 @@ plugins:
     tag:
       - Invent
       - Names
+      # Remove tags for Plants only version.
+      - name: Delev
+        condition: 'not checksum("HarvestOverhaul_Redone.esp", D9E45263) and not checksum("HarvestOverhaul_Redone.esp", 971A2167)'
+      - name: Relev
+        condition: 'not checksum("HarvestOverhaul_Redone.esp", D9E45263) and not checksum("HarvestOverhaul_Redone.esp", 971A2167)'
     clean:
       # version: 1.0 Plants Only
       - crc: 0xD9E45263
