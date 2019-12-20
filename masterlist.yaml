@@ -8947,16 +8947,14 @@ plugins:
         itm: 3
 
   - name: 'WheelsOfLull.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748' ]
-    clean:
-       # version: 1.3a - unofficial patch
-      - crc: 0xC191A3F9
-        util: 'SSEEdit v4.0.0'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/748'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/19734'
     msg:
-      # first crc is before, second is after cleaning
+      # CRC Unofficial Patch (1.5.2 0x3D50ACB6, 1.5.3 0x71D444F7)
       - <<: *patchUpdateAvailable
         subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
-        condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", 6771AF29)'
+        condition: 'not checksum("WheelsOfLull.esp", 3D50ACB6) and not checksum("WheelsOfLull.esp", 71D444F7)'
       # These three are mutually exclusive, which is handled further down
       - <<: *patch3rdParty
         subs:
@@ -8975,6 +8973,20 @@ plugins:
         condition: 'active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp")'  
+    dirty:
+      # version: 3.1
+      - <<: *quickClean
+        crc: 0xFF400946
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 124
+    clean:
+      # version: 1.5.2 Unofficial Patch
+      - crc: 0x3D50ACB6
+        util: 'SSEEdit v4.0.3'
+      # version: 1.5.3 Unofficial Patch
+      - crc: 0x71D444F7
+        util: 'SSEEdit v4.0.3'
+
   - name: 'WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19734' ]
     msg:
