@@ -6935,7 +6935,8 @@ plugins:
 
   - name: 'DynamicDungeonLoot.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10308/' ]
-    - <<: *patch3rdParty_LotD
+    msg:
+      - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DDL.esp")'
     clean:
       # version: 1.0.1
