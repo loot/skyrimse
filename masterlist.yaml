@@ -9589,7 +9589,8 @@ plugins:
 
   - name: 'DaedricCloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9530/' ]
-    - <<: *patch3rdParty_LotD
+    msg:
+      - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DaedricCloaks_Patch.esp")'
     clean:
       # version: 1.5 Crafting Only
