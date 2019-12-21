@@ -4330,6 +4330,9 @@ plugins:
 
   - name: 'Men of Winter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10902/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MenofWinter_Patch.esp")'
     clean:
       # version: 5.1.3
       - crc: 0x9CC73339
@@ -4909,6 +4912,9 @@ plugins:
 ###### Encounters - Enemies ######
   - name: 'AAE Ultimate Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6843/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AAE_Patch.esp")'
     clean:
       # version: 3.7
       - crc: 0xE41E4EFC
@@ -5205,6 +5211,9 @@ plugins:
 
   - name: 'SOTFull.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3093/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SoT_Patch.esp")'
     clean:
       # version: 50.3
       - crc: 0xF70CD42C
@@ -6129,6 +6138,9 @@ plugins:
 
   - name: 'Immersive Needs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29317/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveNeeds_Patch.esp")'
     clean:
       # Version: 6.0
       - crc: 0x139A2572
@@ -6149,6 +6161,9 @@ plugins:
 
   - name: 'Keep It Clean.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17846/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_KeepitClean_Patch.esp")'
     dirty:
       # version: 3.15
       - <<: *quickClean
@@ -6163,6 +6178,9 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
     group: *highPriorityGroup
     inc:
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+        display: 'Legacy of the Dragonborn v5+'  
       - name: 'JKs Skyrim.esp'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
         display: 'JKs Skyrim'
@@ -6314,6 +6332,9 @@ plugins:
 
   - name: 'YASH2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2430/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_YASH_Patch.esp")'
     clean:
       # Version: 2.15
       - crc: 0xFAA02DAA
@@ -6785,6 +6806,9 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/3487'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/23799'
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RND_Patch.esp")'
     dirty:
       # Version: 1.0.4 AIO for USSEP
       - <<: *quickClean
@@ -6865,6 +6889,9 @@ plugins:
 ###### Gameplay - Economy & Item Balance ######
   - name: 'Artificer - Artifacts of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6674/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Artificer_Patch.esp")'
     dirty:
       # version: 2.30
       - <<: *quickClean
@@ -6906,6 +6933,9 @@ plugins:
 
   - name: 'DynamicDungeonLoot.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10308/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DDL.esp")'
     clean:
       # version: 1.0.1
       - crc: 0xC85BA670
@@ -7003,6 +7033,9 @@ plugins:
   - name: 'ImprovedDaedricArtifacts(LightEbonyMail)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2055/' ]
   - name: 'ImprovedDaedricArtifacts.esp'
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImprovedDaedricArtifacts_Patch.esp")'
     dirty:
       # version: 1.3
       - <<: *quickClean
@@ -7026,6 +7059,9 @@ plugins:
 
   - name: 'Legendary Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18981/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_LegendaryArtifacts_Patch.esp")'
     clean:
       # version: 1.7
       - crc: 0x5B50A9BB
@@ -7270,6 +7306,9 @@ plugins:
 
   - name: 'Skytoxin.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13153/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SkyToxin_Patch.esp")'
     clean:
       # version: 1.0
       - crc: 0xFCAE010E
@@ -7292,6 +7331,9 @@ plugins:
 
   - name: 'TrueArtifactsofSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8832/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TAS_Patch.esp")'
     dirty:
       # version: 1.61
       - <<: *quickClean
@@ -8262,6 +8304,9 @@ plugins:
 
   - name: 'SkyTEST-HarderCreatures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/789/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_STHC.esp")'
     clean:
       # version: 1.08.01
       - crc: 0x87290B79
@@ -8333,6 +8378,9 @@ plugins:
 ###### Gameplay - Quests ######
   - name: 'AK- Namira for Good Guys.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/336/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Namira.esp")'
     clean:
       # version: 1.1
       - crc: 0x5F9D4BF0
@@ -8613,8 +8661,23 @@ plugins:
       - crc: 0x53109251
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Dawnguard&VolkiharArtifactsQuests.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12098' ] 
+    inc:
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+        display: 'Legacy of the Dragonborn v5+'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA887288B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+  
   - name: 'Dwarfsphere.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15996/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AHO_Patch.esp")'
     dirty:
       # version: 2.0
       - <<: *quickClean
@@ -8695,6 +8758,9 @@ plugins:
 
   - name: 'goodbrother.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/519' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DBGG_Patch.esp")'
     dirty:
       # version: 3.0
       - <<: *quickClean
@@ -9359,6 +9425,9 @@ plugins:
 
   - name: 'BGCollectables.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15092' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_BGCollectables_Patch.esp")'
     clean:
       # version: 1
       - crc: 0x6CE0A40A
@@ -9366,6 +9435,9 @@ plugins:
 
   - name: 'BooksBooksBooks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10251' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_BBB_Patch.esp")'
     clean:
       # version: 1.4
       - crc: 0x01210102
@@ -9517,6 +9589,9 @@ plugins:
 
   - name: 'DaedricCloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9530/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DaedricCloaks_Patch.esp")'
     clean:
       # version: 1.5 Crafting Only
       - crc: 0x73423EB3
@@ -9535,6 +9610,9 @@ plugins:
 
   - name: 'DIS_Authentic_Legion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29559/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AuthenticLegion_Patch.esp")'
     dirty:
       # version: 1.1 Base
       - <<: *quickClean
@@ -9573,6 +9651,9 @@ plugins:
 
   - name: 'Fossilsyum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14107/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Fossils_Patch.esp")'
     clean:
       # version: 2.1
       - crc: 0xBAAFEFF6
@@ -9593,6 +9674,9 @@ plugins:
 
   - name: 'Guards_Armor_Replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22671/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_GuardsArmorReplacer_Patch.esp")'
     dirty:
       # version: 5.5a Minimal
       - <<: *quickClean
@@ -9638,6 +9722,9 @@ plugins:
 
   - name: 'icebladeofthemonarch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13972/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IceBladeMonarch_Patch.esp")'
     clean:
       # version: 2.6
       - crc: 0x787415CE
@@ -9898,6 +9985,9 @@ plugins:
 
   - name: 'NarrativeLoot Complete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12812/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_NarrativeLoot_Patch.esp")'
     dirty:
       # version: 1.01
       - <<: *quickClean
@@ -9985,6 +10075,9 @@ plugins:
 
   - name: 'RelicsofHyruleDragonborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12244/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RelicsofHyrule_Patch.esp")'
     clean:
       # version: 6.5.21c
       - crc: 0x9FAD4A42
@@ -10052,6 +10145,9 @@ plugins:
 
   - name: 'SkyrimsUniqueTreasures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5261/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SUT_Patch.esp")'
     clean:
       # version: 4.4
       - crc: 0x218B87C0
@@ -10212,6 +10308,9 @@ plugins:
       - crc: 0xE987720F
         util: 'SSEEdit v4.0.3'
   - name: 'treasure_hunt.esp'
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_NewTreasureHunt_Patch.esp")'
     clean:
       # version: 1.72
       - crc: 0x5647775E
@@ -10305,6 +10404,9 @@ plugins:
 
   - name: 'WZOblivionArtifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10644/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_OblivionArtifacts_Patch.esp")'
     clean:
       # version: 2C
       - crc: 0xADC2AAFD
@@ -10312,6 +10414,9 @@ plugins:
 
   - name: 'WZTamrielic Culture.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11418/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TamrielicCulture_Patch.esp")'
     dirty:
       # version: 2
       - <<: *quickClean
@@ -10693,6 +10798,10 @@ plugins:
         itm: 3
   - name: 'MoonAndStar_ImmersionPatch.esp'
     group: *underridesGroup
+    inc:
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+        display: 'Legacy of the Dragonborn v5+'
     dirty:
       # version: 2.0
       - <<: *quickClean
@@ -11296,6 +11405,16 @@ plugins:
       - crc: 0x6D3D6301
         util: 'SSEEdit v4.0.2'
 
+  - name: 'Solitude Skyway SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8250' ]
+    clean:
+      - crc: 0x4C4ACF55
+        util: 'SSEEdit v4.0.3'
+    inc:
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+        display: 'Legacy of the Dragonborn v5+'      
+  
   - name: 'Stonecrest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9303/' ]
     dirty:
@@ -11445,6 +11564,9 @@ plugins:
 ###### Location - Overhauls ######
   - name: 'Blues Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DawnofSkyrimDC_Patch.esp")'
     clean:
       # version: 1.4a
       - crc: 0x37F1F20D
@@ -11612,6 +11734,9 @@ plugins:
 
   - name: 'Enhanced Solitude SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27816/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_EnhancedSolitude_Patch.esp")'
     dirty:
       # version: 1.3
       - <<: *quickClean
@@ -12931,6 +13056,9 @@ plugins:
   - name: '(Serenity|SailorMoonClub|LunarWeapons)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30019/' ]
   - name: 'Serenity.esp'
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Serenity_Patch.esp")'
     clean:
       # version: 1.1.1
       - crc: 0x1E068895
@@ -13804,6 +13932,9 @@ plugins:
 
   - name: 'DA_Skyship.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24587/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DevAvezaAirship_Patch.esp")'
     dirty:
       # version: 1.9.71
       - <<: *quickClean
@@ -15205,6 +15336,8 @@ plugins:
           - '[Unlimited Bookshelves](https://www.nexusmods.com/skyrimspecialedition/mods/2885/)'
           - 'Unlimited Bookshelves reverts changes made in Legacy of the Dragonborn. A patch is recommended to ensure correct functionality.'
         condition: 'active("UnlimitedBookshelves.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494' ]  
     # Old CRCs for version checks (v4 (0x31563183, 0x6736FB94, 0xCB82480D) v5 (0x055A3985, 0xD4D3523B, 0xDC39CE6D))
     clean:
       # version: 5.0.24
