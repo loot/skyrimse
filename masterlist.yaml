@@ -2669,12 +2669,9 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_RelightingSkyrim_CRF Patch.esp")'
-    dirty:
-      # version: 1.0.6
-      - <<: *quickClean
-        crc: 0x431CF3C5
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    clean:
+      - crc: 0xF6BBF04B
+        util: 'SSEEdit v4.0.3'
 
   - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
