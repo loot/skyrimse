@@ -3778,16 +3778,15 @@ plugins:
 
   - name: 'WetandCold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/644/' ]
-    clean:
-      # version: 2.2.2
-      - crc: 0xD8D0DB76
-        util: 'SSEEdit v4.0.2'
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Vivid Weathers'
           - '[WiZkiD Patches Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/24046/)'
         condition: 'active("Vivid WeathersSE.esp") and not active("Vivid Weathers - Wet and Cold patch.esp") and not active("TrueStormsSE.esp")'
+    clean:
+      - crc: 0xD8D0DB76
+        util: 'SSEEdit v4.0.3'
 
   - name: 'WondersofWeather.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13044/' ]
