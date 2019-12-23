@@ -3453,9 +3453,9 @@ plugins:
         condition: 'active("Cathedral Weathers.esp") and not active("Obsidian In Cathedral.esp")'
     req: [ *SKSE ]
     clean:
-      - crc: 0xBAC9B217
+      - crc: 0xA1AA1CD4
         util: 'SSEEdit v4.0.3'
-      - crc: 0x20925511
+      - crc: 0x3F6EFCBD
         util: 'SSEEdit v4.0.3'
 
   - name: 'surreal lighting.esp'
@@ -4458,20 +4458,14 @@ plugins:
         condition: 'version("3DNPC.esp", "4.0", <) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
     tag: [ Invent ]
     dirty:
-      # version: 3.42
       - <<: *quickClean
-        crc: 0x56EBF1FC
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 328
-      # version: 4.00 ESM
-      - <<: *quickClean
-        crc: 0xA4922651
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 7
+        crc: 0xD299AC1A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
     clean:
-      # version: 4.00
-      - crc: 0x9755586A
-        util: 'SSEEdit v4.0.2f'
+      # version: 4.3, after QAC
+      - crc: 0x168ADBC7
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Ambriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/969/' ]
@@ -4945,6 +4939,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
+    clean:
+      - crc: 0x810B659E
+        util: 'SSEEdit v4.0.3'
 
   - name: 'LessDragons(10|20|25|35|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
@@ -5194,12 +5191,10 @@ plugins:
       - 'Real Roads.esp'
     tag: [ Graphics ]
     clean:
-      # version: 1.5 Blended Roads
       - crc: 0x38FF2A83
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.5 REALly Blended Roads
+        util: 'SSEEdit v4.0.3'
       - crc: 0x8C9C032E
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Blowing in the Wind.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124' ]
@@ -5424,22 +5419,13 @@ plugins:
   - name: 'Landscape and Water Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26138/' ]
     group: *landscapeGroup
-    dirty:
-      # version: 3.20 ESM
-      - <<: *quickClean
-        crc: 0x54C0683A
-        util: '[SSEEdit v4.0.2k](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-      # version: 3.20 ESP
-      - <<: *quickClean
-        crc: 0x6213FB30
-        util: '[SSEEdit v4.0.2k](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-      # version: 3.20 ESP-FE
-      - <<: *quickClean
-        crc: 0x0E112783
-        util: '[SSEEdit v4.0.2k](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+    clean:
+      - crc: 0x2702E64A
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x6E37F10B
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x4097CB09
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
@@ -6380,9 +6366,8 @@ plugins:
     after:
       - 'Wildcat - Combat of Skyrim.esp'
     clean:
-      # Version: 3.41
       - crc: 0xC6DB1E26
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Vigor - Combat and Injuries (SE).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1876/' ]
@@ -6877,7 +6862,9 @@ plugins:
     after:
       - 'Combat Evolved.esp'
       - 'Wildcat - Combat of Skyrim.esp'
-    msg: [ *doNotClean ]
+    clean:
+      - crc: 0x473DB27A
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Legendary Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18981/' ]
@@ -7788,8 +7775,7 @@ plugins:
           - lang: pt
             text: '**Mount Support** (trans. "Cavalos de Apoio") deve ser trocado por **Riding Support Only** (trad. "Suporte a cavalo apenas") nas opções da Nether''s Follower Framework de forma a que Immersive Horses funcione corretamente com a Nether''s Follower Framework.'
     clean:
-      # version: 2.5.1
-      - crc: 0xBE4560CE
+      - crc: 0xBBD08D11
         util: 'SSEEdit v4.0.3'
 
   - name: 'SimpleFollowerManager.esp'
@@ -7817,9 +7803,8 @@ plugins:
         subs: [ 'Simple Children' ]
         condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
     clean:
-      # version: 1.1.1
-      - crc: 0xB20FC543
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0x945AC5F5
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Guard Dialogue Overhaul.esp'
     url:
@@ -8140,9 +8125,8 @@ plugins:
       - 'GoToBed.esp'
       - 'Immersive Encounters.esp'
     clean:
-      # version: 1.1b
-      - crc: 0x5686A51F
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0x15B82286
+        util: 'SSEEdit v4.0.3'
 
   - name: 'When Vampires Attack.esp'
     msg:
@@ -8616,9 +8600,8 @@ plugins:
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
     clean:
-      # version: 2.0.1
-      - crc: 0x869FDE8B
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x40613359
+        util: 'SSEEdit v4.0.3'
 
   - name: 'InnoLostAlt.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24236' ]
@@ -8797,9 +8780,8 @@ plugins:
       - <<: *includesX
         subs: [ 'Dragon Stalking Fix' ]
     clean:
-      # version: 1.3.0
-      - crc: 0x06942C61
-        util: 'SSEEdit v4.0.2k'
+      - crc: 0x0D865038
+        util: 'SSEEdit v4.0.3'
 
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
@@ -8813,9 +8795,8 @@ plugins:
           - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697)'
         condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
     clean:
-      # version: 1.0.2
-      - crc: 0x88D27F37
-        util: 'SSEEdit v4.0.2'
+      - crc: 0xD8C0F0B0
+        util: 'SSEEdit v4.0.3'
 
   - name: 'TheChoiceIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
@@ -11082,14 +11063,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/' ]
   - name: 'HammetDungeons.esp'
     clean:
-      # version: 1.92
-      - crc: 0x4A1956E7
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x721BCED1
+        util: 'SSEEdit v4.0.3'
   - name: 'HammetDungeons.esm'
     clean:
-      # version: 1.92
-      - crc: 0xC45431E1
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x64353491
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Immersive War and Violence.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15428' ]
@@ -11836,12 +11815,9 @@ plugins:
 
   - name: 'Holds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/' ]
-    dirty:
-      # version: 0.0.8
-      - <<: *quickClean
-        crc: 0xCECBF47C
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 170
+    clean:
+      - crc: 0xEF19645E
+        util: 'SSEEdit v4.0.3'
 
   - name: 'InnCredible.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/790/' ]
@@ -13149,12 +13125,9 @@ plugins:
 
   - name: 'TacticalValtheim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9101/' ]
-    dirty:
-      # version: 1.08
-      - <<: *quickClean
-        crc: 0x849DF73E
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+    clean:
+      - crc: 0x11BDC61E
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Tel Mithryn( Prison)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/643/' ]
@@ -13886,17 +13859,15 @@ plugins:
   - name: 'DT_VandfaldCottage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28071' ]
     dirty:
-      # version: 7.0
       - <<: *reqManualFix
-        crc: 0x2FFB1185
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 26
-        udr: 26
+        crc: 0x4191CF97
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 28
+        udr: 29
         nav: 12
-      # version: 7.0, after QAC
       - <<: *reqManualFix
-        crc: 0x8DF7FE8A
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        crc: 0xEBF2F5B5
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 12
 
   - name: 'Eastmarch Manor.esp'
@@ -14418,18 +14389,9 @@ plugins:
 
   - name: 'LeanWolfs Aemers Refuge SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4751/' ]
-    dirty:
-      # version: 2.81
-      - <<: *reqManualFix
-        crc: 0x770E67BE
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 19
-        nav: 1
-      # version: 2.81, after QAC
-      - <<: *reqManualFix
-        crc: 0x19722F73
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
+    clean:
+      - crc: 0x3E3E5848
+        util: 'SSEEdit v4.0.3'
 
   - name: 'MarasRespite.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27329' ]
@@ -15168,6 +15130,9 @@ plugins:
       # version: 5.0.24
       - crc: 0xFC4237C9
         util: 'SSEEdit v4.0.3'
+      # version: 5.0.25
+      - crc: 0x201AE1F3
+        util: 'SSEEdit v4.0.3'
   ### Legacy of the Dragonborn Patches ###
   - name: 'DBM_*.\.esp'
     url:
@@ -15178,14 +15143,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12253/' ]
   - name: 'DBM_RelicHunter.esp'
     clean:
-      # version: 2.0.1
-      - crc: 0xA7C08AC2
+      - crc: 0x7E681394
         util: 'SSEEdit v4.0.3'
   - name: 'RelicHunter_Grass_Patch.esp'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
     clean:
-      # version: 2.0
       - crc: 0x91B6301A
         util: 'SSEEdit v4.0.3'
 
@@ -15578,18 +15541,18 @@ plugins:
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("tpos_OCpatch.esp")'
     clean:
-      #  version: 9.1.4 Full
-      - crc: 0x579347B4
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x39FFBC74
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x54C19899
+        util: 'SSEEdit v4.0.3'
   - name: 'thepeopleofskyrim.esp'
     group: *veryEarlyGroup
     inc:
       - 'Immersive Patrols II.esp'
       - 'tpos_Cutting_Room_Floorpatch.esp'
     clean:
-      #  version: 9.1.3 Partial
-      - crc: 0xB6FA8EE7
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x6FE256C2
+        util: 'SSEEdit v4.0.3'
 
   - name: '(MissingEZs(_AllExteriors|Fixed)|MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
