@@ -13203,10 +13203,8 @@ plugins:
       - crc: 0xABF1B47B
         util: 'SSEEdit v4.0.2'
 
-  - name: 'WhiterunValley.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/11917/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17611/'
+  - name: 'WhiterunValley2.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11917/' ]
     inc:
       - name: 'Holds.esp'
         display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
@@ -13217,23 +13215,13 @@ plugins:
     tag:
       - Graphics
       - Invent
-    dirty:
-      # version: Final
-      - <<: *reqManualFix
-        crc: 0x9EECB03A
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 167
-        nav: 10
-      # version: Final, after QAC
-      - <<: *reqManualFix
-        crc: 0xE5A65A7B
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 10
-      # version: LITE
-      - <<: *quickClean
-        crc: 0x98AD850B
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 107
+    clean:
+      # MARKET LOCATION A
+      - crc: 0xEFC3EA57
+        util: 'SSEEdit v4.0.3'
+      # MARKET LOCATION B
+      - crc: 0xB9F50AB6
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Windhelm Bridge Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4246' ]
