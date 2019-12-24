@@ -11789,9 +11789,19 @@ plugins:
 
   - name: 'Holds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/' ]
+    msg:
+      - <<: *missingRequirementXforPlugin
+        subs: [ '[Winter Is Coming - Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/4933) meshes and textures.' ]
+        condition: 'not file("Meshes/1nivCloaks/BearClaw/BearClawA_GND.nif")'
     clean:
       - crc: 0xEF19645E
         util: 'SSEEdit v4.0.3'
+  - name: 'HoldsResources.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/' ]
+    msg:
+      - <<: *missingRequirementXforPlugin
+        subs: [ '[Winter Is Coming - Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/4933) meshes and textures.' ]
+        condition: 'not file("Meshes/1nivCloaks/BearClaw/BearClawA_GND.nif")'
 
   - name: 'InnCredible.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/790/' ]
