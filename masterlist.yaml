@@ -4400,25 +4400,6 @@ plugins:
             text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
         condition: 'active("Lydia Face Preset 64bit.esp")'
 
-  - name: 'Severa_CharPreset.esp'
-    group: *veryEarlyGroup
-    inc:
-      - 'Kayla_CharPreset.esp'
-      - 'Lagertha_CharPreset.esp'
-      - 'Lydia Face Preset 64bit.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'After Character Creation you should deactivate and/or uninstall this.'
-          - lang: de
-            text: 'Nach der Charakter Erstellung sollten Sie es deaktivieren und/oder deinstallieren.'
-          - lang: ja
-            text: 'キャラクターを作成したあと、これを無効化もしくはアンインストールする必要があります。'
-          - lang: pt
-            text: 'Após Criação de Personagem você deve desativar e/ou desinstalar isto.'
-        condition: 'active("Severa_CharPreset.esp")'
-
 ###### Encounters - Allies ######
   - name: '018Auri.esp'
     url:
@@ -4537,19 +4518,6 @@ plugins:
         crc: 0x9CCE987C
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 34
-
-  - name: 'Janessa Half Argonian Companion.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24096']
-    msg:
-      - <<: *wildEdits
-        subs: [ 'Adds a script to levelled Bandits NPC Records which respawns those NPCs several times. This script will affect all references that place these NPCs. Remove these records from Janessa Half Argonian Companion.esp: LvlBanditMeleeTank 00015BE5, LvlBanditMissile 0001E79E, 00023AAD EncFrostbiteSpiderSnowGiant, LvlBanditMelee1H 0003DECB, LvlBanditMeleeBerserker 0003DECC.' ]
-        condition: 'checksum("Janessa Half Argonian Companion.esp", BC38732F)'
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0x39D3BC6F
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
 
   - name: '0Kaidan.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12496/' ]
@@ -5839,14 +5807,6 @@ plugins:
       - 'MajesticMountains.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-
-  - name: 'Unbelievable Grass Two.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4082/' ]
-    group: *floraGroup
-
-  - name: 'p_vegetation_overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7627/' ]
-    group: *floraGroup
 
   - name: 'Veydosebrom( - Grasses and Groundcover)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26293/' ]
@@ -7569,13 +7529,6 @@ plugins:
       - *doNotClean
       - *requiresMCM
 
-  - name: 'UndeathClassicalLichdom SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14823' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("UndeathClassicalLichdom Ordinator Patch.esp")'
-
   - name: 'WardsFunctionalitiesExtended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18664/' ]
     msg: [ *patch3rdPartySRPC ]
@@ -8415,19 +8368,10 @@ plugins:
         util: 'SSEEdit v4.0.2f'
 
   - name: 'CollegeDaysWinterhold.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12615'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/26611'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[College Days - Winterhold SSE - Voicing Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/26611)' ]
-        condition: 'active("CollegeDaysWinterhold.esp") and checksum("CollegeDaysWinterhold.esp", 99F1E78D)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12615' ]
     clean:
       # Version: 5.56
       - crc: 0x99F1E78D
-        util: 'SSEEdit v4.0.2'
-      # Version: 1.0, Voicing Fix Patch
-      - crc: 0xE32C44F4
         util: 'SSEEdit v4.0.2'
 
   - name: 'CollegeEntry.esp'
@@ -12857,41 +12801,6 @@ plugins:
       - crc: 0xDF43054A
         util: 'SSEEdit v4.0.3'
 
-  - name: 'ShezrieOldHroldanVer2.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7857/' ]
-    inc:
-      - name: 'Distinct Interiors.esp'
-        condition: 'checksum("Distinct Interiors.esp", 52B7B288)' # v1.81
-        display: 'Distinct Interiors - All in One'
-      - 'Distinct Interiors - Inns.esp'
-    msg:
-      - type: info
-        content:
-          - lang: en
-            text: 'Shezrie''s Old Hroldan Town is only compatible with Distinct Interiors - Modular version without Inns.'
-          - lang: de
-            text: 'Shezrie''s Old Hroldan Town ist nur kompatibel mit Distinct Interiors - Modular version without Inns.'
-          - lang: ja
-            text: 'Shezrie''s Old Hroldan TownはDistinct Interiors-Modular version without Innsとのみ互換性があります。'
-          - lang: pt
-            text: 'Shezrie''s Old Hroldan Town é apenas compatível com Distinct Interiors - Modular version without Inns.'
-        condition: 'active("Distinct Interiors.esp")'
-      - <<: *sortMasters
-        condition: 'checksum("ShezrieOldHroldanVer2.esp", A8297990)'
-    tag:
-      - C.Light
-      - Graphics
-      - Invent
-      - -C.Water
-      - -C.Acoustic
-      - -C.Regions
-    dirty:
-      # version: 2.2
-      - <<: *quickClean
-        crc: 0x9E66B431
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 6
-
   - name: 'Shor''s Stone.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
@@ -13694,15 +13603,6 @@ plugins:
         crc: 0x4F4A00C1
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 2
-
-  - name: 'CShacks.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29219' ]
-    dirty:
-      # version: 0.1
-      - <<: *quickClean
-        crc: 0xCE74138C
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 27
 
   - name: 'DA_Skyship.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24587/' ]
@@ -15123,12 +15023,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
 ###### Patches ######
-  - name: 'Unique Loot Compatibility Patch.esp'
-    tag:
-      - Delev
-      - Invent
-      - Relev
-
   - name: 'XenonCitiesPatch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/'
