@@ -12403,37 +12403,60 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20514' ]
   - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
     after:
-      - '3DNPC.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'Book Covers Skyrim - Lost Library.esp'
-      - 'CollegeDaysWinterhold.esp'
-      - 'CollegeEntry.esp'
-      - 'CoW Bridge Fix.esp'
-      - 'Cutting Room Floor.esp'
-      - 'Endgame NPC Overhaul.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Enlightened College of Winterhold.esp'
+      - name: '3DNPC.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Book Covers Skyrim.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Book Covers Skyrim - Lost Library.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'CollegeDaysWinterhold.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'CollegeEntry.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'CoW Bridge Fix.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Cutting Room Floor.esp'
+        condition: 'not is_master("OCW_Obscure''s_CollegeofWinterhold.esp")'
+      - name: 'Endgame NPC Overhaul.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'EnhancedLightsandFX.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Enlightened College of Winterhold.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Finding_VelehkSain.esp'
-        condition: 'version("Finding_VelehkSain.esp", "1.0.8", >=) or checksum("Finding_VelehkSain.esp", 63CC1662) or checksum("Finding_VelehkSain.esp", 596355B3)'
+        condition: '(version("Finding_VelehkSain.esp", "1.0.8", >=) or checksum("Finding_VelehkSain.esp", 63CC1662) or checksum("Finding_VelehkSain.esp", 596355B3)) and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Finding_VelehkSain_MAQF.esp'
-        condition: 'version("Finding_VelehkSain_MAQF.esp", "1.0.8", >=) or checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) or checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) or checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C)'
+        condition: '(version("Finding_VelehkSain_MAQF.esp", "1.0.8", >=) or checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) or checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) or checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C)) and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Immersive Music.esp'
-        condition: 'checksum("Immersive Music.esp", 4ED7C6DC)'
+        condition: 'checksum("Immersive Music.esp", 4ED7C6DC) and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Immersive Music Replacer.esp'
-        condition: 'checksum("Immersive Music Replacer.esp", 7DC72CE5)'
-      - 'konahrik_accoutrements.esp'
-      - 'MCWT_ExpiditeTheExpirate.esp'
-      - 'MCWT_TheAugursAdmonishment.esp'
-      - 'middenexpandedlitesse.esp'
-      - 'Mystic Condenser.esp'
-      - 'MysticismMagic.esp'
-      - 'Prometheus_BeastSkeletons.esp'
-      - 'PsijicTeleportSpells.esp'
-      - 'RelightingSkyrim_SSE.esp'
-      - 'Skyrim Immersive Creatures Special Edition.esp'
-      - 'Undeath.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-      - 'WACCF_Armor and Clothing Extension.esp'
+        condition: 'checksum("Immersive Music Replacer.esp", 7DC72CE5) and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'konahrik_accoutrements.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'MCWT_ExpiditeTheExpirate.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'MCWT_TheAugursAdmonishment.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'middenexpandedlitesse.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Mystic Condenser.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'MysticismMagic.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Prometheus_BeastSkeletons.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'PsijicTeleportSpells.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'RelightingSkyrim_SSE.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Skyrim Immersive Creatures Special Edition.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Undeath.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'WACCF_Armor and Clothing Extension.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     inc:
       - 'accessible saarthal and labyrinthian.esp'
       - 'ApepiBetterCollege.esp'
@@ -12451,6 +12474,10 @@ plugins:
       - 'Toblerone Winterhold College.esp'
       - 'Winterhold College SSE.esp'
     msg:
+      - <<: *missingRequirementXforPlugin
+        type: error
+        subs: [ 'OCW_CellSettings.esp' ]
+        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
       - <<: *semiCompatible
@@ -12483,9 +12510,6 @@ plugins:
         subs: [ 'Dynamic Firewood Stacks' ]
         condition: 'active("Dynamic Firewood Stacks.esp") and not active("OCW_DFS_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
-        condition: 'active("ELE_SSE.esp") and not active("OCW_ELE_FEPatch.esp") and not active("OCW_ELEA_FEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("OCW_ELFX_FEPatch.esp")'
       - <<: *patchIncluded
@@ -12504,26 +12528,14 @@ plugins:
         subs: [ 'iNeed - Extended' ]
         condition: 'active("iNeed - Extended.esp") and not active("OCW_iNE_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'LeanWolfs Aemers Refuge' ]
-        condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("Rigmor.esp") and not active("OCW_LAR_FEPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'LeanWolfs Aemers Refuge & Rigmor of Bruma' ]
-        condition: 'active("Rigmor.esp") and active("LeanWolfs Aemers Refuge SE.esp") and not active("OCW_LAR_RoB_MergedFEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Legacy of the Dragonborn' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("OCW_LotD_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Lootable Woodpiles' ]
         condition: 'active("LootableWoodpiles.esp") and not active("OCW_LWP_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Luminosity Lighting Overhaul' ]
-        condition: 'active("Luminosity Lighting Overhaul.esp") and not active("OCW_LLO_FEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'M''rissi''s Tails of Troubles SE' ]
         condition: 'active("MrissiTailOfTroubles.esp") and not active("OCW_MToT_FEPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Magic College Music' ]
-        condition: 'active("MagiCollege.esp") and not active("OCW_MCMSfA_FEPatch.esp") and not active("OCW_SoS_MCMSfA_MergedFEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Map Markers Complete' ]
         condition: 'active("Map Markers Complete.esp") and not active("OCW_MMC_FEPatch.esp")'
@@ -12534,9 +12546,6 @@ plugins:
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("OCW_RLS_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Rigmor of Bruma' ]
-        condition: 'active("Rigmor.esp") and not active("LeanWolfs Aemers Refuge SE.esp") and not active("OCW_RoB_FEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("OCW_3DTaP_FEPatch.esp")'
       - <<: *patchIncluded
@@ -12546,26 +12555,11 @@ plugins:
         subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
         condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("OCW_SFCO_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Soulmancer Music Merge' ]
-        condition: 'active("Soulmancer Soundtrack - NoVindDun.esp") and not active("SoundsofSkyrimComplete.esp") and not active("SoulMusic_OCoW_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Sounds of Skyrim Complete' ]
-        condition: 'active("SoundsofSkyrimComplete.esp") and not active("MagiCollege.esp") and not active("Soulmancer Soundtrack - NoVindDun.esp") and not active("OCW_SoS_FEPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Sounds of Skyrim Complete & Magic College Music' ]
-        condition: 'active("SoundsofSkyrimComplete.esp") and active("MagiCollege.esp") and not active("OCW_SoS_MCMSfA_MergedFEPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Sounds of Skyrim Complete & Soulmancer Music Merge' ]
-        condition: 'active("SoundsofSkyrimComplete.esp") and active("Soulmancer Soundtrack - NoVindDun.esp") and not active("OCW_SoS_MCMSfA_MergedFEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Spell Crafting for Skyrim' ]
         condition: 'active("_tck_SpellCrafting.esp") and not active("OCW_SC_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Spell Research' ]
         condition: 'active("SpellResearch.esp") and not active("OCW_SR_FEPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Tailoring Workbench' ]
-        condition: 'active("Tailoring Workbench.esp") and not active("OCW_TW_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'The Great Cities - Minor Cities and Towns' ]
         condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("OCW_TGCs_FEPatch.esp")'
@@ -12576,9 +12570,6 @@ plugins:
         subs: [ 'The Midden - Expanded' ]
         condition: 'active("middenexpandedlitesse.esp") and not active("OCW_MEL_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'The People of Skyrim 2 Full' ]
-        condition: 'active("tpos_complete02_RTCWG.esp") and not active("tpos_Obscures_CollegeofWinterholdPatch_Full.esp")'
-      - <<: *patchIncluded
         subs: [ 'Winterhold Restored' ]
         condition: 'active("Winterhold Restored.esp") and not active("OCW_WR2_FEPatch.esp") and not file("OCW_WR2_FEPatch.bsa")'
     tag:
@@ -12588,19 +12579,34 @@ plugins:
       - name: "Names"
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.4.12", <)'
     clean:
-      # Version: 1.4.16
-      - crc: 0x31CC387C
-        util: 'SSEEdit v4.0.2f'
-  - name: 'OCW_ELFX_(FE)?Patch\.esp'
+      - crc: 0xDA22A0AE
+        util: 'SSEEdit v4.0.3'
+  - name: 'OCW_CellSettings.esp'
+    group: *highPriorityGroup
     after:
-      - 'ELFX - Hardcore.esp'
+      - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
-    tag:
-      - C.Climate
-      - C.Light
-  - name: 'OCW_(MCMSfA_|SoS_|SoS_MCMSfA_Merged|SoS_SmMM_Merged)(FE)?Patch\.esp'
-    after:
       - 'ELFX - Hardcore.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Immersive Music.esp'
+      - 'Immersive Music Replacer.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'Luminosity - Skyrim is Lit Edition.esp'
+      - 'Soulmancer Soundtrack - NoVindDun.esp'
+      - 'Unique Region Names.esp'
+      # Group afters, to prevent sorting errors
+      - 'MissingEZs_AllExteriors.esp'
+      - 'MissingEZsFixed.esp'
+      - 'NoGrassINCaves.esp'
+      - 'Open Cities Skyrim.esp'
+    msg:
+      - <<: *missingRequirementXforPlugin
+        type: error
+        subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+    clean:
+      - crc: 0x51793574
+        util: 'SSEEdit v4.0.3'
 
   - name: 'OldHroldanRuins.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10134/' ]
