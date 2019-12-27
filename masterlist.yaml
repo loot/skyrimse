@@ -12613,6 +12613,11 @@ plugins:
       - 'MissingEZsFixed.esp'
       - 'NoGrassINCaves.esp'
       - 'Open Cities Skyrim.esp'
+    msg:
+      - <<: *missingRequirementXforPlugin
+        type: error
+        subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
   - name: 'OCW_ELFX_(FE)?Patch\.esp'
     after:
       - 'ELFX - Hardcore.esp'
