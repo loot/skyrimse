@@ -12451,6 +12451,10 @@ plugins:
       - 'Toblerone Winterhold College.esp'
       - 'Winterhold College SSE.esp'
     msg:
+      - <<: *missingRequirementXforPlugin
+        type: error
+        subs: [ 'OCW_CellSettings.esp' ]
+        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
       - <<: *semiCompatible
