@@ -6076,6 +6076,9 @@ plugins:
 
   - name: 'TreasureHunter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TreasureHunter_Patch.esp")'
     dirty:
       - <<: *reqManualFix
         crc: 0x615E9874
