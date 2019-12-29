@@ -12652,7 +12652,7 @@ plugins:
       - name: 'CoW Bridge Fix.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Cutting Room Floor.esp'
-        condition: 'not is_master("OCW_Obscure''s_CollegeofWinterhold.esp")'
+        condition: '(is_master("Cutting Room Floor.esp") and is_master("OCW_Obscure''s_CollegeofWinterhold.esp")) or (not is_master("Cutting Room Floor.esp") and not is_master("OCW_Obscure''s_CollegeofWinterhold.esp"))'
       - name: 'Endgame NPC Overhaul.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'EnhancedLightsandFX.esp'
