@@ -1718,6 +1718,27 @@ plugins:
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_Skyrim3DTrees_FloraRespawnFix Patch.esp") and not active("HarvestOverhaul_Redone.esp")'
 
+  - name: '(MissingEZs(_AllExteriors|Fixed)|MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
+    tag:
+      - C.Encounter
+      - C.Location
+  - name: 'MissingEZs(_AllExteriors|Fixed)\.esp'
+    group: *highPriorityGroup
+    after:
+      - 'RelightingSkyrim_SSE.esp'
+      - 'Populated Dungns Caves Ruins Legendary.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Alternate Start -- New Beginnings.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Realistic Water Two' ]
+        condition: 'active("RealisticWaterTwo.esp") and not active("(MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Missing Encounter Zones FIXED' ]
+        condition: 'many("MissingEZs(_AllExteriors|Fixed)\.esp")'
+
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
     # "This mod overwrites files from mod X, is it compatible?"
@@ -15515,27 +15536,6 @@ plugins:
     clean:
       - crc: 0x6FE256C2
         util: 'SSEEdit v4.0.3'
-
-  - name: '(MissingEZs(_AllExteriors|Fixed)|MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
-    tag:
-      - C.Encounter
-      - C.Location
-  - name: 'MissingEZs(_AllExteriors|Fixed)\.esp'
-    group: *highPriorityGroup
-    after:
-      - 'RelightingSkyrim_SSE.esp'
-      - 'Populated Dungns Caves Ruins Legendary.esp'
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Alternate Start -- New Beginnings.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Realistic Water Two' ]
-        condition: 'active("RealisticWaterTwo.esp") and not active("(MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp")'
-      - <<: *useOnlyOneX
-        subs: [ 'Missing Encounter Zones FIXED' ]
-        condition: 'many("MissingEZs(_AllExteriors|Fixed)\.esp")'
 
   - name: 'sk immersive Armor Swapper - (Dolls|Teens)\.esp'
     url: [ 'https://schaken-mods.com/index.php?/file/94-immersive-armor-swapper-public-version/' ]
