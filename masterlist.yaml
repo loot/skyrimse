@@ -12640,7 +12640,7 @@ plugins:
   - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
     after:
       - name: '3DNPC.esp'
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+        condition: '(is_master("3DNPC.esp") and is_master("OCW_Obscure''s_CollegeofWinterhold.esp")) or (not is_master("3DNPC.esp") and not is_master("OCW_Obscure''s_CollegeofWinterhold.esp"))'
       - name: 'Book Covers Skyrim.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Book Covers Skyrim - Lost Library.esp'
