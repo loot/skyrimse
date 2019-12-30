@@ -12864,6 +12864,9 @@ plugins:
         subs: [ 'Spell Research' ]
         condition: 'active("SpellResearch.esp") and not active("OCW_SR_FEPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Tailoring Workbench' ]
+        condition: 'active("Tailoring Workbench.esp") and not active("OCW_TW_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
         subs: [ 'Tamrielic Culture' ]
         condition: 'active("WZTamrielic Culture.esp") and not active("OCW_TC_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
       - <<: *patchIncluded
