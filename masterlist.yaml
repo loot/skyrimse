@@ -12888,6 +12888,9 @@ plugins:
         subs: [ 'WACCF Armor and Clothing Extension' ]
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("OCW_ACE_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
+        subs: [ 'Winterhold College Hideout' ]
+        condition: 'active("WinterholdCollegeHideout.esp") and not active("OCW_WCH_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
         subs: [ 'Winterhold Restored' ]
         condition: 'active("Winterhold Restored.esp") and not active("OCW_WR2_FEPatch.esp") and not file("OCW_WR2_FEPatch.bsa")'
     clean:
