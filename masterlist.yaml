@@ -12792,12 +12792,6 @@ plugins:
         subs: [ 'Immersive Laundry' ]
         condition: 'active("Laundry.esp") and not active("OCW_IL_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Immersive Music' ]
-        condition: 'active("Immersive Music.esp") and not active("OCW_MusicPatch_IM.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
-      - <<: *patchIncluded
-        subs: [ 'Immersive Music Replacer' ]
-        condition: 'active("Immersive Music Replacer.esp") and not active("OCW_MusicPatch_IMR.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
-      - <<: *patchIncluded
         subs: [ 'iNeed' ]
         condition: 'active("iNeed.esp") and not active("OCW_iN_FEPatch.esp")'
       - <<: *patchIncluded
@@ -12862,7 +12856,7 @@ plugins:
         condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("OCW_SFCO_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Soulmancer Music Merge' ]
-        condition: 'active("Soulmancer Soundtrack - NoVindDun.esp") and not active("(OCW_MusicPatch_SMMM|OCW_SoS_SmMM_MergedFEPatch|SoulMusic_OCoW_Patch)\.esp")'
+        condition: 'active("Soulmancer Soundtrack - NoVindDun.esp") and not active("(OCW_SoS_SmMM_MergedFEPatch|SoulMusic_OCoW_Patch)\.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Sounds of Skyrim Complete' ]
         condition: 'active("SoundsofSkyrimComplete.esp") and not active("OCW_SoS_((MCMSfA|SmMM)_Merged)?FEPatch.esp")'
