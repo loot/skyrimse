@@ -12813,6 +12813,9 @@ plugins:
         subs: [ 'Lootable Woodpiles' ]
         condition: 'active("LootableWoodpiles.esp") and not active("OCW_LWP_FEPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Luminosity Lighting Overhaul' ]
+        condition: 'active("Luminosity Lighting Overhaul.esp") and not active("OCW_LLO_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
         subs: [ 'Luminosity - Skyrim is Lit Edition' ]
         condition: 'active("Luminosity - Skyrim is Lit Edition.esp") and not active("OCW_LLO-SiLE_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
