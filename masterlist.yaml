@@ -8878,6 +8878,9 @@ plugins:
       - 'Relationship Dialogue Overhaul.esp'
       - name: 'Wintersun - Faiths of Skyrim.esp'
         condition: 'not file("TCIY_Wintersun_Patch.esp")'
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("BCS_TCIY_Patch.esp")'
     tag: [ Names ]
     clean:
       # version: 2.0
