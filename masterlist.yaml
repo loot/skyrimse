@@ -12786,6 +12786,12 @@ plugins:
         subs: [ 'Immersive Laundry' ]
         condition: 'active("Laundry.esp") and not active("OCW_IL_FEPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Immersive Music' ]
+        condition: 'active("Immersive Music.esp") and not active("OCW_MusicPatch_IM.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Music Replacer' ]
+        condition: 'active("Immersive Music Replacer.esp") and not active("OCW_MusicPatch_IMR.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
         subs: [ 'iNeed' ]
         condition: 'active("iNeed.esp") and not active("OCW_iN_FEPatch.esp")'
       - <<: *patchIncluded
