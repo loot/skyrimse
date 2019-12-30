@@ -12768,6 +12768,9 @@ plugins:
         subs: [ 'Dynamic Firewood Stacks' ]
         condition: 'active("Dynamic Firewood Stacks.esp") and not active("OCW_DFS_FEPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
+        condition: 'active("ELE_SSE.esp") and not active("OCW_(ELE|ELEA)_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("OCW_ELFX_FEPatch.esp")'
       - <<: *patchIncluded
