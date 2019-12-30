@@ -12891,6 +12891,9 @@ plugins:
         subs: [ 'The Tools of Kagrenac' ]
         condition: 'active("Tools of Kagrenac.esp") and not active("OCW_ToK_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
+        subs: [ 'Viewable Faction Ranks' ]
+        condition: 'active("ViewableFactionRanks.esp") and file("Interface/Translations/ViewableFactionRanks_ENGLISH.txt") and checksum("Interface/Translations/ViewableFactionRanks_ENGLISH.txt", 7ED2755E)'
+      - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing & Clutter Fixes 2.0+' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("OCW_WACCF_FEPatch.esp") and version("Weapons Armor Clothing & Clutter Fixes.esp", "2.0", >=)'
       - <<: *patchIncluded
