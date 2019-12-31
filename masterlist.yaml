@@ -1881,9 +1881,9 @@ plugins:
         name: 'Better Dynamic Majestic Mountains Patch'
     tag: [ Graphics ]
     clean:
-      - crc: 0x7553A2AC
+      - crc: 0x83980C28
         util: 'SSEEdit v4.0.3'
-      - crc: 0x131F7750
+      - crc: 0xE5D4D9D4
         util: 'SSEEdit v4.0.3'
 
   - name: 'dD - Enhanced Blood Main.*\.esp'
@@ -5560,7 +5560,7 @@ plugins:
           - 'Moss Rocks can be used with Majestic Mountains. But Majestic Mountains meshes without snow will not be used. [Source](https://forums.nexusmods.com/index.php?/topic/5838597-majestic-mountains/?p=52271673)'
         condition: 'active("MajesticMountains.esp") and active("Moss Rocks.esp")'
     clean:
-      - crc: 0x58BB7664
+      - crc: 0xB9A84251
         util: 'SSEEdit v4.0.3'
   - name: 'MajesticMountains_Landscape.esm'
     after:
@@ -6028,9 +6028,8 @@ plugins:
       - C.Location
       - C.Regions
     clean:
-      # version: 3.1.4
-      - crc: 0xAF265A7A
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x02AF0402
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Ravengate.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12617' ]
@@ -6148,9 +6147,9 @@ plugins:
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("tpos_OCpatch.esp")'
     clean:
-      - crc: 0x39FFBC74
+      - crc: 0xFBCA60DE
         util: 'SSEEdit v4.0.3'
-      - crc: 0x54C19899
+      - crc: 0x9B010343
         util: 'SSEEdit v4.0.3'
   - name: 'thepeopleofskyrim.esp'
     group: *veryEarlyGroup
@@ -7841,7 +7840,7 @@ plugins:
           - lang: pt
             text: '**Mount Support** (trans. "Cavalos de Apoio") deve ser trocado por **Riding Support Only** (trad. "Suporte a cavalo apenas") nas opções da Nether''s Follower Framework de forma a que Immersive Horses funcione corretamente com a Nether''s Follower Framework.'
     clean:
-      - crc: 0xBBD08D11
+      - crc: 0x75A92D7D
         util: 'SSEEdit v4.0.3'
 
   - name: 'SimpleFollowerManager.esp'
@@ -7869,7 +7868,7 @@ plugins:
         subs: [ 'Simple Children' ]
         condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
     clean:
-      - crc: 0x945AC5F5
+      - crc: 0x4EAFBC85
         util: 'SSEEdit v4.0.3'
 
   - name: 'Guard Dialogue Overhaul.esp'
@@ -8498,6 +8497,11 @@ plugins:
     inc:
       - 'CollegeApplication.esp'
       - 'CollegeModifications.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE993426C
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
 
   - name: 'CYA_ChooseYourOwnArchMage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30887' ]
@@ -8601,17 +8605,15 @@ plugins:
       - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'not version("Finding_VelehkSain.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3))'
     clean:
-      # version: 1.0.12
-      - crc: 0x02A67172
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0xB4CD9B45
+        util: 'SSEEdit v4.0.3'
   - name: 'Finding_VelehkSain_MAQF.esp'
     after:
       - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'not version("Finding_VelehkSain_MAQF.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) and not checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) and not checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C))'
     clean:
-      # version: 1.0.12
-      - crc: 0xB3129CE3
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0x593749C3
+        util: 'SSEEdit v4.0.3'
 
   - name: 'ForgottenCity.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179' ]
@@ -9985,8 +9987,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RelicsofHyrule_Patch.esp")'
     clean:
-      # version: 6.5.21c
-      - crc: 0x9FAD4A42
+      - crc: 0x336DE5C8
         util: 'SSEEdit v4.0.3'
 
   - name: 'RuinsEdge.esp'
@@ -11266,9 +11267,8 @@ plugins:
       - 'manny Lantern Caretakers.esp'
     tag: [ C.Location ]
     clean:
-      # version: 4.0.4
-      - crc: 0xCA14BFDB
-        util: 'SSEEdit v4.0.2'
+      - crc: 0xB85C281D
+        util: 'SSEEdit v4.0.3'
 
   - name: 'SeaPointSettlement.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11346/' ]
@@ -12932,7 +12932,7 @@ plugins:
         subs: [ 'Winterhold Restored' ]
         condition: 'active("Winterhold Restored.esp") and not active("OCW_WR2_FEPatch.esp") and not file("OCW_WR2_FEPatch.bsa")'
     clean:
-      - crc: 0xC525BEAC
+      - crc: 0x7C8A6F78
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_CellSettings.esp'
     group: *highPriorityGroup
@@ -12958,7 +12958,7 @@ plugins:
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     clean:
-      - crc: 0x62713811
+      - crc: 0x964DBD83
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_SPO_FEPatch.esp'
     msg:
@@ -14030,12 +14030,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DevAvezaAirship_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    dirty:
-      # version: 1.9.71
-      - <<: *quickClean
-        crc: 0x430FFD70
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 9
+    clean:
+      - crc: 0x95E2A1FF
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Deithwen.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29935' ]
@@ -15385,17 +15382,16 @@ plugins:
   - name: 'WhiterunMansion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29196' ]
     dirty:
-      # version: 1.0
       - <<: *reqManualFix
-        crc: 0x8A3261AC
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 18
-        nav: 1
-      # version: 1.0, after QAC
+        crc: 0x34ACD2AC
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 25
+        udr: 11
+        nav: 2
       - <<: *reqManualFix
-        crc: 0x03074B78
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
+        crc: 0x1E267AA8
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
 
   - name: 'Winterhold_Beacon.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27657' ]
@@ -15442,11 +15438,11 @@ plugins:
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494' ]
     # Old CRCs for version checks (v4 (0x31563183, 0x6736FB94, 0xCB82480D) v5 (0x055A3985, 0xD4D3523B, 0xDC39CE6D))
     clean:
-      # version: 5.0.24
-      - crc: 0xFC4237C9
-        util: 'SSEEdit v4.0.3'
       # version: 5.0.25
       - crc: 0x201AE1F3
+        util: 'SSEEdit v4.0.3'
+      # version: 5.0.26
+      - crc: 0x666B1947
         util: 'SSEEdit v4.0.3'
   ### Legacy of the Dragonborn Patches ###
   - name: 'DBM_*.\.esp'
