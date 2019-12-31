@@ -4146,6 +4146,19 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Interesting NPCs' ]
         condition: 'active("3DNPC.esp") and not active("Qw_Diversity_3DNPC Patch.esp")'
+    dirty:
+      # version: 3.31 CRF Vanilla Hair
+      - <<: *quickClean
+        crc: 0x7684FC87
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 64
+    clean:
+      # version: 3.3
+      - crc: 0xB98DDEB9
+        util: 'SSEEdit v4.0.3'
+      # version: 3.3 Cutting Room Floor
+      - crc: 0xFFD0B140
+        util: 'SSEEdit v4.0.3'
 
   - name: 'DivinePeopleOfSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8326/' ]
