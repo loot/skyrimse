@@ -559,6 +559,20 @@ common:
       - lang: zh_CN
         text: '只使用一个%1%。'
 
+  - &useVersion
+    type: error
+    content:
+      - lang: en
+        text: 'Use %1% version.'
+      - lang: de
+        text: 'Benutzen Sie die %1% Version.'
+      - lang: ja
+        text: '%1%バージョンを使用してください。'
+      - lang: pl
+        text: 'Użyj wersji %1%'
+      - lang: ru
+        text: 'Используйте версию для %1%'
+
   - &versionOldX
     type: say
     content:
@@ -3827,6 +3841,22 @@ plugins:
     after:
       - 'Hair Replacer.esp'
 
+  - name: 'Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20684' ]
+    msg:
+      - <<: *missingRequirementXforPlugin
+        subs: [ 'Racial Body Morphs Meshes' ]
+        condition: 'not file("Meshes/Actors/Character/Character Assets/Body by Race/skeletonArgonian.nif")'
+      - <<: *useOnlyOneX
+        subs: [ 'Racial Body Morphs' ]
+        condition: 'many("Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp")'
+  - name: 'Racial Body Morphs( - Extreme Morphs| - Subtle)?\.esp'
+    inc: [ 'Imperious - Races of Skyrim.esp' ]
+    msg:
+      - <<: *useVersion
+        subs: [ 'Imperious' ]
+        condition: 'active("Imperious - Races of Skyrim.esp")'
+
   - name: 'SkyrimSizesLore.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/587' ]
     msg:
@@ -6355,9 +6385,6 @@ plugins:
       - name: 'GRACE.esp'
         display: 'SkyGrace - Skyrim Gender Race And Class Enhancements'
       - 'Morroblivion Racial Traits.esp'
-      - 'Racial Body Morphs.esp'
-      - 'Racial Body Morphs - Extreme Morphs.esp'
-      - 'Racial Body Morphs - Subtle.esp'
       - 'SkyRe_Races.esp'
       - 'Subtle but Classless.esp'
       - 'TsunPassiveRacialAbilities.esp'
