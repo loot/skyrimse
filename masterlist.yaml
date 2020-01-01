@@ -3844,6 +3844,9 @@ plugins:
   - name: 'Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20684' ]
     msg:
+      - <<: *missingRequirementXforPlugin
+        subs: [ 'Racial Body Morphs Meshes' ]
+        condition: 'not file(""Meshes/Actors/Character/Character Assets/Body by Race/skeletonArgonian.nif"")'
       - <<: *useOnlyOneX
         subs: [ 'Racial Body Morphs' ]
         condition: 'many("Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp")'
