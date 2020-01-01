@@ -2322,6 +2322,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
         name: 'YOT - Your Own Thoughts SE'
     group: *dispersedGroup
+    tag: [ Text ]
 
 ###### AudioVisual - Animations & Physics ######
   - name: 'beltfastenedquivers.esp'
@@ -6594,9 +6595,6 @@ plugins:
 
   - name: 'Ars Metallica.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/321/' ]
-    tag:
-      - Invent
-      - Relev
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ArsMetallica_Patch.esp")'
@@ -6719,6 +6717,11 @@ plugins:
     tag:
       - Invent
       - Names
+      # Remove tags for Plants only version.
+      - name: Delev
+        condition: 'not checksum("HarvestOverhaul_Redone.esp", D9E45263) and not checksum("HarvestOverhaul_Redone.esp", 971A2167)'
+      - name: Relev
+        condition: 'not checksum("HarvestOverhaul_Redone.esp", D9E45263) and not checksum("HarvestOverhaul_Redone.esp", 971A2167)'
     clean:
       # version: 1.0 Plants Only
       - crc: 0xD9E45263
@@ -7191,12 +7194,9 @@ plugins:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_MLU Patch.esp") and not active("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
-      - Delev
       - Graphics
       - Invent
-      - Names
-      - Relev
-      - Stats
+      - Text
     dirty:
       # version: Simplified Full 2.20
       - <<: *quickClean
@@ -8624,6 +8624,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_BUVARP_Patch.esp")'
+    tag: [ C.Location ]
     clean:
       # Version: 0.7.6
       - crc: 0x9881051E
@@ -9793,6 +9794,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_GuardsArmorReplacer_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+    tag:
+      - Delev
+      - Graphics
+      - Invent
+      - Relev
     dirty:
       # version: 5.5a Minimal
       - <<: *quickClean
@@ -10349,7 +10355,9 @@ plugins:
       - Delev
       - Graphics
       - Invent
+      - Keywords
       - Relev
+      - Text
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/116' ]
@@ -10515,6 +10523,7 @@ plugins:
       - crc: 0xCF308145
         util: 'SSEEdit v4.0.3'
   - name: 'Vikings Weaponry LL - Johnskyrim.esp'
+    tag: [ Relev ]
     clean:
       - crc: 0xA13319FC
         util: 'SSEEdit v4.0.3'
