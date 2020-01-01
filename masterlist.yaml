@@ -4146,6 +4146,19 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Interesting NPCs' ]
         condition: 'active("3DNPC.esp") and not active("Qw_Diversity_3DNPC Patch.esp")'
+    dirty:
+      # version: 3.31 CRF Vanilla Hair
+      - <<: *quickClean
+        crc: 0x7684FC87
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 64
+    clean:
+      # version: 3.3
+      - crc: 0xB98DDEB9
+        util: 'SSEEdit v4.0.3'
+      # version: 3.3 Cutting Room Floor
+      - crc: 0xFFD0B140
+        util: 'SSEEdit v4.0.3'
 
   - name: 'DivinePeopleOfSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8326/' ]
@@ -4949,6 +4962,55 @@ plugins:
       - 'RevampedReleveled.esp'
       - 'Skyrim Revamped - Complete Enemy Overhaul.esp'
 
+  - name: 'mihaildwarvendriller.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27979/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x27A236D1
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+  - name: 'mihailesobonecolossus.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24521/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xEE56D864
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
+  - name: 'mihailesocenturion.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27354/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x0A2FE896
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
+  - name: 'mihailicegolem.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26185/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x9A86B03C
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 20
+        udr: 12
+  - name: 'mihailmmasithis.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27365/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x5D539026
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 11
+  - name: 'mihailspectres.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30772/' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x95F0F68D
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 51
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xCDDFC931
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+
   - name: 'MoreBanditCamps.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1994' ]
     clean:
@@ -4970,6 +5032,14 @@ plugins:
       # version: 2.5
       - crc: 0xC0D9011C
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ogFalkreathHauntings.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20733/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3D299EDF
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
 
   - name: 'Rebalanced Encounter Zones.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25/' ]
@@ -5913,6 +5983,27 @@ plugins:
         itm: 6
 
 ###### Gameplay ######
+  - name: 'AltStartRaceMenuActivator.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22683/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x869D1001
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'AltStartELFXPatch&RaceMenuActivator.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22683/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x56E45815
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+
+  - name: 'BA_Bibliophile''s_Arcanaeum.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26772/' ]
+    clean:
+      - crc: 0x4C7713FD
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
@@ -6949,7 +7040,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Morrowloot.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1255/' ]
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1255/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/24751'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MorrowlootClassic_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -6962,6 +7055,11 @@ plugins:
         crc: 0x9E026276
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 18
+      # version: Morrowloot Lite 0.1
+      - <<: *quickClean
+        crc: 0x2F43E905
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
 
   - name: 'Morrowloot Miscellania - (Ancient Nord Hero Weapons|Better Ancient Knowledge|Daedric Crafting Requirements|Item Distribution|Scroll of Fiercely Roasting)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27094/' ]
@@ -7536,6 +7634,14 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4495/' ]
     msg: [ *patch3rdPartySRPC ]
 
+  - name: 'MysticismMagic.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27839' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x617C8095
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+
   - name: 'PathOfTheAntiMage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
     dirty:
@@ -7625,6 +7731,12 @@ plugins:
       # version: 5.7.9
       - crc: 0xF28D435D
         util: 'SSEEdit v4.0.2'
+
+  - name: 'The Dark Arts.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29834/' ]
+    clean:
+      - crc: 0x15A59F24
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Thunderchild - Epic Shout Package.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1460/' ]
@@ -8677,6 +8789,40 @@ plugins:
       - crc: 0x7D8AB5D7
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'JerralMountainsCitadel.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18175' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xCEB48A1B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 18
+  - name: 'JerallMountainsCitadelPart1.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18175' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xD435B36E
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 177
+        udr: 126
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x8805A560
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+  - name: 'JerallMountainsCitadelPart2.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27331' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x74309E73
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 351
+        udr: 25
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x82011C5C
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+
   - name: 'konahrik_accoutrements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
     group: *underridesGroup
@@ -8983,6 +9129,14 @@ plugins:
         subs: [ 'Wheels Of Lull Bruma / Forgotten City Patch' ]
 
 ###### Gameplay - Skills & Perks ######
+  - name: 'Adamant.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30191/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xC975BDCB
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: 'Elemental Destruction.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/440/' ]
     msg:
@@ -9000,6 +9154,12 @@ plugins:
     after:
       - 'Requiem.esp'
 
+  - name: 'Growl - Werebeasts of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31245' ]
+    clean:
+      - crc: 0xF944EEC6
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Lock_Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
     req:
@@ -9012,6 +9172,14 @@ plugins:
       # version: 1.6 Ordinator version
       - crc: 0xCD2D19F5
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'LupineWerewolfPerkExpansion.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16561/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x031E3B09
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 41
 
   - name: 'Moonlight Tales Special Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2803/' ]
@@ -9327,6 +9495,15 @@ plugins:
       - crc: 0xCF434879
         util: 'SSEEdit v4.0.3'
 
+  - name: 'BetterTreasuryHouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2485' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x895CA291
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+        udr: 6
+
   - name: 'BGCollectables.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15092' ]
     msg:
@@ -9535,6 +9712,14 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("El_WayfarersCoatSSE_CCOR_Patch.esp")'
+
+  - name: 'Equippable Tomes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/157/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x0AE8CBDE
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
 
   - name: 'Faction Crossbows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4047/' ]
@@ -9795,6 +9980,14 @@ plugins:
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
 
+  - name: 'ktWeaponPackSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15050/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x87F02812
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
+
   - name: 'LADX_SSE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2314/'
@@ -9864,6 +10057,14 @@ plugins:
       - crc: 0xA5763C46
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Mage Outfit Texture Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25611' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x182B6D93
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: 'MilkSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3230' ]
     msg:
@@ -9891,6 +10092,14 @@ plugins:
         crc: 0xEF5D0C28
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 5
+
+  - name: 'NewArmoury.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15394/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xBAEB5EAB
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
 
   - name: 'OpulentOutfits_2017-SSE (AIO|Replacer)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/861/' ]
@@ -10221,6 +10430,14 @@ plugins:
       - crc: 0x5647775E
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Undriel_Everlight.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16043/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x5E62A5C6
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+
   - name: 'Unique(Grimsever|Stormfang)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14389/' ]
   - name: 'UniqueGrimsever.esp'
@@ -10257,6 +10474,16 @@ plugins:
   - name: 'UNP Vanilla Outfits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11136/' ]
     group: *underridesGroup
+
+  - name: 'Vikings Weaponry - Johnskyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14409/' ]
+    clean:
+      - crc: 0xCF308145
+        util: 'SSEEdit v4.0.3'
+  - name: 'Vikings Weaponry LL - Johnskyrim.esp'
+    clean:
+      - crc: 0xA13319FC
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Volkihar Knight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4806/' ]
@@ -11058,6 +11285,14 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 99
 
+  - name: 'Crossroads Inn.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1406/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x7AD68FA2
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+
   - name: 'Cutting Room Floor.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
@@ -11177,6 +11412,14 @@ plugins:
       - crc: 0x64353491
         util: 'SSEEdit v4.0.3'
 
+  - name: 'HopesabandonSSE 1.1.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13870' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x60E91A85
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
+
   - name: 'Immersive War and Violence.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15428' ]
     dirty:
@@ -11205,6 +11448,14 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 13
 
+  - name: 'JokerinesRedditDungeon.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17806/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x87021CAF
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 23
+
   - name: 'Laundry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2011/' ]
     group: *veryEarlyGroup
@@ -11224,6 +11475,22 @@ plugins:
       # version: 1.4
       - crc: 0x7B0E794A
         util: 'SSEEdit v4.0.2'
+
+  - name: 'mannyBlackRock.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23362' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x8172E96C
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+
+  - name: 'mannyDragonhead.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23360' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x861FB09E
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
 
   - name: 'Man Those Borders!.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/681' ]
@@ -11269,6 +11536,21 @@ plugins:
     clean:
       - crc: 0xB85C281D
         util: 'SSEEdit v4.0.3'
+
+  - name: '(Run_of_the_Mill_Inn|RunoftheMillInn).*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19481/' ]
+  - name: 'Run_of_the_Mill_Inn.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB4CD3865
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+  - name: 'RunoftheMillInn_CRF_NavPatch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0DEC8D29
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
 
   - name: 'SeaPointSettlement.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11346/' ]
@@ -11414,6 +11696,14 @@ plugins:
       # version: 1.1
       - crc: 0xA15D3872
         util: 'SSEEdit v4.0.2'
+
+  - name: 'SkjolgaBasin.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25080/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xC2A91443
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 13
 
   - name: 'SkyrimSewers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9320/' ]
@@ -13863,6 +14153,14 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 4
 
+  - name: 'AdalvaldsRetreatXBoxPC.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18935/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x0C2CED65
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+
   - name: 'AyleidCitadel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11307/' ]
     tag: [ C.Regions ]
@@ -13911,6 +14209,14 @@ plugins:
         crc: 0x915905E6
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
+
+  - name: 'BreezehomeBasement.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3569' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x1DB57819
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
   - name: 'BreezehomeExtraBreezy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20863' ]
@@ -14273,6 +14579,14 @@ plugins:
       # version: 5.0.1
       - crc: 0xCDCBD5E8
         util: 'SSEEdit v4.0.2'
+
+  - name: 'Faerdham.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10876' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x53A0B73A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
 
   - name: 'FalkreathCaveHouse.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28337' ]
@@ -14691,6 +15005,47 @@ plugins:
       - crc: 0x3E3E5848
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Legend Of The Eagles Nest GS Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9961/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xE6465060
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
+  - name: 'flaho_shi_eagles_nest_ENG.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9961/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x4658FC55
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
+
+  - name: 'Lost Caves - Open Cities.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6137/' ]
+    clean:
+      - crc: 0xC111E82D
+        util: 'SSEEdit v4.0.3'
+  - name: 'Lost Caves - Vanilla Cities.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6137/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x8BB6B355
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+
+  - name: 'MapleManor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27329' ]
+    dirty:
+      # LotD v1.31
+      - <<: *quickClean
+        crc: 0x08CE28A9
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
+    clean:
+      # Standalone v1.2.2
+      - crc: 0x68641FD3
+        util: 'SSEEdit v4.0.3'
+
   - name: 'MarasRespite.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27329' ]
     dirty:
@@ -14984,6 +15339,24 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 3
 
+  - name: 'Rayeks_End_SSE_1.0.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8285/' ]
+    clean:
+      - crc: 0xFE181529
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xCDAF76E9
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x1EECACA2
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'Riften_Well_House.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2758/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3FB6AE37
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 15
+
   - name: 'Riftrun_HF_v_2_0.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/757/' ]
     after:
@@ -14992,6 +15365,22 @@ plugins:
       - 'Hideout_DLC_Main.esp'
       - 'Hideout_Compact.esp'
       - 'Hideout_HF_Compact.esp'
+
+  - name: 'RiverwoodHuntingCabinSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1783' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3369C84D
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 9
+
+  - name: 'RLGBriarHome.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19625' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x0D18BE2F
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
 
   - name: 'roriksteadfarmhouse.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20737' ]
@@ -15057,6 +15446,12 @@ plugins:
         crc: 0x2A2CD1C9
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 3
+
+  - name: 'Shurrashi''s Den.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17115' ]
+    clean:
+      - crc: 0x4D903C10
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Sjel Blad Castle_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2620' ]
@@ -15168,6 +15563,14 @@ plugins:
         crc: 0x8CAF0142
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 4
+
+  - name: 'Svellheim_1.0.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22843/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x910E83A7
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 18
 
   - name: 'Tel_Nalta.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/' ]
@@ -15337,6 +15740,14 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
         udr: 62
+
+  - name: 'Vjarkell Castle.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23097' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x5847ADD2
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
 
   - name: 'VlindrelHall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23483' ]
