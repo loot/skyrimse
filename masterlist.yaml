@@ -7034,7 +7034,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Morrowloot.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1255/' ]
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1255/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/24751'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MorrowlootClassic_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -7047,6 +7049,11 @@ plugins:
         crc: 0x9E026276
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 18
+      # version: Morrowloot Lite 0.1
+      - <<: *quickClean
+        crc: 0x2F43E905
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
 
   - name: 'Morrowloot Miscellania - (Ancient Nord Hero Weapons|Better Ancient Knowledge|Daedric Crafting Requirements|Item Distribution|Scroll of Fiercely Roasting)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27094/' ]
