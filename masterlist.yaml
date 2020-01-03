@@ -6207,7 +6207,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'TreasureHunter.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/' ]
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/31345'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TreasureHunter_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -6221,6 +6223,11 @@ plugins:
         crc: 0xC63DD30E
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 5
+      # Fixed esp
+      - <<: *reqManualFix
+        crc: 0xCFAE157A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
 
   - name: 'tpos_ultimate_esm.esp'
     url:
