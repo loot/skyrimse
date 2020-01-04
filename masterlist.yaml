@@ -1680,11 +1680,9 @@ plugins:
   - name: 'JRCCPatches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12951/' ]
     group: *preVeryEarlyGroup
-    inc:
-      - 'unofficial skyrim creation club content patch.esl'
+    inc: [ 'unofficial skyrim creation club content patch.esl' ]
   - name: 'JR(SpellPack|ArcaneArcherPack|Chrysamere|KnightsOfTheNine|DwarvenMudcrab|Zombies|RuinsEdge|Shadowrend|StaffOfSheogorath|StendarrsHammer)(Patch)?\.esp'
-    inc:
-      - 'unofficial skyrim creation club content patch.esl'
+    inc: [ 'unofficial skyrim creation club content patch.esl' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'Unofficial Creation Club Updates - All-In-One (Main)' ]
@@ -1696,13 +1694,11 @@ plugins:
         condition: 'active("JRCCPatches2.esp")'
   - name: 'JRArcaneArcherPack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12769' ]
-    inc:
-      - 'Unofficial Arcane Archer Pack Patch.esl'
+    inc: [ 'Unofficial Arcane Archer Pack Patch.esl' ]
   - name: 'JRSpellPackPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12748/' ]
     group: *preVeryEarlyGroup
-    inc:
-      - 'Unofficial Arcane Accessories Patch.esl'
+    inc: [ 'Unofficial Arcane Accessories Patch.esl' ]
   - name: 'JRStendarrsHammerPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12750/' ]
     group: *preVeryEarlyGroup
@@ -2390,8 +2386,7 @@ plugins:
   - name: 'CinematicFireFX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
     group: *underridesGroup
-    inc:
-      - 'NAT.esp'
+    inc: [ 'NAT.esp' ]
     clean:
       - crc: 0x4CF60EE4
         util: 'SSEEdit v4.0.3'
@@ -3050,8 +3045,7 @@ plugins:
         name: 'Sounds of Skyrim - The Wilds'
     after:
       - 'LSFX-SSE-Audiosettings.esp'
-    inc:
-      - 'SoundsofSkyrimComplete.esp'
+    inc: [ 'SoundsofSkyrimComplete.esp' ]
     tag: [ Sound ]
     clean:
       - crc: 0xEFF95481
@@ -3061,8 +3055,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8093/' ]
     after:
       - 'LSFX-SSE-Audiosettings.esp'
-    inc:
-      - 'SoundsofSkyrimComplete.esp'
+    inc: [ 'SoundsofSkyrimComplete.esp' ]
     tag:
       - C.Acoustic
       - Sound
@@ -3075,8 +3068,7 @@ plugins:
     group: *underridesGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
-    inc:
-      - 'SoundsofSkyrimComplete.esp'
+    inc: [ 'SoundsofSkyrimComplete.esp' ]
     tag: [ Sound ]
     dirty:
       - <<: *quickClean
@@ -3096,8 +3088,7 @@ plugins:
         condition: 'many("Blacksmith Forge Water Fix SE( USSEP)?.esp")'
     tag: [ C.Water ]
   - name: 'Blacksmith Forge Water Fix SE.esp'
-    inc:
-      - 'Unofficial Skyrim Special Edition Patch.esp'
+    inc: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     dirty:
       - <<: *quickClean
         crc: 0xB417D179
@@ -4120,8 +4111,7 @@ plugins:
       - 'Cutting Room Floor.esp'
       - 'Immersive Weapons.esp'
       - 'ScopedBows.esp'
-    inc:
-      - 'Bijin AIO.esp'
+    inc: [ 'Bijin AIO.esp' ]
     msg:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
@@ -4414,8 +4404,7 @@ plugins:
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
     group: *veryEarlyGroup
-    inc:
-      - 'AsharaSkyrimCharacterPresetsReplacer.esp'
+    inc: [ 'AsharaSkyrimCharacterPresetsReplacer.esp' ]
     msg:
       - type: say
         content:
@@ -4702,8 +4691,7 @@ plugins:
 
   - name: 'Rigmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5271/' ]
-    inc:
-      - 'Open Cities Skyrim.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
     after:
       - 'Cutting Room Floor.esp'
       - 'ETaC - Complete.esp'
@@ -4773,8 +4761,7 @@ plugins:
     after:
       - 'DragonsKeep.esp'
       - 'S3DTrees NextGenerationForests.esp'
-    inc:
-      - 'DragonsKeep.esp'
+    inc: [ 'DragonsKeep.esp' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
@@ -5463,13 +5450,11 @@ plugins:
   - name: 'Enhanced Landscapes Oaks Standalone.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/73161' ]
     group: *floraGroup
-    inc:
-      - 'Enhanced Landscapes.esp'
+    inc: [ 'Enhanced Landscapes.esp' ]
   - name: 'Enhanced Landscapes Standalone Marsh Pines.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/73161' ]
     group: *floraGroup
-    inc:
-      - 'Enhanced Landscapes.esp'
+    inc: [ 'Enhanced Landscapes.esp' ]
 
   - name: '(Enhanced Vanilla Trees SSE|SRG Enhanced Trees Activator)\.esp'
     url:  [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11008' ]
@@ -5688,8 +5673,7 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'MajesticMountains_Moss.esp'
     group: *floraGroup
-    inc:
-      - 'Moss Rocks.esp'
+    inc: [ 'Moss Rocks.esp' ]
     tag: [ Graphics ]
     clean:
       - crc: 0x8764C4CD
@@ -5980,8 +5964,7 @@ plugins:
   - name: 'ViscousGrass.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/' ]
     group: *floraGroup
-    inc:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+    inc: [ 'Verdant - A Skyrim Grass Plugin SSE Version.esp' ]
 
   - name: 'Voluptuous.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22437/' ]
@@ -6243,8 +6226,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13196'
         name: 'The People Of Skyrim Complete SSE'
-    inc:
-      - 'Holds.esp'
+    inc: [ 'Holds.esp' ]
     dirty:
       # version: 8.1.8
       - <<: *quickClean
@@ -7142,8 +7124,7 @@ plugins:
       - 'Weapon AF.esp'
       - 'WACCF_Armor and Clothing Extension.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
-    inc:
-      - 'WACCF_BashedPatchLvlListFix.esp'
+    inc: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MorrowlootUltimate_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -7361,8 +7342,7 @@ plugins:
 
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
-    inc:
-      - 'Race Scale Remover.esp'
+    inc: [ 'Race Scale Remover.esp' ]
     group: *fixesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
@@ -7622,8 +7602,7 @@ plugins:
       - crc: 0xC9D0A414
         util: 'SSEEdit v4.0.0'
   - name: 'GIST-MLPSoulGems-patch.esp'
-    inc:
-      - 'MLP + GIST Patch.esp'
+    inc: [ 'MLP + GIST Patch.esp' ]
     req:
       - name: 'MLPSoulGems.esp'
         display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
@@ -7800,8 +7779,7 @@ plugins:
 
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
-    inc:
-      - 'Religion.esp'
+    inc: [ 'Religion.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -7994,8 +7972,7 @@ plugins:
 
   - name: 'SimpleFollowerManager.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19940' ]
-    inc:
-      - 'My Home Is Your Home.esp'
+    inc: [ 'My Home Is Your Home.esp' ]
     clean:
       # version: 1.1
       - crc: 0x12897011
@@ -8246,8 +8223,7 @@ plugins:
   - name: 'RDO - CRF + USSEP Patch.esp'
     req:
       - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - USSEP Patch.esp'
+    inc: [ 'RDO - USSEP Patch.esp' ]
     clean:
       # version: Final
       - crc: 0xA2753357
@@ -8255,8 +8231,7 @@ plugins:
   - name: 'RDO - USSEP Patch.esp'
     req:
       - 'Relationship Dialogue Overhaul.esp'
-    inc:
-      - 'RDO - CRF + USSEP Patch.esp'
+    inc: [ 'RDO - CRF + USSEP Patch.esp' ]
     clean:
       # version: Final
       - crc: 0x44DE71B0
@@ -9870,8 +9845,7 @@ plugins:
   - name: 'Immersive Jewelry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5336/' ]
     after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
-    inc:
-      - 'Lootification.esm'
+    inc: [ 'Lootification.esm' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveJewelry_Patch.esp")'
@@ -10949,8 +10923,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18327/'
         name: 'The Republic of Maslea - Chapter one - SSE'
-    inc:
-      - 'MoreBanditCamps.esp'
+    inc: [ 'MoreBanditCamps.esp' ]
     req:
       - name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
         display: '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)'
@@ -11103,8 +11076,7 @@ plugins:
       - 'Enhanced Landscapes.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'MoonAndStar_MAS.esp'
-    inc:
-      - 'AuroraVillage.esp'
+    inc: [ 'AuroraVillage.esp' ]
     msg:
       # CRC after QAC. (0x482BBCA6)
       - <<: *sortMasters
@@ -11211,8 +11183,7 @@ plugins:
   - name: 'Aurora(Village| - Moon and Star Patch).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17647' ]
   - name: 'AuroraVillage.esp'
-    inc:
-      - 'Lake Ilinalta Shack.esp'
+    inc: [ 'Lake Ilinalta Shack.esp' ]
     dirty:
       # version: 1.1
       - <<: *quickClean
@@ -11581,8 +11552,7 @@ plugins:
 
   - name: 'Oblivion Gates in Cities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/388/' ]
-    inc:
-      - 'Open Cities Skyrim.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
     clean:
       # version: 2.0.2
       - crc: 0x618758ED
@@ -11604,8 +11574,7 @@ plugins:
 
   - name: 'Provincial Courier Service.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/' ]
-    inc:
-      - 'Eli_Halla.esp'
+    inc: [ 'Eli_Halla.esp' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -12031,8 +12000,7 @@ plugins:
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
     group: *veryEarlyGroup
-    inc:
-      - 'WinterholdBridgeFixed.esp'
+    inc: [ 'WinterholdBridgeFixed.esp' ]
     dirty:
       # version: 1
       - <<: *quickClean
@@ -12071,8 +12039,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8683/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
-    inc:
-      - 'DragonBridgeBoardwalk.esp'
+    inc: [ 'DragonBridgeBoardwalk.esp' ]
     tag:
       - C.Location
       - Invent
@@ -12122,8 +12089,7 @@ plugins:
   - name: 'Distinct Interiors( - Guilds| - Inns| - Miscellaneous| - Player Homes| - Shops)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
   - name: 'Distinct Interiors - Guilds.esp'
-    inc:
-      - 'OpulentThievesGuild.esp'
+    inc: [ 'OpulentThievesGuild.esp' ]
     clean:
       # version: 1.7
       - crc: 0x16EC9185
@@ -12131,8 +12097,7 @@ plugins:
   - name: 'Distinct Interiors - Inns.esp'
     after:
      - 'EnhancedLightsandFX.esp'
-    inc:
-      - 'InnCredible.esp'
+    inc: [ 'InnCredible.esp' ]
     clean:
       # version: 1.7
       - crc: 0x99012024
@@ -12482,8 +12447,7 @@ plugins:
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 91
   - name: 'Inns and Taverns - Heartwood Inn.esp'
-    inc:
-      - 'Inns and Taverns.esp'
+    inc: [ 'Inns and Taverns.esp' ]
     dirty:
       # version: 1.2
       - <<: *quickClean
@@ -12491,8 +12455,7 @@ plugins:
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 11
   - name: 'Inns and Taverns - The Ghostly View.esp'
-    inc:
-      - 'Inns and Taverns.esp'
+    inc: [ 'Inns and Taverns.esp' ]
     dirty:
       # version: 1.2
       - <<: *quickClean
@@ -12703,8 +12666,7 @@ plugins:
       - 'ETaC - Complete.esp'
   - name: 'CFTO-JK-Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
-    inc:
-      - 'ETaC - Complete.esp'
+    inc: [ 'ETaC - Complete.esp' ]
   - name: 'JKs Skyrim_Holidays_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
     inc:
@@ -12758,8 +12720,7 @@ plugins:
   # JK's Skyrim - No Snow Under the Roof Patches
   - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
-    inc:
-      - 'Dawnstar_No Snow Under the Roof_Patch.esp'
+    inc: [ 'Dawnstar_No Snow Under the Roof_Patch.esp' ]
     after:
       - 'NSUTR_groundsnow_mesh_fixes.esp'
     msg:
@@ -12767,8 +12728,7 @@ plugins:
         condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
         subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
   - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
-    inc:
-      - 'ETaC - Complete.esp'
+    inc: [ 'ETaC - Complete.esp' ]
     clean:
       # version: 1
       - crc: 0xF5762CB3
@@ -12805,8 +12765,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/350/'
       - 'https://www.afkmods.com/index.php?/files/file/1768-karthwasten/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2960640'
-    inc:
-      - 'Karthwasten - Let The Silver Flow.esp'
+    inc: [ 'Karthwasten - Let The Silver Flow.esp' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
@@ -12932,8 +12891,7 @@ plugins:
       - crc: 0xA5D77392
         util: 'SSEEdit v4.0.3'
   - name: 'MCWT_DeadDunmerDelivery.esp'
-    inc:
-      - 'WendigoFactionSkillRequirements.esp'
+    inc: [ 'WendigoFactionSkillRequirements.esp' ]
     clean:
       - crc: 0x0AB9A475
         util: 'SSEEdit v4.0.3'
@@ -13011,8 +12969,7 @@ plugins:
       - crc: 0x4D58A63C
         util: 'SSEEdit v4.0.3'
   - name: 'MCWT_TheAugursAdmonishment.esp'
-    inc:
-      - 'NotSoFast-MageGuild.esp'
+    inc: [ 'NotSoFast-MageGuild.esp' ]
     msg:
       - type: say
         content:
@@ -13043,8 +13000,7 @@ plugins:
 
   - name: 'Mixwater Mill Reborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13348/' ]
-    inc:
-      - 'Checkpoints of Skyrim.esp'
+    inc: [ 'Checkpoints of Skyrim.esp' ]
     clean:
       # version: 1.3
       - crc: 0x792410E3
@@ -13415,8 +13371,7 @@ plugins:
       - 'SkyrimSewers.esp'
       - 'SkyrimsUniqueTreasures.esp'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
-    inc:
-      - 'Vaults of Skyrim 1.0 NEXUS.esp'
+    inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -13610,8 +13565,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
-    inc:
-      - 'Rorikstead Revised.esp'
+    inc: [ 'Rorikstead Revised.esp' ]
     clean:
       # version: 1.0.7
       - crc: 0xF698D114
@@ -13825,8 +13779,7 @@ plugins:
     tag:
       - C.Location
       - C.Regions
-    inc:
-      - 'Real Solitude Rocks.esp'
+    inc: [ 'Real Solitude Rocks.esp' ]
     after:
       - 'EnhancedLightsandFX.esp'
       - 'Hole in the Wall - Solitude.esp'
@@ -13957,8 +13910,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
       - 'https://www.afkmods.com/index.php?/files/file/1912-whistling-mine/'
       - 'https://mods.bethesda.net/#en/workshop/skyrim/mod-detail/2959645/'
-    inc:
-      - 'TES Arena Amol.esp'
+    inc: [ 'TES Arena Amol.esp' ]
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
@@ -15597,8 +15549,7 @@ plugins:
 
   - name: 'SkaalManor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10042' ]
-    inc:
-      - 'Skaal Village.esp'
+    inc: [ 'Skaal Village.esp' ]
     dirty:
       # version: 1.2
       - <<: *reqManualFix
@@ -16104,8 +16055,7 @@ plugins:
         subs: [ 'Unique Uniques_CCOR_Patch.esp']
         condition: 'active("Unique Uniques_CCOR_Patch.esp")'
   - name: 'WACCF_Survival Mode_Patch.esp'
-    inc:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
+    inc: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
