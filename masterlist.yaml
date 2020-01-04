@@ -1708,12 +1708,18 @@ plugins:
     group: *preVeryEarlyGroup
 
   ### Unofficial Skyrim Creation Club Content Patches ###
+  - name: 'Unofficial Skyrim Creation Club Content Patch.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/' ]
+    group: *underridesGroup
+    clean:
+      - crc: 0x00AFF89A
+        util: 'SSEEdit v4.0.3'
   - name: 'Unofficial Skyrim Survival Patch.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/' ]
     group: *underridesGroup
     tag: [ Graphics ]
     clean:
-      - crc: 0xECADC6AB
+      - crc: 0x2DA61684
         util: 'SSEEdit v4.0.3'
 
 ###### Fixes ######
@@ -2080,7 +2086,7 @@ plugins:
       - Stats
     dirty:
       - <<: *quickClean
-        crc: 0x4E95AD9B
+        crc: 0x6CBB890F
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
   - name: 'Complete Alchemy & Cooking Overhaul_ASM-SSE.esp'
@@ -3457,7 +3463,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831' ]
     after: [ 'SoS_Cathedral_Patch.esp' ]
     clean:
-      - crc: 0x3AFEB82C
+      - crc: 0x569F0837
         util: 'SSEEdit v4.0.3'
   - name: 'DarkerNights-ObsidianInCathedral.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831' ]
@@ -5528,11 +5534,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26138/' ]
     group: *landscapeGroup
     clean:
-      - crc: 0x2702E64A
+      - crc: 0xA1436CB3
         util: 'SSEEdit v4.0.3'
-      - crc: 0x6E37F10B
+      - crc: 0x953A463D
         util: 'SSEEdit v4.0.3'
-      - crc: 0x4097CB09
+      - crc: 0xAFC871F8
         util: 'SSEEdit v4.0.3'
 
   - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
@@ -6207,7 +6213,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'TreasureHunter.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/' ]
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/31345'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TreasureHunter_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -6221,6 +6229,11 @@ plugins:
         crc: 0xC63DD30E
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 5
+      # Fixed esp
+      - <<: *reqManualFix
+        crc: 0xCFAE157A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
 
   - name: 'tpos_ultimate_esm.esp'
     url:
@@ -6326,8 +6339,7 @@ plugins:
         type: say
         condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.2", >=)'
     clean:
-      # version: 5.0.3
-      - crc: 0x310F4AD9
+      - crc: 0x1CAF3C94
         util: 'SSEEdit v4.0.3'
 
   - name: 'YASH2.esp'
@@ -7196,11 +7208,11 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 271
     clean:
-      # version: Original 1.3.1
-      - crc: 0xBF0E1D2C
+      # version: Original 1.3.4
+      - crc: 0x40474F86
         util: 'SSEEdit v4.0.3'
-      # version: Another Sorting Mod Replacer 1.3.1
-      - crc: 0x46A5D4EB
+      # version: Another Sorting Mod Replacer 1.3.4
+      - crc: 0x9BBD1D36
         util: 'SSEEdit v4.0.3'
   - name: 'MLU - .*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
@@ -7255,8 +7267,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RoLEA_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
-      # version: 2.1
-      - crc: 0x5BA89E17
+      - crc: 0x78CAE7E3
         util: 'SSEEdit v4.0.3'
 
   - name: 'RichMerchantsSkyrim_x\d+.esp'
@@ -7764,14 +7775,20 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21403/' ]
     msg: [ *patch3rdPartySRPC ]
 
-  - name: 'UFD Enhanced Soultrap.esp'
+  - name: 'UFD Enhanced Soultrap.es(l|p)'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6338/' ]
     inc:
       - 'AcquisitiveSoulGemMultithreaded.esp'
       - 'GIST soul trap.esp'
-    msg:
-      - *doNotClean
-      - *requiresMCM
+    msg: [ *requiresMCM ]
+  - name: 'UFD Enhanced Soultrap.esl'
+    clean:
+      - crc: 0x6631183A
+        util: 'SSEEdit v4.0.3'
+  - name: 'UFD Enhanced Soultrap.esp'
+    clean:
+      - crc: 0x08DC13F6
+        util: 'SSEEdit v4.0.3'
 
   - name: 'WardsFunctionalitiesExtended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18664/' ]
@@ -7996,7 +8013,7 @@ plugins:
         subs: [ 'Simple Children' ]
         condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
     clean:
-      - crc: 0x4EAFBC85
+      - crc: 0x4DDB8DBE
         util: 'SSEEdit v4.0.3'
 
   - name: 'Guard Dialogue Overhaul.esp'
@@ -9174,7 +9191,7 @@ plugins:
   - name: 'Growl - Werebeasts of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31245' ]
     clean:
-      - crc: 0xF944EEC6
+      - crc: 0xBF6B641F
         util: 'SSEEdit v4.0.3'
 
   - name: 'Lock_Overhaul.esp'
@@ -9546,6 +9563,8 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
+        name: 'Another Sorting Mod - Replacer Plugin'
     group: *underridesGroup
     msg:
       - *alreadyInLotD
@@ -9585,6 +9604,9 @@ plugins:
       # version: 4.2
       - crc: 0x32587221
         util: 'SSEEdit v4.0.2f'
+      # version: ASM 4.2.7
+      - crc: 0x2851F36D
+        util: 'SSEEdit v4.0.3'
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
@@ -10092,6 +10114,14 @@ plugins:
     msg:
       - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Be A Milk Drinker.esp")'
+
+  - name: 'MisterB''s Unique Treasures.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28939' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF18C33A9
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
 
   - name: 'MLPSoulGems.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25709' ]
@@ -11416,6 +11446,21 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 24
 
+  - name: 'Forgotten DungeonsSSE.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/449/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x060D1EF7
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 512
+  - name: 'Forgotten DungeonsSSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/449/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xB69EB744
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 508
+
   - name: 'frozenintime.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12625/' ]
     dirty:
@@ -11923,6 +11968,35 @@ plugins:
       # version: 1.4a
       - crc: 0x37F1F20D
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ClefJ''s Half Moon Mill.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24365' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xF2F66F1D
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
+        udr: 6
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x6D60F066
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+  - name: 'ClefJ''s Karthwasten.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30947' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xC3274656
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 4
+  - name: 'ClefJShorsStone.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22988' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xDF1A0762
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
+        udr: 28
 
   - name: 'CollegeOfWinterholdImmersive.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/' ]
@@ -13251,7 +13325,7 @@ plugins:
         subs: [ 'Winterhold Restored' ]
         condition: 'active("Winterhold Restored.esp") and not active("OCW_WR2_FEPatch.esp") and not file("OCW_WR2_FEPatch.bsa")'
     clean:
-      - crc: 0x7C8A6F78
+      - crc: 0x5A9BBFAE
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_CellSettings.esp'
     group: *highPriorityGroup
@@ -13277,7 +13351,7 @@ plugins:
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     clean:
-      - crc: 0x964DBD83
+      - crc: 0x046122DB
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_SPO_FEPatch.esp'
     msg:
@@ -14164,6 +14238,20 @@ plugins:
       - <<: *reqManualFix
         crc: 0xC844057C
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
+  - name: 'AonghusHouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/167/' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x0D810996
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 11
+        udr: 2
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x4851B416
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
   - name: 'AshsRestPlayerHouse.esp'
