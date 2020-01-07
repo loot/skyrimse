@@ -4,6 +4,10 @@ common:
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+  - &LotD_v5
+    name: 'LegacyoftheDragonborn.esm'
+    display: 'Legacy of the Dragonborn v5+'
+    condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
   - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](http://skse.silverlock.org))**'
@@ -5933,10 +5937,7 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135'
     group: *highPriorityGroup
-    inc:
-      - name: 'LegacyoftheDragonborn.esm'
-        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
-        display: 'Legacy of the Dragonborn v5+'
+    inc: [ *LotD_v5 ]
       - name: 'JKs Skyrim.esp'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
         display: 'JKs Skyrim'
@@ -8446,10 +8447,7 @@ plugins:
 
   - name: 'Dawnguard&VolkiharArtifactsQuests.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12098' ]
-    inc:
-      - name: 'LegacyoftheDragonborn.esm'
-        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
-        display: 'Legacy of the Dragonborn v5+'
+    inc: [ *LotD_v5 ]
     dirty:
       - <<: *quickClean
         crc: 0xA887288B
@@ -9864,10 +9862,7 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'Lore Weapon Expansion - (Daedric Crescent|Goldbrand|Relics of the Crusader)\.esp'
     group: *veryEarlyGroup
-    inc:
-      - name: 'LegacyoftheDragonborn.esm'
-        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
-        display: 'Legacy of the Dragonborn v5+'
+    inc: [ *LotD_v5 ]
   - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
     clean:
       # version: 1.4c
@@ -10775,10 +10770,7 @@ plugins:
         itm: 3
   - name: 'MoonAndStar_ImmersionPatch.esp'
     group: *underridesGroup
-    inc:
-      - name: 'LegacyoftheDragonborn.esm'
-        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
-        display: 'Legacy of the Dragonborn v5+'
+    inc: [ *LotD_v5 ]
     dirty:
       # version: 2.0
       - <<: *quickClean
@@ -11580,10 +11572,7 @@ plugins:
     clean:
       - crc: 0x4C4ACF55
         util: 'SSEEdit v4.0.3'
-    inc:
-      - name: 'LegacyoftheDragonborn.esm'
-        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
-        display: 'Legacy of the Dragonborn v5+'
+    inc: [ *LotD_v5 ]
 
   - name: 'Stonecrest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9303/' ]
