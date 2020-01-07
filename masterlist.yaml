@@ -934,42 +934,6 @@ globals:
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
 
 # SKSE Plugins - Compatibility
-  # Game Runtime
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)' ]
-    condition: 'file("SKSE/Plugins/DynDOLOD.DLL") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynDOLOD.DLL", "1.5.73.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynDOLOD.DLL", "1.5.73.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/)' ]
-    condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
-    condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
-    condition: 'file("SKSE/Plugins/EngineFixes.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EngineFixes.dll", "4.0.0.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EngineFixes.dll", "4.0.0.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
-    condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)' ]
-    condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
-    condition: 'file("SKSE/Plugins/Fuz Ro D''oh.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/Fuz Ro D''oh.dll", "1.5.12.316", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/Fuz Ro D''oh.dll", "1.5.12.316", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Glow Be Gone](https://www.nexusmods.com/skyrimspecialedition/mods/21703/)' ]
-    condition: 'file("SKSE/Plugins/GlowBeGoneSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/GlowBeGoneSSE.dll", "1.3.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/GlowBeGoneSSE.dll", "1.3.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
-    condition: 'file("SKSE/Plugins/HookShareSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Named Quicksaves - A Save Manager](https://www.nexusmods.com/skyrimspecialedition/mods/16840/)' ]
-    condition: 'file("SKSE/Plugins/NQS_NamedQuicksaves.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/NQS_NamedQuicksaves.dll", "2.3.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/NQS_NamedQuicksaves.dll", "2.3.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[To Your Face SE](https://www.nexusmods.com/skyrimspecialedition/mods/24720/)' ]
-    condition: 'file("SKSE/Plugins/to_your_face.dll") and file("../skse64_loader.exe") and checksum("SKSE/Plugins/to_your_face.dll", E7B39834) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)'
-
   # ENBSeries
   - <<: *versionXIncY
     subs:
