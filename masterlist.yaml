@@ -8953,6 +8953,12 @@ plugins:
       - name: 'SKSE/Plugins/VRPerkExtender.dll'
         display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
         condition: 'file("SkyrimVR.esm")'
+    msg:
+      - <<: *semiCompatible
+        subs:
+          - '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)'
+          - 'Disable resurrection in werebeast form because the feature breaks werebeast mods.'
+        condition: 'active("mrt_MarkofArkay SE.esp")'
     clean:
       - crc: 0xBF6B641F
         util: 'SSEEdit v4.0.3'
