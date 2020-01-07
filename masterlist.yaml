@@ -9864,6 +9864,10 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'Lore Weapon Expansion - (Daedric Crescent|Goldbrand|Relics of the Crusader)\.esp'
     group: *veryEarlyGroup
+    inc:
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+        display: 'Legacy of the Dragonborn v5+'
   - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
     clean:
       # version: 1.4c
