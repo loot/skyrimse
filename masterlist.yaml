@@ -178,6 +178,7 @@ common:
   - &includesMBBF
     <<: *includesX
     subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
+    condition: 'file("Modern Brawl Bug Fix.esp")'
 
   - &missingRequirementXforY
     type: warn
@@ -8968,6 +8969,7 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1519' ]
+      - *includesMBBF
       - <<: *semiCompatible
         subs:
           - '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)'
