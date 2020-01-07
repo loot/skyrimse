@@ -1055,12 +1055,8 @@ groups:
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *lateLoadersGroup ]
 
-  - name: &dispersedGroup Dispersed
-
   - name: &dynamicPatchGroup Dynamic Patches
-    after:
-      - *dispersedGroup
-      - *lvlListsGroup
+    after: [ *lvlListsGroup ]
 
   - name: &lateChangesGroup Late Fixes & Changes
     after: [ *dynamicPatchGroup ]
@@ -2191,7 +2187,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
         name: 'YOT - Your Own Thoughts SE'
-    group: *dispersedGroup
     tag: [ Text ]
   - name: 'YOT - LOTD.esp'
     inc: [ *LotD_v5 ]
