@@ -880,29 +880,29 @@ globals:
       - lang: sv
         text: 'Det verkar som att du har installerat **Skyrim Script Extender**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **[SKSE](http://skse.silverlock.org)** på ett korrekt sätt.'
 
-# Skyrim SE - Latest Version
+# Latest Version
+  # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe")'
-# Skyrim VR - Latest Version
+  # Skyrim VR Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", <) and file("../SkyrimVR.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim VR**' ]
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe")'
-
-# SKSE 64 - Latest Version
+  # SKSE 64
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.17", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.17", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
-# SKSE VR - Latest Version
+  # SKSE VR
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
@@ -910,7 +910,8 @@ globals:
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", >=) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
 
-# SKSE 64 - Compatibility
+# Version Compatibility
+  # SKSE 64 - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
@@ -925,51 +926,13 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
-# SKSE VR - Compatibility
+  # SKSE VR - Game Runtime
   - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
-
-# SKSE Plugins - Compatibility
-  # Game Runtime
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)' ]
-    condition: 'file("SKSE/Plugins/DynDOLOD.DLL") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynDOLOD.DLL", "1.5.73.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynDOLOD.DLL", "1.5.73.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/)' ]
-    condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/DynamicEquipmentManagerSSE.dll", "2.1.7.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
-    condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
-    condition: 'file("SKSE/Plugins/EngineFixes.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EngineFixes.dll", "4.0.0.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EngineFixes.dll", "4.0.0.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
-    condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/EnhancedNoPoisonDialog.dll", "1.2.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)' ]
-    condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/FlatMapMarkersSSE.dll", "1.1.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
-    condition: 'file("SKSE/Plugins/Fuz Ro D''oh.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/Fuz Ro D''oh.dll", "1.5.12.316", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/Fuz Ro D''oh.dll", "1.5.12.316", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Glow Be Gone](https://www.nexusmods.com/skyrimspecialedition/mods/21703/)' ]
-    condition: 'file("SKSE/Plugins/GlowBeGoneSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/GlowBeGoneSSE.dll", "1.3.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/GlowBeGoneSSE.dll", "1.3.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
-    condition: 'file("SKSE/Plugins/HookShareSSE.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/HookShareSSE.dll", "3.0.1.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[Named Quicksaves - A Save Manager](https://www.nexusmods.com/skyrimspecialedition/mods/16840/)' ]
-    condition: 'file("SKSE/Plugins/NQS_NamedQuicksaves.dll") and file("../skse64_loader.exe") and ((version("SKSE/Plugins/NQS_NamedQuicksaves.dll", "2.3.2.0", ==) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)) or (version("SKSE/Plugins/NQS_NamedQuicksaves.dll", "2.3.2.0", <) and product_version("../SkyrimSE.exe", "1.5.73.0", ==)))'
-  - <<: *versionSksePluginIncSSE
-    subs: [ '[To Your Face SE](https://www.nexusmods.com/skyrimspecialedition/mods/24720/)' ]
-    condition: 'file("SKSE/Plugins/to_your_face.dll") and file("../skse64_loader.exe") and checksum("SKSE/Plugins/to_your_face.dll", E7B39834) and product_version("../SkyrimSE.exe", "1.5.73.0", !=)'
-
   # ENBSeries
   - <<: *versionXIncY
     subs:
@@ -977,117 +940,18 @@ globals:
       - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../d3d11.dll") and version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../d3d11.dll", "0.3.7.1", <)'
 
-# SKSE Plugins - Requirements
-  # SKSE 64
+# Plugin Requirements
+  # SKSE
   - <<: *requiresSKSE
     subs: [ 'an SKSE Plugin' ]
-    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-
-  - <<: *requiresSKSE
-    subs: [ '[Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245)' ]
-    condition: 'file("SKSE/Plugins/AchievementsModsEnabler.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Better Jumping SE](https://www.nexusmods.com/skyrimspecialedition/mods/18967/)' ]
-    condition: 'file("SKSE/Plugins/BetterJumpingSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[CBP Physics](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
-    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Classic Sprinting Redone](https://www.nexusmods.com/skyrimspecialedition/mods/20166/)' ]
-    condition: 'file("SKSE/Plugins/ClassicSprinting.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Display Enemy Level](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
-    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Dynamic Equipment Manager](https://www.nexusmods.com/skyrimspecialedition/mods/21937/)' ]
-    condition: 'file("SKSE/Plugins/DynamicEquipmentManagerSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Encounter Zones Unlocked](https://www.nexusmods.com/skyrimspecialedition/mods/19608/)' ]
-    condition: 'file("SKSE/Plugins/encounter_zones_unlocked.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
-    condition: 'file("SKSE/Plugins/EngineFixes.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Enhanced No Poison Dialogue](https://www.nexusmods.com/skyrimspecialedition/mods/19859/)' ]
-    condition: 'file("SKSE/Plugins/EnhancedNoPoisonDialog.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Enchantment Reload Fix SE](https://www.nexusmods.com/skyrimspecialedition/mods/21055/)' ]
-    condition: 'file("SKSE/Plugins/EnchantmentReloadFixSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Experience](https://www.nexusmods.com/skyrimspecialedition/mods/17751/)' ]
-    condition: 'file("SKSE/Plugins/Experience.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Flat Map Markers](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)' ]
-    condition: 'file("SKSE/Plugins/FlatMapMarkersSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Floating Damage](https://www.nexusmods.com/skyrimspecialedition/mods/14332/)' ]
-    condition: 'file("SKSE/Plugins/FloatingDamage.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
-    condition: 'file("SKSE/Plugins/Fuz Ro D''oh.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Glow Be Gone](https://www.nexusmods.com/skyrimspecialedition/mods/21703/)' ]
-    condition: 'file("SKSE/Plugins/GlowBeGoneSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Havok Fix](https://www.nexusmods.com/skyrimspecialedition/mods/18160/)' ]
-    condition: 'file("SKSE/Plugins/HavokFix64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Hook Share SSE](https://www.nexusmods.com/skyrimspecialedition/mods/21373/)' ]
-    condition: 'file("SKSE/Plugins/HookShareSSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[JContainers 64](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
-    condition: 'file("SKSE/Plugins/JContainers64.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[ModifyFaceGen Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
-    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
-    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Quick Loot RE](https://www.nexusmods.com/skyrimspecialedition/mods/21085/)' ]
-    condition: 'file("SKSE/Plugins/QuickLootRE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Simple Face to Face Conversation - Updated](https://www.nexusmods.com/skyrimspecialedition/mods/21220/)' ]
-    condition: 'file("SKSE/Plugins/SimpleFace2FaceKiwami.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Skyrim Skill Uncapper](https://www.nexusmods.com/skyrimspecialedition/mods/8889/)' ]
-    condition: 'file("SKSE/Plugins/SkyrimUncapper.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[SkyriimSouls - Unpaused Game Menus](https://www.nexusmods.com/skyrimspecialedition/mods/15170/)' ]
-    condition: 'file("SKSE/Plugins/SkyrimSouls.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Stay At The System Page - Updated](https://www.nexusmods.com/skyrimspecialedition/mods/19832/)' ]
-    condition: 'file("SKSE/Plugins/StayAtSystemPageSE.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[To Your Face SE](https://www.nexusmods.com/skyrimspecialedition/mods/24720/)' ]
-    condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../skse64_loader.exe") and not file("../SkyrimVR.exe")'
-
-  # SKSE VR
-  - <<: *requiresSKSE
-    subs: [ '[CBP Physics VR](https://www.nexusmods.com/skyrimspecialedition/mods/13207/)' ]
-    condition: 'file("SKSE/Plugins/cbp.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[Display Enemy Level VR](https://www.nexusmods.com/skyrimspecialedition/mods/18533/)' ]
-    condition: 'file("SKSE/Plugins/DisplayEnemyLevel.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
-    condition: 'file("SKSE/Plugins/JContainersVR.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[ModifyFaceGen Fix VR](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)' ]
-    condition: 'file("SKSE/Plugins/mfgfix.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[PapyrusUtil VR](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
-    condition: 'file("SKSE/Plugins/PapyrusUtil.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-  - <<: *requiresSKSE
-    subs: [ '[To Your Face VR](https://www.nexusmods.com/skyrimspecialedition/mods/24720/)' ]
-    condition: 'file("SKSE/Plugins/to_your_face.dll") and not file("../sksevr_loader.exe") and not file("../SkyrimSE.exe")'
-
-# Other Requirements
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
+  # ENBSeries
   - <<: *missingRequirementXforY
     subs:
       - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
       - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
+  # DLL Loaders
   - <<: *missingRequirementXforY
     subs:
       - '[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
