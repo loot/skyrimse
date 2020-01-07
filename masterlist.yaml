@@ -8968,6 +8968,11 @@ plugins:
           - '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)'
           - 'Disable resurrection in werebeast form because the feature breaks werebeast mods.'
         condition: 'active("mrt_MarkofArkay SE.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Mortal Enemies'
+          - '[Growl - Mortal Enemies Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31270)'
+        condition: 'active("Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp") and not file("Growl-MortalEnemies Patch.esp")'
     clean:
       - crc: 0xBF6B641F
         util: 'SSEEdit v4.0.3'
