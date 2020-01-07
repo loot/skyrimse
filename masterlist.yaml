@@ -880,29 +880,29 @@ globals:
       - lang: sv
         text: 'Det verkar som att du har installerat **Skyrim Script Extender**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **[SKSE](http://skse.silverlock.org)** på ett korrekt sätt.'
 
-# Skyrim SE - Latest Version
+# Latest Version
+  # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe")'
-# Skyrim VR - Latest Version
+  # Skyrim VR Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", <) and file("../SkyrimVR.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim VR**' ]
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe")'
-
-# SKSE 64 - Latest Version
+  # SKSE 64
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.17", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.17", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
-# SKSE VR - Latest Version
+  # SKSE VR
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
@@ -910,7 +910,8 @@ globals:
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.10", >=) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
 
-# SKSE 64 - Compatibility
+# Version Compatibility
+  # SKSE 64 - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
@@ -925,15 +926,13 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
-# SKSE VR - Compatibility
+  # SKSE VR - Game Runtime
   - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
-
-# SKSE Plugins - Compatibility
   # ENBSeries
   - <<: *versionXIncY
     subs:
@@ -941,18 +940,18 @@ globals:
       - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../d3d11.dll") and version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../d3d11.dll", "0.3.7.1", <)'
 
-# SKSE Plugins - Requirements
-  # SKSE 64
+# Plugin Requirements
+  # SKSE
   - <<: *requiresSKSE
     subs: [ 'an SKSE Plugin' ]
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader.exe")'
-
-# Other Requirements
+  # ENBSeries
   - <<: *missingRequirementXforY
     subs:
       - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
       - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
+  # DLL Loaders
   - <<: *missingRequirementXforY
     subs:
       - '[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
