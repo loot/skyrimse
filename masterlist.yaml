@@ -9133,9 +9133,15 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
     group: *perksGroup
     after:
+      - name: 'Adamant.esp'
+        condition: 'file("Vokriinator.esp")'
+      - name: 'PathOfSorcery.esp'
+        condition: 'file("Vokriinator.esp")'
       - 'Phenderix Magic Evolved.esp'
       - 'Phenderix Magic World.esp'
       - 'SAFO.esp'
+      - name: 'SPERG-SSE.esp'
+        condition: 'file("Vokriinator.esp")'
       - 'Undeath.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
       - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
@@ -9178,7 +9184,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     group: *perksGroup
     after:
+      - 'Adamant.esp'
+      - 'SPERG-SSE.esp'
       - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'not file("Vokriinator.esp")'
+      - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
         condition: 'not file("Vokriinator.esp")'
     clean:
       # version: 1.2
@@ -9205,13 +9215,17 @@ plugins:
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'DVA - Dynamic Vampire Appearance.esp'
-      - 'Ordinator - Perks of Skyrim.esp'
       - 'RaceCompatibilityUSKPOverride.esp'
       - 'Requiem.esp'
-      # Group after for Vokrii, to prevent sorting errors
-      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
       - 'Volkihar Knight.esp'
       - 'YOT - Your Own Thoughts.esp'
+      # Group afters, to prevent sorting errors
+      - 'Adamant.esp'
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'PathOfSorcery.esp'
+      - 'SPERG-SSE.esp'
+      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
+      - 'Vokriinator.esp'
     tag:
       - Graphics
       - Names
@@ -9252,6 +9266,9 @@ plugins:
   - name: 'SPERG-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
     group: *perksGroup
+    after:
+      - name: 'Adamant.esp'
+        condition: 'file("Vokriinator.esp")'
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
@@ -9266,6 +9283,13 @@ plugins:
   - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176' ]
     group: *perksGroup
+    after:
+      - name: 'Adamant.esp'
+        condition: 'file("Vokriinator.esp")'
+      - name: 'PathOfSorcery.esp'
+        condition: 'file("Vokriinator.esp")'
+      - name: 'SPERG-SSE.esp'
+        condition: 'file("Vokriinator.esp")'
     inc:
       - 'PerkusMaximus_Mage.esp'
       - 'PerkusMaximus_Master.esp'
