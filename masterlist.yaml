@@ -2966,9 +2966,6 @@ plugins:
         subs: [ 'Needs Mod' ]
         condition: '(active("iNeed.esp") or active("RealisticNeedsandDiseases.esp")) and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Paper World Map' ]
-        condition: 'active("Paper World Map.esp") and not active("RealisticWaterTwo - Paper Wold Map Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'The People Of Skyrim Complete' ]
         condition: 'active("tpos_ultimate_esm.esp") and not active("RWT - People of Skyrim Patch.esp")'
       - <<: *patchIncluded
@@ -3031,10 +3028,6 @@ plugins:
     clean:
       - crc: 0x871A6E37
         util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - Paper Wold Map Patch.esp'
-    clean:
-      - crc: 0x241E5E19
-        util: 'SSEEdit v4.0.3'
   - name: 'RealisticWaterTwo - Waves - Falskaar.esp'
     clean:
       - crc: 0xB36FF246
@@ -3044,7 +3037,7 @@ plugins:
       - crc: 0xCE7917CD
         util: 'SSEEdit v4.0.3'
   ### RWT - Old version files
-  - name: 'RealisticWaterTwo - (FlowingLakes|Landscape Fixes|Open Cities|Waves|Wyrmstooth)\.esp'
+  - name: 'RealisticWaterTwo - (FlowingLakes|Landscape Fixes|Open Cities|Paper Wold Map Patch|Waves|Wyrmstooth)\.esp'
     msg: [ *obsolete ]
 
   - name: 'Wavy Waters.esp'
