@@ -1590,6 +1590,19 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29434/' ]
     group: *veryEarlyGroup
 
+  - name: 'ButterfliesUnchained.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29538/' ]
+    after: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Complete Alchemy & Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("ButterfliesUnchained - CACO Patch.esp") and not active("ButterfliesUnchained(ESL) - CACO Patch.esp")'
+    clean:
+      - crc: 0x9B773508
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x69470191
+        util: 'SSEEdit v4.0.3'
+
   - name: 'FloraRespawnFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
     group: *floraGroup
