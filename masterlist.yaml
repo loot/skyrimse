@@ -6886,6 +6886,18 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: 'Infinite Gold For Merchants.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16162/' ]
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+      - 'VendorSaleDelay-Gone.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[RDO - Infinite Gold for Merchants Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31271/)'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("RDO - Infinite Gold for Merchants patch.esp")'    
+
   - name: 'J42_ArmorRatingRedux.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17932/' ]
     after:
@@ -7186,6 +7198,7 @@ plugins:
   - name: 'TTR_Master_Trader.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1826/' ]
     after: [ 'Relationship Dialogue Overhaul.esp' ]
+    inc: [ 'Infinite Gold For Merchants.esp' ]
 
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
@@ -15850,7 +15863,11 @@ plugins:
       - crc: 0x91B6301A
         util: 'SSEEdit v4.0.3'
 
-###### Patches ######
+###### 3RD Party Patches ######
+  - name: 'RDO - Infinite Gold for Merchants patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31271' ]
+    req: [ 'Infinite Gold For Merchants.esp' ]
+
   - name: 'XenonCitiesPatch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/'
