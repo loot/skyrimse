@@ -6891,6 +6891,12 @@ plugins:
     after:
       - 'Relationship Dialogue Overhaul.esp'
       - 'VendorSaleDelay-Gone.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[RDO - Infinite Gold for Merchants Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31271/)'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("RDO - Infinite Gold for Merchants patch.esp")'    
 
   - name: 'J42_ArmorRatingRedux.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17932/' ]
