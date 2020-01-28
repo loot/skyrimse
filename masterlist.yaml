@@ -12298,6 +12298,7 @@ plugins:
 
   - name: 'Friendlier Taverns.esp'
     url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1399'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/2506'
     dirty:
       - <<: *quickClean
@@ -12305,6 +12306,33 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 5
         udr: 17
+      # With Baths and Barns
+      - <<: *reqManualFix
+        crc: 0x0C38A36A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 198
+        udr: 28
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xB66104FF
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+      # With Baths and no Barns
+      - <<: *reqManualFix
+        crc: 0x4F6EC655
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 199
+        udr: 30
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xC42B5E1E
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+      # With Baths, Bathers and Barns
+      - <<: *reqManualFix
+        crc: 0x4773C8FF
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
 
   - name: 'Helarchen Creek.esp'
     url:
