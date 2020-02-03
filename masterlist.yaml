@@ -6024,6 +6024,12 @@ plugins:
       - name: 'Unique Region Names.esp'
         condition: 'version("Unique Region Names.esp", "5.0.0", <) or not file("URN_Open Cities Skyrim_Patch.esp")'
     msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Legacy of the Dragonborn v5'
+          - '[Open Cities + Legacy of the Dragonborn Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31272)'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
