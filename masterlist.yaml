@@ -10502,6 +10502,11 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'ZIA_Complete Pack.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Weapons Armor Clothing and Clutter Fixes'
+          - '[Zim''s Immersive Artifacts - WACCF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19489)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("ZIA_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsImmersiveArtifacts_Patch.esp")'
     tag:
@@ -16048,6 +16053,12 @@ plugins:
         crc: 0x96972D29
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 32
+
+  - name: 'ZIA_WACCF_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19489' ]
+    after:
+      - 'Qw_ACE_CRF Patch.esp'
+      - 'Qw_WACCF_CRF Patch.esp'
 
   ### kryptopyr's Patch Hub ###
   - name: 'AwesomePotions_CACO_Patch.esp'
