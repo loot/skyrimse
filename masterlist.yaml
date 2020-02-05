@@ -9362,7 +9362,7 @@ plugins:
         condition: 'active("Cloaks&Capes.esp") and not active("Qw_ACE_CloaksAndCapes Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp")'
+        condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp") and not file("Complete Crafting Overhaul_Remastered.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("Qw_ACE_CRF Patch.esp")'
@@ -16158,6 +16158,11 @@ plugins:
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
   - name: 'Qw_ACE_BSHeartland Patch.esp'
     after: [ 'Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp' ]
+  - name: 'Qw_ACE_CloaksOfSkyrim Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'kryptopyr''s Patch Hub - CCOR & Cloaks of Skyrim Patch' ]
+        condition: 'active("Cloaks_CCOR_Patch.esp")'
   - name: 'Qw_DeadlySpellImpacts_AOS Patch.esp'
     tag:
       - Graphics
