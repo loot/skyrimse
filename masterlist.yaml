@@ -5917,9 +5917,47 @@ plugins:
 
   - name: 'BA_Bibliophile''s_Arcanaeum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26772/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Apepi''s Better College of Winterhold' ]
+        condition: 'active("ApepiBetterCollege.esp") and not active("BA_ApepiCoW.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Book Covers Skyrim - Lost Library' ]
+        condition: 'active("Book Covers Skyrim - Lost Library.esp") and not active("BA_LostLibrary.esp")'
+      - <<: *patchIncluded
+        subs: [ 'College of Winterhold Upgraded' ]
+        condition: 'active("CollegeofWinterholdUpgraded.esp") and not active("BA_CoWUpgraded.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Immersive College of Winterhold' ]
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("BA_ImmersiveCoW.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Juniper''s College of Winterhold' ]
+        condition: 'active("Winterhold College SSE.esp") and not active("BA_JunipersCoW.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("BA_LegacyoftheDragonborn.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Magical College of Winterhold' ]
+        condition: 'active("MagicalCollegeofWinterhold.esp") and not active("BA_MagicalCoW.esp")'
     clean:
       - crc: 0x4C7713FD
         util: 'SSEEdit v4.0.3'
+  - name: 'BA_(LegacyoftheDragonborn|LostLibrary)\.esp'
+    tag:
+      - Delev
+      - Invent
+  - name: 'BA_Sorting(_BCS|_LL|_LotD)?\.esp'
+    tag:
+      - Delev
+      - Names
+  - name: 'BA_Sorting.esp'
+    inc:
+      - 'Book Covers Skyrim.esp'
+      - 'LegacyoftheDragonborn.esm'
+  - name: 'BA_Sorting_BCS.esp'
+    after: [ 'BA_LostLibrary.esp' ]
+  - name: 'BA_Sorting_LotD.esp'
+    after: [ 'BA_LegacyoftheDragonborn.esp' ]
 
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
@@ -8895,6 +8933,8 @@ plugins:
   - name: 'TheChoiceIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
     after:
+      - 'BA_Sorting.esp'
+      - 'BA_Sorting_BCS.esp'
       - 'BetterQuestObjectives.esp'
       - 'BetterQuestObjectives - BCS Patch.esp'
       - 'BetterQuestObjectives-BSaQBPatch.esp'
