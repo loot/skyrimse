@@ -9019,40 +9019,38 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/748'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/19734'
     msg:
-      # CRC Unofficial Patch (1.5.2 0x3D50ACB6, 1.5.3 0x71D444F7)
       - <<: *patchUpdateAvailable
         subs: [ '[Wheels of Lull Unofficial Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734).' ]
-        condition: 'not checksum("WheelsOfLull.esp", 3D50ACB6) and not checksum("WheelsOfLull.esp", 71D444F7)'
-      # These three are mutually exclusive, which is handled further down
+        condition: 'checksum("WheelsOfLull.esp", FF400946) or checksum("WheelsOfLull.esp", DDDCE3F1)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Airship - Dev Aveza'
+          - '[Wheels of Lull Unofficial Patch - Dev Aveza Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("DA_Skyship.esm") and not active("WheelsofLull-Skyship.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim Bruma'
-          - '[Wheels of Lull Bruma Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
-        condition: 'active("BSHeartland.esm") and not active("ForgottenCity.esp") and not active("WheelsOfLull - Bruma Patch.esp")'
+          - '[Wheels of Lull Unofficial Patch - Bruma Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("BSHeartland.esm") and not active("WheelsOfLull - Bruma Patch.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp") and not active("WoL_SoT_Bruma Combined Patch.esp") and not active("WoL_SoT-FC-Bruma Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Forgotten City'
-          - '[Wheels of Lull Forgotten City Compatibility Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
-        condition: 'not active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City Patch.esp")'
+          - '[Wheels of Lull Unofficial Patch - Forgotten City Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City Patch.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp") and not active("WoL-SoT-FC patch.esp") and not active("WoL_SoT-FC-Bruma Patch.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'Beyond Skyrim Bruma and Forgotten City'
-          - '[Wheels of Lull Forgotten City and Bruma Merged Fix](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
-        condition: 'active("BSHeartland.esm") and active("ForgottenCity.esp") and not active("WheelsOfLull - Forgotten City - Bruma Patch.esp")'
+          - 'Sands of Time'
+          - '[Wheels of Lull Unofficial Patch - Sands of Time Compatiblity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19734/)'
+        condition: 'active("SOTFull.esp") and not active("WoL_SoT Patch.esp") and not active("WoL-SoT-FC patch.esp") and not active("WoL_SoT_Bruma Combined Patch.esp") and not active("WoL_SoT-FC-Bruma Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     dirty:
-      # version: 3.1
       - <<: *quickClean
         crc: 0xFF400946
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 124
     clean:
-      # version: 1.5.2 Unofficial Patch
-      - crc: 0x3D50ACB6
-        util: 'SSEEdit v4.0.3'
-      # version: 1.5.3 Unofficial Patch
-      - crc: 0x71D444F7
+      - crc: 0xF3DB3366
         util: 'SSEEdit v4.0.3'
 
   - name: 'WheelsOfLull (- (Forgotten City|Bruma) ){1,2}Patch\.esp'
