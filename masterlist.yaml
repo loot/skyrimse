@@ -8995,7 +8995,14 @@ plugins:
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
         condition: 'file("SKSE/Plugins/FISS/TGRSettingsPreset.xml")'
-    msg: [ *requiresMCM ]
+    msg:
+      - <<: *includesX
+        subs: [ '[Improved Shadowmarks](https://www.nexusmods.com/skyrimspecialedition/mods/17609/)' ]
+        condition: 'active("Improved Shadowmarks.esp")'
+      - <<: *includesX
+        subs: [ '[Sell Unusual Gems - Stones of Barenziah](https://www.nexusmods.com/skyrimspecialedition/mods/17605/)' ]
+        condition: 'active("Sell Stones of Barenziah.esp")'
+      - *requiresMCM
     tag: [ Names ]
     clean:
       - crc: 0x3D3EFB63
