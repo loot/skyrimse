@@ -8988,6 +8988,26 @@ plugins:
       - crc: 0x36F5C5BD
         util: 'SSEEdit v4.0.2'
 
+  - name: 'Thieves Guild Requirements.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33256/' ]
+    after: [ 'BetterQuestObjectives.esp' ]
+    req:
+      - name: 'FISS.esp'
+        display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
+        condition: 'file("SKSE/Plugins/FISS/TGRSettingsPreset.xml")'
+    msg:
+      - <<: *includesX
+        subs: [ '[Improved Shadowmarks](https://www.nexusmods.com/skyrimspecialedition/mods/17609/)' ]
+        condition: 'active("Improved Shadowmarks.esp")'
+      - <<: *includesX
+        subs: [ '[Sell Unusual Gems - Stones of Barenziah](https://www.nexusmods.com/skyrimspecialedition/mods/17605/)' ]
+        condition: 'active("Sell Stones of Barenziah.esp")'
+      - *requiresMCM
+    tag: [ Names ]
+    clean:
+      - crc: 0x3D3EFB63
+        util: 'SSEEdit v4.0.3'
+
   - name: 'TimingIsEverything.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25464/' ]
     after: [ 'BetterQuestObjectives.esp' ]
