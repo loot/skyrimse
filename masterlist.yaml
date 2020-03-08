@@ -4918,7 +4918,9 @@ plugins:
 
   - name: 'OBIS SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4145' ]
-    after: [ 'DIVERSE SKYRIM.esp' ]
+    after:
+      - 'Cloaks.esp'
+      - 'DIVERSE SKYRIM.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_OBIS_Patch.esp")'
