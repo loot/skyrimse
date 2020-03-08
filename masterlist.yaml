@@ -5079,6 +5079,16 @@ plugins:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC IncNPC.esp")'
 
+  - name: 'Immersive Encounters.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Open Cities' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSChildren.esp") and not active("Immersive Encounters - RS Children Patch.esp")'
+
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
     group: *veryEarlyGroup
