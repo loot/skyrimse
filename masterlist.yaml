@@ -6862,6 +6862,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9542/' ]
     after: [ 'You Hunger.esp' ]
   - name: 'EconomyOverhaulandSpeechcraftImprovements.esp'
+    req:
+      - name: 'SKSE/Plugins/VRPerkExtender.dll'
+        display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
+        condition: 'file("SkyrimVR.esm")'
     msg:
       - <<: *patchIncluded
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
