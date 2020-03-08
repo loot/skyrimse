@@ -982,13 +982,6 @@ groups:
   - name: &veryEarlyGroup Very Early Loaders
     after: [ *ccGroup ]
 
-  - name: &floraGroup Flora
-    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
-    after: [ *veryEarlyGroup ]
-
-  - name: &landscapeGroup Landscape
-    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-    after: [ *floraGroup ]
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
 
   - name: &fixesGroup Fixes & Resources
@@ -1011,6 +1004,12 @@ groups:
       - *earlyLoadersGroup
       - *underridesGroup
 
+  - name: &floraGroup Flora
+    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
+
+  - name: &landscapeGroup Landscape
+    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
+    after: [ *floraGroup ]
 
   - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
 
@@ -1019,9 +1018,7 @@ groups:
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after:
-      - default
-      - *landscapeGroup
+    after: [ default ]
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
