@@ -9951,12 +9951,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JaysusSwords_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    dirty:
-      # version: 1.7.1
-      - <<: *quickClean
-        crc: 0x6D6CA2E6
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
+    clean:
+      - crc: 0x11C4B0B6
+        util: 'SSEEdit v4.0.3'
 
   - name: 'JS Armored Circlets SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2140/' ]
