@@ -10516,12 +10516,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TamrielicCulture_Patch.esp")'
-    dirty:
-      # version: 2
-      - <<: *quickClean
-        crc: 0xE64F0356
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 30
+    clean:
+      - crc: 0x22A8658C
+        util: 'SSEEdit v4.0.3'
 
   - name: 'ZIA_Ancient Pack_V4.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
