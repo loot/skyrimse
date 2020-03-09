@@ -979,33 +979,12 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &preVeryEarlyGroup Pre Very Early (Patches/Add-ons)
-    after: [ *ccGroup ]
-
-  - name: &veryEarlyGroup Very Early Loaders
-    after: [ *preVeryEarlyGroup ]
-
-  - name: &floraGroup Flora
-    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
-    after: [ *veryEarlyGroup ]
-
-  - name: &landscapeGroup Landscape
-    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-    after: [ *floraGroup ]
-
-  - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
-
-  - name: &addonsGroup Add-ons & Expansions
-    after:
-      - *preAddonsGroup
-      - *veryEarlyGroup
-
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
 
   - name: &fixesGroup Fixes & Resources
     after:
       - *preFixesGroup
-      - *addonsGroup
+      - *ccGroup
 
   - name: &preEarlyGroup Pre Early (Patches/Add-ons)
 
@@ -1014,19 +993,24 @@ groups:
       - *preEarlyGroup
       - *fixesGroup
 
-  - name: &underridesGroup Underrides
-    after: [ *veryEarlyGroup ]
-
   - name: default
-    after:
-      - *earlyLoadersGroup
-      - *underridesGroup
+    after: [ *earlyLoadersGroup ]
+
+  - name: &floraGroup Flora
+    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
+
+  - name: &landscapeGroup Landscape
+    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
+    after: [ *floraGroup ]
+
+  - name: &preAddonsGroup Pre Add-ons (Patches/Add-ons)
+
+  - name: &addonsGroup Add-ons & Expansions
+    after: [ *preAddonsGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after:
-      - default
-      - *landscapeGroup
+    after: [ default ]
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
@@ -1509,10 +1493,11 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
-    group: *veryEarlyGroup
+    group: *fixesGroup
     after:
       - name: 'Lanterns Of Skyrim - All In One - Main.esm'
         condition: 'checksum("Lanterns Of Skyrim - All In One - Main.esm", EB94B5F8)'
+      - 'Requiem Records Fix.esp'
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
@@ -1542,7 +1527,7 @@ plugins:
   ### Unofficial Creation Club Updates ###
   - name: 'JRCCPatches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12951/' ]
-    group: *preVeryEarlyGroup
+    group: *fixesGroup
     inc: [ 'unofficial skyrim creation club content patch.esl' ]
   - name: 'JR(SpellPack|ArcaneArcherPack|Chrysamere|KnightsOfTheNine|DwarvenMudcrab|Zombies|RuinsEdge|Shadowrend|StaffOfSheogorath|StendarrsHammer)(Patch)?\.esp'
     inc: [ 'unofficial skyrim creation club content patch.esl' ]
@@ -1560,16 +1545,16 @@ plugins:
     inc: [ 'Unofficial Arcane Archer Pack Patch.esl' ]
   - name: 'JRSpellPackPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12748/' ]
-    group: *preVeryEarlyGroup
+    group: *fixesGroup
     inc: [ 'Unofficial Arcane Accessories Patch.esl' ]
   - name: 'JRStendarrsHammerPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12750/' ]
-    group: *preVeryEarlyGroup
+    group: *fixesGroup
 
   ### Unofficial Skyrim Creation Club Content Patches ###
   - name: 'Unofficial (Skyrim Creation Club Content|Arcane Accessories|Arcane Archer Pack|Arms of Chaos|Bone Wolf|Chrysamere|Civil War Champions|Daedric Mail Armor|Dawnfang and Duskfang|Dead Man''s Dread|Divine Crusader|Dragonscale Armor|Dwarven Armored Mudcrab|Dwarven Mail Armor|Ebony Plate Armor|Elite Crossbows|Elven Hunter Armor|Expanded Crossbow Pack|Forgotten Seasons|Goblins|Gray Cowl Returns|Hendraheim|Lord''s Mail|Myrwatch|Netch Leather Armors|Nix-Hound|Nordic Jewelry|Pets of Skyrim|Plague of the Dead|Rare Curios|Ruin''s Edge|Saints and Seducers|Saturalia Holiday Pack|Shadowfoot Sanctum|Shadowrend|Skyrim Survival|Spell Knight Armor|Staff of Hasedoki|Staff of Sheogorath|Stalhrim Fur Armor|Steel Soldier Armor|Stendarr''s Hammer|Sunder & Wraithguard|Tundra Homestead|Umbra|Vigil Enforcer Armor Set|Wild Horses) Patch.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/' ]
-    group: *underridesGroup
+    group: *fixesGroup
   - name: 'Unofficial Skyrim Creation Club Content Patch.esl'
     tag:
       - Keywords
@@ -1588,7 +1573,7 @@ plugins:
 ###### Fixes ######
   - name: 'Butterflies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29434/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
 
   - name: 'ButterfliesUnchained.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29538/' ]
@@ -1605,7 +1590,7 @@ plugins:
 
   - name: 'FloraRespawnFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
-    group: *floraGroup
+    group: *fixesGroup
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Ars Metallica' ]
@@ -1649,22 +1634,22 @@ plugins:
         name: 'Skyrim Project Optimization SE'
     after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
   - name: 'Skyrim Project Optimization - Full Version.esm'
-    group: *underridesGroup
+    group: *fixesGroup
     clean:
       - crc: 0x45374C76
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-    group: *underridesGroup
+    group: *fixesGroup
     clean:
       - crc: 0xD0948CCF
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Project Optimization - Full Version.esp'
-    group: *veryEarlyGroup
+    group: *fixesGroup
     clean:
       - crc: 0x137A03B3
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    group: *veryEarlyGroup
+    group: *fixesGroup
     clean:
       - crc: 0x81A0DD15
         util: 'SSEEdit v4.0.3'
@@ -1788,7 +1773,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2357/'
         name: 'Enhanced Blood Textures SE'
   - name: 'dD - Enhanced Blood Main.esp'
-    group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'Immersive Sounds - Compendium.esp'
@@ -1802,17 +1786,15 @@ plugins:
       - crc: 0x70E9C0E7
         util: 'SSEEdit v4.0.3'
   - name: 'dD - Enhanced Blood Main LITE.esp'
-    group: *veryEarlyGroup
+    group: *fixesGroup
     clean:
       - crc: 0x6CF176EC
         util: 'SSEEdit v4.0.3'
   - name: 'dD-Reduced Wound Size.esp'
-    group: *underridesGroup
     clean:
       - crc: 0x35D96F84
         util: 'SSEEdit v4.0.3'
   - name: 'dD-(Larger|Reduced) Splatter Size\.esp'
-    group: *underridesGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Larger|Reduced) Splatter Size\.esp")'
@@ -1822,7 +1804,6 @@ plugins:
       - 'EBT - skyBirds Patch.esp'
       - 'EBT - skyBirds Patch (mid).esp'
       - 'EBT - skyBirds Patch (short).esp'
-    group: *underridesGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("dD-(Medium|Short) Script Range\.esp")'
@@ -1846,15 +1827,16 @@ plugins:
       - C.ImageSpace
 
   - name: 'static mesh improvement mod se.esp'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
   - name: 'SMIM-SE.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/659/'
         name: 'Static Mesh Improvement Mod SE'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     tag: [ Graphics ]
   - name: 'SMIM-SE-Merged-All.esp'
     after:
+      - 'AK - Placeable Statics SE.esp'
       - 'Blowing in the Wind SSE.esp'
       - 'Destructible Skyrim.esp'
     inc:
@@ -1949,7 +1931,6 @@ plugins:
 ###### AudioVisual - Interface ######
   - name: 'AnotherSortingMod_2017-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10/' ]
-    group: *underridesGroup
     after:
       - 'Joy of Perspective.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
@@ -2042,7 +2023,7 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/'
       - 'https://github.com/Odie/skyui-vr/releases/'
-    group: *underridesGroup
+    group: *fixesGroup
     req:
       - *SKSE
       - *SKSE_VR
@@ -2100,7 +2081,6 @@ plugins:
 
   - name: 'Joy of Perspective.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358' ]
-    group: *underridesGroup
     after:
       - 'Endgame NPC Overhaul.esp'
       - 'UNP Vanilla Outfits.esp'
@@ -2266,7 +2246,6 @@ plugins:
 ###### AudioVisual - Lighting ######
   - name: 'CinematicFireFX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
-    group: *underridesGroup
     inc: [ 'NAT.esp' ]
     clean:
       - crc: 0x4CF60EE4
@@ -2283,7 +2262,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX'
   - name: 'EnhancedLightsandFX.esp'
-    group: *underridesGroup
     inc:
       - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Interiors.esp'
@@ -2302,8 +2280,9 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
   - name: 'ELFX - Exteriors.esp'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     after:
+      - 'AK - Placeable Statics SE.esp'
       - 'Blowing in the Wind SSE.esp'
       - 'SMIM-SE-Merged-All.esp'
       - 'Prometheus_No_snow_Under_the_roof.esp'
@@ -2314,37 +2293,30 @@ plugins:
       - crc: 0x9B390393
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoBreezehome.esp'
-    group: *underridesGroup
     clean:
       - crc: 0x16B967BB
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoHjerim.esp'
-    group: *underridesGroup
     clean:
       - crc: 0xEFC3B86E
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoHoneyside.esp'
-    group: *underridesGroup
     clean:
       - crc: 0x636D8DC1
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoProudspireManor.esp'
-    group: *underridesGroup
     clean:
       - crc: 0x378FA7EE
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoSeverinManor.esp'
-    group: *underridesGroup
     clean:
       - crc: 0x328328C8
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoVlindrelHall.esp'
-    group: *underridesGroup
     clean:
       - crc: 0xB88AC75D
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - NoPlayerHomes.esp'
-    group: *underridesGroup
     inc:
       - 'ELFX - NoBreezehome.esp'
       - 'ELFX - NoHjerim.esp'
@@ -2358,7 +2330,7 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 1
   - name: 'ELFX - Weathers.esp'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after: [ 'Audio Overhaul Skyrim.esp' ]
     clean:
       - crc: 0x0F02A920
@@ -2460,7 +2432,6 @@ plugins:
 
   - name: 'EmbersHD.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368' ]
-    group: *underridesGroup
     after: [ 'CinematicFireFX.esp' ]
     clean:
       - crc: 0x68222B4D
@@ -2479,7 +2450,6 @@ plugins:
 
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721' ]
-    group: *underridesGroup
     clean:
       - crc: 0xA71A75BB
         util: 'SSEEdit v4.0.3'
@@ -2496,7 +2466,7 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/2429'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/23378'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0xEB94B5F8
         util: 'SSEEdit v4.0.3'
@@ -2574,7 +2544,6 @@ plugins:
 
   - name: 'RelightingSkyrim_SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
-    group: *underridesGroup
     inc:
       - 'ClimatesOfTamriel-Dungeons-Darker.esp'
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
@@ -2636,7 +2605,7 @@ plugins:
       - C.ImageSpace
       - C.Light
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     tag: [ Graphics ]
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     tag: [ Invent ]
@@ -2645,7 +2614,7 @@ plugins:
   - name: 'Audio Overhaul Skyrim.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
   - name: 'Audio Overhaul Skyrim.esp'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after:
       - 'LSFX-SSE-Audiosettings.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
@@ -2690,15 +2659,12 @@ plugins:
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     after: [ 'RealisticWaterTwo.esp' ]
   - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
-    group: *underridesGroup
     tag: [ Sound ]
     dirty:
       - <<: *quickClean
         crc: 0x1E22FDD6
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 37
-  - name: 'Audio Overhaul Skyrim - Legacy of the Dragonborn Patch.esp'
-    group: *underridesGroup
   - name: 'Audio Overhaul Skyrim - Obsidian Weathers Patch.esp'
     after:
       - 'Audio Overhaul Skyrim - True Storms.esp'
@@ -2710,7 +2676,6 @@ plugins:
 
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
-    group: *underridesGroup
     after:
       - name: 'Audio Overhaul Skyrim.esp'
         condition: 'file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
@@ -2738,7 +2703,6 @@ plugins:
 
   - name: 'Immersive Sounds - Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/523/' ]
-    group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'LSFX-SSE-Audiosettings.esp'
@@ -2772,7 +2736,7 @@ plugins:
 
   - name: 'LSFX-SSE-Audiosettings.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     clean:
       - crc: 0x8018F548
         util: 'SSEEdit v4.0.3'
@@ -2796,7 +2760,7 @@ plugins:
 
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/701/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     tag: [ Sound ]
     msg:
       - <<: *patchProvided
@@ -2935,7 +2899,7 @@ plugins:
 
   - name: 'SoS - The Dungeons.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8091/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after: [ 'LSFX-SSE-Audiosettings.esp' ]
     inc: [ 'SoundsofSkyrimComplete.esp' ]
     tag: [ Sound ]
@@ -3164,7 +3128,7 @@ plugins:
 
   - name:  'Dolomite Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7895/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     clean:
       - crc: 0x87498763
         util: 'SSEEdit v4.0.3'
@@ -3196,7 +3160,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
         name: 'NAT - Natural and Atmospheric Tamriel'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after: [ 'Audio Overhaul Skyrim.esp' ]
     inc:
       - 'Aequinoctium.esp'
@@ -3260,7 +3224,7 @@ plugins:
 
   - name: 'Obsidian Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - name: 'TrueStormsSE.esp'
@@ -3384,7 +3348,7 @@ plugins:
 
   - name: 'TrueStormsSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2472/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'ELFX - Weathers.esp'
@@ -3579,7 +3543,7 @@ plugins:
   - name: 'Vivid Weathers(SE| SE -| - ).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/' ]
   - name: 'Vivid WeathersSE.esp'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after: [ 'Audio Overhaul Skyrim.esp' ]
     inc:
       - 'Aequinoctium.esp'
@@ -3713,7 +3677,7 @@ plugins:
 
   - name: 'Hair Replacer( Assets)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
   - name: 'Hair Replacer Assets.esp'
     after: [ 'Hair Replacer.esp' ]
 
@@ -3816,7 +3780,7 @@ plugins:
 
   - name: 'RSkyrimChildren.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2650' ]
-    group: *preVeryEarlyGroup
+    group: *fixesGroup
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RSChildren_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -4266,7 +4230,7 @@ plugins:
 ###### Character Appearance - Presets ######
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2406/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     inc:
       - 'Better_Male_Presets.esp'
       - 'Kayla_CharPreset.esp'
@@ -4286,7 +4250,7 @@ plugins:
 
   - name: 'Better_Male_Presets.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2001/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     inc: [ 'AsharaSkyrimCharacterPresetsReplacer.esp' ]
     msg:
       - type: say
@@ -4303,7 +4267,7 @@ plugins:
 
   - name: 'Kayla_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3851/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Lagertha_CharPreset.esp'
@@ -4324,7 +4288,7 @@ plugins:
 
   - name: 'Lagertha_CharPreset.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2629/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     inc:
       - 'Kayla_CharPreset.esp'
       - 'Lydia Face Preset 64bit.esp'
@@ -4344,7 +4308,7 @@ plugins:
 
   - name: 'Lydia Face Preset 64bit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1080/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     inc:
       - 'AsharaSkyrimCharacterPresetsReplacer.esp'
       - 'Kayla_CharPreset.esp'
@@ -4380,7 +4344,6 @@ plugins:
     url:
       - 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
-    group: *underridesGroup
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
@@ -4406,7 +4369,6 @@ plugins:
 
   - name: 'Ambriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/969/' ]
-    group: *addonsGroup
     dirty:
       # version: AQSE1.06
       - <<: *reqManualFix
@@ -4544,7 +4506,6 @@ plugins:
 
   - name: 'Endgame NPC Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/897/' ]
-    group: *underridesGroup
     after:
       - 'AmazingFollowerTweaks.esp'
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -4941,7 +4902,9 @@ plugins:
 
   - name: 'OBIS SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4145' ]
-    after: [ 'DIVERSE SKYRIM.esp' ]
+    after:
+      - 'Cloaks.esp'
+      - 'DIVERSE SKYRIM.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_OBIS_Patch.esp")'
@@ -5041,7 +5004,7 @@ plugins:
 
   - name: '(CollegeStudents|ICNs_ImmersiveCollegeNPCs)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9252/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
   - name: 'ICNs_ImmersiveCollegeNPCs.esp'
     clean:
       # version: 1.1.1
@@ -5063,7 +5026,7 @@ plugins:
 
   - name: 'Ducks and Swans.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
@@ -5081,7 +5044,7 @@ plugins:
 
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     tag: [ C.LockList ]
     msg:
       - <<: *patchProvided
@@ -5187,22 +5150,24 @@ plugins:
   - name: 'Blowing in the Wind.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124' ]
   - name: 'Blowing in the Wind SSE.esp'
-    group: *veryEarlyGroup
-    after: [ 'Destructible Skyrim.esp' ]
+    group: *earlyLoadersGroup
+    after:
+      - 'AK - Placeable Statics SE.esp'
+      - 'Destructible Skyrim.esp'
     clean:
       # version: 2.04
       - crc: 0x8EF0F5D1
         util: 'SSEEdit v4.0.0'
   - name: 'Blowing in the Wind - ELFX Exterior patch.esp'
-    group: *preVeryEarlyGroup
+    group: *preEarlyGroup
   - name: 'Blowing in the Wind - ELFX Exteriors Patch SSE.esp'
-    group: *preVeryEarlyGroup
+    group: *preEarlyGroup
   - name: 'Blowing in the Wind - Lanterns of Skyrim Patch SSE.esp'
-    group: *preVeryEarlyGroup
+    group: *preEarlyGroup
   - name: 'Blowing in the Wind - Lanterns of Skyrim SE - MCM versionPatch.esp'
-    group: *preVeryEarlyGroup
+    group: *preEarlyGroup
   - name: 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
-    group: *preVeryEarlyGroup
+    group: *preEarlyGroup
 
   - name: 'Cathedral Concept - Lightweight Grass Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21954/' ]
@@ -5250,7 +5215,8 @@ plugins:
 
   - name: 'Destructible Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28291/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
+    after: [ 'AK - Placeable Statics SE.esp' ]
     dirty:
       # version: 0.4
       - <<: *quickClean
@@ -5358,7 +5324,7 @@ plugins:
 
   - name: 'Gildergreen Regrown.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/348/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 2.0.1
       - crc: 0x8627D73D
@@ -5366,7 +5332,7 @@ plugins:
 
   - name: 'Grass Field.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17909' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
 
   - name: 'HearthfireGrassFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13461/' ]
@@ -5399,7 +5365,7 @@ plugins:
 
   - name: 'Immersive Farms.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19026' ]
-    group: *floraGroup
+    group: *earlyLoadersGroup
     dirty:
       # version: 1.1
       - <<: *quickClean
@@ -5479,7 +5445,6 @@ plugins:
       - crc: 0xFF2C28E6
         util: 'SSEEdit v4.0.2'
   - name: 'Landscape Fixes For Grass mods - Cutting Room Floor Locations.esp'
-    group: *underridesGroup
     clean:
       # version: 1.06
       - crc: 0xC5FF509C
@@ -5602,8 +5567,9 @@ plugins:
 
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     after:
+      - 'AK - Placeable Statics SE.esp'
       # Group afters to avoid sorting errors.
       - 'Blowing in the Wind SSE.esp'
       - 'SMIM-SE-Merged-All.esp'
@@ -5622,7 +5588,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15064/'
         name: 'No snow under the roof - Bug fixes'
-    group: *preVeryEarlyGroup
+    group: *preEarlyGroup
   - name: 'NSUTR_bugfixes.esp'
     clean:
       # version: 1.4
@@ -5726,7 +5692,7 @@ plugins:
 
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
 
   - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
@@ -5744,7 +5710,6 @@ plugins:
 
   - name: 'SmoothShores.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10624/' ]
-    group: *floraGroup
     dirty:
       - <<: *quickClean
         crc: 0x3CC7601F
@@ -5764,7 +5729,7 @@ plugins:
 
   - name: 'TerrainLodRedone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
 
   - name: 'Trees in Cities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1941/' ]
@@ -6124,7 +6089,6 @@ plugins:
 
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
-    group: *underridesGroup
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -6217,7 +6181,7 @@ plugins:
       - crc: 0x9B010343
         util: 'SSEEdit v4.0.3'
   - name: 'thepeopleofskyrim.esp'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     inc:
       - 'Immersive Patrols II.esp'
       - 'tpos_Cutting_Room_Floorpatch.esp'
@@ -6227,14 +6191,14 @@ plugins:
 
   - name: 'WARZONES - SSE - Civil Unrest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2360' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 0.94
       - crc: 0xD755C4B7
         util: 'SSEEdit v4.0.3'
   - name: 'WARZONES - SSE - DLC - Assault Attack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2365/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -6266,7 +6230,7 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'URN Extended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11750/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     clean:
       - crc: 0xE05F27B6
         util: 'SSEEdit v4.0.3'
@@ -6387,7 +6351,7 @@ plugins:
 
   - name: 'Immersive Movement.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15649/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *patchIncluded
         subs: [ 'Mortal Enemies' ]
@@ -6430,7 +6394,7 @@ plugins:
 
   - name: 'Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4881' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after: [ 'Immersive Movement.esp' ]
     msg:
       - <<: *useOnlyOneX
@@ -6683,7 +6647,6 @@ plugins:
 
   - name: 'iNeed.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
-    group: *underridesGroup
     after: [ 'SkyUI_SE.esp' ]
     msg:
       - <<: *patch3rdParty_KPH_CACO
@@ -6694,7 +6657,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'iNeed - Extended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
-    group: *underridesGroup
     after:
       - 'AnotherSortingMod_2017-SSE.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
@@ -6819,7 +6781,7 @@ plugins:
 
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim DLC Integration' ]
@@ -6838,7 +6800,7 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 1.1
       - crc: 0x32F4BBE5
@@ -7299,9 +7261,10 @@ plugins:
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
     inc: [ 'Race Scale Remover.esp' ]
-    group: *fixesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
+      - name: 'Guard Dialogue Overhaul.esp'
+        condition: 'checksum("Guard Dialogue Overhaul.esp", 6ABC1129) or checksum("Guard Dialogue Overhaul.esp", 5CB27D7D)'
       - 'Immersive Sounds - Compendium.esp'
       - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
@@ -7954,7 +7917,6 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20791'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/22075'
-    group: *preFixesGroup
     after:
       - 'Ambriel.esp'
       - 'Cutting Room Floor.esp'
@@ -8389,7 +8351,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/159'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089'
   - name: 'BetterQuestObjectives.esp'
-    group: *underridesGroup
+    group: *earlyLoadersGroup
     after:
       - 'QuestsAreInSkyrim.esp'
       - 'QuestsAreInSkyrimUSSEP.esp'
@@ -8429,7 +8391,6 @@ plugins:
       - crc: 0x8B33FD2B
         util: 'SSEEdit v4.0.2f'
   - name: 'BetterQuestObjectives-DBForevertoMisc.esp'
-    group: *underridesGroup
     after: [ 'BetterQuestObjectives.esp' ]
     clean:
       # Version: 1.8.3alpha
@@ -8452,7 +8413,6 @@ plugins:
       - crc: 0xAB22406D
         util: 'SSEEdit v4.0.2f'
   - name: 'BetterQuestObjectives - BCS Patch.esp'
-    group: *underridesGroup
     after: [ 'BetterQuestObjectives.esp' ]
     clean:
       # Version: 1.8.3alpha
@@ -8464,7 +8424,6 @@ plugins:
       - crc: 0x3D710D33
         util: 'SSEEdit v4.0.2f'
   - name: 'BetterQuestObjectives-CRFPatch.esp'
-    group: *underridesGroup
     after: [ 'BetterQuestObjectives.esp' ]
     clean:
       # Version: 1.8.3alpha
@@ -8773,7 +8732,6 @@ plugins:
 
   - name: 'konahrik_accoutrements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206' ]
-    group: *underridesGroup
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_KA_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -8799,7 +8757,6 @@ plugins:
 
   - name: 'Missing Apprentices CRF Quest Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6677/' ]
-    group: *underridesGroup
     after:
       - 'BetterQuestObjectives-CRFPatch.esp'
       - 'Book Covers Skyrim.esp'
@@ -8915,7 +8872,7 @@ plugins:
 
   - name: 'QuestsAreInSkyrim(USSEP)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18416/' ]
-    group: *underridesGroup
+    group: *earlyLoadersGroup
 
   - name: 'Religion.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/67663/' ]
@@ -9432,13 +9389,21 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18177'
         name: 'QUARK - Qwinn''s Ultimate Amulet Restoration Kit'
-    # Must be in group before WACCF
-    group: *preFixesGroup
+    # Must sort before WACCF Armor and Clothing Extension
 
   - name: 'WACCF_Armor and Clothing Extension.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
-    group: *fixesGroup
     after:
+      - 'AmuletsShowOnEverything.esp'
+      - 'AmuletsShowOnClothes.esp'
+      - 'AmuletsShowOnHeavyArmor.esp'
+      - 'AmuletsShowOnLightArmor.esp'
+      - 'AmuletsShowOnRobes.esp'
+      - 'AmuletsShowOnEverything-JOP.esp'
+      - 'AmuletsShowOnClothes-JOP.esp'
+      - 'AmuletsShowOnHeavyArmor-JOP.esp'
+      - 'AmuletsShowOnLightArmor-JOP.esp'
+      - 'AmuletsShowOnRobes-JOP.esp'
       - 'AnotherSortingMod_2017-SSE.esp'
       - 'WACCF_ASM-2019.esp'
     msg:
@@ -9539,7 +9504,6 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
         name: 'Another Sorting Mod - Replacer Plugin'
-    group: *underridesGroup
     msg:
       - *alreadyInLotD
       - <<: *patch3rdParty
@@ -9586,7 +9550,6 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
-    group: *underridesGroup
     msg: [ *alreadyInLotD ]
     tag: [ Delev ]
     clean:
@@ -9606,7 +9569,7 @@ plugins:
 
   - name: 'Circlets and Masks with all Robes and Hoods.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3732/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     tag:
       - Graphics
       - Names
@@ -9617,7 +9580,6 @@ plugins:
 
   - name: 'Cloaks( - Dawnguard| - USSEP Patch)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
-    group: *underridesGroup
   - name: 'Cloaks.esp'
     tag: [ Invent ]
     msg:
@@ -9803,13 +9765,12 @@ plugins:
 
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
 
   - name: 'Hothtrooper44_Armor(Compilation|_Ecksstra).esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
         name: 'Immersive Armors'
-    group: *underridesGroup
   - name: 'Hothtrooper44_ArmorCompilation.esp'
     after: [ 'Ambriel.esp' ]
     msg:
@@ -9949,7 +9910,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4933'
         name: 'Winter Is Coming SSE - Cloaks'
-    group: *underridesGroup
   - name: '1nivWICCloaks.esp'
     msg:
       - <<: *patch3rdParty_CCSMPC
@@ -10048,7 +10008,6 @@ plugins:
   - name: 'Lore Weapon Expansion( - Daedric Crescent| - Goldbrand| - Relics of the Crusader)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
   - name: 'Lore Weapon Expansion.esp'
-    group: *underridesGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - 'DLCIntegration.esp'
@@ -10061,7 +10020,7 @@ plugins:
       - crc: 0x0D7685E5
         util: 'SSEEdit v4.0.2f'
   - name: 'Lore Weapon Expansion - (Daedric Crescent|Goldbrand|Relics of the Crusader)\.esp'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     inc: [ *LotD_v5 ]
   - name: 'Lore Weapon Expansion - Daedric Crescent.esp'
     clean:
@@ -10493,7 +10452,6 @@ plugins:
 
   - name: 'UNP Vanilla Outfits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11136/' ]
-    group: *underridesGroup
 
   - name: 'Vikings Weaponry - Johnskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14409/' ]
@@ -10691,7 +10649,6 @@ plugins:
 
   - name: 'WarmongerArmory_LeveledList.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4956/' ]
-    group: *underridesGroup
     after:
       - '1nivWICCloaks.esp'
       - '1nivWICCloaksNoGuards.esp'
@@ -10750,7 +10707,6 @@ plugins:
         name: 'Beyond Skyrim - Bruma SE'
   - name: 'BSAssets.esm'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835' ]
-    group: *underridesGroup
     tag:
       - C.Light
       - C.RecordFlags
@@ -10760,7 +10716,6 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'BSHeartland.esm'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831' ]
-    group: *underridesGroup
     msg:
       - <<: *patch3rdParty
         subs:
@@ -10807,7 +10762,6 @@ plugins:
         itm: 514
   - name: 'BS_DLC_patch.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167' ]
-    group: *veryEarlyGroup
     msg:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
@@ -10945,7 +10899,6 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
   - name: 'MoonAndStar_MAS.esp'
-    group: *underridesGroup
     after:
       - 'AuroraVillage.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -10973,7 +10926,6 @@ plugins:
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
   - name: 'MoonAndStar_ImmersionPatch.esp'
-    group: *underridesGroup
     inc: [ *LotD_v5 ]
     dirty:
       # version: 2.0
@@ -10986,7 +10938,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10751'
         name: 'Moon and Star - WARZONES Assault Attack Compatibility Patch'
-    group: *underridesGroup
 
   - name: 'moonpath.esp'
     url:
@@ -11070,7 +11021,6 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/6180'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746'
-    group: *underridesGroup
     after:
       - 'Enhanced Landscapes.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -11221,7 +11171,7 @@ plugins:
 
   - name: 'Bee Hives.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1891-bee-hives//' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 2.0.3
       - crc: 0x9774E2CE
@@ -11328,7 +11278,6 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
       - 'https://www.afkmods.com/index.php?/files/file/978-cutting-room-floor/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350'
-    group: *underridesGroup
     after:
       - '3DNPC.esp'
       - 'Audio Overhaul Skyrim.esp'
@@ -11503,7 +11452,7 @@ plugins:
 
   - name: 'Laundry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2011/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
 
   - name: 'Left Hand Crossing.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18726/' ]
@@ -11748,7 +11697,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10434/'
         name: 'Carriage Stops of Skyrim'
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 1.1
       - crc: 0xA15D3872
@@ -12049,7 +11998,7 @@ plugins:
 
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
-    group: *veryEarlyGroup
+    group: *fixesGroup
     inc: [ 'WinterholdBridgeFixed.esp' ]
     dirty:
       # version: 1
@@ -12174,7 +12123,7 @@ plugins:
 
   - name: 'Enlightened College of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8710/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
 
   - name: 'Enhanced Solitude SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27816/' ]
@@ -12193,7 +12142,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552'
         name: 'Expanded Towns and Cities (SSE)'
   - name: 'ETaC - RESOURCES.esm'
-    group: *veryEarlyGroup
+    group: *fixesGroup
     tag: [ Graphics ]
     clean:
       # version: 0.4.4 MCM
@@ -14332,7 +14281,7 @@ plugins:
 
   - name: 'AK - Placeable Statics SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/342/' ]
-    group: *preVeryEarlyGroup
+    group: *earlyLoadersGroup
 
   - name: 'AlchemistRetreat.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29358/' ]
@@ -15654,7 +15603,7 @@ plugins:
 
   - name: 'Shadowmarks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/353/' ]
-    group: *veryEarlyGroup
+    group: *earlyLoadersGroup
     clean:
       # version: 2.0.1
       - crc: 0x802F5628
@@ -15802,7 +15751,6 @@ plugins:
 
   - name: 'Tel_Nalta.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/' ]
-    group: *underridesGroup
     inc:
       - name: 'MoonAndStar_MAS.esp'
         condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
@@ -15898,7 +15846,7 @@ plugins:
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
     # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
-    group: *veryEarlyGroup
+    group: *fixesGroup
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_UnlimitedBookshelves_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -16159,7 +16107,7 @@ plugins:
       - NPC.Class
       - Text
   - name: 'Requiem Records Fix.esp'
-    group: *preVeryEarlyGroup
+    group: *fixesGroup
   - name: 'Requiem for the Indifferent.esp'
     group: *lateChangesGroup
 
