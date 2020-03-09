@@ -11103,12 +11103,14 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SkyrimUnderground_Patch.esp")'
-    dirty:
-      # version: 4.6
-      - <<: *quickClean
-        crc: 0x4696B973
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 210
+    clean:
+      - crc: 0xC9D34395
+        util: 'SSEEdit v4.0.3'
+  - name: 'AKSkyrimUnderground.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/131/' ]
+    clean:
+      - crc: 0x7E339FFC
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Aurora(Village| - Moon and Star Patch).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17647' ]
