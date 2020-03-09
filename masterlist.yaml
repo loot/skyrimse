@@ -993,12 +993,8 @@ groups:
       - *preEarlyGroup
       - *fixesGroup
 
-  - name: &underridesGroup Underrides
-
   - name: default
-    after:
-      - *earlyLoadersGroup
-      - *underridesGroup
+    after: [ *earlyLoadersGroup ]
 
   - name: &floraGroup Flora
     description: 'A group for mods that add, remove or improve grass, plants and Trees.'
