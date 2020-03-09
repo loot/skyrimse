@@ -979,15 +979,12 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &veryEarlyGroup Very Early Loaders
-    after: [ *ccGroup ]
-
   - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
 
   - name: &fixesGroup Fixes & Resources
     after:
       - *preFixesGroup
-      - *veryEarlyGroup
+      - *ccGroup
 
   - name: &preEarlyGroup Pre Early (Patches/Add-ons)
 
@@ -997,7 +994,6 @@ groups:
       - *fixesGroup
 
   - name: &underridesGroup Underrides
-    after: [ *veryEarlyGroup ]
 
   - name: default
     after:
