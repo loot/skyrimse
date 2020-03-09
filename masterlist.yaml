@@ -6742,13 +6742,16 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Valdacil''s Item Sorting' ]
         condition: 'active("ValdacilsItemSorting.esp") and not file("SAFO - Valdacil.esp")'
+    dirty:
+      # With Health Regen
+      - <<: *quickClean
+        crc: 0x563CDE64
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
     clean:
-      # version: 2.5 No Regen
-      - crc: 0x71C54257
-        util: 'SSEEdit v4.0.2f'
-      # version: 2.5 With Health Regen
-      - crc: 0xBB12DA56
-        util: 'SSEEdit v4.0.2f'
+      # No Health Regen
+      - crc: 0x9BDCF9B2
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Skyrim Alchemy Fixed.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
