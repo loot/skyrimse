@@ -4101,25 +4101,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/'
         name: 'Pandorable''s NPCs'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Cutting Room Floor.esp") and not active("Qw_PANNPCs_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("AI Overhaul.esp") and not active("Qw_PANNPCs_CRF Patch.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor and AI Overhaul SSE' ]
-        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and not active("Qw_PANNPCs_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp")'
   - name: 'PAN_NPCs_DG.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24135' ]
     msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_PANNPCsDG_AIOverhaul Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Morrowloot Ultimate' ]
         condition: 'active("MLU.esp") and not active("PAN_NPCs_DG_MLU_Patch.esp")'
