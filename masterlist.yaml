@@ -8474,6 +8474,13 @@ plugins:
       - name: 'BOTI ESP-ESL OCS ESL Patch.esp'
         condition: 'checksum("BOTI.esp", 0900486D)'
     msg:
+      - type: say
+        condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
+        content:
+          - lang: en
+            text: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
+          - lang: de
+            text: '**Optionale Voraussetzung:** Es wird empfohlen auch [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) mit dieser Mod zu nutzen. Diese fügt Unterstützung für im-Spiel unausgesprochen Dialog hinzu.'
       - <<: *patch3rdParty
         subs:
           - 'Open Cities Skyrim'
