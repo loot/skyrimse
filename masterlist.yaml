@@ -8468,6 +8468,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/27556/'
         name: 'Blood on the Ice Redux Open Cities Patches'
     after: [ 'Quest Conflict Fixes.esp' ]
+    inc:
+      - name: 'BOTI ESP OCS ESL Patch.esp'
+        condition: 'checksum("BOTI.esp", 14A9986A)'
+      - name: 'BOTI ESP-ESL OCS ESL Patch.esp'
+        condition: 'checksum("BOTI.esp", 0900486D)'
     msg:
       - <<: *patch3rdParty
         subs:
