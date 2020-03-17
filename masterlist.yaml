@@ -1600,6 +1600,10 @@ plugins:
 
   - name: 'MannequinStayPut.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6414/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'file("LegacyoftheDragonborn.esm")'
     clean:
       - crc: 0x74FC1689
         util: 'SSEEdit v4.0.3'
