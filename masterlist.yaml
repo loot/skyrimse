@@ -2492,6 +2492,36 @@ plugins:
       - crc: 0x93C29074
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Lanterns Of Skyrim II.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30817' ]
+    inc:
+      - 'Blowing in the Wind SSE.esp'
+      - 'CLARALUX SSE.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEA776E36
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
+  - name: 'LoS II - Lantern Workers.esp'
+    inc: [ 'Enhanced Solitude SSE.esp' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x54F40975
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 25
+  - name: 'LoS II - Tamriel Master Lights.esp'
+    inc:
+      - 'ELFX - Exteriors.esp'
+      - 'RLO - Exteriors.esp'
+    tag:
+      - Delev
+      - Invent
+    dirty:
+      - <<: *quickClean
+        crc: 0x0D116849
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+
   - name: 'Luminosity - Skyrim is Lit Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     dirty:
@@ -5172,6 +5202,17 @@ plugins:
     after:
       - 'AK - Placeable Statics SE.esp'
       - 'Destructible Skyrim.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Use %1% instead.'
+          - lang: de
+            text: 'Nutzen Sie %1% stattdessen.'
+          - lang: ja
+            text: '代わりに%1%を使用してください。'
+        subs: [ '[WiZkiD Signs](https://www.nexusmods.com/skyrimspecialedition/mods/30481)' ]
+        condition: 'active("Lanterns Of Skyrim II.esm")'
     clean:
       # version: 2.04
       - crc: 0x8EF0F5D1
