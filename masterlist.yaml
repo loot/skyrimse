@@ -2300,6 +2300,11 @@ plugins:
       - 'SMIM-SE-Merged-All.esp'
       - 'Prometheus_No_snow_Under_the_roof.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities'
+          - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265)'
+        condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
