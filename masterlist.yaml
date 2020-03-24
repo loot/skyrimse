@@ -1570,6 +1570,10 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
 ###### Fixes ######
+  - name: 'BugfixCompilation.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33449/' ]
+    group: *fixesGroup
+
   - name: 'Butterflies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29434/' ]
     group: *fixesGroup
@@ -7991,7 +7995,9 @@ plugins:
 
   - name: 'Hunters Not Bandits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1547/' ]
-    after: [ 'Relationship Dialogue Overhaul.esp' ]
+    after:
+      - 'Relationship Dialogue Overhaul.esp'
+      - 'BugfixCompilation.esp'
     clean:
       # version: 3.1
       - crc: 0xC5DA5E76
