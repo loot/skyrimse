@@ -4172,9 +4172,22 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/'
         name: 'Pandorable''s NPCs'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs Patch.esp")'
+  - name: 'PAN_NPCs_DB.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30680' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp")'
   - name: 'PAN_NPCs_DG.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24135' ]
     msg:
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DG Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Morrowloot Ultimate' ]
         condition: 'active("MLU.esp") and not active("PAN_NPCs_DG_MLU_Patch.esp")'
@@ -7957,9 +7970,9 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("PAN_NPCs.esp") and not active("The Ordinary Women.esp") and not active("WICO - Immersive People.esp") and not active("Diversity - An NPC Overhaul.esp") and not active("Qw_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
+      - <<: *patch3rdParty_RSCPC
         subs: [ 'RS Children Overhaul' ]
-        condition: 'active("RSChildren.esp") and not active("Qw_RSChildren_AIOverhaul Patch.esp")'
+        condition: 'active("RSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Simple Children' ]
         condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
