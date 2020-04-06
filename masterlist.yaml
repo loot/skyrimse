@@ -4438,6 +4438,33 @@ plugins:
       - <<: *patch3rdPartyQUASIPC
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'version("3DNPC.esp", "4.0", <) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("3DNPC - AI Overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Alternate Start' ]
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("3DNPC Alternative Locations.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("3DNPC - CRF Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'EFF - Extensible Follower Framework' ]
+        condition: 'active("EFFCore.esm") and not active("3DNPCEFF.esp")'
+      - <<: *patchProvided
+        subs: [ 'Karthwasten' ]
+        condition: 'active("Karthwasten.esp") and not active("3DNPC - Arth Karthwasten Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Kynesgrove' ]
+        condition: 'active("Kynesgrove.esp") and not active("3DNPC - Arth Kynesgrove Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - 3DNPC Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'TK Children SE' ]
+        condition: 'active("TKChildren.esp") and not active("TKChildren+3DNPC.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unplayable Faction Armors SSE' ]
+        condition: 'active("DIS_Armor_Fractions.esp") and not active("DIS_Armor_Fractions_3DNPC.esp")'
     tag: [ Invent ]
     clean:
       - crc: 0xBCE1E037
