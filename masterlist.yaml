@@ -5502,6 +5502,13 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0xC2255E81
         util: 'SSEEdit v4.0.3'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Lights and FX' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Relighting Skyrim' ]
+        condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
 
   - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
