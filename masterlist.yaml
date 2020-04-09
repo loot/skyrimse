@@ -12765,6 +12765,11 @@ plugins:
           - 'No Snow Under the Roof & ETAC Complete'
           - '[ETaC Complete - JK''s Skyrim - NSUTR Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great Cities - Minor Cities and Towns'
+          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/)'
+        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
