@@ -278,6 +278,11 @@ common:
     subs:
       - 'CC Survival Mode'
       - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+  - &patch3rdParty_KPH_ACE
+    <<: *patch3rdParty
+    subs:
+      - 'WACCF Armor and Clothing Extension'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
   - &patch3rdParty_KPH_CACO
     <<: *patch3rdParty
     subs:
@@ -1348,6 +1353,9 @@ plugins:
         itm: 2
   # Saints & Seducers
   - name: 'ccbgssse025-advdsgs.esm'
+    msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Saints&Seducers.esp")'
     tag:
       - C.Encounter
       - C.Location
@@ -4143,10 +4151,7 @@ plugins:
       - 'MLU.esp'
       - 'ScopedBows.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'WACCF Armor and Clothing Extension'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_ACE
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("ACE_EtherealElvenOverhaul_Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
@@ -9247,6 +9252,8 @@ plugins:
           - 'Mortal Enemies'
           - '[Growl - Mortal Enemies Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31270)'
         condition: 'active("Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp") and not file("Growl-MortalEnemies Patch.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Growl_Patch.esp")'
     clean:
       - crc: 0x507663AA
         util: 'SSEEdit v4.0.3'
@@ -9798,6 +9805,12 @@ plugins:
       - Stats
     msg:
       - *patch3rdPartySRPC
+      - <<: *patch3rdParty_KPH_ACE
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("DawnguardArsenal_WACCF-ACE_Patch.esp")'
+      - <<: *patch3rdParty_KPH_CCOR
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DGA_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
@@ -16434,6 +16447,11 @@ plugins:
       - 'BCS_TCIY_Patch.esp'
       - 'TCIY BCS Patch.esp'
 
+  - name: 'DawnguardArsenal_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'DawnguardArsenal_CCOR_Patch.esp']
+        condition: 'active("DawnguardArsenal_CCOR_Patch.esp")'
   - name: 'Immersive Weapons_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
