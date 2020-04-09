@@ -278,6 +278,11 @@ common:
     subs:
       - 'CC Survival Mode'
       - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154)'
+  - &patch3rdParty_KPH_ACE
+    <<: *patch3rdParty
+    subs:
+      - 'WACCF Armor and Clothing Extension'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
   - &patch3rdParty_KPH_CACO
     <<: *patch3rdParty
     subs:
@@ -4143,10 +4148,7 @@ plugins:
       - 'MLU.esp'
       - 'ScopedBows.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'WACCF Armor and Clothing Extension'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_ACE
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("ACE_EtherealElvenOverhaul_Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
@@ -9800,10 +9802,7 @@ plugins:
       - Stats
     msg:
       - *patch3rdPartySRPC
-      - <<: *patch3rdParty
-        subs:
-          - 'WACCF Armor and Clothing Extension'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_ACE
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("DawnguardArsenal_WACCF-ACE_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_CCOR_Patch.esp")'
