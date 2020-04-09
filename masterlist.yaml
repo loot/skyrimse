@@ -12684,7 +12684,8 @@ plugins:
       - 'Paradise_City_MergedNoWindhelm.esp'
       - 'Paradise_City_MergedSummerWindhelm.esp'
       - 'Paradise_City_Rorikstead.esp'
-      - 'The Great Cities - Minor Cities and Towns.esp'
+      - name: 'The Great Cities - Minor Cities and Towns.esp'
+        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or not active("The Great JK''s Cities.esp")'
       - 'The Great City of Dawnstar.esp'
       - 'The Great City of Dragon Bridge.esp'
       - 'The Great City of Falkreath.esp'
@@ -12764,6 +12765,11 @@ plugins:
           - 'No Snow Under the Roof & ETAC Complete'
           - '[ETaC Complete - JK''s Skyrim - NSUTR Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great Cities - Minor Cities and Towns'
+          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/)'
+        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -16355,23 +16361,14 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31271' ]
     req: [ 'Infinite Gold For Merchants.esp' ]
 
+  - name: 'The Great JK''s Cities.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
+    clean:
+      - crc: 0xE0CA35BC
+        util: 'SSEEdit v4.0.3'
   - name: 'XenonCitiesPatch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/'
-        name: 'JK''s and The Great Cities compatibility refit'
-    dirty:
-      # version: 1.3
-      - <<: *reqManualFix
-        crc: 0xF3117ADB
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 256
-        udr: 677
-        nav: 32
-      # version: 1.3, after QAC
-      - <<: *reqManualFix
-        crc: 0x96972D29
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 32
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
+    msg: [ *obsolete ]
 
   - name: 'ZIA_WACCF_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19489' ]
