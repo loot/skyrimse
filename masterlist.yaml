@@ -9800,6 +9800,15 @@ plugins:
       - Stats
     msg:
       - *patch3rdPartySRPC
+      - <<: *patch3rdParty
+        subs:
+          - 'WACCF Armor and Clothing Extension'
+          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("DawnguardArsenal_WACCF-ACE_Patch.esp")'
+      - <<: *patch3rdParty_KPH_CCOR
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DGA_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
