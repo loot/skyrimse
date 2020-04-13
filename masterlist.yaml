@@ -10102,11 +10102,13 @@ plugins:
       - crc: 0x082F3A95
         util: 'SSEEdit v4.0.2'
 
-  - name: 'JSwords.esm'
+  - name: 'JSwords(D)?\.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29415/' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JaysusSwords_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+  - name: 'JSwords.esm'
+    msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_JSwords_Patch.esp")'
     clean:
@@ -10118,8 +10120,6 @@ plugins:
   - name: 'JSwordsD.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29415/' ]
     msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JaysusSwords_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchIncluded
         subs: [ 'Immersive Weapons' ]
         condition: 'active("Immersive Weapons.esp") and not active("JSwords-ImmersiveWeaponsPatch.esp")'
