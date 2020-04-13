@@ -10107,6 +10107,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JaysusSwords_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *useOnlyOneX
+        subs: [ 'JaySuS Swords' ]
+        condition: 'many("JSwords(D)?\.esm")'
   - name: 'JSwords.esm'
     msg:
       - <<: *patch3rdParty_KPH_CCOR
