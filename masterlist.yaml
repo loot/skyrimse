@@ -8527,7 +8527,7 @@ plugins:
         condition: 'active("EFFCore.esm") and not file("BetterQuestObjectives-EFFPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Legacy of the Dragonborn v5+' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not file("BetterQuestObjectives - LOTD Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("BetterQuestObjectives - LOTD Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=) and not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)'
       - <<: *patchIncluded
         subs: [ 'T3nd0''s Perkus Maximus' ]
         condition: 'active("PerkusMaximus_Mage.esp") and not file("BetterQuestObjectives-PerMaPatch.esp")'
