@@ -10102,20 +10102,34 @@ plugins:
       - crc: 0x082F3A95
         util: 'SSEEdit v4.0.2'
 
-  - name: 'JSwords.esm'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29415/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JaysusPatch.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_JSwords_Patch.esp")'
-  - name: 'JSwordsD.esm'
+  - name: 'JSwords(D)?\.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29415/' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JaysusSwords_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *useOnlyOneX
+        subs: [ 'JaySuS Swords' ]
+        condition: 'many("JSwords(D)?\.esm")'
+  - name: 'JSwords.esm'
+    msg:
+      - <<: *patch3rdParty_KPH_CCOR
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_JSwords_Patch.esp")'
     clean:
-      - crc: 0x11C4B0B6
+      - crc: 0x3E768974
+        util: 'SSEEdit v4.0.3'
+      # Lore Friendly
+      - crc: 0x8BB38B17
+        util: 'SSEEdit v4.0.3'
+  - name: 'JSwordsD.esm'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Immersive Weapons' ]
+        condition: 'active("Immersive Weapons.esp") and not active("JSwords-ImmersiveWeaponsPatch.esp")'
+    clean:
+      - crc: 0x186D41CB
+        util: 'SSEEdit v4.0.3'
+      # Lore Friendly
+      - crc: 0xF42DCC30
         util: 'SSEEdit v4.0.3'
 
   - name: 'JS Armored Circlets SE.esp'
