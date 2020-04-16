@@ -10780,6 +10780,14 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
 
 ###### Leveled List Modifiers ######
+  - name: 'Containers and Leveled Lists Fixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26575/' ]
+    after: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("CLLF - Cutting Room Floor Patch.esp")'
+
   - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
     msg:
