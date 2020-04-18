@@ -6921,8 +6921,17 @@ plugins:
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
     msg:
       - <<: *patchProvided
+        subs: [ 'Complete Alchemy & Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CLLF - CACO Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("CLLF - Cutting Room Floor Patch.esp")'
+  - name: 'CLLF - Cutting Room Floor Patch.esp'
+    req: [ 'Containers and Leveled Lists Fixes.esp' ]
+  - name: 'CLLF - WACCF Patch.esp'
+    req: [ 'Containers and Leveled Lists Fixes.esp' ]
+  - name: 'Priest Vendors - CLLF Integration.esp'
+    req: [ 'Containers and Leveled Lists Fixes.esp' ]
 
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
