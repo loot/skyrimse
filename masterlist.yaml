@@ -16699,3 +16699,24 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Skyrim SE - Project Optimization - ESM VERSION' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
+
+  ### Caliente's Beautiful Bodies Enhancer -CBBE- ###
+  - name: 'CBBE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/198' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'You seem to be using Weapons Armor Clothing and Clutter Fixes. A compatibility patch is available here %1%.'
+        subs: [ '[Weapons Armor Clothing and Clutter Fixes - CBBE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19176/)' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
+
+  ### Bells of Skyrim ###
+  - name: 'Bells of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10495' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Whiterun Expansion SSE - NON Open Cities Version'
+          - '[Bells of Skyrim Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/34472/)'
+        condition: 'active("WhiterunAddition.esp") and not active("Bells of Skyrim-Whiterun Expansion Patchs.esp")'
