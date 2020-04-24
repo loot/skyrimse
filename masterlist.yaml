@@ -16720,3 +16720,22 @@ plugins:
           - 'Whiterun Expansion SSE - NON Open Cities Version'
           - '[Bells of Skyrim Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/34472/)'
         condition: 'active("WhiterunAddition.esp") and not active("Bells of Skyrim-Whiterun Expansion Patchs.esp")'
+
+  ### Majestic Mountains - Pilgrims Delight Patch ###
+  - name: MM_PD_Patch.esp
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/35107'
+    clean:
+      - crc: 0x97709110
+        util: 'SSEEdit v4.0.2'
+
+  ### Pilgrim's Delight - High Hrothgar Shrine Retextures ###
+  - name: PilgrimsDelight.esp
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/3273/'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - Majestic Mountains - Cathedral Concept
+          - '[ Majestic Mountains - Pilgrims Delight Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/35107)'
+        condition: 'active("MajesticMountains.esp") and not active("MM_PD_Patch.esp")'
