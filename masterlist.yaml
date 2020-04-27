@@ -330,28 +330,6 @@ common:
       - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
       - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
 
-  - &patch3rdPartyQUASIPC
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。サードパーティのパッチはこちらから入手できます:[Qwinn''s Unified Automated Self Installing Patch Compendium] (https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 제3자 제공 호환성 패치는 여기에서 다운로드 가능합니다: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka trzeciej strony jest dostępna tutaj: [ Qwins''s Unified Automated Self Installing Patch Compandium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: pt
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod.  Um patch feito por terceiros está disponível aqui: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou um patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: [ Qwins''s Unified Automated Self Installing Patch Compandium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: ru
-        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч доступен здесь: [ Qwinn''s Unified Automated Self Installing Patch Compendium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-      - lang: sv
-        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: [ Qwins''s Unified Automated Self Installing Patch Compandium ](https://www.nexusmods.com/skyrimspecialedition/mods/18369)'
-
   - &patchIncluded
     type: say
     content:
@@ -1612,13 +1590,6 @@ plugins:
   - name: 'FloraRespawnFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
     group: *fixesGroup
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Ars Metallica' ]
-        condition: 'active("Ars Metallica.esp") and not active("Qw_ArsMetallica_FloraRespawnFix Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_Skyrim3DTrees_FloraRespawnFix Patch.esp") and not active("HarvestOverhaul_Redone.esp")'
 
   - name: 'MannequinStayPut.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6414/' ]
@@ -1875,10 +1846,6 @@ plugins:
       - 'SMIM-SE-DungeonsCliffsIceSkirts.esp'
       - 'SMIM-SE-FarmhouseFlickeringFix.esp'
       - 'SMIM-SE-Merged-NoRiftenRopes-NoSolitudeRopes.esp'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Ars Metallica' ]
-        condition: 'active("Ars Metallica.esp") and not active("Qw_ArsMetallica_SMIM_MergedAll Patch.esp")'
     clean:
       - crc: 0x35C26177
         util: 'SSEEdit v4.0.3'
@@ -1899,10 +1866,6 @@ plugins:
       - crc: 0xFCE56AAB
         util: 'SSEEdit v4.0.3'
   - name: 'SMIM-SE-Merged-NoRiftenRopes-NoSolitudeRopes.esp'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Ars Metallica' ]
-        condition: 'active("Ars Metallica.esp") and not active("Qw_ArsMetallica_SMIM_MergedNoRopes Patch.esp")'
     clean:
       - crc: 0xFDDAFDB0
         util: 'SSEEdit v4.0.3'
@@ -2450,13 +2413,6 @@ plugins:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
       - 'RLO - Interiors.esp'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ELE_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_ELE_ICoWinterhold Patch.esp")'
     tag:
       - C.ImageSpace
       - C.Light
@@ -2582,22 +2538,6 @@ plugins:
       - 'ELFX - Hardcore.esp'
       - 'Luminosity - Lightweight Lighting.esp'
       - 'RLO - Interiors.esp'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Castle Volkihar Rebuilt' ]
-        condition: 'active("Castle Volkihar Rebuilt.esp") and not active("Qw_Luminosity_CastleVolkihar Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_Luminosity_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive Citizens - AI Overhaul' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Qw_Luminosity_ImmersiveCitizens Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_Luminosity_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Realistic Water Two' ]
-        condition: 'active("RealisticWaterTwo.esp") and not active("Qw_Luminosity_RW2 Patch.esp")'
     tag: [ C.Light ]
 
   - name: 'RedbellyMineMistFix.esp'
@@ -2628,10 +2568,6 @@ plugins:
       - 'RLO - Interiors.esp'
       - 'RLO - Exteriors.esp'
       - 'torch shadows.esp'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_RelightingSkyrim_CRF Patch.esp")'
     clean:
       - crc: 0xF6BBF04B
         util: 'SSEEdit v4.0.3'
@@ -2736,9 +2672,6 @@ plugins:
         condition: 'active("Cathedral Weathers.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Deadly Spell Impacts' ]
-        condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     dirty:
@@ -2803,21 +2736,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ISC_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Deadly Spell Impacts' ]
-        condition: 'active("DeadlySpellImpacts.esp") and not file("Qw_DeadlySpellImpacts_ISC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'RUSTIC SOULGEMS - Sorted' ]
-        condition: 'file("RUSTIC SOULGEMS - Sorted.esp") and not file("Qw_RusticSoulgemsSorted_ISC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'RUSTIC SOULGEMS - Unsorted' ]
-        condition: 'file("RUSTIC SOULGEMS - Unsorted.esp") and not file("Qw_RusticSoulgemsUnsorted_ISC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_ISC_USSEP Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ISC_CRF Patch.esp")'
     tag: [ Sound ]
     clean:
       # version: 2.2
@@ -3795,10 +3713,6 @@ plugins:
 
   - name: 'SkyrimSizesLore.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/587' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_SkyrimSizesLore_USSEP Patch.esp")'
 
   - name: 'sk immersive Armor Swapper - (Dolls|Teens)\.esp'
     url: [ 'https://schaken-mods.com/index.php?/file/94-immersive-armor-swapper-public-version/' ]
@@ -3956,12 +3870,6 @@ plugins:
     msg:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_AelaStandalone_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("AI Overhaul.esp") and not active("ScopedBows.esp") and not active("Qw_AelaStandalone_USSEP Patch.esp")'
 
   ### Bijin Series by rxkx22
   - name: 'Bijin AIO.esp'
@@ -3982,18 +3890,6 @@ plugins:
     msg:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_BijinAIO_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_BijinAIO_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_BijinAIO_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BijinAIO_USSEP Patch.esp")'
   - name: 'Bijin NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/' ]
     after:
@@ -4110,25 +4006,6 @@ plugins:
 
   - name: 'Diversity - An NPC Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5291/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_Diversity_USSEP Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Cutting Room Floor.esp") and not active("Qw_Diversity_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("AI Overhaul.esp") and not active("Qw_Diversity_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor and AI Overhaul SSE' ]
-        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and not active("Qw_Diversity_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_Diversity_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Interesting NPCs' ]
-        condition: 'active("3DNPC.esp") and not active("Qw_Diversity_3DNPC Patch.esp")'
     dirty:
       # version: 3.31 CRF Vanilla Hair
       - <<: *quickClean
@@ -4145,19 +4022,6 @@ plugins:
 
   - name: 'DivinePeopleOfSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8326/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: '(checksum("DivinePeopleOfSkyrim.esp", BF8C56FD) or checksum("DivinePeopleOfSkyrim.esp", 54254E77)) and active("AI Overhaul.esp") and not active("Qw_DPOSMenOnly_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: '(checksum("DivinePeopleOfSkyrim.esp", BF8C56FD) or checksum("DivinePeopleOfSkyrim.esp", 54254E77)) and active("Cutting Room Floor.esp") and not active("Qw_DPOSMenOnly_CRF_MissingHairs Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: '(checksum("DivinePeopleOfSkyrim.esp", BF8C56FD) or checksum("DivinePeopleOfSkyrim.esp", 54254E77)) and active("CollegeOfWinterholdImmersive.esp") and not active("Qw_Diversity_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: '(checksum("DivinePeopleOfSkyrim.esp", BF8C56FD) or checksum("DivinePeopleOfSkyrim.esp", 54254E77)) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_DPOSMenOnly_USSEP_MissingHairs Patch.esp")'
 
   - name: 'ethereal_elven_overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7351/' ]
@@ -4237,19 +4101,6 @@ plugins:
 
   - name: 'RFCharacterOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8541/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_RealisticFaces_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_RealisticFaces_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_RealisticFaces_ICoWinterhold Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_RealisticFaces_USSEP Patch.esp")'
 
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
@@ -4262,10 +4113,6 @@ plugins:
 
   - name: 'SPTConsistentOlderPeopleSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2977/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Qw_ConsistentOlderPeople_AIOverhaul Patch.esp")'
     clean:
       # version: 4.2
       - crc: 0xA2DD4935
@@ -4283,19 +4130,6 @@ plugins:
   - name: 'The Ordinary Women.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12376' ]
     after: [ 'Cutting Room Floor.esp' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Cutting Room Floor.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_CRF Patch.esp") and not active("Qw_PANNPCs_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor and AI Overhaul SSE' ]
-        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and not active("Qw_TheOrdinaryWomen_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive College of Winterhold' ]
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp") and not active("Qw_PANNPCs_ICoWinterhold Patch.esp")'
     clean:
       # version: 3.0
       - crc: 0xBC4FAE8B
@@ -4315,22 +4149,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2136/'
         name: 'WICO - Windsong Immersive Character Overhaul'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_WICO_USSEP Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("Cutting Room Floor.esp") and not active("Qw_WICO_AIOverhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("AI Overhaul.esp") and not active("Qw_WICO_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor and AI Overhaul SSE' ]
-        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and not active("Qw_WICO_AIOverhaul_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Interesting NPCs' ]
-        condition: 'active("3DNPC.esp") and not active("Qw_WICO_3DNPC Patch.esp")'
 
 ###### Character Appearance - Presets ######
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
@@ -4452,15 +4270,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_3DNPC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'The Ordinary Women' ]
-        condition: 'active("The Ordinary Women.esp") and not active("Qw_3DNPC_TheOrdinaryWomen Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'version("3DNPC.esp", "4.0", <) and active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_3DNPC_USSEP Patch.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("3DNPC - AI Overhaul Patch.esp")'
@@ -4696,15 +4505,6 @@ plugins:
   - name: 'SofiaFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/' ]
     msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Guard Dialogue Overhaul' ]
-        condition: 'active("Guard Dialogue Overhaul.esp") and not active("Qw_SofiaFollower_GDO Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Relationship Dialogue Overhaul' ]
-        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Qw_SofiaFollower_RDO Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_SofiaFollower_USSEP Patch.esp")'
       - type: warn
         content:
           - lang: en
@@ -5164,10 +4964,6 @@ plugins:
   - name: 'Ducks and Swans.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
     group: *earlyLoadersGroup
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_DucksAndSwans_USSEP Patch.esp")'
     clean:
       # version: 1.1
       - crc: 0x1BD494E8
@@ -5810,13 +5606,6 @@ plugins:
     inc:
       - 'Enhanced Landscapes.esp'
       - 'waterplants.esp'
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_S3DLandscapes_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_S3DLandscapes_USSEP Patch.esp")'
 
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
@@ -6436,9 +6225,6 @@ plugins:
           - 'Ethereal Elven Overhaul'
           - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
         condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim Sizes Lore Edition' ]
-        condition: 'active("SkyrimSizesLore.esp") and not active("Qw_Imperious_SkyrimSizesLore Patch.esp")'
     clean:
       # version: 7.24SSE
       - crc: 0xE889ADEB
@@ -6663,18 +6449,6 @@ plugins:
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Ars Metallica' ]
-        condition: 'active("Ars Metallica.esp") and not active("Qw_CACO_ArsMetallica Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_CACO_AOS Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Relationship Dialogue Overhaul' ]
-        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Qw_CACO_RDO Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_CACO_S3DTrees Patch.esp")'
       - <<: *semiCompatible
         subs:
           - 'iNeed'
@@ -6732,9 +6506,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Flora Respawn Fix & Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and active("FloraRespawnFix.esp") and not active("Qw_S3DTrees_FRFix_HarvestORPlants Patch.esp")'
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - HOR Plants Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
@@ -7456,39 +7227,6 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_WACCF_AOS Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Beyond Reach' ]
-        condition: 'active("arnima.esp") and not active("Qw_WACCF_arnima Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Beyond Skyrim: Bruma' ]
-        condition: 'active("BSHeartland.esp") and not active("Qw_WACCF_BSHeartland Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("Qw_WACCF_CloaksOfSkyrim Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_WACCF_CRF Patch.esp") and not active("WACCF_Armor and Clothing Extension.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Immersive Sounds - Compendium' ]
-        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Qw_WACCF_ISC Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Legendary Skyrim Crossbows' ]
-        condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Qw_WACCF_LSCrossbows Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Open Face Guard Helmets' ]
-        condition: 'active("Open Face Guard Helmets.esp") and not active("Qw_WACCF_OpenFaceGuardHelmets Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Open Face Guard Helmets SSE' ]
-        condition: 'active("OpenFaceGuardHelmetsSSE.esp") and not active("Qw_WACCF_OpenFaceGuardHelmetsSE Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'RS Children Overhaul' ]
-        condition: 'active("RSChildren.esp") and not active("Qw_WACCF_RSChildren Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'TMB Vanilla Armors and Clothes SSE' ]
-        condition: 'active("TMBVanillaArmorandClothes.esp") and not active("Qw_WACCF_TMBVAC Patch.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
       - <<: *patch3rdPartyUVCPC
@@ -8090,14 +7828,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654'
         name: 'AI Overhaul SSE'
     msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("PAN_NPCs.esp") and not active("The Ordinary Women.esp") and not active("WICO - Immersive People.esp") and not active("Diversity - An NPC Overhaul.esp") and not active("Qw_AIOverhaul_CRF Patch.esp")'
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Simple Children' ]
-        condition: 'active("FacegenForKids.esp") and not active("Qw_AIO_FacegenForKids Patch.esp")'
     clean:
       - crc: 0xCB3F8A2B
         util: 'SSEEdit v4.0.3'
@@ -8524,10 +8256,6 @@ plugins:
 
   - name: 'BarenziahQuestMarkers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/684/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BarenziahQuestMarkers_USSEP Patch.esp")'
 
   - name: 'BecomeKingofSkyrim.esp'
     url:
@@ -9410,9 +9138,6 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Ordinator.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Ordinator_WACCF_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Qw_Ordinator_AOS Patch.esp")'
     tag:
       - Graphics
       - Names
@@ -9634,21 +9359,6 @@ plugins:
           - 'Remodeled Armor'
           - '[ Armor and Clothing Extension - Remodeled Armor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/30220)'
         condition: 'active("Remodeled Armor - Vanilla Replacer.esp") and not active("ACE_Remodeled_Armor_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Beyond Skyrim: Bruma' ]
-        condition: 'active("BSHeartland.esp") and not active("Qw_ACE_BSHeartland Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cloaks and Capes' ]
-        condition: 'active("Cloaks&Capes.esp") and not active("Qw_ACE_CloaksAndCapes Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("Qw_ACE_CloaksOfSkyrim Patch.esp") and not file("Complete Crafting Overhaul_Remastered.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_ACE_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("Qw_ACE_SkyrimImmersiveCreatures Patch.esp")'
     clean:
       # version: 1.0
       - crc: 0x832B2C99
@@ -9744,15 +9454,6 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Complete Alchemy & Cooking Overhaul' ]
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Qw_CACO_BookCoversSkyrim Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_CRF Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_BookCoversSkyrim_USSEP Patch.esp") and not file("AnotherSortingMod_2017-SSE.esp")'
     after:
       - 'Cutting Room Floor.esp'
       - 'Tel_Nalta.esp'
@@ -9815,12 +9516,6 @@ plugins:
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_CloaksOfSkyrim_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksOfSkyrim_USSEP Patch.esp")'
     clean:
       # version: 1.2.1
       - crc: 0x7A522F11
@@ -9848,13 +9543,6 @@ plugins:
 
   - name: 'Cloaks&Capes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2019/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_CRF Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("Qw_CloaksAndCapes_USSEP Patch.esp")'
 
   - name: 'CL Chillrend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2916/' ]
@@ -9960,10 +9648,6 @@ plugins:
 
   - name: 'GirlHeavyArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17843/' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_GirlHeavyArmor_USSEP Patch.esp") and not active("Qw_GirlHeavyArmorStandalone_USSEP Patch.esp")'
 
   - name: 'GPProvisioning.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9533' ]
@@ -10918,12 +10602,6 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_BeyondReach_Patch.esp")'
       - <<: *patch3rdParty_BAOPFCH
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?BeyondReach(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?BRE(_FAL)?(_VIG)?(_WYR)?.*\.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Relationship Dialogue Overhaul' ]
-        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Qw_BeyondReach_RDO Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BeyondReach_USSEP Patch.esp")'
     dirty:
       # version: 4.0.0
       - <<: *quickClean
@@ -11014,10 +10692,6 @@ plugins:
         itm: 514
   - name: 'BS_DLC_patch.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167' ]
-    msg:
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp")'
     tag:
       - Delev
       - Invent
@@ -11602,9 +11276,6 @@ plugins:
         condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp") and not file("RSC CRF Patch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
-      - <<: *patch3rdPartyQUASIPC
-        subs: [ 'Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Qw_S3DTrees_CRF Patch.esp")'
       - *patch3rdPartySRPC
     tag:
       - C.Location
