@@ -5511,6 +5511,11 @@ plugins:
       - 'Blowing in the Wind SSE.esp'
       - 'SMIM-SE-Merged-All.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[ Cutting Room Floor - No Snow Under the Roof SE ](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
+        condition: 'active("Cutting Room Floor.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[No Snow Under the roof - Bug fixes](https://www.nexusmods.com/skyrimspecialedition/mods/15064/)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("NSUTR_bugfixes.esp")'
