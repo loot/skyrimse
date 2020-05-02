@@ -1041,8 +1041,12 @@ groups:
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lvlListsGroup ]
 
-  - name: &lateChangesGroup Late Fixes & Changes
+  - name: &mapGroup Maps
+    description: 'A group for Map & Map Marker plugins that need to be loaded late to preserve worldspace changes.'
     after: [ *dynamicPatchGroup ]
+
+  - name: &lateChangesGroup Late Fixes & Changes
+    after: [ *mapGroup ]
 
   - name: &dynamicLODGroup Dynamic LOD
     after: [ *lateChangesGroup ]
@@ -1954,8 +1958,7 @@ plugins:
 
   - name: 'EzEWorldMapSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
-    group: *lateLoadersGroup
-    after: [ 'RealisticWaterTwo.esp' ]
+    group: *mapGroup
 
   - name: 'IcePenguinWorldMap(classic|Paper)?\.esp'
     url:
@@ -1982,11 +1985,16 @@ plugins:
       - crc: 0xC1050661
         util: 'SSEEdit v4.0.3'
   - name: 'IcePenguinWorldMapPaper.esp'
-    group: *lateLoadersGroup
-    after: [ 'RealisticWaterTwo.esp' ]
+    group: *mapGroup
+    after:
+      - 'Atlas Legendary.esp'
+      - 'Atlas Legendary OCS.esp'
+      - 'Atlas Map Markers.esp'
+      - 'Dawnguard Map Markers.esp'
     inc:
       - 'IcePenguinWorldMap.esp'
       - 'icepenguinworldmapclassic.esp'
+      - 'Paper World Map.esp'
     msg:
       - <<: *semiCompatible
         subs:
@@ -2009,8 +2017,13 @@ plugins:
 
   - name: 'Paper World Map.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10836/' ]
-    group: *lateLoadersGroup
-    after: [ 'RealisticWaterTwo.esp' ]
+    group: *mapGroup
+    after:
+      - 'Atlas Legendary.esp'
+      - 'Atlas Legendary OCS.esp'
+      - 'Atlas Map Markers.esp'
+      - 'Dawnguard Map Markers.esp'
+    inc: [ 'IcePenguinWorldMapPaper.esp' ]
     msg:
       - <<: *semiCompatible
         subs:
@@ -2039,16 +2052,23 @@ plugins:
 
   - name: 'Atlas Map Markers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24104' ]
+    group: *mapGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'Dawnguard Map Markers.esp'
       - 'MLU.esp'
       - 'SL01AmuletsSkyrim.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
 
   - name: 'Atlas Legendary( OCS)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14493' ]
+    group: *mapGroup
     after:
+      - 'Dawnguard Map Markers.esp'
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
+  - name: 'Atlas Legendary.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
   - name: 'Atlas Legendary OCS.esp'
     req: [ 'Open Cities Skyrim.esp' ]
 
@@ -2062,7 +2082,7 @@ plugins:
     url:
       - 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20931'
-    group: *lateChangesGroup
+    group: *mapGroup
     clean:
       - crc: 0xAA2F3309
         util: 'SSEEdit v4.0.3'
@@ -5508,11 +5528,7 @@ plugins:
 
   - name: 'NoGrassINCities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
-    group: *lateLoadersGroup
-    after:
-      - 'IcePenguinWorldMapPaper.esp'
-      - 'Paper World Map.esp'
-      - 'RealisticWaterTwo.esp'
+    group: *lateChangesGroup
 
   - name: 'NorthernGrass.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25459/' ]
@@ -5996,7 +6012,6 @@ plugins:
       - 'Rigmor.esp'
     after:
       - 'Alternate Start - Live Another Life.esp'
-      - 'Atlas Map Markers.esp'
       - 'Audio Overhaul Skyrim.esp'
       - 'Clockwork.esp'
       - 'Complete Alchemy & Cooking Overhaul.esp'
@@ -13899,9 +13914,6 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/1909-soljunds-sinkhole/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2959957'
     after:
-      - 'Atlas Map Markers.esp'
-      - 'Atlas Legendary.esp'
-      - 'Atlas Legendary OCS.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
