@@ -1041,11 +1041,15 @@ groups:
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lvlListsGroup ]
 
-  - name: &lateChangesGroup Late Fixes & Changes
+  - name: &mapGroup Maps
+    description: 'A group for Map & Map Marker plugins that need to be loaded late to preserve worldspace changes.'
     after: [ *dynamicPatchGroup ]
 
+  - name: &lateChangesGroup Late Fixes & Changes
+    after: [ *mapGroup ]
+
   - name: &dynamicLODGroup Dynamic LOD
-    after: [ *lateChangesGroup ]
+    after: [ *mapGroup ]
 
 plugins:
   - name: 'Update.esm'
