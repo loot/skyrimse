@@ -2660,11 +2660,11 @@ plugins:
       - 'SoS - The Wilds.esp'
     msg:
       - <<: *patchProvided
+        subs: [ 'Enhanced Blood Textures' ]
+        condition: 'active("dD - Enhanced Blood Main.esp") and not active("Audio Overhaul Skyrim - Enhanced Blood Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Hunterborn' ]
         condition: 'active("Hunterborn.esp") and not active("Audio Overhaul Skyrim - Hunterborn Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Immersive Sounds - Compendium' ]
-        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Immersive Weapons' ]
         condition: 'active("Immersive Weapons.esp") and not active("Audio Overhaul Skyrim - Immersive Weapons Patch.esp")'
@@ -2676,6 +2676,11 @@ plugins:
           - 'Cathedral Weathers and Seasons'
           - '[Cathedral Weathers - Audio Overhaul Patch for Skyrim SE patch](https://www.nexusmods.com/skyrimspecialedition/mods/25420/)'
         condition: 'active("Cathedral Weathers.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Sounds - Compendium'
+          - '[Extensive AOS - ISC Patch](https://www.nexusmods.com/skyrimspecialedition/mods/25051)'
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
       - <<: *patch3rdPartyUVCPC
@@ -2688,12 +2693,17 @@ plugins:
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     after: [ 'RealisticWaterTwo.esp' ]
   - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
+    inc: [ 'Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp' ]
     tag: [ Sound ]
     dirty:
       - <<: *quickClean
         crc: 0x1E22FDD6
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 37
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp' ]
+        condition: 'active("Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
   - name: 'Audio Overhaul Skyrim - Obsidian Weathers Patch.esp'
     after:
       - 'Audio Overhaul Skyrim - True Storms.esp'
