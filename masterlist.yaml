@@ -527,6 +527,16 @@ common:
       - lang: sv
         text: 'Denna plugins master behöver sorteras'
 
+  - &useBashTweakInstead
+    type: say
+    content:
+      - lang: en
+        text: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
+      - lang: de
+        text: 'Ein Bashed Patch Tweak kann anstelle dieses Plugins verwendet werden. %1%'
+    subs: [ '' ]
+    condition: 'file("Bashed Patch.*\.esp")'
+
   - &useOnlyOneX
     type: error
     content:
@@ -4105,6 +4115,18 @@ plugins:
       # version: 5.1.3 Miraak Hides Face
       - crc: 0x3C1985BF
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Mors Feminine Female.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3090' ]
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Actors: Opposite Gender Anims Female' ]
+
+  - name: 'Opposite Gender Animations Fix( v1_4_1_4)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7598' ]
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Actors: Opposite Gender Anims Female' ]
 
   - name: 'PAN_NPCs.esp'
     url:
