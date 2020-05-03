@@ -2303,10 +2303,14 @@ plugins:
       - 'RLO - Interiors.esp'
       - 'RLO - Exteriors.esp'
     after:
-      - '3DNPC.esp'
-      - 'Prometheus_No_snow_Under_the_roof.esp'
-      - 'SMIM-SE-Merged-All.esp'
-      - 'SMIM-SE.esp'
+      - name: '3DNPC.esp'
+        condition: '(is_master("3DNPC.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("3DNPC.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'Prometheus_No_snow_Under_the_roof.esp'
+        condition: '(is_master("Prometheus_No_snow_Under_the_roof.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("Prometheus_No_snow_Under_the_roof.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'SMIM-SE.esp'
+        condition: '(is_master("SMIM-SE.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'SMIM-SE-Merged-All.esp'
+        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -2318,10 +2322,14 @@ plugins:
   - name: 'ELFX - Exteriors.esp'
     group: *earlyLoadersGroup
     after:
-      - 'AK - Placeable Statics SE.esp'
-      - 'Blowing in the Wind SSE.esp'
-      - 'SMIM-SE-Merged-All.esp'
-      - 'Prometheus_No_snow_Under_the_roof.esp'
+      - name: 'AK - Placeable Statics SE.esp'
+        condition: '(is_master("AK - Placeable Statics SE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("AK - Placeable Statics SE.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'Blowing in the Wind SSE.esp'
+        condition: '(is_master("Blowing in the Wind SSE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Blowing in the Wind SSE.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'Prometheus_No_snow_Under_the_roof.esp'
+        condition: '(is_master("Prometheus_No_snow_Under_the_roof.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Prometheus_No_snow_Under_the_roof.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'SMIM-SE-Merged-All.esp'
+        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("ELFX - Exteriors.esp"))'
     msg:
       - <<: *patch3rdParty
         subs:
