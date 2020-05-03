@@ -1049,7 +1049,9 @@ groups:
     after: [ *lateLoadersGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
-    after: [ *lvlListsGroup ]
+    after:
+      - *lvlListsGroup
+      - *landscapeGroup
 
   - name: &mapGroup Maps
     description: 'A group for Map & Map Marker plugins that need to be loaded late to preserve worldspace changes.'
