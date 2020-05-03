@@ -2620,6 +2620,13 @@ plugins:
         crc: 0x0F92CA19
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'JK''s Riverwood' ]
+        condition: 'active("JK''s Riverwood.esp") and not active("RLO - JK''s Riverwood.esp")'
+      - <<: *patchIncluded
+        subs: [ 'JK''s Whiterun' ]
+        condition: 'active("JKs Whiterun.esp") and not active("RLO - JK''s Whiterun.esp")'
   - name: 'RLO - Illuminated Spells.esp'
     after: [ 'RLO - Interiors.esp' ]
     clean:
@@ -2650,6 +2657,13 @@ plugins:
     clean:
       - crc: 0xA2034302
         util: 'SSEEdit v4.0.3'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp")'
   # RLO 4.1.1
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
     after:
