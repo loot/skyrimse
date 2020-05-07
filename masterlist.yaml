@@ -10365,9 +10365,14 @@ plugins:
         condition: 'active("Immersive Jewelry.esp") and not active("ImmersiveJewelryXSummermyst.esp") and not active("ImmersiveJewelryXSummermyst - Unrestricted.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'Weapons Armor Clothing and Clutter Fixes or Weapon AF'
-          - '[ Weapons Armor Clothing and Clutter Fixes (WACCF) and Summermyst Enchantments Consistency Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/19500)'
-        condition: '(active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Sum_WACCF_Patch.esp")) or (active("Weapon AF.esp") and not active("Weapon AF and Summermyst Patch.esp"))'
+          - 'Weapon AF'
+          - '[Weapon AF and Summermyst Patch (Old Files)](https://www.nexusmods.com/skyrimspecialedition/mods/19500)'
+        condition: 'active("Weapon AF.esp") and not active("Weapon AF and Summermyst Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Weapons Armor Clothing and Clutter Fixes'
+          - '[Summermyst - WACCF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34547)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Summermyst - WACCF Patch.esp") and not active("Sum_WACCF_Patch.esp")'
     clean:
       # version: 3.07SSE
       - crc: 0x1F17FC44
@@ -10675,6 +10680,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500'
         name: 'WACCF & Summermyst Enchantments Consistency Patch'
+    inc: [ 'Summermyst - WACCF Patch.esp' ]
     msg:
       - <<: *sortMasters
         condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
@@ -16313,6 +16319,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
     msg: [ *obsolete ]
 
+  - name: 'Summermyst - WACCF Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34547' ]
+    tag:
+      - Delev
+      - Graphics
+      - Keywords
+      - Names
+      - Relev
+      - Stats
   - name: 'ZIA_WACCF_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19489' ]
     after:
