@@ -10365,9 +10365,14 @@ plugins:
         condition: 'active("Immersive Jewelry.esp") and not active("ImmersiveJewelryXSummermyst.esp") and not active("ImmersiveJewelryXSummermyst - Unrestricted.esp")'
       - <<: *patch3rdParty
         subs:
+          - 'Weapon AF'
+          - '[Weapon AF and Summermyst Patch (Old Files)](https://www.nexusmods.com/skyrimspecialedition/mods/19500)'
+        condition: 'active("Weapon AF.esp") and not active("Weapon AF and Summermyst Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Weapons Armor Clothing and Clutter Fixes or Weapon AF'
-          - '[ Weapons Armor Clothing and Clutter Fixes (WACCF) and Summermyst Enchantments Consistency Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/19500)'
-        condition: '(active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Sum_WACCF_Patch.esp")) or (active("Weapon AF.esp") and not active("Weapon AF and Summermyst Patch.esp"))'
+          - '[Weapons Armor Clothing and Clutter Fixes (WACCF) and Summermyst Enchantments Consistency Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19500)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Sum_WACCF_Patch.esp")'
     clean:
       # version: 3.07SSE
       - crc: 0x1F17FC44
