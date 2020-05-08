@@ -13495,6 +13495,11 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.02+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
+  - name: 'OCW_WR2_FEPatch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'OCW_WR2_JK_FEPatch.esp' ]
+        condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
 
   - name: 'OldHroldanRuins.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10134/' ]
