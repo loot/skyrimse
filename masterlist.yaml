@@ -2674,6 +2674,12 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp")'
+  # RLO v5 patches
+  - name: 'RLO - IC Patch.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove records **0000B498**, **0001DB52**, **000252CD**, **0001A270** & **0001A26F** from RLO - IC Patch.esp. Blocks Open Cities Skyrim, Immersive Citizens and ICAIO OCS Patch changes.' ]
+        condition: 'checksum("RLO - IC Patch.esp", E13269D4)'
   # RLO 4.1.1
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
     after:
