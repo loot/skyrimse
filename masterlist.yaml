@@ -13312,6 +13312,9 @@ plugins:
         subs: [ 'Book Covers Skyrim - Lost Library' ]
         condition: 'active("Book Covers Skyrim - Lost Library.esp") and not active("OCW_BCS-LL_FEPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Cathedral Character Overhaul - Humans Mer and Beastfolk' ]
+        condition: 'active("HMB TCC.esp") and not active("OCW_HMB_FEPatch.esp")'
+      - <<: *patchIncluded
         subs: [ 'College Modifications' ]
         condition: 'active("CollegeModifications.esp") and not active("OCW_CM_FEPatch.esp")'
       - <<: *patchIncluded
@@ -13333,6 +13336,9 @@ plugins:
         subs: [ 'Female Mannequins' ]
         condition: 'active("female mannequins.esp") and not active("OCW_FM_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
+        subs: [ 'Flora Respawn Fix' ]
+        condition: 'active("FloraRespawnFix.esp") and not active("OCW_FRF_FEPatch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Improved College Entry' ]
         condition: 'active("CollegeEntry.esp") and not active("OCW_ICE_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
@@ -13348,14 +13354,23 @@ plugins:
         subs: [ 'iNeed - Extended' ]
         condition: 'active("iNeed - Extended.esp") and not active("OCW_iNE_FEPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Interesting NPCs' ]
+        condition: 'active("3dnpc.esp") and not active("OCW_3DNPC_FEPatch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Konahrik''s Accoutrements' ]
         condition: 'active("konahrik_accoutrements.esp") and not active("OCW_KA_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+      - <<: *patchIncluded
+        subs: [ 'Lanterns Of Skyrim II' ]
+        condition: 'active("LoS II - Tamriel Master Lights.esp") and not active("OCW_LoS2-TML_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'LeanWolf''s Aemer''s Refuge' ]
         condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("OCW_(AR_|AR_RoB_|LAR_|LAR_RoB_Merged)FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Legacy of the Dragonborn' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("OCW_LotD_FEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Legacy of the Dragonborn BadGremlin''s Collection' ]
+        condition: 'active("BGCollectables.esp") and not active("OCW_BGC_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Lootable Woodpiles' ]
         condition: 'active("LootableWoodpiles.esp") and not active("OCW_LWP_FEPatch.esp")'
@@ -13393,11 +13408,17 @@ plugins:
         subs: [ 'Quests Are In Skyrim USSEP' ]
         condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("OCW_QaiS_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.03", >=)'
       - <<: *patchIncluded
+        subs: [ 'Realistic Winterhold' ]
+        condition: 'active("RealisticWinterhold.esp") and not active("OCW_RW_FEPatch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("OCW_RLS_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("OCW_(RoB_|AR_RoB_|LAR_RoB_Merged)FEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Scrollwriting in Skyrim' ]
+        condition: 'active("Scrollwriting.esp") and not active("OCW_SW_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Skyrim 3D Trees and Plants' ]
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("OCW_3DTaP_FEPatch.esp")'
@@ -13413,6 +13434,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Sounds of Skyrim Complete' ]
         condition: 'active("SoundsofSkyrimComplete.esp") and not active("OCW_SoS_((MCMSfA|SmMM)_Merged)?FEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sounds of Skyrim Complete Edition MCM' ]
+        condition: 'active("Sounds of Skyrim - Complete Edition.esp") and not active("OCW_SoS-A_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Spell Crafting for Skyrim' ]
         condition: 'active("_tck_SpellCrafting.esp") and not active("OCW_SC_FEPatch.esp")'
@@ -13457,9 +13481,12 @@ plugins:
         condition: 'active("WinterholdCollegeHideout.esp") and not active("OCW_WCH_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Winterhold Restored' ]
-        condition: 'active("Winterhold Restored.esp") and not active("OCW_WR2_FEPatch.esp") and not file("OCW_WR2_FEPatch.bsa")'
+        condition: 'active("Winterhold Restored.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_FEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Winterhold Restored & WR JKs Skyrim Patch' ]
+        condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
     clean:
-      - crc: 0x3E38F288
+      - crc: 0x318C6177
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_CellSettings.esp'
     group: *highPriorityGroup
@@ -13485,13 +13512,18 @@ plugins:
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     clean:
-      - crc: 0x69658572
+      - crc: 0xB8CF33F0
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_SPO_FEPatch.esp'
     msg:
       - <<: *alreadyInX
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.02+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
+  - name: 'OCW_WR2_FEPatch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'OCW_WR2_JK_FEPatch.esp' ]
+        condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
 
   - name: 'OldHroldanRuins.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10134/' ]
