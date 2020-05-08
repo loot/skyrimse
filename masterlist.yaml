@@ -12068,6 +12068,30 @@ plugins:
       - *patch3rdPartySRPC
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchIncluded
+        subs: [ 'Better Dynamic Snow' ]
+        condition: 'active("Better Dynamic Snow.esp") and not active("CWIBDSPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("CWICRFSEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Lights and FX' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("CWIEnLFXSEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'M''rissi''s Tails of Troubles' ]
+        condition: 'active("MrissiTailOfTroubles.esp") and not active("CWIMTOTPatchSE.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("CWIOpenCitiesSEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Ordinator - Perks Of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("CWIOrdinatorPatchSSE.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Relighting Skyrim' ]
+        condition: 'active("RelightingSkyrim_SSE.esp") and not active("CWIRLSSEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Skyrim Project Optimization Full ESM' ]
+        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -12086,9 +12110,8 @@ plugins:
       - NPC.Class
       - Stats
     clean:
-      # version: 6.1
       - crc: 0x0BF62F94
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
   - name: 'CWIEnLFXSEPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/' ]
     tag:
