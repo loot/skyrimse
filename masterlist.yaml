@@ -5718,6 +5718,19 @@ plugins:
       - 'Enhanced Landscapes.esp'
       - 'waterplants.esp'
 
+  - name: 'S3DSigns.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21338/' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove CELL **0001A277** from S3DSigns.esp' ]
+        condition: 'checksum("S3DSigns.esp", 6185A858)'
+    tag:
+      - Graphics
+      - ObjectBounds
+    clean:
+      - crc: 0xCB6950B8
+        util: 'SSEEdit v4.0.3'
+
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
     group: *floraGroup
