@@ -5720,6 +5720,10 @@ plugins:
 
   - name: 'S3DSigns.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21338/' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove CELL **0001A277** from S3DSigns.esp' ]
+        condition: 'checksum("S3DSigns.esp", 6185A858)'
 
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
