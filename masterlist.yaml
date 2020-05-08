@@ -975,7 +975,7 @@ globals:
     subs:
       - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546)'
       - '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)'
-    condition: 'file("DLLPlugins/FPSFixPlugin.dll") and not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)'
+    condition: 'file("DLLPlugins/FPSFixPlugin.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
   - <<: *missingRequirementXforY
     subs:
       - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
