@@ -66,6 +66,16 @@ common:
     - lang: sv
       text: 'Ta bort. Redan inkluderat i eller fixat i %1%'
 
+  - &alsoUseX
+    type: say
+    content:
+      - lang: en
+        text: 'It''s highly recommended that you also use %1%.'
+      - lang: de
+        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
+      - lang: pl
+        text: 'Jest wysoce wskazane abyś używał także %1%.'
+
   - &compatNotes
     type: say
     content:
@@ -7921,13 +7931,9 @@ plugins:
       - 'EFFDialogue.esp'
     msg:
       - *requiresMCM
-      - type: say
+      - <<: *alsoUseX
+        subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
-        content:
-          - lang: en
-            text: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
-          - lang: de
-            text: '**Optionale Voraussetzung:** Es wird empfohlen auch [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) mit dieser Mod zu nutzen. Diese fügt Unterstützung für im-Spiel unausgesprochen Dialog hinzu.'
       - type: say
         condition: 'active("Convenient Horses.esp")'
         content:
@@ -8558,13 +8564,9 @@ plugins:
     after: [ 'Quest Conflict Fixes.esp' ]
     inc: [ 'FSA_FindingSusannaAlive.esp' ]
     msg:
-      - type: say
+      - <<: *alsoUseX
+        subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
-        content:
-          - lang: en
-            text: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
-          - lang: de
-            text: '**Optionale Voraussetzung:** Es wird empfohlen auch [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) mit dieser Mod zu nutzen. Diese fügt Unterstützung für im-Spiel unausgesprochen Dialog hinzu.'
       - <<: *patch3rdParty
         subs:
           - 'Open Cities Skyrim'
