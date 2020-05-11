@@ -5206,14 +5206,7 @@ plugins:
       - 'AK - Placeable Statics SE.esp'
       - 'Destructible Skyrim.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ '[WiZkiD Signs](https://www.nexusmods.com/skyrimspecialedition/mods/30481)' ]
         condition: 'active("Lanterns Of Skyrim II.esm")'
     clean:
@@ -13138,14 +13131,7 @@ plugins:
       - 'CollegeofWinterholdUpgraded.esp'
       - 'MagicalCollegeofWinterhold.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ 'MCWT_ErratumEtc_Lite.esp' ]
         condition: 'active("ApepiBetterCollege.esp") or active("CollegeOfWinterholdImmersive.esp") or active("CollegeofWinterholdUpgraded.esp") or active("MagicalCollegeofWinterhold.esp")'
       - <<: *alreadyInX
@@ -13223,14 +13209,7 @@ plugins:
   - name: 'MCWT_TheAugursAdmonishment.esp'
     inc: [ 'NotSoFast-MageGuild.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ 'MCWT_TheAugursAdmonishment_NSF-MG.esp' ]
         condition: 'active("NotSoFast-MageGuild.esp")'
       - <<: *alreadyInX
