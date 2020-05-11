@@ -2481,8 +2481,18 @@ plugins:
 
   - name: 'ENB Light.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574' ]
+    group: *lateLoadersGroup
     after: [ 'ELE_SSE.esp' ]
-    req: [ 'Particle Patch for ENB SSE.esp' ]
+    req:
+      - name: '../d3d11.dll'
+        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Requires resources (Models, Textures etc. Plugins not required.) from %1%.'
+        subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
+        condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds")'
 
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721' ]
