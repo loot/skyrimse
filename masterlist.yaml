@@ -547,6 +547,16 @@ common:
     subs: [ '' ]
     condition: 'file("Bashed Patch.*\.esp")'
 
+  - &useInstead
+    type: warn
+    content:
+      - lang: en
+        text: 'Use %1% instead.'
+      - lang: de
+        text: 'Nutzen Sie %1% stattdessen.'
+      - lang: ja
+        text: '代わりに%1%を使用してください。'
+
   - &useOnlyOneX
     type: error
     content:
@@ -11880,6 +11890,13 @@ plugins:
       - crc: 0x6D3D6301
         util: 'SSEEdit v4.0.2'
 
+  - name: 'sm_jobasha_bookshop.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13285' ]
+    msg:
+      - <<: *useInstead
+        subs: [ '[Jobasha''s Books and WinterHold Restored Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13285/) **sm_jobasha_WHrestore_patch.esp**' ]
+        condition: 'active("Winterhold Restored.esp")'
+
   - name: 'SolemnKeep.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11037' ]
     dirty:
@@ -14446,19 +14463,6 @@ plugins:
       - 'windyridge.esp'
       - 'WinterholdCollegeHideout.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use the Winterhold Restored version of Jobasha''s Books SE instead: %1%'
-          - lang: de
-            text: 'Benutze die Winterhold Restored version of Jobasha''s Books SE stattdessen: %1%'
-          - lang: ja
-            text: '%1%の代わりにWinterhold Restored version of Jobasha''s Books SEを使用してください。'
-          - lang: pt
-            text: 'Use em vez a versão do Winterhold Restored de Jobasha''s Books SE: %1%'
-        subs:
-          - '[Jobasha''s Books and WinterHold Restored Patch] (https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
-        condition: 'active("sm_jobasha_bookshop.esp")'
       - <<: *patchProvided
         subs: [ 'Ambriel - The Lost Princess' ]
         condition: 'active("Ambriel.esp") and not active("Winterhold Restored - Ambriel Patch.esp")'
