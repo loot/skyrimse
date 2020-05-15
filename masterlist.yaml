@@ -16485,14 +16485,7 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp']
         condition: 'active("imp_helm_legend_WACCF_AMB_Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp']
         condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
   - name: 'Immersive Weapons_WACCF_Patch.esp'
