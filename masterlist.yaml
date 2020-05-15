@@ -4623,20 +4623,19 @@ plugins:
   - name: 'SofiaFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/' ]
     msg:
-      - type: warn
+      - type: error
         content:
           - lang: en
-            text: 'Includes an old script from %1%. This script `%2%` must be deleted for %1% to function correctly.'
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
           - lang: de
-            text: 'Enthält ein altes Skript von %1%. Dieses Skript `%2%` muss gelöscht werden damit %1% korrekt funktioniert.'
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
           - lang: ja
-            text: '%1%の古いスクリプトを含みます。%1%が正しく機能するには、このスクリプト(`%2%`)を削除する必要があります。'
-          - lang: pt
-            text: 'Incluí um script antigo de %1%. Este script `%2%` deve ser apagado de forma a que %1% funcione corretamente.'
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
         subs:
+          - 'ski_playerloadgamealias.pex'
+          - 'Sofia Follower'
           - '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)'
-          - ' ski_playerloadgamealias.pex '
-        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
+        condition: '(file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)) or (checksum("SofiaFollower.bsa", 2F513E13))'
     clean:
       # version: 2.51
       - crc: 0xD87DD508
