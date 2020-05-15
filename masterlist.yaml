@@ -66,6 +66,16 @@ common:
     - lang: sv
       text: 'Ta bort. Redan inkluderat i eller fixat i %1%'
 
+  - &alsoUseX
+    type: say
+    content:
+      - lang: en
+        text: 'It''s highly recommended that you also use %1%.'
+      - lang: de
+        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
+      - lang: pl
+        text: 'Jest wysoce wskazane abyś używał także %1%.'
+
   - &compatNotes
     type: say
     content:
@@ -536,6 +546,16 @@ common:
         text: 'Ein Bashed Patch Tweak kann anstelle dieses Plugins verwendet werden. %1%'
     subs: [ '' ]
     condition: 'file("Bashed Patch.*\.esp")'
+
+  - &useInstead
+    type: warn
+    content:
+      - lang: en
+        text: 'Use %1% instead.'
+      - lang: de
+        text: 'Nutzen Sie %1% stattdessen.'
+      - lang: ja
+        text: '代わりに%1%を使用してください。'
 
   - &useOnlyOneX
     type: error
@@ -4603,20 +4623,19 @@ plugins:
   - name: 'SofiaFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/' ]
     msg:
-      - type: warn
+      - type: error
         content:
           - lang: en
-            text: 'Includes an old script from %1%. This script `%2%` must be deleted for %1% to function correctly.'
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
           - lang: de
-            text: 'Enthält ein altes Skript von %1%. Dieses Skript `%2%` muss gelöscht werden damit %1% korrekt funktioniert.'
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
           - lang: ja
-            text: '%1%の古いスクリプトを含みます。%1%が正しく機能するには、このスクリプト(`%2%`)を削除する必要があります。'
-          - lang: pt
-            text: 'Incluí um script antigo de %1%. Este script `%2%` deve ser apagado de forma a que %1% funcione corretamente.'
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
         subs:
+          - 'ski_playerloadgamealias.pex'
+          - 'Sofia Follower'
           - '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)'
-          - ' ski_playerloadgamealias.pex '
-        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
+        condition: '(file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)) or (checksum("SofiaFollower.bsa", 2F513E13))'
     clean:
       # version: 2.51
       - crc: 0xD87DD508
@@ -5186,14 +5205,7 @@ plugins:
       - 'AK - Placeable Statics SE.esp'
       - 'Destructible Skyrim.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ '[WiZkiD Signs](https://www.nexusmods.com/skyrimspecialedition/mods/30481)' ]
         condition: 'active("Lanterns Of Skyrim II.esm")'
     clean:
@@ -7921,13 +7933,9 @@ plugins:
       - 'EFFDialogue.esp'
     msg:
       - *requiresMCM
-      - type: say
+      - <<: *alsoUseX
+        subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
-        content:
-          - lang: en
-            text: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
-          - lang: de
-            text: '**Optionale Voraussetzung:** Es wird empfohlen auch [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) mit dieser Mod zu nutzen. Diese fügt Unterstützung für im-Spiel unausgesprochen Dialog hinzu.'
       - type: say
         condition: 'active("Convenient Horses.esp")'
         content:
@@ -8558,13 +8566,9 @@ plugins:
     after: [ 'Quest Conflict Fixes.esp' ]
     inc: [ 'FSA_FindingSusannaAlive.esp' ]
     msg:
-      - type: say
+      - <<: *alsoUseX
+        subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
-        content:
-          - lang: en
-            text: '**Optional Requirement:** It''s recommended to also use [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) with this mod. Adds support for unvoiced in-game dialog.'
-          - lang: de
-            text: '**Optionale Voraussetzung:** Es wird empfohlen auch [Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109) mit dieser Mod zu nutzen. Diese fügt Unterstützung für im-Spiel unausgesprochen Dialog hinzu.'
       - <<: *patch3rdParty
         subs:
           - 'Open Cities Skyrim'
@@ -11878,6 +11882,13 @@ plugins:
       - crc: 0x6D3D6301
         util: 'SSEEdit v4.0.2'
 
+  - name: 'sm_jobasha_bookshop.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13285' ]
+    msg:
+      - <<: *useInstead
+        subs: [ '[Jobasha''s Books and WinterHold Restored Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13285/) **sm_jobasha_WHrestore_patch.esp**' ]
+        condition: 'active("Winterhold Restored.esp")'
+
   - name: 'SolemnKeep.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11037' ]
     dirty:
@@ -12547,6 +12558,10 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1399'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/2506'
+    msg:
+      - <<: *useInstead
+        subs: [ '[Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506)' ]
+        condition: 'active("JKs Skyrim.esp") and checksum("Friendlier Taverns.esp", 0C38A36A)'
     dirty:
       - <<: *quickClean
         crc: 0x6B2AFBBC
@@ -12721,15 +12736,6 @@ plugins:
       - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
     msg:
-      - type: warn
-        condition: 'checksum("Friendlier Taverns.esp", 0C38A36A)'
-        content:
-          - lang: en
-            text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) is incompatible with JK''s Skyrim. Please use [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506) instead.'
-          - lang: de
-            text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/) ist inkompatibel mit JK''s Skyrim. Bitte nutzen Sie stattdessen [Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506).'
-          - lang: ja
-            text: '[Friendlier Taverns with Baths and Barns SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1399/)はJK''s Skyrimと互換性がありません。代わりに[Friendlier Taverns](https://www.nexusmods.com/skyrimspecialedition/mods/2506)を使用してください。'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JKSkyrim_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
@@ -13119,14 +13125,7 @@ plugins:
       - 'CollegeofWinterholdUpgraded.esp'
       - 'MagicalCollegeofWinterhold.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ 'MCWT_ErratumEtc_Lite.esp' ]
         condition: 'active("ApepiBetterCollege.esp") or active("CollegeOfWinterholdImmersive.esp") or active("CollegeofWinterholdUpgraded.esp") or active("MagicalCollegeofWinterhold.esp")'
       - <<: *alreadyInX
@@ -13204,14 +13203,7 @@ plugins:
   - name: 'MCWT_TheAugursAdmonishment.esp'
     inc: [ 'NotSoFast-MageGuild.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ 'MCWT_TheAugursAdmonishment_NSF-MG.esp' ]
         condition: 'active("NotSoFast-MageGuild.esp")'
       - <<: *alreadyInX
@@ -14444,19 +14436,6 @@ plugins:
       - 'windyridge.esp'
       - 'WinterholdCollegeHideout.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use the Winterhold Restored version of Jobasha''s Books SE instead: %1%'
-          - lang: de
-            text: 'Benutze die Winterhold Restored version of Jobasha''s Books SE stattdessen: %1%'
-          - lang: ja
-            text: '%1%の代わりにWinterhold Restored version of Jobasha''s Books SEを使用してください。'
-          - lang: pt
-            text: 'Use em vez a versão do Winterhold Restored de Jobasha''s Books SE: %1%'
-        subs:
-          - '[Jobasha''s Books and WinterHold Restored Patch] (https://www.nexusmods.com/skyrimspecialedition/mods/13285/)'
-        condition: 'active("sm_jobasha_bookshop.esp")'
       - <<: *patchProvided
         subs: [ 'Ambriel - The Lost Princess' ]
         condition: 'active("Ambriel.esp") and not active("Winterhold Restored - Ambriel Patch.esp")'
@@ -16505,14 +16484,7 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp']
         condition: 'active("imp_helm_legend_WACCF_AMB_Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Use %1% instead.'
-          - lang: de
-            text: 'Nutzen Sie %1% stattdessen.'
-          - lang: ja
-            text: '代わりに%1%を使用してください。'
+      - <<: *useInstead
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp']
         condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
   - name: 'Immersive Weapons_WACCF_Patch.esp'
