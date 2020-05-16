@@ -9460,6 +9460,14 @@ plugins:
       - <<: *obsolete
         subs: [ '[aMidianBorn Content Addon](https://www.nexusmods.com/skyrimspecialedition/mods/35390)' ]
         condition: 'not version("aMidianBorn_ContentAddon.esp", "2.0", >=) and active("Complete Crafting Overhaul_Remastered.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Rename: **%1%** to **%2%**'
+        subs:
+          - 'textures/actors/dlc02/ash'
+          - 'textures/actors/dlc02/ashman'
+        condition: 'file("textures/actors/dlc02/ash") or (file("textures/AMB Variants/dlc02/nordiccarvedbrown/nordiccarvedbootsm.dds") and not file("textures/actors/dlc02/ashman"))'
       - type: say
         content:
           - lang: en
