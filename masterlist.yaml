@@ -3065,30 +3065,6 @@ plugins:
       - <<: *requiresMCM_VR
         type: say
         condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Reach' ]
-        condition: 'active("arnima.esm") and not active("RealisticWaterTwo - Beyond Reach.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Skyrim Bruma' ]
-        condition: 'active("BSHeartland.esm") and not active("RealisticWaterTwo - Beyond Skyrim Bruma.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("(RealisticWaterTwo|Realistic Water Two) - ELFX( Enhancer| Hardcore)? Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Falskaar' ]
-        condition: 'active("Falskaar.esm") and not active("RealisticWaterTwo - Falskaar.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Landscape Fixes For Grass Mods' ]
-        condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("Realistic Water Two - Landscape For Grass Mods Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Needs Mod' ]
-        condition: '(active("iNeed.esp") or active("RealisticNeedsandDiseases.esp")) and not active("RealisticWaterTwo - Needs Mod Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The People Of Skyrim Complete' ]
-        condition: 'active("tpos_ultimate_esm.esp") and not active("RWT - People of Skyrim Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Wyrmstooth' ]
-        condition: 'active("Wyrmstooth.esp") and not active("RealisticWaterTwo - Wyrmstooth.esp") and not active("RealisticWaterTwo - Waves - Wyrmstooth.esp")'
     clean:
       - crc: 0xA926BB56
         util: 'SSEEdit v4.0.3'
