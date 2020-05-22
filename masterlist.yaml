@@ -3065,71 +3065,11 @@ plugins:
       - <<: *requiresMCM_VR
         type: say
         condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
-    clean:
-      - crc: 0xA926BB56
-        util: 'SSEEdit v4.0.3'
-  ### RWT Add-Ons
-  - name: 'RealisticWaterTwo - Watercolor.esp'
-    clean:
-      # Blue
-      - crc: 0xB5BAA2A1
-        util: 'SSEEdit v4.0.3'
-      # Blue for Needs
-      - crc: 0xABE08776
-        util: 'SSEEdit v4.0.3'
-      # Blue Fantasy
-      - crc: 0x1AA85F11
-        util: 'SSEEdit v4.0.3'
-      # Blue Fantasy for Needs
-      - crc: 0xEECE9F98
-        util: 'SSEEdit v4.0.3'
-      # Classic Teal
-      - crc: 0xD236DA22
-        util: 'SSEEdit v4.0.3'
-      # Classic Teal for Needs
-      - crc: 0x1BB88F11
-        util: 'SSEEdit v4.0.3'
-  ### RWT Patches
-  - name: 'RealisticWaterTwo - Beyond Reach.esp'
-    clean:
-      - crc: 0x351F3BA9
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - Beyond Skyrim Bruma.esp'
-    clean:
-      - crc: 0xD4541B9D
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - ELFX Patch.esp'
-    clean:
-      - crc: 0x12D83758
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - ELFX Enhancer Patch.esp'
-    clean:
-      - crc: 0xEBFB0D33
-        util: 'SSEEdit v4.0.3'
-  - name: 'Realistic Water Two - ELFX Hardcore Patch.esp'
-    clean:
-      - crc: 0x2F8CB999
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - Falskaar.esp'
-    clean:
-      - crc: 0xE039988D
-        util: 'SSEEdit v4.0.3'
-  - name: 'Realistic Water Two - Landscape For Grass Mods Patch.esp'
-    clean:
-      - crc: 0xD49824FA
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - Needs Mod Patch.esp'
-    clean:
-      - crc: 0x871A6E37
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - Waves - Falskaar.esp'
-    clean:
-      - crc: 0xB36FF246
-        util: 'SSEEdit v4.0.3'
-  - name: 'RealisticWaterTwo - Waves - Wyrmstooth.esp'
-    clean:
-      - crc: 0xCE7917CD
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2FA0CEF4
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
