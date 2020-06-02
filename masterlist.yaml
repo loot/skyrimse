@@ -2775,21 +2775,14 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x747BD772
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 6
+    clean:
+      - crc: 0x6F8EF0E9
+        util: 'SSEEdit v4.0.3'
   - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
     after: [ 'RealisticWaterTwo.esp' ]
   - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
     inc: [ 'Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp' ]
     tag: [ Sound ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x1E22FDD6
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 37
     msg:
       - <<: *alreadyInX
         subs: [ 'Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp' ]
