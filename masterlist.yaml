@@ -2769,31 +2769,15 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Immersive Sounds - Compendium'
-          - '[Extensive AOS - ISC Patch](https://www.nexusmods.com/skyrimspecialedition/mods/25051)'
-        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
+          - '[Audio Overhaul - Immersive Sounds Integration (AOS - ISC Compatibility Patch)](https://www.nexusmods.com/skyrimspecialedition/mods/36761/)'
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("AOS_ISC_Integration.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x747BD772
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 6
-  - name: 'Audio Overhaul Skyrim - RealisticWaterTwo Patch.esp'
-    after: [ 'RealisticWaterTwo.esp' ]
-  - name: 'Audio Overhaul Skyrim - Immersive Sounds Patch.esp'
-    inc: [ 'Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp' ]
-    tag: [ Sound ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x1E22FDD6
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 37
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp' ]
-        condition: 'active("Extensive Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
+    clean:
+      - crc: 0x6F8EF0E9
+        util: 'SSEEdit v4.0.3'
   - name: 'Audio Overhaul Skyrim - Obsidian Weathers Patch.esp'
     after:
       - 'Audio Overhaul Skyrim - True Storms.esp'
@@ -2802,6 +2786,11 @@ plugins:
   - name: 'Audio Overhaul Skyrim - True Storms Patch.esp'
     after: [ 'Obsidian Weathers - True Storms - Patch.esp' ]
     inc: [ 'Obsidian Weathers - Wander Patch.esp' ]
+  - name: 'AOS_ISC_Integration.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36761/' ]
+    clean:
+      - crc: 0x8B32CED1
+        util: 'SSEEdit v4.0.3'
 
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
