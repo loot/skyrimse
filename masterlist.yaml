@@ -16575,3 +16575,24 @@ plugins:
           - 'Majestic Mountains - Cathedral Concept'
           - '[ Majestic Mountains - Pilgrims Delight Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/35107)'
         condition: 'active("MajesticMountains.esp") and not active("MM_PD_Patch.esp")'
+  ### Eremite Camping and Combat for Campfire ###
+  - name: 'EremiteCamping.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16867' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x59F84263
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x5E104404
+        util: 'SSEEdit v4.0.3'
+  ### Wearable Lanterns ###
+  - name: 'Chesko_WearableLantern.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372)' ]
+        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
+    clean:
+      - crc: 0xA1170B2D
+        util: 'SSEEdit v4.0.3'
