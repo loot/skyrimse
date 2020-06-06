@@ -11086,7 +11086,15 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Wyrmstooth.esp'
-    url: [ 'https://archive.org/details/Wyrmstooth1.17BSSE' ]
+    url:
+      - link: 'https://archive.org/details/Wyrmstooth1.17BSSE'
+        name: 'Wyrmstooth 1.17B SSE'
+      - link: 'https://archive.org/details/wyrmstooth1.18SSE'
+        name: 'Wyrmstooth 1.18 SSE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19492'
+        name: 'Drachenzahn (Wyrmstooth) EV 2.2'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18553'
+        name: 'Drachenzahn (Wyrmstooth) DV 3.0'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wyrmstooth_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -11094,9 +11102,17 @@ plugins:
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?(Vigilant_)?Wyrm.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?(FAL_)?(VIG_)?WYR.*\.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wyrmstooth_Patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xF73A6161
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5587
     clean:
-      # Version: 1.18
+      - crc: 0x97F8C8B4
+        util: 'SSEEdit v4.0.3'
       - crc: 0x85D4BF27
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xFD63BB73
         util: 'SSEEdit v4.0.3'
 
 ###### Locations - New Structures & Landmarks ######
