@@ -11086,7 +11086,15 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Wyrmstooth.esp'
-    url: [ 'https://archive.org/details/Wyrmstooth1.17BSSE' ]
+    url:
+      - link: 'https://archive.org/details/Wyrmstooth1.17BSSE'
+        name: 'Wyrmstooth 1.17B SSE'
+      - link: 'https://archive.org/details/wyrmstooth1.18SSE'
+        name: 'Wyrmstooth 1.18 SSE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19492'
+        name: 'Drachenzahn (Wyrmstooth) EV 2.2'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18553'
+        name: 'Drachenzahn (Wyrmstooth) DV 3.0'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wyrmstooth_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
