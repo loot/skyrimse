@@ -11973,7 +11973,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
     msg:
       - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DawnofSkyrimDC_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DawnofSkyrimDC_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
       # version: 1.4a
       - crc: 0x37F1F20D
@@ -12655,7 +12655,7 @@ plugins:
       - 'WhiterunHoldForest.esp'
     msg:
       - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JKSkyrim_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JKSkyrim_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
         subs:
           - 'Dawn of Skyrim'
