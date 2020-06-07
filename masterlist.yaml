@@ -16335,6 +16335,18 @@ plugins:
     group: *lateChangesGroup
 
 ###### 3RD Party Patches ######
+  - name: 'maplightfix.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30162/'
+        name: 'A Quality Worldmap - Luminosity Compatibility Patch'
+    after:
+      - 'icepenguinworldmapclassic.esp'
+      - 'IcePenguinWorldMapPaper.esp'
+    req:
+      - name: 'IcePenguinWorldMap.esp'
+        display: '[A Quality World Map](https://www.nexusmods.com/skyrimspecialedition/mods/5804/)'
+        condition: 'not active("icepenguinworldmapclassic.esp") and not active("IcePenguinWorldMapPaper.esp")'
+
   - name: 'RDO - Infinite Gold for Merchants patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31271' ]
     req: [ 'Infinite Gold For Merchants.esp' ]
