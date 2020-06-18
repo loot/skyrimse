@@ -11848,7 +11848,9 @@ plugins:
 
   - name: 'Solitude Skyway SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8250' ]
-    inc: [ *LotD_v5 ]
+    inc:
+      - <<: *LotD_v5
+        condition: 'not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
     clean:
       - crc: 0x4C4ACF55
         util: 'SSEEdit v4.0.3'
