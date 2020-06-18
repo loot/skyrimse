@@ -7951,7 +7951,8 @@ plugins:
       - name: 'Blues Skyrim.esp'
         display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
       - 'BosmericDrunkenHuntsmanReborn.esp'
-      - 'Dawnstar.esp'
+      - name: 'Dawnstar.esp'
+        condition: 'not active("CC_ArtDws_IC_Patch.esp")'
       - 'EEKs Arcadia''s Cauldron.esp'
       - 'EEKs Arcadia''s - OCS.esp'
       - name: 'Holds.esp'
@@ -11238,18 +11239,20 @@ plugins:
 
   - name: 'Convenient Carriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12693/' ]
-    after: [ 'JKs Skyrim.esp' ]
+    after:
+      - 'Clockwork.esp'
+      - 'COTN - Dawnstar.esp'
+      - 'Enhanced Solitude SSE.esp'
+      - 'JKs Skyrim.esp'
+      - 'Solitude Docks.esp'
+      - 'thepeopleofskyrim.esp'
+      - 'tpos_complete02_RTCWG.esp'
+      - 'Windhelm Bridge Overhaul.esp'
     inc: [ 'CFTO.esp' ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Better Dynamic Snow' ]
         condition: 'active("Better Dynamic Snow.esp") and not active("CC_BDSnow_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Skyrim: Bruma' ]
-        condition: 'not active("Immersive Citizens - AI Overhaul.esp") and active("BSHeartland.esm") and not active("Helgen Reborn.esp") and not checksum("Convenient Carriages.esp", 3111C695)'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Skyrim: Bruma and Helgen Reborn' ]
-        condition: 'not active("Immersive Citizens - AI Overhaul.esp") and active("BSHeartland.esm") and active("Helgen Reborn.esp") and not checksum("Convenient Carriages.esp", 20142115)'
       - <<: *patchIncluded
         subs: [ 'City Entrances Overhaul - Markarth' ]
         condition: 'active("Markarth Entrance Overhaul.esp") and not active("CC_CEOMark_Patch.esp")'
@@ -11258,25 +11261,10 @@ plugins:
         condition: 'active("WindhelmEntranceOverhaul.esp") and not active("CC_CEOWind_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("Landscape Fixes For Grass Mods.esp") and not active("CC_CRF_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Cutting Room Floor and Landscape Fixes For Grass Mods' ]
-        condition: 'active("Cutting Room Floor.esp") and active("Landscape Fixes For Grass Mods.esp") and not active("CC_CRF_LFFGM_Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("CC_CRF_Patch.esp") and not active("CC_CRF_LFFGM_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Dawnstar' ]
-        condition: 'active("Dawnstar.esp") and not active("CC_ArtDws_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Helgen Reborn' ]
-        condition: 'not active("Immersive Citizens - AI Overhaul.esp") and active("Helgen Reborn.esp") and not active("BSHeartland.esm") and not checksum("Convenient Carriages.esp", A2B8D4F2)'
-      - <<: *patchIncluded
-        subs: [ 'Immersive CItizens - AI Overhaul and Beyond Skyrim: Bruma' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("BSHeartland.esm") and not active("Helgen Reborn.esp") and not checksum("Convenient Carriages.esp", 786E5831)'
-      - <<: *patchIncluded
-        subs: [ 'Immersive CItizens - AI Overhaul and Beyond Skyrim: Bruma and Helgen Reborn' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("BSHeartland.esm") and active("Helgen Reborn.esp") and not checksum("Convenient Carriages.esp", E47EEAFD)'
-      - <<: *patchIncluded
-        subs: [ 'Immersive CItizens - AI Overhaul and Helgen Reborn' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and active("Helgen Reborn.esp") and not active("BSHeartland.esm") and not checksum("Convenient Carriages.esp", 592C41DB)'
+        condition: 'active("Dawnstar.esp") and not active("CC_ArtDws_Patch.esp") and not active("CC_ArtDws_IC_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Landscape Fixes For Grass Mods' ]
         condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("CC_LFFGM_Patch.esp")'
@@ -11286,6 +11274,31 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'The Great City of Solitude' ]
         condition: 'active("The Great City of Solitude.esp") and not active("CC_TGCS_Patch.esp")'
+    clean:
+      # Default
+      - crc: 0xBC54DEA7
+        util: 'SSEEdit v4.0.3'
+      # BS Bruma
+      - crc: 0x195A85EF
+        util: 'SSEEdit v4.0.3'
+      # Helgen Reborn
+      - crc: 0xB6FA2174
+        util: 'SSEEdit v4.0.3'
+      # Helgen Reborn & BS Bruma
+      - crc: 0x2955FBC9
+        util: 'SSEEdit v4.0.3'
+      # ICAIO - Default
+      - crc: 0x53E49A22
+        util: 'SSEEdit v4.0.3'
+      # ICAIO - BS Bruma
+      - crc: 0xD75489D7
+        util: 'SSEEdit v4.0.3'
+      # ICAIO - Helgen Reborn
+      - crc: 0xCB117C0F
+        util: 'SSEEdit v4.0.3'
+      # ICAIO - Helgen Reborn & BS Bruma
+      - crc: 0xD0E6AD41
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Caveoftheforgotten.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13499/' ]
