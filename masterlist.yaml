@@ -2408,7 +2408,7 @@ plugins:
       - crc: 0x0F02A920
         util: 'SSEEdit v4.0.3'
   - name: 'ELFXEnhancer.esp'
-    group: *highPriorityGroup
+    group: *lightingEnhancerGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFX - Hardcore.esp'
@@ -2424,7 +2424,7 @@ plugins:
       - crc: 0x06339952
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - Hardcore.esp'
-    group: *highPriorityGroup
+    group: *lightingEnhancerGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Citizens - OCS patch.esp'
@@ -2454,7 +2454,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
         name: 'Enhanced Lighting for ENB'
-    group: *highPriorityGroup
+    group: *lightingEnhancerGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Ars Metallica.esp'
@@ -2504,8 +2504,13 @@ plugins:
 
   - name: 'ENB Light.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574' ]
-    group: *lateLoadersGroup
-    after: [ 'ELE_SSE.esp' ]
+    group: *lightingEnhancerGroup
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity - Lightweight Lighting.esp'
+      - 'Luminosity Lighting Overhaul.esp'
     req:
       - name: '../d3d11.dll'
         display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
@@ -2588,7 +2593,7 @@ plugins:
         itm: 2
   - name: 'Luminosity - Lightweight Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *highPriorityGroup
+    group: *lightingEnhancerGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Citizens - OCS patch.esp'
@@ -2604,7 +2609,7 @@ plugins:
     tag: [ C.Light ]
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *highPriorityGroup
+    group: *lightingEnhancerGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Immersive Citizens - OCS patch.esp'
