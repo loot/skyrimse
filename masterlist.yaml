@@ -1062,8 +1062,11 @@ groups:
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
 
-  - name: &lateLoadersGroup Late Loaders
+  - name: &lightingEnhancerGroup Lighting Enhancers
     after: [ *highPriorityGroup ]
+
+  - name: &lateLoadersGroup Late Loaders
+    after: [ *lightingEnhancerGroup ]
 
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *lateLoadersGroup ]
