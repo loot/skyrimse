@@ -1062,8 +1062,11 @@ groups:
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
 
-  - name: &lateLoadersGroup Late Loaders
+  - name: &lightingEnhancerGroup Lighting Enhancers
     after: [ *highPriorityGroup ]
+
+  - name: &lateLoadersGroup Late Loaders
+    after: [ *lightingEnhancerGroup ]
 
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *lateLoadersGroup ]
@@ -2405,32 +2408,23 @@ plugins:
       - crc: 0x0F02A920
         util: 'SSEEdit v4.0.3'
   - name: 'ELFXEnhancer.esp'
-    group: *highPriorityGroup
+    group: *lightingEnhancerGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFX - Hardcore.esp'
+      - 'Luminosity - Lightweight Lighting.esp'
+      - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
-      - 'Open Cities Skyrim.esp'
     clean:
       - crc: 0x06339952
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - Hardcore.esp'
-    group: *highPriorityGroup
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
-      - 'Open Cities Skyrim.esp'
+    group: *lightingEnhancerGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
+      - 'Luminosity - Lightweight Lighting.esp'
+      - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
     clean:
       - crc: 0x5ECC3509
@@ -2451,33 +2445,12 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
         name: 'Enhanced Lighting for ENB'
-    group: *highPriorityGroup
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Ars Metallica.esp'
-      - 'Book Covers Skyrim - Lost Library.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'EmbersHD.esp'
-      - 'Open Cities Skyrim.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Inigo.esp'
-      - 'Ivarstead.esp'
-      - 'Karthwasten.esp'
-      - 'LightngDuringStorm.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
-      - 'MLU.esp'
-      - 'Relationship Dialogue Overhaul.esp'
-      - 'RelightingSkyrim_SSE.esp'
-      - 'Shor''s Stone.esp'
-      - 'SkyrimImprovedPuddles-DG-HF-DB.esp'
-      - 'Soljund''s Sinkhole.esp'
-      - 'TheChoiceIsYours.esp'
-      - 'Whistling Mine.esp'
+    group: *lightingEnhancerGroup
     inc:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
+      - 'Luminosity - Lightweight Lighting.esp'
+      - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
     tag:
       - C.ImageSpace
@@ -2501,8 +2474,14 @@ plugins:
 
   - name: 'ENB Light.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574' ]
-    group: *lateLoadersGroup
-    after: [ 'ELE_SSE.esp' ]
+    group: *lightingEnhancerGroup
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity - Lightweight Lighting.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
     req:
       - name: '../d3d11.dll'
         display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
@@ -2587,13 +2566,7 @@ plugins:
         itm: 2
   - name: 'Luminosity - Lightweight Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *highPriorityGroup
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
-      - 'Open Cities Skyrim.esp'
+    group: *lightingEnhancerGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
@@ -2603,13 +2576,7 @@ plugins:
     tag: [ C.Light ]
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
-    group: *highPriorityGroup
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
-      - 'Open Cities Skyrim.esp'
+    group: *lightingEnhancerGroup
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
