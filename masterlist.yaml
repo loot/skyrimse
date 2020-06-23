@@ -16358,6 +16358,7 @@ plugins:
       - 'Qw_WACCF_CRF Patch.esp'
 
   ### kryptopyr's Patch Hub ###
+  # KPH Patches - Complete Alchemy & Cooking Overhaul #
   - name: 'AwesomePotions_CACO_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     after: [ 'Hunterborn_CACO-SE_Patch.esp' ]
@@ -16376,14 +16377,14 @@ plugins:
   - name: 'CACO Rare Curios Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'CACO, Bruma & Rare Curios Patch']
+        subs: [ 'CACO_Bruma_Rare Curios_Patch.esp']
         condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
   - name: 'CACO_USSEP_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
+        subs: [ 'CACO_Survival Mode_Patch.esp']
         condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
-
+  # KPH Patches - Complete Crafting Overhaul Remastered #
   - name: 'Cloaks_CCOR_Patch.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
   - name: '1nivWICCloaks(_COS)?_CCOR_Patch\.esp'
@@ -16392,14 +16393,19 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'CCOR & Winter Is Coming patch']
         condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
-
+  - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp']
+        condition: 'active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
+  # KPH Patches - Smithing Perks Overhaul #
   - name: 'SPO_Ordinator_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     req:
       - 'Ordinator - Perks of Skyrim.esp'
       - 'Smithing Perks Overhaul SE.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
-
+  # KPH Patches - The Choice Is Yours #
   - name: 'TCIY BCS Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518' ]
     tag:
@@ -16414,7 +16420,7 @@ plugins:
     after:
       - 'BCS_TCIY_Patch.esp'
       - 'TCIY BCS Patch.esp'
-
+  # KPH Patches - Weapons Armor Clothing and Clutter Fixes #
   - name: 'DawnguardArsenal_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -16448,11 +16454,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp']
         condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
-  - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp']
-        condition: 'active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
   - name: 'Unique Uniques_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
