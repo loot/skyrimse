@@ -9311,6 +9311,8 @@ plugins:
   - name: 'AetheriumSwordsnArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2687/' ]
     msg:
+      - <<: *patch3rdParty_KPH_CCOR
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("AetheriumSwordsnArmor_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AetheriumWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - *patch3rdPartySRPC
