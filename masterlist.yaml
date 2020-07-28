@@ -4320,7 +4320,9 @@ plugins:
 
   - name: 'Aurlyn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9536/' ]
-    inc: [ 'ArtifactsOfBoethiah.esp' ]
+    inc:
+      - name: 'ArtifactsOfBoethiah.esp'
+        condition: 'not file("ATOT10B patch.esp")'
     dirty:
       # version: 7.22
       - <<: *quickClean
