@@ -11,11 +11,11 @@ common:
   - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](http://skse.silverlock.org))**'
-    condition: 'file("../SkyrimSE.exe") and not file("../skse64_loader.exe")'
+    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
   - &SKSE_VR
     name: '../sksevr_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE VR ](http://skse.silverlock.org))**'
-    condition: 'file("../SkyrimVR.exe") and not file("../sksevr_loader.exe")'
+    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not file("../sksevr_loader.exe")'
 
 # Messages
   - &alreadyInX
