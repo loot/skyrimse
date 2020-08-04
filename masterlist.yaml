@@ -435,11 +435,11 @@ common:
   - &requiresMCM
     <<: *requiresMCM_X
     subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)' ]
-    condition: 'file("../SkyrimSE.exe") and not active("SkyUI_SE.esp")'
+    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
   - &requiresMCM_VR
     <<: *requiresMCM_X
     subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
-    condition: 'file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
+    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
 
   - &requiresSKSE
     type: error
@@ -3019,10 +3019,10 @@ plugins:
     msg:
       - <<: *requiresMCM
         type: say
-        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("../SkyrimSE.exe") and not active("SkyUI_SE.esp")'
+        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
       - <<: *requiresMCM_VR
         type: say
-        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("../SkyrimVR.exe") and not active("SkyUI_SE.esp")'
+        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x2FA0CEF4
