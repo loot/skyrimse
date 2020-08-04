@@ -897,7 +897,7 @@ globals:
         text: '你安装了[FNIS SE](https://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
 # Skyrim Script Extender - Required Scripts
   - type: warn
-    condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("../sksevr_loader.exe")))'
+    condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
     content:
       - lang: en
         text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
