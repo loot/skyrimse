@@ -918,36 +918,36 @@ globals:
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   # Skyrim VR Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
-    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", <) and file("../SkyrimVR.exe")'
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", <) and file("../SkyrimVR.exe") and file("SkyrimVR.esm")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim VR**' ]
-    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe")'
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm")'
   # SKSE 64
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.17", <) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.17", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.17", >=) and file("../SkyrimSE.exe") and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.17", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
   # SKSE VR
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
-    condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
+    condition: 'version("../skseVR_loader.exe", "0.2.0.10", <) and file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skseVR_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
-    condition: 'version("../skseVR_loader.exe", "0.2.0.10", >=) and file("../SkyrimVR.exe") and file("../skseVR_loader.exe")'
+    condition: 'version("../skseVR_loader.exe", "0.2.0.10", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skseVR_loader.exe")'
 
 # Version Compatibility
   # SKSE 64 - Game Runtime
   - <<: *versionSkseIncSSE
-    condition: 'file("../SkyrimSE.exe") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
+    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.50.0", ==) and version("../skse64_loader.exe", "0.2.0.8", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
@@ -962,7 +962,7 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
   # SKSE VR - Game Runtime
   - <<: *versionSkseIncSVR
-    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
+    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
@@ -1549,12 +1549,12 @@ plugins:
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
           - '**Skyrim Special Edition**'
-        condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.6", >=)'
+        condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.6", >=)'
       - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
           - '**Skyrim Special Edition**'
-        condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", <) and file("../SkyrimSE.exe") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.7", >=)'
+        condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.7", >=)'
     tag:
       - C.Acoustic
       - C.Regions
