@@ -6037,10 +6037,10 @@ plugins:
     req:
       - name: 'SKSE/Plugins/JContainers64.dll'
         display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
-        condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimVR.exe")'
+        condition: 'file("scripts/_AP_Main.pex") and not file("SkyrimVR.esm")'
       - name: 'SKSE/Plugins/JContainersVR.dll'
         display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
-        condition: 'file("scripts/_AP_Main.pex") and not file("../SkyrimSE.exe")'
+        condition: 'file("scripts/_AP_Main.pex") and file("SkyrimVR.esm")'
       - *SKSE
       - *SKSE_VR
     clean:
