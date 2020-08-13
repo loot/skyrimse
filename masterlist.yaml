@@ -4692,34 +4692,6 @@ plugins:
       - crc: 0x7AF082B7
         util: 'SSEEdit v4.0.3'
 
-  - name: 'KS Dragon Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
-    after:
-      - 'DeadlyDragons.esp'
-      - 'Mortal Enemies.esp'
-      - 'Serio''s Enhanced Dragons.esp'
-    inc:
-      - 'Alduin V1.esp'
-      - 'Elemental_Dragons.esp'
-      - 'KS Dragon Overhaul 2.esp'
-      - 'Simply Stronger Dragons.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Advanced Adversary Encounters' ]
-        condition: 'active("AAE Ultimate Edition.esp") and not file("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Mighty Dragons' ]
-        condition: 'active("Mighty Dragons SE Medium Cooked.esp") and not active("KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Slightly Mighty Dragons' ]
-        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp") and not active("KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
-    clean:
-      # version: 1.9.5
-      - crc: 0x7E338364
-        util: 'SSEEdit v4.0.2f'
   - name: 'KS Dragon Overhaul 2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/' ]
     after:
