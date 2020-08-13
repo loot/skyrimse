@@ -8091,6 +8091,7 @@ plugins:
     msg:
       - <<: *includesX
         subs: [ 'When Vampires Attack' ]
+        condition: 'active("When Vampires Attack.esp")'
     clean:
       # version:  4.0
       - crc: 0xF3EF2798
@@ -8142,12 +8143,6 @@ plugins:
     clean:
       - crc: 0x15B82286
         util: 'SSEEdit v4.0.3'
-
-  - name: 'When Vampires Attack.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Run For Your Lives.esp' ]
-        condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
 
   - name: 'Wild World.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14616/' ]
