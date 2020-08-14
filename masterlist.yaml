@@ -12599,7 +12599,7 @@ plugins:
       - 'Paradise_City_MergedSummerWindhelm.esp'
       - 'Paradise_City_Rorikstead.esp'
       - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or not active("The Great JK''s Cities.esp")'
+        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or not active("The Great JK''s Cities.esp") or not active("The Great Cities of JK''s Skyrim - Patch.esp")'
       - 'The Great City of Dawnstar.esp'
       - 'The Great City of Dragon Bridge.esp'
       - 'The Great City of Falkreath.esp'
@@ -12673,8 +12673,8 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'The Great Cities - Minor Cities and Towns'
-          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/)'
-        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp")'
+          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/) or [The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
+        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp") and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
