@@ -9382,22 +9382,40 @@ plugins:
     tag:
       - Names
       - Stats
-  - name: 'BandolierForNPC( - (Cloaks of Skyrim|Winter is Coming|Winter is Coming and Cloaks of Skyrim))?\.esp'
+  - name: 'BandolierForNPC.esp'
     msg:
-      - <<: *useOnlyOneX
-        subs: [ 'Bandolier - Bags and Pouches for NPC' ]
-        condition: 'many("BandolierForNPC( - (Cloaks of Skyrim|Winter is Coming|Winter is Coming and Cloaks of Skyrim))?\.esp")'
-  - name: 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
-    after: [ '1nivWICSkyCloaksPatch.esp' ]
+      - <<: *patchIncluded
+        subs: [ 'Cloaks of Skyrim' ]
+        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - Cloaks of Skyrim Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("BandolierForNPC - Cutting Room Floor Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Dawnguard Arsenal' ]
+        condition: 'active("DawnguardArsenal.esp") and not active("BandolierForNPC - Dawnguard Arsenal.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Armors' ]
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("BandolierForNPC - Immersive Armors Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing & Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Winter Is Coming Cloaks' ]
+        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+  - name: 'BandolierForNPC - (Cloaks of Skyrim|Winter is Coming) Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        condition: 'active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
+      - <<: *useInstead
+        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        condition: 'not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
   - name: 'BandolierForNPC - Realistic Enchantements.esp'
-    after:
-      - 'Cloaks.esp'
-      - '1nivWICCloaks.esp'
-      - '1nivWICSkyCloaksPatch.esp'
-      - 'BandolierForNPC.esp'
-      - 'BandolierForNPC - Cloaks of Skyrim Patch.esp'
-      - 'BandolierForNPC - Winter is Coming.esp'
-      - 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
+    after: [ 'BandolierForNPC.esp' ]
+  - name: 'BandolierForNPC - Immersive Armors WiC CoS Patch.esp'
+    req: [ 'BandolierForNPC - Immersive Armors Patch.esp' ]
+  - name: 'BandolierForNPC - WACCF WiC CoS Patch.esp'
+    req: [ 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp' ]
 
   - name: 'Better Skill and Quest Books Names SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5260/' ]
