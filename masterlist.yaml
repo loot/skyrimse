@@ -12051,6 +12051,20 @@ plugins:
       - Invent
       - NPC.Class
 
+  - name: 'COTN - Dawnstar.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
+    after:
+      - name: 'JKs Skyrim.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+
+  - name: 'COTN - Morthal.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34168/' ]
+    after:
+      - name: 'COTN - Dawnstar.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - name: 'JKs Skyrim.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
     group: *fixesGroup
@@ -13994,6 +14008,16 @@ plugins:
       # version: 1.0.5
       - crc: 0x3292D0F0
         util: 'SSEEdit v4.0.2'
+
+  - name: 'The Great Cities - Minor Cities and Towns.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20272' ]
+    after:
+      - name: 'COTN - Dawnstar.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - name: 'COTN - Morthal.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - name: 'JKs Skyrim.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
 
   - name: 'The Ruins.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9933' ]
