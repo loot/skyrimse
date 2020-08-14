@@ -12051,6 +12051,20 @@ plugins:
       - Invent
       - NPC.Class
 
+  - name: 'COTN - Dawnstar.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
+    after:
+      - name: 'JKs Skyrim.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+
+  - name: 'COTN - Morthal.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34168/' ]
+    after:
+      - name: 'COTN - Dawnstar.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - name: 'JKs Skyrim.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
     group: *fixesGroup
@@ -12599,7 +12613,7 @@ plugins:
       - 'Paradise_City_MergedSummerWindhelm.esp'
       - 'Paradise_City_Rorikstead.esp'
       - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or not active("The Great JK''s Cities.esp")'
+        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or (not active("The Great JK''s Cities.esp") and not active("The Great Cities of JK''s Skyrim - Patch.esp"))'
       - 'The Great City of Dawnstar.esp'
       - 'The Great City of Dragon Bridge.esp'
       - 'The Great City of Falkreath.esp'
@@ -12673,8 +12687,8 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'The Great Cities - Minor Cities and Towns'
-          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/)'
-        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp")'
+          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/) or [The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
+        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp") and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -13994,6 +14008,16 @@ plugins:
       # version: 1.0.5
       - crc: 0x3292D0F0
         util: 'SSEEdit v4.0.2'
+
+  - name: 'The Great Cities - Minor Cities and Towns.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20272' ]
+    after:
+      - name: 'COTN - Dawnstar.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - name: 'COTN - Morthal.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - name: 'JKs Skyrim.esp'
+        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
 
   - name: 'The Ruins.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9933' ]
@@ -16232,6 +16256,30 @@ plugins:
   - name: 'RDO - Infinite Gold for Merchants patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31271' ]
     req: [ 'Infinite Gold For Merchants.esp' ]
+
+  - name: 'The Great Cities of JK''s Skyrim - Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF3A33ED4
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 114
+      - <<: *quickClean
+        crc: 0x37E00A5E
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 86
+  - name: 'The Great Town of Ivarstead - JK''s Skyrim Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x5E3E3844
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 21
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0x5319A3CB
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 3
 
   - name: 'The Great JK''s Cities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
