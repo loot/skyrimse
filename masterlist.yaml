@@ -3687,9 +3687,6 @@ plugins:
         subs: [ 'Imperious' ]
         condition: 'active("Imperious - Races of Skyrim.esp")'
 
-  - name: 'SkyrimSizesLore.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/587' ]
-
   - name: 'sk immersive Armor Swapper - (Dolls|Teens)\.esp'
     url: [ 'https://schaken-mods.com/index.php?/file/94-immersive-armor-swapper-public-version/' ]
   - name: 'sk immersive Armor Swapper - Dolls.esp'
@@ -3996,9 +3993,6 @@ plugins:
       - crc: 0xFFD0B140
         util: 'SSEEdit v4.0.3'
 
-  - name: 'DivinePeopleOfSkyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8326/' ]
-
   - name: 'ethereal_elven_overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7351/' ]
     after:
@@ -4091,9 +4085,6 @@ plugins:
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
     after: [ 'MLU.esp' ]
 
-  - name: 'RFCharacterOverhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8541/' ]
-
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
     inc:
@@ -4136,11 +4127,6 @@ plugins:
       # version: 1.4.2
       - crc: 0xC2C81AD6
         util: 'SSEEdit v4.0.2f'
-
-  - name: 'WICO - Immersive People.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2136/'
-        name: 'WICO - Windsong Immersive Character Overhaul'
 
 ###### Character Appearance - Presets ######
   - name: 'AsharaSkyrimCharacterPresetsReplacer.esp'
@@ -4706,34 +4692,6 @@ plugins:
       - crc: 0x7AF082B7
         util: 'SSEEdit v4.0.3'
 
-  - name: 'KS Dragon Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12641/' ]
-    after:
-      - 'DeadlyDragons.esp'
-      - 'Mortal Enemies.esp'
-      - 'Serio''s Enhanced Dragons.esp'
-    inc:
-      - 'Alduin V1.esp'
-      - 'Elemental_Dragons.esp'
-      - 'KS Dragon Overhaul 2.esp'
-      - 'Simply Stronger Dragons.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Advanced Adversary Encounters' ]
-        condition: 'active("AAE Ultimate Edition.esp") and not file("KS Dragon Overhaul - AAE Ultimate Edition Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Mighty Dragons' ]
-        condition: 'active("Mighty Dragons SE Medium Cooked.esp") and not active("KS Dragon Overhaul - Enhanced Mighty Dragons V4 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Slightly Mighty Dragons' ]
-        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp") and not active("KS Dragon Overhaul - Enhanced Slightly Mighty Dragons V4 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul - Thunderchild Patch.esp")'
-    clean:
-      # version: 1.9.5
-      - crc: 0x7E338364
-        util: 'SSEEdit v4.0.2f'
   - name: 'KS Dragon Overhaul 2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/' ]
     after:
@@ -8133,6 +8091,7 @@ plugins:
     msg:
       - <<: *includesX
         subs: [ 'When Vampires Attack' ]
+        condition: 'active("When Vampires Attack.esp")'
     clean:
       # version:  4.0
       - crc: 0xF3EF2798
@@ -8184,12 +8143,6 @@ plugins:
     clean:
       - crc: 0x15B82286
         util: 'SSEEdit v4.0.3'
-
-  - name: 'When Vampires Attack.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Run For Your Lives.esp' ]
-        condition: 'active("When Vampires Attack.esp") and active("Run For Your Lives.esp")'
 
   - name: 'Wild World.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14616/' ]
@@ -8290,9 +8243,6 @@ plugins:
       # version: 1.3.0
       - crc: 0xD9A7F0A7
         util: 'SSEEdit v4.0.2'
-
-  - name: 'BarenziahQuestMarkers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/684/' ]
 
   - name: 'BecomeKingofSkyrim.esp'
     url:
@@ -8853,9 +8803,6 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
 
-  - name: 'QuestsAreInSkyrim(USSEP)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18416/' ]
-
   - name: 'Religion.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/67663/' ]
     after: [ 'Requiem.esp' ]
@@ -9403,12 +9350,6 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
 
-  - name: 'AmuletsShowOn(Clothes|Everything|HeavyArmor|LightArmor|Robes)?(-JOP)?.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18177'
-        name: 'QUARK - Qwinn''s Ultimate Amulet Restoration Kit'
-    # Must sort before WACCF Armor and Clothing Extension
-
   - name: 'WACCF_Armor and Clothing Extension.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
     after:
@@ -9613,9 +9554,6 @@ plugins:
       - crc: 0x5B55FE98
         util: 'SSEEdit v4.0.2f'
 
-  - name: 'Cloaks&Capes.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2019/' ]
-
   - name: 'CL Chillrend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2916/' ]
     msg:
@@ -9717,9 +9655,6 @@ plugins:
       # version: 2.1
       - crc: 0xBAAFEFF6
         util: 'SSEEdit v4.0.3'
-
-  - name: 'GirlHeavyArmor.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17843/' ]
 
   - name: 'GPProvisioning.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9533' ]
@@ -9841,11 +9776,6 @@ plugins:
         name: 'Improved closefaced helmets'
     after: [ 'Circlets and Masks with all Robes and Hoods.esp' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Undeath Remastered'
-          - '[Improved Closefaced Helmets for Undeath SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14614/)'
-        condition: 'active("Undeath.esp") and not active("Improved closefaced helmets for Undeath SSE.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Armors'
@@ -10467,9 +10397,6 @@ plugins:
       - crc: 0xFDE147EF
         util: 'SSEEdit v4.0.2f'
 
-  - name: 'UNP Vanilla Outfits.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11136/' ]
-
   - name: 'Vikings Weaponry - Johnskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14409/' ]
     clean:
@@ -10938,11 +10865,6 @@ plugins:
         crc: 0x2D753507
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
-
-  - name: 'JRWZMASPatch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10751'
-        name: 'Moon and Star - WARZONES Assault Attack Compatibility Patch'
 
   - name: 'moonpath.esp'
     url:
@@ -14724,22 +14646,6 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
-  - name: 'DovahThayShip.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27119' ]
-    dirty:
-      # version: 1.0
-      - <<: *reqManualFix
-        crc: 0xA035FA1B
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 107
-        udr: 29
-        nav: 1
-      # version: 1.0, after QAC
-      - <<: *reqManualFix
-        crc: 0xF72550E2
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
-
   - name: 'Dragon Claw Stands.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/337' ]
     clean:
@@ -15293,22 +15199,6 @@ plugins:
       # version: 1.0, after QAC
       - <<: *reqManualFix
         crc: 0x39BE89C8
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
-
-  - name: 'LakesideHideaway.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27342' ]
-    dirty:
-      # version: 2.0.2
-      - <<: *reqManualFix
-        crc: 0x16959B68
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 54
-        udr: 7
-        nav: 1
-      # version: 2.0.2, after QAC
-      - <<: *reqManualFix
-        crc: 0xEE872AC7
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
@@ -15947,21 +15837,6 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
-  - name: 'STUDIO.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10034/' ]
-    dirty:
-      # version: 1.0
-      - <<: *reqManualFix
-        crc: 0xBCB685FE
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2042
-        nav: 4
-      # version: 1.0, after QAC
-      - <<: *reqManualFix
-        crc: 0x8CAF0142
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 4
-
   - name: 'Svellheim_1.0.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22843/' ]
     dirty:
@@ -16224,21 +16099,6 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 6
 
-  - name: 'Zim''s Falkreath Home.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24646' ]
-    dirty:
-      # version: 1.0
-      - <<: *reqManualFix
-        crc: 0x23676D4A
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 14
-        nav: 1
-      # version: 1.0, after QAC
-      - <<: *reqManualFix
-        crc: 0x2ABCF12F
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
-
 ###### Legacy of the Dragonborn ######
   - name: 'LegacyoftheDragonborn.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/' ]
@@ -16478,14 +16338,6 @@ plugins:
         subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
         condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
 
-  ### Patches - Lexy''s LOTD Special Edition Patches ###
-  - name: 'Improved closefaced helmets for Undeath SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14614/' ]
-    clean:
-      # version: 1.0
-      - crc: 0xCC6D50A9
-        util: 'SSEEdit v4.0.2f'
-
   ### Patches - (QUASIPC) Qwinn's Unified Automated Self Installing Patch Compendium ###
   - name: 'Qw_.*\.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
@@ -16633,8 +16485,3 @@ plugins:
       - crc: 0xA1170B2D
         util: 'SSEEdit v4.0.3'
 
-  ### XP32 XPMSSE Skeleton ITM Patch ###
-  - name: 'XP32 XPMSE Skeleton - ITM Protection Agency.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37142' ]
-    group: *lateLoadersGroup
-    after: [ 'XPMSE.esp' ]
