@@ -6615,12 +6615,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MysticCondenser_Patch.esp")'
-    dirty:
-      # Version: 2.2
-      - <<: *reqManualFix
-        crc: 0x6DF08E4A
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
+    clean:
+      - crc: 0x2B1F4498
+        util: 'SSEEdit v4.0.3'
 
   - name: 'RealisticNeedsandDiseases.esp'
     url:
