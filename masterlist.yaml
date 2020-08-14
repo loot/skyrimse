@@ -2719,6 +2719,9 @@ plugins:
       - 'SoS - The Wilds.esp'
     msg:
       - <<: *patchProvided
+        subs: [ 'Cathedral Weathers and Seasons' ]
+        condition: 'active("Cathedral Weathers.esp") and not active("AOS_Cathedral Weathers Patch.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Enhanced Blood Textures' ]
         condition: 'active("dD - Enhanced Blood Main.esp") and not active("AOS_EBT Patch.esp") and not active("Audio Overhaul Skyrim - Enhanced Blood Patch.esp")'
       - <<: *patchProvided
