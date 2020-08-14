@@ -9382,11 +9382,14 @@ plugins:
     tag:
       - Names
       - Stats
-  - name: 'BandolierForNPC( - (Cloaks of Skyrim|Winter is Coming|Winter is Coming and Cloaks of Skyrim))?\.esp'
+  - name: 'BandolierForNPC - (Cloaks of Skyrim|Winter is Coming) Patch.esp'
     msg:
-      - <<: *useOnlyOneX
-        subs: [ 'Bandolier - Bags and Pouches for NPC' ]
-        condition: 'many("BandolierForNPC( - (Cloaks of Skyrim|Winter is Coming|Winter is Coming and Cloaks of Skyrim))?\.esp")'
+      - <<: *alreadyInX
+        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        condition: 'active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
+      - <<: *useInstead
+        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        condition: 'not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
   - name: 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp'
     after: [ '1nivWICSkyCloaksPatch.esp' ]
   - name: 'BandolierForNPC - Realistic Enchantements.esp'
