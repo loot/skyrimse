@@ -16669,6 +16669,10 @@ plugins:
   - name: 'MM_PD_Patch.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/35107'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [Majestic Mountains - Cathedral Concept]
+        condition: 'active("MajesticMountains.esp") and not checksum("MajesticMountains_Landscape.esm", 1AE8D648) and active("MM_PD_Patch.esp")'
     clean:
       - crc: 0x97709110
         util: 'SSEEdit v4.0.2'
@@ -16682,7 +16686,7 @@ plugins:
         subs:
           - 'Majestic Mountains - Cathedral Concept'
           - '[ Majestic Mountains - Pilgrims Delight Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/35107)'
-        condition: 'active("MajesticMountains.esp") and not active("MM_PD_Patch.esp")'
+        condition: 'active("MajesticMountains.esp") and checksum("MajesticMountains_Landscape.esm", 1AE8D648) and not active("MM_PD_Patch.esp")'
   ### Eremite Camping and Combat for Campfire ###
   - name: 'EremiteCamping.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16867' ]
