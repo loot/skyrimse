@@ -2099,6 +2099,12 @@ plugins:
     inc:
       - name: 'Open Cities Skyrim.esp'
         condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
 
   - name: 'Atlas Legendary( OCS)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14493' ]
