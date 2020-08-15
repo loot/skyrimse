@@ -2096,7 +2096,15 @@ plugins:
       - 'Dawnguard Map Markers.esp'
       - 'MLU.esp'
       - 'SL01AmuletsSkyrim.esp'
-    inc: [ 'Open Cities Skyrim.esp' ]
+    inc:
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
 
   - name: 'Atlas Legendary( OCS)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14493' ]
@@ -16380,6 +16388,14 @@ plugins:
       - name: 'IcePenguinWorldMap.esp'
         display: '[A Quality World Map](https://www.nexusmods.com/skyrimspecialedition/mods/5804/)'
         condition: 'not active("icepenguinworldmapclassic.esp") and not active("IcePenguinWorldMapPaper.esp")'
+
+  - name: 'Open Cities - Atlas Map Markers SE -- Patch v2.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38878' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x2D80DC28
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 25
 
   - name: 'RDO - Infinite Gold for Merchants patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31271' ]
