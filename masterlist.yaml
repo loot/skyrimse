@@ -3209,6 +3209,10 @@ plugins:
 
   - name: 'Obsidian Mountain Fogs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13539/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Obsidian Weathers.esp' ]
+        condition: 'active("Obsidian Weathers.esp")'
     clean:
       - crc: 0x8FA2EB6E
         util: 'SSEEdit v4.0.3'
