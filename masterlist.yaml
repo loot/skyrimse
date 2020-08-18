@@ -11797,6 +11797,24 @@ plugins:
     inc:
       - <<: *LotD_v5
         condition: 'not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD Amended Mountain Assets].esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp")'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD Amended Mountain Assets].esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Legacy of the Dragonborn'
+          - '[Modular PatchXpress](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) Solitude Skyway SE PATCH - LoTD Amended Mountain Assets'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE [PATCH - LoTD Amended Mountain Assets].esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Legacy of the Dragonborn & Drengin''s Blue Palace Terrace'
+          - '[Modular PatchXpress](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) Solitude Skyway SE - Drengin''s Blue Palace Terrace PATCH - LoTD Amended Mountain Assets'
+        condition: 'active("LegacyoftheDragonborn.esm") and active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
+      - <<: *useOnlyOneX
+        type: warn
+        subs: [ 'Solitude Skyway & Legacy of the Dragonborn patch' ]
+        condition: 'not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD Amended Mountain Assets].esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp")'
     clean:
       - crc: 0x4C4ACF55
         util: 'SSEEdit v4.0.3'
@@ -14110,6 +14128,11 @@ plugins:
         crc: 0xBB0F093C
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 8
+  - name: 'USSEP - The Great City of Solitude Patch.esp'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Modular PatchXpress TGCoS plugins' ]
+        condition: 'active("The Great City of Solitude Unofficial Patch.esp") or active("TGCoS [PATCH - Open Cities Skyrim SE].esp") or active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
 
   - name: 'The Great City of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17127/' ]
@@ -16557,6 +16580,94 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
         condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+
+  ### (MPX) Modular PatchXpress ###
+  - name: 'BluePalaceTerrace [PATCH - Solitude Skyway SE] (STD).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc: [ 'Open Cities Skyrim.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
+      - <<: *useInstead
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
+  - name: 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc: [ 'Open Cities Skyrim.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
+      - <<: *useInstead
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
+  - name: 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc: [ 'Open Cities Skyrim.esp' ]
+
+  - name: 'BluePalaceTerrace [PATCH - Solitude Skyway SE] (OCS).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc:
+      - 'Solitude Skyway SE - Open Cities Patch.esp'
+      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+      - <<: *useInstead
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+  - name: 'TGCoS [PATCH - Solitude Skyway SE] (OCS).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc:
+      - 'Solitude Skyway SE - Open Cities Patch.esp'
+      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+      - <<: *useInstead
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+  - name: 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc:
+      - 'Solitude Skyway SE - Open Cities Patch.esp'
+      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
+
+  - name: 'Solitude Skyway SE [PATCH - LoTD Amended Mountain Assets].esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc: [ 'BluePalaceTerrace.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp")'
+      - <<: *useInstead
+        subs: [ 'Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD Amended Mountain Assets].esp' ]
+        condition: 'active("BluePalaceTerrace.esp")'
+
+  - name: 'BluePalaceTerrace [PATCH - TGCoS Amended Mountain Assets].esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
+        condition: 'active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
+      - <<: *alreadyInX
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+  - name: 'TGCoS [PATCH - Open Cities Skyrim SE].esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Modular PatchXpress TGCoS Open Cities Skyrim plugins' ]
+        condition: 'active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+  - name: 'The Great City of Solitude Unofficial Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Modular PatchXpress TGCoS plugins' ]
+        condition: 'active("TGCoS [PATCH - Open Cities Skyrim SE].esp") or active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
 
   ### Patches - (QUASIPC) Qwinn's Unified Automated Self Installing Patch Compendium ###
   - name: 'Qw_.*\.esp'
