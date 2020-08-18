@@ -12013,16 +12013,6 @@ plugins:
       - crc: 0x7B4B358A
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Blues Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DawnofSkyrimDC_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    clean:
-      # version: 1.4a
-      - crc: 0x37F1F20D
-        util: 'SSEEdit v4.0.3'
-
   - name: 'ClefJ''s Half Moon Mill.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24365' ]
     clean:
@@ -12169,6 +12159,20 @@ plugins:
       # version: 2.0.6
       - crc: 0x9CCF0D4E
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'Dawn of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DawnofSkyrimDC_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+    clean:
+      - crc: 0x77E14A2C
+        util: 'SSEEdit v4.0.3'
+  - name: 'Blues Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
+    clean:
+      - crc: 0x37F1F20D
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Dawnstar.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13607/' ]
