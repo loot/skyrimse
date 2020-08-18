@@ -16348,18 +16348,9 @@ plugins:
 
   - name: 'Winterhold_Beacon.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27657' ]
-    dirty:
-      # version: 1.23
-      - <<: *reqManualFix
-        crc: 0x148266B0
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 50
-        nav: 6
-      # version: 1.23, after QAC
-      - <<: *reqManualFix
-        crc: 0xAF27450C
-        util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 6
+    clean:
+      - crc: 0xF54DE098
+        util: 'SSEEdit v4.0.3'
 
 ###### Legacy of the Dragonborn ######
   - name: 'LegacyoftheDragonborn.esm'
