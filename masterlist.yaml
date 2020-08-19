@@ -5944,6 +5944,17 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/' ]
     inc: [ 'EBM_UnlimitedPower.esp' ]
 
+  - name: 'EremiteCamping.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16867' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x59F84263
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x5E104404
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/671/' ]
     msg: [ *patch3rdPartySRPC ]
@@ -16841,15 +16852,4 @@ plugins:
           - 'Majestic Mountains - Cathedral Concept'
           - '[ Majestic Mountains - Pilgrims Delight Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/35107)'
         condition: 'active("MajesticMountains.esp") and checksum("MajesticMountains_Landscape.esm", 1AE8D648) and not active("MM_PD_Patch.esp")'
-  ### Eremite Camping and Combat for Campfire ###
-  - name: 'EremiteCamping.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16867' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x59F84263
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-    clean:
-      - crc: 0x5E104404
-        util: 'SSEEdit v4.0.3'
 
