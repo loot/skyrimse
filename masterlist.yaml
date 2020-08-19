@@ -8881,18 +8881,33 @@ plugins:
   - name: 'Skyrim Unbound.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27962/' ]
     after:
+      - 'Balanced Magic SE.esp'
       - 'BetterQuestObjectives.esp'
+      - 'BUVARP.esp'
       - 'Diverse Character Creation.esp'
       - 'Guard Dialogue Overhaul.esp'
+      - 'Harder Thaneships.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Random Encounter Tweaks.esp'
       - 'Requiem.esp'
       - 'TheChoiceIsYours.esp'
     inc:
-      - 'Dragon Stalking Fix.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Daggerfall.esp'
+      - 'DragonRemains_SSE.esp'
       - 'NotSoFast-MainQuest.esp'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp'
       - 'ShoutsCostOneSoul.esp'
+    req:
+      - <<: *SKSE
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
+      - name: 'Unofficial Skyrim Special Edition Patch.esp'
+        display: '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50)'
     msg:
-      - <<: *includesX
-        subs: [ 'Dragon Stalking Fix' ]
+      - <<: *requiresMCM
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
     clean:
       - crc: 0x0E02D352
         util: 'SSEEdit v4.0.3'
