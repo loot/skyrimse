@@ -1882,6 +1882,15 @@ plugins:
       - C.Climate
       - C.ImageSpace
 
+  - name: 'PilgrimsDelight.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3273/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Majestic Mountains - Cathedral Concept'
+          - '[ Majestic Mountains - Pilgrims Delight Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/35107)'
+        condition: 'active("MajesticMountains.esp") and checksum("MajesticMountains_Landscape.esm", 1AE8D648) and not active("MM_PD_Patch.esp")'
+
   - name: 'static mesh improvement mod se.esp'
     group: *earlyLoadersGroup
   - name: 'SMIM-SE.*\.esp'
@@ -5918,6 +5927,15 @@ plugins:
   - name: 'BA_Sorting_LotD.esp'
     after: [ 'BA_LegacyoftheDragonborn.esp' ]
 
+  - name: 'Bells of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10495' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Whiterun Expansion SSE - NON Open Cities Version'
+          - '[Bells of Skyrim Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/34472/)'
+        condition: 'active("WhiterunAddition.esp") and not active("Bells of Skyrim-Whiterun Expansion Patchs.esp")'
+
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
@@ -5943,6 +5961,17 @@ plugins:
   - name: 'EBM_UnlimitedPower_(DarkBrotherhood|DragonAspect|HermaMora|Nightingale|Racial|StandingStone|Vampire|Werewolf)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4210/' ]
     inc: [ 'EBM_UnlimitedPower.esp' ]
+
+  - name: 'EremiteCamping.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16867' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x59F84263
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x5E104404
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/671/' ]
@@ -9659,6 +9688,16 @@ plugins:
       - crc: 0xDA570813
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Chesko_WearableLantern.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372)' ]
+        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
+    clean:
+      - crc: 0xA1170B2D
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Chrysamere.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12829/' ]
     dirty:
@@ -11711,6 +11750,18 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
+  - name: 'RREnhanced.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19001' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x4778895B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 33
+        udr: 236
+    clean:
+      - crc: 0x0EE555DC
+        util: 'SSEEdit v4.0.3'
+
   - name: '(Run_of_the_Mill_Inn|RunoftheMillInn).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19481/' ]
   - name: 'Run_of_the_Mill_Inn.esp'
@@ -13007,6 +13058,13 @@ plugins:
       - crc: 0xED87C689
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'JK''s The Bannered Mare.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Skyrim SE - Project Optimization - ESM VERSION' ]
+        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
+
   - name: 'JKs Whiterun.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2259/' ]
     after:
@@ -13284,7 +13342,7 @@ plugins:
       # version: 1.3
       - crc: 0x792410E3
         util: 'SSEEdit v4.0.2f'
-        
+
   - name: 'Mundus.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33411/' ]
     tag: [ Text ]
@@ -16442,6 +16500,18 @@ plugins:
         display: '[A Quality World Map](https://www.nexusmods.com/skyrimspecialedition/mods/5804/)'
         condition: 'not active("icepenguinworldmapclassic.esp") and not active("IcePenguinWorldMapPaper.esp")'
 
+  - name: 'MM_PD_Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35107/'
+        name: 'Majestic Mountains - Pilgrims Delight Patch'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [Majestic Mountains - Cathedral Concept]
+        condition: 'active("MajesticMountains.esp") and not checksum("MajesticMountains_Landscape.esm", 1AE8D648) and active("MM_PD_Patch.esp")'
+    clean:
+      - crc: 0x97709110
+        util: 'SSEEdit v4.0.2'
+
   - name: 'Open Cities - Atlas Map Markers SE -- Patch v2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38878' ]
     dirty:
@@ -16715,7 +16785,7 @@ plugins:
         subs: [ 'Modular PatchXpress TGCoS plugins' ]
         condition: 'active("TGCoS [PATCH - Open Cities Skyrim SE].esp") or active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
 
-  ### Patches - (QUASIPC) Qwinn's Unified Automated Self Installing Patch Compendium ###
+  ### (QUASIPC) Qwinn's Unified Automated Self Installing Patch Compendium ###
   - name: 'Qw_.*\.esp'
     url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
   - name: 'Qw_ACE_BSHeartland Patch.esp'
@@ -16757,12 +16827,12 @@ plugins:
   - name: 'Qw_PANNPCs_ICoWinterhold Patch.esp'
     after: [ 'Qw_PANNPCs_CRF Patch.esp' ]
 
-  ### Patches - (RSCPC) RS Children Patch Compendium ###
+  ### (RSCPC) RS Children Patch Compendium ###
   - name: 'RSC_USSEP_AventusFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13409/' ]
     req: [ 'RSChildren.esp' ]
 
-  ### Patches - (SBCK) Scoped Bows Compatibility Kit ###
+  ### (SBCK) Scoped Bows Compatibility Kit ###
   - name: 'ScopedBows_MLU_ZIA Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19495/' ]
     tag:
@@ -16778,78 +16848,4 @@ plugins:
         subs: [ 'CCOR_Vokrii.esp']
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
 
-  ### Raven Rock Enhanced ###
-  - name: 'RREnhanced.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19001' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x4778895B
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 33
-        udr: 236
-    clean:
-      - crc: 0x0EE555DC
-        util: 'SSEEdit v4.0.3'
-
- ### JK's The Bannered Mare ###
-  - name: 'JK''s The Bannered Mare.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Skyrim SE - Project Optimization - ESM VERSION' ]
-        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
-
-  ### Bells of Skyrim ###
-  - name: 'Bells of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10495' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Whiterun Expansion SSE - NON Open Cities Version'
-          - '[Bells of Skyrim Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/34472/)'
-        condition: 'active("WhiterunAddition.esp") and not active("Bells of Skyrim-Whiterun Expansion Patchs.esp")'
-
-  ### Majestic Mountains - Pilgrims Delight Patch ###
-  - name: 'MM_PD_Patch.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/35107'
-    msg:
-      - <<: *alreadyInOrFixedByX
-        subs: [Majestic Mountains - Cathedral Concept]
-        condition: 'active("MajesticMountains.esp") and not checksum("MajesticMountains_Landscape.esm", 1AE8D648) and active("MM_PD_Patch.esp")'
-    clean:
-      - crc: 0x97709110
-        util: 'SSEEdit v4.0.2'
-
-  ### Pilgrim's Delight - High Hrothgar Shrine Retextures ###
-  - name: 'PilgrimsDelight.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/3273/'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Majestic Mountains - Cathedral Concept'
-          - '[ Majestic Mountains - Pilgrims Delight Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/35107)'
-        condition: 'active("MajesticMountains.esp") and checksum("MajesticMountains_Landscape.esm", 1AE8D648) and not active("MM_PD_Patch.esp")'
-  ### Eremite Camping and Combat for Campfire ###
-  - name: 'EremiteCamping.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16867' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x59F84263
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-    clean:
-      - crc: 0x5E104404
-        util: 'SSEEdit v4.0.3'
-  ### Wearable Lanterns ###
-  - name: 'Chesko_WearableLantern.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560' ]
-    msg:
-      - <<: *alsoUseX
-        subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372)' ]
-        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
-    clean:
-      - crc: 0xA1170B2D
-        util: 'SSEEdit v4.0.3'
-
+###### Anything new can go after this (If you're not sure where to put it) ######
