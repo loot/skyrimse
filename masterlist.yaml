@@ -8899,6 +8899,15 @@ plugins:
       - 'Random Alternate Start Reborn SE.esp'
       - 'Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp'
       - 'ShoutsCostOneSoul.esp'
+    req:
+      - <<: *SKSE
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
+      - name: 'Unofficial Skyrim Special Edition Patch.esp'
+        display: '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50)'
+    msg:
+      - <<: *requiresMCM
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
     clean:
       - crc: 0x0E02D352
         util: 'SSEEdit v4.0.3'
