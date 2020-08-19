@@ -9659,6 +9659,16 @@ plugins:
       - crc: 0xDA570813
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Chesko_WearableLantern.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372)' ]
+        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
+    clean:
+      - crc: 0xA1170B2D
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Chrysamere.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12829/' ]
     dirty:
@@ -16841,15 +16851,5 @@ plugins:
         itm: 3
     clean:
       - crc: 0x5E104404
-        util: 'SSEEdit v4.0.3'
-  ### Wearable Lanterns ###
-  - name: 'Chesko_WearableLantern.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560' ]
-    msg:
-      - <<: *alsoUseX
-        subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372)' ]
-        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
-    clean:
-      - crc: 0xA1170B2D
         util: 'SSEEdit v4.0.3'
 
