@@ -5286,13 +5286,6 @@ plugins:
   - name: 'Landscape and Water Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26138/' ]
     group: *landscapeGroup
-    clean:
-      - crc: 0x0DDF5C0E
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x2311B0F6
-        util: 'SSEEdit v4.0.3'
-      - crc: 0xC2255E81
-        util: 'SSEEdit v4.0.3'
     msg:
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
@@ -5300,6 +5293,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
+    clean:
+      - crc: 0x8803CAED
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
