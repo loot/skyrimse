@@ -5927,6 +5927,15 @@ plugins:
   - name: 'BA_Sorting_LotD.esp'
     after: [ 'BA_LegacyoftheDragonborn.esp' ]
 
+  - name: 'Bells of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10495' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Whiterun Expansion SSE - NON Open Cities Version'
+          - '[Bells of Skyrim Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/34472/)'
+        condition: 'active("WhiterunAddition.esp") and not active("Bells of Skyrim-Whiterun Expansion Patchs.esp")'
+
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
@@ -16828,16 +16837,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Skyrim SE - Project Optimization - ESM VERSION' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
-
-  ### Bells of Skyrim ###
-  - name: 'Bells of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10495' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Whiterun Expansion SSE - NON Open Cities Version'
-          - '[Bells of Skyrim Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/34472/)'
-        condition: 'active("WhiterunAddition.esp") and not active("Bells of Skyrim-Whiterun Expansion Patchs.esp")'
 
   ### Majestic Mountains - Pilgrims Delight Patch ###
   - name: 'MM_PD_Patch.esp'
