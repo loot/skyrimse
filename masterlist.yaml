@@ -3691,6 +3691,20 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2659' ]
     msg: [ *corrupt ]
 
+  - name: 'CBBE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/198' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'You seem to be using %1%. A compatibility patch is available here %2%.'
+          - lang: de
+            text: 'Sie scheinen %1% zu nutzen. Ein Kompatibilitätspatch ist hier verfügbar: %2%'
+        subs:
+          - 'Weapons Armor Clothing and Clutter Fixes'
+          - '[Weapons Armor Clothing and Clutter Fixes - CBBE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19176/)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
+
   - name: 'Hair Replacer( Assets)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7409/' ]
     group: *fixesGroup
@@ -16760,21 +16774,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Skyrim SE - Project Optimization - ESM VERSION' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
-
-  ### Caliente's Beautiful Bodies Enhancer -CBBE- ###
-  - name: 'CBBE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/198' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'You seem to be using %1%. A compatibility patch is available here %2%.'
-          - lang: de
-            text: 'Sie scheinen %1% zu nutzen. Ein Kompatibilitätspatch ist hier verfügbar: %2%'
-        subs:
-          - 'Weapons Armor Clothing and Clutter Fixes'
-          - '[Weapons Armor Clothing and Clutter Fixes - CBBE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19176/)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
 
   ### Bells of Skyrim ###
   - name: 'Bells of Skyrim.esp'
