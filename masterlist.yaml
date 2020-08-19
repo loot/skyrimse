@@ -3040,11 +3040,14 @@ plugins:
       - <<: *requiresMCM_VR
         type: say
         condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x2FA0CEF4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+    clean:
+      - crc: 0x5799725E
+        util: 'SSEEdit v4.0.3'
+  - name: 'RealisticWaterTwo - Resources.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
+    clean:
+      - crc: 0xF9561BAC
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
