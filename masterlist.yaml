@@ -11089,13 +11089,15 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
 
-  - name: 'Vigilant.es(m|p)'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11849' ]
   - name: 'Vigilant.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11849' ]
     msg:
       - <<: *patch3rdParty_BAOPFCH
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?Vigilant(_Wyrm)?.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?(FAL_)?VIG(_WYR)?.*\.esp")'
   - name: 'Vigilant.esm'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/11849'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/11894'
     msg:
       - *patch3rdPartySRPC
       - <<: *patch3rdParty_LotD
@@ -11103,7 +11105,7 @@ plugins:
     clean:
       - crc: 0x77C79B19
         util: 'SSEEdit v4.0.3'
-      - crc: 0xA8E96CFB
+      - crc: 0xEEE14A2F
         util: 'SSEEdit v4.0.3'
 
   - name: 'Wyrmstooth.esp'
