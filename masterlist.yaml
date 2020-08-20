@@ -8004,6 +8004,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[AI Overhaul - Open Cites Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/38031)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("AI Overhaul - Open Cities.esp")'
     clean:
       - crc: 0xAFCDE5A2
         util: 'SSEEdit v4.0.3'
