@@ -3936,6 +3936,9 @@ plugins:
     msg:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
+    clean:
+      - crc: 0x9F6F1285
+        util: 'SSEEdit v4.0.3'
   - name: 'Bijin NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/' ]
     after:
@@ -3947,6 +3950,9 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin NPCs.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
+    clean:
+      - crc: 0xBEFFC517
+        util: 'SSEEdit v4.0.3'
   - name: 'Bijin Warmaidens.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1825/' ]
     after:
@@ -3962,6 +3968,9 @@ plugins:
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
+    clean:
+      - crc: 0x117A67EC
+        util: 'SSEEdit v4.0.3'
   - name: 'Bijin Wives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11247/' ]
     after:
@@ -3972,6 +3981,9 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin Wives.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
+    clean:
+      - crc: 0xFDF9F2CE
+        util: 'SSEEdit v4.0.3'
   - name: '(Serana|Valerica)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13027/'
@@ -3987,6 +3999,15 @@ plugins:
     inc:
       - 'Serana - Hellraiser.esp'
       - 'SuperbSerana.esp'
+    clean:
+      - crc: 0x9B10F23E
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xA4D39E55
+        util: 'SSEEdit v4.0.3'
+  - name: 'Valerica.esp'
+    clean:
+      - crc: 0xCD13EC4B
+        util: 'SSEEdit v4.0.3'
 
   ### Bijin AIO by Mebantiza
   - name: 'Bijin(_AIO 2018|_AIO-SV 2018|_Frea-Iona)\.esp'
