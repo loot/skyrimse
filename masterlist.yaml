@@ -4159,6 +4159,12 @@ plugins:
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs Patch.esp")'
+  - name: 'AI Overhaul - PAN_NPCs Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/' ]
+    after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
+    clean:
+      - crc: 0x2611A250
+        util: 'SSEEdit v4.0.3'
   - name: 'PAN_NPCs_DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30680' ]
     msg:
@@ -4179,12 +4185,6 @@ plugins:
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
     after: [ 'MLU.esp' ]
-  - name: 'AI Overhaul - PAN_NPCs Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/' ]
-    after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
-    clean:
-      - crc: 0x2611A250
-        util: 'SSEEdit v4.0.3'
 
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
