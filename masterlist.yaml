@@ -4117,6 +4117,12 @@ plugins:
           - 'WARP - World Assets Recycle Project SE'
           - '[Kalilies NPCs WARP patch](https://www.nexusmods.com/skyrimspecialedition/mods/33942/)'
         condition: 'active("WARP.esp") and not active("KaliliesNPCs WARP PATCH.esp")'
+  - name: 'KaliliesNPCs - USSEP CRF AI Overhaul Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
+    after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
+    clean:
+      - crc: 0x0F741F1A
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Men of Winter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10902/' ]
@@ -4173,6 +4179,12 @@ plugins:
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
     after: [ 'MLU.esp' ]
+  - name: 'AI Overhaul - PAN_NPCs Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/' ]
+    after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
+    clean:
+      - crc: 0x2611A250
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
@@ -7993,8 +8005,21 @@ plugins:
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[AI Overhaul - Open Cites Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/38031)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("AI Overhaul - Open Cities.esp")'
     clean:
       - crc: 0xAFCDE5A2
+        util: 'SSEEdit v4.0.3'
+  - name: 'AI Overhaul - Open Cities.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/38031/'
+        name: 'AI Overhaul - Open Cites Compatibility'
+    after: [ 'Open Cities Skyrim.esp' ]
+    clean:
+      - crc: 0x3B2E3D66
         util: 'SSEEdit v4.0.3'
 
   - name: 'Guard Dialogue Overhaul.esp'
