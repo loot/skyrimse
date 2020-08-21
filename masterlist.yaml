@@ -3709,16 +3709,16 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)' ]
         condition: 'not active("Unofficial Skyrim Special Edition Patch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'You seem to be using %1%. A compatibility patch is available here %2%.'
-          - lang: de
-            text: 'Sie scheinen %1% zu nutzen. Ein Kompatibilitätspatch ist hier verfügbar: %2%'
+      - <<: *patch3rdParty
         subs:
           - 'Weapons Armor Clothing and Clutter Fixes'
           - '[Weapons Armor Clothing and Clutter Fixes - CBBE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19176/)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not file("CalienteTools/BodySlide/SliderSets/WACCF.osp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Armor and Clothing Extension'
+          - '[Weapons Armor Clothing and Clutter Fixes - CBBE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19176/)'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not file("CalienteTools/BodySlide/SliderSets/ACE.osp")'
     clean:
       - crc: 0xD600DFE6
         util: 'SSEEdit v4.0.3'
