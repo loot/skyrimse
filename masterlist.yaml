@@ -7393,7 +7393,9 @@ plugins:
       - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
-    tag: [ Text ]
+    tag:
+      - Sound
+      - Text
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
@@ -7404,7 +7406,6 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WACCF_Patch.esp")'
     clean:
-      # version: 2.1
       - crc: 0xBBDE0D60
         util: 'SSEEdit v4.0.3'
   - name: 'WACCF_BashedPatchLvlListFix.esp'
@@ -7423,7 +7424,6 @@ plugins:
           - lang: pt
             text: 'Este plugin é opcional.'
     clean:
-      # version: 2.1
       - crc: 0xFC0B6550
         util: 'SSEEdit v4.0.3'
 
