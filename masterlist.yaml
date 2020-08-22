@@ -3506,6 +3506,7 @@ plugins:
       - 'SoS_Obsidian_Patch.esp'
       - 'SoS_TrueStorms_Patch.esp'
       - 'True Storms - Obsidian Weathers - Patch .esp'
+    tag: [ Sound ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Audio Overhaul' ]
@@ -8030,6 +8031,7 @@ plugins:
       - 'Ambriel.esp'
       - 'Cutting Room Floor.esp'
       - 'Hothtrooper44_ArmorCompilation.esp'
+    tag: [ Keywords ]
     clean:
       # version: 1.4.2 Redux, True GDO Port
       - crc: 0x6ABC1129
@@ -9482,6 +9484,9 @@ plugins:
 
   - name: 'Vokriinator.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
+    tag:
+      - Names
+      - Text
     dirty:
       # version: 3.0 Plus
       - <<: *quickClean
@@ -10319,6 +10324,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("AwesomePotions_CACO_Patch.esp")'
+    tag: [ Graphics ]
 
   - name: 'PrvtI_HeavyArmory.esp'
     url:
@@ -10336,6 +10342,7 @@ plugins:
     tag:
       - Delev
       - Invent
+      - Keywords
       - Names
       - Relev
       - Stats
@@ -10759,11 +10766,14 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsImmersiveArtifacts_Patch.esp")'
     tag:
+      - EffectStats
+      - EnchantmentStats
       - Graphics
       - Keywords
       - Names
       - Sound
       - Stats
+      - Text
     clean:
       - crc: 0x94796086
         util: 'SSEEdit v4.0.3'
@@ -12365,9 +12375,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8683/' ]
     after: [ 'Landscape Fixes For Grass Mods.esp' ]
     inc: [ 'DragonBridgeBoardwalk.esp' ]
-    tag:
-      - C.Location
-      - Invent
+    tag: [ Actors.AIPackages ]
     clean:
       # version: 2.0.5
       - crc: 0x88C9CF62
