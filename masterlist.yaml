@@ -9617,6 +9617,9 @@ plugins:
       - 'WACCF_ASM-2019.esp'
     msg:
       - *requiresMCM
+      - <<: *alsoUseX
+        subs: [ '[Fixes for Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/28059)' ]
+        condition: 'not active("Fixes for Armor and Clothing Extension.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Remodeled Armor'
