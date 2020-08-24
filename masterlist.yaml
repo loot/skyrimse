@@ -3772,6 +3772,12 @@ plugins:
       - 'TeenDolls - Lewd.esp'
       - 'TeenDolls - Physics(Official).esp'
 
+  - name: 'TheEyesOfBeauty.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16185' ]
+    clean:
+      - crc: 0xD1151EB8
+        util: 'SSEEdit v4.0.3'
+
 ###### Character Appearance - Children ######
   - name: 'aAxeRSCtweaks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16044' ]
@@ -6768,6 +6774,12 @@ plugins:
         crc: 0x04954404
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
+  - name: 'RNAD_FF_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23799' ]
+    tag: [ Graphics ]
+    clean:
+      - crc: 0xD2FA0750
+        util: 'SSEEdit v4.0.3'
 
   - name: 'SAFO.esp'
     url:
@@ -7389,7 +7401,9 @@ plugins:
       - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
-    tag: [ Text ]
+    tag:
+      - Sound
+      - Text
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
@@ -8909,6 +8923,7 @@ plugins:
     tag:
       - C.Encounter
       - C.Music
+      - Keywords
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -9595,6 +9610,9 @@ plugins:
       - 'WACCF_ASM-2019.esp'
     msg:
       - *requiresMCM
+      - <<: *alsoUseX
+        subs: [ '[Fixes for Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/28059)' ]
+        condition: 'not active("Fixes for Armor and Clothing Extension.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Remodeled Armor'
@@ -14052,6 +14070,7 @@ plugins:
       - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    tag: [ Keywords ]
     clean:
       # version: 2.0.4
       - crc: 0xF1BFA9D1
@@ -16548,6 +16567,13 @@ plugins:
     group: *lateChangesGroup
 
 ###### 3RD Party Patches ######
+  - name: 'Fixes for Armor and Clothing Extension.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28059' ]
+    tag: [ Relev ]
+    clean:
+      - crc: 0x2042F66D
+        util: 'SSEEdit v4.0.3'
+
   - name: 'maplightfix.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30162/'
@@ -16855,6 +16881,11 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'kryptopyr''s Patch Hub - CCOR & Cloaks of Skyrim Patch' ]
         condition: 'active("Cloaks_CCOR_Patch.esp")'
+  - name: 'Qw_ACE_CRF Patch.esp'
+    tag: [ Keywords ]
+    clean:
+      - crc: 0xE2B0065F
+        util: 'SSEEdit v4.0.3'
   - name: 'Qw_DeadlySpellImpacts_AOS Patch.esp'
     tag:
       - Graphics
