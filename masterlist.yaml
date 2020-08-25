@@ -53,18 +53,18 @@ common:
   - &alreadyInOrFixedByX
     type: error
     content:
-    - lang: en
-      text: 'Delete. Already included or otherwise fixed in %1%.'
-    - lang: de
-      text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
-    - lang: es
-      text: 'Borrar. Esta incluido, o de otra modo, arreglado en el %1%.'
-    - lang: pl
-      text: 'Usuń. Już zawarte lub naprawione w %1%'
-    - lang: ru
-      text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
-    - lang: sv
-      text: 'Ta bort. Redan inkluderat i eller fixat i %1%'
+      - lang: en
+        text: 'Delete. Already included or otherwise fixed in %1%.'
+      - lang: de
+        text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
+      - lang: es
+        text: 'Borrar. Esta incluido, o de otra modo, arreglado en el %1%.'
+      - lang: pl
+        text: 'Usuń. Już zawarte lub naprawione w %1%'
+      - lang: ru
+        text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
+      - lang: sv
+        text: 'Ta bort. Redan inkluderat i eller fixat i %1%'
 
   - &alsoUseX
     type: say
@@ -1484,13 +1484,18 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("unofficial skyrim survival patch.esp") and not active("unofficial skyrim survival patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
         content:
           - lang: en
-            text: '"ccqdrsse001-survivalmode.esl" has a [Known bug](https://www.nexusmods.com/skyrimspecialedition/articles/22/) which is incompatible with "Ordinator - Perks of Skyrim.esp". Consider using the [Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) to fix this bug.'
+            text: '[%1%] has a [Known bug](%2%) which is incompatible with [%3%]. Consider using the %4% to fix this bug.'
           - lang: de
-            text: '"ccqdrsse001-survivalmode.esl" hat einen [bekannten Fehler](https://www.nexusmods.com/skyrimspecialedition/articles/22/), welcher es inkompatibel mit "Ordinator - Perks of Skyrim.esp" macht. Der [Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) behebt diesen Fehler.'
+            text: '[%1%] hat einen [bekannten Fehler](%2%), welcher es inkompatibel mit [%3%] macht. Der %4% behebt diesen Fehler.'
           - lang: ja
-            text: '[ccqdrsse001-survivalmode.esl]は既知のバグ( (https://www.nexusmods.com/skyrimspecialedition/articles/22/)として[Ordinator - Perks of Skyrim.esp]と互換性がありません。このバグを修正するには、[Unofficial Skyrim Survival Patch] (https://www.nexusmods.com/skyrimspecialedition/mods/12655/)の使用を検討してください。'
+            text: '[%1%]は既知のバグ( (%2%)として[%3%]と互換性がありません。このバグを修正するには、%4%の使用を検討してください。'
           - lang: pt
-            text: '"ccqdrsse001-survivalmode.esl" contém um [erro identificado](https://www.nexusmods.com/skyrimspecialedition/articles/22/) em que é incompatível com "Ordinator - Perks of Skyrim.esp". Considere utilizar o [Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/) para reparar este erro.'
+            text: '[%1%] contém um [erro identificado](%2%) em que é incompatível com [%3%]. Considere utilizar o %4% para reparar este erro.'
+        subs:
+          - 'ccqdrsse001-survivalmode.esl'
+          - 'https://www.nexusmods.com/skyrimspecialedition/articles/22/'
+          - 'Ordinator - Perks of Skyrim.esp'
+          - '[Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/)'
     tag:
       - Keywords
       - Text
@@ -1971,7 +1976,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6651/' ]
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [ DynDOLOD ]
+        subs: [ 'DynDOLOD' ]
         condition: 'file("DynDOLOD.esp")'
 
   - name: '(Vanilla|Aequinoctium|Dolomite|Mythical|NAT|Obsidian|Rustic|Surreal|TrueStorms|Vivid)WaterFix.esp'
@@ -3730,10 +3735,10 @@ plugins:
   - name: 'RaceMenuMorphsCBBE.esp'
     after: [ 'RaceMenuPlugin.esp' ]
     req:
-      - name: 'CalienteTools\BodySlide\BodySlide.exe'
+      - name: 'CalienteTools/BodySlide/BodySlide.exe'
         display: '[BodySlide and Outfit Studio](https://www.nexusmods.com/skyrimspecialedition/mods/201)'
       - 'CBBE.esp'
-      - name: 'meshes\actors\character\character assets\femalebody.tri'
+      - name: 'meshes/actors/character/character assets/femalebody.tri'
         display: 'RaceMenu Morph Files (Included in CBBE installer)'
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
@@ -7496,7 +7501,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/365' ]
       - *includesMBBF
-      - type: info
+      - type: say
         content:
           - lang: en
             text: 'Make sure the Disparity option "Use Modified Blessings" is disabled.'
@@ -7855,7 +7860,7 @@ plugins:
     tag:
       - Text
     msg:
-      - type: info
+      - type: say
         condition: 'active("AmazingFollowerTweaks.esp")'
         content:
           - lang: en
@@ -12976,7 +12981,7 @@ plugins:
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp") and not active("ETaC - Complete.esp")'
       - <<: *patchProvided
-        subs: ['Clockwork']
+        subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("JKs Skyrim_Clockwork_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
@@ -13006,7 +13011,7 @@ plugins:
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
       - <<: *patchProvided
-        subs: ['Realistic Water Two']
+        subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Rorikstead' ]
@@ -13015,7 +13020,7 @@ plugins:
         subs: [ 'Storefront' ]
         condition: 'active("Storefront.esp") and not active("JKs Skyrim_(Storefront)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
-        subs: ['Thunderchild']
+        subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
       - <<: *semiCompatible
         subs:
@@ -16585,7 +16590,7 @@ plugins:
         name: 'Majestic Mountains - Pilgrims Delight Patch'
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [Majestic Mountains - Cathedral Concept]
+        subs: [ 'Majestic Mountains - Cathedral Concept' ]
         condition: 'active("MajesticMountains.esp") and not checksum("MajesticMountains_Landscape.esm", 1AE8D648) and active("MM_PD_Patch.esp")'
     clean:
       - crc: 0x97709110
@@ -16866,7 +16871,7 @@ plugins:
 
   ### (QUASIPC) Qwinn's Unified Automated Self Installing Patch Compendium ###
   - name: 'Qw_.*\.esp'
-    url: [ https://www.nexusmods.com/skyrimspecialedition/mods/18369 ]
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18369' ]
   - name: 'Qw_ACE_BSHeartland Patch.esp'
     after: [ 'Qw_BeyondSkyrimBruma_USSEP Hotfix Patch.esp' ]
   - name: 'Qw_ACE_CloaksOfSkyrim Patch.esp'
