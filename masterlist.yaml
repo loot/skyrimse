@@ -16942,3 +16942,8 @@ plugins:
 
   - name: 'Disease Descriptions.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992' ]
+    msg:
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'Realistic Needs and Diseases' ]
+        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
