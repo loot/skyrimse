@@ -6770,6 +6770,8 @@ plugins:
       - Graphics
       - Keywords
       - Relev
+      - name: SpellStats
+        condition: 'active("Disease Descriptions - RND Patch.esp") and (checksum("RealisticNeedsandDiseases.esp", 04954404) or checksum("RealisticNeedsandDiseases.esp", 46CB9A07))'
     dirty:
       - <<: *quickClean
         crc: 0xB35FFCC4
@@ -7857,8 +7859,7 @@ plugins:
       - 'AmazingFollowerTweaks.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
-    tag:
-      - Text
+    tag: [ Text ]
     msg:
       - type: say
         condition: 'active("AmazingFollowerTweaks.esp")'
@@ -11595,6 +11596,7 @@ plugins:
       - C.Owner
       - C.RecordFlags
       - Delev
+      - Factions
       - Graphics
       - Invent
       - Names
