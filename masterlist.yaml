@@ -2332,6 +2332,12 @@ plugins:
         condition: 'file("scripts/RaceMenuPluginXPMSE.pex")'
     msg:
       - *doNotClean
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Skyrim VR'
+          - '[XP32 First Person Skeleton CTD Bugfix for VR](https://www.nexusmods.com/skyrimspecialedition/mods/34301/)'
+        condition: 'active("SkyrimVR.esm") and not checksum("meshes/actors/character/_1stperson/skeleton.nif", D3F2B285)'
       - <<: *requiresMCM
         condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
 
