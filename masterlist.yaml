@@ -1108,6 +1108,8 @@ plugins:
       - C.Regions
       - C.Water
       - Delev
+      - Invent.Add
+      - Invent.Change
     dirty:
       - <<: *quickClean
         crc: 0x17AB5E20
@@ -1121,13 +1123,14 @@ plugins:
       - C.Location
       - C.Regions
       - Delev
-      - Invent
+      - Invent.Add
+      - Invent.Remove
       - Relev
     msg:
       # (V1.5.97.0, 0x955CCA77) after QAC
       - <<: *wildEdits
         type: say
-        subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
+        subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
         condition: 'checksum("Dawnguard.esm", 955CCA77)'
     dirty:
       - <<: *quickClean
@@ -1141,7 +1144,7 @@ plugins:
     after: [ 'Dawnguard.esm' ]
     tag:
       - C.Location
-      - Invent
+      - Invent.Add
     dirty:
       - <<: *quickClean
         crc: 0xBAD9393A
@@ -1151,12 +1154,10 @@ plugins:
         nav: 5
   - name: 'Dragonborn.esm'
     group: *dlcGroup
-    after:
-      - 'Dawnguard.esm'
-      - 'HearthFires.esm'
+    after: [ 'HearthFires.esm' ]
     tag:
-      - Invent
-      - Relev
+      - Invent.Add
+      - Invent.Remove
     dirty:
       - <<: *quickClean
         crc: 0x0EB10E82
