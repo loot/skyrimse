@@ -5411,6 +5411,9 @@ plugins:
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
       - <<: *patchIncluded
+        subs: [ 'ELFX - Exteriors' ]
+        condition: 'active("ELFX Exteriors.esp") and not checksum("meshes/architecture/solitude/solitudebasemarket.nif", DCA074DC)'
+      - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
       - <<: *patchIncluded
