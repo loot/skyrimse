@@ -5405,6 +5405,9 @@ plugins:
     group: *landscapeGroup
     msg:
       - <<: *patchIncluded
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Landscape and Water Fixes - Patch - CACO.esp")'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
       - <<: *patchIncluded
