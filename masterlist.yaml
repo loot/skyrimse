@@ -8510,6 +8510,9 @@ plugins:
         subs: [ 'Amazing Follower Tweaks or Immersive Amazing Follower Tweaks' ]
         condition: 'active("AmazingFollowerTweaks.esp") and not active("BetterQuestObjectives-AFTPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'aMidianBorn Skyforge Weapons' ]
+        condition: 'active("aMidianborn_Skyforge_Weapons.esp") and not active("BetterQuestObjectives-AMBSkyforgePatch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Book Covers Skyrim' ]
         condition: 'active("Book Covers Skyrim.esp") and not active("BetterQuestObjectives - BCS Patch.esp")'
       - <<: *patchIncluded
@@ -8519,11 +8522,17 @@ plugins:
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("BetterQuestObjectives-CRFPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Dark Brotherhood for Good Guys' ]
+        condition: 'active("goodbrother.esp") and not active("BetterQuestObjectives - Dark Brotherhood for Good Guys Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Extensible Follower Framework' ]
         condition: 'active("EFFCore.esm") and not active("BetterQuestObjectives-EFFPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Legacy of the Dragonborn v5+' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("BetterQuestObjectives - LOTD Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=) and not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)'
+      - <<: *patchIncluded
+        subs: [ 'Namira for Good Guys' ]
+        condition: 'active("AK- Namira for Good Guys.esp") and not active("BetterQuestObjectives - Namira for Good Guys Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'T3nd0''s Perkus Maximus' ]
         condition: 'active("PerkusMaximus_Mage.esp") and not active("BetterQuestObjectives-PerMaPatch.esp")'
@@ -8534,13 +8543,19 @@ plugins:
         subs: [ 'The Paarthurnax Dilemma' ]
         condition: 'active("The Paarthurnax Dilemma.esp") and not active("BetterQuestObjectives-PaarDilemmaPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Thieves Guild For Good Guys' ]
+        condition: 'active("TCBM.esp") and not active("EvenBetterQuestObjectives - Thieves Guild For Good Guys Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Wintersun - Faiths of Skyrim' ]
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("BetterQuestObjectives - Wintersun Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Yet Another Skyrim Hardcore mod' ]
         condition: 'active("YASH2.esp") and not active("BetterQuestObjectives - YASH Patch.esp")'
+    tag: [ Text ]
     clean:
       - crc: 0x272E1695
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives-DBForevertoMisc.esp'
-    after: [ 'BetterQuestObjectives.esp' ]
     clean:
       - crc: 0xB7F49B9D
         util: 'SSEEdit v4.0.3'
@@ -8554,15 +8569,22 @@ plugins:
       - crc: 0xCED07127
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
+    msg:
+      - <<: *alreadyInX
+        type: say
+        subs: [ 'aMidianBorn Content Addon' ]
+        condition: 'active("aMidianBorn_ContentAddon.esp") and active("BetterQuestObjectives-AMBSkyforgePatch.esp")'
     clean:
       - crc: 0xAB22406D
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives - BCS Patch.esp'
     after: [ 'BetterQuestObjectives.esp' ]
+    tag: [ Text ]
     clean:
       - crc: 0x49F6A550
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives-BSaQBPatch.esp'
+    tag: [ Text ]
     clean:
       - crc: 0xF0E2EE4E
         util: 'SSEEdit v4.0.3'
@@ -8581,6 +8603,7 @@ plugins:
       - crc: 0x5D8F1625
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives - LOTD Patch.esp'
+    tag: [ Text ]
     clean:
       - crc: 0xCAC32CA0
         util: 'SSEEdit v4.0.3'
