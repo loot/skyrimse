@@ -5413,6 +5413,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Static Mesh Improvement Mod' ]
+        condition: 'active("SMIM.*\.esp") and not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E114830E)'
     clean:
       - crc: 0x8803CAED
         util: 'SSEEdit v4.0.3'
