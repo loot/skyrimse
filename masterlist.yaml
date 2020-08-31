@@ -7719,7 +7719,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27839' ]
     after:
       - name: 'SPERG-SSE.esp'
-        condition: 'file("Vokriinator Black.esp")'
+        condition: 'file("Vokriinator Black.esp") or file("Vokriinator Black.esp")'
     clean:
       - crc: 0x0B426BDB
         util: 'SSEEdit v4.0.3'
@@ -9462,8 +9462,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     after:
       - name: 'Adamant.esp'
-        condition: 'file("Vokriinator Black.esp")'
+        condition: 'file("Vokriinator Black.esp") or file("Vokriinator Black.esp")'
       - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
+      - name: 'SPERG-SSE.esp'
         condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
     dirty:
       - <<: *quickClean
@@ -9545,6 +9547,7 @@ plugins:
 
   - name: 'SPERG-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
+    after: [ 'Adamant deMystified.esp' ]
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
