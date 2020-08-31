@@ -9586,11 +9586,16 @@ plugins:
     tag:
       - Names
       - Text
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Vokriinator Black.esp' ]
+        condition: 'active("Vokriinator Black.esp")'
     clean:
       - crc: 0x71B366C8
         util: 'SSEEdit v4.0.3'
   - name: 'Vokriinator Black.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
+    inc: [ 'Vokriinator.esp' ]
     clean:
       - crc: 0x2BF03549
         util: 'SSEEdit v4.0.3'
