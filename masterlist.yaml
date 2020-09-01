@@ -5702,6 +5702,12 @@ plugins:
         subs: [ 'RBB - JKs Skyrim Patch.esp' ]
         condition: 'active("RBB - USSEP Patch.esp") and active("RBB - JKs Skyrim Patch.esp")'
   - name: 'RBB - JKs Skyrim Patch.esp'
+    msg:
+      # after QAC
+      - <<: *wildEdits
+        type: say
+        subs: [ 'Remove records **000096F3**, **000097BF**, **000093BD**, & **0000939C** from RBB - JKs Skyrim Patch.esp.' ]
+        condition: 'checksum("RBB - JKs Skyrim Patch.esp", 882F7F3C)'
     dirty:
       - <<: *quickClean
         crc: 0xA6132870
