@@ -5409,11 +5409,23 @@ plugins:
     group: *landscapeGroup
     msg:
       - <<: *patchIncluded
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Landscape and Water Fixes - Patch - CACO.esp")'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
       - <<: *patchIncluded
+        subs: [ 'ELFX - Exteriors' ]
+        condition: 'active("ELFX Exteriors.esp") and not checksum("meshes/architecture/solitude/solitudebasemarket.nif", DCA074DC)'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced textures detail (UV-tweaks)' ]
+        condition: 'checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 2BC30A12)'
+      - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Static Mesh Improvement Mod' ]
+        condition: 'active("SMIM.*\.esp") and not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E114830E)'
     clean:
       - crc: 0x8803CAED
         util: 'SSEEdit v4.0.3'
