@@ -5691,10 +5691,16 @@ plugins:
         condition: 'active("Telengard.esp") and not active("RBB - Telengard Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("RBB - USSEP Patch.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and (not active("RBB - USSEP Patch.esp") and not active("RBB - JKs Skyrim Patch.esp"))'
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("RBB - Wyrmstooth.esp")'
+  - name: 'RBB - USSEP Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        type: say
+        subs: [ 'RBB - JKs Skyrim Patch.esp' ]
+        condition: 'active("RBB - USSEP Patch.esp") and active("RBB - JKs Skyrim Patch.esp")'
 
   - name: 'Realistic Treeline.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/' ]
