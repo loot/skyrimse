@@ -1674,6 +1674,13 @@ plugins:
       - crc: 0xCB6AE2C8
         util: 'SSEEdit v4.0.3'
 
+  - name: 'KeywordsFixed.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21597/' ]
+    tag:
+      - C.Location
+      - C.Music
+      - Keywords
+
   - name: 'MannequinStayPut.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6414/' ]
     msg:
@@ -1713,28 +1720,25 @@ plugins:
     # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
 
-  - name: 'Skyrim Project Optimization.*\.esm'
+  - name: 'Skyrim Project Optimization.*\.es(p|m)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE'
+    group: *fixesGroup
     after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
   - name: 'Skyrim Project Optimization - Full Version.esm'
-    group: *fixesGroup
     clean:
       - crc: 0x4308EA0A
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-    group: *fixesGroup
     clean:
       - crc: 0x19FD56A9
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Project Optimization - Full Version.esp'
-    group: *fixesGroup
     clean:
       - crc: 0x137A03B3
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    group: *fixesGroup
     clean:
       - crc: 0x81A0DD15
         util: 'SSEEdit v4.0.3'
@@ -4163,6 +4167,11 @@ plugins:
           - 'WARP - World Assets Recycle Project SE'
           - '[Kalilies NPCs WARP patch](https://www.nexusmods.com/skyrimspecialedition/mods/33942/)'
         condition: 'active("WARP.esp") and not active("KaliliesNPCs WARP PATCH.esp")'
+    clean:
+      - crc: 0xB9CF4F08
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x062B1FEB
+        util: 'SSEEdit v4.0.3'
   - name: 'KaliliesNPCs - USSEP CRF AI Overhaul Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
     after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
@@ -5416,13 +5425,34 @@ plugins:
     group: *landscapeGroup
     msg:
       - <<: *patchIncluded
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Landscape and Water Fixes - Patch - CACO.esp")'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
       - <<: *patchIncluded
+        subs: [ 'ELFX - Exteriors' ]
+        condition: 'active("ELFX Exteriors.esp") and not checksum("meshes/architecture/solitude/solitudebasemarket.nif", DCA074DC)'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced textures detail (UV-tweaks)' ]
+        condition: 'checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 2BC30A12)'
+      - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Static Mesh Improvement Mod' ]
+        condition: 'active("SMIM.*\.esp") and not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E114830E)'
+    tag: [ C.Climate ]
     clean:
       - crc: 0x8803CAED
+        util: 'SSEEdit v4.0.3'
+  - name: 'Skyrim Landscape and Water Fixes - Light Sources.esp'
+    group: *fixesGroup
+    inc:
+      - 'ELFX Exteriors.esp'
+      - 'LoS II - Tamriel Master Lights.esp'
+    clean:
+      - crc: 0xCC137B4C
         util: 'SSEEdit v4.0.3'
 
   - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
@@ -5671,14 +5701,44 @@ plugins:
         subs: [ 'Quaint Raven Rock' ]
         condition: 'active("Undriel_QuaintRavenRock.esp") and not active("RBB - Quaint Raven Rock Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'Static Mesh Improvement Mod' ]
+        condition: 'active("SMIM.*\.esp") and not checksum("Meshes\RBB\Brinewater\shiprowboatBrine01.nif", 375B3D23)'
+      - <<: *patchProvided
         subs: [ 'Telengard' ]
         condition: 'active("Telengard.esp") and not active("RBB - Telengard Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("RBB - USSEP Patch.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and (not active("RBB - USSEP Patch.esp") and not active("RBB - JKs Skyrim Patch.esp"))'
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("RBB - Wyrmstooth.esp")'
+    clean:
+      - crc: 0xFC7D5A59
+        util: 'SSEEdit v4.0.3'
+  - name: 'RBB - USSEP Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        type: say
+        subs: [ 'RBB - JKs Skyrim Patch.esp' ]
+        condition: 'active("RBB - USSEP Patch.esp") and active("RBB - JKs Skyrim Patch.esp")'
+  - name: 'RBB - JKs Skyrim Patch.esp'
+    msg:
+      # after QAC
+      - <<: *wildEdits
+        type: say
+        subs: [ 'Remove records **000096F3**, **000097BF**, **000093BD**, & **0000939C** from RBB - JKs Skyrim Patch.esp.' ]
+        condition: 'checksum("RBB - JKs Skyrim Patch.esp", 882F7F3C)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA6132870
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+  - name: 'RBB - Telengard Patch.esp'
+    msg:
+      - <<: *wildEdits
+        type: say
+        subs: [ 'Remove record **00000D74** from RBB - Telengard Patch.esp.' ]
+        condition: 'checksum("RBB - Telengard Patch.esp", 6F8AE1F7)'
 
   - name: 'Realistic Treeline.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/' ]
@@ -6151,6 +6211,14 @@ plugins:
       - crc: 0xBFAFCD0B
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Snotgurg Simple Drop Lit Torches.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14490' ]
+    msg: [ *requiresMCM ]
+    req: [ *SKSE ]
+    clean:
+      - crc: 0x376873D2
+        util: 'SSEEdit v4.0.3'
+
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
     msg:
@@ -6177,17 +6245,28 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
     msg: [ *patch3rdPartySRPC ]
 
+  - name: 'Torches Ignite Oil.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13226' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Torches Ignite Oil plugin' ]
+        condition: 'many("Torches Ignite Oil( - Shock Edition( and Arcane Archer Pack Compatibility)?)?.esp")'
+    clean:
+      - crc: 0xF0AA4434
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xC32BA914
+        util: 'SSEEdit v4.0.3'
+
   - name: 'TouringCarriages.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0xE84A9BD4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 5
+    tag: [ Keywords ]
+    clean:
+      - crc: 0x15B143C8
+        util: 'SSEEdit v4.0.3'
   - name: 'TouringCarriages-ICAIO.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     after: [ 'Immersive Citizens - TC patch.esp' ]
@@ -7696,6 +7775,9 @@ plugins:
 
   - name: 'MysticismMagic.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27839' ]
+    after:
+      - name: 'SPERG-SSE.esp'
+        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
     clean:
       - crc: 0x0B426BDB
         util: 'SSEEdit v4.0.3'
@@ -8041,6 +8123,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654'
         name: 'AI Overhaul SSE'
+    after: [ 'Immersive Weapons.esp' ]
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -8052,6 +8135,11 @@ plugins:
       - Invent.Add
       - NPC.AIPackageOverrides
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'JK''s Skyrim'
+          - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194)'
+        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
       - <<: *patch3rdParty
@@ -8060,7 +8148,7 @@ plugins:
           - '[AI Overhaul - Open Cites Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/38031)'
         condition: 'active("Open Cities Skyrim.esp") and not active("AI Overhaul - Open Cities.esp")'
     clean:
-      - crc: 0xAFCDE5A2
+      - crc: 0x0DA67D14
         util: 'SSEEdit v4.0.3'
   - name: 'AI Overhaul - Open Cities.esp'
     url:
@@ -9156,18 +9244,19 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("BCS_TCIY_Patch.esp")'
-    tag: [ Names ]
+    tag:
+      - Actors.AIPackages
+      - Names
+      - Text
     clean:
-      # version: 2.0
       - crc: 0x9F3FDA79
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'The Paarthurnax Dilemma.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/365' ]
     clean:
-      # version: 2.0.1
       - crc: 0x36F5C5BD
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Thieves Guild Requirements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33256/' ]
@@ -9184,9 +9273,8 @@ plugins:
         subs: [ '[Sell Unusual Gems - Stones of Barenziah](https://www.nexusmods.com/skyrimspecialedition/mods/17605/)' ]
         condition: 'active("Sell Stones of Barenziah.esp")'
       - *requiresMCM
-    tag: [ Names ]
     clean:
-      - crc: 0x3D3EFB63
+      - crc: 0x4383E5A0
         util: 'SSEEdit v4.0.3'
 
   - name: 'TimingIsEverything.esp'
@@ -9198,9 +9286,8 @@ plugins:
         condition: 'file("SKSE/Plugins/FISS/TimingIsEverythingPresets.xml")'
     msg: [ *requiresMCM ]
     clean:
-      # version: 2.2
       - crc: 0x06689998
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Tools of Kagrenac.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
@@ -9343,13 +9430,17 @@ plugins:
     req:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
+      - *SKSE
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
+      - *requiresMCM
     clean:
-      # version: 1.6
       - crc: 0xB7986707
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.6 Ordinator version
+        util: 'SSEEdit v4.0.3'
       - crc: 0xCD2D19F5
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'LupineWerewolfPerkExpansion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16561/' ]
@@ -9391,7 +9482,7 @@ plugins:
       - 'Undeath.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
       - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
-        condition: 'file("Vokriinator.esp")'
+        condition: 'file("Vokriinator.esp") or file("Vokriinator Black.esp")'
     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
       - 'PerkusMaximus_Mage.esp'
@@ -9437,8 +9528,12 @@ plugins:
   - name: 'PathOfSorcery.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     after:
+      - name: 'Adamant.esp'
+        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
       - name: 'Ordinator - Perks of Skyrim.esp'
-        condition: 'not file("Vokriinator.esp")'
+        condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
+      - name: 'SPERG-SSE.esp'
+        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x498BF207
@@ -9519,6 +9614,7 @@ plugins:
 
   - name: 'SPERG-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
+    after: [ 'Adamant deMystified.esp' ]
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
@@ -9533,6 +9629,9 @@ plugins:
   - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176' ]
     group: *perksGroup
+    after:
+      - name: 'PathOfSorcery.esp'
+        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
     inc:
       - 'PerkusMaximus_Mage.esp'
       - 'PerkusMaximus_Master.esp'
@@ -9562,18 +9661,39 @@ plugins:
 
   - name: 'Vokriinator.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
+    group: *perksGroup
     tag:
       - Names
       - Text
-    dirty:
-      # version: 3.0 Plus
-      - <<: *quickClean
-        crc: 0x8BCDDC24
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Vokriinator Black.esp' ]
+        condition: 'active("Vokriinator Black.esp")'
     clean:
-      # version: 3.0
-      - crc: 0x5842BB65
+      - crc: 0x71B366C8
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x39CCCFAC
+        util: 'SSEEdit v4.0.3'
+  - name: 'Adamant deMystified.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
+    inc:
+      - 'Adamant.esp'
+      - 'MysticismMagic.esp'
+    clean:
+      - crc: 0x895A810F
+        util: 'SSEEdit v4.0.3'
+  - name: 'Vokriinator Black.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
+    group: *perksGroup
+    inc: [ 'Vokriinator.esp' ]
+    tag:
+      - Names
+      - SpellStats
+      - Text
+      - Graphics
+      - Keywords
+    clean:
+      - crc: 0x2BF03549
         util: 'SSEEdit v4.0.3'
 
   - name: 'WerewolfPerksExpanded.esp'
@@ -10104,12 +10224,14 @@ plugins:
     tag:
       - Delev
       - Graphics
-      - Invent
+      - Keywords
+      - Invent.Add
+      - Invent.Remove
       - Relev
+      - Stats
     clean:
-      # version: 2
       - crc: 0x5B38977B
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'imp_helm_legend.esp'
     url:
