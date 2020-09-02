@@ -4156,6 +4156,11 @@ plugins:
           - 'WARP - World Assets Recycle Project SE'
           - '[Kalilies NPCs WARP patch](https://www.nexusmods.com/skyrimspecialedition/mods/33942/)'
         condition: 'active("WARP.esp") and not active("KaliliesNPCs WARP PATCH.esp")'
+    clean:
+      - crc: 0xB9CF4F08
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x062B1FEB
+        util: 'SSEEdit v4.0.3'
   - name: 'KaliliesNPCs - USSEP CRF AI Overhaul Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
     after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
@@ -5696,6 +5701,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("RBB - Wyrmstooth.esp")'
+    clean:
+      - crc: 0xFC7D5A59
+        util: 'SSEEdit v4.0.3'
   - name: 'RBB - USSEP Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -6245,11 +6253,9 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
     tag: [ Keywords ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xE84A9BD4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 5
+    clean:
+      - crc: 0x15B143C8
+        util: 'SSEEdit v4.0.3'
   - name: 'TouringCarriages-ICAIO.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
     after: [ 'Immersive Citizens - TC patch.esp' ]
@@ -8131,7 +8137,7 @@ plugins:
           - '[AI Overhaul - Open Cites Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/38031)'
         condition: 'active("Open Cities Skyrim.esp") and not active("AI Overhaul - Open Cities.esp")'
     clean:
-      - crc: 0xAFCDE5A2
+      - crc: 0x0DA67D14
         util: 'SSEEdit v4.0.3'
   - name: 'AI Overhaul - Open Cities.esp'
     url:
@@ -9232,16 +9238,14 @@ plugins:
       - Names
       - Text
     clean:
-      # version: 2.0
       - crc: 0x9F3FDA79
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'The Paarthurnax Dilemma.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/365' ]
     clean:
-      # version: 2.0.1
       - crc: 0x36F5C5BD
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Thieves Guild Requirements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33256/' ]
@@ -9259,7 +9263,7 @@ plugins:
         condition: 'active("Sell Stones of Barenziah.esp")'
       - *requiresMCM
     clean:
-      - crc: 0x3D3EFB63
+      - crc: 0x4383E5A0
         util: 'SSEEdit v4.0.3'
 
   - name: 'TimingIsEverything.esp'
@@ -9271,9 +9275,8 @@ plugins:
         condition: 'file("SKSE/Plugins/FISS/TimingIsEverythingPresets.xml")'
     msg: [ *requiresMCM ]
     clean:
-      # version: 2.2
       - crc: 0x06689998
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Tools of Kagrenac.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
@@ -9423,12 +9426,10 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
       - *requiresMCM
     clean:
-      # version: 1.6
       - crc: 0xB7986707
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.6 Ordinator version
+        util: 'SSEEdit v4.0.3'
       - crc: 0xCD2D19F5
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'LupineWerewolfPerkExpansion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16561/' ]
@@ -10218,9 +10219,8 @@ plugins:
       - Relev
       - Stats
     clean:
-      # version: 2
       - crc: 0x5B38977B
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'imp_helm_legend.esp'
     url:
