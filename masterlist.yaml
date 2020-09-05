@@ -16504,7 +16504,6 @@ plugins:
 
   - name: 'UnlimitedBookshelves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2885/' ]
-    # Authors instructions: Load directly after Unofficial Skyrim Special Edition Patch.
     group: *fixesGroup
     tag: [ ObjectBounds ]
     msg:
@@ -16523,11 +16522,10 @@ plugins:
         subs:
           - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
           - '[Unlimited Bookshelves patch generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160)'
-        condition: 'active("UnlimitedBookshelves.esp")'
+        condition: 'active("UnlimitedBookshelves.esp") and not active("UnlimitedBookshelvesPatch.esp")'
     clean:
-      # version: 2.0
       - crc: 0x86CF0F2B
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Vaal''Sky.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8383' ]
