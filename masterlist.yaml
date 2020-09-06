@@ -1911,6 +1911,10 @@ plugins:
 
   - name: 'Particle Patch for ENB SSE.esp'
     url: [ 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174)' ]
+        condition: 'file("../skse64_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperSE.dll")'
     tag:
       - C.Climate
       - C.ImageSpace
