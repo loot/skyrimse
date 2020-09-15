@@ -7726,6 +7726,9 @@ plugins:
       - 'Requiem.esp'
       - 'Sacrosanct - Vampires of Skyrim.esp'
       - 'Tainted_Blood.esp'
+    inc:
+      - name: 'Sacrosanct - Vampires of Skyrim.esp'
+        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("BVandSacrosanct_Patch.esp")'
     tag:
       - Graphics
       - Names
@@ -9594,9 +9597,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
     group: *perksGroup
     inc:
-      - name: 'better vampires.esp'
-        condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
-        display: '[Better Vampires](https://www.nexusmods.com/skyrimspecialedition/mods/1925/)'
       - 'mslVampiricThirst.esp'
       - 'SanguinairVampirism.esp'
       - 'VampireLordPerksExpanded.esp'
