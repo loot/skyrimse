@@ -7729,6 +7729,13 @@ plugins:
     inc:
       - name: 'Sacrosanct - Vampires of Skyrim.esp'
         condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("Add Sacrosanct Spells to BV.esp") and not active("BVandSacrosanct_Patch.esp")'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Royal Bloodline: Vampire Lord perk tree **Vampirelordroyal.esp**' ]
+        condition: 'active("Vampirelordroyal.esp") and not active("BVandRoyalBloodline_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Sacrosanct: Vampires of Skyrim' ]
+        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("Add Sacrosanct Spells to BV.esp") and not active("BVandSacrosanct_Patch.esp")'
     tag:
       - Graphics
       - Names
