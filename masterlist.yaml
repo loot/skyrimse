@@ -5468,7 +5468,10 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Static Mesh Improvement Mod' ]
         condition: 'active("SMIM.*\.esp") and (not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E114830E) and not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 9016DCA9))'
-    tag: [ C.Climate ]
+    tag:
+      - C.Climate
+      - C.Light
+      - C.Water
     clean:
       - crc: 0x8803CAED
         util: 'SSEEdit v4.0.3'
