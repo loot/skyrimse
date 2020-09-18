@@ -5446,8 +5446,9 @@ plugins:
         itm: 130
         udr: 218
 
-  - name: 'Landscape and Water Fixes.esp'
+  - name: '(Skyrim )?Landscape and Water Fixes.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26138/' ]
+  - name: 'Landscape and Water Fixes.esp'
     group: *landscapeGroup
     msg:
       - <<: *patchIncluded
@@ -5468,9 +5469,17 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Static Mesh Improvement Mod' ]
         condition: 'active("SMIM.*\.esp") and (not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E114830E) and not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 9016DCA9))'
-    tag: [ C.Climate ]
+    tag:
+      - C.Climate
+      - C.Light
+      - C.Water
+    dirty:
+      - <<: *quickClean
+        crc: 0x3BA8986D
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
     clean:
-      - crc: 0x8803CAED
+      - crc: 0xB72E9CA9
         util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Landscape and Water Fixes - Light Sources.esp'
     group: *fixesGroup
@@ -5480,6 +5489,8 @@ plugins:
     clean:
       - crc: 0xCC137B4C
         util: 'SSEEdit v4.0.3'
+  - name: 'Landscape and Water Fixes - Patch - Relighting Skyrim.esp'
+    req: [ 'RelightingSkyrim_SSE.esp' ]
 
   - name: 'Landscape( Fixes)? For Grass Mods.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/' ]
