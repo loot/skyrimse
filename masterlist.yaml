@@ -8477,6 +8477,10 @@ plugins:
   - name: '(SeranaDialogAddon|SDA).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/' ]
   - name: 'SeranaDialogAddon.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Lustmord Vampire Armor' ]
+        condition: 'active("LustmordVampireArmor.esp") and not active("SDA-LustmordPatch.esp")'
     tag: [ Keywords ]
 
   - name: 'Serana Dialogue Edit.esp'
