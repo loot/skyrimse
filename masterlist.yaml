@@ -7720,18 +7720,36 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
+    group: *perksGroup
     after:
       - 'EBM_UnlimitedPower.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
+      # Group after for Ordinator, to prevent sorting errors
+      - 'Ordinator - Perks of Skyrim.esp'
       - 'Requiem.esp'
       - 'Sacrosanct - Vampires of Skyrim.esp'
       - 'Tainted_Blood.esp'
+      # Group after for Vokrii, to prevent sorting errors
+      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
+      - 'Vokriinator.esp'
+      - 'Vokriinator Black.esp'
+    inc:
+      - name: 'Sacrosanct - Vampires of Skyrim.esp'
+        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("Add Sacrosanct Spells to BV.esp") and not active("BVandSacrosanct_Patch.esp")'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Royal Bloodline: Vampire Lord perk tree **Vampirelordroyal.esp**' ]
+        condition: 'active("Vampirelordroyal.esp") and not active("BVandRoyalBloodline_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Sacrosanct: Vampires of Skyrim' ]
+        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("Add Sacrosanct Spells to BV.esp") and not active("BVandSacrosanct_Patch.esp")'
     tag:
+      - EffectStats
       - Graphics
       - Names
-      - Relev
       - Sound
       - Stats
+      - Text
     clean:
       - crc: 0x397B1E26
         util: 'SSEEdit v4.0.3'
@@ -9594,9 +9612,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
     group: *perksGroup
     inc:
-      - name: 'better vampires.esp'
-        condition: 'active("better vampires.esp") and not active("BVandSacrosanct_Patch.esp")'
-        display: '[Better Vampires](https://www.nexusmods.com/skyrimspecialedition/mods/1925/)'
       - 'mslVampiricThirst.esp'
       - 'SanguinairVampirism.esp'
       - 'VampireLordPerksExpanded.esp'
