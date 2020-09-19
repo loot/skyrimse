@@ -8474,6 +8474,25 @@ plugins:
       - crc: 0xF3EF2798
         util: 'SSEEdit v4.0.2f'
 
+  - name: '(SeranaDialogAddon|SDA).*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/' ]
+  - name: 'SeranaDialogAddon.esp'
+    inc: [ 'Marry Me Serana.esp' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Serana Dialogue Edit](https://www.nexusmods.com/skyrimspecialedition/mods/16222/)' ]
+        condition: 'not active("Serana Dialogue Edit.esp")'
+      - <<: *patchProvided
+        subs: [ 'DX Crimson Blood Armor' ]
+        condition: 'active("Crimson Blood Armor.esp") and not active("SDA- DX CBlood Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Lustmord Vampire Armor' ]
+        condition: 'active("LustmordVampireArmor.esp") and not active("SDA-LustmordPatch.esp")'
+    tag: [ Keywords ]
+    clean:
+      - crc: 0x2F3126C1
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Serana Dialogue Edit.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16222/' ]
     after: [ 'Relationship Dialogue Overhaul.esp' ]
