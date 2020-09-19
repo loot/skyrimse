@@ -8479,6 +8479,9 @@ plugins:
   - name: 'SeranaDialogAddon.esp'
     msg:
       - <<: *patchProvided
+        subs: [ 'DX Crimson Blood Armor' ]
+        condition: 'active("Crimson Blood Armor.esp") and not active("SDA- DX CBlood Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Lustmord Vampire Armor' ]
         condition: 'active("LustmordVampireArmor.esp") and not active("SDA-LustmordPatch.esp")'
     tag: [ Keywords ]
