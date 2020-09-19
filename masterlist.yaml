@@ -8479,6 +8479,9 @@ plugins:
   - name: 'SeranaDialogAddon.esp'
     inc: [ 'Marry Me Serana.esp' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Serana Dialogue Edit](https://www.nexusmods.com/skyrimspecialedition/mods/16222/)' ]
+        condition: 'not active("Serana Dialogue Edit.esp")'
       - <<: *patchProvided
         subs: [ 'DX Crimson Blood Armor' ]
         condition: 'active("Crimson Blood Armor.esp") and not active("SDA- DX CBlood Patch.esp")'
