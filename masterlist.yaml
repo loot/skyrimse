@@ -9470,6 +9470,19 @@ plugins:
       - Names
       - Text
     msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
+          - lang: de
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
+          - lang: ja
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
+        subs:
+          - 'PlayerWerewolfChangeScript.pex'
+          - 'RaceCompatibility'
+          - 'Growl - Werebeasts of Skyrim'
+        condition: 'file("RaceCompatibility.esm") and file("Scripts/PlayerWerewolfChangeScript.pex")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1519' ]
       - *includesMBBF
