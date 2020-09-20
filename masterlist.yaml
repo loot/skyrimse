@@ -16,6 +16,10 @@ common:
     name: '../sksevr_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE VR ](http://skse.silverlock.org))**'
     condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not file("../sksevr_loader.exe")'
+  - &VR_PerkExtender
+    name: 'SKSE/Plugins/VRPerkExtender.dll'
+    display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
+    condition: 'file("SkyrimVR.esm")'
 
 # Messages
   - &alreadyInX
@@ -7093,10 +7097,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9542/' ]
     after: [ 'You Hunger.esp' ]
   - name: 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    req:
-      - name: 'SKSE/Plugins/VRPerkExtender.dll'
-        display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
-        condition: 'file("SkyrimVR.esm")'
+    req: [ *VR_PerkExtender ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
@@ -9466,10 +9467,7 @@ plugins:
       - 'Real Feeding V3.esp'
       - name: 'Tainted_Blood.esp'
         condition: 'not file("Tainted_Blood_Growl_Compatibility_Patch.esp")'
-    req:
-      - name: 'SKSE/Plugins/VRPerkExtender.dll'
-        display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
-        condition: 'file("SkyrimVR.esm")'
+    req: [ *VR_PerkExtender ]
     tag:
       - Names
       - Text
@@ -9571,10 +9569,7 @@ plugins:
       - 'PerkusMaximus_Thief.esp'
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
-    req:
-      - name: 'SKSE/Plugins/VRPerkExtender.dll'
-        display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
-        condition: 'file("SkyrimVR.esm")'
+    req: [ *VR_PerkExtender ]
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
@@ -9648,10 +9643,7 @@ plugins:
       - 'Vokriinator Black.esp'
       - 'Volkihar Knight.esp'
       - 'YOT - Your Own Thoughts.esp'
-    req:
-      - name: 'SKSE/Plugins/VRPerkExtender.dll'
-        display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
-        condition: 'file("SkyrimVR.esm")'
+    req: [ *VR_PerkExtender ]
     tag:
       - EffectStats
       - Graphics
