@@ -12980,6 +12980,9 @@ plugins:
   - name: 'fortdawnguardimmersive.esp'
     msg:
       - <<: *patchIncluded
+        subs: [ 'Dawnguard Arsenal' ]
+        condition: 'active("DawnguardArsenal.esp") and not active("FDIDGArsenalPatch.esp")'
+      - <<: *patchIncluded
         subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("FDIELnFXPatch.esp")'
       - <<: *patchIncluded
