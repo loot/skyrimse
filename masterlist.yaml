@@ -6481,6 +6481,7 @@ plugins:
     inc:
       - name: 'GRACE.esp'
         display: 'SkyGrace - Skyrim Gender Race And Class Enhancements'
+      - 'Half-Beast Visuals for Growl - Werebeasts of Skyrim.esp'
       - 'Morroblivion Racial Traits.esp'
       - 'SkyRe_Races.esp'
       - 'Subtle but Classless.esp'
@@ -9451,14 +9452,20 @@ plugins:
   - name: 'Growl - Werebeasts of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31245' ]
     after:
+      # OMEGA Version of Morrowloot Ultimate
+      - 'MLU.esp'
       - 'Mortal Enemies.esp'
       - 'Mortal Enemies - No RunWalk Changes.esp'
       - 'Mortal Enemies - Rival Remix.esp'
       - 'Mortal Enemies - Rival Remix - NoRunWalkChanges.esp'
       - 'Mortal Enemies - 2.0 Test Version.esp'
+      - 'Tainted_Blood.esp'
     inc:
+      - 'Curse of the Dragonborn.esp'
       - 'Moonlight Tales Special Edition.esp'
-      - 'RaceCompatibility.esm'
+      - 'Real Feeding V3.esp'
+      - name: 'Tainted_Blood.esp'
+        condition: 'not file("Tainted_Blood_Growl_Compatibility_Patch.esp")'
     req:
       - name: 'SKSE/Plugins/VRPerkExtender.dll'
         display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
@@ -9467,6 +9474,19 @@ plugins:
       - Names
       - Text
     msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
+          - lang: de
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
+          - lang: ja
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
+        subs:
+          - 'PlayerWerewolfChangeScript.pex'
+          - 'RaceCompatibility'
+          - 'Growl - Werebeasts of Skyrim'
+        condition: 'file("RaceCompatibility.esm") and file("Scripts/PlayerWerewolfChangeScript.pex")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1519' ]
       - *includesMBBF
@@ -9483,7 +9503,7 @@ plugins:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Growl_Patch.esp")'
     clean:
-      - crc: 0x507663AA
+      - crc: 0xECCB94D4
         util: 'SSEEdit v4.0.3'
 
   - name: 'Lock_Overhaul.esp'
