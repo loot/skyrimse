@@ -12985,23 +12985,36 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
 
-  - name: 'fortdawnguardimmersive.esp'
+  - name: '(fortdawnguardimmersive|FDI).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40436/'
         name: 'Immersive Fort Dawnguard'
+  - name: 'fortdawnguardimmersive.esp'
     msg:
       - <<: *patchIncluded
-        subs: [ '[Enhanced Lights and FX](https://www.nexusmods.com/skyrimspecialedition/mods/2424)' ]
+        subs: [ 'Dawnguard Arsenal' ]
+        condition: 'active("DawnguardArsenal.esp") and not active("FDIDGArsenalPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("FDIELnFXPatch.esp")'
       - <<: *patchIncluded
-        subs: [ '[Medieval Lanterns of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/27622)' ]
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("FDILOTDPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Medieval Lanterns of Skyrim' ]
         condition: 'active("Medieval Lanterns of Skyrim.esp") and not active("FDIMLOSPatch.esp")'
       - <<: *patchIncluded
-        subs: [ '[RLO Interiors](https://www.nexusmods.com/skyrimspecialedition/mods/844)' ]
+        subs: [ 'Palaces and Castles Enhanced' ]
+        condition: 'active("Palaces Castles Enhanced.esp") and not active("FDIPCEPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'RLO Interiors' ]
         condition: 'active("RLO - Interiors.esp") and not active("FDIRLOInteriorsPatch.esp")'
       - <<: *patchIncluded
-        subs: [ '[Skyrim Project Optimization SE](https://www.nexusmods.com/skyrimspecialedition/mods/14084/)' ]
+        subs: [ 'Skyrim Project Optimization SE' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("FDISPOPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Skyrim Wayshrines' ]
+        condition: 'active("WayshrinesIFT.esp") and not active("FDIWayshrinesPatch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIPackages
@@ -13011,30 +13024,16 @@ plugins:
       - C.Water
       - Factions
       - ObjectBounds
-    dirty:
-      - <<: *reqManualFix
-        crc: 0xBF78675F
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 104
-        nav: 10
-      - <<: *reqManualFix
-        crc: 0x394DCD54
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 10
-  - name: 'FDIELnFXPatch.esp'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0xE40BC671
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 2
-  - name: 'FDIMLOSPatch.esp'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0x6870B6DB
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 2
+    clean:
+      - crc: 0x7EA88908
+        util: 'SSEEdit v4.0.3'
+  - name: 'FDIDGArsenalPatch.esp'
+    tag:
+      - Actors.CombatStyle
+      - Actors.Stats
+      - NPC.Class
   - name: 'FDIRLOInteriorsPatch.esp'
-    after: [ 'RLO - Interiors.esp' ]
+    req: [ 'RLO - Interiors.esp' ]
     tag: [ C.Light ]
 
   - name: 'Friendlier Taverns.esp'
