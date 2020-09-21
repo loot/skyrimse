@@ -5224,9 +5224,8 @@ plugins:
   - name: 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
     group: *preEarlyGroup
 
-  - name: 'Cathedral (Concept - Lightweight Grass Overhaul|Landscapes)\.esp'
+  - name: 'Cathedral Landscapes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21954/' ]
-    group: *floraGroup
     after:
       - 'Dolomite Weathers.esp'
       - 'MajesticMountains.esp'
@@ -5236,10 +5235,17 @@ plugins:
     msg:
       - <<: *includesX
         subs: [ '[ Blended Roads ](https://www.nexusmods.com/skyrimspecialedition/mods/8834/)' ]
-        condition: 'active("BlendedRoads.esp")'
+        condition: 'active("BlendedRoads.esp") and not checksum("Cathedral Landscapes.esp", A4E835CA)'
       - <<: *includesX
         subs: [ '[ Terrain LOD Redone ](https://www.nexusmods.com/skyrimspecialedition/mods/9135/)' ]
-        condition: 'active("TerrainLODRedone.esp")'
+        condition: 'active("TerrainLODRedone.esp") and not checksum("Cathedral Landscapes.esp", A4E835CA)'
+    clean:
+      - crc: 0x03EB25F1
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xA52DCDED
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xA4E835CA
+        util: 'SSEEdit v4.0.3'
 
   - name: 'cliffs.esp'
     url:
