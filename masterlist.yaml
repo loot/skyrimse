@@ -12298,7 +12298,7 @@ plugins:
       - <<: *useOnlyOneX
         type: warn
         subs: [ 'Solitude Skyway & Legacy of the Dragonborn patch' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE [PATCH - LoTD] (OCS).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (OCS).esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and many("(Solitude Skyway SE - Legacy of the Dragonborn Patch|Solitude Skyway SE \[PATCH - LoTD\] \((STD|OCS)\)|Solitude Skyway SE \+ BluePalaceTerrace \[PATCH - LoTD\] \((STD|OCS)\)).esp")'
     clean:
       - crc: 0x4C4ACF55
         util: 'SSEEdit v4.0.3'
