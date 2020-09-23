@@ -2064,7 +2064,6 @@ plugins:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
       - 'Atlas Map Markers.esp'
-      - 'Dawnguard Map Markers.esp'
     inc:
       - 'IcePenguinWorldMap.esp'
       - 'icepenguinworldmapclassic.esp'
@@ -2096,7 +2095,6 @@ plugins:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
       - 'Atlas Map Markers.esp'
-      - 'Dawnguard Map Markers.esp'
     inc: [ 'IcePenguinWorldMapPaper.esp' ]
     msg:
       - <<: *semiCompatible
@@ -2129,7 +2127,6 @@ plugins:
     group: *mapGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Dawnguard Map Markers.esp'
       - 'MLU.esp'
       - 'SL01AmuletsSkyrim.esp'
     inc:
@@ -2146,7 +2143,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14493' ]
     group: *mapGroup
     after:
-      - 'Dawnguard Map Markers.esp'
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
   - name: 'Atlas Legendary.esp'
@@ -2165,6 +2161,13 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20931'
     group: *mapGroup
+    after:
+      - 'Atlas Legendary.esp'
+      - 'Atlas Legendary OCS.esp'
+      - 'Atlas Map Markers.esp'
+      - 'IcePenguinWorldMapPaper.esp'
+      # For group, to prevent sorting errors
+      - 'Paper World Map.esp'
     clean:
       - crc: 0xAA2F3309
         util: 'SSEEdit v4.0.3'
