@@ -12710,6 +12710,12 @@ plugins:
 
   - name: 'EEKs Immersive Whiterun.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31214/' ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'This plugin references a record **000CB4F3**, which has been deleted by Hearthfires.esm. This must be corrected manually by the mod author.'
+        condition: 'checksum("EEKs Immersive Whiterun.esp", 7CAB09F2) or checksum("EEKs Immersive Whiterun.esp", 16BF915D)'
 
   - name: 'Enlightened College of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8710/' ]
