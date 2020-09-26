@@ -1542,6 +1542,11 @@ plugins:
         condition: 'checksum("Lanterns Of Skyrim - All In One - Main.esm", EB94B5F8)'
       - 'Requiem Records Fix.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Gemling Queen Jewelry SE'
+          - '[Circlet USSEP Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/35576/)'
+        condition: 'checksum("meshes/armor/circlets/FemElfCirclets/circletf1.nif", CBBD41AB) and not checksum("meshes/uskp/armor/circlets/FemElfCirclets/circletf1.nif", CBBD41AB)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *patch3rdParty_RSCPC
