@@ -6856,6 +6856,13 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Hunterborn_CACO-SE_Patch.esp")'
+    tag:
+      - name: -C.Climate
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: -Delev
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: -ObjectBounds
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
     clean:
       - crc: 0x7117CBA9
         util: 'SSEEdit v4.0.3'
