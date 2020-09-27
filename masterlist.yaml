@@ -9566,6 +9566,10 @@ plugins:
       - 'PerkusMaximus_CombatPlus.esp'
     req: [ *VR_PerkExtender ]
     msg:
+      - <<: *alsoUseX
+        type: warn
+        subs: [ '[Bug Fixes SSE](https://www.nexusmods.com/skyrimspecialedition/mods/33261/)' ]
+        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/22' ]
       - *includesMBBF
