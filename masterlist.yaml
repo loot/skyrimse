@@ -1722,6 +1722,10 @@ plugins:
 
   - name: 'MorthalMillFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1594/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x22C5A1C9
