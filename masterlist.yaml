@@ -1567,7 +1567,9 @@ plugins:
           - '**Unofficial Skyrim Special Edition Patch**'
           - '**Skyrim Special Edition**'
         condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.7", >=)'
-    tag: [ C.Regions ]
+    tag:
+      - C.Regions
+      - Invent.Change
     clean:
       - crc: 0xCC95AE25
         util: 'SSEEdit v4.0.3'
@@ -4211,6 +4213,7 @@ plugins:
           - 'WARP - World Assets Recycle Project SE'
           - '[Kalilies NPCs WARP patch](https://www.nexusmods.com/skyrimspecialedition/mods/33942/)'
         condition: 'active("WARP.esp") and not active("KaliliesNPCs WARP PATCH.esp")'
+    tag: [ Outfits.Remove ]
     clean:
       - crc: 0xB9CF4F08
         util: 'SSEEdit v4.0.3'
@@ -6892,6 +6895,13 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Hunterborn_CACO-SE_Patch.esp")'
+    tag:
+      - name: -C.Climate
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: -Delev
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: -ObjectBounds
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
     clean:
       - crc: 0x7117CBA9
         util: 'SSEEdit v4.0.3'
@@ -6945,6 +6955,9 @@ plugins:
     tag:
       - Delev
       - Graphics
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
       - Keywords
       - Relev
       - name: SpellStats
@@ -9517,7 +9530,12 @@ plugins:
         condition: 'not file("Tainted_Blood_Growl_Compatibility_Patch.esp")'
     req: [ *VR_PerkExtender ]
     tag:
+      - EffectStats
+      - Graphics
+      - Keywords
       - Names
+      - Sound
+      - SpellStats
       - Text
     msg:
       - type: error
