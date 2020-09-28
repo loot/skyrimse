@@ -7580,6 +7580,7 @@ plugins:
       - name: 'Guard Dialogue Overhaul.esp'
         condition: 'checksum("Guard Dialogue Overhaul.esp", 6ABC1129) or checksum("Guard Dialogue Overhaul.esp", 5CB27D7D) or checksum("Guard Dialogue Overhaul.esp", E248614B) or checksum("Guard Dialogue Overhaul.esp", E40EDE50) or checksum("Guard Dialogue Overhaul.esp", 7D16C40A)'
       - 'Immersive Sounds - Compendium.esp'
+      - 'TAR-GuildMaster1stPersonFix.esp'
       - 'Undeath.esp'
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
@@ -7590,6 +7591,11 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Triss Armor Retextured'
+          - '[Useless Patches Collection](https://www.nexusmods.com/skyrimspecialedition/mods/27667/)'
+        condition: 'active("TrissArmorRetextured.esp") and not active("Triss Armor Retextured SE - WACCF Patch.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
       - <<: *patch3rdPartyUVCPC
