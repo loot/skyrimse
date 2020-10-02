@@ -9384,6 +9384,17 @@ plugins:
       - <<: *wildEdits
         subs: [ 'Remove all NPC records except 0002BA8E MallusMaccius from TCBM.esp. Remove RiftenRatwayZone [ECZN:0009FBB9] in Cell 00016BCF from TCBM.esp.' ]
         condition: 'checksum("TCBM.esp", 590CFFA2) or checksum("TCBM.esp", BB5A8ADD) or checksum("TCBM.esp", 48A0029F)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x590CFFA2
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+        udr: 1
+      - <<: *quickClean
+        crc: 0xBB5A8ADD
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+        udr: 1
 
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
