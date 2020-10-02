@@ -9367,6 +9367,20 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10745/'
         name: 'Thieves Guild For Good Guys: Taking Care of Business Redux'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
+          - lang: de
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
+          - lang: ja
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
+        subs:
+          - 'QF_MS11_0001F7A3.pex'
+          - 'Thieves Guild For Good Guys'
+          - 'USSEP'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and file("scripts/QF_MS11_0001F7A3.pex") and checksum("scripts/QF_MS11_0001F7A3.pex", 22A14151)'
 
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
