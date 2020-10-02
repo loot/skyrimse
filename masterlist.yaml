@@ -9381,6 +9381,9 @@ plugins:
           - 'Thieves Guild For Good Guys'
           - 'USSEP'
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and file("scripts/QF_MS11_0001F7A3.pex") and checksum("scripts/QF_MS11_0001F7A3.pex", 22A14151)'
+      - <<: *wildEdits
+        subs: [ 'Remove all NPC records except 0002BA8E MallusMaccius from TCBM.esp. Remove RiftenRatwayZone [ECZN:0009FBB9] in Cell 00016BCF from TCBM.esp.' ]
+        condition: 'checksum("TCBM.esp", 590CFFA2) or checksum("TCBM.esp", BB5A8ADD) or checksum("TCBM.esp", 48A0029F)'
 
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
