@@ -9363,6 +9363,51 @@ plugins:
       - crc: 0x0E02D352
         util: 'SSEEdit v4.0.3'
 
+  - name: '(tcbm|TCBM)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9800/'
+        name: 'Thieves Guild Alternate Routes: Taking Care of Business Mod'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10745/'
+        name: 'Thieves Guild For Good Guys: Taking Care of Business Redux'
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'Point The Way.esp'
+    tag:
+      - Keywords
+      - Actors.AIPackages
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
+          - lang: de
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
+          - lang: ja
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
+        subs:
+          - 'QF_MS11_0001F7A3.pex'
+          - 'Thieves Guild For Good Guys'
+          - 'USSEP'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and file("scripts/QF_MS11_0001F7A3.pex") and checksum("scripts/QF_MS11_0001F7A3.pex", 22A14151)'
+      - <<: *wildEdits
+        subs: [ 'Remove all NPC records except 0002BA8E MallusMaccius from TCBM.esp. Remove RiftenRatwayZone [ECZN:0009FBB9] in Cell 00016BCF from TCBM.esp.' ]
+        condition: 'checksum("TCBM.esp", 590CFFA2) or checksum("TCBM.esp", BB5A8ADD) or checksum("TCBM.esp", 48A0029F)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x590CFFA2
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
+        udr: 1
+      - <<: *quickClean
+        crc: 0xBB5A8ADD
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+        udr: 1
+    clean:
+      - crc: 0x759E2463
+        util: 'SSEEdit v4.0.3'
+
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
     after:
