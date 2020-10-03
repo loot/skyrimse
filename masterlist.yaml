@@ -6200,8 +6200,10 @@ plugins:
   - name: 'Improved Traps.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17592/' ]
     tag:
-      - Graphics
-      - Stats
+      - name: SpellStats
+        condition: 'checksum("Improved Traps.esp", F718BAC1)'
+      - name: Stats
+        condition: 'checksum("Improved Traps.esp", F718BAC1)'
     clean:
       # version: 2.3 - Normal Edition
       - crc: 0xDAA5AC38
