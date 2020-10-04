@@ -1639,6 +1639,10 @@ plugins:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+      - <<: *useInstead
+        type: error
+        subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/) (see [this post](https://www.afkmods.com/index.php?/topic/4682-mods-made-obsolete-by-unofficial-skyrim-special-edition-patch/))' ]
+        condition: 'not active("Unofficial Skyrim Special Edition Patch.esp")'
 
   - name: 'BugfixCompilation.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33449/' ]
