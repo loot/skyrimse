@@ -17368,6 +17368,17 @@ plugins:
   - name: 'TGCoS [PATCH - KvHarborside].esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
     inc: [ 'Solitude Skyway SE.esp' ]
+  - name: 'TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Requires one of these plugins: %1%.'
+          - lang: de
+            text: 'Benötigt eins dieser Plugins: %1%.'
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp or TGCoS [PATCH - Solitude Skyway SE] (OCS).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'not active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") and not active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
 
   - name: 'TGCoS [PATCH - Open Cities Skyrim SE].esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
