@@ -4207,8 +4207,9 @@ plugins:
       - crc: 0xD0F78346
         util: 'SSEEdit v4.0.2f'
 
-  - name: 'KaliliesNPCs.esp'
+  - name: '(KaliliesNPCs|Kalilies NPCs)(?! WARP).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
+  - name: 'KaliliesNPCs.esp'
     msg:
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
@@ -4227,12 +4228,10 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0x062B1FEB
         util: 'SSEEdit v4.0.3'
+  - name: 'Kalilies.*(CRF|Cutting Room Floor).*\.esp'
+    req: [ 'Cutting Room Floor.esp' ]
   - name: 'Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
     after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
-    clean:
-      - crc: 0x29FFA6BD
-        util: 'SSEEdit v4.0.3'
 
   - name: 'Men of Winter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10902/' ]
