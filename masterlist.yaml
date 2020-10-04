@@ -12448,6 +12448,9 @@ plugins:
 
   - name: 'Solitude Skyway SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8250' ]
+    after:
+      - name: 'KvHarborside.esp'
+        condition: 'file("TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp")'
     inc:
       - <<: *LotD_v5
         condition: 'not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE [PATCH - LoTD] (OCS).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (OCS).esp")'
@@ -14859,6 +14862,9 @@ plugins:
 
   - name: 'The Great City of Solitude.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22243/' ]
+    after:
+      - name: 'KvHarborside.esp'
+        condition: 'file("TGCoS [PATCH - KvHarborside].esp") or file("TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp")'
     dirty:
       - <<: *quickClean
         crc: 0xBB0F093C
@@ -17364,6 +17370,27 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
         condition: 'active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+
+  - name: 'TGCoS [PATCH - KvHarborside].esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    inc: [ 'Solitude Skyway SE.esp' ]
+  - name: 'TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
+    after:
+      - 'TGCoS [PATCH - Solitude Skyway SE] (OCS).esp'
+      - 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp'
+      - 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp'
+      - 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Requires one of these plugins: %1%.'
+          - lang: de
+            text: 'Benötigt eins dieser Plugins: %1%.'
+        subs: [ 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp or TGCoS [PATCH - Solitude Skyway SE] (OCS).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
+        condition: 'not active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") and not active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
+
   - name: 'TGCoS [PATCH - Open Cities Skyrim SE].esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116' ]
     msg:
