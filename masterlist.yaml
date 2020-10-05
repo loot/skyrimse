@@ -4845,21 +4845,10 @@ plugins:
 
   - name: 'DwemerSpectresLegendary.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8016' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Enhanced Blood Textures'
-          - '[ Dwemer Spectres EBT No Bleeding and Other Fixes ](https://www.nexusmods.com/skyrimspecialedition/mods/26954)'
-        condition: '(active("dD - Enhanced Blood Main.esp") or active("dD - Enhanced Blood Main LITE.esp")) and not active("DwemerSpecterNoBlood.esp")'
-    dirty:
-      # version: 3.0
-      - <<: *quickClean
-        crc: 0x2AA82040
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+    after: [ 'Skyrim Immersive Creatures Special Edition.esp' ]
+    clean:
+      - crc: 0x626BA4C9
+        util: 'SSEEdit v4.0.3'
 
   - name: 'High Level Enemies( - Dawnguard| - Dragonborn)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3231/' ]
@@ -5036,6 +5025,11 @@ plugins:
       - Invent
       - Relev
     msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'When using DwemerSpectresLegendary.esp. Set Creature Toggles Dwemer Spectre to Disabled in MCM Settings.'
+        condition: 'active("DwemerSpectresLegendary.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
       - <<: *patchUpdateAvailable
