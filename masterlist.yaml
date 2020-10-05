@@ -5503,16 +5503,16 @@ plugins:
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
       - <<: *patchIncluded
         subs: [ 'ELFX - Exteriors' ]
-        condition: 'active("ELFX Exteriors.esp") and not checksum("meshes/architecture/solitude/solitudebasemarket.nif", DCA074DC)'
+        condition: 'active("ELFX - Exteriors.esp") and (checksum("meshes/architecture/solitude/solitudebasemarket.nif", A8A46533) or checksum("meshes/architecture/solitude/solitudebasemarket.nif", AA80BE6E))'
       - <<: *patchIncluded
         subs: [ 'Enhanced textures detail (UV-tweaks)' ]
-        condition: 'checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 2BC30A12)'
+        condition: 'checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 799B7B92) or checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", A84B73A9) or checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", A09782CB) or checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 2BC30A12)'
       - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
       - <<: *patchIncluded
         subs: [ 'Static Mesh Improvement Mod' ]
-        condition: 'active("SMIM.*\.esp") and (not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E114830E) and not checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 9016DCA9))'
+        condition: 'active("SMIM-SE.*\.esp") and (checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 03B8A5D4) or checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", E406653E) or checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 8C41B11C) or checksum("meshes/architecture/farmhouse/walkway/walkwaycwall01.nif", 4D9C2B42))'
     tag:
       - C.Climate
       - C.Light
@@ -5528,7 +5528,7 @@ plugins:
   - name: 'Skyrim Landscape and Water Fixes - Light Sources.esp'
     group: *fixesGroup
     inc:
-      - 'ELFX Exteriors.esp'
+      - 'ELFX - Exteriors.esp'
       - 'LoS II - Tamriel Master Lights.esp'
     clean:
       - crc: 0xCC137B4C
