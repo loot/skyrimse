@@ -8032,6 +8032,10 @@ plugins:
       - -Names
       - -Relev
       - -Stats
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Adamant: A Perk Overhaul' ]
+        condition: 'active("Adamant.esp") and not active("Triumvirate - Adamant Compatibility Patch.esp")'
     clean:
       - crc: 0x8949A9E7
         util: 'SSEEdit v4.0.3'
