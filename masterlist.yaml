@@ -7101,15 +7101,16 @@ plugins:
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *earlyLoadersGroup
+    tag:
+      - EffectStats
+      - Invent.Add
+      - Invent.Change
+      - -Invent.Remove
+      - Keywords
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim DLC Integration' ]
         condition: 'active("BS_DLC_patch.esp") and not active("DLCIntegration Beyond Skyrim Compatibility Patch.esp")'
-    tag:
-      - Delev
-      - Invent
-      - Names
-      - Relev
     clean:
       # version: 1.1
       - crc: 0xA3FB0FAD
