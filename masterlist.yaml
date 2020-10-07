@@ -7490,8 +7490,10 @@ plugins:
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
     inc:
-      - 'Scarcity SE - Less Loot Mod.esp'
-      - 'WACCF_BashedPatchLvlListFix.esp'
+      - name: 'Scarcity SE - Less Loot Mod.esp'
+        condition: 'checksum("Poverty.esp", BD49570C)'
+      - name: 'WACCF_BashedPatchLvlListFix.esp'
+        condition: 'checksum("Poverty.esp", BD49570C)'
     msg: [ *requiresMCM ]
     tag:
       - Delev
