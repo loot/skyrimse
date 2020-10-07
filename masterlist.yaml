@@ -11469,8 +11469,10 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Clockwork_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     after:
-      - 'Bring Out Your Dead.esp'
-      - 'JKs Skyrim.esp'
+      - name: 'Bring Out Your Dead.esp'
+        condition: '(is_master("Bring Out Your Dead.esp") and is_master("Clockwork.esp")) or (not is_master("Bring Out Your Dead.esp") and not is_master("Clockwork.esp"))'
+      - name: 'JKs Skyrim.esp'
+        condition: '(is_master("JKs Skyrim.esp") and is_master("Clockwork.esp")) or (not is_master("JKs Skyrim.esp") and not is_master("Clockwork.esp"))'
     dirty:
       # version: 1.0
       - <<: *quickClean
