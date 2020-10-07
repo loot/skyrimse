@@ -10236,6 +10236,9 @@ plugins:
   - name: 'Cloaks( - Dawnguard| - USSEP Patch)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6369/' ]
   - name: 'Cloaks.esp'
+    tag:
+      - Invent.Add
+      - Outfits.Add
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CloaksofSkyrim_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -10248,6 +10251,7 @@ plugins:
       - crc: 0x7A522F11
         util: 'SSEEdit v4.0.2f'
   - name: 'Cloaks - Dawnguard.esp'
+    tag: [ Outfits.Add ]
     clean:
       # version: 1.2.1
       - crc: 0x60DE7658
