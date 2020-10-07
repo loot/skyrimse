@@ -4459,6 +4459,19 @@ plugins:
     url:
       - 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
+    tag:
+      - -C.Acoustic
+      - -C.Climate
+      - -C.Encounter
+      - -C.Location
+      - -C.Music
+      - -C.Name
+      - -C.RecordFlags
+      - -C.Regions
+      - -C.Water
+      - Keywords
+      - Invent.Add
+      - -Invent.Remove
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
@@ -4489,7 +4502,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Unplayable Faction Armors SSE' ]
         condition: 'active("DIS_Armor_Fractions.esp") and not active("DIS_Armor_Fractions_3DNPC.esp")'
-    tag: [ Invent ]
     clean:
       - crc: 0xC60DC7D3
         util: 'SSEEdit v4.0.3'
