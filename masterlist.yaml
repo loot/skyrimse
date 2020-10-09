@@ -11265,6 +11265,10 @@ plugins:
   - name: 'CoinPurseIncrease.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6508/' ]
     group: *lvlListsGroup
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V1' ]
+        condition: 'active("Coins of Tamriel SSE Edition.esp") and not active("CoT_CPO_Patch.esp")'
 
   - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
