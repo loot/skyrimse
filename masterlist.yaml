@@ -1571,7 +1571,9 @@ plugins:
         condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.7", >=)'
     tag:
       - C.Regions
+      - Invent.Add
       - Invent.Change
+      - Invent.Remove
     clean:
       - crc: 0xCC95AE25
         util: 'SSEEdit v4.0.3'
@@ -6918,7 +6920,13 @@ plugins:
         condition: 'checksum("Hunterborn.esp", 7117CBA9)'
       - name: -Delev
         condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: Invent.Add
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: Invent.Remove
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
       - name: -ObjectBounds
+        condition: 'checksum("Hunterborn.esp", 7117CBA9)'
+      - name: Relev
         condition: 'checksum("Hunterborn.esp", 7117CBA9)'
     dirty:
       - <<: *quickClean
@@ -7599,7 +7607,10 @@ plugins:
       - *requiresMCM
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
-    tag: [ Text ]
+    tag:
+      - Invent.Add
+      - Invent.Remove
+      - Text
     clean:
       - crc: 0x09A56806
         util: 'SSEEdit v4.0.3'
@@ -7634,8 +7645,15 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'unofficial skyrim survival patch.esp'
     tag:
+      - Actors.ACBS
+      - EnchantmentStats
+      - Invent.Add
       - Invent.Change
+      - Invent.Remove
+      - Outfits.Add
+      - Outfits.Remove
       - Sound
+      - SpellStats
       - Text
     msg:
       - <<: *compatNotes
@@ -10064,6 +10082,16 @@ plugins:
           - 'Remodeled Armor'
           - '[ Armor and Clothing Extension - Remodeled Armor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/30220)'
         condition: 'active("Remodeled Armor - Vanilla Replacer.esp") and not active("ACE_Remodeled_Armor_Patch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.Stats
+      - Factions
+      - Invent.Add
+      - -Invent.Remove
+      - -Names
+      - Outfits.Add
+      - Outfits.Remove
+      - -Stats
     clean:
       - crc: 0x832B2C99
         util: 'SSEEdit v4.0.3'
@@ -11268,6 +11296,21 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
 
 ###### Leveled List Modifiers ######
+  - name: 'CoinPurseIncrease.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6508/' ]
+    group: *lvlListsGroup
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V1' ]
+        condition: 'active("Coins of Tamriel SSE Edition.esp") and not active("CoT_CPO_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V2' ]
+        condition: 'active("Coins of Tamriel V2 SSE Edition.esp") and not active("CoTV2SSEE_CPAOFS_Patch.esp")'
+    tag: [ Relev ]
+    clean:
+      - crc: 0xD68FE3A1
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
     msg:
@@ -13220,7 +13263,6 @@ plugins:
     after:
       - 'HoldBorderBanners.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
-    tag: [ Keywords ]
     clean:
       - crc: 0x6A949897
         util: 'SSEEdit v4.0.3'
@@ -13337,7 +13379,6 @@ plugins:
     after:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-    tag: [ C.Location ]
     clean:
       - crc: 0x20589DD2
         util: 'SSEEdit v4.0.3'
@@ -14833,6 +14874,10 @@ plugins:
       - 'SoundsofSkyrimComplete.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Name
     clean:
       - crc: 0x7D9DCEA6
         util: 'SSEEdit v4.0.3'
@@ -14869,7 +14914,6 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/17423'
       - 'https://www.afkmods.com/index.php?/files/file/2107-telengard/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4066247'
-    tag: [ C.Location ]
     clean:
       - crc: 0x028D4C07
         util: 'SSEEdit v4.0.3'
