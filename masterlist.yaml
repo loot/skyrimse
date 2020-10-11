@@ -9752,6 +9752,8 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
     group: *perksGroup
     after:
+      - name: 'PathOfSorcery.esp'
+        condition: 'file("Path to Ordinance.esp") or file("Vokriinator.esp") or file("Vokriinator Black.esp")'
       - 'Phenderix Magic Evolved.esp'
       - 'Phenderix Magic World.esp'
       - 'SAFO.esp'
@@ -9808,7 +9810,7 @@ plugins:
       - name: 'Adamant.esp'
         condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
       - name: 'Ordinator - Perks of Skyrim.esp'
-        condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
+        condition: 'not file("Path to Ordinance.esp") and not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
       - name: 'SPERG-SSE.esp'
         condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
     dirty:
