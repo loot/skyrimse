@@ -9752,6 +9752,8 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036'
     group: *perksGroup
     after:
+      - name: 'PathOfSorcery.esp'
+        condition: 'file("Path to Ordinance.esp") or file("Vokriinator.esp") or file("Vokriinator Black.esp")'
       - 'Phenderix Magic Evolved.esp'
       - 'Phenderix Magic World.esp'
       - 'SAFO.esp'
@@ -9808,7 +9810,7 @@ plugins:
       - name: 'Adamant.esp'
         condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
       - name: 'Ordinator - Perks of Skyrim.esp'
-        condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
+        condition: 'not file("Path to Ordinance.esp") and not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
       - name: 'SPERG-SSE.esp'
         condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
     dirty:
@@ -9816,6 +9818,19 @@ plugins:
         crc: 0x498BF207
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
+
+  - name: 'Path to Ordinance.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37296/' ]
+    inc:
+      - 'Vokriinator.esp'
+      - 'Vokriinator Black.esp'
+    tag:
+      - Names
+      - Text
+    msg:
+      - <<: *includesX
+        subs: [ '[Path of Sorcery Synergy Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41142/)' ]
+        condition: 'active("PoSUnofficialFix.esp")'
 
   - name: 'Piercing Shot Perk - Bullseye perk replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2698/' ]
