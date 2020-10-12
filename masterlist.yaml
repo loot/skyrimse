@@ -4004,14 +4004,6 @@ plugins:
       - name: 'Unofficial Skyrim Special Edition Patch.esp'
         display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
         condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("TKChildren.esp", 8B45CAFD)'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **TKChildren.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-tk-children-)'
-          - lang: de
-            text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **TKChildren.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-tk-children-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("TKChildren.esp", 8B45CAFD)'
 
 ###### Character Appearance - NPCs ######
   - name: 'AelaStandalone.esp'
