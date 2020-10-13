@@ -3925,18 +3925,25 @@ plugins:
 
   - name: 'Killable Children.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1108' ]
-    inc:
-      - name: 'Unofficial Skyrim Special Edition Patch.esp'
-        display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
-        condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("Killable Children.esp", C38F2891)'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **Killable Children.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-killable-children-)'
-          - lang: de
-            text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **Killable Children.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-killable-children-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("Killable Children.esp", C38F2891)'
+      - <<: *includesX
+        subs: [ '[Universal Race Scale Remover](https://www.nexusmods.com/skyrimspecialedition/mods/4259/)' ]
+        condition: 'active("Race Scale Remover.esp")'
+    clean:
+      - crc: 0x0E290E34
+        util: 'SSEEdit v4.0.3'
+  - name: 'KC - USLEEP Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'KC RS Usleep Patch.esp' ]
+        condition: 'active("KC RS Usleep Patch.esp")'
+      - <<: *alreadyInX
+        subs: [ 'KC TK Usleep Patch.esp' ]
+        condition: 'active("KC TK Usleep Patch.esp")'
+  - name: 'Killable Children - RS.esp'
+    after: [ 'RSChildren.esp' ]
+  - name: 'Killable Children - TK.esp'
+    after: [ 'TKChildren.esp' ]
 
   - name: 'RSkyrimChildren.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2650' ]
