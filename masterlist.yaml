@@ -1556,9 +1556,6 @@ plugins:
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not checksum("meshes/uskp/armor/circlets/FemElfCirclets/circletf1.nif", BC2EE889)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - <<: *patch3rdParty_RSCPC
-        type: warn
-        condition: 'active("RSChildren.esp") and not active("RSC_USSEP_AventusFix.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2))'
       - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
@@ -3955,23 +3952,18 @@ plugins:
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("RSChildren Patch - BS Bruma.esp")'
     clean:
-      # version: 1.1.2
-      - crc: 0xE8137869
-        util: 'SSEEdit v4.0.2'
+      - crc: 0xBDFAB2FA
+        util: 'SSEEdit v4.0.3'
   - name: 'RSChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2650' ]
-    inc:
-      - name: 'Unofficial Skyrim Special Edition Patch.esp'
-        display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
-        condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2)) and not active("RSC_USSEP_AventusFix.esp")'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **RSChildren.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-rs-children-overhaul-)'
-          - lang: de
-            text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **RSChildren.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-rs-children-overhaul-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2)) and not active("RSC_USSEP_AventusFix.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x49DC2B49
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x807242D1
+        util: 'SSEEdit v4.0.3'
 
   - name: 'SimpleChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789' ]
@@ -12106,11 +12098,6 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC CRF Patch.esp") and not file("CRF_RSChildrenPatch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'RS Children Overhaul'
-          - '[ RS Children Overhaul Cutting Room Floor Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/8753)'
-        condition: 'active("RSkyrimChildren.esm") and not active("CRF_RSChildrenPatch.esp") and not file("RSC CRF Patch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
       - *patch3rdPartySRPC
