@@ -6866,13 +6866,13 @@ plugins:
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - HOR Plants Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
-      - Invent
+      - Delev
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
       - Names
-      # Remove tags for Plants only version.
-      - name: Delev
-        condition: 'not checksum("HarvestOverhaul_Redone.esp", D9E45263) and not checksum("HarvestOverhaul_Redone.esp", 971A2167)'
-      - name: Relev
-        condition: 'not checksum("HarvestOverhaul_Redone.esp", D9E45263) and not checksum("HarvestOverhaul_Redone.esp", 971A2167)'
+      - Relev
+      - Text
     clean:
       # version: 1.0 Plants Only
       - crc: 0xD9E45263
@@ -6892,23 +6892,6 @@ plugins:
       # version: 1.0 Plants & Creatures with no treasure for Flora Respawn Fix
       - crc: 0x336125AE
         util: 'SSEEdit v4.0.2f'
-  - name: 'HarvestOverhaul_Redone_Creatures.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
-    after:
-      - 'Ars Metallica.esp'
-      - 'skyBirds_SSE.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Flora Respawn Fix'
-          - '[Harvest Overhaul Redone - Flora Respawn Fix Patch](https://www.nexusmods.com/skyrimspecialedition/mods/14125/)'
-        condition: 'active("FloraRespawnFix.esp") and not active("HOR Creatures-Flora Respawn Fix Patch.esp")'
-      - <<: *patch3rdPartyUVCPC
-        condition: 'not active("Vokrii - HOR Creatures Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
-    tag:
-      - Delev
-      - Invent
-      - Relev
 
   - name: 'Hunterborn.esp'
     url:
