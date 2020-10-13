@@ -3881,19 +3881,13 @@ plugins:
 
 ###### Character Appearance - Children ######
   - name: 'aAxeRSCtweaks.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16044' ]
-    inc:
-      - name: 'Unofficial Skyrim Special Edition Patch.esp'
-        display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
-        condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("aAxeRSCtweaks.esp", 26F29854)'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **aAxeRSCtweaks.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-axes-rs-children-)'
-          - lang: de
-            text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **aAxeRSCtweaks.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-axes-rs-children-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("aAxeRSCtweaks.esp", 26F29854)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16044/'
+        name: 'Axe''s RS Children Tweaks'
+    after: [ 'RSChildren.esp' ]
+    clean:
+      - crc: 0x21D67EF0
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Children.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2822' ]
@@ -8335,7 +8329,7 @@ plugins:
           - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194)'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
       - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
+        condition: 'active("RSChildren.esp") and not active("aAxeRSCtweaks.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Open Cities Skyrim'
