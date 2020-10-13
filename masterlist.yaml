@@ -3945,6 +3945,10 @@ plugins:
   - name: 'RealisticRSChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39359/' ]
     after: [ 'RSChildren.esp' ]
+    msg:
+      - <<: *requiresX
+        subs: [ 'Optional file [KS Hairdo''s - hair and textures](https://www.nexusmods.com/skyrimspecialedition/mods/39359/) or [KS Hairdos SSE](https://www.nexusmods.com/skyrimspecialedition/mods/6817/) 1.7' ]
+        condition: 'not file("textures/KS Hairdo''s/hairline/Scalp.dds")'
     clean:
       - crc: 0x82D0D25F
         util: 'SSEEdit v4.0.3'
