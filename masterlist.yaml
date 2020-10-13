@@ -1556,9 +1556,6 @@ plugins:
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not checksum("meshes/uskp/armor/circlets/FemElfCirclets/circletf1.nif", BC2EE889)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - <<: *patch3rdParty_RSCPC
-        type: warn
-        condition: 'active("RSChildren.esp") and not active("RSC_USSEP_AventusFix.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2))'
       - <<: *versionXIncY
         subs:
           - '**Unofficial Skyrim Special Edition Patch**'
