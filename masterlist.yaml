@@ -3954,7 +3954,7 @@ plugins:
     group: *fixesGroup
     msg:
       - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RSChildren_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("RealisticRSChildren.esp") and not active("DBM_RSChildren_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("RSChildren Patch - BS Bruma.esp")'
@@ -8335,7 +8335,7 @@ plugins:
           - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194)'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
       - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSChildren.esp") and not active("aAxeRSCtweaks.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
+        condition: 'active("RSChildren.esp") and not active("aAxeRSCtweaks.esp") and not active("RealisticRSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Open Cities Skyrim'
@@ -12104,7 +12104,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RSC CRF Patch.esp") and not file("CRF_RSChildrenPatch.esp")'
+        condition: 'active("RSkyrimChildren.esm") and not active("RealisticRSChildren.esp") and not active("RSC CRF Patch.esp") and not active("CRF_RSChildrenPatch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
       - *patch3rdPartySRPC
