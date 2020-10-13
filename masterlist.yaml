@@ -3964,14 +3964,6 @@ plugins:
       - name: 'Unofficial Skyrim Special Edition Patch.esp'
         display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
         condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2)) and not active("RSC_USSEP_AventusFix.esp")'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **RSChildren.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-rs-children-overhaul-)'
-          - lang: de
-            text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **RSChildren.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-rs-children-overhaul-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and (checksum("RSChildren.esp", 6407E29C) or checksum("RSChildren.esp", 693C3418) or checksum("RSChildren.esp", 2CC8F8D2)) and not active("RSC_USSEP_AventusFix.esp")'
 
   - name: 'SimpleChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789' ]
