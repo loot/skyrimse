@@ -11798,12 +11798,10 @@ plugins:
       - 'MoonAndStar_MAS.esp'
     inc: [ 'AuroraVillage.esp' ]
     msg:
-      # CRC after QAC. (0x482BBCA6)
       - <<: *sortMasters
-        condition: 'checksum("Undeath.esp", 482BBCA6)'
-      # CRC after QAC & Sort Masters. (0x8D7A8440)
+        condition: 'checksum("Undeath.esp", FDADED23)'
       - <<: *wildEdits
-        subs: [ '[Undeath Wild Edits Cleaning Guide](https://linnsmusings.wordpress.com/2017/08/27/undeathcleaningguideforle/)' ]
+        subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
         condition: 'checksum("Undeath.esp", 8D7A8440)'
       - <<: *patch3rdParty
         subs:
@@ -11814,9 +11812,9 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Undeath_Patch.esp")'
     tag:
       - Graphics
+      - Relations.Add
       - Sound
     dirty:
-      # version: 1.7
       - <<: *quickClean
         crc: 0xEB75A960
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
