@@ -10694,8 +10694,13 @@ plugins:
         name: 'Legendary Armors - DeserterX Collection SSE'
     tag:
       - Delev
-      - Invent
-      - Relev
+      - Invent.Add
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("LADX_SSE.esp", 04B416E8)'
+    clean:
+      - crc: 0xACA8F513
+        util: 'SSEEdit v4.0.3'
 
   - name: 'LC_FieldGuardArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25481' ]
