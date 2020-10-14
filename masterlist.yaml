@@ -10513,7 +10513,9 @@ plugins:
 
   - name: 'Immersive Jewelry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5336/' ]
-    after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+    after:
+      - name: 'Complete Crafting Overhaul_Remastered.esp'
+        condition: 'file("Immersive Jewelry_CCOR_Patch.esp")'
     inc: [ 'Lootification.esm' ]
     msg:
       - <<: *patch3rdParty_LotD
