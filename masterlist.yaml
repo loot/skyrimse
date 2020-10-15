@@ -15125,22 +15125,70 @@ plugins:
   - name: 'WhiterunValley2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11917/' ]
     inc:
-      - name: 'Holds.esp'
-        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
-      - 'Chapels Of Skyrim.esp'
-      - 'CowHerdsOfSkyrim.esp'
-      - 'simpleCarriageExpansion.esp'
-      - 'The Ruins.esp'
+      - 'Holds.esp'
+      - 'JKs Whiterun exterior.esp'
+      - 'T''Skyrim - True Skyrim.esp'
+      - 'Whiterun Gate Restoration.esp'
+      - 'Willybach''sWhiterun.esp'
+      - 'Z''Whiterun.esp'
     tag:
-      - Graphics
-      - Invent
-    clean:
-      # MARKET LOCATION A
-      - crc: 0xEFC3EA57
-        util: 'SSEEdit v4.0.3'
-      # MARKET LOCATION B
-      - crc: 0xB9F50AB6
-        util: 'SSEEdit v4.0.3'
+      - Actors.ACBS
+      - Actors.AIPackages
+      - Factions
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'Civil War Checkpoints' ]
+        condition: 'active("CivilWarCheckpointsV2 .esp") or active("Checkpoints of Skyrim.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'Gallows of Skyrim' ]
+        condition: 'active("GallowsOfSkyrim.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'Halla: A Whiterun Player Home' ]
+        condition: 'active("Eli_Halla.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'Immersive Citizens: AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'The Great Cities: Minor Cities and Towns' ]
+        condition: 'active("The Great Cities - Minor Cities and Towns.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'The People Of Skyrim Complete' ]
+        condition: 'active("tpos_ultimate_esm.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        subs: [ 'Whiterun Forest Borealis' ]
+        condition: 'active("Whiterun Forest Borealis Lightweight.esp") or active("Whiterun Forest Borealis.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x21A3B69D
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
   - name: 'Windhelm Bridge Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4246' ]
