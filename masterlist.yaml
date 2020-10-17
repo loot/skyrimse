@@ -7029,21 +7029,24 @@ plugins:
         name: 'Skyrim Alchemy and Food Overhaul'
     after: [ 'Betterfoodeffects.esp' ]
     inc:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'Cooking_In_Skyrim.esp'
       - 'Cooking_In_Skyrim_v_2_0.esp'
       - 'Cooking_In_Skyrim_v_2_0_Salty_Edition.esp'
     tag:
       - Delev
-      - Invent
+      - EffectStats
+      - Graphics
+      - Invent.Add
+      - Keywords
       - Names
       - Relev
+      - SpellStats
       - Stats
+      - Text
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SAFO_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Another Sorting Mod' ]
-        condition: 'active("AnotherSortingMod_2017-SSE.esp") and not active("SAFO - Another Sorting Mod.esp")'
       - <<: *patchIncluded
         subs: [ 'AWESOME POTIONS' ]
         condition: 'active("Potions.esp") and not file("SAFO - Awesome Potions.esp")'
@@ -7065,19 +7068,76 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Creation Club Survival Mode' ]
         condition: 'active("ccqdrsse001-survivalmode.esp") and not active("SAFO - Survival Overhaul.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Valdacil''s Item Sorting' ]
-        condition: 'active("ValdacilsItemSorting.esp") and not file("SAFO - Valdacil.esp")'
     dirty:
-      # With Health Regen
       - <<: *quickClean
-        crc: 0x563CDE64
+        crc: 0x8BA8A5DF
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
     clean:
-      # No Health Regen
-      - crc: 0x9BDCF9B2
+      - crc: 0x46488209
         util: 'SSEEdit v4.0.3'
+  - name: 'SAFO - Adamant.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Adamant.esp", 50A1C57E)'
+    tag: [ Text ]
+  - name: 'SAFO - Aetherius.esp'
+    tag: [ Text ]
+  - name: 'SAFO - Another Sorting Mod.esp'
+    msg:
+      - <<: *corrupt
+        condition: 'checksum("SAFO - Another Sorting Mod.esp", EB023317)'
+  - name: 'SAFO - Awesome Potions.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Awesome Potions.esp", 9A784820)'
+  - name: 'SAFO - Flora Respawn Fix.esp'
+    req: [ 'FloraRespawnFix.esp' ]
+  - name: 'SAFO - Frostfall.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Frostfall.esp", 001B87AB)'
+  - name: 'SAFO - Imperious.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Imperious.esp", D55BB733)'
+  - name: 'SAFO - iNeed.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - iNeed.esp", 6AECAE92)'
+  - name: 'SAFO - Ordinator.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Ordinator.esp", DC2A6715)'
+  - name: 'SAFO - RND.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - RND.esp", F6CE8560)'
+    tag:
+      - Delev
+      - Relev
+      - Stats
+      - Keywords
+      - Graphics
+  - name: 'SAFO - SkyTEST RAP.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - SkyTEST RAP.esp", 7FB6D019)'
+  - name: 'SAFO - Valdacil.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin seems to be outdated and may not be compatible with the latest version of its master files.'
+        condition: 'checksum("SAFO - Valdacil.esp", DE73CDD3)'
+  - name: 'SAFO - Vokrii.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Vokrii.esp", B65E79A7)'
+  - name: 'SAFO - Wounds.esp'
+    req: [ 'SAFO.esp' ]
+  - name: 'SAFO Leveled Items Fix.esp'
+    req: [ 'Bashed Patch, 0.esp' ]
 
   - name: 'Skyrim Alchemy Fixed.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
