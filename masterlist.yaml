@@ -7582,10 +7582,16 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Lore Weapon Expansion' ]
         condition: 'active("Lore Weapon Expansion.esp") and not active("SR - Lore Weapon Expansion Patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA2D9E76A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
     clean:
-      # version: 2.0
       - crc: 0xD3688B7B
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x78B11FA1
+        util: 'SSEEdit v4.0.3'
   - name: '(Skyrim Revamped|SR) - (InsanitySorrow Weapon''s Pack|Lore Weapon Expansion Patch|Skyrim Expanded Weaponry NPC Patch|Summermyst Patch)\.esp'
     req: [ 'Skyrim Revamped.esp' ]
     tag:
