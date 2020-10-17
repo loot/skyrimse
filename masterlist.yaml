@@ -7061,6 +7061,9 @@ plugins:
       - crc: 0x46488209
         util: 'SSEEdit v4.0.3'
   - name: 'SAFO - Adamant.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Adamant.esp", 50A1C57E)'
     tag: [ Text ]
   - name: 'SAFO - Aetherius.esp'
     tag: [ Text ]
@@ -7068,15 +7071,42 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("SAFO - Another Sorting Mod.esp", EB023317)'
+  - name: 'SAFO - Awesome Potions.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Awesome Potions.esp", 9A784820)'
   - name: 'SAFO - Flora Respawn Fix.esp'
     req: [ 'FloraRespawnFix.esp' ]
+  - name: 'SAFO - Frostfall.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Frostfall.esp", 001B87AB)'
+  - name: 'SAFO - Imperious.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Imperious.esp", D55BB733)'
+  - name: 'SAFO - iNeed.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - iNeed.esp", 6AECAE92)'
+  - name: 'SAFO - Ordinator.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Ordinator.esp", DC2A6715)'
   - name: 'SAFO - RND.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - RND.esp", F6CE8560)'
     tag:
       - Delev
       - Relev
       - Stats
       - Keywords
       - Graphics
+  - name: 'SAFO - SkyTEST RAP.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - SkyTEST RAP.esp", 7FB6D019)'
   - name: 'SAFO - Valdacil.esp'
     msg:
       - type: warn
@@ -7084,6 +7114,10 @@ plugins:
           - lang: en
             text: 'This plugin seems to be outdated and may not be compatible with the latest version of its master files.'
         condition: 'checksum("SAFO - Valdacil.esp", DE73CDD3)'
+  - name: 'SAFO - Vokrii.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("SAFO - Vokrii.esp", B65E79A7)'
   - name: 'SAFO - Wounds.esp'
     req: [ 'SAFO.esp' ]
   - name: 'SAFO Leveled Items Fix.esp'
