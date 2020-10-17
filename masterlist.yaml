@@ -3883,6 +3883,11 @@ plugins:
       - name: 'SKSE/Plugins/hdtSMP64.dll'
         display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
     msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Requires a compatible base body.'
+        condition: 'not active("CBBE.esp") and not active("TouchedbyDibella.esp") and not active("BHUNP3BBB.esp")'
       - <<: *requiresX
         subs: [ '[Caliente''s Beautiful Bodies Enhancer (CBBE)](https://www.nexusmods.com/skyrimspecialedition/mods/198/) **OR** [Touched by Dibella (TBD)](https://www.nexusmods.com/skyrimspecialedition/mods/20024/) **OR** [BHUNP (UUNP Next Generation) SSE](https://www.nexusmods.com/skyrimspecialedition/mods/31126/)' ]
         condition: 'not active("CBBE.esp") and not active("TouchedbyDibella.esp") and not active("BHUNP3BBB.esp")'
