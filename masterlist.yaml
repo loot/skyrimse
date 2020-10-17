@@ -5032,28 +5032,50 @@ plugins:
 
   - name: 'Skyrim Immersive Creatures Special Edition.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/18639/'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
+        name: 'Skyrim Immersive Creatures Special Edition'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18639/'
+        name: 'Skyrim Immersive Creatures - Official Patch and Patch Central'
     tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Stats
       - -C.Location
-      - Delev
-      - Invent
-      - Relev
+      - Factions
+      - Graphics
+      - Invent.Add
+      - Invent.Remove
+      - NPC.Class
+      - NPC.Race
     msg:
+      - *requiresMCM
       - type: say
         content:
           - lang: en
             text: 'When using DwemerSpectresLegendary.esp. Set Creature Toggles Dwemer Spectre to Disabled in MCM Settings.'
         condition: 'active("DwemerSpectresLegendary.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Better Spell Learning'
+          - '[Better Spell Learning - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
+        condition: 'active("Better Spell Learning.esp") and not active("Better Spell Learning - SIC SE Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Wintersun - Faiths of Skyrim'
+          - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp") and not active("Wintersun_GBRS_SIC_ZIA_Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
       - <<: *patchUpdateAvailable
-        subs: [ '[Skyrim Immersive Creatures - Official Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
+        subs: [ '[Skyrim Immersive Creatures - Official Patch and Patch Central](https://www.nexusmods.com/skyrimspecialedition/mods/18639)' ]
         condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
     clean:
-      # version: 0.27 Official patch
+      - crc: 0x7CD2929B
+        util: 'SSEEdit v4.0.3'
       - crc: 0x01764C6F
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Skyrim Revamped - Complete Enemy Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14598/' ]
