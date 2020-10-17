@@ -2347,6 +2347,11 @@ plugins:
 
   - name: 'TESL-LS-.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40919/' ]
+  - name: 'TESL-LS-AddonMain.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Aetherius' ]
+        condition: 'active("Aetherius.esp") and not active("TESL-LS-AddonAetherius.esp")'
 
   - name: 'ValdacilsItemSorting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5224/' ]
