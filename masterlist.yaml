@@ -3882,9 +3882,10 @@ plugins:
       - *SKSE
       - name: 'SKSE/Plugins/hdtSMP64.dll'
         display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
-      - name: 'CBBE.esp'
-        display: '[Caliente''s Beautiful Bodies Enhancer (CBBE)](https://www.nexusmods.com/skyrimspecialedition/mods/198/) **OR** [Touched by Dibella (TBD)](https://www.nexusmods.com/skyrimspecialedition/mods/20024/) **OR** [BHUNP (UUNP Next Generation) SSE](https://www.nexusmods.com/skyrimspecialedition/mods/31126/)'
-        condition: 'not file("TouchedbyDibella.esp") and not file("BHUNP3BBB.esp")'
+    msg:
+      - <<: *requiresX
+        subs: [ '[Caliente''s Beautiful Bodies Enhancer (CBBE)](https://www.nexusmods.com/skyrimspecialedition/mods/198/) **OR** [Touched by Dibella (TBD)](https://www.nexusmods.com/skyrimspecialedition/mods/20024/) **OR** [BHUNP (UUNP Next Generation) SSE](https://www.nexusmods.com/skyrimspecialedition/mods/31126/)' ]
+        condition: 'not active("CBBE.esp") and not active("TouchedbyDibella.esp") and not active("BHUNP3BBB.esp")'
 
   - name: 'Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20684' ]
