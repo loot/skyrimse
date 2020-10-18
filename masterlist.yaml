@@ -3876,6 +3876,20 @@ plugins:
   - name: 'Hair Replacer Assets.esp'
     after: [ 'Hair Replacer.esp' ]
 
+  - name: 'KSHairdosSMP.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31300/' ]
+    req:
+      - *SKSE
+      - name: 'SKSE/Plugins/hdtSMP64.dll'
+        display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
+    msg:
+      - <<: *requiresX
+        subs: [ '[Caliente''s Beautiful Bodies Enhancer (CBBE)](https://www.nexusmods.com/skyrimspecialedition/mods/198/) **OR** [Touched by Dibella (TBD)](https://www.nexusmods.com/skyrimspecialedition/mods/20024/) **OR** [BHUNP (UUNP Next Generation) SSE](https://www.nexusmods.com/skyrimspecialedition/mods/31126/)' ]
+        condition: 'not active("CBBE.esp") and not active("TouchedbyDibella.esp") and not active("BHUNP3BBB.esp")'
+    clean:
+      - crc: 0x9DE3D3D1
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20684' ]
     msg:
