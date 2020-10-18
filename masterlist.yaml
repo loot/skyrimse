@@ -17402,6 +17402,10 @@ plugins:
     after: [ 'imp_helm_USSEP.esp' ]
   - name: 'imp_helm_USSEP.esp'
     req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'imp_helm_legend_WACCF_Patch.esp' ]
+        condition: 'active("imp_helm_legend_WACCF_Patch.esp")'
 
   - name: 'maplightfix.esp'
     url:
