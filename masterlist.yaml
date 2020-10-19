@@ -2067,11 +2067,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10808/'
         name: 'Water''s Edge Fix'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Wet and Cold'
-          - '[True Storms - Wet and Cold Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15632/)'
-        condition: 'active("WetandCold.esp") and not active("Wet&Cold - WaterFix - Addon.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Wet and Cold' ]
+        condition: 'active("WetandCold.esp") and not active("TrueStormsSE.esp") and not active("Wet&Cold - WaterFix - Addon.esp")'
       - <<: *useOnlyOneX
         subs: [ 'Water''s Edge Fix' ]
         condition: 'many("(Vanilla|Aequinoctium|Dolomite|Mythical|NAT|Obsidian|Rustic|Surreal|TrueStorms|Vivid)WaterFix.esp")'
