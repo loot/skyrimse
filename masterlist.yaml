@@ -1071,8 +1071,11 @@ groups:
   - name: &lateLoadersGroup Late Loaders
     after: [ *lightingEnhancerGroup ]
 
-  - name: &lvlListsGroup Leveled List Modifiers
+  - name: &kSpeakGroup Khajiit Speak
     after: [ *lateLoadersGroup ]
+
+  - name: &lvlListsGroup Leveled List Modifiers
+    after: [ *kSpeakGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after:
@@ -17849,3 +17852,42 @@ plugins:
     clean:
       - crc: 0xE26D04C8
         util: 'SSEEdit v4.0.3'
+
+  ### Khajiit Speak mods and patches ###
+  - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
+    group: *kSpeakGroup
+  - name: 'mjhKhajiitSpeak.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
+    group: *kSpeakGroup
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+  - name: 'BA_KSR_.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+  - name: 'mjhKhajiitSpeakMod.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+  - name: 'Khajiit Speak \+.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/' ]
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+  - name: 'Khajiit Speak Extended SSE.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18441/' ]
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+  - name: 'Chr_KhajiitSpeak.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/' ]
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+  - name: 'Khajiit Speak - .*\.esp'
+    after: 
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
