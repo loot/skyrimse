@@ -3497,13 +3497,7 @@ plugins:
   - name:  'StormLightning.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
     inc: [ 'mintylightningmod.esp' ]
-    msg:
-      - *requiresMCM
-      - <<: *semiCompatible
-        subs:
-          - 'Cathedral Weathers'
-          - 'Install [Improved Rain and Fog for Cathedral Weathers](https://www.nexusmods.com/skyrimspecialedition/mods/27831) or change Storm Lightning MCM Settings: Enable Compatibility Mode on the Advanced page. Then Disable Cloudy and Snowy Sheet and Fork lightning from the General page.'
-        condition: 'active("Cathedral Weathers.esp") and not active("Obsidian In Cathedral.esp")'
+    msg: [ *requiresMCM ]
     req: [ *SKSE ]
     clean:
       - crc: 0xB1AD6870
