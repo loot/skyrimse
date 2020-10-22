@@ -1098,6 +1098,7 @@ plugins:
       - Delev
       - Invent.Add
       - Invent.Change
+      - Keywords
     dirty:
       - <<: *quickClean
         crc: 0x17AB5E20
@@ -1147,6 +1148,7 @@ plugins:
       - C.Location
       - Invent.Add
       - Invent.Remove
+      - Text
     dirty:
       - <<: *quickClean
         crc: 0x0EB10E82
@@ -2653,6 +2655,7 @@ plugins:
             text: 'Benötigt Ressourcen (Models, Texturen usw. Plugins werden nicht benötigt.) von %1%.'
         subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
         condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds")'
+    tag: [ Graphics ]
 
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721' ]
@@ -6284,6 +6287,22 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 9
 
+  - name: 'Creation Club Integration - Studded Dragonscale.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29020/' ]
+    tag: [ Keywords ]
+
+  - name: 'Crossbow Integration.*/.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28766/' ]
+  - name: 'Crossbow Integration.esp'
+    tag:
+      - -Actors.Stats
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - Text
+  - name: 'Crossbow Integration - USSEP.esp'
+    tag: [ Text ]
+
   - name: 'EBM_Train(10|25|50|99)x.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/' ]
     msg:
@@ -6605,6 +6624,8 @@ plugins:
     clean:
       - crc: 0x5A8460BA
         util: 'SSEEdit v4.0.3'
+  - name: 'URN Extended_Telengard.esp'
+    tag: [ -C.Location ]
 
   - name: 'YASH2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2430/' ]
