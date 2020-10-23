@@ -7098,6 +7098,10 @@ plugins:
 
   - name: 'MainlandStalhrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8307/' ]
+    msg:
+      - <<: *patchUnavailable
+        subs: [ 'Ars Metallica' ]
+        condition: 'active("Ars Metallica.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xB78B64CB
