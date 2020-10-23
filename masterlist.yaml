@@ -7451,6 +7451,7 @@ plugins:
 
   - name: 'ImprovedDaedricArtifacts(LightEbonyMail)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2055/' ]
+    after: [ 'MLU.esp' ]
     tag:
       - EnchantmentStats
       - Keywords
@@ -7576,11 +7577,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17653/'
         name: '(SJG) OMEGA - The Modular Gameplay Overhaul'
     group: *economyGroup
-    after:
-      - 'LoreWorthyBandits.esp'
-      - 'Weapon AF.esp'
-      - 'WACCF_Armor and Clothing Extension.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
     inc: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
       - <<: *patch3rdParty
@@ -7603,9 +7599,6 @@ plugins:
         subs: [ 'Improved closefaced helmets' ]
         condition: 'active("imp_helm_legend.esp") and not active("OMEGA MLU Improved Closefaced Helmets.esp") and not active("MLU - Improved Closefaced Helmets.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
-        subs: [ 'Improved Daedric Artifacts' ]
-        condition: 'active("ImprovedDaedricArtifacts.esp") and not active("MLU - Improved Daedric Artifacts.esp") and not active("MLU - ImprovedDaedricArtifacts.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *patchProvided
         subs: [ 'InsanitySorrow Weapons Pack' ]
         condition: 'active("InsanitySorrow Weapons Pack.esp") and not active("MLU - InsanitySorrow Weapons Pack.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
@@ -7614,9 +7607,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Mainland Stalhrim' ]
         condition: 'active("MainlandStalhrim.esp") and not active("MLU - Mainland Stalhrim.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *patchProvided
-        subs: [ 'Simple Magic Rebalance' ]
-        condition: 'active("Simple Magic Rebalance.esp") and not active("MLU - Simple Magic Rebalance.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Summermyst - Enchantments of Skyrim' ]
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst.esp") and not active("MLU Patches Merged.esp")'
@@ -7635,8 +7625,21 @@ plugins:
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_MLU Patch.esp") and not active("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.CombatStyle
+      - Actors.Spells
+      - Actors.Stats
+      - EnchantmentStats
       - Graphics
-      - Invent
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
+      - Keywords
+      - NPC.Class
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
       - Text
     dirty:
       # version: Simplified Full 2.20
@@ -7654,51 +7657,92 @@ plugins:
         crc: 0xAB5FD735
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 271
-    clean:
       # Original
-      - crc: 0x33765A6F
-        util: 'SSEEdit v4.0.3'
+      - <<: *quickClean
+        crc: 0x85F6C46A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+      # Another Sorting Mod Replacer
+      - <<: *quickClean
+        crc: 0xA2D06745
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
       # Original, No Artifacts
       - crc: 0xDFB26843
         util: 'SSEEdit v4.0.3'
-      # Another Sorting Mod Replacer
-      - crc: 0x7A189474
-        util: 'SSEEdit v4.0.3'
   - name: 'MLU - .*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
+    after: [ 'MLU.esp' ]
   - name: 'MLU - AAE Ultimate Edition.esp'
     after: [ 'MLU - Immersive Armors.esp' ]
-    tag: [ Invent ]
-    clean:
-      # version: 1.2
-      - crc: 0x57E025A8
-        util: 'SSEEdit v4.0.2f'
+    tag:
+      - Actors.ACBS
+      - Actors.Spells
+      - Actors.Stats
+      - Invent.Add
+      - Invent.Remove
+  - name: 'MLU - CosmeticVampireOverhaul.esp'
+    req: [ 'CosmeticVampireOverhaul.esp' ]
   - name: 'MLU - Immersive Armors.esp'
     tag:
       - Delev
-      - Invent
-      - Names
-      - Relev
-      - Stats
-    dirty:
-      # version: 1.1a.1
-      - <<: *quickClean
-        crc: 0xCDB3B128
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 16
-  - name: 'MLU - ImprovedDaedricArtifacts.esp'
-    req:
-      - 'ImprovedDaedricArtifacts.esp'
-      - 'MLU.esp'
+      - Invent.Add
+      - Outfits.Add
+      - Outfits.Remove
   - name: 'MLU - Improved Closefaced Helmets.esp'
-    req: [ 'MLU.esp' ]
+    tag:
+      - Text
+      - Keywords
+  - name: 'MLU - ImprovedDaedricArtifacts.esp'
+    tag:
+      - EnchantmentStats
+      - Keywords
+      - Stats
+      - Text
+  - name: 'MLU - Inigo.esp'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+    dirty:
+      - <<: *quickClean
+        crc: 0x0E968F0C
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 2
+  - name: 'MLU - InsanitySorrow Weapons Pack.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'MLU - Mainland Stalhrim.esp'
+    tag:
+      - Keywords
+      - Text
+  - name: 'MLU - Skyrim Revamped Complete Enemy Overhaul.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.SpellsForceAdd
+      - Invent.Remove
+      - NPC.Class
+      - Outfits.Remove
+  - name: 'MLU - Summermyst.esp'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - Text
+  - name: 'MLU - Unique Uniques.esp'
+    after: [ 'MLU - WaCCF.esp' ]
+  - name: 'MLU - WaCCF.esp'
     tag:
       - Stats
-      - -Names
-    clean:
-      # version: 1.2
-      - crc: 0xDEC74079
-        util: 'SSEEdit v4.0.2f'
+      - ObjectBounds
+  - name: 'MLU - ZIA.esp'
+    tag:
+      - EnchantmentStats
+      - Keywords
+      - ObjectBounds
+      - Stats
+      - Text
 
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
