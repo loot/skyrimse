@@ -7096,6 +7096,23 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/' ]
     after: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
 
+  - name: 'MainlandStalhrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8307/' ]
+    msg:
+      - <<: *patchUnavailable
+        type: say
+        subs: [ 'Ars Metallica' ]
+        condition: 'active("Ars Metallica.esp")'
+      - <<: *patchUnavailable
+        type: say
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB78B64CB
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 16
+
   - name: 'Mystic Condenser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10176/' ]
     msg:
