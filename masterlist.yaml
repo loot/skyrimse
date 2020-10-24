@@ -7328,12 +7328,7 @@ plugins:
   - name: 'Containers and Leveled Lists Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26575/' ]
     group: *economyGroup
-    after:
-      - 'LoreWorthyBandits.esp'
-      - 'MLU.esp'
-      - 'Weapon AF.esp'
-      - 'WACCF_Armor and Clothing Extension.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+    after: [ 'MLU.esp' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
@@ -7341,10 +7336,44 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("CLLF - Cutting Room Floor Patch.esp")'
-  - name: 'CLLF - Cutting Room Floor Patch.esp'
+    tag:
+      - Delev
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
+      - Relev
+    dirty:
+      - <<: *quickClean
+        crc: 0x18A0118A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'CLLF - (ACE|Cutting Room Floor|WACCF) Patch\.esp'
     req: [ 'Containers and Leveled Lists Fixes.esp' ]
-  - name: 'CLLF - WACCF Patch.esp'
-    req: [ 'Containers and Leveled Lists Fixes.esp' ]
+  - name: 'CLLF - (ACE|CACO|Lock Related Loot for SCCR|Skyrim Coin Replacer Redux|WACCF).*\.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'CLLF - CACO Patch.esp'
+    after:
+      - 'CLLF - Lock Related Loot for SCCR.esp'
+      - 'CLLF - Skyrim Coin Replacer Redux.esp'
+    tag: [ Invent.Change ]
+  - name: 'CLLF - (Lock Related Loot Addon|Lock Related Loot for SCCR)\.esp'
+    inc: [ 'LockRelatedLoot.esp' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Requires resources (Models, Textures etc. Plugins not required.) from %1%.'
+          - lang: de
+            text: 'Benötigt Ressourcen (Models, Texturen usw. Plugins werden nicht benötigt.) von %1%.'
+        subs: [ '[Lock Related Loot](https://www.nexusmods.com/skyrimspecialedition/mods/11342)' ]
+        condition: 'not file("Scripts/lockExtraLootSCRIPT.pex")'
+  - name: 'CLLF - (Lock Related Loot Addon|Skyrim Coin Replacer Redux Patch)\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CLLF - Lock Related Loot for SCCR.esp' ]
+        condition: 'active("CLLF - Lock Related Loot for SCCR.esp")'
   - name: 'Priest Vendors - CLLF Integration.esp'
     req: [ 'Containers and Leveled Lists Fixes.esp' ]
 
