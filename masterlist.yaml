@@ -6146,12 +6146,28 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
 
-  - name: 'Veydosebrom( - Grasses and Groundcover)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26293/' ]
-    group: *floraGroup
-    after:
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
+  - name: 'Veydosebrom( Regions)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26293/'
+        name: 'Veydosebrom Regions'
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Landscape Fixes For Grass Mods](https://www.nexusmods.com/skyrimspecialedition/mods/9005/)' ]
+        condition: 'not active("Landscape Fixes For Grass Mods.esp") and not checksum("Veydosebrom Regions.esp", E3B3D451) and not checksum("Veydosebrom.esp", 3E8D76A4)'
+  - name: 'Veydosebrom Regions.esp'
+    clean:
+      - crc: 0xE3B3D451
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xC4BC2AF3
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xA1A22D51
+        util: 'SSEEdit v4.0.3'
+  - name: 'Veydosebrom.esp'
+    clean:
+      - crc: 0x3E8D76A4
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x5183B92E
+        util: 'SSEEdit v4.0.3'
 
   - name: 'ViscousGrass.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13995/' ]
