@@ -6202,6 +6202,9 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Whiterun Trees Overhaul ESP' ]
         condition: 'many("Whiterun Trees Overhaul( for Open Cities| - 3D Trees Patch)?\.esp")'
+      - <<: *wildEdits
+        type: say
+        condition: 'checksum("Whiterun Trees Overhaul.esp", 56AFDFE3) or checksum("Whiterun Trees Overhaul - 3D Trees Patch.esp", D7C21CC5) or checksum("Whiterun Trees Overhaul - 3D Trees Patch.esp", 2D0BB74F)'
   - name: 'Whiterun Trees Overhaul.esp'
     dirty:
       - <<: *quickClean
