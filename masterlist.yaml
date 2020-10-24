@@ -6196,9 +6196,33 @@ plugins:
     group: *landscapeGroup
     after: [ 'Tamriel Reloaded HD SE.esp' ]
 
-  - name: 'Whiterun Trees Overhaul.esp'
+  - name: 'Whiterun Trees Overhaul( for Open Cities| - 3D Trees Patch)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16230/' ]
-    group: *floraGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Whiterun Trees Overhaul ESP' ]
+        condition: 'many("Whiterun Trees Overhaul( for Open Cities| - 3D Trees Patch)?\.esp")'
+      - <<: *wildEdits
+        type: say
+        condition: 'checksum("Whiterun Trees Overhaul.esp", 56AFDFE3) or checksum("Whiterun Trees Overhaul - 3D Trees Patch.esp", D7C21CC5) or checksum("Whiterun Trees Overhaul - 3D Trees Patch.esp", 2D0BB74F)'
+  - name: 'Whiterun Trees Overhaul.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x56AFDFE3
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 13
+  - name: 'Whiterun Trees Overhaul - 3D Trees Patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xD7C21CC5
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
+  - name: 'Whiterun Trees Overhaul for Open Cities.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2D0BB74F
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
 
   - name: 'WhiterunHoldForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3212/' ]
