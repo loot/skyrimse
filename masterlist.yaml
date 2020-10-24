@@ -6063,12 +6063,30 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9135/' ]
     group: *fixesGroup
 
-  - name: 'Trees in Cities.esp'
+  - name: 'Trees in Cities( - Open Cities Skyrim Edition)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1941/' ]
-    group: *floraGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Trees in Cities ESP' ]
+        condition: 'many("Trees in Cities( - Open Cities Skyrim Edition)?\.esp")'
+      - <<: *wildEdits
+        type: say
+        condition: 'checksum("Trees in Cities.esp", B88B72C4) or checksum("Trees in Cities - Open Cities Skyrim Edition.esp", B7F7EB65)'
+  - name: 'Trees in Cities.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TreesinCities_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB88B72C4
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 21
+  - name: 'Trees in Cities - Open Cities Skyrim Edition.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB7F7EB65
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 30
 
   - name: 'UniqueLocationsRiverwoodForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9258/' ]
