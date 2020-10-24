@@ -6065,6 +6065,13 @@ plugins:
 
   - name: 'Trees in Cities( - Open Cities Skyrim Edition)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1941/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Trees in Cities ESP' ]
+        condition: 'many("Trees in Cities( - Open Cities Skyrim Edition)?\.esp")'
+      - <<: *wildEdits
+        type: say
+        condition: 'checksum("Trees in Cities.esp", B88B72C4) or checksum("Trees in Cities - Open Cities Skyrim Edition.esp", B7F7EB65)'
   - name: 'Trees in Cities.esp'
     msg:
       - <<: *patch3rdParty_LotD
