@@ -5994,9 +5994,7 @@ plugins:
   - name: 'S3DLandscapes NextGenerationForests.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18247/' ]
     group: *floraGroup
-    inc:
-      - 'Enhanced Landscapes.esp'
-      - 'waterplants.esp'
+    inc: [ 'Enhanced Landscapes.esp' ]
 
   - name: 'S3DSigns.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21338/' ]
@@ -6172,13 +6170,25 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
 
+  - name: 'waterplants.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/'
+        name: 'Waterplants'
   - name: 'waterplants.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6092/' ]
-    group: *floraGroup
     clean:
       - crc: 0xA15B392D
         util: 'SSEEdit v4.0.3'
+  - name: 'waterplants_grass.esp'
+    clean:
+      - crc: 0xD3D7DD2B
+        util: 'SSEEdit v4.0.3'
+  - name: 'waterplants_lily.esp'
+    clean:
       - crc: 0x4A3CA7FB
+        util: 'SSEEdit v4.0.3'
+  - name: 'waterplants_S3D.esp'
+    clean:
+      - crc: 0x32AAAE0F
         util: 'SSEEdit v4.0.3'
 
   - name: 'WGT.esp'
