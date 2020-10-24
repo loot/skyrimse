@@ -1044,17 +1044,17 @@ groups:
     description: 'A group for mods that modify items to balance the game.'
     after: [ *racesGroup ]
 
-  - name: &economyGroup Economy
-    description: 'A group for mods that alter the Economy of the game.'
-    after: [ *itemBalanceGroup ]
-
   - name: &craftingGroup Crafting
     description: 'A group for modules that modify or expand crafting systems such as Alchemy, or Smithing.'
-    after: [ *economyGroup ]
+    after: [ *itemBalanceGroup ]
+
+  - name: &economyGroup Economy
+    description: 'A group for mods that alter the Economy of the game.'
+    after: [ *craftingGroup ]
 
   - name: &perksGroup Skills & Perks
     description: 'A group for modules that modify or add new Skills and Perks.'
-    after: [ *craftingGroup ]
+    after: [ *economyGroup ]
 
   - name: &coreGroup Core Mods
     after: [ *perksGroup ]
