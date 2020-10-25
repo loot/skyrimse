@@ -5562,6 +5562,10 @@ plugins:
 
   - name: 'fallentreebridgesSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8767' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Immersive Fallen Trees Patch](https://www.nexusmods.com/skyrimspecialedition/mods/27834/)' ]
+        condition: 'not active("fallenbridgesSSE-Patch.esp") and not active("MarkarthCliffFix.esp") and checksum("fallentreebridgesSSE.esp", FF60C24A)'
     clean:
       - crc: 0xFF60C24A
         util: 'SSEEdit v4.0.3'
