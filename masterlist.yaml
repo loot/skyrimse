@@ -5492,21 +5492,23 @@ plugins:
   - name: 'Enhanced Landscapes.esp'
     inc: [ 'tpos_ultimate_esm.esp' ]
     msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Simply Bigger Trees **SimplyBiggerTreesSE.esp**' ]
+        condition: 'active("SimplyBiggerTreesSE.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Skyrim 3D Trees and Plants **S3DTrees NextGenerationForests.esp**' ]
+        condition: 'active("S3DTrees NextGenerationForests.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Enhanced_Landscapes.esp") and not active("DBM_EnhancedLandscapes_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Immersive Citizens' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Enhanced Landscapes - IC Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Simply Bigger Trees'
-          - 'Semi-Compatible. Enhanced Landscape adds and increases a lot of trees by hand. When used together with Simply Bigger Trees you may end up with massive trees. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/18162/)'
-        condition: 'active("SimplyBiggerTreesSE.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Skyrim 3D Trees and Plants'
-          - 'Semi-Compatible. It''s currently not recommended to use both mods together. You may run into performance problems as 3D Trees seems to have some issues with tree scaling, which  Enhanced Landscape does a lot. You can use the **meshes/plants, meshes/landscape/plants and textures** from 3D Trees and Plants but do not activate the plugin. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/18162/)'
-        condition: 'active("S3DTrees NextGenerationForests.esp")'
     clean:
       - crc: 0x9B2A145A
         util: 'SSEEdit v4.0.3'
