@@ -6028,12 +6028,13 @@ plugins:
 
   - name: 'SkyrimIsWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5836/' ]
-    group: *floraGroup
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("SkyrimIsWindy_CACO_Patch.esp")'
+    clean:
+      - crc: 0x60E8AEDE
+        util: 'SSEEdit v4.0.3'
   - name: 'SkyrimIsWindy( - EVT patch|-SimplyBiggerTreesSE-Patch)\.esp'
-    group: *floraGroup
     req: [ 'SkyrimIsWindy.esp' ]
   - name: 'SkyrimIsWindy - EVT patch.esp'
     req: [ 'Enhanced Vanilla Trees SSE.esp' ]
