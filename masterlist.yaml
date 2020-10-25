@@ -5325,11 +5325,6 @@ plugins:
     after:
       - 'BSHeartland.esm'
       - 'Unofficial Skyrim Special Edition Patch.esp'
-    msg:
-      - <<: *includesX
-        type: warn
-        subs: [ 'Realistic High Altitude Treeline' ]
-        condition: 'active("Realistic Treeline.esp")'
     clean:
       # version: 1.0.5
       - crc: 0xBD798EA8
@@ -5946,6 +5941,10 @@ plugins:
     after:
       - 'Enhanced Landscapes.esp'
       - 'S3DTrees NextGenerationForests.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Alpine Forest of Whiterun Valley.esp' ]
+        condition: 'active("Alpine Forest of Whiterun Valley.esp")'
     dirty:
       # version: 1.0
       - <<: *quickClean
