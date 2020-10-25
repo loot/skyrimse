@@ -5562,10 +5562,8 @@ plugins:
   - name: '(Enhanced Vanilla Trees SSE|SRG Enhanced Trees Activator)\.esp'
     url:  [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11008' ]
     group: *floraGroup
-    inc:
-      - 'SimplyBiggerTreesSE.esp'
-      - name: 'Skyrim Flora Overhaul.esp'
-        condition: 'checksum("Skyrim Flora Overhaul.esp", 3BD2CC4C)'
+    after: [ 'Skyrim Flora Overhaul.esp' ]
+    inc: [ 'SimplyBiggerTreesSE.esp' ]
 
   - name: 'fallentreebridgesSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8767' ]
@@ -6010,8 +6008,19 @@ plugins:
 
   - name: 'Skyrim Flora Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
-    group: *floraGroup
     after: [ 'SimplyBiggerTreesSE.esp' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This mods changes to trees are not compatible with %1%.'
+        subs: [ '[Enhanced Vanilla Trees SE](https://www.nexusmods.com/skyrimspecialedition/mods/11008/)' ]
+        condition: 'active("Enhanced Vanilla Trees SSE.esp") and (checksum("Skyrim Flora Overhaul.esp", 17415E34) or checksum("Skyrim Flora Overhaul.esp", 3BD2CC4C))'
+    clean:
+      - crc: 0x17415E34
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x3BD2CC4C
+        util: 'SSEEdit v4.0.3'
 
   - name: 'SkyrimImprovedPuddles-DG-HF-DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1462/' ]
