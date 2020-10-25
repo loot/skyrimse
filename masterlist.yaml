@@ -5961,8 +5961,9 @@ plugins:
         util: 'SSEEdit v4.0.2f'
 
   - name: 'S3DTrees NextGenerationForests.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12371/' ]
-    group: *floraGroup
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12371/'
+        name: 'Skyrim 3D Trees and Plants'
     after:
       - 'Bent Pines.esp'
       - 'fallentreebridgesSSE.esp'
@@ -5971,15 +5972,21 @@ plugins:
       - 'WhiterunHoldForest.esp'
       - 'Whiterun Forest Borealis.esp'
     inc:
-      - 'Enhanced Landscapes.esp'
       - 'Enhanced Vanilla Trees SSE.esp'
       - 'S3DPlants.esp'
       - 'SimplyBiggerTreesSE.esp'
       - 'Skyrim Flora Overhaul.esp'
       - 'SkyrimIsWindy.esp'
       - 'SRG Enhanced Trees Activator.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Complete Alchemy and Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("S3DTrees - CACO Patch.esp")'
+    tag:
+      - Graphics
+      - ObjectBounds
     clean:
-      - crc: 0xC786D6C9
+      - crc: 0xE07D93B2
         util: 'SSEEdit v4.0.3'
 
   - name: 'S3DLandscapes NextGenerationForests.esp'
