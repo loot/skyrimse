@@ -6138,25 +6138,15 @@ plugins:
         util: 'SSEEdit v4.0.0'
 
   - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
-    group: *landscapeGroup
-    inc:
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'checksum("Verdant - A Skyrim Grass Plugin SSE Version.esp", 9AB5147C)'
-      - 'ViscousGrass.esp'
-    after:
-      - 'Enhanced Landscapes.esp'
-      - 'Skyrim Flora Overhaul.esp'
-      - 'Tamriel Reloaded HD SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2296/' ]
+    inc: [ 'ViscousGrass.esp' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Landscape Fixes For Grass Mods](https://www.nexusmods.com/skyrimspecialedition/mods/9005)' ]
+        condition: 'not active("Landscape Fixes For Grass Mods.esp")'
     clean:
-      # version: 1.6.1
       - crc: 0x102BBC11
-        util: 'SSEEdit v4.0.0'
-      # version: 1.6.1 - Tweaks for Verdant
-      - crc: 0x91F1764B
-        util: 'SSEEdit v4.0.0'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Verdant - Altered .*\.esp'
     url:
