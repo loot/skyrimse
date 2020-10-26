@@ -11670,11 +11670,11 @@ plugins:
       - Graphics
       - Relev
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'EnchantingAwakened.esp'
-          - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Wintermyst enchantments.'
+      - <<: *compatIssuesWithX
+        subs: [ 'EnchantingAwakened.esp' ]
         condition: 'active("Wintermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
     dirty:
       # version: 4.06SE
       - <<: *quickClean
