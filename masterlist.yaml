@@ -1478,22 +1478,9 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
-      - type: warn
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("unofficial skyrim survival patch.esp") and not active("unofficial skyrim survival patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
-        content:
-          - lang: en
-            text: '[%1%] has a [Known bug](%2%) which is incompatible with [%3%]. Consider using the %4% to fix this bug.'
-          - lang: de
-            text: '[%1%] hat einen [bekannten Fehler](%2%), welcher es inkompatibel mit [%3%] macht. Der %4% behebt diesen Fehler.'
-          - lang: ja
-            text: '[%1%]は既知のバグ( (%2%)として[%3%]と互換性がありません。このバグを修正するには、%4%の使用を検討してください。'
-          - lang: pt
-            text: '[%1%] contém um [erro identificado](%2%) em que é incompatível com [%3%]. Considere utilizar o %4% para reparar este erro.'
-        subs:
-          - 'ccqdrsse001-survivalmode.esl'
-          - 'https://www.nexusmods.com/skyrimspecialedition/articles/22/'
-          - 'Ordinator - Perks of Skyrim.esp'
-          - '[Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/)'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Unofficial Skyrim Creation Club Content Patches](https://www.nexusmods.com/skyrimspecialedition/mods/18975/)' ]
+        condition: 'not active("Unofficial Skyrim Survival Patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
     tag:
       - Keywords
       - Text
