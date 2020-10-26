@@ -2892,17 +2892,33 @@ plugins:
   - name: 'Audio Overhaul Skyrim.esp'
     group: *earlyLoadersGroup
     after:
-      - 'LSFX-SSE-Audiosettings.esp'
-      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
       - 'SoS - The Dungeons.esp'
       - 'UnlimitedBookshelves.esp'
-    inc:
-      - name: '../x3daudio1_7.dll'
-        display: 'True 3D Sound for Headphones'
-      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
-      - 'SoundsofSkyrimComplete.esp'
-      - 'SoS - The Wilds.esp'
     msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Lucidity Sound FX **LSFX-SSE-Audiosettings.esp**' ]
+        condition: 'active("LSFX-SSE-Audiosettings.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Sounds of Skyrim **SoS - The Wilds.esp** or **SoundsofSkyrimComplete.esp** or **Sounds of Skyrim - Complete Edition.esp**' ]
+        condition: 'active("SoS - The Wilds.esp") or active("SoundsofSkyrimComplete.esp") or active("Sounds of Skyrim - Complete Edition.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Reverb and Ambiance Overhaul **Reverb and Ambiance Overhaul - Skyrim.esp**' ]
+        condition: 'active("Reverb and Ambiance Overhaul - Skyrim.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'True 3D Sound for Headphones **x3daudio1_7.dll**' ]
+        condition: 'file("../x3daudio1_7.dll")'
       - <<: *patchProvided
         subs: [ 'Cathedral Weathers and Seasons' ]
         condition: 'active("Cathedral Weathers.esp") and not active("AOS_Cathedral Weathers Patch.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
