@@ -1469,31 +1469,18 @@ plugins:
   # Survival Mode
   - name: 'ccqdrsse001-survivalmode.esl'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Unlimited Bookshelves'
+          - '[Survival Mode and Unlimited Bookshelves Patch](https://www.nexusmods.com/skyrimspecialedition/mods/39288/)'
+        condition: 'active("UnlimitedBookshelves.esp") and not active("Unlimited Bookshelves - Survival Mode.esp") and not active("unofficial skyrim survival patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
-      - <<: *semiCompatible
-        subs:
-          - '[Unlimited Bookshelves](https://www.nexusmods.com/skyrimspecialedition/mods/2885/)'
-          - 'Unlimited Bookshelves reverts changes made in Update.esm which are required by Survival mode. A patch is recommended to ensure correct functionality.'
-        condition: 'active("UnlimitedBookshelves.esp")'
-      - type: warn
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("unofficial skyrim survival patch.esp") and not active("unofficial skyrim survival patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
-        content:
-          - lang: en
-            text: '[%1%] has a [Known bug](%2%) which is incompatible with [%3%]. Consider using the %4% to fix this bug.'
-          - lang: de
-            text: '[%1%] hat einen [bekannten Fehler](%2%), welcher es inkompatibel mit [%3%] macht. Der %4% behebt diesen Fehler.'
-          - lang: ja
-            text: '[%1%]は既知のバグ( (%2%)として[%3%]と互換性がありません。このバグを修正するには、%4%の使用を検討してください。'
-          - lang: pt
-            text: '[%1%] contém um [erro identificado](%2%) em que é incompatível com [%3%]. Considere utilizar o %4% para reparar este erro.'
-        subs:
-          - 'ccqdrsse001-survivalmode.esl'
-          - 'https://www.nexusmods.com/skyrimspecialedition/articles/22/'
-          - 'Ordinator - Perks of Skyrim.esp'
-          - '[Unofficial Skyrim Survival Patch](https://www.nexusmods.com/skyrimspecialedition/mods/12655/)'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Unofficial Skyrim Creation Club Content Patches](https://www.nexusmods.com/skyrimspecialedition/mods/18975/)' ]
+        condition: 'not active("Unofficial Skyrim Survival Patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
     tag:
       - Keywords
       - Text
@@ -2160,11 +2147,6 @@ plugins:
       - 'icepenguinworldmapclassic.esp'
       - 'Paper World Map.esp'
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'Atlas Map Markers'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
-        condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Enhanced Lighting for ENB (ELE)'
@@ -2175,6 +2157,9 @@ plugins:
           - 'Realistic Water Two'
           - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095)'
         condition: 'active("RealisticWaterTwo.esp") and not active("AQWMP_RWT_Patch.esp") and not active("AQWMP_ELE_RWT_Patch.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Atlas Map Markers' ]
+        condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
     clean:
       - crc: 0x09706810
         util: 'SSEEdit v4.0.3'
@@ -2188,15 +2173,11 @@ plugins:
       - 'Atlas Map Markers.esp'
     inc: [ 'IcePenguinWorldMapPaper.esp' ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'Atlas Map Markers'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
+      - <<: *patchUnavailable
+        subs: [ 'Atlas Map Markers' ]
         condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Enhanced Lighting for ENB (ELE)'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
         condition: 'active("ELE_SSE.esp")'
 
   - name: 'SkyUI_SE.esp'
@@ -4917,15 +4898,11 @@ plugins:
       - 'Serio''s Enhanced Dragons.esp'
     msg:
       - *requiresMCM
-      - <<: *semiCompatible
-        subs:
-          - 'Elemental Dragons'
-          - 'Dragons added by Elemental Dragons will not be affected by Deadly Dragons'' settings, nor will they spawn from the Assault system''s spawning. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/23723)'
+      - <<: *compatIssuesWithX
+        subs: [ 'Elemental Dragons' ]
         condition: 'active("Elemental_Dragons.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Enhanced Mighty Dragons'
-          - 'Using Deadly Dragons and any mod like Enhanced Mighty Dragons can result in virtually un-killable dragons, so they are not recommended.. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/23723)'
+      - <<: *compatIssuesWithX
+        subs: [ 'Enhanced Mighty Dragons' ]
         condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
       - <<: *patchProvided
         subs: [ 'Diverse Dragons Collection' ]
@@ -5583,6 +5560,10 @@ plugins:
         name: 'Enhanced Vanilla Trees SE'
     after: [ 'Skyrim Flora Overhaul.esp' ]
     inc: [ 'SimplyBiggerTreesSE.esp' ]
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ '[Skyrim Flora Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2154/)' ]
+        condition: 'active("Skyrim Flora Overhaul.esp") and (checksum("Skyrim Flora Overhaul.esp", 17415E34) or checksum("Skyrim Flora Overhaul.esp", 3BD2CC4C))'
     tag: [ Graphics ]
   - name: 'Enhanced Vanilla Trees SSE.esp'
     clean:
@@ -5778,10 +5759,8 @@ plugins:
       - 'ViscousGrass.esp'
     tag: [ Graphics ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)'
-          - 'Moss Rocks can be used with Majestic Mountains. But Majestic Mountains meshes without snow will not be used. [Source](https://forums.nexusmods.com/index.php?/topic/5838597-majestic-mountains/?p=52271673)'
+      - <<: *compatIssuesWithX
+        subs: [ '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)' ]
         condition: 'active("MajesticMountains.esp") and active("Moss Rocks.esp")'
     clean:
       - crc: 0x17CBC52F
@@ -5803,10 +5782,8 @@ plugins:
   - name: 'SunDaytime(South|North_MM_default)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'ENBSeries'
-          - 'Sun direction MAY cause conflicts with future versions of ENBSeries. If you run into a 95 percent daytime issue you need to disable sun direction esp''s.'
+      - <<: *compatIssuesWithX
+        subs: [ 'ENBSeries' ]
         condition: 'file("../d3d11.dll")'
 
   - name: 'NoGrassINCaves.esp'
@@ -6021,13 +5998,6 @@ plugins:
   - name: 'Skyrim Flora Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2154/' ]
     after: [ 'SimplyBiggerTreesSE.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mods changes to trees are not compatible with %1%.'
-        subs: [ '[Enhanced Vanilla Trees SE](https://www.nexusmods.com/skyrimspecialedition/mods/11008/)' ]
-        condition: 'active("Enhanced Vanilla Trees SSE.esp") and (checksum("Skyrim Flora Overhaul.esp", 17415E34) or checksum("Skyrim Flora Overhaul.esp", 3BD2CC4C))'
     clean:
       - crc: 0x17415E34
         util: 'SSEEdit v4.0.3'
@@ -7062,15 +7032,13 @@ plugins:
     msg:
       - *requiresMCM
       - *requiresMCM_VR
+      - <<: *compatIssuesWithX
+        subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
+        condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'iNeed'
-          - 'Disable iNeed''s option to alter food weight, as this can result in some odd weight values when used with CACO. iNeed''s degradation system is not recognized by CACO''s food portion system, which results in some slight inconsistencies.'
-        condition: 'active("iNeed.esp")'
       - <<: *patch3rdParty
         subs:
           - 'iNeed'
@@ -7082,11 +7050,6 @@ plugins:
           - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301)'
         condition: 'active("iNeed - Dangerous Diseases.esp") and not active("CACO - iNeed DD Patch.esp")'
       - *patch3rdPartySRPC
-      - <<: *semiCompatible
-        subs:
-          - 'iNeed - Extended'
-          - 'Only use the **No Food/Recipe Changes** version of **iNeed - Extended** with CACO.'
-        condition: 'active("iNeed - Extended.esp")'
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
         condition: 'version("Complete Alchemy & Cooking Overhaul.esp", "2.0", ==) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
@@ -8550,6 +8513,11 @@ plugins:
       - SpellStats
       - Text
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Zim''s Immersive Artifacts' ]
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and (active("ZIA_Daedric Pack.esp") or active("ZRN.esp"))'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/962/' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
@@ -8561,11 +8529,6 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Zim''s Immersive Artifacts'
-          - 'Disable the Ring of Namira in Zim''s Immersive Artifacts. It uses different mechanics than the vanilla ring and is not compatible with Wintersun.'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and (active("ZIA_Daedric Pack.esp") or active("ZRN.esp"))'
     clean:
       - crc: 0xA916F85A
         util: 'SSEEdit v4.0.3'
@@ -10127,14 +10090,12 @@ plugins:
           - 'RaceCompatibility'
           - 'Growl - Werebeasts of Skyrim'
         condition: 'file("RaceCompatibility.esm") and file("Scripts/PlayerWerewolfChangeScript.pex")'
+      - <<: *compatIssuesWithX
+        subs: [ '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)' ]
+        condition: 'active("mrt_MarkofArkay SE.esp")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1519' ]
       - *includesMBBF
-      - <<: *semiCompatible
-        subs:
-          - '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)'
-          - 'Disable resurrection in werebeast form because the feature breaks werebeast mods.'
-        condition: 'active("mrt_MarkofArkay SE.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Mortal Enemies'
@@ -11468,14 +11429,12 @@ plugins:
       - Keywords
       - Text
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'EnchantingAwakened.esp' ]
+        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/116' ]
       - *includesMBBF
-      - <<: *semiCompatible
-        subs:
-          - 'EnchantingAwakened.esp'
-          - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
-        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Jewelry'
@@ -11670,11 +11629,11 @@ plugins:
       - Graphics
       - Relev
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'EnchantingAwakened.esp'
-          - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Wintermyst enchantments.'
+      - <<: *compatIssuesWithX
+        subs: [ 'EnchantingAwakened.esp' ]
         condition: 'active("Wintermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18603/' ]
     dirty:
       # version: 4.06SE
       - <<: *quickClean
@@ -13943,6 +13902,14 @@ plugins:
       - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Paradise City - Great Trees for Cities' ]
+        condition: 'active("Paradise_City_Merged.esp") or active("Paradise_City_MergedNoWindhelm.esp") or active("Paradise_City_MergedSummerWindhelm.esp") or active("Paradise_City_Rorikstead.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JKSkyrim_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
@@ -14062,16 +14029,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Immersive Citizens - AI Overhaul'
-          - 'Semi-Compatible. NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
-        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Paradise City - Great Trees for Cities'
-          - 'Partially Compatible. Use `Paradise_City_MergedNoRorikstead.esp` or the modular plugins without `Paradise_City_Rorikstead.esp`. Some minor clipping in Whiterun. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
-        condition: 'active("Paradise_City_Merged.esp") or active("Paradise_City_MergedNoWindhelm.esp") or active("Paradise_City_MergedSummerWindhelm.esp") or active("Paradise_City_Rorikstead.esp")'
     clean:
       # version: 1.0 ETaC Compatible Replacer File
       - crc: 0x8E2CDE40
@@ -14553,22 +14510,18 @@ plugins:
       - 'Toblerone Winterhold College.esp'
       - 'Winterhold College SSE.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ '[Cloaks and Capes Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/19510/)' ]
+        condition: 'active("Cloaks&Capes.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ '[Guardian Spectres](https://www.nexusmods.com/skyrimspecialedition/mods/30772/)' ]
+        condition: 'checksum("mihailspectres.esp", 95F0F68D)'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
         condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
-      - <<: *semiCompatible
-        subs:
-          - '[Cloaks and Capes Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/19510/)'
-          - 'A tanning rack added by this mod is hidden behind some clutter which OCW adds.'
-        condition: 'active("Cloaks&Capes.esp")'
-      - <<: *semiCompatible
-        subs:
-          - '[Guardian Spectres](https://www.nexusmods.com/skyrimspecialedition/mods/30772/)'
-          - 'mihailspectres.esp requires cleaning before using it with Obscure''s College of Winterhold.'
-        condition: 'checksum("mihailspectres.esp", 95F0F68D)'
       - <<: *patchIncluded
         subs: [ 'Arcanum - A New Age of Magic' ]
         condition: 'active("Arcanum.esp") and not active("OCW_A-aNAoM_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -17539,11 +17492,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/' ]
     after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - '[Unlimited Bookshelves](https://www.nexusmods.com/skyrimspecialedition/mods/2885/)'
-          - 'Unlimited Bookshelves reverts changes made in Legacy of the Dragonborn. A patch is recommended to ensure correct functionality.'
-        condition: 'active("UnlimitedBookshelves.esp") and (checksum("LegacyoftheDragonborn.esm", 31563183) or checksum("LegacyoftheDragonborn.esm", 6736FB94) or checksum("LegacyoftheDragonborn.esm", CB82480D))'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494' ]
     # Old CRCs for version checks (v4 (0x31563183, 0x6736FB94, 0xCB82480D) v5 (0x055A3985, 0xD4D3523B, 0xDC39CE6D))
