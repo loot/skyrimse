@@ -7062,15 +7062,13 @@ plugins:
     msg:
       - *requiresMCM
       - *requiresMCM_VR
+      - <<: *compatIssuesWithX
+        subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
+        condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'iNeed'
-          - 'Disable iNeed''s option to alter food weight, as this can result in some odd weight values when used with CACO. iNeed''s degradation system is not recognized by CACO''s food portion system, which results in some slight inconsistencies.'
-        condition: 'active("iNeed.esp")'
       - <<: *patch3rdParty
         subs:
           - 'iNeed'
@@ -7082,11 +7080,6 @@ plugins:
           - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301)'
         condition: 'active("iNeed - Dangerous Diseases.esp") and not active("CACO - iNeed DD Patch.esp")'
       - *patch3rdPartySRPC
-      - <<: *semiCompatible
-        subs:
-          - 'iNeed - Extended'
-          - 'Only use the **No Food/Recipe Changes** version of **iNeed - Extended** with CACO.'
-        condition: 'active("iNeed - Extended.esp")'
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
         condition: 'version("Complete Alchemy & Cooking Overhaul.esp", "2.0", ==) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
