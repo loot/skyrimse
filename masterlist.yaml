@@ -8561,11 +8561,6 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Zim''s Immersive Artifacts'
-          - 'Disable the Ring of Namira in Zim''s Immersive Artifacts. It uses different mechanics than the vanilla ring and is not compatible with Wintersun.'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and (active("ZIA_Daedric Pack.esp") or active("ZRN.esp"))'
     clean:
       - crc: 0xA916F85A
         util: 'SSEEdit v4.0.3'
