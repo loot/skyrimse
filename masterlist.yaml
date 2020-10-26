@@ -2188,15 +2188,11 @@ plugins:
       - 'Atlas Map Markers.esp'
     inc: [ 'IcePenguinWorldMapPaper.esp' ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'Atlas Map Markers'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
+      - <<: *patchUnavailable
+        subs: [ 'Atlas Map Markers' ]
         condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Enhanced Lighting for ENB (ELE)'
-          - 'A patch is recommended to ensure correct functionality for both mods. None is currently available for download.'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
         condition: 'active("ELE_SSE.esp")'
 
   - name: 'SkyUI_SE.esp'
