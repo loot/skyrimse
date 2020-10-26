@@ -5778,10 +5778,8 @@ plugins:
       - 'ViscousGrass.esp'
     tag: [ Graphics ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)'
-          - 'Moss Rocks can be used with Majestic Mountains. But Majestic Mountains meshes without snow will not be used. [Source](https://forums.nexusmods.com/index.php?/topic/5838597-majestic-mountains/?p=52271673)'
+      - <<: *compatIssuesWithX
+        subs: [ '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838)' ]
         condition: 'active("MajesticMountains.esp") and active("Moss Rocks.esp")'
     clean:
       - crc: 0x17CBC52F
@@ -5803,10 +5801,8 @@ plugins:
   - name: 'SunDaytime(South|North_MM_default)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
     msg:
-      - <<: *semiCompatible
-        subs:
-          - 'ENBSeries'
-          - 'Sun direction MAY cause conflicts with future versions of ENBSeries. If you run into a 95 percent daytime issue you need to disable sun direction esp''s.'
+      - <<: *compatIssuesWithX
+        subs: [ 'ENBSeries' ]
         condition: 'file("../d3d11.dll")'
 
   - name: 'NoGrassINCaves.esp'
