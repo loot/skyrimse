@@ -11468,14 +11468,12 @@ plugins:
       - Keywords
       - Text
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'EnchantingAwakened.esp' ]
+        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/116' ]
       - *includesMBBF
-      - <<: *semiCompatible
-        subs:
-          - 'EnchantingAwakened.esp'
-          - 'Semi-Compatible. Both mods can be active at the same time, but the enchantment limits in Enchanting Awakened do not apply to Summermyst enchantments.'
-        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and active("EnchantingAwakened.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Jewelry'
