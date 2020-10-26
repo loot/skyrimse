@@ -17248,6 +17248,10 @@ plugins:
 
   - name: 'Tel_Nalta.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Moon and Star' ]
+        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xDB9E70DA
