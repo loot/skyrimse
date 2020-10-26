@@ -8550,6 +8550,11 @@ plugins:
       - SpellStats
       - Text
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Zim''s Immersive Artifacts' ]
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and (active("ZIA_Daedric Pack.esp") or active("ZRN.esp"))'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/962/' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
