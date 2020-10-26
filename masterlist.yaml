@@ -2891,24 +2891,55 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
   - name: 'Audio Overhaul Skyrim.esp'
     group: *earlyLoadersGroup
-    after:
-      - 'LSFX-SSE-Audiosettings.esp'
-      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
-      - 'SoS - The Dungeons.esp'
-      - 'UnlimitedBookshelves.esp'
-    inc:
-      - name: '../x3daudio1_7.dll'
-        display: 'True 3D Sound for Headphones'
-      - 'Reverb and Ambiance Overhaul - Skyrim.esp'
-      - 'SoundsofSkyrimComplete.esp'
-      - 'SoS - The Wilds.esp'
+    after: [ 'SoS - The Dungeons.esp' ]
     msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Lucidity Sound FX **LSFX-SSE-Audiosettings.esp**' ]
+        condition: 'active("LSFX-SSE-Audiosettings.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Sounds of Skyrim **SoS - The Wilds.esp** or **SoundsofSkyrimComplete.esp** or **Sounds of Skyrim - Complete Edition.esp**' ]
+        condition: 'active("SoS - The Wilds.esp") or active("SoundsofSkyrimComplete.esp") or active("Sounds of Skyrim - Complete Edition.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'Reverb and Ambiance Overhaul **Reverb and Ambiance Overhaul - Skyrim.esp**' ]
+        condition: 'active("Reverb and Ambiance Overhaul - Skyrim.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+        subs: [ 'True 3D Sound for Headphones **x3daudio1_7.dll**' ]
+        condition: 'file("../x3daudio1_7.dll")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466?tab=posts' ]
+      - <<: *patchProvided
+        subs: [ 'Aequinoctium - Weathers and Seasons' ]
+        condition: 'active("Aequinoctium.esp") and not active("Audio Overhaul Skyrim - Aequinoctium Patch.esp") and not active("Aequinoctium_TS_Patch_.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Cathedral Weathers and Seasons' ]
         condition: 'active("Cathedral Weathers.esp") and not active("AOS_Cathedral Weathers Patch.esp") and not active("AOS - Catherdral Weathers Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel Special Edition' ]
+        condition: 'active("ClimatesOfTamriel.esm") and not active("Audio Overhaul Skyrim - Climates of Tamriel Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Dolomite Weathers - Natural Lighting Vivid Atmospherics II' ]
+        condition: 'active("Dolomite Weathers.esp") and not active("Audio Overhaul Skyrim - Dolomite Weathers Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Enhanced Blood Textures' ]
         condition: 'active("dD - Enhanced Blood Main.esp") and not active("AOS_EBT Patch.esp") and not active("Audio Overhaul Skyrim - Enhanced Blood Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Enhanced Blood Textures LITE' ]
+        condition: 'active("dD - Enhanced Blood Main LITE.esp") and not active("AOS_EBT LITE Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'The Elder Scrolls Online Imports' ]
+        condition: 'active("ESOimports.esp") and not active("Audio Overhaul Skyrim - ESO Imports Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Hunterborn' ]
         condition: 'active("Hunterborn.esp") and not active("Audio Overhaul Skyrim - Hunterborn Patch.esp")'
@@ -2918,6 +2949,24 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Lore Weapon Expansion' ]
         condition: 'active("Lore Weapon Expansion.esp") and not active("Audio Overhaul Skyrim - Lore Weapon Expansion Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Mythical Ages - Weathers and lighting overhaul' ]
+        condition: 'active("Mythical Ages.esp") and not active("Audio Overhaul Skyrim - Mythical Ages Patch.esp") and not active("Mythical_TS_Patch_.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'NAT - Natural and Atmospheric Tamriel' ]
+        condition: 'active("NAT.esp") and not active("Audio Overhaul Skyrim - Natural Atmospheric Tamriel Patch.esp") and not active("NAT_TS_Patch_.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Obsidian Weathers and Seasons' ]
+        condition: 'active("Obsidian Weathers.esp") and not active("Audio Overhaul Skyrim - Obsidian Weathers Patch.esp") and not active("Obsidian_TS_Patch__.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Rustic Weathers and Lighting' ]
+        condition: 'active("Rustic Weathers And Lighting.esp") and not active("Audio Overhaul Skyrim - Rustic Weathers Patch.esp") and not active("Rustic_TS_Patch_.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'True Storms - Thunder, Rain & Weather Redone' ]
+        condition: 'active("TrueStormsSE.esp") and not active("Audio Overhaul Skyrim - True Storms Patch.esp") and not active("(Aequinoctium|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Vivid Weathers Definitive Edition' ]
+        condition: 'active("Vivid WeathersSE.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Vivid_TS_Patch_.*\.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Sounds - Compendium'
