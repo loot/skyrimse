@@ -2979,19 +2979,15 @@ plugins:
 
   - name: 'Immersive Sounds - Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/523/' ]
+    group: *earlyLoadersGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
-      - 'LSFX-SSE-Audiosettings.esp'
       - 'Reverb and Ambiance Overhaul - Skyrim.esp'
-      - name: 'Undeath.esp'
-        condition: 'checksum("Undeath.esp", 6E988E26) or checksum("Undeath.esp", EB75A960)'
-      - 'UnlimitedBookshelves.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ISC_Patch.esp")'
     tag: [ Sound ]
     clean:
-      # version: 2.2
       - crc: 0xD2B5EFA4
         util: 'SSEEdit v4.0.3'
 
