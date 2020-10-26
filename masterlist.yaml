@@ -2899,28 +2899,16 @@ plugins:
     group: *earlyLoadersGroup
     after: [ 'SoS - The Dungeons.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+      - <<: *compatIssuesWithX
         subs: [ 'Lucidity Sound FX **LSFX-SSE-Audiosettings.esp**' ]
         condition: 'active("LSFX-SSE-Audiosettings.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+      - <<: *compatIssuesWithX
         subs: [ 'Sounds of Skyrim **SoS - The Wilds.esp** or **SoundsofSkyrimComplete.esp** or **Sounds of Skyrim - Complete Edition.esp**' ]
         condition: 'active("SoS - The Wilds.esp") or active("SoundsofSkyrimComplete.esp") or active("Sounds of Skyrim - Complete Edition.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+      - <<: *compatIssuesWithX
         subs: [ 'Reverb and Ambiance Overhaul **Reverb and Ambiance Overhaul - Skyrim.esp**' ]
         condition: 'active("Reverb and Ambiance Overhaul - Skyrim.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+      - <<: *compatIssuesWithX
         subs: [ 'True 3D Sound for Headphones **x3daudio1_7.dll**' ]
         condition: 'file("../x3daudio1_7.dll")'
       - <<: *compatNotes
@@ -5549,16 +5537,10 @@ plugins:
   - name: 'Enhanced Landscapes.esp'
     inc: [ 'tpos_ultimate_esm.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+      - <<: *compatIssuesWithX
         subs: [ 'Simply Bigger Trees **SimplyBiggerTreesSE.esp**' ]
         condition: 'active("SimplyBiggerTreesSE.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin has compatibility issues with %1%. For more information, read this mods compatibility notes.'
+      - <<: *compatIssuesWithX
         subs: [ 'Skyrim 3D Trees and Plants **S3DTrees NextGenerationForests.esp**' ]
         condition: 'active("S3DTrees NextGenerationForests.esp")'
       - <<: *patch3rdParty_LotD
