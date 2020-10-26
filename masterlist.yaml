@@ -13943,6 +13943,14 @@ plugins:
       - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Paradise City - Great Trees for Cities' ]
+        condition: 'active("Paradise_City_Merged.esp") or active("Paradise_City_MergedNoWindhelm.esp") or active("Paradise_City_MergedSummerWindhelm.esp") or active("Paradise_City_Rorikstead.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_JKSkyrim_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
@@ -14062,16 +14070,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Immersive Citizens - AI Overhaul'
-          - 'Semi-Compatible. NPC pathing issues in Falkreath and Rorikstead and clipping in Dawnstar. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
-        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
-      - <<: *semiCompatible
-        subs:
-          - 'Paradise City - Great Trees for Cities'
-          - 'Partially Compatible. Use `Paradise_City_MergedNoRorikstead.esp` or the modular plugins without `Paradise_City_Rorikstead.esp`. Some minor clipping in Whiterun. [Source](https://www.nexusmods.com/skyrimspecialedition/mods/6289?tab=description)'
-        condition: 'active("Paradise_City_Merged.esp") or active("Paradise_City_MergedNoWindhelm.esp") or active("Paradise_City_MergedSummerWindhelm.esp") or active("Paradise_City_Rorikstead.esp")'
     clean:
       # version: 1.0 ETaC Compatible Replacer File
       - crc: 0x8E2CDE40
