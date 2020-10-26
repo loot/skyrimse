@@ -10127,14 +10127,12 @@ plugins:
           - 'RaceCompatibility'
           - 'Growl - Werebeasts of Skyrim'
         condition: 'file("RaceCompatibility.esm") and file("Scripts/PlayerWerewolfChangeScript.pex")'
+      - <<: *compatIssuesWithX
+        subs: [ '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)' ]
+        condition: 'active("mrt_MarkofArkay SE.esp")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1519' ]
       - *includesMBBF
-      - <<: *semiCompatible
-        subs:
-          - '[Mark of Arkay - Death Alternative](https://www.nexusmods.com/skyrimspecialedition/mods/11540/)'
-          - 'Disable resurrection in werebeast form because the feature breaks werebeast mods.'
-        condition: 'active("mrt_MarkofArkay SE.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Mortal Enemies'
