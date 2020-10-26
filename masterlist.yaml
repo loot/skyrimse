@@ -14553,22 +14553,18 @@ plugins:
       - 'Toblerone Winterhold College.esp'
       - 'Winterhold College SSE.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ '[Cloaks and Capes Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/19510/)' ]
+        condition: 'active("Cloaks&Capes.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ '[Guardian Spectres](https://www.nexusmods.com/skyrimspecialedition/mods/30772/)' ]
+        condition: 'checksum("mihailspectres.esp", 95F0F68D)'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
         condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
-      - <<: *semiCompatible
-        subs:
-          - '[Cloaks and Capes Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/19510/)'
-          - 'A tanning rack added by this mod is hidden behind some clutter which OCW adds.'
-        condition: 'active("Cloaks&Capes.esp")'
-      - <<: *semiCompatible
-        subs:
-          - '[Guardian Spectres](https://www.nexusmods.com/skyrimspecialedition/mods/30772/)'
-          - 'mihailspectres.esp requires cleaning before using it with Obscure''s College of Winterhold.'
-        condition: 'checksum("mihailspectres.esp", 95F0F68D)'
       - <<: *patchIncluded
         subs: [ 'Arcanum - A New Age of Magic' ]
         condition: 'active("Arcanum.esp") and not active("OCW_A-aNAoM_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
