@@ -17247,15 +17247,27 @@ plugins:
         itm: 18
 
   - name: 'Tel_Nalta.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/' ]
-    inc:
-      - name: 'MoonAndStar_MAS.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18680/'
+        name: 'Tel Nalta SE - Telvanni Home'
+    inc: [ 'Tel_Avius.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Moon and Star' ]
         condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
+    tag:
+      - C.Location
+      - C.Music
+      - Graphics
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - Names
+      - SpellStats
     dirty:
-      # version: 1.0
       - <<: *quickClean
         crc: 0xDB9E70DA
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
 
   - name: 'The Crossroads Cellar.esp'
