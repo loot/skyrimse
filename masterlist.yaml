@@ -3071,8 +3071,14 @@ plugins:
     clean:
       - crc: 0xDABA118D
         util: 'SSEEdit v4.0.3'
-  - name: 'SoulMusic_OCoW_Patch.esp'
-    after: [ 'ELFX - Hardcore.esp' ]
+  - name: '(SoulMusic_OCoW_|Soul Music OCoW SoS )Patch\.esp'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'OCW_MusicPatch_SMMM.esp' ]
+        condition: 'active("OCW_MusicPatch_SMMM.esp")'
+      - <<: *useInstead
+        subs: [ 'OCW_MusicPatch_SMMM.esp' ]
+        condition: 'not active("OCW_MusicPatch_SMMM.esp")'
 
   - name: 'Sounds of Skyrim - Complete Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30658/' ]
