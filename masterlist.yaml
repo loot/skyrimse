@@ -1067,8 +1067,12 @@ groups:
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
 
-  - name: &lightingEnhancerGroup Lighting Enhancers
+  - name: &cellSettingsGroup Cell Settings
+    description: 'A group for modules that only modify cell settings.'
     after: [ *highPriorityGroup ]
+
+  - name: &lightingEnhancerGroup Lighting Enhancers
+    after: [ *cellSettingsGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *lightingEnhancerGroup ]
@@ -5788,7 +5792,7 @@ plugins:
 
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
-    group: *highPriorityGroup
+    group: *cellSettingsGroup
 
   - name: 'NoGrassINCities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
@@ -14733,12 +14737,11 @@ plugins:
       - crc: 0x318C6177
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_CellSettings.esp'
-    group: *highPriorityGroup
+    group: *cellSettingsGroup
     after:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Music.esp'
       - 'Immersive Music Replacer.esp'
       - 'Luminosity Lighting Overhaul.esp'
@@ -14749,7 +14752,6 @@ plugins:
       - 'MissingEZs_AllExteriors.esp'
       - 'MissingEZsFixed.esp'
       - 'NoGrassINCaves.esp'
-      - 'Open Cities Skyrim.esp'
     msg:
       - <<: *missingRequirementXforPlugin
         type: error
