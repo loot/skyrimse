@@ -1067,8 +1067,12 @@ groups:
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
 
-  - name: &lightingEnhancerGroup Lighting Enhancers
+  - name: &cellSettingsGroup Cell Settings
+    description: 'A group for modules that only modify cell settings.'
     after: [ *highPriorityGroup ]
+
+  - name: &lightingEnhancerGroup Lighting Enhancers
+    after: [ *cellSettingsGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *lightingEnhancerGroup ]
