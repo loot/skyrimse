@@ -3064,32 +3064,21 @@ plugins:
         itm: 1
 
   - name: 'Soulmancer Soundtrack - NoVindDun.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22551/' ]
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Ars Metallica.esp'
-      - 'Artifacts.esp'
-      - 'Cloaks.esp'
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Finding_VelehkSain_MAQF.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-      - 'LeanWolfs Aemers Refuge SE.esp'
-      - 'MCWT_ACollegeCoup.esp'
-      - 'MCWT_ArnielsAppeals.esp'
-      - 'MCWT_ExpiditeTheExpirate.esp'
-      - 'MCWT_GovernableGatekeeper.esp'
-      - 'MLU.esp'
-      - 'NewArmoury.esp'
-      - 'NotSoFast-MageGuild.esp'
-      - 'Open Cities Skyrim.esp'
-      - 'Requiem.esp'
-      - 'SL01AmuletsSkyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22551/'
+        name: 'Soulmancer Music Merge'
+    group: *cellSettingsGroup
     clean:
-      - crc: 0x305E1238
+      - crc: 0xDABA118D
         util: 'SSEEdit v4.0.3'
-  - name: 'SoulMusic_OCoW_Patch.esp'
-    after: [ 'ELFX - Hardcore.esp' ]
+  - name: '(SoulMusic_OCoW_|Soul Music OCoW SoS )Patch\.esp'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'OCW_MusicPatch_SMMM.esp' ]
+        condition: 'active("OCW_MusicPatch_SMMM.esp")'
+      - <<: *useInstead
+        subs: [ 'OCW_MusicPatch_SMMM.esp' ]
+        condition: 'not active("OCW_MusicPatch_SMMM.esp")'
 
   - name: 'Sounds of Skyrim - Complete Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30658/' ]
@@ -5793,6 +5782,7 @@ plugins:
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
     group: *cellSettingsGroup
+    after: [ 'Soulmancer Soundtrack - NoVindDun.esp' ]
 
   - name: 'NoGrassINCities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
