@@ -2489,12 +2489,27 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/25498/)' ]
+        condition: 'not active("ELFX Fixes.esp") and not active("ELFX with Shadows.esp")'
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+      - Graphics
+      - Invent.Remove
+      - ObjectBounds
+      - Stats
     dirty:
       - <<: *quickClean
         crc: 0xDD00738B
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
   - name: 'ELFX - Exteriors.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26327/'
+        name: 'ELFX - Exteriors Fixes'
     group: *earlyLoadersGroup
     after:
       - name: 'AK - Placeable Statics SE.esp'
@@ -2513,6 +2528,10 @@ plugins:
         condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX - Exteriors Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26327/)' ]
+        condition: 'checksum("ELFX - Exteriors.esp", 9B390393)'
+    tag: [ Invent.Remove ]
     clean:
       - crc: 0x9B390393
         util: 'SSEEdit v4.0.3'
@@ -2556,30 +2575,46 @@ plugins:
   - name: 'ELFX - Weathers.esp'
     group: *earlyLoadersGroup
     after: [ 'Audio Overhaul Skyrim.esp' ]
+    tag:
+      - Graphics
+      - Sound
     clean:
       - crc: 0x0F02A920
         util: 'SSEEdit v4.0.3'
   - name: 'ELFXEnhancer.esp'
     group: *lightingEnhancerGroup
-    after: [ 'ELFX Fixes.esp' ]
     inc:
       - 'ELE_SSE.esp'
       - 'ELFX - Hardcore.esp'
       - 'Luminosity - Lightweight Lighting.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Water
     clean:
       - crc: 0x06339952
         util: 'SSEEdit v4.0.3'
   - name: 'ELFX - Hardcore.esp'
     group: *lightingEnhancerGroup
-    after: [ 'ELFX Fixes.esp' ]
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
       - 'Luminosity - Lightweight Lighting.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[ELFX Hardcore - Alternate Start Void Fix](https://www.nexusmods.com/skyrimspecialedition/mods/34941) **OR** [LiveAnotherLife - ELFX Hardcore Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38543/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Alternate Start ELFX Fix.esp") and not active("LiveAnotherLife - ELFX Hardcore.esp")'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+      - Graphics
     clean:
       - crc: 0x5ECC3509
         util: 'SSEEdit v4.0.3'
@@ -2591,7 +2626,9 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'MLU.esp'
       - 'Open Cities Skyrim.esp'
-    tag: [ C.Light ]
+    tag:
+      - C.Light
+      - C.Water
     clean:
       - crc: 0xDFEDB8EC
         util: 'SSEEdit v4.0.3'
@@ -2599,9 +2636,11 @@ plugins:
     after:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
+      - 'ELFX Fixes.esp'
       - 'RealisticWaterTwo.esp'
-    req: [ 'ELFX Fixes.esp' ]
-    tag: [ C.Light ]
+    tag:
+      - C.Light
+      - C.Water
     clean:
       - crc: 0x246FBB30
         util: 'SSEEdit v4.0.3'
@@ -2611,7 +2650,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
         name: 'Enhanced Lighting for ENB'
     group: *lightingEnhancerGroup
-    after: [ 'ELFX Fixes.esp' ]
     inc:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
@@ -2736,7 +2774,6 @@ plugins:
   - name: 'Luminosity - Lightweight Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     group: *lightingEnhancerGroup
-    after: [ 'ELFX Fixes.esp' ]
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
@@ -2747,7 +2784,6 @@ plugins:
   - name: 'Luminosity Lighting Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830' ]
     group: *lightingEnhancerGroup
-    after: [ 'ELFX Fixes.esp' ]
     inc:
       - 'ELE_SSE.esp'
       - 'ELFXEnhancer.esp'
