@@ -5846,11 +5846,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/518/' ]
     group: *earlyLoadersGroup
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Cutting Room Floor'
-          - '[ Cutting Room Floor - No Snow Under the Roof SE ](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
-        condition: 'active("Cutting Room Floor.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[No Snow Under the roof - Bug fixes](https://www.nexusmods.com/skyrimspecialedition/mods/15064/)' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("NSUTR_bugfixes.esp")'
@@ -12534,6 +12529,11 @@ plugins:
       - 'UnlimitedBookshelves.esp'
       - 'WhiterunHoldForest.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'No Snow Under the Roof **Prometheus_No_snow_Under_the_roof.esp**'
+          - '[Cutting Room Floor - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_RSCPC
