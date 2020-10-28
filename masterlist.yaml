@@ -2606,6 +2606,12 @@ plugins:
       - 'Luminosity - Lightweight Lighting.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[ELFX Hardcore - Alternate Start Void Fix](https://www.nexusmods.com/skyrimspecialedition/mods/34941) **OR** [LiveAnotherLife - ELFX Hardcore Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38543/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Alternate Start ELFX Fix.esp") and not active("LiveAnotherLife - ELFX Hardcore.esp")'
     tag:
       - C.ImageSpace
       - C.Light
