@@ -2522,6 +2522,9 @@ plugins:
         condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX - Exteriors Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26327/)' ]
+        condition: 'checksum("ELFX - Exteriors.esp", 9B390393)'
     tag: [ Invent.Remove ]
     clean:
       - crc: 0x9B390393
