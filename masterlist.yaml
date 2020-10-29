@@ -6598,6 +6598,13 @@ plugins:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - TC patch.esp' ]
+        condition: 'active("Immersive Citizens - TC patch.esp") and active("Immersive Citizens - TC patch.esp") and not active("TouringCarriages-ICAIO.esp")'
+      - <<: *patchProvided
+        subs: [ 'Oakwood' ]
+        condition: 'active("Oakwood.esp") and not active("TouringCarriages-Oakwood.esp")'
     tag:
       - C.Location
       - Factions
