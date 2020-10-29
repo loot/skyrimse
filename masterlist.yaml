@@ -4427,20 +4427,47 @@ plugins:
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp")'
+
+  - name: '.*PAN_NPCs_DG.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24135/'
+        name: 'Pandorable''s NPCs - Dawnguard'
   - name: 'PAN_NPCs_DG.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24135' ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Dawnguard Arsenal'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("DawnguardArsenal.esp") and not active("Pan NPCs DG - Dawnguard Arsenal.esp") and not active("Pan NPCs DG - Dawnguard Arsenal - Legendary Skyrim Crossbows.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Legendary Skyrim Crossbows and Bows'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Pan NPCs DG - Legendary Skyrim Crossbows.esp") and not active("Pan NPCs DG - Dawnguard Arsenal - Legendary Skyrim Crossbows.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DG Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DG Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Morrowloot Ultimate' ]
         condition: 'active("MLU.esp") and not active("PAN_NPCs_DG_MLU_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Revamped - Complete Enemy Overhaul' ]
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
+      - <<: *patchProvided
+        subs: [ 'VR' ]
+        condition: 'file("SkyrimVR.esm") and checksum("Meshes\Actors\Character\FaceGenData\FaceGeom\Skyrim.esm\000135E6.NIF", 1C7AB506)'
+    clean:
+      - crc: 0x6C01DB11
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x0FB798DD
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xCA4B5E69
+        util: 'SSEEdit v4.0.3'
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
-    after: [ 'MLU.esp' ]
+    req: [ 'MLU.esp' ]
 
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
