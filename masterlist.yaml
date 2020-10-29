@@ -12230,11 +12230,14 @@ plugins:
       - 'MoonAndStar_MAS.esp'
     inc: [ 'AuroraVillage.esp' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Undeath Remastered - Facegen Data Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20046/)' ]
+        condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF")'
       - <<: *sortMasters
         condition: 'checksum("Undeath.esp", FDADED23)'
       - <<: *wildEdits
         subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
-        condition: 'checksum("Undeath.esp", 8D7A8440)'
+        condition: 'checksum("Undeath.esp", 8D7A8440) or checksum("Undeath.esp", FDADED23)'
       - <<: *patch3rdParty
         subs:
           - 'Complete Alchemy & Cooking Overhaul'
@@ -12242,6 +12245,9 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Undeath_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Undeath_Patch.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Undeath Classical Lichdom](https://www.nexusmods.com/skyrimspecialedition/mods/40802/)' ]
+        condition: 'not active("UndeathFixes.esp") and not file("Undeath Ascension.esp") and not file("Undeath Immersive Lichdom.esp") and not file("Tainted_Blood.esp")'
     tag:
       - Graphics
       - Relations.Add
@@ -12251,6 +12257,29 @@ plugins:
         crc: 0xEB75A960
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
+      - <<: *quickClean
+        crc: 0x103B1E2B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 33
+
+  - name: 'UndeathFixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40802/'
+        name: 'Undeath Classical Lichdom'
+    tag: [ Relations.Add ]
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'True Hybrid: Tainted Blood of the Dragonborn **Tainted_Blood.esp**' ]
+        condition: 'active("Tainted_Blood.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Undeath: Immersive Lichdom **Undeath Immersive Lichdom.esp**' ]
+        condition: 'active("Undeath Immersive Lichdom.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Undeath: The Ascension **Undeath Ascension.esp**' ]
+        condition: 'active("Undeath Ascension.esp")'
+    clean:
+      - crc: 0xE281DC1A
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Vigilant.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11849' ]
