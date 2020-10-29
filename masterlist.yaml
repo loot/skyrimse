@@ -4349,17 +4349,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
   - name: 'KaliliesNPCs.esp'
     msg:
+      - <<: *patchIncluded
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("KaliliesNPCs.esp", 062B1FEB)'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("Kalilies NPCs + AI Overhaul Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("Kalilies NPCs + AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("KaliliesNPCs - CRF Patch.esp") and not active("Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'WARP - World Assets Recycle Project SE'
-          - '[Kalilies NPCs WARP patch](https://www.nexusmods.com/skyrimspecialedition/mods/33942/)'
-        condition: 'active("WARP.esp") and not active("KaliliesNPCs WARP PATCH.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("KaliliesNPCs - CRF Patch.esp") and not active("Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp") and not active("Bashed Patch.*\.esp")'
     tag: [ Outfits.Remove ]
     clean:
       - crc: 0xB9CF4F08
