@@ -5923,24 +5923,6 @@ plugins:
         type: say
         subs: [ 'RBB - JKs Skyrim Patch.esp' ]
         condition: 'active("RBB - USSEP Patch.esp") and active("RBB - JKs Skyrim Patch.esp")'
-  - name: 'RBB - JKs Skyrim Patch.esp'
-    msg:
-      # after QAC
-      - <<: *wildEdits
-        type: say
-        subs: [ 'Remove records **000096F3**, **000097BF**, **000093BD**, & **0000939C** from RBB - JKs Skyrim Patch.esp.' ]
-        condition: 'checksum("RBB - JKs Skyrim Patch.esp", 882F7F3C)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA6132870
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-  - name: 'RBB - Telengard Patch.esp'
-    msg:
-      - <<: *wildEdits
-        type: say
-        subs: [ 'Remove record **00000D74** from RBB - Telengard Patch.esp.' ]
-        condition: 'checksum("RBB - Telengard Patch.esp", 6F8AE1F7)'
 
   - name: 'Realistic Treeline.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/' ]
