@@ -1,0 +1,13 @@
+
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - name: Set up workspace
+        uses: actions/checkout@v2
