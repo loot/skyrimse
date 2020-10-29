@@ -4436,6 +4436,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Skyrim Revamped - Complete Enemy Overhaul' ]
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
     after: [ 'MLU.esp' ]
 
