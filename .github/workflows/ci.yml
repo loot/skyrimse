@@ -10,3 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get install libstdc++6
+          sudo apt-get install libhttp-parser-dev
+          sudo apt-get install libssh2-1-dev
