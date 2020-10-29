@@ -4439,6 +4439,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
+      - <<: *patchProvided
+        subs: [ 'VR' ]
+        condition: 'file("SkyrimVR.esm") and checksum("Meshes\Actors\Character\FaceGenData\FaceGeom\Skyrim.esm\000135E6.NIF", 1C7AB506)'
     clean:
       - crc: 0x6C01DB11
         util: 'SSEEdit v4.0.3'
