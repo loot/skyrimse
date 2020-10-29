@@ -4404,6 +4404,11 @@ plugins:
         name: 'Pandorable''s NPCs'
   - name: 'PAN_NPCs.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Jewelry'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("Immersive Jewelry.esp") and not active("Pan NPCs - Immersive Jewelry.esp")'
       - <<: *patchIncluded
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
@@ -4415,8 +4420,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0xA3F0ED46
         util: 'SSEEdit v4.0.3'
-  - name: 'AI Overhaul - PAN_NPCs Patch.esp'
-    after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
 
   - name: 'PAN_NPCs_DB.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30680' ]
@@ -18036,6 +18039,13 @@ plugins:
         condition: 'active("Guard Dialogue Overhaul.esp") and active("Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp")'
   - name: 'Qw_ISC_USSEP Patch.esp'
     tag: [ Sound ]
+  - name: 'Qw_PANNPCs_AIOverhaul Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'AI Overhaul - PAN_NPCs Patch.esp' ]
+        condition: 'active("AI Overhaul - PAN_NPCs Patch.esp")'
+  - name: 'Qw_PANNPCs_ICoWinterhold Patch.esp'
+    after: [ 'Qw_PANNPCs_CRF Patch.esp' ]
   - name: 'Qw_RelightingSkyrim_CRF Patch.esp'
   - name: 'Qw_WACCF_AOS Patch.esp'
     tag: [ Sound ]
@@ -18050,8 +18060,6 @@ plugins:
     after: [ 'Qw_TheOrdinaryWomen_CRF Patch.esp' ]
   - name: 'Qw_Diversity_ICoWinterhold Patch.esp'
     after: [ 'Qw_Diversity_CRF Patch.esp' ]
-  - name: 'Qw_PANNPCs_ICoWinterhold Patch.esp'
-    after: [ 'Qw_PANNPCs_CRF Patch.esp' ]
 
   ### (RSCPC) RS Children Patch Compendium ###
   - name: 'RSC_USSEP_AventusFix.esp'
