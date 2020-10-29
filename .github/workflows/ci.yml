@@ -25,3 +25,8 @@ jobs:
 
       - name: Install parser
         run: npm install -g js-yaml
+
+      - name: Run metadata validator
+        run: |
+          ./metadata_validator $GITHUB_WORKSPACE/masterlist.yaml
+          js-yaml $GITHUB_WORKSPACE/masterlist.yaml > /dev/null
