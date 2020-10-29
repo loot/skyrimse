@@ -12267,6 +12267,16 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40802/'
         name: 'Undeath Classical Lichdom'
     tag: [ Relations.Add ]
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'True Hybrid: Tainted Blood of the Dragonborn **Tainted_Blood.esp**' ]
+        condition: 'active("Tainted_Blood.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Undeath: Immersive Lichdom **Undeath Immersive Lichdom.esp**' ]
+        condition: 'active("Undeath Immersive Lichdom.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Undeath: The Ascension **Undeath Ascension.esp**' ]
+        condition: 'active("Undeath Ascension.esp")'
     clean:
       - crc: 0xE281DC1A
         util: 'SSEEdit v4.0.3'
