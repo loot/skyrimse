@@ -4399,6 +4399,11 @@ plugins:
         name: 'Pandorable''s NPCs'
   - name: 'PAN_NPCs.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Jewelry'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("Immersive Jewelry.esp") and not active("Pan NPCs - Immersive Jewelry.esp")'
       - <<: *patchIncluded
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
