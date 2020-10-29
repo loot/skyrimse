@@ -4427,6 +4427,11 @@ plugins:
         name: 'Pandorable''s NPCs - Dragonborn'
   - name: 'PAN_NPCs_DB.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Diverse Werewolves Collection'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("DiverseWerewolvesCollection.esp") and not active("Pan NPCs DB - Diverse Werewolves Collection.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp")'
