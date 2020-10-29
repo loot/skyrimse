@@ -12234,7 +12234,7 @@ plugins:
         condition: 'checksum("Undeath.esp", FDADED23)'
       - <<: *wildEdits
         subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
-        condition: 'checksum("Undeath.esp", 8D7A8440)'
+        condition: 'checksum("Undeath.esp", 8D7A8440) or checksum("Undeath.esp", FDADED23)'
       - <<: *patch3rdParty
         subs:
           - 'Complete Alchemy & Cooking Overhaul'
@@ -12251,6 +12251,10 @@ plugins:
         crc: 0xEB75A960
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
+      - <<: *quickClean
+        crc: 0x103B1E2B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 33
 
   - name: 'UndeathFixes.esp'
     url:
