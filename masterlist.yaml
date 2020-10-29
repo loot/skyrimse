@@ -1189,7 +1189,7 @@ plugins:
   - name: 'ccbgssse060-ba_dragonscale.esl'
     dirty:
       - <<: *quickClean
-        crc: 0xE4469CC6
+        crc: 0x29681D18
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
   # Alternative Armors - Dwarven Mail
@@ -2376,11 +2376,11 @@ plugins:
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("TESL-LS-AddonThunderchild.esp")'
     clean:
-      - crc: 0x029F183B
+      - crc: 0x09BB88B3
         util: 'SSEEdit v4.0.3'
-      - crc: 0xA48BC3D8
+      - crc: 0x45B51807
         util: 'SSEEdit v4.0.3'
-      - crc: 0x35D1D933
+      - crc: 0xF84D6866
         util: 'SSEEdit v4.0.3'
   - name: 'TESL-LS-VanillaLSRemover.esp'
     after:
@@ -5928,24 +5928,6 @@ plugins:
         type: say
         subs: [ 'RBB - JKs Skyrim Patch.esp' ]
         condition: 'active("RBB - USSEP Patch.esp") and active("RBB - JKs Skyrim Patch.esp")'
-  - name: 'RBB - JKs Skyrim Patch.esp'
-    msg:
-      # after QAC
-      - <<: *wildEdits
-        type: say
-        subs: [ 'Remove records **000096F3**, **000097BF**, **000093BD**, & **0000939C** from RBB - JKs Skyrim Patch.esp.' ]
-        condition: 'checksum("RBB - JKs Skyrim Patch.esp", 882F7F3C)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA6132870
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-  - name: 'RBB - Telengard Patch.esp'
-    msg:
-      - <<: *wildEdits
-        type: say
-        subs: [ 'Remove record **00000D74** from RBB - Telengard Patch.esp.' ]
-        condition: 'checksum("RBB - Telengard Patch.esp", 6F8AE1F7)'
 
   - name: 'Realistic Treeline.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18046/' ]
@@ -6406,6 +6388,9 @@ plugins:
   - name: 'Creation Club Integration - Studded Dragonscale.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29020/' ]
     tag: [ Keywords ]
+    clean:
+      - crc: 0x7CD91DCE
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Crossbow Integration.*/.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28766/' ]
@@ -6416,6 +6401,9 @@ plugins:
       - Invent.Remove
       - Keywords
       - Text
+    clean:
+      - crc: 0xC3FFCD87
+        util: 'SSEEdit v4.0.3'
   - name: 'Crossbow Integration - USSEP.esp'
     tag: [ Text ]
 
@@ -9065,7 +9053,7 @@ plugins:
         condition: 'active("LustmordVampireArmor.esp") and not active("SDA-LustmordPatch.esp")'
     tag: [ Keywords ]
     clean:
-      - crc: 0xD47EABA0
+      - crc: 0x61AFBCBD
         util: 'SSEEdit v4.0.3'
 
   - name: 'Serana Dialogue Edit.esp'
@@ -10132,7 +10120,7 @@ plugins:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Growl_Patch.esp")'
     clean:
-      - crc: 0xA9CE7065
+      - crc: 0x041CC3FF
         util: 'SSEEdit v4.0.3'
 
   - name: 'Lock_Overhaul.esp'
@@ -18090,9 +18078,6 @@ plugins:
   - name: 'SSE-Terrain-Tamriel.esm'
     url: [ 'https://forum.step-project.com/topic/13451-xlodgen-terrain-lod-beta-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal' ]
     msg: [ *optional ]
-    clean:
-      - crc: 0x807E1071
-        util: 'SSEEdit v4.0.3'
 
   - name: 'Disease Descriptions.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992' ]
