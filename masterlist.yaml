@@ -4349,17 +4349,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
   - name: 'KaliliesNPCs.esp'
     msg:
+      - <<: *patchIncluded
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("KaliliesNPCs.esp", 062B1FEB)'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("Kalilies NPCs + AI Overhaul Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("Kalilies NPCs + AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("KaliliesNPCs - CRF Patch.esp") and not active("Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'WARP - World Assets Recycle Project SE'
-          - '[Kalilies NPCs WARP patch](https://www.nexusmods.com/skyrimspecialedition/mods/33942/)'
-        condition: 'active("WARP.esp") and not active("KaliliesNPCs WARP PATCH.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("KaliliesNPCs - CRF Patch.esp") and not active("Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp") and not active("Bashed Patch.*\.esp")'
     tag: [ Outfits.Remove ]
     clean:
       - crc: 0xB9CF4F08
@@ -4445,20 +4443,47 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0x995D939B
         util: 'SSEEdit v4.0.3'
+
+  - name: '.*PAN_NPCs_DG.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24135/'
+        name: 'Pandorable''s NPCs - Dawnguard'
   - name: 'PAN_NPCs_DG.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24135' ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Dawnguard Arsenal'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("DawnguardArsenal.esp") and not active("Pan NPCs DG - Dawnguard Arsenal.esp") and not active("Pan NPCs DG - Dawnguard Arsenal - Legendary Skyrim Crossbows.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Legendary Skyrim Crossbows and Bows'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Pan NPCs DG - Legendary Skyrim Crossbows.esp") and not active("Pan NPCs DG - Dawnguard Arsenal - Legendary Skyrim Crossbows.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DG Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DG Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Morrowloot Ultimate' ]
         condition: 'active("MLU.esp") and not active("PAN_NPCs_DG_MLU_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Revamped - Complete Enemy Overhaul' ]
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
+      - <<: *patchProvided
+        subs: [ 'VR' ]
+        condition: 'file("SkyrimVR.esm") and checksum("Meshes\Actors\Character\FaceGenData\FaceGeom\Skyrim.esm\000135E6.NIF", 1C7AB506)'
+    clean:
+      - crc: 0x6C01DB11
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x0FB798DD
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xCA4B5E69
+        util: 'SSEEdit v4.0.3'
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
-    after: [ 'MLU.esp' ]
+    req: [ 'MLU.esp' ]
 
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088' ]
@@ -6617,11 +6642,23 @@ plugins:
   - name: 'TouringCarriages.esp'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'MoreToSay.esp'
+      - 'moretosayfalkreath.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
-    tag: [ C.Location ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - TC patch.esp' ]
+        condition: 'active("Immersive Citizens - TC patch.esp") and active("Immersive Citizens - TC patch.esp") and not active("TouringCarriages-ICAIO.esp")'
+      - <<: *patchProvided
+        subs: [ 'Oakwood' ]
+        condition: 'active("Oakwood.esp") and not active("TouringCarriages-Oakwood.esp")'
+    tag:
+      - C.Location
+      - Factions
+      - Keywords
     clean:
-      - crc: 0xC48E340B
+      - crc: 0xA79E0DDD
         util: 'SSEEdit v4.0.3'
   - name: 'TouringCarriages-ICAIO.esp'
     after: [ 'Immersive Citizens - TC patch.esp' ]
@@ -12211,11 +12248,14 @@ plugins:
       - 'MoonAndStar_MAS.esp'
     inc: [ 'AuroraVillage.esp' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Undeath Remastered - Facegen Data Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20046/)' ]
+        condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF")'
       - <<: *sortMasters
         condition: 'checksum("Undeath.esp", FDADED23)'
       - <<: *wildEdits
         subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
-        condition: 'checksum("Undeath.esp", 8D7A8440)'
+        condition: 'checksum("Undeath.esp", 8D7A8440) or checksum("Undeath.esp", FDADED23)'
       - <<: *patch3rdParty
         subs:
           - 'Complete Alchemy & Cooking Overhaul'
@@ -12223,6 +12263,9 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Undeath_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Undeath_Patch.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Undeath Classical Lichdom](https://www.nexusmods.com/skyrimspecialedition/mods/40802/)' ]
+        condition: 'not active("UndeathFixes.esp") and not file("Undeath Ascension.esp") and not file("Undeath Immersive Lichdom.esp") and not file("Tainted_Blood.esp")'
     tag:
       - Graphics
       - Relations.Add
@@ -12232,6 +12275,29 @@ plugins:
         crc: 0xEB75A960
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
+      - <<: *quickClean
+        crc: 0x103B1E2B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 33
+
+  - name: 'UndeathFixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40802/'
+        name: 'Undeath Classical Lichdom'
+    tag: [ Relations.Add ]
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'True Hybrid: Tainted Blood of the Dragonborn **Tainted_Blood.esp**' ]
+        condition: 'active("Tainted_Blood.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Undeath: Immersive Lichdom **Undeath Immersive Lichdom.esp**' ]
+        condition: 'active("Undeath Immersive Lichdom.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Undeath: The Ascension **Undeath Ascension.esp**' ]
+        condition: 'active("Undeath Ascension.esp")'
+    clean:
+      - crc: 0xE281DC1A
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Vigilant.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11849' ]
@@ -14463,7 +14529,9 @@ plugins:
 
   - name: 'Oakwood.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27564/' ]
-    after: [ 'Storefront.esp' ]
+    after:
+      - 'Storefront.esp'
+      - 'TouringCarriages-Oakwood.esp'
     inc: [ 'Lakeview_Extended.esp' ]
     clean:
       - crc: 0xC96DCE2B
