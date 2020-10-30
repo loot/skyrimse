@@ -6771,8 +6771,10 @@ plugins:
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 773
 
-  - name: '(Unique Region Names|URN.*).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11750/' ]
+  - name: '(Unique Region Names|URN_.*)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11750/'
+        name: 'Unique Region Names'
   - name: 'Unique Region Names.esp'
     group: *lowPriorityGroup
     after:
@@ -6792,8 +6794,10 @@ plugins:
         type: say
         condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.2", >=)'
     clean:
-      - crc: 0xCE7B2414
+      - crc: 0x85CA5093
         util: 'SSEEdit v4.0.3'
+  - name: 'URN_CastleVolkiharFerry.esp'
+    inc: [ 'CC_Ferry_Patch.esp' ]
   - name: 'URN Extended.esp'
     group: *fixesGroup
     clean:
@@ -12514,8 +12518,6 @@ plugins:
       # ICAIO - Default
       - crc: 0x8EEAB63F
         util: 'SSEEdit v4.0.3'
-  - name: 'CC_Ferry_Patch.esp'
-    after: [ 'Unique Region Names.esp' ]
 
   - name: 'Caveoftheforgotten.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13499/' ]
