@@ -4419,12 +4419,30 @@ plugins:
       - crc: 0xA3F0ED46
         util: 'SSEEdit v4.0.3'
 
+  - name: '.*PAN_NPCs_DB.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30680'
+        name: 'Pandorable''s NPCs - Dragonborn'
   - name: 'PAN_NPCs_DB.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30680' ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Diverse Werewolves Collection'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("DiverseWerewolvesCollection.esp") and not active("Pan NPCs DB - Diverse Werewolves Collection.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Economy Overhaul and Speechcraft Improvements'
+          - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
+        condition: 'active("EconomyOverhaulandSpeechcraftImprovements.esp") and not active("Pan NPCs DB - Economy Overhaul Speechcraft Improvements.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp") and not active("Bashed Patch.*\.esp")'
+    clean:
+      - crc: 0xCDE9B342
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x995D939B
+        util: 'SSEEdit v4.0.3'
 
   - name: '.*PAN_NPCs_DG.*\.esp'
     url:
