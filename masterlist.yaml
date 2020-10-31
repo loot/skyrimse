@@ -6793,6 +6793,12 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'version("Unique Region Names.esp", "5.0.8", <)'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("URN_CRF_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("URN_Open Cities Skyrim_Patch.esp")'
     clean:
       - crc: 0x85CA5093
         util: 'SSEEdit v4.0.3'
