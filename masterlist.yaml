@@ -6547,8 +6547,6 @@ plugins:
       - 'Rigmor.esp'
       - 'Shadowmarks.esp'
       - 'Storefront.esp'
-      - name: 'Unique Region Names.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", <) or not file("URN_Open Cities Skyrim_Patch.esp")'
     msg:
       - <<: *patch3rdParty
         type: warn
@@ -6778,15 +6776,10 @@ plugins:
   - name: 'Unique Region Names.esp'
     group: *cellSettingsGroup
     after:
-      - name: 'Immersive Citizens - AI Overhaul.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
       - 'SoS - Civilization.esp'
       - 'SoS - The Dungeons.esp'
       - 'SoS - The Wilds.esp'
       - 'SoundsofSkyrimComplete.esp'
-      # Group after to prevent sorting errors
-      - name: 'nwsFollowerFramework.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
     inc:
       - name: 'Open Cities Skyrim.esp'
         condition: 'not active("URN_Open Cities Skyrim_Patch.esp")'
@@ -8759,8 +8752,6 @@ plugins:
       - 'Qw_BeyondReach_USSEP Patch.esp'
       # Group afters to prevent sorting errors
       - 'Immersive Citizens - AI Overhaul.esp'
-      - name: 'Unique Region Names.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
     req: [ *SKSE ]
     inc:
       - 'AmazingFollowerTweaks.esp'
@@ -8940,8 +8931,6 @@ plugins:
       - 'breezehome_basement.esp'
       - 'BreezehomeSB.esp'
       - 'breeze2.esp'
-      - name: 'Unique Region Names.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
     msg:
       - <<: *compatNotes
         subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
