@@ -6787,6 +6787,9 @@ plugins:
       # Group after to prevent sorting errors
       - name: 'nwsFollowerFramework.esp'
         condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
+    inc:
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'not active("URN_Open Cities Skyrim_Patch.esp")'
     msg:
       - <<: *obsolete
         condition: 'version("Unique Region Names.esp", "5.0.0", <)'
