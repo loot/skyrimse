@@ -3117,6 +3117,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22551/'
         name: 'Soulmancer Music Merge'
     group: *cellSettingsGroup
+    after: [ 'Unique Region Names.esp' ]
     clean:
       - crc: 0xDABA118D
         util: 'SSEEdit v4.0.3'
@@ -5877,7 +5878,10 @@ plugins:
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
     group: *cellSettingsGroup
-    after: [ 'Soulmancer Soundtrack - NoVindDun.esp' ]
+    after:
+      # Group afters to prevent sorting errors
+      - 'Soulmancer Soundtrack - NoVindDun.esp'
+      - 'Unique Region Names.esp'
 
   - name: 'NoGrassINCities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
