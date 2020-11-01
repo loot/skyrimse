@@ -3117,6 +3117,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22551/'
         name: 'Soulmancer Music Merge'
     group: *cellSettingsGroup
+    after: [ 'Unique Region Names.esp' ]
     clean:
       - crc: 0xDABA118D
         util: 'SSEEdit v4.0.3'
@@ -5877,7 +5878,10 @@ plugins:
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
     group: *cellSettingsGroup
-    after: [ 'Soulmancer Soundtrack - NoVindDun.esp' ]
+    after:
+      # Group afters to prevent sorting errors
+      - 'Soulmancer Soundtrack - NoVindDun.esp'
+      - 'Unique Region Names.esp'
 
   - name: 'NoGrassINCities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
@@ -6547,8 +6551,6 @@ plugins:
       - 'Rigmor.esp'
       - 'Shadowmarks.esp'
       - 'Storefront.esp'
-      - name: 'Unique Region Names.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", <) or not file("URN_Open Cities Skyrim_Patch.esp")'
     msg:
       - <<: *patch3rdParty
         type: warn
@@ -6776,28 +6778,35 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11750/'
         name: 'Unique Region Names'
   - name: 'Unique Region Names.esp'
-    group: *lowPriorityGroup
+    group: *cellSettingsGroup
     after:
-      - name: 'Immersive Citizens - AI Overhaul.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
       - 'SoS - Civilization.esp'
       - 'SoS - The Dungeons.esp'
       - 'SoS - The Wilds.esp'
       - 'SoundsofSkyrimComplete.esp'
-      # Group after to prevent sorting errors
-      - name: 'nwsFollowerFramework.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", >=)'
+    inc:
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'not active("URN_Open Cities Skyrim_Patch.esp")'
     msg:
       - <<: *obsolete
-        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
-      - <<: *obsolete
-        type: say
-        condition: 'version("Unique Region Names.esp", "5.0.0", >=) and not version("Unique Region Names.esp", "5.0.2", >=)'
+        condition: 'version("Unique Region Names.esp", "5.0.8", <)'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("URN_CRF_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("URN_Open Cities Skyrim_Patch.esp")'
     clean:
       - crc: 0x85CA5093
         util: 'SSEEdit v4.0.3'
   - name: 'URN_CastleVolkiharFerry.esp'
     inc: [ 'CC_Ferry_Patch.esp' ]
+  - name: 'URN_Open Cities Skyrim_Patch.esp'
+    after: [ 'URN_CRF_Patch.esp' ]
+  - name: '(URN Extended|URN Extended_.*)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41853/'
+        name: 'Unique Region Names Extended'
   - name: 'URN Extended.esp'
     group: *fixesGroup
     clean:
@@ -8753,8 +8762,6 @@ plugins:
       - 'Qw_BeyondReach_USSEP Patch.esp'
       # Group afters to prevent sorting errors
       - 'Immersive Citizens - AI Overhaul.esp'
-      - name: 'Unique Region Names.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
     req: [ *SKSE ]
     inc:
       - 'AmazingFollowerTweaks.esp'
@@ -8934,8 +8941,6 @@ plugins:
       - 'breezehome_basement.esp'
       - 'BreezehomeSB.esp'
       - 'breeze2.esp'
-      - name: 'Unique Region Names.esp'
-        condition: 'version("Unique Region Names.esp", "5.0.0", <)'
     msg:
       - <<: *compatNotes
         subs: [ 'http://nextgen-ai.com/immersive-citizens-se-compatibility-support' ]
