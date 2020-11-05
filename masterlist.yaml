@@ -5129,8 +5129,18 @@ plugins:
       - 'Simply Stronger Dragons.esp'
     msg:
       - <<: *patchIncluded
+        subs: [ 'Deadly Dragons' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - DD Patch.esp") and not active("UltimateDragons.esp")'
+      - <<: *patchIncluded
+        # Script Patch for MQKillDragonScript.pex - KSDO2 CRC 0xC58C9B59, SUR CRC 0xC2CA6008.
+        subs: [ 'Skyrim Unbound Reborn' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and (active("Skyrim Unbound.esp") and file("SKSE/Plugins/StorageUtilData/SkyrimUnbound")) and (checksum("Scripts/MQKillDragonScript.pex", C58C9B59) or checksum("Scripts/MQKillDragonScript.pex", C2CA6008))'
+      - <<: *patchIncluded
         subs: [ 'Thunderchild: Epic Shouts & Immersion' ]
         condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Ultimate Dragons SE' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("UltimateDragons.esp") and not active("KS Dragon Overhaul 2 - UD Patch.esp") and not active("DeadlyDragons.esp")'
     clean:
       - crc: 0x8B5B8262
         util: 'SSEEdit v4.0.3'
