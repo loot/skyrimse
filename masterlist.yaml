@@ -13517,43 +13517,31 @@ plugins:
             text: 'This plugin includes records deleted by its master files. A guide to fixing this can be found [here](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
         condition: 'checksum("Distinct Interiors.esp", 6977340A)'
     dirty:
-      # version 1.82
-      - <<: *reqManualFix
-        crc: 0x6977340A
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+      - <<: *quickClean
+        crc: 0xCB0F62A8
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 1
-        nav: 1
-      # version 1.82, after QAC
-      - <<: *reqManualFix
-        crc: 0xC6A69F3C
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
     clean:
-      # version: 1.1 Distinct Interiors Fixes
-      - crc: 0x81B0E921
+      - crc: 0xE0B02A54
         util: 'SSEEdit v4.0.3'
-      # version: 1.1 Distinct Interiors Fixes without Thieves Guild
       - crc: 0xA0B93437
         util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Guilds.esp'
     inc: [ 'OpulentThievesGuild.esp' ]
     clean:
-      # version: 1.7
       - crc: 0x16EC9185
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Inns.esp'
     after:
      - 'EnhancedLightsandFX.esp'
     inc: [ 'InnCredible.esp' ]
     clean:
-      # version: 1.7
       - crc: 0x99012024
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Miscellaneous.esp'
     clean:
-      # version: 1.7
       - crc: 0xE45A43C7
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Player Homes.esp'
     req:
       - name: 'ELFX - NoPlayerHomes.esp'
@@ -13564,17 +13552,13 @@ plugins:
           - lang: en
             text: 'This plugin includes records deleted by its master files. A guide to fixing this can be found [here](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
         condition: 'checksum("Distinct Interiors - Player Homes.esp", 289785CC)'
-    dirty:
-      # version: 1.82
-      - <<: *reqManualFix
-        crc: 0x289785CC
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
+    clean:
+      - crc: 0xBE5B4F4A
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Shops.esp'
     clean:
-      # version: 1.7
       - crc: 0x9DA76663
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'EEKs Immersive Whiterun.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31214/' ]
