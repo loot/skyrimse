@@ -13510,6 +13510,12 @@ plugins:
     req:
       - name: 'ELFX - NoPlayerHomes.esp'
         condition: 'active("EnhancedLightsandFX.esp") and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921)'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'This plugin includes records deleted by its master files. A guide to fixing this can be found [here](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
+        condition: 'checksum("Distinct Interiors.esp", 6977340A)'
     dirty:
       # version 1.82
       - <<: *reqManualFix
@@ -13552,6 +13558,12 @@ plugins:
     req:
       - name: 'ELFX - NoPlayerHomes.esp'
         condition: 'active("EnhancedLightsandFX.esp")'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'This plugin includes records deleted by its master files. A guide to fixing this can be found [here](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
+        condition: 'checksum("Distinct Interiors - Player Homes.esp", 289785CC)'
     dirty:
       # version: 1.82
       - <<: *reqManualFix
