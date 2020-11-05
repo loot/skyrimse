@@ -5139,6 +5139,18 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Ultimate Dragons SE' ]
         condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("UltimateDragons.esp") and not active("KS Dragon Overhaul 2 - UD Patch.esp") and not active("DeadlyDragons.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Advanced Adversary Encounters' ]
+        condition: 'active("AAE Ultimate Edition.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Elemental Dragons' ]
+        condition: 'active("Elemental_Dragons.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Mighty Dragons' ]
+        condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Slightly Mighty Dragons' ]
+        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp")'
     clean:
       - crc: 0x8B5B8262
         util: 'SSEEdit v4.0.3'
