@@ -5128,9 +5128,9 @@ plugins:
       - 'Mighty Dragons SE Medium Cooked.esp'
       - 'Simply Stronger Dragons.esp'
     msg:
-      - <<: *patchProvided
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Thunderchild: Epic Shouts & Immersion' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
     clean:
       - crc: 0x8B5B8262
         util: 'SSEEdit v4.0.3'
