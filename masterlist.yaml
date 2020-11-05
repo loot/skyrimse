@@ -5022,7 +5022,7 @@ plugins:
         condition: 'active("DiverseDragonsCollectionSE.esp") and not active("Deadly Dragons - Diverse Dragons Collection.esp") and not active("Deadly Dragons - Diverse Dragons Collection Patch.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
       - <<: *patchProvided
         subs: [ 'KS Dragon Overhaul 2' ]
-        condition: 'active("KS Dragon Overhaul 2.esp") and not active("Deadly Dragons - KSDO2.esp")'
+        condition: 'active("KS Dragon Overhaul 2.esp") and not version("KS Dragon Overhaul 2.esp", "2.50", >=) and not active("Deadly Dragons - KSDO2.esp")'
       - <<: *patchProvided
         subs: [ 'Splendor Dragon Variants' ]
         condition: 'active("ogSplendorDragons.esp") and not active("Deadly Dragons - Splendor Dragon Variants.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
@@ -5120,29 +5120,47 @@ plugins:
     after:
       - 'Mortal Enemies.esp'
       - 'Serio''s Enhanced Dragons.esp'
+      - 'SkyTEST-HarderCreatures.esp'
     inc:
-      - 'Alduin V1.esp'
-      - 'Elemental_Dragons.esp'
-      - 'ERSO 03 - Soft Slighty Mighty Dragons.esp'
+      - 'Dragon Combat Overhaul.esp'
       - 'KS Dragon Overhaul.esp'
-      - 'Mighty Dragons SE Medium Cooked.esp'
       - 'Simply Stronger Dragons.esp'
     msg:
-      - <<: *patchProvided
+      - <<: *patchIncluded
+        subs: [ 'Deadly Dragons' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - DD Patch.esp") and not active("UltimateDragons.esp")'
+      - <<: *patchIncluded
+        # Script Patch for MQKillDragonScript.pex - KSDO2 CRC 0xC58C9B59, SUR CRC 0xC2CA6008.
+        subs: [ 'Skyrim Unbound Reborn' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and (active("Skyrim Unbound.esp") and file("SKSE/Plugins/StorageUtilData/SkyrimUnbound")) and (checksum("Scripts/MQKillDragonScript.pex", C58C9B59) or checksum("Scripts/MQKillDragonScript.pex", C2CA6008))'
+      - <<: *patchIncluded
+        subs: [ 'Thunderchild: Epic Shouts & Immersion' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Ultimate Dragons SE' ]
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("UltimateDragons.esp") and not active("KS Dragon Overhaul 2 - UD Patch.esp") and not active("DeadlyDragons.esp")'
+      - <<: *patchUnavailable
         subs: [ 'Advanced Adversary Encounters' ]
-        condition: 'active("AAE Ultimate Edition.esp") and not file("KSDO2 - AAE Ultimate Edition Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KSDO2 - Thunderchild Patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA10CFF3A
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-      - <<: *quickClean
-        crc: 0xA8E131D1
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+        condition: 'active("AAE Ultimate Edition.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Elemental Dragons' ]
+        condition: 'active("Elemental_Dragons.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Mighty Dragons' ]
+        condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Slightly Mighty Dragons' ]
+        condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.DeathItem
+      - Actors.RecordFlags
+      - Actors.Spells
+      - Actors.Stats
+      - NPC.Class
+    clean:
+      - crc: 0x8B5B8262
+        util: 'SSEEdit v4.0.3'
 
   - name: 'LessDragons(10|20|25|35|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
