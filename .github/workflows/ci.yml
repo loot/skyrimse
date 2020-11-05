@@ -1,0 +1,29 @@
+
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: sudo apt-get install -y libstdc++6 libhttp-parser-dev libssh2-1-dev
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+
+      - name: Install metadata validator
+        run: wget https://github.com/loot/metadata-validator/releases/download/0.15.0/metadata-validator.tar.xz -O - | tar -xJ --strip-components=1
+
+      - name: Install parser
+        run: npm install -g js-yaml
+
+      - name: Run metadata validator
+        run: |
+          ./metadata_validator $GITHUB_WORKSPACE/masterlist.yaml
+          js-yaml $GITHUB_WORKSPACE/masterlist.yaml > /dev/null
