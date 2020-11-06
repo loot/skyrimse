@@ -13482,80 +13482,81 @@ plugins:
       - crc: 0x88C9CF62
         util: 'SSEEdit v4.0.2f'
 
-  - name: 'Distinct Interiors.esp'
+  - name: 'Distinct Interiors.*\.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/23831'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/'
+        name: 'Distinct Interiors'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23831/'
+        name: 'Distinct Interiors - Fixes'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30483/'
+        name: 'Distinct Interiors - Cleaned Plugin Replacer'
+  - name: 'Distinct Interiors.esp'
     after:
+      - 'ELFX - NoBreezehome.esp'
+      - 'ELFX - NoHoneyside.esp'
+      - 'ELFX - NoPlayerHomes.esp'
+      - 'ELFX - NoProudspireManor.esp'
+      - 'ELFX - NoVlindrelHall.esp'
       - 'EnhancedLightsandFX.esp'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
     inc:
-      # CRC: Modular Core (v1.81, 0xB337055B)
-      - name: 'EnhancedLightsandFX.esp'
-        condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921) and active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
       - name: 'InnCredible.esp'
         condition: 'not checksum("Distinct Interiors.esp", B337055B)'
       - name: 'OpulentThievesGuild.esp'
         condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437)'
-      - 'Snazzy Furniture and Clutter Overhaul.esp'
-    req:
-      - name: 'ELFX - NoPlayerHomes.esp'
-        condition: 'active("EnhancedLightsandFX.esp") and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921)'
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'EnhancedLightsandFX.esp' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - No(PlayerHomes|Breezehome|Honeyside|ProudspireManor|VlindrelHall)\.esp") and not checksum("Distinct Interiors.esp", B337055B) and not file("textures/greynoise.dds")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Snazzy Furniture and Clutter Overhaul.esp' ]
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("SFCO - Distinct Interiors Fixes Patch.esp") and not active("SFCO - Distinct Interiors Patch.esp")'
+      - type: error
+        content:
+          - lang: en
+            text: 'This plugin includes records deleted by its master files. A guide to fixing this can be found [here](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
+        condition: 'checksum("Distinct Interiors.esp", 6977340A)'
     dirty:
-      # version 1.82
-      - <<: *reqManualFix
-        crc: 0x6977340A
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+      - <<: *quickClean
+        crc: 0xCB0F62A8
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 1
-        nav: 1
-      # version 1.82, after QAC
-      - <<: *reqManualFix
-        crc: 0xC6A69F3C
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
     clean:
-      # version: 1.1 Distinct Interiors Fixes
-      - crc: 0x81B0E921
+      - crc: 0xE0B02A54
         util: 'SSEEdit v4.0.3'
-      # version: 1.1 Distinct Interiors Fixes without Thieves Guild
       - crc: 0xA0B93437
         util: 'SSEEdit v4.0.3'
-  - name: 'Distinct Interiors( - Guilds| - Inns| - Miscellaneous| - Player Homes| - Shops)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6130/' ]
   - name: 'Distinct Interiors - Guilds.esp'
     inc: [ 'OpulentThievesGuild.esp' ]
     clean:
-      # version: 1.7
       - crc: 0x16EC9185
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Inns.esp'
-    after:
-     - 'EnhancedLightsandFX.esp'
     inc: [ 'InnCredible.esp' ]
     clean:
-      # version: 1.7
       - crc: 0x99012024
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Miscellaneous.esp'
     clean:
-      # version: 1.7
       - crc: 0xE45A43C7
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Player Homes.esp'
-    req:
-      - name: 'ELFX - NoPlayerHomes.esp'
-        condition: 'active("EnhancedLightsandFX.esp")'
-    dirty:
-      # version: 1.82
-      - <<: *reqManualFix
-        crc: 0x289785CC
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'EnhancedLightsandFX.esp' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - No(PlayerHomes|Breezehome|Honeyside|ProudspireManor|VlindrelHall)\.esp")'
+      - type: error
+        content:
+          - lang: en
+            text: 'This plugin includes records deleted by its master files. A guide to fixing this can be found [here](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
+        condition: 'checksum("Distinct Interiors - Player Homes.esp", 289785CC)'
+    clean:
+      - crc: 0xBE5B4F4A
+        util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Shops.esp'
     clean:
-      # version: 1.7
       - crc: 0x9DA76663
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.3'
 
   - name: 'EEKs Immersive Whiterun.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31214/' ]
