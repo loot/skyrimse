@@ -13499,18 +13499,15 @@ plugins:
       - 'EnhancedLightsandFX.esp'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
     inc:
-      # CRC: Modular Core (v1.81, 0xB337055B)
-      - name: 'EnhancedLightsandFX.esp'
-        condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921) and active("EnhancedLightsandFX.esp") and not active("ELFX - NoPlayerHomes.esp")'
       - name: 'InnCredible.esp'
         condition: 'not checksum("Distinct Interiors.esp", B337055B)'
       - name: 'OpulentThievesGuild.esp'
         condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437)'
       - 'Snazzy Furniture and Clutter Overhaul.esp'
-    req:
-      - name: 'ELFX - NoPlayerHomes.esp'
-        condition: 'active("EnhancedLightsandFX.esp") and not checksum("Distinct Interiors.esp", A0B93437) and not checksum("Distinct Interiors.esp", 81B0E921)'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'EnhancedLightsandFX.esp' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - No(PlayerHomes|Breezehome|Honeyside|ProudspireManor|VlindrelHall)\.esp") and not checksum("Distinct Interiors.esp", B337055B) and not file("textures/greynoise.dds")'
       - type: error
         content:
           - lang: en
@@ -13543,10 +13540,10 @@ plugins:
       - crc: 0xE45A43C7
         util: 'SSEEdit v4.0.3'
   - name: 'Distinct Interiors - Player Homes.esp'
-    req:
-      - name: 'ELFX - NoPlayerHomes.esp'
-        condition: 'active("EnhancedLightsandFX.esp")'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'EnhancedLightsandFX.esp' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - No(PlayerHomes|Breezehome|Honeyside|ProudspireManor|VlindrelHall)\.esp")'
       - type: error
         content:
           - lang: en
