@@ -13503,11 +13503,13 @@ plugins:
         condition: 'not checksum("Distinct Interiors.esp", B337055B)'
       - name: 'OpulentThievesGuild.esp'
         condition: 'not checksum("Distinct Interiors.esp", B337055B) and not checksum("Distinct Interiors.esp", A0B93437)'
-      - 'Snazzy Furniture and Clutter Overhaul.esp'
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'EnhancedLightsandFX.esp' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - No(PlayerHomes|Breezehome|Honeyside|ProudspireManor|VlindrelHall)\.esp") and not checksum("Distinct Interiors.esp", B337055B) and not file("textures/greynoise.dds")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Snazzy Furniture and Clutter Overhaul.esp' ]
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("SFCO - Distinct Interiors Fixes Patch.esp") and not active("SFCO - Distinct Interiors Patch.esp")'
       - type: error
         content:
           - lang: en
