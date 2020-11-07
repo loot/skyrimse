@@ -8950,9 +8950,6 @@ plugins:
     inc:
       - 'EEKs Arcadia''s Cauldron.esp'
       - 'EEKs Arcadia''s - OCS.esp'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-        display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
     after:
       - '3DNPC.esp'
       - 'Bells of Skyrim.esp'
@@ -9007,6 +9004,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'http://ai-gamer.com/skyrim/ic-se/' ]
       - <<: *patchIncluded
+        type: error
         subs: [ 'Open Cities' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
       - <<: *patchIncluded
