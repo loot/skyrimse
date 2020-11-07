@@ -2195,6 +2195,10 @@ plugins:
     req:
       - *SKSE
       - *SKSE_VR
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
+        condition: 'file("SkyUI_SE.bsa") and not file("SkyrimVR.esm") and not file("interface/quest_journal.swf")'
     clean:
       - crc: 0x79ACE179
         util: 'SSEEdit v4.0.3'
