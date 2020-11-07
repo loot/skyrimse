@@ -9111,13 +9111,15 @@ plugins:
   - name: 'RDO - .*\.esp'
     req: [ 'Relationship Dialogue Overhaul.esp' ]
   - name: 'RDO - CRF + USSEP Patch.esp'
-    inc: [ 'RDO - USSEP Patch.esp' ]
     clean:
       # version: Final
       - crc: 0xA2753357
         util: 'SSEEdit v4.0.2f'
   - name: 'RDO - USSEP Patch.esp'
-    inc: [ 'RDO - CRF + USSEP Patch.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'RDO - CRF + USSEP Patch.esp' ]
+        condition: 'active("RDO - CRF + USSEP Patch.esp") and active("Cutting Room Floor.esp")'
     clean:
       # version: Final
       - crc: 0x44DE71B0
