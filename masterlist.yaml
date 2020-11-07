@@ -9093,17 +9093,17 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
-        condition: '(checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Immersive Amazing Follower Tweaks' ]
-        condition: '(checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Extensible Follower Framework (EFF) v4.0.2+' ]
-        condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
       - <<: *patchUnavailable
         type: say
         subs: [ 'Follower Commentary Overhaul' ]
-        condition: 'active("FCO - Follower Commentary Overhaul.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and active("FCO - Follower Commentary Overhaul.esp")'
     clean:
       - crc: 0x20DC9B97
         util: 'SSEEdit v4.0.3'
