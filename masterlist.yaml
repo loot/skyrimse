@@ -8951,32 +8951,15 @@ plugins:
       - 'Arthmoor''s Skyrim Villages - All In One.esp'
       - name: 'iWil_BelethorsGoodStore.esp'
         display: 'Belethors Overrated Goods'
-      - 'BetterCitiesWhiterun.esp'
-      - 'Better Cities Solitude.esp'
-      - name: 'Blues Skyrim.esp'
-        display: '[Dawn of Skyrim (Director''s Cut) SE](https://www.nexusmods.com/skyrimspecialedition/mods/9074)'
       - 'BosmericDrunkenHuntsmanReborn.esp'
-      - name: 'Dawnstar.esp'
-        condition: 'not active("CC_ArtDws_IC_Patch.esp")'
       - 'EEKs Arcadia''s Cauldron.esp'
       - 'EEKs Arcadia''s - OCS.esp'
-      - name: 'Holds.esp'
-        display: '[Holds The City Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/10609)'
-      - 'InnCredible.esp'
-      - name: 'iWil_UselessShopOverhaul.esp'
-        display: 'The Useless Shop and Interior Overhaul'
       - 'NerniesCityandVillageExpansion.esp'
-      - 'Northern Bathhouses.esp'
       - name: 'Open Cities Skyrim.esp'
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
         display: '[Open Cities Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/281)'
       - 'RealWarMaiden.esp'
       - 'ScottishBanneredMare.esp'
-      - 'Skyrim Radioactive - Solitude Docks.esp'
-      - 'Skyrim Radioactive - Windhelm Docks.esp'
-      - name: 'tpos_ultimate_esm.esp'
-        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
-        display: '[The People Of Skyrim Complete SSE](https://www.nexusmods.com/skyrimspecialedition/mods/13196)'
     after:
       - '3DNPC.esp'
       - 'Bells of Skyrim.esp'
@@ -9001,6 +8984,33 @@ plugins:
       - 'BreezehomeSB.esp'
       - 'breeze2.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Arthmoor''s Dawnstar **Dawnstar.esp**' ]
+        condition: 'active("Dawnstar.esp") and not active("CC_ArtDws_IC_Patch.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Better Cities SSE **BetterCitiesWhiterun.esp**, **Better Cities Solitude.esp**' ]
+        condition: 'active("BetterCitiesWhiterun.esp") or active("Better Cities Solitude.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Dawn of Skyrim (Director''s Cut) SE **Blues Skyrim.esp**, **Dawn of Skyrim.esp**' ]
+        condition: 'active("Blues Skyrim.esp") or active("Dawn of Skyrim.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Holds The City Overhaul **Holds.esp**' ]
+        condition: 'active("Holds.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'InnCredible **InnCredible.esp**' ]
+        condition: 'active("InnCredible.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Northern Bathhouses SSE **Northern Bathhouses.esp**' ]
+        condition: 'active("Northern Bathhouses.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Skyrim Radioactive **Skyrim Radioactive - Solitude Docks.esp**, **Skyrim Radioactive - Windhelm Docks.esp**' ]
+        condition: 'active("Skyrim Radioactive - Solitude Docks.esp") or active("Skyrim Radioactive - Windhelm Docks.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'The People Of Skyrim Complete **tpos_ultimate_esm.esp**' ]
+        condition: 'active("tpos_ultimate_esm.esp") and not active("tpos_immersive_clit_patch_01.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'The Useless Shop and Interior Overhaul **iWil_UselessShopOverhaul.esp**' ]
+        condition: 'active("iWil_UselessShopOverhaul.esp")'
       - <<: *compatNotes
         subs: [ 'http://ai-gamer.com/skyrim/ic-se/' ]
       - <<: *patchIncluded
