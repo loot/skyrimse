@@ -9095,7 +9095,6 @@ plugins:
       - name: 'EFFDialogue.esp'
         condition: 'checksum("EFFDialogue.esp", E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
         display: 'Extensible Follower Framework'
-      - 'FCO - Follower Commentary Overhaul.esp'
     after:
       - '018Auri.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -9109,6 +9108,10 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Extensible Follower Framework (EFF) v4.0.2+' ]
         condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
+      - <<: *patchUnavailable
+        type: say
+        subs: [ 'Follower Commentary Overhaul' ]
+        condition: 'active("FCO - Follower Commentary Overhaul.esp")'
     clean:
       # version: Final
       - crc: 0x20DC9B97
