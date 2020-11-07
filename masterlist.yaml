@@ -9086,71 +9086,44 @@ plugins:
       - 'Thief skills rebalance for Ordinator.esp'
 
   - name: 'Relationship Dialogue Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/' ]
-    inc:
-      - name: 'Immersive Horses.esp'
-        condition: 'active("Immersive Horses.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
-      - name: 'AmazingFollowerTweaks.esp'
-        condition: 'active("AmazingFollowerTweaks.esp") and not active("RDO - AFT v1.66 Patch.esp") and not active("RDO - iAFT Patch.esp")'
-      - name: 'EFFDialogue.esp'
-        condition: 'checksum("EFFDialogue.esp", E0305B2C) and not active("RDO - EFF v4.0.2 Patch.esp")'
-        display: 'Extensible Follower Framework'
-      - 'FCO - Follower Commentary Overhaul.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1187/'
+        name: 'Relationship Dialogue Overhaul - RDO SE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9951/'
+        name: 'Lost of T''Skyrim - RDO MCM Patch'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42068/'
+        name: 'Relationship Dialogue Overhaul Lite Fixed'
     after:
       - '018Auri.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
     msg:
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
-        condition: '(checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Immersive Amazing Follower Tweaks' ]
-        condition: '(checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 8B1BC915) or checksum("AmazingFollowerTweaks.esp", 3899F517) or checksum("AmazingFollowerTweaks.esp", CB85EFD2) or checksum("AmazingFollowerTweaks.esp", 2CE005AD)) and not active("RDO - iAFT Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Extensible Follower Framework (EFF) v4.0.2+' ]
-        condition: 'active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("RDO - CRF + USSEP Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")  and not active("Cutting Room Floor.esp") and not active("RDO - USSEP Patch.esp")'
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and active("EFFDialogue.esp") and not active("RDO - EFF v4.0.2 Patch.esp")'
+      - <<: *patchUnavailable
+        type: say
+        subs: [ 'Follower Commentary Overhaul' ]
+        condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and active("FCO - Follower Commentary Overhaul.esp")'
     clean:
-      # version: Final
       - crc: 0x20DC9B97
-        util: 'SSEEdit v4.0.2f'
-  - name: 'RDO - CRF + USSEP Patch.esp'
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x4B10077D
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x29F34E5B
+        util: 'SSEEdit v4.0.3'
+  - name: 'RDO - .*\.esp'
     req: [ 'Relationship Dialogue Overhaul.esp' ]
-    inc: [ 'RDO - USSEP Patch.esp' ]
-    clean:
-      # version: Final
-      - crc: 0xA2753357
-        util: 'SSEEdit v4.0.2f'
   - name: 'RDO - USSEP Patch.esp'
-    req: [ 'Relationship Dialogue Overhaul.esp' ]
-    inc: [ 'RDO - CRF + USSEP Patch.esp' ]
-    clean:
-      # version: Final
-      - crc: 0x44DE71B0
-        util: 'SSEEdit v4.0.2f'
-  - name: 'RDO - AFT v1.66 Patch.esp'
-    after: [ 'RDO-FCO Patch.esp' ]
-    clean:
-      # version: Final
-      - crc: 0x88F9C8B8
-        util: 'SSEEdit v4.0.2f'
-  - name: 'RDO - iAFT Patch.esp'
-    after: [ 'RDO-FCO Patch.esp' ]
-    clean:
-      # version: Final
-      - crc: 0x88C2EA38
-        util: 'SSEEdit v4.0.2f'
-  - name: 'RDO - EFF v4.0.2 Patch.esp'
-    after: [ 'RDO-FCO Patch.esp' ]
-    clean:
-      # version: Final
-      - crc: 0xAE1B1EDF
-        util: 'SSEEdit v4.0.2f'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'RDO - CRF + USSEP Patch.esp' ]
+        condition: 'active("RDO - CRF + USSEP Patch.esp") and active("Cutting Room Floor.esp")'
 
   - name: 'Run For Your Lives.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2272/' ]
