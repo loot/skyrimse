@@ -3047,11 +3047,6 @@ plugins:
 
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
-    after:
-      - name: 'Audio Overhaul Skyrim.esp'
-        condition: 'file("Qw_DeadlySpellImpacts_AOS Patch.esp")'
-      - name: 'Immersive Sounds - Compendium.esp'
-        condition: 'file("Qw_DeadlySpellImpacts_ISC Patch.esp")'
     clean:
       - crc: 0x72B9103C
         util: 'SSEEdit v4.0.3'
@@ -11104,7 +11099,7 @@ plugins:
   - name: '1nivWICSkyCloaksPatch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp']
+        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp' ]
         condition: 'active("1nivWICCloaks_COS_CCOR_Patch.esp")'
 
   - name: 'InsanitySorrow Weapons Pack.esp'
@@ -17919,12 +17914,12 @@ plugins:
   - name: 'CACO Rare Curios Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'CACO_Bruma_Rare Curios_Patch.esp']
+        subs: [ 'CACO_Bruma_Rare Curios_Patch.esp' ]
         condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
   - name: 'CACO_USSEP_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'CACO_Survival Mode_Patch.esp']
+        subs: [ 'CACO_Survival Mode_Patch.esp' ]
         condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
   # KPH Patches - Complete Crafting Overhaul Remastered #
   - name: 'Cloaks_CCOR_Patch.esp'
@@ -17933,12 +17928,12 @@ plugins:
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
     msg:
       - <<: *useOnlyOneX
-        subs: [ 'CCOR & Winter Is Coming patch']
+        subs: [ 'CCOR & Winter Is Coming patch' ]
         condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
   - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp']
+        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp' ]
         condition: 'active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
   # KPH Patches - Smithing Perks Overhaul #
   - name: 'SPO_Ordinator_Patch.esp'
@@ -17966,48 +17961,48 @@ plugins:
   - name: 'DawnguardArsenal_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'DawnguardArsenal_CCOR_Patch.esp']
+        subs: [ 'DawnguardArsenal_CCOR_Patch.esp' ]
         condition: 'active("DawnguardArsenal_CCOR_Patch.esp")'
   - name: '(imp_helm_legend_WACCF_Patch|ImprovedClosefacedHelmets_WACCF)\.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp']
+        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
         condition: 'active("imp_helm_legend_WACCF_AMB_Patch.esp")'
       - <<: *useInstead
-        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp']
+        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
         condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
   - name: 'ImprovedClosefacedHelmets_WACCF.esp'
     msg: [ *obsolete ]
   - name: 'Immersive Weapons_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'Immersive Weapons_CCOR_Patch.esp']
+        subs: [ 'Immersive Weapons_CCOR_Patch.esp' ]
         condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
   - name: 'KatanaCrafting_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'KatanaCrafting_CCOR_Patch.esp']
+        subs: [ 'KatanaCrafting_CCOR_Patch.esp' ]
         condition: 'active("KatanaCrafting_CCOR_Patch.esp")'
   - name: 'Ordinator_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'CCOR_Ordinator.esp']
+        subs: [ 'CCOR_Ordinator.esp' ]
         condition: 'active("CCOR_Ordinator.esp")'
   - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp']
+        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp' ]
         condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
   - name: 'Unique Uniques_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'Unique Uniques_CCOR_Patch.esp']
+        subs: [ 'Unique Uniques_CCOR_Patch.esp' ]
         condition: 'active("Unique Uniques_CCOR_Patch.esp")'
   - name: 'WACCF_Survival Mode_Patch.esp'
     inc: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
     msg:
       - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch']
+        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch' ]
         condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
 
   ### (MPX) Modular PatchXpress ###
@@ -18173,11 +18168,8 @@ plugins:
     tag:
       - Graphics
       - Sound
-  - name: 'Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Guard Dialogue Overhaul' ]
-        condition: 'active("Guard Dialogue Overhaul.esp") and active("Qw_GuardDialogueOverhaul(_USSEP|_CRF) Patch\.esp")'
+  - name: 'Qw_Diversity_ICoWinterhold Patch.esp'
+    after: [ 'Qw_Diversity_CRF Patch.esp' ]
   - name: 'Qw_ISC_USSEP Patch.esp'
     tag: [ Sound ]
   - name: 'Qw_PANNPCs_AIOverhaul Patch.esp'
@@ -18187,7 +18179,8 @@ plugins:
         condition: 'active("AI Overhaul - PAN_NPCs Patch.esp")'
   - name: 'Qw_PANNPCs_ICoWinterhold Patch.esp'
     after: [ 'Qw_PANNPCs_CRF Patch.esp' ]
-  - name: 'Qw_RelightingSkyrim_CRF Patch.esp'
+  - name: 'Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp'
+    after: [ 'Qw_TheOrdinaryWomen_CRF Patch.esp' ]
   - name: 'Qw_WACCF_AOS Patch.esp'
     tag: [ Sound ]
   - name: 'Qw_WACCF_BSHeartland Patch.esp'
@@ -18197,10 +18190,6 @@ plugins:
   - name: 'Qw_WACCF_ISC Patch.esp'
     after: [ 'Qw_ISC_USSEP Patch.esp' ]
     tag: [ Sound ]
-  - name: 'Qw_TheOrdinaryWomen_ICoWinterhold Patch.esp'
-    after: [ 'Qw_TheOrdinaryWomen_CRF Patch.esp' ]
-  - name: 'Qw_Diversity_ICoWinterhold Patch.esp'
-    after: [ 'Qw_Diversity_CRF Patch.esp' ]
 
   ### (RSCPC) RS Children Patch Compendium ###
   - name: 'RSC_USSEP_AventusFix.esp'
@@ -18220,7 +18209,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
     msg:
       - <<: *alreadyInX
-        subs: [ 'CCOR_Vokrii.esp']
+        subs: [ 'CCOR_Vokrii.esp' ]
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
@@ -18246,34 +18235,34 @@ plugins:
   - name: 'mjhKhajiitSpeak.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
     group: *kSpeakGroup
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
   - name: 'BA_KSR_.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
   - name: 'mjhKhajiitSpeakMod.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
   - name: 'Khajiit Speak \+.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/' ]
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
   - name: 'Khajiit Speak Extended SSE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18441/' ]
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
   - name: 'Chr_KhajiitSpeak.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/' ]
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
   - name: 'Khajiit Speak - .*\.esp'
-    after: 
+    after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
