@@ -9049,6 +9049,54 @@ plugins:
         itm: 13
         udr: 1
 
+  - name: 'MoreToSay.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22622/'
+        name: 'More to Say'
+    clean:
+      - crc: 0x70366437
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosay(cityguards|falkreath|generic|karthwasten|riverwood|rorikstead|shorsstone|whiterun)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22622/'
+        name: 'More to Say'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'MoreToSay.esp' ]
+        condition: 'active("MoreToSay.esp")'
+  - name: 'moretosaycityguards.esp'
+    clean:
+      - crc: 0xE9A5FC26
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosayfalkreath.esp'
+    clean:
+      - crc: 0x49BAF699
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosaygeneric.esp'
+    clean:
+      - crc: 0x3D8F537F
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosaykarthwasten.esp'
+    clean:
+      - crc: 0x160AEBFD
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosayriverwood.esp'
+    clean:
+      - crc: 0x7E6F5858
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosayrorikstead.esp'
+    clean:
+      - crc: 0xE4A5C151
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosayshorsstone.esp'
+    clean:
+      - crc: 0xAB7727DA
+        util: 'SSEEdit v4.0.3'
+  - name: 'moretosaywhiterun.esp'
+    clean:
+      - crc: 0x1C8E8DFA
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Realistic AI Detection 2 SE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2345/' ]
     after:
@@ -12491,6 +12539,8 @@ plugins:
       - 'COTN - Dawnstar.esp'
       - 'Enhanced Solitude SSE.esp'
       - 'JKs Skyrim.esp'
+      - 'MoreToSay.esp'
+      - 'moretosayfalkreath.esp'
       - 'Solitude Docks.esp'
       - 'thepeopleofskyrim.esp'
       - 'tpos_complete02_RTCWG.esp'
@@ -13369,6 +13419,9 @@ plugins:
     after:
       - name: 'JKs Skyrim.esp'
         condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - 'MoreToSay.esp'
+      - name: 'moretosaycityguards.esp'
+        condition: 'not active("COTN Dawnstar - More to Say City Guards.esp")'
 
   - name: 'COTN - Morthal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34168/' ]
@@ -13772,6 +13825,8 @@ plugins:
       - 'Clockwork.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
+      - 'MoreToSay.esp'
+      - 'moretosayfalkreath.esp'
     clean:
       # version: 1.0.2
       - crc: 0x3DD9AFDB
