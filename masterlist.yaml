@@ -2098,8 +2098,10 @@ plugins:
   - name: 'AnotherSortingMod_2017-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10/' ]
     after:
-      - 'Joy of Perspective.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+      - name: 'Joy of Perspective.esp'
+        condition: 'not is_master("AnotherSortingMod_2017-SSE.esp")'
+      - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
+        condition: 'not is_master("AnotherSortingMod_2017-SSE.esp")'
     tag:
       - Delev
       - Graphics
