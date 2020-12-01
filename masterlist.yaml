@@ -10492,6 +10492,7 @@ plugins:
       - Graphics
       - Keywords
       - Names
+      - Relev
       - Sound
       - SpellStats
       - Text
@@ -10501,10 +10502,12 @@ plugins:
       - *includesMBBF
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Vokrii.esp")'
+      - <<: *patchProvided
+        subs: [ 'Mysticism - A Magic Overhaul' ]
+        condition: 'active("MysticismMagic.esp") and not active("Mysticism - Vokrii Compatibility Patch.esp")'
     clean:
-      # version: 2.0.1
-      - crc: 0xA9E7E94E
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x1AE0B575
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Vokriinator.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26702' ]
