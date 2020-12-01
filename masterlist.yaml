@@ -10502,6 +10502,9 @@ plugins:
       - *includesMBBF
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Vokrii.esp")'
+      - <<: *patchProvided
+        subs: [ 'Mysticism - A Magic Overhaul' ]
+        condition: 'active("MysticismMagic.esp") and not active("Mysticism - Vokrii Compatibility Patch.esp")'
     clean:
       - crc: 0x1AE0B575
         util: 'SSEEdit v4.0.3'
