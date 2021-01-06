@@ -10261,24 +10261,17 @@ plugins:
 
   - name: 'WheelsOfLull.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748' ]
-    tag: [ C.Location ]
+    tag: 
+      - C.Location
+      - Relations.add
     msg:
       - <<: *patchIncluded
         subs: [ 'Airship - Dev Aveza' ]
         condition: 'active("DA_Skyship.esm") and not active("WheelsofLull-Skyship.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Skyrim Bruma' ]
-        condition: 'active("BSHeartland.esm") and not active("WoL-Bruma.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Forgotten City' ]
-        condition: 'active("ForgottenCity.esp") and not active("WoL-FC.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Sands of Time' ]
-        condition: 'active("SOTFull.esp") and not active("WoL-SoT.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
-      - crc: 0xF656BA64
+      - crc: 0x5D3C1F44
         util: 'SSEEdit v4.0.3'
 
 ###### Gameplay - Skills & Perks ######
