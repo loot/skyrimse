@@ -9021,6 +9021,11 @@ plugins:
           - 'Open Cities Skyrim'
           - '[AI Overhaul - Open Cites Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/38031)'
         condition: 'active("Open Cities Skyrim.esp") and not active("AI Overhaul - Open Cities.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[Immersive College of Winterhold - AI Overhaul Patch](https://www.nexusmods.com/skyrimspecialedition/mods/41694)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active ("AI Overhaul - CWI Patch.esp")'
     clean:
       - crc: 0x973A774C
         util: 'SSEEdit v4.0.3'
@@ -13511,6 +13516,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
+      - <<: *patch3rdParty
+		    subs: 
+		      - 'Obscure's College of Winterhold'
+		      - '[Ultimate College of Winterhold](
+		    condition: 'active("OCW_Obscure's_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -13535,11 +13545,9 @@ plugins:
       - Outfits.Add
       - Stats
       - Text
-    dirty:
-      - <<: *quickClean
-        crc: 0x80E5FDAC
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    clean:
+      - crc: 0x01E10725
+        util: 'SSEEdit v4.0.3'
 
   - name: 'COTN - Dawnstar.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
@@ -14838,6 +14846,8 @@ plugins:
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'WACCF_Armor and Clothing Extension.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+	    - name: 'CollegeofWinterholdImmersive.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     inc:
       - 'accessible saarthal and labyrinthian.esp'
       - 'ApepiBetterCollege.esp'
@@ -14845,7 +14855,6 @@ plugins:
       - 'College Guards SE JMR.esp'
       - 'CollegeDormDoors.esp'
       - 'CollegeGrounds.esp'
-      - 'CollegeOfWinterholdImmersive.esp'
       - 'CollegeofWinterholdUpgraded.esp'
       - 'CoW-Thriving edition.esp'
       - 'EspeciallySpecialWinterhold.esp'
@@ -14874,7 +14883,7 @@ plugins:
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
-        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'not active("OCW_CellSettings.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Arcanum - A New Age of Magic' ]
         condition: 'active("Arcanum.esp") and not active("OCW_A-aNAoM_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -15082,6 +15091,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Winterhold Restored & WR JKs Skyrim Patch' ]
         condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
+      - <<: *patch3rdParty
+		    subs: 
+		      - 'Immersive College of Winterhold'
+		      - '[Ultimate College of Winterhold](
+		    condition: 'active("CollegeofWinterholdImmersive.esp") and not active("UltimateCollege.esp")'
     clean:
       - crc: 0x318C6177
         util: 'SSEEdit v4.0.3'
@@ -15105,8 +15119,11 @@ plugins:
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
-    clean:
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <) and not active("UltimateCollege.esp")'
+      - <<: *alreadyInX
+		subs: [ 'Ultimate College of Winterhold' ]
+		condition: 'active("UltimateCollege.esp") and active("OCW_CellSettings.esp")'
+	clean:
       - crc: 0xB8CF33F0
         util: 'SSEEdit v4.0.3'
   - name: 'OCW_SPO_FEPatch.esp'
@@ -15775,7 +15792,16 @@ plugins:
         crc: 0x0D4D03BC
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 48
-
+  
+  - name: 'UltimateCollege.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/
+    msg:
+      - <<: *compatNotes
+        subs: [
+    clean:
+      - crc: 0xDBAE05A3
+        util: 'SSEEdit v4.0.3'
+  
   - name: 'Undriel_QuaintRavenRock.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20851/' ]
     inc:
