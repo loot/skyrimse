@@ -13517,10 +13517,10 @@ plugins:
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
       - <<: *patch3rdParty
-		    subs: 
-		      - 'Obscure's College of Winterhold'
-		      - '[Ultimate College of Winterhold](
-		    condition: 'active("OCW_Obscure's_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
+	subs: 
+	  - 'Obscure's College of Winterhold'
+	  - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797)
+	condition: 'active("OCW_Obscure's_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -14846,7 +14846,7 @@ plugins:
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'WACCF_Armor and Clothing Extension.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
-	    - name: 'CollegeofWinterholdImmersive.esp'
+      - name: 'CollegeofWinterholdImmersive.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     inc:
       - 'accessible saarthal and labyrinthian.esp'
@@ -15092,10 +15092,10 @@ plugins:
         subs: [ 'Winterhold Restored & WR JKs Skyrim Patch' ]
         condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
       - <<: *patch3rdParty
-		    subs: 
-		      - 'Immersive College of Winterhold'
-		      - '[Ultimate College of Winterhold](
-		    condition: 'active("CollegeofWinterholdImmersive.esp") and not active("UltimateCollege.esp")'
+	subs: 
+	  - 'Immersive College of Winterhold'
+	  - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797)
+	condition: 'active("CollegeofWinterholdImmersive.esp") and not active("UltimateCollege.esp")'
     clean:
       - crc: 0x318C6177
         util: 'SSEEdit v4.0.3'
@@ -15792,15 +15792,6 @@ plugins:
         crc: 0x0D4D03BC
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 48
-  
-  - name: 'UltimateCollege.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/
-    msg:
-      - <<: *compatNotes
-        subs: [
-    clean:
-      - crc: 0xDBAE05A3
-        util: 'SSEEdit v4.0.3'
   
   - name: 'Undriel_QuaintRavenRock.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20851/' ]
@@ -18117,6 +18108,15 @@ plugins:
     after:
       - 'Qw_ACE_CRF Patch.esp'
       - 'Qw_WACCF_CRF Patch.esp'
+          
+  - name: 'UltimateCollege.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797' ]
+    msg:
+      - <<: *compatNotes
+        subs: [https://www.nexusmods.com/skyrimspecialedition/articles/2761]
+    clean:
+      - crc: 0xDBAE05A3
+        util: 'SSEEdit v4.0.3'
 
   ### kryptopyr's Patch Hub ###
   # KPH Patches - Complete Alchemy & Cooking Overhaul #
