@@ -11184,6 +11184,13 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveJewelry_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Jewelry_CCOR_Patch.esp")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Version 1.05 of this mod contains corrupt records. Update to version 1.06a.'
+          - lang: de
+            text: 'Die Version 1.05 dieses Mods enthält korrupte Einträge. Aktualieren Sie zu Version 1.06a.'
+        condition: 'version("Immersive Jewelry.esp", "1.05", ==)'
     tag:
       - Delev
       - Graphics
