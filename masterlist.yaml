@@ -1062,8 +1062,12 @@ groups:
     description: 'A group for modules that modify or add new Skills and Perks.'
     after: [ *craftingGroup ]
 
-  - name: &coreGroup Core Mods
+  - name: &vampireGameplayGroup Vampire Gameplay Overhauls
+    description: 'A group for modules that overhaul gameplay for Vampire player characters.'
     after: [ *perksGroup ]
+
+  - name: &coreGroup Core Mods
+    after: [ *vampireGameplayGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ *coreGroup ]
