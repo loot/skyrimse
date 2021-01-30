@@ -1062,8 +1062,12 @@ groups:
     description: 'A group for modules that modify or add new Skills and Perks.'
     after: [ *craftingGroup ]
 
-  - name: &coreGroup Core Mods
+  - name: &vampireGameplayGroup Vampire Gameplay Overhauls
+    description: 'A group for modules that overhaul gameplay for Vampire player characters.'
     after: [ *perksGroup ]
+
+  - name: &coreGroup Core Mods
+    after: [ *vampireGameplayGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ *coreGroup ]
@@ -8488,19 +8492,13 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1925/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3244230'
-    group: *perksGroup
+    group: *vampireGameplayGroup
     after:
       - 'EBM_UnlimitedPower.esp'
       - 'EBM_UnlimitedPower_Vampire.esp'
-      # Group after for Ordinator, to prevent sorting errors
-      - 'Ordinator - Perks of Skyrim.esp'
       - 'Requiem.esp'
       - 'Sacrosanct - Vampires of Skyrim.esp'
       - 'Tainted_Blood.esp'
-      # Group after for Vokrii, to prevent sorting errors
-      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
-      - 'Vokriinator.esp'
-      - 'Vokriinator Black.esp'
     inc:
       - name: 'Sacrosanct - Vampires of Skyrim.esp'
         condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("Add Sacrosanct Spells to BV.esp") and not active("BVandSacrosanct_Patch.esp")'
@@ -10533,8 +10531,9 @@ plugins:
 
   - name: 'Sacrilege - Minimalistic Vampires of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42408' ]
-    group: *perksGroup
+    group: *vampireGameplayGroup
     inc:
+      - 'Better Vampires.esp'
       - 'Sacrosanct - Vampires of Skyrim.esp'
     req: [ *VR_PerkExtender ]
     tag:
@@ -10552,7 +10551,7 @@ plugins:
 
   - name: 'Sacrosanct - Vampires of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3928' ]
-    group: *perksGroup
+    group: *vampireGameplayGroup
     inc:
       - 'mslVampiricThirst.esp'
       - 'SanguinairVampirism.esp'
@@ -10560,14 +10559,8 @@ plugins:
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'DVA - Dynamic Vampire Appearance.esp'
-      - 'Ordinator - Perks of Skyrim.esp'
       - 'RaceCompatibilityUSKPOverride.esp'
       - 'Requiem.esp'
-      # Group after for Vokrii, to prevent sorting errors
-      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
-      # Group after for Vokriinator, to prevent sorting errors
-      - 'Vokriinator.esp'
-      - 'Vokriinator Black.esp'
       - 'Volkihar Knight.esp'
       - 'YOT - Your Own Thoughts.esp'
     req: [ *VR_PerkExtender ]
