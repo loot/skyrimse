@@ -8470,13 +8470,16 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
         condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Apocalypse - Vokrii Compatibility Patch.esp")'
+      - <<: *wildEdits
+        type: say
+        subs: [ 'Remove CELL **00009B79** from Apocalypse - Magic of Skyrim.esp' ]
+        condition: 'checksum("Apocalypse - Magic of Skyrim.esp", 266B3B3B)'
     after:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and active("Apocalypse - Ordinator Compatibility Patch.esp")'
     clean:
-      # version: 9.45SSE
-      - crc: 0x266B3B3B
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x4F2B0B46
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'Apocalypse - More Apocalypse.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18578/' ]
