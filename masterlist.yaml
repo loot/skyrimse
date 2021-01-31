@@ -8470,6 +8470,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Vokrii - Minimalistic Perks of Skyrim' ]
         condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Apocalypse - Vokrii Compatibility Patch.esp")'
+    after:
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and active("Apocalypse - Ordinator Compatibility Patch.esp")'
     clean:
       # version: 9.45SSE
       - crc: 0x266B3B3B
