@@ -12697,6 +12697,11 @@ plugins:
 
   - name: 'BooksOfSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4115/' ]
+    msg:
+      - <<: *wildEdits
+        type: say
+        subs: [ 'Remove CELL **00037EE9** from BooksOfSkyrim.esp. The Navmesh **000CAD79** in that cell reverts changes made in Update.esm, SkyrimSewers.esp or CC Saint & Seducers.' ]
+        condition: 'checksum("BooksOfSkyrim.esp", 74D04D2B)'
 
   - name: 'Bring Out Your Dead.esp'
     url:
