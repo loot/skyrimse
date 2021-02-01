@@ -13575,6 +13575,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -14902,6 +14907,8 @@ plugins:
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'WACCF_Armor and Clothing Extension.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'CollegeOfWinterholdImmersive.esp'
+        condition: 'active("UltimateCollege.esp")'                                                                                                                         
     inc:
       - 'accessible saarthal and labyrinthian.esp'
       - 'ApepiBetterCollege.esp'
@@ -14909,7 +14916,8 @@ plugins:
       - 'College Guards SE JMR.esp'
       - 'CollegeDormDoors.esp'
       - 'CollegeGrounds.esp'
-      - 'CollegeOfWinterholdImmersive.esp'
+      - name: 'CollegeOfWinterholdImmersive.esp'
+        condition: 'not active("UltimateCollege.esp")'
       - 'CollegeofWinterholdUpgraded.esp'
       - 'CoW-Thriving edition.esp'
       - 'EspeciallySpecialWinterhold.esp'
@@ -14938,7 +14946,7 @@ plugins:
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
-        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'not active("OCW_CellSettings.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Arcanum - A New Age of Magic' ]
         condition: 'active("Arcanum.esp") and not active("OCW_A-aNAoM_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -15169,7 +15177,10 @@ plugins:
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <) and not active("UltimateCollege.esp")'
+      - <<: *alreadyInX
+        subs: [ 'Ultimate College of Winterhold' ]
+        condition: 'active("UltimateCollege.esp") and active("OCW_CellSettings.esp")'
     clean:
       - crc: 0xB8CF33F0
         util: 'SSEEdit v4.0.3'
@@ -18156,6 +18167,17 @@ plugins:
       - 'Qw_ACE_CRF Patch.esp'
       - 'Qw_WACCF_CRF Patch.esp'
 
+   ### Ultimate College of Winterhold: Mod & Patches ###       
+   # Main Mod #
+  - name: 'UltimateCollege.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797' ]
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2761']
+    clean:
+      - crc: 0x0E18E9D7
+        util: 'SSEEdit v4.0.3'
+        
   ### kryptopyr's Patch Hub ###
   # KPH Patches - Complete Alchemy & Cooking Overhaul #
   - name: 'AwesomePotions_CACO_Patch.esp'
