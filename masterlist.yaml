@@ -10524,12 +10524,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6660/' ]
     group: *perksGroup
     after:
-      - name: 'Adamant.esp'
-        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
+      - 'Adamant.esp'
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'not file("Path to Ordinance.esp") and not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
-      - name: 'SPERG-SSE.esp'
-        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
+      - 'Requiem.esp'
+      - 'SPERG-SSE.esp'
+      - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
+        condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x6F45DD3D
