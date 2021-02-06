@@ -2519,6 +2519,11 @@ plugins:
       - name: 'SMIM-SE-Merged-All.esp'
         condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lighting for ENB'
+          - '[ELE - ELFX Consistency Patch and Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/18634/)'
+        condition: 'active("ELE_SSE.esp") and not active("ELE-ELFX Patch AIO.esp") and not active("ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources)\.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchUpdateAvailable
@@ -18068,6 +18073,20 @@ plugins:
     clean:
       - crc: 0xE245BD69
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources|Patch AIO)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18634/' ]
+    inc:
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+  - name: 'ELE-ELFX Cavern Worldspaces.esp'
+    tag: [ C.ImageSpace ]
+  - name: 'ELE-ELFX More Light Sources.esp'
+    tag: [ C.Light ]
+  - name: 'ELE-ELFX Patch AIO.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
 
   - name: 'Fixes for Armor and Clothing Extension.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28059' ]
