@@ -1714,26 +1714,16 @@ plugins:
       - crc: 0x74FC1689
         util: 'SSEEdit v4.0.3'
 
-  - name: '(MissingEZs(_AllExteriors|Fixed)|MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
-    tag:
-      - C.Encounter
-      - C.Location
   - name: 'MissingEZs(_AllExteriors|Fixed)\.esp'
-    group: *highPriorityGroup
-    after:
-      - 'RelightingSkyrim_SSE.esp'
-      - 'Populated Dungns Caves Ruins Legendary.esp'
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Alternate Start -- New Beginnings.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
+    group: *cellSettingsGroup
     msg:
-      - <<: *patchProvided
-        subs: [ 'Realistic Water Two' ]
-        condition: 'active("RealisticWaterTwo.esp") and not active("(MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp")'
       - <<: *useOnlyOneX
         subs: [ 'Missing Encounter Zones FIXED' ]
         condition: 'many("MissingEZs(_AllExteriors|Fixed)\.esp")'
+    tag:
+      - C.Encounter
+      - C.Location
 
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
@@ -3264,7 +3254,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22551/'
         name: 'Soulmancer Music Merge'
     group: *cellSettingsGroup
-    after: [ 'Unique Region Names.esp' ]
+    after:
+      - 'MissingEZs_AllExteriors.esp'
+      - 'MissingEZsFixed.esp'
+      - 'Unique Region Names.esp'
     clean:
       - crc: 0xDABA118D
         util: 'SSEEdit v4.0.3'
@@ -6082,6 +6075,8 @@ plugins:
     group: *cellSettingsGroup
     after:
       # Group afters to prevent sorting errors
+      - 'MissingEZs_AllExteriors.esp'
+      - 'MissingEZsFixed.esp'
       - 'Soulmancer Soundtrack - NoVindDun.esp'
       - 'Unique Region Names.esp'
 
@@ -6745,8 +6740,6 @@ plugins:
       - 'iNeed.esp'
       - 'JKs Skyrim.esp'
       - 'Landscape Fixes For Grass Mods.esp'
-      - 'MissingEZsFixed.esp'
-      - 'MissingEZs_AllExteriors.esp'
       - 'Ordinator - Perks of Skyrim.esp'
       - 'Palaces Castles Enhanced.esp'
       - 'Point The Way.esp'
@@ -6982,6 +6975,8 @@ plugins:
   - name: 'Unique Region Names.esp'
     group: *cellSettingsGroup
     after:
+      - 'MissingEZs_AllExteriors.esp'
+      - 'MissingEZsFixed.esp'
       - 'SoS - Civilization.esp'
       - 'SoS - The Dungeons.esp'
       - 'SoS - The Wilds.esp'
