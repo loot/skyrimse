@@ -1714,17 +1714,16 @@ plugins:
       - crc: 0x74FC1689
         util: 'SSEEdit v4.0.3'
 
-  - name: '(MissingEZs(_AllExteriors|Fixed)|MZEF_ExteriorsRW2Patch|MissingEZsFixedRW2Patch)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
-    tag:
-      - C.Encounter
-      - C.Location
   - name: 'MissingEZs(_AllExteriors|Fixed)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609' ]
     group: *cellSettingsGroup
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Missing Encounter Zones FIXED' ]
         condition: 'many("MissingEZs(_AllExteriors|Fixed)\.esp")'
+    tag:
+      - C.Encounter
+      - C.Location
 
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
