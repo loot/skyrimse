@@ -4230,12 +4230,19 @@ plugins:
   - name: 'Killable Children.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1108' ]
     msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugins changes to the Default Object Manager record may revert changes in other mods. Remove record **00000031** and install [IDRS - Improved Disabled Race Scaling](https://www.nexusmods.com/skyrimspecialedition/mods/19094/).'
+        condition: 'checksum("Killable Children.esp", 0E290E34) or not file("RaceScalingDisabled.esp")'
       - <<: *includesX
         subs: [ '[Universal Race Scale Remover](https://www.nexusmods.com/skyrimspecialedition/mods/4259/)' ]
         condition: 'active("Race Scale Remover.esp")'
     clean:
       - crc: 0x0E290E34
         util: 'SSEEdit v4.0.3'
+      - crc: 0x07FEBB43
+        util: 'SSEEdit v4.0.3f'
   - name: 'KC - USLEEP Patch.esp'
     msg:
       - <<: *alreadyInX
