@@ -15254,7 +15254,11 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("PCE - Skyrim Sewers Patch.esp")'
-    tag: [ C.Name ]
+    tag:
+      - C.Encounter
+      - C.LockList
+      - C.Name
+      - C.Water
     dirty:
       # version: 2.2
       - <<: *quickClean
