@@ -1721,9 +1721,14 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Missing Encounter Zones FIXED' ]
         condition: 'many("MissingEZs(_AllExteriors|Fixed)\.esp")'
-    tag:
-      - C.Encounter
-      - C.Location
+  - name: 'MissingEZsFixed.esp'
+    clean:
+      - crc: 0xFE48F4ED
+        util: 'SSEEdit v4.0.3f'
+  - name: 'MissingEZs_AllExteriors.esp'
+    clean:
+      - crc: 0x28BE7164
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
