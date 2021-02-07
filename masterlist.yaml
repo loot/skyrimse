@@ -13560,16 +13560,16 @@ plugins:
     msg:
       - *patch3rdPartySRPC
       - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege_LOTD_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchIncluded
         subs: [ 'Better Dynamic Snow' ]
         condition: 'active("Better Dynamic Snow.esp") and not active("CWIBDSPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("CWICRFSEPatch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("CWICRFSEPatch.esp") and not active("UltimateCollege_CRF_Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("CWIEnLFXSEPatch.esp")'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("CWIEnLFXSEPatch.esp") and not active("UltimateCollege_ELFX_Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'M''rissi''s Tails of Troubles' ]
         condition: 'active("MrissiTailOfTroubles.esp") and not active("CWIMTOTPatchSE.esp")'
@@ -18253,7 +18253,7 @@ plugins:
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("UltimateCollege_WACCF_Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Armor and Clothing Extension' ]
+        subs: [ 'WACCF - Armor and Clothing Extension' ]
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("UltimateCollege_WACCFACE_Patch.esp")'
     clean:
       - crc: 0x0E18E9D7
