@@ -15234,14 +15234,14 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchProvided
-        subs: [ 'Interesting NPCs' ]
-        condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("PCE - ELFX PATCH.esp")'
       - <<: *patchProvided
         subs: [ 'Immersive Citizens' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("PCE - Immersive Citizens AI Overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Interesting NPCs' ]
+        condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Open Cities' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
