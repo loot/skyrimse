@@ -1777,6 +1777,10 @@ plugins:
         name: 'Skyrim Project Optimization SE'
     group: *fixesGroup
     after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Skyrim Project Optimization' ]
+        condition: 'many("Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm)'
   - name: 'Skyrim Project Optimization - Full Version.esm'
     clean:
       - crc: 0x4308EA0A
