@@ -15237,101 +15237,62 @@ plugins:
       - crc: 0xDB7238E5
         util: 'SSEEdit v4.0.2'
 
-  - name: '(Palaces Castles Enhanced|PCE - ).*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/'
-        name: 'Palaces and Castles Enhanced SSE'
   - name: 'Palaces Castles Enhanced.esp'
-    after:
-      - 'AKSkyrimUnderground.esp'
-      - 'BGCollectables.esp'
-      - 'BGsomethingFishy.esp'
-      - 'Celtic and Germanic Armor and Weapons standalone.esp'
-      - 'Cutting Room Floor.esp'
-      - 'Faction Crossbows.esp'
-      - 'Holds.esp'
-      - 'Inconsequential NPCs.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Legendary Skyrim Crossbows.esp'
-      - 'MLU.esp'
-      - 'Morrowloot.esp'
-      - 'OvensAndChurnsMain.esp'
-      - 'PerkusMaximus_Mage.esp'
-      - 'rbdThaneRooms.esp'
-      - 'Requiem.esp'
-      - 'RLO - Interiors.esp'
-      - 'RelightingSkyrim_SSE.esp'
-      - 'Roman armor and weapons.esp'
-      - 'Roman armor and weapons replacer.esp'
-      - 'SkyrimSewers.esp'
-      - 'SkyrimsUniqueTreasures.esp'
-      - 'Snazzy Furniture and Clutter Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/' ]
+    group: *highPriorityGroup
     inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchProvided
-        type: error
-        subs: [ 'Interesting NPCs' ]
-        condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Alternate Start' ]
-        condition: 'active("Alternate Start - Live Another Life.esp") and not active("PCE - Live Another Life Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Art of Magicka' ]
-        condition: 'active("AOM.esm") and not active("PCE - Art of Magicka Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("PCE - USSEP+CRF Patch.esp")'
-      - <<: *patchProvided
-        type: error
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("PCE - ELFX PATCH.esp")'
       - <<: *patchProvided
-        subs: [ 'ELFX Enhancer' ]
-        condition: 'active("ELFXEnhancer.esp") and not active("PCE - ELFXEnhancer Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Holidays' ]
-        condition: 'active("Holidays.esp") and not active("PCE - Holidays Patch.esp")'
-      - <<: *patchProvided
-        type: error
         subs: [ 'Immersive Citizens' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("PCE - Immersive Citizens AI Overhaul Patch.esp")'
       - <<: *patchProvided
-        type: error
+        subs: [ 'Interesting NPCs' ]
+        condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Open Cities' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Relationship Dialogue Overhaul' ]
-        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("PCE - RDO Patch.esp")'
-      - <<: *patchProvided
-        type: error
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("PCE - Relighting Skyrim.esp")'
       - <<: *patchProvided
-        type: error
-        subs: [ 'Skyrim Project Optimization' ]
-        condition: 'not active("PCE - SPO Patch.esp") and (active("Skyrim Project Optimization - Full Version.esm") or active("Skyrim Project Optimization - Full Version.esp"))'
+        subs: [ 'Skyrim Project Optimization ESM' ]
+        condition: 'not active("PCE - SPO Patch.esp") and active("Skyrim Project Optimization - Full Version.esm")'
       - <<: *patchProvided
-        type: error
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("PCE - Skyrim Sewers Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Cutting Room Floor.esp") and not active("PCE - USSEP Patch.esp")'
-    tag: [ C.Name ]
-    dirty:
-      # version: 2.2
-      - <<: *quickClean
-        crc: 0x7260B6A1
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 12
-  - name: 'PCE - RLO Patch.esp'
+    tag:
+      - C.Encounter
+      - C.Light
+      - C.LockList
+      - C.Music
+      - C.Name
+      - C.Water
+    clean:
+      - crc: 0x38BA0672
+        util: 'SSEEdit v4.0.3'
+  - name: 'PCE - (3DNPC|ELFX|Holds|Holidays|Immersive Citizens|Relighting Skyrim|RDO|RLO|Skyrim Sewers|SPO).*\.esp'
     after:
-      - 'PCE - Open Cities Patch.esp'
-      - 'PCE - Skyrim Sewers Patch.esp'
       - 'PCE - USSEP Patch.esp'
       - 'PCE - USSEP+CRF Patch.esp'
+  - name: 'PCE - Immersive Citizens AI Overhaul Patch.esp'
+    after: [ 'PCE - Skyrim Sewers Patch.esp' ]
+  - name: 'PCE - RLO Patch.esp'
+    after:
+      - 'PCE - 3DNPC Patch.esp'
+      - 'PCE - Art of Magicka Patch.esp'
+      - 'PCE - Holidays Patch.esp'
+      - 'PCE - Immersive Citizens AI Overhaul Patch.esp'
+      - 'PCE - Open Cities Patch.esp'
+      - 'PCE - Skyrim Sewers Patch.esp'
+      - 'PCE - SPO Patch.esp'
+    tag: [ C.Light ]
+  - name: 'PCE - USSEP+CRF Patch.esp'
+    tag: [ Factions ]
 
   - name: 'Paradise_City_.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10135' ]
