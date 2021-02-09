@@ -2946,6 +2946,8 @@ plugins:
       - 'Luminosity Lighting Overhaul.esp'
       - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Interiors.esp'
+      - 'WSEnhancer.esp'
+      - 'WSEnhancerCW.esp'
     clean:
       - crc: 0xEEB73A63
         util: 'SSEEdit v4.0.3'
@@ -3080,14 +3082,41 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37831/'
         name: 'Window Shadows by HHaleyy'
     tag:
-      - C.Climate
-      - C.Light
+      - name: 'C.Climate'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
+      - name: 'C.ImageSpace'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
+      - name: 'C.Light'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
+      - name: 'C.Water'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
     dirty:
       - <<: *quickClean
-        crc: 0xC6CFE16B
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 18
-        udr: 19
+        crc: 0xBFF90416
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 24
+  - name: 'WS-Light Fade.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x115D5DB7
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 73
+  - name: 'WSEnhancer.esp'
+    group: *lightingEnhancerGroup
+    tag: [ C.Light ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x67A348EC
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'WSEnhancerCW.esp'
+    group: *lightingEnhancerGroup
+    tag: [ C.Light ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x53C7055A
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
@@ -15196,6 +15225,8 @@ plugins:
       - 'Luminosity - Skyrim is Lit Edition.esp'
       - 'Soulmancer Soundtrack - NoVindDun.esp'
       - 'Unique Region Names.esp'
+      - 'WSEnhancer.esp'
+      - 'WSEnhancerCW.esp'
       # Group afters, to prevent sorting errors
       - 'MissingEZs_AllExteriors.esp'
       - 'MissingEZsFixed.esp'
