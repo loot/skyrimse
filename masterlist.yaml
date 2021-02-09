@@ -3082,8 +3082,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37831/'
         name: 'Window Shadows by HHaleyy'
     tag:
-      - C.Climate
-      - C.Light
+      - name: 'C.Climate'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
+      - name: 'C.ImageSpace'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
+      - name: 'C.Light'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
+      - name: 'C.Water'
+        condition: 'not file("WSEnhancer(CW)?\.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xBFF90416
