@@ -1771,28 +1771,32 @@ plugins:
       - crc: 0x85FDB027
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Skyrim Project Optimization.*\.es(p|m)'
+  - name: 'Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE'
     group: *fixesGroup
     after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Skyrim Project Optimization' ]
+        condition: 'many("Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm")'
   - name: 'Skyrim Project Optimization - Full Version.esm'
     clean:
       - crc: 0x4308EA0A
         util: 'SSEEdit v4.0.3'
+  - name: 'Skyrim Project Optimization - Full ESL Version.esm'
+    clean:
+      - crc: 0x169FE6A5
+        util: 'SSEEdit v4.0.3f'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
     clean:
       - crc: 0x19FD56A9
         util: 'SSEEdit v4.0.3'
-  - name: 'Skyrim Project Optimization - Full Version.esp'
+  - name: 'Skyrim Project Optimization - No Homes - Full ESL Version.esm'
     clean:
-      - crc: 0x137A03B3
-        util: 'SSEEdit v4.0.3'
-  - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    clean:
-      - crc: 0x81A0DD15
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x21E5E6AF
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'WindhelmGateFixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25621/' ]
@@ -9144,7 +9148,6 @@ plugins:
       - 'Eli_Routa - Non-Stormcloak.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'SkyfallEstate.esp'
-      - 'Skyrim Project Optimization - Full Version.esp'
       - 'Skyrim Sewers.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
@@ -14957,10 +14960,6 @@ plugins:
       - 'MagicalCollegeofWinterhold.esp'
       - name: 'MagiCollege.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
-      - name: 'Skyrim Project Optimization - Full Version.esp'
-        condition: 'is_master("OCW_Obscure''s_CollegeofWinterhold.esp")'
-      - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-        condition: 'is_master("OCW_Obscure''s_CollegeofWinterhold.esp")'
       - 'Toblerone Winterhold College.esp'
       - 'Winterhold College SSE.esp'
     msg:
@@ -15122,7 +15121,7 @@ plugins:
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("OCW_3DTaP_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization' ]
-        condition: 'active("Skyrim Project Optimization( - No Homes)? - Full Version\.es(m|p)") and not active("OCW_SPO_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", <)'
+        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("OCW_SPO_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", <)'
       - <<: *patchIncluded
         subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
         condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("OCW_SFCO_FEPatch.esp")'
