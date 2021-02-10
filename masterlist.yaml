@@ -1018,29 +1018,14 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *dlcGroup ]
 
-  - name: &preFixesGroup Pre Fixes (Patches/Add-ons)
-
   - name: &fixesGroup Fixes & Resources
-    after:
-      - *preFixesGroup
-      - *ccGroup
-
-  - name: &preEarlyGroup Pre Early (Patches/Add-ons)
+    after: [ *ccGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after:
-      - *preEarlyGroup
-      - *fixesGroup
+    after: [ *fixesGroup ]
 
   - name: default
     after: [ *earlyLoadersGroup ]
-
-  - name: &floraGroup Flora
-    description: 'A group for mods that add, remove or improve grass, plants and Trees.'
-
-  - name: &landscapeGroup Landscape
-    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-    after: [ *floraGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
@@ -1088,9 +1073,7 @@ groups:
     after: [ *kSpeakGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
-    after:
-      - *lvlListsGroup
-      - *landscapeGroup
+    after: [ *lvlListsGroup ]
 
   - name: &mapGroup Maps
     description: 'A group for Map & Map Marker plugins that need to be loaded late to preserve worldspace changes.'
