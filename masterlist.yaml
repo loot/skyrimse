@@ -1021,12 +1021,8 @@ groups:
   - name: &fixesGroup Fixes & Resources
     after: [ *ccGroup ]
 
-  - name: &preEarlyGroup Pre Early (Patches/Add-ons)
-
   - name: &earlyLoadersGroup Early Loaders
-    after:
-      - *preEarlyGroup
-      - *fixesGroup
+    after: [ *fixesGroup ]
 
   - name: default
     after: [ *earlyLoadersGroup ]
