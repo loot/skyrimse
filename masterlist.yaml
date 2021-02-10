@@ -4521,6 +4521,9 @@ plugins:
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("ACE_EtherealElvenOverhaul_Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Imperious - Races of Skyrim' ]
+        condition: 'active("Imperious - Races of Skyrim.esp") and not active("EEO Imperious patch.esp") and not active("Universal Imperious Patch.esp")'
     clean:
       # version: 2.0.1
       - crc: 0xD0F78346
@@ -7093,11 +7096,6 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
-      - <<: *patch3rdParty
-        subs:
-          - 'Ethereal Elven Overhaul'
-          - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
-        condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
     clean:
       - crc: 0x324A7C96
         util: 'SSEEdit v4.0.3f'
