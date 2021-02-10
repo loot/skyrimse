@@ -4160,11 +4160,13 @@ plugins:
         subs: [ 'Racial Body Morphs' ]
         condition: 'many("Racial Body Morphs( - Extreme Morphs| - Subtle)?( - Imperious)?\.esp")'
   - name: 'Racial Body Morphs( - Extreme Morphs| - Subtle)?\.esp'
-    inc: [ 'Imperious - Races of Skyrim.esp' ]
+    inc:
+      - name: 'Imperious - Races of Skyrim.esp'
+        condition: 'not active("Universal Imperious Patch.esp")'
     msg:
       - <<: *useVersion
         subs: [ 'Imperious' ]
-        condition: 'active("Imperious - Races of Skyrim.esp")'
+        condition: 'active("Imperious - Races of Skyrim.esp") and not active("Universal Imperious Patch.esp")'
 
   - name: 'sk immersive Armor Swapper - (Dolls|Teens)\.esp'
     url: [ 'https://schaken-mods.com/index.php?/file/94-immersive-armor-swapper-public-version/' ]
@@ -4521,6 +4523,9 @@ plugins:
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("ACE_EtherealElvenOverhaul_Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO ethereal_elven_overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Imperious - Races of Skyrim' ]
+        condition: 'active("Imperious - Races of Skyrim.esp") and not active("EEO Imperious patch.esp") and not active("Universal Imperious Patch.esp")'
     clean:
       # version: 2.0.1
       - crc: 0xD0F78346
@@ -7077,15 +7082,15 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2985912'
     group: *racesGroup
-    after: [ 'Joy of Perspective.esp' ]
     inc:
-      - name: 'GRACE.esp'
-        display: 'SkyGrace - Skyrim Gender Race And Class Enhancements'
-      - 'Half-Beast Visuals for Growl - Werebeasts of Skyrim.esp'
-      - 'Morroblivion Racial Traits.esp'
-      - 'SkyRe_Races.esp'
-      - 'Subtle but Classless.esp'
-      - 'TsunPassiveRacialAbilities.esp'
+      - name: 'Morroblivion Racial Traits.esp'
+        condition: 'not active("Universal Imperious Patch.esp")'
+      - name: 'SkyRe_Races.esp'
+        condition: 'not active("Universal Imperious Patch.esp")'
+      - name: 'Subtle but Classless.esp'
+        condition: 'not active("Universal Imperious Patch.esp")'
+      - name: 'TsunPassiveRacialAbilities.esp'
+        condition: 'not active("Universal Imperious Patch.esp")'
     tag:
       - Names
       - Text
@@ -7093,25 +7098,15 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/127' ]
       - *includesMBBF
-      - <<: *patch3rdParty
-        subs:
-          - 'Disparity - Player Character Class, Race and Gender Diversity'
-          - '[ Imperious and Disparity Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/13127/)'
-        condition: 'active("Disparity.esp") and not active("Imperious Disparity Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Ethereal Elven Overhaul'
-          - '[ Ethereal Elven Overhaul patches for SSE ](https://www.nexusmods.com/skyrimspecialedition/mods/7351)'
-        condition: 'active("ethereal_elven_overhaul.esp") and not active("EEO Imperious patch.esp")'
     clean:
-      # version: 7.24SSE
-      - crc: 0xE889ADEB
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0x324A7C96
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'Morningstar - Minimalistic Races of Skyrim.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22298' ]
     inc:
-      - 'Imperious - Races of Skyrim.esp'
+      - name: 'Imperious - Races of Skyrim.esp'
+        condition: 'not active("Universal Imperious Patch.esp")'
     tag:
       - Graphics
       - Names
