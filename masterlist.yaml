@@ -1027,9 +1027,6 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
-  - name: &landscapeGroup Landscape
-    description: 'A group for plugins that modify landscapes to fix issues and/or improve visuals.'
-
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
     after: [ default ]
@@ -1076,9 +1073,7 @@ groups:
     after: [ *kSpeakGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
-    after:
-      - *lvlListsGroup
-      - *landscapeGroup
+    after: [ *lvlListsGroup ]
 
   - name: &mapGroup Maps
     description: 'A group for Map & Map Marker plugins that need to be loaded late to preserve worldspace changes.'
