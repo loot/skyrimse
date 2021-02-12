@@ -12600,10 +12600,8 @@ plugins:
 
   - name: 'Wyrmstooth.esp'
     url:
-      - link: 'https://archive.org/details/Wyrmstooth1.17BSSE'
-        name: 'Wyrmstooth 1.17B SSE'
-      - link: 'https://archive.org/details/wyrmstooth1.18SSE'
-        name: 'Wyrmstooth 1.18 SSE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/45565'
+        name: 'Wyrmstooth'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19492'
         name: 'Drachenzahn (Wyrmstooth) EV 2.2'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18553'
@@ -12615,6 +12613,9 @@ plugins:
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?(Bruma_)?(Shire_)?(BeyondReach_)?(Falskaar_)?(Vigilant_)?Wyrm.*\.esp") and not active("CH (GFC_)?(BRU_)?(SHI_)?(BRE_)?(FAL_)?(VIG_)?WYR.*\.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wyrmstooth_Patch.esp")'
+      - <<: *obsolete
+        subs: [ '[Wyrmstooth](https://www.nexusmods.com/skyrimspecialedition/mods/45565/)' ]
+        condition: 'not version("Wyrmstooth.esp", "1.19", >=)'
     dirty:
       - <<: *quickClean
         crc: 0xF73A6161
@@ -12626,6 +12627,8 @@ plugins:
       - crc: 0x85D4BF27
         util: 'SSEEdit v4.0.3'
       - crc: 0xFD63BB73
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x65126395
         util: 'SSEEdit v4.0.3'
 
 ###### Locations - New Structures & Landmarks ######
