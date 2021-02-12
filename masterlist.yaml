@@ -9364,11 +9364,29 @@ plugins:
         subs: [ '[Serana Dialogue Edit](https://www.nexusmods.com/skyrimspecialedition/mods/16222/)' ]
         condition: 'not active("Serana Dialogue Edit.esp")'
       - <<: *patchProvided
+        subs: [ 'Amorous Adventures' ]
+        condition: 'active("SexLab-AmorousAdventures.esp") and not active("SDA-AA Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'DX Crimson Blood Armor' ]
         condition: 'active("Crimson Blood Armor.esp") and not active("SDA- DX CBlood Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Lustmord Vampire Armor' ]
         condition: 'active("LustmordVampireArmor.esp") and not active("SDA-LustmordPatch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Nether''s Follower Framework' ]
+        condition: 'active("nwsFollowerFramework.esp") and not active("SDA NFF Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Relationship Dialogue Overhaul' ]
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("SDA RDO Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Serana Dialogue Edit' ]
+        condition: 'active("Serana Dialogue Edit.esp") and not active("SDA_SDE Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wintersun - Faiths of Skyrim' ]
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Complete Alchemy & Cooking Overhaul.esp") and(not active("SDA Wintersun Patch.esp") or not checksum("SDA Wintersun Patch.esp", A0EB4F89))'
+      - <<: *patchProvided
+        subs: [ 'Wintersun and CACO' ]
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and active("Complete Alchemy & Cooking Overhaul.esp") and(not active("SDA Wintersun Patch.esp") or not checksum("SDA Wintersun Patch.esp", 2F889D8A))'
     tag: [ Keywords ]
     clean:
       - crc: 0x61AFBCBD
