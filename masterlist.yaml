@@ -10969,26 +10969,27 @@ plugins:
   - name: 'Book Covers Skyrim.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/901/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3071870/'
+        name: 'Book Covers Skyrim - Original'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3072082/'
+        name: 'Book Covers Skyrim - Desaturated'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10/'
         name: 'Another Sorting Mod - Replacer Plugin'
     msg:
       - *alreadyInLotD
       - <<: *patch3rdParty
         subs:
           - 'Not So Fast - Main Quest'
-          - '[ Skylover''s Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/9849)'
-        condition: 'active("NotSoFast-MainQuest.esp") and not active("BCS_NotsoFast_Patch.esp")'
+          - '[Skylover''s Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/9849/)'
+        condition: 'active("NotSoFast-MainQuest.esp") and not active("BCS_NotsoFast_Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Wintersun - Faiths of Skyrim'
-          - '[ Wintersun - Zim''s Immersive Artifacts and Book Covers Skyrim Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/24228)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp")'
+          - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patch3rdParty_KPH_TCIY
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch.esp")'
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY BCS Patch.esp") and not active("Bashed Patch.*\.esp")'
     after:
-      - 'Cutting Room Floor.esp'
       - 'Tel_Nalta.esp'
       - 'UnlimitedBookshelves.esp'
       - 'Weightless Books.esp'
@@ -10999,23 +11000,23 @@ plugins:
       - Sound
       - Stats
     clean:
-      # version: 4.2
       - crc: 0x32587221
-        util: 'SSEEdit v4.0.2f'
-      # Another Sorting Mod Replacer
-      - crc: 0x00975168
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xEFE70941
+        util: 'SSEEdit v4.0.3f'
+
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152/'
+        name: 'BCS Lost Library - Original'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032/'
+        name: 'BCS Lost Library - Desaturated'
     msg: [ *alreadyInLotD ]
     tag: [ Delev ]
     clean:
-      # version: 2.2
       - crc: 0xDA570813
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'Chesko_WearableLantern.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560' ]
