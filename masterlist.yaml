@@ -12260,6 +12260,10 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("ccbgssse037-curios.esl") and not active("CACO_Bruma_Rare Curios_Patch.esp")'
       - <<: *patch3rdPartyUVCPC
         condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
+      - <<: *patchProvided
+        subs:
+          - 'Identity Crisis'
+        condition: 'active("BSHeartland.esm") and active("Identity Crisis.esp") and not active("BS Bruma Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.CombatStyle
