@@ -4549,7 +4549,7 @@ plugins:
       - crc: 0xD0F78346
         util: 'SSEEdit v4.0.2f'
 
-  - name: '(KaliliesNPCs|Kalilies NPCs)(?! WARP).*\.esp'
+  - name: '.*(KaliliesNPC|Kalilies NPC)(?! WARP).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
   - name: 'KaliliesNPCs.esp'
     msg:
@@ -4558,20 +4558,22 @@ plugins:
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("KaliliesNPCs.esp", 9B789EF8)'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("Kalilies NPCs + AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - KaliliesNPCs Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("KaliliesNPCs - CRF Patch.esp") and not active("Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp") and not active("Bashed Patch.*\.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("CRF - Kalilies NPC''s Patch.esp") and (not active("AI Overhaul - KaliliesNPCs Patch.esp") or checksum("AI Overhaul - KaliliesNPCs Patch.esp", 6A098011)) and not active("Bashed Patch.*\.esp")'
     tag: [ Outfits.Remove ]
     clean:
       - crc: 0xD3921C56
         util: 'SSEEdit v4.0.3f'
       - crc: 0x9B789EF8
         util: 'SSEEdit v4.0.3f'
-  - name: 'Kalilies.*(CRF|Cutting Room Floor).*\.esp'
+  - name: 'AI Overhaul - KaliliesNPCs Patch.esp'
+    req:
+      - name: 'Cutting Room Floor.esp'
+        condition: 'checksum("AI Overhaul - KaliliesNPCs Patch.esp", D063D027)'
+  - name: 'CRF - Kalilies NPC''s Patch.esp'
     req: [ 'Cutting Room Floor.esp' ]
-  - name: 'Kalilies NPCs + AI Overhaul + Cutting Room Floor Patch.esp'
-    after: [ 'AI Overhaul - Cutting Room Floor Patch.esp' ]
 
   - name: 'Men of Winter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10902/' ]
