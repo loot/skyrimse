@@ -1984,15 +1984,22 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp")'
 
   - name: 'Particle Patch for ENB SSE.esp'
-    url: [ 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499' ]
+    url: [ 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499/' ]
     msg:
       - <<: *alsoUseX
-        subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174)' ]
+        subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
         condition: 'file("../skse64_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperSE.dll")'
+      - <<: *alsoUseX
+        subs: [ '[ENB Helper VR](https://www.nexusmods.com/skyrimspecialedition/mods/25142/)' ]
+        condition: 'file("../sksevr_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperVR.dll")'
       - <<: *deletePlugin
         type: say
-        subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174)' ]
+        subs: [ 'ENB Helper SE' ]
         condition: 'file("skse/plugins/ENBHelperSE.dll") and active("Particle Patch for ENB SSE.esp")'
+      - <<: *deletePlugin
+        type: say
+        subs: [ 'ENB Helper VR' ]
+        condition: 'file("skse/plugins/ENBHelperVR.dll") and active("Particle Patch for ENB SSE.esp")'
     tag:
       - C.Climate
       - C.ImageSpace
