@@ -18724,3 +18724,15 @@ plugins:
     tag:
       - Actors.AIPackages
       - Factions
+
+# Identity Crisis
+  - name: 'Identity Crisis.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39634' ]
+    inc:
+      - name: 'BSHeartland.esm'
+        display: 'Beyond Skyrim - Bruma SE'
+        condition: 'not active("BS Bruma Patch.esp")'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Beyond Skyrim - Bruma SE' ]
+        condition: 'active("BSHeartland.esm") and not active("BS Bruma Patch.esp")'
