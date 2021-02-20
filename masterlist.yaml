@@ -5474,6 +5474,31 @@ plugins:
         condition: 'many("Rebalanced Encounter Zones.*\.esp")'
         subs: [ 'Rebalanced Encounter Zones' ]
 
+  - name: 'Serio''s Enhanced Dragons Redone.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27061/' ]
+    inc:
+      - 'Elemental_Dragons.esp'
+      - 'Serio''s Enhanced Dragons.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Deadly Dragons' ]
+        condition: 'active("DeadlyDragons.esp") and not active("SEDR Deadly Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'KS Dragon Overhaul 2' ]
+        condition: 'active("KS Dragon Overhaul 2.esp") and not active("SEDR KS Dragons 2 Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Ultimate Dragons SE' ]
+        condition: 'active("UltimateDragons.esp") and not active("SEDR Ultimate Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
+      - *requiresMCM
+    tag:
+      - Actors.ACBS
+      - SpellStats
+    dirty:
+      - <<: *quickClean
+        crc: 0xC3D70E5A
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+        itm: 22
+
   - name: 'Skyrim Immersive Creatures Special Edition.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
