@@ -5480,7 +5480,6 @@ plugins:
       - 'Elemental_Dragons.esp'
       - 'Serio''s Enhanced Dragons.esp'
     msg:
-      - *requiresMCM
       - <<: *patchProvided
         subs: [ 'Deadly Dragons' ]
         condition: 'active("DeadlyDragons.esp") and not active("SEDR Deadly Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
@@ -5490,6 +5489,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ultimate Dragons SE' ]
         condition: 'active("UltimateDragons.esp") and not active("SEDR Ultimate Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
+      - *requiresMCM
     tag:
       - Actors.ACBS
       - SpellStats
