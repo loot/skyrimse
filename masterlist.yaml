@@ -2141,6 +2141,17 @@ plugins:
       - Names
       - Stats
 
+  - name: 'Disease Descriptions.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992' ]
+    msg:
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'Realistic Needs and Diseases' ]
+        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
+    clean:
+      - crc: 0xE26D04C8
+        util: 'SSEEdit v4.0.3'
+
   - name: 'EzEWorldMapSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
     group: *mapGroup
@@ -5612,6 +5623,26 @@ plugins:
       # version: 50.3
       - crc: 0xF70CD42C
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Zim''s Improved Dremora.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12128' ]
+    after: [ 'MLU.esp' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'The Unofficial Skyrim Special Edition Patch (USSEP)'
+          - '[Zim''s Improved Dremora -- USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45399)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Zim''s Improved Dremora -- USSEP patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'No Animals Report Crimes (NARC)'
+          - '[Zim''s Improved Dremora -- NARC Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45397)'
+        condition: 'active("NARC SE for Vanilla.esp") and not active("Zim''s Dremora Improvements -- NARC patch.esp")'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+      - Names
+      - Relev
 
 ###### Encounters - Neutrals ######
   - name: 'BirdsOfSkyrim_SSE.esp'
@@ -9156,6 +9187,15 @@ plugins:
       - crc: 0x973A774C
         util: 'SSEEdit v4.0.3'
 
+  - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
+    group: *kSpeakGroup
+  - name: 'BA_KSR_.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
   - name: 'Guard Dialogue Overhaul.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20791/'
@@ -9299,6 +9339,17 @@ plugins:
   - name: 'More Dialogue Options.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28905/' ]
     after: [ 'Misc Dialogue Edits.esp' ]
+
+  - name: 'mjhKhajiitSpeak.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
+    group: *kSpeakGroup
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+  - name: 'mjhKhajiitSpeakMod.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
 
   - name: 'More idle markers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24859/' ]
@@ -10187,6 +10238,12 @@ plugins:
   - name: 'Religion.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/67663/' ]
     after: [ 'Requiem.esp' ]
+
+  - name: 'SaveTheBrotherhood.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33461' ]
+    tag:
+      - Actors.AIPackages
+      - Factions
 
   - name: 'SaveTheIcerunner.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34681' ]
@@ -12435,6 +12492,17 @@ plugins:
         crc: 0xDA11D0DA
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 21
+
+  - name: 'Identity Crisis.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39634' ]
+    inc:
+      - name: 'BSHeartland.esm'
+        display: 'Beyond Skyrim - Bruma SE'
+        condition: 'not active("BS Bruma Patch.esp")'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Beyond Skyrim - Bruma SE' ]
+        condition: 'active("BSHeartland.esm") and not active("BS Bruma Patch.esp")'
 
   - name: 'Maslea.esm'
     url:
@@ -18155,6 +18223,11 @@ plugins:
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("aMidianBorn_ContentAddon.esp")'
 
+  - name: 'Khajiit Speak - .*\.esp'
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
   - name: 'maplightfix.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30162/'
@@ -18255,101 +18328,20 @@ plugins:
       - 'Qw_ACE_CRF Patch.esp'
       - 'Qw_WACCF_CRF Patch.esp'
 
-   ### Ultimate College of Winterhold: Mod & Patches ###       
-   # Main Mod #
-  - name: 'UltimateCollege.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797' ]
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2761']
-      - <<: *patchIncluded
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("UltimateCollege_AIOv_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Aemer''s Refuge' ]
-        condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("UltimateCollege_AemersRefuge_Patch.esp")'        
-      - <<: *patchIncluded
-        subs: [ 'Animated Armoury' ]
-        condition: 'active("NewArmoury.esp") and not active("UltimateCollege_NewArmoury_Patch.esp")' 
-      - <<: *patchIncluded
-        subs: [ 'Arcanum' ]
-        condition: 'active("Arcanum.esp") and not active("UltimateCollege_Arcanum_Patch.esp")' 
-      - <<: *patchIncluded
-        subs: [ 'Artifacts - The Tournament of the Ten Bloods' ]
-        condition: 'active("ArtifactsOfBoethiah.esp") and not active("UltimateCollege_ArtBoethiah_Patch.esp")'        
-      - <<: *patchIncluded
-        subs: [ 'Bijin Warmaidens SE' ]
-        condition: 'active("Bijin Warmaidens.esp") and not active("UltimateCollege_BijinWar_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Bijin All in One' ]
-        condition: 'active("Bijin AIO.esp") and not active("UltimateCollege_BijinAIO_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Bijin All in One 2020' ]
-        condition: 'active("Bijin_AIO 2018.esp") and not active("UltimateCollege_Bijin2018_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Bijin All in One 2020 SV' ]
-        condition: 'active("Bijin_AIO-SV 2018.esp") and not active("UltimateCollege_Bijin2018SV_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Black Mage Armor' ]
-        condition: 'active("Black Mage Armor SE.esp") and not active("UltimateCollege_BlackMageArmor_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("UltimateCollege_Cloaks_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Creation Club: Wild Horses' ]
-        condition: 'active("ccbgssse034-mntuni.esl") and not active("UltimateCollege_CCWildHorses_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("UltimateCollege_CRF_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("UltimateCollege_ELFX_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Enhanced Lights and FX Exteriors' ]
-        condition: 'active("ELFX - Exteriors.esp") and not active("UltimateCollege_ELFXExt_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Konahrik''s Accoutrements' ]
-        condition: 'active("konahrik_accoutrements.esp") and not active("UltimateCollege_KA_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Legacy of the Dragonborn SSE' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("UltimateCollege_LOTD_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Legacy of the Dragonborn BadGremlin''s Collection' ]
-        condition: 'active("BGCollectables.esp") and not active("UltimateCollege_BadGC_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'M''rissi''s Tails of Troubles' ]
-        condition: 'active("MrissiTailOfTroubles.esp") and not active("UltimateCollege_Mrissi_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Mystic Condenser SE' ]
-        condition: 'active("Mystic Condenser.esp") and not active("UltimateCollege_MysCond_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Mysticism - A Magic Overhaul' ]
-        condition: 'active("MysticismMagic.esp") and not active("UltimateCollege_Mysticism_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Not So Fast - Mage Guild' ]
-        condition: 'active("NotSoFast-MageGuild.esp") and not active("UltimateCollege_NSFMG_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Pandorable''s Brelyna' ]
-        condition: 'active("PAN_Brelyna.esp") and not active("UltimateCollege_PanBrelyna_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Pandorable''s NPCs' ]
-        condition: 'active("PAN_NPCs.esp") and not active("UltimateCollege_PanNPCs_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Pandorable''s NPCs - males' ]
-        condition: 'active("PAN_NPCs_Males.esp") and not active("UltimateCollege_PanMales_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The Tools of Kagrenac' ]
-        condition: 'active("Tools of Kagrenac.esp") and not active("UltimateCollege_ToK_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("UltimateCollege_WACCF_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'WACCF - Armor and Clothing Extension' ]
-        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("UltimateCollege_WACCFACE_Patch.esp")'
-    clean:
-      - crc: 0x03ED123A
-        util: 'SSEEdit v4.0.3'
-        
+  ### Even More Khajiit Speak Patches ###
+  - name: 'Chr_KhajiitSpeak.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
+  ### Khajiit Speak Extended ###
+  - name: 'Khajiit Speak Extended SSE.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18441/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
   ### kryptopyr's Patch Hub ###
   # KPH Patches - Complete Alchemy & Cooking Overhaul #
   - name: 'AwesomePotions_CACO_Patch.esp'
@@ -18647,6 +18639,13 @@ plugins:
     after: [ 'Qw_ISC_USSEP Patch.esp' ]
     tag: [ Sound ]
 
+  ### Raptor's Khajiit Speak Patch Collection ###
+  - name: 'Khajiit Speak \+.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
   ### (RSCPC) RS Children Patch Compendium ###
   - name: 'RSC_USSEP_AventusFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13409/' ]
@@ -18660,87 +18659,7 @@ plugins:
       - Names
       - Stats
 
-  ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
-  - name: 'Vokrii - WACCF Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'CCOR_Vokrii.esp' ]
-        condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
-
-###### Anything new can go after this (If you're not sure where to put it) ######
-  - name: 'Disease Descriptions.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992' ]
-    msg:
-      - <<: *patchIncluded
-        type: warn
-        subs: [ 'Realistic Needs and Diseases' ]
-        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
-    clean:
-      - crc: 0xE26D04C8
-        util: 'SSEEdit v4.0.3'
-
-  ### Khajiit Speak mods and patches ###
-  - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
-    group: *kSpeakGroup
-  - name: 'mjhKhajiitSpeak.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
-    group: *kSpeakGroup
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-  - name: 'BA_KSR_.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-  - name: 'mjhKhajiitSpeakMod.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-  - name: 'Khajiit Speak \+.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-  - name: 'Khajiit Speak Extended SSE.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18441/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-  - name: 'Chr_KhajiitSpeak.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-  - name: 'Khajiit Speak - .*\.esp'
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-
-  # Zim's Improved Dremora
-  - name: 'Zim''s Improved Dremora.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12128' ]
-    after: [ 'MLU.esp' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'The Unofficial Skyrim Special Edition Patch (USSEP)'
-          - '[Zim''s Improved Dremora -- USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45399)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Zim''s Improved Dremora -- USSEP patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'No Animals Report Crimes (NARC)'
-          - '[Zim''s Improved Dremora -- NARC Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45397)'
-        condition: 'active("NARC SE for Vanilla.esp") and not active("Zim''s Dremora Improvements -- NARC patch.esp")'
-    tag:
-      - Invent.Add
-      - Invent.Remove
-      - Names
-      - Relev
-
-# Surival Mode Patches - aMidianBorn Content Add-on
+  ### Survival Mode Patch Collection ###
   - name: 'Survival Mode Patches - AMB Content Addon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19154'
@@ -18750,21 +18669,107 @@ plugins:
         subs: [ 'aMidianBorn Content Addon SE' ]
         condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
 
-# Save the Brotherhood
-  - name: 'SaveTheBrotherhood.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33461' ]
-    tag:
-      - Actors.AIPackages
-      - Factions
-
-# Identity Crisis
-  - name: 'Identity Crisis.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39634' ]
-    inc:
-      - name: 'BSHeartland.esm'
-        display: 'Beyond Skyrim - Bruma SE'
-        condition: 'not active("BS Bruma Patch.esp")'
+  ### Ultimate College of Winterhold: Mod & Patches ###
+  # Main Mod #
+  - name: 'UltimateCollege.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797' ]
     msg:
-      - <<: *patchProvided
-        subs: [ 'Beyond Skyrim - Bruma SE' ]
-        condition: 'active("BSHeartland.esm") and not active("BS Bruma Patch.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2761']
+      - <<: *patchIncluded
+        subs: [ 'AI Overhaul SSE' ]
+        condition: 'active("AI Overhaul.esp") and not active("UltimateCollege_AIOv_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Aemer''s Refuge' ]
+        condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("UltimateCollege_AemersRefuge_Patch.esp")'        
+      - <<: *patchIncluded
+        subs: [ 'Animated Armoury' ]
+        condition: 'active("NewArmoury.esp") and not active("UltimateCollege_NewArmoury_Patch.esp")' 
+      - <<: *patchIncluded
+        subs: [ 'Arcanum' ]
+        condition: 'active("Arcanum.esp") and not active("UltimateCollege_Arcanum_Patch.esp")' 
+      - <<: *patchIncluded
+        subs: [ 'Artifacts - The Tournament of the Ten Bloods' ]
+        condition: 'active("ArtifactsOfBoethiah.esp") and not active("UltimateCollege_ArtBoethiah_Patch.esp")'        
+      - <<: *patchIncluded
+        subs: [ 'Bijin Warmaidens SE' ]
+        condition: 'active("Bijin Warmaidens.esp") and not active("UltimateCollege_BijinWar_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Bijin All in One' ]
+        condition: 'active("Bijin AIO.esp") and not active("UltimateCollege_BijinAIO_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Bijin All in One 2020' ]
+        condition: 'active("Bijin_AIO 2018.esp") and not active("UltimateCollege_Bijin2018_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Bijin All in One 2020 SV' ]
+        condition: 'active("Bijin_AIO-SV 2018.esp") and not active("UltimateCollege_Bijin2018SV_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Black Mage Armor' ]
+        condition: 'active("Black Mage Armor SE.esp") and not active("UltimateCollege_BlackMageArmor_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cloaks of Skyrim' ]
+        condition: 'active("Cloaks.esp") and not active("UltimateCollege_Cloaks_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Creation Club: Wild Horses' ]
+        condition: 'active("ccbgssse034-mntuni.esl") and not active("UltimateCollege_CCWildHorses_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("UltimateCollege_CRF_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Lights and FX' ]
+        condition: 'active("EnhancedLightsandFX.esp") and not active("UltimateCollege_ELFX_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Lights and FX Exteriors' ]
+        condition: 'active("ELFX - Exteriors.esp") and not active("UltimateCollege_ELFXExt_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Konahrik''s Accoutrements' ]
+        condition: 'active("konahrik_accoutrements.esp") and not active("UltimateCollege_KA_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Legacy of the Dragonborn SSE' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("UltimateCollege_LOTD_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Legacy of the Dragonborn BadGremlin''s Collection' ]
+        condition: 'active("BGCollectables.esp") and not active("UltimateCollege_BadGC_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'M''rissi''s Tails of Troubles' ]
+        condition: 'active("MrissiTailOfTroubles.esp") and not active("UltimateCollege_Mrissi_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Mystic Condenser SE' ]
+        condition: 'active("Mystic Condenser.esp") and not active("UltimateCollege_MysCond_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Mysticism - A Magic Overhaul' ]
+        condition: 'active("MysticismMagic.esp") and not active("UltimateCollege_Mysticism_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Not So Fast - Mage Guild' ]
+        condition: 'active("NotSoFast-MageGuild.esp") and not active("UltimateCollege_NSFMG_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Pandorable''s Brelyna' ]
+        condition: 'active("PAN_Brelyna.esp") and not active("UltimateCollege_PanBrelyna_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Pandorable''s NPCs' ]
+        condition: 'active("PAN_NPCs.esp") and not active("UltimateCollege_PanNPCs_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Pandorable''s NPCs - males' ]
+        condition: 'active("PAN_NPCs_Males.esp") and not active("UltimateCollege_PanMales_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Tools of Kagrenac' ]
+        condition: 'active("Tools of Kagrenac.esp") and not active("UltimateCollege_ToK_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("UltimateCollege_WACCF_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'WACCF - Armor and Clothing Extension' ]
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("UltimateCollege_WACCFACE_Patch.esp")'
+    clean:
+      - crc: 0x03ED123A
+        util: 'SSEEdit v4.0.3'
+
+  ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
+  - name: 'Vokrii - WACCF Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CCOR_Vokrii.esp' ]
+        condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
+
+###### Anything new can go after this (If you're not sure where to put it) ######
