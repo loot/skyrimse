@@ -4590,7 +4590,7 @@ plugins:
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - KaliliesNPCs Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("CRF - Kalilies NPC''s Patch.esp") and (not active("AI Overhaul - KaliliesNPCs Patch.esp") or checksum("AI Overhaul - KaliliesNPCs Patch.esp", 6A098011)) and not active("Bashed Patch.*\.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("CRF - Kalilies NPC''s Patch.esp") and not active("AI Overhaul - KaliliesNPCs Patch.esp") and not active("Bashed Patch.*\.esp")'
     tag: [ Outfits.Remove ]
     clean:
       - crc: 0xD3921C56
@@ -4601,8 +4601,16 @@ plugins:
     req:
       - name: 'Cutting Room Floor.esp'
         condition: 'checksum("AI Overhaul - KaliliesNPCs Patch.esp", D063D027)'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and checksum("AI Overhaul - KaliliesNPCs Patch.esp", 6A098011)'
   - name: 'CRF - Kalilies NPC''s Patch.esp'
     req: [ 'Cutting Room Floor.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'AI Overhaul patch for CRF users' ]
+        condition: 'active("Cutting Room Floor.esp") and active("AI Overhaul.esp") and active("AI Overhaul - KaliliesNPCs Patch.esp")'
 
   - name: 'Men of Winter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10902/' ]
