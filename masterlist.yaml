@@ -2141,6 +2141,17 @@ plugins:
       - Names
       - Stats
 
+  - name: 'Disease Descriptions.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992' ]
+    msg:
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'Realistic Needs and Diseases' ]
+        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
+    clean:
+      - crc: 0xE26D04C8
+        util: 'SSEEdit v4.0.3'
+
   - name: 'EzEWorldMapSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
     group: *mapGroup
@@ -18716,16 +18727,6 @@ plugins:
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
-  - name: 'Disease Descriptions.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992' ]
-    msg:
-      - <<: *patchIncluded
-        type: warn
-        subs: [ 'Realistic Needs and Diseases' ]
-        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
-    clean:
-      - crc: 0xE26D04C8
-        util: 'SSEEdit v4.0.3'
 
   ### Khajiit Speak mods and patches ###
   - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
