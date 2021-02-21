@@ -9187,6 +9187,15 @@ plugins:
       - crc: 0x973A774C
         util: 'SSEEdit v4.0.3'
 
+  - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
+    group: *kSpeakGroup
+  - name: 'BA_KSR_.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
   - name: 'Guard Dialogue Overhaul.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20791/'
@@ -9330,6 +9339,17 @@ plugins:
   - name: 'More Dialogue Options.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28905/' ]
     after: [ 'Misc Dialogue Edits.esp' ]
+
+  - name: 'mjhKhajiitSpeak.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
+    group: *kSpeakGroup
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+  - name: 'mjhKhajiitSpeakMod.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
 
   - name: 'More idle markers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24859/' ]
@@ -18729,39 +18749,24 @@ plugins:
 ###### Anything new can go after this (If you're not sure where to put it) ######
 
   ### Khajiit Speak mods and patches ###
-  - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
-    group: *kSpeakGroup
-  - name: 'mjhKhajiitSpeak.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
-    group: *kSpeakGroup
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-  - name: 'BA_KSR_.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-  - name: 'mjhKhajiitSpeakMod.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/441/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
   - name: 'Khajiit Speak \+.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/' ]
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
+
   - name: 'Khajiit Speak Extended SSE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18441/' ]
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
+
   - name: 'Chr_KhajiitSpeak.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/' ]
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
+
   - name: 'Khajiit Speak - .*\.esp'
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
