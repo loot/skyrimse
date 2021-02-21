@@ -18677,6 +18677,16 @@ plugins:
       - Names
       - Stats
 
+  ### Survival Mode Patch Collection ###
+  - name: 'Survival Mode Patches - AMB Content Addon.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19154'
+        name: 'Survival Mode Patch Collection'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'aMidianBorn Content Addon SE' ]
+        condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
+
   ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
   - name: 'Vokrii - WACCF Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
@@ -18756,13 +18766,3 @@ plugins:
       - Invent.Remove
       - Names
       - Relev
-
-# Surival Mode Patches - aMidianBorn Content Add-on
-  - name: 'Survival Mode Patches - AMB Content Addon.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19154'
-        name: 'Survival Mode Patch Collection'
-    msg:
-      - <<: *alreadyInOrFixedByX
-        subs: [ 'aMidianBorn Content Addon SE' ]
-        condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
