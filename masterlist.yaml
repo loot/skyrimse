@@ -3113,40 +3113,21 @@ plugins:
         name: 'Window Shadows by HHaleyy'
     tag:
       - name: 'C.Climate'
-        condition: 'not file("WSEnhancer(CW)?\.esp")'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
       - name: 'C.ImageSpace'
-        condition: 'not file("WSEnhancer(CW)?\.esp")'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
       - name: 'C.Light'
-        condition: 'not file("WSEnhancer(CW)?\.esp")'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
       - name: 'C.Water'
-        condition: 'not file("WSEnhancer(CW)?\.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xBFF90416
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 24
-  - name: 'WS-Light Fade.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x115D5DB7
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 73
-  - name: 'WSEnhancer.esp'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
+    clean:
+      - crc: 0x6B6ABB95
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xBA2BB589
+        util: 'SSEEdit v4.0.3f'
+  - name: 'WSEnhancer(CW)?\.esp'
     group: *lightingEnhancerGroup
     tag: [ C.Light ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x67A348EC
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-  - name: 'WSEnhancerCW.esp'
-    group: *lightingEnhancerGroup
-    tag: [ C.Light ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x53C7055A
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
 
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
