@@ -13797,7 +13797,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
     after:
       - name: 'JKs Skyrim.esp'
-        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
       - 'MoreToSay.esp'
       - name: 'moretosaycityguards.esp'
         condition: 'not active("COTN Dawnstar - More to Say City Guards.esp")'
@@ -13806,9 +13806,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34168/' ]
     after:
       - name: 'COTN - Dawnstar.esp'
-        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
-      - name: 'JKs Skyrim.esp'
-        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
+
+  - name: 'COTN - Winterhold.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40088/' ]
+    after:
+      - name: 'COTN - Morthal.esp'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
 
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
@@ -14475,7 +14479,7 @@ plugins:
       - 'Paradise_City_MergedSummerWindhelm.esp'
       - 'Paradise_City_Rorikstead.esp'
       - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or (not active("The Great JK''s Cities.esp") and not active("The Great Cities of JK''s Skyrim - Patch.esp"))'
+        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or not active("The Great Cities of JK''s (North|Skyrim) - Patch.esp")'
       - 'The Great City of Dawnstar.esp'
       - 'The Great City of Dragon Bridge.esp'
       - 'The Great City of Falkreath.esp'
@@ -14485,6 +14489,8 @@ plugins:
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'S3DTrees NextGenerationForests.esp'
+      - name: 'The Great Cities - Minor Cities and Towns.esp'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
@@ -14557,8 +14563,13 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'The Great Cities - Minor Cities and Towns'
-          - '[Xenons City patch (The Great Cities of Skyrim and JKs skyrim compatibility patch)](https://www.nexusmods.com/skyrimspecialedition/mods/25282/) or [The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
-        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and not active("The Great JK''s Cities.esp") and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
+          - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
+        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and (not active("COTN - Dawnstar.esp") or not active("COTN - Morthal.esp")) and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great Cities & Cities of the North'
+          - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
+        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and active("COTN - Dawnstar.esp") and active("COTN - Morthal.esp") and not active("The Great Cities of JK''s North - Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -14617,11 +14628,9 @@ plugins:
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
     clean:
-      # version: 1.0 ETaC Compatible Replacer File
-      - crc: 0x8E2CDE40
-        util: 'SSEEdit v4.0.2'
-      # version: 1.6
       - crc: 0x09D90FD3
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0x8E2CDE40
         util: 'SSEEdit v4.0.2'
   # JK's Skyrim Patches
   - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
@@ -15887,16 +15896,12 @@ plugins:
   - name: 'The Great Cities - Minor Cities and Towns.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20272' ]
     after:
-      - name: 'COTN - Dawnstar.esp'
-        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
-      - name: 'COTN - Morthal.esp'
-        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
       - name: 'JKs Skyrim.esp'
-        condition: 'file("The Great Cities of JK''s Skyrim - Patch.esp")'
+        condition: 'active("The Great Cities of JK''s Skyrim - Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x2E50E9ED
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
         itm: 26
 
   - name: 'The Great City of Dawnstar.esp'
@@ -18290,35 +18295,20 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31271' ]
     req: [ 'Infinite Gold For Merchants.esp' ]
 
-  - name: 'The Great Cities of JK''s Skyrim - Patch.esp'
+  - name: 'The Great Cities of JK''s (North|Skyrim) - Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xF3A33ED4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 114
-      - <<: *quickClean
-        crc: 0x37E00A5E
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 86
-  - name: 'The Great Town of Ivarstead - JK''s Skyrim Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
-    dirty:
-      - <<: *reqManualFix
-        crc: 0x5E3E3844
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 21
-        nav: 3
-      - <<: *reqManualFix
-        crc: 0x5319A3CB
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 3
+  - name: 'The Great Cities of JK''s North - Patch.esp'
+    msg:
+      - <<: *useInstead
+        subs: [ 'The Great Cities of JK''s North - Full' ]
+        condition: 'active("COTN - Winterhold.esp") and checksum("The Great Cities of JK''s North - Patch.esp", 17C7DEA5)'
 
   - name: 'The Great JK''s Cities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
-    clean:
-      - crc: 0xE0CA35BC
-        util: 'SSEEdit v4.0.3'
+    msg:
+      - <<: *useInstead
+        subs: [ '[The Great Cities of JK''s Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)' ]
+        condition: 'active("JKs Skyrim.esp") and active("The Great Cities - Minor Cities and Towns.esp")'
   - name: 'XenonCitiesPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
     msg: [ *obsolete ]
