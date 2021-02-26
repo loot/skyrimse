@@ -16591,14 +16591,39 @@ plugins:
   - name: 'Castle Volkihar Rebuilt.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/324/' ]
     after: [ 'Relationship Dialogue Overhaul.esp' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lights and FX'
+          - '[what777''s Castle Volkihar Rebuilt Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("Castle Volkihar Rebuilt - ELFX Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[what777''s Castle Volkihar Rebuilt Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Castle Volkihar Rebuilt - RDO Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Serana Dialogue Edit'
+          - '[what777''s Castle Volkihar Rebuilt Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)'
+        condition: 'active("Serana Dialogue Edit.esp") and not active("Castle Volkihar Rebuilt - SDE Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Snazzy Furniture and Clutter Overhaul'
+          - '[what777''s Castle Volkihar Rebuilt Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)'
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("Castle Volkihar Rebuilt - SFCO Patch.esp")'
     tag:
       - C.Encounter
       - C.Location
       - C.Owner
     clean:
-      # version: 2.0.4
-      - crc: 0x4BA91E14
-        util: 'SSEEdit v4.0.2'
+      - crc: 0xDCC5DB46
+        util: 'SSEEdit v4.0.3'
+        
+  - name: 'SFCO - Castle Volkihar Rebuilt Patch.esp'
+    msg:
+      - <<: *useInstead
+        subs: [ '[what777''s Castle Volkihar Rebuilt Patches - SFCO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)' ]
 
   - name: 'chickensbounty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21327' ]
