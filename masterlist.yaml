@@ -3190,16 +3190,21 @@ plugins:
         condition: 'active("NAT.esp") and not active("Audio Overhaul Skyrim - Natural Atmospheric Tamriel Patch.esp") and not active("NAT_TS_Patch_.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Obsidian Weathers and Seasons' ]
-        condition: 'active("Obsidian Weathers.esp") and not active("Audio Overhaul Skyrim - Obsidian Weathers Patch.esp") and not active("Obsidian_TS_Patch__.*\.esp")'
+        condition: 'active("Obsidian Weathers.esp") and not active("Audio Overhaul Skyrim - Obsidian Weathers Patch.esp") and not active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch__.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Rustic Weathers and Lighting' ]
         condition: 'active("Rustic Weathers And Lighting.esp") and not active("Audio Overhaul Skyrim - Rustic Weathers Patch.esp") and not active("Rustic_TS_Patch_.*\.esp")'
       - <<: *patchProvided
         subs: [ 'True Storms - Thunder, Rain & Weather Redone' ]
-        condition: 'active("TrueStormsSE.esp") and not active("Audio Overhaul Skyrim - True Storms Patch.esp") and not active("(Aequinoctium|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("Audio Overhaul Skyrim - True Storms Patch.esp") and not active("Obsidian Weathers.esp") and not active("(Aequinoctium|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Vivid Weathers Definitive Edition' ]
         condition: 'active("Vivid WeathersSE.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Vivid_TS_Patch_.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'True Storms and Obsidian Weathers'
+          - '[Obsidian Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/17198/)'
+        condition: 'active("TrueStormsSE.esp") and active("Obsidian Weathers.esp") and not active("Obsidian_TS_AOS_Patch.esp") and not active("True Storms - Obsidian Weathers - Patch .esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Sounds - Compendium'
@@ -3702,17 +3707,11 @@ plugins:
       - 'Skyrim Legendary Weathers.esp'
       - 'SolstitiumWeathersandSeasons.esp'
       - 'surreal lighting.esp'
-      - name: 'TrueStormsSE.esp'
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not active("Obsidian Wander TS Combined Patch.esp")'
-        display: 'True Storms Special Edition'
       - 'Vivid WeathersSE.esp'
     msg:
-      - <<: *patchProvided
-        subs: [ 'True Storms' ]
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'True Storms'
+          - 'True Storms - Thunder Rain and Weather Redone'
           - '[Obsidian Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/17198)'
         condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
       - <<: *patch3rdParty
@@ -3730,9 +3729,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24357/' ]
     after: [ 'Audio Overhaul Skyrim.esp' ]
     tag: [ Sound ]
-    clean:
-      - crc: 0x72EE17AE
-        util: 'SSEEdit v4.0.3'
   - name:  'True Storms - Obsidian Weathers - Patch .esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
     inc:
@@ -3741,9 +3737,9 @@ plugins:
       - 'Obsidian_TS_Patch_Luminous_WaterFix.esp'
       - 'Obsidian_TS_Patch_Spectral_WaterFix.esp '
       - 'Obsidian Weathers - Wander Patch.esp'
-    clean:
-      - crc: 0x795E49B4
-        util: 'SSEEdit v4.0.3'
+    msg:
+      - <<: *useInstead
+        subs: [ '[Obsidian Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/17198/)' ]
 
   - name: 'Obsidian In Cathedral.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831' ]
@@ -3823,6 +3819,11 @@ plugins:
           - 'Mythical Ages'
           - '[Mythical Ages - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/15617/)'
         condition: 'active("Mythical Ages.esp") and not active("Mythical_TS_Patch_.*\.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Obsidian Weathers and Seasons'
+          - '[Obsidian Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/17198/)'
+        condition: 'active("Obsidian Weathers.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Rustic Weathers and Lighting'
