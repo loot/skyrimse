@@ -12479,6 +12479,11 @@ plugins:
         condition: 'active("Better Dynamic Snow.esp") and not active("Falskaar - Better Dynamic Snow Patch.esp")'
       - <<: *patch3rdParty
         subs:
+          - Beyond Skyrim - Bruma'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("BSHeartland.esm") and not active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Falskaar - Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Containers and Leveled Lists Fixes - Complete Loot Overhaul'
           - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
         condition: 'active("Containers and Leveled Lists Fixes.esp") and not active("Falskaar - CLLF Patch.esp")'
@@ -12491,7 +12496,12 @@ plugins:
         subs:
           - 'SkyTEST - Realistic Animals and Predators'
           - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Falskaar - SkyTEST Patch.esp")'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("BSHeartland.esm") and not active("Falskaar - SkyTEST Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST and Beyond Skyrim - Bruma'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and active("BSHeartland.esm") and not active("Falskaar - SkyTEST and Bruma Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'YASH - Yet Another Skyrim Hardcore Mod'
