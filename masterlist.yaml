@@ -12448,6 +12448,44 @@ plugins:
   - name: 'Falskaar.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2057/' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Falskaar - Bug Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)' ]
+        condition: 'not active("Falskaar - Bug Fixes.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Better Dynamic Snow'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("Better Dynamic Snow.esp") and not active("Falskaar - Better Dynamic Snow Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim - Bruma'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("BSHeartland.esm") and not active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Falskaar - Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Containers and Leveled Lists Fixes - Complete Loot Overhaul'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("Containers and Leveled Lists Fixes.esp") and not active("Falskaar - CLLF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'iNeed - Food Water and Sleep'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("iNeed.esp") and not active("Falskaar - iNeed Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST - Realistic Animals and Predators'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("BSHeartland.esm") and not active("Falskaar - SkyTEST Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST and Beyond Skyrim - Bruma'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and active("BSHeartland.esm") and not active("Falskaar - SkyTEST and Bruma Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'YASH - Yet Another Skyrim Hardcore Mod'
+          - '[Falskaar - Addons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19454/)'
+        condition: 'active("YASH2.esp") and not active("Falskaar - YASH Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Falskaar_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty_BAOPFCH
@@ -12462,6 +12500,13 @@ plugins:
         crc: 0x00AFAC80
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
+    
+### Falskaar - Addons and Patches ###
+  - name: 'Falskaar - Bruma Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Falskaar - SkyTEST and Bruma Patch.esp' ]
+        condition: 'active("Falskaar - SkyTEST and Bruma Patch.esp")'  
   - name: 'Falskaar - Bug Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19454/'
@@ -12470,10 +12515,15 @@ plugins:
       - 'Falskaar - Boat Location.esp'
       - 'Falskaar - Fast Travel.esp'
       - 'Falskaar - House Map Marker.esp'
-    clean:
-      # version: 1.6
-      - crc: 0xC7B6E6E8
-        util: 'SSEEdit v4.0.2f'
+  - name: 'Falskaar - Unique Region Names.esp'
+    msg:
+      - <<: *useInstead
+        subs: [ '[Unique Region Names - Falskaar Addon](www.nexusmods.com/skyrimspecialedition/mods/11750/)' ]
+  - name: 'Falskaar - SkyTEST Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Falskaar - SkyTEST and Bruma Patch.esp' ]
+        condition: 'active("Falskaar - SkyTEST and Bruma Patch.esp")'
 
   - name: 'ForgottenIsland.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6640' ]
