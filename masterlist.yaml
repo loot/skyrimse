@@ -10546,21 +10546,20 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Lock_Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927' ]
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927/' ]
     req:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
-      - *SKSE
     msg:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not checksum("Lock_Overhaul.esp", CD2D19F5)'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and checksum("Lock_Overhaul.esp", B7986707)'
       - *requiresMCM
     clean:
       - crc: 0xB7986707
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3f'
       - crc: 0xCD2D19F5
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'LupineWerewolfPerkExpansion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16561/' ]
