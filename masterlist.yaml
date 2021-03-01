@@ -8750,6 +8750,39 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34010' ]
     after: [ 'FleshFX.esp' ]
 
+  - name: 'Odin - Skyrim Magic Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46000/' ]
+    after: [ 'AltmerSisters.esp' ]
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Adamant - A Perk Overhaul' ]
+        condition: 'active("Adamant.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Mysticism - A Magic Overhaul' ]
+        condition: 'active("MysticismMagic.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2844/' ]
+      - *includesMBBF
+    tag:
+      - Actors.ACBS
+      - Actors.RecordFlags
+      - Actors.Spells
+      - Actors.Stats
+      - EffectStats
+      - EnchantmentStats
+      - Graphics
+      - Invent.Remove
+      - Keywords
+      - Names
+      - Relev
+      - Sound
+      - SpellStats
+      - Stats
+      - Text
+    clean:
+      - crc: 0x1111DFBC
+        util: 'SSEEdit v4.0.3f'
+
   - name: 'PathOfTheAntiMage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668' ]
     dirty:
@@ -10631,6 +10664,9 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Ordinator.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Ordinator_WACCF_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Odin - Skyrim Magic Overhaul' ]
+        condition: 'active("Odin - Skyrim Magic Overhaul.esp") and not active("Odin - Ordinator Compatibility Patch.esp")'
     tag:
       - EffectStats
       - Graphics
@@ -10811,6 +10847,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Mysticism - A Magic Overhaul' ]
         condition: 'active("MysticismMagic.esp") and not active("Mysticism - Vokrii Compatibility Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Odin - Skyrim Magic Overhaul' ]
+        condition: 'active("Odin - Skyrim Magic Overhaul.esp") and not active("Odin - Vokrii Compatibility Patch.esp")'
     clean:
       - crc: 0x1AE0B575
         util: 'SSEEdit v4.0.3'
