@@ -10,11 +10,11 @@ common:
     condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
   - &SKSE
     name: '../skse64_loader.exe'
-    display: '**Skyrim Script Extender ([ SKSE 64 ](http://skse.silverlock.org))**'
+    display: '**Skyrim Script Extender ([ SKSE 64 ](https://skse.silverlock.org))**'
     condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
   - &SKSE_VR
     name: '../sksevr_loader.exe'
-    display: '**Skyrim Script Extender ([ SKSE VR ](http://skse.silverlock.org))**'
+    display: '**Skyrim Script Extender ([ SKSE VR ](https://skse.silverlock.org))**'
     condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not file("../sksevr_loader.exe")'
   - &VR_PerkExtender
     name: 'SKSE/Plugins/VRPerkExtender.dll'
@@ -723,12 +723,12 @@ common:
   - &versionSkseIncSSE
     <<: *versionXIncY
     subs:
-      - '**Script Extender ([SKSE](http://skse.silverlock.org))**'
+      - '**Script Extender ([SKSE](https://skse.silverlock.org))**'
       - '**Skyrim SE**'
   - &versionSkseIncSVR
     <<: *versionXIncY
     subs:
-      - '**Script Extender ([SKSE](http://skse.silverlock.org))**'
+      - '**Script Extender ([SKSE](https://skse.silverlock.org))**'
       - '**Skyrim VR**'
 
   - &wildEdits
@@ -932,19 +932,19 @@ globals:
     condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
     content:
       - lang: en
-        text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](http://skse.silverlock.org)** installation archive.'
+        text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](https://skse.silverlock.org)** installation archive.'
       - lang: de
-        text: 'Es erscheint als hätten Sie **Skyrim Script Extender** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie die Skripte korrekt mit installiert haben, die mit dem **[SKSE](http://skse.silverlock.org)** Installationsarchiv enthalten sind.'
+        text: 'Es erscheint als hätten Sie **Skyrim Script Extender** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie die Skripte korrekt mit installiert haben, die mit dem **[SKSE](https://skse.silverlock.org)** Installationsarchiv enthalten sind.'
       - lang: ja
-        text: 'Skyrim Script Extenderをインストールしてあるようですが、必要なスクリプトが見つかりません。**[SKSE] (http://skse.silverlock.org)**に付属するスクリプトが正しくインストールされているかを確認してください。'
+        text: 'Skyrim Script Extenderをインストールしてあるようですが、必要なスクリプトが見つかりません。**[SKSE] (https://skse.silverlock.org)**に付属するスクリプトが正しくインストールされているかを確認してください。'
       - lang: pl
-        text: 'Wygląda na to że zainstalowałeś **Skyrim Script Extender**, ale jego wymagane skrypty są brakujące. Upewnij się że poprawnie zainstalowałeś skrypty w pakiecie z archiwum instalacyjnym **[SKSE](http://skse.silverlock.org)**'
+        text: 'Wygląda na to że zainstalowałeś **Skyrim Script Extender**, ale jego wymagane skrypty są brakujące. Upewnij się że poprawnie zainstalowałeś skrypty w pakiecie z archiwum instalacyjnym **[SKSE](https://skse.silverlock.org)**'
       - lang: pt
-        text: 'Você aparenta ter instalado **Skyrim Script Extender**, mas os seus scripts necessário estão em falta. Por favor, garanta que tem os devidamente instalados os scripts the acompanham o arquivo de instalação do **[SKSE](http://skse.silverlock.org)**'
+        text: 'Você aparenta ter instalado **Skyrim Script Extender**, mas os seus scripts necessário estão em falta. Por favor, garanta que tem os devidamente instalados os scripts the acompanham o arquivo de instalação do **[SKSE](https://skse.silverlock.org)**'
       - lang: ru
-        text: 'Похоже, у вас установлен **Skyrim Script Extender**, но требуемые скрипты отсутствуют. Убедитесь, что правильно установили скрипты из архива **[SKSE](http://skse.silverlock.org)**.'
+        text: 'Похоже, у вас установлен **Skyrim Script Extender**, но требуемые скрипты отсутствуют. Убедитесь, что правильно установили скрипты из архива **[SKSE](https://skse.silverlock.org)**.'
       - lang: sv
-        text: 'Det verkar som att du har installerat **Skyrim Script Extender**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **[SKSE](http://skse.silverlock.org)** på ett korrekt sätt.'
+        text: 'Det verkar som att du har installerat **Skyrim Script Extender**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **[SKSE](https://skse.silverlock.org)** på ett korrekt sätt.'
 
 # Latest Version
   # Skyrim SE Game Runtime
@@ -963,17 +963,17 @@ globals:
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm")'
   # SKSE 64
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
+    subs: [ '**Script Extender ([SKSE 64](https://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.19", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE 64](http://skse.silverlock.org))**' ]
+    subs: [ '**Script Extender ([SKSE 64](https://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.19", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
   # SKSE VR
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
+    subs: [ '**Script Extender ([SKSE VR](https://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.12", <) and file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skseVR_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE VR](http://skse.silverlock.org))**' ]
+    subs: [ '**Script Extender ([SKSE VR](https://skse.silverlock.org))**' ]
     condition: 'version("../skseVR_loader.exe", "0.2.0.12", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skseVR_loader.exe")'
 
 # Version Compatibility
@@ -1003,7 +1003,7 @@ globals:
   - <<: *versionXIncY
     subs:
       - '**SKSE Plugin ([ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/))**'
-      - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
+      - '[ENBSeries](https://enbdev.com/download_mod_tesskyrimse.html)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../d3d11.dll") and version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../d3d11.dll", "0.3.7.1", <)'
 
 # Plugin Requirements
@@ -1014,7 +1014,7 @@ globals:
   # ENBSeries
   - <<: *missingRequirementXforY
     subs:
-      - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
+      - '[ENBSeries](https://enbdev.com/download_mod_tesskyrimse.html)'
       - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
   # DLL Loaders
