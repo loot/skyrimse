@@ -10201,7 +10201,7 @@ plugins:
         subs:
           - 'Immersive College of Winterhold'
           - '[Immersive College of Winterhold - Not so fast Mage Guild Patch](https://www.nexusmods.com/skyrimspecialedition/mods/18731/)'
-        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("CWIAIPATCH.esp")'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("CWIAIPATCH.esp") and not active("UltimateCollege.esp")'
     clean:
       # version: 1.4
       - crc: 0x838EA616
@@ -13802,7 +13802,7 @@ plugins:
         condition: 'active("Open Cities Skyrim.esp") and not active("CWIOpenCitiesSEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Ordinator - Perks Of Skyrim' ]
-        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("CWIOrdinatorPatchSSE.esp")'
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("CWIOrdinatorPatchSSE.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("CWIRLSSEPatch.esp")'
@@ -15195,10 +15195,10 @@ plugins:
         condition: 'active("ArtifactsOfBoethiah.esp") and not active("OCW_AtTotTB_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Atlas Map Markers' ]
-        condition: 'active("Atlas Legendary.esp") and not active("OCW_AMM_FEPatch.esp")'
+        condition: 'active("Atlas Legendary.esp") and not active("OCW_AMM_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Atlas Map Markers with MCM' ]
-        condition: 'active("Atlas Map Markers.esp") and not active("OCW_AMM-SE_FEPatch.esp")'
+        condition: 'active("Atlas Map Markers.esp") and not active("OCW_AMM-SE_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Audio Overhaul for Skyrim' ]
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("OCW_AO_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -15300,13 +15300,13 @@ plugins:
         condition: 'active("Map Markers Complete.esp") and not active("OCW_MMC_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Morrowloot' ]
-        condition: 'active("Morrowloot.esp") and not active("OCW_ML_FEPatch.esp")'
+        condition: 'active("Morrowloot.esp") and not active("OCW_ML_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Morrowloot Miscellania' ]
         condition: 'active("Morrowloot Miscellania - Item Distribution.esp") and not active("OCW_MLM_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'MorrowLoot Ultimate' ]
-        condition: 'active("MLU.esp") and not active("OCW_MLU_FEPatch.esp")'
+        condition: 'active("MLU.esp") and not active("OCW_MLU_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Mysticism - A Magic Overhaul' ]
         condition: 'active("MysticismMagic.esp") and not active("OCW_MaMO_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -15315,7 +15315,7 @@ plugins:
         condition: 'active("Mystic Condenser.esp") and not active("OCW_MC_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Quests Are In Skyrim USSEP' ]
-        condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("OCW_QaiS_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.03", >=)'
+        condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("OCW_QaiS_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.03", >=)'
       - <<: *patchIncluded
         subs: [ 'Realistic Winterhold' ]
         condition: 'active("RealisticWinterhold.esp") and not active("OCW_RW_FEPatch.esp")'
@@ -15336,7 +15336,7 @@ plugins:
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("OCW_SPO_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", <)'
       - <<: *patchIncluded
         subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
-        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("OCW_SFCO_FEPatch.esp")'
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("OCW_SFCO_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Soulmancer Music Merge' ]
         condition: 'active("Soulmancer Soundtrack - NoVindDun.esp") and not active("(OCW_SoS_SmMM_MergedFEPatch|SoulMusic_OCoW_Patch)\.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -18777,15 +18777,25 @@ plugins:
   # Main Mod #
   - name: 'UltimateCollege.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797' ]
+    inc:
+      - 'CollegeModifications.esp'
+      - 'MagicalCollegeofWinterhold.esp'
+      - 'OCW_LightingPatch_Brighter.esp'
+      - 'OCW_LightingPatch_Darker.esp'
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2761']
-      - <<: *patchIncluded
-        subs: [ 'AI Overhaul SSE' ]
-        condition: 'active("AI Overhaul.esp") and not active("UltimateCollege_AIOv_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Cheesemod for Everyone'
+          - '[what777''s Cheesemod for Everyone Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45824/)'
+        condition: 'active("yumcheese.esp") and not active("yumcheese - UCOW.esp")'
       - <<: *patchIncluded
         subs: [ 'Aemer''s Refuge' ]
         condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("UltimateCollege_AemersRefuge_Patch.esp")'        
+      - <<: *patchIncluded
+        subs: [ 'AI Overhaul SSE' ]
+        condition: 'active("AI Overhaul.esp") and not active("UltimateCollege_AIOv_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Animated Armoury' ]
         condition: 'active("NewArmoury.esp") and not active("UltimateCollege_NewArmoury_Patch.esp")' 
@@ -18793,8 +18803,17 @@ plugins:
         subs: [ 'Arcanum' ]
         condition: 'active("Arcanum.esp") and not active("UltimateCollege_Arcanum_Patch.esp")' 
       - <<: *patchIncluded
+        subs: [ 'Artifacts of Skyrim' ]
+        condition: 'active("Artifacts.esp") and not active("UltimateCollege_Artifacts_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Artifacts - The Tournament of the Ten Bloods' ]
         condition: 'active("ArtifactsOfBoethiah.esp") and not active("UltimateCollege_ArtBoethiah_Patch.esp")'        
+      - <<: *patchIncluded
+        subs: [ 'Atlas Map Markers' ]
+        condition: 'active("Atlas Legendary.esp") and not active("UltimateCollege_AtlasLegendary_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Atlas Map Markers SE with MCM' ]
+        condition: 'active("Atlas Map Markers.esp") and not active("UltimateCollege_AtlasMapMarkersSE_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Bijin Warmaidens SE' ]
         condition: 'active("Bijin Warmaidens.esp") and not active("UltimateCollege_BijinWar_Patch.esp")'
@@ -18814,17 +18833,29 @@ plugins:
         subs: [ 'Cloaks of Skyrim' ]
         condition: 'active("Cloaks.esp") and not active("UltimateCollege_Cloaks_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Creation Club: Arcane Archer Pack' ]
+        condition: 'active("ccbgssse002-exoticarrows.esl") and not active("UltimateCollege_CCArcaneArcher_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Creation Club: Wild Horses' ]
         condition: 'active("ccbgssse034-mntuni.esl") and not active("UltimateCollege_CCWildHorses_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("UltimateCollege_CRF_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Diversity - A Character Overhaul' ]
+        condition: 'active("Diversity - A Character Overhaul.esp") and (not active("UltimateCollege_Diversity_Patch.esp") or not active("UltimateCollege_Diversity_CRF_VanillaHair.esp"))'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("UltimateCollege_ELFX_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Enhanced Lights and FX Enhancer' ]
+        condition: 'active("ELFXEnhancer.esp") and not active("UltimateCollege_ELFXEnhancer_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX Exteriors' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("UltimateCollege_ELFXExt_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Jampion NPCs' ]
+        condition: 'active("Jampion NPCs.esp") and not active("UltimateCollege_Jampion_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Konahrik''s Accoutrements' ]
         condition: 'active("konahrik_accoutrements.esp") and not active("UltimateCollege_KA_Patch.esp")'
@@ -18838,14 +18869,32 @@ plugins:
         subs: [ 'M''rissi''s Tails of Troubles' ]
         condition: 'active("MrissiTailOfTroubles.esp") and not active("UltimateCollege_Mrissi_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'The Men of Winter' ]
+        condition: 'active("Men of Winter.esp") and not active("UltimateCollege_MenOfWinter_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Men of Winter - Modular Edition Enthir' ]
+        condition: 'active("MoW Enthir.esp") and not active("UltimateCollege_MoWEnthir_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Morrowloot Special Edition' ]
+        condition: 'active("Morrowloot.esp") and not active("UltimateCollege_Morrowloot_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Morrowloot Ultimate' ]
+        condition: 'active("MLU.esp") and not active("UltimateCollege_MLU_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Mystic Condenser SE' ]
         condition: 'active("Mystic Condenser.esp") and not active("UltimateCollege_MysCond_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Mysticism - A Magic Overhaul' ]
         condition: 'active("MysticismMagic.esp") and not active("UltimateCollege_Mysticism_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Northbourne NPCs of Winterhold' ]
+        condition: 'active("Northbourne NPCs of Winterhold.esp") and not active("UltimateCollege_Northbourne_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Not So Fast - Mage Guild' ]
         condition: 'active("NotSoFast-MageGuild.esp") and not active("UltimateCollege_NSFMG_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Ordinary Women' ]
+        condition: 'active("The Ordinary Women.esp") and not active("UltimateCollege_TOW_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Pandorable''s Brelyna' ]
         condition: 'active("PAN_Brelyna.esp") and not active("UltimateCollege_PanBrelyna_Patch.esp")'
@@ -18856,6 +18905,18 @@ plugins:
         subs: [ 'Pandorable''s NPCs - males' ]
         condition: 'active("PAN_NPCs_Males.esp") and not active("UltimateCollege_PanMales_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Pandorable''s Small Replacers AIO' ]
+        condition: 'active("PAN_AIO_small.esp") and not active("UltimateCollege_PanAIO_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Quests are in Skyrim' ]
+        condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("UltimateCollege_QiaS_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Skyrim''s Unique Treasures' ]
+        condition: 'active("SkyrimsUniqueTreasures.esp") and not active("UltimateCollege_SUT_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("UltimateCollege_SFCO_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'The Tools of Kagrenac' ]
         condition: 'active("Tools of Kagrenac.esp") and not active("UltimateCollege_ToK_Patch.esp")'
       - <<: *patchIncluded
@@ -18864,8 +18925,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'WACCF - Armor and Clothing Extension' ]
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("UltimateCollege_WACCFACE_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Windsong Immersive Character Overhaul' ]
+        condition: 'active("WICO - Immersive People.esp") and not active("UltimateCollege_WICO_Patch.esp")'
     clean:
-      - crc: 0x03ED123A
+      - crc: 0x6BD324B9
         util: 'SSEEdit v4.0.3'
 
   ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
