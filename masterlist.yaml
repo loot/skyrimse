@@ -755,6 +755,18 @@ common:
       - lang: sv
         text: 'Denna plugin innehåller vilda föränringar utanför ITM och UDR-records samt borttagna navmeshes och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
     subs: [ '' ]
+    
+  - &renameXtoY
+    type: warn
+    content:
+      - lang: en
+        text: 'You need to rename %1% to %2% or this mod won''t work.'
+      - lang: de
+        text: 'Sie müssen %1% zu %2% umbenennen, ansonsten funktioniert diese Mod nicht.'
+      - lang: ja
+        text: '%1%を%2%にリネームしないと機能しません。'
+      - lang: ru
+        text: 'Вам нужно переименовать %1% в %2% для подключения ресурсов мода..' 
 
 # Dirty Aliases
   - &quickClean
@@ -8594,11 +8606,16 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[Arcanum - A New Age of Magic 4.0.1 Bugfix](https://www.nexusmods.com/skyrimspecialedition/mods/46322)' ]
         condition: 'checksum("Arcanum.esp", AA67A039)'
-      - type: warn
-        content: 
-          - lang: en
-            text: 'The BSA files included with this version of Arcanum need to be renamed in order for the mod to work. Remove "4.0 BSA" from the name of each .bsa file so you are left with Arcanum.bsa and Arcanum - Textures.bsa.'
-        condition: 'checksum("Arcanum.esp", AA67A039)'
+      - <<: *renameXtoY
+        subs:
+          - 'Arcanum 4.0 BSA.bsa'
+          - 'Arcanum.bsa'
+        condition: 'not file("Arcanum.bsa") and file("Arcanum 4.0 BSA.bsa")'
+      - <<: *renameXtoY
+        subs:
+          - 'Arcanum 4.0 BSA - Textures.bsa'
+          - 'Arcanum - Textures.bsa'
+        condition: 'not file("Arcanum - Textures.bsa") and file("Arcanum 4.0 BSA - Textures.bsa")'
     dirty:
       - <<: *quickClean
         crc: 0xAA67A039
