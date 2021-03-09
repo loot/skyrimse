@@ -755,6 +755,18 @@ common:
       - lang: sv
         text: 'Denna plugin innehåller vilda föränringar utanför ITM och UDR-records samt borttagna navmeshes och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
     subs: [ '' ]
+    
+  - &renameXtoY
+    type: warn
+    content:
+      - lang: en
+        text: 'You need to rename %1% to %2% or this mod won''t work.'
+      - lang: de
+        text: 'Sie müssen %1% zu %2% umbenennen, ansonsten funktioniert diese Mod nicht.'
+      - lang: ja
+        text: '%1%を%2%にリネームしないと機能しません。'
+      - lang: ru
+        text: 'Вам нужно переименовать %1% в %2% для подключения ресурсов мода..' 
 
 # Dirty Aliases
   - &quickClean
@@ -8602,12 +8614,26 @@ plugins:
 
   - name: 'Arcanum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg:
+      - *patch3rdPartySRPC
+      - <<: *alsoUseX
+        subs: [ '[Arcanum - A New Age of Magic 4.0.1 Bugfix](https://www.nexusmods.com/skyrimspecialedition/mods/46322)' ]
+        condition: 'checksum("Arcanum.esp", AA67A039)'
+      - <<: *renameXtoY
+        subs:
+          - 'Arcanum 4.0 BSA.bsa'
+          - 'Arcanum.bsa'
+        condition: 'not file("Arcanum.bsa") and file("Arcanum 4.0 BSA.bsa")'
+      - <<: *renameXtoY
+        subs:
+          - 'Arcanum 4.0 BSA - Textures.bsa'
+          - 'Arcanum - Textures.bsa'
+        condition: 'not file("Arcanum - Textures.bsa") and file("Arcanum 4.0 BSA - Textures.bsa")'
     dirty:
       - <<: *quickClean
-        crc: 0xF2FF5FAB
+        crc: 0xAA67A039
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 13
+        itm: 15
 
   - name: 'Better Vampires.esp'
     url:
