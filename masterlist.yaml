@@ -18374,11 +18374,6 @@ plugins:
         subs: [ 'Wheels of Lull v5.0.0' ]
         condition: checksum("WheelsOfLull.esp", E6561EE8) or checksum("WheelsOfLull.esp", 5D3C1F44)
 
-  - name: 'Khajiit Speak - .*\.esp'
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-
   - name: 'maplightfix.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30162/'
@@ -18469,13 +18464,6 @@ plugins:
       - 'Qw_ACE_CRF Patch.esp'
       - 'Qw_WACCF_CRF Patch.esp'
 
-  ### Even More Khajiit Speak Patches ###
-  - name: 'Chr_KhajiitSpeak.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
-
   ### Falskaar - Addons and Patches ###
   - name: 'Falskaar - Bruma Patch.esp'
     msg:
@@ -18500,9 +18488,41 @@ plugins:
       - <<: *useInstead
         subs: [ '[Unique Region Names - Falskaar addon](www.nexusmods.com/skyrimspecialedition/mods/11750/)' ]
 
-  ### Khajiit Speak Extended ###
+  ### Khajiit Speak Patches ###
+  # Even More Khajiit Speak Patches #
+  - name: 'Chr_KhajiitSpeak.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40594/'
+        name: 'Even More Khajiit Speak Patches'
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
+  # Khajiit Speak Extended #
   - name: 'Khajiit Speak Extended SSE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18441/' ]
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
+  # Raptor's Khajiit Speak Patch Collection #
+  - name: 'Khajiit Speak \+.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/'
+        name: 'Raptor''s Khajiit Speak Patch Collection'
+    after:
+      - 'BA_KhajiitSpeakRedux_MAIN.esp'
+      - 'mjhKhajiitSpeak.esp'
+
+  # Misc. Khajiit Speak Patches #
+  - name: 'Khajiit Speak - .*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/32356/'
+        name: 'Khajiit Speak - Creation Club'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36488/'
+        name: 'Khajiit Speak Extended Extended'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37024/'
+        name: 'Khajiit Speak - More Patches (Compatibility patches)'
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
@@ -18803,13 +18823,6 @@ plugins:
   - name: 'Qw_WACCF_ISC Patch.esp'
     after: [ 'Qw_ISC_USSEP Patch.esp' ]
     tag: [ Sound ]
-
-  ### Raptor's Khajiit Speak Patch Collection ###
-  - name: 'Khajiit Speak \+.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35294/' ]
-    after:
-      - 'BA_KhajiitSpeakRedux_MAIN.esp'
-      - 'mjhKhajiitSpeak.esp'
 
   ### (RSCPC) RS Children Patch Compendium ###
   - name: 'RSC_USSEP_AventusFix.esp'
