@@ -10514,9 +10514,6 @@ plugins:
 
   - name: 'WheelsOfLull.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748' ]
-    tag:
-      - C.Location
-      - Relations.Add
     msg:
       - <<: *patchIncluded
         subs: [ 'Airship - Dev Aveza' ]
@@ -10524,7 +10521,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     clean:
-      - crc: 0x5D3C1F44
+      - crc: 0xE6561EE8
         util: 'SSEEdit v4.0.3'
 
 ###### Gameplay - Skills & Perks ######
@@ -18352,6 +18349,13 @@ plugins:
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("aMidianBorn_ContentAddon.esp")'
 
+  - name: 'JRWheelsOfLullPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5245' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Wheels of Lull v5.0.0' ]
+        condition: checksum("WheelsOfLull.esp", E6561EE8) or checksum("WheelsOfLull.esp", 5D3C1F44)
+  
   - name: 'Khajiit Speak - .*\.esp'
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
