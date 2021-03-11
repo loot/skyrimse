@@ -3497,12 +3497,6 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 5
 
-  - name: 'CubemapEnabler.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30571/' ]
-    group: *lateChangesGroup
-  - name: 'SkyVRaan-WaterGrass.esp'
-    after: [ 'Landscape Fixes For Grass Mods.esp' ]
-
   - name: 'RealisticWaterTwo.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
     group: *lateLoadersGroup
@@ -3521,6 +3515,20 @@ plugins:
     clean:
       - crc: 0xF9561BAC
         util: 'SSEEdit v4.0.3'
+
+  - name: '(VRWaterColor|SkyVRaan).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30571/'
+        name: 'SkyVRaan - Shimmering VR Waters'
+  - name: 'VRWaterColor.esp'
+    group: *lateLoadersGroup
+    after: [ 'RealisticWaterTwo.esp' ]
+  - name: 'VRWaterColor-(Blackreach|Volcanic)\.esp'
+    after: [ 'VRWaterColor.esp' ]
+  - name: 'SkyVRaan-WaterGrass.esp'
+    after: [ 'Landscape Fixes For Grass Mods.esp' ]
+  - name: 'CubemapEnabler.esp'
+    msg: [ *obsolete ]
 
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
