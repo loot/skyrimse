@@ -3516,8 +3516,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30571/'
         name: 'SkyVRaan - Shimmering VR Waters'
-  - name: 'VRWaterColor(-Blackreach|-Volcanic)?\.esp'
+  - name: 'VRWaterColor.esp'
+    group: *lateLoadersGroup
     after: [ 'RealisticWaterTwo.esp' ]
+  - name: 'VRWaterColor-(Blackreach|Volcanic)\.esp'
+    after: [ 'VRWaterColor.esp' ]
   - name: 'SkyVRaan-WaterGrass.esp'
     after: [ 'Landscape Fixes For Grass Mods.esp' ]
   - name: 'CubemapEnabler.esp'
