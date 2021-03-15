@@ -5070,19 +5070,60 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20035' ]
     msg:
       - <<: *patchProvided
-        subs: [ 'Holds The City Overhaul' ]
-        condition: 'active("Lucien.esp") and active("Holds.esp") and not active("Lucien-Holds-Patch.esp")'
+        subs: [ 'Creation Club: Adventurer''s Backpack' ]
+        condition: 'active("ccfsvsse001-backpacks.esl") and not active("Lucien-Backpacks-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Arcane Archer Pack' ]
+        condition: 'active("ccbgssse002-exoticarrows.esl") and not active("Lucien-ArcaneArcher-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Bone Wolf' ]
+        condition: 'active("ccbgssse036-petbwolf.esl") and not active("Lucien-BoneWolf-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Camping' ]
+        condition: 'active("ccqdrsse002-firewood.esl") and not active("Lucien-Camping-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Plague of the Dead' ]
+        condition: 'active("ccbgssse003-zombies.esl") and not active("Lucien-PlagueOfTheDead-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Ruin''s Edge' ]
+        condition: 'active("ccbgssse004-ruinsedge.esl") and not active("Lucien-RuinsEdge-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Saturalia Holiday Pack' ]
+        condition: 'active("ccvsvsse001-winter.esl") and not active("Lucien-Saturalia-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Shadowrend' ]
+        condition: 'active("ccbgssse018-shadowrend.esl") and not active("Lucien-Shadowrend-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Staff of Sheogorath' ]
+        condition: 'active("ccbgssse019-staffofsheogorath.esl") and not active("Lucien-StaffOfSheogorath-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Stendarr''s Hammer' ]
+        condition: 'active("ccbgssse006-stendarshammer.esl") and not active("Lucien-StendarrsHammer-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Tundra Homestead' ]
+        condition: 'active("cceejsse001-hstead.esm") and not active("Lucien-TundraHomestead-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club: Umbra' ]
+        condition: 'active("ccbgssse016-umbra.esm") and not active("Lucien-Umbra-Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Insects Begone' ]
+        condition: 'active("Insects Begone - (Chaurus|Spiders|Spiders and Chaurus)\.esp") and not active("Lucien-InsectsBegone-Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Moon and Star' ]
-        condition: 'active("Lucien.esp") and active("MoonAndStar_MAS.esp") and not active("Lucien-MoonandStar-Patch.esp")'
+        condition: 'active("MoonAndStar_MAS.esp") and not active("Lucien-MoonandStar-Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Moonpath to Elsweyr' ]
-        condition: 'active("Lucien.esp") and active("moonpath.esp") and not active("Lucien-Moonpath-Patch.esp")'
+        condition: 'active("moonpath.esp") and not active("Lucien-Moonpath-Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Shiva''s Vanilla Clothing Replacer' ]
-        condition: 'active("Lucien.esp") and active("Shiva''s Vanilla Clothing Replacer.esp") and not active("Lucien-ShivaVanillaClothing-Patch.esp")'
+        condition: 'active("Shiva''s Vanilla Clothing Replacer.esp") and not active("Lucien-ShivaVanillaClothing-Patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x1BA7BA4A
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 11
     clean:
-      - crc: 0x739D4BFD
+      - crc: 0x2EBF36A7
         util: 'SSEEdit v4.0.3'
 
   - name: 'MiraakFollower.esp'
