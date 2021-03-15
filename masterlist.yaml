@@ -952,12 +952,8 @@ globals:
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
     
 #Nemesis and FNIS compatibility
-  - type: warn
-    content:
-      - lang: en
-        text: 'Nemesis Unlimited Behavior Engine can not be used in conjunction with Fores New Idles. You''ll have to delete either one of them.'
-      - lang: sv
-        text: 'Nemesis Unlimited Behavior Engine kan inte användas samtidigt som Fores New Idles. Du behöver ta bort en av dom.'
+  - <<: *useOnlyOneX
+    subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
 
 # Skyrim Script Extender - Required Scripts
