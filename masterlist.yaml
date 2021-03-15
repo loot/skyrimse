@@ -925,6 +925,37 @@ globals:
     subs: [ '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)' ]
     condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
 
+# Nemesis Unlimited Behavior Engine
+  - type: say
+    content:
+      - lang: en
+        text: 'It appears you have **%1%** installed. Remember to run **Nemesis Unlimited Behavior Engine.exe** every time you have installed or un-installed Nemesis, or a Nemesis based mod.'
+      - lang: de
+        text: 'Sie haben anscheinend **%1%** installiert. Vergessen Sie nicht, jedes mal **Nemesis Unlimited Behavior Engine.exe** zu starten, wenn Sie Nemesis oder einen auf Nemesis basierende Mod installiert oder deinstalliert haben.'
+      - lang: es
+        text: 'Parece que **%1%** está instalado. Recuerda correr **Nemesis Unlimited Behavior Engine.exe** cada vez que instales o desinstales Nemesis o un mod basado en Nemesis.'
+      - lang: ja
+        text: '**%1%**がインストールされているようです。Nemesis本体、またNemesisに準拠するModをインストール/アンインストールする際は、必ず**Nemesis Unlimited Behavior Engine.exe**を実行し直すようにしてください。'
+      - lang: ko
+        text: '**%1%**가 설치되어 있습니다. Nemesis 또는 Nemesis 기반 모드를 설치하거나 제거할 때마다 **Nemesis Unlimited Behavior Engine.exe**를 실행하는 것을 잊지 마십시오.'
+      - lang: pl
+        text: 'Wygląda na to że masz zainstalowany **%1%**. Pamiętaj aby uruchomić **Nemesis Unlimited Behavior Engine.exe** za każdym razem kiedy zainstalowałeś lub odinstalowałeś Nemesis, lub mod bazujący na Nemesis.'
+      - lang: pt
+        text: 'Você aparenta ter **%1%** instalado. Lembre-se de correr **Nemesis Unlimited Behavior Engine.exe** cada vez que instale ou desinstale Nemesis, ou um mod baseado em Nemesis.'
+      - lang: ru
+        text: 'У вас установлен **%1%**. Не забудьте запускать **Nemesis Unlimited Behavior Engine.exe** каждый раз, когда вы установите или удалите Nemesis, или любой мод, основанный на Nemesis.'
+      - lang: sv
+        text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **Nemesis Unlimited Behavior Engine.exe** varje gång du har installerat eller avinstallerat Nemesis, eller en Nemesis-baserad mod.'
+      - lang: zh_CN
+        text: '你安装了**%1%**。每次安装或卸载基于Nemesis的mod时记得运行**Nemesis Unlimited Behavior Engine.exe**。'
+    subs: [ '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)' ]
+    condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+    
+#Nemesis and FNIS compatibility
+  - <<: *useOnlyOneX
+    subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
+    condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
+
 # Skyrim Script Extender - Required Scripts
   - type: warn
     content:
