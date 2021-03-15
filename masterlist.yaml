@@ -925,28 +925,7 @@ globals:
 
 # Animation Frameworks
   # Fores New Idles
-  - type: say
-    content:
-      - lang: en
-        text: 'It appears you have **%1%** installed. Remember to run **%2%** every time you have installed or uninstalled %3%, or a %3%-based mod.'
-      - lang: de
-        text: 'Sie haben anscheinend **%1%** installiert. Vergessen Sie nicht, jedes mal **%2%** zu starten, wenn Sie %3% oder einen auf %3% basierende Mod installiert oder deinstalliert haben.'
-      - lang: es
-        text: 'Parece que **%1%** está instalado. Recuerda correr **%2%** cada vez que instales o desinstales %3% o un mod basado en %3%.'
-      - lang: ja
-        text: '**%1%**がインストールされているようです。%3%本体、また%3%に準拠するModをインストール/アンインストールする際は、必ず**%2%**を実行し直すようにしてください。'
-      - lang: ko
-        text: '**%1%**가 설치되어 있습니다. %3% 또는 %3% 기반 모드를 설치하거나 제거할 때마다 **%2%**를 실행하는 것을 잊지 마십시오.'
-      - lang: pl
-        text: 'Wygląda na to że masz zainstalowany **%1%**. Pamiętaj aby uruchomić **%2%** za każdym razem kiedy zainstalowałeś lub odinstalowałeś %3%, lub mod bazujący na %3%.'
-      - lang: pt
-        text: 'Você aparenta ter **%1%** instalado. Lembre-se de correr **%2%** cada vez que instale ou desinstale %3%, ou um mod baseado em %3%.'
-      - lang: ru
-        text: 'У вас установлен **%1%**. Не забудьте запускать **%2%** каждый раз, когда вы установите или удалите %3%, или любой мод, основанный на %3%.'
-      - lang: sv
-        text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **%2%** varje gång du har installerat eller avinstallerat %3%, eller en %3%-baserad mod.'
-      - lang: zh_CN
-        text: '你安装了**%1%**。每次安装或卸载基于%3%的mod时记得运行**%2%**。'
+  - <<: *runAnimFramework
     subs:
       - '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
       - 'GenerateFNISforUsers.exe'
@@ -954,28 +933,7 @@ globals:
     condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
 
   # Nemesis Unlimited Behavior Engine
-  - type: say
-    content:
-      - lang: en
-        text: 'It appears you have **%1%** installed. Remember to run **%2%** every time you have installed or uninstalled %3%, or a %3%-based mod.'
-      - lang: de
-        text: 'Sie haben anscheinend **%1%** installiert. Vergessen Sie nicht, jedes mal **%2%** zu starten, wenn Sie %3% oder einen auf %3% basierende Mod installiert oder deinstalliert haben.'
-      - lang: es
-        text: 'Parece que **%1%** está instalado. Recuerda correr **%2%** cada vez que instales o desinstales %3% o un mod basado en %3%.'
-      - lang: ja
-        text: '**%1%**がインストールされているようです。%3%本体、また%3%に準拠するModをインストール/アンインストールする際は、必ず**%2%**を実行し直すようにしてください。'
-      - lang: ko
-        text: '**%1%**가 설치되어 있습니다. %3% 또는 %3% 기반 모드를 설치하거나 제거할 때마다 **%2%**를 실행하는 것을 잊지 마십시오.'
-      - lang: pl
-        text: 'Wygląda na to że masz zainstalowany **%1%**. Pamiętaj aby uruchomić **%2%** za każdym razem kiedy zainstalowałeś lub odinstalowałeś %3%, lub mod bazujący na %3%.'
-      - lang: pt
-        text: 'Você aparenta ter **%1%** instalado. Lembre-se de correr **%2%** cada vez que instale ou desinstale %3%, ou um mod baseado em %3%.'
-      - lang: ru
-        text: 'У вас установлен **%1%**. Не забудьте запускать **%2%** каждый раз, когда вы установите или удалите %3%, или любой мод, основанный на %3%.'
-      - lang: sv
-        text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **%2%** varje gång du har installerat eller avinstallerat %3%, eller en %3%-baserad mod.'
-      - lang: zh_CN
-        text: '你安装了**%1%**。每次安装或卸载基于%3%的mod时记得运行**%2%**。'
+  - <<: *runAnimFramework
     subs:
       - '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
       - 'Nemesis Unlimited Behavior Engine.exe'
