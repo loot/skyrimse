@@ -927,22 +927,25 @@ globals:
 
 # Skyrim Script Extender - Required Scripts
   - type: warn
-    condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
     content:
       - lang: en
-        text: 'It appears you have installed **Skyrim Script Extender**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **[SKSE](https://skse.silverlock.org)** installation archive.'
+        text: 'It appears you have installed **%1%**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **%2%** installation archive.'
       - lang: de
-        text: 'Es erscheint als hätten Sie **Skyrim Script Extender** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie die Skripte korrekt mit installiert haben, die mit dem **[SKSE](https://skse.silverlock.org)** Installationsarchiv enthalten sind.'
+        text: 'Es erscheint als hätten Sie **%1%** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie die Skripte korrekt mit installiert haben, die mit dem **%2%** Installationsarchiv enthalten sind.'
       - lang: ja
-        text: 'Skyrim Script Extenderをインストールしてあるようですが、必要なスクリプトが見つかりません。**[SKSE] (https://skse.silverlock.org)**に付属するスクリプトが正しくインストールされているかを確認してください。'
+        text: '**%1%**をインストールしてあるようですが、必要なスクリプトが見つかりません。**%2%**に付属するスクリプトが正しくインストールされているかを確認してください。'
       - lang: pl
-        text: 'Wygląda na to że zainstalowałeś **Skyrim Script Extender**, ale jego wymagane skrypty są brakujące. Upewnij się że poprawnie zainstalowałeś skrypty w pakiecie z archiwum instalacyjnym **[SKSE](https://skse.silverlock.org)**'
+        text: 'Wygląda na to że zainstalowałeś **%1%**, ale jego wymagane skrypty są brakujące. Upewnij się że poprawnie zainstalowałeś skrypty w pakiecie z archiwum instalacyjnym **%2%**'
       - lang: pt
-        text: 'Você aparenta ter instalado **Skyrim Script Extender**, mas os seus scripts necessário estão em falta. Por favor, garanta que tem os devidamente instalados os scripts the acompanham o arquivo de instalação do **[SKSE](https://skse.silverlock.org)**'
+        text: 'Você aparenta ter instalado **%1%**, mas os seus scripts necessário estão em falta. Por favor, garanta que tem os devidamente instalados os scripts the acompanham o arquivo de instalação do **%2%**'
       - lang: ru
-        text: 'Похоже, у вас установлен **Skyrim Script Extender**, но требуемые скрипты отсутствуют. Убедитесь, что правильно установили скрипты из архива **[SKSE](https://skse.silverlock.org)**.'
+        text: 'Похоже, у вас установлен **%1%**, но требуемые скрипты отсутствуют. Убедитесь, что правильно установили скрипты из архива **%2%**.'
       - lang: sv
-        text: 'Det verkar som att du har installerat **Skyrim Script Extender**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **[SKSE](https://skse.silverlock.org)** på ett korrekt sätt.'
+        text: 'Det verkar som att du har installerat **%1%**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **%2%** på ett korrekt sätt.'
+    subs:
+      - 'Skyrim Script Extender'
+      - '[SKSE](https://skse.silverlock.org)'
+    condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
 
 # Latest Version
   # Skyrim SE Game Runtime
