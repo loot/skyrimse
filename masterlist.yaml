@@ -898,30 +898,33 @@ globals:
       - lang: zh_CN
         text: '[最新的LOOT版本](%1%)。'
     subs: [ 'https://loot.github.io/latest-thread/' ]
+
 # Fores New Idles
   - type: say
-    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
     content:
       - lang: en
-        text: 'It appears you have [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installed. Remember to run GenerateFNISforUsers.exe every time you have installed or un-installed FNIS, or a FNIS based mod.'
+        text: 'It appears you have **%1%** installed. Remember to run **GenerateFNISforUsers.exe** every time you have installed or un-installed FNIS, or a FNIS based mod.'
       - lang: de
-        text: 'Sie haben anscheinend [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installiert. Vergessen Sie nicht, jedes mal GenerateFNISforUsers.exe zu starten, wenn Sie FNIS oder einen auf FNIS basierende Mod installiert oder deinstalliert haben.'
+        text: 'Sie haben anscheinend **%1%** installiert. Vergessen Sie nicht, jedes mal **GenerateFNISforUsers.exe** zu starten, wenn Sie FNIS oder einen auf FNIS basierende Mod installiert oder deinstalliert haben.'
       - lang: es
-        text: 'Parece que [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
+        text: 'Parece que **%1%** está instalado. Recuerda correr **GenerateFNISforUsers.exe** cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
       - lang: ja
-        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
+        text: '**%1%**がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ず**GenerateFNISforUsers.exe**を実行し直すようにしてください。'
       - lang: ko
-        text: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)가 설치되어 있습니다. FNIS 또는 FNIS 기반 모드를 설치하거나 제거할 때마다 GenerateFNISforUsers.exe를 실행하는 것을 잊지 마십시오.'
+        text: '**%1%**가 설치되어 있습니다. FNIS 또는 FNIS 기반 모드를 설치하거나 제거할 때마다 **GenerateFNISforUsers.exe**를 실행하는 것을 잊지 마십시오.'
       - lang: pl
-        text: 'Wygląda na to że masz zainstalowany [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038). Pamiętaj aby uruchomić GenerateFNISforUsers.exe za każdym razem kiedy zainstalowałeś lub odinstalowałeś FNIS, lub mod bazujący na FNIS.'
+        text: 'Wygląda na to że masz zainstalowany **%1%**. Pamiętaj aby uruchomić **GenerateFNISforUsers.exe** za każdym razem kiedy zainstalowałeś lub odinstalowałeś FNIS, lub mod bazujący na FNIS.'
       - lang: pt
-        text: 'Você aparenta ter [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) instalado. Lembre-se de correr GenerateFNISforUsers.exe cada vez que instale ou desinstale FNIS, ou um mod baseado em FNIS.'
+        text: 'Você aparenta ter **%1%** instalado. Lembre-se de correr **GenerateFNISforUsers.exe** cada vez que instale ou desinstale FNIS, ou um mod baseado em FNIS.'
       - lang: ru
-        text: 'У вас установлен [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038). Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.'
+        text: 'У вас установлен **%1%**. Не забудьте запускать **GenerateFNISforUsers.exe** каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.'
       - lang: sv
-        text: 'Det verkar som att använder [Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038) installerat. Kom ihåg att köra GenerateFNISforUsers.exe varje gång du har installerat eller avinstallerat FNIS, eller en FNIS-baserad mod.'
+        text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **GenerateFNISforUsers.exe** varje gång du har installerat eller avinstallerat FNIS, eller en FNIS-baserad mod.'
       - lang: zh_CN
-        text: '你安装了[FNIS SE](https://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
+        text: '你安装了**%1%**。每次安装或卸载基于FNIS的mod时记得运行**GenerateFNISforUsers.exe**。'
+    subs: [ '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)' ]
+    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
+
 # Skyrim Script Extender - Required Scripts
   - type: warn
     condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
