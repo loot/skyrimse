@@ -8599,6 +8599,11 @@ plugins:
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
       - <<: *patch3rdParty
         subs:
+          - 'Perks Unbound'
+          - '[Perks Unbound SSE -- WACCF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46295/)'
+        condition: 'active("Perks Unbound - Special Edition.esp") and not active("PerksUnbound_WACCF.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Triss Armor Retextured'
           - '[Useless Patches Collection](https://www.nexusmods.com/skyrimspecialedition/mods/27667/)'
         condition: 'active("TrissArmorRetextured.esp") and not active("Triss Armor Retextured SE - WACCF Patch.esp")'
@@ -19155,12 +19160,3 @@ plugins:
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
- # Perks Unbound -- Weapons Armor Clothing & Clutter Fixes patch
-  - name: 'Perks Unbound - Special Edition.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1800' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing & Clutter Fixes (WACCF)'
-          - '[Perks Unbound SSE -- WACCF patch](https://www.nexusmods.com/skyrimspecialedition/mods/46295)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("PerksUnbound_WACCF.esp")'
