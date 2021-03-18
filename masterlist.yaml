@@ -8916,6 +8916,12 @@ plugins:
     after:
       - name: 'SPERG-SSE.esp'
         condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'FleshFX'
+          - '[Mysticism - FleshFX Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46997)'
+        condition: 'active("FleshFX.esp") and not active("Mysticism_FleshFX_Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.Spells
