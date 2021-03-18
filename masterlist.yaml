@@ -486,6 +486,50 @@ common:
       - lang: sv
         text: 'Uppdateringspatch tillgänglig: %1%'
 
+  - &renameXtoY
+    type: warn
+    content:
+      - lang: en
+        text: 'You need to rename %1% to %2% or this mod won''t work.'
+      - lang: bg
+        text: 'Трябва да преименувате %1% на %2%, в противен случай този мод няма да работи.'
+      - lang: de
+        text: 'Sie müssen %1% zu %2% umbenennen, ansonsten funktioniert diese Mod nicht.'
+      - lang: ja
+        text: '%1%を%2%にリネームしないと機能しません。'
+      - lang: pt_BR
+        text: 'Você precisa renomear %1% para %2%, caso contrário esse mod não irá funcionar.'
+      - lang: ru
+        text: 'Вам нужно переименовать %1% в %2% для подключения ресурсов мода..'
+
+  - &requiresX
+    type: warn
+    content:
+      - lang: en
+        text: 'Requires: %1%'
+      - lang: bg
+        text: 'Изисква: %1%'
+      - lang: de
+        text: 'Benötigt: %1%'
+      - lang: es
+        text: 'Requiere: %1%'
+      - lang: ja
+        text: '要: %1%'
+      - lang: ko
+        text: '필요모드: %1%'
+      - lang: pl
+        text: 'Wymaga: %1%'
+      - lang: pt_BR
+        text: 'Requer: %1%'
+      - lang: ru
+        text: 'Требуется: %1%'
+      - lang: sv
+        text: 'Kräver: %1%'
+  - &requiresBashOrSmash
+    <<: *requiresX
+    subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
+    condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
+
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &requiresMCM_X
     type: warn
@@ -518,34 +562,6 @@ common:
     <<: *requiresMCM_X
     subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
     condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-
-  - &requiresX
-    type: warn
-    content:
-      - lang: en
-        text: 'Requires: %1%'
-      - lang: bg
-        text: 'Изисква: %1%'
-      - lang: de
-        text: 'Benötigt: %1%'
-      - lang: es
-        text: 'Requiere: %1%'
-      - lang: ja
-        text: '要: %1%'
-      - lang: ko
-        text: '필요모드: %1%'
-      - lang: pl
-        text: 'Wymaga: %1%'
-      - lang: pt_BR
-        text: 'Requer: %1%'
-      - lang: ru
-        text: 'Требуется: %1%'
-      - lang: sv
-        text: 'Kräver: %1%'
-  - &requiresBashOrSmash
-    <<: *requiresX
-    subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
-    condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
 
   - &runAnimFramework
     type: say
@@ -627,6 +643,22 @@ common:
       - lang: sv
         text: 'Denna plugins master behöver sorteras.'
 
+  - &useInstead
+    type: warn
+    content:
+      - lang: en
+        text: 'Use %1% instead.'
+      - lang: bg
+        text: 'Може да използвате %1%.'
+      - lang: de
+        text: 'Nutzen Sie %1% stattdessen.'
+      - lang: ja
+        text: '代わりに%1%を使用してください。'
+      - lang: pt_BR
+        text: 'Use %1% ao invés disso.'
+      - lang: sv
+        text: 'Använd %1% istället.'
+
   - &useBashTweakInstead
     type: say
     content:
@@ -644,22 +676,6 @@ common:
         text: 'En Bashed Patch Tweak kan användas istället för det här pluginet. %1%'
     subs: [ '' ]
     condition: 'file("Bashed Patch.*\.esp")'
-
-  - &useInstead
-    type: warn
-    content:
-      - lang: en
-        text: 'Use %1% instead.'
-      - lang: bg
-        text: 'Може да използвате %1%.'
-      - lang: de
-        text: 'Nutzen Sie %1% stattdessen.'
-      - lang: ja
-        text: '代わりに%1%を使用してください。'
-      - lang: pt_BR
-        text: 'Use %1% ao invés disso.'
-      - lang: sv
-        text: 'Använd %1% istället.'
 
   - &useOnlyOneX
     type: error
@@ -833,22 +849,6 @@ common:
       - lang: sv
         text: 'Denna plugin innehåller vilda föränringar utanför ITM och UDR-records samt borttagna navmeshes och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
     subs: [ '' ]
-
-  - &renameXtoY
-    type: warn
-    content:
-      - lang: en
-        text: 'You need to rename %1% to %2% or this mod won''t work.'
-      - lang: bg
-        text: 'Трябва да преименувате %1% на %2%, в противен случай този мод няма да работи.'
-      - lang: de
-        text: 'Sie müssen %1% zu %2% umbenennen, ansonsten funktioniert diese Mod nicht.'
-      - lang: ja
-        text: '%1%を%2%にリネームしないと機能しません。'
-      - lang: pt_BR
-        text: 'Você precisa renomear %1% para %2%, caso contrário esse mod não irá funcionar.'
-      - lang: ru
-        text: 'Вам нужно переименовать %1% в %2% для подключения ресурсов мода..'
 
 # Dirty Aliases
   - &quickClean
