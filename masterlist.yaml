@@ -643,6 +643,22 @@ common:
       - lang: sv
         text: 'Denna plugins master behöver sorteras.'
 
+  - &useInstead
+    type: warn
+    content:
+      - lang: en
+        text: 'Use %1% instead.'
+      - lang: bg
+        text: 'Може да използвате %1%.'
+      - lang: de
+        text: 'Nutzen Sie %1% stattdessen.'
+      - lang: ja
+        text: '代わりに%1%を使用してください。'
+      - lang: pt_BR
+        text: 'Use %1% ao invés disso.'
+      - lang: sv
+        text: 'Använd %1% istället.'
+
   - &useBashTweakInstead
     type: say
     content:
@@ -660,22 +676,6 @@ common:
         text: 'En Bashed Patch Tweak kan användas istället för det här pluginet. %1%'
     subs: [ '' ]
     condition: 'file("Bashed Patch.*\.esp")'
-
-  - &useInstead
-    type: warn
-    content:
-      - lang: en
-        text: 'Use %1% instead.'
-      - lang: bg
-        text: 'Може да използвате %1%.'
-      - lang: de
-        text: 'Nutzen Sie %1% stattdessen.'
-      - lang: ja
-        text: '代わりに%1%を使用してください。'
-      - lang: pt_BR
-        text: 'Use %1% ao invés disso.'
-      - lang: sv
-        text: 'Använd %1% istället.'
 
   - &useOnlyOneX
     type: error
