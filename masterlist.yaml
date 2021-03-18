@@ -8990,6 +8990,12 @@ plugins:
     after:
       - name: 'SPERG-SSE.esp'
         condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'FleshFX'
+          - '[Mysticism - FleshFX Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46997)'
+        condition: 'active("FleshFX.esp") and not active("Mysticism_FleshFX_Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.Spells
@@ -9005,9 +9011,6 @@ plugins:
     clean:
       - crc: 0x0B426BDB
         util: 'SSEEdit v4.0.3'
-  - name: 'MM - CRF + USSEP.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34010' ]
-    after: [ 'FleshFX.esp' ]
 
   - name: 'Odin - Skyrim Magic Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46000/' ]
