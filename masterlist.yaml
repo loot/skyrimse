@@ -13240,10 +13240,6 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Books of Skyrim SE - Redux](https://www.nexusmods.com/skyrimspecialedition/mods/46991/)' ]
         condition: 'active("BooksOfSkyrim.esp") and not version("BooksOfSkyrim.esp", "5.0.0", >=)'
-      - <<: *wildEdits
-        type: say
-        subs: [ 'Remove CELL **00037EE9** from BooksOfSkyrim.esp. The Navmesh **000CAD79** in that cell reverts changes made in Update.esm, SkyrimSewers.esp or CC Saint & Seducers.' ]
-        condition: 'checksum("BooksOfSkyrim.esp", 74D04D2B)'
     clean:
       - crc: 0xE9FF2708
         util: 'SSEEdit v4.0.3'
