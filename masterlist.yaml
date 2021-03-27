@@ -2038,14 +2038,17 @@ plugins:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
 
-###### Modding Tools - Plugins ######
-  - name: 'SSE-Terrain-Tamriel(-Extend)?\.esm'
-    url: [ 'https://stepmodifications.org/forum/topic/13451-xlodgen-terrain-lod-beta-71-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal/' ]
+###### Modding Tools - Resources ######
+  - name: 'SSE-Terrain-Tamriel(-Full)?(-Extend)?\.esm'
+    url:
+      - link: 'https://stepmodifications.org/forum/topic/13451-xlodgen-terrain-lod-beta-76-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal-enderalse/'
+        name: 'SSELODGen Recommended Optionals'
     msg:
+      - *moddingPlugin
       - *optional
       - <<: *useOnlyOneX
-        subs: [ 'SSELODGen terrain plugin' ]
-        condition: 'many("SSE-Terrain-Tamriel(-Extend)?\.esm")'
+        subs: [ 'SSELODGen Terrain ESM' ]
+        condition: 'many("SSE-Terrain-Tamriel(-Full)?(-Extend)?\.esm")'
 
 ###### Modding Tools - Generated Files ######
   - name: 'Automated Leveled List Addition.esp'
