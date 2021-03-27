@@ -2967,12 +2967,7 @@ plugins:
       - name: '../d3d11.dll'
         display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires resources (Models, Textures etc. Plugins not required.) from %1%.'
-          - lang: de
-            text: 'Benötigt Ressourcen (Models, Texturen usw. Plugins werden nicht benötigt.) von %1%.'
+      - <<: *requiresResources
         subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
         condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
     tag: [ Graphics ]
@@ -8117,12 +8112,7 @@ plugins:
   - name: 'CLLF - (Lock Related Loot Addon|Lock Related Loot for SCCR)\.esp'
     inc: [ 'LockRelatedLoot.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires resources (Models, Textures etc. Plugins not required.) from %1%.'
-          - lang: de
-            text: 'Benötigt Ressourcen (Models, Texturen usw. Plugins werden nicht benötigt.) von %1%.'
+      - <<: *requiresResources
         subs: [ '[Lock Related Loot](https://www.nexusmods.com/skyrimspecialedition/mods/11342)' ]
         condition: 'not file("Scripts/lockExtraLootSCRIPT.pex")'
   - name: 'CLLF - (Lock Related Loot Addon|Skyrim Coin Replacer Redux Patch)\.esp'
@@ -11260,12 +11250,7 @@ plugins:
       - <<: *obsolete
         subs: [ '[aMidianBorn Content Addon](https://www.nexusmods.com/skyrimspecialedition/mods/35390)' ]
         condition: 'not version("aMidianBorn_ContentAddon.esp", "2.0", >=) and active("Complete Crafting Overhaul_Remastered.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires resources (Models, Textures etc. Plugins not required.) from %1%.'
-          - lang: de
-            text: 'Benötigt Ressourcen (Models, Texturen usw. Plugins werden nicht benötigt.) von %1%.'
+      - <<: *requiresResources
         subs: [ '[aMidianBorn Book of Silence SE](https://www.nexusmods.com/skyrimspecialedition/mods/35382/) (aMidianBorn Book of Silence SE -- CCOR CONTENT ADDON BSA or Armors, Dragonborn DLC, Unique Items & Weapons loose files)' ]
         condition: 'version("aMidianBorn_ContentAddon.esp", "2.0", >=) and not file("aMidianBorn_ContentAddon.bsa") and not file("textures/AMB Variants/dlc02/nordiccarvedbrown/nordiccarvedbootsm.dds")'
 
@@ -13261,10 +13246,7 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Books of Skyrim SE - Redux](https://www.nexusmods.com/skyrimspecialedition/mods/46991/)' ]
         condition: 'active("BooksOfSkyrim.esp") and not version("BooksOfSkyrim.esp", "5.0.0", >=)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Requires resources (e.g. meshes, textures; not plugins) from %1%.'
+      - <<: *requiresResources
         subs: [ '[Books of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/4115/)' ]
         condition: 'not file("BooksOfSkyrim.bsa") and not file("BooksOfSkyrim - Textures.bsa") and not file("textures/manny/librarian/manny_librarian_sign.dds")'
     clean:
