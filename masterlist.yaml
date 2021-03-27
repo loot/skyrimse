@@ -13240,6 +13240,12 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Books of Skyrim SE - Redux](https://www.nexusmods.com/skyrimspecialedition/mods/46991/)' ]
         condition: 'active("BooksOfSkyrim.esp") and not version("BooksOfSkyrim.esp", "5.0.0", >=)'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Requires resources (e.g. meshes, textures; not plugins) from %1%.'
+        subs: [ '[Books of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/4115/)' ]
+        condition: 'not file("BooksOfSkyrim.bsa") and not file("BooksOfSkyrim - Textures.bsa") and not file("textures/manny/librarian/manny_librarian_sign.dds")'
     clean:
       - crc: 0xE9FF2708
         util: 'SSEEdit v4.0.3'
