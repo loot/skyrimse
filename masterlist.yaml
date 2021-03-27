@@ -13240,17 +13240,24 @@ plugins:
         itm: 17
 
   - name: 'BooksOfSkyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4115/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4115/'
+        name: 'Books of Skyrim SE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/46991/'
+        name: 'Books of Skyrim SE - Redux'
     msg:
-      - <<: *wildEdits
-        type: say
-        subs: [ 'Remove CELL **00037EE9** from BooksOfSkyrim.esp. The Navmesh **000CAD79** in that cell reverts changes made in Update.esm, SkyrimSewers.esp or CC Saint & Seducers.' ]
-        condition: 'checksum("BooksOfSkyrim.esp", 74D04D2B)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xBB022E55
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+      - <<: *patchUpdateAvailable
+        subs: [ '[Books of Skyrim SE - Redux](https://www.nexusmods.com/skyrimspecialedition/mods/46991/)' ]
+        condition: 'active("BooksOfSkyrim.esp") and not version("BooksOfSkyrim.esp", "5.0.0", >=)'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Requires resources (e.g. meshes, textures; not plugins) from %1%.'
+        subs: [ '[Books of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/4115/)' ]
+        condition: 'not file("BooksOfSkyrim.bsa") and not file("BooksOfSkyrim - Textures.bsa") and not file("textures/manny/librarian/manny_librarian_sign.dds")'
+    clean:
+      - crc: 0xE9FF2708
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Bring Out Your Dead.esp'
     url:
