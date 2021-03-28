@@ -11268,7 +11268,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5800/' ]
     msg:
       - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Apophysis_Patch.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and checksum("meshes\armor\dragonpriesthelms\dragonhelm_steel_go.nif", B0068E0C)'
 
   - name: 'Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2431/' ]
@@ -18514,6 +18514,8 @@ plugins:
       - crc: 0xE89880B1
         util: 'SSEEdit v4.0.3'
       - crc: 0x2403123D
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x5F999F62
         util: 'SSEEdit v4.0.3'
   ### Legacy of the Dragonborn Patches ###
   - name: 'DBM_*.\.esp'
