@@ -7804,6 +7804,9 @@ plugins:
       - *requiresMCM
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CCOR_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[CCOR PRUFEI Chest CTD Hotfix](https://www.nexusmods.com/skyrimspecialedition/mods/46991/)' ]
+        condition: 'checksum("Scripts/prufiscript.pex", DAAA227E) and version("Complete Crafting Overhaul_Remastered.esp", "2.2", <=)'
     clean:
       - crc: 0xC57DC7ED
         util: 'SSEEdit v4.0.3'
