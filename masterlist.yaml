@@ -19150,11 +19150,19 @@ plugins:
   # Main Mod #
   - name: 'UltimateCollege.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797' ]
+    after:
+      - 'mihailspectres.esp'
+      - 'mihailbeholder.esp'
+      - 'ImmersiveIntegrationSE15.esp'
     inc:
       - 'CollegeModifications.esp'
       - 'MagicalCollegeofWinterhold.esp'
       - 'OCW_LightingPatch_Brighter.esp'
       - 'OCW_LightingPatch_Darker.esp'
+      - name: 'mihailspectres.esp'
+        condition: 'active("mihailspectres.esp") and checksum("mihailspectres.esp", 0x95F0F68D)'
+      - name: 'mihailbeholder.esp'
+        condition: 'active("mihailbeholder.esp") and checksum("mihailbeholder.esp", 0x447993FF)'
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2761']
