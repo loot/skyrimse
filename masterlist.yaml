@@ -3736,15 +3736,16 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Water for ENB ESP' ]
         condition: 'many("Water for ENB.*\.esp")'
-      - <<: *useVersion
-        subs: [ 'Needs' ]
-        condition: 'active("(iNeed|RealisticNeedsandDiseases|Keep It Clean|tdgsseWadeInWater)\.esp") and not active("Water for ENB.*\(iNeed\).*\.esp")'
   - name: 'Water for ENB( \((Mineral Teal|Tropical Green|Wavy Rivers)\))?\.esp'
     inc:
       - 'iNeed.esp'
       - 'Keep It Clean.esp'
       - 'RealisticNeedsandDiseases.esp'
       - 'tdgsseWadeInWater.esp'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Needs' ]
+        condition: 'active("(iNeed|RealisticNeedsandDiseases|Keep It Clean|tdgsseWadeInWater)\.esp")'
 
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
