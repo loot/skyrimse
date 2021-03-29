@@ -3732,6 +3732,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37061/' ]
     group: *lateLoadersGroup
     tag: [ C.Water ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Water for ENB ESP' ]
+        condition: 'many("Water for ENB.*\.esp")'
+      - <<: *useVersion
+        subs: [ 'Needs' ]
+        condition: 'active("(iNeed|RealisticNeedsandDiseases)\.esp") and not active("Water for ENB.*\(iNeed\).*\.esp")'
 
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
