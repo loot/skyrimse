@@ -3728,6 +3728,25 @@ plugins:
   - name: 'CubemapEnabler.esp'
     msg: [ *obsolete ]
 
+  - name: 'Water for ENB.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37061/' ]
+    group: *lateLoadersGroup
+    tag: [ C.Water ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Water for ENB ESP' ]
+        condition: 'many("Water for ENB.*\.esp")'
+  - name: 'Water for ENB( \((Mineral Teal|Tropical Green|Wavy Rivers)\))?\.esp'
+    inc:
+      - 'iNeed.esp'
+      - 'Keep It Clean.esp'
+      - 'RealisticNeedsandDiseases.esp'
+      - 'tdgsseWadeInWater.esp'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Needs' ]
+        condition: 'active("(iNeed|RealisticNeedsandDiseases|Keep It Clean|tdgsseWadeInWater)\.esp")'
+
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
     inc:
