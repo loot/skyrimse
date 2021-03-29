@@ -10601,28 +10601,6 @@ plugins:
   - name: 'Religion.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/67663/' ]
     after: [ 'Requiem.esp' ]
-    
-  - name: 'RodryksDragonBridge.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42510/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Enhanced Lights and FX'
-          - '[ELFX - Rodryk''s Dragon Bridge patch](https://www.nexusmods.com/skyrimspecialedition/mods/43032/)'
-        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - Rodryk's Dragon Bridge patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Great Cities - Minor Cities and Towns'
-          - '[Rodryk''s Dragon Bridge - Great Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/42619/)'
-        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("RodryksDragonBridge - GCS Dragon Bridge Patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xB73D9C06
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 1
-    clean:
-      - crc: 0xC110BC98
-        util: 'SSEEdit v4.0.3'
 
   - name: 'SaveTheBrotherhood.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33461' ]
@@ -13707,6 +13685,25 @@ plugins:
     clean:
       - crc: 0x0EE555DC
         util: 'SSEEdit v4.0.3'
+    
+  - name: 'RodryksDragonBridge.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42510/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lights and FX'
+          - '[ELFX - Rodryk''s Dragon Bridge patch](https://www.nexusmods.com/skyrimspecialedition/mods/43032/)'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("ELFX - Rodryk''s Dragon Bridge patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great Cities - Minor Cities and Towns'
+          - '[Rodryk''s Dragon Bridge - Great Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/42619/)'
+        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("RodryksDragonBridge - GCS Dragon Bridge Patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB73D9C06
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 1
 
   - name: '(Run_of_the_Mill_Inn|RunoftheMillInn).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19481/' ]
