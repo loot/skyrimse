@@ -5570,7 +5570,24 @@ plugins:
       # version: 3.7
       - crc: 0xE41E4EFC
         util: 'SSEEdit v4.0.3'
-
+        
+  - name: 'Bears of the North.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47541/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Savage Skyrim'
+          - '[Bears of the North patches for SkyTest and Savage Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/47708/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Savage Skyrim Bears of the North patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST - Realistic Animals and Predators'
+          - '[Bears of the North patches for SkyTest and Savage Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/47708/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SkyTest Bears of the North patch.esp")'
+    clean:
+      - crc: 0x816DD00B
+        util: 'SSEEdit v4.0.3'
+  
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
     msg:
