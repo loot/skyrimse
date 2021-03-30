@@ -1135,7 +1135,7 @@ globals:
         text: 'В этой версии LOOT плагины Creation Club обрабатываются хуже. Поэтому их поддержка ограничена до версии LOOT 0.13.1. Рекомендуется обновить как можно скорее.'
       - lang: sv
         text: 'Denna version av LOOT har sämre hantering av Creation Club plugins. Stöd för dessa är därför begränsad i versionen tidigare än LOOT 0.13.1. Du rekommenderas att uppdatera så snart som möjligt.'
-    condition: 'version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
+    condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
 
   - type: say
     content:
