@@ -11056,6 +11056,10 @@ plugins:
           - 'Even Better Quest Objectives'
           - '[A Selection of EBQO Patches](https://www.nexusmods.com/skyrimspecialedition/mods/47430/)'
         condition: 'active("BetterQuestObjectives.esp") and not active("YCM_ADBEM and EBQO Patch.esp")'
+      - <<: *patchProvided
+        type: warn
+        subs: [ 'Save the Dark Brotherhood' ]
+        condition: 'active("SaveTheBrotherhood.esp") and not active("ww_AlternateDBEnding_SaveTheDBPatch.esp")'
       - <<: *requiresMCM
         type: say
       - <<: *requiresMCM_VR
