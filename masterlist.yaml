@@ -1,27 +1,34 @@
+# LOOT ignores anything that doesn't come under 'bash_tags', 'globals',
+# 'groups', or 'plugins', so a section like 'common' is useful for storing
+# data that gets re-used.
 common:
-# Files
+# File Anchors
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+
   - &LotD_v5
     name: 'LegacyoftheDragonborn.esm'
     display: 'Legacy of the Dragonborn v5+'
     condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+
   - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](https://skse.silverlock.org))**'
     condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
+
   - &SKSE_VR
     name: '../sksevr_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE VR ](https://skse.silverlock.org))**'
     condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not file("../sksevr_loader.exe")'
+
   - &VR_PerkExtender
     name: 'SKSE/Plugins/VRPerkExtender.dll'
     display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
     condition: 'file("SkyrimVR.esm")'
 
-# Messages
+# Message Anchors
   - &alreadyInX
     type: error
     content:
@@ -570,6 +577,41 @@ common:
       - lang: sv
         text: 'Du behöver byta namn på %1% till %2% för att det här moddet ska fungera.'
 
+  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
+  - &requiresMCM_X
+    type: warn
+    content:
+      - lang: en
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing %1%.'
+      - lang: bg
+        text: 'Този мод изисква **меню за конфигуриране на модовете** за някои от неговите функции. Може да добавите **МКМ** с инсталиране на %1%.'
+      - lang: de
+        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man %1% installiert.'
+      - lang: it
+        text: 'È necessario un **Menu di configurazione Mod** per rendere questa mod completamente funzionante. È possibile aggiungere un **MCM** installando %1%.'
+      - lang: ja
+        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには%1%を導入してください。'
+      - lang: ko
+        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. %1%를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
+      - lang: pl
+        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację %1%.'
+      - lang: pt
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar %1%.'
+      - lang: pt_BR
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar %1%.'
+      - lang: ru
+        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с %1%.'
+      - lang: sv
+        text: 'En **Mod-konfigurationsmeny** krävs för att denna mod ska fungera korrekt. En **MCM** kan fås genom att installera %1%.'
+  - &requiresMCM
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)' ]
+    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+  - &requiresMCM_VR
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
+    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+
   - &requiresResources
     type: warn
     content:
@@ -615,41 +657,6 @@ common:
     <<: *requiresX
     subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
     condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
-
-  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &requiresMCM_X
-    type: warn
-    content:
-      - lang: en
-        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing %1%.'
-      - lang: bg
-        text: 'Този мод изисква **меню за конфигуриране на модовете** за някои от неговите функции. Може да добавите **МКМ** с инсталиране на %1%.'
-      - lang: de
-        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man %1% installiert.'
-      - lang: it
-        text: 'È necessario un **Menu di configurazione Mod** per rendere questa mod completamente funzionante. È possibile aggiungere un **MCM** installando %1%.'
-      - lang: ja
-        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには%1%を導入してください。'
-      - lang: ko
-        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. %1%를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
-      - lang: pl
-        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację %1%.'
-      - lang: pt
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar %1%.'
-      - lang: pt_BR
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar %1%.'
-      - lang: ru
-        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с %1%.'
-      - lang: sv
-        text: 'En **Mod-konfigurationsmeny** krävs för att denna mod ska fungera korrekt. En **MCM** kan fås genom att installera %1%.'
-  - &requiresMCM
-    <<: *requiresMCM_X
-    subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604)' ]
-    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-  - &requiresMCM_VR
-    <<: *requiresMCM_X
-    subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
-    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
 
   - &runAnimFramework
     type: say
@@ -737,26 +744,6 @@ common:
       - lang: sv
         text: 'Denna plugins master behöver sorteras.'
 
-  - &useInstead
-    type: warn
-    content:
-      - lang: en
-        text: 'Use %1% instead.'
-      - lang: bg
-        text: 'Може да използвате %1%.'
-      - lang: de
-        text: 'Nutzen Sie %1% stattdessen.'
-      - lang: it
-        text: 'Utilizza %1% invece.'
-      - lang: ja
-        text: '代わりに%1%を使用してください。'
-      - lang: ko
-        text: '대신 %1%를 사용하십시오.'
-      - lang: pt_BR
-        text: 'Use %1% ao invés disso.'
-      - lang: sv
-        text: 'Använd %1% istället.'
-
   - &useBashTweakInstead
     type: say
     content:
@@ -778,6 +765,26 @@ common:
         text: 'En Bashed Patch Tweak kan användas istället för det här pluginet. %1%'
     subs: [ '' ]
     condition: 'file("Bashed Patch.*\.esp")'
+
+  - &useInstead
+    type: warn
+    content:
+      - lang: en
+        text: 'Use %1% instead.'
+      - lang: bg
+        text: 'Може да използвате %1%.'
+      - lang: de
+        text: 'Nutzen Sie %1% stattdessen.'
+      - lang: it
+        text: 'Utilizza %1% invece.'
+      - lang: ja
+        text: '代わりに%1%を使用してください。'
+      - lang: ko
+        text: '대신 %1%를 사용하십시오.'
+      - lang: pt_BR
+        text: 'Use %1% ao invés disso.'
+      - lang: sv
+        text: 'Använd %1% istället.'
 
   - &useOnlyOneX
     type: error
@@ -929,12 +936,12 @@ common:
   - &versionSkseIncSSE
     <<: *versionXIncY
     subs:
-      - '**Script Extender ([SKSE](https://skse.silverlock.org))**'
+      - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim SE**'
   - &versionSkseIncSVR
     <<: *versionXIncY
     subs:
-      - '**Script Extender ([SKSE](https://skse.silverlock.org))**'
+      - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim VR**'
 
   - &wildEdits
@@ -968,7 +975,7 @@ common:
         text: 'Denna plugin innehåller vilda föränringar utanför ITM och UDR-records samt borttagna navmeshes och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
     subs: [ '' ]
 
-# Dirty Aliases
+# Cleaning Data Anchors
   - &quickClean
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
     info:
@@ -996,6 +1003,7 @@ common:
         text: 'En guide till att rensa plugins med xEdit finns [här](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
       - lang: zh_CN
         text: 'xEdit的清洁插件指南可以在[这里](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)找到。'
+
   - &reqManualFix
     util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
     info:
@@ -1128,6 +1136,7 @@ globals:
       - lang: sv
         text: 'Denna version av LOOT har sämre hantering av Creation Club plugins. Stöd för dessa är därför begränsad i versionen tidigare än LOOT 0.13.1. Du rekommenderas att uppdatera så snart som möjligt.'
     condition: 'version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
+
   - type: say
     content:
       - lang: en
@@ -1168,7 +1177,6 @@ globals:
       - 'GenerateFNISforUsers.exe'
       - 'FNIS'
     condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
-
   # Nemesis Unlimited Behavior Engine
   - <<: *runAnimFramework
     subs:
@@ -1176,7 +1184,6 @@ globals:
       - 'Nemesis Unlimited Behavior Engine.exe'
       - 'Nemesis'
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
-    
   # Nemesis and FNIS compatibility
   - <<: *useOnlyOneX
     subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
