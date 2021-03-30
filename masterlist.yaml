@@ -13281,12 +13281,10 @@ plugins:
 
   - name: 'Wyrmstooth.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/45565'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/45565/'
         name: 'Wyrmstooth'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19492'
-        name: 'Drachenzahn (Wyrmstooth) EV 2.2'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18553'
-        name: 'Drachenzahn (Wyrmstooth) DV 3.0'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18553/'
+        name: 'Drachenzahn (Wyrmstooth) DV 1.19.2'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wyrmstooth_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -13296,20 +13294,15 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wyrmstooth_Patch.esp")'
       - <<: *obsolete
         subs: [ '[Wyrmstooth](https://www.nexusmods.com/skyrimspecialedition/mods/45565/)' ]
-        condition: 'not version("Wyrmstooth.esp", "1.19", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xF73A6161
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 5587
-    clean:
+        condition: 'not version("Wyrmstooth.esp", "1.19.2", >=)'
+    clean: # CRC's for 1: Unknown, 2: Unknown, 3: Drachenzahn (Wyrmstooth) DV 1.19.2, 4: Wyrmstooth 1.19.2 #
       - crc: 0x97F8C8B4
         util: 'SSEEdit v4.0.3'
       - crc: 0x85D4BF27
         util: 'SSEEdit v4.0.3'
-      - crc: 0xFD63BB73
+      - crc: 0x7D46DF7E
         util: 'SSEEdit v4.0.3'
-      - crc: 0x65126395
+      - crc: 0x4FB18D3A
         util: 'SSEEdit v4.0.3'
 
 ###### Locations - New Structures & Landmarks ######
