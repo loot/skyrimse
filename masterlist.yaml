@@ -10778,6 +10778,27 @@ plugins:
       - crc: 0xA24DEE38
         util: 'SSEEdit v4.0.3'
 
+  - name: 'QuestsAreInSkyrim(USSEP)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18416/' ]
+    group: *earlyLoadersGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Quests Are In Skyrim ESP' ]
+        condition: 'many("QuestsAreInSkyrim(USSEP)?\.esp")'
+  - name: 'QuestsAreInSkyrim.esp'
+    inc: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    msg:
+      - <<: *useInstead
+        subs: [ 'QuestsAreInSkyrimUSSEP.esp' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+    clean:
+      - crc: 0x0981903E
+        util: 'SSEEdit v4.0.3f'
+  - name: 'QuestsAreInSkyrimUSSEP.esp'
+    clean:
+      - crc: 0x35327EC4
+        util: 'SSEEdit v4.0.3f'
+
   - name: 'quest_pitfighter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22513' ]
     dirty:
