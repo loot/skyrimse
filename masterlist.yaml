@@ -2090,6 +2090,11 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 7
 
+  ### Scrambled Bugs Optional Plugins ###
+  - name: 'ApplySpellPerkEntryPointsDemonstration.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
+    msg: [ *moddingPlugin ]
+
   - name: 'SmallEnviromentalFixes(SEF).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5270/' ]
     group: *fixesGroup
@@ -2144,6 +2149,7 @@ plugins:
 
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28197/' ]
+    req: [ *SKSE ]
     inc:
       - name: 'scripts/foxHarvestFix.pex'
         display: 'Brutal Flora Harvest Fix'
@@ -2152,10 +2158,22 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
-    req: [ *SKSE ]
+      - <<: *deletePlugin
+        type: say
+        subs: [ 'Scrambled Bugs' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll") and active("WM Flora Fixes.esp")'
     clean:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
+
+  - name: 'wolfs_LockpickingXPFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36734/' ]
+    group: *fixesGroup
+    msg:
+      - <<: *alreadyInOrFixedByX
+        type: say
+        subs: [ 'Scrambled Bugs' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
 
 ###### Modding Tools - Resources ######
   - name: 'SSE-Terrain-Tamriel(-Full)?(-Extend)?\.esm'
