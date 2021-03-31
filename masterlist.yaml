@@ -2144,6 +2144,7 @@ plugins:
 
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28197/' ]
+    req: [ *SKSE ]
     inc:
       - name: 'scripts/foxHarvestFix.pex'
         display: 'Brutal Flora Harvest Fix'
@@ -2152,7 +2153,10 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
-    req: [ *SKSE ]
+      - <<: *deletePlugin
+        type: say
+        subs: [ 'Scrambled Bugs' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll") and active("WM Flora Fixes.esp")'
     clean:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
