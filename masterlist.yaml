@@ -10762,6 +10762,11 @@ plugins:
 
   - name: 'QuestsAreInSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18416/' ]
+    inc: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    msg:
+      - <<: *useInstead
+        subs: [ 'QuestsAreInSkyrimUSSEP.esp' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
     clean:
       - crc: 0x0981903E
         util: 'SSEEdit v4.0.3f'
