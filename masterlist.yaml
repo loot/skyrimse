@@ -11040,6 +11040,54 @@ plugins:
       - crc: 0xE6561EE8
         util: 'SSEEdit v4.0.3'
 
+  - name: 'ww_AlternateDBEnding.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/46871/'
+        name: 'Your Choices Matter - A Dark Brotherhood Expansion SSE'
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'BetterQuestObjectives-DBForevertoMisc.esp'
+      - 'Save the Dark Brotherhood!.esp'
+      - 'SaveTheBrotherhood.esp'
+      - 'The Brotherhood of Old.esp'
+    req:
+      - *SKSE
+      - *SKSE_VR
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Dark Brotherhood for Good Guys - goodbrother.esp' ]
+        condition: 'active("goodbrother.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Dark Brotherhood For People on the Go - DB_OnTheGo.esp' ]
+        condition: 'active("DB_OnTheGo.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Shezarrine: The Fate of Tamriel - Shezarrine.esp' ]
+        condition: 'active("Shezarrine.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Shut Up Night Mother - Sid_DBNM.esp' ]
+        condition: 'active("Sid_DBNM.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Veezara Alive - Veezara.esp' ]
+        condition: 'active("Veezara.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Even Better Quest Objectives'
+          - '[A Selection of EBQO Patches](https://www.nexusmods.com/skyrimspecialedition/mods/47430/)'
+        condition: 'active("BetterQuestObjectives.esp") and not active("YCM_ADBEM and EBQO Patch.esp")'
+      - <<: *patchProvided
+        type: warn
+        subs: [ 'Save the Dark Brotherhood' ]
+        condition: 'active("SaveTheBrotherhood.esp") and not active("ww_AlternateDBEnding_SaveTheDBPatch.esp")'
+      - <<: *requiresMCM
+        type: say
+      - <<: *requiresMCM_VR
+        type: say
+    dirty:
+      - <<: *quickClean
+        crc: 0xABAA34BC
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
 ###### Gameplay - Skills & Perks ######
   - name: 'Adamant.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30191/' ]
