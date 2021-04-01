@@ -2223,35 +2223,42 @@ plugins:
       - crc: 0x0B872760
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Better Dynamic Snow.esp'
+  - name: 'Better Dynamic Snow( SE)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Better Dynamic Snow ESP' ]
+        condition: 'many("Better Dynamic Snow( SE)?\.esp")'
+  - name: 'Better Dynamic Snow SE.esp'
+    clean:
+      - crc: 0x1E8DF8AF
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xE23348BA
+        util: 'SSEEdit v4.0.3f'
+  - name: 'Better Dynamic Snow( - NSUTR Patch)?\.esp'
+    tag: [ Graphics ]
+  - name: 'Better Dynamic Snow.esp'
     after:
       - '___SNOW_FIX.esp'
       - 'SMIM-SE-Merged-All.esp'
       - 'SMIM-SE.esp'
     msg:
-      - <<: *patchIncluded
-        subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
+      - <<: *obsolete
+        condition: 'not file("skse/plugins/ShaderTools.dll")'
       - <<: *patch3rdParty
         subs:
           - 'Majestic Mountains'
-          - '[ Better Dynamic Majestic Mountains ](https://www.nexusmods.com/skyrimspecialedition/mods/20102)'
-        condition: 'active("MajesticMountains.esp")  and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
-    tag: [ Graphics ]
+          - '[Better Dynamic Majestic Mountains](https://www.nexusmods.com/skyrimspecialedition/mods/20102/)'
+        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
+      - <<: *patchIncluded
+        subs: [ 'No Snow Under the Roof' ]
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
     clean:
       - crc: 0x65408AA9
         util: 'SSEEdit v4.0.3'
       # ESP With Majestic Mountains conflicting records removed.
       - crc: 0x165C9A2F
         util: 'SSEEdit v4.0.3'
-  - name: 'Better Dynamic Snow - Snowy Farmhouses.esp'
-    clean:
-      - crc: 0xE53171ED
-        util: 'SSEEdit v4.0.3'
-  - name: 'Better Dynamic Snow - NSUTR Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
-    tag: [ Graphics ]
 
   - name: 'BDS - MM Patch.esp'
     url:
