@@ -92,6 +92,10 @@ common:
         text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
       - lang: sv
         text: 'Ta bort. Redan inkluderat eller fixat i %1%.'
+  - &alreadyInOrFixedByBDSv3_0
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Better Dynamic Snow v3.0+' ]
+    condition: 'active("Better Dynamic Snow SE.esp")'
 
   - &alsoUseX
     type: say
@@ -2223,43 +2227,41 @@ plugins:
       - crc: 0x0B872760
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Better Dynamic Snow.esp'
+  - name: 'Better Dynamic Snow( SE)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Better Dynamic Snow ESP' ]
+        condition: 'many("Better Dynamic Snow( SE)?\.esp")'
+  - name: 'Better Dynamic Snow SE.esp'
+    clean:
+      - crc: 0x1E8DF8AF
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xE23348BA
+        util: 'SSEEdit v4.0.3f'
+  - name: 'Better Dynamic Snow( - NSUTR Patch)?\.esp'
+    tag: [ Graphics ]
+  - name: 'Better Dynamic Snow.esp'
     after:
       - '___SNOW_FIX.esp'
       - 'SMIM-SE-Merged-All.esp'
       - 'SMIM-SE.esp'
     msg:
-      - <<: *patchIncluded
-        subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
+      - <<: *obsolete
+        condition: 'not file("skse/plugins/ShaderTools.dll")'
       - <<: *patch3rdParty
         subs:
           - 'Majestic Mountains'
-          - '[ Better Dynamic Majestic Mountains ](https://www.nexusmods.com/skyrimspecialedition/mods/20102)'
-        condition: 'active("MajesticMountains.esp")  and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
-    tag: [ Graphics ]
+          - '[Better Dynamic Majestic Mountains](https://www.nexusmods.com/skyrimspecialedition/mods/20102/)'
+        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
+      - <<: *patchIncluded
+        subs: [ 'No Snow Under the Roof' ]
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
     clean:
       - crc: 0x65408AA9
         util: 'SSEEdit v4.0.3'
       # ESP With Majestic Mountains conflicting records removed.
       - crc: 0x165C9A2F
-        util: 'SSEEdit v4.0.3'
-  - name: 'Better Dynamic Snow - Snowy Farmhouses.esp'
-    clean:
-      - crc: 0xE53171ED
-        util: 'SSEEdit v4.0.3'
-  - name: 'Better Dynamic Snow - NSUTR Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
-    tag: [ Graphics ]
-
-  - name: 'BDS - MM Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
-        name: 'Better Dynamic Majestic Mountains Patch'
-    tag: [ Graphics ]
-    clean:
-      - crc: 0x09F94900
         util: 'SSEEdit v4.0.3'
 
   - name: 'dD - Enhanced Blood Main.*\.esp'
@@ -16045,6 +16047,8 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0xC87408AC
         util: 'SSEEdit v4.0.3'
+  - name: 'OCW_BDS_FEPatch.esp'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
   - name: 'OCW_SPO_FEPatch.esp'
     msg:
       - <<: *alreadyInX
@@ -18888,6 +18892,21 @@ plugins:
       - crc: 0xE245BD69
         util: 'SSEEdit v4.0.3'
 
+  - name: 'BDS - MM Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
+        name: 'Better Dynamic Majestic Mountains'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
+    tag: [ Graphics ]
+
+  - name: 'BDS_(BRE|FSK|NOR|RCY|WYR).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22741/'
+        name: 'Better Dynamic Snow in New Lands'
+    msg:
+      - <<: *alreadyInOrFixedByBDSv3_0
+        type: warn
+
   - name: 'ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources|Patch AIO)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18634/' ]
     inc:
@@ -19397,6 +19416,13 @@ plugins:
       - Names
       - Stats
 
+  ### Skyrim 3D Trees Patches ###
+  - name: 'S3DTrees Better Dynamic Snow Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36647/'
+        name: 'Skyrim 3D Trees Patches'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
+
   ### Survival Mode Patch Collection ###
   - name: 'Survival Mode Patches - AMB Content Addon.esp'
     url:
@@ -19584,5 +19610,12 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'CCOR_Vokrii.esp' ]
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
+
+  ### WiZkiD Patches Compendium ###
+  - name: 'Better Dynamic Snow - S3D Rocks patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24046/'
+        name: 'WiZkiD Patches Compendium'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
