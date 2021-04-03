@@ -8586,26 +8586,56 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MorrowlootUltimate_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchProvided
-        subs: [ 'Advanced Adversary Encounters' ]
+        subs: [ 'Advanced Adversary Encounters - Ultimate' ]
         condition: 'active("AAE Ultimate Edition.esp") and not active("MLU - AAE Ultimate Edition.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("MLU - AI Overhaul.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Ars Metallica - Smithing Enhancements' ]
         condition: 'active("Ars Metallica.esp") and not active("MLU - Ars Metallica Patch.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
+        subs: [ 'Complete Crafting Overhaul Remastered' ]
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("MLU - CCOR.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cosmetic Vampire Overhaul' ]
+        condition: 'active("CosmeticVampireOverhaul.esp") and not active("MLU - CosmeticVampireOverhaul.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'utting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("MLU - CRF.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
         subs: [ 'Immersive Armors' ]
         condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("MLU - Immersive Armors.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
-        subs: [ 'Improved closefaced helmets' ]
+        subs: [ 'Improved Closefaced Helmets' ]
         condition: 'active("imp_helm_legend.esp") and not active("OMEGA MLU Improved Closefaced Helmets.esp") and not active("MLU - Improved Closefaced Helmets.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'Improved Daedric Artifacts' ]
+        condition: 'active("ImprovedDaedricArtifacts.esp") and not active("MLU - ImprovedDaedricArtifacts.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'INIGO' ]
+        condition: 'active("Inigo.esp") and not active("MLU - ImprovedDaedricArtifacts.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'InsanitySorrow Weapons Pack' ]
         condition: 'active("InsanitySorrow Weapons Pack.esp") and not active("MLU - InsanitySorrow Weapons Pack.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
+        subs: [ 'JK''s The Drunken Huntsman' ]
+        condition: 'active("JKs The Drunken Huntsman.esp") and not active("MLU - JK''s The Drunken Hunstman.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
         subs: [ 'Lore Weapon Expansion' ]
-        condition: 'active("Lore Weapon Expansion.esp") and not active("MLU - Lore Weapon Expansion.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'active("Lore Weapon Expansion.esp") and not active("LegacyoftheDragonborn.esm") and not active("MLU - Lore Weapon Expansion.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'Lore Weapon Expansion and Legacy of the Dragonborn' ]
+        condition: 'active("Lore Weapon Expansion.esp") and active("LegacyoftheDragonborn.esm") and not active("MLU - Lore Weapon Expansion - LOTD Version.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Mainland Stalhrim' ]
         condition: 'active("MainlandStalhrim.esp") and not active("MLU - Mainland Stalhrim.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'Simple Magic Rebalance' ]
+        condition: 'active("Simple Magic Rebalance.esp") and not checksum("Simple Magic Rebalance.esp", 4F3CB180) and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim Revamped - Complete Enemy Overhaul' ]
+        condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("MLU - Skyrim Revamped Complete Enemy Overhaul.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Summermyst - Enchantments of Skyrim' ]
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst.esp") and not active("MLU Patches Merged.esp")'
@@ -8613,14 +8643,14 @@ plugins:
         subs: [ 'Unique Uniques' ]
         condition: 'active("Unique Uniques.esp") and checksum("Unique Uniques.esp", 31DB2011) and not active("MLU - Unique Uniques.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
-        subs: [ 'Wild World' ]
-        condition: 'active("Wild World.esp") and not active("MLU - Wild World.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *patchProvided
-        subs: [ 'Zim''s Immersive Artifacts' ]
-        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp") and not active("MLU Patches Merged.esp") and not active("ScopedBows.esp")'
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("MLU - WaCCF.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("MLU - WICO.esp") and not active("MLU Patches Merged.esp")'
+      - <<: *patchProvided
+        subs: [ 'Zim''s Immersive Artifacts' ]
+        condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp") and not active("MLU Patches Merged.esp") and not active("ScopedBows.esp")'
       - <<: *patch3rdPartySBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_MLU Patch.esp") and not active("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
@@ -8658,7 +8688,7 @@ plugins:
         itm: 271
       # Original
       - <<: *quickClean
-        crc: 0x85F6C46A
+        crc: 0x7E34D591
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
       # Another Sorting Mod Replacer
@@ -8666,10 +8696,6 @@ plugins:
         crc: 0xA2D06745
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
-    clean:
-      # Original, No Artifacts
-      - crc: 0xDFB26843
-        util: 'SSEEdit v4.0.3'
   - name: 'MLU - .*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3058/' ]
     after: [ 'MLU.esp' ]
@@ -8712,6 +8738,11 @@ plugins:
     tag:
       - Delev
       - Relev
+  - name: 'MLU - Lore Weapon Expansion.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'MLU - Lore Weapon Expansion - LOTD Version.esp' ]
+        condition: 'active("MLU - Lore Weapon Expansion - LOTD Version.esp")'
   - name: 'MLU - Mainland Stalhrim.esp'
     tag:
       - Keywords
