@@ -92,6 +92,10 @@ common:
         text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
       - lang: sv
         text: 'Ta bort. Redan inkluderat eller fixat i %1%.'
+  - &alreadyInOrFixedByBDSv3_0
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Better Dynamic Snow v3.0+' ]
+    condition: 'active("Better Dynamic Snow SE.esp")'
 
   - &alsoUseX
     type: say
@@ -560,6 +564,18 @@ common:
       - lang: sv
         text: 'Uppdateringspatch tillgänglig: %1%'
 
+  - &patcherScriptAvailable
+    type: say
+    content:
+      - lang: en
+        text: '%1% patcher script available here: %2%'
+      - lang: de
+        text: '%1% Patch-Skript hier verfügbar: %2%'
+      - lang: ja
+        text: '%1%のパッチスクリプトは%2%を利用できます。'
+      - lang: pt_PT
+        text: 'O script de atualização para %1% está disponível aqui: %2%'
+
   - &renameXtoY
     type: warn
     content:
@@ -692,34 +708,6 @@ common:
         text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **%2%** varje gång du har installerat eller avinstallerat %3%, eller en %3%-baserad mod.'
       - lang: zh_CN
         text: '你安装了**%1%**。每次安装或卸载基于%3%的mod时记得运行**%2%**。'
-
-  - &semiCompatible
-    type: say
-    content:
-      - lang: en
-        text: '%1% is not fully compatible with this mod. %2%'
-      - lang: bg
-        text: 'Приставката %1% не е напълно съвместима с този мод. %2%'
-      - lang: de
-        text: '%1% ist nicht vollständig kompatibel mit dieser Mod. %2%'
-      - lang: fi
-        text: '%1% ei ole täysin yhteensopiva tämän modin kanssa. %2%'
-      - lang: it
-        text: '%1% non è pienamente compatibile con questa mod. %2%'
-      - lang: ja
-        text: '%1%は%2%と完全な互換性がありません。'
-      - lang: ko
-        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
-      - lang: pl
-        text: '%1% nie jest w pełni kompatybilny z tym modem. %2%'
-      - lang: pt_PT
-        text: '%1% não é totalmente compatível com este mod. %2%'
-      - lang: pt_BR
-        text: '%1% não é completamente compatível com este mod. %2%'
-      - lang: ru
-        text: '%1% не полностью совместим с этим модом. %2%'
-      - lang: sv
-        text: '%1% är inte helt kompatibel med denna mod. %2%'
 
   - &sortMasters
     type: say
@@ -2090,6 +2078,11 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 7
 
+  ### Scrambled Bugs Optional Plugins ###
+  - name: 'ApplySpellPerkEntryPointsDemonstration.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
+    msg: [ *moddingPlugin ]
+
   - name: 'SmallEnviromentalFixes(SEF).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5270/' ]
     group: *fixesGroup
@@ -2144,6 +2137,7 @@ plugins:
 
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28197/' ]
+    req: [ *SKSE ]
     inc:
       - name: 'scripts/foxHarvestFix.pex'
         display: 'Brutal Flora Harvest Fix'
@@ -2152,10 +2146,22 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
-    req: [ *SKSE ]
+      - <<: *deletePlugin
+        type: say
+        subs: [ 'Scrambled Bugs' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll") and active("WM Flora Fixes.esp")'
     clean:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
+
+  - name: 'wolfs_LockpickingXPFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36734/' ]
+    group: *fixesGroup
+    msg:
+      - <<: *alreadyInOrFixedByX
+        type: say
+        subs: [ 'Scrambled Bugs' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
 
 ###### Modding Tools - Resources ######
   - name: 'SSE-Terrain-Tamriel(-Full)?(-Extend)?\.esm'
@@ -2233,43 +2239,41 @@ plugins:
       - crc: 0x0B872760
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Better Dynamic Snow.esp'
+  - name: 'Better Dynamic Snow( SE)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Better Dynamic Snow ESP' ]
+        condition: 'many("Better Dynamic Snow( SE)?\.esp")'
+  - name: 'Better Dynamic Snow SE.esp'
+    clean:
+      - crc: 0x1E8DF8AF
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xE23348BA
+        util: 'SSEEdit v4.0.3f'
+  - name: 'Better Dynamic Snow( - NSUTR Patch)?\.esp'
+    tag: [ Graphics ]
+  - name: 'Better Dynamic Snow.esp'
     after:
       - '___SNOW_FIX.esp'
       - 'SMIM-SE-Merged-All.esp'
       - 'SMIM-SE.esp'
     msg:
-      - <<: *patchIncluded
-        subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
+      - <<: *obsolete
+        condition: 'not file("skse/plugins/ShaderTools.dll")'
       - <<: *patch3rdParty
         subs:
           - 'Majestic Mountains'
-          - '[ Better Dynamic Majestic Mountains ](https://www.nexusmods.com/skyrimspecialedition/mods/20102)'
-        condition: 'active("MajesticMountains.esp")  and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
-    tag: [ Graphics ]
+          - '[Better Dynamic Majestic Mountains](https://www.nexusmods.com/skyrimspecialedition/mods/20102/)'
+        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
+      - <<: *patchIncluded
+        subs: [ 'No Snow Under the Roof' ]
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
     clean:
       - crc: 0x65408AA9
         util: 'SSEEdit v4.0.3'
       # ESP With Majestic Mountains conflicting records removed.
       - crc: 0x165C9A2F
-        util: 'SSEEdit v4.0.3'
-  - name: 'Better Dynamic Snow - Snowy Farmhouses.esp'
-    clean:
-      - crc: 0xE53171ED
-        util: 'SSEEdit v4.0.3'
-  - name: 'Better Dynamic Snow - NSUTR Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
-    tag: [ Graphics ]
-
-  - name: 'BDS - MM Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
-        name: 'Better Dynamic Majestic Mountains Patch'
-    tag: [ Graphics ]
-    clean:
-      - crc: 0x09F94900
         util: 'SSEEdit v4.0.3'
 
   - name: 'dD - Enhanced Blood Main.*\.esp'
@@ -2644,20 +2648,6 @@ plugins:
       - 'Endgame NPC Overhaul.esp'
       - 'UNP Vanilla Outfits.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '%1% patcher script available here: %2%'
-          - lang: de
-            text: '%1% Patch-Skript hier verfügbar: %2%'
-          - lang: ja
-            text: '%1%のパッチスクリプトは%2%を利用できます。'
-          - lang: pt_PT
-            text: 'O script de atualização para %1% está disponível aqui: %2%'
-        subs:
-          - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-          - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
-        condition: 'active("Joy of Perspective.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim: Bruma'
@@ -2693,6 +2683,11 @@ plugins:
           - 'WACCF - Armor and Clothing Extension'
           - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
+      - <<: *patcherScriptAvailable
+        subs:
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Auto Patching - VIS - JOP - Disenchant All - Weightless](https://www.nexusmods.com/skyrimspecialedition/mods/10959/)'
+        condition: 'active("Joy of Perspective.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x292F204E
@@ -8616,7 +8611,7 @@ plugins:
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Unique Uniques' ]
-        condition: 'active("Unique Uniques.esp") and not active("MLU - Unique Uniques.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'active("Unique Uniques.esp") and checksum("Unique Uniques.esp", 31DB2011) and not active("MLU - Unique Uniques.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Wild World' ]
         condition: 'active("Wild World.esp") and not active("MLU - Wild World.esp") and not active("MLU Patches Merged.esp")'
@@ -10525,6 +10520,25 @@ plugins:
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 7
 
+  - name: 'FSA_FindingSusannaAlive(_BotIR)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32512/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Finding Susanna Alive ESP' ]
+        condition: 'many("FSA_FindingSusannaAlive(_BotIR)?\.esp")'
+  - name: 'FSA_FindingSusannaAlive.esp'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Blood on the Ice Redux' ]
+        condition: 'active("BOTI.esp")'
+    clean:
+      - crc: 0xD76EF163
+        util: 'SSEEdit v4.0.3f'
+  - name: 'FSA_FindingSusannaAlive_BotIR.esp'
+    clean:
+      - crc: 0xB77FA395
+        util: 'SSEEdit v4.0.3f'
+
   - name: 'GoldenglowIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25155/' ]
     tag:
@@ -10759,6 +10773,27 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0xA24DEE38
         util: 'SSEEdit v4.0.3'
+
+  - name: 'QuestsAreInSkyrim(USSEP)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18416/' ]
+    group: *earlyLoadersGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Quests Are In Skyrim ESP' ]
+        condition: 'many("QuestsAreInSkyrim(USSEP)?\.esp")'
+  - name: 'QuestsAreInSkyrim.esp'
+    inc: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    msg:
+      - <<: *useVersion
+        subs: [ 'USSEP' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+    clean:
+      - crc: 0x0981903E
+        util: 'SSEEdit v4.0.3f'
+  - name: 'QuestsAreInSkyrimUSSEP.esp'
+    clean:
+      - crc: 0x35327EC4
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'quest_pitfighter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22513' ]
@@ -11000,6 +11035,54 @@ plugins:
     clean:
       - crc: 0xE6561EE8
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ww_AlternateDBEnding.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/46871/'
+        name: 'Your Choices Matter - A Dark Brotherhood Expansion SSE'
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'BetterQuestObjectives-DBForevertoMisc.esp'
+      - 'Save the Dark Brotherhood!.esp'
+      - 'SaveTheBrotherhood.esp'
+      - 'The Brotherhood of Old.esp'
+    req:
+      - *SKSE
+      - *SKSE_VR
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Dark Brotherhood for Good Guys - goodbrother.esp' ]
+        condition: 'active("goodbrother.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Dark Brotherhood For People on the Go - DB_OnTheGo.esp' ]
+        condition: 'active("DB_OnTheGo.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Shezarrine: The Fate of Tamriel - Shezarrine.esp' ]
+        condition: 'active("Shezarrine.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Shut Up Night Mother - Sid_DBNM.esp' ]
+        condition: 'active("Sid_DBNM.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Veezara Alive - Veezara.esp' ]
+        condition: 'active("Veezara.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Even Better Quest Objectives'
+          - '[A Selection of EBQO Patches](https://www.nexusmods.com/skyrimspecialedition/mods/47430/)'
+        condition: 'active("BetterQuestObjectives.esp") and not active("YCM_ADBEM and EBQO Patch.esp")'
+      - <<: *patchProvided
+        type: warn
+        subs: [ 'Save the Dark Brotherhood' ]
+        condition: 'active("SaveTheBrotherhood.esp") and not active("ww_AlternateDBEnding_SaveTheDBPatch.esp")'
+      - <<: *requiresMCM
+        type: say
+      - <<: *requiresMCM_VR
+        type: say
+    dirty:
+      - <<: *quickClean
+        crc: 0xABAA34BC
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
 ###### Gameplay - Skills & Perks ######
   - name: 'Adamant.esp'
@@ -11308,14 +11391,14 @@ plugins:
     inc:
       - 'PathOfMight.esp'
       - 'PerkusMaximus_Warrior.esp'
-      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
+    tag:
+      - Names
+      - Text
     clean:
-      # version: 2.0 Modified Vanilla Tree
-      - crc: 0xBB63CBFF
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.0 New Perk Tree
       - crc: 0xC0A33704
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xBB63CBFF
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'SPERG-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
@@ -12595,13 +12678,12 @@ plugins:
     msg:
       - *alreadyInLotD
       - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
+        condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
+        condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
     clean:
-      # version: 1.1
       - crc: 0x31DB2011
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'Unique Zephyr.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16956/' ]
@@ -15986,6 +16068,8 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0xC87408AC
         util: 'SSEEdit v4.0.3'
+  - name: 'OCW_BDS_FEPatch.esp'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
   - name: 'OCW_SPO_FEPatch.esp'
     msg:
       - <<: *alreadyInX
@@ -18573,20 +18657,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_UnlimitedBookshelves_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - type: say
-        content:
-          - lang: en
-            text: '%1% patcher script available here: %2%'
-          - lang: de
-            text: '%1% Patch-Skript hier verfügbar: %2%'
-          - lang: ja
-            text: '%1%のパッチスクリプトは%2%を利用できます。'
-          - lang: pt_PT
-            text: 'O script de atualização para %1% está disponível aqui: %2%'
+      - <<: *patcherScriptAvailable
         subs:
-          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-          - '[Unlimited Bookshelves patch generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160)'
-        condition: 'active("UnlimitedBookshelves.esp") and not active("UnlimitedBookshelvesPatch.esp")'
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Unlimited Bookshelves Patch Generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160/)'
+        condition: 'not active("UnlimitedBookshelvesPatch.esp")'
     clean:
       - crc: 0x86CF0F2B
         util: 'SSEEdit v4.0.3'
@@ -18828,6 +18903,21 @@ plugins:
     clean:
       - crc: 0xE245BD69
         util: 'SSEEdit v4.0.3'
+
+  - name: 'BDS - MM Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
+        name: 'Better Dynamic Majestic Mountains'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
+    tag: [ Graphics ]
+
+  - name: 'BDS_(BRE|FSK|NOR|RCY|WYR).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22741/'
+        name: 'Better Dynamic Snow in New Lands'
+    msg:
+      - <<: *alreadyInOrFixedByBDSv3_0
+        type: warn
 
   - name: 'ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources|Patch AIO)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18634/' ]
@@ -19338,6 +19428,13 @@ plugins:
       - Names
       - Stats
 
+  ### Skyrim 3D Trees Patches ###
+  - name: 'S3DTrees Better Dynamic Snow Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36647/'
+        name: 'Skyrim 3D Trees Patches'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
+
   ### Survival Mode Patch Collection ###
   - name: 'Survival Mode Patches - AMB Content Addon.esp'
     url:
@@ -19525,5 +19622,12 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'CCOR_Vokrii.esp' ]
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
+
+  ### WiZkiD Patches Compendium ###
+  - name: 'Better Dynamic Snow - S3D Rocks patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24046/'
+        name: 'WiZkiD Patches Compendium'
+    msg: [ *alreadyInOrFixedByBDSv3_0 ]
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
