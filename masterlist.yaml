@@ -564,6 +564,18 @@ common:
       - lang: sv
         text: 'Uppdateringspatch tillgänglig: %1%'
 
+  - &patcherScriptAvailable
+    type: say
+    content:
+      - lang: en
+        text: '%1% patcher script available here: %2%'
+      - lang: de
+        text: '%1% Patch-Skript hier verfügbar: %2%'
+      - lang: ja
+        text: '%1%のパッチスクリプトは%2%を利用できます。'
+      - lang: pt_PT
+        text: 'O script de atualização para %1% está disponível aqui: %2%'
+
   - &renameXtoY
     type: warn
     content:
@@ -2636,20 +2648,6 @@ plugins:
       - 'Endgame NPC Overhaul.esp'
       - 'UNP Vanilla Outfits.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '%1% patcher script available here: %2%'
-          - lang: de
-            text: '%1% Patch-Skript hier verfügbar: %2%'
-          - lang: ja
-            text: '%1%のパッチスクリプトは%2%を利用できます。'
-          - lang: pt_PT
-            text: 'O script de atualização para %1% está disponível aqui: %2%'
-        subs:
-          - '[xEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-          - '[ Auto Patching - VIS - JOP ](https://www.nexusmods.com/skyrimspecialedition/mods/10959)'
-        condition: 'active("Joy of Perspective.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim: Bruma'
@@ -2685,6 +2683,11 @@ plugins:
           - 'WACCF - Armor and Clothing Extension'
           - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114)'
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
+      - <<: *patcherScriptAvailable
+        subs:
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Auto Patching - VIS - JOP - Disenchant All - Weightless](https://www.nexusmods.com/skyrimspecialedition/mods/10959/)'
+        condition: 'active("Joy of Perspective.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x292F204E
@@ -18654,20 +18657,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_UnlimitedBookshelves_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - type: say
-        content:
-          - lang: en
-            text: '%1% patcher script available here: %2%'
-          - lang: de
-            text: '%1% Patch-Skript hier verfügbar: %2%'
-          - lang: ja
-            text: '%1%のパッチスクリプトは%2%を利用できます。'
-          - lang: pt_PT
-            text: 'O script de atualização para %1% está disponível aqui: %2%'
+      - <<: *patcherScriptAvailable
         subs:
-          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-          - '[Unlimited Bookshelves patch generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160)'
-        condition: 'active("UnlimitedBookshelves.esp") and not active("UnlimitedBookshelvesPatch.esp")'
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Unlimited Bookshelves Patch Generator](https://www.nexusmods.com/skyrimspecialedition/mods/19160/)'
+        condition: 'not active("UnlimitedBookshelvesPatch.esp")'
     clean:
       - crc: 0x86CF0F2B
         util: 'SSEEdit v4.0.3'
