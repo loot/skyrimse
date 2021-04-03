@@ -8608,7 +8608,7 @@ plugins:
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Unique Uniques' ]
-        condition: 'active("Unique Uniques.esp") and not active("MLU - Unique Uniques.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'active("Unique Uniques.esp") and checksum("Unique Uniques.esp", 31DB2011) and not active("MLU - Unique Uniques.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Wild World' ]
         condition: 'active("Wild World.esp") and not active("MLU - Wild World.esp") and not active("MLU Patches Merged.esp")'
@@ -12656,9 +12656,9 @@ plugins:
     msg:
       - *alreadyInLotD
       - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
+        condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
+        condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
     clean:
       # version: 1.1
       - crc: 0x31DB2011
