@@ -10019,17 +10019,17 @@ plugins:
   - name: 'SeranaDialogAddon.esp'
     inc: [ 'Marry Me Serana.esp' ]
     msg:
-      - <<: *alsoUseX
-        subs: [ 'Amorous Adventures Patch' ]
+      - <<: *patchProvided
+        subs: [ 'Amorous Adventures' ]
         condition: 'active("SexLab-AmorousAdventures.esp") and not active("SDA-AA Patch.esp")'
-      - <<: *alsoUseX
-        subs: [ 'DX Crimson Blood Armor Patch' ]
+      - <<: *patchProvided
+        subs: [ 'DX Crimson Blood Armor' ]
         condition: 'active("Crimson Blood Armor.esp") and not active("SDA- DX CBlood Patch.esp")'
-      - <<: *alsoUseX
-        subs: [ 'Lustmord Vampire Armor Patch' ]
+      - <<: *patchProvided
+        subs: [ 'Lustmord Vampire Armor' ]
         condition: 'active("LustmordVampireArmor.esp") and not active("SDA-LustmordPatch.esp")'
-      - <<: *alsoUseX
-        subs: [ 'Nether''s Follower Framework Patch' ]
+      - <<: *patchProvided
+        subs: [ 'Nether''s Follower Framework' ]
         condition: 'active("nwsFollowerFramework.esp") and not active("SDA NFF Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Relationship Dialogue Overhaul' ]
@@ -10037,16 +10037,18 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Serana Dialogue Edit' ]
         condition: 'active("Serana Dialogue Edit.esp") and not active("SDA_SDE Patch.esp")'
-      - <<: *alsoUseX
-        subs: [ 'Wintersun - Faiths of Skyrim Patch' ]
+      - <<: *patchProvided
+        subs: [ 'Wintersun - Faiths of Skyrim' ]
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Complete Alchemy & Cooking Overhaul.esp") and not active("SDA Wintersun Patch.esp")'
-      - <<: *alsoUseX
-        subs: [ 'Wintersun and CACO Patch' ]
+      - <<: *patchProvided
+        subs: [ 'Wintersun and CACO' ]
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and active("Complete Alchemy & Cooking Overhaul.esp") and not active("SDA Wintersun Patch.esp")'
     tag: [ Keywords ]
-    clean:
-      - crc: 0x61AFBCBD
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE8B1FED6
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
 
   - name: 'SDA Wintersun Patch.esp'
     msg:
