@@ -13893,6 +13893,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/' ]
     tag: [ C.Location ]
   - name: 'HammetDungeons.esp'
+    msg:
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU - HammetDungeons Patch.esp")'
     clean:
       - crc: 0x721BCED1
         util: 'SSEEdit v4.0.3'
@@ -14407,6 +14410,17 @@ plugins:
         crc: 0x10B36003
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
+
+  - name: 'Vuldur.es(m|p)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/' ]
+  - name: 'Vuldur.esp'
+    clean:
+      - crc: 0x4A24602B
+        util: 'SSEEdit v4.0.3'
+  - name: 'Vuldur.esm'
+    clean:
+      - crc: 0x40DE999C
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Watchtowers of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19230' ]
