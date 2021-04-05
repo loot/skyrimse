@@ -442,6 +442,11 @@ common:
     subs:
       - '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)'
       - '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)'
+  - &patch3rdParty_MLU
+    <<: *patch3rdParty
+    subs:
+      - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
   - &patch3rdParty_RSCPC
     <<: *patch3rdParty
     subs:
@@ -12332,6 +12337,9 @@ plugins:
 
   - name: 'LrsamwaysExpandedSkyrimWeaponry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2300' ]
+    msg:
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU - Expanded Skyrim Weaponry Patch.esp")'
     clean:
       - crc: 0x12BB1808
         util: 'SSEEdit v4.0.3'
@@ -12382,6 +12390,9 @@ plugins:
 
   - name: 'NewArmoury.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15394/' ]
+    msg:
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU - Animated Armoury Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xBAEB5EAB
@@ -12439,6 +12450,8 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_CCOR_Patch.esp") and not active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
       - <<: *sortMasters
         condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
     tag:
@@ -12464,6 +12477,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RoyalArmory_Patch.esp")'
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU_RoyalArmory_patch.esp")'
     clean:
       # version: 2.2
       - crc: 0x06EC2D98
@@ -13057,6 +13072,8 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Beyond Skyrim Bruma_Patch.esp")'
       - <<: *patch3rdParty_BAOPFCH
         condition: 'active("Convenient Horses.esp") and not active("CH (GrayFox_)?Bruma(_Shire)?(_BeyondReach)?(_Falskaar)?(_Vigilant)?(_Wyrm)?.*\.esp") and not active("CH (GFC_)?BRU(_SHI)?(_BRE)?(_FAL)?(_VIG)?(_WYR)?.*\.esp")'
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU_Bruma.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
@@ -15588,6 +15605,9 @@ plugins:
   - name: 'MagicalCollegeofWinterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1539/' ]
     after: [ 'CollegeEntry.esp' ]
+    msg:
+      - <<: *patch3rdParty_MLU
+        condition: 'active("MLU.esp") and not active("MLU - MagicalCollegeofWinterhold Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x9AA2E2D1
