@@ -469,6 +469,20 @@ common:
       - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
       - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278)'
 
+  - &patcherScriptAvailable
+    type: say
+    content:
+      - lang: en
+        text: '%1% patcher script available here: %2%'
+      - lang: bg
+        text: 'Скриптът за кръпки %1% е наличен от: %2%'
+      - lang: de
+        text: '%1% Patch-Skript hier verfügbar: %2%'
+      - lang: ja
+        text: '%1%のパッチスクリプトは%2%を利用できます。'
+      - lang: pt_PT
+        text: 'O script de atualização para %1% está disponível aqui: %2%'
+
   - &patchIncluded
     type: say
     content:
@@ -568,18 +582,6 @@ common:
         text: 'Доступно обновление патча: %1%'
       - lang: sv
         text: 'Uppdateringspatch tillgänglig: %1%'
-
-  - &patcherScriptAvailable
-    type: say
-    content:
-      - lang: en
-        text: '%1% patcher script available here: %2%'
-      - lang: de
-        text: '%1% Patch-Skript hier verfügbar: %2%'
-      - lang: ja
-        text: '%1%のパッチスクリプトは%2%を利用できます。'
-      - lang: pt_PT
-        text: 'O script de atualização para %1% está disponível aqui: %2%'
 
   - &renameXtoY
     type: warn
@@ -7333,6 +7335,55 @@ plugins:
         condition: 'active("ccbgssse025-advdsgs.esm") and not active("OCS + Saints and Seducers Patch.esp")'
     clean:
       - crc: 0x4CDD0E4E
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'Project Proteus.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46620/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Better Vampires' ]
+        condition: 'active("Better Vampires.esp") and not active("Project Proteus - Better Vampires Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Bloodmoon Rising - Werewolf Overhaul' ]
+        condition: 'active("BloodmoonRising.esp") and not active("Project Proteus - Bloodmoon Rising Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Curse of the Vampire' ]
+        condition: 'active("Curse of the Vampire.esp") and not active("Project Proteus - Curse of the Vampire Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Custom Skills - Glenmoril' ]
+        condition: 'active("Perk-Glenmoril.esp") and not active("Project Proteus - Glenmoril Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Custom Skills - Vigilant' ]
+        condition: 'active("Perk-Vigilant.esp") and not active("Project Proteus - Vigilant Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Growl - Werebeasts of Skyrim' ]
+        condition: 'active("Growl - Werebeasts of Skyrim.esp") and not active("Project Proteus - Growl Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Haemophilia - A Custom Vampire Skill Tree' ]
+        condition: 'active("Haemophilia.esp") and not active("Project Proteus - Haemophilia Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Manbeast - A Werewolf Overhaul' ]
+        condition: 'active("Manbeast.esp") and not active("Project Proteus - Manbeast Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Moonlight Tales - Werewolf and Werebear Overhaul' ]
+        condition: 'active("Moonlight Tales Special Edition.esp") and not active("Project Proteus - Moonlight Tales Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Sacrilege - Minimalistic Vampires of Skyrim' ]
+        condition: 'active("Sacrilege - Minimalistic Vampires of Skyrim.esp") and not active("Project Proteus - Sacrilege Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Sacrosanct - Vampires of Skyrim' ]
+        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("Project Proteus - Sacrosanct Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Sanguinaire - Skyrim Vampire and Lycanthropy Experience' ]
+        condition: 'active("Sanguinaire.esp") and not active("Project Proteus - Sanguinaire Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Scion - A Vampire Overhaul' ]
+        condition: 'active("Scion.esp") and not active("Project Proteus - Scion Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Werewolf Perks Expanded' ]
+        condition: 'active("WerewolfPerksExpanded.esp") and not active("Project Proteus - Werewolf Perks Expanded Patch.esp")'
+    clean:
+      - crc: 0x5C08E91A
         util: 'SSEEdit v4.0.3'
 
   - name: 'Ravengate.esp'
