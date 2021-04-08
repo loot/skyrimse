@@ -6497,17 +6497,18 @@ plugins:
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
       - <<: *patchIncluded
+        subs: [ 'Landscape Fixes For Grass Mods' ]
+        condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("Landscape and Water Fixes - Patch - LFfGM.esp")'
+      - <<: *patchIncluded
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
     tag:
       - C.Climate
       - C.Light
       - C.Water
-    dirty:
-      - <<: *quickClean
-        crc: 0x3BA8986D
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    clean:
+      - crc: 0x9652F8D8
+        util: 'SSEEdit v4.0.3'
   - name: 'Skyrim Landscape and Water Fixes - Light Sources.esp'
     group: *fixesGroup
     inc:
