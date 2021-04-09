@@ -2026,7 +2026,12 @@ plugins:
     inc:
       - name: 'scripts/foxHarvestFix.pex'
         display: '[Brutal Flora Harvest Fix](https://www.nexusmods.com/skyrimspecialedition/mods/27781/)'
-    msg: [ *alreadyInOrFixedByScrambledBugs ]
+    msg:
+      - *alreadyInOrFixedByScrambledBugs
+      - <<: *patcherScriptAvailable
+        subs:
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Flora Respawn Fix](https://www.nexusmods.com/skyrimspecialedition/mods/13186/)'
 
   - name: 'GQJ_DG_vampireamuletfix.esp'
     url:
