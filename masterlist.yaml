@@ -96,6 +96,11 @@ common:
     <<: *alreadyInOrFixedByX
     subs: [ 'Better Dynamic Snow v3.0+' ]
     condition: 'active("Better Dynamic Snow SE.esp")'
+  - &alreadyInOrFixedByScrambledBugs
+    <<: *alreadyInOrFixedByX
+    type: say
+    subs: [ 'Scrambled Bugs' ]
+    condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
 
   - &alsoUseX
     type: say
@@ -2018,6 +2023,7 @@ plugins:
   - name: 'FloraRespawnFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
     group: *fixesGroup
+    msg: [ *alreadyInOrFixedByScrambledBugs ]
 
   - name: 'GQJ_DG_vampireamuletfix.esp'
     url:
@@ -2161,10 +2167,10 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
-      - <<: *deletePlugin
+      - <<: *useVersion
         type: say
-        subs: [ 'Scrambled Bugs' ]
-        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll") and active("WM Flora Fixes.esp")'
+        subs: [ 'No Scripts' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
     clean:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
@@ -2172,11 +2178,7 @@ plugins:
   - name: 'wolfs_LockpickingXPFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36734/' ]
     group: *fixesGroup
-    msg:
-      - <<: *alreadyInOrFixedByX
-        type: say
-        subs: [ 'Scrambled Bugs' ]
-        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+    msg: [ *alreadyInOrFixedByScrambledBugs ]
 
 ###### Modding Tools - Resources ######
   - name: 'SSE-Terrain-Tamriel(-Full)?(-Extend)?\.esm'
@@ -7812,6 +7814,10 @@ plugins:
       - crc: 0x82AA7490
         util: 'SSEEdit v4.0.2'
 
+  - name: 'Lafreakshow_AutoEquipAmmo.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35435/' ]
+    msg: [ *alreadyInOrFixedByScrambledBugs ]
+
   - name: 'Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4881' ]
     group: *earlyLoadersGroup
@@ -7824,6 +7830,10 @@ plugins:
   - name: 'NoBSAIProjectileDodge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1763' ]
     after: [ 'UltimateCombat.esp' ]
+
+  - name: 'Pick Best Arrow.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25410/' ]
+    msg: [ *alreadyInOrFixedByScrambledBugs ]
 
   - name: '(Smilodon|Wildcat) - Combat of Skyrim\.esp'
     after:
