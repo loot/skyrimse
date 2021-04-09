@@ -2023,7 +2023,18 @@ plugins:
   - name: 'FloraRespawnFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13186/' ]
     group: *fixesGroup
-    msg: [ *alreadyInOrFixedByScrambledBugs ]
+    inc:
+      - name: 'scripts/foxHarvestFix.pex'
+        display: '[Brutal Flora Harvest Fix](https://www.nexusmods.com/skyrimspecialedition/mods/27781/)'
+    msg:
+      - *alreadyInOrFixedByScrambledBugs
+      - <<: *patcherScriptAvailable
+        subs:
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Flora Respawn Fix](https://www.nexusmods.com/skyrimspecialedition/mods/13186/)'
+    clean:
+      - crc: 0x9FD4564F
+        util: 'SSEEdit v4.0.3f'
 
   - name: 'GQJ_DG_vampireamuletfix.esp'
     url:
