@@ -2167,10 +2167,10 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
-      - <<: *deletePlugin
+      - <<: *useVersion
         type: say
-        subs: [ 'Scrambled Bugs' ]
-        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll") and active("WM Flora Fixes.esp")'
+        subs: [ 'No Scripts' ]
+        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
     clean:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
