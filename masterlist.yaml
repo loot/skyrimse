@@ -9549,23 +9549,12 @@ plugins:
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
     inc: [ 'Religion.esp' ]
-    tag:
-      - Delev
-      - EffectStats
-      - Graphics
-      - Keywords
-      - Names
-      - Relev
-      - SpellStats
-      - Text
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Zim''s Immersive Artifacts' ]
         condition: 'active("ZIA_Daedric Pack.esp") or active("ZRN.esp")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/962/' ]
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty
         subs:
           - 'Zim''s Immersive Artifacts'
@@ -9575,6 +9564,17 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+    tag:
+      - Delev
+      - EffectStats
+      - Graphics
+      - Keywords
+      - Names
+      - Relev
+      - SpellStats
+      - Text
     clean:
       - crc: 0xA916F85A
         util: 'SSEEdit v4.0.3f'
