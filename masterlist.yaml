@@ -5629,14 +5629,34 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
+          - 'Beyond Skyrim - Bruma'
+          - '[Bears of the North Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48148/)'
+        condition: 'active("BSHeartland.esm") and not active("Bruma Bears of the North Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Grunt - The Bear Companion'
+          - '[Bears of the North Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48148/)'
+        condition: 'active("GruntTheBear.esp") and not active("Grunt of the North Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Monster Mod'
+          - '[Bears of the North Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48148/)'
+        condition: 'active("Monster Mod SE.esm") and not active("Monster Mod SE Bears of the North Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Savage Skyrim'
-          - '[Bears of the North patches for SkyTest and Savage Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/47708/)'
-        condition: 'active("Savage Skyrim Std.esp") and not active("Savage Skyrim Bears of the North patch.esp")'
+          - '[Bears of the North Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48148/)'
+        condition: 'active("Savage Skyrim Std.esp") and not active("Savage Bears of the North Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Immersive Creatures'
+          - '[Bears of the North Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48148/)'
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("Immersive Bears of the North Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'SkyTEST - Realistic Animals and Predators'
-          - '[Bears of the North patches for SkyTest and Savage Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/47708/)'
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SkyTest Bears of the North patch.esp")'
+          - '[Bears of the North Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48148/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SkyTest Bears of the North Patch.esp")'
     clean:
       - crc: 0x816DD00B
         util: 'SSEEdit v4.0.3'
