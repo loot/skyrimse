@@ -468,6 +468,11 @@ common:
       - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
       - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
     condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
+  - &patch3rdParty_STIP
+    <<: *patch3rdParty
+    subs:
+      - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
+      - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
   - &patch3rdPartyUVCPC
     <<: *patch3rdParty
     subs:
@@ -5666,6 +5671,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Beasts Of Tamriel.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Beasts of Tamriel.esp")'
     tag:
       - Invent.Add
       - Relev
@@ -6013,6 +6020,8 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Better Spell Learning'
@@ -9722,6 +9731,8 @@ plugins:
       - *requiresMCM
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveHorses_Patch.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim - Bruma SE'
