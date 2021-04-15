@@ -9822,28 +9822,12 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
-      - type: say
+      - <<: *compatIssuesWithX
+        subs: [ 'Convenient Horses' ]
         condition: 'active("Convenient Horses.esp")'
-        content:
-          - lang: en
-            text: '**Mount Support** must be switched to **Riding Support Only, OR disable horse on a per-follower basis** in Nether''s Follower Framework settings for Convenient Horses to function correctly with Nether''s Follower Framework.'
-          - lang: de
-            text: '**Mount Support** (übers. Pferde Unterstützung) muss auf **Riding Support Only, OR disable horse on a per-follower basis** (übers. **Keine Unterstützung**) gestellt sein in Nether''s Follower Framework Einstellungen damit Convenient Horses korrekt funktioniert mit Nether''s Follower Framework.'
-          - lang: ja
-            text: 'Convenient Horsesを正しく機能させるには、Nether''s Follower Frameworkの設定で、**騎乗サポート(Mount Support)**を**騎乗サポートのみ(Riding Support Only)に切り替えるか、フォロワーごとに馬の機能を無効**にする必要があります。'
-          - lang: pt_PT
-            text: '**Mount Support** (trans. "Cavalos de Apoio") deve ser trocado por **Riding Support Only, OR disable horse on a per-follower basis** (trans. **Sem suporte**) nas opções da Nether''s Follower Framework de forma a que Convenient Horses funcione corretamente com a Nether''s Follower Framework.'
-      - type: say
+      - <<: *compatIssuesWithX
+        subs: [ 'Immersive Horses' ]
         condition: 'active("Immersive Horses.esp")'
-        content:
-          - lang: en
-            text: '**Mount Support** must be switched to **Riding Support Only** in Nether''s Follower Framework settings for Immersive Horses to function correctly with Nether''s Follower Framework.'
-          - lang: de
-            text: '**Mount Support** (übers. Pferde Unterstützung) muss auf **Riding Support Only** (übers. **Nur reitende Unterstützung**) gestellt sein in Nether''s Follower Framework Einstellungen damit Immersive Horses korrekt funktioniert mit Nether''s Follower Framework.'
-          - lang: ja
-            text: 'Immersive Horsesを正しく機能させるには、Nether''s Follower Frameworkの設定で、**騎乗サポート(Mount Support)**を**騎乗サポートのみ(Riding Support Only)**にする必要があります。'
-          - lang: pt_PT
-            text: '**Mount Support** (trans. "Cavalos de Apoio") deve ser trocado por **Riding Support Only** (trad. "Suporte a cavalo apenas") nas opções da Nether''s Follower Framework de forma a que Immersive Horses funcione corretamente com a Nether''s Follower Framework.'
     clean:
       - crc: 0x88AB8AAD
         util: 'SSEEdit v4.0.3f'
