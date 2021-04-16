@@ -5547,13 +5547,16 @@ plugins:
 
   - name: 'Rigmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5271/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
     after:
       - 'Cutting Room Floor.esp'
       - 'ETaC - Complete.esp'
       - 'ETaC - Dawnstar.esp'
       - 'ETaC - Riverwood.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *patchUnavailable
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp")'
     clean:
       - crc: 0x90543FD4
         util: 'SSEEdit v4.0.3g'
@@ -7386,7 +7389,6 @@ plugins:
         display: 'JKs Skyrim'
       - 'Oblivion Gates in Cities.esp'
       - 'OutlawsRefuges.esp'
-      - 'Rigmor.esp'
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Audio Overhaul Skyrim.esp'
@@ -7401,7 +7403,6 @@ plugins:
       - 'Ordinator - Perks of Skyrim.esp'
       - 'Palaces Castles Enhanced.esp'
       - 'Point The Way.esp'
-      - 'Rigmor.esp'
       - 'Shadowmarks.esp'
       - 'Storefront.esp'
     msg:
