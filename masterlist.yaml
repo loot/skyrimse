@@ -13477,15 +13477,16 @@ plugins:
   - name: 'MoonAndStar_(MAS|ImmersionPatch)\.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/4301/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/28530/'
   - name: 'MoonAndStar_MAS.esp'
     after:
-      - 'AuroraVillage.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Tel_Nalta.esp'
-    inc:
+      - name: 'AuroraVillage.esp'
+        condition: 'not is_master("MoonAndStar_MAS.esp")'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: 'not is_master("MoonAndStar_MAS.esp")'
       - name: 'Tel_Nalta.esp'
-        condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
+        condition: 'not is_master("MoonAndStar_MAS.esp")'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MAS_Patch.esp")'
@@ -13494,25 +13495,15 @@ plugins:
           - 'WARZONES - Assault Attack'
           - '[ Moon and Star WARZONES - Assault Attack Compatibility Patch ](https://www.nexusmods.com/skyrimspecialedition/mods/10751)'
         condition: 'active("WARZONES - SSE - DLC - Assault Attack.esp") and not active("JRWZMASPatch.esp")'
-      # version: 3.2, after automatic cleaning
-      - <<: *wildEdits
-        subs: [ '[Cleaning Guide](https://macsplody.github.io/xGuides/#-moon-and-star-)' ]
-        condition: 'checksum("MoonAndStar_MAS.esp", 2A2488C0)'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Moon and Star - Cleaned Plugin Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/28530/)' ]
+        condition: 'checksum("moonpath.esp", EB5AEFAF)'
     tag: [ C.Location ]
-    dirty:
-      # version: 3.2, before any cleaning
-      - <<: *quickClean
-        crc: 0xEB5AEFAF
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
+    clean:
+      - crc: 0x2EE7DDD5
+        util: 'SSEEdit v4.0.3g'
   - name: 'MoonAndStar_ImmersionPatch.esp'
     inc: [ *LotD_v5 ]
-    dirty:
-      # version: 2.0
-      - <<: *quickClean
-        crc: 0x2D753507
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
 
   - name: 'moonpath.esp'
     url:
