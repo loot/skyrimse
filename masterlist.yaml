@@ -5482,20 +5482,19 @@ plugins:
         itm: 34
 
   - name: '0Kaidan.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12496/' ]
-    dirty:
-      # version: 1.5
-      - <<: *reqManualFix
-        crc: 0xDA7B7F89
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 20
-        udr: 10
-        nav: 3
-      # version: 1.5, after QAC
-      - <<: *reqManualFix
-        crc: 0x99A72B29
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 3
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12496/'
+        name: 'Kaidan - Fully Voiced Follower'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19075/'
+        name: 'Kaidan 2'
+    tag: [ C.Location ]
+    msg:
+      - <<: *obsolete
+        subs: [ '[Kaidan 2](https://www.nexusmods.com/skyrimspecialedition/mods/19075/)' ]
+        condition: 'checksum("0Kaidan.esp", DA7B7F89) or checksum("0Kaidan.esp", 3EACB022) or checksum("0Kaidan.esp", 99A72B29)'
+    clean:
+      - crc: 0x146A0117
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'Lucien.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20035' ]
