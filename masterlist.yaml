@@ -13480,9 +13480,12 @@ plugins:
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3107024'
   - name: 'MoonAndStar_MAS.esp'
     after:
-      - 'AuroraVillage.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Tel_Nalta.esp'
+      - name: 'AuroraVillage.esp'
+        condition: 'not is_master("MoonAndStar_MAS.esp")'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: 'not is_master("MoonAndStar_MAS.esp")'
+      - name: 'Tel_Nalta.esp'
+        condition: 'not is_master("MoonAndStar_MAS.esp")'
     inc:
       - name: 'Tel_Nalta.esp'
         condition: 'active("Tel_Nalta.esp") and not active("MoonAndStar_TelNaltaPatch.esp")'
