@@ -1510,15 +1510,15 @@ groups:
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *kSpeakGroup ]
 
-  - name: &dynamicPatchGroup Dynamic Patches
+  - name: &worldSettingsGroup Worldspace Settings
+    description: 'A group for modules that need to be loaded late to preserve worldspace settings.'
     after: [ *lvlListsGroup ]
 
-  - name: &mapGroup Maps
-    description: 'A group for Map & Map Marker plugins that need to be loaded late to preserve worldspace changes.'
-    after: [ *dynamicPatchGroup ]
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *worldSettingsGroup ]
 
   - name: &lateChangesGroup Late Fixes & Changes
-    after: [ *mapGroup ]
+    after: [ *dynamicPatchGroup ]
 
   - name: &dynamicLODGroup Dynamic LOD
     after: [ *lateChangesGroup ]
@@ -2068,7 +2068,7 @@ plugins:
 ###### Fixes ######
   - name: 'Allinonefpsfix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21073/' ]
-    group: *lateLoadersGroup
+    group: *worldSettingsGroup
     dirty:
       - <<: *quickClean
         crc: 0xFF589033
@@ -2611,7 +2611,7 @@ plugins:
 
   - name: 'EzEWorldMapSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
-    group: *mapGroup
+    group: *worldSettingsGroup
 
   - name: 'IcePenguinWorldMap(classic|Paper)?\.esp'
     url:
@@ -2638,7 +2638,7 @@ plugins:
       - crc: 0xC1050661
         util: 'SSEEdit v4.0.3'
   - name: 'IcePenguinWorldMapPaper.esp'
-    group: *mapGroup
+    group: *worldSettingsGroup
     after:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
@@ -2667,7 +2667,7 @@ plugins:
 
   - name: 'Paper World Map.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10836/' ]
-    group: *mapGroup
+    group: *worldSettingsGroup
     after:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
@@ -2701,7 +2701,7 @@ plugins:
 
   - name: 'Atlas Map Markers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24104' ]
-    group: *mapGroup
+    group: *worldSettingsGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
@@ -2718,7 +2718,7 @@ plugins:
 
   - name: 'Atlas Legendary( OCS)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14493' ]
-    group: *mapGroup
+    group: *worldSettingsGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
@@ -2737,7 +2737,7 @@ plugins:
     url:
       - 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/'
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/20931'
-    group: *mapGroup
+    group: *worldSettingsGroup
     after:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
@@ -6805,17 +6805,11 @@ plugins:
 
   - name: 'NoGrassINCaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12431' ]
-    group: *cellSettingsGroup
-    after:
-      # Group afters to prevent sorting errors
-      - 'MissingEZs_AllExteriors.esp'
-      - 'MissingEZsFixed.esp'
-      - 'Soulmancer Soundtrack - NoVindDun.esp'
-      - 'Unique Region Names.esp'
+    group: *worldSettingsGroup
 
   - name: 'NoGrassINCities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18768' ]
-    group: *lateChangesGroup
+    group: *worldSettingsGroup
 
   - name: 'NorthernGrass.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25459/' ]
@@ -16365,7 +16359,6 @@ plugins:
       # Group afters, to prevent sorting errors
       - 'MissingEZs_AllExteriors.esp'
       - 'MissingEZsFixed.esp'
-      - 'NoGrassINCaves.esp'
     msg:
       - <<: *missingRequirementXforPlugin
         type: error
