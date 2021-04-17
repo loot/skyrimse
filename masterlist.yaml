@@ -17352,7 +17352,9 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Windyridge - Player Home In Winterhold' ]
         condition: 'active("windyridge.esp") and not active("Winterhold Restored - Windyridge Patch.esp")'
-    tag: [ C.Location ]
+    tag:
+      - C.Location
+      - C.MiscFlags
     clean:
       - crc: 0x06109F5B
         util: 'SSEEdit v4.0.3'
