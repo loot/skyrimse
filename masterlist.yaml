@@ -5488,6 +5488,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19075/'
         name: 'Kaidan 2'
     tag: [ C.Location ]
+    msg:
+      - <<: *obsolete
+        subs: [ '[Kaidan 2](https://www.nexusmods.com/skyrimspecialedition/mods/19075/)' ]
+        condition: 'checksum("0Kaidan.esp", DA7B7F89) or checksum("0Kaidan.esp", 3EACB022) or checksum("0Kaidan.esp", 99A72B29)'
     clean:
       - crc: 0x146A0117
         util: 'SSEEdit v4.0.3g'
