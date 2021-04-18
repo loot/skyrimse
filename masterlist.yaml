@@ -3684,6 +3684,20 @@ plugins:
         name: 'NPC Dialogue Audio Enhancer'
     tag: [ Sound ]
 
+  - name: '(Celtic_Music_In_Skyrim_SE(_Dungeon)?|Celtic Music in Skyrim - Combat)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2980/' ]
+  - name: 'Celtic_Music_In_Skyrim_SE.esp'
+    clean:
+      - crc: 0xD61DAF8F
+        util: 'SSEEdit v4.0.3g'
+  - name: 'Celtic Music in Skyrim - Combat.esp'
+    msg:
+      - <<: *renameXtoY
+        subs:
+          - '**Celtic_Music_In_Skyrim_SE_Combat.bsa**'
+          - '**Celtic Music in Skyrim - Combat.bsa**'
+        condition: 'file("Celtic_Music_In_Skyrim_SE_Combat.bsa")'
+
   - name: 'DeadlySpellImpacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
     clean:
