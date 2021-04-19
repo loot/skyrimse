@@ -1,4 +1,4 @@
-# skyrimse
+# About
 
 This repository holds the LOOT masterlist for TES V: Skyrim Special Edition.
 
