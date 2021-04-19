@@ -15484,29 +15484,11 @@ plugins:
         util: 'SSEEdit v4.0.3g'
 
   - name: 'JKs Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
-    inc:
-      - name: 'Friendlier Taverns.esp'
-        condition: 'checksum("Friendlier Taverns.esp", 0C38A36A)'
-        display: 'Friendlier Taverns with Baths and Barns SSE'
-      - name: 'Blues Skyrim.esp'
-        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
-        display: 'Dawn of Skyrim (Director''s Cut) for SSE'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
-        display: 'Open Cities Skyrim'
-      - 'Paradise_City_Merged.esp'
-      - 'Paradise_City_MergedNoWindhelm.esp'
-      - 'Paradise_City_MergedSummerWindhelm.esp'
-      - 'Paradise_City_Rorikstead.esp'
-      - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: 'checksum("JKs Skyrim.esp", 8E2CDE40) or not active("The Great Cities of JK''s (North|Skyrim) - Patch.esp")'
-      - 'The Great City of Dawnstar.esp'
-      - 'The Great City of Dragon Bridge.esp'
-      - 'The Great City of Falkreath.esp'
-      - 'The Great City of Morthal.esp'
-      - 'The Great City of Rorikstead.esp'
-      - 'The Great City of Winterhold.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/'
+        name: 'JK''s Skyrim'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/'
+        name: 'JK''s Skyrim - ETaC - Patches Replacer'
     after:
       - 'Landscape Fixes For Grass Mods.esp'
       - 'S3DTrees NextGenerationForests.esp'
@@ -15515,6 +15497,28 @@ plugins:
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
       - 'WhiterunHoldForest.esp'
+    inc:
+      - name: 'Friendlier Taverns.esp'
+        display: 'Friendlier Taverns with Baths and Barns SSE'
+        condition: 'checksum("Friendlier Taverns.esp", 0C38A36A)'
+      - name: 'Blues Skyrim.esp'
+        display: 'Dawn of Skyrim (Director''s Cut) for SSE'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
+      - name: 'Open Cities Skyrim.esp'
+        display: 'Open Cities Skyrim'
+        condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
+      - 'Paradise_City_Merged.esp'
+      - 'Paradise_City_MergedNoWindhelm.esp'
+      - 'Paradise_City_MergedSummerWindhelm.esp'
+      - 'Paradise_City_Rorikstead.esp'
+      - name: 'The Great Cities - Minor Cities and Towns.esp'
+        condition: 'checksum("JKs Skyrim.esp", C8478AEC) or not active("The Great Cities of JK''s (North|Skyrim) - Patch.esp")'
+      - 'The Great City of Dawnstar.esp'
+      - 'The Great City of Dragon Bridge.esp'
+      - 'The Great City of Falkreath.esp'
+      - 'The Great City of Morthal.esp'
+      - 'The Great City of Rorikstead.esp'
+      - 'The Great City of Winterhold.esp'
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Immersive Citizens - AI Overhaul' ]
@@ -15543,9 +15547,9 @@ plugins:
         condition: 'active("Holidays.esp") and active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("JKS_DoS_Holidays_Patch.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'Expanded Towns and Cities: Complete'
-          - '[JK''s Skyrim - ETaC Compatible Replacer File](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
-        condition: 'active("ETaC - Complete.esp") and not checksum("JKs Skyrim.esp", 8E2CDE40)'
+          - 'Expanded Towns and Cities Complete'
+          - '[JK''s Skyrim - ETaC - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
+        condition: 'active("ETaC - Complete.esp") and checksum("JKs Skyrim.esp", C2ACB37F)'
       - <<: *patch3rdParty
         subs:
           - 'Blowing in the Wind & ETAC Complete'
@@ -15585,12 +15589,12 @@ plugins:
         subs:
           - 'The Great Cities - Minor Cities and Towns'
           - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
-        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and (not active("COTN - Dawnstar.esp") or not active("COTN - Morthal.esp")) and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
+        condition: 'not checksum("JKs Skyrim.esp", C8478AEC) and active("The Great Cities - Minor Cities and Towns.esp") and (not active("COTN - Dawnstar.esp") or not active("COTN - Morthal.esp")) and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'The Great Cities & Cities of the North'
           - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
-        condition: 'not checksum("JKs Skyrim.esp", 8E2CDE40) and active("The Great Cities - Minor Cities and Towns.esp") and active("COTN - Dawnstar.esp") and active("COTN - Morthal.esp") and not active("The Great Cities of JK''s North - Patch.esp")'
+        condition: 'not checksum("JKs Skyrim.esp", C8478AEC) and active("The Great Cities - Minor Cities and Towns.esp") and active("COTN - Dawnstar.esp") and active("COTN - Morthal.esp") and not active("The Great Cities of JK''s North - Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -15649,11 +15653,10 @@ plugins:
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
     clean:
-      - crc: 0x09D90FD3
-        util: 'SSEEdit v4.0.3f'
-      - crc: 0x8E2CDE40
-        util: 'SSEEdit v4.0.2'
-  # JK's Skyrim Patches
+      - crc: 0xC2ACB37F
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0xC8478AEC
+        util: 'SSEEdit v4.0.3g'
   - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
     inc:
@@ -15667,76 +15670,6 @@ plugins:
     inc:
       - 'Blues Skyrim.esp'
       - 'ETaC - Complete.esp'
-  # JK's Skyrim - Dawn of Skyrim Patches
-  - name: 'Blowing in the Wind - JKS_DoS_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
-    inc:
-      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
-      - 'ETaC - Complete.esp'
-  - name: 'JKS_DoS_Holidays_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
-    inc:
-      - 'Dawn of Skyrim_Holidays_Patch.esp'
-      - 'JKs Skyrim_Holidays_Patch.esp'
-  # JK's Skyrim - Expanded Towns and Cities (ETaC) Patches
-  - name: 'ETaC - Complete_JKs Skyrim_.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
-  - name: 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
-    inc:
-      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
-      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
-      - 'Blues Skyrim.esp'
-  - name: 'ETaC - Complete_JKs Skyrim_CFTO Patch.esp'
-    inc:
-      - 'CFTO-JK-Patch.esp'
-      - 'ETaC - Complete CFTO Patch.esp'
-  - name: 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
-    inc:
-      - 'Dawn of Skyrim_Holidays_Patch.esp'
-      - 'JKs Skyrim_Holidays_Patch.esp'
-      - 'JKS_DoS_Holidays_Patch.esp'
-  - name: 'ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp'
-    inc:
-      - 'ETaC - Complete No Snow Patch.esp'
-      - 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
-  - name: 'JKS_DoS_ETaC_Blowing in the Wind_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
-    inc:
-      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
-      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
-      - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
-  - name: 'JKS_DoS_ETaC_Holidays_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
-    inc:
-      - 'Dawn of Skyrim_Holidays_Patch.esp'
-      - 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
-      - 'JKs Skyrim_Holidays_Patch.esp'
-      - 'JKS_DoS_Holidays_Patch.esp'
-  # JK's Skyrim - No Snow Under the Roof Patches
-  - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
-    inc: [ 'Dawnstar_No Snow Under the Roof_Patch.esp' ]
-    after: [ 'NSUTR_groundsnow_mesh_fixes.esp' ]
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
-        subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
-  - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
-    inc: [ 'ETaC - Complete.esp' ]
-    clean:
-      # version: 1
-      - crc: 0xF5762CB3
-        util: 'SSEEdit v4.0.2f'
-  - name: 'JKs Skyrim_Dawnstar_BOYD_NSUTR_Patch.esp'
-    clean:
-      # version: 1
-      - crc: 0x69A3BB54
-        util: 'SSEEdit v4.0.2f'
-  - name: 'JKs Skyrim_Dawnstar_NSUTR_Patch.esp'
-    clean:
-      # version: 1
-      - crc: 0xED87C689
-        util: 'SSEEdit v4.0.2f'
 
   - name: 'JK''s The Bannered Mare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845' ]
@@ -19416,6 +19349,66 @@ plugins:
     msg:
       - <<: *useInstead
         subs: [ '[Unique Region Names - Falskaar addon](https://www.nexusmods.com/skyrimspecialedition/mods/11750/)' ]
+
+  ### JK's Skyrim Patches ###
+  # JK's Skyrim - Dawn of Skyrim - Patch #
+  - name: 'Blowing in the Wind - JKS_DoS_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'JKS_DoS_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+
+  # JK's Skyrim - ETaC - Patches #
+  - name: 'ETaC - Complete_JKs Skyrim_.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+  - name: 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'Blues Skyrim.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_CFTO Patch.esp'
+    inc:
+      - 'CFTO-JK-Patch.esp'
+      - 'ETaC - Complete CFTO Patch.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+      - 'JKS_DoS_Holidays_Patch.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp'
+    inc:
+      - 'ETaC - Complete No Snow Patch.esp'
+      - 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
+  - name: 'JKS_DoS_ETaC_Blowing in the Wind_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+  - name: 'JKS_DoS_ETaC_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+      - 'JKS_DoS_Holidays_Patch.esp'
+
+  # JK's Skyrim - No Snow Under the Roof #
+  - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
+    inc: [ 'Dawnstar_No Snow Under the Roof_Patch.esp' ]
+    after: [ 'NSUTR_groundsnow_mesh_fixes.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
+        subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
+  - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
+    inc: [ 'ETaC - Complete.esp' ]
 
   ### Khajiit Speak Patches ###
   # Even More Khajiit Speak Patches #
