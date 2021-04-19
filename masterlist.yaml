@@ -15657,7 +15657,6 @@ plugins:
         util: 'SSEEdit v4.0.3g'
       - crc: 0xC8478AEC
         util: 'SSEEdit v4.0.3g'
-  # JK's Skyrim Patches
   - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
     inc:
@@ -15671,76 +15670,6 @@ plugins:
     inc:
       - 'Blues Skyrim.esp'
       - 'ETaC - Complete.esp'
-  # JK's Skyrim - Dawn of Skyrim Patches
-  - name: 'Blowing in the Wind - JKS_DoS_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
-    inc:
-      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
-      - 'ETaC - Complete.esp'
-  - name: 'JKS_DoS_Holidays_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
-    inc:
-      - 'Dawn of Skyrim_Holidays_Patch.esp'
-      - 'JKs Skyrim_Holidays_Patch.esp'
-  # JK's Skyrim - Expanded Towns and Cities (ETaC) Patches
-  - name: 'ETaC - Complete_JKs Skyrim_.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
-  - name: 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
-    inc:
-      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
-      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
-      - 'Blues Skyrim.esp'
-  - name: 'ETaC - Complete_JKs Skyrim_CFTO Patch.esp'
-    inc:
-      - 'CFTO-JK-Patch.esp'
-      - 'ETaC - Complete CFTO Patch.esp'
-  - name: 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
-    inc:
-      - 'Dawn of Skyrim_Holidays_Patch.esp'
-      - 'JKs Skyrim_Holidays_Patch.esp'
-      - 'JKS_DoS_Holidays_Patch.esp'
-  - name: 'ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp'
-    inc:
-      - 'ETaC - Complete No Snow Patch.esp'
-      - 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
-  - name: 'JKS_DoS_ETaC_Blowing in the Wind_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
-    inc:
-      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
-      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
-      - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
-  - name: 'JKS_DoS_ETaC_Holidays_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
-    inc:
-      - 'Dawn of Skyrim_Holidays_Patch.esp'
-      - 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
-      - 'JKs Skyrim_Holidays_Patch.esp'
-      - 'JKS_DoS_Holidays_Patch.esp'
-  # JK's Skyrim - No Snow Under the Roof Patches
-  - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
-    inc: [ 'Dawnstar_No Snow Under the Roof_Patch.esp' ]
-    after: [ 'NSUTR_groundsnow_mesh_fixes.esp' ]
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
-        subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
-  - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
-    inc: [ 'ETaC - Complete.esp' ]
-    clean:
-      # version: 1
-      - crc: 0xF5762CB3
-        util: 'SSEEdit v4.0.2f'
-  - name: 'JKs Skyrim_Dawnstar_BOYD_NSUTR_Patch.esp'
-    clean:
-      # version: 1
-      - crc: 0x69A3BB54
-        util: 'SSEEdit v4.0.2f'
-  - name: 'JKs Skyrim_Dawnstar_NSUTR_Patch.esp'
-    clean:
-      # version: 1
-      - crc: 0xED87C689
-        util: 'SSEEdit v4.0.2f'
 
   - name: 'JK''s The Bannered Mare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845' ]
@@ -19420,6 +19349,80 @@ plugins:
     msg:
       - <<: *useInstead
         subs: [ '[Unique Region Names - Falskaar addon](https://www.nexusmods.com/skyrimspecialedition/mods/11750/)' ]
+
+  ### JK's Skyrim Patches ###
+  # JK's Skyrim - Dawn of Skyrim - Patch #
+  - name: 'Blowing in the Wind - JKS_DoS_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'JKS_DoS_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16852/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+
+  # JK's Skyrim - ETaC - Patches #
+  - name: 'ETaC - Complete_JKs Skyrim_.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+  - name: 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'Blues Skyrim.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_CFTO Patch.esp'
+    inc:
+      - 'CFTO-JK-Patch.esp'
+      - 'ETaC - Complete CFTO Patch.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+      - 'JKS_DoS_Holidays_Patch.esp'
+  - name: 'ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp'
+    inc:
+      - 'ETaC - Complete No Snow Patch.esp'
+      - 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
+  - name: 'JKS_DoS_ETaC_Blowing in the Wind_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Blowing in the Wind - JKs Skyrim Patch.esp'
+      - 'Blowing in the Wind - JKS_DoS_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp'
+  - name: 'JKS_DoS_ETaC_Holidays_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/' ]
+    inc:
+      - 'Dawn of Skyrim_Holidays_Patch.esp'
+      - 'ETaC - Complete_JKs Skyrim_Holidays_Patch.esp'
+      - 'JKs Skyrim_Holidays_Patch.esp'
+      - 'JKS_DoS_Holidays_Patch.esp'
+
+  # JK's Skyrim - No Snow Under the Roof #
+  - name: 'JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17026' ]
+    inc: [ 'Dawnstar_No Snow Under the Roof_Patch.esp' ]
+    after: [ 'NSUTR_groundsnow_mesh_fixes.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("JKs Skyrim_(No Snow Under the Roof|Dawnstar_NSUTR|Dawnstar_BOYD_NSUTR)_Patch\.esp")'
+        subs: [ 'JKs Skyrim - No Snow Under the Roof Patch' ]
+  - name: 'JKs Skyrim_No Snow Under the Roof_Patch.esp'
+    inc: [ 'ETaC - Complete.esp' ]
+    clean:
+      # version: 1
+      - crc: 0xF5762CB3
+        util: 'SSEEdit v4.0.2f'
+  - name: 'JKs Skyrim_Dawnstar_BOYD_NSUTR_Patch.esp'
+    clean:
+      # version: 1
+      - crc: 0x69A3BB54
+        util: 'SSEEdit v4.0.2f'
+  - name: 'JKs Skyrim_Dawnstar_NSUTR_Patch.esp'
+    clean:
+      # version: 1
+      - crc: 0xED87C689
+        util: 'SSEEdit v4.0.2f'
 
   ### Khajiit Speak Patches ###
   # Even More Khajiit Speak Patches #
