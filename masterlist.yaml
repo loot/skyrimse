@@ -15489,16 +15489,24 @@ plugins:
         name: 'JK''s Skyrim'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24416/'
         name: 'JK''s Skyrim - ETaC - Patches Replacer'
+    after:
+      - 'Landscape Fixes For Grass Mods.esp'
+      - 'S3DTrees NextGenerationForests.esp'
+      - name: 'The Great Cities - Minor Cities and Towns.esp'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
+      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+      - 'ViscousGrass.esp'
+      - 'WhiterunHoldForest.esp'
     inc:
       - name: 'Friendlier Taverns.esp'
-        condition: 'checksum("Friendlier Taverns.esp", 0C38A36A)'
         display: 'Friendlier Taverns with Baths and Barns SSE'
+        condition: 'checksum("Friendlier Taverns.esp", 0C38A36A)'
       - name: 'Blues Skyrim.esp'
-        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
         display: 'Dawn of Skyrim (Director''s Cut) for SSE'
+        condition: 'active("Blues Skyrim.esp") and not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
       - name: 'Open Cities Skyrim.esp'
-        condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
         display: 'Open Cities Skyrim'
+        condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp")'
       - 'Paradise_City_Merged.esp'
       - 'Paradise_City_MergedNoWindhelm.esp'
       - 'Paradise_City_MergedSummerWindhelm.esp'
@@ -15511,14 +15519,6 @@ plugins:
       - 'The Great City of Morthal.esp'
       - 'The Great City of Rorikstead.esp'
       - 'The Great City of Winterhold.esp'
-    after:
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'S3DTrees NextGenerationForests.esp'
-      - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
-      - 'WhiterunHoldForest.esp'
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Immersive Citizens - AI Overhaul' ]
