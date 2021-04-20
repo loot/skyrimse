@@ -4819,6 +4819,70 @@ plugins:
             text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **FacegenForKids.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-simple-children-) aufrufbar.'
         condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("FacegenForKids.esp", DB8F0931)'
 
+  - name: 'TKAA.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/48297/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Beyond Skyrim - Bruma' ]
+        condition: 'active("BSHeartland.esm") and not active("BSHeartland TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Books of Skyrim' ]
+        condition: 'active("BooksOfSkyrim.esp") and not active("BooksOfSkyrim TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("Cutting Room Floor TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Expanded Towns and Cities' ]
+        condition: 'active("ETaC - Complete.esp") and not active("ETaC - TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Falskaar' ]
+        condition: 'active("Falskaar.esm") and not active("Falskaar TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Gavrostead' ]
+        condition: 'active("Gavrostead.esp") and not active("Gavrostead TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Helgen Reborn' ]
+        condition: 'active("Helgen Reborn.esp") and not active("Helgen Reborn TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive World Encounters' ]
+        condition: 'active("Immersive Encounters.esp") and not active("Immersive Encounters TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Inconsequential NPCs' ]
+        condition: 'active("Inconsequential NPCs.esp") and not active("Inconsequential NPCs TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Interesting NPCs' ]
+        condition: 'active("3DNPC.esp") and not active("3DNPC TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Keld-Nar' ]
+        condition: 'active("Keld-Nar.esp") and not active("Keld-Nar TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("LegacyoftheDragonborn TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Moon and Star' ]
+        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_MAS TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Oakwood' ]
+        condition: 'active("Oakwood.esp") and not active("Oakwood TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Rigmor of Bruma' ]
+        condition: 'active("Rigmor.esp") and not active("Rigmor Bruma TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Settlements Expanded' ]
+        condition: 'active("Settlements Expanded SE.esp") and not active("Settlements Expanded SE TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'The Forgotten City' ]
+        condition: 'active("ForgottenCity.esp") and not active("ForgottenCity TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'The People of Skyrim Complete' ]
+        condition: 'active("tpos_ultimate_esm.esp") and not active("TPOS TKAA Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wyrmstooth' ]
+        condition: 'active("Wyrmstooth.esp") and not active("Wyrmstooth TKAA Patch.esp")'
+    clean:
+      - crc: 0x499EF180
+        util: 'SSEEdit v4.0.3'
+
   - name: 'TKChildren.es(m|p)'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5916' ]
     msg:
