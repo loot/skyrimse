@@ -14669,6 +14669,28 @@ plugins:
         itm: 38
         udr: 3
 
+  - name: 'The Windhelm Smelter.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46333/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Capital Windhelm Expansion' ]
+        condition: 'active("WindhelmSSE.esp") and not active("The Windhelm Smelterworks - Capital Windhelm Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Lanterns of Skyrim II' ]
+        condition: 'active("Lanterns Of Skyrim II.esm") and not active("The Windhelm Smelterworks - LOS II Patch.esp")'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xED966101
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 30
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x71698916
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+  - name: 'Windhelm Smelterworks.esp'
+    msg: [ *obsolete ]
+
   - name: 'vikingmeadhall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17132/' ]
     dirty:
@@ -14739,28 +14761,6 @@ plugins:
       # version: 1.1
       - crc: 0x707334C0
         util: 'SSEEdit v4.0.2'
-
-  - name: 'The Windhelm Smelter.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46333/' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Capital Windhelm Expansion' ]
-        condition: 'active("WindhelmSSE.esp") and not active("The Windhelm Smelterworks - Capital Windhelm Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Lanterns of Skyrim II' ]
-        condition: 'active("Lanterns Of Skyrim II.esm") and not active("The Windhelm Smelterworks - LOS II Patch.esp")'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0xED966101
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 30
-        nav: 1
-      - <<: *reqManualFix
-        crc: 0x71698916
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
-  - name: 'Windhelm Smelterworks.esp'
-    msg: [ *obsolete ]
 
   - name: 'winRoscrea.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19247' ]
