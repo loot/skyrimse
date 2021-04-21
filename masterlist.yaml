@@ -14742,6 +14742,13 @@ plugins:
 
   - name: 'The Windhelm Smelter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46333/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Capital Windhelm Expansion' ]
+        condition: 'active("WindhelmSSE.esp") and not active("The Windhelm Smelterworks - Capital Windhelm Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Lanterns of Skyrim II' ]
+        condition: 'active("Lanterns Of Skyrim II.esm") and not active("The Windhelm Smelterworks - LOS II Patch.esp")'
     dirty:
       - <<: *reqManualFix
         crc: 0xAEBCDCBF
