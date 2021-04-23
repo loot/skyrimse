@@ -495,12 +495,12 @@ common:
     subs:
       - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)'
       - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
-  - &patch3rdPartySBCK
+  - &patch3rdParty_SBCK
     <<: *patch3rdParty
     subs:
       - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
       - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495/)'
-  - &patch3rdPartySRPC
+  - &patch3rdParty_SRPC
     <<: *patch3rdParty
     subs:
       - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
@@ -511,7 +511,7 @@ common:
     subs:
       - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
       - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
-  - &patch3rdPartyUVCPC
+  - &patch3rdParty_UVCPC
     <<: *patch3rdParty
     subs:
       - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
@@ -3662,7 +3662,7 @@ plugins:
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("AOS_ISC_Integration.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
-      - <<: *patch3rdPartyUVCPC
+      - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     clean:
       - crc: 0x6F8EF0E9
@@ -4919,7 +4919,7 @@ plugins:
       - 'Bijin_AIO-SV 2018.esp'
       - 'Bijin Warmaidens.esp'
     msg:
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
 
   ### Bijin Series by rxkx22
@@ -4939,7 +4939,7 @@ plugins:
       - 'Bijin_AIO 2018.esp'
       - 'Bijin_AIO-SV 2018.esp'
     msg:
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp") and not active("Bashed Patch.*\.esp")'
     clean:
       - crc: 0x9F6F1285
@@ -4971,7 +4971,7 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
     clean:
       - crc: 0x117A67EC
@@ -5026,7 +5026,7 @@ plugins:
       - 'ScopedBows.esp'
     inc: [ 'Bijin AIO.esp' ]
     msg:
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
   - name: 'Bijin_AIO 2018.esp'
     clean:
@@ -7540,7 +7540,7 @@ plugins:
 
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/671/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Immersive Needs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29317/' ]
@@ -7737,7 +7737,7 @@ plugins:
 
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Torches Ignite Oil.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13226' ]
@@ -8064,7 +8064,7 @@ plugins:
 
   - name: 'DSerArcheryGameplayOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24296/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Immersive Movement.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15649/' ]
@@ -8280,7 +8280,7 @@ plugins:
           - 'iNeed - Dangerous Disease'
           - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301)'
         condition: 'active("iNeed - Dangerous Diseases.esp") and not active("CACO - iNeed DD Patch.esp")'
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
         condition: 'version("Complete Alchemy & Cooking Overhaul.esp", "2.0", ==) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
@@ -8325,7 +8325,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - <<: *patch3rdPartyUVCPC
+      - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - HOR Plants Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Delev
@@ -9046,7 +9046,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Zim''s Immersive Artifacts' ]
         condition: 'active("ZIA_Complete Pack_V4.esp") and not active("MLU - ZIA.esp") and not active("MLU Patches Merged.esp") and not active("ScopedBows.esp")'
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_MLU Patch.esp") and not active("ScopedBows_MLU_ZIA Patch.esp")'
     tag:
       - Actors.ACBS
@@ -9309,7 +9309,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TradeBarter_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - *requiresMCM
-      - <<: *patch3rdPartyUVCPC
+      - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Invent.Add
@@ -9370,9 +9370,9 @@ plugins:
           - 'Triss Armor Retextured'
           - '[Useless Patches Collection](https://www.nexusmods.com/skyrimspecialedition/mods/27667/)'
         condition: 'active("TrissArmorRetextured.esp") and not active("Triss Armor Retextured SE - WACCF Patch.esp")'
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
-      - <<: *patch3rdPartyUVCPC
+      - <<: *patch3rdParty_UVCPC
         condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - WACCF Patch.esp") and not active("Complete Crafting Overhaul_Remastered.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WACCF_Patch.esp")'
@@ -9427,7 +9427,7 @@ plugins:
 ###### Gameplay - Magic & Abilities ######
   - name: 'Ace Blood Magic SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16995/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'AcquisitiveSoulGemMultithreaded.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1469/' ]
@@ -9441,7 +9441,7 @@ plugins:
 
   - name: 'AlterationWards.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28818/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Andromeda - Unique Standing Stones of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/' ]
@@ -9494,7 +9494,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136' ]
       - *includesMBBF
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
@@ -9514,12 +9514,12 @@ plugins:
 
   - name: 'Apocalypse - More Apocalypse.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18578/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Arcanum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
     msg:
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
       - <<: *alsoUseX
         subs: [ '[Arcanum - A New Age of Magic 4.0.1 Bugfix](https://www.nexusmods.com/skyrimspecialedition/mods/46322)' ]
         condition: 'checksum("Arcanum.esp", AA67A039)'
@@ -9595,11 +9595,11 @@ plugins:
 
   - name: 'DetectLever.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/64196/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Druidessentials.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37665/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'DustAdept.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2350/' ]
@@ -9633,7 +9633,7 @@ plugins:
 
   - name: 'ForgottenMagic_Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12711/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'GIST soul trap.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
@@ -9681,7 +9681,7 @@ plugins:
 
   - name: 'IHarvest.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27789/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'LiamsConjurationSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29873/' ]
@@ -9693,7 +9693,7 @@ plugins:
 
   - name: 'LoreFriendlySpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28533/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Magelight Multi Cast.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29380/' ]
@@ -9705,11 +9705,11 @@ plugins:
 
   - name: 'Magistrate Levitate.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24695/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Mining For Mages Redux.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4495/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Mundus.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33411/' ]
@@ -9817,7 +9817,7 @@ plugins:
 
   - name: 'QL_Stendarr''sLight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22297/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Randomized Word Walls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13757' ]
@@ -9852,7 +9852,7 @@ plugins:
 
   - name: 'ShadowSpellPackage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13299/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'SpellResearch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20983/' ]
@@ -9902,7 +9902,7 @@ plugins:
 
   - name: 'Tomebound.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21403/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Triumvirate - Mage Archetypes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39170/' ]
@@ -9941,7 +9941,7 @@ plugins:
 
   - name: 'WardsFunctionalitiesExtended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18664/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
@@ -11608,9 +11608,9 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
-      - <<: *patch3rdPartyUVCPC
+      - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Elemental Destruction Magic Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
     dirty:
       - <<: *quickClean
         crc: 0xA52F627E
@@ -12011,7 +12011,7 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("AetheriumSwordsnArmor_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AetheriumWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -12070,7 +12070,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ArtifactsOfBoethiah_Patch.esp")'
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
     dirty:
       - <<: *quickClean
         crc: 0xBEA0B2DA
@@ -12365,7 +12365,7 @@ plugins:
       - Sound
       - Stats
     msg:
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
       - <<: *patch3rdParty_KPH_ACE
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("DawnguardArsenal_WACCF-ACE_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
@@ -13317,7 +13317,7 @@ plugins:
   - name: 'ZIA_Ancient Pack_V4.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
     msg:
-      - <<: *patch3rdPartySBCK
+      - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_ZIA Patch") and not active("ScopedBows_MLU_ZIA Patch.esp")'
   - name: 'ZIA_(Ancient|Complete|Daedric) Pack\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
@@ -13538,7 +13538,7 @@ plugins:
           - 'Complete Alchemy & Cooking Overhaul and Rare Curios'
           - '[CACO, BS Bruma & Rare Curios Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24830)'
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("ccbgssse037-curios.esl") and not active("CACO_Bruma_Rare Curios_Patch.esp")'
-      - <<: *patch3rdPartyUVCPC
+      - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Actors.ACBS
@@ -13970,7 +13970,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11894/'
         name: 'VIGILANT Voiced - English Addon'
     msg:
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Vigilant_Patch.esp")'
     clean:
@@ -14286,7 +14286,7 @@ plugins:
         condition: 'active("RSkyrimChildren.esm") and not active("RealisticRSChildren.esp") and not active("RSC CRF Patch.esp") and not active("CRF_RSChildrenPatch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
     tag:
       - -Actors.DeathItem
       - -C.RecordFlags
@@ -15150,7 +15150,7 @@ plugins:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     msg:
-      - *patch3rdPartySRPC
+      - *patch3rdParty_SRPC
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchIncluded
@@ -17971,7 +17971,7 @@ plugins:
 
   - name: 'CaranthirTowerReborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4269/' ]
-    msg: [ *patch3rdPartySRPC ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 3.2
       - <<: *quickClean
