@@ -17413,6 +17413,21 @@ plugins:
       - crc: 0x00EC9C71
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Whistling City Ruins.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30766/'
+        name: 'Whistling Mine Ruins'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Delete **Sub-Block 0, 0** in SSEEdit.' ]
+        condition: 'checksum("Whistling City Ruins.esp", FE1A1960)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x32C772B9
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 97
+        itm: 2
+
   - name: 'Whistling Mine.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
