@@ -18182,6 +18182,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/48931/'
         name: 'Eli''s Breezehome Optimization ESP Replacer'
     after: [ 'JKs Whiterun.esp' ]
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Eli''s Breezehome Optimization ESP Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/48931/)' ]
+        condition: 'active("Eli_Breezehome.esp") and not version("Eli_Breezehome.esp", "1.6.0", >=)'
     clean:
       - crc: 0x659C5B45
         util: 'SSEEdit v4.0.3g'
