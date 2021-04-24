@@ -18182,21 +18182,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/48931/'
         name: 'Eli''s Breezehome Optimization ESP Replacer'
     after: [ 'JKs Whiterun.esp' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Eli_Breezehome.esp", CBA83065)'
-    dirty:
-      # version: 1.6
-      - <<: *reqManualFix
-        crc: 0x4768B826
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 39
-        nav: 2
-      # version: 1.6, after QAC
-      - <<: *reqManualFix
-        crc: 0xCBA83065
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 2
+    clean:
+      - crc: 0x659C5B45
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0x062FA990
+        util: 'SSEEdit v4.0.3g'
   - name: 'Eli_Halla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
     msg:
