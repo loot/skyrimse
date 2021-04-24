@@ -9808,23 +9808,6 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 23
 
-  - name: 'Phenderix Magic World.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6551/' ]
-    msg:
-      - <<: *alsoUseX
-        subs: [ '[Phenderix Magic World - Leveled Lists Add-On](https://www.nexusmods.com/skyrimspecialedition/mods/36742/)' ]
-        condition: 'not active("Phenderix Magic World - Leveled Lists Add-On.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Cities Skyrim'
-          - '[Phenderix OCS Patch](https://www.nexusmods.com/skyrimspecialedition/mods/39637/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Phenderix OCS Patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xE4CCCE2F
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
-        itm: 17
-
   - name: 'Predator Vision.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2777/' ]
     after: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
@@ -13823,6 +13806,23 @@ plugins:
       # version: 1.5
       - crc: 0x3161E919
         util: 'SSEEdit v4.0.0'
+
+  - name: 'Phenderix Magic World.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6551/' ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Phenderix Magic World - Leveled Lists Add-On](https://www.nexusmods.com/skyrimspecialedition/mods/36742/)' ]
+        condition: 'not active("Phenderix Magic World - Leveled Lists Add-On.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[Phenderix OCS Patch](https://www.nexusmods.com/skyrimspecialedition/mods/39637/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Phenderix OCS Patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE4CCCE2F
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+        itm: 17
 
   - name: 'StagPrinceBow.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3140/' ]
