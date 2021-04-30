@@ -15675,6 +15675,17 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40436/'
         name: 'Immersive Fort Dawnguard'
   - name: 'fortdawnguardimmersive.esp'
+    after:
+      - 'AHZBetterDGEntranceSE.esp'
+      - name: 'Blacksmith Forge Water Fix SE.esp'
+        condition: 'not active("Bashed Patch.*\.esp")'
+      - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
+        condition: 'not active("Bashed Patch.*\.esp")'
+      - 'Castle Volkihar Rebuilt.esp'
+      - 'EmbersHD.esp'
+      - 'Immersive Patrols II.esp'
+      - name: 'RealisticWaterTwo.esp'
+        condition: 'not active("Bashed Patch.*\.esp")'
     msg:
       - <<: *patchIncluded
         subs: [ 'Dawnguard Arsenal' ]
