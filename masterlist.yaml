@@ -12348,7 +12348,6 @@ plugins:
   - name: 'DawnguardArsenal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25094/' ]
     tag:
-      - Actors.ACBS
       - Actors.CombatStyle
       - Actors.Spells
       - Actors.Stats
@@ -15670,11 +15669,22 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
 
-  - name: '(fortdawnguardimmersive|FDI).*\.esp'
+  - name: '(fortdawnguardimmersive|FDI.*|IFD.*)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40436/'
         name: 'Immersive Fort Dawnguard'
   - name: 'fortdawnguardimmersive.esp'
+    after:
+      - 'AHZBetterDGEntranceSE.esp'
+      - name: 'Blacksmith Forge Water Fix SE.esp'
+        condition: 'not active("Bashed Patch.*\.esp")'
+      - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
+        condition: 'not active("Bashed Patch.*\.esp")'
+      - 'Castle Volkihar Rebuilt.esp'
+      - 'EmbersHD.esp'
+      - 'Immersive Patrols II.esp'
+      - name: 'RealisticWaterTwo.esp'
+        condition: 'not active("Bashed Patch.*\.esp")'
     msg:
       - <<: *patchIncluded
         subs: [ 'Dawnguard Arsenal' ]
@@ -15683,40 +15693,65 @@ plugins:
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("FDIELnFXPatch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Immersive Patrols' ]
+        condition: 'active("Immersive Patrols II.esp") and not active("IFDImmPatrolsIIPatch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Legacy of the Dragonborn' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("FDILOTDPatch.esp") and not active("FDILOTDBPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Medieval Lanterns of Skyrim' ]
         condition: 'active("Medieval Lanterns of Skyrim.esp") and not active("FDIMLOSPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Palaces and Castles Enhanced' ]
+        subs: [ 'Palaces & Castles Enhanced' ]
         condition: 'active("Palaces Castles Enhanced.esp") and not active("FDIPCEPatch.esp") and not active("FDIPCEnhancedPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'RLO Interiors' ]
+        subs: [ 'Realistic Lighting Overhaul - Interiors' ]
         condition: 'active("RLO - Interiors.esp") and not active("FDIRLOInteriorsPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Skyrim Project Optimization SE' ]
+        subs: [ 'Skyrim Project Optimization' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("FDISPOPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Skyrim Wayshrines' ]
-        condition: 'active("WayshrinesIFT.esp") and not active("FDIWayshrinesPatch.esp")'
+        subs: [ 'Skyrim Wayshrines - Immersive Fast Travel' ]
+        condition: 'active("WayshrinesIFT.esp") and not active("FDIWayshrinesPatch.esp") and not active("FDISWIFTPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("IFDSFCOPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Training Dummies Provide XP' ]
+        condition: 'active("Training Dummies XP.esp") and active("Training Dummies XP Dawnguard.esp") and not active("FDIDummyXPPatch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing & Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("IFDWACCFPatch.esp")'
     tag:
-      - Actors.ACBS
       - Actors.AIPackages
       - Actors.Stats
       - C.Climate
       - C.Light
       - C.Water
       - Factions
-      - ObjectBounds
     clean:
-      - crc: 0x7EA88908
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x33523FF8
+        util: 'SSEEdit v4.0.3g'
   - name: 'FDIDGArsenalPatch.esp'
     tag:
       - Actors.CombatStyle
       - Actors.Stats
       - NPC.Class
+  - name: 'FDILOTD(B)?Patch\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Legacy of the Dragonborn patch' ]
+        condition: 'many("FDILOTD(B)?Patch\.esp")'
+  - name: 'FDIPC(E|Enhanced)Patch\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Palaces & Castles Enhanced patch' ]
+        condition: 'many("FDIPC(E|Enhanced)Patch\.esp")'
+  - name: 'FDI(SWIFT|Wayshrines)Patch\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Skyrim Wayshrines patch' ]
+        condition: 'many("FDI(SWIFT|Wayshrines)Patch\.esp")'
   - name: 'FDIRLOInteriorsPatch.esp'
     req: [ 'RLO - Interiors.esp' ]
     tag: [ C.Light ]
