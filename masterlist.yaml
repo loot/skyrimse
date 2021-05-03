@@ -7805,10 +7805,27 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'tpos_ultimate_esm.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13196'
-        name: 'The People Of Skyrim Complete SSE'
-    inc: [ 'Holds.esp' ]
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13196/' ]
+    inc:
+      - 'Holds.esp'
+    after:
+      - 'Alternate Start - Live Another Life.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[Alternate Start Patch for The People of Skyrim Complete](https://www.nexusmods.com/skyrimspecialedition/mods/13902/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("tpos_altstart_02.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Elysium Estate'
+          - '[The People of Skyrim Elysium Estate Patch](https://www.nexusmods.com/skyrimspecialedition/mods/17969/)'
+        condition: 'active("ElysiumEstate.esp") and not active("tpos Elysium Estate.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Falskaar'
+          - '[The People of Skyrim Complete Falskaar Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13906/)'
+        condition: 'active("Falskaar.esm") and not active("tposc_falskar_patch.esp")'
     clean:
       - crc: 0xB0C5B717
         util: 'SSEEdit v4.0.3'
@@ -10644,6 +10661,7 @@ plugins:
       - 'BecomeKingofSkyrim.esp'
       - 'BetterQuestObjectives.esp'
       - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'Falskaar.esm'
       - 'Guard Dialogue Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
       - 'MLU.esp'
