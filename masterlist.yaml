@@ -6381,13 +6381,13 @@ plugins:
     after:
       - 'Kireina SSE.esl'
       - 'Kireina SSE.esp'
-    tag:
-      - Delev
-      - Relev
     msg:
       - <<: *alsoUseX
         subs: [ '[Diverse Skyrim - Battle of Whiterun Fix](https://www.nexusmods.com/skyrimspecialedition/mods/47939)' ]
-        condition: 'not active("DiverseSkyimCivilWarFix.esp")'
+        condition: 'not active("DiverseSkyimCivilWarFix.esp") and not active("Immersive Citizens - AI Overhaul.esp")'
+    tag:
+      - Delev
+      - Relev
     clean:
       # version: 2.14
       - crc: 0xA6A5118F
@@ -19688,6 +19688,15 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByBDSv3_0
         type: warn
+
+  - name: 'DiverseSkyimCivilWarFix.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/47939/'
+        name: 'Diverse Skyrim - Battle of Whiterun Fix'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp")'
 
   - name: 'ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources|Patch AIO)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18634/' ]
