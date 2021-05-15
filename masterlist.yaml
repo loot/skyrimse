@@ -3453,9 +3453,6 @@ plugins:
       - 'EnhancedLightsandFX.esp'
       - name: 'ImprovedHearthfireLighting.esp'
         condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-      - name: 'Palaces Castles Enhanced.esp'
-        condition: 'active("Palaces Castles Enhanced.esp") and not active("PCE - Relighting Skyrim.esp")'
-        display: '[Palaces and Castles Enhanced SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
       - 'RealisticRoomRental.esp'
       - 'RLO - Exteriors.esp'
       - 'RLO - Interiors.esp'
@@ -16885,7 +16882,10 @@ plugins:
   - name: 'Palaces Castles Enhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/' ]
     group: *highPriorityGroup
-    inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
+    inc:
+      - name: 'RelightingSkyrim_SSE.esp'
+        condition: 'not active("PCE - Relighting Skyrim.esp")'
+      - 'Vaults of Skyrim 1.0 NEXUS.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
