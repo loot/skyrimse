@@ -3453,16 +3453,23 @@ plugins:
       - 'EnhancedLightsandFX.esp'
       - name: 'ImprovedHearthfireLighting.esp'
         condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-      - name: 'Palaces Castles Enhanced.esp'
-        condition: 'active("Palaces Castles Enhanced.esp") and not active("PCE - Relighting Skyrim.esp")'
-        display: '[Palaces and Castles Enhanced SSE](https://www.nexusmods.com/skyrimspecialedition/mods/1819/)'
       - 'RealisticRoomRental.esp'
-      - 'RLO - Interiors.esp'
       - 'RLO - Exteriors.esp'
+      - 'RLO - Interiors.esp'
       - 'torch shadows.esp'
-    clean:
-      - crc: 0x38BA0672
-        util: 'SSEEdit v4.0.3'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Window Shadows' ]
+        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
+    dirty:
+      - <<: *quickClean
+        crc: 0x689F6CE0
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      - <<: *quickClean
+        crc: 0x3000FAA3
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
 
   - name: 'RS_NoPlayerHomes.esp'
     url:
@@ -16885,7 +16892,10 @@ plugins:
   - name: 'Palaces Castles Enhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/' ]
     group: *highPriorityGroup
-    inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
+    inc:
+      - name: 'RelightingSkyrim_SSE.esp'
+        condition: 'not active("PCE - Relighting Skyrim.esp")'
+      - 'Vaults of Skyrim 1.0 NEXUS.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
