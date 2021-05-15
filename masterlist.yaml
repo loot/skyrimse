@@ -3457,6 +3457,10 @@ plugins:
       - 'RLO - Exteriors.esp'
       - 'RLO - Interiors.esp'
       - 'torch shadows.esp'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Window Shadows' ]
+        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
     clean:
       - crc: 0x38BA0672
         util: 'SSEEdit v4.0.3'
