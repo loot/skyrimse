@@ -11759,10 +11759,11 @@ plugins:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
     msg:
-      - <<: *patchProvided
+      - *requiresMCM
+      - <<: *useVersion
+        type: warn
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and checksum("Lock_Overhaul.esp", B7986707)'
-      - *requiresMCM
     clean:
       - crc: 0xB7986707
         util: 'SSEEdit v4.0.3f'
