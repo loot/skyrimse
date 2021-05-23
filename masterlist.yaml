@@ -2458,6 +2458,26 @@ plugins:
         condition: 'many("EBT - skyBirds Patch( \((mid|short)\))?\.esp")'
         subs: [ 'EBT SkyBirds Patch' ]
 
+  - name: 'Ecotone Dual Sheath.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17763/' ]
+    req:
+      - *SKSE
+      - name: 'SKSE/Plugins/JContainers64.dll'
+        display: '[JContainers](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+    inc:
+      - 'Backshields.esl'
+      - 'Backshields.esp'
+      - name: 'SKSE/Plugins/SimpleDualSheath.dll'
+        display: 'Simple Dual Sheath'
+    msg:
+      - *requiresMCM
+      - <<: *requiresX
+        subs: [ '[XP32 Maximum Skeleton](https://www.nexusmods.com/skyrimspecialedition/mods/1988/)' ]
+        condition: 'not file("XPMSE.esp")'
+    clean:
+      - crc: 0x8E576EFA
+        util: 'SSEEdit v4.0.3g'
+
   - name: 'Improved Fire Salts Frost Salts And Glow Dust.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20572/' ]
     msg:
