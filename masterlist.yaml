@@ -7727,6 +7727,27 @@ plugins:
       - crc: 0x971ADB2B
         util: 'SSEEdit v4.0.3'
 
+  - name: 'SimplyKnock.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14098/' ]
+    req: [ *SKSE ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Simply Knock - Tower Stone Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41590/)' ]
+        condition: 'not file("Simply Knock - Tower Stone Fix.esp")'
+      - <<: *patchUpdateAvailable
+        type: error
+        subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/)' ]
+        condition: 'checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
+      - <<: *requiresMCM
+        type: error
+      - <<: *requiresX
+        type: error
+        subs: [ '[PapyrusUtil v3.9+](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
+        condition: 'checksum("SKSE/Plugins/PapyrusUtil.dll", 9BACEE98)'
+    clean:
+      - crc: 0x95029A30
+        util: 'SSEEdit v4.0.3g'
+
   - name: 'Snotgurg Simple Drop Lit Torches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14490/' ]
     msg: [ *requiresMCM ]
@@ -19732,6 +19753,13 @@ plugins:
     group: *lateChangesGroup
 
 ###### 3RD Party Patches ######
+  - name: 'Andromeda - Simply Knock Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38508/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Simply Knock - Tower Stone Fix' ]
+        condition: 'file("Simply Knock - Tower Stone Fix.esp")'
+
   - name: 'BDS - MM Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
@@ -19877,6 +19905,13 @@ plugins:
   - name: 'XenonCitiesPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
     msg: [ *obsolete ]
+
+  - name: 'trawzifiedsSimplyKnockWintersunPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38137/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Simply Knock - Tower Stone Fix' ]
+        condition: 'file("Simply Knock - Tower Stone Fix.esp")'
 
   - name: 'Summermyst - WACCF Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34547/' ]
