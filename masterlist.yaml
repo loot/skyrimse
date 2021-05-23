@@ -7734,6 +7734,10 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[Simply Knock - Tower Stone Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41590/)' ]
         condition: 'not file("Simply Knock - Tower Stone Fix.esp")'
+      - <<: *patchUpdateAvailable
+        type: error
+        subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/)' ]
+        condition: 'checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
 
   - name: 'Snotgurg Simple Drop Lit Torches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14490/' ]
