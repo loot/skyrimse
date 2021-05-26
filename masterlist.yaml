@@ -5094,7 +5094,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8695/' ]
     after:
       - 'Better Vampire NPCs.esp'
-      - 'Cutting Room Floor.esp'
       - 'DIVERSE SKYRIM.esp'
       - name: 'ethereal_elven_overhaul.esp'
         condition: 'file("ethereal_elven_overhaul.esp") and file("ethereal_elven_overhaul\.bsa")'
@@ -5105,11 +5104,18 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("CosmeticVampireOverhaul - Cutting Room Floor Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("CosmeticVampireOverhaul - Cutting Room Floor Patch.esp") and not active("CosmeticVampireOverhaul - CRF.esp")'
     clean:
-      # version: A8, B8, C8
       - crc: 0x7DC951A8
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3g'
+  - name: 'CosmeticVampireOverhaul - Cutting Room Floor Patch.esp'
+    req:
+      - 'CosmeticVampireOverhaul.esp'
+      - 'Cutting Room Floor.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Cutting Room Floor patch' ]
+        condition: 'many("CosmeticVampireOverhaul - (Cutting Room Floor Patch|CRF)\.esp")'
 
   - name: 'Diversity - An NPC Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5291/' ]
