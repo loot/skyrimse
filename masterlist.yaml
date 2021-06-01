@@ -462,6 +462,11 @@ common:
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%'
       - lang: zh_CN
         text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
+  - &patch3rdParty_AOOPH
+    <<: *patch3rdParty
+    subs:
+      - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
+      - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
   - &patch3rdParty_CCSMPC
     <<: *patch3rdParty
     subs:
@@ -10609,6 +10614,8 @@ plugins:
       - '018Auri.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
     msg:
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Relationship Dialogue Overhaul Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
         condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
@@ -14465,6 +14472,8 @@ plugins:
           - 'No Snow Under the Roof **Prometheus_No_snow_Under_the_roof.esp**'
           - '[Cutting Room Floor - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Cutting Room Floor Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_RSCPC
@@ -15542,6 +15551,8 @@ plugins:
           - lang: de
             text: 'Dieses Plugin enthält Einträge die von dessen Master-Dateien entfernt wurden. Eine englische Anleitung zum beheben befindet sich [hier](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
         condition: 'checksum("Distinct Interiors.esp", 6977340A)'
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Distinct Interiors Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xCB0F62A8
@@ -16097,6 +16108,9 @@ plugins:
       - 'Landscape For Grass Mods JK''S Skyrim.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    msg:
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Ivarstead Patch.esp")'
     clean:
       # version: 2.0.5
       - crc: 0x33FD25F8
@@ -16445,6 +16459,9 @@ plugins:
       - 'SkyrimReputation_SSE.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    msg:
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Kynesgrove Patch.esp")'
     clean:
       - crc: 0x25C25727
         util: 'SSEEdit v4.0.3'
