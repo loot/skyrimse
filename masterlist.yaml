@@ -9810,42 +9810,21 @@ plugins:
       - 'UFD Enhanced Soultrap.esp'
     msg:
       - <<: *patchProvided
-        subs: [ 'MultiLayer Parallax Soul Gems' ]
-        condition: 'file("MLPSoulGems.esp") and not file("GIST-MLPSoulGems-patch.esp") and not file("MLP + GIST Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Rustic Soul Gems' ]
-        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
+        subs: [ 'Rustic Soul Gems Unsorted' ]
+        condition: 'file("RUSTIC SOULGEMS - Unsorted( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
       - *requiresMCM
     clean:
-      # version: 1.3
       - crc: 0xC9D0A414
-        util: 'SSEEdit v4.0.0'
-  - name: 'GIST-MLPSoulGems-patch.esp'
-    inc: [ 'MLP + GIST Patch.esp' ]
-    req:
-      - name: 'MLPSoulGems.esp'
-        display: '[MultiLayer Parallax Soul Gems](https://www.nexusmods.com/skyrimspecialedition/mods/25709/)'
-        condition: 'not file("MLPSoulGems.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0x87187AE1
-        util: 'SSEEdit v4.0.0'
+        util: 'SSEEdit v4.0.3g'
   - name: 'GIST-RusticSoulGems-patch.esp'
     req:
-      - name: 'RUSTIC SOULGEMS - Sorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
-        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785/)'
       - name: 'RUSTIC SOULGEMS - Unsorted.esp'
-        condition: 'not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
-        display: '[Rustic Soulgems](https://www.nexusmods.com/skyrimspecialedition/mods/5785/)'
+        display: '[Rustic Soulgems Unsorted](https://www.nexusmods.com/skyrimspecialedition/mods/5785/)'
+        condition: 'not file("RUSTIC SOULGEMS - Unsorted( - ESL)?\.esp")'
     msg:
       - <<: *alreadyInX
-        subs: [ 'Rustic Soulgems GIST' ]
-        condition: 'file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0xEF0A2A16
-        util: 'SSEEdit v4.0.0'
+        subs: [ 'Rustic Soulgems Unsorted GIST' ]
+        condition: 'file("RUSTIC SOULGEMS - Unsorted( - ESL)? - GIST\.esp")'
 
   - name: 'IHarvest.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27789/' ]
@@ -13013,7 +12992,7 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'GIST soul trap' ]
-        condition: 'file("GIST soul trap.esp") and not file("MLP + GIST Patch.esp") and not file("GIST-MLPSoulGems-patch.esp")'
+        condition: 'file("GIST soul trap.esp") and not file("MLP + GIST Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Immersive Sounds Compendium' ]
         condition: 'file("Immersive Sounds - Compendium.esp") and not file("MLP + ISC Patch.esp")'
