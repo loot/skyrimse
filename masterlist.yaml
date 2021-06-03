@@ -2281,6 +2281,11 @@ plugins:
   - name: 'ApplySpellPerkEntryPointsDemonstration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
     msg: [ *moddingPlugin ]
+  - name: 'SoulGemTooSmall.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Settings -> Msg: No Soul Gem Large Enough' ]
 
   - name: 'SmallEnviromentalFixes(SEF).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5270/' ]
@@ -10106,12 +10111,6 @@ plugins:
     clean:
       - crc: 0x08DC13F6
         util: 'SSEEdit v4.0.3'
-
-  - name: 'SoulGemTooSmall.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
-    msg:
-      - <<: *useBashTweakInstead
-        subs: [ 'Tweak Settings -> Msg: No Soul Gem Large Enough' ]
 
   - name: 'WardsFunctionalitiesExtended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18664/' ]
