@@ -16359,10 +16359,14 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/2039-keld-nar/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4047950/'
     after:
-      - 'Clockwork.esp'
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Watchtowers of Skyrim.esp'
+      - name: 'Clockwork.esp'
+        condition: 'not is_master("Keld-Nar.esp")'
+      - name: 'Complete Alchemy & Cooking Overhaul.esp'
+        condition: 'not is_master("Keld-Nar.esp")'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: 'not is_master("Keld-Nar.esp")'
+      - name: 'Watchtowers of Skyrim.esp'
+        condition: 'not is_master("Keld-Nar.esp")'
     msg:
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
