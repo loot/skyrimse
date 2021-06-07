@@ -16921,6 +16921,9 @@ plugins:
       - name: 'UltimateCollege.esp'
         condition: 'not version("OCW_CellSettings.esp", "100.99.97", >=)'
     msg:
+      - <<: *useVersion
+        subs: [ 'Ultimate College' ]
+        condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
       - type: error
         content:
           - lang: en
@@ -16929,9 +16932,6 @@ plugins:
           - '1.5.00'
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
-      - <<: *useVersion
-        subs: [ 'Ultimate College' ]
-        condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
     clean:
       - crc: 0xB8CF33F0
         util: 'SSEEdit v4.0.3'
