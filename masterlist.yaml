@@ -7903,8 +7903,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
   - name: 'TouringCarriages.esp'
     after:
-      - 'MoreToSay.esp'
-      - 'moretosayfalkreath.esp'
+      - name: 'MoreToSay.esp'
+        condition: 'not is_master("TouringCarriages.esp")'
+      - name: 'moretosayfalkreath.esp'
+        condition: 'not is_master("TouringCarriages.esp")'
     msg:
       - <<: *patchProvided
         subs: [ 'Immersive Citizens - TC patch.esp' ]
