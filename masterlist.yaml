@@ -7903,11 +7903,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
   - name: 'TouringCarriages.esp'
     after:
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MoreToSay.esp'
-      - 'moretosayfalkreath.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
+      - name: 'MoreToSay.esp'
+        condition: 'not is_master("TouringCarriages.esp")'
+      - name: 'moretosayfalkreath.esp'
+        condition: 'not is_master("TouringCarriages.esp")'
     msg:
       - <<: *patchProvided
         subs: [ 'Immersive Citizens - TC patch.esp' ]
@@ -7917,11 +7916,10 @@ plugins:
         condition: 'active("Oakwood.esp") and not active("TouringCarriages-Oakwood.esp")'
     tag:
       - C.Location
-      - Factions
       - Keywords
     clean:
-      - crc: 0xA79E0DDD
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xF110A235
+        util: 'SSEEdit v4.0.3g'
   - name: 'TouringCarriages-ICAIO.esp'
     after: [ 'Immersive Citizens - TC patch.esp' ]
     req: [ 'Immersive Citizens - AI Overhaul.esp' ]
