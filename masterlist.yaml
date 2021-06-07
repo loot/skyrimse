@@ -11139,10 +11139,14 @@ plugins:
   - name: 'Finding_Helgi_and_Laelette.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28973/' ]
     after:
-      - 'BetterQuestObjectives.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Road to Morthal.esp'
-      - 'TheChoiceIsYours.esp'
+      - name: 'BetterQuestObjectives.esp'
+        condition: 'not is_master("Finding_Helgi_and_Laelette.esp")'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: 'not is_master("Finding_Helgi_and_Laelette.esp")'
+      - name: 'Road to Morthal.esp'
+        condition: 'not is_master("Finding_Helgi_and_Laelette.esp")'
+      - name: 'TheChoiceIsYours.esp'
+        condition: 'not is_master("Finding_Helgi_and_Laelette.esp")'
     clean:
       - crc: 0xE5F2D3C8
         util: 'SSEEdit v4.0.3'
