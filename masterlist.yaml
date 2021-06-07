@@ -4078,10 +4078,13 @@ plugins:
       - 'Purewaters.esp'
       - 'RealisticWaterTwo.esp'
     msg:
-      - <<: *versionXIncY
+      - type: error
+        content:
+          - lang: en
+            text: 'Requires version **%1%** or greater of **%2%**.'
         subs:
-          - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
-          - '[Wavy Waters](https://www.nexusmods.com/skyrimspecialedition/mods/25880/)'
+          - '0.379'
+          - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
         condition: 'product_version("../d3d11.dll", "0, 3, 7, 9", <) and file("../d3d11.dll")'
     req:
       - name: '../d3d11.dll'
