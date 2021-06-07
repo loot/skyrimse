@@ -16917,6 +16917,9 @@ plugins:
       # Group afters, to prevent sorting errors
       - 'MissingEZs_AllExteriors.esp'
       - 'MissingEZsFixed.esp'
+    inc:
+      - name: 'UltimateCollege.esp'
+        condition: 'not version("OCW_CellSettings.esp", "100.99.97", >=)'
     msg:
       - type: error
         content:
@@ -16926,16 +16929,9 @@ plugins:
           - '1.5.00'
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
-      - <<: *versionXIncY
-        subs:
-          - 'OCW_CellSettings.esp'
-          - 'Ultimate College of Winterhold'
-        condition: 'active("UltimateCollege.esp") and version("OCW_CellSettings.esp", "100.99.97", <)'
-      - <<: *versionXIncY
-        subs:
-          - 'OCW_CellSettings.esp'
-          - 'Obscure''s College of Winterhold'
-        condition: 'not active("UltimateCollege.esp") and version("OCW_CellSettings.esp", "100.99.98", ==)'
+      - <<: *useVersion
+        subs: [ 'Ultimate College' ]
+        condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
     clean:
       - crc: 0xB8CF33F0
         util: 'SSEEdit v4.0.3'
