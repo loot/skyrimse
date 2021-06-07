@@ -2058,25 +2058,17 @@ plugins:
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not checksum("meshes/uskp/armor/circlets/FemElfCirclets/circletf1.nif", BC2EE889)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - <<: *versionXIncY
+      - type: error
+        content:
+          - lang: en
+            text: 'Requires version **%1%** or greater of **%2%**.'
         subs:
-          - '**Unofficial Skyrim Special Edition Patch**'
-          - '**Skyrim Special Edition**'
-        condition: 'product_version("../SkyrimSE.exe", "1.5.62.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.6", >=)'
-      - <<: *versionXIncY
-        subs:
-          - '**Unofficial Skyrim Special Edition Patch**'
-          - '**Skyrim Special Edition**'
-        condition: 'product_version("../SkyrimSE.exe", "1.5.73.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.7", >=)'
-    tag:
-      - Actors.DeathItem
-      - C.Regions
-      - Invent.Add
-      - Invent.Change
-      - Invent.Remove
+          - '1.5.97.0'
+          - 'Skyrim Special Edition'
+        condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.1", >=)'
     clean:
-      - crc: 0xA7FF3241
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x6AB37816
+        util: 'SSEEdit v4.0.3g'
 
   ### Unofficial Creation Club Updates ###
   - name: 'JRCCPatches.esp'
