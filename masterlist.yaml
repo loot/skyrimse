@@ -14446,8 +14446,10 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/978-cutting-room-floor/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350/'
     after:
-      - 'Immersive Encounters.esp'
-      - 'TouringCarriages.esp'
+      - name: 'Immersive Encounters.esp'
+        condition: 'not is_master("Cutting Room Floor.esp")'
+      - name: 'TouringCarriages.esp'
+        condition: '(is_master("Cutting Room Floor.esp") and is_master("TouringCarriages.esp")) or (not is_master("Cutting Room Floor.esp") and not is_master("TouringCarriages.esp"))'
     msg:
       - <<: *patch3rdParty
         subs:
