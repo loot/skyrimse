@@ -1106,6 +1106,12 @@ common:
       - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim VR**'
 
+  - &versionXofYorGreaterRequired
+    type: error
+    content:
+      - lang: en
+        text: 'Requires version **%1%** or greater of **%2%**.'
+
   - &wildEdits
     type: warn
     content:
@@ -2058,10 +2064,7 @@ plugins:
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not checksum("meshes/uskp/armor/circlets/FemElfCirclets/circletf1.nif", BC2EE889)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires version **%1%** or greater of **%2%**.'
+      - <<: *versionXofYorGreaterRequired
         subs:
           - '1.5.97.0'
           - 'Skyrim Special Edition'
@@ -4078,10 +4081,7 @@ plugins:
       - 'Purewaters.esp'
       - 'RealisticWaterTwo.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires version **%1%** or greater of **%2%**.'
+      - <<: *versionXofYorGreaterRequired
         subs:
           - '0.379'
           - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
@@ -16926,10 +16926,7 @@ plugins:
       - <<: *useVersion
         subs: [ 'Ultimate College' ]
         condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires version **%1%** or greater of **%2%**.'
+      - <<: *versionXofYorGreaterRequired
         subs:
           - '1.5.00'
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
