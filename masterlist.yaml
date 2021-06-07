@@ -2066,11 +2066,9 @@ plugins:
           - '1.5.97.0'
           - 'Skyrim Special Edition'
         condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.1", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0x6B47169F
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+    clean:
+      - crc: 0x6AB37816
+        util: 'SSEEdit v4.0.3g'
 
   ### Unofficial Creation Club Updates ###
   - name: 'JRCCPatches.esp'
