@@ -16918,9 +16918,13 @@ plugins:
       - 'MissingEZs_AllExteriors.esp'
       - 'MissingEZsFixed.esp'
     msg:
-      - <<: *missingRequirementXforPlugin
-        type: error
-        subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.00+' ]
+      - type: error
+        content:
+          - lang: en
+            text: 'Requires version **%1%** or greater of **%2%**.'
+        subs:
+          - '1.5.00'
+          - 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - <<: *versionXIncY
         subs:
