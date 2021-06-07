@@ -1106,6 +1106,12 @@ common:
       - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim VR**'
 
+  - &versionXofYorGreaterRequired
+    type: error
+    content:
+      - lang: en
+        text: 'Requires version **%1%** or greater of **%2%**.'
+
   - &wildEdits
     type: warn
     content:
@@ -2058,10 +2064,7 @@ plugins:
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not checksum("meshes/uskp/armor/circlets/FemElfCirclets/circletf1.nif", BC2EE889)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires version **%1%** or greater of **%2%**.'
+      - <<: *versionXofYorGreaterRequired
         subs:
           - '1.5.97.0'
           - 'Skyrim Special Edition'
@@ -3285,7 +3288,7 @@ plugins:
       - 'RLO - Interiors.esp'
     req:
       - name: '../d3d11.dll'
-        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
+        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
     msg:
       - <<: *requiresResources
         subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
@@ -4078,14 +4081,14 @@ plugins:
       - 'Purewaters.esp'
       - 'RealisticWaterTwo.esp'
     msg:
-      - <<: *versionXIncY
+      - <<: *versionXofYorGreaterRequired
         subs:
-          - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.html)'
-          - '[Wavy Waters](https://www.nexusmods.com/skyrimspecialedition/mods/25880/)'
+          - '0.379'
+          - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
         condition: 'product_version("../d3d11.dll", "0, 3, 7, 9", <) and file("../d3d11.dll")'
     req:
       - name: '../d3d11.dll'
-        display: '[ENBSeries v0.379+](http://enbdev.com/download_mod_tesskyrimse.html)'
+        display: '[ENBSeries v0.379+](http://enbdev.com/download_mod_tesskyrimse.htm)'
     clean:
       - crc: 0xFD4F2E74
         util: 'SSEEdit v4.0.3'
@@ -4900,7 +4903,7 @@ plugins:
   - name: 'SimpleChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789/' ]
     msg:
-      - <<: *missingRequirementXforPlugin
+      - <<: *requiresResources
         subs: [ '[TK Children SE](https://www.nexusmods.com/skyrimspecialedition/mods/5916). Only install the `*.tri files` inside the `Meshes/Actors/character/character assets/` folder' ]
         condition: 'not checksum("Meshes/Actors/character/character assets/childhead.tri", 2FEDB034) or not checksum("Textures/Actors/Character/malechild/upperbodymale_sk.dds", D894ADB3)'
   - name: 'FacegenForKids.esp'
@@ -5180,7 +5183,7 @@ plugins:
         subs: [ 'Cutting Room Floor patch' ]
         condition: 'many("CosmeticVampireOverhaul - (Cutting Room Floor Patch|CRF)\.esp")'
 
-  - name: 'Diversity - An NPC Overhaul.esp'
+  - name: 'Diversity - A Character Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5291/' ]
     dirty:
       # version: 3.31 CRF Vanilla Hair
@@ -6292,7 +6295,7 @@ plugins:
         crc: 0xC872BCEA
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
         itm: 2
-        
+
   - name: 'Serio''s Enhanced Dragons Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27061/' ]
     inc:
@@ -7955,7 +7958,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13196/'
         name: 'The People Of Skyrim Complete SSE'
     inc: [ 'Holds.esp' ]
-    after: [ 'Alternate Start - Live Another Life.esp' ] 
+    after: [ 'Alternate Start - Live Another Life.esp' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -10679,7 +10682,6 @@ plugins:
     clean:
       - crc: 0xC95ED3D1
         util: 'SSEEdit v4.0.3'
-
   - name: 'SDA Wintersun Patch.esp'
     msg:
       - <<: *useVersion
@@ -14823,7 +14825,7 @@ plugins:
     clean:
       - crc: 0x0EE555DC
         util: 'SSEEdit v4.0.3'
-    
+
   - name: 'RodryksDragonBridge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42510/' ]
     msg:
@@ -15954,8 +15956,8 @@ plugins:
   - name: 'Holds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/' ]
     msg:
-      - <<: *missingRequirementXforPlugin
-        subs: [ '[Winter Is Coming - Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/4933) meshes and textures.' ]
+      - <<: *requiresResources
+        subs: [ '[Winter Is Coming - Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/4933)' ]
         condition: 'not file("Meshes/1nivCloaks/BearClaw/BearClawA_GND.nif")'
     clean:
       - crc: 0xEF19645E
@@ -15963,8 +15965,8 @@ plugins:
   - name: 'HoldsResources.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10609/' ]
     msg:
-      - <<: *missingRequirementXforPlugin
-        subs: [ '[Winter Is Coming - Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/4933) meshes and textures.' ]
+      - <<: *requiresResources
+        subs: [ '[Winter Is Coming - Cloaks](https://www.nexusmods.com/skyrimspecialedition/mods/4933)' ]
         condition: 'not file("Meshes/1nivCloaks/BearClaw/BearClawA_GND.nif")'
 
   - name: 'InnCredible.esp'
@@ -16924,10 +16926,7 @@ plugins:
       - <<: *useVersion
         subs: [ 'Ultimate College' ]
         condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires version **%1%** or greater of **%2%**.'
+      - <<: *versionXofYorGreaterRequired
         subs:
           - '1.5.00'
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
