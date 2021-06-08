@@ -14192,7 +14192,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4126/'
         name: 'Immersive Dawnguard Dayspring Pass'
-    after: [ 'Immersive Patrols II.esp' ]
+    after:
+      - name: 'Immersive Patrols II.esp'
+        condition: 'not is_master("AHZBetterDGEntranceSE.esp")'
     tag:
       - C.Location
       - C.Regions
