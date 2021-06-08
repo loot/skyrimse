@@ -15376,8 +15376,10 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/1895-darkwater-crossing/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2949694/'
     after:
-      - 'Finding_Derkeethus.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
+      - name: 'Finding_Derkeethus.esp'
+        condition: '(is_master("Finding_Derkeethus.esp") and is_master("Darkwater Crossing.esp")) or (not is_master("Finding_Derkeethus.esp") and not is_master("Darkwater Crossing.esp"))'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Darkwater Crossing.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Darkwater Crossing.esp"))'
     tag:
       - Keywords
       - Names
