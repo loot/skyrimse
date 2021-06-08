@@ -18374,22 +18374,27 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/'
         name: 'Eli''s Breezehome Overhaul'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/48931/'
-        name: 'Eli''s Breezehome Optimization ESP Replacer'
+        name: 'Eli''s Breezehome Optimization Packages and Affiliated Patches'
     after: [ 'JKs Whiterun.esp' ]
     tag:
       - C.Light
       - C.Water
     msg:
       - <<: *patchUpdateAvailable
-        subs: [ '[Eli''s Breezehome Optimization ESP Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/48931/)' ]
+        type: warn
+        subs: [ '[Eli''s Breezehome Optimization Packages and Affiliated Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48931/)' ]
         condition: 'active("Eli_Breezehome.esp") and not version("Eli_Breezehome.esp", "1.6.0", >=)'
       - <<: *requiresResources
         subs: [ '[Eli''s Breezehome Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2829/)' ]
         condition: 'not file("Eli_Breezehome.bsa") and not file("Eli_Breezehome - Textures.bsa") and not file("meshes/elianora/breezehome/eli_byohtowerfull.nif")'
     clean:
-      - crc: 0x659C5B45
+      - crc: 0x70DCA8A9
         util: 'SSEEdit v4.0.3g'
-      - crc: 0x062FA990
+      - crc: 0x99BEAFC8
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0xC6BECD12
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0x6C868F62
         util: 'SSEEdit v4.0.3g'
 
   - name: 'Eli_Halla.esp'
