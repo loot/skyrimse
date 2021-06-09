@@ -15870,11 +15870,13 @@ plugins:
   - name: 'Fall of Granite Hill.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22512/' ]
     after:
-      - 'HoldBorderBanners.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
+      - name: 'HoldBorderBanners.esp'
+        condition: 'not is_master("Fall of Granite Hill.esp")'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("Fall of Granite Hill.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("Fall of Granite Hill.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
     clean:
-      - crc: 0x6A949897
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x7D237336
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'FarmhouseChimneys.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8766/' ]
