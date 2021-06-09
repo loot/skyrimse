@@ -15551,27 +15551,41 @@ plugins:
         name: 'Expanded Towns and Cities (SSE)'
   - name: 'ETaC - RESOURCES.esm'
     group: *fixesGroup
-    tag: [ Graphics ]
     clean:
-      # version: 0.4.4 MCM
       - crc: 0xAD4F1F5E
-        util: 'SSEEdit v4.0.2f'
-      # version: 0.4.4 No MCM
+        util: 'SSEEdit v4.0.3g'
       - crc: 0xAB6247F1
-        util: 'SSEEdit v4.0.2f'
-  - name: 'ETaC - (Complete|Darkwater Crossing|Dawnstar|Riverwood|Rorikstead)\.esp'
-    after:
-      - '3DNPC.esp'
-      - 'CLARALUX SSE.esp'
-      - 'ELFX - Exteriors.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Landscape and Water Fixes.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'QaxeQuestorium.esp'
-      - 'S3DLandscapes NextGenerationForests.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
+        util: 'SSEEdit v4.0.3g'
   - name: 'ETaC - Complete.esp'
+    after:
+      - name: '3DNPC.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("3DNPC.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("3DNPC.esp"))'
+      - name: 'BetterDocks-MP-DLC-Compatible.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("BetterDocks-MP-DLC-Compatible.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("BetterDocks-MP-DLC-Compatible.esp"))'
+      - name: 'CLARALUX SSE.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("CLARALUX SSE.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("CLARALUX SSE.esp"))'
+      - name: 'Finding_Derkeethus.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Finding_Derkeethus.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Finding_Derkeethus.esp"))'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
+      - name: 'LeafRest OnePiece.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("LeafRest OnePiece.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("LeafRest OnePiece.esp"))'
+      - name: 'RiverwoodHuntingCabinSE.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("RiverwoodHuntingCabinSE.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("RiverwoodHuntingCabinSE.esp"))'
+      - name: 'RLO - Exteriors.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("RLO - Exteriors.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("RLO - Exteriors.esp"))'
+      - name: 'Rorikstead Wagons.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Rorikstead Wagons.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Rorikstead Wagons.esp"))'
+      - name: 'S3DLandscapes NextGenerationForests.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("S3DLandscapes NextGenerationForests.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("S3DLandscapes NextGenerationForests.esp"))'
+      - name: 'UniqueLocationsRiverwoodForest.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("UniqueLocationsRiverwoodForest.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("UniqueLocationsRiverwoodForest.esp"))'
+      - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp"))'
+      - name: 'ViscousGrass.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("ViscousGrass.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("ViscousGrass.esp"))'
     inc:
       - 'Darkwater Crossing.esp'
       - 'Dawnstar.esp'
@@ -15579,13 +15593,6 @@ plugins:
       - 'HogorTheGiant_V1.esp'
       - 'JK''s Riverwood.esp'
       - '01NobleWarriorCottage2.0.esp'
-    after:
-      - 'BetterDocks-MP-DLC-Compatible.esp'
-      - 'Finding_Derkeethus.esp'
-      - 'LeafRest OnePiece.esp'
-      - 'Prometheus_No_snow_Under_the_roof.esp'
-      - 'RiverwoodHuntingCabinSE.esp'
-      - 'UniqueLocationsRiverwoodForest.esp'
     msg:
       - <<: *patchIncluded
         subs: [ 'Better Docks' ]
@@ -15606,9 +15613,6 @@ plugins:
         subs: [ 'Lanterns of Skyrim' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Complete LoS Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Leaf Rest' ]
-        condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Complete Leaf Rest Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
@@ -15621,25 +15625,24 @@ plugins:
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Complete RSC Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Skyrim 3D Landscapes' ]
-        condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Complete S3D Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
     tag: [ C.Location ]
     clean:
-      # version: 0.4.4
       - crc: 0x51D1C7C1
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3g'
   - name: 'ETaC - Complete LoS Patch.esp'
     dirty:
-      # version: 0.4.4
       - <<: *quickClean
         crc: 0x4407112E
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 16
   - name: 'ETaC - Darkwater Crossing.esp'
-    after: [ 'Finding_Derkeethus.esp' ]
+    after:
+      - name: 'Finding_Derkeethus.esp'
+        condition: '(is_master("ETaC - Darkwater Crossing.esp") and is_master("Finding_Derkeethus.esp")) or (not is_master("ETaC - Darkwater Crossing.esp") and not is_master("Finding_Derkeethus.esp"))'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("ETaC - Darkwater Crossing.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Darkwater Crossing.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
     inc: [ 'Darkwater Crossing.esp' ]
     msg:
       - <<: *patchIncluded
@@ -15651,24 +15654,15 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Lanterns of Skyrim' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Darkwater Crossing LoS Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Skyrim 3D Landscapes' ]
-        condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Darkwater Crossing S3D Patch.esp")'
     tag: [ C.Location ]
     clean:
-      # version: 0.4.4
       - crc: 0x05A0C452
-        util: 'SSEEdit v4.0.2f'
-  - name: 'ETaC - Darkwater Crossing LoS Patch.esp'
-    clean:
-      # version: 0.4.4
-      - crc: 0x3D2CBE1B
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3g'
   - name: 'ETaC - Dawnstar.esp'
-    inc: [ 'Dawnstar.esp' ]
     after:
-      - 'BetterDocks-MP-DLC-Compatible.esp'
-      - 'Prometheus_No_snow_Under_the_roof.esp'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("ETaC - Dawnstar.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Dawnstar.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
+    inc: [ 'Dawnstar.esp' ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Better Docks' ]
@@ -15695,19 +15689,23 @@ plugins:
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
     clean:
-      # version: 0.4.4
       - crc: 0x8B28A721
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3g'
   - name: 'ETaC - Riverwood.esp'
+    after:
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("ETaC - Riverwood.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
+      - name: 'LeafRest OnePiece.esp'
+        condition: '(is_master("ETaC - Riverwood.esp") and is_master("LeafRest OnePiece.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("LeafRest OnePiece.esp"))'
+      - name: 'RiverwoodHuntingCabinSE.esp'
+        condition: '(is_master("ETaC - Riverwood.esp") and is_master("RiverwoodHuntingCabinSE.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("RiverwoodHuntingCabinSE.esp"))'
+      - name: 'RLO - Exteriors.esp'
+        condition: '(is_master("ETaC - Riverwood.esp") and is_master("RLO - Exteriors.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("RLO - Exteriors.esp"))'
     inc:
       - 'Eli_RiverwoodShack.esp'
       - 'HogorTheGiant_V1.esp'
       - 'JK''s Riverwood.esp'
       - '01NobleWarriorCottage2.0.esp'
-    after:
-      - 'LeafRest OnePiece.esp'
-      - 'RiverwoodHuntingCabinSE.esp'
-      - 'UniqueLocationsRiverwoodForest.esp'
     msg:
       - <<: *patchIncluded
         subs: [ 'CLARALUX' ]
@@ -15722,35 +15720,27 @@ plugins:
         subs: [ 'Lanterns of Skyrim SE' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Riverwood LoS Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Leaf Rest' ]
-        condition: 'active("LeafRest OnePiece.esp") and not active("ETaC - Riverwood Leaf Rest Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Riverwood Rigmor Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Realistic Lighting Overhaul' ]
         condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Riverwood RLO Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Skyrim 3D Landscapes' ]
-        condition: 'active("S3DLandscapes NextGenerationForests.esp") and not active("ETaC - Riverwood S3D Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
     tag: [ C.Location ]
     clean:
-      # version: 0.4.4
       - crc: 0x53CFBC83
-        util: 'SSEEdit v4.0.2f'
-  - name: 'ETaC - Riverwood LoS Patch.esp'
-    clean:
-      # version: 0.4.4
-      - crc: 0x6950BECD
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3g'
   - name: 'ETaC - Rorikstead.esp'
+    after:
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("ETaC - Rorikstead.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Rorikstead.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
+      - name: 'Rorikstead Wagons.esp'
+        condition: '(is_master("ETaC - Rorikstead.esp") and is_master("Rorikstead Wagons.esp")) or (not is_master("ETaC - Rorikstead.esp") and not is_master("Rorikstead Wagons.esp"))'
     clean:
-      # version: 0.4.4
       - crc: 0x5C33F555
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'Falkreath.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21266/' ]
