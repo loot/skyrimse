@@ -12654,7 +12654,6 @@ plugins:
 
   - name: 'Guards_Armor_Replacer.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22671/' ]
-    after: [ 'Unleveled_Items.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_GuardsArmorReplacer_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -12666,19 +12665,21 @@ plugins:
       - Invent.Add
       - Invent.Remove
       - Keywords
+      - Names
+      - NPC.DefaultOutfit
       - Outfits.Add
       - Outfits.Remove
       - Relev
+      - Sound
+      - Stats
     dirty:
-      # version: 5.5a Minimal
       - <<: *quickClean
         crc: 0xED725A9C
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
     clean:
-      # version: 5.5a
       - crc: 0x876D9DF2
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'HFDecorativeDolls.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
