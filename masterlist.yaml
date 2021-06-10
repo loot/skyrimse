@@ -8237,18 +8237,10 @@ plugins:
     clean:
       - crc: 0x3B2ED7E3
         util: 'SSEEdit v4.0.3'
-  - name: '(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp'
+  - name: 'tpos_complete02_RTCWG.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22392/'
         name: 'The People Of Skyrim 2'
-    inc:
-      - 'Holds.esp'
-      - 'tpos_ultimate_esm.esp'
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'The People Of Skyrim 2' ]
-        condition: 'many("(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp")'
-  - name: 'tpos_complete02_RTCWG.esp'
     after:
       - 'Alternate Start - Live Another Life.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -8261,6 +8253,7 @@ plugins:
       - 'AncientLand.esp'
       - name: 'ElysiumEstate.esp'
         condition: 'version("tpos_complete02_RTCWG.esp", "9.1.8", <)'
+      - 'Holds.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Patrols II.esp'
       - name: 'Open Cities Skyrim.esp'
@@ -8269,6 +8262,7 @@ plugins:
       - name: 'SkyTEST-RealisticAnimals&Predators.esp'
         condition: 'not active("tpos_SkyTESTpatch.esp")'
       - 'The Ruins.esp'
+      - 'tpos_ultimate_esm.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'WARZONES - SSE - Civil Unrest.esp'
       - 'WARZONES - SSE - DLC - Assault Attack.esp'
@@ -8283,14 +8277,6 @@ plugins:
       - crc: 0x6AD6A83E
         util: 'SSEEdit v4.0.3'
       - crc: 0x03E5358E
-        util: 'SSEEdit v4.0.3'
-  - name: 'thepeopleofskyrim.esp'
-    group: *earlyLoadersGroup
-    inc:
-      - 'Immersive Patrols II.esp'
-      - 'tpos_Cutting_Room_Floorpatch.esp'
-    clean:
-      - crc: 0x6FE256C2
         util: 'SSEEdit v4.0.3'
 
   - name: 'WARZONES - SSE - Civil Unrest.esp'
