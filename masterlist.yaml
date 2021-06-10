@@ -15459,10 +15459,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
     after:
       - name: 'JKs Skyrim.esp'
-        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
-      - 'MoreToSay.esp'
+        condition: '(is_master("COTN - Dawnstar.esp") and is_master("JKs Skyrim.esp") and active("The Great Cities of JK''s North - Patch.esp")) or (not is_master("COTN - Dawnstar.esp") and not is_master("JKs Skyrim.esp") and active("The Great Cities of JK''s North - Patch.esp"))'
+      - name: 'MoreToSay.esp'
+        condition: 'not is_master("COTN - Dawnstar.esp")'
       - name: 'moretosaycityguards.esp'
-        condition: 'not active("COTN Dawnstar - More to Say City Guards.esp")'
+        condition: 'not is_master("COTN - Dawnstar.esp") and not active("COTN Dawnstar - More to Say City Guards.esp")'
     tag: [ C.Music ]
     clean:
       - crc: 0x8255D1CF
