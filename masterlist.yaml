@@ -11346,9 +11346,11 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
-    clean:
-      - crc: 0x40613359
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0x5B1011A7
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
 
   - name: 'InnoLostAlt.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24236/' ]
