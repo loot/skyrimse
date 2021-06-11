@@ -2812,6 +2812,11 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
+          - 'Atlas Map Markers'
+          - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095/)'
+        condition: 'active("(Atlas Map Markers|Atlas Legendary|Atlas Legendary OCS)\.esp") or not active("AQWMP_AMM_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Enhanced Lighting for ENB (ELE)'
           - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095/)'
         condition: 'active("ELE_SSE.esp") and not active("AQWMP_ELE_Patch.esp") and not active("AQWMP_ELE_RWT_Patch.esp")'
@@ -2820,9 +2825,6 @@ plugins:
           - 'Realistic Water Two'
           - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095/)'
         condition: 'active("RealisticWaterTwo.esp") and not active("AQWMP_RWT_Patch.esp") and not active("AQWMP_ELE_RWT_Patch.esp") and not active("AQWMP_Lux_RWT_Patch.esp")'
-      - <<: *patchUnavailable
-        subs: [ 'Atlas Map Markers' ]
-        condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
     clean:
       - crc: 0x09706810
         util: 'SSEEdit v4.0.3'
