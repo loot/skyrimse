@@ -1674,8 +1674,16 @@ groups:
   - name: &coreGroup Core Mods
     after: [ *vampireGameplayGroup ]
 
-  - name: &lowPriorityGroup Low Priority Overrides
+  - name: &altStartGroup Alternate Start
+    description: 'A group for mods that provide alternative starting choices.'
     after: [ *coreGroup ]
+
+  - name: &followerFrameworksGroup Follower Frameworks
+    description: 'A group for mods that extend the follower system.'
+    after: [ *altStartGroup ]
+
+  - name: &lowPriorityGroup Low Priority Overrides
+    after: [ *followerFrameworksGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
