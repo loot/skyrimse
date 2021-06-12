@@ -1678,8 +1678,12 @@ groups:
     description: 'A group for mods that provide alternative starting choices.'
     after: [ *coreGroup ]
 
-  - name: &lowPriorityGroup Low Priority Overrides
+  - name: &followerFrameworksGroup Follower Frameworks
+    description: 'A group for mods that extend the follower system.'
     after: [ *altStartGroup ]
+
+  - name: &lowPriorityGroup Low Priority Overrides
+    after: [ *followerFrameworksGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
