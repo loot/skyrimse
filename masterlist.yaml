@@ -10356,16 +10356,14 @@ plugins:
 
   - name: 'nwsFollowerFramework.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18076/' ]
-    group: *lowPriorityGroup
-    after:
-      - 'Qw_BeyondReach_USSEP Patch.esp'
-      # Group afters to prevent sorting errors
-      - 'Immersive Citizens - AI Overhaul.esp'
+    group: *followerFrameworksGroup
+    after: [ 'Qw_BeyondReach_USSEP Patch.esp' ]
     req: [ *SKSE ]
     inc:
       - 'AmazingFollowerTweaks.esp'
       - 'EFFCore.esm'
       - 'EFFDialogue.esp'
+      - 'UFO - Ultimate Follower Overhaul.esp'
     msg:
       - *requiresMCM
       - <<: *alsoUseX
@@ -10378,8 +10376,8 @@ plugins:
         subs: [ 'Immersive Horses' ]
         condition: 'active("Immersive Horses.esp")'
     clean:
-      - crc: 0x88AB8AAD
-        util: 'SSEEdit v4.0.3f'
+      - crc: 0xF0C2D123
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'SimpleFollowerManager.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19940/' ]
