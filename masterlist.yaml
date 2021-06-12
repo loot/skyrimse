@@ -10487,31 +10487,23 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
         name: 'Immersive Citizens AI Overhaul'
   - name: 'Immersive Citizens - AI Overhaul.esp'
-    group: *lowPriorityGroup
+    group: *coreGroup
+    after:
+      - name: '3DNPC.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("3DNPC.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("3DNPC.esp"))'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
+      - name: 'Skyrim Sewers.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Skyrim Sewers.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Skyrim Sewers.esp"))'
+      - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp"))'
+      - name: 'ViscousGrass.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("ViscousGrass.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("ViscousGrass.esp"))'
     inc:
+      - 'ASLAO - Front Porch (Breezehome).esp'
       - 'EEKs Arcadia''s Cauldron.esp'
       - 'EEKs Arcadia''s - OCS.esp'
-    after:
-      - '3DNPC.esp'
-      - 'Bells of Skyrim.esp'
-      - 'Bridges of Skyrim.esp'
-      - 'Civil War Repairs.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Eli_Routa.esp'
-      - 'Eli_Routa - Non-Stormcloak.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'SkyfallEstate.esp'
-      - 'Skyrim Sewers.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
-      - 'ASLAO - Front Porch (Breezehome).esp'
-      - 'BHTNFBP.esp'
-      - 'breezehome enhanced SSE.esp'
-      - 'Simpler Breezehome.esp'
       - 'Wind District Breezehome - Replacer.esp'
-      - 'breezehome_basement.esp'
-      - 'BreezehomeSB.esp'
-      - 'breeze2.esp'
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Arthmoor''s Dawnstar **Dawnstar.esp**' ]
@@ -10565,13 +10557,13 @@ plugins:
     dirty:
       - <<: *quickClean
         crc: 0xA61F66AD
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
   - name: 'Immersive Citizens - OCS patch.esp'
     dirty:
       - <<: *quickClean
         crc: 0x6227D18D
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 17
 
   - name: 'ImprovedCompanionsBoogaloo.esp'
