@@ -10489,11 +10489,16 @@ plugins:
   - name: 'Immersive Citizens - AI Overhaul.esp'
     group: *coreGroup
     after:
-      - '3DNPC.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Skyrim Sewers.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
+      - name: '3DNPC.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("3DNPC.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("3DNPC.esp"))'
+      - name: 'Landscape Fixes For Grass Mods.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
+      - name: 'Skyrim Sewers.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Skyrim Sewers.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Skyrim Sewers.esp"))'
+      - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp"))'
+      - name: 'ViscousGrass.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("ViscousGrass.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("ViscousGrass.esp"))'
     inc:
       - 'ASLAO - Front Porch (Breezehome).esp'
       - 'EEKs Arcadia''s Cauldron.esp'
