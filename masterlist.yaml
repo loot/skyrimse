@@ -1682,13 +1682,13 @@ groups:
     description: 'A group for mods that extend the follower system.'
     after: [ *altStartGroup ]
 
-  - name: &musicGroup Music
+  - name: &cellMusicGroup Cell Music
     description: 'A group for modules that modify cell music.'
     after: [ *followerFrameworksGroup ]
 
   - name: &cellEncZonesGroup Cell Encounter Zones
     description: 'A group for modules that modify cell encounter zones.'
-    after: [ *musicGroup ]
+    after: [ *cellMusicGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ *cellEncZonesGroup ]
