@@ -1682,8 +1682,12 @@ groups:
     description: 'A group for mods that extend the follower system.'
     after: [ *altStartGroup ]
 
-  - name: &lowPriorityGroup Low Priority Overrides
+  - name: &musicGroup Music
+    description: 'A group for modules that modify cell music.'
     after: [ *followerFrameworksGroup ]
+
+  - name: &lowPriorityGroup Low Priority Overrides
+    after: [ *musicGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
