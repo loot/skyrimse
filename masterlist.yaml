@@ -1686,12 +1686,12 @@ groups:
     description: 'A group for modules that modify cell music.'
     after: [ *followerFrameworksGroup ]
 
-  - name: &enczonesGroup Encounter Zones
+  - name: &cellEncZonesGroup Cell Encounter Zones
     description: 'A group for modules that modify cell encounter zones.'
     after: [ *musicGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
-    after: [ *enczonesGroup ]
+    after: [ *cellEncZonesGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *lowPriorityGroup ]
