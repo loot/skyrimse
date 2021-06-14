@@ -1693,8 +1693,12 @@ groups:
   - name: &lowPriorityGroup Low Priority Overrides
     after: [ *cellEncZonesGroup ]
 
-  - name: &highPriorityGroup High Priority Overrides
+  - name: &interiorLightingGroup Interior Lighting
+    description: 'A group for modules that add/remove and/or fix light bulbs in interiors.'
     after: [ *lowPriorityGroup ]
+
+  - name: &highPriorityGroup High Priority Overrides
+    after: [ *interiorLightingGroup ]
 
   - name: &cellSettingsGroup Cell Settings
     description: 'A group for modules that only modify cell settings.'
