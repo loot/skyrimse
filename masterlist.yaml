@@ -3661,13 +3661,8 @@ plugins:
   - name: 'RLO - Effects.esp'
     clean:
       - crc: 0x1FD6BDD7
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3g'
   - name: 'RLO - Exteriors.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x0F92CA19
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
     msg:
       - <<: *patchIncluded
         subs: [ 'JK''s Riverwood' ]
@@ -3675,36 +3670,21 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'JK''s Whiterun' ]
         condition: 'active("JKs Whiterun.esp") and not active("RLO - JK''s Whiterun.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0F92CA19
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
   - name: 'RLO - Illuminated Spells.esp'
     after: [ 'RLO - Interiors.esp' ]
     clean:
       - crc: 0x4D6D9B00
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3g'
   - name: 'RLO - Interiors.esp'
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Cutting Room Floor.esp'
-      - 'EmbersHD.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - name: 'Immersive Citizens - OCS patch.esp'
-        condition: 'not file("Palaces Castles Enhanced.esp")'
-      - 'Morrowloot Miscellania - Item Distribution.esp'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'not file("Palaces Castles Enhanced.esp")'
-      - 'Quest Conflict Fixes.esp'
-      - 'Requiem.esp'
-      - 'TheChoiceIsYours.esp'
-      - 'Thieves Guild Requirements.esp'
-      - 'WACCF_Armor and Clothing Extension.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-      - 'Wintersun - Faiths of Skyrim.esp'
+    group: *interiorLightingGroup
     tag:
       - C.ImageSpace
       - C.Light
-    clean:
-      - crc: 0xA2034302
-        util: 'SSEEdit v4.0.3'
     msg:
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
@@ -3712,6 +3692,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp")'
+    clean:
+      - crc: 0xA2034302
+        util: 'SSEEdit v4.0.3g'
   # RLO v5 patches
   - name: 'RLO - IC Patch.esp'
     msg:
