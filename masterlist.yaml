@@ -12211,6 +12211,9 @@ plugins:
         display: '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
         condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50)'
     msg:
+      - <<: *obsolete
+        subs: [ '[Skyrim Unbound Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/27962/)' ]
+        condition: 'checksum("Skyrim Unbound.esp", 4C621C50) and active("Unofficial Skyrim Special Edition Patch.esp")'
       - <<: *requiresMCM
         condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
     clean:
