@@ -3683,6 +3683,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40520/'
         name: 'RLO Interiors - No modified lights sources'
     group: *interiorLightingGroup
+    after:
+      - name: 'Lux.esp'
+        condition: 'version("RLO - Interiors.esp", "5.0.4", >=)'
     inc:
       - name: 'EnhancedLightsandFX.esp'
         condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
