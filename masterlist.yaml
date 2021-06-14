@@ -3694,10 +3694,10 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
       - <<: *patchIncluded
         subs: [ 'Immersive Citizens - AI Overhaul' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp")'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
     clean:
       - crc: 0xA2034302
         util: 'SSEEdit v4.0.3g'
