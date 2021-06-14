@@ -2366,7 +2366,7 @@ plugins:
 
   - name: 'MissingEZs(_AllExteriors|Fixed)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23609/' ]
-    group: *cellSettingsGroup
+    group: *cellEncZonesGroup
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Missing Encounter Zones FIXED' ]
@@ -8139,8 +8139,6 @@ plugins:
   - name: 'Unique Region Names.esp'
     group: *cellSettingsGroup
     after:
-      - 'MissingEZs_AllExteriors.esp'
-      - 'MissingEZsFixed.esp'
       - 'SoS - Civilization.esp'
       - 'SoS - The Dungeons.esp'
       - 'SoS - The Wilds.esp'
@@ -16990,9 +16988,6 @@ plugins:
       - 'Unique Region Names.esp'
       - 'WSEnhancer.esp'
       - 'WSEnhancerCW.esp'
-      # Group afters, to prevent sorting errors
-      - 'MissingEZs_AllExteriors.esp'
-      - 'MissingEZsFixed.esp'
     inc:
       - name: 'UltimateCollege.esp'
         condition: 'not version("OCW_CellSettings.esp", "100.99.97", >=)'
