@@ -6586,6 +6586,10 @@ plugins:
 
   - name: 'Faction Warfare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32997/' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove records 0000907A & 0401B640.' ]
+        condition: 'checksum("Faction Warfare.esp", 2FF0FBE7)'
     tag: [ Relations.Add ]
     dirty:
       - <<: *reqManualFix
