@@ -16513,6 +16513,11 @@ plugins:
   - name: 'JK''s The Bannered Mare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845/' ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Citizens'
+          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("JKs Bannered Mare - Immersive Citizens Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Project Optimization' ]
         condition: 'active("Skyrim Project Optimization - .*\.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
