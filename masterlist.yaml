@@ -16540,9 +16540,22 @@ plugins:
   - name: 'JK''s The Bannered Mare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845/' ]
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Citizens'
+          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("JKs Bannered Mare - Immersive Citizens Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[JK''s Interiors Patch Collection OCS](https://www.nexusmods.com/skyrimspecialedition/mods/46114/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("JK''s Bannered Mare OCS Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Skyrim SE - Project Optimization - ESM VERSION' ]
-        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
+        subs: [ 'Skyrim Project Optimization' ]
+        condition: 'active("Skyrim Project Optimization - .*\.esm") and not active("JK''s The Bannered Mare SPO Patch.esp")'
+    clean:
+      - crc: 0xe5831fc7
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'JK''s The Winking Skeever.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43991/' ]
