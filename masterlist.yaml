@@ -9717,6 +9717,23 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1772/' ]
     tag: [ Relev ]
 
+  - name: 'Scarcity SE - Less Loot Mod.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
+    group: *lvlListsGroup
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Spell Research' ]
+        condition: 'active("SpellResearch.esp") and not active("Scarcity SE - Spell Research Compatibility Patch.esp")'
+    clean:
+      # version: 1.1
+      - crc: 0x34C78E0F
+        util: 'SSEEdit v4.0.2'
+  - name: 'Scarcity SE - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
+    group: *lvlListsGroup
+    after: [ 'Scarcity SE - Less Loot Mod.esp' ]
+
   - name: '(Skyrim Revamped|SR - ).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14338/'
@@ -13917,22 +13934,6 @@ plugins:
 
 ###### Leveled List Modifiers ######
 
-  - name: 'Scarcity SE - Less Loot Mod.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
-    group: *lvlListsGroup
-    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Spell Research' ]
-        condition: 'active("SpellResearch.esp") and not active("Scarcity SE - Spell Research Compatibility Patch.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0x34C78E0F
-        util: 'SSEEdit v4.0.2'
-  - name: 'Scarcity SE - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
-    group: *lvlListsGroup
-    after: [ 'Scarcity SE - Less Loot Mod.esp' ]
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
