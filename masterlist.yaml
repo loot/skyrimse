@@ -12552,8 +12552,8 @@ plugins:
         condition: 'not version("aMidianBorn_ContentAddon.esp", "2.2", >=) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *renameXtoY
         subs:
-          - 'aMidianBorn_ContentAddonLight.bsa'
-          - 'aMidianBorn_ContentAddon.bsa'
+          - '**aMidianBorn_ContentAddonLight.bsa**'
+          - '**aMidianBorn_ContentAddon.bsa**'
         condition: 'not file("aMidianBorn_ContentAddon.bsa") and file("aMidianBorn_ContentAddonLight.bsa") and not file("aMidianBorn_ContentAddonLight.esp")'
     clean:
       - crc: 0x3307ACE9
@@ -12563,8 +12563,8 @@ plugins:
     msg:
       - <<: *renameXtoY
         subs:
-          - 'aMidianBorn_ContentAddon.bsa'
-          - 'aMidianBorn_ContentAddonLight.bsa'
+          - '**aMidianBorn_ContentAddon.bsa**'
+          - '**aMidianBorn_ContentAddonLight.bsa**'
         condition: 'not file("aMidianBorn_ContentAddonLight.bsa") and file("aMidianBorn_ContentAddon.bsa") and not file("aMidianBorn_ContentAddon.esp")'
     clean:
       - crc: 0xD8B69F8C
