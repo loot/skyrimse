@@ -9112,6 +9112,21 @@ plugins:
       - *requiresMCM
       - *requiresMCM_VR
 
+  - name: 'CoinPurseIncrease.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6508/' ]
+    group: *lvlListsGroup
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V1' ]
+        condition: 'active("Coins of Tamriel SSE Edition.esp") and not active("CoT_CPO_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V2' ]
+        condition: 'active("Coins of Tamriel V2 SSE Edition.esp") and not active("CoTV2SSEE_CPAOFS_Patch.esp")'
+    tag: [ Relev ]
+    clean:
+      - crc: 0xD68FE3A1
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Coins of Tamriel( V[234])? SSE( Hardcore)? Edition\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6441/' ]
     msg:
@@ -13885,20 +13900,6 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
 
 ###### Leveled List Modifiers ######
-  - name: 'CoinPurseIncrease.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6508/' ]
-    group: *lvlListsGroup
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Coins of Tamriel V1' ]
-        condition: 'active("Coins of Tamriel SSE Edition.esp") and not active("CoT_CPO_Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Coins of Tamriel V2' ]
-        condition: 'active("Coins of Tamriel V2 SSE Edition.esp") and not active("CoTV2SSEE_CPAOFS_Patch.esp")'
-    tag: [ Relev ]
-    clean:
-      - crc: 0xD68FE3A1
-        util: 'SSEEdit v4.0.3'
 
   - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
