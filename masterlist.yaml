@@ -13935,33 +13935,6 @@ plugins:
 ###### Leveled List Modifiers ######
 
 
-  - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500/'
-        name: 'WACCF & Summermyst Enchantments Consistency Patch'
-    inc: [ 'Summermyst - WACCF Patch.esp' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
-      - <<: *useOnlyOneX
-        subs: [ 'WACCF/WAF Summermyst Enchantments Consistency Patch' ]
-        condition: 'many("(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp")'
-    tag:
-      - Delev
-      - Relev
-  - name: 'Sum_WACCF_Patch.esp'
-    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
-    req: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
-    clean:
-      # version: 1, after master sort
-      - crc: 0x3791ADB2
-        util: 'SSEEdit v4.0.2f'
-  - name: 'Weapon AF and Summermyst Patch.esp'
-    req: [ 'Weapon AF.esp' ]
-    clean:
-      # version: 1, after master sort
-      - crc: 0x18976F77
-        util: 'SSEEdit v4.0.2f'
 
   - name: 'WarmongerArmory_LeveledList.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4956/' ]
@@ -20279,6 +20252,34 @@ plugins:
     tag:
       - Delev
       - Relev
+
+  - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500/'
+        name: 'WACCF & Summermyst Enchantments Consistency Patch'
+    inc: [ 'Summermyst - WACCF Patch.esp' ]
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
+      - <<: *useOnlyOneX
+        subs: [ 'WACCF/WAF Summermyst Enchantments Consistency Patch' ]
+        condition: 'many("(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp")'
+    tag:
+      - Delev
+      - Relev
+  - name: 'Sum_WACCF_Patch.esp'
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    req: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
+    clean:
+      # version: 1, after master sort
+      - crc: 0x3791ADB2
+        util: 'SSEEdit v4.0.2f'
+  - name: 'Weapon AF and Summermyst Patch.esp'
+    req: [ 'Weapon AF.esp' ]
+    clean:
+      # version: 1, after master sort
+      - crc: 0x18976F77
+        util: 'SSEEdit v4.0.2f'
 
   - name: 'The Great Cities of JK''s (North|Skyrim) - Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
