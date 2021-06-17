@@ -8237,61 +8237,91 @@ plugins:
     clean:
       - crc: 0x3B2ED7E3
         util: 'SSEEdit v4.0.3'
-  - name: '(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp'
+
+  - name: 'tpos_complete02_RTCWG.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22392/'
         name: 'The People Of Skyrim 2'
-    inc:
-      - 'Holds.esp'
-      - 'tpos_ultimate_esm.esp'
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'The People Of Skyrim 2' ]
-        condition: 'many("(tpos_complete02_RTCWG|thepeopleofskyrim)\.esp")'
-  - name: 'tpos_complete02_RTCWG.esp'
     after:
-      - 'Alternate Start - Live Another Life.esp'
       - 'Landscape Fixes For Grass Mods.esp'
-      - 'OCW_Obscure''s_CollegeofWinterhold.esp'
-      - 'SkyTEST-RealisticAnimals&Predators.esp'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'active("tpos_OCpatch.esp") and version("tpos_complete02_RTCWG.esp", "9.2.9", >=)'
+      - 'tposcw.esp'
     inc:
       - 'Alternate Start -- New Beginnings.esp'
       - 'AncientLand.esp'
-      - name: 'ElysiumEstate.esp'
-        condition: 'version("tpos_complete02_RTCWG.esp", "9.1.8", <)'
-      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Holds.esp'
       - 'Immersive Patrols II.esp'
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'version("tpos_complete02_RTCWG.esp", "9.2.9", <)'
       - 'SkyfallEstate.esp'
-      - name: 'SkyTEST-RealisticAnimals&Predators.esp'
-        condition: 'not active("tpos_SkyTESTpatch.esp")'
       - 'The Ruins.esp'
+      - 'tpos_ultimate_esm.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'WARZONES - SSE - Civil Unrest.esp'
       - 'WARZONES - SSE - DLC - Assault Attack.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("tpos_Cutting_Room_Floorpatch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("tpos_OCpatch.esp")'
     clean:
-      - crc: 0x6AD6A83E
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x03E5358E
-        util: 'SSEEdit v4.0.3'
-  - name: 'thepeopleofskyrim.esp'
-    group: *earlyLoadersGroup
-    inc:
-      - 'Immersive Patrols II.esp'
-      - 'tpos_Cutting_Room_Floorpatch.esp'
+      - crc: 0xE3D600F3
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Drunks Of Skyrim
+  - name: 'DrunksofSkyrim.esp'
     clean:
-      - crc: 0x6FE256C2
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xD6CD1064
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Immersive Skyrim Bridges
+  - name: 'nesbits_skyrim_bridges.esp'
+    clean:
+      - crc: 0xE373D2D5
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Old Falkreath
+  - name: 'Old_Falkreath.esp'
+    clean:
+      - crc: 0x1E5C164D
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Riften: Guild City of Thieves
+  - name: 'tpos_Riften_Exspan01.esp'
+    clean:
+      - crc: 0xDA668F6C
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Riverwood by Nesbit
+  - name: 'Riverwood_By_Nesbit.esp'
+    after: [ 'tposcw.esp' ]
+    inc: [ 'tpos_Riverwood_Grove.esp' ]
+    clean:
+      - crc: 0x51195099
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Riverwood Grove
+  - name: 'tpos_Riverwood_Grove.esp'
+    after: [ 'tposcw.esp' ]
+    clean:
+      - crc: 0xB2FBEC27
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Skyrim Border Holds
+  - name: 'tposcthebordersofskyrim.esp'
+    clean:
+      - crc: 0x61210900
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Skyrims Dead
+  - name: 'TPOS_Skyrims_Dead.esp'
+    clean:
+      - crc: 0xDA6255EA
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Skyrims Farmhouse Inns
+  - name: 'skryrimfarmhouseinns.esp'
+    clean:
+      - crc: 0xE9197F66
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - The Enemy Of My Enemy: A Civil War Adventure.
+  - name: 'tposcw.esp'
+    clean:
+      - crc: 0xC70379D4
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Whiterun by Nesbit
+  - name: 'tpos_whiterunexteriorproject.esp'
+    clean:
+      - crc: 0xE0A87E29
+        util: 'SSEEdit v4.0.3g'
+  # TPOS2 - Whiterun Reimagined: The Way Of The Nords
+  - name: 'Whiterun_Reimagined.esp'
+    clean:
+      - crc: 0xDC41965D
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'WARZONES - SSE - Civil Unrest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2360/' ]
@@ -14585,7 +14615,6 @@ plugins:
       - 'MoreToSay.esp'
       - 'moretosayfalkreath.esp'
       - 'Solitude Docks.esp'
-      - 'thepeopleofskyrim.esp'
       - 'tpos_complete02_RTCWG.esp'
       - 'Windhelm Bridge Overhaul.esp'
     inc: [ 'CFTO.esp' ]
@@ -17121,12 +17150,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'The Midden - Expanded' ]
         condition: 'active("middenexpandedlitesse.esp") and not active("OCW_MEL_FEPatch.esp") and not active("UltimateCollege.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The People of Skyrim 2 Full' ]
-        condition: 'active("tpos_complete02_RTCWG.esp") and not active("(OCW_tPoS2F_FEPatch|tpos_Obscures_CollegeofWinterholdPatch_Full)\.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The People of Skyrim 2 Partial' ]
-        condition: 'active("thepeopleofskyrim.esp") and not active("OCW_tPoS2P_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'The Tools of Kagrenac' ]
         condition: 'active("Tools of Kagrenac.esp") and not active("OCW_ToK_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
