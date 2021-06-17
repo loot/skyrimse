@@ -12549,6 +12549,11 @@ plugins:
       - <<: *obsolete
         subs: [ '[aMidianBorn Content Addon](https://www.nexusmods.com/skyrimspecialedition/mods/35390/)' ]
         condition: 'not version("aMidianBorn_ContentAddon.esp", "2.0", >=) and active("Complete Crafting Overhaul_Remastered.esp")'
+      - <<: *renameXtoY
+        subs:
+          - 'aMidianBorn_ContentAddonLight.bsa'
+          - 'aMidianBorn_ContentAddon.bsa'
+        condition: 'not file("aMidianBorn_ContentAddon.bsa") and file("aMidianBorn_ContentAddonLight.bsa") and not file("aMidianBorn_ContentAddonLight.esp")'
     clean:
       - crc: 0x3307ACE9
         util: 'SSEEdit v4.0.3g'
