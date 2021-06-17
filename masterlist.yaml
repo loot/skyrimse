@@ -12541,6 +12541,9 @@ plugins:
       - <<: *requiresResources
         subs: [ '[aMidianBorn Book of Silence SE](https://www.nexusmods.com/skyrimspecialedition/mods/35382/) **(CCOR CONTENT ADDON BSA)**' ]
         condition: 'not file("aMidianBorn_ContentAddon(Light)?\.bsa") and not file("textures/AMB Variants/dlc02/nordiccarvedbrown/nordiccarvedbootsm.dds")'
+      - <<: *useOnlyOneX
+        subs: [ 'aMidianBorn Content Addon ESP' ]
+        condition: 'many("aMidianBorn_ContentAddon(Light)?\.esp")'
   - name: 'aMidianBorn_ContentAddon.esp'
     msg:
       - <<: *obsolete
