@@ -9665,6 +9665,22 @@ plugins:
       - crc: 0xF20272B0
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Scarcity SE - Less Loot Mod'
+          - '[Rebalanced Leveled Lists Scarcity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20812/)'
+        condition: 'active("Scarcity SE - Less Loot Mod") and not active("rll(_lite)?_scarcity_patch\.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Rebalanced Leveled Lists' ]
+        condition: 'many("Rebalanced Leveled Lists( - Lite)?\.esp")'
+    tag:
+      - Delev
+      - Invent.Add
+      - Relev
+
   - name: 'Relics of Legend - Enhanced Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25620/' ]
     msg:
@@ -13901,21 +13917,6 @@ plugins:
 
 ###### Leveled List Modifiers ######
 
-  - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Scarcity SE - Less Loot Mod'
-          - '[Rebalanced Leveled Lists Scarcity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20812/)'
-        condition: 'active("Scarcity SE - Less Loot Mod") and not active("rll(_lite)?_scarcity_patch\.esp")'
-      - <<: *useOnlyOneX
-        subs: [ 'Rebalanced Leveled Lists' ]
-        condition: 'many("Rebalanced Leveled Lists( - Lite)?\.esp")'
-    tag:
-      - Delev
-      - Invent.Add
-      - Relev
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20812/' ]
