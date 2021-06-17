@@ -12516,33 +12516,61 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 7
 
-  - name: 'aMidianBorn_ContentAddon.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35390/' ]
+  - name: 'aMidianBorn_ContentAddon(Light)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35390/'
+        name: 'aMidianBorn Content Addon'
     after:
+      - 'aMidianBorn_Book of Silence.esp'
       - 'BetterQuestObjectives.esp'
       - '1nivWICCloaks.esp'
       - '1nivWICCloaksNoGuards.esp'
       - 'WarmongerArmory_LeveledList.esp'
     inc:
-      - name: 'aMidianBorn_Book of Silence.esp'
-        condition: 'version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
+      - 'aMidianBorn_Book of Silence.esp'
       - 'aMidianBorn_Ebony Variants.esp'
       - 'aMidianBorn_Glass Variants.esp'
       - 'aMidianBorn_Glass Variants Lore.esp'
       - 'aMidianborn_Skyforge_Weapons.esp'
     tag:
       - Graphics
-      - name: Invent.Add
-        condition: 'version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
+      - Invent.Add
       - Keywords
+      - Names
+      - Outfits.Add
+      - Outfits.Remove
       - Stats
+    msg:
+      - <<: *requiresResources
+        subs: [ '[aMidianBorn Book of Silence SE](https://www.nexusmods.com/skyrimspecialedition/mods/35382/) **(CCOR CONTENT ADDON BSA)**' ]
+        condition: 'not file("aMidianBorn_ContentAddon(Light)?\.bsa") and not file("textures/AMB Variants/dlc02/nordiccarvedbrown/nordiccarvedbootsm.dds")'
+      - <<: *useOnlyOneX
+        subs: [ 'aMidianBorn Content Addon ESP' ]
+        condition: 'many("aMidianBorn_ContentAddon(Light)?\.esp")'
+  - name: 'aMidianBorn_ContentAddon.esp'
     msg:
       - <<: *obsolete
         subs: [ '[aMidianBorn Content Addon](https://www.nexusmods.com/skyrimspecialedition/mods/35390/)' ]
-        condition: 'not version("aMidianBorn_ContentAddon.esp", "2.0", >=) and active("Complete Crafting Overhaul_Remastered.esp")'
-      - <<: *requiresResources
-        subs: [ '[aMidianBorn Book of Silence SE](https://www.nexusmods.com/skyrimspecialedition/mods/35382/) (aMidianBorn Book of Silence SE -- CCOR CONTENT ADDON BSA or Armors, Dragonborn DLC, Unique Items & Weapons loose files)' ]
-        condition: 'version("aMidianBorn_ContentAddon.esp", "2.0", >=) and not file("aMidianBorn_ContentAddon.bsa") and not file("textures/AMB Variants/dlc02/nordiccarvedbrown/nordiccarvedbootsm.dds")'
+        condition: 'not version("aMidianBorn_ContentAddon.esp", "2.2", >=) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
+      - <<: *renameXtoY
+        subs:
+          - '**aMidianBorn_ContentAddonLight.bsa**'
+          - '**aMidianBorn_ContentAddon.bsa**'
+        condition: 'not file("aMidianBorn_ContentAddon.bsa") and file("aMidianBorn_ContentAddonLight.bsa") and not file("aMidianBorn_ContentAddonLight.esp")'
+    clean:
+      - crc: 0x3307ACE9
+        util: 'SSEEdit v4.0.3g'
+  - name: 'aMidianBorn_ContentAddonLight.esp'
+    inc: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+    msg:
+      - <<: *renameXtoY
+        subs:
+          - '**aMidianBorn_ContentAddon.bsa**'
+          - '**aMidianBorn_ContentAddonLight.bsa**'
+        condition: 'not file("aMidianBorn_ContentAddonLight.bsa") and file("aMidianBorn_ContentAddon.bsa") and not file("aMidianBorn_ContentAddon.esp")'
+    clean:
+      - crc: 0xD8B69F8C
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'Apophysis_DPM_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5800/' ]
