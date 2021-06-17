@@ -12558,6 +12558,11 @@ plugins:
       - Outfits.Remove
       - Stats
     msg:
+      - <<: *renameXtoY
+        subs:
+          - 'aMidianBorn_ContentAddon.bsa'
+          - 'aMidianBorn_ContentAddonLight.bsa'
+        condition: 'not file("aMidianBorn_ContentAddonLight.bsa") and file("aMidianBorn_ContentAddon.bsa")'
       - <<: *requiresResources
         subs: [ '[aMidianBorn Book of Silence SE](https://www.nexusmods.com/skyrimspecialedition/mods/35382/) **(CCOR CONTENT ADDON BSA)**' ]
         condition: 'not file("aMidianBorn_ContentAddon(Light)?\.bsa") and not file("textures/AMB Variants/dlc02/nordiccarvedbrown/nordiccarvedbootsm.dds")'
