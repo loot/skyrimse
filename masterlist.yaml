@@ -9112,6 +9112,21 @@ plugins:
       - *requiresMCM
       - *requiresMCM_VR
 
+  - name: 'CoinPurseIncrease.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6508/' ]
+    group: *lvlListsGroup
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V1' ]
+        condition: 'active("Coins of Tamriel SSE Edition.esp") and not active("CoT_CPO_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Coins of Tamriel V2' ]
+        condition: 'active("Coins of Tamriel V2 SSE Edition.esp") and not active("CoTV2SSEE_CPAOFS_Patch.esp")'
+    tag: [ Relev ]
+    clean:
+      - crc: 0xD68FE3A1
+        util: 'SSEEdit v4.0.3'
+
   - name: 'Coins of Tamriel( V[234])? SSE( Hardcore)? Edition\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6441/' ]
     msg:
@@ -9650,6 +9665,22 @@ plugins:
       - crc: 0xF20272B0
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Scarcity SE - Less Loot Mod'
+          - '[Rebalanced Leveled Lists Scarcity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20812/)'
+        condition: 'active("Scarcity SE - Less Loot Mod") and not active("rll(_lite)?_scarcity_patch\.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Rebalanced Leveled Lists' ]
+        condition: 'many("Rebalanced Leveled Lists( - Lite)?\.esp")'
+    tag:
+      - Delev
+      - Invent.Add
+      - Relev
+
   - name: 'Relics of Legend - Enhanced Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25620/' ]
     msg:
@@ -9685,6 +9716,23 @@ plugins:
   - name: 'RichMerchantsSkyrim_x\d+.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1772/' ]
     tag: [ Relev ]
+
+  - name: 'Scarcity SE - Less Loot Mod.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
+    group: *lvlListsGroup
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Spell Research' ]
+        condition: 'active("SpellResearch.esp") and not active("Scarcity SE - Spell Research Compatibility Patch.esp")'
+    clean:
+      # version: 1.1
+      - crc: 0x34C78E0F
+        util: 'SSEEdit v4.0.2'
+  - name: 'Scarcity SE - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
+    group: *lvlListsGroup
+    after: [ 'Scarcity SE - Less Loot Mod.esp' ]
 
   - name: '(Skyrim Revamped|SR - ).*\.esp'
     url:
@@ -13778,6 +13826,21 @@ plugins:
       - crc: 0xF3768475
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'WarmongerArmory_LeveledList.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4956/' ]
+    after:
+      - '1nivWICCloaks.esp'
+      - '1nivWICCloaksNoGuards.esp'
+    tag:
+      - Actors.ACBS
+      - Delev
+      - Graphics
+      - Invent.Add
+      - Invent.Remove
+      - Outfits.Add
+      - Outfits.Remove
+      - Relev
+
   - name: 'WeaponsOf3E_SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/' ]
     clean:
@@ -13883,104 +13946,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-
-###### Leveled List Modifiers ######
-  - name: 'CoinPurseIncrease.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6508/' ]
-    group: *lvlListsGroup
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Coins of Tamriel V1' ]
-        condition: 'active("Coins of Tamriel SSE Edition.esp") and not active("CoT_CPO_Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Coins of Tamriel V2' ]
-        condition: 'active("Coins of Tamriel V2 SSE Edition.esp") and not active("CoTV2SSEE_CPAOFS_Patch.esp")'
-    tag: [ Relev ]
-    clean:
-      - crc: 0xD68FE3A1
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'Rebalanced Leveled Lists( - Lite)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Scarcity SE - Less Loot Mod'
-          - '[Rebalanced Leveled Lists Scarcity Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20812/)'
-        condition: 'active("Scarcity SE - Less Loot Mod") and not active("rll(_lite)?_scarcity_patch\.esp")'
-      - <<: *useOnlyOneX
-        subs: [ 'Rebalanced Leveled Lists' ]
-        condition: 'many("Rebalanced Leveled Lists( - Lite)?\.esp")'
-    tag:
-      - Delev
-      - Invent.Add
-      - Relev
-
-  - name: 'rll(_lite)?_scarcity_patch\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20812/' ]
-    tag:
-      - Delev
-      - Relev
-
-  - name: 'Scarcity SE - Less Loot Mod.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
-    group: *lvlListsGroup
-    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Spell Research' ]
-        condition: 'active("SpellResearch.esp") and not active("Scarcity SE - Spell Research Compatibility Patch.esp")'
-    clean:
-      # version: 1.1
-      - crc: 0x34C78E0F
-        util: 'SSEEdit v4.0.2'
-  - name: 'Scarcity SE - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8647/' ]
-    group: *lvlListsGroup
-    after: [ 'Scarcity SE - Less Loot Mod.esp' ]
-
-  - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500/'
-        name: 'WACCF & Summermyst Enchantments Consistency Patch'
-    inc: [ 'Summermyst - WACCF Patch.esp' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
-      - <<: *useOnlyOneX
-        subs: [ 'WACCF/WAF Summermyst Enchantments Consistency Patch' ]
-        condition: 'many("(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp")'
-    tag:
-      - Delev
-      - Relev
-  - name: 'Sum_WACCF_Patch.esp'
-    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
-    req: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
-    clean:
-      # version: 1, after master sort
-      - crc: 0x3791ADB2
-        util: 'SSEEdit v4.0.2f'
-  - name: 'Weapon AF and Summermyst Patch.esp'
-    req: [ 'Weapon AF.esp' ]
-    clean:
-      # version: 1, after master sort
-      - crc: 0x18976F77
-        util: 'SSEEdit v4.0.2f'
-
-  - name: 'WarmongerArmory_LeveledList.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4956/' ]
-    after:
-      - '1nivWICCloaks.esp'
-      - '1nivWICCloaksNoGuards.esp'
-    tag:
-      - Actors.ACBS
-      - Delev
-      - Graphics
-      - Invent.Add
-      - Invent.Remove
-      - Outfits.Add
-      - Outfits.Remove
-      - Relev
 
 ###### Locations - New Lands ######
   - name: 'arnima.esm'
@@ -20275,6 +20240,42 @@ plugins:
     req:
       - name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
         display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+
+  - name: 'rll(_lite)?_scarcity_patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20812/'
+        name: 'Rebalanced Leveled Lists & Scarcity Patch'
+    tag:
+      - Delev
+      - Relev
+
+  - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19500/'
+        name: 'WACCF & Summermyst Enchantments Consistency Patch'
+    inc: [ 'Summermyst - WACCF Patch.esp' ]
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("Sum_WACCF_Patch.esp", 41BB8CCB) or checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
+      - <<: *useOnlyOneX
+        subs: [ 'WACCF/WAF Summermyst Enchantments Consistency Patch' ]
+        condition: 'many("(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp")'
+    tag:
+      - Delev
+      - Relev
+  - name: 'Sum_WACCF_Patch.esp'
+    after: [ 'WACCF_BashedPatchLvlListFix.esp' ]
+    req: [ 'Weapons Armor Clothing & Clutter Fixes.esp' ]
+    clean:
+      # version: 1, after master sort
+      - crc: 0x3791ADB2
+        util: 'SSEEdit v4.0.2f'
+  - name: 'Weapon AF and Summermyst Patch.esp'
+    req: [ 'Weapon AF.esp' ]
+    clean:
+      # version: 1, after master sort
+      - crc: 0x18976F77
+        util: 'SSEEdit v4.0.2f'
 
   - name: 'The Great Cities of JK''s (North|Skyrim) - Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
