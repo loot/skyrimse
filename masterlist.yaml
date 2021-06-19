@@ -13811,6 +13811,18 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8387/' ]
     msg: [ *alreadyInLotD ]
 
+  - name: 'The Infinity Gauntlet.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25556/' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove 00000D74 & 0000003C.' ]
+        condition: 'checksum("The Infinity Gauntlet.esp", BEDB4EB0)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC875BB6D
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
+
   - name: 'TheOneRing.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20167/' ]
     dirty:
