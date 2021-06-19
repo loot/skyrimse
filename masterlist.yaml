@@ -7469,9 +7469,11 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("RBB - Wyrmstooth.esp")'
-    clean:
-      - crc: 0xFC7D5A59
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0x7143B93E
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
   - name: 'RBB - USSEP Patch.esp'
     msg:
       - <<: *alreadyInX
