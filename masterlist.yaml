@@ -2202,7 +2202,7 @@ plugins:
           - 'Skyrim Special Edition'
         condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.1", >=)'
     clean:
-      - crc: 0x6AB37816
+      - crc: 0x0CD1CA0B
         util: 'SSEEdit v4.0.3g'
 
   ### Unofficial Creation Club Updates ###
@@ -6065,6 +6065,22 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 31
 
+  - name: 'Pussycats.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28852/' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x0B465805
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xAA137029
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x80DC69F2
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
+
   - name: 'Recorder Follower Base.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4718/' ]
     dirty:
@@ -6101,6 +6117,14 @@ plugins:
       - crc: 0x90543FD4
         util: 'SSEEdit v4.0.3g'
 
+  - name: 'Shani the Grey - Khajiit Follower.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26935/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x80A3764F
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
+
   - name: 'Shezarrine.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15866/' ]
     tag:
@@ -6118,6 +6142,14 @@ plugins:
         crc: 0xDB0A5FC8
         util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 286
+
+  - name: 'SnowBall.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51006/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF25CB13C
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
 
   - name: 'SofiaFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/' ]
@@ -6139,6 +6171,16 @@ plugins:
       # version: 2.51
       - crc: 0xD87DD508
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'Sorceress Supreme.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/39913/'
+        name: 'The Sorceress - Dragon''s Crown Sorceress Follower'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEC0E6EA3
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 18
 
   - name: 'Toccata.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
@@ -6711,6 +6753,17 @@ plugins:
       - crc: 0x37D38707
         util: 'SSEEdit v4.0.0'
 
+  - name: 'chickenleg.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29339/'
+        name: 'The Bone Merchant'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDD534CE0
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+        udr: 1
+
   - name: 'CitizensComplete.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29069/'
@@ -6831,6 +6884,14 @@ plugins:
       # version: 1.0.1
       - crc: 0xF1453836
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'ShadyMerchants.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17940/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF02E79B3
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
 
   - name: 'skyBirds_SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2315/' ]
@@ -7408,9 +7469,11 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("RBB - Wyrmstooth.esp")'
-    clean:
-      - crc: 0xFC7D5A59
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0x7143B93E
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
   - name: 'RBB - USSEP Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -8023,6 +8086,22 @@ plugins:
     clean:
       - crc: 0x4CDD0E4E
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Portals of Skyrim\.es(p|l)'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44519/' ]
+  - name: 'Portals of Skyrim.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x1B8AE5D9
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
+        udr: 6
+  - name: 'Portals of Skyrim.esl'
+    dirty:
+      - <<: *quickClean
+        crc: 0x55D6D32B
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
 
   - name: 'Project Proteus.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46620/' ]
@@ -9081,6 +9160,14 @@ plugins:
   - name: 'SAFO Leveled Items Fix.esp'
     req: [ 'Bashed Patch, 0.esp' ]
 
+  - name: 'silvercraft.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9450/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x48668319
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: 'Skyrim Alchemy Fixed.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
     tag: [ Delev ]
@@ -9734,6 +9821,24 @@ plugins:
     group: *lvlListsGroup
     after: [ 'Scarcity SE - Less Loot Mod.esp' ]
 
+  - name: '(skoomadealer|SkoomDealersDen)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/25081/'
+        name: 'Become A Skooma Dealer'
+  - name: 'skoomadealer.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB076A1C9
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
+  - name: 'SkoomDealersDen.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x9FC50651
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+        udr: 37
+
   - name: '(Skyrim Revamped|SR - ).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14338/'
@@ -9898,7 +10003,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WACCF_Patch.esp")'
     clean:
-      - crc: 0x3FE3FA1B
+      - crc: 0x7C1ABB8D
         util: 'SSEEdit v4.0.3g'
   - name: 'WACCF_BashedPatchLvlListFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
@@ -9907,7 +10012,7 @@ plugins:
       - *optional
       - *requiresBashOrSmash
     clean:
-      - crc: 0x977A6C2E
+      - crc: 0x1D19D916
         util: 'SSEEdit v4.0.3g'
 
   - name: 'WhitePhialBetterAlignments.esp'
@@ -10480,8 +10585,8 @@ plugins:
       - SpellStats
       - Text
     clean:
-      - crc: 0xA916F85A
-        util: 'SSEEdit v4.0.3f'
+      - crc: 0x15F51A67
+        util: 'SSEEdit v4.0.3g'
 
 ###### Gameplay - Mount & Follower Managers ######
   - name: 'AmazingFollowerTweaks.esp'
@@ -11562,6 +11667,15 @@ plugins:
     clean:
       - crc: 0xB77FA395
         util: 'SSEEdit v4.0.3f'
+
+  - name: 'Glamoril.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43477/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xED78173A
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 10
+        udr: 1
 
   - name: 'GoldenglowIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25155/' ]
@@ -12764,6 +12878,14 @@ plugins:
       - crc: 0x6CE0A40A
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Black Thief.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/48252/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xB7952B91
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+
   - name: 'BooksBooksBooks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10251/' ]
     msg:
@@ -12835,6 +12957,23 @@ plugins:
     clean:
       - crc: 0xA1170B2D
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ChillrendNote\.es(p|l)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/34657/'
+        name: 'Concerning Chillrend'
+  - name: 'ChillrendNote.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA86756E4
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'ChillrendNote.esl'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE771ACEB
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
   - name: 'Chrysamere.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12829/' ]
@@ -13312,6 +13451,22 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
 
+  - name: '(Leek_Giant|GiantLeek)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43960/' ]
+  - name: 'Leek_Giant.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x704F38BC
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 26
+        udr: 14
+  - name: 'GiantLeek.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x7C263915
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+
   - name: 'Lore Weapon Expansion( - Daedric Crescent| - Goldbrand| - Relics of the Crusader)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9660/' ]
   - name: 'Lore Weapon Expansion.esp'
@@ -13369,6 +13524,14 @@ plugins:
         crc: 0x182B6D93
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
+
+  - name: 'mihaildwarvenpowerarmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30317/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xA542594A
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 8
 
   - name: 'MilkSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3230/' ]
@@ -13518,6 +13681,14 @@ plugins:
     clean:
       - crc: 0x336DE5C8
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Remodeled Armor - Vanilla Replacer.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22168/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x24A898B8
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
   - name: 'RuinsEdge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12792/' ]
@@ -13673,6 +13844,34 @@ plugins:
   - name: 'ThaneWeaponsReborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8387/' ]
     msg: [ *alreadyInLotD ]
+
+  - name: 'The Infinity Gauntlet.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25556/' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove 00000D74 & 0000003C.' ]
+        condition: 'checksum("The Infinity Gauntlet.esp", BEDB4EB0)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC875BB6D
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
+
+  - name: 'TheOneRing.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20167/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xDDAB5BDC
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+      - <<: *quickClean
+        crc: 0xECD2F4A3
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+      - <<: *quickClean
+        crc: 0xFF77372A
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
   - name: 'TheWulfPanda - City Teleport Spells( Less Magicka Increase Cast Time)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7015/' ]
@@ -14526,6 +14725,16 @@ plugins:
       - crc: 0x7E339FFC
         util: 'SSEEdit v4.0.3'
 
+  - name: 'ancient weathertop.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42065/'
+        name: 'Lord of the Rings Amon Sul - Ancient Weathertop'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x6C28BE22
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 4
+
   - name: 'Aurora(Village| - Moon and Star Patch).esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17647/' ]
   - name: 'AuroraVillage.esp'
@@ -14658,12 +14867,10 @@ plugins:
         subs: [ 'The Great City of Solitude' ]
         condition: 'active("The Great City of Solitude.esp") and not active("CC_TGCS_Patch.esp")'
     clean:
-      # Default
-      - crc: 0xB7495D13
-        util: 'SSEEdit v4.0.3'
-      # ICAIO - Default
-      - crc: 0x8EEAB63F
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xA69C30B9
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0x529C0B5C
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'Caveoftheforgotten.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13499/' ]
@@ -15257,6 +15464,16 @@ plugins:
       - crc: 0x6D3D6301
         util: 'SSEEdit v4.0.2'
 
+  - name: 'SMMerchantCamp.esl'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26042/'
+        name: 'Laryn Summermyst Merchant Camp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xD6E8CE35
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+
   - name: 'sm_jobasha_bookshop.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13285/' ]
     msg:
@@ -15523,6 +15740,22 @@ plugins:
         itm: 6
 
 ###### Location - Overhauls ######
+  - name: 'Better( )?Cities( )?(Solitude|Whiterun)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3847/' ]
+  - name: 'Better Cities Solitude.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC112DD5C
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 16
+  - name: 'BetterCitiesWhiterun.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4BEB56A4
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 27
+        udr: 92
+
   - name: 'BluePalaceTerrace.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35180/' ]
     after: [ 'Solitude Expansion.esp' ]
@@ -17469,6 +17702,16 @@ plugins:
       - crc: 0x3B9B5701
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Sanctuary Reborn.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22070/'
+        name: 'Dark Brotherhood Reborn - Dawnstar Sanctuary'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDEB7C3C4
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: '(Serenity|SailorMoonClub|LunarWeapons)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30019/' ]
   - name: 'Serenity.esp'
@@ -17692,12 +17935,12 @@ plugins:
     dirty:
       - <<: *reqManualFix
         crc: 0xB547C8EB
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 20
         nav: 13
       - <<: *reqManualFix
         crc: 0xBC5257F4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 13
 
   - name: 'Soljund''s Sinkhole.esp'
@@ -20211,6 +20454,20 @@ plugins:
     clean:
       - crc: 0x97709110
         util: 'SSEEdit v4.0.2'
+
+  - name: 'Moonpath Navmesh Fix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4341/' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xF6CAAE30
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 31
+        udr: 12
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x02E02099
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 1
 
   - name: 'Obsidian Weathers for Vigilant.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24357/' ]
