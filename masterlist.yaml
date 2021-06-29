@@ -8047,6 +8047,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9959/' ]
     req: [ *SKSE ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '**[Bug Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/33261/)** OR **[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/)**' ]
+        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll") or not file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
       - *missingRequirementAddrLibforPlugin
       - *requiresMCM
 
