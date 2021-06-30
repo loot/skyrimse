@@ -3089,12 +3089,22 @@ plugins:
     inc: [ *LotD_v5 ]
 
 ###### AudioVisual - Animations & Physics ######
+  - name: 'AnimatedEatingRedux.esp'
+    clean:
+      - crc: 0x82AC4355
+        util: 'SSEEdit v4.0.3g'
+
   - name: 'beltfastenedquivers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1182/' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'XP32 Maximum Skeleton Special Extended' ]
         condition: 'active("beltfastenedquivers.esp") and active("XPMS(S)?E.esp")'
+
+  - name: 'Conditional Expressions.esp'
+    clean:
+      - crc: 0xD09C1D44
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'dD - Realistic Ragdoll Force -.*.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1439/' ]
@@ -6586,8 +6596,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37768/' ]
     dirty:
       - <<: *quickClean
-        crc: 0xC872BCEA
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+        crc: 0x7BFD4A32
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
         itm: 2
 
   - name: 'Serio''s Enhanced Dragons Redone.esp'
@@ -7978,8 +7988,8 @@ plugins:
         display: '[powerofthree''s Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854/)'
     msg: [ *requiresMCM ]
     clean:
-      - crc: 0xB8631D40
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x6DFDCF17
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'EBM_Train(10|25|50|99)x.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10580/' ]
@@ -8368,8 +8378,8 @@ plugins:
           - '[The People of Skyrim Complete Falskaar Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13906/)'
         condition: 'active("Falskaar.esm") and not active("tposc_falskar_patch.esp")'
     clean:
-      - crc: 0x3B2ED7E3
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xEF9F7C00
+        util: 'SSEEdit v4.0.3g'
 
   - name: 'tpos_complete02_RTCWG.esp'
     url:
@@ -10058,7 +10068,7 @@ plugins:
       - *optional
       - *requiresBashOrSmash
     clean:
-      - crc: 0x1D19D916
+      - crc: 0x7C1ABB8D
         util: 'SSEEdit v4.0.3g'
 
   - name: 'WhitePhialBetterAlignments.esp'
@@ -11189,8 +11199,8 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and active("Complete Alchemy & Cooking Overhaul.esp") and not active("SDA Wintersun Patch.esp")'
     tag: [ Keywords ]
     clean:
-      - crc: 0xC95ED3D1
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x53729966
+        util: 'SSEEdit v4.0.3g'
   - name: 'SDA Wintersun Patch.esp'
     msg:
       - <<: *useVersion
@@ -11780,11 +11790,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x8249AC20
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+    clean:
+      - crc: 0x48C40A75
+        util: 'SSEEdit v4.0.3g'
   - name: 'Immersive Encounters - Open Cities Patch.esp'
     req: [ 'Open Cities Skyrim.esp' ]
 
@@ -14687,8 +14695,8 @@ plugins:
         subs: [ 'Undeath: The Ascension **Undeath Ascension.esp**' ]
         condition: 'active("Undeath Ascension.esp")'
     clean:
-      - crc: 0x2F738EC1
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xC197E5B2
+        util: 'SSEEdit v4.0.3g'
 
   - name: '(Valen_assault|BosmerArmorMATY743)\.es(p|m)'
     url:
@@ -14921,7 +14929,7 @@ plugins:
         subs: [ 'The Great City of Solitude' ]
         condition: 'active("The Great City of Solitude.esp") and not active("CC_TGCS_Patch.esp")'
     clean:
-      - crc: 0xA69C30B9
+      - crc: 0x1C7037D9
         util: 'SSEEdit v4.0.3g'
       - crc: 0x529C0B5C
         util: 'SSEEdit v4.0.3g'
@@ -20326,8 +20334,8 @@ plugins:
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not checksum("meshes/dbm resources/jadeclaw.nif", 1396FEDA)'
     clean:
-      - crc: 0xEA82EAD9
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xE7EE25C3
+        util: 'SSEEdit v4.0.3g'
   ### Legacy of the Dragonborn Patches ###
   - name: 'DBM_*.\.esp'
     url:
