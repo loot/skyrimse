@@ -3155,7 +3155,9 @@ plugins:
           - '[Undeath - XPMSSE Skeleton Patch](https://www.nexusmods.com/skyrimspecialedition/mods/50694/)'
         condition: 'active("Undeath.esp") and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 8BBCBBDD)'
       - <<: *requiresMCM
-        condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
+        condition: 'file("scripts/XPMSEMCM.pex") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+      - <<: *requiresMCM_VR
+        condition: 'file("scripts/XPMSEMCM.pex") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
       - <<: *requiresResources
         subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skee64.dll** and **skse/plugins/skee64.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using Enhanced Character Edit or MCM Version of **XPMSE.esp**' ]
         condition: 'checksum("XPMSE.esp", 776BAB77) and not file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skee64.dll") or not file("skse/plugins/skee64.ini"))'
