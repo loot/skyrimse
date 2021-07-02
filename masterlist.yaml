@@ -3153,6 +3153,9 @@ plugins:
       - <<: *requiresResources
         subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skee64.dll** and **skse/plugins/skee64.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using EnhancedCharacterEdit.esp' ]
         condition: 'file("EnhancedCharacterEdit.esp") and not file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skee64.dll") or not file("skse/plugins/skee64.ini"))'
+      - <<: *requiresResources
+        subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skeevr.dll** and **skse/plugins/skeevr.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using EnhancedCharacterEdit.esp' ]
+        condition: 'file("EnhancedCharacterEdit.esp") and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
   - name: 'CinematicFireFX.esp'
