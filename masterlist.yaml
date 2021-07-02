@@ -3150,6 +3150,9 @@ plugins:
         condition: 'active("SkyrimVR.esm") and not checksum("meshes/actors/character/_1stperson/skeleton.nif", D3F2B285)'
       - <<: *requiresMCM
         condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
+      - <<: *requiresResources
+        subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **scripts/nioverride.pex** from **RaceMenu.BSA** and **skee dll + ini** when using EnhancedCharacterEdit.esp' ]
+        condition: 'file("EnhancedCharacterEdit.esp") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skee(64|VR)\.dll"))'
 
 ###### AudioVisual - Lighting ######
   - name: 'CinematicFireFX.esp'
