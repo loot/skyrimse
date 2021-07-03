@@ -14612,20 +14612,12 @@ plugins:
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/6180/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746/'
-    after:
-      - 'Enhanced Landscapes.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'MoonAndStar_MAS.esp'
+    after: [ 'MoonAndStar_MAS.esp' ]
     inc: [ 'AuroraVillage.esp' ]
     msg:
       - <<: *alsoUseX
         subs: [ '[Undeath Remastered - Facegen Data Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20046/)' ]
-        condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF")'
-      - <<: *sortMasters
-        condition: 'checksum("Undeath.esp", FDADED23)'
-      - <<: *wildEdits
-        subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
-        condition: 'checksum("Undeath.esp", 8D7A8440) or checksum("Undeath.esp", FDADED23)'
+        condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF") and not active("UndeathFixes.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Complete Alchemy & Cooking Overhaul'
@@ -14636,6 +14628,11 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Undeath Classical Lichdom](https://www.nexusmods.com/skyrimspecialedition/mods/40802/)' ]
         condition: 'not active("UndeathFixes.esp") and not file("Undeath Ascension.esp") and not file("Undeath Immersive Lichdom.esp") and not file("Tainted_Blood.esp")'
+      - <<: *sortMasters
+        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 103B1E2B) or checksum("Undeath.esp", B4C16D72) or checksum("Undeath.esp", B98E4E0A) or checksum("Undeath.esp", 7740C0F5)'
+      - <<: *wildEdits
+        subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
+        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 06E15812) or checksum("Undeath.esp", 8D7A8440)'
     tag:
       - Graphics
       - Relations.Add
@@ -14643,12 +14640,28 @@ plugins:
     dirty:
       - <<: *quickClean
         crc: 0xEB75A960
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 41
+      - <<: *quickClean
+        crc: 0x06E15812
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
       - <<: *quickClean
         crc: 0x103B1E2B
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 33
+      - <<: *quickClean
+        crc: 0xB02C0236
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 33
+      - <<: *quickClean
+        crc: 0x7740C0F5
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 39
+      - <<: *quickClean
+        crc: 0xBE0CF101
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 39
 
   - name: 'UndeathFixes.esp'
     url:
