@@ -14620,7 +14620,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '[Undeath Remastered - Facegen Data Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20046/)' ]
-        condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF")'
+        condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF") and not active("UndeathFixes.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Complete Alchemy & Cooking Overhaul'
