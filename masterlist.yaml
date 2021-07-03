@@ -14621,11 +14621,6 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[Undeath Remastered - Facegen Data Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20046/)' ]
         condition: 'not file("meshes/actors/character/FaceGenData/FaceGeom/Undeath.esp/000BB03A.NIF")'
-      - <<: *sortMasters
-        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 103B1E2B) or checksum("Undeath.esp", B4C16D72) or checksum("Undeath.esp", B98E4E0A) or checksum("Undeath.esp", 7740C0F5)'
-      - <<: *wildEdits
-        subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
-        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 06E15812) or checksum("Undeath.esp", 8D7A8440)'
       - <<: *patch3rdParty
         subs:
           - 'Complete Alchemy & Cooking Overhaul'
@@ -14636,6 +14631,11 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Undeath Classical Lichdom](https://www.nexusmods.com/skyrimspecialedition/mods/40802/)' ]
         condition: 'not active("UndeathFixes.esp") and not file("Undeath Ascension.esp") and not file("Undeath Immersive Lichdom.esp") and not file("Tainted_Blood.esp")'
+      - <<: *sortMasters
+        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 103B1E2B) or checksum("Undeath.esp", B4C16D72) or checksum("Undeath.esp", B98E4E0A) or checksum("Undeath.esp", 7740C0F5)'
+      - <<: *wildEdits
+        subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
+        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 06E15812) or checksum("Undeath.esp", 8D7A8440)'
     tag:
       - Graphics
       - Relations.Add
