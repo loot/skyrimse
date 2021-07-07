@@ -2620,11 +2620,7 @@ plugins:
       - 'Audio Overhaul Skyrim.esp'
       - 'Immersive Sounds - Compendium.esp'
     inc: [ 'dD - Enhanced Blood Main LITE.esp' ]
-    msg:
-      - <<: *includesMBBF
-      - <<: *patchIncluded
-        subs: [ 'SkyBirds' ]
-        condition: 'active("skyBirds_SSE.esp") and not active("EBT - skyBirds Patch.esp") and not active("EBT - skyBirds Patch (mid).esp") and not active("EBT - skyBirds Patch (short).esp")'
+    msg: [ <<: *includesMBBF ]
     clean:
       - crc: 0x70E9C0E7
         util: 'SSEEdit v4.0.3'
@@ -6884,14 +6880,6 @@ plugins:
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
 
-  - name: 'skyBirds_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2315/' ]
-    after: [ 'SkyTEST-RealisticAnimals&Predators.esp' ]
-    clean:
-      # version: 1.11
-      - crc: 0x08ABC53D
-        util: 'SSEEdit v4.0.0'
-
 ###### Environment, Landscape & Flora ######
   - name: 'Alpine Forest of Whiterun Valley.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18866/' ]
@@ -8742,7 +8730,6 @@ plugins:
 
   - name: 'Better Harvesting( (animal loot version))?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/522/' ]
-    after: [ 'skyBirds_SSE.esp' ]
   - name: 'Better Harvesting.esp'
     clean:
       - crc: 0x09BDE5B4
@@ -8851,7 +8838,6 @@ plugins:
 
   - name: 'HarvestOverhaul_Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
-    after: [ 'skyBirds_SSE.esp' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
