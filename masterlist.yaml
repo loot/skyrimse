@@ -8757,7 +8757,10 @@ plugins:
 
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
-    group: *craftingGroup
+    group: *alchemyOverhaulsGroup
+    after:
+      - 'Complete Crafting Overhaul_Remastered.esp'
+      - 'iNeed.esp'
     req:
       - *SKSE
       - *SKSE_VR
@@ -8768,19 +8771,10 @@ plugins:
       - 'HarvestOverhaul_Redone_Creatures.esp'
       - name: 'Paralyze.esp'
         display: 'Ragdoll Paralysis Redux SE'
-    after:
-      - 'BetterQuestObjectives.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'Complete Crafting Overhaul_Remastered.esp'
-      - 'Cutting Room Floor.esp'
-      - 'disparity.esp'
-      - 'Immersive Weapons.esp'
-      - 'iNeed.esp'
-      - 'Radiant and Unique Potions Poisons and Booze.esp'
-      - 'Skyrim Revamped - Complete Enemy Overhaul.esp'
-      - 'YOT - Your Own Thoughts.esp'
     tag:
+      - EffectStats
       - Keywords
+      - ObjectBounds
       - Text
     msg:
       - *requiresMCM
@@ -8792,24 +8786,13 @@ plugins:
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'iNeed'
-          - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301/)'
-        condition: 'active("iNeed.esp") and not active("iNeed CACO Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'iNeed - Dangerous Disease'
-          - '[ Be a Milk Drinker - iNeed CACO-Frostfall Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/15301/)'
-        condition: 'active("iNeed - Dangerous Diseases.esp") and not active("CACO - iNeed DD Patch.esp")'
       - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
         condition: 'version("Complete Alchemy & Cooking Overhaul.esp", "2.0", ==) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
     clean:
-      # version: 2.0.1
       - crc: 0x479F529D
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3h'
 
   - name: 'Complete Crafting Overhaul_Remade.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49791/' ]
