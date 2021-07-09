@@ -1664,12 +1664,16 @@ groups:
     after: [ *racesGroup ]
 
   - name: &craftingGroup Crafting
-    description: 'A group for modules that modify or expand crafting systems such as Alchemy, or Smithing.'
+    description: 'A group for modules that modify or expand crafting systems.'
     after: [ *economyGroup ]
+
+  - name: &alchemyOverhaulsGroup Alchemy Overhauls
+    description: 'A group for modules that overhaul the alchemy system.'
+    after: [ *craftingGroup ]
 
   - name: &perksGroup Skills & Perks
     description: 'A group for modules that modify or add new Skills and Perks.'
-    after: [ *craftingGroup ]
+    after: [ *alchemyOverhaulsGroup ]
 
   - name: &vampireGameplayGroup Vampire Gameplay Overhauls
     description: 'A group for modules that overhaul gameplay for Vampire player characters.'
