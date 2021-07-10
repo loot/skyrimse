@@ -2313,6 +2313,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29538/' ]
     after: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
     msg:
+      - <<: *alreadyInX
+        subs: [ 'Unofficial Skyrim Modder''s Patch' ]
+        condition: 'active("Unofficial Skyrim Modders Patch.esp") or active("Unofficial Skyrim Modders Patch VR.esp")'
       - <<: *patchProvided
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("ButterfliesUnchained - CACO Patch.esp") and not active("ButterfliesUnchained(ESL) - CACO Patch.esp")'
