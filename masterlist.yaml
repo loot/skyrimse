@@ -2915,9 +2915,9 @@ plugins:
       - type: say
         content:
           - lang: en
-            text: '%1% is known to include files from an older version of this mod.'
-        subs: [ 'SofiaFollower.bsa' ]
-        condition: 'checksum("SofiaFollower.bsa", 2F513E13)'
+            text: 'BSA known to include files from an older version of this mod. %1%'
+        subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
+        condition: 'checksum("SofiaFollower.bsa", 2F513E13) or checksum("ConfigureCommentaryRate.bsa", EF4CBA70) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F)'
     clean:
       - crc: 0x79ACE179
         util: 'SSEEdit v4.0.3'
