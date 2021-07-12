@@ -2906,6 +2906,18 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
         condition: 'file("SkyUI_SE.bsa") and not file("SkyrimVR.esm") and not file("interface/quest_journal.swf")'
+      - type: error
+        content:
+          - lang: en
+            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
+        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
+        condition: 'checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B) or checksum("SofiaFollower.bsa", 2F513E13) or checksum("ConfigureCommentaryRate.bsa", EF4CBA70) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F)'
+      - type: warn
+        content:
+          - lang: en
+            text: 'BSA known to include files from an older version of this mod. %1%'
+        subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
+        condition: 'checksum("SofiaFollower.bsa", 2F513E13) or checksum("ConfigureCommentaryRate.bsa", EF4CBA70) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F)'
     clean:
       - crc: 0x79ACE179
         util: 'SSEEdit v4.0.3'
@@ -6180,20 +6192,6 @@ plugins:
 
   - name: 'SofiaFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2180/' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
-          - lang: de
-            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
-          - lang: ja
-            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
-        subs:
-          - 'ski_playerloadgamealias.pex'
-          - 'Sofia Follower'
-          - '[SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)'
-        condition: '(file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)) or (checksum("SofiaFollower.bsa", 2F513E13))'
     clean:
       # version: 2.51
       - crc: 0xD87DD508
