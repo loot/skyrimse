@@ -2917,13 +2917,13 @@ plugins:
           - lang: en
             text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
         subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or checksum("ConfigureCommentaryRate.bsa", EF4CBA70) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
       - type: say
         content:
           - lang: en
             text: 'BSA known to include files from an older version of this mod. %1%'
         subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or checksum("ConfigureCommentaryRate.bsa", EF4CBA70) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
     clean:
       - crc: 0x79ACE179
         util: 'SSEEdit v4.0.3'
