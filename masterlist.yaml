@@ -9195,6 +9195,10 @@ plugins:
 
   - name: '(Skyrim Alchemy Fixed( - Ordinator)?|SAF for CACO)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2262/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Skyrim Alchemy Fixed Main File' ]
+        condition: 'many("(Skyrim Alchemy Fixed( - Ordinator)?|SAF for CACO)\.esp")'
     tag:
       - Delev
       - Keywords
@@ -9202,6 +9206,10 @@ plugins:
       - Text
   - name: 'Skyrim Alchemy Fixed( - Ordinator)?\.esp'
     inc: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
+    msg:
+      - <<: *useInstead
+        subs: [ 'SAF for CACO.esp' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp")'
   - name: 'Skyrim Alchemy Fixed.esp'
     clean:
       - crc: 0xBDAD3E6E
