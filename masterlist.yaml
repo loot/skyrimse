@@ -10835,6 +10835,17 @@ plugins:
       - crc: 0x12897011
         util: 'SSEEdit v4.0.0'
 
+###### Gameplay - NPC Balance & Distributiom ######
+  - name: 'SkyTEST-HarderCreatures.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/789/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_STHC_Patch.esp")'
+    clean:
+      # version: 1.08.01
+      - crc: 0x87290B79
+        util: 'SSEEdit v4.0.3'
+
 ###### Gameplay - NPC Behaviour & Dialogue ######
   - name: 'AI Overhaul.esp'
     url:
@@ -11256,16 +11267,6 @@ plugins:
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
       - crc: 0x1A2AC119
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
-
-  - name: 'SkyTEST-HarderCreatures.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/789/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_STHC_Patch.esp")'
-    clean:
-      # version: 1.08.01
-      - crc: 0x87290B79
-        util: 'SSEEdit v4.0.3'
 
   - name: 'TavernAIFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23107/' ]
