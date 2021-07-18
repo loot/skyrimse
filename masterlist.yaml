@@ -11230,18 +11230,32 @@ plugins:
       - 'SkyTEST-RealisticAnimalsBehaviors_LightVersion.esp'
       - 'SkyTEST-RealisticAnimals&Predators_ImAWussy.esp'
     tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Spells
+      - Actors.Stats
       - Delev
+      - Factions
+      - Keywords
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.Race
+      - R.ChangeSpells
+      - R.Stats
+      - Relations.Add
+      - Relations.Change
+      - Relations.Remove
       - Relev
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SkyTEST_Patch.esp")'
     clean:
-      # version: 1.65 No survival mode
-      - crc: 0xAE9687E1
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.65 CC Survival mode
-      - crc: 0x9F375906
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0xBC4325B9
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x1A2AC119
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'SkyTEST-HarderCreatures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/789/' ]
