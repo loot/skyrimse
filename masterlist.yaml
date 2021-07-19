@@ -8254,6 +8254,76 @@ plugins:
       - crc: 0xBFAFCD0B
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'Requiem.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19281/' ]
+    group: *perksGroup
+    inc:
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'PerkusMaximus_Mage.esp'
+      - 'PerkusMaximus_Master.esp'
+      - 'PerkusMaximus_Thief.esp'
+      - 'PerkusMaximus_Warrior.esp'
+      - 'PerkusMaximus_CombatPlus.esp'
+      - 'SkyRe_Main.esp'
+      - 'Requiem plus PCEA 3-5.esp'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
+          - lang: de
+            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
+          - lang: ja
+            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
+        subs:
+          - 'MineOreScript.pex'
+          - 'Requiem'
+          - 'Complete Crafting Overhaul Remastered'
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and file("Scripts/MineOreScript.pex")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
+      - Actors.RecordFlags
+      - Actors.Spells
+      - Actors.Stats
+      - Delev
+      - EffectStats
+      - EnchantmentStats
+      - Factions
+      - Graphics
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
+      - Keywords
+      - Names
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+      - R.AddSpells
+      - R.Description
+      - R.Skills
+      - R.Stats
+      - Relations.Add
+      - Relations.Change
+      - Relations.Remove
+      - Relev
+      - Sound
+      - SpellStats
+      - Stats
+      - Text
+  - name: 'Requiem Record Fixes.esm'
+    group: *fixesGroup
+  - name: 'Requiem for the Indifferent.esp'
+    group: *lateChangesGroup
+
   - name: 'Simple Magic Rebalance.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1982/' ]
     tag:
@@ -20556,45 +20626,6 @@ plugins:
     clean:
       - crc: 0x663FAB6A
         util: 'SSEEdit v4.0.3f'
-
-###### Requiem - The Roleplaying Overhaul ######
-  - name: 'Requiem.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19281/' ]
-    group: *perksGroup
-    inc:
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'PerkusMaximus_Mage.esp'
-      - 'PerkusMaximus_Master.esp'
-      - 'PerkusMaximus_Thief.esp'
-      - 'PerkusMaximus_Warrior.esp'
-      - 'PerkusMaximus_CombatPlus.esp'
-      - 'SkyRe_Main.esp'
-      - 'Requiem plus PCEA 3-5.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete %1% from %2%. %3%''s script must take precedence.'
-          - lang: de
-            text: 'Löschen Sie %1% von %2%. %3%''s Skript muss Vorrang haben.'
-          - lang: ja
-            text: '%2%の%1%は削除してください。%3%側のスクリプトを優先させる必要があります。'
-        subs:
-          - 'MineOreScript.pex'
-          - 'Requiem'
-          - 'Complete Crafting Overhaul Remastered'
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and file("Scripts/MineOreScript.pex")'
-    tag:
-      - Actors.ACBS
-      - Actors.AIPackages
-      - Actors.Stats
-      - Keywords
-      - NPC.Class
-      - Text
-  - name: 'Requiem Records Fix.esp'
-    group: *fixesGroup
-  - name: 'Requiem for the Indifferent.esp'
-    group: *lateChangesGroup
 
 ###### 3RD Party Patches ######
   - name: 'Andromeda - Simply Knock Patch.esp'
