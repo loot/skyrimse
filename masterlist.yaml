@@ -3209,22 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: 'ENB Light.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574/' ]
-    after:
-      - 'ELE_SSE.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    req:
-      - name: '../d3d11.dll'
-        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
-    msg:
-      - <<: *requiresResources
-        subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
-        condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
-    tag: [ Graphics ]
-
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
     after: [ 'RS_NoPlayerHomes.esp' ]
@@ -4466,6 +4450,22 @@ plugins:
     req:
       - name: 'RLO - Interiors.esp'
         condition: 'not file("Realistic Lighting Overhaul - Major City Interiors.esp")'
+
+  - name: 'ENB Light.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574/' ]
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    req:
+      - name: '../d3d11.dll'
+        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    tag: [ Graphics ]
+    msg:
+      - <<: *requiresResources
+        subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
+        condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
 
   - name:  'mintylightningmod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8778/' ]
