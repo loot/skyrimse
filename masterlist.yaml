@@ -3209,155 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: '(EnhancedLightsandFX|ELFX - ).*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
-  - name: 'EnhancedLightsandFX.esp'
-    inc:
-      - 'RelightingSkyrim_SSE.esp'
-      - 'RLO - Exteriors.esp'
-    after:
-      - name: '3DNPC.esp'
-        condition: '(is_master("3DNPC.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("3DNPC.esp") and not is_master("EnhancedLightsandFX.esp"))'
-      - name: 'SMIM-SE.esp'
-        condition: '(is_master("SMIM-SE.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE.esp") and not is_master("EnhancedLightsandFX.esp"))'
-      - name: 'SMIM-SE-Merged-All.esp'
-        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Enhanced Lighting for ENB'
-          - '[ELE - ELFX Consistency Patch and Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/18634/)'
-        condition: 'active("ELE_SSE.esp") and not active("ELE-ELFX Patch AIO.esp") and not active("ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources)\.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *patchUpdateAvailable
-        subs: [ '[ELFX Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/25498/)' ]
-        condition: 'not active("ELFX Fixes.esp") and not active("ELFX with Shadows.esp")'
-    tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
-      - C.Water
-      - Graphics
-      - Invent.Remove
-      - ObjectBounds
-      - Stats
-    dirty:
-      - <<: *quickClean
-        crc: 0xDD00738B
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-  - name: 'ELFX - Exteriors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26327/'
-        name: 'ELFX - Exteriors Fixes'
-    group: *earlyLoadersGroup
-    after:
-      - name: 'AK - Placeable Statics SE.esp'
-        condition: '(is_master("AK - Placeable Statics SE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("AK - Placeable Statics SE.esp") and not is_master("ELFX - Exteriors.esp"))'
-      - name: 'Blowing in the Wind SSE.esp'
-        condition: '(is_master("Blowing in the Wind SSE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Blowing in the Wind SSE.esp") and not is_master("ELFX - Exteriors.esp"))'
-      - name: 'SMIM-SE-Merged-All.esp'
-        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("ELFX - Exteriors.esp"))'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Cities'
-          - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265/)'
-        condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *patchUpdateAvailable
-        subs: [ '[ELFX - Exteriors Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26327/)' ]
-        condition: 'checksum("ELFX - Exteriors.esp", 9B390393)'
-    tag: [ Invent.Remove ]
-    clean:
-      - crc: 0x9B390393
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoBreezehome.esp'
-    clean:
-      - crc: 0x16B967BB
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoHjerim.esp'
-    clean:
-      - crc: 0xEFC3B86E
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoHoneyside.esp'
-    clean:
-      - crc: 0x636D8DC1
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoProudspireManor.esp'
-    clean:
-      - crc: 0x378FA7EE
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoSeverinManor.esp'
-    clean:
-      - crc: 0x328328C8
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoVlindrelHall.esp'
-    clean:
-      - crc: 0xB88AC75D
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoPlayerHomes.esp'
-    inc:
-      - 'ELFX - NoBreezehome.esp'
-      - 'ELFX - NoHjerim.esp'
-      - 'ELFX - NoHoneyside.esp'
-      - 'ELFX - NoProudspireManor.esp'
-      - 'ELFX - NoSeverinManor.esp'
-      - 'ELFX - NoVlindrelHall.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x181ECD13
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 1
-  - name: 'ELFX - Weathers.esp'
-    group: *earlyLoadersGroup
-    after: [ 'Audio Overhaul Skyrim.esp' ]
-    tag:
-      - Graphics
-      - Sound
-    clean:
-      - crc: 0x0F02A920
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFXEnhancer.esp'
-    group: *lightingEnhancerGroup
-    inc:
-      - 'ELE_SSE.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    tag:
-      - C.ImageSpace
-      - C.Light
-      - C.Water
-    clean:
-      - crc: 0x06339952
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - Hardcore.esp'
-    group: *lightingEnhancerGroup
-    inc:
-      - 'ELE_SSE.esp'
-      - 'ELFXEnhancer.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Alternate Start - Live Another Life'
-          - '[ELFX Hardcore - Alternate Start Void Fix](https://www.nexusmods.com/skyrimspecialedition/mods/34941) **OR** [LiveAnotherLife - ELFX Hardcore Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38543/)'
-        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Alternate Start ELFX Fix.esp") and not active("LiveAnotherLife - ELFX Hardcore.esp")'
-    tag:
-      - C.ImageSpace
-      - C.Light
-      - C.Water
-      - Graphics
-    clean:
-      - crc: 0x5ECC3509
-        util: 'SSEEdit v4.0.3'
-
   - name: 'ELFX Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25498/' ]
     after: [ 'Skysan_ELFX_SMIM_Fix.esp' ]
@@ -4465,6 +4316,155 @@ plugins:
     group: *earlyLoadersGroup
     clean:
       - crc: 0x87498763
+        util: 'SSEEdit v4.0.3'
+
+  - name: '(ELFX|EnhancedLightsandFX).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
+        name: 'Enhanced Lights and FX'
+  - name: 'EnhancedLightsandFX.esp'
+    inc:
+      - 'RelightingSkyrim_SSE.esp'
+      - 'RLO - Exteriors.esp'
+    after:
+      - name: '3DNPC.esp'
+        condition: '(is_master("3DNPC.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("3DNPC.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'SMIM-SE.esp'
+        condition: '(is_master("SMIM-SE.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'SMIM-SE-Merged-All.esp'
+        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lighting for ENB'
+          - '[ELE - ELFX Consistency Patch and Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/18634/)'
+        condition: 'active("ELE_SSE.esp") and not active("ELE-ELFX Patch AIO.esp") and not active("ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources)\.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/25498/)' ]
+        condition: 'not active("ELFX Fixes.esp") and not active("ELFX with Shadows.esp")'
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+      - Graphics
+      - Invent.Remove
+      - ObjectBounds
+      - Stats
+    dirty:
+      - <<: *quickClean
+        crc: 0xDD00738B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'ELFXEnhancer.esp'
+    group: *lightingEnhancerGroup
+    inc:
+      - 'ELE_SSE.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+    clean:
+      - crc: 0x06339952
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - Hardcore.esp'
+    group: *lightingEnhancerGroup
+    inc:
+      - 'ELE_SSE.esp'
+      - 'ELFXEnhancer.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[ELFX Hardcore - Alternate Start Void Fix](https://www.nexusmods.com/skyrimspecialedition/mods/34941) **OR** [LiveAnotherLife - ELFX Hardcore Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38543/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Alternate Start ELFX Fix.esp") and not active("LiveAnotherLife - ELFX Hardcore.esp")'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+      - Graphics
+    clean:
+      - crc: 0x5ECC3509
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - Exteriors.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26327/'
+        name: 'ELFX - Exteriors Fixes'
+    group: *earlyLoadersGroup
+    after:
+      - name: 'AK - Placeable Statics SE.esp'
+        condition: '(is_master("AK - Placeable Statics SE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("AK - Placeable Statics SE.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'Blowing in the Wind SSE.esp'
+        condition: '(is_master("Blowing in the Wind SSE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Blowing in the Wind SSE.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'SMIM-SE-Merged-All.esp'
+        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("ELFX - Exteriors.esp"))'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities'
+          - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265/)'
+        condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX - Exteriors Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26327/)' ]
+        condition: 'checksum("ELFX - Exteriors.esp", 9B390393)'
+    tag: [ Invent.Remove ]
+    clean:
+      - crc: 0x9B390393
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - Weathers.esp'
+    group: *earlyLoadersGroup
+    after: [ 'Audio Overhaul Skyrim.esp' ]
+    tag:
+      - Graphics
+      - Sound
+    clean:
+      - crc: 0x0F02A920
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoPlayerHomes.esp'
+    inc:
+      - 'ELFX - NoBreezehome.esp'
+      - 'ELFX - NoHjerim.esp'
+      - 'ELFX - NoHoneyside.esp'
+      - 'ELFX - NoProudspireManor.esp'
+      - 'ELFX - NoSeverinManor.esp'
+      - 'ELFX - NoVlindrelHall.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x181ECD13
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 1
+  - name: 'ELFX - NoBreezehome.esp'
+    clean:
+      - crc: 0x16B967BB
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoHjerim.esp'
+    clean:
+      - crc: 0xEFC3B86E
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoHoneyside.esp'
+    clean:
+      - crc: 0x636D8DC1
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoProudspireManor.esp'
+    clean:
+      - crc: 0x378FA7EE
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoSeverinManor.esp'
+    clean:
+      - crc: 0x328328C8
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoVlindrelHall.esp'
+    clean:
+      - crc: 0xB88AC75D
         util: 'SSEEdit v4.0.3'
 
   - name:  'mintylightningmod.esp'
