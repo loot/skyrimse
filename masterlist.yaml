@@ -3209,31 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: 'RelightingSkyrim_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
-    inc:
-      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
-      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
-      - 'EnhancedLightsandFX.esp'
-      - name: 'ImprovedHearthfireLighting.esp'
-        condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-      - 'RealisticRoomRental.esp'
-      - 'RLO - Exteriors.esp'
-      - 'torch shadows.esp'
-    msg:
-      - <<: *useVersion
-        subs: [ 'Window Shadows' ]
-        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
-    dirty:
-      - <<: *quickClean
-        crc: 0x689F6CE0
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-      - <<: *quickClean
-        crc: 0xDFB3B05E
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-
   - name: 'RS_NoPlayerHomes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
@@ -4631,6 +4606,31 @@ plugins:
     clean:
       - crc: 0xEEB73A63
         util: 'SSEEdit v4.0.3'
+
+  - name: 'RelightingSkyrim_SSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
+      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+      - 'EnhancedLightsandFX.esp'
+      - name: 'ImprovedHearthfireLighting.esp'
+        condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
+      - 'RealisticRoomRental.esp'
+      - 'RLO - Exteriors.esp'
+      - 'torch shadows.esp'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Window Shadows' ]
+        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
+    dirty:
+      - <<: *quickClean
+        crc: 0x689F6CE0
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      - <<: *quickClean
+        crc: 0xDFB3B05E
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
   - name: 'Rustic Weathers And Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8398/' ]
