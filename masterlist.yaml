@@ -3208,780 +3208,6 @@ plugins:
         subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skeevr.dll** and **skse/plugins/skeevr.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using Enhanced Character Edit or MCM Version of **XPMSE.esp**' ]
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
-###### AudioVisual - Lighting ######
-  - name: 'CinematicFireFX.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
-    inc: [ 'NAT.esp' ]
-    clean:
-      - crc: 0x4CF60EE4
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'CRF - Lighting Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5732/' ]
-    clean:
-      - crc: 0x59766837
-        util: 'SSEEdit v4.0.3'
-
-  - name: '(EnhancedLightsandFX|ELFX - ).*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
-        name: 'Enhanced Lights and FX'
-  - name: 'EnhancedLightsandFX.esp'
-    inc:
-      - 'RelightingSkyrim_SSE.esp'
-      - 'RLO - Exteriors.esp'
-    after:
-      - name: '3DNPC.esp'
-        condition: '(is_master("3DNPC.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("3DNPC.esp") and not is_master("EnhancedLightsandFX.esp"))'
-      - name: 'SMIM-SE.esp'
-        condition: '(is_master("SMIM-SE.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE.esp") and not is_master("EnhancedLightsandFX.esp"))'
-      - name: 'SMIM-SE-Merged-All.esp'
-        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Enhanced Lighting for ENB'
-          - '[ELE - ELFX Consistency Patch and Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/18634/)'
-        condition: 'active("ELE_SSE.esp") and not active("ELE-ELFX Patch AIO.esp") and not active("ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources)\.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *patchUpdateAvailable
-        subs: [ '[ELFX Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/25498/)' ]
-        condition: 'not active("ELFX Fixes.esp") and not active("ELFX with Shadows.esp")'
-    tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
-      - C.Water
-      - Graphics
-      - Invent.Remove
-      - ObjectBounds
-      - Stats
-    dirty:
-      - <<: *quickClean
-        crc: 0xDD00738B
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-  - name: 'ELFX - Exteriors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26327/'
-        name: 'ELFX - Exteriors Fixes'
-    group: *earlyLoadersGroup
-    after:
-      - name: 'AK - Placeable Statics SE.esp'
-        condition: '(is_master("AK - Placeable Statics SE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("AK - Placeable Statics SE.esp") and not is_master("ELFX - Exteriors.esp"))'
-      - name: 'Blowing in the Wind SSE.esp'
-        condition: '(is_master("Blowing in the Wind SSE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Blowing in the Wind SSE.esp") and not is_master("ELFX - Exteriors.esp"))'
-      - name: 'SMIM-SE-Merged-All.esp'
-        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("ELFX - Exteriors.esp"))'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Cities'
-          - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265/)'
-        condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *patchUpdateAvailable
-        subs: [ '[ELFX - Exteriors Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26327/)' ]
-        condition: 'checksum("ELFX - Exteriors.esp", 9B390393)'
-    tag: [ Invent.Remove ]
-    clean:
-      - crc: 0x9B390393
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoBreezehome.esp'
-    clean:
-      - crc: 0x16B967BB
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoHjerim.esp'
-    clean:
-      - crc: 0xEFC3B86E
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoHoneyside.esp'
-    clean:
-      - crc: 0x636D8DC1
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoProudspireManor.esp'
-    clean:
-      - crc: 0x378FA7EE
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoSeverinManor.esp'
-    clean:
-      - crc: 0x328328C8
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoVlindrelHall.esp'
-    clean:
-      - crc: 0xB88AC75D
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - NoPlayerHomes.esp'
-    inc:
-      - 'ELFX - NoBreezehome.esp'
-      - 'ELFX - NoHjerim.esp'
-      - 'ELFX - NoHoneyside.esp'
-      - 'ELFX - NoProudspireManor.esp'
-      - 'ELFX - NoSeverinManor.esp'
-      - 'ELFX - NoVlindrelHall.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x181ECD13
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 1
-  - name: 'ELFX - Weathers.esp'
-    group: *earlyLoadersGroup
-    after: [ 'Audio Overhaul Skyrim.esp' ]
-    tag:
-      - Graphics
-      - Sound
-    clean:
-      - crc: 0x0F02A920
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFXEnhancer.esp'
-    group: *lightingEnhancerGroup
-    inc:
-      - 'ELE_SSE.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    tag:
-      - C.ImageSpace
-      - C.Light
-      - C.Water
-    clean:
-      - crc: 0x06339952
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX - Hardcore.esp'
-    group: *lightingEnhancerGroup
-    inc:
-      - 'ELE_SSE.esp'
-      - 'ELFXEnhancer.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Alternate Start - Live Another Life'
-          - '[ELFX Hardcore - Alternate Start Void Fix](https://www.nexusmods.com/skyrimspecialedition/mods/34941) **OR** [LiveAnotherLife - ELFX Hardcore Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38543/)'
-        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Alternate Start ELFX Fix.esp") and not active("LiveAnotherLife - ELFX Hardcore.esp")'
-    tag:
-      - C.ImageSpace
-      - C.Light
-      - C.Water
-      - Graphics
-    clean:
-      - crc: 0x5ECC3509
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'ELFX Fixes.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25498/' ]
-    after: [ 'Skysan_ELFX_SMIM_Fix.esp' ]
-    tag:
-      - C.Light
-      - C.Water
-    clean:
-      - crc: 0xDFEDB8EC
-        util: 'SSEEdit v4.0.3'
-  - name: 'ELFX Fixes Ragged Flagon Fix.esp'
-    after:
-      - 'ELE_SSE.esp'
-      - 'ELFXEnhancer.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'ELFX Fixes.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-      - 'RealisticWaterTwo.esp'
-      - 'WSEnhancer.esp'
-    tag:
-      - C.Light
-      - C.Water
-    clean:
-      - crc: 0x246FBB30
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'ELE_SSE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
-        name: 'Enhanced Lighting for ENB'
-    group: *lightingEnhancerGroup
-    inc:
-      - 'ELFXEnhancer.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    tag:
-      - C.ImageSpace
-      - C.Light
-    clean:
-      - crc: 0x92A4011D
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'EmbersHD.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368/' ]
-    after: [ 'CinematicFireFX.esp' ]
-    clean:
-      - crc: 0x68222B4D
-        util: 'SSEEdit v4.0.3'
-  - name: 'EmbersHD - RLO Patch.esp'
-    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
-    # doNotClean
-    req:
-      - name: 'RLO - Interiors.esp'
-        condition: 'not file("Realistic Lighting Overhaul - Major City Interiors.esp")'
-
-  - name: 'ENB Light.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574/' ]
-    after:
-      - 'ELE_SSE.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RLO - Interiors.esp'
-    req:
-      - name: '../d3d11.dll'
-        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
-    msg:
-      - <<: *requiresResources
-        subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
-        condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
-    tag: [ Graphics ]
-
-  - name: 'ImprovedHearthfireLighting.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
-    after: [ 'RS_NoPlayerHomes.esp' ]
-    clean:
-      - crc: 0xA71A75BB
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'JBMod.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7535/'
-        name: 'Dungeon Darkness SE'
-    clean:
-      - crc: 0xC1A55CC1
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'Lanterns Of Skyrim - All In One - Main.esm'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2429/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/23378/'
-    group: *earlyLoadersGroup
-    clean:
-      - crc: 0xEB94B5F8
-        util: 'SSEEdit v4.0.3'
-      # MCM Original
-      - crc: 0x272D7339
-        util: 'SSEEdit v4.0.3'
-      # MCM Tweaked Normal
-      - crc: 0xABE89712
-        util: 'SSEEdit v4.0.3'
-      # MCM Tweaked Brighter
-      - crc: 0x93C29074
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'Lanterns Of Skyrim II.esm'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30817/' ]
-    inc:
-      - 'Blowing in the Wind SSE.esp'
-      - 'CLARALUX SSE.esp'
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Blackthorn - A Buildable Town in The Rift' ]
-        condition: 'active("BlackthornManor.esp") and not active("LoS II - BlackthornManor patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Books of Skyrim' ]
-        condition: 'active("BooksOfSkyrim.esp") and not active("LoS II - Book of Skyrim patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Skyrim Bruma' ]
-        condition: 'active("BSHeartland.esm") and not active("LoS II - Bruma patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'City Entrance Overhaul - Windhelm' ]
-        condition: 'active("WindhelmEntranceOverhaul.esp") and not active("LoS II - CEO Windhelm patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("LoS II - CRF patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Camp Argentum' ]
-        condition: 'active("CampArgentum.esp") and not active("LoS II - Camp Argentum patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Camp Varglya' ]
-        condition: 'active("CampVarglya.esp") and not active("LoS II - Camp Varglya patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Convenient Bridges' ]
-        condition: 'active("Convenient Bridges.esp") and not active("LoS II - Convenient Bridges patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Darkwater Crossing' ]
-        condition: 'active("Darkwater Crossing.esp") and not active("LoS II - Darkwater Crossing patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Dragon Bridge' ]
-        condition: 'active("Dragon Bridge.esp") and not active("LoS II - Dragon Bridge patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Expanded Towns and Cities' ]
-        condition: 'active("ETaC - Complete.esp") and not active("LoS II - ETaC patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Eli''s Breezehome' ]
-        condition: 'active("Eli_Breezehome.esp") and not active("LoS II - Eli''s Breezehome patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Eli''s Riverwood Shack' ]
-        condition: 'active("Eli_RiverwoodShack.esp") and not active("LoS II - Eli''s Riverwood Shack patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Enhanced Solitude SSE' ]
-        condition: 'active("Enhanced Solitude SSE.esp") and not active("LoS II - Enhanced Solitude SSE patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Falkreath' ]
-        condition: 'active("Falkreath.esp") and not active("LoS II - Falkreath patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Helarchen Creek' ]
-        condition: 'active("Helarchen Creek.esp") and not active("LoS II - Helarchen Creek patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Ivarstead' ]
-        condition: 'active("Ivarstead.esp") and not active("LoS II - Ivarstead patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'JK''s Riverwood' ]
-        condition: 'active("JKs Riverwood.esp") and not active("LoS II - JKs Riverwood patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'JK''s Skyrim' ]
-        condition: 'active("JKs Skyrim.esp") and not active("LoS II - JKs Skyrim patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Karthwasten' ]
-        condition: 'active("Karthwasten.esp") and not active("LoS II - Karthwasten patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Kynesgrove' ]
-        condition: 'active("Kynesgrove.esp") and not active("LoS II - Kynesgrove patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Legacy of the Dragonborn' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("LoS II - LotD patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Midwood Isle' ]
-        condition: 'active("Midwood Isle.esp") and not active("LoS II - Midwood Isle patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Northern Marsh Bridges' ]
-        condition: 'active("Northern Marsh Bridges SE.esp") and not active("LoS II - Northern Marsh Bridges patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Oakwood' ]
-        condition: 'active("Oakwood.esp") and not active("LoS II - Oakwood patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Old Hroldan Ruins' ]
-        condition: 'active("OldHroldanRuins.esp") and not active("LoS II - Old Hroldan Ruins patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Overstead' ]
-        condition: 'active("Overstead.esp") and not active("LoS II - Overstead SE patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Run of the Mill Inn' ]
-        condition: 'active("Run_of_the_Mill_Inn.esp") and not active("LoS II - Run of the Mill Inn patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Static Mesh Improvement Mod' ]
-        condition: 'active("SMIM-SE-Merged-All.esp") and not active("LoS II - SMIM patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Settlements Expanded' ]
-        condition: 'active("Settlements Expanded SE.esp") and not active("LoS II - Settlements Expanded patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Skyrim Bridges' ]
-        condition: 'active("Skyrim Bridges.esp") and not active("LoS II - Skyrim Bridges patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Solitude Docks' ]
-        condition: 'active("Solitude Docks.esp") and not active("LoS II - Solitude Docks patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Solitude Expansion' ]
-        condition: 'active("Solitude Expansion.esp") and not active("LoS II - Solitude Expansion patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Soljund''s Sinkhole' ]
-        condition: 'active("Soljund''s Sinkhole.esp") and not active("LoS II - Soljund''s Skinkhole patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Telengard' ]
-        condition: 'active("Telengard.esp") and not active("LoS II - Telengard patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The Fall of Granite Hill' ]
-        condition: 'active("The Fall of Granite Hill.esp") and not active("LoS II - The Fall of Granite Hill patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Weathered Road Signs' ]
-        condition: 'active("Weathered Road Signs.esp") and not active("LoS II - Weathered Road Signs patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Whistling Mine' ]
-        condition: 'active("Whistling Mine.esp") and not active("LoS II - Whistling Mine patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA3E4DDC5
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 9
-  - name: 'LoS II - Lantern Workers.esp'
-    tag: [ C.Location ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x64F4E73F
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 25
-  - name: 'LoS II - Tamriel Master Lights.esp'
-    after:
-      - 'ELFX Fixes.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Skysan_ELFX_SMIM_Fix.esp'
-    inc:
-      - 'CLARALUX SSE.esp'
-      - 'ELFX - Exteriors.esp'
-      - 'RelightingSkyrim_SSE.esp'
-      - 'RLO - Exteriors.esp'
-    tag:
-      - C.Climate
-      - Delev
-      - Graphics
-      - Invent.Remove
-    dirty:
-      - <<: *quickClean
-        crc: 0x7D322CBC
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-      - <<: *quickClean
-        crc: 0xE56C6EB6
-        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-
-  - name: 'Luminosity Lighting Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830/' ]
-    group: *lightingEnhancerGroup
-    inc:
-      - 'ELE_SSE.esp'
-      - 'ELFXEnhancer.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'RLO - Interiors.esp'
-    tag: [ C.Light ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x9D08DEBF
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-      - <<: *quickClean
-        crc: 0x779942E9
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-  - name: 'Luminosity - Lightweight Lighting.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830/' ]
-    msg: [ *obsolete ]
-
-  - name: 'Lux.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43158/' ]
-    group: *interiorLightingGroup
-    tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
-      - C.Location
-      - C.Water
-    dirty:
-      - <<: *quickClean
-        crc: 0xB0F9620D
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 40
-  # Lux - Compatibility Patches
-  - name: 'Lux - Breezehome by Lupus patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x2CA088B5
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-        udr: 53
-  - name: 'Lux - COTN (Dawnstar|Morthal|Winterhold) patch\.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag: [ C.Light ]
-  - name: 'Lux - JK''s Bee and Barb patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x308F8E7F
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-        udr: 1
-  - name: 'Lux - JK''s Palace of Kings patch.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - JK''s Sadris Used Wares patch.esp'
-    req: [ 'JK''s Sadris Used Wares.esp' ]
-  - name: 'Lux - Legacy of the Dragonborn patch.esp'
-    tag:
-      - C.Climate
-      - C.Light
-      - C.ImageSpace
-      - C.Water
-  - name: 'Lux - Great Village of (Ivarstead|Karthwasten|Kynesgrove|Mixwater Mill|Old Hroldan|Shor''s Stone) patch\.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - Great Village of Old Hroldan patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-  - name: 'Lux - OCW College.esp'
-    after: [ 'OCW_CellSettings.esp' ]
-    tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
-    dirty:
-      - <<: *quickClean
-        crc: 0xC1493431
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-        udr: 9
-  - name: 'Lux - RedBag''s Solitude patch.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - Rodryk''s Dragonbridge patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag:
-      - C.Climate
-      - C.Light
-  - name: 'Lux - SoS compatibility patch.esp'
-    after:
-      - 'Lux - BleakFalls Barrow patch.esp'
-      - 'Lux - Blue Palace Terrace patch 3.esp'
-      - 'Lux - Breezehome by Lupus patch.esp'
-      - 'Lux - Crimson Blood Armor patch.esp'
-      - 'Lux - Distinct Interiors patch.esp'
-      - 'Lux - Distinct Silver Blood inn patch.esp'
-      - 'Lux - Embershard Mine patch.esp'
-      - 'Lux - Halted Stream Camp patch.esp'
-      - 'Lux - HSTNF compatibility patch.esp'
-      - 'Lux - JK''s Angelines Aromatics patch.esp'
-      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
-      - 'Lux - JK''s Bannered Mare patch.esp'
-      - 'Lux - JK''s Bee and Barb patch.esp'
-      - 'Lux - JK''s Belethor''s General Goods patch.esp'
-      - 'Lux - JK''s Bits and Pieces patch.esp'
-      - 'Lux - JK''s Blue Palace patch.esp'
-      - 'Lux - JK''s Dragonsreach patch.esp'
-      - 'Lux - JK''s Drunken Huntsman patch.esp'
-      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
-      - 'Lux - JK''s Radiant Raiment patch.esp'
-      - 'Lux - JK''s Sadris Used Wares patch.esp'
-      - 'Lux - JK''s Sleeping Giant inn patch.esp'
-      - 'Lux - JK''s Warmaidens patch.esp'
-      - 'Lux - Mara Valentine patch.esp'
-      - 'Lux - RedBag''s Solitude patch.esp'
-      - 'Lux - Silver Blood inn overhaul.esp'
-      - 'Lux - Steepfall Burrow patch.esp'
-      - 'Lux - Ustengrav Revisited patch.esp'
-      - 'Lux - WhiteRiver Watch patch.esp'
-  - name: 'Lux - The Great Cities - Minor Cities and Towns patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag: [ C.Light ]
-  - name: 'Lux - The Great City of (Dawnstar|Falkreath|Winterhold) patch\.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - WhiteRiver Watch patch.esp'
-    tag: [ C.Light ]
-  # Lux - Language Packs
-  - name: 'Lux FR.esp'
-    after:
-      - 'Lux - BleakFalls Barrow patch.esp'
-      - 'Lux - Blue Palace Terrace patch 3.esp'
-      - 'Lux - Breezehome by Lupus patch.esp'
-      - 'Lux - Crimson Blood Armor patch.esp'
-      - 'Lux - Distinct Interiors patch.esp'
-      - 'Lux - Distinct Silver Blood inn patch.esp'
-      - 'Lux - Embershard Mine patch.esp'
-      - 'Lux - Halted Stream Camp patch.esp'
-      - 'Lux - HSTNF compatibility patch.esp'
-      - 'Lux - JK''s Angelines Aromatics patch.esp'
-      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
-      - 'Lux - JK''s Bannered Mare patch.esp'
-      - 'Lux - JK''s Bee and Barb patch.esp'
-      - 'Lux - JK''s Belethor''s General Goods patch.esp'
-      - 'Lux - JK''s Bits and Pieces patch.esp'
-      - 'Lux - JK''s Blue Palace patch.esp'
-      - 'Lux - JK''s Dragonsreach patch.esp'
-      - 'Lux - JK''s Drunken Huntsman patch.esp'
-      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
-      - 'Lux - JK''s Radiant Raiment patch.esp'
-      - 'Lux - JK''s Sadris Used Wares patch.esp'
-      - 'Lux - JK''s Sleeping Giant inn patch.esp'
-      - 'Lux - JK''s Warmaidens patch.esp'
-      - 'Lux - Mara Valentine patch.esp'
-      - 'Lux - RedBag''s Solitude patch.esp'
-      - 'Lux - Silver Blood inn overhaul.esp'
-      - 'Lux - SoS compatibility patch.esp'
-      - 'Lux - Steepfall Burrow patch.esp'
-      - 'Lux - Ustengrav Revisited patch.esp'
-      - 'Lux - WhiteRiver Watch patch.esp'
-    tag: [ C.Name ]
-  - name: 'Lux - SoS compatibility patch FR.esp'
-    after:
-      - 'Lux - SoS compatibility patch.esp'
-      - 'Lux FR.esp'
-  # Lux - Optional Content
-  - name: 'Lux - Mara Valentine patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-  - name: 'Lux - Silver Blood inn overhaul.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-  - name: 'Lux - Silver Blood inn AIOverhaul patch.esp'
-    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
-  - name: 'Lux - Distinct Silver Blood inn patch.esp'
-    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
-  - name: 'Lux - Understone Keep overhaul.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag: [ C.Light ]
-  - name: 'Great City of JK''s Redbag Solitude patch.esp'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0x489C561F
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 14
-
-  - name: 'RedbellyMineMistFix.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21715/' ]
-    after:
-      - 'ELE_SSE.esp'
-      - 'ELFX - Hardcore.esp'
-      - 'ELFXEnhancer.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Luminosity Lighting Overhaul.esp'
-      - 'RelightingSkyrim_SSE.esp'
-      - 'RLO - Interiors.esp'
-      - 'WSEnhancer.esp'
-      - 'WSEnhancerCW.esp'
-    clean:
-      - crc: 0xEEB73A63
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'RelightingSkyrim_SSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
-    inc:
-      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
-      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
-      - 'EnhancedLightsandFX.esp'
-      - name: 'ImprovedHearthfireLighting.esp'
-        condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-      - 'RealisticRoomRental.esp'
-      - 'RLO - Exteriors.esp'
-      - 'torch shadows.esp'
-    msg:
-      - <<: *useVersion
-        subs: [ 'Window Shadows' ]
-        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
-    dirty:
-      - <<: *quickClean
-        crc: 0x689F6CE0
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-      - <<: *quickClean
-        crc: 0xDFB3B05E
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-
-  - name: 'RS_NoPlayerHomes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
-        name: 'Relighting Skyrim SSE - No Player Homes'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42280/'
-        name: 'Relighting Skyrim SSE - No Player Homes (Updated)'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Relighting Skyrim SSE - No Player Homes (Updated)](https://www.nexusmods.com/skyrimspecialedition/mods/42280/)' ]
-        condition: 'not version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA9D66DE5
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 43
-    clean:
-      - crc: 0x3FB3393E
-        util: 'SSEEdit v4.0.3'
-
-  - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
-  - name: 'RLO - Effects.esp'
-    clean:
-      - crc: 0x1FD6BDD7
-        util: 'SSEEdit v4.0.3g'
-  - name: 'RLO - Exteriors.esp'
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'JK''s Riverwood' ]
-        condition: 'active("JK''s Riverwood.esp") and not active("RLO - JK''s Riverwood.esp")'
-      - <<: *patchIncluded
-        subs: [ 'JK''s Whiterun' ]
-        condition: 'active("JKs Whiterun.esp") and not active("RLO - JK''s Whiterun.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x0F92CA19
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-  - name: 'RLO - Illuminated Spells.esp'
-    after: [ 'RLO - Interiors.esp' ]
-    clean:
-      - crc: 0x4D6D9B00
-        util: 'SSEEdit v4.0.3g'
-  - name: 'RLO - Interiors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40520/'
-        name: 'RLO Interiors - No modified lights sources'
-    group: *interiorLightingGroup
-    after:
-      - name: 'Lux.esp'
-        condition: 'version("RLO - Interiors.esp", "5.0.4", >=)'
-    inc:
-      - name: 'EnhancedLightsandFX.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - name: 'Lux.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - name: 'RelightingSkyrim_SSE.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-    tag:
-      - C.ImageSpace
-      - C.Light
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - <<: *patchIncluded
-        subs: [ 'Immersive Citizens - AI Overhaul' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
-    clean:
-      - crc: 0xA2034302
-        util: 'SSEEdit v4.0.3g'
-      - crc: 0xC9899199
-        util: 'SSEEdit v4.0.3g'
-  # RLO v5 patches
-  - name: 'RLO - IC Patch.esp'
-    msg:
-      - <<: *wildEdits
-        subs: [ 'Remove records **0000B498**, **0001DB52**, **000252CD**, **0001A270** & **0001A26F** from RLO - IC Patch.esp. Blocks Open Cities Skyrim, Immersive Citizens and ICAIO OCS Patch changes.' ]
-        condition: 'checksum("RLO - IC Patch.esp", E13269D4)'
-  # RLO 4.1.1
-  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-  - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-  - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
-  - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
-    tag:
-      - C.ImageSpace
-      - C.Light
-  - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    group: *earlyLoadersGroup
-    tag: [ Graphics ]
-  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
-    tag:
-      - Actors.ACBS
-      - Invent.Add
-      - Invent.Remove
-
-  - name: 'Shadows.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37831/'
-        name: 'Window Shadows by HHaleyy'
-    tag:
-      - name: 'C.Climate'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-      - name: 'C.ImageSpace'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-      - name: 'C.Light'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-      - name: 'C.Water'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-    clean:
-      - crc: 0x6B6ABB95
-        util: 'SSEEdit v4.0.3f'
-      - crc: 0xBA2BB589
-        util: 'SSEEdit v4.0.3f'
-  - name: 'WSEnhancer(CW)?\.esp'
-    group: *lightingEnhancerGroup
-    tag: [ C.Light ]
-
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
@@ -4396,7 +3622,7 @@ plugins:
       - crc: 0x88A4D052
         util: 'SSEEdit v4.0.3'
 
-###### AudioVisual - Weather ######
+###### AudioVisual - Weather & Lighting ######
   - name: 'Aequinoctium.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15884/' ]
     clean:
@@ -4415,6 +3641,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24791/' ]
     clean:
       - crc: 0xB2743FA6
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'CinematicFireFX.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16326/' ]
+    inc: [ 'NAT.esp' ]
+    clean:
+      - crc: 0x4CF60EE4
         util: 'SSEEdit v4.0.3'
 
   - name: 'ClimatesOfTamriel.*\.es(m|p)'
@@ -4460,12 +3693,611 @@ plugins:
       - crc: 0x5E0A1F80
         util: 'SSEEdit v4.0.3'
 
+  - name: 'CRF - Lighting Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5732/' ]
+    clean:
+      - crc: 0x59766837
+        util: 'SSEEdit v4.0.3'
+
   - name:  'Dolomite Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7895/' ]
     group: *earlyLoadersGroup
     clean:
       - crc: 0x87498763
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ELE_SSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1377/'
+        name: 'Enhanced Lighting for ENB'
+    group: *lightingEnhancerGroup
+    inc:
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+    clean:
+      - crc: 0x92A4011D
+        util: 'SSEEdit v4.0.3'
+
+  - name: '(ELFX|EnhancedLightsandFX).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
+        name: 'Enhanced Lights and FX'
+  - name: 'EnhancedLightsandFX.esp'
+    inc:
+      - 'RelightingSkyrim_SSE.esp'
+      - 'RLO - Exteriors.esp'
+    after:
+      - name: '3DNPC.esp'
+        condition: '(is_master("3DNPC.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("3DNPC.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'SMIM-SE.esp'
+        condition: '(is_master("SMIM-SE.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE.esp") and not is_master("EnhancedLightsandFX.esp"))'
+      - name: 'SMIM-SE-Merged-All.esp'
+        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lighting for ENB'
+          - '[ELE - ELFX Consistency Patch and Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/18634/)'
+        condition: 'active("ELE_SSE.esp") and not active("ELE-ELFX Patch AIO.esp") and not active("ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources)\.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/25498/)' ]
+        condition: 'not active("ELFX Fixes.esp") and not active("ELFX with Shadows.esp")'
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+      - Graphics
+      - Invent.Remove
+      - ObjectBounds
+      - Stats
+    dirty:
+      - <<: *quickClean
+        crc: 0xDD00738B
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'ELFXEnhancer.esp'
+    group: *lightingEnhancerGroup
+    inc:
+      - 'ELE_SSE.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+    clean:
+      - crc: 0x06339952
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - Hardcore.esp'
+    group: *lightingEnhancerGroup
+    inc:
+      - 'ELE_SSE.esp'
+      - 'ELFXEnhancer.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Alternate Start - Live Another Life'
+          - '[ELFX Hardcore - Alternate Start Void Fix](https://www.nexusmods.com/skyrimspecialedition/mods/34941) **OR** [LiveAnotherLife - ELFX Hardcore Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38543/)'
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Alternate Start ELFX Fix.esp") and not active("LiveAnotherLife - ELFX Hardcore.esp")'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Water
+      - Graphics
+    clean:
+      - crc: 0x5ECC3509
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - Exteriors.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26327/'
+        name: 'ELFX - Exteriors Fixes'
+    group: *earlyLoadersGroup
+    after:
+      - name: 'AK - Placeable Statics SE.esp'
+        condition: '(is_master("AK - Placeable Statics SE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("AK - Placeable Statics SE.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'Blowing in the Wind SSE.esp'
+        condition: '(is_master("Blowing in the Wind SSE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Blowing in the Wind SSE.esp") and not is_master("ELFX - Exteriors.esp"))'
+      - name: 'SMIM-SE-Merged-All.esp'
+        condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("ELFX - Exteriors.esp"))'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities'
+          - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265/)'
+        condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchUpdateAvailable
+        subs: [ '[ELFX - Exteriors Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26327/)' ]
+        condition: 'checksum("ELFX - Exteriors.esp", 9B390393)'
+    tag: [ Invent.Remove ]
+    clean:
+      - crc: 0x9B390393
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - Weathers.esp'
+    group: *earlyLoadersGroup
+    after: [ 'Audio Overhaul Skyrim.esp' ]
+    tag:
+      - Graphics
+      - Sound
+    clean:
+      - crc: 0x0F02A920
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoPlayerHomes.esp'
+    inc:
+      - 'ELFX - NoBreezehome.esp'
+      - 'ELFX - NoHjerim.esp'
+      - 'ELFX - NoHoneyside.esp'
+      - 'ELFX - NoProudspireManor.esp'
+      - 'ELFX - NoSeverinManor.esp'
+      - 'ELFX - NoVlindrelHall.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x181ECD13
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 1
+  - name: 'ELFX - NoBreezehome.esp'
+    clean:
+      - crc: 0x16B967BB
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoHjerim.esp'
+    clean:
+      - crc: 0xEFC3B86E
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoHoneyside.esp'
+    clean:
+      - crc: 0x636D8DC1
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoProudspireManor.esp'
+    clean:
+      - crc: 0x378FA7EE
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoSeverinManor.esp'
+    clean:
+      - crc: 0x328328C8
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX - NoVlindrelHall.esp'
+    clean:
+      - crc: 0xB88AC75D
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'ELFX Fixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25498/' ]
+    after: [ 'Skysan_ELFX_SMIM_Fix.esp' ]
+    tag:
+      - C.Light
+      - C.Water
+    clean:
+      - crc: 0xDFEDB8EC
+        util: 'SSEEdit v4.0.3'
+  - name: 'ELFX Fixes Ragged Flagon Fix.esp'
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'ELFX Fixes.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+      - 'RealisticWaterTwo.esp'
+      - 'WSEnhancer.esp'
+    tag:
+      - C.Light
+      - C.Water
+    clean:
+      - crc: 0x246FBB30
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'EmbersHD.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368/' ]
+    after: [ 'CinematicFireFX.esp' ]
+    clean:
+      - crc: 0x68222B4D
+        util: 'SSEEdit v4.0.3'
+  - name: 'EmbersHD - RLO Patch.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
+    # doNotClean
+    req:
+      - name: 'RLO - Interiors.esp'
+        condition: 'not file("Realistic Lighting Overhaul - Major City Interiors.esp")'
+
+  - name: 'ENB Light.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574/' ]
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    req:
+      - name: '../d3d11.dll'
+        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    tag: [ Graphics ]
+    msg:
+      - <<: *requiresResources
+        subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
+        condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
+
+  - name: 'ImprovedHearthfireLighting.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
+    after: [ 'RS_NoPlayerHomes.esp' ]
+    clean:
+      - crc: 0xA71A75BB
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'JBMod.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7535/'
+        name: 'Dungeon Darkness SE'
+    clean:
+      - crc: 0xC1A55CC1
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'Lanterns Of Skyrim - All In One - Main.esm'
+    url:
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/2429/'
+      - 'https://www.nexusmods.com/skyrimspecialedition/mods/23378/'
+    group: *earlyLoadersGroup
+    clean:
+      - crc: 0xEB94B5F8
+        util: 'SSEEdit v4.0.3'
+      # MCM Original
+      - crc: 0x272D7339
+        util: 'SSEEdit v4.0.3'
+      # MCM Tweaked Normal
+      - crc: 0xABE89712
+        util: 'SSEEdit v4.0.3'
+      # MCM Tweaked Brighter
+      - crc: 0x93C29074
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'Lanterns Of Skyrim II.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30817/' ]
+    inc:
+      - 'Blowing in the Wind SSE.esp'
+      - 'CLARALUX SSE.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Blackthorn - A Buildable Town in The Rift' ]
+        condition: 'active("BlackthornManor.esp") and not active("LoS II - BlackthornManor patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Books of Skyrim' ]
+        condition: 'active("BooksOfSkyrim.esp") and not active("LoS II - Book of Skyrim patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Beyond Skyrim Bruma' ]
+        condition: 'active("BSHeartland.esm") and not active("LoS II - Bruma patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'City Entrance Overhaul - Windhelm' ]
+        condition: 'active("WindhelmEntranceOverhaul.esp") and not active("LoS II - CEO Windhelm patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("LoS II - CRF patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Camp Argentum' ]
+        condition: 'active("CampArgentum.esp") and not active("LoS II - Camp Argentum patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Camp Varglya' ]
+        condition: 'active("CampVarglya.esp") and not active("LoS II - Camp Varglya patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Convenient Bridges' ]
+        condition: 'active("Convenient Bridges.esp") and not active("LoS II - Convenient Bridges patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Darkwater Crossing' ]
+        condition: 'active("Darkwater Crossing.esp") and not active("LoS II - Darkwater Crossing patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Dragon Bridge' ]
+        condition: 'active("Dragon Bridge.esp") and not active("LoS II - Dragon Bridge patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Expanded Towns and Cities' ]
+        condition: 'active("ETaC - Complete.esp") and not active("LoS II - ETaC patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Eli''s Breezehome' ]
+        condition: 'active("Eli_Breezehome.esp") and not active("LoS II - Eli''s Breezehome patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Eli''s Riverwood Shack' ]
+        condition: 'active("Eli_RiverwoodShack.esp") and not active("LoS II - Eli''s Riverwood Shack patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Solitude SSE' ]
+        condition: 'active("Enhanced Solitude SSE.esp") and not active("LoS II - Enhanced Solitude SSE patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Falkreath' ]
+        condition: 'active("Falkreath.esp") and not active("LoS II - Falkreath patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Helarchen Creek' ]
+        condition: 'active("Helarchen Creek.esp") and not active("LoS II - Helarchen Creek patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Ivarstead' ]
+        condition: 'active("Ivarstead.esp") and not active("LoS II - Ivarstead patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'JK''s Riverwood' ]
+        condition: 'active("JKs Riverwood.esp") and not active("LoS II - JKs Riverwood patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'JK''s Skyrim' ]
+        condition: 'active("JKs Skyrim.esp") and not active("LoS II - JKs Skyrim patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Karthwasten' ]
+        condition: 'active("Karthwasten.esp") and not active("LoS II - Karthwasten patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Kynesgrove' ]
+        condition: 'active("Kynesgrove.esp") and not active("LoS II - Kynesgrove patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("LoS II - LotD patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Midwood Isle' ]
+        condition: 'active("Midwood Isle.esp") and not active("LoS II - Midwood Isle patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Northern Marsh Bridges' ]
+        condition: 'active("Northern Marsh Bridges SE.esp") and not active("LoS II - Northern Marsh Bridges patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Oakwood' ]
+        condition: 'active("Oakwood.esp") and not active("LoS II - Oakwood patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Old Hroldan Ruins' ]
+        condition: 'active("OldHroldanRuins.esp") and not active("LoS II - Old Hroldan Ruins patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Overstead' ]
+        condition: 'active("Overstead.esp") and not active("LoS II - Overstead SE patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Run of the Mill Inn' ]
+        condition: 'active("Run_of_the_Mill_Inn.esp") and not active("LoS II - Run of the Mill Inn patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Static Mesh Improvement Mod' ]
+        condition: 'active("SMIM-SE-Merged-All.esp") and not active("LoS II - SMIM patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Settlements Expanded' ]
+        condition: 'active("Settlements Expanded SE.esp") and not active("LoS II - Settlements Expanded patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Skyrim Bridges' ]
+        condition: 'active("Skyrim Bridges.esp") and not active("LoS II - Skyrim Bridges patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Solitude Docks' ]
+        condition: 'active("Solitude Docks.esp") and not active("LoS II - Solitude Docks patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Solitude Expansion' ]
+        condition: 'active("Solitude Expansion.esp") and not active("LoS II - Solitude Expansion patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Soljund''s Sinkhole' ]
+        condition: 'active("Soljund''s Sinkhole.esp") and not active("LoS II - Soljund''s Skinkhole patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Telengard' ]
+        condition: 'active("Telengard.esp") and not active("LoS II - Telengard patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Fall of Granite Hill' ]
+        condition: 'active("The Fall of Granite Hill.esp") and not active("LoS II - The Fall of Granite Hill patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weathered Road Signs' ]
+        condition: 'active("Weathered Road Signs.esp") and not active("LoS II - Weathered Road Signs patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Whistling Mine' ]
+        condition: 'active("Whistling Mine.esp") and not active("LoS II - Whistling Mine patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA3E4DDC5
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 9
+  - name: 'LoS II - Lantern Workers.esp'
+    tag: [ C.Location ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x64F4E73F
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 25
+  - name: 'LoS II - Tamriel Master Lights.esp'
+    after:
+      - 'ELFX Fixes.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Skysan_ELFX_SMIM_Fix.esp'
+    inc:
+      - 'CLARALUX SSE.esp'
+      - 'ELFX - Exteriors.esp'
+      - 'RelightingSkyrim_SSE.esp'
+      - 'RLO - Exteriors.esp'
+    tag:
+      - C.Climate
+      - Delev
+      - Graphics
+      - Invent.Remove
+    dirty:
+      - <<: *quickClean
+        crc: 0x7D322CBC
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+      - <<: *quickClean
+        crc: 0xE56C6EB6
+        util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
+  - name: 'Luminosity Lighting Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830/' ]
+    group: *lightingEnhancerGroup
+    inc:
+      - 'ELE_SSE.esp'
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'RLO - Interiors.esp'
+    tag: [ C.Light ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x9D08DEBF
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+      - <<: *quickClean
+        crc: 0x779942E9
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'Luminosity - Lightweight Lighting.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830/' ]
+    msg: [ *obsolete ]
+
+  - name: 'Lux.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43158/' ]
+    group: *interiorLightingGroup
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Water
+    dirty:
+      - <<: *quickClean
+        crc: 0xB0F9620D
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 40
+  # Lux - Optional Content #
+  - name: 'Lux - Mara Valentine patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+  - name: 'Lux - Silver Blood inn overhaul.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+  - name: 'Lux - Understone Keep overhaul.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag: [ C.Light ]
+  # Lux - Patches #
+  - name: 'Lux - Breezehome by Lupus patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2CA088B5
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+        udr: 53
+  - name: 'Lux - COTN (Dawnstar|Morthal|Winterhold) patch\.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag: [ C.Light ]
+  - name: 'Lux - Distinct Silver Blood inn patch.esp'
+    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
+  - name: 'Lux - JK''s Bee and Barb patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x308F8E7F
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+        udr: 1
+  - name: 'Lux - Great Village of (Ivarstead|Karthwasten|Kynesgrove|Mixwater Mill|Old Hroldan|Shor''s Stone) patch\.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - Great Village of Old Hroldan patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+  - name: 'Lux - JK''s Palace of Kings patch.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - JK''s Sadris Used Wares patch.esp'
+    req: [ 'JK''s Sadris Used Wares.esp' ]
+  - name: 'Lux - Legacy of the Dragonborn patch.esp'
+    tag:
+      - C.Climate
+      - C.Light
+      - C.ImageSpace
+      - C.Water
+  - name: 'Lux - OCW College.esp'
+    after: [ 'OCW_CellSettings.esp' ]
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+    dirty:
+      - <<: *quickClean
+        crc: 0xC1493431
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+        udr: 9
+  - name: 'Lux - RedBag''s Solitude patch.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - Rodryk''s Dragonbridge patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag:
+      - C.Climate
+      - C.Light
+  - name: 'Lux - Silver Blood inn AIOverhaul patch.esp'
+    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
+  - name: 'Lux - SoS compatibility patch.esp'
+    after:
+      - 'Lux - BleakFalls Barrow patch.esp'
+      - 'Lux - Blue Palace Terrace patch 3.esp'
+      - 'Lux - Breezehome by Lupus patch.esp'
+      - 'Lux - Crimson Blood Armor patch.esp'
+      - 'Lux - Distinct Interiors patch.esp'
+      - 'Lux - Distinct Silver Blood inn patch.esp'
+      - 'Lux - Embershard Mine patch.esp'
+      - 'Lux - Halted Stream Camp patch.esp'
+      - 'Lux - HSTNF compatibility patch.esp'
+      - 'Lux - JK''s Angelines Aromatics patch.esp'
+      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
+      - 'Lux - JK''s Bannered Mare patch.esp'
+      - 'Lux - JK''s Bee and Barb patch.esp'
+      - 'Lux - JK''s Belethor''s General Goods patch.esp'
+      - 'Lux - JK''s Bits and Pieces patch.esp'
+      - 'Lux - JK''s Blue Palace patch.esp'
+      - 'Lux - JK''s Dragonsreach patch.esp'
+      - 'Lux - JK''s Drunken Huntsman patch.esp'
+      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
+      - 'Lux - JK''s Radiant Raiment patch.esp'
+      - 'Lux - JK''s Sadris Used Wares patch.esp'
+      - 'Lux - JK''s Sleeping Giant inn patch.esp'
+      - 'Lux - JK''s Warmaidens patch.esp'
+      - 'Lux - Mara Valentine patch.esp'
+      - 'Lux - RedBag''s Solitude patch.esp'
+      - 'Lux - Silver Blood inn overhaul.esp'
+      - 'Lux - Steepfall Burrow patch.esp'
+      - 'Lux - Ustengrav Revisited patch.esp'
+      - 'Lux - WhiteRiver Watch patch.esp'
+  - name: 'Lux - The Great Cities - Minor Cities and Towns patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag: [ C.Light ]
+  - name: 'Lux - The Great City of (Dawnstar|Falkreath|Winterhold) patch\.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - WhiteRiver Watch patch.esp'
+    tag: [ C.Light ]
+  - name: 'Great City of JK''s Redbag Solitude patch.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x489C561F
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 14
+  # Lux - Language Packs
+  - name: 'Lux FR.esp'
+    after:
+      - 'Lux - BleakFalls Barrow patch.esp'
+      - 'Lux - Blue Palace Terrace patch 3.esp'
+      - 'Lux - Breezehome by Lupus patch.esp'
+      - 'Lux - Crimson Blood Armor patch.esp'
+      - 'Lux - Distinct Interiors patch.esp'
+      - 'Lux - Distinct Silver Blood inn patch.esp'
+      - 'Lux - Embershard Mine patch.esp'
+      - 'Lux - Halted Stream Camp patch.esp'
+      - 'Lux - HSTNF compatibility patch.esp'
+      - 'Lux - JK''s Angelines Aromatics patch.esp'
+      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
+      - 'Lux - JK''s Bannered Mare patch.esp'
+      - 'Lux - JK''s Bee and Barb patch.esp'
+      - 'Lux - JK''s Belethor''s General Goods patch.esp'
+      - 'Lux - JK''s Bits and Pieces patch.esp'
+      - 'Lux - JK''s Blue Palace patch.esp'
+      - 'Lux - JK''s Dragonsreach patch.esp'
+      - 'Lux - JK''s Drunken Huntsman patch.esp'
+      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
+      - 'Lux - JK''s Radiant Raiment patch.esp'
+      - 'Lux - JK''s Sadris Used Wares patch.esp'
+      - 'Lux - JK''s Sleeping Giant inn patch.esp'
+      - 'Lux - JK''s Warmaidens patch.esp'
+      - 'Lux - Mara Valentine patch.esp'
+      - 'Lux - RedBag''s Solitude patch.esp'
+      - 'Lux - Silver Blood inn overhaul.esp'
+      - 'Lux - SoS compatibility patch.esp'
+      - 'Lux - Steepfall Burrow patch.esp'
+      - 'Lux - Ustengrav Revisited patch.esp'
+      - 'Lux - WhiteRiver Watch patch.esp'
+    tag: [ C.Name ]
+  - name: 'Lux - SoS compatibility patch FR.esp'
+    after:
+      - 'Lux - SoS compatibility patch.esp'
+      - 'Lux FR.esp'
 
   - name:  'mintylightningmod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8778/' ]
@@ -4632,11 +4464,159 @@ plugins:
       - crc: 0x3ACE8690
         util: 'SSEEdit v4.0.3'
 
+  - name: 'RedbellyMineMistFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21715/' ]
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'ELFXEnhancer.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RelightingSkyrim_SSE.esp'
+      - 'RLO - Interiors.esp'
+      - 'WSEnhancer.esp'
+      - 'WSEnhancerCW.esp'
+    clean:
+      - crc: 0xEEB73A63
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'RelightingSkyrim_SSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
+      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+      - 'EnhancedLightsandFX.esp'
+      - name: 'ImprovedHearthfireLighting.esp'
+        condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
+      - 'RealisticRoomRental.esp'
+      - 'RLO - Exteriors.esp'
+      - 'torch shadows.esp'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Window Shadows' ]
+        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
+    dirty:
+      - <<: *quickClean
+        crc: 0x689F6CE0
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      - <<: *quickClean
+        crc: 0xDFB3B05E
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
+  - name: '(RLO|Realistic Lighting Overhaul) -.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
+  - name: 'RLO - Effects.esp'
+    clean:
+      - crc: 0x1FD6BDD7
+        util: 'SSEEdit v4.0.3g'
+  - name: 'RLO - Exteriors.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'JK''s Riverwood' ]
+        condition: 'active("JK''s Riverwood.esp") and not active("RLO - JK''s Riverwood.esp")'
+      - <<: *patchIncluded
+        subs: [ 'JK''s Whiterun' ]
+        condition: 'active("JKs Whiterun.esp") and not active("RLO - JK''s Whiterun.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0F92CA19
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+  - name: 'RLO - Illuminated Spells.esp'
+    after: [ 'RLO - Interiors.esp' ]
+    clean:
+      - crc: 0x4D6D9B00
+        util: 'SSEEdit v4.0.3g'
+  - name: 'RLO - Interiors.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40520/'
+        name: 'RLO Interiors - No modified lights sources'
+    group: *interiorLightingGroup
+    after:
+      - name: 'Lux.esp'
+        condition: 'version("RLO - Interiors.esp", "5.0.4", >=)'
+    inc:
+      - name: 'EnhancedLightsandFX.esp'
+        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+      - name: 'Lux.esp'
+        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+      - name: 'RelightingSkyrim_SSE.esp'
+        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+    tag:
+      - C.ImageSpace
+      - C.Light
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
+    clean:
+      - crc: 0xA2034302
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0xC9899199
+        util: 'SSEEdit v4.0.3g'
+  # RLO v5 patches
+  - name: 'RLO - IC Patch.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove records **0000B498**, **0001DB52**, **000252CD**, **0001A270** & **0001A26F** from RLO - IC Patch.esp. Blocks Open Cities Skyrim, Immersive Citizens and ICAIO OCS Patch changes.' ]
+        condition: 'checksum("RLO - IC Patch.esp", E13269D4)'
+  # RLO 4.1.1
+  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+  - name: 'Realistic Lighting Overhaul - Dungeons.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
+  - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
+  - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+  - name: 'Realistic Lighting Overhaul - Weathers.esp'
+    group: *earlyLoadersGroup
+    tag: [ Graphics ]
+  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
+    tag:
+      - Actors.ACBS
+      - Invent.Add
+      - Invent.Remove
+
   - name: 'Rustic Weathers And Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8398/' ]
     clean:
       - crc: 0x14EA63EF
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Shadows.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37831/'
+        name: 'Window Shadows by HHaleyy'
+    tag:
+      - name: 'C.Climate'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
+      - name: 'C.ImageSpace'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
+      - name: 'C.Light'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
+      - name: 'C.Water'
+        condition: 'checksum("Shadows.esp", BA2BB589)'
+    clean:
+      - crc: 0x6B6ABB95
+        util: 'SSEEdit v4.0.3f'
+      - crc: 0xBA2BB589
+        util: 'SSEEdit v4.0.3f'
+  - name: 'WSEnhancer(CW)?\.esp'
+    group: *lightingEnhancerGroup
+    tag: [ C.Light ]
 
   - name: 'Skyrim Legendary Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16725/' ]
@@ -20792,6 +20772,25 @@ plugins:
     tag:
       - Delev
       - Relev
+
+  - name: 'RS_NoPlayerHomes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
+        name: 'Relighting Skyrim SSE - No Player Homes'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42280/'
+        name: 'Relighting Skyrim SSE - No Player Homes (Updated)'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Relighting Skyrim SSE - No Player Homes (Updated)](https://www.nexusmods.com/skyrimspecialedition/mods/42280/)' ]
+        condition: 'not version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA9D66DE5
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 43
+    clean:
+      - crc: 0x3FB3393E
+        util: 'SSEEdit v4.0.3'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
