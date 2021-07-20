@@ -3209,166 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: 'Lux.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43158/' ]
-    group: *interiorLightingGroup
-    tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
-      - C.Location
-      - C.Water
-    dirty:
-      - <<: *quickClean
-        crc: 0xB0F9620D
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 40
-  # Lux - Compatibility Patches
-  - name: 'Lux - Breezehome by Lupus patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x2CA088B5
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-        udr: 53
-  - name: 'Lux - COTN (Dawnstar|Morthal|Winterhold) patch\.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag: [ C.Light ]
-  - name: 'Lux - JK''s Bee and Barb patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x308F8E7F
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-        udr: 1
-  - name: 'Lux - JK''s Palace of Kings patch.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - JK''s Sadris Used Wares patch.esp'
-    req: [ 'JK''s Sadris Used Wares.esp' ]
-  - name: 'Lux - Legacy of the Dragonborn patch.esp'
-    tag:
-      - C.Climate
-      - C.Light
-      - C.ImageSpace
-      - C.Water
-  - name: 'Lux - Great Village of (Ivarstead|Karthwasten|Kynesgrove|Mixwater Mill|Old Hroldan|Shor''s Stone) patch\.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - Great Village of Old Hroldan patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-  - name: 'Lux - OCW College.esp'
-    after: [ 'OCW_CellSettings.esp' ]
-    tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
-    dirty:
-      - <<: *quickClean
-        crc: 0xC1493431
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-        udr: 9
-  - name: 'Lux - RedBag''s Solitude patch.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - Rodryk''s Dragonbridge patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag:
-      - C.Climate
-      - C.Light
-  - name: 'Lux - SoS compatibility patch.esp'
-    after:
-      - 'Lux - BleakFalls Barrow patch.esp'
-      - 'Lux - Blue Palace Terrace patch 3.esp'
-      - 'Lux - Breezehome by Lupus patch.esp'
-      - 'Lux - Crimson Blood Armor patch.esp'
-      - 'Lux - Distinct Interiors patch.esp'
-      - 'Lux - Distinct Silver Blood inn patch.esp'
-      - 'Lux - Embershard Mine patch.esp'
-      - 'Lux - Halted Stream Camp patch.esp'
-      - 'Lux - HSTNF compatibility patch.esp'
-      - 'Lux - JK''s Angelines Aromatics patch.esp'
-      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
-      - 'Lux - JK''s Bannered Mare patch.esp'
-      - 'Lux - JK''s Bee and Barb patch.esp'
-      - 'Lux - JK''s Belethor''s General Goods patch.esp'
-      - 'Lux - JK''s Bits and Pieces patch.esp'
-      - 'Lux - JK''s Blue Palace patch.esp'
-      - 'Lux - JK''s Dragonsreach patch.esp'
-      - 'Lux - JK''s Drunken Huntsman patch.esp'
-      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
-      - 'Lux - JK''s Radiant Raiment patch.esp'
-      - 'Lux - JK''s Sadris Used Wares patch.esp'
-      - 'Lux - JK''s Sleeping Giant inn patch.esp'
-      - 'Lux - JK''s Warmaidens patch.esp'
-      - 'Lux - Mara Valentine patch.esp'
-      - 'Lux - RedBag''s Solitude patch.esp'
-      - 'Lux - Silver Blood inn overhaul.esp'
-      - 'Lux - Steepfall Burrow patch.esp'
-      - 'Lux - Ustengrav Revisited patch.esp'
-      - 'Lux - WhiteRiver Watch patch.esp'
-  - name: 'Lux - The Great Cities - Minor Cities and Towns patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag: [ C.Light ]
-  - name: 'Lux - The Great City of (Dawnstar|Falkreath|Winterhold) patch\.esp'
-    tag: [ C.Light ]
-  - name: 'Lux - WhiteRiver Watch patch.esp'
-    tag: [ C.Light ]
-  # Lux - Language Packs
-  - name: 'Lux FR.esp'
-    after:
-      - 'Lux - BleakFalls Barrow patch.esp'
-      - 'Lux - Blue Palace Terrace patch 3.esp'
-      - 'Lux - Breezehome by Lupus patch.esp'
-      - 'Lux - Crimson Blood Armor patch.esp'
-      - 'Lux - Distinct Interiors patch.esp'
-      - 'Lux - Distinct Silver Blood inn patch.esp'
-      - 'Lux - Embershard Mine patch.esp'
-      - 'Lux - Halted Stream Camp patch.esp'
-      - 'Lux - HSTNF compatibility patch.esp'
-      - 'Lux - JK''s Angelines Aromatics patch.esp'
-      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
-      - 'Lux - JK''s Bannered Mare patch.esp'
-      - 'Lux - JK''s Bee and Barb patch.esp'
-      - 'Lux - JK''s Belethor''s General Goods patch.esp'
-      - 'Lux - JK''s Bits and Pieces patch.esp'
-      - 'Lux - JK''s Blue Palace patch.esp'
-      - 'Lux - JK''s Dragonsreach patch.esp'
-      - 'Lux - JK''s Drunken Huntsman patch.esp'
-      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
-      - 'Lux - JK''s Radiant Raiment patch.esp'
-      - 'Lux - JK''s Sadris Used Wares patch.esp'
-      - 'Lux - JK''s Sleeping Giant inn patch.esp'
-      - 'Lux - JK''s Warmaidens patch.esp'
-      - 'Lux - Mara Valentine patch.esp'
-      - 'Lux - RedBag''s Solitude patch.esp'
-      - 'Lux - Silver Blood inn overhaul.esp'
-      - 'Lux - SoS compatibility patch.esp'
-      - 'Lux - Steepfall Burrow patch.esp'
-      - 'Lux - Ustengrav Revisited patch.esp'
-      - 'Lux - WhiteRiver Watch patch.esp'
-    tag: [ C.Name ]
-  - name: 'Lux - SoS compatibility patch FR.esp'
-    after:
-      - 'Lux - SoS compatibility patch.esp'
-      - 'Lux FR.esp'
-  # Lux - Optional Content
-  - name: 'Lux - Mara Valentine patch.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-  - name: 'Lux - Silver Blood inn overhaul.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-  - name: 'Lux - Silver Blood inn AIOverhaul patch.esp'
-    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
-  - name: 'Lux - Distinct Silver Blood inn patch.esp'
-    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
-  - name: 'Lux - Understone Keep overhaul.esp'
-    after: [ 'Lux - Distinct Interiors patch.esp' ]
-    tag: [ C.Light ]
-  - name: 'Great City of JK''s Redbag Solitude patch.esp'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0x489C561F
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 14
-
   - name: 'RedbellyMineMistFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21715/' ]
     after:
@@ -4466,6 +4306,166 @@ plugins:
   - name: 'Luminosity - Lightweight Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16830/' ]
     msg: [ *obsolete ]
+
+  - name: 'Lux.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43158/' ]
+    group: *interiorLightingGroup
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Water
+    dirty:
+      - <<: *quickClean
+        crc: 0xB0F9620D
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 40
+  # Lux - Optional Content #
+  - name: 'Lux - Mara Valentine patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+  - name: 'Lux - Silver Blood inn overhaul.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+  - name: 'Lux - Understone Keep overhaul.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag: [ C.Light ]
+  # Lux - Patches #
+  - name: 'Lux - Breezehome by Lupus patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2CA088B5
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+        udr: 53
+  - name: 'Lux - COTN (Dawnstar|Morthal|Winterhold) patch\.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag: [ C.Light ]
+  - name: 'Lux - Distinct Silver Blood inn patch.esp'
+    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
+  - name: 'Lux - JK''s Bee and Barb patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x308F8E7F
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+        udr: 1
+  - name: 'Lux - Great Village of (Ivarstead|Karthwasten|Kynesgrove|Mixwater Mill|Old Hroldan|Shor''s Stone) patch\.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - Great Village of Old Hroldan patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+  - name: 'Lux - JK''s Palace of Kings patch.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - JK''s Sadris Used Wares patch.esp'
+    req: [ 'JK''s Sadris Used Wares.esp' ]
+  - name: 'Lux - Legacy of the Dragonborn patch.esp'
+    tag:
+      - C.Climate
+      - C.Light
+      - C.ImageSpace
+      - C.Water
+  - name: 'Lux - OCW College.esp'
+    after: [ 'OCW_CellSettings.esp' ]
+    tag:
+      - C.Climate
+      - C.ImageSpace
+      - C.Light
+    dirty:
+      - <<: *quickClean
+        crc: 0xC1493431
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+        udr: 9
+  - name: 'Lux - RedBag''s Solitude patch.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - Rodryk''s Dragonbridge patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag:
+      - C.Climate
+      - C.Light
+  - name: 'Lux - Silver Blood inn AIOverhaul patch.esp'
+    req: [ 'Lux - Silver Blood inn overhaul.esp' ]
+  - name: 'Lux - SoS compatibility patch.esp'
+    after:
+      - 'Lux - BleakFalls Barrow patch.esp'
+      - 'Lux - Blue Palace Terrace patch 3.esp'
+      - 'Lux - Breezehome by Lupus patch.esp'
+      - 'Lux - Crimson Blood Armor patch.esp'
+      - 'Lux - Distinct Interiors patch.esp'
+      - 'Lux - Distinct Silver Blood inn patch.esp'
+      - 'Lux - Embershard Mine patch.esp'
+      - 'Lux - Halted Stream Camp patch.esp'
+      - 'Lux - HSTNF compatibility patch.esp'
+      - 'Lux - JK''s Angelines Aromatics patch.esp'
+      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
+      - 'Lux - JK''s Bannered Mare patch.esp'
+      - 'Lux - JK''s Bee and Barb patch.esp'
+      - 'Lux - JK''s Belethor''s General Goods patch.esp'
+      - 'Lux - JK''s Bits and Pieces patch.esp'
+      - 'Lux - JK''s Blue Palace patch.esp'
+      - 'Lux - JK''s Dragonsreach patch.esp'
+      - 'Lux - JK''s Drunken Huntsman patch.esp'
+      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
+      - 'Lux - JK''s Radiant Raiment patch.esp'
+      - 'Lux - JK''s Sadris Used Wares patch.esp'
+      - 'Lux - JK''s Sleeping Giant inn patch.esp'
+      - 'Lux - JK''s Warmaidens patch.esp'
+      - 'Lux - Mara Valentine patch.esp'
+      - 'Lux - RedBag''s Solitude patch.esp'
+      - 'Lux - Silver Blood inn overhaul.esp'
+      - 'Lux - Steepfall Burrow patch.esp'
+      - 'Lux - Ustengrav Revisited patch.esp'
+      - 'Lux - WhiteRiver Watch patch.esp'
+  - name: 'Lux - The Great Cities - Minor Cities and Towns patch.esp'
+    after: [ 'Lux - Distinct Interiors patch.esp' ]
+    tag: [ C.Light ]
+  - name: 'Lux - The Great City of (Dawnstar|Falkreath|Winterhold) patch\.esp'
+    tag: [ C.Light ]
+  - name: 'Lux - WhiteRiver Watch patch.esp'
+    tag: [ C.Light ]
+  - name: 'Great City of JK''s Redbag Solitude patch.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x489C561F
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 14
+  # Lux - Language Packs
+  - name: 'Lux FR.esp'
+    after:
+      - 'Lux - BleakFalls Barrow patch.esp'
+      - 'Lux - Blue Palace Terrace patch 3.esp'
+      - 'Lux - Breezehome by Lupus patch.esp'
+      - 'Lux - Crimson Blood Armor patch.esp'
+      - 'Lux - Distinct Interiors patch.esp'
+      - 'Lux - Distinct Silver Blood inn patch.esp'
+      - 'Lux - Embershard Mine patch.esp'
+      - 'Lux - Halted Stream Camp patch.esp'
+      - 'Lux - HSTNF compatibility patch.esp'
+      - 'Lux - JK''s Angelines Aromatics patch.esp'
+      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
+      - 'Lux - JK''s Bannered Mare patch.esp'
+      - 'Lux - JK''s Bee and Barb patch.esp'
+      - 'Lux - JK''s Belethor''s General Goods patch.esp'
+      - 'Lux - JK''s Bits and Pieces patch.esp'
+      - 'Lux - JK''s Blue Palace patch.esp'
+      - 'Lux - JK''s Dragonsreach patch.esp'
+      - 'Lux - JK''s Drunken Huntsman patch.esp'
+      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
+      - 'Lux - JK''s Radiant Raiment patch.esp'
+      - 'Lux - JK''s Sadris Used Wares patch.esp'
+      - 'Lux - JK''s Sleeping Giant inn patch.esp'
+      - 'Lux - JK''s Warmaidens patch.esp'
+      - 'Lux - Mara Valentine patch.esp'
+      - 'Lux - RedBag''s Solitude patch.esp'
+      - 'Lux - Silver Blood inn overhaul.esp'
+      - 'Lux - SoS compatibility patch.esp'
+      - 'Lux - Steepfall Burrow patch.esp'
+      - 'Lux - Ustengrav Revisited patch.esp'
+      - 'Lux - WhiteRiver Watch patch.esp'
+    tag: [ C.Name ]
+  - name: 'Lux - SoS compatibility patch FR.esp'
+    after:
+      - 'Lux - SoS compatibility patch.esp'
+      - 'Lux FR.esp'
 
   - name:  'mintylightningmod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8778/' ]
