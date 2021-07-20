@@ -3209,91 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
-  - name: 'RLO - Effects.esp'
-    clean:
-      - crc: 0x1FD6BDD7
-        util: 'SSEEdit v4.0.3g'
-  - name: 'RLO - Exteriors.esp'
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'JK''s Riverwood' ]
-        condition: 'active("JK''s Riverwood.esp") and not active("RLO - JK''s Riverwood.esp")'
-      - <<: *patchIncluded
-        subs: [ 'JK''s Whiterun' ]
-        condition: 'active("JKs Whiterun.esp") and not active("RLO - JK''s Whiterun.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x0F92CA19
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-  - name: 'RLO - Illuminated Spells.esp'
-    after: [ 'RLO - Interiors.esp' ]
-    clean:
-      - crc: 0x4D6D9B00
-        util: 'SSEEdit v4.0.3g'
-  - name: 'RLO - Interiors.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40520/'
-        name: 'RLO Interiors - No modified lights sources'
-    group: *interiorLightingGroup
-    after:
-      - name: 'Lux.esp'
-        condition: 'version("RLO - Interiors.esp", "5.0.4", >=)'
-    inc:
-      - name: 'EnhancedLightsandFX.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - name: 'Lux.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - name: 'RelightingSkyrim_SSE.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-    tag:
-      - C.ImageSpace
-      - C.Light
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - <<: *patchIncluded
-        subs: [ 'Immersive Citizens - AI Overhaul' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
-    clean:
-      - crc: 0xA2034302
-        util: 'SSEEdit v4.0.3g'
-      - crc: 0xC9899199
-        util: 'SSEEdit v4.0.3g'
-  # RLO v5 patches
-  - name: 'RLO - IC Patch.esp'
-    msg:
-      - <<: *wildEdits
-        subs: [ 'Remove records **0000B498**, **0001DB52**, **000252CD**, **0001A270** & **0001A26F** from RLO - IC Patch.esp. Blocks Open Cities Skyrim, Immersive Citizens and ICAIO OCS Patch changes.' ]
-        condition: 'checksum("RLO - IC Patch.esp", E13269D4)'
-  # RLO 4.1.1
-  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-  - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-  - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
-  - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
-    tag:
-      - C.ImageSpace
-      - C.Light
-  - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    group: *earlyLoadersGroup
-    tag: [ Graphics ]
-  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
-    tag:
-      - Actors.ACBS
-      - Invent.Add
-      - Invent.Remove
-
   - name: 'Shadows.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37831/'
@@ -4612,6 +4527,91 @@ plugins:
         crc: 0xDFB3B05E
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
+
+  - name: '(RLO|Realistic Lighting Overhaul) -.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
+  - name: 'RLO - Effects.esp'
+    clean:
+      - crc: 0x1FD6BDD7
+        util: 'SSEEdit v4.0.3g'
+  - name: 'RLO - Exteriors.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'JK''s Riverwood' ]
+        condition: 'active("JK''s Riverwood.esp") and not active("RLO - JK''s Riverwood.esp")'
+      - <<: *patchIncluded
+        subs: [ 'JK''s Whiterun' ]
+        condition: 'active("JKs Whiterun.esp") and not active("RLO - JK''s Whiterun.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0F92CA19
+        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+  - name: 'RLO - Illuminated Spells.esp'
+    after: [ 'RLO - Interiors.esp' ]
+    clean:
+      - crc: 0x4D6D9B00
+        util: 'SSEEdit v4.0.3g'
+  - name: 'RLO - Interiors.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40520/'
+        name: 'RLO Interiors - No modified lights sources'
+    group: *interiorLightingGroup
+    after:
+      - name: 'Lux.esp'
+        condition: 'version("RLO - Interiors.esp", "5.0.4", >=)'
+    inc:
+      - name: 'EnhancedLightsandFX.esp'
+        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+      - name: 'Lux.esp'
+        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+      - name: 'RelightingSkyrim_SSE.esp'
+        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+    tag:
+      - C.ImageSpace
+      - C.Light
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
+    clean:
+      - crc: 0xA2034302
+        util: 'SSEEdit v4.0.3g'
+      - crc: 0xC9899199
+        util: 'SSEEdit v4.0.3g'
+  # RLO v5 patches
+  - name: 'RLO - IC Patch.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove records **0000B498**, **0001DB52**, **000252CD**, **0001A270** & **0001A26F** from RLO - IC Patch.esp. Blocks Open Cities Skyrim, Immersive Citizens and ICAIO OCS Patch changes.' ]
+        condition: 'checksum("RLO - IC Patch.esp", E13269D4)'
+  # RLO 4.1.1
+  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+  - name: 'Realistic Lighting Overhaul - Dungeons.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
+  - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Interiors.esp' ]
+  - name: 'Realistic Lighting Overhaul - ((Dawnguard|Major City) Interiors|Dungeons)\.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
+  - name: 'Realistic Lighting Overhaul - Weathers.esp'
+    group: *earlyLoadersGroup
+    tag: [ Graphics ]
+  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
+    tag:
+      - Actors.ACBS
+      - Invent.Add
+      - Invent.Remove
 
   - name: 'Rustic Weathers And Lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8398/' ]
