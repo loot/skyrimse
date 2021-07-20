@@ -3209,25 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: 'RS_NoPlayerHomes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
-        name: 'Relighting Skyrim SSE - No Player Homes'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42280/'
-        name: 'Relighting Skyrim SSE - No Player Homes (Updated)'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Relighting Skyrim SSE - No Player Homes (Updated)](https://www.nexusmods.com/skyrimspecialedition/mods/42280/)' ]
-        condition: 'not version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA9D66DE5
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 43
-    clean:
-      - crc: 0x3FB3393E
-        util: 'SSEEdit v4.0.3'
-
   - name: '(Realistic Lighting Overhaul|RLO) -.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
   - name: 'RLO - Effects.esp'
@@ -20792,6 +20773,25 @@ plugins:
     tag:
       - Delev
       - Relev
+
+  - name: 'RS_NoPlayerHomes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
+        name: 'Relighting Skyrim SSE - No Player Homes'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42280/'
+        name: 'Relighting Skyrim SSE - No Player Homes (Updated)'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Relighting Skyrim SSE - No Player Homes (Updated)](https://www.nexusmods.com/skyrimspecialedition/mods/42280/)' ]
+        condition: 'not version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA9D66DE5
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 43
+    clean:
+      - crc: 0x3FB3393E
+        util: 'SSEEdit v4.0.3'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
