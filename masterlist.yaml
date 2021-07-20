@@ -3209,13 +3209,6 @@ plugins:
         condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
 
 ###### AudioVisual - Lighting ######
-  - name: 'ImprovedHearthfireLighting.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
-    after: [ 'RS_NoPlayerHomes.esp' ]
-    clean:
-      - crc: 0xA71A75BB
-        util: 'SSEEdit v4.0.3'
-
   - name: 'JBMod.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7535/'
@@ -4466,6 +4459,13 @@ plugins:
       - <<: *requiresResources
         subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
         condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
+
+  - name: 'ImprovedHearthfireLighting.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
+    after: [ 'RS_NoPlayerHomes.esp' ]
+    clean:
+      - crc: 0xA71A75BB
+        util: 'SSEEdit v4.0.3'
 
   - name:  'mintylightningmod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8778/' ]
