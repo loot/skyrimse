@@ -2302,21 +2302,6 @@ plugins:
         subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/) (see [this post](https://www.afkmods.com/index.php?/topic/4682-mods-made-obsolete-by-unofficial-skyrim-special-edition-patch/))' ]
         condition: 'not active("Unofficial Skyrim Special Edition Patch.esp")'
 
-  - name: 'BugfixCompilation.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33449/' ]
-    group: *fixesGroup
-    tag:
-      - Factions
-      - Relations.Add
-      - Relations.Change
-    msg:
-      - <<: *alsoUseX
-        subs: [ '[Fixed Dragon Stalking Fix](https://www.nexusmods.com/skyrimspecialedition/mods/37230/)' ]
-        condition: 'not checksum("scripts/dragonactorscript.pex", 71277C7D)'
-    clean:
-      - crc: 0xE79729A9
-        util: 'SSEEdit v4.0.3'
-
   - name: 'Butterflies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29434/' ]
     group: *fixesGroup
