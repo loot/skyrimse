@@ -12358,8 +12358,13 @@ plugins:
         condition: 'active("DA_Skyship.esm") and not active("WheelsofLull-Skyship.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+    inc:
+      - name: 'WoLStartAt40.esp'
+        condition: 'version("WheelsOfLull.esp", "5.1.0", >=)'
     clean:
       - crc: 0xE6561EE8
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xAC83F041
         util: 'SSEEdit v4.0.3'
 
   - name: 'ww_AlternateDBEnding.esp'
