@@ -12356,6 +12356,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Airship - Dev Aveza' ]
         condition: 'active("DA_Skyship.esm") and not active("WheelsofLull-Skyship.esp")'
+      - <<: *patchProvided
+        subs: [ 'High Poly Head' ]
+        condition: 'active("High Poly Head.esm") and not active("High Poly NPCs - WheelsOfLull.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
     inc:
@@ -12366,6 +12369,12 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0xAC83F041
         util: 'SSEEdit v4.0.3'
+  - name: 'High Poly NPCs - WheelsOfLull.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748/' ]
+    msg:
+      - <<: *obsolete
+        subs: [ '[High Poly NPCs - Wheels of Lull](https://www.nexusmods.com/skyrimspecialedition/mods/748/)' ]
+        condition: 'version("WheelsOfLull.esp", "5.1.0", >=) and not version("High Poly NPCs - WheelsOfLull.esp", "5.1.0", >=)'
 
   - name: 'ww_AlternateDBEnding.esp'
     url:
