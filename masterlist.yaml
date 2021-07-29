@@ -514,6 +514,11 @@ common:
     subs:
       - 'CC Survival Mode'
       - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
+  - &patch3rdParty_ClockA
+    <<: *patch3rdParty
+    subs:
+      - "[Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/4155/)"
+      - "[Additional Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/47087)"
   - &patch3rdParty_JSDCP
     <<: *patch3rdParty
     subs:
@@ -2045,6 +2050,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
+      - <<: *patch3rdParty_ClockA
+        condition: 'active("Clockwork.esp") and not active("ClockworkSorting_Ing_CCCurios.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
     clean:
       - crc: 0x56996C5B
         util: 'SSEEdit v4.0.3'
@@ -8913,6 +8920,8 @@ plugins:
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
+      - <<: *patch3rdParty_ClockA
+        condition: 'active("Clockwork.esp") and not active("ClockworkSorting_Ing_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp") and not active("ClockworkSorting_Food_CACO.esp")'
       - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
@@ -14609,6 +14618,67 @@ plugins:
         crc: 0x7E36F0E5
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 122
+        
+  # Additional Clockwork
+  - name: 'ClockworkCourierCounterspell.esp'
+    group: "Fixes & Resources"
+    clean:
+      - crc: 0x6abc5154
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+  - name: 'ClockworkShadowmarksCastleExt.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - Marked Shadows Merged\" (ClockworkShadowmarksMerged.esp)"]
+        condition: 'active("ClockworkShadowmarksMerged.esp")'
+    clean:
+      - crc: 0xc73f27d3
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkShadowmarksTermini.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - Marked Shadows Merged\" (ClockworkShadowmarksMerged.esp)"]
+        condition: 'active("ClockworkShadowmarksMerged.esp")'
+    clean:
+      - crc: 0x93ba7a0d
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkShadowmarksTravelRoom.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - Marked Shadows Merged\" (ClockworkShadowmarksMerged.esp)"]
+        condition: 'active("ClockworkShadowmarksMerged.esp")'
+    clean:
+      - crc: 0xedc64e4b
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkShadowmarksMerged.esp'
+    clean:
+      - crc: 0xb4c1e773
+        util: "SSEEdit v4.0.3"
+    msg:
+      - <<: *includesX
+        subs: ["\"Additional Clockwork - Marked Shadows - Castle Exterior\" (ClockworkShadowmarksCastleExt.esp)"]
+        condition: 'active("ClockworkShadowmarksCastleExt.esp")'
+      - <<: *includesX
+        subs: ["\"Additional Clockwork - Marked Shadows - Travel Room\" (ClockworkShadowmarksTravelRoom.esp)"]
+        condition: 'active("ClockworkShadowmarksTravelRoom.esp")'
+      - <<: *includesX
+        subs: ["\"Additional Clockwork - Marked Shadows - Termi\" (ClockworkShadowmarksTermini.esp)"]
+        condition: 'active("ClockworkShadowmarksTermini.esp")'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkTitleRemover.esp'
+    clean:
+      - crc: 0x913191e9
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkMausoleumDummyDoorFix.esp'
+    group: "Fixes & Resources"
+    clean:
+      - crc: 0xcae2b6ae
+        util: "SSEEdit v4.0.3g"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
 
   - name: 'Darkend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10423/' ]
@@ -20679,6 +20749,101 @@ plugins:
         name: 'Carriage and Ferry Travel Overhaul - Companions Radiant Quest FIx SSE'
     after: [ 'CFTO.esp' ]
     tag: [ Factions ]
+
+  ### Patches from Additional Clockwork ***
+  # Clockwork Sorting Patches #
+  - name: 'ClockworkSorting_Food_CACO.esp'
+    clean:
+      - crc: 0x83840648
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkSorting_Ing_CACO.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch\" (ClockworkSorting_Ing_CCCurios_CACO.esp)"]
+        condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
+      - type: error
+        content: '"Additional Clockwork - Rare Curios Ingredient Sorting Patch (ClockworkSorting_Ing_CCCurios.esp)" is incompatible. Consider using the merged plugin that comes with the installer instead.'
+        condition: 'active("ClockworkSorting_Ing_CCCurios.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
+    clean:
+      - crc: 0xfc69bf72
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkSorting_Ing_CCCurios.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch\" (ClockworkSorting_Ing_CCCurios_CACO.esp)"]
+        condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
+      - type: error
+        content: '"Additional Clockwork - CACO Ingredient Sorting Patch" (ClockworkSorting_Ing_CACO.esp) is incompatible. Consider using the merged plugin instead.'
+        condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
+    clean:
+      - crc: 0x30bafdf7
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkSorting_Ing_CCCurios_CACO.esp'
+    after:
+      - name: "ClockworkSorting_Ing_CCCurios.esp"
+        display: "Additional Clockwork - Rare Curios Ingredient Sorting Patch"
+      - name: "ClockworkSorting_Ing_CACO.esp"
+        display: "Additional Clockwork - CACO Ingredient Sorting Patch"
+    msg:
+      - <<: *includesX
+        subs: [ '"Additional Clockwork - Rare Curios Ingredient Sorting Patch" (ClockworkSorting_Ing_CCCurios.esp)' ]
+        condition: 'active("ClockworkSorting_Ing_CCCurios.esp")'
+      - <<: *includesX
+        subs: [ '"Additional Clockwork - CACO Ingredient Sorting Patch" (ClockworkSorting_Ing_CACO.esp)' ]
+        condition: 'active("ClockworkSorting_Ing_CACO.esp")'
+    clean:
+      - crc: 0x3297a568
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  # Clockwork High poly Project Patches #
+  - name: 'ClockworkHPPCoalsFix.esp'
+    group: "Fixes & Resources"
+    msg:
+      - type: say
+        content: "Additional Clockwork's HPP Coals Fix is also installed. Consider using the merged plugin instead (included with installer)."
+        condition: 'active("ClockworkHPPHayFix.esp") and not active("ClockworkHPPMergedFixes.esp")'
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - High Poly Project Merged Patch\" (ClockworkHPPMergedFixes.esp)"]
+        condition: 'active("ClockworkHPPMergedFixes.esp")'
+      - <<: *requiresResources
+        subs: ["[Static Mesh Improvement Mod](https://www.nexusmods.com/skyrimspecialedition/mods/659)"]
+        condition: 'not file("textures/smim/clutter/charcoal/Charcoal01.dds" or not file("textures/smim/clutter/charcoal/Charcoal01_n.dds")'
+    clean:
+      - crc: 0xa4e097b9
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkHPPHayFix.esp'
+    group: "Fixes & Resources"
+    msg:
+      - type: say
+        content: "Additional Clockwork's \"HPP Coals Fix\" (ClockworkHPPCoalsFix.esp) is also installed. Consider using the merged plugin instead."
+        condition: 'active("ClockworkHPPCoalsFix.esp") and not active("ClockworkHPPMergedFixes.esp")'
+      - <<: *alreadyInX
+        subs: ["\"Additional Clockwork - High Poly Project Merged Patch\" (ClockworkHPPMergedFixes.esp)"]
+        condition: 'active("ClockworkHPPMergedFixes.esp")'
+    clean:
+      - crc: 0xb00e3f81
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+  - name: 'ClockworkHPPMergedFixes.esp'
+    group: "Fixes & Resources"
+    msg:
+      - <<: *includesX
+        subs: ["\"Additional Clockwork - HPP Hay Fix\" (ClockworkHPPHayFix.esp)"]
+        condition: 'active("ClockworkHPPHayFix.esp")'
+      - <<: *includesX
+        subs: ["\"Additional Clockwork - HPP Coals Fix\" (ClockworkHPPCoalsFix.esp)"]
+        condition: 'active("ClockworkHPPHayFix.esp")'
+      - <<: *requiresResources
+        subs: ["[Static Mesh Improvement Mod](https://www.nexusmods.com/skyrimspecialedition/mods/659)"]
+        condition: 'not file("textures/smim/clutter/charcoal/Charcoal01.dds") or not file("textures/smim/clutter/charcoal/Charcoal01_n.dds")'
+    clean:
+      - crc: 0x4acde125
+        util: "SSEEdit v4.0.3"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
 
   - name: 'DiverseSkyimCivilWarFix.esp'
     url:
