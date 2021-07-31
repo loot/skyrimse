@@ -3108,14 +3108,6 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_VIS_Patch.esp")'
 
-  - name: 'Yot -.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
-        name: 'YOT - Your Own Thoughts SE'
-    tag: [ Text ]
-  - name: 'YOT - LOTD.esp'
-    inc: [ *LotD_v5 ]
-
 ###### AudioVisual - Animations & Physics ######
   - name: 'beltfastenedquivers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1182/' ]
@@ -12891,6 +12883,18 @@ plugins:
     req: [ 'Better descriptions SSE.esp' ]
   - name: 'Better Descriptions SSE - YOT Patch.esp'
     req: [ 'YOT - Your Own Thoughts.esp' ]
+
+  - name: 'Yot -.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
+        name: 'YOT - Your Own Thoughts SE'
+    tag: [ Text ]
+  - name: 'YOT - Your Own Thoughts.esp'
+    clean:
+      - crc: 0x63C713B2
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x5518CDFF
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
 ###### Items ######
   - name: 'AetheriumSwordsnArmor.esp'
