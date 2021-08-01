@@ -20770,17 +20770,17 @@ plugins:
         util: "SSEEdit v4.0.3"
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
   - name: 'ClockworkSorting_Ing_CCCurios.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     msg:
       - <<: *alreadyInX
-        subs: ["\"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch\" (ClockworkSorting_Ing_CCCurios_CACO.esp)"]
+        subs: [ '"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch" (ClockworkSorting_Ing_CCCurios_CACO.esp)' ]
         condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
-      - type: error
-        content: '"Additional Clockwork - CACO Ingredient Sorting Patch" (ClockworkSorting_Ing_CACO.esp) is incompatible. Consider using the merged plugin instead.'
-        condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
+      - <<: *useInstead
+        subs: [ '"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch" (ClockworkSorting_Ing_CCCurios_CACO.esp)' ]
+        condition: 'active("ClockworkSorting_Ing_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
     clean:
-      - crc: 0x30bafdf7
-        util: "SSEEdit v4.0.3"
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+      - crc: 0x30BAFDF7
+        util: 'SSEEdit v4.0.3'
   - name: 'ClockworkSorting_Ing_CCCurios_CACO.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     clean:
