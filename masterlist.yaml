@@ -20788,21 +20788,22 @@ plugins:
         util: 'SSEEdit v4.0.3'
   # Clockwork High poly Project Patches #
   - name: 'ClockworkHPPCoalsFix.esp'
-    group: "Fixes & Resources"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+    group: *fixesGroup
+    inc: [ 'ClockworkHPPHayFix.esp' ]
     msg:
-      - type: say
-        content: "Additional Clockwork's HPP Coals Fix is also installed. Consider using the merged plugin instead (included with installer)."
-        condition: 'active("ClockworkHPPHayFix.esp") and not active("ClockworkHPPMergedFixes.esp")'
       - <<: *alreadyInX
-        subs: ["\"Additional Clockwork - High Poly Project Merged Patch\" (ClockworkHPPMergedFixes.esp)"]
+        subs: [ '"Additional Clockwork - High Poly Project Merged Patch" (ClockworkHPPMergedFixes.esp)' ]
         condition: 'active("ClockworkHPPMergedFixes.esp")'
       - <<: *requiresResources
-        subs: ["[Static Mesh Improvement Mod](https://www.nexusmods.com/skyrimspecialedition/mods/659)"]
+        subs: [ '[Static Mesh Improvement Mod](https://www.nexusmods.com/skyrimspecialedition/mods/659/)' ]
         condition: 'not file("textures/smim/clutter/charcoal/Charcoal01.dds") or not file("textures/smim/clutter/charcoal/Charcoal01_n.dds")'
+      - <<: *useInstead
+        subs: [ '"Additional Clockwork - High Poly Project Merged Patch" (ClockworkHPPMergedFixes.esp)' ]
+        condition: 'active("ClockworkHPPHayFix.esp") and not active("ClockworkHPPMergedFixes.esp")'
     clean:
-      - crc: 0xa4e097b9
-        util: "SSEEdit v4.0.3"
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+      - crc: 0xA4E097B9
+        util: 'SSEEdit v4.0.3'
   - name: 'ClockworkHPPHayFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     group: *fixesGroup
