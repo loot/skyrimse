@@ -20829,21 +20829,15 @@ plugins:
         util: "SSEEdit v4.0.3"
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
   - name: 'ClockworkHPPMergedFixes.esp'
-    group: "Fixes & Resources"
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+    group: *fixesGroup
     msg:
-      - <<: *includesX
-        subs: ["\"Additional Clockwork - HPP Hay Fix\" (ClockworkHPPHayFix.esp)"]
-        condition: 'active("ClockworkHPPHayFix.esp")'
-      - <<: *includesX
-        subs: ["\"Additional Clockwork - HPP Coals Fix\" (ClockworkHPPCoalsFix.esp)"]
-        condition: 'active("ClockworkHPPHayFix.esp")'
       - <<: *requiresResources
-        subs: ["[Static Mesh Improvement Mod](https://www.nexusmods.com/skyrimspecialedition/mods/659)"]
+        subs: [ '[Static Mesh Improvement Mod](https://www.nexusmods.com/skyrimspecialedition/mods/659/)' ]
         condition: 'not file("textures/smim/clutter/charcoal/Charcoal01.dds") or not file("textures/smim/clutter/charcoal/Charcoal01_n.dds")'
     clean:
-      - crc: 0x4acde125
-        util: "SSEEdit v4.0.3"
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087' ]
+      - crc: 0x4ACDE125
+        util: 'SSEEdit v4.0.3'
 
   - name: 'DiverseSkyimCivilWarFix.esp'
     url:
