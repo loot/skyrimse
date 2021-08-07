@@ -2957,9 +2957,7 @@ plugins:
         condition: 'checksum("coloredmapmarkers.esp", E4D0F057)'
 
   - name: 'Dawnguard Map Markers.esp'
-    url:
-      - 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/20931/'
+    url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
     group: *worldSettingsGroup
     after:
       - 'Atlas Legendary.esp'
@@ -3400,7 +3398,17 @@ plugins:
         condition: 'not active("OCW_MusicPatch_SMMM.esp")'
 
   - name: 'Sounds of Skyrim - Complete Edition.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30658/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2196-sounds-of-skyrim-complete-edition-mcm/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4137094/'
+    inc:
+      - 'SoS - Civilization.esp'
+      - 'SoS - The Dungeons.esp'
+      - 'SoS - The Wilds.esp'
+      - 'SoundsofSkyrimComplete.esp'
+    tag:
+      - C.Acoustic
     clean:
       - crc: 0xAAA01E72
         util: 'SSEEdit v4.0.3'
@@ -8092,7 +8100,6 @@ plugins:
 
   - name: 'Open Cities Skyrim.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/281/'
       - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135/'
     group: *highPriorityGroup
@@ -14078,7 +14085,10 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Skyshards.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6331/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1939-eso-skyshards/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3326552/'
     after: [ 'Landscape For Grass Mods - Moon and Star PATCH.esp' ]
     clean:
       - crc: 0x3D73F899
@@ -15202,7 +15212,6 @@ plugins:
 
   - name: 'Bring Out Your Dead.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/323/'
       - 'https://www.afkmods.com/index.php?/files/file/273-bring-out-your-dead/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2956453/'
     after:
@@ -15386,7 +15395,10 @@ plugins:
         nav: 4
 
   - name: 'Dolmen Ruins.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/327/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1897-dolmen-ruins-eso-dark-anchors/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2941128/'
     clean:
       # version: 2.0.5
       - crc: 0xBC6758E7
@@ -15637,7 +15649,9 @@ plugins:
         itm: 11
 
   - name: 'Oblivion Gates in Cities.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/388/' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1904-oblivion-gates-in-cities/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2964068/'
     inc: [ 'Open Cities Skyrim.esp' ]
     clean:
       # version: 2.0.2
@@ -15679,7 +15693,10 @@ plugins:
         util: 'SSEEdit v4.0.2'
 
   - name: 'Provincial Courier Service.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10623/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2006-provincial-courier-service/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4024642/'
     inc: [ 'Eli_Halla.esp' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -15935,7 +15952,9 @@ plugins:
         itm: 2
 
   - name: 'Storefront.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/364/' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1910-storefront/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2948562/'
     clean:
       # version: 2.0.4
       - crc: 0xDED3A723
@@ -16292,7 +16311,6 @@ plugins:
 
   - name: 'Darkwater Crossing.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/326/'
       - 'https://www.afkmods.com/index.php?/files/file/1895-darkwater-crossing/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2949694/'
     after:
@@ -16322,7 +16340,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Dawnstar.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13607/' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2035-dawnstar/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4042758/'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -16332,7 +16352,9 @@ plugins:
         util: 'SSEEdit v4.0.2'
 
   - name: 'Dragon Bridge.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8683/' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1979-dragon-bridge/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/3991097'
     after: [ 'Landscape Fixes For Grass Mods.esp' ]
     inc: [ 'DragonBridgeBoardwalk.esp' ]
     tag:
@@ -16658,7 +16680,10 @@ plugins:
         util: 'SSEEdit v4.0.3g'
 
   - name: 'Falkreath.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21266/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2143-falkreath/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4086477/'
     after:
       - 'Clockwork.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -16671,7 +16696,10 @@ plugins:
         util: 'SSEEdit v4.0.2'
 
   - name: 'Fall of Granite Hill.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22512/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2156-the-fall-of-granite-hill/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4092108'
     after:
       - name: 'HoldBorderBanners.esp'
         condition: 'not is_master("Fall of Granite Hill.esp")'
@@ -16838,7 +16866,6 @@ plugins:
 
   - name: 'Helarchen Creek.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/4043/'
       - 'https://www.afkmods.com/index.php?/files/file/1927-helarchen-creek/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/3090713/'
     after:
@@ -16922,7 +16949,6 @@ plugins:
 
   - name: 'Ivarstead.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/349/'
       - 'https://www.afkmods.com/index.php?/files/file/1583-ivarstead/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2958352/'
     after:
@@ -17225,7 +17251,6 @@ plugins:
 
   - name: 'Karthwasten.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/350/'
       - 'https://www.afkmods.com/index.php?/files/file/1768-karthwasten/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2960640/'
     inc: [ 'Karthwasten - Let The Silver Flow.esp' ]
@@ -17270,7 +17295,6 @@ plugins:
 
   - name: 'Keld-Nar.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/14353/'
       - 'https://www.afkmods.com/index.php?/files/file/2039-keld-nar/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4047950/'
     after:
@@ -17292,7 +17316,6 @@ plugins:
 
   - name: 'Kynesgrove.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/351/'
       - 'https://www.afkmods.com/index.php?/files/file/1576-kynesgrove/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2948900/'
     after:
@@ -17512,7 +17535,10 @@ plugins:
         itm: 26
 
   - name: 'Oakwood.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27564/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2178-oakwood/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4117042/'
     after:
       - 'Storefront.esp'
       - 'TouringCarriages-Oakwood.esp'
@@ -18080,7 +18106,10 @@ plugins:
         itm: 19
 
   - name: 'Rorikstead.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16881/' ]
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/2103-rorikstead/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/4063535/'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Landscape Fixes For Grass Mods.esp'
@@ -18126,8 +18155,8 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Shor''s Stone.esp'
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/354/'
       - 'https://www.afkmods.com/index.php?/files/file/1908-shors-stone/'
       - 'https://bethesda.net/it/mods/skyrim/mod-detail/2958397/'
     after:
@@ -18328,7 +18357,6 @@ plugins:
 
   - name: 'Soljund''s Sinkhole.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/358/'
       - 'https://www.afkmods.com/index.php?/files/file/1909-soljunds-sinkhole/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2959957/'
     after:
@@ -18372,8 +18400,8 @@ plugins:
         itm: 1
 
   - name: 'Telengard.esp'
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/17423/'
       - 'https://www.afkmods.com/index.php?/files/file/2107-telengard/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4066247/'
     clean:
@@ -18564,8 +18592,8 @@ plugins:
         itm: 2
 
   - name: 'Whistling Mine.esp'
+    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/367/'
       - 'https://www.afkmods.com/index.php?/files/file/1912-whistling-mine/'
       - 'https://mods.bethesda.net/#en/workshop/skyrim/mod-detail/2959645/'
     after:
@@ -19225,7 +19253,9 @@ plugins:
         nav: 1
 
   - name: 'Dragon Claw Stands.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/337/' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1898-dragon-claw-stands/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2940632/'
     clean:
       # version: 2.0.2
       - crc: 0xF622EFC1
@@ -20262,7 +20292,9 @@ plugins:
         itm: 39
 
   - name: 'Shadowmarks.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/353/' ]
+    url:
+      - 'https://www.afkmods.com/index.php?/files/file/1907-shadowmarks/'
+      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2941238/'
     group: *earlyLoadersGroup
     clean:
       # version: 2.0.1
