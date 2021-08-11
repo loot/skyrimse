@@ -10104,7 +10104,7 @@ plugins:
     inc: [ 'Race Scale Remover.esp' ]
     after:
       - name: 'Guard Dialogue Overhaul.esp'
-        condition: 'checksum("Guard Dialogue Overhaul.esp", 6ABC1129) or checksum("Guard Dialogue Overhaul.esp", 15C41030) or checksum("Guard Dialogue Overhaul.esp", 70074A19)'
+        condition: 'checksum("Guard Dialogue Overhaul.esp", 6ABC1129) or version("Guard Dialogue Overhaul.esp", "2.17", >=)'
       - 'TAR-GuildMaster1stPersonFix.esp'
       - name: 'Undeath.esp'
         condition: 'checksum("Undeath.esp", EB75A960)'
@@ -10986,14 +10986,17 @@ plugins:
       - 'Ambriel.esp'
       - 'Cutting Room Floor.esp'
       - 'Hothtrooper44_ArmorCompilation.esp'
-    tag: [ Keywords ]
+    tag:
+      - Keywords
+      - name: -Names
+        condition: 'version("Guard Dialogue Overhaul.esp", "2.17", >=)'
     clean:
       - crc: 0x6ABC1129
         util: 'SSEEdit v4.0.2f'
       - crc: 0x82FE6344
         util: 'SSEEdit v4.0.2f'
-      - crc: 0x70074A19
-        util: 'SSEEdit v4.0.3f'
+      - crc: 0x18AEFA4B
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'How Hard Is This Persuasion Check.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23886/' ]
