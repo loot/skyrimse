@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
 
   build:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v1
 
       - name: Install metadata validator
-        run: wget https://github.com/loot/metadata-validator/releases/download/0.15.0/metadata-validator.tar.xz -O - | tar -xJ --strip-components=1
+        run: wget https://github.com/loot/metadata-validator/releases/download/0.16.1/metadata-validator-0.16.1-0-gc6e86d2_0.16.1-Linux.tar.xz -O - | tar -xJ --strip-components=1
 
       - name: Install parser
         run: npm install -g js-yaml
