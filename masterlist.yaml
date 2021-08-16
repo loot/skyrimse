@@ -12626,17 +12626,17 @@ plugins:
       - 'Phenderix Magic World.esp'
       - 'SAFO.esp'
       - 'Undeath.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
       - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
         condition: 'file("Vokriinator( Black)?\.esp")'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+    req: [ *VR_PerkExtender ]
     inc:
-      - 'ScopedBows_EagleEyeTweak.esp'
+      - 'PerkusMaximus_CombatPlus.esp'
       - 'PerkusMaximus_Mage.esp'
       - 'PerkusMaximus_Master.esp'
       - 'PerkusMaximus_Thief.esp'
       - 'PerkusMaximus_Warrior.esp'
-      - 'PerkusMaximus_CombatPlus.esp'
-    req: [ *VR_PerkExtender ]
+      - 'ScopedBows_EagleEyeTweak.esp'
     msg:
       - <<: *alsoUseX
         type: warn
@@ -12809,11 +12809,11 @@ plugins:
       - name: 'PathOfSorcery.esp'
         condition: 'file("Vokriinator( Black)?\.esp")'
     inc:
+      - 'PerkusMaximus_CombatPlus.esp'
       - 'PerkusMaximus_Mage.esp'
       - 'PerkusMaximus_Master.esp'
       - 'PerkusMaximus_Thief.esp'
       - 'PerkusMaximus_Warrior.esp'
-      - 'PerkusMaximus_CombatPlus.esp'
       - 'Requiem.esp'
     tag:
       - Delev
@@ -12851,7 +12851,7 @@ plugins:
   - name: 'Vokriinator.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'Vokriinator Black.esp' ]
+        subs: [ '**Vokriinator Black.esp**' ]
         condition: 'active("Vokriinator Black.esp")'
     clean:
       - crc: 0x71B366C8
@@ -12860,9 +12860,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'Vokriinator Black.esp'
     tag:
-      - SpellStats
       - Graphics
       - Keywords
+      - SpellStats
     clean:
       - crc: 0x2BF03549
         util: 'SSEEdit v4.0.3'
