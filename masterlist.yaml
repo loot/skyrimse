@@ -10478,7 +10478,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27839/' ]
     after:
       - name: 'SPERG-SSE.esp'
-        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
+        condition: 'file("Vokriinator( Black)?\.esp")'
     msg:
       - <<: *patch3rdParty
         subs:
@@ -12621,14 +12621,14 @@ plugins:
     group: *perksGroup
     after:
       - name: 'PathOfSorcery.esp'
-        condition: 'file("Path to Ordinance.esp") or file("Vokriinator.esp") or file("Vokriinator Black.esp")'
+        condition: 'file("Path to Ordinance.esp") or file("Vokriinator( Black)?\.esp")'
       - 'Phenderix Magic Evolved.esp'
       - 'Phenderix Magic World.esp'
       - 'SAFO.esp'
       - 'Undeath.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
       - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
-        condition: 'file("Vokriinator.esp") or file("Vokriinator Black.esp")'
+        condition: 'file("Vokriinator( Black)?\.esp")'
     inc:
       - 'ScopedBows_EagleEyeTweak.esp'
       - 'PerkusMaximus_Mage.esp'
@@ -12681,11 +12681,11 @@ plugins:
     after:
       - 'Adamant.esp'
       - name: 'Ordinator - Perks of Skyrim.esp'
-        condition: 'not file("Path to Ordinance.esp") and not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
+        condition: 'not file("Path to Ordinance.esp") and not file("Vokriinator( Black)?\.esp")'
       - 'Requiem.esp'
       - 'SPERG-SSE.esp'
       - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
-        condition: 'not file("Vokriinator.esp") and not file("Vokriinator Black.esp")'
+        condition: 'not file("Vokriinator( Black)?\.esp")'
     tag:
       - Actors.Spells
       - Keywords
@@ -12810,7 +12810,7 @@ plugins:
     group: *perksGroup
     after:
       - name: 'PathOfSorcery.esp'
-        condition: 'file("Vokriinator Black.esp") or file("Vokriinator.esp")'
+        condition: 'file("Vokriinator( Black)?\.esp")'
     inc:
       - 'PerkusMaximus_Mage.esp'
       - 'PerkusMaximus_Master.esp'
