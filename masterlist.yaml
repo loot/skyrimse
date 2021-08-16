@@ -10476,9 +10476,6 @@ plugins:
 
   - name: 'MysticismMagic.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27839/' ]
-    after:
-      - name: 'SPERG-SSE.esp'
-        condition: 'file("Vokriinator( Black)?\.esp")'
     msg:
       - <<: *patch3rdParty
         subs:
@@ -12469,6 +12466,9 @@ plugins:
 ###### Gameplay - Skills & Perks ######
   - name: 'Adamant.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30191/' ]
+    after:
+      - name: 'SPERG-SSE.esp'
+        condition: 'file("Vokriinator( Black)?\.esp")'
     tag:
       - EffectStats
       - -Invent.Add
@@ -12791,6 +12791,9 @@ plugins:
 
   - name: 'SPERG-SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14180/' ]
+    after:
+      - name: 'MysticismMagic.esp'
+        condition: 'file("Vokriinator( Black)?\.esp")'
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
