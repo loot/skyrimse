@@ -10944,7 +10944,7 @@ plugins:
     tag:
       - Actors.ACBS
       - Actors.AIData
-      - Actors.AIPackages
+      - Actors.AIPackagesForceAdd
       - Actors.CombatStyle
       - Actors.Spells
       - Actors.Stats
@@ -10957,16 +10957,9 @@ plugins:
           - 'JK''s Skyrim'
           - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194/)'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSChildren.esp") and not active("aAxeRSCtweaks.esp") and not active("RealisticRSChildren.esp") and not active("RSChildren + AI Overhaul Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Cities Skyrim'
-          - '[AI Overhaul - Open Cites Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/38031/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("AI Overhaul - Open Cities.esp")'
     clean:
-      - crc: 0x973A774C
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x15F86D84
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
