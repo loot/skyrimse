@@ -2507,23 +2507,21 @@ plugins:
       - crc: 0xF2284762
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: 'WindhelmGateFixes.esp'
+  - name: 'WindhelmGateFixes(_ESL)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25621/' ]
     group: *fixesGroup
-    inc: [ 'Open Cities Skyrim.esp' ]
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xF4B58BF6
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 11
-      - <<: *quickClean
-        crc: 0xB714A153
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 11
+  - name: 'WindhelmGateFixes.esp'
+    clean:
+      - crc: 0x9193B434
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'WindhelmGateFixes_ESL.esp'
+    clean:
+      - crc: 0x124BD2A4
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28197/' ]
