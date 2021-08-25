@@ -2787,22 +2787,6 @@ plugins:
         subs: [ 'DynDOLOD' ]
         condition: 'file("DynDOLOD.esp")'
 
-  - name: '(Vanilla|Aequinoctium|Dolomite|Mythical|NAT|Obsidian|Rustic|Surreal|TrueStorms|Vivid)WaterFix.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10808/'
-        name: 'Water''s Edge Fix'
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Wet and Cold' ]
-        condition: 'active("WetandCold.esp") and not active("TrueStormsSE.esp") and not active("Wet&Cold - WaterFix - Addon.esp")'
-      - <<: *useOnlyOneX
-        subs: [ 'Water''s Edge Fix' ]
-        condition: 'many("(Vanilla|Aequinoctium|Dolomite|Mythical|NAT|Obsidian|Rustic|Surreal|TrueStorms|Vivid)WaterFix.esp")'
-  - name: 'VWExtendedRain - WaterFix - Patch.esp'
-    req: [ 'Vivid Weathers - Extended Rain.esp' ]
-  - name: 'VWExtendedSnow - WaterFix - Patch.esp'
-    req: [ 'Vivid Weathers SE - Extended Snow.esp' ]
-
   - name: 'Windhelm Improvements Snow Shader.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27696/' ]
     clean:
