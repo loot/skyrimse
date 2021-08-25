@@ -2456,17 +2456,6 @@ plugins:
         util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
-  - name: '(ApplySpellPerkEntryPointsDemonstration|SoulGemTooSmall)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/'
-        name: 'Scrambled Bugs'
-  - name: 'ApplySpellPerkEntryPointsDemonstration.esp'
-    msg: [ *moddingPlugin ]
-  - name: 'SoulGemTooSmall.esp'
-    msg:
-      - <<: *useBashTweakInstead
-        subs: [ 'Tweak Settings -> Msg: No Soul Gem Large Enough' ]
-
   - name: 'BloodOnTheIceQuestFix(USSEP)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24941/' ]
     group: *fixesGroup
@@ -2627,6 +2616,14 @@ plugins:
     clean:
       - crc: 0x21E5E6AF
         util: 'SSEEdit v4.0.3f'
+
+  - name: 'SoulGemTooSmall.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/'
+        name: 'Scrambled Bugs'
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Settings -> Msg: No Soul Gem Large Enough' ]
 
   - name: 'Unofficial Skyrim Modders Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49616/' ]
