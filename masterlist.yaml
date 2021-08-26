@@ -8,6 +8,15 @@ common:
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
 
+  - &JContainers
+    name: 'SKSE/Plugins/JContainers64.dll'
+    display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+    condition: 'not file("SkyrimVR.esm")'
+  - &JContainers_VR
+    name: 'SKSE/Plugins/JContainersVR.dll'
+    display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+    condition: 'file("SkyrimVR.esm")'
+
   - &LotD_v5
     name: 'LegacyoftheDragonborn.esm'
     display: 'Legacy of the Dragonborn v5+'
@@ -2795,8 +2804,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17763/' ]
     req:
       - *SKSE
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - *JContainers
     inc:
       - 'Backshields.esl'
       - 'Backshields.esp'
@@ -3052,16 +3060,14 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
     msg: [ *requiresMCM_SkyUISE ]
     req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - *JContainers
       - *SKSE
 
   - name: 'iEquip.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
     msg: [ *requiresMCM_SkyUISE ]
     req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - *JContainers
       - *SKSE
 
   - name: 'Joy of Perspective.esp'
@@ -8492,11 +8498,9 @@ plugins:
       - *requiresMCM_SkyUISE
       - *requiresMCM_VR
     req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - <<: *JContainers
         condition: 'file("scripts/_AP_Main.pex") and not file("SkyrimVR.esm")'
-      - name: 'SKSE/Plugins/JContainersVR.dll'
-        display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - <<: *JContainers_VR
         condition: 'file("scripts/_AP_Main.pex") and file("SkyrimVR.esm")'
       - *SKSE
       - *SKSE_VR
