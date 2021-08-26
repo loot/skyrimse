@@ -3191,6 +3191,22 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_VIS_Patch.esp")'
 
 ###### AudioVisual - Animations & Physics ######
+  - name: 'AnimatedEatingRedux.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4652/' ]
+    req:
+      - <<: *FNIS
+        condition: 'file("meshes/actors/character/behaviors/FNIS_animatedeatingredux_Behavior.hkx")'
+      - name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
+        display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+        condition: 'not file("meshes/actors/character/behaviors/FNIS_animatedeatingredux_Behavior.hkx")'
+    tag: [ Sound ]
+    msg: [ *requiresMCM_SkyUISE ]
+    clean:
+      - crc: 0x82AC4355
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'AnimatedEatingReduxTableBenchPatch.esp'
+    tag: [ Keywords ]
+
   - name: 'beltfastenedquivers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1182/' ]
     msg:
