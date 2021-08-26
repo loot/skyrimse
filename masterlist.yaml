@@ -23,6 +23,10 @@ common:
     display: 'Legacy of the Dragonborn v5+'
     condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
 
+  - &NemesisEngine
+    name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
+    display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+
   - &PapyrusUtil
     name: 'SKSE/Plugins/PapyrusUtil.dll'
     display: '[PapyrusUtil SE - Modders Scripting Utility Functions](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
@@ -3207,8 +3211,7 @@ plugins:
     req:
       - <<: *FNIS
         condition: 'checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
-      - name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
-        display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+      - <<: *NemesisEngine
         condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
     tag: [ Sound ]
     msg: [ *requiresMCM_SkyUISE ]
