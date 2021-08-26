@@ -10916,24 +10916,14 @@ plugins:
 
   - name: 'Immersive Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/' ]
-    after:
-      - 'AmazingFollowerTweaks.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Relationship Dialogue Overhaul.esp'
+    after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     req:
       - name: 'SKSE/Plugins/PapyrusUtil.dll'
         display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
       - *SKSE
-    inc:
-      - 'Convenient Horses.esp'
-      - name: 'Relationship Dialogue Overhaul.esp'
-        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+    inc: [ 'Convenient Horses.esp' ]
     msg:
       - *requiresMCM_SkyUISE
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveHorses_Patch.esp")'
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim - Bruma SE'
@@ -10948,11 +10938,16 @@ plugins:
         subs:
           - 'Relationship Dialogue Overhaul'
           - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
-        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("Relationship Dialogue Overhaul - Immersive Horses Patch.esp") and not active("RDO - Immersive Horses Patch.esp")'
+        condition: 'active("Relationship Dialogue Overhaul.esp") and not active("(Relationship Dialogue Overhaul - Immersive Horses Patch|RDO - Immersive Horses Patch|Immersive Horses - RDO)\.esp") and not active("nwsFollowerFramework.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveHorses_Patch.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
       - Actors.AIPackages
+      - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
       - Factions
@@ -10960,13 +10955,14 @@ plugins:
       - Invent.Add
       - Keywords
       - Names
+      - NPC.DefaultOutfit
+      - R.Stats
       - SpellStats
       - Stats
       - Text
     clean:
-      # version: 3.0
       - crc: 0xD5111397
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'Immersive Horses - Vanilla Horses.esp'
     tag:
       - Graphics
