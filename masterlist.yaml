@@ -3,10 +3,14 @@
 # data that gets re-used.
 common:
 # File Anchors
+  - &AnimFramework
+    name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
+    display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/) **OR** [Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+    condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
-    condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
 
   - &JContainers
     name: 'SKSE/Plugins/JContainers64.dll'
@@ -3276,7 +3280,7 @@ plugins:
         name: 'XP32 Maximum Skeleton Special Extended - XPMSSE'
     after: [ 'Requiem.esp' ]
     req:
-      - <<: *FNIS
+      - <<: *AnimFramework
         condition: 'file("meshes/actors/character/character assets/skeleton.hkx") and not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
