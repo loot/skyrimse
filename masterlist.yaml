@@ -10924,10 +10924,6 @@ plugins:
     inc: [ 'Convenient Horses.esp' ]
     msg:
       - *requiresMCM_SkyUISE
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveHorses_Patch.esp")'
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim - Bruma SE'
@@ -10943,6 +10939,10 @@ plugins:
           - 'Relationship Dialogue Overhaul'
           - '[Miscellaneous Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17700/)'
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("(Relationship Dialogue Overhaul - Immersive Horses Patch|RDO - Immersive Horses Patch|Immersive Horses - RDO)\.esp") and not active("nwsFollowerFramework.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveHorses_Patch.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
