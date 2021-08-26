@@ -22,6 +22,10 @@ common:
     display: 'Legacy of the Dragonborn v5+'
     condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
 
+  - &PapyrusUtil
+    name: 'SKSE/Plugins/PapyrusUtil.dll'
+    display: '[PapyrusUtil SE - Modders Scripting Utility Functions](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+
   - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](https://skse.silverlock.org))**'
@@ -2678,8 +2682,7 @@ plugins:
         name: 'Dynamic Distant Objects LOD - DynDOLOD'
     group: *dynamicLODGroup
     req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/) or [DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)'
+      - <<: *PapyrusUtil
         condition: 'version("DynDOLOD.esm", "2.45", >=) and not file("SKSE/Plugins/DynDOLOD.DLL")'
 
   - name: 'Occlusion.esp'
@@ -10923,8 +10926,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/' ]
     after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+      - *PapyrusUtil
       - *SKSE
     inc: [ 'Convenient Horses.esp' ]
     msg:
@@ -20885,8 +20887,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/38529/'
         name: 'Legacy of the Dragonborn: The Curators Companion'
     req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+      - <<: *PapyrusUtil
         condition: 'checksum("DBM_RelicNotifications.esp", 663FAB6A) or version("DBM_RelicNotifications.esp", "5.1.1", >=)'
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts (FISSES)](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
