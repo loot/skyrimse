@@ -3196,10 +3196,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4652/' ]
     req:
       - <<: *FNIS
-        condition: 'file("meshes/actors/character/behaviors/FNIS_animatedeatingredux_Behavior.hkx")'
+        condition: 'checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
       - name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
         display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
-        condition: 'not file("meshes/actors/character/behaviors/FNIS_animatedeatingredux_Behavior.hkx")'
+        condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
     tag: [ Sound ]
     msg: [ *requiresMCM_SkyUISE ]
     clean:
