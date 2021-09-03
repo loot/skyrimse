@@ -11571,17 +11571,36 @@ plugins:
     inc:
       - 'NotSoFast-MainQuest.esp'
       - 'Skyrim Unbound.esp'
-    clean:
-      - crc: 0xF7952FF8
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'At Your Own Pace - Bards College.esp'
     clean:
       - crc: 0x4063AC57
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'At Your Own Pace - College of Winterhold.esp'
-    inc: [ 'NotSoFast-MageGuild.esp' ]
+    inc:
+      - 'NotSoFast-MageGuild.esp'
+      - 'MCWT_TheAugursAdmonishment.esp'
     clean:
-      - crc: 0xF2B517D6
+      - crc: 0xC40608AE
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'At Your Own Pace - Main Quest.esp'
+    inc: [ 'NotSoFast-MainQuest.esp' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x6E5564B6
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'At Your Own Pace - Thieves Guild.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
+      - 'BetterQuestObjectives - YASH Patch.esp'
+      - 'More Dialogue Options.esp'
+      - 'Requiem.esp'
+    inc:
+      - 'Destroy the Thieves Guild.esp'
+      - 'TCBM.esp'
+      - 'Thieves Guild Requirements.esp'
+    clean:
+      - crc: 0x1C586D7E
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'BecomeKingofSkyrim.esp'
