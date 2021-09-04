@@ -8,6 +8,10 @@ common:
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/) **OR** [Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
 
+  - &ENBSeries
+    name: '../d3d11.dll'
+    display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
@@ -3725,9 +3729,7 @@ plugins:
           - '0.379'
           - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
         condition: 'product_version("../d3d11.dll", "0, 3, 7, 9", <) and file("../d3d11.dll")'
-    req:
-      - name: '../d3d11.dll'
-        display: '[ENBSeries v0.379+](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    req: [ *ENBSeries ]
     clean:
       - crc: 0xFD4F2E74
         util: 'SSEEdit v4.0.3'
@@ -4028,9 +4030,7 @@ plugins:
       - 'ELFX - Hardcore.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
-    req:
-      - name: '../d3d11.dll'
-        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    req: [ *ENBSeries ]
     tag: [ Graphics ]
     msg:
       - <<: *requiresResources
