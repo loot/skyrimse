@@ -8289,17 +8289,17 @@ plugins:
     inc: [ 'Oblivion Gates in Cities.esp' ]
     msg:
       - <<: *patchProvided
-        subs: [ 'Legacy of the Dragonborn v5' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Skyrim Sewers' ]
-        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
-      - <<: *patchProvided
         subs: [ 'Drinking fountains of Skyrim' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn v5' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Saints and Seducers' ]
         condition: 'active("ccbgssse025-advdsgs.esm") and not active("OCS + Saints and Seducers Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim Sewers' ]
+        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
     clean:
       - crc: 0x4CDD0E4E
         util: 'SSEEdit v4.0.3'
