@@ -16502,7 +16502,9 @@ plugins:
 
   - name: 'BluePalaceTerrace.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35180/' ]
-    after: [ 'Solitude Expansion.esp' ]
+    after:
+      - name: 'Solitude Expansion.esp'
+        condition: '(is_master("BluePalaceTerrace.esp") and is_master("Solitude Expansion.esp")) or (not is_master("BluePalaceTerrace.esp") and not is_master("Solitude Expansion.esp"))'
     tag:
       - C.Location
       - C.Light
