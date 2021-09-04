@@ -3311,6 +3311,17 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5941/' ]
     after: [ 'Relationship Dialogue Overhaul.esp' ]
 
+  - name: 'Nemesis PCEA.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31667/' ]
+    req: [ *NemesisEngine ]
+    msg:
+      - *requiresMCM_SkyUISE
+      - *requiresMCM_VR
+      - type: say
+        content:
+          - lang: en
+            text: 'This file may become corrupted. To resolve this, reinstall Nemesis PCEA.esp and run the Nemesis Unlimited Behavior Engine.exe again.'
+
   - name: 'PetTheDog.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47829/' ]
     clean:
