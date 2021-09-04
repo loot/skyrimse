@@ -12,6 +12,16 @@ common:
     name: '../d3d11.dll'
     display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
 
+  - &EngineFixes
+    name: 'SKSE/Plugins/EngineFixes.dll'
+    display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &EngineFixes_VR
+    name: 'SKSE/Plugins/EngineFixesVR.dll'
+    display: '[Engine Fixes VR](https://github.com/rollingrock/EngineFixesVR/releases)'
+    condition: 'file("SkyrimVR.esm")'
+
   - &FlatMapMarkers
     name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
     display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
@@ -3159,9 +3169,8 @@ plugins:
     msg: [ *requiresMCM_SkyUISE ]
     req:
       - *SKSE
-      - name: 'SKSE/Plugins/EngineFixes.dll'
-        display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/) or [Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245/)'
-        condition: 'not file("SKSE/Plugins/AchievementsModsEnablerLoader.dll") and not file("Plugins/Sumwunn/AchievementsModsEnabler.dll")'
+      - *EngineFixes
+      - *EngineFixes_VR
 
   - name: 'RaceMenu.esp'
     url:
