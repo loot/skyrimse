@@ -12,6 +12,10 @@ common:
     name: '../d3d11.dll'
     display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
 
+  - &FlatMapMarkers
+    name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
+    display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
@@ -21135,9 +21139,7 @@ plugins:
 
   - name: 'Paper World Map Unofficial Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21237/' ]
-    inc:
-      - name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
-        display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+    inc: [ *FlatMapMarkers ]
     req:
       - name: 'Paper World Map.esp'
         display: '[Paper World Map for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10836/)'
@@ -21145,9 +21147,7 @@ plugins:
   - name: 'Paper World Map Unofficial Fix - Vanilla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23114/' ]
     inc: [ 'Paper World Map Unofficial Fix.esp' ]
-    req:
-      - name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
-        display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+    req: [ *FlatMapMarkers ]
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
