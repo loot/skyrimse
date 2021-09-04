@@ -8308,11 +8308,8 @@ plugins:
       - 'Shadowmarks.esp'
       - 'Storefront.esp'
     msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Legacy of the Dragonborn v5'
-          - '[Open Cities + Legacy of the Dragonborn Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31272/)'
+      - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn v5' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
