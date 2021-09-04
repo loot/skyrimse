@@ -65,6 +65,16 @@ common:
     name: 'SKSE/Plugins/PapyrusUtil.dll'
     display: '[PapyrusUtil SE - Modders Scripting Utility Functions](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
 
+  - &SilentVoice
+    name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
+    display: '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &SilentVoice_VR
+    name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
+    display: '[Fuz Ro D-oh - Silent Voice VR (Alpha 3)](https://github.com/shadeMe/Fuz-Ro-D-oh-64/issues/2#issuecomment-633285465/)'
+    condition: 'file("SkyrimVR.esm")'
+
   - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](https://skse.silverlock.org))**'
@@ -14956,8 +14966,8 @@ plugins:
         name: 'The Republic of Maslea - Chapter one - SSE'
     inc: [ 'MoreBanditCamps.esp' ]
     req:
-      - name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
-        display: '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)'
+      - *SilentVoice
+      - *SilentVoice_VR
     dirty:
       - <<: *quickClean
         crc: 0x47A6A2ED
