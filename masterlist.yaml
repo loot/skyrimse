@@ -35,6 +35,10 @@ common:
     display: 'Legacy of the Dragonborn v5+'
     condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
 
+  - &ModifyFaceGenFix
+    name: 'SKSE/Plugins/mfgfix.dll'
+    display: '[MFG Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)'
+
   - &NemesisEngine
     name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
     display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
@@ -3246,9 +3250,7 @@ plugins:
 
   - name: 'Conditional Expressions.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/45148/' ]
-    req:
-      - name: 'SKSE/Plugins/mfgfix.dll'
-        display: '[Mfg Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)'
+    req: [ *ModifyFaceGenFix ]
     clean:
       - crc: 0xD09C1D44
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
