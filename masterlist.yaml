@@ -11,6 +11,12 @@ common:
   - &ENBSeries
     name: '../d3d11.dll'
     display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &ENBSeries_VR
+    name: '../d3d11.dll'
+    display: '[ENBSeries VR](http://enbdev.com/download_mod_tesskyrimvr.html)'
+    condition: 'file("SkyrimVR.esm")'
 
   - &EngineFixes
     name: 'SKSE/Plugins/EngineFixes.dll'
