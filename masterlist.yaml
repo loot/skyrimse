@@ -8285,44 +8285,20 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135/'
     group: *highPriorityGroup
-    inc:
-      - name: 'JKs Skyrim.esp'
-        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp") and not active("JK - DoS - OCS Patch.esp")'
-        display: 'JKs Skyrim'
-      - 'Oblivion Gates in Cities.esp'
-      - 'OutlawsRefuges.esp'
-    after:
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Audio Overhaul Skyrim.esp'
-      - 'Clockwork.esp'
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'Gildergreen Regrown.esp'
-      - 'The Horkerpocalypse.esp'
-      - 'iNeed - Extended.esp'
-      - 'iNeed.esp'
-      - 'JKs Skyrim.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'Palaces Castles Enhanced.esp'
-      - 'Point The Way.esp'
-      - 'Shadowmarks.esp'
-      - 'Storefront.esp'
+    after: [ 'Palaces Castles Enhanced.esp' ]
     msg:
-      - <<: *patch3rdParty
-        type: warn
-        subs:
-          - 'Legacy of the Dragonborn v5'
-          - '[Open Cities + Legacy of the Dragonborn Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31272/)'
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Skyrim Sewers' ]
-        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
       - <<: *patchProvided
         subs: [ 'Drinking fountains of Skyrim' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn v5' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Saints and Seducers' ]
         condition: 'active("ccbgssse025-advdsgs.esm") and not active("OCS + Saints and Seducers Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim Sewers' ]
+        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
     clean:
       - crc: 0x4CDD0E4E
         util: 'SSEEdit v4.0.3'
