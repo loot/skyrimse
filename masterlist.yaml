@@ -3,15 +3,83 @@
 # data that gets re-used.
 common:
 # File Anchors
+  - &AnimFramework
+    name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
+    display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/) **OR** [Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+    condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+
+  - &ENBSeries
+    name: '../d3d11.dll'
+    display: '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &ENBSeries_VR
+    name: '../d3d11.dll'
+    display: '[ENBSeries VR](http://enbdev.com/download_mod_tesskyrimvr.html)'
+    condition: 'file("SkyrimVR.esm")'
+
+  - &EngineFixes
+    name: 'SKSE/Plugins/EngineFixes.dll'
+    display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &EngineFixes_VR
+    name: 'SKSE/Plugins/EngineFixesVR.dll'
+    display: '[Engine Fixes VR](https://github.com/rollingrock/EngineFixesVR/releases)'
+    condition: 'file("SkyrimVR.esm")'
+
+  - &FlatMapMarkers
+    name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
+    display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
-    condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+
+  - &HDT_SMP
+    name: 'SKSE/Plugins/hdtSMP64.dll'
+    display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
+
+  - &JContainers
+    name: 'SKSE/Plugins/JContainers64.dll'
+    display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &JContainers_VR
+    name: 'SKSE/Plugins/JContainersVR.dll'
+    display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+    condition: 'file("SkyrimVR.esm")'
 
   - &LotD_v5
     name: 'LegacyoftheDragonborn.esm'
     display: 'Legacy of the Dragonborn v5+'
     condition: 'version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D))'
+
+  - &ModifyFaceGenFix
+    name: 'SKSE/Plugins/mfgfix.dll'
+    display: '[MFG Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)'
+
+  - &NemesisEngine
+    name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
+    display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+
+  - &PapyrusExtender
+    name: 'SKSE/Plugins/po3_PapyrusExtender.dll'
+    display: '[powerofthree''s Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854/)'
+
+  - &PapyrusUtil
+    name: 'SKSE/Plugins/PapyrusUtil.dll'
+    display: '[PapyrusUtil SE - Modders Scripting Utility Functions](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+
+  - &SilentVoice
+    name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
+    display: '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)'
+    condition: 'not file("SkyrimVR.esm")'
+
+  - &SilentVoice_VR
+    name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
+    display: '[Fuz Ro D-oh - Silent Voice VR (Alpha 3)](https://github.com/shadeMe/Fuz-Ro-D-oh-64/issues/2#issuecomment-633285465/)'
+    condition: 'file("SkyrimVR.esm")'
 
   - &SKSE
     name: '../skse64_loader.exe'
@@ -1676,7 +1744,7 @@ globals:
   - <<: *versionXIncY
     subs:
       - '**SKSE Plugin ([ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/))**'
-      - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+      - '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../d3d11.dll") and version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../d3d11.dll", "0.3.7.1", <)'
 
 # Plugin Requirements
@@ -1722,7 +1790,7 @@ globals:
   # ENBSeries
   - <<: *missingRequirementXforY
     subs:
-      - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+      - '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
       - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
   # DLL Loaders
@@ -2669,8 +2737,7 @@ plugins:
         name: 'Dynamic Distant Objects LOD - DynDOLOD'
     group: *dynamicLODGroup
     req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/) or [DynDOLOD .DLL SSE](https://forum.step-project.com/topic/13716-dyndolod-dll/)'
+      - <<: *PapyrusUtil
         condition: 'version("DynDOLOD.esm", "2.45", >=) and not file("SKSE/Plugins/DynDOLOD.DLL")'
 
   - name: 'Occlusion.esp'
@@ -2795,8 +2862,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17763/' ]
     req:
       - *SKSE
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - *JContainers
     inc:
       - 'Backshields.esl'
       - 'Backshields.esp'
@@ -3052,16 +3118,14 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
     msg: [ *requiresMCM_SkyUISE ]
     req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - *JContainers
       - *SKSE
 
   - name: 'iEquip.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
     msg: [ *requiresMCM_SkyUISE ]
     req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - *JContainers
       - *SKSE
 
   - name: 'Joy of Perspective.esp'
@@ -3121,9 +3185,8 @@ plugins:
     msg: [ *requiresMCM_SkyUISE ]
     req:
       - *SKSE
-      - name: 'SKSE/Plugins/EngineFixes.dll'
-        display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/) or [Achievements Mods Enabler](https://www.nexusmods.com/skyrimspecialedition/mods/245/)'
-        condition: 'not file("SKSE/Plugins/AchievementsModsEnablerLoader.dll") and not file("Plugins/Sumwunn/AchievementsModsEnabler.dll")'
+      - *EngineFixes
+      - *EngineFixes_VR
 
   - name: 'RaceMenu.esp'
     url:
@@ -3197,8 +3260,7 @@ plugins:
     req:
       - <<: *FNIS
         condition: 'checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
-      - name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
-        display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+      - <<: *NemesisEngine
         condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
     tag: [ Sound ]
     msg: [ *requiresMCM_SkyUISE ]
@@ -3217,9 +3279,7 @@ plugins:
 
   - name: 'Conditional Expressions.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/45148/' ]
-    req:
-      - name: 'SKSE/Plugins/mfgfix.dll'
-        display: '[Mfg Fix](https://www.nexusmods.com/skyrimspecialedition/mods/11669/)'
+    req: [ *ModifyFaceGenFix ]
     clean:
       - crc: 0xD09C1D44
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -3263,7 +3323,7 @@ plugins:
         name: 'XP32 Maximum Skeleton Special Extended - XPMSSE'
     after: [ 'Requiem.esp' ]
     req:
-      - <<: *FNIS
+      - <<: *AnimFramework
         condition: 'file("meshes/actors/character/character assets/skeleton.hkx") and not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
       - name: 'RaceMenu.esp'
         display: '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/)'
@@ -3706,11 +3766,9 @@ plugins:
       - <<: *versionXofYorGreaterRequired
         subs:
           - '0.379'
-          - '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+          - '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
         condition: 'product_version("../d3d11.dll", "0, 3, 7, 9", <) and file("../d3d11.dll")'
-    req:
-      - name: '../d3d11.dll'
-        display: '[ENBSeries v0.379+](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    req: [ *ENBSeries ]
     clean:
       - crc: 0xFD4F2E74
         util: 'SSEEdit v4.0.3'
@@ -4011,9 +4069,7 @@ plugins:
       - 'ELFX - Hardcore.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
-    req:
-      - name: '../d3d11.dll'
-        display: '[ENBSeries](http://enbdev.com/download_mod_tesskyrimse.htm)'
+    req: [ *ENBSeries ]
     tag: [ Graphics ]
     msg:
       - <<: *requiresResources
@@ -5136,8 +5192,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31300/' ]
     req:
       - *SKSE
-      - name: 'SKSE/Plugins/hdtSMP64.dll'
-        display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
+      - *HDT_SMP
     msg:
       - <<: *requiresX
         subs: [ '[Caliente''s Beautiful Bodies Enhancer (CBBE)](https://www.nexusmods.com/skyrimspecialedition/mods/198/) **OR** [Touched by Dibella (TBD)](https://www.nexusmods.com/skyrimspecialedition/mods/20024/) **OR** [BHUNP (UUNP Next Generation) SSE](https://www.nexusmods.com/skyrimspecialedition/mods/31126/)' ]
@@ -8119,9 +8174,7 @@ plugins:
 
   - name: 'Dynamic Things Alternative.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49250/' ]
-    req:
-      - name: 'SKSE/Plugins/po3_PapyrusExtender.dll'
-        display: '[powerofthree''s Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854/)'
+    req: [ *PapyrusExtender ]
     msg: [ *requiresMCM_SkyUISE ]
     clean:
       - crc: 0xB8631D40
@@ -8492,11 +8545,9 @@ plugins:
       - *requiresMCM_SkyUISE
       - *requiresMCM_VR
     req:
-      - name: 'SKSE/Plugins/JContainers64.dll'
-        display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - <<: *JContainers
         condition: 'file("scripts/_AP_Main.pex") and not file("SkyrimVR.esm")'
-      - name: 'SKSE/Plugins/JContainersVR.dll'
-        display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
+      - <<: *JContainers_VR
         condition: 'file("scripts/_AP_Main.pex") and file("SkyrimVR.esm")'
       - *SKSE
       - *SKSE_VR
@@ -10919,8 +10970,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13402/' ]
     after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+      - *PapyrusUtil
       - *SKSE
     inc: [ 'Convenient Horses.esp' ]
     msg:
@@ -14922,8 +14972,8 @@ plugins:
         name: 'The Republic of Maslea - Chapter one - SSE'
     inc: [ 'MoreBanditCamps.esp' ]
     req:
-      - name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
-        display: '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)'
+      - *SilentVoice
+      - *SilentVoice_VR
     dirty:
       - <<: *quickClean
         crc: 0x47A6A2ED
@@ -20881,8 +20931,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/38529/'
         name: 'Legacy of the Dragonborn: The Curators Companion'
     req:
-      - name: 'SKSE/Plugins/PapyrusUtil.dll'
-        display: '[PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
+      - <<: *PapyrusUtil
         condition: 'checksum("DBM_RelicNotifications.esp", 663FAB6A) or version("DBM_RelicNotifications.esp", "5.1.1", >=)'
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts (FISSES)](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
@@ -21120,9 +21169,7 @@ plugins:
 
   - name: 'Paper World Map Unofficial Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21237/' ]
-    inc:
-      - name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
-        display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+    inc: [ *FlatMapMarkers ]
     req:
       - name: 'Paper World Map.esp'
         display: '[Paper World Map for SSE](https://www.nexusmods.com/skyrimspecialedition/mods/10836/)'
@@ -21130,9 +21177,7 @@ plugins:
   - name: 'Paper World Map Unofficial Fix - Vanilla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23114/' ]
     inc: [ 'Paper World Map Unofficial Fix.esp' ]
-    req:
-      - name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
-        display: '[Flat Map Markers SSE](https://www.nexusmods.com/skyrimspecialedition/mods/22122/)'
+    req: [ *FlatMapMarkers ]
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
