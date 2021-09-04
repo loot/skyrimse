@@ -20,6 +20,10 @@ common:
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
 
+  - &HDT_SMP
+    name: name: 'SKSE/Plugins/hdtSMP64.dll'
+    display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
+
   - &JContainers
     name: 'SKSE/Plugins/JContainers64.dll'
     display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
@@ -5163,8 +5167,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31300/' ]
     req:
       - *SKSE
-      - name: 'SKSE/Plugins/hdtSMP64.dll'
-        display: '[HDT-SMP (Skinned Mesh Physics)](https://www.nexusmods.com/skyrimspecialedition/mods/30872/)'
+      - *HDT_SMP
     msg:
       - <<: *requiresX
         subs: [ '[Caliente''s Beautiful Bodies Enhancer (CBBE)](https://www.nexusmods.com/skyrimspecialedition/mods/198/) **OR** [Touched by Dibella (TBD)](https://www.nexusmods.com/skyrimspecialedition/mods/20024/) **OR** [BHUNP (UUNP Next Generation) SSE](https://www.nexusmods.com/skyrimspecialedition/mods/31126/)' ]
