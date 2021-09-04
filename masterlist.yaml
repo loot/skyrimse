@@ -35,6 +35,10 @@ common:
     name: 'Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe'
     display: '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
 
+  - &PapyrusExtender
+    name: 'SKSE/Plugins/po3_PapyrusExtender.dll'
+    display: '[powerofthree''s Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854/)'
+
   - &PapyrusUtil
     name: 'SKSE/Plugins/PapyrusUtil.dll'
     display: '[PapyrusUtil SE - Modders Scripting Utility Functions](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)'
@@ -8136,9 +8140,7 @@ plugins:
 
   - name: 'Dynamic Things Alternative.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49250/' ]
-    req:
-      - name: 'SKSE/Plugins/po3_PapyrusExtender.dll'
-        display: '[powerofthree''s Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854/)'
+    req: [ *PapyrusExtender ]
     msg: [ *requiresMCM_SkyUISE ]
     clean:
       - crc: 0xB8631D40
