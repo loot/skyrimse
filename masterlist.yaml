@@ -7458,12 +7458,12 @@ plugins:
         name: 'Landscape Fixes For Grass Mods'
   - name: 'Landscape Fixes For Grass Mods.esp'
     after:
-      - 'Enhanced Landscapes.esp'
-      - 'Midsummer - Stylised Grass for Skyrim SE.esp'
-      - 'Tamriel Reloaded HD SE.esp'
-      - 'Whiterun Forest Borealis.esp'
-      - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-      - 'ViscousGrass.esp'
+      - name: 'Midsummer - Stylised Grass for Skyrim SE.esp'
+        condition: '(is_master("Midsummer - Stylised Grass for Skyrim SE.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Midsummer - Stylised Grass for Skyrim SE.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
+      - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
+        condition: '(is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
+      - name: 'ViscousGrass.esp'
+        condition: '(is_master("ViscousGrass.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("ViscousGrass.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
     msg:
       - <<: *patchProvided
         subs: [ 'Alternate Start' ]
@@ -7529,8 +7529,8 @@ plugins:
         subs: [ 'Valkyrja Estate' ]
         condition: 'active("ValkyrjaEstate.esp") and not active("Landscape For Grass Mods - Valkyrja Estate PATCH.esp") and not active("Landscape Fixes For Grass Patches Merged.esp")'
     clean:
-      - crc: 0xAC6FA805
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x4F589808
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: '(Landscape Fixes For Grass Mods|Landscape For Grass Mods) .*\.esp'
     after: [ 'Landscape Fixes For Grass Mods.esp' ]
   - name: 'Landscape For Grass Mods - Arthmoor''s Dragon Bridge PATCH.esp'
@@ -7538,9 +7538,7 @@ plugins:
   - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
     after: [ 'Immersive Citizens - AI Overhaul.esp' ]
   - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'JKs Skyrim.esp'
+    after: [ 'JKs Skyrim.esp' ]
 
   - name: 'MajesticMountains.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
