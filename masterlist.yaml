@@ -15929,11 +15929,12 @@ plugins:
     url:
       - 'https://www.afkmods.com/index.php?/files/file/2006-provincial-courier-service/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4024642/'
-    inc: [ 'Eli_Halla.esp' ]
     after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'manny Lantern Caretakers.esp'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Provincial Courier Service.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Provincial Courier Service.esp"))'
+      - name: 'manny Lantern Caretakers.esp'
+        condition: '(is_master("manny Lantern Caretakers.esp") and is_master("Provincial Courier Service.esp")) or (not is_master("manny Lantern Caretakers.esp") and not is_master("Provincial Courier Service.esp"))'
+    inc: [ 'Eli_Halla.esp' ]
     tag:
       - Actors.ACBS
       - Actors.AIPackages
