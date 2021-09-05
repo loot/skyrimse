@@ -17756,8 +17756,10 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/2178-oakwood/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4117042/'
     after:
-      - 'Storefront.esp'
-      - 'TouringCarriages-Oakwood.esp'
+      - name: 'Storefront.esp'
+        condition: '(is_master("Storefront.esp") and is_master("Oakwood.esp")) or (not is_master("Storefront.esp") and not is_master("Oakwood.esp"))'
+      - name: 'TouringCarriages-Oakwood.esp'
+        condition: '(is_master("TouringCarriages-Oakwood.esp") and is_master("Oakwood.esp")) or (not is_master("TouringCarriages-Oakwood.esp") and not is_master("Oakwood.esp"))'
     inc: [ 'Lakeview_Extended.esp' ]
     clean:
       - crc: 0xC96DCE2B
