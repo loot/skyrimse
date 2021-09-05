@@ -16549,8 +16549,8 @@ plugins:
       - 'https://www.afkmods.com/index.php?/files/file/2035-dawnstar/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4042758/'
     after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("Dawnstar.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("Dawnstar.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
     clean:
       # version: 2.0.5
       - crc: 0x3305FDD4
