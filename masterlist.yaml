@@ -17076,7 +17076,9 @@ plugins:
 
   - name: 'Helgen Reborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5673/' ]
-    after: [ 'MLU.esp' ]
+    after:
+      - name: 'MLU.esp'
+        condition: '(is_master("Helgen Reborn.esp") and is_master("MLU.esp")) or (not is_master("Helgen Reborn.esp") and not is_master("MLU.esp"))'
     msg:
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not active("JS Dragon Claws - Helgen Reborn Patch.esp")'
