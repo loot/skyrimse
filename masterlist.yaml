@@ -6847,6 +6847,9 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
     msg:
+      - <<: *obsolete
+        subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
+        condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "8.0.0", >=)'
       - *requiresMCM_SkyUISE
       - type: say
         content:
