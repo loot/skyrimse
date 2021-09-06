@@ -15926,19 +15926,22 @@ plugins:
         util: 'SSEEdit v4.0.2'
 
   - name: 'Provincial Courier Service.esp'
-    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     url:
       - 'https://www.afkmods.com/index.php?/files/file/2006-provincial-courier-service/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/4024642/'
-    inc: [ 'Eli_Halla.esp' ]
     after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Landscape Fixes For Grass Mods.esp'
-      - 'manny Lantern Caretakers.esp'
-    tag: [ C.Location ]
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Provincial Courier Service.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Provincial Courier Service.esp"))'
+      - name: 'manny Lantern Caretakers.esp'
+        condition: '(is_master("manny Lantern Caretakers.esp") and is_master("Provincial Courier Service.esp")) or (not is_master("manny Lantern Caretakers.esp") and not is_master("Provincial Courier Service.esp"))'
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - Factions
+      - NPC.CrimeFaction
     clean:
-      - crc: 0xEF4753DF
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x423C0D3A
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Ravengrave.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6570/' ]
