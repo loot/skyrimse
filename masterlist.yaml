@@ -12459,14 +12459,17 @@ plugins:
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
     after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'SkyrimSewers.esp'
+      - name: 'Immersive Citizens - AI Overhaul.esp'
+        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("The Brotherhood of Old.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("The Brotherhood of Old.esp"))'
+      - name: 'SkyrimSewers.esp'
+        condition: '(is_master("SkyrimSewers.esp") and is_master("The Brotherhood of Old.esp")) or (not is_master("SkyrimSewers.esp") and not is_master("The Brotherhood of Old.esp"))'
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Skyrim Sewers'
           - '[ Brotherhood of Old and Skyrim Sewers Compatibility patch ](https://www.nexusmods.com/skyrimspecialedition/mods/17697/)'
         condition: 'active("SkyrimSewers.esp") and not file("TBoO & SS Patch.esp")'
+    tag: [ NPC.DefaultOutfit ]
     clean:
       - crc: 0xABB4BCB2
         util: 'SSEEdit v4.0.3'
