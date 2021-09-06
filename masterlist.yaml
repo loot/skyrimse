@@ -13840,6 +13840,10 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Winter Is Coming ESP' ]
         condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?\.esp")'
+  - name: '1nivWICCloaks(NoGuards)?\.esp'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
   - name: '1nivWICCloaks.esp'
     msg:
       - <<: *patch3rdParty_CCSMPC
@@ -13862,6 +13866,10 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**1nivWICCloaks_COS_CCOR_Patch.esp**' ]
         condition: 'active("1nivWICCloaks_COS_CCOR_Patch.esp")'
+    tag:
+      - -Delev
+      - Outfits.Remove
+      - -Relev
 
   - name: 'InsanitySorrow Weapons Pack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/' ]
