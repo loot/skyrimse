@@ -6837,22 +6837,58 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
         name: 'Skyrim Immersive Creatures Special Edition'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18639/'
-        name: 'Skyrim Immersive Creatures - Official Patch and Patch Central'
     tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.DeathItem
-      - Actors.Stats
-      - -C.Location
-      - Factions
-      - Graphics
-      - Invent.Add
-      - Invent.Remove
-      - NPC.Class
-      - NPC.Race
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
+      - Actors.Voice
+      - NPC.AttackRace
+      - NPC.DefaultOutfit
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
     msg:
+      - <<: *obsolete
+        subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
+        condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Better Spell Learning'
+          - '[Better Spell Learning - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19960/)'
+        condition: 'active("Better Spell Learning.esp") and not active("Better Spell Learning - SIC SE Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Complete Crafting Overhaul Remastered'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SIC CCOR Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Creation Club: Nix-Hound'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("ccbgssse035-petnhound.esl") and not active("SIC CClub Nixhound Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Creation Club: Saints & Seducers'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("ccbgssse025-advdsgs.esm") and not active("SIC CClub Saints & Seducer Integration.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Sounds - Compendium'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("SIC - Immersive Sound Integration.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Improved Closefaced Helmets'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("imp_helm_legend.esp") and not active("SIC - ICH Patch.esp") and not active("SIC WACCF_ICH Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Wintersun - Faiths of Skyrim'
+          - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp") and not active("Wintersun_GBRS_SIC_ZIA_Patch.esp")'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
       - *requiresMCM_SkyUISE
       - type: say
         content:
@@ -6861,33 +6897,9 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Better Spell Learning'
-          - '[Better Spell Learning - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
-        condition: 'active("Better Spell Learning.esp") and not active("Better Spell Learning - SIC SE Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Improved Closefaced Helmets'
-          - '[Skyrim Immersive Creatures - Official Patch and Patch Central](https://www.nexusmods.com/skyrimspecialedition/mods/18639/)'
-        condition: 'active("imp_helm_legend.esp") and not active("SIC - ICH Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wintersun - Faiths of Skyrim'
-          - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp") and not active("Wintersun_GBRS_SIC_ZIA_Patch.esp")'
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
-      - <<: *patchUpdateAvailable
-        subs: [ '[Skyrim Immersive Creatures - Official Patch and Patch Central](https://www.nexusmods.com/skyrimspecialedition/mods/18639/)' ]
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and checksum("Skyrim Immersive Creatures Special Edition.esp", 7CD2929B)'
     clean:
-      - crc: 0x7CD2929B
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x01764C6F
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xC8771FF5
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Skyrim Revamped - Complete Enemy Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14598/' ]
