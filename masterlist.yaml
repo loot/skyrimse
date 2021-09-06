@@ -6855,8 +6855,6 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Better Spell Learning'
@@ -6894,6 +6892,8 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp") and not active("Wintersun_GBRS_SIC_ZIA_Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
+      - <<: *patch3rdParty_STIP
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
     clean:
       - crc: 0xC8771FF5
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
