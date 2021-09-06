@@ -8265,6 +8265,33 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
 
+  - name: 'Master of Disguise - Special Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9959/' ]
+    req: [ *SKSE ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '**[Bug Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/33261/)** OR **[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/)**' ]
+        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll") or not file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Alternate Start - Live Another Life' ]
+        condition: 'active("Master of Disguise - Special Edition.esp") and active("Alternate Start - Live Another Life.esp")'
+      - <<: *compatNotes
+        subs: [ 'https://forums.nexusmods.com/index.php?/topic/5644877-master-of-disguise-immersive-disguises-for-skyrim-se/page-4#entry50270297' ]
+      - *missingRequirementAddrLibforPlugin
+      - *requiresMCM_SkyUISE
+    tag:
+      - Actors.ACBS
+      - Actors.DeathItem
+      - Factions
+      - Invent.Remove
+      - NPC.DefaultOutfit
+      - -ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0xF97D9D82
+        util: 'SSEEdit v4.0.3g'
+
   - name: 'Open Cities Skyrim.esp'
     url:
       - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
