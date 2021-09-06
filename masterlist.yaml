@@ -6850,14 +6850,6 @@ plugins:
       - <<: *obsolete
         subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
         condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "8.0.0", >=)'
-      - *requiresMCM_SkyUISE
-      - type: say
-        content:
-          - lang: en
-            text: 'When using DwemerSpectresLegendary.esp, set Creature Toggles Dwemer Spectre to Disabled in MCM Settings.'
-          - lang: de
-            text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
-        condition: 'active("DwemerSpectresLegendary.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Better Spell Learning'
@@ -6897,6 +6889,14 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
       - <<: *patch3rdParty_STIP
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
+      - *requiresMCM_SkyUISE
+      - type: say
+        content:
+          - lang: en
+            text: 'When using DwemerSpectresLegendary.esp, set Creature Toggles Dwemer Spectre to Disabled in MCM Settings.'
+          - lang: de
+            text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
+        condition: 'active("DwemerSpectresLegendary.esp")'
     clean:
       - crc: 0xC8771FF5
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
