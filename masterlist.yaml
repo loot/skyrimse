@@ -13831,21 +13831,45 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 5
 
-  - name: '1nivWICCloaks(NoGuards)?\.esp'
+  - name: '1nivWIC(Sky)?Cloaks(CRAFT|NoGuards|Patch)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4933/'
         name: 'Winter Is Coming SSE - Cloaks'
+  - name: '1nivWICCloaks(CRAFT|NoGuards)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Winter Is Coming ESP' ]
+        condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?\.esp")'
+  - name: '1nivWICCloaks(NoGuards)?\.esp'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
   - name: '1nivWICCloaks.esp'
     msg:
       - <<: *patch3rdParty_CCSMPC
         condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Winter Is Coming.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
+    clean:
+      - crc: 0x5D2443E8
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: '1nivWICCloaksCRAFT.esp'
+    clean:
+      - crc: 0x37A08CC4
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: '1nivWICCloaksNoGuards.esp'
+    clean:
+      - crc: 0x75B4F674
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: '1nivWICSkyCloaksPatch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ '1nivWICCloaks_COS_CCOR_Patch.esp' ]
+        subs: [ '**1nivWICCloaks_COS_CCOR_Patch.esp**' ]
         condition: 'active("1nivWICCloaks_COS_CCOR_Patch.esp")'
+    tag:
+      - -Delev
+      - Outfits.Remove
+      - -Relev
 
   - name: 'InsanitySorrow Weapons Pack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/' ]
