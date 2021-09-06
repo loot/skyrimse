@@ -13462,6 +13462,9 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Cloaks of Skyrim ESP' ]
         condition: 'many("Cloaks( - No Imperial| - Player Only)?\.esp")'
+    tag: [ Invent.Add ]
+  - name: 'Cloaks( - No Imperial)?( - Dawnguard)?\.esp'
+    tag: [ Outfits.Add ]
   - name: 'Cloaks.esp'
     msg:
       - <<: *patch3rdParty_CCSMPC
@@ -13470,14 +13473,10 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CloaksofSkyrim_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    tag:
-      - Invent.Add
-      - Outfits.Add
     clean:
       - crc: 0x7A522F11
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'Cloaks - Dawnguard.esp'
-    tag: [ Outfits.Add ]
     clean:
       - crc: 0x60DE7658
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
