@@ -12572,10 +12572,14 @@ plugins:
   - name: 'Tools of Kagrenac.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
     after:
-      - 'MLU.esp'
-      - 'ZIA_Ancient Pack.esp'
-      - 'ZIA_Complete Pack.esp'
-      - 'ZKN.esp'
+      - name: 'MLU.esp'
+        condition: '(is_master("MLU.esp") and is_master("Tools of Kagrenac.esp")) or (not is_master("MLU.esp") and not is_master("Tools of Kagrenac.esp"))'
+      - name: 'ZIA_Ancient Pack.esp'
+        condition: '(is_master("ZIA_Ancient Pack.esp") and is_master("Tools of Kagrenac.esp")) or (not is_master("ZIA_Ancient Pack.esp") and not is_master("Tools of Kagrenac.esp"))'
+      - name: 'ZIA_Complete Pack.esp'
+        condition: '(is_master("ZIA_Complete Pack.esp") and is_master("Tools of Kagrenac.esp")) or (not is_master("ZIA_Complete Pack.esp") and not is_master("Tools of Kagrenac.esp"))'
+      - name: 'ZKN.esp'
+        condition: '(is_master("ZKN.esp") and is_master("Tools of Kagrenac.esp")) or (not is_master("ZKN.esp") and not is_master("Tools of Kagrenac.esp"))'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TOK_Patch.esp")'
