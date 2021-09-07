@@ -1551,12 +1551,6 @@ bash_tags:
   - 'SpellStats'
   - 'Stats'
   - 'Text'
-  ## Removed & Deprecated Bash Tags ##
-  # - 'C.GridFlags'
-  # - 'Derel'
-  # - 'Invent'
-  # - 'NoMerge'
-  # - 'Relations'
 
 globals:
   - type: warn
@@ -1910,6 +1904,7 @@ groups:
     after: [ *lateChangesGroup ]
 
 plugins:
+###### Official Game Files ######
   - name: 'Update.esm'
     group: *dlcGroup
     tag:
@@ -2387,9 +2382,10 @@ plugins:
       - crc: 0x0CD1CA0B
         util: 'SSEEdit v4.0.3g'
 
-  ### Unofficial Creation Club Updates ###
-  - name: 'JRCCPatches.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12951/' ]
+  - name: 'JRCCPatches.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12951/'
+        name: 'Unofficial Creation Club Updates - All-In-One'
     group: *fixesGroup
     inc: [ 'unofficial skyrim creation club content patch.esl' ]
   - name: 'JR(SpellPack|ArcaneArcherPack|Chrysamere|KnightsOfTheNine|DwarvenMudcrab|Zombies|RuinsEdge|Shadowrend|StaffOfSheogorath|StendarrsHammer)(Patch)?\.esp'
@@ -2414,22 +2410,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12750/' ]
     group: *fixesGroup
 
-  ### Unofficial Skyrim Creation Club Content Patches ###
   - name: 'Unofficial (Skyrim Creation Club Content|Arcane Accessories|Arcane Archer Pack|Arms of Chaos|Bone Wolf|Chrysamere|Civil War Champions|Daedric Mail Armor|Dawnfang and Duskfang|Dead Man''s Dread|Divine Crusader|Dragonscale Armor|Dwarven Armored Mudcrab|Dwarven Mail Armor|Ebony Plate Armor|Elite Crossbows|Elven Hunter Armor|Expanded Crossbow Pack|Forgotten Seasons|Goblins|Gray Cowl Returns|Hendraheim|Lord''s Mail|Myrwatch|Netch Leather Armors|Nix-Hound|Nordic Jewelry|Pets of Skyrim|Plague of the Dead|Rare Curios|Ruin''s Edge|Saints and Seducers|Saturalia Holiday Pack|Shadowfoot Sanctum|Shadowrend|Skyrim Survival|Spell Knight Armor|Staff of Hasedoki|Staff of Sheogorath|Stalhrim Fur Armor|Steel Soldier Armor|Stendarr''s Hammer|Sunder & Wraithguard|Tundra Homestead|Umbra|Vigil Enforcer Armor Set|Wild Horses) Patch.esl'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/'
+        name: 'Unofficial Skyrim Creation Club Content Patches'
     group: *fixesGroup
-  - name: 'Unofficial Arcane Archer Pack Patch.esl'
-    tag: [ SpellStats ]
-  - name: 'Unofficial Elven Hunter Armor Patch.esl'
-    tag: [ Delev ]
-  - name: 'Unofficial Forgotten Seasons Patch.esl'
-    tag: [ C.Location ]
-  - name: 'Unofficial Steel Soldier Armor Patch.esl'
-    tag: [ Delev ]
-  - name: 'Unofficial Umbra Patch.esl'
-    tag:
-      - C.Location
-      - Stats
   - name: 'Unofficial Skyrim Creation Club Content Patch.esl'
     tag:
       - C.Location
@@ -2441,6 +2426,12 @@ plugins:
     clean:
       - crc: 0x6AD6F2AD
         util: 'SSEEdit v4.0.3'
+  - name: 'Unofficial Arcane Archer Pack Patch.esl'
+    tag: [ SpellStats ]
+  - name: 'Unofficial Elven Hunter Armor Patch.esl'
+    tag: [ Delev ]
+  - name: 'Unofficial Forgotten Seasons Patch.esl'
+    tag: [ C.Location ]
   - name: 'Unofficial Skyrim Survival Patch.esl'
     tag:
       - Keywords
@@ -2448,6 +2439,12 @@ plugins:
     clean:
       - crc: 0xA83AA56A
         util: 'SSEEdit v4.0.3'
+  - name: 'Unofficial Steel Soldier Armor Patch.esl'
+    tag: [ Delev ]
+  - name: 'Unofficial Umbra Patch.esl'
+    tag:
+      - C.Location
+      - Stats
 
 ###### Fixes ######
   - name: 'Allinonefpsfix.esp'
@@ -2562,10 +2559,6 @@ plugins:
 
   - name: 'Modern Brawl Bug Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1473/' ]
-    # "This mod overwrites files from mod X, is it compatible?"
-    # Many mods that were found to trigger the brawl bug come with an included copy of the (obsolete)Brawl Bugs Patch.
-    # Load the Modern Brawl Bug Fix after them, preferably at the end of your load order to be sure there is nothing overwriting it.
-    # (This will not impede the functionality of said other mods.)
     group: *lateChangesGroup
 
   - name: 'MorthalMillFix.esp'
@@ -2589,23 +2582,6 @@ plugins:
     clean:
       - crc: 0xBF9B55EB
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
-
-  ### Scrambled Bugs Optional Plugins ###
-  - name: 'ApplySpellPerkEntryPointsDemonstration.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
-    msg: [ *moddingPlugin ]
-  - name: 'SoulGemTooSmall.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/' ]
-    msg:
-      - <<: *useBashTweakInstead
-        subs: [ 'Tweak Settings -> Msg: No Soul Gem Large Enough' ]
-
-  - name: 'SmallEnviromentalFixes(SEF).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5270/' ]
-    group: *fixesGroup
-    clean:
-      - crc: 0x85FDB027
-        util: 'SSEEdit v4.0.3'
 
   - name: 'Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm'
     url:
@@ -2633,6 +2609,21 @@ plugins:
     clean:
       - crc: 0x21E5E6AF
         util: 'SSEEdit v4.0.3f'
+
+  - name: 'SmallEnviromentalFixes(SEF).esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5270/' ]
+    group: *fixesGroup
+    clean:
+      - crc: 0x85FDB027
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'SoulGemTooSmall.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/43532/'
+        name: 'Scrambled Bugs'
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Settings -> Msg: No Soul Gem Large Enough' ]
 
   - name: 'Unofficial Skyrim Modders Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49616/' ]
@@ -2756,7 +2747,9 @@ plugins:
   - name: 'Smashed Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/90987/' ]
     group: *dynamicPatchGroup
+
   - name: 'SSEMerged.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/164/' ]
     group: *dynamicPatchGroup
     after:
       - 'One ImCh Patch.esp'
@@ -5473,7 +5466,6 @@ plugins:
       - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
 
-  ### Bijin Series by rxkx22
   - name: 'Bijin AIO.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11287/'
@@ -5565,7 +5557,6 @@ plugins:
       - crc: 0xCD13EC4B
         util: 'SSEEdit v4.0.3'
 
-  ### Bijin AIO by Mebantiza
   - name: 'Bijin(_AIO 2018|_AIO-SV 2018|_Frea-Iona)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11/'
@@ -5986,11 +5977,12 @@ plugins:
       - crc: 0x165E7B6D
         util: 'SSEEdit v4.0.3g'
 
-  ### Interesting NPCs ###
   - name: '3DNPC.esp'
     url:
-      - 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
+      - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
+        name: 'Interesting NPCs'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
+        name: 'Interesting NPCs SE (3DNPC)'
     tag:
       - -C.Acoustic
       - -C.Climate
