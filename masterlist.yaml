@@ -6384,6 +6384,15 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/598/'
         name: 'Buxom Wench Yuriana'
+    req:
+      - name: 'SKSE/Plugins/DynamicAnimationReplacer.dll'
+        display: '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/)'
+      - *SilentVoice
+      - *SilentVoice_VR
+    msg:
+      - <<: *requiresX
+        subs: [ '[XP32 Maximum Skeleton](https://www.nexusmods.com/skyrimspecialedition/mods/1988/)' ]
+        condition: 'not file("XPMSE.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xE37FB948
