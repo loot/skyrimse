@@ -16124,8 +16124,10 @@ plugins:
   - name: 'Settlements Expanded SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7777/' ]
     after:
-      - 'Soljund''s Sinkhole.esp'
-      - 'Whistling Mine.esp'
+      - name: 'Soljund''s Sinkhole.esp'
+        condition: '(is_master("Soljund''s Sinkhole.esp") and is_master("Settlements Expanded SE.esp")) or (not is_master("Soljund''s Sinkhole.esp") and not is_master("Settlements Expanded SE.esp"))'
+      - name: 'Whistling Mine.esp'
+        condition: '(is_master("Whistling Mine.esp") and is_master("Settlements Expanded SE.esp")) or (not is_master("Whistling Mine.esp") and not is_master("Settlements Expanded SE.esp"))'
     tag:
       - C.Acoustic
       - C.Location
