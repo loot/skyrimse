@@ -4253,9 +4253,12 @@ plugins:
         itm: 25
   - name: 'LoS II - Tamriel Master Lights.esp'
     after:
-      - 'ELFX Fixes.esp'
-      - 'EnhancedLightsandFX.esp'
-      - 'Skysan_ELFX_SMIM_Fix.esp'
+      - name: 'ELFX Fixes.esp'
+        condition: '(is_master("ELFX Fixes.esp") and is_master("LoS II - Tamriel Master Lights.esp")) or (not is_master("ELFX Fixes.esp") and not is_master("LoS II - Tamriel Master Lights.esp"))'
+      - name: 'EnhancedLightsandFX.esp'
+        condition: '(is_master("EnhancedLightsandFX.esp") and is_master("LoS II - Tamriel Master Lights.esp")) or (not is_master("EnhancedLightsandFX.esp") and not is_master("LoS II - Tamriel Master Lights.esp"))'
+      - name: 'Skysan_ELFX_SMIM_Fix.esp'
+        condition: '(is_master("Skysan_ELFX_SMIM_Fix.esp") and is_master("LoS II - Tamriel Master Lights.esp")) or (not is_master("Skysan_ELFX_SMIM_Fix.esp") and not is_master("LoS II - Tamriel Master Lights.esp"))'
     inc:
       - 'CLARALUX SSE.esp'
       - 'ELFX - Exteriors.esp'
