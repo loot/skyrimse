@@ -6855,6 +6855,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12680/'
         name: 'Skyrim Immersive Creatures Special Edition'
+    inc:
+      - name: 'Skytest Creature Extension.esp'
+        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+      - name: 'Skytest Immersive Creatures.esp'
+        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
     tag:
       - Actors.Perks.Add
       - Actors.Perks.Remove
@@ -6867,7 +6872,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
-        condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+        condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.2", >=)'
       - <<: *patch3rdParty
         subs:
           - 'Better Spell Learning'
@@ -6900,13 +6905,11 @@ plugins:
         condition: 'active("imp_helm_legend.esp") and not active("SIC - ICH Patch.esp") and not active("SIC WACCF_ICH Patch.esp")'
       - <<: *patch3rdParty
         subs:
-          - 'Wintersun - Faiths of Skyrim'
-          - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
-        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp") and not active("Wintersun_GBRS_SIC_ZIA_Patch.esp")'
+          - 'SkyTEST Realistic Animals and Predators'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SIC - Skytest Integration.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Creatures.esp")'
       - *requiresMCM_SkyUISE
       - type: say
         content:
@@ -6916,7 +6919,7 @@ plugins:
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
     clean:
-      - crc: 0xC8771FF5
+      - crc: 0xE92A5A2D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Skyrim Revamped - Complete Enemy Overhaul.esp'
