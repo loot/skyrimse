@@ -21916,6 +21916,20 @@ plugins:
         name: 'Skyrim 3D Trees Patches'
     msg: [ *alreadyInOrFixedByBDSv3_0 ]
 
+  ### SkyTEST Integration Project ###
+  - name: 'Skytest Creature Extension.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13428/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'SIC - Skytest Integration.esp' ]
+        condition: 'active("SIC - Skytest Integration.esp")'
+  - name: 'Skytest Immersive Creatures.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13428/' ]
+    msg:
+      - <<: *obsolete
+        subs: [ '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)' ]
+        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+
   ### Survival Mode Patch Collection ###
   - name: 'Survival Mode Patches - AMB Content Addon.esp'
     url:
