@@ -5595,6 +5595,9 @@ plugins:
 
   - name: 'Elderly&Adults.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42335/' ]
+    msg:
+      - <<: *patch3rdParty_KPH_WACCF
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Elderly&Adults.esp")'
     tag:
       - Graphics
       - Outfits.Add
