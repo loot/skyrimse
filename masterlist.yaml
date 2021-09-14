@@ -1822,9 +1822,13 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
+  - name: &lowPriorityGroup Low Priority Overrides
+    description: 'A group for modules that must load after most other mods.'
+    after: [ default ]
+
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after: [ default ]
+    after: [ *lowPriorityGroup ]
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
@@ -1865,12 +1869,9 @@ groups:
     description: 'A group for modules that modify cell encounter zones.'
     after: [ *cellMusicGroup ]
 
-  - name: &lowPriorityGroup Low Priority Overrides
-    after: [ *cellEncZonesGroup ]
-
   - name: &interiorLightingGroup Interior Lighting
     description: 'A group for modules that add/remove and/or fix light bulbs in interiors.'
-    after: [ *lowPriorityGroup ]
+    after: [ *cellEncZonesGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *interiorLightingGroup ]
