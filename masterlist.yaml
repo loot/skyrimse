@@ -3893,7 +3893,6 @@ plugins:
         name: 'Enhanced Lights and FX'
   - name: 'EnhancedLightsandFX.esp'
     inc:
-      - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Exteriors.esp'
     after:
       - name: '3DNPC.esp'
@@ -4262,7 +4261,6 @@ plugins:
     inc:
       - 'CLARALUX SSE.esp'
       - 'ELFX - Exteriors.esp'
-      - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Exteriors.esp'
     tag:
       - C.Climate
@@ -4709,8 +4707,6 @@ plugins:
       - name: 'EnhancedLightsandFX.esp'
         condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
       - name: 'Lux.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - name: 'RelightingSkyrim_SSE.esp'
         condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
     tag:
       - C.ImageSpace
@@ -18232,10 +18228,7 @@ plugins:
   - name: 'Palaces Castles Enhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/' ]
     group: *highPriorityGroup
-    inc:
-      - name: 'RelightingSkyrim_SSE.esp'
-        condition: 'not active("PCE - Relighting Skyrim.esp")'
-      - 'Vaults of Skyrim 1.0 NEXUS.esp'
+    inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
