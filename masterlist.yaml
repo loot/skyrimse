@@ -4089,7 +4089,6 @@ plugins:
 
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
-    after: [ 'RS_NoPlayerHomes.esp' ]
     clean:
       - crc: 0xA71A75BB
         util: 'SSEEdit v4.0.3'
@@ -21336,25 +21335,6 @@ plugins:
     tag:
       - Delev
       - Relev
-
-  - name: 'RS_NoPlayerHomes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
-        name: 'Relighting Skyrim SSE - No Player Homes'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42280/'
-        name: 'Relighting Skyrim SSE - No Player Homes (Updated)'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Relighting Skyrim SSE - No Player Homes (Updated)](https://www.nexusmods.com/skyrimspecialedition/mods/42280/)' ]
-        condition: 'not version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA9D66DE5
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 43
-    clean:
-      - crc: 0x3FB3393E
-        util: 'SSEEdit v4.0.3'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
