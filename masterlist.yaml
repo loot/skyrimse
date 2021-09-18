@@ -8534,6 +8534,10 @@ plugins:
       - <<: *PapyrusExtender
         condition: 'version("SunHelmSurvival.esp", "3.0.0", >=)'
     msg:
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'Reliquary of Myth' ]
+        condition: 'active("Reliquary of Myth.esp") and not active("M_ROM__SunHelm.esp")'
       - *requiresMCM_SkyUISE
       - *requiresMCM_VR
     clean:
