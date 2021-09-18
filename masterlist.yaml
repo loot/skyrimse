@@ -3893,7 +3893,6 @@ plugins:
         name: 'Enhanced Lights and FX'
   - name: 'EnhancedLightsandFX.esp'
     inc:
-      - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Exteriors.esp'
     after:
       - name: '3DNPC.esp'
@@ -4089,7 +4088,6 @@ plugins:
 
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
-    after: [ 'RS_NoPlayerHomes.esp' ]
     clean:
       - crc: 0xA71A75BB
         util: 'SSEEdit v4.0.3'
@@ -4263,7 +4261,6 @@ plugins:
     inc:
       - 'CLARALUX SSE.esp'
       - 'ELFX - Exteriors.esp'
-      - 'RelightingSkyrim_SSE.esp'
       - 'RLO - Exteriors.esp'
     tag:
       - C.Climate
@@ -4657,28 +4654,22 @@ plugins:
 
   - name: 'RelightingSkyrim_SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8586/' ]
-    inc:
-      - 'ClimatesOfTamriel-Dungeons-Darker.esp'
-      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
-      - 'EnhancedLightsandFX.esp'
-      - name: 'ImprovedHearthfireLighting.esp'
-        condition: 'active("ImprovedHearthfireLighting.esp") and not active("RS_NoPlayerHomes.esp") and version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-      - 'RealisticRoomRental.esp'
-      - 'RLO - Exteriors.esp'
-      - 'torch shadows.esp'
-    msg:
-      - <<: *useVersion
-        subs: [ 'Window Shadows' ]
-        condition: 'active("Shadows.esp") and (checksum("RelightingSkyrim_SSE.esp", 689F6CE0) or checksum("RelightingSkyrim_SSE.esp", B452F93F))'
+    clean:
+      - crc: 0x6DD401AA
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
     dirty:
       - <<: *quickClean
         crc: 0x689F6CE0
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
       - <<: *quickClean
-        crc: 0xDFB3B05E
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+        crc: 0xEC7D3BF7
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+      - <<: *quickClean
+        crc: 0xB0BAAA33
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
 
   - name: '(RLO|Realistic Lighting Overhaul) -.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/844/' ]
@@ -4716,8 +4707,6 @@ plugins:
       - name: 'EnhancedLightsandFX.esp'
         condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
       - name: 'Lux.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
-      - name: 'RelightingSkyrim_SSE.esp'
         condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
     tag:
       - C.ImageSpace
@@ -7418,9 +7407,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Landscape Fixes For Grass Mods' ]
         condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("Landscape and Water Fixes - Patch - LFfGM.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Relighting Skyrim' ]
-        condition: 'active("RelightingSkyrim_SSE.esp") and not active("Landscape and Water Fixes - Patch - Relighting Skyrim.esp")'
     tag:
       - C.Climate
       - C.ImageSpace
@@ -16586,9 +16572,6 @@ plugins:
         subs: [ 'Ordinator - Perks Of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("CWIOrdinatorPatchSSE.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
-        subs: [ 'Relighting Skyrim' ]
-        condition: 'active("RelightingSkyrim_SSE.esp") and not active("CWIRLSSEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
       - <<: *patch3rdParty
@@ -18114,9 +18097,6 @@ plugins:
         subs: [ 'Realistic Winterhold' ]
         condition: 'active("RealisticWinterhold.esp") and not active("OCW_RW_FEPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Relighting Skyrim' ]
-        condition: 'active("RelightingSkyrim_SSE.esp") and not active("OCW_RLS_FEPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("OCW_(RoB_|AR_RoB_|LAR_RoB_Merged)FEPatch.esp")'
       - <<: *patchIncluded
@@ -18239,10 +18219,7 @@ plugins:
   - name: 'Palaces Castles Enhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/' ]
     group: *highPriorityGroup
-    inc:
-      - name: 'RelightingSkyrim_SSE.esp'
-        condition: 'not active("PCE - Relighting Skyrim.esp")'
-      - 'Vaults of Skyrim 1.0 NEXUS.esp'
+    inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -21342,25 +21319,6 @@ plugins:
     tag:
       - Delev
       - Relev
-
-  - name: 'RS_NoPlayerHomes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26538/'
-        name: 'Relighting Skyrim SSE - No Player Homes'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42280/'
-        name: 'Relighting Skyrim SSE - No Player Homes (Updated)'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Relighting Skyrim SSE - No Player Homes (Updated)](https://www.nexusmods.com/skyrimspecialedition/mods/42280/)' ]
-        condition: 'not version("RS_NoPlayerHomes.esp", "1.1.0", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA9D66DE5
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 43
-    clean:
-      - crc: 0x3FB3393E
-        util: 'SSEEdit v4.0.3'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
