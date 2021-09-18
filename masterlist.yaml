@@ -4776,22 +4776,16 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37831/'
         name: 'Window Shadows by HHaleyy'
     tag:
-      - name: 'C.Climate'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-      - name: 'C.ImageSpace'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-      - name: 'C.Light'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
-      - name: 'C.Water'
-        condition: 'checksum("Shadows.esp", BA2BB589)'
+      - C.Climate
+      - C.Light
     clean:
-      - crc: 0x6B6ABB95
-        util: 'SSEEdit v4.0.3f'
-      - crc: 0xBA2BB589
-        util: 'SSEEdit v4.0.3f'
+      - crc: 0x48434973
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'WSEnhancer(CW)?\.esp'
     group: *lightingEnhancerGroup
     tag: [ C.Light ]
+  - name: 'WSLightFade.esp'
+    after: [ 'WSEnhancer.esp' ]
 
   - name: 'Skyrim Legendary Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16725/' ]
