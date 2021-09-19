@@ -12984,6 +12984,8 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
       - *includesMBBF
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Sacrosanct_CACO_Patch.esp")'
     clean:
       - crc: 0x9570442B
         util: 'SSEEdit v4.0.3'
