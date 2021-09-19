@@ -8528,6 +8528,39 @@ plugins:
       - crc: 0x04D36F4B
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'SunHelmSurvival.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39414/' ]
+    req:
+      - <<: *PapyrusExtender
+        condition: 'version("SunHelmSurvival.esp", "3.0.0", >=)'
+    inc:
+      - name: 'ccqdrsse001-survivalmode.esl'
+        display: 'Creation Club: Survival Mode **ccqdrsse001-survivalmode.esl**'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://sites.google.com/view/colinswrathmods/sunhelm-survival/compatibility/' ]
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SunHelm.esp")'
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'Reliquary of Myth' ]
+        condition: 'active("Reliquary of Myth.esp") and not active("M_ROM__SunHelm.esp")'
+      - *requiresMCM_SkyUISE
+      - *requiresMCM_VR
+    clean:
+      - crc: 0x3EE4D30F
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'EWM_SunhelmSurvivalSE.esp'
+    req:
+      - name: 'EasyWheel-AIO.esp'
+        display: '[Easy Wheelmenu - SSE Conversion](https://www.nexusmods.com/skyrimspecialedition/mods/22934/)'
+        condition: 'not file("EasyWheel.esp")'
+      - 'SunHelmSurvival.esp'
+  - name: 'SunHelmDiseases.esp'
+    tag:
+      - SpellStats
+      - Text
+
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
     msg: [ *patch3rdParty_SRPC ]
