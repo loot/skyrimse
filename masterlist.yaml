@@ -8539,6 +8539,8 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://sites.google.com/view/colinswrathmods/sunhelm-survival/compatibility/' ]
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SunHelm.esp")'
       - <<: *patchIncluded
         type: warn
         subs: [ 'Reliquary of Myth' ]
