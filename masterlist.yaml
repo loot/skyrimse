@@ -6860,6 +6860,12 @@ plugins:
           - 'SkyTEST Realistic Animals and Predators'
           - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SIC - Skytest Integration.esp")'
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Wintersun - Faiths of Skyrim'
+          - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
       - *requiresMCM_SkyUISE
@@ -6870,6 +6876,11 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
+      - type: error
+        content:
+          - lang: en
+            text: 'Make sure you have completely uninstalled files included with old versions of this mod.'
+        condition: 'file("scripts/scc_spelleater_script.pex")'
     clean:
       - crc: 0xE92A5A2D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -21872,6 +21883,14 @@ plugins:
         name: 'Skyrim 3D Trees Patches'
     msg: [ *alreadyInOrFixedByBDSv3_0 ]
 
+  ### SIC SE - Add-Ons and Patches ###
+  - name: 'SIC - ICH Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/54930/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'SIC WACCF_ICH Patch.esp' ]
+        condition: 'active("SIC WACCF_ICH Patch.esp")'
+
   ### SkyTEST Integration Project ###
   - name: 'Skytest Creature Extension.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13428/' ]
@@ -22073,6 +22092,11 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'CCOR_Vokrii.esp' ]
         condition: 'active("CCOR_Vokrii.esp") and active("Vokrii - WACCF Patch.esp")'
+
+  ### Wintersun - More Patches ###
+  - name: 'Wintersun - SIC Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24228/' ]
+    after: [ 'SIC BetterQuestObjectives.esp' ]
 
   ### WiZkiD Patches Compendium ###
   - name: 'Better Dynamic Snow - S3D Rocks patch.esp'
