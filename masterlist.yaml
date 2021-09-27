@@ -6876,6 +6876,11 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
+      - type: error
+        content:
+          - lang: en
+            text: 'Make sure you have completely uninstalled files included with old versions of this mod.'
+        condition: 'file("scripts/scc_spelleater_script.pex")'
     clean:
       - crc: 0xE92A5A2D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
