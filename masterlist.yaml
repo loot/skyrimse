@@ -1387,6 +1387,159 @@ prelude:
         - lang: zh_CN
           text: '强烈建议不要使用包含已删除navmeshes的mod，因为它们会导致崩溃。**已删除navmeshes**必须手动修正(一个复杂的过程，应该由mod作者完成)。更多关于**已删除navmeshes**的信息已提供[这里](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)。'
 
+  # Global Anchors
+    - &creationClubPlugins
+      type: warn
+      content:
+        - lang: en
+          text: 'This version of LOOT has inferior handling of Creation Club plugins. Support for these are therefore limited in versions prior to LOOT 0.13.1. It is recommended to update as soon as possible.'
+        - lang: bg
+          text: 'Тази версия на "LOOT" не работи добре с приставките от "Creation Club". Поддръжката за тях е ограничена във версиите преди "LOOT" 0.13.1. Препоръчва се да обновите Вашата програма.'
+        - lang: da
+          text: 'Denne version af LOOT har begrænset understøttelse af Creation Club-plugins. Det er derfor anbefalet at opdatere til LOOT 0.13.1 eller senere hurtigst muligt.'
+        - lang: de
+          text: 'Diese Version von LOOT kann nicht richtig mit Creation Club-Plugins umgehen. Unterstützung für diese ist daher limitiert in Versionen älter als LOOT 0.13.1. Ein Update ist stark empfohlen.'
+        - lang: es
+          text: 'Esta versión de LOOT tiene un manejo inferior de los plugin del Creation Club. El soporte para estos se encuentra por lo tanto limitado en las versiones previas a LOOT 0.13.1. Se recomienda actualizar lo antes posible.'
+        - lang: fr
+          text: 'Cette version de LOOT soutient moins efficacement les plugins du Creation Club. Ceux-ci ne sont donc pas, ou très peu, supporté par les versions de LOOT précédant la 0.13.1. Il est vivement recommandé d''effectuer une mise à jour le plus tôt possible.'
+        - lang: it
+          text: 'Questa versione di LOOT ha una minore capacità di gestione dei plugin del Creation Club. Il supporto per questi plugin è limitato nelle versioni precedenti a LOOT 0.13.1. Si consiglia di aggiornare il più presto possibile.'
+        - lang: ja
+          text: 'このバージョンのLOOTではCreation Clubプラグインをうまく扱えません。そのため、LOOT 0.13.1より前のバージョンではサポートが制限されます。できるだけ早くアップデートすることをおすすめします。'
+        - lang: ko
+          text: '이 버전의 LOOT는 Creation Club 플러그인의 처리 성능이 떨어집니다. 따라서 이들에 대한 지원은 LOOT 0.13.1 이전 버전에서 제한됩니다. 가능한 한 빨리 업데이트하는 것이 좋습니다.'
+        - lang: pl
+          text: 'Ta wersja LOOT ma gorszą obsługę wtyczek Creation Club. Wsparcie dla nich będzie limitowane w wersjach LOOT niższych niż 0.13.1. Aktualizacja jest rekomendowana jak najszybciej.'
+        - lang: pt_BR
+          text: 'Esta versão do LOOT tem gerenciamento inferior de plugins do Creation Club. Suporte pare esses, portanto, está limitado a versões do LOOT acima de 0.13.1. É altamente recomendado atualizar o mais rápido possível.'
+        - lang: pt_PT
+          text: 'Esta versão do LOOT contém uma manipulação inferior de plugins do Creation Club. Suporte a estes é então limitado nas versões posteriors a LOOT 0.13.1. É recomendado realizar uma atualização assim que possível.'
+        - lang: ru
+          text: 'В этой версии LOOT плагины Creation Club обрабатываются хуже. Поэтому их поддержка ограничена до версии LOOT 0.13.1. Рекомендуется обновить как можно скорее.'
+        - lang: sv
+          text: 'Denna version av LOOT har sämre hantering av Creation Club plugins. Stöd för dessa är därför begränsad i versionen tidigare än LOOT 0.13.1. Du rekommenderas att uppdatera så snart som möjligt.'
+        - lang: uk_UA
+          text: 'У цій версії LOOT плагіни Creation Club обробляються гірше. Тому їх підтримка обмежена до версії LOOT 0.13.1. Рекомендується оновити якомога швидше.'
+        - lang: zh_CN
+          text: '这个版本的LOOT对Creation Club插件的处理较差。因此，在LOOT 0.13.1之前的版本中，对这些的支持是有限的。建议尽快更新。'
+      condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
+
+    - &latestLOOTThread
+      type: say
+      content:
+        - lang: en
+          text: '[Latest LOOT thread](%1%).'
+        - lang: bg
+          text: '[Форумът на "LOOT"](%1%).'
+        - lang: da
+          text: '[Seneste LOOT-tråd](%1%).'
+        - lang: de
+          text: '[Aktueller LOOT-Thread](%1%).'
+        - lang: es
+          text: '[Forum de LOOT](%1%).'
+        - lang: fr
+          text: '[Récent post sur le forum LOOT](%1%).'
+        - lang: it
+          text: '[Ultimo thread di LOOT](%1%).'
+        - lang: ja
+          text: '[LOOTの最新スレッドを開く](%1%)（英語）。'
+        - lang: ko
+          text: '[최신 LOOT 스레드](%1%).'
+        - lang: pl
+          text: '[Ostatni wątek LOOT](%1%).'
+        - lang: pt_BR
+          text: '[Thread mais recento do LOOT](%1%).'
+        - lang: pt_PT
+          text: '[Postagem mais recente do LOOT](%1%).'
+        - lang: ru
+          text: '[Обсуждение LOOT "(Eng)"](%1%).'
+        - lang: sv
+          text: '[Senaste LOOT-tråd](%1%).'
+        - lang: uk_UA
+          text: '[Обговорення LOOT "(Eng)"](%1%).'
+        - lang: zh_CN
+          text: '[最新的LOOT版本](%1%)。'
+      subs: [ 'https://loot.github.io/latest-thread/' ]
+
+    - &scriptExtenderMissing
+      type: error
+      content:
+        - lang: en
+          text: 'You have installed an %1% plugin but %1% was not found! See %1% download page: %2%.'
+        - lang: bg
+          text: 'Инсталирали сте приставката %1%, но %1% липсва! Отворете Интернет страницата на %1%: %2%.'
+        - lang: da
+          text: 'Du har installeret an %1% plugin men %1% blev ikke fundet! Se %1%-downloadsiden: %2%.'
+        - lang: de
+          text: 'Sie haben ein %1% Plugin installiert, aber %1% wurde nicht gefunden! %1% kann hier heruntergeladen werden: %2%.'
+        - lang: es
+          text: '!Tiene un %1% plugin instalado pero %1% no se pudo encontrar! Véase %1% la página de descarga: %2%.'
+        - lang: fr
+          text: 'Vous avez installé un %1% plugin mais %1% ne fut pas détécté ! Veuillez consultez la page de téléchargement de %1% : %2%.'
+        - lang: it
+          text: 'Hai installato un plugin %1% ma %1% non è stato trovato! Consulta %1% nella pagina di download: %2%.'
+        - lang: ja
+          text: 'an %1% pluginはインストールされていますが、%1%が見つかりません！%1%のダウンロードページを確認してください。%2%。'
+        - lang: ko
+          text: '%1% 플러그인이 설치되었지만 %1%를 찾을 수 없습니다! %1% 다운로드 페이지를 참조하십시오: %2%.'
+        - lang: pl
+          text: 'Zainstalowałeś an %1% plugin ale nie odnaleziono %1%! Odwiedź stronę pobierania %1%: %2%.'
+        - lang: pt_BR
+          text: 'Você tem um plugin do %1% instalado mas o %1% não foi encontrado! Veja a página de download do %1%: %2%.'
+        - lang: pt_PT
+          text: 'Você instalou an %1% plugin mas o %1% não foi encontrado! Veja a página de download do %1%: %2%.'
+        - lang: ru
+          text: 'У вас установлен %1% плагин, но %1% не найден! Смотрите страницу загрузки: %2%.'
+        - lang: sv
+          text: 'Du har installerat an %1% plugin men %1% kunde inte hittas! Läs mer på %1%:s nedladdningssisda: %2%.'
+        - lang: uk_UA
+          text: 'У вас встановлено %1% плагін, але %1% не знайдено! Дивіться сторінку завантаження: %2%.'
+        - lang: zh_CN
+          text: '您已经安装了%1%插件，但是未发现%1%！请查看%1%的下载页面:%2%。'
+      subs:
+        - 'SKSE'
+        - '[SKSE](https://skse.silverlock.org)'
+      condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader\.exe")'
+
+    - &scriptExtenderRequiredScripts
+      type: warn
+      content:
+        - lang: en
+          text: 'It appears you have installed **%1%**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **%2%** installation archive.'
+        - lang: bg
+          text: 'Инсталирали сте **%1%**, но неговите скриптове липсват. Моля, инсталирайте **%2%** отново.'
+        - lang: de
+          text: 'Es erscheint als hätten Sie **%1%** installiert, aber die vorausgesetzten Skripte scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie die Skripte korrekt mit installiert haben, die mit dem **%2%** Installationsarchiv enthalten sind.'
+        - lang: es
+          text: 'Parece que tiene instalado **%1%** pero los scripts necesarios parece que no se encuentran presentes. Por favor, asegúrese de que haya instalado correctamente los scripts que vienen con el archivo de instalación de **%2%**.'
+        - lang: fr
+          text: 'Il semblerait que vous ayez installé **%1%**, mais les scripts requis sont manquant. Veuillez vous assurer que vous ayez correctement installé les scripts de **%2%**, dans l''archive d''installation.'
+        - lang: it
+          text: 'Sembra che tu abbia installato **%1%**, ma i suoi script di base non sembrano essere presenti. Assicurati di aver installato correttamente gli script dall''archivio di installazione presenti in **%2%**.'
+        - lang: ja
+          text: '**%1%**をインストールしてあるようですが、必要なスクリプトが見つかりません。**%2%**に付属するスクリプトが正しくインストールされているかを確認してください。'
+        - lang: ko
+          text: '**%1%**를 설치한것으로 보이지만 필수 스크립트가 누락된 것같습니다. **%2%** 설치 아카이브와 함께 번들로 제공되는 스크립트를 올바르게 설치했는지 확인하십시오.'
+        - lang: pl
+          text: 'Wygląda na to że zainstalowałeś **%1%**, ale jego wymagane skrypty są brakujące. Upewnij się że poprawnie zainstalowałeś skrypty w pakiecie z archiwum instalacyjnym **%2%**.'
+        - lang: pt_BR
+          text: 'Você aparenta ter instalado o **%1%**, mas os scripts necessários aparentam estar faltando. Por favor, tenha certeza de que você instalou o scripts que vem com o arquivo de instalação do **%2%**.'
+        - lang: pt_PT
+          text: 'Você aparenta ter instalado **%1%**, mas os seus scripts necessário estão em falta. Por favor, garanta que tem os devidamente instalados os scripts the acompanham o arquivo de instalação do **%2%**.'
+        - lang: ru
+          text: 'Похоже, что у вас установлен **%1%**, но требуемые скрипты отсутствуют. Убедитесь, что правильно установили скрипты включенные в установочный архив **%2%**.'
+        - lang: sv
+          text: 'Det verkar som att du har installerat **%1%**, men de script som det kräver verkar saknas. Var god att se till att du har installerat de script som bifogas med installationsarkivet **%2%** på ett korrekt sätt.'
+        - lang: uk_UA
+          text: 'Схоже, що у вас встановлено **%1%**, але необхідні скрипти відсутні. Переконайтеся, що правильно встановили скрипти включені в інсталяційний архів **%2%**.'
+        - lang: zh_CN
+          text: '看起来您已经安装了**%1%**，但它需要的脚本似乎缺失了。请确保您已正确安装**%2%**中附带的脚本。'
+      subs:
+        - 'Skyrim Script Extender'
+        - '[SKSE](https://skse.silverlock.org)'
+      condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
+
 common:
 # File Anchors
   - &AnimFramework
