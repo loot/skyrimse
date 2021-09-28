@@ -1708,6 +1708,33 @@ bash_tags:
   - 'Text'
 
 globals:
+# Latest LOOT Thread
+  - &lootThread
+    <<: *latestLOOTThread
+    subs: [ 'https://loot.github.io/latest-thread/' ]
+
+# Creation Club Plugins
+  - &creationClubSSE
+    <<: *creationClubPlugins
+    condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
+
+# SKSE
+  # Missing
+  - &skseMissing
+    <<: *scriptExtenderMissing
+    subs:
+      - 'SKSE'
+      - '[SKSE](https://skse.silverlock.org)'
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse(64|vr)_loader\.exe")'
+
+  # Required Scripts
+  - &skseRequiredScripts
+    <<: *scriptExtenderRequiredScripts
+    subs:
+      - 'Skyrim Script Extender'
+      - '[SKSE](https://skse.silverlock.org)'
+    condition: 'not file("scripts/skse.pex") and ((file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")) or (file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../sksevr_loader.exe")))'
+
 # Animation Frameworks
   # Fores New Idles
   - <<: *runAnimFramework
