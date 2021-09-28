@@ -3,6 +3,1389 @@
 # data that gets re-used.
 prelude:
   common:
+  # Message Anchors
+    - &alreadyInX
+      type: error
+      content:
+        - lang: en
+          text: 'Delete. Already included in %1%.'
+        - lang: bg
+          text: 'За изтриване. Включена е в %1%.'
+        - lang: da
+          text: 'Slet. Allerede inkluderet i %1%.'
+        - lang: de
+          text: 'Löschen. Bereits in %1% enthalten.'
+        - lang: es
+          text: 'Eliminar. Está incluido en %1%.'
+        - lang: fi
+          text: 'Poista. %1% sisältää jo tämän.'
+        - lang: fr
+          text: 'Supprimer. Déjà inclus dans %1%.'
+        - lang: it
+          text: 'Cancella. Già incluso in %1%.'
+        - lang: ja
+          text: '削除してください。既に%1%に含まれています。'
+        - lang: ko
+          text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
+        - lang: pl
+          text: 'Usuń. Już zawarte w %1%'
+        - lang: pt_BR
+          text: 'Apague. Já incluído em %1%'
+        - lang: pt_PT
+          text: 'Apagar. Já incluído em %1%.'
+        - lang: ru
+          text: 'Удалите. Уже включено в %1%.'
+        - lang: sv
+          text: 'Ta bort. Redan inkluderat i %1%.'
+        - lang: uk_UA
+          text: 'Видаліть. Уже додано у %1%.'
+        - lang: zh_CN
+          text: '删除。已包含在%1%中。'
+    - &alreadyInLotD
+      <<: *alreadyInX
+      subs: [ '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)' ]
+      condition: 'active("LegacyoftheDragonborn.esm")'
+
+    - &alreadyInOrFixedByX
+      type: error
+      content:
+        - lang: en
+          text: 'Delete. Already included or otherwise fixed in %1%.'
+        - lang: bg
+          text: 'За изтриване. Приложена е в %1%.'
+        - lang: de
+          text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
+        - lang: es
+          text: 'Eliminar. Está incluido o arreglado en %1%.'
+        - lang: fr
+          text: 'Supprimer. Déjà inclus ou corrigé en %1%.'
+        - lang: it
+          text: 'Cancella. Già incluso o corretto in %1%.'
+        - lang: ja
+          text: '削除してください。%1%にすでに含まれているか修正されています。'
+        - lang: ko
+          text: '삭제하십시오. 이미 %1%에 포함되었거나 수정되었습니다.'
+        - lang: pl
+          text: 'Usuń. Już zawarte lub naprawione w %1%.'
+        - lang: pt_BR
+          text: 'Apague. Já incluído ou consertado em %1%.'
+        - lang: pt_PT
+          text: 'Apagar. Já incluído ou reparado em %1%.'
+        - lang: ru
+          text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
+        - lang: sv
+          text: 'Ta bort. Redan inkluderat eller fixat i %1%.'
+        - lang: uk_UA
+          text: 'Видаліть. Уже включено або іншим чином виправлено у %1%.'
+        - lang: zh_CN
+          text: '删除。在%1%中已包含或修复。'
+    - &alreadyInOrFixedByBDSv3_0
+      <<: *alreadyInOrFixedByX
+      subs: [ 'Better Dynamic Snow v3.0+' ]
+      condition: 'active("Better Dynamic Snow SE.esp")'
+    - &alreadyInOrFixedByScrambledBugs
+      <<: *alreadyInOrFixedByX
+      type: say
+      subs: [ 'Scrambled Bugs' ]
+      condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+
+    - &alsoUseX
+      type: say
+      content:
+        - lang: en
+          text: 'It''s highly recommended that you also use %1%.'
+        - lang: bg
+          text: 'Препоръчва се да използвате %1%.'
+        - lang: de
+          text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
+        - lang: es
+          text: 'Se recomienda que también use %1%.'
+        - lang: fr
+          text: 'Il est vivement recommendé que vous utilisiez aussi %1%.'
+        - lang: it
+          text: 'Si consiglia vivamente di usare anche %1%.'
+        - lang: ja
+          text: '%1%の併用を強く推奨します。'
+        - lang: ko
+          text: '%1%도 함께 사용하는 것을 매우 권장합니다.'
+        - lang: pl
+          text: 'Jest wysoce wskazane abyś używał także %1%.'
+        - lang: pt_BR
+          text: 'É altamente recomendado que você também use %1%.'
+        - lang: pt_PT
+          text: 'É altamente recomendado que você também use %1%.'
+        - lang: ru
+          text: 'Настоятельно рекомендуется также использовать %1%.'
+        - lang: sv
+          text: 'Det är rekommenderat att du också använder %1%.'
+        - lang: uk_UA
+          text: 'Наполегливо рекомендуємо також використати %1%.'
+        - lang: zh_CN
+          text: '强烈建议您使用%1%。'
+
+    - &compatIssuesWithX
+      type: say
+      content:
+        - lang: en
+          text: 'This plugin has compatibility issues with %1%. For more information, read this mod''s compatibility notes.'
+        - lang: bg
+          text: 'Тази приставка не е съвместима с %1%. За повече информация, прочетете бележките за съвместимост.'
+        - lang: de
+          text: 'Dieses Plugin hat Kompatibilitätsprobleme mit %1%. Mehr Information dazu sind in den Kompatibilitäts-Notizen der Mod nachzulesen.'
+        - lang: es
+          text: 'Este plugin tiene problemas de compatibilidad con %1%. Para más información, lea las notas de compatibilidad de este mod.'
+        - lang: fr
+          text: 'Ce plugin a des problèmes de compatibilités avec %1%. Pour plus d''informations, lisez la liste de compabilité de ce mod.'
+        - lang: it
+          text: 'Questo plugin ha problemi di compatibilità con %1%. Per maggiori informazioni, leggi le note sulla compatibilità di questa mod.'
+        - lang: ja
+          text: 'このプラグインには%1%との互換性の問題があります。詳細についてはこのmodの互換性に関する注意事項をお読みください。'
+        - lang: ko
+          text: '이 플러그인은 %1%와의 호환성 문제가 있습니다. 자세한 내용은 이 모드의 호환성 정보를 확인해주세요.'
+        - lang: pt_BR
+          text: 'Este plugin tem problemas de compatibilidade com %1%. Para mais informações, leia as notas de compatibilidade deste mod.'
+        - lang: pt_PT
+          text: 'Este plugin tem problemas de compatibilidade com %1%. Para mais informações, leia as notas de compatibilidade deste mod.'
+        - lang: ru
+          text: 'У этого плагина есть проблемы совместимости с %1%. Для получения дополнительной информации прочтите заметки о совместимости этого мода.'
+        - lang: sv
+          text: 'Det här pluginet är inte helt kompatibelt med %1%. För mer information, läs det här moddets kompabilitetsanteckningar.'
+        - lang: uk_UA
+          text: 'У цього плагіна наявні проблеми сумісності з %1%. Для отримання додаткової інформації дивіться примітки щодо сумісності цього моду.'
+        - lang: zh_CN
+          text: '这个插件与%1%有兼容性问题。欲了解更多信息，请阅读这个mod的兼容性说明。'
+
+    - &compatNotes
+      type: say
+      content:
+        - lang: en
+          text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
+        - lang: bg
+          text: 'Препоръчва се да прочетете [бележките за съвместимост](%1%).'
+        - lang: de
+          text: 'Es wird empfohlen, dass Sie die [Kompatibilitäts-Notizen](%1%) dieses Mods lesen.'
+        - lang: es
+          text: 'Se recomienda que lea las [Notas de compatibilidad](%1%) de este mod.'
+        - lang: fi
+          text: 'On suotavaa lukea modin tiedot [yhteensopivuudesta](%1%).'
+        - lang: fr
+          text: 'Il est recommandé que vous lisiez les [Notes de compabilités](%1%) de ce mod.'
+        - lang: it
+          text: 'Si raccomanda la lettura delle [Note sulla compatibilità](%1%) di questa mod.'
+        - lang: ja
+          text: '[互換性に関する注意事項](%1%)を読みましょう。'
+        - lang: ko
+          text: '이 모드의 [호환성 정보](%1%)를 읽어 보는 걸 권장합니다.'
+        - lang: pl
+          text: 'Jest rekomendowane abyś przeczytał [Notki Kompatybilności](%1%) tego moda.'
+        - lang: pt_BR
+          text: 'É recomendada a leitura das [Notas de Compatibilidade](%1%) deste mod.'
+        - lang: pt_PT
+          text: 'É recomendada leitura das [Notas de Compatibilidade](%1%) deste mod.'
+        - lang: ru
+          text: 'Рекомендуется прочесть [заметки о совместимости](%1%) мода.'
+        - lang: sv
+          text: 'Det är rekommenderat att du läser det här moddets [kompabilitetsanteckningar](%1%).'
+        - lang: uk_UA
+          text: 'Рекомендується прочитати [примітки щодо сумісності](%1%) моду.'
+        - lang: zh_CN
+          text: '建议您阅读这个mod的[兼容性说明](%1%)。'
+
+    - &corrupt
+      type: warn
+      content:
+        - lang: en
+          text: 'This file is corrupt and should not be used.'
+        - lang: bg
+          text: 'Този файл е повреден и не трябва да се използва.'
+        - lang: de
+          text: 'Diese Datei ist korrupt und sollte nicht benutzt werden.'
+        - lang: es
+          text: 'Este archivo está corrupto y no debería ser utilizado.'
+        - lang: fi
+          text: 'Tiedosto on vaurioitunut, eikä sitä tule käyttää.'
+        - lang: fr
+          text: 'Ce fichier est corrompu et ne devrait pas être utilisé.'
+        - lang: it
+          text: 'Questo file risulta corrotto e pertanto non deve essere utilizzato.'
+        - lang: ja
+          text: 'このファイルは壊れています。使用しないでください。'
+        - lang: ko
+          text: '이 파일은 손상되었습니다. 사용하지 마십시오.'
+        - lang: pl
+          text: 'Ten plik jest zepsuty i nie powinien być używany.'
+        - lang: pt_BR
+          text: 'Este arquivo está corrompido e não deveria ser utilizado.'
+        - lang: pt_PT
+          text: 'Este ficheiro está corrompido e não deve ser utilizado.'
+        - lang: ru
+          text: 'Файл испорчен и не должен использоваться.'
+        - lang: sv
+          text: 'Denna fil är korrupt och borde inte användas.'
+        - lang: uk_UA
+          text: 'Файл зіпсований та не має використовуватися.'
+        - lang: zh_CN
+          text: '该文件已损坏，不应使用。'
+
+    - &deletePlugin
+      type: warn
+      content:
+        - lang: en
+          text: 'When using **%1%**, it''s recommended that you deactivate or delete this ESP file but keep the resources (e.g. meshes, textures) installed with this mod.'
+        - lang: bg
+          text: 'Когато използвате приставката **%1%**, трябва да деактивирате или изтриете този ESP файл, но да запазите неговите ресурси (триизмерни модели, текстури и други).'
+        - lang: de
+          text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Ressourcen (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden.'
+        - lang: es
+          text: 'Si usa **%1%**, se recomienda que desactive o elimine este archivo ESP pero que mantenga los recursos (ej. mallas, texturas) que se instalaron con él.'
+        - lang: fr
+          text: 'Lorsque vous utilisez **%1%**, il est recommandé que vous désactivez, ou supprimez, cet ESP mais gardez les ressources (ex : meshes, textures) installés avec ce mod.'
+        - lang: it
+          text: 'Quando si utilizza **%1%**, è fortemente consigliato disattivare o eliminare questo file ESP ma mantenerne le risorse (ad es. mesh, texture) installate con questa mod.'
+        - lang: ja
+          text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。'
+        - lang: ko
+          text: '**%1%**를 사용할 때 이 ESP 파일을 비활성화하거나 삭제하되, 이 모드와 함께 설치된 리소스(예: 메쉬, 텍스쳐)는 유지하는 것을 권장합니다.'
+        - lang: pl
+          text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem.'
+        - lang: pt_BR
+          text: 'Quando se usa **%1%**, é recomendado que você desative ou apague este arquivo ESP mas que mantenha os recursos (por ex. meshes, textures) instalados com esse mod.'
+        - lang: pt_PT
+          text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod.'
+        - lang: ru
+          text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (меши, текстуры и тд).'
+        - lang: sv
+          text: 'När du använder **%1%** är det rekommenderat att du avaktiverar eller tar bort denna ESP-fil, men behåll resurserna (meshar och texturer) installerade med denna mod.'
+        - lang: uk_UA
+          text: 'Поки використовується **%1%**, рекомендується відключити чи деактивувати esp цього моду, але залишити встановлені ресурси (меші, текстури і тп).'
+        - lang: zh_CN
+          text: '当使用**%1%**时，建议您禁用或删除这个ESP文件，但保留与此mod一起安装的资源(如网格，纹理等)。'
+
+    - &includesX
+      type: say
+      content:
+        - lang: en
+          text: '%1% is included with this mod.'
+        - lang: bg
+          text: 'Приставката %1% е включена в този мод.'
+        - lang: de
+          text: '%1% ist in dieser Mod enthalten.'
+        - lang: es
+          text: '%1% viene incluido ya con este mod.'
+        - lang: fi
+          text: '%1% on tässä modissa'
+        - lang: fr
+          text: '%1% est inclut avec ce mod.'
+        - lang: it
+          text: '%1% è incluso in questa mod.'
+        - lang: ja
+          text: '%1%はこのmodに含まれています。'
+        - lang: ko
+          text: '%1% 모드가 포함되어 있습니다.'
+        - lang: pl
+          text: '%1% jest już zawarte z tym modem.'
+        - lang: pt_BR
+          text: '%1% está incluído neste mod.'
+        - lang: pt_PT
+          text: '%1% vem incluído com este mod.'
+        - lang: ru
+          text: '%1% уже добавлен с этим модом.'
+        - lang: sv
+          text: '%1% är inluderat med denna mod.'
+        - lang: uk_UA
+          text: '%1% вже додано з цим модом.'
+        - lang: zh_CN
+          text: '%1%已包含在这个mod中。'
+    - &includesMBBF
+      <<: *includesX
+      subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
+      condition: 'file("Modern Brawl Bug Fix.esp")'
+
+    - &missingRequirementXforY
+      type: warn
+      content:
+        - lang: en
+          text: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+        - lang: bg
+          text: 'Инсталирали сте **%2%**, но някои от нейните изисквания не са изпълнени. Моля, инсталирайте **%1%** отново.'
+        - lang: de
+          text: 'Es erscheint so als hätten Sie **%2%** installiert, aber einige der Voraussetzungen scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
+        - lang: es
+          text: 'Parece que tiene instalado **%2%**, pero algunos de sus requerimientos no están presentes. Por favor, asegúrese de que haya instalado **%1%** correctamente.'
+        - lang: fr
+          text: 'Il semblerait que vous ayez installés **%2%**, mais certains de ses prérequis semblent manquer. Veuillez vous assurer que vous ayez correctement installés **%1%**.'
+        - lang: it
+          text: 'Sembra che tu abbia installato **%2%**, ma mancano alcuni dei suoi requisiti. Assicurati di aver installato correttamente **%1%**.'
+        - lang: ja
+          text: '**%2%**がインストールされましたが、必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
+        - lang: ko
+          text: '**%2%** 모드를 실행하기 위한 필요 모드가 빠져 있습니다. **%1%** 모드를 제대로 설치하십시오.'
+        - lang: pl
+          text: 'Wygląda na to że zainstalowałeś **%2%**, ale wydaje się, że brakuje niektórych z jego wymagań. Upewnij się że poprawnie zainstalowałeś **%1%**.'
+        - lang: pt_BR
+          text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
+        - lang: pt_PT
+          text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão em falta Por favor confirme que você instalou **%1%** corretamente.'
+        - lang: ru
+          text: 'Похоже у вас установлен **%2%**, но некоторые его требования отсутствуют. Убедитесь, что вы правильно установили **%1%**.'
+        - lang: sv
+          text: 'Det verkar som om du har installerat **%2%**, men några av dess krav är inte uppfyllda. Var vänlig och se till att du har installerat **%1%**.'
+        - lang: uk_UA
+          text: 'Схоже, що у вас уже встановлено **%2%**, але деякі його вимоги відсутні. Переконайтесь, що ви правильно встановили **%1%**.'
+        - lang: zh_CN
+          text: '看起来您安装了**%2%**，但它的一些需求似乎缺失了。请确保您已正确安装**%1%**。'
+
+    - &missingRequirementXforPlugin
+      type: warn
+      content:
+        - lang: en
+          text: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+        - lang: bg
+          text: 'Някои от изискванията на приставката не са изпълнени. Моля, инсталирайте **%1%** отново.'
+        - lang: de
+          text: 'Einige der Voraussetzungen dieses Plugins scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
+        - lang: es
+          text: 'Algunos de los requerimientos de este plugin parecen faltar. Por favor, asegúrese de que haya instalado correctamente **%1%**.'
+        - lang: fr
+          text: 'Certains prérequis de ce plugin semblent manquer. Veuillez vous assurer que vous ayez correctement installés **%1%**.'
+        - lang: it
+          text: 'Sembra che manchino alcuni requisiti di questi plugin. Assicurati di avere installato correttamente **%1%**.'
+        - lang: ja
+          text: 'このプラグインに必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
+        - lang: ko
+          text: '이 플러그인의 일부 요구사항이 빠져 있습니다. **%1%** 모드를 제대로 설치하십시오.'
+        - lang: pl
+          text: 'Część wymagań dla tej wtyczki wydaje się być brakująca. Upewnij się że poprawnie zainstalowałeś **%1%**.'
+        - lang: pt_BR
+          text: 'Alguns dos requerimentos deste plugin estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
+        - lang: pt_PT
+          text: 'Alguns dos requerimentos deste plugin estão em falta. Por favor confirme que você instalou **%1%** corretamente.'
+        - lang: ru
+          text: 'Некоторые требования этого плагина отсутствуют. Убедитесь, что правильно установили **%1%**.'
+        - lang: sv
+          text: 'Några av denna plugins behov/krav verkar saknas. Var god och se till att du har installerat **%1%** korrekt.'
+        - lang: uk_UA
+          text: 'Деякі вимоги цього плагіна відсутні. Переконайтеся, що правильно встановили **%1%**.'
+        - lang: zh_CN
+          text: '这些插件的一些需求似乎缺失了。请确保您已正确安装**%1%**。'
+    - &missingRequirementAddrLibforPlugin
+      <<: *missingRequirementXforPlugin
+      subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
+      condition: '(not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==))'
+
+    - &moddingPlugin
+      type: error
+      content:
+        - lang: en
+          text: 'This plugin is a modding resource and should not be used in-game.'
+        - lang: bg
+          text: 'Тази приставка е ресурс за модифициране и не трябва да се използва по време на игра.'
+        - lang: de
+          text: 'Dieses Plugin ist eine Modding Ressource und sollte nicht im Spiel verwendet werden.'
+        - lang: es
+          text: 'Este plugin es un recurso para la creación de mods y no debería ser usado en el juego.'
+        - lang: fr
+          text: 'Ce plugin est une ressource pour moddeur et ne devrait pas être utilisé en jeu.'
+        - lang: it
+          text: 'Questo Plugin è una risorsa di modding e non dovrebbe essere usato in gioco.'
+        - lang: ja
+          text: 'このプラグインはモッド用のリソースであり、ゲーム内で使用できません。'
+        - lang: ko
+          text: '이 플러그인은 모딩 리소스이며 게임 내에서 사용해서는 안 됩니다.'
+        - lang: pt_BR
+          text: 'Este plugin é um recurso para a criação de mods e não deve ser usado no jogo.'
+        - lang: pt_PT
+          text: 'Este plugin é um recurso para a criação de mods e não deve ser usado no jogo.'
+        - lang: ru
+          text: 'Этот плагин является мод-ресурсом и не должен использоваться во время игры.'
+        - lang: sv
+          text: 'Det här pluginet används som en modding resurs och borde inte användas i spelet.'
+        - lang: uk_UA
+          text: 'Цей плагін є мод-ресурсом та не має використовуватися під час гри.'
+        - lang: zh_CN
+          text: '这个插件是一个mod开发资源，不应该在游戏中使用。'
+
+    - &obsolete
+      type: warn
+      content:
+        - lang: en
+          text: 'Obsolete. Update to the latest version. %1%'
+        - lang: bg
+          text: 'Стара версия. Моля, обновете приставката. %1%'
+        - lang: da
+          text: 'Forældet. Opdatér til den nyeste version. %1%'
+        - lang: de
+          text: 'Veraltet. Aktualisieren Sie zur neusten Version. %1%'
+        - lang: es
+          text: 'Obsoleto. Actualizar a la última versión. %1%'
+        - lang: fr
+          text: 'Obsolète. Veuillez mettre ce fichier à jour. %1%'
+        - lang: it
+          text: 'Obsoleto. Aggiorna all''ultima versione. %1%'
+        - lang: ja
+          text: '旧式のプラグインです。最新版に更新してください。 %1%'
+        - lang: ko
+          text: '폐기된 플러그인입니다. 최신 버전으로 업데이트하십시오. %1%'
+        - lang: pl
+          text: 'Przestarzały. Uaktualnij do ostatniej wersji. %1%'
+        - lang: pt_BR
+          text: 'Obsoleto. Atualize para a última versão %1%.'
+        - lang: pt_PT
+          text: 'Obsoleto. Atualize para a versão mais recente. %1%'
+        - lang: ru
+          text: 'Устарело. Обновите до последней версии. %1%'
+        - lang: sv
+          text: 'Utdaterad. Uppdatera till den senaste versionen. %1%'
+        - lang: uk_UA
+          text: 'Застаріло. Оновіть до останньої версії. %1%'
+        - lang: zh_CN
+          text: '已过时。请升级到最新版本。 %1%'
+      subs: [ '' ]
+
+    - &optional
+      type: say
+      content:
+        - lang: en
+          text: 'This plugin is optional.'
+        - lang: bg
+          text: 'Тази приставка не е задължителна.'
+        - lang: de
+          text: 'Dieses Plugin ist optional.'
+        - lang: es
+          text: 'Este plugin es opcional.'
+        - lang: fr
+          text: 'Ce plugin est optionnel.'
+        - lang: it
+          text: 'Questo plugin è opzionale.'
+        - lang: ja
+          text: 'このプラグインはオプションです。'
+        - lang: ko
+          text: '이 플러그인은 선택 사항입니다.'
+        - lang: pt_BR
+          text: 'Este plugin é opcional.'
+        - lang: pt_PT
+          text: 'Este plugin é opcional.'
+        - lang: ru
+          text: 'Этот плагин не обязателен.'
+        - lang: sv
+          text: 'Det här pluginet är valfritt.'
+        - lang: uk_UA
+          text: 'Цей плагін не обов’язковий.'
+        - lang: zh_CN
+          text: '这个插件是可选的。'
+
+    - &patch3rdParty
+      type: say
+      content:
+        - lang: en
+          text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
+        - lang: bg
+          text: 'Използвате **%1%**, но се изисква кръпка за съвместимост. Тя е налична от: %2%'
+        - lang: de
+          text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
+        - lang: es
+          text: 'Parece que está usando **%1%**, pero no ha habilitado un parche de compatibilidad para este mod. Un parche de un tercero se encuentra disponible aquí: %2%'
+        - lang: fr
+          text: 'Vous utilisez **%1%**, mais vous n''avez pas activé le patch de compatibilité pour ce mod. Ce patch peut être trouvé ici : %2%'
+        - lang: it
+          text: 'Sembra che tu stia utilizzando **%1%**, ma non hai attivato la patch di compatibilità per questa mod. E'' disponibile una patch esterna qui: %2%'
+        - lang: ja
+          text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。サードパーティのパッチはここで入手できます:%2%'
+        - lang: ko
+          text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 제3자 제공 호환성 패치는 여기에서 다운로드 가능합니다: %2%'
+        - lang: pl
+          text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka trzeciej strony jest dostępna tutaj: %2%'
+        - lang: pt_BR
+          text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
+        - lang: pt_PT
+          text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
+        - lang: ru
+          text: 'Похоже, что вы используете **%1%**, но его патч совместимости не был включен. Сторонний патч можно найти здесь: %2%'
+        - lang: sv
+          text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%'
+        - lang: uk_UA
+          text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Сторонній патч можна знайти тут: %2%'
+        - lang: zh_CN
+          text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
+    - &patch3rdParty_AOOPH
+      <<: *patch3rdParty
+      subs:
+        - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
+        - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
+    - &patch3rdParty_CCSMPC
+      <<: *patch3rdParty
+      subs:
+        - 'CC Survival Mode'
+        - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
+    - &patch3rdParty_ClockA
+      <<: *patch3rdParty
+      subs:
+        - '[Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/4155/)'
+        - '[Additional Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/47087/)'
+    - &patch3rdParty_JSDCP
+      <<: *patch3rdParty
+      subs:
+        - '[JS Dragon Claws](https://www.nexusmods.com/skyrimspecialedition/mods/1394/)'
+        - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/)'
+    - &patch3rdParty_KPH_ACE
+      <<: *patch3rdParty
+      subs:
+        - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002/)'
+        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+    - &patch3rdParty_KPH_CACO
+      <<: *patch3rdParty
+      subs:
+        - '[Complete Alchemy and Cooking Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/19924/)'
+        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+    - &patch3rdParty_KPH_CCOR
+      <<: *patch3rdParty
+      subs:
+        - '[Complete Crafting Overhaul Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)'
+        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+    - &patch3rdParty_KPH_TCIY
+      <<: *patch3rdParty
+      subs:
+        - '[The Choice is Yours](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
+        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+    - &patch3rdParty_KPH_WACCF
+      <<: *patch3rdParty
+      subs:
+        - '[Weapons Armor Clothing and Clutter Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/18994/)'
+        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+    - &patch3rdParty_LotD
+      <<: *patch3rdParty
+      subs:
+        - '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)'
+        - '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)'
+    - &patch3rdParty_MLU
+      <<: *patch3rdParty
+      subs:
+        - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+        - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
+    - &patch3rdParty_RSCPC
+      <<: *patch3rdParty
+      subs:
+        - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)'
+        - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
+    - &patch3rdParty_SBCK
+      <<: *patch3rdParty
+      subs:
+        - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
+        - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495/)'
+    - &patch3rdParty_SRPC
+      <<: *patch3rdParty
+      subs:
+        - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
+        - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
+      condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
+    - &patch3rdParty_STIP
+      <<: *patch3rdParty
+      subs:
+        - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
+        - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
+    - &patch3rdParty_UVCPC
+      <<: *patch3rdParty
+      subs:
+        - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
+        - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
+
+    - &patcherScriptAvailable
+      type: say
+      content:
+        - lang: en
+          text: '%1% patcher script available here: %2%'
+        - lang: bg
+          text: 'Скриптът за кръпки %1% е наличен от: %2%'
+        - lang: de
+          text: '%1% Patch-Skript hier verfügbar: %2%'
+        - lang: es
+          text: '%1% un script parcheador se encuentra disponible aquí: %2%'
+        - lang: fr
+          text: 'Le script patcher de %1% est disponible ici : %2%'
+        - lang: it
+          text: '%1% patcher script disponibile qui: %2%'
+        - lang: ja
+          text: '%1%のパッチスクリプトは%2%を利用できます。'
+        - lang: ko
+          text: '%1%의 패쳐 스크립트는 %2%에서 사용이 가능합니다.'
+        - lang: pt_PT
+          text: 'O script de atualização para %1% está disponível aqui: %2%'
+        - lang: ru
+          text: '%1% скрипт-патчер доступен здесь: %2%'
+        - lang: uk_UA
+          text: '%1% патч-скрипт доступний тут: %2%'
+        - lang: zh_CN
+          text: '%1%的补丁在这里: %2%'
+
+    - &patchIncluded
+      type: say
+      content:
+        - lang: en
+          text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
+        - lang: bg
+          text: 'Използвате **%1%**, но се изисква кръпка за съвместимост. Тя е налична от инсталационния файл на приставката.'
+        - lang: de
+          text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
+        - lang: es
+          text: 'Parece que está usando **%1%**, pero no ha habilitado un parche de compatibilidad para este mod. Un parche de compatibilidad está incluido en el instalador de este plugin.'
+        - lang: fr
+          text: 'Vous utilisez **%1%**, mais vous n''avez pas activé le patch de compatibilité pour ce mod. Ce patch est inclut avec l''installeur de ce plugin.'
+        - lang: it
+          text: 'Sembra che tu stia utilizzando **%1%**, ma non hai attivato patch di compatibilità per questa mod. Una patch di compatibilità è inclusa nell''installer di questo plugin.'
+        - lang: ja
+          text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
+        - lang: ko
+          text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
+        - lang: pl
+          text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
+        - lang: pt_BR
+          text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
+        - lang: pt_PT
+          text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin.'
+        - lang: ru
+          text: 'Похоже, что вы используете **%1%**, но его патч совместимости не был включен. Патч совместимости можно найти в установщике плагина.'
+        - lang: sv
+          text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En kompabilitetspatch är inkluderad i denna plugins installationsprogram.'
+        - lang: uk_UA
+          text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Патч сумісності можна знайти в установнику плагіна.'
+        - lang: zh_CN
+          text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。这个插件的安装程序中包含了该补丁。'
+
+    - &patchProvided
+      type: say
+      content:
+        - lang: en
+          text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+        - lang: bg
+          text: 'Използвате **%1%**, но се изисква кръпка за съвместимост. Тя е налична от Интернет страницата на приставката.'
+        - lang: de
+          text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
+        - lang: es
+          text: 'Parece que está usando **%1%**, pero no ha habilitado un parche de compatibilidad para este mod. Un parche de compatibilidad está  disponible en la página del mod.'
+        - lang: fr
+          text: 'Vous utilisez **%1%**, mais vous n''avez pas activé le patch de compatibilité pour ce mod. Ce patch peut être trouvé sur la page web du plugin.'
+        - lang: it
+          text: 'Sembra che tu stia utilizzando **%1%**, ma non hai attivato patch di compatibilità per questa mod. Una patch di compatibilità è presente in questa pagina.'
+        - lang: ja
+          text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。'
+        - lang: ko
+          text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
+        - lang: pl
+          text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
+        - lang: pt_BR
+          text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
+        - lang: pt_PT
+          text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
+        - lang: ru
+          text: 'Похоже, что вы используете **%1%**, но его патч совместимости не был включен. Патч совместимости можно найти на странице плагина.'
+        - lang: sv
+          text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En kompabilitetspatch finns på denna plugins modsida.'
+        - lang: uk_UA
+          text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Патч сумісності можна знайти на сторінці плагіну.'
+        - lang: zh_CN
+          text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。这个插件的mod页面提供了该补丁。'
+
+    - &patchUnavailable
+      type: warn
+      content:
+        - lang: en
+          text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+        - lang: bg
+          text: 'Този мод изисква кръпка за съвместимост с приставката %1%. Няма налична кръпка за съвместимост.'
+        - lang: de
+          text: 'Ein Patch ist nötig um diese Mod vollständig kompatibel mit %1% zu machen. Keiner ist derzeit zum Download verfügbar.'
+        - lang: es
+          text: 'Se requiere un parche para hacer este mod completamente compatible con %1%. No existe por el momento ninguno disponible para ser descargado.'
+        - lang: fr
+          text: 'Ce mod requiert un patch pour rendre ce mod complètement compatible avec %1%. Aucun patch n''est disponible pour l''instant.'
+        - lang: it
+          text: 'E'' necessaria una patch che renda questa mod totalmente compatibile con %1%. Al momento non ne è disponibile nessuna che possa essere scaricata.'
+        - lang: ja
+          text: 'このMODを%1%と完全に互換性のあるものにするにはパッチが必要です。現在ダウンロード可能なものはありません。'
+        - lang: ko
+          text: '이 모드가 %1%와 완전히 호환되도록하려면 패치가 필요합니다. 현재 다운로드 할 수있는 항목이 없습니다.'
+        - lang: pt_BR
+          text: 'Um patch é necessário para fazer esse mod ser totalmente compatível com %1%. No entanto, não há nenhum patch atualmente disponível para download.'
+        - lang: pt_PT
+          text: 'Um patch é necessário para fazer este mod ser totalmente compatível com %1%. Atualmente, nenhum está disponível para download.'
+        - lang: ru
+          text: 'Требуется патч для полной совместимости с %1%. В настоящее время ничего не доступно для загрузки.'
+        - lang: sv
+          text: 'En kompabilitetspatch krävs för att för att göra det moddet fullständigt kompatibelt med %1%. Ingen kompabilitetspatch finns tillgänglig för nedladdning.'
+        - lang: uk_UA
+          text: 'Потрібний патч для повної сумісності з %1%. На даний момент жодного не доступно для завантаження.'
+        - lang: zh_CN
+          text: '需要一个补丁来使这个mod与%1%完全兼容。目前没有可供下载的。'
+
+    - &patchUpdateAvailable
+      type: say
+      content:
+        - lang: en
+          text: 'Update Patch available: %1%'
+        - lang: bg
+          text: 'Налична е обновена кръпка: %1%'
+        - lang: de
+          text: 'Update Patch verfügbar: %1%'
+        - lang: es
+          text: 'Parche actualizado disponible aquí %1%.'
+        - lang: fi
+          text: 'Päivitys saatavilla: %1%'
+        - lang: fr
+          text: 'Mise à jour du patch disponible : %1%'
+        - lang: it
+          text: 'Aggiornamento della Patch disponibile: %1%'
+        - lang: ja
+          text: 'パッチの更新ができます: %1%'
+        - lang: ko
+          text: '패치 업데이트 가능: %1%'
+        - lang: pl
+          text: 'Dostępna Łatka Aktualizująca: %1%'
+        - lang: pt_BR
+          text: 'Patch de Atualização disponível: %1%'
+        - lang: pt_PT
+          text: 'Patch de atualização disponível: %1%'
+        - lang: ru
+          text: 'Доступно обновление патча: %1%'
+        - lang: sv
+          text: 'Uppdateringspatch tillgänglig: %1%'
+        - lang: uk_UA
+          text: 'Наявне оновлення патчу: %1%'
+        - lang: zh_CN
+          text: '可用的更新补丁:%1%'
+
+    - &renameXtoY
+      type: warn
+      content:
+        - lang: en
+          text: 'You need to rename %1% to %2% or this mod won''t work.'
+        - lang: bg
+          text: 'Трябва да преименувате %1% на %2%, в противен случай този мод няма да работи.'
+        - lang: de
+          text: 'Sie müssen %1% zu %2% umbenennen, ansonsten funktioniert diese Mod nicht.'
+        - lang: es
+          text: 'Necesita renombrar %1% como %2% o de lo contrario este mod no funcionará.'
+        - lang: fr
+          text: 'Vous devez renommer %1% en %2% ou ce mod ne fonctionnera pas.'
+        - lang: it
+          text: 'Devi rinominare %1% in %2% o questa mod non funzionerà.'
+        - lang: ja
+          text: '%1%を%2%にリネームしないと機能しません。'
+        - lang: ko
+          text: '%1%의 이름을 %2%로 변경하지 않으면 이 모드가 작동하지 않습니다.'
+        - lang: pt_BR
+          text: 'Você precisa renomear %1% para %2%, caso contrário esse mod não irá funcionar.'
+        - lang: pt_PT
+          text: 'Você necessita renomear %1% para %2% ou este mod não irá funcionar.'
+        - lang: ru
+          text: 'Вам нужно переименовать %1% в %2%, или мод не будет работать.'
+        - lang: sv
+          text: 'Du behöver byta namn på %1% till %2% för att det här moddet ska fungera.'
+        - lang: uk_UA
+          text: 'Вам потрібно перейменувати %1% у %2%, або мод не працюватиме.'
+        - lang: zh_CN
+          text: '你需要把%1%重命名为%2%，否则这个mod将不起作用。'
+
+    # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
+    - &requiresMCM_X
+      type: warn
+      content:
+        - lang: en
+          text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing %1%.'
+        - lang: bg
+          text: 'Този мод изисква **меню за конфигуриране на модовете** за някои от неговите функции. Може да добавите **МКМ** с инсталиране на %1%.'
+        - lang: de
+          text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man %1% installiert.'
+        - lang: es
+          text: 'Un **Menú de configuración de mod** se requiere para que este mod sea completamente funcional. Un **MCM** puede ser agregado si se instala %1%.'
+        - lang: fr
+          text: 'Un **Mod Configuration Menu** est requis pour que ce mod fonctionne complètement. Un **MCM** peut-être ajouté en installant %1%.'
+        - lang: it
+          text: 'È necessario un **Menu di configurazione Mod** per rendere questa mod completamente funzionante. È possibile aggiungere un **MCM** installando %1%.'
+        - lang: ja
+          text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには%1%を導入してください。'
+        - lang: ko
+          text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. %1%를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
+        - lang: pl
+          text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację %1%.'
+        - lang: pt_BR
+          text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar %1%.'
+        - lang: pt_PT
+          text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar %1%.'
+        - lang: ru
+          text: '**Mod Configuration Menu** (Меню Настройки Модов) требуется для полного функционирования мода. **MCM** может быть добавлено вместе с %1%.'
+        - lang: sv
+          text: 'En **Mod-konfigurationsmeny** krävs för att denna mod ska fungera korrekt. En **MCM** kan fås genom att installera %1%.'
+        - lang: uk_UA
+          text: '**Mod Configuration Menu** (Меню Налаштування Модів) потрібне для повного функціонування мода. **MCM** може бути додано разом з %1%.'
+        - lang: zh_CN
+          text: '这个Mod需要一个**Mod配置菜单**来实现完整功能。**MCM**可以通过安装%1%来添加。'
+    - &requiresMCM_SkyUISE
+      <<: *requiresMCM_X
+      subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)' ]
+      condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+    - &requiresMCM_VR
+      <<: *requiresMCM_X
+      subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
+      condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+
+    - &requiresResources
+      type: warn
+      content:
+        - lang: en
+          text: 'Requires resources (e.g. meshes, textures; not plugins) from %1%.'
+        - lang: bg
+          text: 'Изисква ресурси (триизмерни модели и текстури, без приставки) от %1%.'
+        - lang: de
+          text: 'Braucht Ressourcen (z.B. Meshes, Texturen; keine Plugins) von %1%.'
+        - lang: es
+          text: 'Requiere de recursos (ej. mallas, texturas; no plugins) de %1%.'
+        - lang: fr
+          text: 'Requiert des ressources (ex : meshes, textures ; pas de plugins) de %1%.'
+        - lang: it
+          text: 'Richiede risorse (ad es. mesh, texture; non plugin) da %1%.'
+        - lang: ja
+          text: '%1%のリソース(プラグインではなくメッシュやテクスチャなど)が必要です。'
+        - lang: ko
+          text: '%1%의 리소스(플러그인이 아닌, 메쉬 및 질감 등)가 필요합니다.'
+        - lang: pt_BR
+          text: 'Requer recursos (ex: meshes, texturas; não plugins) vindos de %1%.'
+        - lang: pt_PT
+          text: 'Requer recursos (ex: meshes, texturas; não plugins) vindos de %1%.'
+        - lang: ru
+          text: 'Требуются ресурсы (например, меши, текстуры; не плагины) от %1%.'
+        - lang: sv
+          text: 'Behöver resurser (t.ex. meshar, texturer; inte plugin) från %1%.'
+        - lang: uk_UA
+          text: 'Потрібні ресурси (наприклад: меші, текстури; не плагіни) від %1%.'
+        - lang: zh_CN
+          text: '需要%1%的资源(如网格，纹理;非插件)。'
+
+    - &requiresX
+      type: warn
+      content:
+        - lang: en
+          text: 'Requires: %1%'
+        - lang: bg
+          text: 'Изисква: %1%'
+        - lang: de
+          text: 'Benötigt: %1%'
+        - lang: es
+          text: 'Requiere: %1%'
+        - lang: fr
+          text: 'Requiert : %1%'
+        - lang: it
+          text: 'Richiede: %1%'
+        - lang: ja
+          text: '要: %1%'
+        - lang: ko
+          text: '필요모드: %1%'
+        - lang: pl
+          text: 'Wymaga: %1%'
+        - lang: pt_BR
+          text: 'Requer: %1%'
+        - lang: pt_PT
+          text: 'Requer: %1%'
+        - lang: ru
+          text: 'Требуется: %1%'
+        - lang: sv
+          text: 'Kräver: %1%'
+        - lang: uk_UA
+          text: 'Потрібно: %1%'
+        - lang: zh_CN
+          text: '需要:%1%'
+    - &requiresBashOrSmash
+      <<: *requiresX
+      subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
+      condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
+
+    - &runAnimFramework
+      type: say
+      content:
+        - lang: en
+          text: 'It appears you have **%1%** installed. Remember to run **%2%** every time you have installed or uninstalled %3%, or a %3%-based mod.'
+        - lang: bg
+          text: 'Инсталирали сте **%1%**. Използвайте **%2%** всеки път, когато променяте %3% или модове, свързани с %3%.'
+        - lang: de
+          text: 'Sie haben anscheinend **%1%** installiert. Vergessen Sie nicht, jedes mal **%2%** zu starten, wenn Sie %3% oder einen auf %3% basierende Mod installiert oder deinstalliert haben.'
+        - lang: es
+          text: 'Parece que **%1%** está instalado. Recuerda ejecutar **%2%** cada vez que se instale o desinstale %3%, o un mod basado en %3%.'
+        - lang: fr
+          text: 'Il semblerait que vous avez **%1%** d''installer. N''oubliez pas de lancer **%2%** à chaque fois que vous installez ou désinstallez %3%, ou un mod dépendant de %3%.'
+        - lang: it
+          text: 'Sembra che tu abbia installato **%1%**. Ricorda di eseguire **%2%** ogni volta che installi o disinstalli %3%, o una mod basata su %3%.'
+        - lang: ja
+          text: '**%1%**がインストールされているようです。%3%本体、また%3%に準拠するModをインストール/アンインストールする際は、必ず**%2%**を実行し直すようにしてください。'
+        - lang: ko
+          text: '**%1%**가 설치되어 있습니다. %3% 또는 %3% 기반 모드를 설치하거나 제거할 때마다 **%2%**를 실행하는 것을 잊지 마십시오.'
+        - lang: pl
+          text: 'Wygląda na to że masz zainstalowany **%1%**. Pamiętaj aby uruchomić **%2%** za każdym razem kiedy zainstalowałeś lub odinstalowałeś %3%, lub mod bazujący na %3%.'
+        - lang: pt_BR
+          text: 'Você aparenta ter o **%1%** instalado. Lembre-se de rodar o **%2%** toda vez que você instalar or desinstalar o **%3%** ou um mod baseado no **%3%**.'
+        - lang: pt_PT
+          text: 'Você aparenta ter **%1%** instalado. Lembre-se de correr **%2%** cada vez que instale ou desinstale %3%, ou um mod baseado em %3%.'
+        - lang: ru
+          text: 'У вас установлен **%1%**. Не забудьте запускать **%2%** каждый раз, когда вы установите или удалите %3%, или любой мод, основанный на %3%.'
+        - lang: sv
+          text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **%2%** varje gång du har installerat eller avinstallerat %3%, eller en %3%-baserad mod.'
+        - lang: uk_UA
+          text: 'У вас встановлений **%1%**. Не забудьте запускати **%2%** кожен раз, коли ви встановите або видалите %3%, або будь-який мод, на основі %3%.'
+        - lang: zh_CN
+          text: '您安装了**%1%**。每次安装或卸载%3%，以及基于%3%的mod时，记得运行**%2%**。'
+
+    - &runxLODGen
+      type: say
+      content:
+        - lang: en
+          text: 'If you add, remove, or update plugins that alter WRLD/CELL records, remember to update this module with **xLODGen**.'
+        - lang: bg
+          text: 'Ако добавите, премахнете или обновите приставки, които променят записите WRLD и CELL, трябва да обновите този модул с **"xLODGen"**.'
+        - lang: de
+          text: 'Wenn Sie Plugins hinzufügen, entfernen oder aktualisieren die WRLD/CELL Einträge verändern, denken Sie daran dieses Modul mit **xLODGen** zu aktualisieren.'
+        - lang: es
+          text: 'Si se agrega, elimina, o se actualizan plugins que modifican registros WRLD/CELL, recuerde actualizar este módulo con **xLODGen**.'
+        - lang: fr
+          text: 'Si vous ajoutez, enlevez, ou mettez à jour des plugins qui modifient WRLD/CELL records, n''oubliez pas de mettre à jour ce module avec **xLODGen**.'
+        - lang: it
+          text: 'Se aggiungi, rimuovi o aggiorni i plugin che modificano i record WRLD/CELL, ricorda di aggiornare questo modulo con **xLODGen**.'
+        - lang: ja
+          text: 'WRLD/CELLレコードを変更するプラグインを追加、削除、または更新する場合は、このモジュールを **xLODGen** で更新することを忘れないでください。'
+        - lang: ko
+          text: 'WRLD/CELL 레코드를 변경하는 플러그인을 추가, 제거 또는 업데이트하는 경우 **xLODGen**으로 이 모듈을 업데이트해야 합니다.'
+        - lang: pt_PT
+          text: 'Se você adicionar, remover, ou atualizar plugins que alterem registos WRLD/CELL, lembre-se de atualizar este módulo com **xLODGen**.'
+        - lang: ru
+          text: 'Если вы добавляете, удаляете или обновляете плагины, которые изменяют записи WRLD / CELL, не забудьте обновить этот модуль с помощью **xLODGen**.'
+        - lang: uk_UA
+          text: 'Якщо ви додаєте, видаляєте чи оновлюєте плагіни, які змінюють записи WRLD/CELL, не забудьте оновити цей модуль за допомогою **xLODGen**.'
+        - lang: zh_CN
+          text: '如果您添加、删除或更新修改了WRLD/CELL记录的插件时，记得使用**xLODGen**更新此模块。'
+
+    - &sortMasters
+      type: say
+      content:
+        - lang: en
+          text: 'Plugin''s Masters require sorting. %1%'
+        - lang: bg
+          text: 'Трябва да сортирате основния списък с приставките. %1%'
+        - lang: de
+          text: 'Die Plugin Master müssen sortiert werden. %1%'
+        - lang: es
+          text: 'Los masters de este plugin necesitan ser ordenados. %1%'
+        - lang: fi
+          text: 'Liitännäisen isännät vaativat uudelleenjärjestämistä. %1%'
+        - lang: fr
+          text: 'Les Masters des plugins requièrent un tri. %1%'
+        - lang: it
+          text: 'I Master dei plugin richiedono un ordinamento. %1%'
+        - lang: ja
+          text: 'このプラグインのマスターはソートが必要です。 %1%'
+        - lang: ko
+          text: '플러그인 마스터의 정렬이 필요합니다. %1%'
+        - lang: pl
+          text: 'Wtyczki Główne tej wtyczki wymagają sortowania. %1%'
+        - lang: pt_BR
+          text: 'Os Masters desse plugin necessitam de ordenação. %1%'
+        - lang: pt_PT
+          text: 'A Master deste Plugin necessita ordenação. %1%'
+        - lang: ru
+          text: 'Мастерфайлы плагина требуют сортировки. %1%'
+        - lang: sv
+          text: 'Denna plugins master behöver sorteras. %1%'
+        - lang: uk_UA
+          text: 'Майстерфайли плагіну потребують сортування. %1%'
+        - lang: zh_CN
+          text: '插件的主依赖需要排序。 %1%'
+      subs: [ '[xEdit - Sort Masters](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#SortingMasterFileLoadOrders)' ]
+
+    - &useBashTweakInstead
+      type: say
+      content:
+        - lang: en
+          text: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
+        - lang: bg
+          text: 'Може да използвате кръпка на "Bash" вместо тази приставка. %1%'
+        - lang: de
+          text: 'Ein Bashed Patch Tweak kann anstelle dieses Plugins verwendet werden. %1%'
+        - lang: es
+          text: 'Un Bashed patch puede ser empleado en vez de este plugin. %1%'
+        - lang: fr
+          text: 'Un Bashed Patch tweak peut-être utilisé au lieu de ce plugin. %1%'
+        - lang: it
+          text: 'Puoi usare una Bashed Patch modificata invece di questo plugin. %1%'
+        - lang: ja
+          text: 'このプラグインの代わりに、Bashed Patch の調整機能を使用できます。%1%'
+        - lang: ko
+          text: '이 플러그인 대신 Bashed Patch의 트윅을 사용할 수 있습니다. %1%'
+        - lang: pt_BR
+          text: 'Uma tweak do Bashed Patch pode ser utilizada no lugar deste plugin. %1%'
+        - lang: pt_PT
+          text: 'Um Bashed Patch modificado pode ser utilizado em vez deste plugin. %1%'
+        - lang: ru
+          text: 'Можно использовать Bashed Patch tweak вместо этого плагина. %1%'
+        - lang: sv
+          text: 'En Bashed Patch Tweak kan användas istället för det här pluginet. %1%'
+        - lang: uk_UA
+          text: 'Можна використати Bashed Patch tweak замість цього плагіну. %1%'
+        - lang: zh_CN
+          text: '可以使用一个Bashed Patch来代替这个插件。%1%'
+      subs: [ '' ]
+      condition: 'file("Bashed Patch.*\.esp")'
+
+    - &useInstead
+      type: warn
+      content:
+        - lang: en
+          text: 'Use %1% instead.'
+        - lang: bg
+          text: 'Може да използвате %1%.'
+        - lang: de
+          text: 'Nutzen Sie %1% stattdessen.'
+        - lang: es
+          text: 'Use %1% en su lugar.'
+        - lang: fr
+          text: 'Utilisez %1% au lieu de celui-ci.'
+        - lang: it
+          text: 'Utilizza %1% al suo posto.'
+        - lang: ja
+          text: '代わりに%1%を使用してください。'
+        - lang: ko
+          text: '대신 %1%를 사용하십시오.'
+        - lang: pt_BR
+          text: 'Use %1% ao invés disso.'
+        - lang: pt_PT
+          text: 'Use %1% ao invés disto.'
+        - lang: ru
+          text: 'Вместо этого используйте %1%.'
+        - lang: sv
+          text: 'Använd %1% istället.'
+        - lang: uk_UA
+          text: 'Замість цього використовуйте: %1%.'
+        - lang: zh_CN
+          text: '使用%1%代替。'
+
+    - &useOnlyOneX
+      type: error
+      content:
+        - lang: en
+          text: 'Use only one %1%.'
+        - lang: bg
+          text: 'Използвайте само една %1%.'
+        - lang: da
+          text: 'Brug kun én %1%.'
+        - lang: de
+          text: 'Nutzen Sie nur einen %1%.'
+        - lang: es
+          text: 'Utilice solo uno %1%.'
+        - lang: fi
+          text: 'Käytä vain yhtä: %1%.'
+        - lang: fr
+          text: 'N''utilisez qu''un %1%.'
+        - lang: it
+          text: 'Usa solo un %1%.'
+        - lang: ja
+          text: '%1%は一つだけ使用してください。'
+        - lang: ko
+          text: '%1%을 한 개만 사용하십시오.'
+        - lang: pl
+          text: 'Używa tylko jednego %1%.'
+        - lang: pt_BR
+          text: 'Utilize apenas um %1%.'
+        - lang: pt_PT
+          text: 'Utilizar apenas um %1%.'
+        - lang: ru
+          text: 'Используйте только один %1%.'
+        - lang: sv
+          text: 'Använd endast en %1%.'
+        - lang: uk_UA
+          text: 'Використовуйте лише один %1%.'
+        - lang: zh_CN
+          text: '只使用一个%1%。'
+
+    - &useVersion
+      type: error
+      content:
+        - lang: en
+          text: 'Use %1% version.'
+        - lang: bg
+          text: 'Използвайте версията %1%.'
+        - lang: de
+          text: 'Benutzen Sie die %1% Version.'
+        - lang: es
+          text: 'Use la versión diseñada para %1%.'
+        - lang: fr
+          text: 'Utilisez la version de %1%.'
+        - lang: it
+          text: 'Usa la versione %1%.'
+        - lang: ja
+          text: '%1%バージョンを使用してください。'
+        - lang: ko
+          text: '%1% 버전을 사용하십시오.'
+        - lang: pl
+          text: 'Użyj wersji %1%.'
+        - lang: pt_BR
+          text: 'Use a versão %1%.'
+        - lang: pt_PT
+          text: 'Use a versão %1%.'
+        - lang: ru
+          text: 'Используйте версию %1%.'
+        - lang: sv
+          text: 'Använd version %1%.'
+        - lang: uk_UA
+          text: 'Використовуйте версію %1%.'
+        - lang: zh_CN
+          text: '使用%1%版本。'
+
+    - &versionOldX
+      type: say
+      content:
+        - lang: en
+          text: 'It appears you do not have the latest version of %1%. Some mods may require functionality added in the latest version of %1% to work.'
+        - lang: bg
+          text: 'Инсталирайте последната версия на %1%. Някои модове може да изискват последната версия на %1% за да работят.'
+        - lang: de
+          text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
+        - lang: es
+          text: 'Parece que no tiene la última versión de %1%. Algunos mods pueden requerir funcionalidades añadidas en la última versión de %1% para funcionar.'
+        - lang: fr
+          text: 'Il semble que vous n''ayez pas la dernière version de %1%. Certains mods pourraient avoir besoin de fonctionalités disponible dans la dernière version de %1% pour fonctionner.'
+        - lang: it
+          text: 'Sembra che tu non abbia l''ultima versione di %1%. Alcune modifiche potrebbero richiedere funzionalità aggiunte nell''ultima versione di %1% per funzionare.'
+        - lang: ja
+          text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
+        - lang: ko
+          text: '%1%의 최신 버전이없는 것 같습니다. 일부 모드가 동작하려면 %1%의 최신 버전에 추가 된 기능이 필요할 수 있습니다.'
+        - lang: pl
+          text: 'Wygląda na to że nie masz ostatniej aktualnej wersji %1%. Część modów może wymagać funkcjonalności dodanej w ostatniej wersji %1% aby działać poprawnie.'
+        - lang: pt_BR
+          text: 'Você aparenta não ter a versão mais recente de %1%. Alguns mods podem requerer funcionalidades que foram adicionada na versão mais recente de %1% para funcionar.'
+        - lang: pt_PT
+          text: 'Aparenta que você não tem a versão mais recente de %1%. Alguns mods podem requerir funcinalidades adicionadas na última versão de %1% para funcionar.'
+        - lang: ru
+          text: 'Возможно у вас не установлена последняя версия %1%. Для работы некоторых модов может требоваться функционал, добавленный в последней версии %1%.'
+        - lang: sv
+          text: 'Det verkar som att du inte har den senaste versionen av %1%. Några mods kan kräva funktionalitet tillagd i den senaste versionen av %1% för att fungera.'
+        - lang: uk_UA
+          text: 'Можливо у вас не встановлена остання версія %1%. Роботи деяких модів може потребувати функціоналу, доданого в останній версії %1%.'
+        - lang: zh_CN
+          text: '您的%1%似乎不是最新的。有些插件可能需要最新的%1%才能工作。'
+
+    - &versionUpToDateX
+      type: say
+      content:
+        - lang: en
+          text: 'Your %1% is up-to-date.'
+        - lang: bg
+          text: '%1% е актуална.'
+        - lang: da
+          text: 'Din %1% er opdateret.'
+        - lang: de
+          text: 'Ihr %1% ist aktuell.'
+        - lang: es
+          text: 'Tiene la última versión de %1%.'
+        - lang: fr
+          text: '%1% est à jour.'
+        - lang: it
+          text: 'La tua %1% è aggiornata.'
+        - lang: ja
+          text: '%1%は最新版です。'
+        - lang: ko
+          text: '%1%가 최신 버전입니다.'
+        - lang: pl
+          text: 'Twój %1% jest aktualny.'
+        - lang: pt_BR
+          text: 'Seu %1% está atualizado.'
+        - lang: pt_PT
+          text: 'O seu %1% está atualizado.'
+        - lang: ru
+          text: 'Ваш %1% обновлен.'
+        - lang: sv
+          text: 'Din %1% är uppdaterad.'
+        - lang: uk_UA
+          text: 'Ваш %1% оновлено.'
+        - lang: zh_CN
+          text: '您的%1%是最新的。'
+
+    - &versionXIncY
+      type: error
+      content:
+        - lang: en
+          text: 'Your installed version of %1% is not compatible with your version of %2%.'
+        - lang: bg
+          text: 'Инсталираната версия на %1% не е съвместима с версията на %2%.'
+        - lang: da
+          text: 'Din installerede version af %1% er ikke kompatibel med din version af %2%.'
+        - lang: de
+          text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
+        - lang: es
+          text: 'La versión instalada de %1% no es compatible con la versión de %2% que está utilizando.'
+        - lang: fr
+          text: 'La version installée de %1% n''est pas compatible avec votre version de %2%.'
+        - lang: it
+          text: 'La tua versione installata di %1% non è compatibile con la tua versione di %2%.'
+        - lang: ja
+          text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
+        - lang: ko
+          text: '현재 설치된 %1%의 버전은 %2%의 버전과 호환되지 않습니다.'
+        - lang: pl
+          text: 'Twoja zainstalowana wersja %1% nie jest kompatybilna z twoją wersją %2%.'
+        - lang: pt_BR
+          text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
+        - lang: pt_PT
+          text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
+        - lang: ru
+          text: 'Установленная у вас версия %1% несовместима с вашей версией %2%.'
+        - lang: sv
+          text: 'Din installerade version av %1% är inte kombatibel med din version av %2%.'
+        - lang: uk_UA
+          text: 'Встановлена ​​у вас версія %1% несумісна з вашою версією %2%.'
+        - lang: zh_CN
+          text: '您安装的%1%版本与%2%版本不兼容。'
+    - &versionSkseIncSSE
+      <<: *versionXIncY
+      subs:
+        - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
+        - '**Skyrim SE**'
+    - &versionSkseIncSVR
+      <<: *versionXIncY
+      subs:
+        - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
+        - '**Skyrim VR**'
+
+    - &versionXofYorGreaterRequired
+      type: error
+      content:
+        - lang: en
+          text: 'Requires version **%1%** or greater of **%2%**.'
+        - lang: bg
+          text: 'Изисква версия **%1%** или всяка следваща на **%2%**.'
+        - lang: de
+          text: 'Benötigt Version **%1%** oder höher von **%2%**.'
+        - lang: es
+          text: 'Requiere como mínimo la versión **%1%** de **%2%**.'
+        - lang: fr
+          text: 'Requiert la version **%1%** ou plus de **%2%**.'
+        - lang: it
+          text: 'Richiede la versione **%1%** o superiore di **%2%**.'
+        - lang: ja
+          text: 'バージョン**%1%**以上の**%2%**が必要です。'
+        - lang: ko
+          text: '**%1%** 혹은 **%2%** 이상의 버전이 필요합니다.'
+        - lang: pt_PT
+          text: 'Necessita a versão **%1%** ou maior de **%2%**.'
+        - lang: ru
+          text: 'Нужна версия **%1%** или выше **%2%**.'
+        - lang: uk_UA
+          text: 'Потрібна версія **%1%** або вище **%2%**.'
+        - lang: zh_CN
+          text: '需要 **%2%** 的 **%1%** 或更高版本。'
+
+    - &wildEdits
+      type: warn
+      content:
+        - lang: en
+          text: 'This plugin contains [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) and may require additional manual cleaning to not interfere with other mods. %1%'
+        - lang: bg
+          text: 'Тази приставка съдържа [диви редакции](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) и може да изисква допълнително ръчно почистване. %1%'
+        - lang: da
+          text: 'Dette plugin indeholder [ukontrollerede redigeringer](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
+        - lang: de
+          text: 'Dieses Plugin enthält [wilde Modifikationen](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) und benötigt vermutlich zusätzliche manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+        - lang: es
+          text: 'Este plugin contiene [ediciones no intencionadas](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) y probablemente requiera de una limpieza manual adicional para que no interfiera con otros mods. %1%'
+        - lang: fi
+          text: 'Tämä liitännäinen sisältää [villejä muokkauksia](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits). Manuaalinen lisäpuhdistaminen voi olla tarpeen yhteensopivuuden takaamiseksi. %1%'
+        - lang: fr
+          text: 'Ce plugin contient [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) et peut avoir besoin de nettoyage manuel additionelle pour ne pas interférer avec d''autres mods. %1%'
+        - lang: it
+          text: 'Questo plugin contiene [pesanti modifiche](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) e potrebbe richiedere una pulizia manuale aggiuntiva, in modo da non interferire con altre mod. %1%'
+        - lang: ja
+          text: 'このプラグインには[Wild Edit](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) が含まれており、他の改造と干渉を防ぐためには追加の手動クリーニングが必要な場合があります。%1%'
+        - lang: ko
+          text: '이 플러그인에는 [잘못된 편집](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits)이 포함되어 있으며 다른 모드와 간섭되지 않도록 추가적인 수동 청소가 필요할 수 있습니다. %1%'
+        - lang: pl
+          text: 'Ta wtyczka zawiera [dzikie edycje](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) i może wymagać dodatkowego ręcznego czyszczenia aby nie kolidować z innymi modami. %1%'
+        - lang: pt_BR
+          text: 'Este plugin contém [edições não-intencionais](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) e pode requerer limpeza manual adicional para que não interfira com outros mods. %1%'
+        - lang: pt_PT
+          text: 'Este plugin contém [edições selvagens](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits). Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
+        - lang: ru
+          text: 'Плагин содержит [дикие правки](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) и может потребовать дополнительной ручной чистки, чтобы не кофликтовать с другими модами. %1%'
+        - lang: sv
+          text: 'Denna plugin innehåller [vilda föränringar](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
+        - lang: uk_UA
+          text: 'Плагін містить [дикі правки](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) та може вимагати додаткової ручної чистки, щоб не конфліктувати з іншими модами. %1%'
+        - lang: zh_CN
+          text: '这个插件包含[随意编辑](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits)，可能需要额外的手动清理，以免干扰其他mod。%1%'
+      subs: [ '' ]
+
+  # Cleaning Data Anchors
+    - &quickClean
+      util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+      info:
+        - lang: en
+          text: 'A guide to cleaning plugins using xEdit can be found [here](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: bg
+          text: 'Информация за почистване на приставките в "xEdit" може да намерите [тук](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: de
+          text: 'Eine Anleitung zum Säubern von Plugins mit xEdit finden Sie [hier](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: es
+          text: 'Una guía para limpiar plugins usando xEdit se encuentra disponible [aquí](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: fi
+          text: 'Ohjeet liitännäisten puhdistamiseen xEditillä löytyvät [tästä linkistä](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: fr
+          text: 'Un guide pour nettoyer les plugins grâce à xEdit se trouve [ici](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: it
+          text: 'Puoi trovare una guida per la pulizia dei plugin tramite xEdit [qui](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: ja
+          text: 'xEditを使ったプラグインのクリーニングのガイドは[こちら](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)にあります。'
+        - lang: ko
+          text: 'xEdit을 사용한 플러그인 정리에 대한 가이드는 [여기](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)에서 찾을 수 있습니다.'
+        - lang: pt_BR
+          text: 'Um guia para limpar plugins utilizando o xEdit pode ser encontrado [aqui](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: pt_PT
+          text: 'Um guia para limpar plugins utilizando xEdit pode ser encontrado [aqui](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: ru
+          text: 'Руководство по очистке модов с помощью xEdit можно найти [здесь](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: sv
+          text: 'En guide till att rensa plugins med xEdit finns [här](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: uk_UA
+          text: 'Посібник з очищення модів за допомогою xEdit можна знайти [тут](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
+        - lang: zh_CN
+          text: 'xEdit的清洁插件指南可以在[这里](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)找到。'
+
+    - &reqManualFix
+      util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+      info:
+        - lang: en
+          text: 'It is strongly recommended not to use mods that contain **deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually (a complex process that should be done by the mod author). More information on **deleted navmeshes** is provided [here](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: bg
+          text: 'Препоръчва се да избягвате модове, които съдържат **изтрити навигационни обекти**, защото те могат да причинят проблеми. **Изтритите навигационни обекти** трябва да бъдат коригирани ръчно (това е сложен процес и не се препоръчва за начинаещи). Повече информация за **тях** може да намерите [тук](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: de
+          text: 'Es wird streng empfohlen, keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten, da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden (ein komplexer Prozess der vom Mod-Autor erledigt werden sollte). Mehr Informationen über **Gelöschte Navmeshes** werden [hier](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial) geboten.'
+        - lang: es
+          text: 'Es altamente recomendable que no se usen mods que contienen **navmeshes eliminadas** pues es común que causen cierres súbitos (crashes). Las **navmeshes eliminadas** deben ser corregidas manualmente (un proceso bien complejo que debe ser ejecutado por el autor del mod). Más información sobre las **navmeshes eliminadas** puede ser consltada [aquí](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: fr
+          text: 'Il est fortement recommandé de ne pas utilisé de mod contenant **deleted navmeshes**, connu pour provoquer des crash. **Deleted navmeshes** doit être corrigé manuellement (un processus complexe, devant être effectué par l''auteur du mod). Plus d''information sur **Deleted navmeshes** peuvent être trouvées [ici](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: it
+          text: 'Si raccomanda vivamente di non utilizzare mod che contengono **navmesh cancellate** che sono note come causa di Crash. **Navmesh cancellate** devono essere corrette manualmente (un processo complesso che dovrebbe essere fatto dall''autore della mod). Puoi trovare maggiori informazioni su **deleted navmeshes** [qui](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: ja
+          text: '**navmeshの削除**を含むmodは使用しないことを強く推奨します。クラッシュの原因になります。**navmeshの削除**は手動で修正する必要があります(mod作成者が行う必要がある複雑なプロセスです)。**navmeshの削除**の詳細については[ここ](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)を参照してください。'
+        - lang: ko
+          text: '**삭제된 Navmesh**가 포함된 모드는 크래시를 유발하는 것으로 알려져 있으므로 사용하지 않는 것이 좋습니다. **삭제된 Navmesh**는 수동으로 수정해야합니다(모드 작성자가 수행해야하는 복잡한 프로세스). **삭제된 Navmesh**에 대한 자세한 정보는 [여기](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)에서 제공됩니다.'
+        - lang: pl
+          text: 'Jest silnie zalecane aby nie używać modów zawierających **Usunięte navmeshe** jako że są znane jako powód awarii. **Usunięte navmeshe** muszą zostać poprawione ręcznie(skomplikowany proces który powinien być wykonany przez autora modu). Więcej informacji o **Usuniętych navmeshach** można znaleźć [tutaj](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: pt_BR
+          text: 'É altamente recomendado que você não utilize mods que contenham **Navmeshes deletados**, pois eles são conhecidos por causar problemas. **Navmeshes deletados devem ser corrigos manualmente (Um processo complexo que deve ser feito pelo autor do mod). Mais informações em **Navmeshes deletadas** está disponível [aqui](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: pt_PT
+          text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente(Um processo complexo que deve ser feito pelo autor do mod). Mais informação sobre **Navmeshes apagados** está disponível em inglês [aqui] (https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: ru
+          text: 'Настоятельно не рекомендуется использовать моды с **удаленными навмешами** т.к. известно, что они вызывают вылеты. **Удаленные навмеши** должны быть исправлены вручную (сложный процесс, который должен быть выполнен автором мода). Больше информации о **удаленных навмешах** можно найти [здесь](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: sv
+          text: 'Det är starkt rekommenderat att inte använda mods som innehåller **Borttagna navmeshes** eftersom de kan orsaka krascher. **Borttagna navmeshes** måste korrigeras manuellt (en komplex process som borde göras av modskaparen). Mer information om **Borttagna navmeshes** hittar du [här](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: uk_UA
+          text: 'Наполегливо не рекомендується використовувати моди з **видаленими навмешами** бо відомо, що вони викликають збої. **Видалені навмеші** повинні бути виправлені вручну (складний процес, який повинен бути виконаний автором моду). Більше інформації про **видалені навмеші** можна знайти [тут](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+        - lang: zh_CN
+          text: '强烈建议不要使用包含已删除navmeshes的mod，因为它们会导致崩溃。**已删除navmeshes**必须手动修正(一个复杂的过程，应该由mod作者完成)。更多关于**已删除navmeshes**的信息已提供[这里](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)。'
 
 common:
 # File Anchors
@@ -98,1390 +1481,6 @@ common:
     name: 'SKSE/Plugins/VRPerkExtender.dll'
     display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
     condition: 'file("SkyrimVR.esm")'
-
-# Message Anchors
-  - &alreadyInX
-    type: error
-    content:
-      - lang: en
-        text: 'Delete. Already included in %1%.'
-      - lang: bg
-        text: 'За изтриване. Включена е в %1%.'
-      - lang: da
-        text: 'Slet. Allerede inkluderet i %1%.'
-      - lang: de
-        text: 'Löschen. Bereits in %1% enthalten.'
-      - lang: es
-        text: 'Eliminar. Está incluido en %1%.'
-      - lang: fi
-        text: 'Poista. %1% sisältää jo tämän.'
-      - lang: fr
-        text: 'Supprimer. Déjà inclus dans %1%.'
-      - lang: it
-        text: 'Cancella. Già incluso in %1%.'
-      - lang: ja
-        text: '削除してください。既に%1%に含まれています。'
-      - lang: ko
-        text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
-      - lang: pl
-        text: 'Usuń. Już zawarte w %1%'
-      - lang: pt_BR
-        text: 'Apague. Já incluído em %1%'
-      - lang: pt_PT
-        text: 'Apagar. Já incluído em %1%.'
-      - lang: ru
-        text: 'Удалите. Уже включено в %1%.'
-      - lang: sv
-        text: 'Ta bort. Redan inkluderat i %1%.'
-      - lang: uk_UA
-        text: 'Видаліть. Уже додано у %1%.'
-      - lang: zh_CN
-        text: '删除。已包含在%1%中。'
-  - &alreadyInLotD
-    <<: *alreadyInX
-    subs: [ '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)' ]
-    condition: 'active("LegacyoftheDragonborn.esm")'
-
-  - &alreadyInOrFixedByX
-    type: error
-    content:
-      - lang: en
-        text: 'Delete. Already included or otherwise fixed in %1%.'
-      - lang: bg
-        text: 'За изтриване. Приложена е в %1%.'
-      - lang: de
-        text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
-      - lang: es
-        text: 'Eliminar. Está incluido o arreglado en %1%.'
-      - lang: fr
-        text: 'Supprimer. Déjà inclus ou corrigé en %1%.'
-      - lang: it
-        text: 'Cancella. Già incluso o corretto in %1%.'
-      - lang: ja
-        text: '削除してください。%1%にすでに含まれているか修正されています。'
-      - lang: ko
-        text: '삭제하십시오. 이미 %1%에 포함되었거나 수정되었습니다.'
-      - lang: pl
-        text: 'Usuń. Już zawarte lub naprawione w %1%.'
-      - lang: pt_BR
-        text: 'Apague. Já incluído ou consertado em %1%.'
-      - lang: pt_PT
-        text: 'Apagar. Já incluído ou reparado em %1%.'
-      - lang: ru
-        text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
-      - lang: sv
-        text: 'Ta bort. Redan inkluderat eller fixat i %1%.'
-      - lang: uk_UA
-        text: 'Видаліть. Уже включено або іншим чином виправлено у %1%.'
-      - lang: zh_CN
-        text: '删除。在%1%中已包含或修复。'
-  - &alreadyInOrFixedByBDSv3_0
-    <<: *alreadyInOrFixedByX
-    subs: [ 'Better Dynamic Snow v3.0+' ]
-    condition: 'active("Better Dynamic Snow SE.esp")'
-  - &alreadyInOrFixedByScrambledBugs
-    <<: *alreadyInOrFixedByX
-    type: say
-    subs: [ 'Scrambled Bugs' ]
-    condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
-
-  - &alsoUseX
-    type: say
-    content:
-      - lang: en
-        text: 'It''s highly recommended that you also use %1%.'
-      - lang: bg
-        text: 'Препоръчва се да използвате %1%.'
-      - lang: de
-        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
-      - lang: es
-        text: 'Se recomienda que también use %1%.'
-      - lang: fr
-        text: 'Il est vivement recommendé que vous utilisiez aussi %1%.'
-      - lang: it
-        text: 'Si consiglia vivamente di usare anche %1%.'
-      - lang: ja
-        text: '%1%の併用を強く推奨します。'
-      - lang: ko
-        text: '%1%도 함께 사용하는 것을 매우 권장합니다.'
-      - lang: pl
-        text: 'Jest wysoce wskazane abyś używał także %1%.'
-      - lang: pt_BR
-        text: 'É altamente recomendado que você também use %1%.'
-      - lang: pt_PT
-        text: 'É altamente recomendado que você também use %1%.'
-      - lang: ru
-        text: 'Настоятельно рекомендуется также использовать %1%.'
-      - lang: sv
-        text: 'Det är rekommenderat att du också använder %1%.'
-      - lang: uk_UA
-        text: 'Наполегливо рекомендуємо також використати %1%.'
-      - lang: zh_CN
-        text: '强烈建议您使用%1%。'
-
-  - &compatIssuesWithX
-    type: say
-    content:
-      - lang: en
-        text: 'This plugin has compatibility issues with %1%. For more information, read this mod''s compatibility notes.'
-      - lang: bg
-        text: 'Тази приставка не е съвместима с %1%. За повече информация, прочетете бележките за съвместимост.'
-      - lang: de
-        text: 'Dieses Plugin hat Kompatibilitätsprobleme mit %1%. Mehr Information dazu sind in den Kompatibilitäts-Notizen der Mod nachzulesen.'
-      - lang: es
-        text: 'Este plugin tiene problemas de compatibilidad con %1%. Para más información, lea las notas de compatibilidad de este mod.'
-      - lang: fr
-        text: 'Ce plugin a des problèmes de compatibilités avec %1%. Pour plus d''informations, lisez la liste de compabilité de ce mod.'
-      - lang: it
-        text: 'Questo plugin ha problemi di compatibilità con %1%. Per maggiori informazioni, leggi le note sulla compatibilità di questa mod.'
-      - lang: ja
-        text: 'このプラグインには%1%との互換性の問題があります。詳細についてはこのmodの互換性に関する注意事項をお読みください。'
-      - lang: ko
-        text: '이 플러그인은 %1%와의 호환성 문제가 있습니다. 자세한 내용은 이 모드의 호환성 정보를 확인해주세요.'
-      - lang: pt_BR
-        text: 'Este plugin tem problemas de compatibilidade com %1%. Para mais informações, leia as notas de compatibilidade deste mod.'
-      - lang: pt_PT
-        text: 'Este plugin tem problemas de compatibilidade com %1%. Para mais informações, leia as notas de compatibilidade deste mod.'
-      - lang: ru
-        text: 'У этого плагина есть проблемы совместимости с %1%. Для получения дополнительной информации прочтите заметки о совместимости этого мода.'
-      - lang: sv
-        text: 'Det här pluginet är inte helt kompatibelt med %1%. För mer information, läs det här moddets kompabilitetsanteckningar.'
-      - lang: uk_UA
-        text: 'У цього плагіна наявні проблеми сумісності з %1%. Для отримання додаткової інформації дивіться примітки щодо сумісності цього моду.'
-      - lang: zh_CN
-        text: '这个插件与%1%有兼容性问题。欲了解更多信息，请阅读这个mod的兼容性说明。'
-
-  - &compatNotes
-    type: say
-    content:
-      - lang: en
-        text: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
-      - lang: bg
-        text: 'Препоръчва се да прочетете [бележките за съвместимост](%1%).'
-      - lang: de
-        text: 'Es wird empfohlen, dass Sie die [Kompatibilitäts-Notizen](%1%) dieses Mods lesen.'
-      - lang: es
-        text: 'Se recomienda que lea las [Notas de compatibilidad](%1%) de este mod.'
-      - lang: fi
-        text: 'On suotavaa lukea modin tiedot [yhteensopivuudesta](%1%).'
-      - lang: fr
-        text: 'Il est recommandé que vous lisiez les [Notes de compabilités](%1%) de ce mod.'
-      - lang: it
-        text: 'Si raccomanda la lettura delle [Note sulla compatibilità](%1%) di questa mod.'
-      - lang: ja
-        text: '[互換性に関する注意事項](%1%)を読みましょう。'
-      - lang: ko
-        text: '이 모드의 [호환성 정보](%1%)를 읽어 보는 걸 권장합니다.'
-      - lang: pl
-        text: 'Jest rekomendowane abyś przeczytał [Notki Kompatybilności](%1%) tego moda.'
-      - lang: pt_BR
-        text: 'É recomendada a leitura das [Notas de Compatibilidade](%1%) deste mod.'
-      - lang: pt_PT
-        text: 'É recomendada leitura das [Notas de Compatibilidade](%1%) deste mod.'
-      - lang: ru
-        text: 'Рекомендуется прочесть [заметки о совместимости](%1%) мода.'
-      - lang: sv
-        text: 'Det är rekommenderat att du läser det här moddets [kompabilitetsanteckningar](%1%).'
-      - lang: uk_UA
-        text: 'Рекомендується прочитати [примітки щодо сумісності](%1%) моду.'
-      - lang: zh_CN
-        text: '建议您阅读这个mod的[兼容性说明](%1%)。'
-
-  - &corrupt
-    type: warn
-    content:
-      - lang: en
-        text: 'This file is corrupt and should not be used.'
-      - lang: bg
-        text: 'Този файл е повреден и не трябва да се използва.'
-      - lang: de
-        text: 'Diese Datei ist korrupt und sollte nicht benutzt werden.'
-      - lang: es
-        text: 'Este archivo está corrupto y no debería ser utilizado.'
-      - lang: fi
-        text: 'Tiedosto on vaurioitunut, eikä sitä tule käyttää.'
-      - lang: fr
-        text: 'Ce fichier est corrompu et ne devrait pas être utilisé.'
-      - lang: it
-        text: 'Questo file risulta corrotto e pertanto non deve essere utilizzato.'
-      - lang: ja
-        text: 'このファイルは壊れています。使用しないでください。'
-      - lang: ko
-        text: '이 파일은 손상되었습니다. 사용하지 마십시오.'
-      - lang: pl
-        text: 'Ten plik jest zepsuty i nie powinien być używany.'
-      - lang: pt_BR
-        text: 'Este arquivo está corrompido e não deveria ser utilizado.'
-      - lang: pt_PT
-        text: 'Este ficheiro está corrompido e não deve ser utilizado.'
-      - lang: ru
-        text: 'Файл испорчен и не должен использоваться.'
-      - lang: sv
-        text: 'Denna fil är korrupt och borde inte användas.'
-      - lang: uk_UA
-        text: 'Файл зіпсований та не має використовуватися.'
-      - lang: zh_CN
-        text: '该文件已损坏，不应使用。'
-
-  - &deletePlugin
-    type: warn
-    content:
-      - lang: en
-        text: 'When using **%1%**, it''s recommended that you deactivate or delete this ESP file but keep the resources (e.g. meshes, textures) installed with this mod.'
-      - lang: bg
-        text: 'Когато използвате приставката **%1%**, трябва да деактивирате или изтриете този ESP файл, но да запазите неговите ресурси (триизмерни модели, текстури и други).'
-      - lang: de
-        text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Ressourcen (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden.'
-      - lang: es
-        text: 'Si usa **%1%**, se recomienda que desactive o elimine este archivo ESP pero que mantenga los recursos (ej. mallas, texturas) que se instalaron con él.'
-      - lang: fr
-        text: 'Lorsque vous utilisez **%1%**, il est recommandé que vous désactivez, ou supprimez, cet ESP mais gardez les ressources (ex : meshes, textures) installés avec ce mod.'
-      - lang: it
-        text: 'Quando si utilizza **%1%**, è fortemente consigliato disattivare o eliminare questo file ESP ma mantenerne le risorse (ad es. mesh, texture) installate con questa mod.'
-      - lang: ja
-        text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。'
-      - lang: ko
-        text: '**%1%**를 사용할 때 이 ESP 파일을 비활성화하거나 삭제하되, 이 모드와 함께 설치된 리소스(예: 메쉬, 텍스쳐)는 유지하는 것을 권장합니다.'
-      - lang: pl
-        text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem.'
-      - lang: pt_BR
-        text: 'Quando se usa **%1%**, é recomendado que você desative ou apague este arquivo ESP mas que mantenha os recursos (por ex. meshes, textures) instalados com esse mod.'
-      - lang: pt_PT
-        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod.'
-      - lang: ru
-        text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (меши, текстуры и тд).'
-      - lang: sv
-        text: 'När du använder **%1%** är det rekommenderat att du avaktiverar eller tar bort denna ESP-fil, men behåll resurserna (meshar och texturer) installerade med denna mod.'
-      - lang: uk_UA
-        text: 'Поки використовується **%1%**, рекомендується відключити чи деактивувати esp цього моду, але залишити встановлені ресурси (меші, текстури і тп).'
-      - lang: zh_CN
-        text: '当使用**%1%**时，建议您禁用或删除这个ESP文件，但保留与此mod一起安装的资源(如网格，纹理等)。'
-
-  - &includesX
-    type: say
-    content:
-      - lang: en
-        text: '%1% is included with this mod.'
-      - lang: bg
-        text: 'Приставката %1% е включена в този мод.'
-      - lang: de
-        text: '%1% ist in dieser Mod enthalten.'
-      - lang: es
-        text: '%1% viene incluido ya con este mod.'
-      - lang: fi
-        text: '%1% on tässä modissa'
-      - lang: fr
-        text: '%1% est inclut avec ce mod.'
-      - lang: it
-        text: '%1% è incluso in questa mod.'
-      - lang: ja
-        text: '%1%はこのmodに含まれています。'
-      - lang: ko
-        text: '%1% 모드가 포함되어 있습니다.'
-      - lang: pl
-        text: '%1% jest już zawarte z tym modem.'
-      - lang: pt_BR
-        text: '%1% está incluído neste mod.'
-      - lang: pt_PT
-        text: '%1% vem incluído com este mod.'
-      - lang: ru
-        text: '%1% уже добавлен с этим модом.'
-      - lang: sv
-        text: '%1% är inluderat med denna mod.'
-      - lang: uk_UA
-        text: '%1% вже додано з цим модом.'
-      - lang: zh_CN
-        text: '%1%已包含在这个mod中。'
-  - &includesMBBF
-    <<: *includesX
-    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
-    condition: 'file("Modern Brawl Bug Fix.esp")'
-
-  - &missingRequirementXforY
-    type: warn
-    content:
-      - lang: en
-        text: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
-      - lang: bg
-        text: 'Инсталирали сте **%2%**, но някои от нейните изисквания не са изпълнени. Моля, инсталирайте **%1%** отново.'
-      - lang: de
-        text: 'Es erscheint so als hätten Sie **%2%** installiert, aber einige der Voraussetzungen scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
-      - lang: es
-        text: 'Parece que tiene instalado **%2%**, pero algunos de sus requerimientos no están presentes. Por favor, asegúrese de que haya instalado **%1%** correctamente.'
-      - lang: fr
-        text: 'Il semblerait que vous ayez installés **%2%**, mais certains de ses prérequis semblent manquer. Veuillez vous assurer que vous ayez correctement installés **%1%**.'
-      - lang: it
-        text: 'Sembra che tu abbia installato **%2%**, ma mancano alcuni dei suoi requisiti. Assicurati di aver installato correttamente **%1%**.'
-      - lang: ja
-        text: '**%2%**がインストールされましたが、必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
-      - lang: ko
-        text: '**%2%** 모드를 실행하기 위한 필요 모드가 빠져 있습니다. **%1%** 모드를 제대로 설치하십시오.'
-      - lang: pl
-        text: 'Wygląda na to że zainstalowałeś **%2%**, ale wydaje się, że brakuje niektórych z jego wymagań. Upewnij się że poprawnie zainstalowałeś **%1%**.'
-      - lang: pt_BR
-        text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
-      - lang: pt_PT
-        text: 'Aparentemente você tem instalado **%2%**, mas alguns de seus requerimentos estão em falta Por favor confirme que você instalou **%1%** corretamente.'
-      - lang: ru
-        text: 'Похоже у вас установлен **%2%**, но некоторые его требования отсутствуют. Убедитесь, что вы правильно установили **%1%**.'
-      - lang: sv
-        text: 'Det verkar som om du har installerat **%2%**, men några av dess krav är inte uppfyllda. Var vänlig och se till att du har installerat **%1%**.'
-      - lang: uk_UA
-        text: 'Схоже, що у вас уже встановлено **%2%**, але деякі його вимоги відсутні. Переконайтесь, що ви правильно встановили **%1%**.'
-      - lang: zh_CN
-        text: '看起来您安装了**%2%**，但它的一些需求似乎缺失了。请确保您已正确安装**%1%**。'
-
-  - &missingRequirementXforPlugin
-    type: warn
-    content:
-      - lang: en
-        text: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
-      - lang: bg
-        text: 'Някои от изискванията на приставката не са изпълнени. Моля, инсталирайте **%1%** отново.'
-      - lang: de
-        text: 'Einige der Voraussetzungen dieses Plugins scheinen zu fehlen. Bitte stellen Sie sicher, dass Sie **%1%** korrekt installiert haben.'
-      - lang: es
-        text: 'Algunos de los requerimientos de este plugin parecen faltar. Por favor, asegúrese de que haya instalado correctamente **%1%**.'
-      - lang: fr
-        text: 'Certains prérequis de ce plugin semblent manquer. Veuillez vous assurer que vous ayez correctement installés **%1%**.'
-      - lang: it
-        text: 'Sembra che manchino alcuni requisiti di questi plugin. Assicurati di avere installato correttamente **%1%**.'
-      - lang: ja
-        text: 'このプラグインに必要なものの一部が不足しているようです。**%1%**が正しくインストールされていることを確認してください。'
-      - lang: ko
-        text: '이 플러그인의 일부 요구사항이 빠져 있습니다. **%1%** 모드를 제대로 설치하십시오.'
-      - lang: pl
-        text: 'Część wymagań dla tej wtyczki wydaje się być brakująca. Upewnij się że poprawnie zainstalowałeś **%1%**.'
-      - lang: pt_BR
-        text: 'Alguns dos requerimentos deste plugin estão faltando. Por favor tenha certeza de que você instalou **%1%** corretamente.'
-      - lang: pt_PT
-        text: 'Alguns dos requerimentos deste plugin estão em falta. Por favor confirme que você instalou **%1%** corretamente.'
-      - lang: ru
-        text: 'Некоторые требования этого плагина отсутствуют. Убедитесь, что правильно установили **%1%**.'
-      - lang: sv
-        text: 'Några av denna plugins behov/krav verkar saknas. Var god och se till att du har installerat **%1%** korrekt.'
-      - lang: uk_UA
-        text: 'Деякі вимоги цього плагіна відсутні. Переконайтеся, що правильно встановили **%1%**.'
-      - lang: zh_CN
-        text: '这些插件的一些需求似乎缺失了。请确保您已正确安装**%1%**。'
-  - &missingRequirementAddrLibforPlugin
-    <<: *missingRequirementXforPlugin
-    subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
-    condition: '(not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==))'
-
-  - &moddingPlugin
-    type: error
-    content:
-      - lang: en
-        text: 'This plugin is a modding resource and should not be used in-game.'
-      - lang: bg
-        text: 'Тази приставка е ресурс за модифициране и не трябва да се използва по време на игра.'
-      - lang: de
-        text: 'Dieses Plugin ist eine Modding Ressource und sollte nicht im Spiel verwendet werden.'
-      - lang: es
-        text: 'Este plugin es un recurso para la creación de mods y no debería ser usado en el juego.'
-      - lang: fr
-        text: 'Ce plugin est une ressource pour moddeur et ne devrait pas être utilisé en jeu.'
-      - lang: it
-        text: 'Questo Plugin è una risorsa di modding e non dovrebbe essere usato in gioco.'
-      - lang: ja
-        text: 'このプラグインはモッド用のリソースであり、ゲーム内で使用できません。'
-      - lang: ko
-        text: '이 플러그인은 모딩 리소스이며 게임 내에서 사용해서는 안 됩니다.'
-      - lang: pt_BR
-        text: 'Este plugin é um recurso para a criação de mods e não deve ser usado no jogo.'
-      - lang: pt_PT
-        text: 'Este plugin é um recurso para a criação de mods e não deve ser usado no jogo.'
-      - lang: ru
-        text: 'Этот плагин является мод-ресурсом и не должен использоваться во время игры.'
-      - lang: sv
-        text: 'Det här pluginet används som en modding resurs och borde inte användas i spelet.'
-      - lang: uk_UA
-        text: 'Цей плагін є мод-ресурсом та не має використовуватися під час гри.'
-      - lang: zh_CN
-        text: '这个插件是一个mod开发资源，不应该在游戏中使用。'
-
-  - &obsolete
-    type: warn
-    content:
-      - lang: en
-        text: 'Obsolete. Update to the latest version. %1%'
-      - lang: bg
-        text: 'Стара версия. Моля, обновете приставката. %1%'
-      - lang: da
-        text: 'Forældet. Opdatér til den nyeste version. %1%'
-      - lang: de
-        text: 'Veraltet. Aktualisieren Sie zur neusten Version. %1%'
-      - lang: es
-        text: 'Obsoleto. Actualizar a la última versión. %1%'
-      - lang: fr
-        text: 'Obsolète. Veuillez mettre ce fichier à jour. %1%'
-      - lang: it
-        text: 'Obsoleto. Aggiorna all''ultima versione. %1%'
-      - lang: ja
-        text: '旧式のプラグインです。最新版に更新してください。 %1%'
-      - lang: ko
-        text: '폐기된 플러그인입니다. 최신 버전으로 업데이트하십시오. %1%'
-      - lang: pl
-        text: 'Przestarzały. Uaktualnij do ostatniej wersji. %1%'
-      - lang: pt_BR
-        text: 'Obsoleto. Atualize para a última versão %1%.'
-      - lang: pt_PT
-        text: 'Obsoleto. Atualize para a versão mais recente. %1%'
-      - lang: ru
-        text: 'Устарело. Обновите до последней версии. %1%'
-      - lang: sv
-        text: 'Utdaterad. Uppdatera till den senaste versionen. %1%'
-      - lang: uk_UA
-        text: 'Застаріло. Оновіть до останньої версії. %1%'
-      - lang: zh_CN
-        text: '已过时。请升级到最新版本。 %1%'
-    subs: [ '' ]
-
-  - &optional
-    type: say
-    content:
-      - lang: en
-        text: 'This plugin is optional.'
-      - lang: bg
-        text: 'Тази приставка не е задължителна.'
-      - lang: de
-        text: 'Dieses Plugin ist optional.'
-      - lang: es
-        text: 'Este plugin es opcional.'
-      - lang: fr
-        text: 'Ce plugin est optionnel.'
-      - lang: it
-        text: 'Questo plugin è opzionale.'
-      - lang: ja
-        text: 'このプラグインはオプションです。'
-      - lang: ko
-        text: '이 플러그인은 선택 사항입니다.'
-      - lang: pt_BR
-        text: 'Este plugin é opcional.'
-      - lang: pt_PT
-        text: 'Este plugin é opcional.'
-      - lang: ru
-        text: 'Этот плагин не обязателен.'
-      - lang: sv
-        text: 'Det här pluginet är valfritt.'
-      - lang: uk_UA
-        text: 'Цей плагін не обов’язковий.'
-      - lang: zh_CN
-        text: '这个插件是可选的。'
-
-  - &patch3rdParty
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
-      - lang: bg
-        text: 'Използвате **%1%**, но се изисква кръпка за съвместимост. Тя е налична от: %2%'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
-      - lang: es
-        text: 'Parece que está usando **%1%**, pero no ha habilitado un parche de compatibilidad para este mod. Un parche de un tercero se encuentra disponible aquí: %2%'
-      - lang: fr
-        text: 'Vous utilisez **%1%**, mais vous n''avez pas activé le patch de compatibilité pour ce mod. Ce patch peut être trouvé ici : %2%'
-      - lang: it
-        text: 'Sembra che tu stia utilizzando **%1%**, ma non hai attivato la patch di compatibilità per questa mod. E'' disponibile una patch esterna qui: %2%'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。サードパーティのパッチはここで入手できます:%2%'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 제3자 제공 호환성 패치는 여기에서 다운로드 가능합니다: %2%'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka trzeciej strony jest dostępna tutaj: %2%'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
-      - lang: pt_PT
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
-      - lang: ru
-        text: 'Похоже, что вы используете **%1%**, но его патч совместимости не был включен. Сторонний патч можно найти здесь: %2%'
-      - lang: sv
-        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%'
-      - lang: uk_UA
-        text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Сторонній патч можна знайти тут: %2%'
-      - lang: zh_CN
-        text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-  - &patch3rdParty_AOOPH
-    <<: *patch3rdParty
-    subs:
-      - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
-      - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
-  - &patch3rdParty_CCSMPC
-    <<: *patch3rdParty
-    subs:
-      - 'CC Survival Mode'
-      - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
-  - &patch3rdParty_ClockA
-    <<: *patch3rdParty
-    subs:
-      - '[Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/4155/)'
-      - '[Additional Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/47087/)'
-  - &patch3rdParty_JSDCP
-    <<: *patch3rdParty
-    subs:
-      - '[JS Dragon Claws](https://www.nexusmods.com/skyrimspecialedition/mods/1394/)'
-      - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/)'
-  - &patch3rdParty_KPH_ACE
-    <<: *patch3rdParty
-    subs:
-      - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002/)'
-      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-  - &patch3rdParty_KPH_CACO
-    <<: *patch3rdParty
-    subs:
-      - '[Complete Alchemy and Cooking Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/19924/)'
-      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-  - &patch3rdParty_KPH_CCOR
-    <<: *patch3rdParty
-    subs:
-      - '[Complete Crafting Overhaul Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)'
-      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-  - &patch3rdParty_KPH_TCIY
-    <<: *patch3rdParty
-    subs:
-      - '[The Choice is Yours](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
-      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-  - &patch3rdParty_KPH_WACCF
-    <<: *patch3rdParty
-    subs:
-      - '[Weapons Armor Clothing and Clutter Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/18994/)'
-      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-  - &patch3rdParty_LotD
-    <<: *patch3rdParty
-    subs:
-      - '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)'
-      - '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)'
-  - &patch3rdParty_MLU
-    <<: *patch3rdParty
-    subs:
-      - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
-      - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
-  - &patch3rdParty_RSCPC
-    <<: *patch3rdParty
-    subs:
-      - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)'
-      - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
-  - &patch3rdParty_SBCK
-    <<: *patch3rdParty
-    subs:
-      - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
-      - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495/)'
-  - &patch3rdParty_SRPC
-    <<: *patch3rdParty
-    subs:
-      - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
-      - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
-    condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
-  - &patch3rdParty_STIP
-    <<: *patch3rdParty
-    subs:
-      - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
-      - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
-  - &patch3rdParty_UVCPC
-    <<: *patch3rdParty
-    subs:
-      - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
-      - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
-
-  - &patcherScriptAvailable
-    type: say
-    content:
-      - lang: en
-        text: '%1% patcher script available here: %2%'
-      - lang: bg
-        text: 'Скриптът за кръпки %1% е наличен от: %2%'
-      - lang: de
-        text: '%1% Patch-Skript hier verfügbar: %2%'
-      - lang: es
-        text: '%1% un script parcheador se encuentra disponible aquí: %2%'
-      - lang: fr
-        text: 'Le script patcher de %1% est disponible ici : %2%'
-      - lang: it
-        text: '%1% patcher script disponibile qui: %2%'
-      - lang: ja
-        text: '%1%のパッチスクリプトは%2%を利用できます。'
-      - lang: ko
-        text: '%1%의 패쳐 스크립트는 %2%에서 사용이 가능합니다.'
-      - lang: pt_PT
-        text: 'O script de atualização para %1% está disponível aqui: %2%'
-      - lang: ru
-        text: '%1% скрипт-патчер доступен здесь: %2%'
-      - lang: uk_UA
-        text: '%1% патч-скрипт доступний тут: %2%'
-      - lang: zh_CN
-        text: '%1%的补丁在这里: %2%'
-
-  - &patchIncluded
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
-      - lang: bg
-        text: 'Използвате **%1%**, но се изисква кръпка за съвместимост. Тя е налична от инсталационния файл на приставката.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
-      - lang: es
-        text: 'Parece que está usando **%1%**, pero no ha habilitado un parche de compatibilidad para este mod. Un parche de compatibilidad está incluido en el instalador de este plugin.'
-      - lang: fr
-        text: 'Vous utilisez **%1%**, mais vous n''avez pas activé le patch de compatibilité pour ce mod. Ce patch est inclut avec l''installeur de ce plugin.'
-      - lang: it
-        text: 'Sembra che tu stia utilizzando **%1%**, ma non hai attivato patch di compatibilità per questa mod. Una patch di compatibilità è inclusa nell''installer di questo plugin.'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
-      - lang: pt_PT
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin.'
-      - lang: ru
-        text: 'Похоже, что вы используете **%1%**, но его патч совместимости не был включен. Патч совместимости можно найти в установщике плагина.'
-      - lang: sv
-        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En kompabilitetspatch är inkluderad i denna plugins installationsprogram.'
-      - lang: uk_UA
-        text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Патч сумісності можна знайти в установнику плагіна.'
-      - lang: zh_CN
-        text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。这个插件的安装程序中包含了该补丁。'
-
-  - &patchProvided
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
-      - lang: bg
-        text: 'Използвате **%1%**, но се изисква кръпка за съвместимост. Тя е налична от Интернет страницата на приставката.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
-      - lang: es
-        text: 'Parece que está usando **%1%**, pero no ha habilitado un parche de compatibilidad para este mod. Un parche de compatibilidad está  disponible en la página del mod.'
-      - lang: fr
-        text: 'Vous utilisez **%1%**, mais vous n''avez pas activé le patch de compatibilité pour ce mod. Ce patch peut être trouvé sur la page web du plugin.'
-      - lang: it
-        text: 'Sembra che tu stia utilizzando **%1%**, ma non hai attivato patch di compatibilità per questa mod. Una patch di compatibilità è presente in questa pagina.'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
-      - lang: pt_PT
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
-      - lang: ru
-        text: 'Похоже, что вы используете **%1%**, но его патч совместимости не был включен. Патч совместимости можно найти на странице плагина.'
-      - lang: sv
-        text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En kompabilitetspatch finns på denna plugins modsida.'
-      - lang: uk_UA
-        text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Патч сумісності можна знайти на сторінці плагіну.'
-      - lang: zh_CN
-        text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。这个插件的mod页面提供了该补丁。'
-
-  - &patchUnavailable
-    type: warn
-    content:
-      - lang: en
-        text: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
-      - lang: bg
-        text: 'Този мод изисква кръпка за съвместимост с приставката %1%. Няма налична кръпка за съвместимост.'
-      - lang: de
-        text: 'Ein Patch ist nötig um diese Mod vollständig kompatibel mit %1% zu machen. Keiner ist derzeit zum Download verfügbar.'
-      - lang: es
-        text: 'Se requiere un parche para hacer este mod completamente compatible con %1%. No existe por el momento ninguno disponible para ser descargado.'
-      - lang: fr
-        text: 'Ce mod requiert un patch pour rendre ce mod complètement compatible avec %1%. Aucun patch n''est disponible pour l''instant.'
-      - lang: it
-        text: 'E'' necessaria una patch che renda questa mod totalmente compatibile con %1%. Al momento non ne è disponibile nessuna che possa essere scaricata.'
-      - lang: ja
-        text: 'このMODを%1%と完全に互換性のあるものにするにはパッチが必要です。現在ダウンロード可能なものはありません。'
-      - lang: ko
-        text: '이 모드가 %1%와 완전히 호환되도록하려면 패치가 필요합니다. 현재 다운로드 할 수있는 항목이 없습니다.'
-      - lang: pt_BR
-        text: 'Um patch é necessário para fazer esse mod ser totalmente compatível com %1%. No entanto, não há nenhum patch atualmente disponível para download.'
-      - lang: pt_PT
-        text: 'Um patch é necessário para fazer este mod ser totalmente compatível com %1%. Atualmente, nenhum está disponível para download.'
-      - lang: ru
-        text: 'Требуется патч для полной совместимости с %1%. В настоящее время ничего не доступно для загрузки.'
-      - lang: sv
-        text: 'En kompabilitetspatch krävs för att för att göra det moddet fullständigt kompatibelt med %1%. Ingen kompabilitetspatch finns tillgänglig för nedladdning.'
-      - lang: uk_UA
-        text: 'Потрібний патч для повної сумісності з %1%. На даний момент жодного не доступно для завантаження.'
-      - lang: zh_CN
-        text: '需要一个补丁来使这个mod与%1%完全兼容。目前没有可供下载的。'
-
-  - &patchUpdateAvailable
-    type: say
-    content:
-      - lang: en
-        text: 'Update Patch available: %1%'
-      - lang: bg
-        text: 'Налична е обновена кръпка: %1%'
-      - lang: de
-        text: 'Update Patch verfügbar: %1%'
-      - lang: es
-        text: 'Parche actualizado disponible aquí %1%.'
-      - lang: fi
-        text: 'Päivitys saatavilla: %1%'
-      - lang: fr
-        text: 'Mise à jour du patch disponible : %1%'
-      - lang: it
-        text: 'Aggiornamento della Patch disponibile: %1%'
-      - lang: ja
-        text: 'パッチの更新ができます: %1%'
-      - lang: ko
-        text: '패치 업데이트 가능: %1%'
-      - lang: pl
-        text: 'Dostępna Łatka Aktualizująca: %1%'
-      - lang: pt_BR
-        text: 'Patch de Atualização disponível: %1%'
-      - lang: pt_PT
-        text: 'Patch de atualização disponível: %1%'
-      - lang: ru
-        text: 'Доступно обновление патча: %1%'
-      - lang: sv
-        text: 'Uppdateringspatch tillgänglig: %1%'
-      - lang: uk_UA
-        text: 'Наявне оновлення патчу: %1%'
-      - lang: zh_CN
-        text: '可用的更新补丁:%1%'
-
-  - &renameXtoY
-    type: warn
-    content:
-      - lang: en
-        text: 'You need to rename %1% to %2% or this mod won''t work.'
-      - lang: bg
-        text: 'Трябва да преименувате %1% на %2%, в противен случай този мод няма да работи.'
-      - lang: de
-        text: 'Sie müssen %1% zu %2% umbenennen, ansonsten funktioniert diese Mod nicht.'
-      - lang: es
-        text: 'Necesita renombrar %1% como %2% o de lo contrario este mod no funcionará.'
-      - lang: fr
-        text: 'Vous devez renommer %1% en %2% ou ce mod ne fonctionnera pas.'
-      - lang: it
-        text: 'Devi rinominare %1% in %2% o questa mod non funzionerà.'
-      - lang: ja
-        text: '%1%を%2%にリネームしないと機能しません。'
-      - lang: ko
-        text: '%1%의 이름을 %2%로 변경하지 않으면 이 모드가 작동하지 않습니다.'
-      - lang: pt_BR
-        text: 'Você precisa renomear %1% para %2%, caso contrário esse mod não irá funcionar.'
-      - lang: pt_PT
-        text: 'Você necessita renomear %1% para %2% ou este mod não irá funcionar.'
-      - lang: ru
-        text: 'Вам нужно переименовать %1% в %2%, или мод не будет работать.'
-      - lang: sv
-        text: 'Du behöver byta namn på %1% till %2% för att det här moddet ska fungera.'
-      - lang: uk_UA
-        text: 'Вам потрібно перейменувати %1% у %2%, або мод не працюватиме.'
-      - lang: zh_CN
-        text: '你需要把%1%重命名为%2%，否则这个mod将不起作用。'
-
-  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &requiresMCM_X
-    type: warn
-    content:
-      - lang: en
-        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing %1%.'
-      - lang: bg
-        text: 'Този мод изисква **меню за конфигуриране на модовете** за някои от неговите функции. Може да добавите **МКМ** с инсталиране на %1%.'
-      - lang: de
-        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man %1% installiert.'
-      - lang: es
-        text: 'Un **Menú de configuración de mod** se requiere para que este mod sea completamente funcional. Un **MCM** puede ser agregado si se instala %1%.'
-      - lang: fr
-        text: 'Un **Mod Configuration Menu** est requis pour que ce mod fonctionne complètement. Un **MCM** peut-être ajouté en installant %1%.'
-      - lang: it
-        text: 'È necessario un **Menu di configurazione Mod** per rendere questa mod completamente funzionante. È possibile aggiungere un **MCM** installando %1%.'
-      - lang: ja
-        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには%1%を導入してください。'
-      - lang: ko
-        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. %1%를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
-      - lang: pl
-        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację %1%.'
-      - lang: pt_BR
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar %1%.'
-      - lang: pt_PT
-        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar %1%.'
-      - lang: ru
-        text: '**Mod Configuration Menu** (Меню Настройки Модов) требуется для полного функционирования мода. **MCM** может быть добавлено вместе с %1%.'
-      - lang: sv
-        text: 'En **Mod-konfigurationsmeny** krävs för att denna mod ska fungera korrekt. En **MCM** kan fås genom att installera %1%.'
-      - lang: uk_UA
-        text: '**Mod Configuration Menu** (Меню Налаштування Модів) потрібне для повного функціонування мода. **MCM** може бути додано разом з %1%.'
-      - lang: zh_CN
-        text: '这个Mod需要一个**Mod配置菜单**来实现完整功能。**MCM**可以通过安装%1%来添加。'
-  - &requiresMCM_SkyUISE
-    <<: *requiresMCM_X
-    subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)' ]
-    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-  - &requiresMCM_VR
-    <<: *requiresMCM_X
-    subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
-    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-
-  - &requiresResources
-    type: warn
-    content:
-      - lang: en
-        text: 'Requires resources (e.g. meshes, textures; not plugins) from %1%.'
-      - lang: bg
-        text: 'Изисква ресурси (триизмерни модели и текстури, без приставки) от %1%.'
-      - lang: de
-        text: 'Braucht Ressourcen (z.B. Meshes, Texturen; keine Plugins) von %1%.'
-      - lang: es
-        text: 'Requiere de recursos (ej. mallas, texturas; no plugins) de %1%.'
-      - lang: fr
-        text: 'Requiert des ressources (ex : meshes, textures ; pas de plugins) de %1%.'
-      - lang: it
-        text: 'Richiede risorse (ad es. mesh, texture; non plugin) da %1%.'
-      - lang: ja
-        text: '%1%のリソース(プラグインではなくメッシュやテクスチャなど)が必要です。'
-      - lang: ko
-        text: '%1%의 리소스(플러그인이 아닌, 메쉬 및 질감 등)가 필요합니다.'
-      - lang: pt_BR
-        text: 'Requer recursos (ex: meshes, texturas; não plugins) vindos de %1%.'
-      - lang: pt_PT
-        text: 'Requer recursos (ex: meshes, texturas; não plugins) vindos de %1%.'
-      - lang: ru
-        text: 'Требуются ресурсы (например, меши, текстуры; не плагины) от %1%.'
-      - lang: sv
-        text: 'Behöver resurser (t.ex. meshar, texturer; inte plugin) från %1%.'
-      - lang: uk_UA
-        text: 'Потрібні ресурси (наприклад: меші, текстури; не плагіни) від %1%.'
-      - lang: zh_CN
-        text: '需要%1%的资源(如网格，纹理;非插件)。'
-
-  - &requiresX
-    type: warn
-    content:
-      - lang: en
-        text: 'Requires: %1%'
-      - lang: bg
-        text: 'Изисква: %1%'
-      - lang: de
-        text: 'Benötigt: %1%'
-      - lang: es
-        text: 'Requiere: %1%'
-      - lang: fr
-        text: 'Requiert : %1%'
-      - lang: it
-        text: 'Richiede: %1%'
-      - lang: ja
-        text: '要: %1%'
-      - lang: ko
-        text: '필요모드: %1%'
-      - lang: pl
-        text: 'Wymaga: %1%'
-      - lang: pt_BR
-        text: 'Requer: %1%'
-      - lang: pt_PT
-        text: 'Requer: %1%'
-      - lang: ru
-        text: 'Требуется: %1%'
-      - lang: sv
-        text: 'Kräver: %1%'
-      - lang: uk_UA
-        text: 'Потрібно: %1%'
-      - lang: zh_CN
-        text: '需要:%1%'
-  - &requiresBashOrSmash
-    <<: *requiresX
-    subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
-    condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
-
-  - &runAnimFramework
-    type: say
-    content:
-      - lang: en
-        text: 'It appears you have **%1%** installed. Remember to run **%2%** every time you have installed or uninstalled %3%, or a %3%-based mod.'
-      - lang: bg
-        text: 'Инсталирали сте **%1%**. Използвайте **%2%** всеки път, когато променяте %3% или модове, свързани с %3%.'
-      - lang: de
-        text: 'Sie haben anscheinend **%1%** installiert. Vergessen Sie nicht, jedes mal **%2%** zu starten, wenn Sie %3% oder einen auf %3% basierende Mod installiert oder deinstalliert haben.'
-      - lang: es
-        text: 'Parece que **%1%** está instalado. Recuerda ejecutar **%2%** cada vez que se instale o desinstale %3%, o un mod basado en %3%.'
-      - lang: fr
-        text: 'Il semblerait que vous avez **%1%** d''installer. N''oubliez pas de lancer **%2%** à chaque fois que vous installez ou désinstallez %3%, ou un mod dépendant de %3%.'
-      - lang: it
-        text: 'Sembra che tu abbia installato **%1%**. Ricorda di eseguire **%2%** ogni volta che installi o disinstalli %3%, o una mod basata su %3%.'
-      - lang: ja
-        text: '**%1%**がインストールされているようです。%3%本体、また%3%に準拠するModをインストール/アンインストールする際は、必ず**%2%**を実行し直すようにしてください。'
-      - lang: ko
-        text: '**%1%**가 설치되어 있습니다. %3% 또는 %3% 기반 모드를 설치하거나 제거할 때마다 **%2%**를 실행하는 것을 잊지 마십시오.'
-      - lang: pl
-        text: 'Wygląda na to że masz zainstalowany **%1%**. Pamiętaj aby uruchomić **%2%** za każdym razem kiedy zainstalowałeś lub odinstalowałeś %3%, lub mod bazujący na %3%.'
-      - lang: pt_BR
-        text: 'Você aparenta ter o **%1%** instalado. Lembre-se de rodar o **%2%** toda vez que você instalar or desinstalar o **%3%** ou um mod baseado no **%3%**.'
-      - lang: pt_PT
-        text: 'Você aparenta ter **%1%** instalado. Lembre-se de correr **%2%** cada vez que instale ou desinstale %3%, ou um mod baseado em %3%.'
-      - lang: ru
-        text: 'У вас установлен **%1%**. Не забудьте запускать **%2%** каждый раз, когда вы установите или удалите %3%, или любой мод, основанный на %3%.'
-      - lang: sv
-        text: 'Det verkar som att använder **%1%** installerat. Kom ihåg att köra **%2%** varje gång du har installerat eller avinstallerat %3%, eller en %3%-baserad mod.'
-      - lang: uk_UA
-        text: 'У вас встановлений **%1%**. Не забудьте запускати **%2%** кожен раз, коли ви встановите або видалите %3%, або будь-який мод, на основі %3%.'
-      - lang: zh_CN
-        text: '您安装了**%1%**。每次安装或卸载%3%，以及基于%3%的mod时，记得运行**%2%**。'
-
-  - &runxLODGen
-    type: say
-    content:
-      - lang: en
-        text: 'If you add, remove, or update plugins that alter WRLD/CELL records, remember to update this module with **xLODGen**.'
-      - lang: bg
-        text: 'Ако добавите, премахнете или обновите приставки, които променят записите WRLD и CELL, трябва да обновите този модул с **"xLODGen"**.'
-      - lang: de
-        text: 'Wenn Sie Plugins hinzufügen, entfernen oder aktualisieren die WRLD/CELL Einträge verändern, denken Sie daran dieses Modul mit **xLODGen** zu aktualisieren.'
-      - lang: es
-        text: 'Si se agrega, elimina, o se actualizan plugins que modifican registros WRLD/CELL, recuerde actualizar este módulo con **xLODGen**.'
-      - lang: fr
-        text: 'Si vous ajoutez, enlevez, ou mettez à jour des plugins qui modifient WRLD/CELL records, n''oubliez pas de mettre à jour ce module avec **xLODGen**.'
-      - lang: it
-        text: 'Se aggiungi, rimuovi o aggiorni i plugin che modificano i record WRLD/CELL, ricorda di aggiornare questo modulo con **xLODGen**.'
-      - lang: ja
-        text: 'WRLD/CELLレコードを変更するプラグインを追加、削除、または更新する場合は、このモジュールを **xLODGen** で更新することを忘れないでください。'
-      - lang: ko
-        text: 'WRLD/CELL 레코드를 변경하는 플러그인을 추가, 제거 또는 업데이트하는 경우 **xLODGen**으로 이 모듈을 업데이트해야 합니다.'
-      - lang: pt_PT
-        text: 'Se você adicionar, remover, ou atualizar plugins que alterem registos WRLD/CELL, lembre-se de atualizar este módulo com **xLODGen**.'
-      - lang: ru
-        text: 'Если вы добавляете, удаляете или обновляете плагины, которые изменяют записи WRLD / CELL, не забудьте обновить этот модуль с помощью **xLODGen**.'
-      - lang: uk_UA
-        text: 'Якщо ви додаєте, видаляєте чи оновлюєте плагіни, які змінюють записи WRLD/CELL, не забудьте оновити цей модуль за допомогою **xLODGen**.'
-      - lang: zh_CN
-        text: '如果您添加、删除或更新修改了WRLD/CELL记录的插件时，记得使用**xLODGen**更新此模块。'
-
-  - &sortMasters
-    type: say
-    content:
-      - lang: en
-        text: 'Plugin''s Masters require sorting. %1%'
-      - lang: bg
-        text: 'Трябва да сортирате основния списък с приставките. %1%'
-      - lang: de
-        text: 'Die Plugin Master müssen sortiert werden. %1%'
-      - lang: es
-        text: 'Los masters de este plugin necesitan ser ordenados. %1%'
-      - lang: fi
-        text: 'Liitännäisen isännät vaativat uudelleenjärjestämistä. %1%'
-      - lang: fr
-        text: 'Les Masters des plugins requièrent un tri. %1%'
-      - lang: it
-        text: 'I Master dei plugin richiedono un ordinamento. %1%'
-      - lang: ja
-        text: 'このプラグインのマスターはソートが必要です。 %1%'
-      - lang: ko
-        text: '플러그인 마스터의 정렬이 필요합니다. %1%'
-      - lang: pl
-        text: 'Wtyczki Główne tej wtyczki wymagają sortowania. %1%'
-      - lang: pt_BR
-        text: 'Os Masters desse plugin necessitam de ordenação. %1%'
-      - lang: pt_PT
-        text: 'A Master deste Plugin necessita ordenação. %1%'
-      - lang: ru
-        text: 'Мастерфайлы плагина требуют сортировки. %1%'
-      - lang: sv
-        text: 'Denna plugins master behöver sorteras. %1%'
-      - lang: uk_UA
-        text: 'Майстерфайли плагіну потребують сортування. %1%'
-      - lang: zh_CN
-        text: '插件的主依赖需要排序。 %1%'
-    subs: [ '[xEdit - Sort Masters](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#SortingMasterFileLoadOrders)' ]
-
-  - &useBashTweakInstead
-    type: say
-    content:
-      - lang: en
-        text: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
-      - lang: bg
-        text: 'Може да използвате кръпка на "Bash" вместо тази приставка. %1%'
-      - lang: de
-        text: 'Ein Bashed Patch Tweak kann anstelle dieses Plugins verwendet werden. %1%'
-      - lang: es
-        text: 'Un Bashed patch puede ser empleado en vez de este plugin. %1%'
-      - lang: fr
-        text: 'Un Bashed Patch tweak peut-être utilisé au lieu de ce plugin. %1%'
-      - lang: it
-        text: 'Puoi usare una Bashed Patch modificata invece di questo plugin. %1%'
-      - lang: ja
-        text: 'このプラグインの代わりに、Bashed Patch の調整機能を使用できます。%1%'
-      - lang: ko
-        text: '이 플러그인 대신 Bashed Patch의 트윅을 사용할 수 있습니다. %1%'
-      - lang: pt_BR
-        text: 'Uma tweak do Bashed Patch pode ser utilizada no lugar deste plugin. %1%'
-      - lang: pt_PT
-        text: 'Um Bashed Patch modificado pode ser utilizado em vez deste plugin. %1%'
-      - lang: ru
-        text: 'Можно использовать Bashed Patch tweak вместо этого плагина. %1%'
-      - lang: sv
-        text: 'En Bashed Patch Tweak kan användas istället för det här pluginet. %1%'
-      - lang: uk_UA
-        text: 'Можна використати Bashed Patch tweak замість цього плагіну. %1%'
-      - lang: zh_CN
-        text: '可以使用一个Bashed Patch来代替这个插件。%1%'
-    subs: [ '' ]
-    condition: 'file("Bashed Patch.*\.esp")'
-
-  - &useInstead
-    type: warn
-    content:
-      - lang: en
-        text: 'Use %1% instead.'
-      - lang: bg
-        text: 'Може да използвате %1%.'
-      - lang: de
-        text: 'Nutzen Sie %1% stattdessen.'
-      - lang: es
-        text: 'Use %1% en su lugar.'
-      - lang: fr
-        text: 'Utilisez %1% au lieu de celui-ci.'
-      - lang: it
-        text: 'Utilizza %1% al suo posto.'
-      - lang: ja
-        text: '代わりに%1%を使用してください。'
-      - lang: ko
-        text: '대신 %1%를 사용하십시오.'
-      - lang: pt_BR
-        text: 'Use %1% ao invés disso.'
-      - lang: pt_PT
-        text: 'Use %1% ao invés disto.'
-      - lang: ru
-        text: 'Вместо этого используйте %1%.'
-      - lang: sv
-        text: 'Använd %1% istället.'
-      - lang: uk_UA
-        text: 'Замість цього використовуйте: %1%.'
-      - lang: zh_CN
-        text: '使用%1%代替。'
-
-  - &useOnlyOneX
-    type: error
-    content:
-      - lang: en
-        text: 'Use only one %1%.'
-      - lang: bg
-        text: 'Използвайте само една %1%.'
-      - lang: da
-        text: 'Brug kun én %1%.'
-      - lang: de
-        text: 'Nutzen Sie nur einen %1%.'
-      - lang: es
-        text: 'Utilice solo uno %1%.'
-      - lang: fi
-        text: 'Käytä vain yhtä: %1%.'
-      - lang: fr
-        text: 'N''utilisez qu''un %1%.'
-      - lang: it
-        text: 'Usa solo un %1%.'
-      - lang: ja
-        text: '%1%は一つだけ使用してください。'
-      - lang: ko
-        text: '%1%을 한 개만 사용하십시오.'
-      - lang: pl
-        text: 'Używa tylko jednego %1%.'
-      - lang: pt_BR
-        text: 'Utilize apenas um %1%.'
-      - lang: pt_PT
-        text: 'Utilizar apenas um %1%.'
-      - lang: ru
-        text: 'Используйте только один %1%.'
-      - lang: sv
-        text: 'Använd endast en %1%.'
-      - lang: uk_UA
-        text: 'Використовуйте лише один %1%.'
-      - lang: zh_CN
-        text: '只使用一个%1%。'
-
-  - &useVersion
-    type: error
-    content:
-      - lang: en
-        text: 'Use %1% version.'
-      - lang: bg
-        text: 'Използвайте версията %1%.'
-      - lang: de
-        text: 'Benutzen Sie die %1% Version.'
-      - lang: es
-        text: 'Use la versión diseñada para %1%.'
-      - lang: fr
-        text: 'Utilisez la version de %1%.'
-      - lang: it
-        text: 'Usa la versione %1%.'
-      - lang: ja
-        text: '%1%バージョンを使用してください。'
-      - lang: ko
-        text: '%1% 버전을 사용하십시오.'
-      - lang: pl
-        text: 'Użyj wersji %1%.'
-      - lang: pt_BR
-        text: 'Use a versão %1%.'
-      - lang: pt_PT
-        text: 'Use a versão %1%.'
-      - lang: ru
-        text: 'Используйте версию %1%.'
-      - lang: sv
-        text: 'Använd version %1%.'
-      - lang: uk_UA
-        text: 'Використовуйте версію %1%.'
-      - lang: zh_CN
-        text: '使用%1%版本。'
-
-  - &versionOldX
-    type: say
-    content:
-      - lang: en
-        text: 'It appears you do not have the latest version of %1%. Some mods may require functionality added in the latest version of %1% to work.'
-      - lang: bg
-        text: 'Инсталирайте последната версия на %1%. Някои модове може да изискват последната версия на %1% за да работят.'
-      - lang: de
-        text: 'Sie haben anscheinend nicht die aktuellste Version von %1% installiert. Einige Mods könnten Funktionalitäten benötigen, die nur in der aktuellsten Version von %1% enthalten sind, um zu funktionieren.'
-      - lang: es
-        text: 'Parece que no tiene la última versión de %1%. Algunos mods pueden requerir funcionalidades añadidas en la última versión de %1% para funcionar.'
-      - lang: fr
-        text: 'Il semble que vous n''ayez pas la dernière version de %1%. Certains mods pourraient avoir besoin de fonctionalités disponible dans la dernière version de %1% pour fonctionner.'
-      - lang: it
-        text: 'Sembra che tu non abbia l''ultima versione di %1%. Alcune modifiche potrebbero richiedere funzionalità aggiunte nell''ultima versione di %1% per funzionare.'
-      - lang: ja
-        text: '%1%が最新版ではないようです。一部のModを動作させるには最新版の%1%で追加された機能が必要となる場合があります。'
-      - lang: ko
-        text: '%1%의 최신 버전이없는 것 같습니다. 일부 모드가 동작하려면 %1%의 최신 버전에 추가 된 기능이 필요할 수 있습니다.'
-      - lang: pl
-        text: 'Wygląda na to że nie masz ostatniej aktualnej wersji %1%. Część modów może wymagać funkcjonalności dodanej w ostatniej wersji %1% aby działać poprawnie.'
-      - lang: pt_BR
-        text: 'Você aparenta não ter a versão mais recente de %1%. Alguns mods podem requerer funcionalidades que foram adicionada na versão mais recente de %1% para funcionar.'
-      - lang: pt_PT
-        text: 'Aparenta que você não tem a versão mais recente de %1%. Alguns mods podem requerir funcinalidades adicionadas na última versão de %1% para funcionar.'
-      - lang: ru
-        text: 'Возможно у вас не установлена последняя версия %1%. Для работы некоторых модов может требоваться функционал, добавленный в последней версии %1%.'
-      - lang: sv
-        text: 'Det verkar som att du inte har den senaste versionen av %1%. Några mods kan kräva funktionalitet tillagd i den senaste versionen av %1% för att fungera.'
-      - lang: uk_UA
-        text: 'Можливо у вас не встановлена остання версія %1%. Роботи деяких модів може потребувати функціоналу, доданого в останній версії %1%.'
-      - lang: zh_CN
-        text: '您的%1%似乎不是最新的。有些插件可能需要最新的%1%才能工作。'
-
-  - &versionUpToDateX
-    type: say
-    content:
-      - lang: en
-        text: 'Your %1% is up-to-date.'
-      - lang: bg
-        text: '%1% е актуална.'
-      - lang: da
-        text: 'Din %1% er opdateret.'
-      - lang: de
-        text: 'Ihr %1% ist aktuell.'
-      - lang: es
-        text: 'Tiene la última versión de %1%.'
-      - lang: fr
-        text: '%1% est à jour.'
-      - lang: it
-        text: 'La tua %1% è aggiornata.'
-      - lang: ja
-        text: '%1%は最新版です。'
-      - lang: ko
-        text: '%1%가 최신 버전입니다.'
-      - lang: pl
-        text: 'Twój %1% jest aktualny.'
-      - lang: pt_BR
-        text: 'Seu %1% está atualizado.'
-      - lang: pt_PT
-        text: 'O seu %1% está atualizado.'
-      - lang: ru
-        text: 'Ваш %1% обновлен.'
-      - lang: sv
-        text: 'Din %1% är uppdaterad.'
-      - lang: uk_UA
-        text: 'Ваш %1% оновлено.'
-      - lang: zh_CN
-        text: '您的%1%是最新的。'
-
-  - &versionXIncY
-    type: error
-    content:
-      - lang: en
-        text: 'Your installed version of %1% is not compatible with your version of %2%.'
-      - lang: bg
-        text: 'Инсталираната версия на %1% не е съвместима с версията на %2%.'
-      - lang: da
-        text: 'Din installerede version af %1% er ikke kompatibel med din version af %2%.'
-      - lang: de
-        text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
-      - lang: es
-        text: 'La versión instalada de %1% no es compatible con la versión de %2% que está utilizando.'
-      - lang: fr
-        text: 'La version installée de %1% n''est pas compatible avec votre version de %2%.'
-      - lang: it
-        text: 'La tua versione installata di %1% non è compatibile con la tua versione di %2%.'
-      - lang: ja
-        text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
-      - lang: ko
-        text: '현재 설치된 %1%의 버전은 %2%의 버전과 호환되지 않습니다.'
-      - lang: pl
-        text: 'Twoja zainstalowana wersja %1% nie jest kompatybilna z twoją wersją %2%.'
-      - lang: pt_BR
-        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
-      - lang: pt_PT
-        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
-      - lang: ru
-        text: 'Установленная у вас версия %1% несовместима с вашей версией %2%.'
-      - lang: sv
-        text: 'Din installerade version av %1% är inte kombatibel med din version av %2%.'
-      - lang: uk_UA
-        text: 'Встановлена ​​у вас версія %1% несумісна з вашою версією %2%.'
-      - lang: zh_CN
-        text: '您安装的%1%版本与%2%版本不兼容。'
-  - &versionSkseIncSSE
-    <<: *versionXIncY
-    subs:
-      - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
-      - '**Skyrim SE**'
-  - &versionSkseIncSVR
-    <<: *versionXIncY
-    subs:
-      - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
-      - '**Skyrim VR**'
-
-  - &versionXofYorGreaterRequired
-    type: error
-    content:
-      - lang: en
-        text: 'Requires version **%1%** or greater of **%2%**.'
-      - lang: bg
-        text: 'Изисква версия **%1%** или всяка следваща на **%2%**.'
-      - lang: de
-        text: 'Benötigt Version **%1%** oder höher von **%2%**.'
-      - lang: es
-        text: 'Requiere como mínimo la versión **%1%** de **%2%**.'
-      - lang: fr
-        text: 'Requiert la version **%1%** ou plus de **%2%**.'
-      - lang: it
-        text: 'Richiede la versione **%1%** o superiore di **%2%**.'
-      - lang: ja
-        text: 'バージョン**%1%**以上の**%2%**が必要です。'
-      - lang: ko
-        text: '**%1%** 혹은 **%2%** 이상의 버전이 필요합니다.'
-      - lang: pt_PT
-        text: 'Necessita a versão **%1%** ou maior de **%2%**.'
-      - lang: ru
-        text: 'Нужна версия **%1%** или выше **%2%**.'
-      - lang: uk_UA
-        text: 'Потрібна версія **%1%** або вище **%2%**.'
-      - lang: zh_CN
-        text: '需要 **%2%** 的 **%1%** 或更高版本。'
-
-  - &wildEdits
-    type: warn
-    content:
-      - lang: en
-        text: 'This plugin contains [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) and may require additional manual cleaning to not interfere with other mods. %1%'
-      - lang: bg
-        text: 'Тази приставка съдържа [диви редакции](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) и може да изисква допълнително ръчно почистване. %1%'
-      - lang: da
-        text: 'Dette plugin indeholder [ukontrollerede redigeringer](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
-      - lang: de
-        text: 'Dieses Plugin enthält [wilde Modifikationen](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) und benötigt vermutlich zusätzliche manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
-      - lang: es
-        text: 'Este plugin contiene [ediciones no intencionadas](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) y probablemente requiera de una limpieza manual adicional para que no interfiera con otros mods. %1%'
-      - lang: fi
-        text: 'Tämä liitännäinen sisältää [villejä muokkauksia](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits). Manuaalinen lisäpuhdistaminen voi olla tarpeen yhteensopivuuden takaamiseksi. %1%'
-      - lang: fr
-        text: 'Ce plugin contient [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) et peut avoir besoin de nettoyage manuel additionelle pour ne pas interférer avec d''autres mods. %1%'
-      - lang: it
-        text: 'Questo plugin contiene [pesanti modifiche](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) e potrebbe richiedere una pulizia manuale aggiuntiva, in modo da non interferire con altre mod. %1%'
-      - lang: ja
-        text: 'このプラグインには[Wild Edit](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) が含まれており、他の改造と干渉を防ぐためには追加の手動クリーニングが必要な場合があります。%1%'
-      - lang: ko
-        text: '이 플러그인에는 [잘못된 편집](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits)이 포함되어 있으며 다른 모드와 간섭되지 않도록 추가적인 수동 청소가 필요할 수 있습니다. %1%'
-      - lang: pl
-        text: 'Ta wtyczka zawiera [dzikie edycje](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) i może wymagać dodatkowego ręcznego czyszczenia aby nie kolidować z innymi modami. %1%'
-      - lang: pt_BR
-        text: 'Este plugin contém [edições não-intencionais](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) e pode requerer limpeza manual adicional para que não interfira com outros mods. %1%'
-      - lang: pt_PT
-        text: 'Este plugin contém [edições selvagens](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits). Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
-      - lang: ru
-        text: 'Плагин содержит [дикие правки](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) и может потребовать дополнительной ручной чистки, чтобы не кофликтовать с другими модами. %1%'
-      - lang: sv
-        text: 'Denna plugin innehåller [vilda föränringar](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
-      - lang: uk_UA
-        text: 'Плагін містить [дикі правки](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) та може вимагати додаткової ручної чистки, щоб не конфліктувати з іншими модами. %1%'
-      - lang: zh_CN
-        text: '这个插件包含[随意编辑](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits)，可能需要额外的手动清理，以免干扰其他mod。%1%'
-    subs: [ '' ]
-
-# Cleaning Data Anchors
-  - &quickClean
-    util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-    info:
-      - lang: en
-        text: 'A guide to cleaning plugins using xEdit can be found [here](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: bg
-        text: 'Информация за почистване на приставките в "xEdit" може да намерите [тук](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: de
-        text: 'Eine Anleitung zum Säubern von Plugins mit xEdit finden Sie [hier](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: es
-        text: 'Una guía para limpiar plugins usando xEdit se encuentra disponible [aquí](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: fi
-        text: 'Ohjeet liitännäisten puhdistamiseen xEditillä löytyvät [tästä linkistä](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: fr
-        text: 'Un guide pour nettoyer les plugins grâce à xEdit se trouve [ici](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: it
-        text: 'Puoi trovare una guida per la pulizia dei plugin tramite xEdit [qui](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: ja
-        text: 'xEditを使ったプラグインのクリーニングのガイドは[こちら](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)にあります。'
-      - lang: ko
-        text: 'xEdit을 사용한 플러그인 정리에 대한 가이드는 [여기](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)에서 찾을 수 있습니다.'
-      - lang: pt_BR
-        text: 'Um guia para limpar plugins utilizando o xEdit pode ser encontrado [aqui](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: pt_PT
-        text: 'Um guia para limpar plugins utilizando xEdit pode ser encontrado [aqui](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: ru
-        text: 'Руководство по очистке модов с помощью xEdit можно найти [здесь](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: sv
-        text: 'En guide till att rensa plugins med xEdit finns [här](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: uk_UA
-        text: 'Посібник з очищення модів за допомогою xEdit можна знайти [тут](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
-      - lang: zh_CN
-        text: 'xEdit的清洁插件指南可以在[这里](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)找到。'
-
-  - &reqManualFix
-    util: '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-    info:
-      - lang: en
-        text: 'It is strongly recommended not to use mods that contain **deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually (a complex process that should be done by the mod author). More information on **deleted navmeshes** is provided [here](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: bg
-        text: 'Препоръчва се да избягвате модове, които съдържат **изтрити навигационни обекти**, защото те могат да причинят проблеми. **Изтритите навигационни обекти** трябва да бъдат коригирани ръчно (това е сложен процес и не се препоръчва за начинаещи). Повече информация за **тях** може да намерите [тук](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: de
-        text: 'Es wird streng empfohlen, keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten, da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden (ein komplexer Prozess der vom Mod-Autor erledigt werden sollte). Mehr Informationen über **Gelöschte Navmeshes** werden [hier](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial) geboten.'
-      - lang: es
-        text: 'Es altamente recomendable que no se usen mods que contienen **navmeshes eliminadas** pues es común que causen cierres súbitos (crashes). Las **navmeshes eliminadas** deben ser corregidas manualmente (un proceso bien complejo que debe ser ejecutado por el autor del mod). Más información sobre las **navmeshes eliminadas** puede ser consltada [aquí](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: fr
-        text: 'Il est fortement recommandé de ne pas utilisé de mod contenant **deleted navmeshes**, connu pour provoquer des crash. **Deleted navmeshes** doit être corrigé manuellement (un processus complexe, devant être effectué par l''auteur du mod). Plus d''information sur **Deleted navmeshes** peuvent être trouvées [ici](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: it
-        text: 'Si raccomanda vivamente di non utilizzare mod che contengono **navmesh cancellate** che sono note come causa di Crash. **Navmesh cancellate** devono essere corrette manualmente (un processo complesso che dovrebbe essere fatto dall''autore della mod). Puoi trovare maggiori informazioni su **deleted navmeshes** [qui](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: ja
-        text: '**navmeshの削除**を含むmodは使用しないことを強く推奨します。クラッシュの原因になります。**navmeshの削除**は手動で修正する必要があります(mod作成者が行う必要がある複雑なプロセスです)。**navmeshの削除**の詳細については[ここ](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)を参照してください。'
-      - lang: ko
-        text: '**삭제된 Navmesh**가 포함된 모드는 크래시를 유발하는 것으로 알려져 있으므로 사용하지 않는 것이 좋습니다. **삭제된 Navmesh**는 수동으로 수정해야합니다(모드 작성자가 수행해야하는 복잡한 프로세스). **삭제된 Navmesh**에 대한 자세한 정보는 [여기](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)에서 제공됩니다.'
-      - lang: pl
-        text: 'Jest silnie zalecane aby nie używać modów zawierających **Usunięte navmeshe** jako że są znane jako powód awarii. **Usunięte navmeshe** muszą zostać poprawione ręcznie(skomplikowany proces który powinien być wykonany przez autora modu). Więcej informacji o **Usuniętych navmeshach** można znaleźć [tutaj](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: pt_BR
-        text: 'É altamente recomendado que você não utilize mods que contenham **Navmeshes deletados**, pois eles são conhecidos por causar problemas. **Navmeshes deletados devem ser corrigos manualmente (Um processo complexo que deve ser feito pelo autor do mod). Mais informações em **Navmeshes deletadas** está disponível [aqui](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: pt_PT
-        text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente(Um processo complexo que deve ser feito pelo autor do mod). Mais informação sobre **Navmeshes apagados** está disponível em inglês [aqui] (https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: ru
-        text: 'Настоятельно не рекомендуется использовать моды с **удаленными навмешами** т.к. известно, что они вызывают вылеты. **Удаленные навмеши** должны быть исправлены вручную (сложный процесс, который должен быть выполнен автором мода). Больше информации о **удаленных навмешах** можно найти [здесь](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: sv
-        text: 'Det är starkt rekommenderat att inte använda mods som innehåller **Borttagna navmeshes** eftersom de kan orsaka krascher. **Borttagna navmeshes** måste korrigeras manuellt (en komplex process som borde göras av modskaparen). Mer information om **Borttagna navmeshes** hittar du [här](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: uk_UA
-        text: 'Наполегливо не рекомендується використовувати моди з **видаленими навмешами** бо відомо, що вони викликають збої. **Видалені навмеші** повинні бути виправлені вручну (складний процес, який повинен бути виконаний автором моду). Більше інформації про **видалені навмеші** можна знайти [тут](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-      - lang: zh_CN
-        text: '强烈建议不要使用包含已删除navmeshes的mod，因为它们会导致崩溃。**已删除navmeshes**必须手动修正(一个复杂的过程，应该由mod作者完成)。更多关于**已删除navmeshes**的信息已提供[这里](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)。'
 
 bash_tags:
   - 'Actors.ACBS'
