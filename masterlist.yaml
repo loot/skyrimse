@@ -17759,7 +17759,9 @@ plugins:
 
   - name: 'MagicalCollegeofWinterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1539/' ]
-    after: [ 'CollegeEntry.esp' ]
+    after:
+      - name: 'CollegeEntry.esp'
+        condition: 'not is_master("MagicalCollegeofWinterhold.esp")'
     msg:
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU - MagicalCollegeofWinterhold Patch.esp")'
@@ -17768,6 +17770,10 @@ plugins:
         crc: 0x9AA2E2D1
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
+  - name: 'MCoW_EndofLoadOrderOverwrite.esp'
+    after:
+      - name: 'CollegeEntry.esp'
+        condition: 'is_master("MagicalCollegeofWinterhold.esp")'
 
   - name: 'Markarth Entrance Overhaul.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19538/' ]
