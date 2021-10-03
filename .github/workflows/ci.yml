@@ -25,7 +25,11 @@ jobs:
       - name: Install parser
         run: npm install -g js-yaml
 
+      - name: Download prelude file
+        run: wget https://raw.githubusercontent.com/loot/prelude/v0.17/prelude.yaml
+
       - name: Run metadata validator
         run: |
           ./metadata_validator $GITHUB_WORKSPACE/masterlist.yaml
+          ./metadata_validator $GITHUB_WORKSPACE/masterlist.yaml $GITHUB_WORKSPACE/prelude.yaml
           js-yaml $GITHUB_WORKSPACE/masterlist.yaml > /dev/null
