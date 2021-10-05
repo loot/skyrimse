@@ -41,10 +41,6 @@ prelude:
           text: 'Видаліть. Уже додано у %1%.'
         - lang: zh_CN
           text: '删除。已包含在%1%中。'
-    - &alreadyInLotD
-      <<: *alreadyInX
-      subs: [ '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)' ]
-      condition: 'active("LegacyoftheDragonborn.esm")'
 
     - &alreadyInOrFixedByX
       type: error
@@ -79,15 +75,6 @@ prelude:
           text: 'Видаліть. Уже включено або іншим чином виправлено у %1%.'
         - lang: zh_CN
           text: '删除。在%1%中已包含或修复。'
-    - &alreadyInOrFixedByBDSv3_0
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Better Dynamic Snow v3.0+' ]
-      condition: 'active("Better Dynamic Snow SE.esp")'
-    - &alreadyInOrFixedByScrambledBugs
-      <<: *alreadyInOrFixedByX
-      type: say
-      subs: [ 'Scrambled Bugs' ]
-      condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
 
     - &alsoUseX
       type: say
@@ -296,10 +283,6 @@ prelude:
           text: '%1% вже додано з цим модом.'
         - lang: zh_CN
           text: '%1%已包含在这个mod中。'
-    - &includesMBBF
-      <<: *includesX
-      subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
-      condition: 'file("Modern Brawl Bug Fix.esp")'
 
     - &missingRequirementXforY
       type: warn
@@ -368,10 +351,6 @@ prelude:
           text: 'Деякі вимоги цього плагіна відсутні. Переконайтеся, що правильно встановили **%1%**.'
         - lang: zh_CN
           text: '这些插件的一些需求似乎缺失了。请确保您已正确安装**%1%**。'
-    - &missingRequirementAddrLibforPlugin
-      <<: *missingRequirementXforPlugin
-      subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
-      condition: '(not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==))'
 
     - &moddingPlugin
       type: error
@@ -507,87 +486,6 @@ prelude:
           text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Сторонній патч можна знайти тут: %2%'
         - lang: zh_CN
           text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-    - &patch3rdParty_AOOPH
-      <<: *patch3rdParty
-      subs:
-        - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
-        - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
-    - &patch3rdParty_CCSMPC
-      <<: *patch3rdParty
-      subs:
-        - 'CC Survival Mode'
-        - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
-    - &patch3rdParty_ClockA
-      <<: *patch3rdParty
-      subs:
-        - '[Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/4155/)'
-        - '[Additional Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/47087/)'
-    - &patch3rdParty_JSDCP
-      <<: *patch3rdParty
-      subs:
-        - '[JS Dragon Claws](https://www.nexusmods.com/skyrimspecialedition/mods/1394/)'
-        - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/)'
-    - &patch3rdParty_KPH_ACE
-      <<: *patch3rdParty
-      subs:
-        - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002/)'
-        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-    - &patch3rdParty_KPH_CACO
-      <<: *patch3rdParty
-      subs:
-        - '[Complete Alchemy and Cooking Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/19924/)'
-        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-    - &patch3rdParty_KPH_CCOR
-      <<: *patch3rdParty
-      subs:
-        - '[Complete Crafting Overhaul Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)'
-        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-    - &patch3rdParty_KPH_TCIY
-      <<: *patch3rdParty
-      subs:
-        - '[The Choice is Yours](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
-        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-    - &patch3rdParty_KPH_WACCF
-      <<: *patch3rdParty
-      subs:
-        - '[Weapons Armor Clothing and Clutter Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/18994/)'
-        - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
-    - &patch3rdParty_LotD
-      <<: *patch3rdParty
-      subs:
-        - '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)'
-        - '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)'
-    - &patch3rdParty_MLU
-      <<: *patch3rdParty
-      subs:
-        - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
-        - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
-    - &patch3rdParty_RSCPC
-      <<: *patch3rdParty
-      subs:
-        - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)'
-        - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
-    - &patch3rdParty_SBCK
-      <<: *patch3rdParty
-      subs:
-        - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
-        - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495/)'
-    - &patch3rdParty_SRPC
-      <<: *patch3rdParty
-      subs:
-        - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
-        - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
-      condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
-    - &patch3rdParty_STIP
-      <<: *patch3rdParty
-      subs:
-        - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
-        - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
-    - &patch3rdParty_UVCPC
-      <<: *patch3rdParty
-      subs:
-        - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
-        - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
 
     - &patcherScriptAvailable
       type: say
@@ -819,14 +717,6 @@ prelude:
           text: '**Mod Configuration Menu** (Меню Налаштування Модів) потрібне для повного функціонування мода. **MCM** може бути додано разом з %1%.'
         - lang: zh_CN
           text: '这个Mod需要一个**Mod配置菜单**来实现完整功能。**MCM**可以通过安装%1%来添加。'
-    - &requiresMCM_SkyUISE
-      <<: *requiresMCM_X
-      subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)' ]
-      condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-    - &requiresMCM_VR
-      <<: *requiresMCM_X
-      subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
-      condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
 
     - &requiresResources
       type: warn
@@ -893,10 +783,6 @@ prelude:
           text: 'Потрібно: %1%'
         - lang: zh_CN
           text: '需要:%1%'
-    - &requiresBashOrSmash
-      <<: *requiresX
-      subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
-      condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
 
     - &runAnimFramework
       type: say
@@ -1240,16 +1126,6 @@ prelude:
           text: 'Встановлена ​​у вас версія %1% несумісна з вашою версією %2%.'
         - lang: zh_CN
           text: '您安装的%1%版本与%2%版本不兼容。'
-    - &versionSkseIncSSE
-      <<: *versionXIncY
-      subs:
-        - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
-        - '**Skyrim SE**'
-    - &versionSkseIncSVR
-      <<: *versionXIncY
-      subs:
-        - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
-        - '**Skyrim VR**'
 
     - &versionXofYorGreaterRequired
       type: error
@@ -1634,6 +1510,147 @@ common:
     name: 'SKSE/Plugins/VRPerkExtender.dll'
     display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
     condition: 'file("SkyrimVR.esm")'
+
+# Sub-Anchors
+  # &alreadyInX
+  - &alreadyInLotD
+    <<: *alreadyInX
+    subs: [ '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)' ]
+    condition: 'active("LegacyoftheDragonborn.esm")'
+
+  # &alreadyInOrFixedByX
+  - &alreadyInOrFixedByBDSv3_0
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Better Dynamic Snow v3.0+' ]
+    condition: 'active("Better Dynamic Snow SE.esp")'
+  - &alreadyInOrFixedByScrambledBugs
+    <<: *alreadyInOrFixedByX
+    type: say
+    subs: [ 'Scrambled Bugs' ]
+    condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+
+  # &includesX
+  - &includesMBBF
+    <<: *includesX
+    subs: [ '[ Modern Brawl Bug Fix ](https://www.nexusmods.com/skyrimspecialedition/mods/1473/)' ]
+    condition: 'file("Modern Brawl Bug Fix.esp")'
+
+  # &missingRequirementXforPlugin
+  - &missingRequirementAddrLibforPlugin
+    <<: *missingRequirementXforPlugin
+    subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
+    condition: '(not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==))'
+
+  # &patch3rdParty
+  - &patch3rdParty_AOOPH
+    <<: *patch3rdParty
+    subs:
+      - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
+      - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
+  - &patch3rdParty_CCSMPC
+    <<: *patch3rdParty
+    subs:
+      - 'CC Survival Mode'
+      - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
+  - &patch3rdParty_ClockA
+    <<: *patch3rdParty
+    subs:
+      - '[Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/4155/)'
+      - '[Additional Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/47087/)'
+  - &patch3rdParty_JSDCP
+    <<: *patch3rdParty
+    subs:
+      - '[JS Dragon Claws](https://www.nexusmods.com/skyrimspecialedition/mods/1394/)'
+      - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/)'
+  - &patch3rdParty_KPH_ACE
+    <<: *patch3rdParty
+    subs:
+      - '[Armor and Clothing Extension](https://www.nexusmods.com/skyrimspecialedition/mods/19002/)'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+  - &patch3rdParty_KPH_CACO
+    <<: *patch3rdParty
+    subs:
+      - '[Complete Alchemy and Cooking Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/19924/)'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+  - &patch3rdParty_KPH_CCOR
+    <<: *patch3rdParty
+    subs:
+      - '[Complete Crafting Overhaul Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+  - &patch3rdParty_KPH_TCIY
+    <<: *patch3rdParty
+    subs:
+      - '[The Choice is Yours](https://www.nexusmods.com/skyrimspecialedition/mods/3850/)'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+  - &patch3rdParty_KPH_WACCF
+    <<: *patch3rdParty
+    subs:
+      - '[Weapons Armor Clothing and Clutter Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/18994/)'
+      - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)'
+  - &patch3rdParty_LotD
+    <<: *patch3rdParty
+    subs:
+      - '[Legacy of the Dragonborn](https://www.nexusmods.com/skyrimspecialedition/mods/11802/)'
+      - '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)'
+  - &patch3rdParty_MLU
+    <<: *patch3rdParty
+    subs:
+      - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
+      - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
+  - &patch3rdParty_RSCPC
+    <<: *patch3rdParty
+    subs:
+      - '[RS Children Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2650/)'
+      - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
+  - &patch3rdParty_SBCK
+    <<: *patch3rdParty
+    subs:
+      - '[Scoped Bows](https://www.nexusmods.com/skyrimspecialedition/mods/912/)'
+      - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495/)'
+  - &patch3rdParty_SRPC
+    <<: *patch3rdParty
+    subs:
+      - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
+      - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
+    condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
+  - &patch3rdParty_STIP
+    <<: *patch3rdParty
+    subs:
+      - '[SkyTEST - Realistic Animals and Predators](https://www.nexusmods.com/skyrimspecialedition/mods/1104/)'
+      - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
+  - &patch3rdParty_UVCPC
+    <<: *patch3rdParty
+    subs:
+      - '[Vokrii - Minimalistic Perks of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/26176/)'
+      - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
+
+  # &requiresMCM_X
+  - &requiresMCM_SkyUISE
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)' ]
+    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+  - &requiresMCM_VR
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
+    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+
+  # &requiresX
+  - &requiresBashOrSmash
+    <<: *requiresX
+    subs: [ '[Wrye Bash](https://www.nexusmods.com/skyrimspecialedition/mods/6837) or [Smash](https://github.com/matortheeternal/smash/releases)' ]
+    condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
+
+  # &versionXIncY
+  - &versionSkseIncSSE
+    <<: *versionXIncY
+    subs:
+      - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
+      - '**Skyrim SE**'
+  - &versionSkseIncSVR
+    <<: *versionXIncY
+    subs:
+      - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
+      - '**Skyrim VR**'
 
 bash_tags:
   - 'Actors.ACBS'
