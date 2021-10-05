@@ -13195,7 +13195,7 @@ plugins:
         condition: 'active("RealisticWaterTwo.esp") and active("MissingEZs_AllExteriors.esp") and not active("RealisticWaterTwo - Unique Region Names - MissingEZs_AllExteriors.esp")'
       - <<: *requiresX
         subs: [ '[Regional Save Names](https://www.nexusmods.com/skyrimspecialedition/mods/49698/)' ]
-        condition: 'file("SKSE/Plugins/po3_RegionalSaveNames.dll")'
+        condition: 'not file("SKSE/Plugins/po3_RegionalSaveNames.dll")'
   - name: 'RealisticWaterTwo - Unique Region Names.esp'
     msg:
       - <<: *alreadyInX
