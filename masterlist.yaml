@@ -13181,6 +13181,30 @@ plugins:
   - name: 'Better Descriptions SSE - YOT Patch.esp'
     req: [ 'YOT - Your Own Thoughts.esp' ]
 
+  - name: 'Unique Region Names.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56452/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Realistic Water Two SE' ]
+        condition: 'active("RealisticWaterTwo.esp") and not active("Cutting Room Floor.esp") and not active("MissingEZs_AllExteriors.esp") and not active("RealisticWaterTwo - Unique Region Names.esp") and not active("RealisticWaterTwo - Unique Region Names - (Cutting Room Floor|MissingEZs_AllExteriors)\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Water Two SE and Cutting Room Floor SSE' ]
+        condition: 'active("RealisticWaterTwo.esp") and active("Cutting Room Floor.esp") and not active("RealisticWaterTwo - Unique Region Names - Cutting Room Floor.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Water Two SE and Missing Encounter Zones FIXED' ]
+        condition: 'active("RealisticWaterTwo.esp") and active("MissingEZs_AllExteriors.esp") and not active("RealisticWaterTwo - Unique Region Names - MissingEZs_AllExteriors.esp")'
+      - <<: *requiresX
+        subs: [ '[Regional Save Names](https://www.nexusmods.com/skyrimspecialedition/mods/49698/)' ]
+        condition: 'file("SKSE/Plugins/po3_RegionalSaveNames.dll")'
+  - name: 'RealisticWaterTwo - Unique Region Names.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'RealisticWaterTwo - Unique Region Names - Cutting Room Floor.esp' ]
+        condition: 'active("RealisticWaterTwo - Unique Region Names - Cutting Room Floor.esp")'
+      - <<: *alreadyInX
+        subs: [ 'RealisticWaterTwo - Unique Region Names - MissingEZs_AllExteriors.esp' ]
+        condition: 'active("RealisticWaterTwo - Unique Region Names - MissingEZs_AllExteriors.esp")'
+
   - name: 'Yot -.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
