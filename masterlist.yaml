@@ -5761,12 +5761,15 @@ plugins:
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("PAN_NPCs - AI Overhaul SSE patch.esp")'
+    tag:
+      - Actors.ACBS
+      - NPC.DefaultOutfit
     clean:
       - crc: 0x5550DC82
         util: 'SSEEdit v4.0.3'
-      - crc: 0xA3F0ED46
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xA6E5020B
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: '.*PAN_NPCs_DB.*\.esp'
     url:
