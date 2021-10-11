@@ -9908,11 +9908,6 @@ plugins:
     group: *economyGroup
     inc: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Not So Fast - Main Quest'
-          - '[Skylover''s Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/9849/)'
-        condition: 'active("NotSoFast-MainQuest.esp") and not active("MLU NotSoFast Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MorrowlootUltimate_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchProvided
