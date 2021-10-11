@@ -10545,6 +10545,10 @@ plugins:
 
   - name: 'Better Candlelight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4553/' ]
+    msg:
+      - <<: *patchUnavailable
+        subs: [ 'Face Light' ]
+        condition: 'active("Facelight.esp")'
     tag: [ EffectStats ]
     clean:
       - crc: 0xBD16A6B2
