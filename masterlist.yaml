@@ -3310,9 +3310,14 @@ plugins:
       - <<: *FNIS
         condition: 'checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
       - <<: *NemesisEngine
-        condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
+        condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6) and not file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
     tag: [ Sound ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg:
+      - *requiresMCM_SkyUISE
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'FNIS' ]
+        condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
     clean:
       - crc: 0x82AC4355
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
