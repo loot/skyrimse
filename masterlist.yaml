@@ -17075,10 +17075,10 @@ plugins:
   - name: 'ETaC - RESOURCES.esm'
     group: *fixesGroup
     clean:
-      - crc: 0xAD4F1F5E
-        util: 'SSEEdit v4.0.3g'
-      - crc: 0xAB6247F1
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0xA25EF7F0
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x7D7B7275
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'ETaC - Complete.esp'
     after:
       - name: '3DNPC.esp'
@@ -17153,9 +17153,15 @@ plugins:
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
     tag: [ C.Location ]
-    clean:
-      - crc: 0x51D1C7C1
-        util: 'SSEEdit v4.0.3g'
+    dirty:
+      - <<: *quickClean
+        crc: 0xF36D1C39
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x6151A332
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
   - name: 'ETaC - Complete LoS Patch.esp'
     dirty:
       - <<: *quickClean
@@ -17182,9 +17188,11 @@ plugins:
         subs: [ 'Lanterns of Skyrim' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Darkwater Crossing LoS Patch.esp")'
     tag: [ C.Location ]
-    clean:
-      - crc: 0x05A0C452
-        util: 'SSEEdit v4.0.3g'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB0A9AE57
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
   - name: 'ETaC - Dawnstar.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17216,8 +17224,12 @@ plugins:
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
     clean:
-      - crc: 0x8B28A721
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0x9CFFD062
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'ETaC - Kynesgrove.esp'
+    clean:
+      - crc: 0x8C8B3AC0
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'ETaC - Riverwood.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17256,9 +17268,11 @@ plugins:
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
     tag: [ C.Location ]
-    clean:
-      - crc: 0x53CFBC83
-        util: 'SSEEdit v4.0.3g'
+    dirty:
+      - <<: *quickClean
+        crc: 0x869AB0E7
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
   - name: 'ETaC - Rorikstead.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17266,8 +17280,8 @@ plugins:
       - name: 'Rorikstead Wagons.esp'
         condition: '(is_master("ETaC - Rorikstead.esp") and is_master("Rorikstead Wagons.esp")) or (not is_master("ETaC - Rorikstead.esp") and not is_master("Rorikstead Wagons.esp"))'
     clean:
-      - crc: 0x5C33F555
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0x222303C7
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Falkreath.esp'
     url:
