@@ -3310,7 +3310,7 @@ plugins:
       - <<: *FNIS
         condition: 'checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
       - <<: *NemesisEngine
-        condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6)'
+        condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6) and not file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
     tag: [ Sound ]
     msg:
       - *requiresMCM_SkyUISE
