@@ -17068,17 +17068,17 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 46
 
-  - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Riverwood).*\.esm'
+  - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Kynesgrove|Riverwood|Rorikstead).*\.es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552/'
         name: 'Expanded Towns and Cities (SSE)'
   - name: 'ETaC - RESOURCES.esm'
     group: *fixesGroup
     clean:
-      - crc: 0xAD4F1F5E
-        util: 'SSEEdit v4.0.3g'
-      - crc: 0xAB6247F1
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0xA25EF7F0
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x7D7B7275
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'ETaC - Complete.esp'
     after:
       - name: '3DNPC.esp'
@@ -17103,6 +17103,8 @@ plugins:
         condition: '(is_master("ETaC - Complete.esp") and is_master("Rorikstead Wagons.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Rorikstead Wagons.esp"))'
       - name: 'S3DLandscapes NextGenerationForests.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("S3DLandscapes NextGenerationForests.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("S3DLandscapes NextGenerationForests.esp"))'
+      - name: 'Skyrim Bridges.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Skyrim Bridges.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Skyrim Bridges.esp"))'
       - name: 'UniqueLocationsRiverwoodForest.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("UniqueLocationsRiverwoodForest.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("UniqueLocationsRiverwoodForest.esp"))'
       - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -17118,9 +17120,6 @@ plugins:
       - '01NobleWarriorCottage2.0.esp'
     msg:
       - <<: *patchIncluded
-        subs: [ 'Better Docks' ]
-        condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Complete Better Docks Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
@@ -17133,14 +17132,11 @@ plugins:
         subs: [ 'Hunters Cabin of Riverwood' ]
         condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Complete Hunting Cabin Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Lanterns of Skyrim' ]
-        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Complete LoS Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
-        condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp")'
+        condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp") and not active("ETaC - Complete RoB Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Realistic Lighting Overhaul' ]
         condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Complete RLO Patch.esp")'
@@ -17151,45 +17147,43 @@ plugins:
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
     tag: [ C.Location ]
-    clean:
-      - crc: 0x51D1C7C1
-        util: 'SSEEdit v4.0.3g'
-  - name: 'ETaC - Complete LoS Patch.esp'
     dirty:
       - <<: *quickClean
-        crc: 0x4407112E
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        udr: 16
+        crc: 0xF36D1C39
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x6151A332
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
   - name: 'ETaC - Darkwater Crossing.esp'
     after:
       - name: 'Finding_Derkeethus.esp'
         condition: '(is_master("ETaC - Darkwater Crossing.esp") and is_master("Finding_Derkeethus.esp")) or (not is_master("ETaC - Darkwater Crossing.esp") and not is_master("Finding_Derkeethus.esp"))'
       - name: 'Immersive Citizens - AI Overhaul.esp'
         condition: '(is_master("ETaC - Darkwater Crossing.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Darkwater Crossing.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
+      - name: 'Skyrim Bridges.esp'
+        condition: '(is_master("ETaC - Darkwater Crossing.esp") and is_master("Skyrim Bridges.esp")) or (not is_master("ETaC - Darkwater Crossing.esp") and not is_master("Skyrim Bridges.esp"))'
     inc: [ 'Darkwater Crossing.esp' ]
     msg:
       - <<: *patchIncluded
         subs: [ 'CLARALUX' ]
-        condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Complete Claralux Patch.esp")'
+        condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Darkwater Crossing Claralux Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Darkwater Crossing ELFX Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Lanterns of Skyrim' ]
-        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Darkwater Crossing LoS Patch.esp")'
     tag: [ C.Location ]
-    clean:
-      - crc: 0x05A0C452
-        util: 'SSEEdit v4.0.3g'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB0A9AE57
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
   - name: 'ETaC - Dawnstar.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
         condition: '(is_master("ETaC - Dawnstar.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Dawnstar.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
     inc: [ 'Dawnstar.esp' ]
     msg:
-      - <<: *patchIncluded
-        subs: [ 'Better Docks' ]
-        condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("ETaC - Dawnstar Better Docks Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("ETaC - Dawnstar CFTO Patch.esp")'
@@ -17200,20 +17194,22 @@ plugins:
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Dawnstar ELFX Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Lanterns of Skyrim' ]
-        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Dawnstar LoS Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'No snow under the roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Dawnstar No Snow Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
-        condition: 'active("Rigmor.esp") and not active("ETaC - Dawnstar Rigmor Patch.esp")'
+        condition: 'active("Rigmor.esp") and not active("ETaC - Dawnstar Rigmor Patch.esp") and not active("ETaC - Dawnstar RoB Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
     clean:
-      - crc: 0x8B28A721
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0x9CFFD062
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'ETaC - Kynesgrove.esp'
+    tag: [ C.Location ]
+    clean:
+      - crc: 0x8C8B3AC0
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'ETaC - Riverwood.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17240,11 +17236,8 @@ plugins:
         subs: [ 'Hunters Cabin of Riverwood' ]
         condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Riverwood Hunting Cabin Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Lanterns of Skyrim SE' ]
-        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("ETaC - Riverwood LoS Patch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
-        condition: 'active("Rigmor.esp") and not active("ETaC - Riverwood Rigmor Patch.esp")'
+        condition: 'active("Rigmor.esp") and not active("ETaC - Riverwood Rigmor Patch.esp") and not active("ETaC - Riverwood RoB Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Realistic Lighting Overhaul' ]
         condition: 'active("RLO - Exteriors.esp") and not active("ETaC - Riverwood RLO Patch.esp")'
@@ -17252,18 +17245,21 @@ plugins:
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
     tag: [ C.Location ]
-    clean:
-      - crc: 0x53CFBC83
-        util: 'SSEEdit v4.0.3g'
+    dirty:
+      - <<: *quickClean
+        crc: 0x869AB0E7
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
   - name: 'ETaC - Rorikstead.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
         condition: '(is_master("ETaC - Rorikstead.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Rorikstead.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
       - name: 'Rorikstead Wagons.esp'
         condition: '(is_master("ETaC - Rorikstead.esp") and is_master("Rorikstead Wagons.esp")) or (not is_master("ETaC - Rorikstead.esp") and not is_master("Rorikstead Wagons.esp"))'
+    tag: [ C.Location ]
     clean:
-      - crc: 0x5C33F555
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0x222303C7
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Falkreath.esp'
     url:
