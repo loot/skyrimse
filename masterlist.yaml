@@ -2831,6 +2831,10 @@ plugins:
   - name: 'Better Dynamic Snow( SE)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
     group: *earlyLoadersGroup
+    after:
+      - '___SNOW_FIX.esp'
+      - 'SMIM-SE.esp'
+      - 'SMIM-SE-Merged-All.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Better Dynamic Snow ESP' ]
@@ -2844,10 +2848,6 @@ plugins:
   - name: 'Better Dynamic Snow( - NSUTR Patch)?\.esp'
     tag: [ Graphics ]
   - name: 'Better Dynamic Snow.esp'
-    after:
-      - '___SNOW_FIX.esp'
-      - 'SMIM-SE-Merged-All.esp'
-      - 'SMIM-SE.esp'
     msg:
       - <<: *obsolete
         condition: 'not file("skse/plugins/ShaderTools.dll")'
