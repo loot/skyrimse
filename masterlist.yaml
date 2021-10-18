@@ -2817,6 +2817,7 @@ plugins:
 ###### AudioVisual - Fixes ######
   - name: '___SNOW_FIX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19846/' ]
+    group: *earlyLoadersGroup
     clean:
       - crc: 0xC4C4F255
         util: 'SSEEdit v4.0.3'
@@ -2830,6 +2831,11 @@ plugins:
 
   - name: 'Better Dynamic Snow( SE)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
+    group: *earlyLoadersGroup
+    after:
+      - '___SNOW_FIX.esp'
+      - 'SMIM-SE.esp'
+      - 'SMIM-SE-Merged-All.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Better Dynamic Snow ESP' ]
@@ -2837,16 +2843,14 @@ plugins:
   - name: 'Better Dynamic Snow SE.esp'
     clean:
       - crc: 0x1E8DF8AF
-        util: 'SSEEdit v4.0.3f'
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
       - crc: 0xE23348BA
-        util: 'SSEEdit v4.0.3f'
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xC092E1AF
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'Better Dynamic Snow( - NSUTR Patch)?\.esp'
     tag: [ Graphics ]
   - name: 'Better Dynamic Snow.esp'
-    after:
-      - '___SNOW_FIX.esp'
-      - 'SMIM-SE-Merged-All.esp'
-      - 'SMIM-SE.esp'
     msg:
       - <<: *obsolete
         condition: 'not file("skse/plugins/ShaderTools.dll")'
