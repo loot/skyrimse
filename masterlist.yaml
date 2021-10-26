@@ -10729,6 +10729,10 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Rustic Soulgems Unsorted GIST' ]
         condition: 'file("RUSTIC SOULGEMS - Unsorted( - ESL)? - GIST\.esp")'
+    tag: [ Graphics ]
+    clean:
+      - crc: 0xEF0A2A16
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'IHarvest.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27789/' ]
@@ -14611,6 +14615,9 @@ plugins:
 
   - name: 'RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5785/' ]
+    tag:
+      - Graphics
+      - ObjectBounds
     inc:
       - name: 'MLPSoulGems.esp'
         display: 'MultiLayer Parallax Soul Gems'
@@ -14618,6 +14625,82 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)?( - GIST)?\.esp")'
         subs: [ 'RUSTIC SOULGEMS' ]
+  - name: 'RUSTIC SOULGEMS - Sorted.esp'
+    tag: [ Names ]
+    clean:
+      - crc: 0x2F1715EC
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xE2AAFCF0
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x240FB8A3
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x1DAA6BEB
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x0AAB3093
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xB3BABE90
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Sorted - ESL.esp'
+    tag: [ Names ]
+    clean:
+      - crc: 0x7AD6717B
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Sorted - GIST.esp'
+    tag: [ Names ]
+    clean:
+      - crc: 0x5E295CF3
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Sorted - ESL - GIST.esp'
+    tag: [ Names ]
+    clean:
+      - crc: 0xB03693EC
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Unsorted.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x8B98CA15
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      - crc: 0x89792621
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x4AA7E618
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xA5DE6420
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x1A8E5C3C
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xADD2280C
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xE075ED5E
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Unsorted - ESL.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE54891DA
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      - crc: 0x72B14661
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Unsorted - GIST.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB4B14CCE
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      - crc: 0xA44937DA
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'RUSTIC SOULGEMS - Unsorted - ESL - GIST.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC62B36D0
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+    clean:
+      - crc: 0x3AEAA186
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Seashells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4492/' ]
