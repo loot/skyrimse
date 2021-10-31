@@ -3459,6 +3459,13 @@ plugins:
         name: 'MultiLayer Parallax Soul Gems'
     tag: [ Graphics ]
   - name: 'MLPSoulGems.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'GIST soul trap' ]
+        condition: 'file("GIST soul trap.esp") and not file("MLP + GIST Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Sounds Compendium' ]
+        condition: 'file("Immersive Sounds - Compendium.esp") and not file("MLP + ISC Patch.esp")'
     clean:
       - crc: 0x31F662B9
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -14600,16 +14607,6 @@ plugins:
         crc: 0xF18C33A9
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 12
-
-  - name: 'MLPSoulGems.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25709/' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'GIST soul trap' ]
-        condition: 'file("GIST soul trap.esp") and not file("MLP + GIST Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Immersive Sounds Compendium' ]
-        condition: 'file("Immersive Sounds - Compendium.esp") and not file("MLP + ISC Patch.esp")'
 
   - name: 'NarrativeLoot Complete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12812/' ]
