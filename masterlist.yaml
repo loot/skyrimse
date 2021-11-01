@@ -19084,8 +19084,18 @@ plugins:
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
 
-  - name: '(Serenity|SailorMoonClub|LunarWeapons)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30019/' ]
+  - name: '(Serenity|SailorMoonClub)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30019/'
+        name: 'Serenity - A Silent Moons Camp Overhaul'
+    tag:
+      - C.Location
+      - Delev
+      - Graphics
+      - Keywords
+      - Names
+      - Stats
+      - Text
   - name: 'Serenity.esp'
     msg:
       - <<: *patch3rdParty_LotD
@@ -19095,19 +19105,34 @@ plugins:
         crc: 0xBADBB311
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
+      - <<: *quickClean
+        crc: 0x5972B869
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x54652F9B
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'SailorMoonClub.esp'
     dirty:
       - <<: *quickClean
         crc: 0x49755AFF
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
+      - <<: *quickClean
+        crc: 0xF5295D1D
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
     clean:
       - crc: 0x70AAD525
         util: 'SSEEdit v4.0.3'
+      - crc: 0xCBD838E0
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x1470C914
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
   - name: 'LunarWeapons.esp'
     clean:
       - crc: 0xF3925568
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Shor''s Stone.esp'
     url:
