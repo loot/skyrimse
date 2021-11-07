@@ -12049,8 +12049,9 @@ plugins:
       - crc: 0xE5BCC27A
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: 'Wild World.esp'
+  - name: 'Wild World.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14616/' ]
+  - name: 'Wild World.esp'
     after:
       - 'Combat Evolved.esp'
       - 'MVABasic.esp'
@@ -12065,10 +12066,8 @@ plugins:
       - 'NARC SE for SkyTEST.esp'
       - 'NARC SE for Vanilla.esp'
       - 'One With Nature.esp'
-      - name: 'Pacifist Mini-Mods Collection.esl'
-        display: 'Less Aggressive Animals'
-      - name: 'Pacifist Mini-Mods Collection.esp'
-        display: 'Less Aggressive Animals'
+      - 'Pacifist Mini-Mods Collection.esl'
+      - 'Pacifist Mini-Mods Collection.esp'
       - 'Real Wildlife Behaviour.esp'
     msg:
       - <<: *patch3rdParty_LotD
@@ -12086,14 +12085,22 @@ plugins:
         subs: [ 'Revenge Of the Enemies' ]
         condition: 'file("Rebirth Monster.esp") and not file("Wild World - Rebirth Monster.esp")'
       - <<: *patchProvided
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'file("Skyrim Immersive Creatures Special Edition.esp") and not file("Wild World - SIC.esp")'
-      - <<: *patchProvided
         subs: [ 'SkyTEST - Realistic Animals and Predators' ]
         condition: 'file("SkyTEST-RealisticAnimals&Predators.esp") and not file("Wild World - SkyTEST.esp")'
+    tag:
+      - Actors.AIData
+      - Actors.AIPackages
+      - Factions
+      - NPC.AIPackageOverrides
+      - Relations.Add
+      - Relations.Change
     clean:
       - crc: 0xC87A64A9
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'Wild World - SIC.esp'
+    msg:
+      - <<: *patchOutdated
+        condition: 'checksum("Wild World - SIC.esp", 724A874D)'
 
 ###### Gameplay - Quests ######
   - name: 'AgentOfRighteousMight.esp'
