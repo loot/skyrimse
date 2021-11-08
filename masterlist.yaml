@@ -18044,13 +18044,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'JK''s Skyrim' ]
         condition: 'active("JKs Skyrim.esp")'
-        
-  - name: 'JKs Whiterun.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2259/' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'JK''s Skyrim' ]
-        condition: 'active("JKs Skyrim.esp")'
 
   - name: 'JK''s SkyHaven Forge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8706/' ]
@@ -18296,12 +18289,21 @@ plugins:
     tag:
       - C.Location
       - C.Water
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'JK''s Skyrim' ]
+        condition: 'active("JKs Skyrim.esp")'
+        
   - name: 'JKs Whiterun exterior.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2259/' ]
     after:
       - 'S3DTrees NextGenerationForests.esp'
       - 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
       - 'ViscousGrass.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'JK''s Skyrim' ]
+        condition: 'active("JKs Skyrim.esp")'
 
   - name: 'Karthwasten.esp'
     url:
