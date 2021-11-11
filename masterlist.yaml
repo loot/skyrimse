@@ -1557,11 +1557,6 @@ common:
     subs:
       - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
       - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
-  - &patch3rdParty_CCSMPC
-    <<: *patch3rdParty
-    subs:
-      - 'CC Survival Mode'
-      - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
   - &patch3rdParty_ClockA
     <<: *patch3rdParty
     subs:
@@ -2117,19 +2112,11 @@ plugins:
         util: 'SSEEdit v4.0.4'
   # Arcane Accessories
   - name: 'ccbgssse014-spellpack01.esl'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Unofficial Creation Club Updates - Arcane Accessories](https://www.nexusmods.com/skyrimspecialedition/mods/12748/)' ]
-        condition: 'not active("JRSpellPackPatch.esp") and not active("JRCCPatches.esp") and not active("Unofficial Arcane Accessories Patch.esl") and not active("unofficial skyrim creation club content patch.esl")'
     clean:
       - crc: 0x44769216
         util: 'SSEEdit v4.0.4'
   # Arcane Archer Pack
   - name: 'ccbgssse002-exoticarrows.esl'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Unofficial Creation Club Updates - Arcane Archer Pack](https://www.nexusmods.com/skyrimspecialedition/mods/12769/)' ]
-        condition: 'not active("JRArcaneArcherPack.esp") and not active("JRCCPatches.esp") and not active("Unofficial Arcane Archer Pack Patch.esl") and not active("unofficial skyrim creation club content patch.esl")'
     clean:
       - crc: 0x3E964C17
         util: 'SSEEdit v4.0.3'
@@ -2255,9 +2242,6 @@ plugins:
         util: 'SSEEdit v4.0.4'
   # Nordic Jewelry
   - name: 'ccedhsse001-norjewel.esl'
-    msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CC-NordicJewelry_CCOR_Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x9DA80A2D
@@ -2282,11 +2266,6 @@ plugins:
         itm: 1
   # Rare Curios
   - name: 'ccBGSSSE037-Curios.esl'
-    msg:
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
-      - <<: *patch3rdParty_ClockA
-        condition: 'active("Clockwork.esp") and not active("ClockworkSorting_Ing_CCCurios.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
     clean:
       - crc: 0xE5E88667
         util: 'SSEEdit v4.0.4'
@@ -2299,9 +2278,6 @@ plugins:
         itm: 2
   # Saints & Seducers
   - name: 'ccBGSSSE025-AdvDSGS.esm'
-    msg:
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Saints&Seducers.esp")'
     tag:
       - C.Encounter
       - C.Location
@@ -2368,19 +2344,6 @@ plugins:
         itm: 20
   # Survival Mode
   - name: 'ccQDRSSE001-SurvivalMode.esl'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Unlimited Bookshelves'
-          - '[Survival Mode and Unlimited Bookshelves Patch](https://www.nexusmods.com/skyrimspecialedition/mods/39288/)'
-        condition: 'active("UnlimitedBookshelves.esp") and not active("Unlimited Bookshelves - Survival Mode.esp") and not active("unofficial skyrim survival patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
-      - <<: *patchUpdateAvailable
-        subs: [ '[Unofficial Skyrim Creation Club Content Patches](https://www.nexusmods.com/skyrimspecialedition/mods/18975/)' ]
-        condition: 'not active("Unofficial Skyrim Survival Patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
     tag:
       - Keywords
       - Text
@@ -6413,42 +6376,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20035/' ]
     msg:
       - <<: *patchProvided
-        subs: [ 'Creation Club: Adventurer''s Backpack' ]
-        condition: 'active("ccfsvsse001-backpacks.esl") and not active("Lucien-Backpacks-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Arcane Archer Pack' ]
-        condition: 'active("ccbgssse002-exoticarrows.esl") and not active("Lucien-ArcaneArcher-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Bone Wolf' ]
-        condition: 'active("ccbgssse036-petbwolf.esl") and not active("Lucien-BoneWolf-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Camping' ]
-        condition: 'active("ccqdrsse002-firewood.esl") and not active("Lucien-Camping-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Plague of the Dead' ]
-        condition: 'active("ccbgssse003-zombies.esl") and not active("Lucien-PlagueOfTheDead-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Ruin''s Edge' ]
-        condition: 'active("ccbgssse004-ruinsedge.esl") and not active("Lucien-RuinsEdge-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Saturalia Holiday Pack' ]
-        condition: 'active("ccvsvsse001-winter.esl") and not active("Lucien-Saturalia-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Shadowrend' ]
-        condition: 'active("ccbgssse018-shadowrend.esl") and not active("Lucien-Shadowrend-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Staff of Sheogorath' ]
-        condition: 'active("ccbgssse019-staffofsheogorath.esl") and not active("Lucien-StaffOfSheogorath-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Stendarr''s Hammer' ]
-        condition: 'active("ccbgssse006-stendarshammer.esl") and not active("Lucien-StendarrsHammer-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Tundra Homestead' ]
-        condition: 'active("cceejsse001-hstead.esm") and not active("Lucien-TundraHomestead-Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Creation Club: Umbra' ]
-        condition: 'active("ccbgssse016-umbra.esm") and not active("Lucien-Umbra-Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Insects Begone' ]
         condition: 'active("Insects Begone - (Chaurus|Spiders|Spiders and Chaurus)\.esp") and not active("Lucien-InsectsBegone-Patch.esp")'
       - <<: *patchProvided
@@ -6751,8 +6678,6 @@ plugins:
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Beasts Of Tamriel.esp")'
       - <<: *patch3rdParty_STIP
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Beasts of Tamriel.esp")'
     tag:
@@ -7234,16 +7159,6 @@ plugins:
           - 'Complete Crafting Overhaul Remastered'
           - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SIC CCOR Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Creation Club: Nix-Hound'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("ccbgssse035-petnhound.esl") and not active("SIC CClub Nixhound Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Creation Club: Saints & Seducers'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("ccbgssse025-advdsgs.esm") and not active("SIC CClub Saints & Seducer Integration.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Sounds - Compendium'
@@ -8558,8 +8473,6 @@ plugins:
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Campfire.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Campfire_Patch.esp")'
 
@@ -14125,8 +14038,6 @@ plugins:
     tag: [ Outfits.Add ]
   - name: 'Cloaks.esp'
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
@@ -14329,12 +14240,6 @@ plugins:
         crc: 0x66EFDF49
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
-
-  - name: 'GPProvisioning.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9533/' ]
-    msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
 
   - name: 'GuardsArmorsAndWeapons.esp'
     url:
@@ -14541,8 +14446,6 @@ plugins:
       - Outfits.Remove
   - name: '1nivWICCloaks.esp'
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Winter Is Coming.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
     clean:
@@ -14758,12 +14661,6 @@ plugins:
         crc: 0xA542594A
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 8
-
-  - name: 'MilkSSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3230/' ]
-    msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Be A Milk Drinker.esp")'
 
   - name: 'MisterB''s Unique Treasures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28939/' ]
@@ -15591,11 +15488,6 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Alchemy & Cooking Overhaul and Rare Curios'
-          - '[CACO, BS Bruma & Rare Curios Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24830/)'
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("ccbgssse037-curios.esl") and not active("CACO_Bruma_Rare Curios_Patch.esp")'
       - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
@@ -22848,12 +22740,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Cloaks of Skyrim' ]
         condition: 'active("Cloaks.esp") and not active("UltimateCollege_Cloaks_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Creation Club: Arcane Archer Pack' ]
-        condition: 'active("ccbgssse002-exoticarrows.esl") and not active("UltimateCollege_CCArcaneArcher_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Creation Club: Wild Horses' ]
-        condition: 'active("ccbgssse034-mntuni.esl") and not active("UltimateCollege_CCWildHorses_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("UltimateCollege_CRF_Patch.esp")'
