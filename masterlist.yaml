@@ -2247,9 +2247,6 @@ plugins:
         util: 'SSEEdit v4.0.4'
   # Nordic Jewelry
   - name: 'ccedhsse001-norjewel.esl'
-    msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CC-NordicJewelry_CCOR_Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x9DA80A2D
@@ -2275,8 +2272,6 @@ plugins:
   # Rare Curios
   - name: 'ccBGSSSE037-Curios.esl'
     msg:
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO Rare Curios Patch.esp")  and not active("BSHeartland.esm")'
       - <<: *patch3rdParty_ClockA
         condition: 'active("Clockwork.esp") and not active("ClockworkSorting_Ing_CCCurios.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
     clean:
@@ -2291,9 +2286,6 @@ plugins:
         itm: 2
   # Saints & Seducers
   - name: 'ccBGSSSE025-AdvDSGS.esm'
-    msg:
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Saints&Seducers.esp")'
     tag:
       - C.Encounter
       - C.Location
@@ -2366,10 +2358,6 @@ plugins:
           - 'Unlimited Bookshelves'
           - '[Survival Mode and Unlimited Bookshelves Patch](https://www.nexusmods.com/skyrimspecialedition/mods/39288/)'
         condition: 'active("UnlimitedBookshelves.esp") and not active("Unlimited Bookshelves - Survival Mode.esp") and not active("unofficial skyrim survival patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Survival Mode_Patch.esp")'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Survival Mode_Patch.esp") and not active("Complete Alchemy & Cooking Overhaul.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[Unofficial Skyrim Creation Club Content Patches](https://www.nexusmods.com/skyrimspecialedition/mods/18975/)' ]
         condition: 'not active("Unofficial Skyrim Survival Patch.esl") and not active("Unofficial Skyrim Creation Club Content Patch.esl")'
