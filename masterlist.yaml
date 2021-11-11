@@ -1983,6 +1983,12 @@ plugins:
         itm: 334
         udr: 92
         nav: 3
+      - <<: *quickClean
+        crc: 0x1A4D8BDF
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 384
+        udr: 92
+        nav: 3
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -1993,11 +1999,11 @@ plugins:
       - Invent.Remove
       - Relev
     msg:
-      # (V1.5.97.0, 0xADFC1487) after QAC
+      # (V1.5.97.0, 0xADFC1487) after QAC, (V1.6.318.0, 0x8FA85074) after QAC
       - <<: *wildEdits
         type: say
         subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
-        condition: 'checksum("Dawnguard.esm", ADFC1487)'
+        condition: 'checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 8FA85074)'
     dirty:
       - <<: *quickClean
         crc: 0xCC81E5D8
@@ -2005,6 +2011,12 @@ plugins:
         itm: 766
         udr: 82
         nav: 57
+      - <<: *quickClean
+        crc: 0x237C2051
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 849
+        udr: 82
+        nav: 59
   - name: 'HearthFires.esm'
     group: *dlcGroup
     after: [ 'Dawnguard.esm' ]
@@ -2014,6 +2026,12 @@ plugins:
     dirty:
       - <<: *quickClean
         crc: 0xBAD9393A
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      - <<: *quickClean
+        crc: 0xE564684F
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 221
         udr: 11
@@ -2034,6 +2052,12 @@ plugins:
         crc: 0x0EB10E82
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 81
+        udr: 8
+        nav: 1
+      - <<: *quickClean
+        crc: 0x786FA766
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 87
         udr: 8
         nav: 1
   - name: 'SkyrimVR.esm'
