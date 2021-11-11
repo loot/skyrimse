@@ -1557,11 +1557,6 @@ common:
     subs:
       - '[AI Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/21654/)'
       - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
-  - &patch3rdParty_CCSMPC
-    <<: *patch3rdParty
-    subs:
-      - 'CC Survival Mode'
-      - '[Survival Mode Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/19154/)'
   - &patch3rdParty_ClockA
     <<: *patch3rdParty
     subs:
@@ -6731,8 +6726,6 @@ plugins:
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Beasts Of Tamriel.esp")'
       - <<: *patch3rdParty_STIP
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Beasts of Tamriel.esp")'
     tag:
@@ -8538,8 +8531,6 @@ plugins:
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Campfire.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Campfire_Patch.esp")'
 
@@ -14105,8 +14096,6 @@ plugins:
     tag: [ Outfits.Add ]
   - name: 'Cloaks.esp'
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Cloaks Of Skyrim.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
@@ -14309,12 +14298,6 @@ plugins:
         crc: 0x66EFDF49
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
-
-  - name: 'GPProvisioning.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9533/' ]
-    msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Google''s ESO Provisioning.esp")'
 
   - name: 'GuardsArmorsAndWeapons.esp'
     url:
@@ -14521,8 +14504,6 @@ plugins:
       - Outfits.Remove
   - name: '1nivWICCloaks.esp'
     msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Winter Is Coming.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
     clean:
@@ -14738,12 +14719,6 @@ plugins:
         crc: 0xA542594A
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 8
-
-  - name: 'MilkSSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3230/' ]
-    msg:
-      - <<: *patch3rdParty_CCSMPC
-        condition: 'active("ccqdrsse001-survivalmode.esl") and not active("Survival Mode Patches - Be A Milk Drinker.esp")'
 
   - name: 'MisterB''s Unique Treasures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28939/' ]
