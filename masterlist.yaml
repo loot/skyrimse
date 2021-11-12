@@ -1646,10 +1646,15 @@ common:
     condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
 
   # &versionXIncY
+  - &versionSkseIncSAE
+    <<: *versionXIncY
+    subs:
+      - '**[Skyrim Script Extender](https://skse.silverlock.org)**'
+      - '**Skyrim AE**'
   - &versionSkseIncSSE
     <<: *versionXIncY
     subs:
-      - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
+      - '**[Skyrim Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim SE**'
   - &versionSkseIncSVR
     <<: *versionXIncY
@@ -1779,13 +1784,17 @@ globals:
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
 
 # Latest Version
+  # Skyrim AE Game Runtime
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim AE**' ]
+    condition: 'product_version("../SkyrimSE.exe", "1.6.318.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   # Skyrim VR Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
@@ -1793,13 +1802,20 @@ globals:
   - <<: *versionUpToDateX
     subs: [ '**Skyrim VR**' ]
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm")'
-  # SKSE 64
+  # SKSE AE
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE 64](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.20", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
+    subs: [ '**Script Extender ([SKSE AE Preliminary](https://skse.silverlock.org))**' ]
+    condition: 'version("../skse64_loader.exe", "0.2.1.1", <) and file("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.318.0", >=) and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE 64](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.20", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
+    subs: [ '**Script Extender ([SKSE AE Preliminary](https://skse.silverlock.org))**' ]
+    condition: 'version("../skse64_loader.exe", "0.2.1.1", >=) and file("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.318.0", >=) and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
+  # SKSE SE
+  - <<: *versionOldX
+    subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
+    condition: 'version("../skse64_loader.exe", "0.2.0.20", <) and file("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.318.0", <) and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
+    condition: 'version("../skse64_loader.exe", "0.2.0.20", >=) and file("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.318.0", <) and not file("SkyrimVR.esm") and file("../skse64_loader.exe")'
   # SKSE VR
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE VR](https://skse.silverlock.org))**' ]
@@ -1809,7 +1825,10 @@ globals:
     condition: 'version("../skseVR_loader.exe", "0.2.0.12", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skseVR_loader.exe")'
 
 # Version Compatibility
-  # SKSE 64 - Game Runtime
+  # SKSE AE - Game Runtime
+  - <<: *versionSkseIncSAE
+    condition: 'product_version("../SkyrimSE.exe", "1.6.318.0", ==) and version("../skse64_loader.exe", "0.2.1.1", <) and file("../skse64_loader.exe")'
+  # SKSE SE - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
