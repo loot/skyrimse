@@ -1779,13 +1779,17 @@ globals:
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
 
 # Latest Version
+  # Skyrim AE Game Runtime
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim AE**' ]
+    condition: 'product_version("../SkyrimSE.exe", "1.6.318.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
+    condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   # Skyrim VR Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim VR**' ]
