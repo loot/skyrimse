@@ -1646,10 +1646,15 @@ common:
     condition: 'not file("Bashed Patch.*\.esp") and not file("Smashed Patch.esp")'
 
   # &versionXIncY
+  - &versionSkseIncSAE
+    <<: *versionXIncY
+    subs:
+      - '**[Skyrim Script Extender](https://skse.silverlock.org)**'
+      - '**Skyrim AE**'
   - &versionSkseIncSSE
     <<: *versionXIncY
     subs:
-      - '**[Skyrim SE Script Extender](https://skse.silverlock.org)**'
+      - '**[Skyrim Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim SE**'
   - &versionSkseIncSVR
     <<: *versionXIncY
@@ -1820,7 +1825,10 @@ globals:
     condition: 'version("../skseVR_loader.exe", "0.2.0.12", >=) and file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skseVR_loader.exe")'
 
 # Version Compatibility
-  # SKSE 64 - Game Runtime
+  # SKSE AE - Game Runtime
+  - <<: *versionSkseIncSAE
+    condition: 'product_version("../SkyrimSE.exe", "1.6.318.0", ==) and version("../skse64_loader.exe", "0.2.1.1", <) and file("../skse64_loader.exe")'
+  # SKSE SE - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and file("../skse(?:vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
