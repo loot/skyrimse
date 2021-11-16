@@ -15757,6 +15757,7 @@ plugins:
         util: 'SSEEdit v4.0.2'
   - name: 'BSHeartland.esm'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831/' ]
+    after: [ 'BSAssets.esm' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -15806,6 +15807,9 @@ plugins:
         itm: 514
   - name: 'BS_DLC_patch.esp'
     url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167/' ]
+    after:
+      - 'BSAssets.esm'
+      - 'BSHeartland.esm'
     tag:
       - C.Regions
       - Delev
