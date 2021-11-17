@@ -9714,7 +9714,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
       - <<: *patch3rdParty_ClockA
-        condition: 'active("Clockwork.esp") and not active("ClockworkSorting_Ing_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp") and not active("ClockworkSorting_Food_CACO.esp")'
+        condition: 'active("Clockwork.esp") and not active("ClockworkSuperiorSorting.esp") and not active("ClockworkSorting_Ing_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp") and not active("ClockworkSorting_Food_CACO.esp")'
       - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
@@ -15869,11 +15869,29 @@ plugins:
         itm: 122
 
   # Additional Clockwork
+  - name: 'ClockworkBugFixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+    clean:
+      - crc: 0x6ED1EE37
+        util: 'SSEEdit v4.0.4'
   - name: 'ClockworkCourierCounterspell.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     clean:
       - crc: 0x6ABC5154
         util: 'SSEEdit v4.0.3'
+  - name: 'ClockworkInterestingInhabitants.esp'
+    clean:
+      - crc: 0xC73837D9
+        util: 'SSEEdit v4.0.4'
+  - name: 'ClockworkMausoleumDummyDoorFix.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '"Additional Clockwork - Bug Fixes" (ClockworkBugFixes.esp)' ]
+        condition: 'active("ClockworkBugFixes.esp")'
+    clean:
+      - crc: 0xCAE2B6AE
+        util: 'SSEEdit v4.0.4'
   - name: 'ClockworkShadowmarksCastleExt.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     msg:
@@ -15906,16 +15924,20 @@ plugins:
     clean:
       - crc: 0xB4C1E773
         util: 'SSEEdit v4.0.3'
+  - name: 'ClockworkSuperiorSorting.esp'
+    req:
+      - *PapyrusExtender
+      - *SKSE
+    clean:
+      - crc: 0x9E78E8D9
+        util: 'SSEEdit v4.0.4'
   - name: 'ClockworkTitleRemover.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
-    clean:
-      - crc: 0x913191E9
-        util: 'SSEEdit v4.0.3'
-  - name: 'ClockworkMausoleumDummyDoorFix.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
-    clean:
-      - crc: 0xCAE2B6AE
-        util: 'SSEEdit v4.0.3g'
+    dirty:
+      - <<: *quickClean
+        crc: 0x913191E9
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        udr: 3
 
   - name: 'Darkend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10423/' ]
@@ -22274,6 +22296,10 @@ plugins:
   # Clockwork Sorting Patches #
   - name: 'ClockworkSorting_Food_CACO.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ '"Additional Clockwork - Superior Sorting" (ClockworkSuperiorSorting.esp)' ]
+        condition: 'active("ClockworkSuperiorSorting.esp")'
     clean:
       - crc: 0x83840648
         util: 'SSEEdit v4.0.3'
@@ -22281,6 +22307,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     inc: [ 'ClockworkSorting_Ing_CCCurios.esp' ]
     msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ '"Additional Clockwork - Superior Sorting" (ClockworkSuperiorSorting.esp)' ]
+        condition: 'active("ClockworkSuperiorSorting.esp")'
       - <<: *alreadyInX
         subs: [ '"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch" (ClockworkSorting_Ing_CCCurios_CACO.esp)' ]
         condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
@@ -22293,6 +22322,9 @@ plugins:
   - name: 'ClockworkSorting_Ing_CCCurios.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ '"Additional Clockwork - Superior Sorting" (ClockworkSuperiorSorting.esp)' ]
+        condition: 'active("ClockworkSuperiorSorting.esp")'
       - <<: *alreadyInX
         subs: [ '"Additional Clockwork - CACO & Rare Curios Ingredient Sorting Patch" (ClockworkSorting_Ing_CCCurios_CACO.esp)' ]
         condition: 'active("ClockworkSorting_Ing_CCCurios_CACO.esp")'
@@ -22304,10 +22336,14 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'ClockworkSorting_Ing_CCCurios_CACO.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ '"Additional Clockwork - Superior Sorting" (ClockworkSuperiorSorting.esp)' ]
+        condition: 'active("ClockworkSuperiorSorting.esp")'
     clean:
       - crc: 0x3297A568
         util: 'SSEEdit v4.0.3'
-  # Clockwork High poly Project Patches #
+  # Clockwork High Poly Project Patches #
   - name: 'ClockworkHPPCoalsFix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
     inc: [ 'ClockworkHPPHayFix.esp' ]
