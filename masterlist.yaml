@@ -15933,9 +15933,10 @@ plugins:
         util: 'SSEEdit v4.0.4'
   - name: 'ClockworkTitleRemover.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47087/' ]
-    clean:
-      - crc: 0xBF1FBE1F
-        util: 'Human Review in SSEEdit v4.0.3' # It doesn't like my deleted records, but I can veryfiy that they don't cause any issues in-game.
+    dirty:
+      - <<: *quickClean
+        crc: 0xBF1FBE1F
+        udr: 3
 
   - name: 'Darkend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10423/' ]
@@ -15943,7 +15944,6 @@ plugins:
       # version: 1.4
       - <<: *quickClean
         crc: 0x616730B8
-        util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 26
 
   - name: 'DwemerWorldGate.esp'
