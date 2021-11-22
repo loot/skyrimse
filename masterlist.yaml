@@ -4251,12 +4251,12 @@ plugins:
 
   - name: 'Water for ENB.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37061/' ]
+  - name: 'Water for ENB( \((Mineral Teal|Shades of Skyrim|Tropical Green|Wavy Rivers)\))?( \(iNeed\))?\.esp'
     group: *lateLoadersGroup
-    tag: [ C.Water ]
     msg:
       - <<: *useOnlyOneX
-        subs: [ 'Water for ENB ESP' ]
-        condition: 'many("Water for ENB.*\.esp")'
+        subs: [ 'Water for ENB Main ESP' ]
+        condition: 'many("Water for ENB( \((Mineral Teal|Shades of Skyrim|Tropical Green|Wavy Rivers)\))?( \(iNeed\))?\.esp")'
   - name: 'Water for ENB( \((Mineral Teal|Tropical Green|Wavy Rivers)\))?\.esp'
     inc:
       - 'iNeed.esp'
@@ -4267,6 +4267,10 @@ plugins:
       - <<: *useVersion
         subs: [ 'Needs' ]
         condition: 'active("(iNeed|RealisticNeedsandDiseases|Keep It Clean|tdgsseWadeInWater)\.esp")'
+  - name: 'Water for ENB - Patch - (Clear Underwater|Lakeview Manor Avant Garden EX|Volcanic Water)\.esp'
+    group: *lateLoadersGroup
+  - name: 'Water for ENB - Patch - FWMF (Marked|Unmarked) (Clean|Dear Diary|Old)(-Dark)?\.esp'
+    group: *worldSettingsGroup
 
   - name: 'Wavy Waters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25880/' ]
