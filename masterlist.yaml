@@ -11850,6 +11850,33 @@ plugins:
       - crc: 0x87290B79
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'Vigil (Enforcer Set|Armor) Integration( Basic| Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21724/'
+        name: 'Vigil Enforcer Armor Set (Creation Club) Integration'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Vigil Enforcer Armor Set (Creation Club) Integration ESP' ]
+        condition: 'many("Vigil (Enforcer Set|Armor) Integration( Basic| Patch)?\.esp")'
+    tag:
+      - NPC.DefaultOutfit
+      - Outfits.Add
+      - Outfits.Remove
+  - name: 'Vigil Enforcer Set Integration.esp'
+    tag: [ Invent.Add ]
+    clean:
+      - crc: 0x1170EF89
+        util: 'SSEEdit v4.0.4'
+  - name: 'Vigil Enforcer Set Integration Basic.esp'
+    tag: [ Invent.Add ]
+    clean:
+      - crc: 0xB1E3AAE6
+        util: 'SSEEdit v4.0.4'
+  - name: 'Vigil Armor Integration Patch.esp'
+    clean:
+      - crc: 0x5C844961
+        util: 'SSEEdit v4.0.4'
+
 ###### Gameplay - NPC Behaviour & Dialogue ######
   - name: 'AI Overhaul.esp'
     url:
