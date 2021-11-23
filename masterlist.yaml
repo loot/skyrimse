@@ -15687,14 +15687,23 @@ plugins:
         util: 'SSEEdit v4.0.0'
 
   - name: 'WZOblivionArtifacts.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10644/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10644/'
+        name: 'Oblivion Artifact Pack'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_OblivionArtifacts_Patch.esp")'
-    clean:
-      # version: 2C
-      - crc: 0xADC2AAFD
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0x5FD5D31C
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 31
+        udr: 3
+      - <<: *quickClean
+        crc: 0xF914361B
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 31
+        udr: 3
 
   - name: 'WZTamrielic Culture.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11418/' ]
