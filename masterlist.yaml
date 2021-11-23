@@ -20042,6 +20042,16 @@ plugins:
       - <<: *includesX
         subs: [ 'The Raven of Raven Rock SE' ]
         condition: 'active("Undriel_Raven_of_RavenRock.esp") or active("Undriel_Raven_of_RavenRock.esl")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Nordic Jewelry (Creation Club)'
+          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
+        condition: 'active("ccedhsse001-norjewel.esl") and not active("Quaint Raven Rock - Nordic Jewelry Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Quaint Raven Rock - USSEP Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("Undriel_QRR_Clockwork_Patch.esp")'
@@ -20051,16 +20061,6 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Quaint Raven Rock Navm Cleaned and Optimized](https://www.nexusmods.com/skyrimspecialedition/mods/58041/)' ]
         condition: 'active("Undriel_QuaintRavenRock.esp") and not file("Undriel_QRR Nav Fixed Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Quaint Raven Rock - USSEP Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Nordic Jewelry (Creation Club)'
-          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
-        condition: 'active("ccedhsse001-norjewel.esl") and not active("Quaint Raven Rock - Nordic Jewelry Patch.esp")'
     clean:
       - crc: 0x0AFFAEEF
         util: 'SSEEdit v4.0.4'
