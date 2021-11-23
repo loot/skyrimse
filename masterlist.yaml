@@ -20028,8 +20028,11 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 48
 
+  - name: 'Undriel_(QuaintRavenRock|QRR_Clockwork_Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20851/'
+        name: 'Quaint Raven Rock'
   - name: 'Undriel_QuaintRavenRock.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20851/' ]
     inc:
       - 'Raven Rock.esp'
       - 'SolstheimLighthouse.esp'
@@ -20039,19 +20042,40 @@ plugins:
       - <<: *includesX
         subs: [ 'The Raven of Raven Rock SE' ]
         condition: 'active("Undriel_Raven_of_RavenRock.esp") or active("Undriel_Raven_of_RavenRock.esl")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Nordic Jewelry (Creation Club)'
+          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
+        condition: 'active("ccedhsse001-norjewel.esl") and not active("Quaint Raven Rock - Nordic Jewelry Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Quaint Raven Rock - USSEP Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("Undriel_QRR_Clockwork_Patch.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Ghosts of the Tribunal (Creation Club)' ]
+        condition: 'active("ccasvsse001-almsivi.esm")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Quaint Raven Rock Navm Cleaned and Optimized](https://www.nexusmods.com/skyrimspecialedition/mods/58041/)' ]
+        condition: 'active("Undriel_QuaintRavenRock.esp") and not file("Undriel_QRR Nav Fixed Patch.esp")'
     clean:
-      # version: 1.6
-      - crc: 0xEAEAF38B
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0x0AFFAEEF
+        util: 'SSEEdit v4.0.4'
   - name: 'Undriel_QRR_Clockwork_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20851/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/58041/'
+        name: 'Quaint Raven Rock Navm Cleaned and Optimized'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Quaint Raven Rock Navm Cleaned and Optimized](https://www.nexusmods.com/skyrimspecialedition/mods/58041/)' ]
+        condition: 'checksum("Undriel_QRR_Clockwork_Patch.esp", 8A98BC76)'
     dirty:
       - <<: *reqManualFix
         crc: 0x8A98BC76
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 1
 
   - name: 'Vaults of Skyrim (1.0 NEXUS|Palaces Patch)\.esp'
