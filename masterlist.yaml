@@ -17652,7 +17652,9 @@ plugins:
         udr: 28
 
   - name: 'CollegeOfWinterholdImmersive.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/'
+        name: 'Immersive College of Winterhold'
     after:
       - 'Book Covers Skyrim.esp'
       - 'CollegeEntry.esp'
@@ -17695,11 +17697,18 @@ plugins:
           - 'Obscure''s College of Winterhold'
           - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
         condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Gray Cowl Returns! (Creation Club)'
+          - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
       - Actors.AIPackages
       - Actors.CombatStyle
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - C.Climate
@@ -17707,6 +17716,7 @@ plugins:
       - C.Light
       - C.Music
       - C.Owner
+      - C.Regions
       - C.Water
       - EnchantmentStats
       - Factions
@@ -17714,16 +17724,16 @@ plugins:
       - Invent.Add
       - Invent.Remove
       - Keywords
-      - Names
+      - NPC.AttackRace
       - NPC.Class
+      - NPC.DefaultOutfit
+      - ObjectBounds
       - Outfits.Add
       - Stats
       - Text
-    dirty:
-      - <<: *quickClean
-        crc: 0x80E5FDAC
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    clean:
+      - crc: 0x01E10725
+        util: 'SSEEdit v4.0.4'
 
   - name: 'COTN - Dawnstar.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
