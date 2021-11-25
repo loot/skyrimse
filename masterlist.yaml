@@ -17668,6 +17668,16 @@ plugins:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Gray Cowl Returns! (Creation Club)'
+          - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp")'
       - *patch3rdParty_SRPC
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -17692,16 +17702,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Obscure''s College of Winterhold'
-          - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
-        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Gray Cowl Returns! (Creation Club)'
-          - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
-        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -17727,7 +17727,6 @@ plugins:
       - NPC.AttackRace
       - NPC.Class
       - NPC.DefaultOutfit
-      - ObjectBounds
       - Outfits.Add
       - Stats
       - Text
