@@ -17652,7 +17652,9 @@ plugins:
         udr: 28
 
   - name: 'CollegeOfWinterholdImmersive.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/'
+        name: 'Immersive College of Winterhold'
     after:
       - 'Book Covers Skyrim.esp'
       - 'CollegeEntry.esp'
@@ -17666,6 +17668,16 @@ plugins:
       - 'TheWulfPanda - Faction Teleport Spells.esp'
       - 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Gray Cowl Returns! (Creation Club)'
+          - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp")'
       - *patch3rdParty_SRPC
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -17690,16 +17702,13 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Obscure''s College of Winterhold'
-          - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
-        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
       - Actors.AIPackages
       - Actors.CombatStyle
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - C.Climate
@@ -17707,6 +17716,7 @@ plugins:
       - C.Light
       - C.Music
       - C.Owner
+      - C.Regions
       - C.Water
       - EnchantmentStats
       - Factions
@@ -17714,16 +17724,15 @@ plugins:
       - Invent.Add
       - Invent.Remove
       - Keywords
-      - Names
+      - NPC.AttackRace
       - NPC.Class
+      - NPC.DefaultOutfit
       - Outfits.Add
       - Stats
       - Text
-    dirty:
-      - <<: *quickClean
-        crc: 0x80E5FDAC
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    clean:
+      - crc: 0x01E10725
+        util: 'SSEEdit v4.0.4'
 
   - name: 'COTN - Dawnstar.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
@@ -18667,73 +18676,6 @@ plugins:
     inc:
       - 'Blues Skyrim.esp'
       - 'ETaC - Complete.esp'
-
-  - name: 'JK''s Temple of Talos.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56971/' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'AI Overhaul'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("AI Overhaul.esp") and not active("JKs Temple of Talos - AI Overhaul patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Armor and Clothing Extension'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("JKs Temple of Talos - ACE Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cheesemod for EVERYONE'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("yumcheese.esp") and not active("JKs Temple of Talos - Cheesemod Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Cloaks of Skyrim'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("Cloaks.esp") and not active("JKs Temple of Talos - Cloaks of Skyrim patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Enhanced Lights and FX'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("EnhancedLightsandFX.esp") and not active("JKs Temple of Talos - ELFX Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Interesting NPCs'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("3DNPC.esp") and not active("JKs Temple of Talos - 3DNPC patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Oblivion Artifact Pack'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("WZOblivionArtifacts.esp") and not active("JKs Temple of Talos - Oblivion Artifacts patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Palaces and Castles Enhanced'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("Palaces Castles Enhanced.esp") and not active("JKs Temple of Talos - PCE patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Snazzy Furniture and Clutter Overhaul (SFCO)'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("JKs Temple of Talos - SFCO patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Solitude and Temple Frescoes 2019'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("SolitudeTempleFrescoes.esp") and not active("JKs Temple of Talos - Solitude and Temple Frescoes Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Elder Scrolls Online Imports'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("ESOimports.esp") and not active("JKs Temple of Talos - ESO Imports Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("JKs Temple of Talos - USSEP patch.esp")'
-    clean:
-      - crc: 0xDF26DC5A
-        util: 'SSEEdit v4.0.4'
 
   - name: 'JK''s The Bannered Mare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845/' ]
