@@ -17948,21 +17948,18 @@ plugins:
             text: 'Dieses Plugin weist auf einen Eintrag **000CB4F3** hin, der von Hearthfires.esm gelöscht wurde. Dies muss manuell vom Mod-Autor korrigiert werden.'
         condition: 'checksum("EEKs Immersive Whiterun.esp", 7CAB09F2) or checksum("EEKs Immersive Whiterun.esp", 16BF915D)'
 
-  - name: 'Enlightened College of Winterhold.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8710/' ]
-    group: *earlyLoadersGroup
-
   - name: 'Enhanced Solitude SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27816/' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_EnhancedSolitude_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    dirty:
-      # version: 1.3
-      - <<: *quickClean
-        crc: 0x9A3E4FB8
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 46
+    clean:
+      - crc: 0xEABAE5E2
+        util: 'SSEEdit v4.0.4'
+
+  - name: 'Enlightened College of Winterhold.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8710/' ]
+    group: *earlyLoadersGroup
 
   - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Kynesgrove|Riverwood|Rorikstead).*\.es(m|p)'
     url:
