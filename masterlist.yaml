@@ -17953,12 +17953,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_EnhancedSolitude_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    dirty:
-      # version: 1.3
-      - <<: *quickClean
-        crc: 0x9A3E4FB8
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 46
+    clean:
+      - crc: 0xEABAE5E2
+        util: 'SSEEdit v4.0.4'
 
   - name: 'Enlightened College of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8710/' ]
