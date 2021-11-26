@@ -14461,15 +14461,62 @@ plugins:
       - crc: 0x7462E171
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: '(DaedricCloaks|WICO_DaedricCloaks_Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9530/'
+        name: 'Daedric Cloaks'
   - name: 'DaedricCloaks.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9530/' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DaedricCloaks_Patch.esp")'
+    tag:
+      - Invent.Add
+      - NPC.DefaultOutfit
+      - Outfits.Add
+    dirty:
+      - <<: *quickClean
+        crc: 0x1DD1D189
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x484551FE
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x49B341C1
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x2C88101F
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x651F2799
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x1814C3B5
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x6752F515
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0xB230B719
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
     clean:
-      # version: 1.5 Crafting Only
       - crc: 0x73423EB3
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4'
+      - crc: 0xAFD93667
+        util: 'SSEEdit v4.0.4'
+      - crc: 0xD4EB3F1E
+        util: 'SSEEdit v4.0.4'
+  - name: 'WICO_DaedricCloaks_Patch.esp'
+    clean:
+      - crc: 0x9B3E1856
+        util: 'SSEEdit v4.0.4'
 
   - name: 'DawnguardArsenal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25094/' ]
