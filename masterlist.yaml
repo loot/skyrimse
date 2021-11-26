@@ -15743,6 +15743,29 @@ plugins:
       - crc: 0x22A8658C
         util: 'SSEEdit v4.0.3'
 
+  - name: 'yumcheese.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36506/'
+        name: 'Cheesemod for EVERYONE'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove the record 00083B04 & remove the XEZN subrecord from RiftenRatwayZone in 00016BCF.' ]
+        condition: 'checksum("yumcheese.esp", 8A36B7F3) or checksum("yumcheese.esp", A2F4FBDB)'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+    dirty:
+      - <<: *quickClean
+        crc: 0x8A36B7F3
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 25
+        udr: 4
+      - <<: *quickClean
+        crc: 0x5FFDF5E1
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 25
+        udr: 4
+
   - name: 'ZIA_Ancient Pack_V4.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
     msg:
