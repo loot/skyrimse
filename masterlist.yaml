@@ -18788,8 +18788,13 @@ plugins:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("JKs Temple of Talos - USSEP patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Window Shadows RT'
+          - '[Window Shadows - Patches for JK''s Interiors](https://www.nexusmods.com/skyrimspecialedition/mods/55309/)'
+        condition: 'active("Shadows.esp") and not active("JKs Temple of Talos - WS Patch.esp")'
     clean:
-      - crc: 0xDF26DC5A
+      - crc: 0x0C6BB768
         util: 'SSEEdit v4.0.4'
 
   - name: 'JK''s The Bannered Mare.esp'
