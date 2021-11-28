@@ -4580,6 +4580,17 @@ plugins:
   - name: 'Embers XD.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37085/' ]
   - name: 'Embers XD.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Campfire - Complete Camping System'
+          - '[Miscellaneous Embers XD Patches](https://www.nexusmods.com/skyrimspecialedition/mods/50883/)'
+        condition: 'active("Campfire.esm") and not active("EmbersXD-Campfire Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'InnCredible'
+          - '[Miscellaneous Embers XD Patches](https://www.nexusmods.com/skyrimspecialedition/mods/50883/)'
+        condition: 'active("InnCredible.esp") and not active("EmbersXD-InnCredible Patch.esp")'
     tag:
       - Graphics
       - ObjectBounds
