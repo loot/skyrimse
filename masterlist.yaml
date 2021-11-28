@@ -19587,6 +19587,33 @@ plugins:
       - crc: 0xEC8CCF97
         util: 'SSEEdit v4.0.3g'
 
+  - name: 'OpulentThievesGuild(Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/931/'
+        name: 'Opulent Thieves Guild'
+  - name: 'OpulentThievesGuild.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[Opulent Thieves Guild Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35261/)'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Opulent Thieves Guild - USSEP Patch.esp")'
+      - <<: *wildEdits
+        subs: [ 'Remove the XEZN subrecord from RiftenRatwayZone in 00016BCF.' ]
+        condition: 'checksum("OpulentThievesGuild.esp", 78CE1FC1) and not active("OpulentThievesGuildPatch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIPackages
+      - C.Light
+      - C.Music
+      - Invent.Add
+      - Invent.Remove
+      - ObjectBounds
+  - name: 'OpulentThievesGuildPatch.esp'
+    clean:
+      - crc: 0xF5C66B8F
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Palaces Castles Enhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1819/' ]
     group: *highPriorityGroup
@@ -20665,17 +20692,6 @@ plugins:
       - 'Winterhold Restored - JKs Skyrim Patch.esp'
       - 'Winterhold Restored - Azura''s Shield Patch.esp'
       - 'Winterhold Restored - Ambriel Patch.esp'
-
-  - name: 'OpulentThievesGuild.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/931/' ]
-    tag:
-      - Actors.ACBS
-      - Actors.AIPackages
-      - C.Light
-      - C.Music
-      - Invent.Add
-      - Invent.Remove
-      - ObjectBounds
 
 ###### Locations - Player Homes ######
   - name: '00MarzRedguardHome.esp'
