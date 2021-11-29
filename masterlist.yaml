@@ -20295,6 +20295,11 @@ plugins:
         condition: 'active("Undriel_Raven_of_RavenRock.esp") or active("Undriel_Raven_of_RavenRock.esl")'
       - <<: *patch3rdParty
         subs:
+          - 'Ghosts of the Tribunal (Creation Club)'
+          - '[Quaint Raven Rock - Ghosts of the Tribunal Patch](https://www.nexusmods.com/skyrimspecialedition/mods/59172/)'
+        condition: 'active("ccasvsse001-almsivi.esm") and not active("Quaint Raven Rock - Ghosts of the Tribunal CC Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Nordic Jewelry (Creation Club)'
           - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
         condition: 'active("ccedhsse001-norjewel.esl") and not active("Quaint Raven Rock - Nordic Jewelry Patch.esp")'
@@ -20306,9 +20311,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("Undriel_QRR_Clockwork_Patch.esp")'
-      - <<: *patchUnavailable
-        subs: [ 'Ghosts of the Tribunal (Creation Club)' ]
-        condition: 'active("ccasvsse001-almsivi.esm")'
       - <<: *patchUpdateAvailable
         subs: [ '[Quaint Raven Rock Navm Cleaned and Optimized](https://www.nexusmods.com/skyrimspecialedition/mods/58041/)' ]
         condition: 'active("Undriel_QuaintRavenRock.esp") and not file("Undriel_QRR Nav Fixed Patch.esp")'
