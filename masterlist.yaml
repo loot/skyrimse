@@ -3865,6 +3865,40 @@ plugins:
       - crc: 0x7904EDBC
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'Vibrant weapons( - (no shock light|Summermyst addon))*\.es(l|p)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40087/'
+        name: 'Vibrant weapons - Fire Frost Shock'
+    req: [ *SKSE ]
+  - name: 'Vibrant weapons.esl'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Alteration Weapon Spells'
+          - '[Alteration Vibrant Weapon Spells](https://www.nexusmods.com/skyrimspecialedition/mods/43318/)'
+        condition: 'active("AlterationWeaponSpells.esp") and not active("Alteration Vibrant Weapon Spells.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Animated Armoury'
+          - '[Vibrant Weapons - Animated Armoury Patch](https://www.nexusmods.com/skyrimspecialedition/mods/58865/)'
+        condition: 'active("NewArmoury.esp") and not active("Vibrant Animated Armoury.esp")'
+      - <<: *patchProvided
+        subs: [ 'Summermyst - Enchantments of Skyrim' ]
+        condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("Vibrant weapons - Summermyst addon.esp")'
+    clean:
+      - crc: 0x62AA4119
+        util: 'SSEEdit v4.0.4'
+  - name: 'Vibrant weapons - no shock light.esp'
+    tag: [ EffectStats ]
+    clean:
+      - crc: 0xF194EABC
+        util: 'SSEEdit v4.0.4'
+  - name: 'Vibrant weapons - Summermyst addon.esp'
+    req: [ 'Summermyst - Enchantments of Skyrim.esp' ]
+    clean:
+      - crc: 0x165C362E
+        util: 'SSEEdit v4.0.4'
+
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/' ]
