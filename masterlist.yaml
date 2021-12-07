@@ -28,6 +28,11 @@ prelude:
       type: warn
       content: 'This file is corrupt and should not be used.'
 
+    - &deleteOrDeactivateX
+      type: error
+      content: 'Delete or deactivate. %1%'
+      subs: [ '' ]
+
     - &deletePlugin
       type: warn
       content: 'When using **%1%**, it''s recommended that you deactivate or delete this ESP file but keep the resources (e.g. meshes, textures) installed with this mod.'
@@ -35,6 +40,18 @@ prelude:
     - &includesX
       type: say
       content: '%1% is included with this mod.'
+
+    - &languageX
+      type: say
+      content: 'Language: %1%'
+
+    - &mainQuestCompleted
+      type: say
+      content: 'Only use this plugin once the main quest of the game has been completed.'
+
+    - &masterReassign
+      type: say
+      content: 'The **%1%** master must be reassigned to **%2%**.'
 
     - &missingRequirementXforY
       type: warn
@@ -48,10 +65,18 @@ prelude:
       type: error
       content: 'This plugin is a modding resource and should not be used in-game.'
 
+    - &moveXFromYToZ
+      type: say
+      content: 'Move %1% from %2% to %3%.'
+
     - &obsolete
       type: warn
       content: 'Obsolete. Update to the latest version. %1%'
       subs: [ '' ]
+
+    - &onlyUseSmashOrBash
+      type: say
+      content: 'Can be used with a %1% but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
 
     - &optional
       type: say
@@ -84,6 +109,10 @@ prelude:
     - &patchUpdateAvailable
       type: say
       content: 'Update Patch available: %1%'
+
+    - &renameFile
+      type: say
+      content: 'Rename this file to %1%.'
 
     - &renameXtoY
       type: warn
@@ -121,6 +150,11 @@ prelude:
       subs: [ '' ]
       condition: 'file("Bashed Patch.*\.esp")'
 
+    - &useINITweakInstead
+      type: say
+      content: 'An INI tweak can be used instead of this plugin. %1%'
+      subs: [ '' ]
+
     - &useInstead
       type: warn
       content: 'Use %1% instead.'
@@ -132,6 +166,10 @@ prelude:
     - &useVersion
       type: error
       content: 'Use %1% version.'
+
+    - &useVersionNon
+      type: error
+      content: 'Use non-%1% version.'
 
     - &versionOldX
       type: say
