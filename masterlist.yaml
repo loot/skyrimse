@@ -3739,6 +3739,25 @@ plugins:
       - crc: 0x796B5447
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'DeadlySpellImpacts( - Two Fire)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/'
+        name: 'Deadly Spell Impacts'
+  - name: 'DeadlySpellImpacts.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'ENBSeries SE'
+          - '[Deadly Spell Impacts Transparency Fix for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/41284/)'
+        condition: 'file("../d3d11.dll") and not active("DeadlySpellImpacts Transparency Fix.esp")'
+    clean:
+      - crc: 0x72B9103C
+        util: 'SSEEdit v4.0.4b'
+  - name: 'DeadlySpellImpacts - Two Fire.esp'
+    clean:
+      - crc: 0x88A3564F
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'FleshFX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27456/' ]
     tag: [ Graphics ]
@@ -4027,12 +4046,6 @@ plugins:
           - '**Celtic_Music_In_Skyrim_SE_Combat.bsa**'
           - '**Celtic Music in Skyrim - Combat.bsa**'
         condition: 'file("Celtic_Music_In_Skyrim_SE_Combat.bsa")'
-
-  - name: 'DeadlySpellImpacts.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/' ]
-    clean:
-      - crc: 0x72B9103C
-        util: 'SSEEdit v4.0.3'
 
   - name: 'Immersive Music( Replacer)?.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16402/' ]
