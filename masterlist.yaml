@@ -12897,6 +12897,56 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
 
+  - name: '(CWRepairs|CW_Enjia|CWR_IC_Patch|CWR_OC_Patch|CWRepairSGW|CWRNimriel)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20668/'
+        name: 'After the Civil War - Siege Damage Repairs'
+  - name: 'CWRepairs.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'YOT - Your Own Thoughts SE - First Person Messages'
+          - '[YOT - Your Own Thoughts SE - First Person Messages](https://www.nexusmods.com/skyrimspecialedition/mods/762/)'
+        condition: 'active("YOT - Your Own Thoughts.esp") and not active("YOT - CWRepairs.esp")'
+      - <<: *patchProvided
+        subs: [ 'Immersive Citizens - AI Overhaul' ]
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("CWR_IC_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and not active("CWR_OC_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'The Second Great War' ]
+        condition: 'active("GreatWarSkyrim.esp") and not active("CWRepairSGW.esp")'
+    clean:
+      - crc: 0x388DAD91
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CW_Enjia.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Open Cities Skyrim' ]
+        condition: 'active("Open Cities Skyrim.esp") and checksum("CW_Enjia.esp", F9313512)'
+    clean:
+      - crc: 0xF9313512
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0xA23F932D
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWR_IC_Patch.esp'
+    clean:
+      - crc: 0x7DCCD930
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWR_OC_Patch.esp'
+    clean:
+      - crc: 0xF8549982
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWRepairSGW.esp'
+    clean:
+      - crc: 0x4A2454C1
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWRNimriel.esp'
+    clean:
+      - crc: 0x949ED59C
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'CYA_ChooseYourOwnArchMage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30887/' ]
     after: [ 'CollegeEntry.esp' ]
