@@ -1785,9 +1785,12 @@ globals:
 
 # Latest Version
   # Skyrim AE Game Runtime
+  - <<: *versionOldX
+    subs: [ '**Skyrim AE**' ]
+    condition: '(product_version("../SkyrimSE.exe", "1.6.317.0", >=) and product_version("../SkyrimSE.exe", "1.6.342.0", <)) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim AE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.6.323.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
+    condition: 'product_version("../SkyrimSE.exe", "1.6.342.0", >=) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm")'
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
