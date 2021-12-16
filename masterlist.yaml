@@ -9052,20 +9052,24 @@ plugins:
     after: [ 'Palaces Castles Enhanced.esp' ]
     msg:
       - <<: *patchProvided
+        subs: [ 'Bittercup' ]
+        condition: 'active("cckrtsse001_altar.esl") and not active("OCS + Bittercup Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Drinking fountains of Skyrim' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Legacy of the Dragonborn v5' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Saints and Seducers' ]
-        condition: 'active("ccbgssse025-advdsgs.esm") and not active("OCS + Saints and Seducers Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
+      - <<: *patchProvided
+        subs: [ 'The Gray Cowl Returns!' ]
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("OCS + Gray Cowl Returns Patch.esp")'
+    tag: [ C.Owner ]
     clean:
-      - crc: 0x4CDD0E4E
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x1D344547
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'Open World Loot.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49681/' ]
