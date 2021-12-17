@@ -13037,6 +13037,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15996/'
         name: 'Project AHO'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST - Realistic Animals & Predators'
+          - '[Project AHO - Skytest Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24997/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("AHO - Skytest Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AHO_Patch.esp")'
     dirty:
