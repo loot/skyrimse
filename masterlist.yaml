@@ -13033,20 +13033,25 @@ plugins:
     # doNotClean
 
   - name: 'Dwarfsphere.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15996/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15996/'
+        name: 'Project AHO'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST - Realistic Animals & Predators'
+          - '[Project AHO - Skytest Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24997/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("AHO - Skytest Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AHO_Patch.esp")'
     dirty:
-      # version: 2.0
       - <<: *quickClean
         crc: 0x3365C7A4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 50
-      # version: 2.0 ESM
       - <<: *quickClean
         crc: 0xFB5886C8
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 50
 
   - name: 'Finding_Derkeethus.esp'
