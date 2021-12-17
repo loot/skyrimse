@@ -18415,6 +18415,9 @@ plugins:
       - '01NobleWarriorCottage2.0.esp'
     msg:
       - <<: *patchIncluded
+        subs: [ 'Ancient Land' ]
+        condition: 'active("AncientLand2.esp") and not active("ETaC - Complete Ancient Land Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
@@ -18526,6 +18529,9 @@ plugins:
       - 'JK''s Riverwood.esp'
       - '01NobleWarriorCottage2.0.esp'
     msg:
+      - <<: *patchIncluded
+        subs: [ 'Ancient Land' ]
+        condition: 'active("AncientLand2.esp") and not active("ETaC - Riverwood Ancient Land Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'CLARALUX' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Riverwood Claralux Patch.esp")'
