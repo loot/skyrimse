@@ -18444,7 +18444,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
-    tag: [ C.Location ]
+    tag:
+      - C.Location
+      - Keywords
     clean:
       - crc: 0x0F87CAB5
         util: 'SSEEdit v4.0.4b'
@@ -18464,7 +18466,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Darkwater Crossing ELFX Patch.esp")'
-    tag: [ C.Location ]
+    tag:
+      - C.Location
+      - Keywords
     clean:
       - crc: 0x72E3F055
         util: 'SSEEdit v4.0.4b'
@@ -18506,6 +18510,7 @@ plugins:
     after:
       - name: 'AncientLand2.esp'
         condition: '(is_master("ETaC - Morthal.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Morthal.esp") and not is_master("AncientLand2.esp"))'
+    tag: [ C.Location ]
     clean:
       - crc: 0xECAA7832
         util: 'SSEEdit v4.0.4b'
