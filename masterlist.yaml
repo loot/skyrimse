@@ -18374,6 +18374,8 @@ plugins:
     after:
       - name: '3DNPC.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("3DNPC.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("3DNPC.esp"))'
+      - name: 'AncientLand2.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("AncientLand2.esp"))'
       - name: 'BetterDocks-MP-DLC-Compatible.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("BetterDocks-MP-DLC-Compatible.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("BetterDocks-MP-DLC-Compatible.esp"))'
       - name: 'CLARALUX SSE.esp'
@@ -18498,11 +18500,16 @@ plugins:
       - crc: 0x885E3F16
         util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Morthal.esp'
+    after:
+      - name: 'AncientLand2.esp'
+        condition: '(is_master("ETaC - Morthal.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Morthal.esp") and not is_master("AncientLand2.esp"))'
     clean:
       - crc: 0xECAA7832
         util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Riverwood.esp'
     after:
+      - name: 'AncientLand2.esp'
+        condition: '(is_master("ETaC - Riverwood.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("AncientLand2.esp"))'
       - name: 'Immersive Citizens - AI Overhaul.esp'
         condition: '(is_master("ETaC - Riverwood.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
       - name: 'LeafRest OnePiece.esp'
