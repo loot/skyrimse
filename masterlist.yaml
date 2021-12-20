@@ -820,9 +820,6 @@ plugins:
         itm: 87
         udr: 8
         nav: 1
-  - name: 'SkyrimVR.esm'
-    group: *dlcGroup
-    after: [ 'Dragonborn.esm' ]
 
 ###### Creation Club ######
   - name: 'cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)'
@@ -1439,7 +1436,7 @@ plugins:
         subs:
           - '1.6.323.0'
           - 'Skyrim Special Edition'
-        condition: 'product_version("../SkyrimSE.exe", "1.6.323.0", <) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.6a", >=)'
+        condition: 'product_version("../SkyrimSE.exe", "1.6.323.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.6a", >=)'
     clean:
       - crc: 0x7B6EB54A
         util: 'SSEEdit v4.0.4'
@@ -1540,7 +1537,7 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ 'Unofficial Skyrim Modder''s Patch' ]
-        condition: 'active("Unofficial Skyrim Modders Patch.esp") or active("Unofficial Skyrim Modders Patch VR.esp")'
+        condition: 'active("Unofficial Skyrim Modders Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("ButterfliesUnchained - CACO Patch.esp") and not active("ButterfliesUnchained(ESL) - CACO Patch.esp")'
@@ -1640,7 +1637,7 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ 'Unofficial Skyrim Modder''s Patch' ]
-        condition: 'active("Unofficial Skyrim Modders Patch.esp") or active("Unofficial Skyrim Modders Patch VR.esp")'
+        condition: 'active("Unofficial Skyrim Modders Patch.esp")'
     clean:
       - crc: 0xBF9B55EB
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -1689,15 +1686,8 @@ plugins:
 
   - name: 'Unofficial Skyrim Modders Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49616/' ]
-    inc: [ 'Unofficial Skyrim Modders Patch VR.esp' ]
-    clean:
-      - crc: 0x02271148
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-  - name: 'Unofficial Skyrim Modders Patch VR.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51236/' ]
-    inc: [ 'Unofficial Skyrim Modders Patch.esp' ]
-  - name: 'Unofficial Skyrim Modders Patch( VR)?\.esp'
     group: *fixesGroup
+    inc: [ 'Unofficial Skyrim Modders Patch VR.esp' ]
     tag:
       - Actors.ACBS
       - C.Acoustic
@@ -1709,6 +1699,9 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
       - SpellStats
+    clean:
+      - crc: 0x02271148
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Vanilla Script MicroOptimizations.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/54061/' ]
@@ -1953,17 +1946,10 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
         condition: 'file("../skse64_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperSE.dll")'
-      - <<: *alsoUseX
-        subs: [ '[ENB Helper VR](https://www.nexusmods.com/skyrimspecialedition/mods/25142/)' ]
-        condition: 'file("../sksevr_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperVR.dll")'
       - <<: *deletePlugin
         type: say
         subs: [ 'ENB Helper SE' ]
         condition: 'file("skse/plugins/ENBHelperSE.dll") and active("Particle Patch for ENB SSE.esp")'
-      - <<: *deletePlugin
-        type: say
-        subs: [ 'ENB Helper VR' ]
-        condition: 'file("skse/plugins/ENBHelperVR.dll") and active("Particle Patch for ENB SSE.esp")'
     tag:
       - C.Climate
       - C.ImageSpace
@@ -2095,15 +2081,13 @@ plugins:
         condition: 'active("ELE_SSE.esp")'
 
   - name: 'SkyUI_SE.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/'
-      - 'https://github.com/Odie/skyui-vr/releases/'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
     group: *fixesGroup
     req: [ *SKSE ]
     msg:
       - <<: *alsoUseX
         subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
-        condition: 'file("SkyUI_SE.bsa") and not file("SkyrimVR.esm") and not file("interface/quest_journal.swf")'
+        condition: 'file("SkyUI_SE.bsa") and not file("interface/quest_journal.swf")'
       - type: warn
         content:
           - lang: en
@@ -2414,23 +2398,14 @@ plugins:
       - <<: *patch3rdParty
         type: warn
         subs:
-          - 'Skyrim VR'
-          - '[XP32 First Person Skeleton CTD Bugfix for VR](https://www.nexusmods.com/skyrimspecialedition/mods/34301/)'
-        condition: 'active("SkyrimVR.esm") and not checksum("meshes/actors/character/_1stperson/skeleton.nif", D3F2B285)'
-      - <<: *patch3rdParty
-        type: warn
-        subs:
           - 'Undeath Remastered'
           - '[Undeath - XPMSSE - Strange Runes - Skeleton Patch](https://www.nexusmods.com/skyrimspecialedition/mods/50694/)'
         condition: 'active("Undeath.esp") and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 8BBCBBDD) and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 6FEF769A)'
       - <<: *requiresMCM_SkyUISE
-        condition: 'file("scripts/XPMSEMCM.pex") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+        condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
       - <<: *requiresResources
         subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skee64.dll** and **skse/plugins/skee64.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using Enhanced Character Edit or MCM Version of **XPMSE.esp**' ]
-        condition: 'checksum("XPMSE.esp", 776BAB77) and not file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skee64.dll") or not file("skse/plugins/skee64.ini"))'
-      - <<: *requiresResources
-        subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skeevr.dll** and **skse/plugins/skeevr.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using Enhanced Character Edit or MCM Version of **XPMSE.esp**' ]
-        condition: 'checksum("XPMSE.esp", 776BAB77) and file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skeevr.dll") or not file("skse/plugins/skeevr.ini"))'
+        condition: 'checksum("XPMSE.esp", 776BAB77) and (not file("scripts/nioverride.pex") or not file("skse/plugins/skee64.dll") or not file("skse/plugins/skee64.ini"))'
 
 ###### AudioVisual - Models & Textures ######
   - name: 'AcolyteMasks\.es(l|p)'
@@ -5148,9 +5123,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
-      - <<: *patchProvided
-        subs: [ 'VR' ]
-        condition: 'file("SkyrimVR.esm") and checksum("Meshes\Actors\Character\FaceGenData\FaceGeom\Skyrim.esm\000135E6.NIF", 1C7AB506)'
     clean:
       - crc: 0x6C01DB11
         util: 'SSEEdit v4.0.3'
@@ -10506,9 +10478,6 @@ plugins:
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *patchProvided
-        subs: [ 'Skyrim VR' ]
-        condition: 'file("../SkyrimVR.exe") and active("Wintersun - VR Patch.esp")'
       - <<: *requiresMCM_SkyUISE
         type: say
     tag:
@@ -10717,7 +10686,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3329/' ]
     msg:
       - <<: *requiresMCM_SkyUISE
-        condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp") and version("Better Hunters.esp", "1.0.1", >=)'
+        condition: 'not active("SkyUI_SE.esp") and version("Better Hunters.esp", "1.0.1", >=)'
       - <<: *wildEdits
         subs: [ 'Remove **00006FBF**, **00009079**, **00009097**, **000093F5**, & **000097D9** from **Better Hunters.esp**.' ]
         condition: 'checksum("Better Hunters.esp", 78B50785) or checksum("Better Hunters.esp", 680D15F3) or checksum("Better Hunters.esp", 34241866) or checksum("Better Hunters.esp", 6043DA88)'
@@ -12271,7 +12240,7 @@ plugins:
       - 'ShoutsCostOneSoul.esp'
     req:
       - <<: *SKSE
-        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and not file("../skse64_loader.exe")'
       - name: 'Unofficial Skyrim Special Edition Patch.esp'
         display: '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
         condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50)'
@@ -12285,7 +12254,7 @@ plugins:
         subs: [ '[Skyrim Unbound Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/27962/)' ]
         condition: 'checksum("Skyrim Unbound.esp", 4C621C50) and active("Unofficial Skyrim Special Edition Patch.esp")'
       - <<: *requiresMCM_SkyUISE
-        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and not active("SkyUI_SE.esp")'
     clean:
       - crc: 0x878AF41D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
