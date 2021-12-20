@@ -238,22 +238,10 @@ common:
   - &ENBSeries
     name: '../d3d11.dll'
     display: '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
-    condition: 'not file("SkyrimVR.esm")'
-
-  - &ENBSeries_VR
-    name: '../d3d11.dll'
-    display: '[ENBSeries VR](http://enbdev.com/download_mod_tesskyrimvr.html)'
-    condition: 'file("SkyrimVR.esm")'
 
   - &EngineFixes
     name: 'SKSE/Plugins/EngineFixes.dll'
     display: '[SSE Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
-    condition: 'not file("SkyrimVR.esm")'
-
-  - &EngineFixes_VR
-    name: 'SKSE/Plugins/EngineFixesVR.dll'
-    display: '[Engine Fixes VR](https://github.com/rollingrock/EngineFixesVR/releases)'
-    condition: 'file("SkyrimVR.esm")'
 
   - &FlatMapMarkers
     name: 'SKSE/Plugins/FlatMapMarkersSSE.dll'
@@ -270,12 +258,6 @@ common:
   - &JContainers
     name: 'SKSE/Plugins/JContainers64.dll'
     display: '[JContainers SE](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
-    condition: 'not file("SkyrimVR.esm")'
-
-  - &JContainers_VR
-    name: 'SKSE/Plugins/JContainersVR.dll'
-    display: '[JContainers VR](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)'
-    condition: 'file("SkyrimVR.esm")'
 
   - &LotD_v5
     name: 'LegacyoftheDragonborn.esm'
@@ -301,27 +283,10 @@ common:
   - &SilentVoice
     name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
     display: '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)'
-    condition: 'not file("SkyrimVR.esm")'
-
-  - &SilentVoice_VR
-    name: 'SKSE/Plugins/Fuz Ro D''oh.dll'
-    display: '[Fuz Ro D-oh - Silent Voice VR (Alpha 3)](https://github.com/shadeMe/Fuz-Ro-D-oh-64/issues/2#issuecomment-633285465)'
-    condition: 'file("SkyrimVR.esm")'
 
   - &SKSE
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](https://skse.silverlock.org))**'
-    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not file("../skse64_loader.exe")'
-
-  - &SKSE_VR
-    name: '../sksevr_loader.exe'
-    display: '**Skyrim Script Extender ([ SKSE VR ](https://skse.silverlock.org))**'
-    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not file("../sksevr_loader.exe")'
-
-  - &VR_PerkExtender
-    name: 'SKSE/Plugins/VRPerkExtender.dll'
-    display: '[VR Perk Extender](https://www.nexusmods.com/skyrimspecialedition/mods/16330/)'
-    condition: 'file("SkyrimVR.esm")'
 
 # Sub-Anchors
   # &alreadyInX
@@ -2164,9 +2129,7 @@ plugins:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/'
       - 'https://github.com/Odie/skyui-vr/releases/'
     group: *fixesGroup
-    req:
-      - *SKSE
-      - *SKSE_VR
+    req: [ *SKSE ]
     msg:
       - <<: *alsoUseX
         subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
@@ -2320,7 +2283,6 @@ plugins:
     req:
       - *SKSE
       - *EngineFixes
-      - *EngineFixes_VR
 
   - name: 'RaceMenu.esp'
     url:
@@ -5768,9 +5730,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/598/'
         name: 'Buxom Wench Yuriana'
-    req:
-      - *SilentVoice
-      - *SilentVoice_VR
+    req: [ *SilentVoice ]
     msg:
       - <<: *requiresX
         subs: [ '[XP32 Maximum Skeleton](https://www.nexusmods.com/skyrimspecialedition/mods/1988/)' ]
@@ -8121,11 +8081,8 @@ plugins:
       - *requiresMCM_VR
     req:
       - <<: *JContainers
-        condition: 'file("scripts/_AP_Main.pex") and not file("SkyrimVR.esm")'
-      - <<: *JContainers_VR
-        condition: 'file("scripts/_AP_Main.pex") and file("SkyrimVR.esm")'
+        condition: 'file("scripts/_AP_Main.pex")'
       - *SKSE
-      - *SKSE_VR
     clean:
       # version: 3.1 - No JContainers
       - crc: 0x5DEC1D9A
@@ -8736,9 +8693,7 @@ plugins:
     after:
       - 'Complete Crafting Overhaul_Remastered.esp'
       - 'iNeed.esp'
-    req:
-      - *SKSE
-      - *SKSE_VR
+    req: [ *SKSE ]
     inc:
       - 'BullseyePerkParalyzeBugFixSE.esp'
       - 'FloraRespawnFix.esp'
@@ -9301,7 +9256,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9542/' ]
     after: [ 'You Hunger.esp' ]
   - name: 'EconomyOverhaulandSpeechcraftImprovements.esp'
-    req: [ *VR_PerkExtender ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
@@ -12595,9 +12549,7 @@ plugins:
       - 'Save the Dark Brotherhood!.esp'
       - 'SaveTheBrotherhood.esp'
       - 'The Brotherhood of Old.esp'
-    req:
-      - *SKSE
-      - *SKSE_VR
+    req: [ *SKSE ]
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Dark Brotherhood for Good Guys - goodbrother.esp' ]
@@ -12689,7 +12641,6 @@ plugins:
       - 'Real Feeding V3.esp'
       - name: 'Tainted_Blood.esp'
         condition: 'not file("Tainted_Blood_Growl_Compatibility_Patch.esp")'
-    req: [ *VR_PerkExtender ]
     tag:
       - EffectStats
       - Graphics
@@ -12799,7 +12750,6 @@ plugins:
       - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
         condition: 'file("Vokriinator( Black)?\.esp")'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
-    req: [ *VR_PerkExtender ]
     inc:
       - 'PerkusMaximus_CombatPlus.esp'
       - 'PerkusMaximus_Mage.esp'
@@ -12890,7 +12840,6 @@ plugins:
     inc:
       - 'Better Vampires.esp'
       - 'Sacrosanct - Vampires of Skyrim.esp'
-    req: [ *VR_PerkExtender ]
     tag:
       - EffectStats
       - Graphics
@@ -12912,7 +12861,6 @@ plugins:
       - 'SanguinairVampirism.esp'
       - 'VampireLordPerksExpanded.esp'
     after: [ 'RaceCompatibilityUSKPOverride.esp' ]
-    req: [ *VR_PerkExtender ]
     tag:
       - EffectStats
       - Graphics
@@ -15340,9 +15288,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18327/'
         name: 'The Republic of Maslea - Chapter one - SSE'
     inc: [ 'MoreBanditCamps.esp' ]
-    req:
-      - *SilentVoice
-      - *SilentVoice_VR
+    req: [ *SilentVoice ]
     dirty:
       - <<: *quickClean
         crc: 0x47A6A2ED
