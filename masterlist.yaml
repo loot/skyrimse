@@ -397,7 +397,7 @@ common:
       - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
 
   # &requiresMCM_X
-  - &requiresMCM_SkyUISE
+  - &requiresMCM
     <<: *requiresMCM_X
     subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)' ]
     condition: 'not active("SkyUI_SE.esp")'
@@ -1926,7 +1926,7 @@ plugins:
       - name: 'SKSE/Plugins/SimpleDualSheath.dll'
         display: 'Simple Dual Sheath'
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *requiresX
         subs: [ '[XP32 Maximum Skeleton](https://www.nexusmods.com/skyrimspecialedition/mods/1988/)' ]
         condition: 'not file("XPMSE.esp")'
@@ -2167,14 +2167,14 @@ plugins:
 
   - name: 'Gamepad++.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req:
       - *JContainers
       - *SKSE
 
   - name: 'iEquip.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req:
       - *JContainers
       - *SKSE
@@ -2233,7 +2233,7 @@ plugins:
 
   - name: 'NQS_NamedQuicksaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req:
       - *SKSE
       - *EngineFixes
@@ -2314,7 +2314,7 @@ plugins:
         condition: 'not checksum("meshes/actors/character/animations/animatedeatingredux/fnis_animatedeatingredux_list.txt", 3317BFC6) and not file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
     tag: [ Sound ]
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *patchIncluded
         type: warn
         subs: [ 'FNIS' ]
@@ -2370,7 +2370,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31667/' ]
     req: [ *NemesisEngine ]
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - type: say
         content:
           - lang: en
@@ -2401,7 +2401,7 @@ plugins:
           - 'Undeath Remastered'
           - '[Undeath - XPMSSE - Strange Runes - Skeleton Patch](https://www.nexusmods.com/skyrimspecialedition/mods/50694/)'
         condition: 'active("Undeath.esp") and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 8BBCBBDD) and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 6FEF769A)'
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         condition: 'file("scripts/XPMSEMCM.pex") and not active("SkyUI_SE.esp")'
       - <<: *requiresResources
         subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skee64.dll** and **skse/plugins/skee64.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using Enhanced Character Edit or MCM Version of **XPMSE.esp**' ]
@@ -2506,7 +2506,7 @@ plugins:
 
   - name: 'JS Emissive Eyes SE - Johnskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/60108/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     tag:
       - Actors.Spells
       - R.AddSpells
@@ -3021,7 +3021,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/' ]
     group: *lateLoadersGroup
     msg:
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         type: say
         condition: 'file("scripts/RealisticWaterTwoMCM.pex") and not active("SkyUI_SE.esp")'
     clean:
@@ -4125,7 +4125,7 @@ plugins:
     inc:
       - 'mintylightningmod.esp'
       - 'MPAB.esp'
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req: [ *SKSE ]
     clean:
       - crc: 0x08DF4CAE
@@ -5647,7 +5647,7 @@ plugins:
 
   - name: 'Toccata.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req: [ *SKSE ]
     clean:
       # version: 1.4.2
@@ -5824,7 +5824,7 @@ plugins:
       - 'KS Dragon Overhaul.esp'
       - 'Serio''s Enhanced Dragons.esp'
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *compatIssuesWithX
         subs: [ 'Elemental Dragons' ]
         condition: 'active("Elemental_Dragons.esp")'
@@ -6241,7 +6241,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ultimate Dragons SE' ]
         condition: 'active("UltimateDragons.esp") and not active("SEDR Ultimate Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
     tag:
       - Actors.ACBS
       - SpellStats
@@ -6306,7 +6306,7 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - type: say
         content:
           - lang: en
@@ -7648,7 +7648,7 @@ plugins:
   - name: 'Dynamic Things Alternative.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49250/' ]
     req: [ *PapyrusExtender ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     clean:
       - crc: 0xB8631D40
         util: 'SSEEdit v4.0.3'
@@ -7728,7 +7728,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/5644877-master-of-disguise-immersive-disguises-for-skyrim-se/page-4#entry50270297' ]
       - *missingRequirementAddrLibforPlugin
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
     tag:
       - Actors.ACBS
       - Actors.DeathItem
@@ -7959,7 +7959,7 @@ plugins:
         type: error
         subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/)' ]
         condition: 'checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         type: error
       - <<: *requiresX
         type: error
@@ -7986,7 +7986,7 @@ plugins:
 
   - name: 'Snotgurg Simple Drop Lit Torches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14490/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req: [ *SKSE ]
     clean:
       - crc: 0x376873D2
@@ -8012,7 +8012,7 @@ plugins:
 
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     req:
       - <<: *JContainers
         condition: 'file("scripts/_AP_Main.pex")'
@@ -8112,7 +8112,7 @@ plugins:
           - 'Wyrmstooth'
           - '[SunHelm Survival - Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/41335/)'
         condition: 'active("Wyrmstooth.esp") and not active("SunHelm_Wyrmstooth.esp")'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
     clean:
       - crc: 0x3EE4D30F
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -8640,7 +8640,7 @@ plugins:
       - ObjectBounds
       - Text
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *compatIssuesWithX
         subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
         condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
@@ -8676,7 +8676,7 @@ plugins:
       - Keywords
       - Text
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CCOR_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchUpdateAvailable
@@ -9049,7 +9049,7 @@ plugins:
   - name: 'Bounty Gold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
     after: [ 'Requiem.esp' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
 
   - name: 'BuildWithGold.esp'
     url:
@@ -9606,7 +9606,7 @@ plugins:
         condition: 'checksum("Poverty.esp", BD49570C)'
       - name: 'WACCF_BashedPatchLvlListFix.esp'
         condition: 'checksum("Poverty.esp", BD49570C)'
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     tag:
       - Delev
       - Invent.Add
@@ -9789,7 +9789,7 @@ plugins:
         condition: 'active("BSHeartland.esm") and not active("Beyond Bruma - Trade and Barter Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TradeBarter_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
@@ -9927,7 +9927,7 @@ plugins:
     inc:
       - 'GIST soul trap.esp'
       - 'UFD Enhanced Soultrap.esp'
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     clean:
       - crc: 0x71F3F1A3
         util: 'SSEEdit v4.0.3'
@@ -10175,7 +10175,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Rustic Soul Gems Unsorted' ]
         condition: 'file("RUSTIC SOULGEMS - Unsorted( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
     clean:
       - crc: 0xC9D0A414
         util: 'SSEEdit v4.0.3g'
@@ -10444,7 +10444,7 @@ plugins:
     inc:
       - 'AcquisitiveSoulGemMultithreaded.esp'
       - 'GIST soul trap.esp'
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
   - name: 'UFD Enhanced Soultrap.esl'
     clean:
       - crc: 0x6631183A
@@ -10478,7 +10478,7 @@ plugins:
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         type: say
     tag:
       - Delev
@@ -10582,7 +10582,7 @@ plugins:
       - *SKSE
     inc: [ 'Convenient Horses.esp' ]
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim - Bruma SE'
@@ -10659,7 +10659,7 @@ plugins:
       - 'EFFDialogue.esp'
       - 'UFO - Ultimate Follower Overhaul.esp'
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *alsoUseX
         subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
@@ -10685,7 +10685,7 @@ plugins:
   - name: 'Better Hunters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3329/' ]
     msg:
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         condition: 'not active("SkyUI_SE.esp") and version("Better Hunters.esp", "1.0.1", >=)'
       - <<: *wildEdits
         subs: [ 'Remove **00006FBF**, **00009079**, **00009097**, **000093F5**, & **000097D9** from **Better Hunters.esp**.' ]
@@ -11915,7 +11915,7 @@ plugins:
   - name: 'Immersive Encounters.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/' ]
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
@@ -12253,7 +12253,7 @@ plugins:
       - <<: *obsolete
         subs: [ '[Skyrim Unbound Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/27962/)' ]
         condition: 'checksum("Skyrim Unbound.esp", 4C621C50) and active("Unofficial Skyrim Special Edition Patch.esp")'
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and not active("SkyUI_SE.esp")'
     clean:
       - crc: 0x878AF41D
@@ -12389,7 +12389,7 @@ plugins:
       - <<: *includesX
         subs: [ '[Sell Unusual Gems - Stones of Barenziah](https://www.nexusmods.com/skyrimspecialedition/mods/17605/)' ]
         condition: 'active("Sell Stones of Barenziah.esp")'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
     clean:
       - crc: 0x4383E5A0
         util: 'SSEEdit v4.0.3'
@@ -12401,7 +12401,7 @@ plugins:
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
         condition: 'file("SKSE/Plugins/FISS/TimingIsEverythingPresets.xml")'
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     clean:
       - crc: 0x06689998
         util: 'SSEEdit v4.0.3'
@@ -12498,7 +12498,7 @@ plugins:
         type: warn
         subs: [ 'Save the Dark Brotherhood' ]
         condition: 'active("SaveTheBrotherhood.esp") and not active("ww_AlternateDBEnding_SaveTheDBPatch.esp")'
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         type: say
     dirty:
       - <<: *quickClean
@@ -12617,7 +12617,7 @@ plugins:
       - name: 'Ordinator - Perks of Skyrim.esp'
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
     msg:
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
       - <<: *useVersion
         type: warn
         subs: [ 'Ordinator - Perks of Skyrim' ]
@@ -13118,7 +13118,7 @@ plugins:
           - 'Remodeled Armor'
           - '[Armor and Clothing Extension - Remodeled Armor Patch](https://www.nexusmods.com/skyrimspecialedition/mods/30220/)'
         condition: 'active("Remodeled Armor - Vanilla Replacer.esp") and not active("ACE_Remodeled_Armor_Patch.esp")'
-      - *requiresMCM_SkyUISE
+      - *requiresMCM
     tag:
       - -Invent.Add
       - -Invent.Remove
@@ -13721,7 +13721,7 @@ plugins:
         util: 'SSEEdit v4.0.2f'
   - name: 'Hothtrooper44_Armor_Ecksstra.esp'
     req: [ 'Hothtrooper44_ArmorCompilation.esp' ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
 
   - name: 'icebladeofthemonarch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13972/' ]
@@ -17269,7 +17269,7 @@ plugins:
   - name: 'FarmhouseChimneys.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8766/' ]
     msg:
-      - <<: *requiresMCM_SkyUISE
+      - <<: *requiresMCM
         condition: 'file("scripts/FarmhouseChimneysMCM.pex") and not active("SkyUI_SE.esp")'
     dirty:
       - <<: *quickClean
@@ -21572,7 +21572,7 @@ plugins:
         display: '[FileAccess Interface for Skyrim SE Scripts (FISSES)](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
         condition: 'not checksum("DBM_RelicNotifications.esp", 663FAB6A) and not version("DBM_RelicNotifications.esp", "5.1.1", >=)'
     tag: [ Text ]
-    msg: [ *requiresMCM_SkyUISE ]
+    msg: [ *requiresMCM ]
     clean:
       - crc: 0x663FAB6A
         util: 'SSEEdit v4.0.3f'
