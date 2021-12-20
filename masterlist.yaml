@@ -7854,20 +7854,24 @@ plugins:
     after: [ 'Palaces Castles Enhanced.esp' ]
     msg:
       - <<: *patchProvided
+        subs: [ 'Bittercup' ]
+        condition: 'active("cckrtsse001_altar.esl") and not active("OCS + Bittercup Patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Drinking fountains of Skyrim' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Legacy of the Dragonborn v5' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Saints and Seducers' ]
-        condition: 'active("ccbgssse025-advdsgs.esm") and not active("OCS + Saints and Seducers Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
+      - <<: *patchProvided
+        subs: [ 'The Gray Cowl Returns!' ]
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("OCS + Gray Cowl Returns Patch.esp")'
+    tag: [ C.Owner ]
     clean:
-      - crc: 0x4CDD0E4E
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x1D344547
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'Open World Loot.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49681/' ]
@@ -8091,6 +8095,24 @@ plugins:
     clean:
       - crc: 0x376873D2
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Spiderbros - Throwing Spider Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/59295/' ]
+    tag:
+      - Actors.ACBS
+      - Actors.Stats
+      - EffectStats
+      - Graphics
+      - Keywords
+      - Names
+      - Sound
+      - SpellStats
+      - Text
+    dirty:
+      - <<: *quickClean
+        crc: 0x2F533FD2
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
@@ -11831,20 +11853,25 @@ plugins:
     # doNotClean
 
   - name: 'Dwarfsphere.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15996/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/15996/'
+        name: 'Project AHO'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'SkyTEST - Realistic Animals & Predators'
+          - '[Project AHO - Skytest Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24997/)'
+        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("AHO - Skytest Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AHO_Patch.esp")'
     dirty:
-      # version: 2.0
       - <<: *quickClean
         crc: 0x3365C7A4
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 50
-      # version: 2.0 ESM
       - <<: *quickClean
         crc: 0xFB5886C8
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 50
 
   - name: 'Finding_Derkeethus.esp'
@@ -17134,21 +17161,23 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8710/' ]
     group: *earlyLoadersGroup
 
-  - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Kynesgrove|Riverwood|Rorikstead).*\.es(m|p)'
+  - name: 'ETaC - (RESOURCES|Complete|Darkwater Crossing|Dawnstar|Kynesgrove|Morthal|Riverwood|Rorikstead).*\.es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13552/'
         name: 'Expanded Towns and Cities (SSE)'
   - name: 'ETaC - RESOURCES.esm'
     group: *fixesGroup
     clean:
-      - crc: 0xA25EF7F0
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-      - crc: 0x7D7B7275
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xAE652BA9
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x84C8B5C9
+        util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Complete.esp'
     after:
       - name: '3DNPC.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("3DNPC.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("3DNPC.esp"))'
+      - name: 'AncientLand2.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("AncientLand2.esp"))'
       - name: 'BetterDocks-MP-DLC-Compatible.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("BetterDocks-MP-DLC-Compatible.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("BetterDocks-MP-DLC-Compatible.esp"))'
       - name: 'CLARALUX SSE.esp'
@@ -17188,6 +17217,9 @@ plugins:
       - '01NobleWarriorCottage2.0.esp'
     msg:
       - <<: *patchIncluded
+        subs: [ 'Ancient Land' ]
+        condition: 'active("AncientLand2.esp") and not active("ETaC - Complete Ancient Land Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("ETaC - Complete CFTO Patch.esp") and not active("JKs Skyrim.esp")'
       - <<: *patchIncluded
@@ -17214,16 +17246,12 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Complete ULRF Patch.esp")'
-    tag: [ C.Location ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xF36D1C39
-        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-      - <<: *quickClean
-        crc: 0x6151A332
-        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
+    tag:
+      - C.Location
+      - Keywords
+    clean:
+      - crc: 0x0F87CAB5
+        util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Darkwater Crossing.esp'
     after:
       - name: 'Finding_Derkeethus.esp'
@@ -17240,12 +17268,12 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Darkwater Crossing ELFX Patch.esp")'
-    tag: [ C.Location ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xB0A9AE57
-        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+    tag:
+      - C.Location
+      - Keywords
+    clean:
+      - crc: 0x72E3F055
+        util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Dawnstar.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17273,15 +17301,25 @@ plugins:
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not file("ETaC - Dawnstar RSC Patch.esp")'
     clean:
-      - crc: 0x9CFFD062
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x83A4FD6E
+        util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Kynesgrove.esp'
     tag: [ C.Location ]
     clean:
-      - crc: 0x8C8B3AC0
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x885E3F16
+        util: 'SSEEdit v4.0.4b'
+  - name: 'ETaC - Morthal.esp'
+    after:
+      - name: 'AncientLand2.esp'
+        condition: '(is_master("ETaC - Morthal.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Morthal.esp") and not is_master("AncientLand2.esp"))'
+    tag: [ C.Location ]
+    clean:
+      - crc: 0xECAA7832
+        util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Riverwood.esp'
     after:
+      - name: 'AncientLand2.esp'
+        condition: '(is_master("ETaC - Riverwood.esp") and is_master("AncientLand2.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("AncientLand2.esp"))'
       - name: 'Immersive Citizens - AI Overhaul.esp'
         condition: '(is_master("ETaC - Riverwood.esp") and is_master("Immersive Citizens - AI Overhaul.esp")) or (not is_master("ETaC - Riverwood.esp") and not is_master("Immersive Citizens - AI Overhaul.esp"))'
       - name: 'LeafRest OnePiece.esp'
@@ -17298,6 +17336,9 @@ plugins:
       - 'JK''s Riverwood.esp'
       - '01NobleWarriorCottage2.0.esp'
     msg:
+      - <<: *patchIncluded
+        subs: [ 'Ancient Land' ]
+        condition: 'active("AncientLand2.esp") and not active("ETaC - Riverwood Ancient Land Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'CLARALUX' ]
         condition: 'active("CLARALUX SSE.esp") and not active("ETaC - Riverwood Claralux Patch.esp")'
@@ -17317,11 +17358,9 @@ plugins:
         subs: [ 'Unique Locations - Riverwood Forest' ]
         condition: 'active("UniqueLocationsRiverwoodForest.esp") and not active("ETaC - Riverwood ULRF Patch.esp")'
     tag: [ C.Location ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x869AB0E7
-        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+    clean:
+      - crc: 0x16847A98
+        util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Rorikstead.esp'
     after:
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17330,8 +17369,8 @@ plugins:
         condition: '(is_master("ETaC - Rorikstead.esp") and is_master("Rorikstead Wagons.esp")) or (not is_master("ETaC - Rorikstead.esp") and not is_master("Rorikstead Wagons.esp"))'
     tag: [ C.Location ]
     clean:
-      - crc: 0x222303C7
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x6DDCF952
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'Falkreath.esp'
     url:
