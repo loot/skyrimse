@@ -400,11 +400,7 @@ common:
   - &requiresMCM_SkyUISE
     <<: *requiresMCM_X
     subs: [ '[SkyUI SE](https://www.nexusmods.com/skyrimspecialedition/mods/12604/)' ]
-    condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-  - &requiresMCM_VR
-    <<: *requiresMCM_X
-    subs: [ '[SkyUI VR](https://github.com/Odie/skyui-vr/releases/)' ]
-    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+    condition: 'not active("SkyUI_SE.esp")'
 
   # &requiresX
   - &requiresBashOrSmash
@@ -423,11 +419,6 @@ common:
     subs:
       - '**[Skyrim Script Extender](https://skse.silverlock.org)**'
       - '**Skyrim SE**'
-  - &versionSkseIncSVR
-    <<: *versionXIncY
-    subs:
-      - '**[Skyrim VR Script Extender](https://skse.silverlock.org)**'
-      - '**Skyrim VR**'
 
 bash_tags:
   - 'Actors.ACBS'
@@ -619,13 +610,6 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
-  # SKSE VR - Game Runtime
-  - <<: *versionSkseIncSVR
-    condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
-  - <<: *versionSkseIncSVR
-    condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
-  - <<: *versionSkseIncSVR
-    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
   # ENBSeries
   - <<: *versionXIncY
     subs:
@@ -2417,7 +2401,6 @@ plugins:
     req: [ *NemesisEngine ]
     msg:
       - *requiresMCM_SkyUISE
-      - *requiresMCM_VR
       - type: say
         content:
           - lang: en
@@ -2456,8 +2439,6 @@ plugins:
         condition: 'active("Undeath.esp") and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 8BBCBBDD) and not checksum("meshes/actors/dragonpriest/character assets/skeleton.nif", 6FEF769A)'
       - <<: *requiresMCM_SkyUISE
         condition: 'file("scripts/XPMSEMCM.pex") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-      - <<: *requiresMCM_VR
-        condition: 'file("scripts/XPMSEMCM.pex") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
       - <<: *requiresResources
         subs: [ '[RaceMenu Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/19080/). Only install **skse/plugins/skee64.dll** and **skse/plugins/skee64.ini**, and **scripts/nioverride.pex** from **RaceMenu.BSA** when using Enhanced Character Edit or MCM Version of **XPMSE.esp**' ]
         condition: 'checksum("XPMSE.esp", 776BAB77) and not file("SkyrimVR.esm") and (not file("scripts/nioverride.pex") or not file("skse/plugins/skee64.dll") or not file("skse/plugins/skee64.ini"))'
@@ -3081,10 +3062,7 @@ plugins:
     msg:
       - <<: *requiresMCM_SkyUISE
         type: say
-        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
-      - <<: *requiresMCM_VR
-        type: say
-        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp")'
+        condition: 'file("scripts/RealisticWaterTwoMCM.pex") and not active("SkyUI_SE.esp")'
     clean:
       - crc: 0x5799725E
         util: 'SSEEdit v4.0.3'
@@ -8076,9 +8054,7 @@ plugins:
 
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
-    msg:
-      - *requiresMCM_SkyUISE
-      - *requiresMCM_VR
+    msg: [ *requiresMCM_SkyUISE ]
     req:
       - <<: *JContainers
         condition: 'file("scripts/_AP_Main.pex")'
@@ -8179,7 +8155,6 @@ plugins:
           - '[SunHelm Survival - Compatibility Patches](https://www.nexusmods.com/skyrimspecialedition/mods/41335/)'
         condition: 'active("Wyrmstooth.esp") and not active("SunHelm_Wyrmstooth.esp")'
       - *requiresMCM_SkyUISE
-      - *requiresMCM_VR
     clean:
       - crc: 0x3EE4D30F
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -8708,7 +8683,6 @@ plugins:
       - Text
     msg:
       - *requiresMCM_SkyUISE
-      - *requiresMCM_VR
       - <<: *compatIssuesWithX
         subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
         condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
@@ -9117,9 +9091,7 @@ plugins:
   - name: 'Bounty Gold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
     after: [ 'Requiem.esp' ]
-    msg:
-      - *requiresMCM_SkyUISE
-      - *requiresMCM_VR
+    msg: [ *requiresMCM_SkyUISE ]
 
   - name: 'BuildWithGold.esp'
     url:
@@ -10553,8 +10525,6 @@ plugins:
         condition: 'file("../SkyrimVR.exe") and active("Wintersun - VR Patch.esp")'
       - <<: *requiresMCM_SkyUISE
         type: say
-      - <<: *requiresMCM_VR
-        type: say
     tag:
       - Delev
       - EffectStats
@@ -10762,8 +10732,6 @@ plugins:
     msg:
       - <<: *requiresMCM_SkyUISE
         condition: 'file("../SkyrimSE.exe") and not file("SkyrimVR.esm") and not active("SkyUI_SE.esp") and version("Better Hunters.esp", "1.0.1", >=)'
-      - <<: *requiresMCM_VR
-        condition: 'file("../SkyrimVR.exe") and file("SkyrimVR.esm") and not active("SkyUI_SE.esp") and version("Better Hunters.esp", "1.0.1", >=)'
       - <<: *wildEdits
         subs: [ 'Remove **00006FBF**, **00009079**, **00009097**, **000093F5**, & **000097D9** from **Better Hunters.esp**.' ]
         condition: 'checksum("Better Hunters.esp", 78B50785) or checksum("Better Hunters.esp", 680D15F3) or checksum("Better Hunters.esp", 34241866) or checksum("Better Hunters.esp", 6043DA88)'
@@ -12576,8 +12544,6 @@ plugins:
         subs: [ 'Save the Dark Brotherhood' ]
         condition: 'active("SaveTheBrotherhood.esp") and not active("ww_AlternateDBEnding_SaveTheDBPatch.esp")'
       - <<: *requiresMCM_SkyUISE
-        type: say
-      - <<: *requiresMCM_VR
         type: say
     dirty:
       - <<: *quickClean
