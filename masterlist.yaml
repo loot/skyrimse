@@ -2649,7 +2649,7 @@ plugins:
       - crc: 0x1B895243
         util: 'SSEEdit v4.0.4b'
 
-  - name: 'Vibrant weapons.*\.es(l|p)'
+  - name: '(Vibrant weapons.*|VW - Enchanting Adjustments patch)\.es(l|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40087/'
         name: 'Vibrant weapons - Fire Frost Shock'
@@ -2667,21 +2667,28 @@ plugins:
           - '[Vibrant Weapons - Animated Armoury Patch](https://www.nexusmods.com/skyrimspecialedition/mods/58865/)'
         condition: 'active("NewArmoury.esp") and not active("Vibrant Animated Armoury.esp")'
       - <<: *patchProvided
+        subs: [ 'Enchanting Adjustments and Price-Charge Bug Fix' ]
+        condition: 'active("EnchantingAdjustments.esp") and not active("VW - Enchanting Adjustments patch.esp")'
+      - <<: *patchProvided
         subs: [ 'Summermyst - Enchantments of Skyrim' ]
         condition: 'active("Summermyst - Enchantments of Skyrim.esp") and not active("Vibrant weapons - Summermyst addon.esp")'
     clean:
       - crc: 0x62AA4119
-        util: 'SSEEdit v4.0.4'
+        util: 'SSEEdit v4.0.4b'
   - name: 'Vibrant weapons - no shock light.esp'
     tag: [ EffectStats ]
     clean:
       - crc: 0xF194EABC
-        util: 'SSEEdit v4.0.4'
+        util: 'SSEEdit v4.0.4b'
   - name: 'Vibrant weapons - Summermyst addon.esp'
     req: [ 'Summermyst - Enchantments of Skyrim.esp' ]
     clean:
       - crc: 0x165C362E
-        util: 'SSEEdit v4.0.4'
+        util: 'SSEEdit v4.0.4b'
+  - name: 'VW - Enchanting Adjustments patch.esp'
+    clean:
+      - crc: 0x52B0DD20
+        util: 'SSEEdit v4.0.4b'
 
 ###### AudioVisual - Sound & Music ######
   - name: 'Audio Overhaul Skyrim.*\.esp'
