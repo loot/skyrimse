@@ -8530,6 +8530,18 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1763/' ]
     after: [ 'UltimateCombat.esp' ]
 
+  - name: 'Pause after loading.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/60582/'
+        name: 'Pause Combat After Loading'
+    req:
+      - *SKSE
+      - name: 'SKSE/Plugins/ConsoleUtilSSE.dll'
+        display: '[ConsoleUtilSSE](https://www.nexusmods.com/skyrimspecialedition/mods/24858/)'
+    clean:
+      - crc: 0xE5389472
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Pick Best Arrow.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25410/' ]
     msg: [ *alreadyInOrFixedByScrambledBugs ]
