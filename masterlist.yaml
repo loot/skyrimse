@@ -22679,7 +22679,9 @@ plugins:
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Immersive Citizens - OCS patch.esp'
-    req: [ *SKSE ]
+    req:
+      - <<: *SKSE
+        condition: 'version("MarkekrausSentientChairsOfSkyrim.esp", "4.1.0", >=)'
     clean:
       - crc: 0xBD12E363
         util: 'SSEEdit v4.0.4'
