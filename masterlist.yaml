@@ -16785,7 +16785,7 @@ plugins:
         subs:
           - 'The Gray Cowl Returns! (Creation Club)'
           - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
-        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp")'
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp") and not active("UltimateCollege.esp")'
       - *patch3rdParty_SRPC
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
@@ -16809,7 +16809,7 @@ plugins:
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("CWIOrdinatorPatchSSE.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
-        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp")'
+        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp") and not active("UltimateCollege.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -18348,7 +18348,7 @@ plugins:
         condition: 'active("Atlas Map Markers.esp") and not active("OCW_AMM-SE_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Audio Overhaul for Skyrim' ]
-        condition: 'active("Audio Overhaul Skyrim.esp") and not active("OCW_AO_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("OCW_AO_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Better Dynamic Snow' ]
         condition: 'active("Better Dynamic Snow.esp") and not active("OCW_BDS_FEPatch.esp")'
@@ -18375,7 +18375,7 @@ plugins:
         condition: 'active("CollegeModifications.esp") and not active("OCW_CM_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Dynamic Firewood Stacks' ]
-        condition: 'active("Dynamic Firewood Stacks.esp") and not active("OCW_DFS_FEPatch.esp")'
+        condition: 'active("Dynamic Firewood Stacks.esp") and not active("OCW_DFS_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lighting for ENB (ELE)' ]
         condition: 'active("ELE_SSE.esp") and not active("OCW_(ELE|ELEA)_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -22437,11 +22437,17 @@ plugins:
           - '[what777''s Cheesemod for Everyone Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45824/)'
         condition: 'active("yumcheese.esp") and not active("yumcheese - UCOW.esp")'
       - <<: *patchIncluded
+        subs: [ 'Additional Hearthfire Dolls' ]
+        condition: 'active("AdditionalHearthfireDolls.esp") and not active("UltimateCollege_AddlHFDolls_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Aemer''s Refuge' ]
         condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("UltimateCollege_AemersRefuge_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'AI Overhaul SSE' ]
         condition: 'active("AI Overhaul.esp") and not active("UltimateCollege_AIOv_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Amulets of Skyrim' ]
+        condition: 'active("SL01AmuletsSkyrim.esp") and not active("UltimateCollege_Amulets_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Animated Armoury' ]
         condition: 'active("NewArmoury.esp") and not active("UltimateCollege_NewArmoury_Patch.esp")'
@@ -22463,6 +22469,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Atlas Map Markers SE with MCM' ]
         condition: 'active("Atlas Map Markers.esp") and not active("UltimateCollege_AtlasMapMarkersSE_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul for Skyrim SE' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("UltimateCollege_AudioOv_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Bijin Warmaidens SE' ]
         condition: 'active("Bijin Warmaidens.esp") and not active("UltimateCollege_BijinWar_Patch.esp")'
@@ -22488,6 +22497,9 @@ plugins:
         subs: [ 'Diversity - A Character Overhaul' ]
         condition: 'active("Diversity - A Character Overhaul.esp") and (not active("UltimateCollege_Diversity_Patch.esp") or not active("UltimateCollege_Diversity_CRF_VanillaHair.esp"))'
       - <<: *patchIncluded
+        subs: [ 'Dynamic Firewood Stacks' ]
+        condition: 'active("Dynamic Firewood Stacks.esp") and not active("UltimateCollege_DynFwS_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("UltimateCollege_ELFX_Patch.esp")'
       - <<: *patchIncluded
@@ -22496,6 +22508,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX Exteriors' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("UltimateCollege_ELFXExt_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Weapon Integration' ]
+        condition: 'active("ImmersiveIntegrationSE15.esp") and not active("UltimateCollege_IWIntegration_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Jampion NPCs' ]
         condition: 'active("Jampion NPCs.esp") and not active("UltimateCollege_Jampion_Patch.esp")'
@@ -22536,6 +22551,12 @@ plugins:
         subs: [ 'Not So Fast - Mage Guild' ]
         condition: 'active("NotSoFast-MageGuild.esp") and not active("UltimateCollege_NSFMG_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Opulent Outfits AIO' ]
+        condition: 'active("OpulentOutfits_2017-SSE AIO.esp") and not active("UltimateCollege_OpOutfitsAIO_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Opulent Outfits Replacer' ]
+        condition: 'active("OpulentOutfits_2017-SSE Replacer.esp") and not active("UltimateCollege_OpOutfitsReplacer_Patch.esp")'
+      - <<: *patchIncluded
         subs: [ 'The Ordinary Women' ]
         condition: 'active("The Ordinary Women.esp") and not active("UltimateCollege_TOW_Patch.esp")'
       - <<: *patchIncluded
@@ -22560,6 +22581,9 @@ plugins:
         subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
         condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("UltimateCollege_SFCO_Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Solitude and Temple Frescoes' ]
+        condition: 'active("SolitudeTempleFrescoes.esp") and (not active("UltimateCollege_Frescoes_Patch.esp") or not active("UltimateCollege_Frescoes19ESL_Patch.esp") or not active("UltimateCollege_Frescoes19NLESL_Patch.esp"))'
+      - <<: *patchIncluded
         subs: [ 'The Tools of Kagrenac' ]
         condition: 'active("Tools of Kagrenac.esp") and not active("UltimateCollege_ToK_Patch.esp")'
       - <<: *patchIncluded
@@ -22571,6 +22595,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("UltimateCollege_WICO_Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Your Choices Matter - A Dark Brotherhood Expansion' ]
+        condition: 'active("ww_AlternateDBEnding.esp") and not active("UltimateCollege_YCMDarkBrotherhood_Patch.esp")'
     clean:
       - crc: 0x6BD324B9
         util: 'SSEEdit v4.0.3'
