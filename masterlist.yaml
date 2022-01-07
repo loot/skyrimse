@@ -316,7 +316,7 @@ common:
   - &missingRequirementAddrLibforPlugin
     <<: *missingRequirementXforPlugin
     subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
-    condition: '(not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-317-0.bin") and product_version("../SkyrimSE.exe", "1.6.317.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-318-0.bin") and product_version("../SkyrimSE.exe", "1.6.318.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-323-0.bin") and product_version("../SkyrimSE.exe", "1.6.323.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-342-0.bin") and product_version("../SkyrimSE.exe", "1.6.342.0", ==))'
+    condition: '(not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-317-0.bin") and product_version("../SkyrimSE.exe", "1.6.317.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-318-0.bin") and product_version("../SkyrimSE.exe", "1.6.318.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-323-0.bin") and product_version("../SkyrimSE.exe", "1.6.323.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-342-0.bin") and product_version("../SkyrimSE.exe", "1.6.342.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-353-0.bin") and product_version("../SkyrimSE.exe", "1.6.353.0", ==))'
 
   # &patch3rdParty
   - &patch3rdParty_AOOPH
@@ -545,10 +545,10 @@ globals:
   # Skyrim AE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim AE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.6.317.0", >=) and product_version("../SkyrimSE.exe", "1.6.342.0", <)'
+    condition: 'product_version("../SkyrimSE.exe", "1.6.317.0", >=) and product_version("../SkyrimSE.exe", "1.6.353.0", <)'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim AE**' ]
-    condition: 'product_version("../SkyrimSE.exe", "1.6.342.0", >=)'
+    condition: 'product_version("../SkyrimSE.exe", "1.6.353.0", >=)'
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
@@ -558,18 +558,18 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.5.97.0", ==)'
   # SKSE AE
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE AE Preliminary](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.1.4", <) and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
+    subs: [ '**Script Extender ([SKSE AE](https://skse.silverlock.org))**' ]
+    condition: 'version("../skse64_loader.exe", "0.2.1.5", <) and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE AE Preliminary](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.1.4", >=) and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
+    subs: [ '**Script Extender ([SKSE AE](https://skse.silverlock.org))**' ]
+    condition: 'version("../skse64_loader.exe", "0.2.1.5", >=) and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
   # SKSE SE
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.20", <) and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse64_loader.exe", "0.2.0.20", >=) and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
+    condition: 'version("../skse64_loader.exe", "0.2.0.20", ==) and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
 
 # Version Compatibility
   # SKSE AE - Game Runtime
@@ -581,6 +581,8 @@ globals:
     condition: 'product_version("../SkyrimSE.exe", "1.6.323.0", ==) and version("../skse64_loader.exe", "0.2.1.3", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSAE
     condition: 'product_version("../SkyrimSE.exe", "1.6.342.0", ==) and version("../skse64_loader.exe", "0.2.1.4", <) and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSAE
+    condition: 'product_version("../SkyrimSE.exe", "1.6.353.0", ==) and version("../skse64_loader.exe", "0.2.1.5", <) and file("../skse64_loader.exe")'
   # SKSE SE - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../skse(vr)?_loader.exe") and not file("../skse64_loader.exe")'
