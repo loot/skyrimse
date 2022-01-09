@@ -494,27 +494,22 @@ bash_tags:
 
 globals:
 # Latest LOOT Thread
-  - &lootThread
-    <<: *latestLOOTThread
-    subs: [ 'https://loot.github.io/latest-thread/' ]
+  - *latestLOOTThread
 
 # Creation Club Plugins
-  - &creationClubSSE
-    <<: *creationClubPlugins
+  - <<: *creationClubPlugins
     condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
 
 # SKSE
   # Missing
-  - &skseMissing
-    <<: *scriptExtenderMissing
+  - <<: *scriptExtenderMissing
     subs:
       - 'SKSE'
       - '[SKSE](https://skse.silverlock.org)'
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
 
   # Required Scripts
-  - &skseRequiredScripts
-    <<: *scriptExtenderRequiredScripts
+  - <<: *scriptExtenderRequiredScripts
     subs:
       - 'Skyrim Script Extender'
       - '[SKSE](https://skse.silverlock.org)'
