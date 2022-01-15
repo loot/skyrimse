@@ -17098,6 +17098,8 @@ plugins:
         condition: '(is_master("ETaC - Complete.esp") and is_master("BetterDocks-MP-DLC-Compatible.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("BetterDocks-MP-DLC-Compatible.esp"))'
       - name: 'CLARALUX SSE.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("CLARALUX SSE.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("CLARALUX SSE.esp"))'
+      - name: 'Cutting Room Floor.esp'
+        condition: '(is_master("ETaC - Complete.esp") and is_master("Cutting Room Floor.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Cutting Room Floor.esp"))'
       - name: 'Finding_Derkeethus.esp'
         condition: '(is_master("ETaC - Complete.esp") and is_master("Finding_Derkeethus.esp")) or (not is_master("ETaC - Complete.esp") and not is_master("Finding_Derkeethus.esp"))'
       - name: 'Immersive Citizens - AI Overhaul.esp'
@@ -17220,6 +17222,9 @@ plugins:
       - crc: 0x83A4FD6E
         util: 'SSEEdit v4.0.4b'
   - name: 'ETaC - Kynesgrove.esp'
+    after:
+      - name: 'Cutting Room Floor.esp'
+        condition: '(is_master("ETaC - Kynesgrove.esp") and is_master("Cutting Room Floor.esp")) or (not is_master("ETaC - Kynesgrove.esp") and not is_master("Cutting Room Floor.esp"))'
     tag: [ C.Location ]
     clean:
       - crc: 0x885E3F16
