@@ -10771,12 +10771,11 @@ plugins:
 
   - name: 'Spell Research - Even More Patches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61177/' ]
-    req: [ 'SpellResearch.esp' ]
     msg:
       - <<: *requiresX
         type: error
         subs: [ '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)' ]
-        condition: 'file("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+        condition: 'not file("SpellResearch.esp") or (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
 
   - name: 'spinesimplespells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/53274/' ]
