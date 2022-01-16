@@ -383,8 +383,8 @@ common:
     <<: *patch3rdParty
     subs:
       - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
-      - '[Spell Research - Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/28816/)'
-    condition: 'active("SpellResearch.esp") and not active("Spell Research - Patch Compendium.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
+      - '[Spell Research - Patch Compendium Redux](https://www.nexusmods.com/skyrimspecialedition/mods/61177/)'
+    condition: 'active("SpellResearch.esp") and not active("Spell Research - Even More Patches.esp") and not checksum("SpellResearch.esp", 755423D7) and not checksum("SpellResearch.esp", 63661836) and not checksum("SpellResearch.esp", 860EFC3D)'
   - &patch3rdParty_STIP
     <<: *patch3rdParty
     subs:
@@ -941,11 +941,13 @@ plugins:
         util: 'SSEEdit v4.0.4'
   # Arcane Accessories
   - name: 'ccbgssse014-spellpack01.esl'
+    msg: [ *patch3rdParty_SRPC ]
     clean:
       - crc: 0x44769216
         util: 'SSEEdit v4.0.4'
   # Arcane Archer Pack
   - name: 'ccbgssse002-exoticarrows.esl'
+    msg: [ *patch3rdParty_SRPC ]
     clean:
       - crc: 0x7B49228E
         util: 'SSEEdit v4.0.4'
@@ -958,6 +960,7 @@ plugins:
         itm: 9
   # Bittercup
   - name: 'cckrtsse001_altar.esl'
+    msg: [ *patch3rdParty_SRPC ]
     tag:
       - C.Acoustic
       - C.Encounter
@@ -1224,6 +1227,7 @@ plugins:
         util: 'SSEEdit v4.0.4'
   # Necromantic Grimoire
   - name: 'ccvsvsse003-necroarts.esl'
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       - <<: *quickClean
         crc: 0xFFDD5881
@@ -1257,6 +1261,7 @@ plugins:
         udr: 8
   # Plague of the Dead
   - name: 'ccbgssse003-zombies.esl'
+    msg: [ *patch3rdParty_SRPC ]
     tag:
       - Delev
       - Relev
@@ -1286,6 +1291,7 @@ plugins:
         itm: 2
   # Saints & Seducers
   - name: 'ccBGSSSE025-AdvDSGS.esm'
+    msg: [ *patch3rdParty_SRPC ]
     tag:
       - C.Encounter
       - C.Location
@@ -1367,6 +1373,7 @@ plugins:
         itm: 1
   # The Cause
   - name: 'ccbgssse067-daedinv.esm'
+    msg: [ *patch3rdParty_SRPC ]
     tag:
       - C.Acoustic
       - C.Climate
@@ -5350,6 +5357,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
+      - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("3DNPC - AI Overhaul Patch.esp")'
@@ -5407,6 +5415,7 @@ plugins:
 
   - name: 'AnnaNPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1163/' ]
+    msg: [ *patch3rdParty_SRPC ]
     tag:
       - C.Acoustic
       - C.Location
@@ -5597,6 +5606,7 @@ plugins:
 
   - name: 'Recorder Follower Base.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4718/' ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 3.0
       - <<: *quickClean
@@ -6017,6 +6027,10 @@ plugins:
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 22
 
+  - name: 'Heritage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30017/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'High Level Enemies( - Dawnguard| - Dragonborn)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3231/' ]
     tag: [ Relev ]
@@ -6156,6 +6170,9 @@ plugins:
         crc: 0x0A2FE896
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 14
+  - name: 'mihailhighfantasypack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56523/' ]
+    msg: [ *patch3rdParty_SRPC ]
   - name: 'mihailicegolem.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26185/' ]
     dirty:
@@ -6184,6 +6201,10 @@ plugins:
         crc: 0xCDDFC931
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 2
+  - name: 'mihailundeadpackdef.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56567/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
 
   - name: 'MoreBanditCamps.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1994/' ]
@@ -6462,6 +6483,7 @@ plugins:
           - 'No Animals Report Crimes (NARC)'
           - '[Zim''s Improved Dremora -- NARC Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45397/)'
         condition: 'active("NARC SE for Vanilla.esp") and not active("Zim''s Dremora Improvements -- NARC patch.esp")'
+      - *patch3rdParty_SRPC
     tag:
       - Invent.Add
       - Invent.Remove
@@ -7787,6 +7809,10 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
 
+  - name: 'Marc.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30404/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Master of Disguise - Special Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9959/' ]
     req: [ *SKSE ]
@@ -8576,6 +8602,7 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/21/' ]
+      - *patch3rdParty_SRPC
     clean:
       # version: 7.00SSE
       - crc: 0xE6A87461
@@ -9962,6 +9989,18 @@ plugins:
       - crc: 0x71F3F1A3
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Advanced Alteration - Telekinetics.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29605/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'AetherialTomes.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47187/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'AllMakersLexicon.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21634/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'AlterationWards.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28818/' ]
     msg: [ *patch3rdParty_SRPC ]
@@ -10039,6 +10078,18 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18578/' ]
     msg: [ *patch3rdParty_SRPC ]
 
+  - name: 'Apocalypse - Waterstride Spell Addon.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1090/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'ArachnomancerSpidersSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39839/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Arcane Miscellanea.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46792/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Arcanum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23488/' ]
     msg:
@@ -10062,8 +10113,17 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 15
 
+  - name: 'Arkay''s Rites - Clean up Corpse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51169/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'ArrowTransmutation.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2691/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Astral.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37992/' ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       - <<: *quickClean
         crc: 0x3A8D55BA
@@ -10115,9 +10175,81 @@ plugins:
       - crc: 0x397B1E26
         util: 'SSEEdit v4.0.3'
 
+  - name: 'BlinkSpell.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21606/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'BloodSpellsPack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15652/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Blue Fire Magic - (Fire|Frost)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/452/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'BoundArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11268/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'BoundArrows.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/938/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Bound Quiver Fire.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16762/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Bound Tools Spell.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3653/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Chronomancy Spell Pack.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/48375/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Clairvoyance.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20197/' ]
     after: [ 'Requiem.esp' ]
+
+  - name: 'ClassicSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12199/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'ColdharbourDaedra.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19484/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Colorful Bound Weapons.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37268/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Colorful_Magic_SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13261/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Conjure Ancestral Bosmer.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38976/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Conjure Ash Atronach.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8529/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'ConjureElemWeapons.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8061/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'ConjureFemaleDremora.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8717/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Cosmic Spells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29352/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Daedric Entity Restoration Project.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3604/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Darkspell01.esp'
     url:
@@ -10133,12 +10265,33 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/64196/' ]
     msg: [ *patch3rdParty_SRPC ]
 
+  - name: 'Draco''s Master Healer Spell Pack SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19544/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'DragonAgeSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22954/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'DragonGuard.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43094/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'DragonMonarch''s Master Spells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49590/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Druidessentials.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37665/' ]
     msg: [ *patch3rdParty_SRPC ]
 
+  - name: 'DSOMagicofTamriel.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25737/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'DustAdept.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2350/' ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -10166,6 +10319,14 @@ plugins:
     clean:
       - crc: 0x17C95AFF
         util: 'SSEEdit v4.0.3f'
+
+  - name: 'FA_BookOfNecromancy.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61238/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'FalmerFemaleEnemies.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49940/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'ForcefulTongue.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36276/' ]
@@ -10196,6 +10357,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12711/' ]
     msg: [ *patch3rdParty_SRPC ]
 
+  - name: 'FS_TeleportTomes_(Cities|FactionsHomes|TownsVillages)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43666/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'GIST soul trap.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15755/' ]
     inc:
@@ -10223,17 +10388,70 @@ plugins:
       - crc: 0xEF0A2A16
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'GlamorilLite.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13089/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'hfhometeleports.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7148/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'HK03YennefersFlames.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51172/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'IHarvest.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27789/' ]
     msg: [ *patch3rdParty_SRPC ]
 
+  - name: 'jaddruid.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34724/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'JaxonzBlinkTeleport2.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7978/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'khajitdave-necromanticsummons-v02.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49498/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'KynesZodiac.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18931/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'La_Tomatina.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52776/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'LaBellaMagia -Simple compendium.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21655/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Levin.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44159/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'LiamsConjurationSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29873/' ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       - <<: *quickClean
         crc: 0xF1C8C6EF
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
+
+  - name: 'LiamsDestructionSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29873/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'LiamsStavesofSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/57776/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'LLX Expanded Spells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8935/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'LoreFriendlySpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28533/' ]
@@ -10251,8 +10469,36 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24695/' ]
     msg: [ *patch3rdParty_SRPC ]
 
+  - name: 'MarkRecallNPC.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46606/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'mihailfirewyrm.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47394/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Milky_Spell.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/59876/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Mind Twist - Illusion Spell Pack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20293/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Mining For Mages Redux.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4495/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'MinionMastery.esm'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21334/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'MinorSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5685/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'MJHSynthesisRedux.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18483/' ]
     msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Mundus.esp'
@@ -10269,6 +10515,14 @@ plugins:
       - crc: 0x21A1957E
         util: 'SSEEdit v4.0.3g'
 
+  - name: 'Mehrunes'' Champion''s Army.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25289/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Meteorokinesis.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3041/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'MysticismMagic.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27839/' ]
     msg:
@@ -10277,6 +10531,7 @@ plugins:
           - 'FleshFX'
           - '[Mysticism - FleshFX Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46997/)'
         condition: 'active("FleshFX.esp") and not active("Mysticism_FleshFX_Patch.esp")'
+      - *patch3rdParty_SRPC
     tag:
       - Actors.ACBS
       - Actors.RecordFlags
@@ -10297,6 +10552,14 @@ plugins:
       - crc: 0x77D16829
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'NecromancySpellsPack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36336/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Necromantic spells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1690/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Odin - Skyrim Magic Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46000/' ]
     after: [ 'AltmerSisters.esp' ]
@@ -10310,6 +10573,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2844/' ]
       - *includesMBBF
+      - *patch3rdParty_SRPC
     tag:
       - Actors.ACBS
       - Actors.RecordFlags
@@ -10330,6 +10594,10 @@ plugins:
     clean:
       - crc: 0x89C13738
         util: 'SSEEdit v4.0.3g'
+
+  - name: 'OverlordMagic.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17481/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'PathOfTheAntiMage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19668/' ]
@@ -10353,12 +10621,32 @@ plugins:
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 23
 
+  - name: 'Posion Magic.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8944/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Poison Spells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25497/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'PotentBasicSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42559/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Predator Vision.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2777/' ]
     after: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Predator Vision_CACO_Patch.esp")'
+
+  - name: 'ProgressiveNoviceSpells.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/46819/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Pumpkin_Party.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/55128/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'QL_Stendarr''sLight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22297/' ]
@@ -10378,6 +10666,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ReachMage_Patch.esp")'
+      - *patch3rdParty_SRPC
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -10395,8 +10684,68 @@ plugins:
         itm: 3
         udr: 10
 
+  - name: 'RedLightningSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47552/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Remorseless Winter.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31649/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Resurrect.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11450/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'RipOffWeapon.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/50787/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'rt_teleportation.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49097/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'rvyMacromancyLite.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3901/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'SE_SummonNazeem.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52284/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'ShadowSpellPackage.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13299/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'ShockSpellUpgrades.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/771/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Simple Bound Weapons Expansion.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21013/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Slow and Freeze Time Spells -TwinCrows.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/779/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'SlowTimeSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25201/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'SovngardeSummonables.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/57891/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'sMoreFamiliars.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/55118/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'specialised spells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52558/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Spellmaster - Spells and Spellcasting.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/55192/' ]
     msg: [ *patch3rdParty_SRPC ]
 
   - name: 'SpellResearch.esp'
@@ -10413,12 +10762,29 @@ plugins:
 
   - name: 'Spell Research - Patch Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28816/' ]
-    req: [ 'SpellResearch.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Spell Research - Even More Patches.esp**' ]
+        condition: 'active("Spell Research - Even More Patches.esp")'
+      - <<: *obsolete
+        subs: [ '[Spell Research Patch Compendium Redux](https://www.nexusmods.com/skyrimspecialedition/mods/61177/)' ]
+        condition: 'not active("Spell Research - Even More Patches.esp")'
+      - <<: *requiresX
+        type: error
+        subs: [ '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)' ]
+        condition: 'not file("SpellResearch.esp") or (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+
+  - name: 'Spell Research - Even More Patches.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61177/' ]
     msg:
       - <<: *requiresX
         type: error
         subs: [ '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)' ]
-        condition: 'file("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+        condition: 'not file("SpellResearch.esp") or (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+
+  - name: 'spinesimplespells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/53274/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Tainted_Blood.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9312/' ]
@@ -10426,6 +10792,34 @@ plugins:
       # version: 5.7.9
       - crc: 0xF28D435D
         util: 'SSEEdit v4.0.2'
+
+  - name: 'SPK''s Betteronomicon.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/57277/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'sSwordSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58359/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'StendarrSpellPack.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/57377/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Summon Monsters.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/57224/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'TechnicolorAlchemy.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22118/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'TeleportSpells.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1910/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'The Career Mage.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47351/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'The Dark Arts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29834/' ]
@@ -10445,6 +10839,10 @@ plugins:
       # doNotClean
       - *includesMBBF
 
+  - name: 'TissPumpkinORD.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30143/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'Tomebound.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21403/' ]
     msg: [ *patch3rdParty_SRPC ]
@@ -10462,6 +10860,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2394/' ]
       - *includesMBBF
+      - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Adamant: A Perk Overhaul' ]
         condition: 'active("Adamant.esp") and not active("Triumvirate - Adamant Compatibility Patch.esp")'
@@ -10483,6 +10882,26 @@ plugins:
     clean:
       - crc: 0x08DC13F6
         util: 'SSEEdit v4.0.3'
+
+  - name: 'UnderwaterShockPulse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51218/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Undriel_SummonIceHorse.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49588/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'UniqueConjurationThralls.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43646/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'UsefulAlteration.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25409/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Warlock+Perk.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7051/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'WardsFunctionalitiesExtended.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18664/' ]
@@ -11771,6 +12190,7 @@ plugins:
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("AHO - Skytest Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AHO_Patch.esp")'
+      - *patch3rdParty_SRPC
     dirty:
       - <<: *quickClean
         crc: 0x3365C7A4
@@ -11911,6 +12331,7 @@ plugins:
 
   - name: 'Haem Projects Goblands.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24351/' ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 1.1
       - <<: *quickClean
@@ -12450,12 +12871,17 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TOK_Patch.esp")'
+      - *patch3rdParty_SRPC
     tag:
       - -C.Climate
       - Sound
     clean:
       - crc: 0x7D576666
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
+
+  - name: 'TSR_TeldrynSerious.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5541/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'WARP.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28228/' ]
@@ -13539,6 +13965,7 @@ plugins:
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DGA_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - *patch3rdParty_SRPC
     clean:
       # version: 1.0
       - crc: 0x3A701728
@@ -14098,6 +14525,10 @@ plugins:
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 8
 
+  - name: 'mihailboundarmos.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36571/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
   - name: 'MisterB''s Unique Treasures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28939/' ]
     dirty:
@@ -14280,6 +14711,7 @@ plugins:
 
   - name: 'PsijicTeleportSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5643/' ]
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 4.8.0
       - <<: *quickClean
@@ -14579,6 +15011,7 @@ plugins:
         subs: [ '[Cleaning Guide](https://macsplody.github.io/xGuides/#-teleport---city-spells-)' ]
         condition: 'checksum("TheWulfPanda - City Teleport Spells.esp", 6FCC9D3A) or checksum("TheWulfPanda - City Teleport Spells Less Magicka Increase Cast Time.esp", DA06632F)'
   - name: 'TheWulfPanda - City Teleport Spells.esp'
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 1.01
       - <<: *quickClean
@@ -14602,6 +15035,7 @@ plugins:
         subs: [ '[Cleaning Guide](https://macsplody.github.io/xGuides/#-teleport---faction-spells-)' ]
         condition: 'checksum("TheWulfPanda - Faction Teleport Spells.esp", 017847FA) or checksum("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp", 7F826487)'
   - name: 'TheWulfPanda - Faction Teleport Spells.esp'
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 1.01
       - <<: *quickClean
@@ -14625,6 +15059,7 @@ plugins:
         subs: [ '[Cleaning Guide](https://macsplody.github.io/xGuides/#-teleport---towns-and-villages-)' ]
         condition: 'checksum("TheWulfPanda - Teleport Spells Towns and Villages.esp", AAAA667B) or checksum("TheWulfPanda - Teleport Spells Towns and Villages Less Magicka Increase Cast Time.esp", 8C2C1182)'
   - name: 'TheWulfPanda - Teleport Spells Towns and Villages.esp'
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       # version: 1.03
       - <<: *quickClean
@@ -14899,6 +15334,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/33150/'
         name: 'Isle of Artaeum Season 3'
+    msg: [ *patch3rdParty_SRPC ]
     dirty:
       - <<: *reqManualFix
         crc: 0x78537FA2
@@ -14962,6 +15398,7 @@ plugins:
           - 'Ordinator - Perks of Skyrim'
           - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
+      - *patch3rdParty_SRPC
       - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
@@ -15216,6 +15653,7 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TheGrayCowlofNocturnal_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_GrayCowl_Patch.esp")'
+      - *patch3rdParty_SRPC
     dirty:
       # version: 1.3
       - <<: *quickClean
@@ -15435,6 +15873,7 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Undeath_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Undeath_Patch.esp")'
+      - *patch3rdParty_SRPC
       - <<: *patchUpdateAvailable
         subs: [ '[Undeath Classical Lichdom](https://www.nexusmods.com/skyrimspecialedition/mods/40802/)' ]
         condition: 'not active("UndeathFixes.esp") and not file("Undeath Ascension.esp") and not file("Undeath Immersive Lichdom.esp") and not file("Tainted_Blood.esp")'
@@ -15538,6 +15977,7 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wyrmstooth_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wyrmstooth_Patch.esp")'
+      - *patch3rdParty_SRPC
       - <<: *obsolete
         subs: [ '[Wyrmstooth](https://www.nexusmods.com/skyrimspecialedition/mods/45565/)' ]
         condition: 'not version("Wyrmstooth.esp", "1.19.2", >=)'
@@ -16665,6 +17105,14 @@ plugins:
     clean:
       - crc: 0x64353491
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Warbird''s Dwemer Train Station.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30964/' ]
+    msg: [ *patch3rdParty_SRPC ]
+
+  - name: 'Warbirds Whiterun Metropolis.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56839/' ]
+    msg: [ *patch3rdParty_SRPC ]
 
   - name: 'Watchtowers of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19230/' ]
@@ -21626,7 +22074,9 @@ plugins:
         display: '[FileAccess Interface for Skyrim SE Scripts (FISSES)](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
         condition: 'not checksum("DBM_RelicNotifications.esp", 663FAB6A) and not version("DBM_RelicNotifications.esp", "5.1.1", >=)'
     tag: [ Text ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *patch3rdParty_SRPC
+      - *requiresMCM
     clean:
       - crc: 0x663FAB6A
         util: 'SSEEdit v4.0.3f'
