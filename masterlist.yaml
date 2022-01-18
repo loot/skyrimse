@@ -385,6 +385,9 @@ common:
       - '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
       - '[Spell Research - Patch Compendium Redux](https://www.nexusmods.com/skyrimspecialedition/mods/61177/)'
     condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - (Even More Patches|Patch Compendium)\.esp")'
+  - &patch3rdParty_SRPC_Redux
+    <<: *patch3rdParty_SRPC
+    condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - Even More Patches.esp")'
   - &patch3rdParty_STIP
     <<: *patch3rdParty
     subs:
