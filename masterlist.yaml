@@ -22337,10 +22337,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/61177/'
         name: 'Spell Research Patch Compendium Redux'
     msg:
-      - <<: *requiresX
-        type: error
-        subs: [ '[Spell Research v2.2+](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)' ]
-        condition: 'not file("SpellResearch.esp") or (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+      - <<: *versionXofYorGreaterRequired
+        subs:
+          - '2.2'
+          - '[Spell Research](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
+        condition: 'file("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
