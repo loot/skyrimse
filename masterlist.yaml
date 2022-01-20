@@ -12073,7 +12073,7 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
 
-  - name: '(CWRepairs|CW_Enjia|CWR_IC_Patch|CWR_OC_Patch|CWRepairSGW|CWRNimriel)\.esp'
+  - name: '(CWRepairs|CW_Enjia|CWR_IC_Patch|CWR_OC_Patch|CWRepairSGW|CWRNimriel|CWR_JKTemple_Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20668/'
         name: 'After the Civil War - Siege Damage Repairs'
@@ -12084,15 +12084,18 @@ plugins:
           - 'YOT - Your Own Thoughts SE - First Person Messages'
           - '[YOT - Your Own Thoughts SE - First Person Messages](https://www.nexusmods.com/skyrimspecialedition/mods/762/)'
         condition: 'active("YOT - Your Own Thoughts.esp") and not active("YOT - CWRepairs.esp")'
-      - <<: *patchProvided
+      - <<: *patchIncluded
         subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("CWR_IC_Patch.esp")'
-      - <<: *patchProvided
+      - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("CWR_OC_Patch.esp")'
-      - <<: *patchProvided
+      - <<: *patchIncluded
         subs: [ 'The Second Great War' ]
         condition: 'active("GreatWarSkyrim.esp") and not active("CWRepairSGW.esp")'
+      - <<: *patchProvided
+        subs: [ 'JK''s Temple of the Divines' ]
+        condition: 'active("JK''s Temple of the Divines.esp") and not active("(CWR_JKTemple_Patch|JKs Temple of the Divines - After the Civil War patch)\.esp")'
     clean:
       - crc: 0x388DAD91
         util: 'SSEEdit v4.0.4b'
@@ -12121,6 +12124,10 @@ plugins:
   - name: 'CWRNimriel.esp'
     clean:
       - crc: 0x949ED59C
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWR_JKTemple_Patch.esp'
+    clean:
+      - crc: 0x2191AA4E
         util: 'SSEEdit v4.0.4b'
 
   - name: 'CYA_ChooseYourOwnArchMage.esp'
