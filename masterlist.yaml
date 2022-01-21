@@ -1881,6 +1881,10 @@ plugins:
         display: 'SSE Parallax Shader Fix'
       - name: 'SKSE/Plugins/SSEShaderTools.dll'
         display: 'SSE Parallax Shader Fix AE'
+    msg:
+      - <<: *useVersion
+        subs: [ '2.11' ]
+        condition: 'file("skse/plugins/(SSE)?\ShaderTools.dll")'
     clean:
       - crc: 0x1E8DF8AF
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
