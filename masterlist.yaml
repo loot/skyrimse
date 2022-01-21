@@ -12095,7 +12095,7 @@ plugins:
         condition: 'active("GreatWarSkyrim.esp") and not active("CWRepairSGW.esp")'
       - <<: *patchProvided
         subs: [ 'JK''s Temple of the Divines' ]
-        condition: 'active("JK''s Temple of the Divines.esp") and not active("(CWR_JKTemple_Patch|JKs Temple of the Divines - After the Civil War patch)\.esp")'
+        condition: 'active("JK''s Temple of the Divines.esp") and not (active("CWR_JKTemple_Patch.esp") or active("JKs Temple of the Divines - After the Civil War patch.esp"))'
     clean:
       - crc: 0x388DAD91
         util: 'SSEEdit v4.0.4b'
