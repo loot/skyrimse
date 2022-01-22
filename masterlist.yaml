@@ -6193,12 +6193,12 @@ plugins:
     msg: [ *patch3rdParty_SRPC_Redux ]
   - name: 'mihailesobonecolossus.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24521/' ]
+    msg: [ *patch3rdParty_SRPC_Redux ]
     dirty:
       - <<: *quickClean
         crc: 0xEE56D864
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 16
-    msg: [ *patch3rdParty_SRPC_Redux ]
   - name: 'mihailesocenturion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27354/' ]
     dirty:
@@ -6235,13 +6235,13 @@ plugins:
     msg: [ *patch3rdParty_SRPC_Redux ]
   - name: 'mihailicegolem.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26185/' ]
+    msg: [ *patch3rdParty_SRPC_Redux ]
     dirty:
       - <<: *quickClean
         crc: 0x9A86B03C
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 21
         udr: 12
-    msg: [ *patch3rdParty_SRPC_Redux ]
   - name: 'mihailindrik.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/53640?tab=files/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
@@ -6463,7 +6463,6 @@ plugins:
           - 'SkyTEST Realistic Animals and Predators'
           - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SIC - Skytest Integration.esp")'
-      - *patch3rdParty_SRPC_Redux
       - <<: *patch3rdParty
         type: warn
         subs:
@@ -6472,6 +6471,7 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
+      - *patch3rdParty_SRPC_Redux
       - *requiresMCM
       - type: say
         content:
@@ -6686,10 +6686,10 @@ plugins:
     group: *earlyLoadersGroup
     tag: [ C.LockList ]
     msg:
+      - *patch3rdParty_SRPC_Redux
       - <<: *patchProvided
         subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Immersive Wenches -Immersive Citizens AI Overhaul Patch-.esp")'
-      - *patch3rdParty_SRPC_Redux
     clean:
       # version: 1.6.0SE
       - crc: 0xA66B30B5
@@ -11657,6 +11657,10 @@ plugins:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
 
+  - name: 'DudestiaMultiMarriages.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21625/' ]
+    msg: [ *patch3rdParty_SRPC_Redux ]
+
   - name: 'Fertility Mode.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13068/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
@@ -11888,10 +11892,6 @@ plugins:
     clean:
       - crc: 0x1C8E8DFA
         util: 'SSEEdit v4.0.3'
-
-  - name: 'DudestiaMultiMarriages.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21625/' ]
-    msg: [ *patch3rdParty_SRPC_Redux ]
 
   - name: 'Realistic AI Detection 2 SE.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2345/' ]
@@ -13192,6 +13192,10 @@ plugins:
       - crc: 0x9F3FDA79
         util: 'SSEEdit v4.0.3'
 
+  - name: 'TheGemstoneProphecy.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20629?tab=files/' ]
+    msg: [ *patch3rdParty_SRPC_Redux ]
+
   - name: 'TheOnlyCureQuestExpansion.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/57683/'
@@ -13206,10 +13210,6 @@ plugins:
     clean:
       - crc: 0x36F5C5BD
         util: 'SSEEdit v4.0.3'
-
-  - name: 'TheGemstoneProphecy.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20629?tab=files/' ]
-    msg: [ *patch3rdParty_SRPC_Redux ]
 
   - name: 'Thieves Guild Requirements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33256/' ]
@@ -16081,10 +16081,10 @@ plugins:
 
   - name: 'Midwood Isle.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28120/' ]
+    msg: [ *patch3rdParty_SRPC_Redux ]
     clean:
       - crc: 0x902458B5
         util: 'SSEEdit v4.0.4'
-    msg: [ *patch3rdParty_SRPC_Redux ]
   - name: 'MI Alt Ship Loc 2.esp'
     dirty:
       - <<: *quickClean
@@ -17488,10 +17488,10 @@ plugins:
       - crc: 0x4A24602B
         util: 'SSEEdit v4.0.3'
   - name: 'Vuldur.esm'
+    msg: [ *patch3rdParty_SRPC_Redux ]
     clean:
       - crc: 0x40DE999C
         util: 'SSEEdit v4.0.3'
-    msg: [ *patch3rdParty_SRPC_Redux ]
   - name: 'HammetDungeons\.es(m|p)'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/' ]
     tag: [ C.Location ]
