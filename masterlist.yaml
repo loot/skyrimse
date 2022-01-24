@@ -14177,6 +14177,9 @@ plugins:
       - <<: *PapyrusUtil
         condition: 'active("SkyUI_SE.esp")'
     msg:
+      - <<: *deleteOrDeactivateX
+        subs: [ '**SKSE/Plugins/StorageUtil.dll**' ]
+        condition: 'file("SKSE/Plugins/StorageUtil.dll")'
       - <<: *patchUpdateAvailable
         subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372/)' ]
         condition: 'active("SkyUI_SE.esp") and not file("interface/wearablelanterns/_wl_title.dds") and not file("interface/exported/widgets/wearablelanterns/meter.swf")'
