@@ -14173,13 +14173,24 @@ plugins:
 
   - name: 'Chesko_WearableLantern.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7560/' ]
+    req:
+      - <<: *PapyrusUtil
+        condition: 'active("SkyUI_SE.esp")'
     msg:
-      - <<: *alsoUseX
+      - <<: *deleteOrDeactivateX
+        subs: [ '**SKSE/Plugins/StorageUtil.dll**' ]
+        condition: 'file("SKSE/Plugins/StorageUtil.dll")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Chesko''s Wearable Lanterns - SE and VR Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19348/)' ]
+        condition: 'file("../skse64_loader.exe") and (not file("scripts/_wl_compatibility.pex") or checksum("scripts/_wl_compatibility.pex", 7DA73A58))'
+      - <<: *patchUpdateAvailable
         subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372/)' ]
-        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
+        condition: 'active("SkyUI_SE.esp") and not file("interface/wearablelanterns/_wl_title.dds") and not file("interface/exported/widgets/wearablelanterns/meter.swf")'
+      - <<: *requiresMCM
+        condition: 'not active("SkyUI_SE.esp") and checksum("scripts/_wl_compatibility.pex", 02E2CA8E)'
     clean:
       - crc: 0xA1170B2D
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'ChillrendNote\.es(p|l)'
     url:
