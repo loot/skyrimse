@@ -14181,6 +14181,9 @@ plugins:
         subs: [ '**SKSE/Plugins/StorageUtil.dll**' ]
         condition: 'file("SKSE/Plugins/StorageUtil.dll")'
       - <<: *patchUpdateAvailable
+        subs: [ '[Chesko''s Wearable Lanterns - SE and VR Patch](https://www.nexusmods.com/skyrimspecialedition/mods/19348/)' ]
+        condition: 'file("../skse64_loader.exe") and (not file("scripts/_wl_compatibility.pex") or checksum("scripts/_wl_compatibility.pex", 7DA73A58))'
+      - <<: *patchUpdateAvailable
         subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372/)' ]
         condition: 'active("SkyUI_SE.esp") and not file("interface/wearablelanterns/_wl_title.dds") and not file("interface/exported/widgets/wearablelanterns/meter.swf")'
     clean:
