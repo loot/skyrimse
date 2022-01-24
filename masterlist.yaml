@@ -14177,9 +14177,9 @@ plugins:
       - <<: *PapyrusUtil
         condition: 'active("SkyUI_SE.esp")'
     msg:
-      - <<: *alsoUseX
+      - <<: *patchUpdateAvailable
         subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372/)' ]
-        condition: 'not file("interface/wearablelanterns/_wl_title.dds") and active("SkyUI_SE.esp")'
+        condition: 'active("SkyUI_SE.esp") and not file("interface/wearablelanterns/_wl_title.dds") and not file("interface/exported/widgets/wearablelanterns/meter.swf")'
     clean:
       - crc: 0xA1170B2D
         util: 'SSEEdit v4.0.3'
