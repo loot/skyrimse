@@ -14186,6 +14186,8 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Wearable Lanterns MCM Fix](https://www.nexusmods.com/skyrimspecialedition/mods/25372/)' ]
         condition: 'active("SkyUI_SE.esp") and not file("interface/wearablelanterns/_wl_title.dds") and not file("interface/exported/widgets/wearablelanterns/meter.swf")'
+      - <<: *requiresMCM
+        condition: 'not active("SkyUI_SE.esp") and checksum("scripts/_wl_compatibility.pex", 02E2CA8E)'
     clean:
       - crc: 0xA1170B2D
         util: 'SSEEdit v4.0.3'
