@@ -7906,31 +7906,27 @@ plugins:
     msg: [ *patch3rdParty_SRPC_Redux ]
 
   - name: 'Master of Disguise - Special Edition.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9959/' ]
+    url: [ 'https://letsplaywithfire.com/releases/file/master-of-disguise/' ]
     req: [ *SKSE ]
     msg:
       - <<: *alsoUseX
         subs: [ '**[Bug Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/33261/)** OR **[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/)**' ]
-        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll") or not file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
-      - <<: *compatIssuesWithX
-        subs: [ 'Alternate Start - Live Another Life' ]
-        condition: 'active("Master of Disguise - Special Edition.esp") and active("Alternate Start - Live Another Life.esp")'
+        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll") and not file("DLLPlugins/ScrambledBugs.dll")'
       - <<: *compatNotes
-        subs: [ 'https://forums.nexusmods.com/index.php?/topic/5644877-master-of-disguise-immersive-disguises-for-skyrim-se/page-4#entry50270297' ]
+        subs: [ 'https://wiki.fireundubh.com/mods/master-of-disguise#compatibility' ]
       - *missingRequirementAddrLibforPlugin
       - *requiresMCM
     tag:
-      - Actors.ACBS
       - Actors.DeathItem
       - Factions
-      - Invent.Remove
+      - -Names
       - NPC.DefaultOutfit
       - -ObjectBounds
       - Outfits.Add
       - Outfits.Remove
     clean:
       - crc: 0xF97D9D82
-        util: 'SSEEdit v4.0.3g'
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'Open Cities Skyrim.esp'
     url:
