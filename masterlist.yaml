@@ -7911,7 +7911,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '**[Bug Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/33261/)** OR **[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/)**' ]
-        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll") or not file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+        condition: 'not file("NetScriptFramework/Plugins/BugFixesSSE.dll") and not file("DLLPlugins/ScrambledBugs.dll")'
       - <<: *compatIssuesWithX
         subs: [ 'Alternate Start - Live Another Life' ]
         condition: 'active("Master of Disguise - Special Edition.esp") and active("Alternate Start - Live Another Life.esp")'
