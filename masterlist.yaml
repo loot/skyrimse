@@ -18895,7 +18895,13 @@ plugins:
 
   - name: 'JK''s The Bannered Mare.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33845/' ]
-    msg: [ *compatPatch_JKIPC ]
+    msg:
+      - *compatPatch_JKIPC
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[JK''s Interiors Patch Collection OCS](https://www.nexusmods.com/skyrimspecialedition/mods/46114/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("JK''s Bannered Mare OCS Patch.esp")'
     tag: [ C.Water ]
     clean:
       - crc: 0xBA0A1929
