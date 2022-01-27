@@ -17197,7 +17197,7 @@ plugins:
         subs:
           - 'The Great Cities - Minor Cities and Towns'
           - '[Rodryk''s Dragon Bridge - Great Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/42619/)'
-        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("RodryksDragonBridge - GCS Dragon Bridge Patch.esp")'
+        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("RodryksDragonBridge - GCS Dragon Bridge Patch.esp") and not active("The Great Cities of Jk''s North - Rodryks Dragon Bridge Patch.esp") and not active("The Great Cities of JK''s North - Arthmoor and Rodryk Dragon Bridge Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xB73D9C06
@@ -18725,10 +18725,10 @@ plugins:
         condition: 'active("Cutting Room Floor.esp") and not active("JKs Skyrim_(Cutting Room Floor)?(Arth CRF DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Dawnstar' ]
-        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_(Dawnstar)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_(Dawnstar)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp") and not active("The Great Cities of JK''s North - Arthmoor Dawnstar Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Dragon Bridge' ]
-        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_(Dragon Bridge)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_(Dragon Bridge)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp") and not active("The Great Cities of JK''s North - Arthmoor (and Rodryk )Dragon Bridge Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Falkreath' ]
         condition: 'active("Falkreath.esp") and not active("JKs Skyrim_(Falkreath)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
@@ -18752,7 +18752,7 @@ plugins:
         condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Rorikstead' ]
-        condition: 'active("Rorikstead.esp") and not active("JKs Skyrim_(Rorikstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Rorikstead.esp") and not active("JKs Skyrim_(Rorikstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp") and not active("The Great Cities of JK''s North - Arthmoor Rorikstead Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Storefront' ]
         condition: 'active("Storefront.esp") and not active("JKs Skyrim_(Storefront)?(Arthmoor All)?_Patch?.*\.esp")'
@@ -22899,6 +22899,48 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33687/' ]
   - name: 'The Great Cities of JK''s North - Patch.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul SSE' ]
+        condition: 'active("AI Overhaul.esp") and not active("The Great Cities of JK''s North - AI Overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s and Rodryk''s Dragon Bridge' ]
+        condition: 'active("Dragon Bridge.esp") and active("RodryksDragonBridge.esp") and not active("The Great Cities of JK''s North - Arthmoor and Rodryk Dragon Bridge Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Dawnstar' ]
+        condition: 'active("Dawnstar.esp") and not active("The Great Cities of JK''s North - Arthmoor Dawnstar Patch.esp") and not active("The Great Cities of JK''s North - Arthmoor and Rodryk Dragon Bridge Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Dragon Bridge' ]
+        condition: 'active("Dragon Bridge.esp") and not active("The Great Cities of JK''s North - Arthmoor Dragon Bridge Patch.esp") and not active("The Great Cities of JK''s North - Arthmoor and Rodryk Dragon Bridge Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Rorikstead' ]
+        condition: 'active("Rorikstead.esp") and not active("The Great Cities of JK''s North - Arthmoor Rorikstead Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Denizens of Morthal' ]
+        condition: 'active("Denizens of Morthal__Lollia.esp") and not active("The Great Cities of JK''s North - Denizens of Morthal Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Finding Helgi and Laelette' ]
+        condition: 'active("Finding_Helgi_and_Laelette.esp") and not active("The Great Cities of JK''s North - Finding Helge and Laelette Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Helgen Reborn' ]
+        condition: 'active("Helgen Reborn.esp") and not active("The Great Cities of JK''s North - Helgen Reborn Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Interesting NPCs' ]
+        condition: 'active("3DNPC.esp") and not active("The Great Cities of JK''s North - 3DNPC Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Lanterns of Skyrim II' ]
+        condition: 'active("Lanterns Of Skyrim II.esm") and not active("The Great Cities of JK''s North - Lanterns of Skyrim II Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'No Snow Under The Roof' ]
+        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("The Great Cities of Jk''s North - No Snow Under the Roof Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Rodryk''s Dragon Bridge' ]
+        condition: 'active("RodryksDragonBridge.esp") and not active("Dragon Bridge.esp") and not active("The Great Cities of Jk''s North - Rodryks Dragon Bridge Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cheesemod for EVERYONE' ]
+        condition: 'active("yumcheese.esp") and not active("The Great Cities of JK''s North - Cheesemod Winterhold Consistency Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'The Midden - Expanded' ]
+        condition: 'active("middenexpandedSSE.esp") or active("middenexpandedlitesse.esp") and not active("The Great Cities of JK''s North - The Midden Expanded Patch.esp")'
       - <<: *useVersion
         subs: [ 'The Great Cities of JK''s North - Full' ]
         condition: 'active("COTN - Winterhold.esp") and checksum("The Great Cities of JK''s North - Patch.esp", 17C7DEA5)'
