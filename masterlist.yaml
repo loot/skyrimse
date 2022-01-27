@@ -17607,7 +17607,20 @@ plugins:
   - name: 'AnotherOakwood.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61007/' ]
     after: [ 'ogFalkreathHauntings.esp' ]
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove **00009B95**, **00009B96**, **00009B97**, & **00009BB9** from **AnotherOakwood.esp**.' ]
+        condition: 'checksum("AnotherOakwood.esp", EE69FD67) or checksum("AnotherOakwood.esp", BB723686)'
     tag: [ C.Location ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xEE69FD67
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
+      - <<: *quickClean
+        crc: 0x7A5531B9
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
 
   - name: 'Better( )?Cities( )?(Solitude|Whiterun)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3847/' ]
