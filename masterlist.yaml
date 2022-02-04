@@ -8741,6 +8741,50 @@ plugins:
     after: [ 'SkyTEST-RealisticAnimals&Predators.esp' ]
     tag: [ Text ]
 
+  - name: 'Apothecary.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52130/' ]
+    after: [ 'TechnicolorAlchemy.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Beyond Skyrim - Bruma' ]
+        condition: 'active("BSHeartland.esm") and not active("Apothecary - Bruma Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Fishing' ]
+        condition: 'active("ccBGSSSE001-Fish.esm") and not active("Apothecary - Fishing Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Rare Curios' ]
+        condition: 'active("ccBGSSSE037-Curios.esl") and not active("Apothecary - Rare Curios Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Saints & Seducers' ]
+        condition: 'active("ccBGSSSE025-AdvDSGS.esm") and not active("Apothecary - Saints & Seducers Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim 3D Trees and Plants' ]
+        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("Apothecary - Skyrim 3D Trees and Plants Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wyrmstooth' ]
+        condition: 'active("Wyrmstooth.esp") and not active("Apothecary - Wyrmstooth Patch.esp")'
+  - name: 'ApothecaryFood.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52130/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Beyond Skyrim - Bruma' ]
+        condition: 'active("BSHeartland.esm") and not active("ApothecaryFood - Bruma Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Fishing' ]
+        condition: 'active("ccBGSSSE001-Fish.esm") and not active("ApothecaryFood - Fishing Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Creation Club Survival Mode' ]
+        condition: 'active("ccQDRSSE001-SurvivalMode.esl") and not active("ApothecaryFood - Survival Mode Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Skyrim 3D Trees and Plants' ]
+        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("ApothecaryFood - Skyrim 3D Trees and Plants Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("ApothecaryFood - USSEP Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wyrmstooth' ]
+        condition: 'active("Wyrmstooth.esp") and not active("ApothecaryFood - Wyrmstooth Patch.esp")'
+
   - name: 'Ars Metallica.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/321/' ]
     msg:
