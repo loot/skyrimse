@@ -20989,7 +20989,11 @@ plugins:
 
   - name: 'CaranthirTowerReborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4269/' ]
-    msg: [ *patch3rdParty_SRPC ]
+    msg:
+      - *patch3rdParty_SRPC
+      - <<: *patchUnavailable
+        subs: [ 'Badersee SE' ]
+        condition: 'active("Badersee.esp")'
     dirty:
       # version: 3.2
       - <<: *quickClean
