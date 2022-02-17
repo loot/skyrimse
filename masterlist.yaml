@@ -12832,8 +12832,10 @@ plugins:
       - 'WARP - EBQO Patch.esp'
       - 'WARP - TheChoiceIsYours Patch.esp'
 
-  - name: 'Finding_VelehkSain(_MAQF)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19815/' ]
+  - name: 'Finding_VelehkSain.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19815/'
+        name: 'Finding Velehk Sain'
     after:
       - 'ApepiBetterCollege.esp'
       - 'CollegeOfWinterholdImmersive.esp'
@@ -12845,12 +12847,31 @@ plugins:
       - 'MCWT_ErratumEtc.esp'
       - 'MCWT_ErratumEtc_Lite.esp'
       - 'MCWT_TheAugursAdmonishment.esp'
+      - 'Missing Apprentices CRF Quest Fix.esp'
       - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'not version("Finding_VelehkSain.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3))'
-    tag: [ Text ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'College of Winterhold The Missing Apprentices Quest Fix' ]
+        condition: 'active("Missing Apprentices CRF Quest Fix.esp") and not active("Finding_VelehkSain_MAQF.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Path of the Anti-Mage' ]
+        condition: 'active("PathOfTheAntiMage.esp") and not active("Finding_VelehkSain_PotAM.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Stats
+      - Graphics
+      - Names
+      - NPC.AttackRace
+      - NPC.Class
+      - Stats
+      - Text
     clean:
       - crc: 0xB4CD9B45
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4b'
   - name: 'Finding_VelehkSain_MAQF.esp'
     after:
       - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
@@ -12858,7 +12879,11 @@ plugins:
     tag: [ Text ]
     clean:
       - crc: 0x8136C3E4
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Finding_VelehkSain_PotAM.esp'
+    clean:
+      - crc: 0x3012C0BE
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'ForgottenCity.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179/' ]
