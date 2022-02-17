@@ -9349,6 +9349,43 @@ plugins:
   - name: 'Priest Vendors - CLLF Integration.esp'
     req: [ 'Containers and Leveled Lists Fixes.esp' ]
 
+  - name: '(CrossbowIntegration|Thwack! - (Rare Curios - Bolts Expanded|Vigil Enforcer Distribution))\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42653/'
+        name: 'Thwack - A Creation Club Integration Mod'
+  - name: 'CrossbowIntegration.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Rare Curios - Bolts Expanded' ]
+        condition: 'active("RareCuriosBoltsExpanded.esp") and not active("Thwack! - Rare Curios - Bolts Expanded.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Vigilants'' New Clothes - A Creation Club Integration Mod' ]
+        condition: 'active("Vigil Enforcer Distribution.esp") and not active("Thwack! - Vigil Enforcer Distribution.esp")'
+    tag:
+      - Actors.CombatStyle
+      - Delev
+      - Invent.Add
+      - Invent.Remove
+      - Names
+      - ObjectBounds
+      - Text
+    dirty:
+      - <<: *quickClean
+        crc: 0x6BC3F73C
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'Thwack! - Rare Curios - Bolts Expanded.esp'
+    tag:
+      - Delev
+      - Relev
+    clean:
+      - crc: 0x1E543F89
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Thwack! - Vigil Enforcer Distribution.esp'
+    clean:
+      - crc: 0x4D5B6393
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'DLCIntegration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
     group: *earlyLoadersGroup
