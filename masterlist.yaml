@@ -9349,6 +9349,43 @@ plugins:
   - name: 'Priest Vendors - CLLF Integration.esp'
     req: [ 'Containers and Leveled Lists Fixes.esp' ]
 
+  - name: '(CrossbowIntegration|Thwack! - (Rare Curios - Bolts Expanded|Vigil Enforcer Distribution))\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42653/'
+        name: 'Thwack - A Creation Club Integration Mod'
+  - name: 'CrossbowIntegration.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Rare Curios - Bolts Expanded' ]
+        condition: 'active("RareCuriosBoltsExpanded.esp") and not active("Thwack! - Rare Curios - Bolts Expanded.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Vigilants'' New Clothes - A Creation Club Integration Mod' ]
+        condition: 'active("Vigil Enforcer Distribution.esp") and not active("Thwack! - Vigil Enforcer Distribution.esp")'
+    tag:
+      - Actors.CombatStyle
+      - Delev
+      - Invent.Add
+      - Invent.Remove
+      - Names
+      - ObjectBounds
+      - Text
+    dirty:
+      - <<: *quickClean
+        crc: 0x6BC3F73C
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'Thwack! - Rare Curios - Bolts Expanded.esp'
+    tag:
+      - Delev
+      - Relev
+    clean:
+      - crc: 0x1E543F89
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Thwack! - Vigil Enforcer Distribution.esp'
+    clean:
+      - crc: 0x4D5B6393
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Dead Man''s Dread Distribution.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35163/'
@@ -9844,6 +9881,29 @@ plugins:
       - Stats
       - Text
 
+  - name: 'Netch Leather Distribution.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/45352/'
+        name: 'Morrowind Threads - A Creation Club Integration Mod'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("Netch Leather Distribution.esp", 82AA1014)'
+    tag:
+      - Delev
+      - Invent.Add
+      - Invent.Remove
+      - NPC.DefaultOutfit
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+      - Relev
+      - Stats
+    clean:
+      - crc: 0x82AA1014
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x9ACBD2E4
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
     inc:
@@ -10092,6 +10152,20 @@ plugins:
         crc: 0xDABA090F
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
+
+  - name: 'Vigil Enforcer Distribution.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31991/'
+        name: 'The Vigilants'' New Clothes - A Creation Club Integration Mod'
+    tag:
+      - Invent.Add
+      - Names
+      - NPC.DefaultOutfit
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0x41751B40
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
