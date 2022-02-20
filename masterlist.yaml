@@ -13397,6 +13397,23 @@ plugins:
       - crc: 0x759E2463
         util: 'SSEEdit v4.0.3'
 
+  - name: '(Thane of Whiterun Requires Favors|.* ThaneofWhiterun Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/61206/'
+        name: 'Thane of Whiterun Requires Favors'
+  - name: 'Thane of Whiterun Requires Favors.esp'
+    after: [ 'Thane of Riften Requires Favors.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'A Proper Thane for Winterhold' ]
+        condition: 'active("WinterholdHouse.esp") and not active("WinterholdHouse ThaneofWhiterun Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Not So Fast - Main Quest' ]
+        condition: 'active("NotSoFast-MainQuest.esp") and not active("NotSoFast ThaneofWhiterun Patch.esp")'
+    clean:
+      - crc: 0x0D389E07
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'The Brotherhood of Old.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15322/' ]
     after:
