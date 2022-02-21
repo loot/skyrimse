@@ -6764,6 +6764,75 @@ plugins:
       - crc: 0xBD798EA8
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'AncientLand2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22900/'
+        name: 'Ancient Land'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Arthmoor''s Oakwood'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("Oakwood.esp") and not active("AncientLand-Oakwood.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Beginner''s Shack in Riverwood'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("Eli_RiverwoodShack.esp") and not active("AncientLand-EliRiverwoodShack.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Camp Argentum'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("CampArgentum.esp") and not active("AncientLand-CampArgentum.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Dark Forests of Skyrim'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("Dark_Forests_FULL.esp") and not active("AncientLand-DarkForests.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Dark''s Whiterun market'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("WhiterunMarket.esp") and not active("AncientLand-DarksWhiterunMarket.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Landscapes'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("Enhanced Landscapes.esp") and not active("AncientLand-EnhancedLandscapes.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Solitude Docks'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("Enhanced Solitude Docks.esp") and not active("AncientLand-EnhancedSolitudeDocks.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Lanterns Of Skyrim II'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("Lanterns Of Skyrim II.esm") and not active("AncientLand-LoS.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Leaps of Faith - A Misc Quest'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("LeapsOfFaith.esp") and not active("AncientLand-LeapsOfFaith.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Pirates of The North'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("PiratesNorth.esp") and not active("AncientLand-PiratesOfTheNorth.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Schlitzohr''s Oakwood'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("AnotherOakwood.esp") and not active("AncientLand-AnotherOakwood.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Whiterun Valley - Hold Expansion'
+          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
+        condition: 'active("WhiterunValley3.esp") and not active("AncientLand-WhiterunValley.esp")'
+    clean:
+      - crc: 0xB5FDA10D
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Ashbound.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14663/' ]
     dirty:
@@ -7722,75 +7791,6 @@ plugins:
         crc: 0x68A235DA
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
-       
-  - name: 'AncientLand2.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22900'
-        name: 'Ancient Land'
-    clean:
-      - crc: 0xB5FDA10D
-        util: 'SSEEdit v4.0.4'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - '[Lanterns Of Skyrim II](https://www.nexusmods.com/skyrimspecialedition/mods/30817)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("Lanterns Of Skyrim II.esm") and not active("AncientLand-LoS.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Enhanced Landscapes](https://www.nexusmods.com/skyrimspecialedition/mods/18162)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("Enhanced Landscapes.esp") and not active("AncientLand-EnhancedLandscapes.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Dark Forests of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/21934)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("Dark_Forests_FULL.esp") and not active("AncientLand-DarkForests.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Dark''s Whiterun market](https://www.nexusmods.com/skyrimspecialedition/mods/22926)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("WhiterunMarket.esp") and not active("AncientLand-DarksWhiterunMarket.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Whiterun Valley - Hold Expansion](https://www.nexusmods.com/skyrimspecialedition/mods/11917)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("WhiterunValley3.esp") and not active("AncientLand-WhiterunValley.esp.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Enhanced Solitude Docks](https://www.nexusmods.com/skyrimspecialedition/mods/28349)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("Enhanced Solitude Docks.esp") and not active("AncientLand-EnhancedSolitudeDocks.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Oakwood](https://www.afkmods.com/index.php?/files/file/2178-oakwood)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("Oakwood.esp") and not active("AncientLand-Oakwood.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Schlitzohr''s Oakwood](https://www.nexusmods.com/skyrimspecialedition/mods/61007)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("AnotherOakwood.esp") and not active("AncientLand-AnotherOakwood.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Pirates of The North SSE](https://www.nexusmods.com/skyrimspecialedition/mods/28985)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("PiratesNorth.esp") and not active("AncientLand-PiratesOfTheNorth.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Camp Argentum SSE](https://www.nexusmods.com/skyrimspecialedition/mods/14226)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("CampArgentum.esp") and not active("AncientLand-CampArgentum.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Beginner''s Shack in Riverwood](https://www.nexusmods.com/skyrimspecialedition/mods/6238)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("Eli_RiverwoodShack.esp") and not active("AncientLand-EliRiverwoodShack.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - '[Leaps of Faith - A Misc Quest](https://www.nexusmods.com/skyrimspecialedition/mods/53074)'
-          - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140)'
-        condition: 'active("LeapsOfFaith.esp") and not active("AncientLand-LeapsOfFaith.esp")'
 
 ###### Gameplay ######
   - name: 'AnotherSortingMod SSE.esp'
