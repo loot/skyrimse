@@ -4706,9 +4706,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("RealisticRSChildren.esp") and not active("DBM_RSChildren_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-      - <<: *patchIncluded
-        subs: [ 'Beyond Skyrim - Bruma' ]
-        condition: 'active("BSHeartland.esm") and not active("RSChildren Patch - BS Bruma.esp")'
     clean:
       - crc: 0xBDFAB2FA
         util: 'SSEEdit v4.0.3'
