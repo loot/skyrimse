@@ -4718,6 +4718,10 @@ plugins:
     clean:
       - crc: 0x807242D1
         util: 'SSEEdit v4.0.3'
+  - name: 'RSChildren Patch - BS Bruma.esp'
+    msg:
+      - <<: *patchOutdated
+        condition: 'checksum("RSChildren Patch - BS Bruma.esp", E279375E) and (checksum("BSHeartland.esm", A5D74A7B) or checksum("BSHeartland.esm", CAD9E556))'
 
   - name: 'SimpleChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789/' ]
