@@ -8277,6 +8277,13 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/' ]
     after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
 
+  - name: 'Requiem - Vampiric Thirst.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/' ]
+    after: [ 'Vampiric Thirst Redone.esp' ]
+    msg:
+      - <<: *includesX
+        subs: [ '**Vampiric Thirst Redone.esp**' ]
+
   - name: 'Requiem - Warmonger Armory.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/' ]
     after:
@@ -14152,11 +14159,18 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
 
   - name: 'Vampiric Thirst Redone.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13549/' ]
-    after: [ 'Requiem.esp' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13549/'
+        name: 'Vampiric Thirst Redone SSE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17610/'
+        name: 'The ACTUAL Vampiric Thirst for SSE'
+    group: *vampireGameplayGroup
   - name: 'mslVampiricThirst.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17610/' ]
-    after: [ 'Requiem.esp' ]
+    group: *vampireGameplayGroup
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
 
   - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176/' ]
