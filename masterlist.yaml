@@ -5943,6 +5943,8 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Deadly Dragons.esp")'
     clean:
       - crc: 0x5061010B
         util: 'SSEEdit v4.0.3'
