@@ -12489,6 +12489,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SkyTEST_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active(".esp")'
     clean:
       - crc: 0xBC4325B9
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
