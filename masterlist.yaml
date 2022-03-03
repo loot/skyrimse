@@ -7975,7 +7975,10 @@ plugins:
 
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/671/' ]
-    msg: [ *patch3rdParty_SRPC ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active(".esp")'
+      - *patch3rdParty_SRPC
 
   - name: 'Immersive Needs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29317/' ]
