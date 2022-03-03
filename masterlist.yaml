@@ -10340,6 +10340,8 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TradeBarter_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - *requiresMCM
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Trade and Barter.esp")'
       - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
