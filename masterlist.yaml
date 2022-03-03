@@ -13594,6 +13594,9 @@ plugins:
   - name: 'Skyrim Unlocked.esp'
     url: [ 'https://github.com/Kaenguru-Knobel-Kette/skyrim-unlocked/releases/' ]
     after: [ 'BetterQuestObjectives.esp' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xD8C4BCD1
