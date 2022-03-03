@@ -1777,6 +1777,8 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Flora Fixes.esp")'
       - <<: *useVersion
         type: say
         subs: [ 'No Scripts' ]
