@@ -5582,6 +5582,8 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Shiva''s Vanilla Clothing Replacer' ]
         condition: 'active("Shiva''s Vanilla Clothing Replacer.esp") and not active("Lucien-ShivaVanillaClothing-Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Lucien.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x1BA7BA4A
