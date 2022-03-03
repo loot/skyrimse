@@ -13757,7 +13757,10 @@ plugins:
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
         condition: 'file("SKSE/Plugins/FISS/TimingIsEverythingPresets.xml")'
-    msg: [ *requiresMCM ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Timing is Everything.esp")'
+      - *requiresMCM
     clean:
       - crc: 0x06689998
         util: 'SSEEdit v4.0.3'
