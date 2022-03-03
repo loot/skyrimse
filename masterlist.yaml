@@ -5517,6 +5517,9 @@ plugins:
 
   - name: 'HothFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16137/' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active(".esp")'
     clean:
       # version: 3.2
       - crc: 0x215922B2
