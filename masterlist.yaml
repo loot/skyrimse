@@ -14679,7 +14679,11 @@ plugins:
         name: 'BCS Lost Library - Original'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032/'
         name: 'BCS Lost Library - Desaturated'
-    msg: [ *alreadyInLotD ]
+    msg:
+      - *alreadyInLotD
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
+
     tag: [ Delev ]
     clean:
       - crc: 0xDA570813
