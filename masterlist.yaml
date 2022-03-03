@@ -12561,6 +12561,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WildWorld_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Wild World.esp")'
       - <<: *patchProvided
         subs: [ 'Animallica - Skyrim Wildlife Overhaul' ]
         condition: 'file("Animallica.esp") and not file("Wild World - Animallica.esp")'
