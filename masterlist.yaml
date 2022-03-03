@@ -2892,6 +2892,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ISC_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp")'
     tag: [ Sound ]
     clean:
       - crc: 0xD2B5EFA4
