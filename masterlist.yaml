@@ -5948,6 +5948,8 @@ plugins:
       - <<: *compatIssuesWithX
         subs: [ 'Enhanced Mighty Dragons' ]
         condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Deadly Dragons.esp")'
       - <<: *patchProvided
         subs: [ 'Diverse Dragons Collection' ]
         condition: 'active("DiverseDragonsCollectionSE.esp") and not active("Deadly Dragons - Diverse Dragons Collection.esp") and not active("Deadly Dragons - Diverse Dragons Collection Patch.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
@@ -5960,8 +5962,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth Patch.esp")'
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Deadly Dragons.esp")'
     clean:
       - crc: 0x5061010B
         util: 'SSEEdit v4.0.3'
