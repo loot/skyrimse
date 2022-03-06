@@ -6639,6 +6639,12 @@ plugins:
       - Relev
 
 ###### Encounters - Neutrals ######
+  - name: 'Animallica.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20456/' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Animallica.esp")'
+
   - name: 'chickenleg.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29339/'
@@ -12097,12 +12103,6 @@ plugins:
     clean:
       - crc: 0x15F86D84
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
-
-  - name: 'Animallica.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20456/' ]
-    msg:
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Animallica.esp")'
 
   - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
