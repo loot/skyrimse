@@ -14849,15 +14849,15 @@ plugins:
 
   - name: 'Common Clothes and Armors.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21305/' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Common Clothes and Armors.esp")'
     tag:
       - Graphics
       - Keywords
       - ObjectBounds
       - Outfits.Add
       - Outfits.Remove
-    msg:
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Common Clothes and Armors.esp")'
     clean:
       - crc: 0x7462E171
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
