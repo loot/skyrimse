@@ -373,6 +373,11 @@ common:
     subs:
       - '[MorrowLoot Ultimate](https://www.nexusmods.com/skyrimspecialedition/mods/3058/)'
       - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
+  - &patch3rdParty_RPC
+    <<: *patch3rdParty
+    subs:
+      - '[Requiem - The Roleplaying Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/60888/)'
+      - '[Requiem Patch Central](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)'
   - &patch3rdParty_RSCPC
     <<: *patch3rdParty
     subs:
@@ -1772,6 +1777,8 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Flora Fixes.esp")'
       - <<: *useVersion
         type: say
         subs: [ 'No Scripts' ]
@@ -2471,6 +2478,14 @@ plugins:
       - crc: 0xB0489B02
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'ArteFake.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41254/'
+        name: 'ArteFakes - Unique Artifacts Replacer'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp")'
+
   - name: 'BolarsOathReplacer\.es(l|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35124/'
@@ -2863,6 +2878,8 @@ plugins:
         condition: 'active("Immersive Sounds - Compendium.esp") and not active("AOS_ISC_Integration.esp") and not active("Audio Overhaul Skyrim - Immersive Sounds Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul Skyrim.esp")'
       - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     clean:
@@ -2922,6 +2939,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ISC_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp")'
     tag: [ Sound ]
     clean:
       - crc: 0xD2B5EFA4
@@ -5530,6 +5549,14 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: 'EMCompViljaSkyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6722/'
+        name: 'Vilja in Skyrim'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Vilja.esp")'
+
   - name: 'Followers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10633/' ]
     dirty:
@@ -5547,6 +5574,9 @@ plugins:
 
   - name: 'HothFollower.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16137/' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Hoth.esp")'
     clean:
       # version: 3.2
       - crc: 0x215922B2
@@ -5557,6 +5587,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Inigo_CACO_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Inigo.esp")'
     tag: [ C.Location ]
     dirty:
       # version: 2.4C
@@ -5587,6 +5619,8 @@ plugins:
   - name: 'Lucien.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20035/' ]
     msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Lucien.esp")'
       - <<: *patchProvided
         subs: [ 'Insects Begone' ]
         condition: 'active("Insects Begone - (Chaurus|Spiders|Spiders and Chaurus)\.esp") and not active("Lucien-InsectsBegone-Patch.esp")'
@@ -5963,6 +5997,8 @@ plugins:
       - <<: *compatIssuesWithX
         subs: [ 'Enhanced Mighty Dragons' ]
         condition: 'active("Mighty Dragons SE Medium Cooked.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Deadly Dragons.esp")'
       - <<: *patchProvided
         subs: [ 'Diverse Dragons Collection' ]
         condition: 'active("DiverseDragonsCollectionSE.esp") and not active("Deadly Dragons - Diverse Dragons Collection.esp") and not active("Deadly Dragons - Diverse Dragons Collection Patch.esp") and not active("Deadly Dragons - DDC and Splendor.esp")'
@@ -6652,6 +6688,14 @@ plugins:
       - Relev
 
 ###### Encounters - Neutrals ######
+  - name: 'Animallica.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20456/'
+        name: 'Animallica - Skyrim Wildlife Overhaul'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Animallica.esp")'
+
   - name: 'chickenleg.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29339/'
@@ -6750,6 +6794,14 @@ plugins:
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC IncNPC.esp")'
+
+  - name: 'Immersive Patrols II.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/718/'
+        name: 'Immersive Patrols'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Patrols.esp")'
 
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
@@ -7931,6 +7983,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Campfire_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp")'
 
   - name: 'Civil War Aftermath.esp'
     url:
@@ -8003,7 +8057,10 @@ plugins:
 
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/671/' ]
-    msg: [ *patch3rdParty_SRPC ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp")'
+      - *patch3rdParty_SRPC
 
   - name: 'Immersive Needs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29317/' ]
@@ -8205,7 +8262,9 @@ plugins:
         util: 'SSEEdit v4.0.2f'
 
   - name: 'Requiem.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/60888/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/60888/'
+        name: 'Requiem - The Roleplaying Overhaul'
     group: *perksGroup
     inc:
       - 'Ordinator - Perks of Skyrim.esp'
@@ -8215,10 +8274,28 @@ plugins:
       - 'PerkusMaximus_Warrior.esp'
       - 'PerkusMaximus_CombatPlus.esp'
       - 'SkyRe_Main.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://requiem.atlassian.net/wiki/spaces/RSSE/pages/2658926593/Compatibility+Advice' ]
+      - *includesMBBF
+  - name: 'Requiem - No Overencumbered Messages.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/60888/'
+        name: 'Requiem - The Roleplaying Overhaul'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Requiem - No Messages.esp' ]
+        condition: 'active("Requiem - No Messages.esp")'
   - name: 'Requiem Record Fixes.esm'
     group: *fixesGroup
   - name: 'Requiem for the Indifferent.esp'
     group: *lateChangesGroup
+
+  - name: 'Requiem - Minor Arcana - Roleplaying.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/61342/'
+        name: 'Requiem - Minor Arcana'
+    after: [ 'Requiem - Warmonger Armory.esp' ]
 
   - name: 'Simple Magic Rebalance.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1982/' ]
@@ -8853,6 +8930,14 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Vigor.esp") and not active("CACO_Vigor_Campfire.esp")'
+
+  - name: 'VioLens SE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/668/'
+        name: 'VioLens - A Killmove Mod'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - VioLens.esp")'
 
   - name: 'Wounds.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17581/' ]
@@ -10230,6 +10315,8 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TradeBarter_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - *requiresMCM
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Trade and Barter.esp")'
       - <<: *patch3rdParty_UVCPC
         condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
@@ -11729,6 +11816,8 @@ plugins:
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("(Relationship Dialogue Overhaul - Immersive Horses Patch|RDO - Immersive Horses Patch|Immersive Horses - RDO)\.esp") and not active("nwsFollowerFramework.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveHorses_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Horses.esp")'
       - <<: *patch3rdParty_STIP
         condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
     tag:
@@ -12371,6 +12460,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SkyTEST_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - SkyTEST.esp")'
     clean:
       - crc: 0xBC4325B9
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -12427,6 +12518,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WildWorld_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Wild World.esp")'
       - <<: *patchProvided
         subs: [ 'Animallica - Skyrim Wildlife Overhaul' ]
         condition: 'file("Animallica.esp") and not file("Wild World - Animallica.esp")'
@@ -13476,6 +13569,9 @@ plugins:
   - name: 'Skyrim Unlocked.esp'
     url: [ 'https://github.com/Kaenguru-Knobel-Kette/skyrim-unlocked/releases/' ]
     after: [ 'BetterQuestObjectives.esp' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xD8C4BCD1
@@ -13634,7 +13730,10 @@ plugins:
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
         condition: 'file("SKSE/Plugins/FISS/TimingIsEverythingPresets.xml")'
-    msg: [ *requiresMCM ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Timing is Everything.esp")'
+      - *requiresMCM
     clean:
       - crc: 0x06689998
         util: 'SSEEdit v4.0.3'
@@ -14079,11 +14178,20 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
 
   - name: 'Vampiric Thirst Redone.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13549/' ]
-    after: [ 'Requiem.esp' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13549/'
+        name: 'Vampiric Thirst Redone SSE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17610/'
+        name: 'The ACTUAL Vampiric Thirst for SSE'
+    group: *vampireGameplayGroup
   - name: 'mslVampiricThirst.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17610/' ]
-    after: [ 'Requiem.esp' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17610/'
+        name: 'The ACTUAL Vampiric Thirst for SSE'
+    group: *vampireGameplayGroup
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
 
   - name: 'Vokrii - Minimalistic Perks of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176/' ]
@@ -14281,6 +14389,14 @@ plugins:
       - crc: 0xD8B69F8C
         util: 'SSEEdit v4.0.3g'
 
+  - name: 'aMidianborn_Skyforge_Weapons.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35382/'
+        name: 'aMidianBorn Book of Silence'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - aMidianborn Skyforge Weapons.esp")'
+
   - name: 'AOM\.es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12470/'
@@ -14476,6 +14592,14 @@ plugins:
       - crc: 0x6CE0A40A
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Black Mage Armor SE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/356/'
+        name: 'Black Mage Armor'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Black Mage Armor.esp")'
+
   - name: 'Black Thief.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/48252/' ]
     dirty:
@@ -14512,6 +14636,8 @@ plugins:
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch\.esp") and not active("Bashed Patch.*\.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Book Covers Skyrim.esp")'
     after:
       - 'Tel_Nalta.esp'
       - 'UnlimitedBookshelves.esp'
@@ -14536,7 +14662,10 @@ plugins:
         name: 'BCS Lost Library - Original'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032/'
         name: 'BCS Lost Library - Desaturated'
-    msg: [ *alreadyInLotD ]
+    msg:
+      - *alreadyInLotD
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
     tag: [ Delev ]
     clean:
       - crc: 0xDA570813
@@ -14662,6 +14791,14 @@ plugins:
       - crc: 0x45353408
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'Cloaks&Capes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2019/'
+        name: 'Cloaks and Capes'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Cloaks and Capes.esp")'
+
   - name: 'CL Chillrend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2916/' ]
     msg:
@@ -14670,6 +14807,9 @@ plugins:
 
   - name: 'Common Clothes and Armors.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21305/' ]
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Common Clothes and Armors.esp")'
     tag:
       - Graphics
       - Keywords
@@ -14679,6 +14819,14 @@ plugins:
     clean:
       - crc: 0x7462E171
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
+
+  - name: 'Craftable Horse Barding.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23679/'
+        name: 'Craftable Horse Barding'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Craftable Horse Barding.esp")'
 
   - name: '(DaedricCloaks|WICO_DaedricCloaks_Patch)\.esp'
     url:
@@ -14816,6 +14964,14 @@ plugins:
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
 
+  - name: 'DIS_NordScale.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41118/'
+        name: 'Scale Nord Armor'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Scale Nord Armor.esp")'
+
   - name: '(DivineCloaks|WICO_DivineCloaks_Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9304/'
@@ -14863,6 +15019,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Faction Crossbows_CCOR_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Faction Crossbows.esp")'
     clean:
       # version: 1.1
       - crc: 0xEFE74E03
@@ -15096,9 +15254,11 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Requiem.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("imp_helm_legend_WACCF_Patch.esp") and not active("imp_helm_legend_WACCF_AMB_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
     tag: [ Graphics ]
     dirty:
       - <<: *quickClean
@@ -15205,6 +15365,8 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp")'
 
   - name: 'ktWeaponPackSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15050/' ]
@@ -15303,6 +15465,14 @@ plugins:
       # version: 1.4c
       - crc: 0xA5763C46
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'LPotD Armor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/51461/'
+        name: 'Lost Paladin Armor - Unofficial SSE Port'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Divine Wrath Armor.esp")'
 
   - name: 'LrsamwaysExpandedSkyrimWeaponry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2300/' ]
@@ -15500,6 +15670,8 @@ plugins:
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
       - <<: *sortMasters
         condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
     tag:
@@ -15527,6 +15699,8 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RoyalArmory_Patch.esp")'
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU_RoyalArmory_patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Royal Armory.esp")'
     clean:
       # version: 2.2
       - crc: 0x06EC2D98
@@ -15587,6 +15761,14 @@ plugins:
         crc: 0x24A898B8
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
+
+  - name: 'Rough Leather Armor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23725/'
+        name: 'Rough Leather Armor - Unofficial SE Port'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Rough Leather Armor.esp")'
 
   - name: 'RuinsEdge.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12792/' ]
@@ -15699,6 +15881,9 @@ plugins:
         name: 'Scoped Bows SE'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19495/'
         name: 'Scoped Bows Compatibility Kit - SBCK'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Scoped Bows.esp")'
     tag:
       - Delev
       - Graphics
@@ -15820,6 +16005,14 @@ plugins:
       # version: 3.07SSE
       - crc: 0x1F17FC44
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'TalosHousecarl.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5540/'
+        name: 'Talos Housecarl Armor Pack'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Talos Housecarl Armor.esp")'
 
   - name: 'ThaneWeaponsReborn.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8387/' ]
@@ -15950,6 +16143,14 @@ plugins:
       - crc: 0x5647775E
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Ulags Legacy.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20510/'
+        name: 'Ulag''s Legacy - Apotheus Light Armor - Blooded Heavy Armor - Duskward Light Armor'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Ulag''s Legacy.esp")'
+
   - name: 'Undriel_Everlight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16043/' ]
     dirty:
@@ -16029,6 +16230,14 @@ plugins:
       - Outfits.Remove
       - Relev
 
+  - name: 'WarmongerArmory_SSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17809/'
+        name: 'Warmonger Armory - Unofficial Fixed SSE Port'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Warmonger Armory.esp")'
+
   - name: 'WeaponsOf3E_SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5019/' ]
     clean:
@@ -16070,6 +16279,14 @@ plugins:
       # version: 4.06SE
       - crc: 0x65AFCE11
         util: 'SSEEdit v4.0.0'
+
+  - name: 'witchplate.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17053/'
+        name: 'Witchplate Armor Set'
+    msg:
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Witchplate Armor.esp")'
 
   - name: 'WZOblivionArtifacts.esp'
     url:
@@ -17141,6 +17358,8 @@ plugins:
         condition: 'active("RSkyrimChildren.esm") and not active("RealisticRSChildren.esp") and not active("RSC CRF Patch.esp") and not active("CRF_RSChildrenPatch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
       - *patch3rdParty_SRPC
     tag:
       - -Actors.DeathItem
@@ -18175,6 +18394,8 @@ plugins:
         condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive College of Winterhold.esp")'
       - *patch3rdParty_SRPC
       - <<: *patchIncluded
         subs: [ 'Better Dynamic Snow' ]
@@ -23199,12 +23420,18 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
         condition: 'active("imp_helm_legend_WACCF_AMB_Patch.esp")'
+      - <<: *alreadyInX
+        subs: [ 'Requiem - Improved Closefaced Helmets.esp' ]
+        condition: 'active("Requiem - Improved Closefaced Helmets.esp")'
       - <<: *useInstead
         subs: [ 'imp_helm_legend_WACCF_Patch.esp' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *useInstead
         subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("aMidianBorn_ContentAddon.esp")'
+      - <<: *useInstead
+        subs: [ '[Requiem - Improved Closefaced Helmets.esp](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)' ]
+        condition: 'active("Requiem.esp")'
 
   - name: 'JRWheelsOfLullPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5245/' ]
@@ -23275,6 +23502,134 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23114/' ]
     inc: [ 'Paper World Map Unofficial Fix.esp' ]
     req: [ *FlatMapMarkers ]
+
+  - name: 'Requiem - ArteFakes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+      - 'Requiem - Cutting Room Floor.esp'
+      - 'Requiem - ESF Companions.esp'
+  - name: 'Requiem - Audio Overhaul Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+      - 'Requiem - Cutting Room Floor.esp'
+  - name: 'Requiem - Book Covers Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Requiem - Minor Arcana - Roleplaying.esp' ]
+  - name: 'Requiem - Craftable Horse Barding.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after:
+      - 'Requiem - Immersive Horses.esp'
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
+  - name: 'Requiem - Cutting Room Floor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Deadly Dragons.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - ESF Companions.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Requiem - Minor Arcana - Roleplaying.esp' ]
+  - name: 'Requiem - Flora Fixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Heavy Armory.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Immersive Horses.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after:
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
+      - 'Requiem - SkyTEST.esp'
+      - 'Requiem - Wild World.esp'
+  - name: 'Requiem - Immersive Sounds Compendium.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Improved Closefaced Helmets.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Rough Leather Armor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Royal Armory.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+      - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
+      - 'Requiem - Warmonger Armory.esp'
+  - name: 'Requiem - Scoped Bows.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - SkyTEST.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+    inc: [ 'Requiem - Wild World.esp' ]
+  - name: 'Requiem - Timing Is Everything.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Trade and Barter.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+  - name: 'Requiem - Vampiric Thirst.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Vampiric Thirst Redone.esp' ]
+    msg:
+      - <<: *includesX
+        subs: [ '**Vampiric Thirst Redone.esp**' ]
+        condition: 'active("Vampiric Thirst Redone.esp")'
+  - name: 'Requiem - Warmonger Armory.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+      - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
+      - 'Requiem - Scale Nord Armor.esp'
+  - name: 'Requiem - Wild World.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+    inc: [ 'Requiem - SkyTEST.esp' ]
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
