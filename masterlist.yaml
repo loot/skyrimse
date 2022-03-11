@@ -23516,6 +23516,16 @@ plugins:
     inc: [ 'Paper World Map Unofficial Fix.esp' ]
     req: [ *FlatMapMarkers ]
 
+  - name: 'Requiem - Legacy of the Dragonborn.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36998/'
+        name: 'Requiem - Legacy of the Dragonborn'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Requiem - Legacy of the Dragonborn patch' ]
+        condition: 'file("DBM_Requiem_Patch.esp")'
+
+  ### Requiem Patch Central ###
   - name: 'Requiem - ArteFakes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -23643,15 +23653,6 @@ plugins:
         name: 'Requiem Patch Central'
     after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
     inc: [ 'Requiem - SkyTEST.esp' ]
-
-  - name: 'Requiem - Legacy of the Dragonborn.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36998/'
-        name: 'Requiem - Legacy of the Dragonborn'
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'Requiem - Legacy of the Dragonborn patch' ]
-        condition: 'file("DBM_Requiem_Patch.esp")'
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
