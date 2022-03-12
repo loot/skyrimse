@@ -9092,6 +9092,11 @@ plugins:
       - Text
     msg:
       - *requiresMCM
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CCOR_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchUpdateAvailable
@@ -10407,6 +10412,11 @@ plugins:
           - 'Perks Unbound'
           - '[Perks Unbound SSE -- WACCF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46295/)'
         condition: 'active("Perks Unbound - Special Edition.esp") and not active("PerksUnbound_WACCF.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Triss Armor Retextured'
@@ -14478,6 +14488,11 @@ plugins:
           - 'Remodeled Armor'
           - '[Armor and Clothing Extension - Remodeled Armor Patch](https://www.nexusmods.com/skyrimspecialedition/mods/30220/)'
         condition: 'active("Remodeled Armor - Vanilla Replacer.esp") and not active("ACE_Remodeled_Armor_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp")'
       - *requiresMCM
     tag:
       - -Invent.Add
