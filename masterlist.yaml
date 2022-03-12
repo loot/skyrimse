@@ -23208,6 +23208,11 @@ plugins:
     after:
       - 'Qw_ACE_CRF Patch.esp'
       - 'Qw_WACCF_CRF Patch.esp'
+  - name: 'DBM_Requiem_Patch.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Requiem - Legacy of the Dragonborn patch' ]
+        condition: 'file("Requiem - Legacy of the Dragonborn.esp")'
   - name: 'DBM_WACCF_Patch.esp'
     after:
       - 'DBM_CRF_Patch.esp'
@@ -23511,6 +23516,16 @@ plugins:
     inc: [ 'Paper World Map Unofficial Fix.esp' ]
     req: [ *FlatMapMarkers ]
 
+  - name: 'Requiem - Legacy of the Dragonborn.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36998/'
+        name: 'Requiem - Legacy of the Dragonborn'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Requiem - Legacy of the Dragonborn patch' ]
+        condition: 'file("DBM_Requiem_Patch.esp")'
+
+  ### Requiem Patch Central ###
   - name: 'Requiem - ArteFakes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
