@@ -3494,6 +3494,10 @@ plugins:
   - name: 'ELFX Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25498/' ]
     after: [ 'Skysan_ELFX_SMIM_Fix.esp' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'ELFX Shadows' ]
+        condition: 'active("ELFX Shadows.esp")'
     tag:
       - C.Light
       - C.Water
