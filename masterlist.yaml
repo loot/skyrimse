@@ -3350,8 +3350,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2424/'
         name: 'Enhanced Lights and FX'
   - name: 'EnhancedLightsandFX.esp'
-    inc:
-      - 'RLO - Exteriors.esp'
     after:
       - name: '3DNPC.esp'
         condition: '(is_master("3DNPC.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("3DNPC.esp") and not is_master("EnhancedLightsandFX.esp"))'
@@ -3359,6 +3357,7 @@ plugins:
         condition: '(is_master("SMIM-SE.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE.esp") and not is_master("EnhancedLightsandFX.esp"))'
       - name: 'SMIM-SE-Merged-All.esp'
         condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("EnhancedLightsandFX.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("EnhancedLightsandFX.esp"))'
+    inc: [ 'RLO - Exteriors.esp' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -3435,7 +3434,7 @@ plugins:
         subs:
           - 'Open Cities'
           - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265/)'
-        condition: 'active("Open Cities Skyrim.esp")  and not active("ELFX - Exteriors Open Cities Patch.esp")'
+        condition: 'active("Open Cities Skyrim.esp") and not active("ELFX - Exteriors Open Cities Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchUpdateAvailable
