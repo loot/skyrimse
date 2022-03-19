@@ -17170,7 +17170,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Wyrmstooth](https://www.nexusmods.com/skyrimspecialedition/mods/45565/)' ]
-        condition: 'not version("Wyrmstooth.esp", "1.19.2", >=)'
+        condition: 'version("Wyrmstooth.esp", "1.19.2", <) and not file("interface/translations/wyrmstooth_german.txt")'
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not active("JS Dragon Claws - Wyrmstooth Patch.esp")'
       - <<: *patch3rdParty_KPH_CACO
