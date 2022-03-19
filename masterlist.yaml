@@ -3369,7 +3369,7 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFX_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patchUpdateAvailable
         subs: [ '[ELFX Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/25498/)' ]
-        condition: 'not active("ELFX Fixes.esp") and not active("ELFX with Shadows.esp")'
+        condition: 'not active("ELFX Fixes.esp") and not active("ELFX Shadows.esp") and not active("ELFX with Shadows.esp")'
     tag:
       - C.Climate
       - C.ImageSpace
@@ -3494,6 +3494,10 @@ plugins:
   - name: 'ELFX Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25498/' ]
     after: [ 'Skysan_ELFX_SMIM_Fix.esp' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'ELFX Shadows' ]
+        condition: 'active("ELFX Shadows.esp")'
     tag:
       - C.Light
       - C.Water
@@ -3516,6 +3520,20 @@ plugins:
     clean:
       - crc: 0x246FBB30
         util: 'SSEEdit v4.0.3'
+
+  - name: 'ELFX Shadows.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63790/'
+        name: 'ELFX Shadows'
+    inc:
+      - 'ELFX Fake Light Remover.esp'
+      - 'Skysan_ELFX_SMIM_Fix.esp'
+    tag: [ C.Climate ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xE8991432
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
   - name: 'EmbersHD.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14368/' ]
