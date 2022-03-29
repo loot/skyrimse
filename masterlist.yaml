@@ -1455,9 +1455,14 @@ plugins:
 ###### Unofficial Patches ######
   - name: 'Unofficial Skyrim Special Edition Patch.esp'
     url:
-      - 'https://www.afkmods.com/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
+      - link: 'https://www.afkmods.com/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
+        name: 'Unofficial Skyrim Special Edition Patch (AFK Mods)'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2947658/'
+        name: 'Unofficial Skyrim Special Edition Patch (Bethesda.net Mods)'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
+        name: 'Unofficial Skyrim Special Edition Patch (Nexus Mods)'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65237/'
+        name: 'Unofficial Skyrim Special Edition Patch DV'
     group: *fixesGroup
     msg:
       - <<: *patch3rdParty
@@ -1480,6 +1485,8 @@ plugins:
     clean:
       - crc: 0x7B6EB54A
         util: 'SSEEdit v4.0.4b'
+      - crc: 0xB3AB07FD
+        util: 'SSEEdit v4.0.4'
 
   - name: 'JRCCPatches.*\.esp'
     url:
