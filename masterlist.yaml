@@ -2183,16 +2183,34 @@ plugins:
           - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
         condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
 
-  - name: 'Atlas Legendary( OCS)?.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14493/' ]
+  - name: 'Atlas (Legendary( OCS)?|Compass Tweaks)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14493/'
+        name: 'Atlas Map Markers'
+  - name: 'Atlas Legendary( OCS)?\.esp'
     group: *worldSettingsGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
+  - name: 'Atlas (Legendary|Compass Tweaks)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20466/'
+        name: 'Atlas Map Markers DV'
   - name: 'Atlas Legendary.esp'
     inc: [ 'Open Cities Skyrim.esp' ]
+    clean:
+      - crc: 0xF9673261
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0xE1DB000E
+        util: 'SSEEdit v4.0.4'
   - name: 'Atlas Legendary OCS.esp'
     req: [ 'Open Cities Skyrim.esp' ]
+  - name: 'Atlas Compass Tweaks.esp'
+    clean:
+      - crc: 0x73556E7A
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x3259520C
+        util: 'SSEEdit v4.0.4'
 
   - name: 'coloredmapmarkers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3997/' ]
