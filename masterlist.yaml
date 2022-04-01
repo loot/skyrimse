@@ -7015,6 +7015,11 @@ plugins:
           - 'Whiterun Valley - Hold Expansion'
           - '[Ancient Land Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54140/)'
         condition: 'active("WhiterunValley3.esp") and not active("AncientLand-WhiterunValley.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Expanded Towns and Cities'
+          - '[Expanded Towns and Cities](https://www.nexusmods.com/skyrimspecialedition/mods/13552/)'
+        condition: '(active("ETaC - Complete.esp") and not active("ETaC - Complete Ancient Land Patch.esp")) or (active("ETaC - Riverwood.esp") and not active("ETaC - Riverwood Ancient Land Patch.esp"))'
     clean:
       - crc: 0xB5FDA10D
         util: 'SSEEdit v4.0.4'
