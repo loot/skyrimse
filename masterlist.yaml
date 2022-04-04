@@ -1996,19 +1996,27 @@ plugins:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp")'
 
-  - name: 'Particle Patch for ENB SSE.esp'
-    url: [ 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499/' ]
+  - name: 'Particle Patch for ENB( SSE)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65720/'
+        name: 'Particle Patch for ENB'
+  - name: 'Particle Patch for ENB.esp'
+    group: *fixesGroup
     msg:
       - <<: *alsoUseX
-        subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
+        subs: [ '[ENB Helper](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
         condition: 'file("../skse64_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperSE.dll")'
-      - <<: *deletePlugin
-        type: say
-        subs: [ 'ENB Helper SE' ]
-        condition: 'file("skse/plugins/ENBHelperSE.dll") and active("Particle Patch for ENB SSE.esp")'
-    tag:
-      - C.Climate
-      - C.ImageSpace
+    tag: [ C.ImageSpace ]
+    clean:
+      - crc: 0x3D8BEDCB
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Particle Patch for ENB SSE.esp'
+    url:
+      - link: 'http://enbseries.enbdev.com/forum/viewtopic.php?t=1499/'
+        name: 'Skyrim particle patch for ENB'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Particle Patch for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/65720/)' ]
 
   - name: 'PilgrimsDelight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3273/' ]
