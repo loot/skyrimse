@@ -2006,10 +2006,6 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)' ]
         condition: 'file("../skse64_loader.exe") and file("../d3d11.dll") and not file("skse/plugins/ENBHelperSE.dll")'
-      - <<: *deletePlugin
-        type: say
-        subs: [ 'ENB Helper SE' ]
-        condition: 'file("skse/plugins/ENBHelperSE.dll") and active("Particle Patch for ENB SSE.esp")'
     tag:
       - C.Climate
       - C.ImageSpace
