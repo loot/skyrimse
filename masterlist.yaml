@@ -3621,18 +3621,20 @@ plugins:
         util: 'SSEEdit v4.0.3j (RC2 for 4.0.4)'
 
   - name: 'ENB Light.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22574/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22574/'
+        name: 'ENB Light'
     after:
       - 'ELE_SSE.esp'
       - 'ELFX - Hardcore.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
     req: [ *ENBSeries ]
-    tag: [ Graphics ]
     msg:
       - <<: *requiresResources
-        subs: [ '[Skyrim Particle Patch for ENB-SSE](http://enbseries.enbdev.com/forum/viewtopic.php?t=1499)' ]
-        condition: 'not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
+        subs: [ '[Particle Patch for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/65720/)' ]
+        condition: 'not (file("Particle Patch for ENB.bsa") and active("Particle Patch for ENB.esp")) and not file("textures/effects/gradients/gradillusiondark01m.dds") and not file("textures/WiZkiD/iron_e.dds")'
+    tag: [ Graphics ]
 
   - name: 'ImprovedHearthfireLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/721/' ]
