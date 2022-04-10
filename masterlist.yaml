@@ -23577,6 +23577,108 @@ plugins:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp")'
+    
+    ### Dawn of Skyrim - Modern Patches ###
+  - name: 'DoS_MP_Whiterun.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ '***Interesting NPCs***' ]
+        condition: 'active("3DNPC.esp") and not active("DoS_MP_Whiterun_3DNPC.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Capital Whiterun Expansion***' ]
+        condition: 'active("SurWR.esp") and not active("DoS_MP_Whiterun_CWE.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Dynamic Things Alternative***' ]
+        condition: 'active("Dynamic Things Alternative.esp") and not active("DoS_MP_Whiterun_DynamicThingsAlternative.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Fishing***' ]
+        condition: 'active("ccBGSSSE001-Fish.esm") and not active("DoS_MP_Whiterun_Fishing.esp")'
+      - <<: *patchIncluded
+        subs: [ '***JKs Skyrim***' ]
+        condition: 'active("JKs Skyrim.esp") and not active("DoS_MP_Whiterun_JK.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Legacy of the Dragonborn***' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_LOTD.esp") and not active("DoS_MP_Whiterun_CWE_LOTD.esp") and not active("DoS_MP_Whiterun_JK_LOTD.esp") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+  - name: 'DoS_MP_Whiterun_CWE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ '***JKs Skyrim***' ]
+        condition: 'active("JKs Skyrim.esp") and not active("DoS_MP_Whiterun_JK_CWE.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Darks Whiterun Market***' ]
+        condition: 'active("WhiterunMarket.esp") and not active("DoS_MP_Whiterun_CWE_DWM.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Legacy of the Dragonborn***' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_CWE_LOTD.esp") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+  - name: 'DoS_MP_Whiterun_CWE_DWM.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ '***Capital Whiterun Expansion NPC Sleep Fixes***' ]
+        condition: 'active("Capital Whiterun Expansion v15 Sleep Fixes.esp") and not active("DoS_MP_Whiterun_CWE_DWM_SleepFix.esp")'
+  - name: 'DoS_MP_Whiterun_CWE_LOTD.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    inc:
+      - 'DoS_MP_Whiterun_JK_LOTD.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '***DoS_MP_Whiterun_JK_CWE_LOTD.esp***' ]
+        condition: 'active("DoS_MP_Whiterun_CWE_LOTD.esp") and active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+  - name: 'DoS_MP_Whiterun_JK.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ '***Capital Whiterun Expansion***' ]
+        condition: 'active("SurWR.esp") and not active("DoS_MP_Whiterun_JK_CWE.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Darks Whiterun Market***' ]
+        condition: 'active("WhiterunMarket.esp") and not active("DoS_MP_Whiterun_JK_DWM.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Fishing***' ]
+        condition: 'active("ccBGSSSE001-Fish.esm") and not active("DoS_MP_Whiterun_JK_Fishing.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Legacy of the Dragonborn***' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_JK_LOTD.esp") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+  - name: 'DoS_MP_Whiterun_JK_CWE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    inc: [ 'JK - CWE Patch.esp' ]
+    msg:
+      - <<: *patchIncluded
+        subs: [ '***Legacy of the Dragonborn***' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Capital Whiterun Expansion NPC Sleep Fixes***' ]
+        condition: 'active("Capital Whiterun Expansion v15 Sleep Fixes.esp") and not active("DoS_MP_Whiterun_JK_CWE_SleepFix.esp")'
+  - name: 'DoS_MP_Whiterun_JK_CWE_LOTD.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    inc:
+      - 'DoS_MP_Whiterun_CWE_LOTD.esp'
+      - 'DoS_MP_Whiterun_JK_LOTD.esp'
+      - 'DoS_MP_Whiterun_LOTD.esp'
+  - name: 'DoS_MP_Whiterun_JK_DWM.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    inc: [ 'Whiterun Market - JK skyrim patch.esp' ]
+  - name: 'DoS_MP_Whiterun_JK_LOTD.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    inc: [ 'DoS_MP_Whiterun_CWE_LOTD.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '***DoS_MP_Whiterun_JK_CWE_LOTD.esp***' ]
+        condition: 'active("DoS_MP_Whiterun_JK_LOTD.esp") and active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+  - name: 'DoS_MP_Whiterun_LOTD.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/65467/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '***DoS_MP_Whiterun_CWE_LOTD.esp***' ]
+        condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_CWE_LOTD.esp")'
+      - <<: *alreadyInX
+        subs: [ '***DoS_MP_Whiterun_JK_LOTD.esp***' ]
+        condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_JK_LOTD.esp")'
+      - <<: *alreadyInX
+        subs: [ '***DoS_MP_Whiterun_JK_CWE_LOTD.esp***' ]
+        condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
 
   - name: 'ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources|Patch AIO)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18634/' ]
