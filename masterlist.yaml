@@ -2568,6 +2568,27 @@ plugins:
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 5
 
+  - name: 'Elemental_Staffs(_Patch_Mysticism)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5319/'
+        name: 'Elemental Staffs'
+    tag: [ Graphics ]
+  - name: 'Elemental_Staffs.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Mysticism - A Magic Overhaul' ]
+        condition: 'active("MysticismMagic.esp") and not active("Elemental_Staffs_Patch_Mysticism.esp")'
+    tag:
+      - Names
+      - ObjectBounds
+    clean:
+      - crc: 0xA9F6838B
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Elemental_Staffs_Patch_Mysticism.esp'
+    clean:
+      - crc: 0x2A99F47D
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Elemental_Staffs_Patch_AMoS.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/34521/'
