@@ -8826,10 +8826,23 @@ plugins:
         name: 'Woodworker''s Whim'
     group: *craftingGroup
     after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs:
+          - 'Campfire - Complete Camping System'
+        condition: 'active("Campfire.esm") and not active("WoodworkersWhim_Campfire.esp")'
     clean:
       - crc: 0x24E8B4EA
         util: 'SSEEdit v4.0.4b'
       - crc: 0x8CCD892A
+        util: 'SSEEdit v4.0.4b'
+
+  - name: 'WoodworkersWhim_Campfire.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64507/'
+        name: 'Woodworker''s Whim'
+    clean:
+      - crc: 0x7F60A661
         util: 'SSEEdit v4.0.4b'
 
   - name: 'YASH2.esp'
