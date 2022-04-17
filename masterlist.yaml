@@ -14485,18 +14485,17 @@ plugins:
         util: 'SSEEdit v4.0.4b'
 
   - name: 'AetheriumSwordsnArmor.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2687/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2687/'
+        name: 'Aetherium Armor and Weapons Compilation by lautasantenni'
     msg:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("AetheriumSwordsnArmor_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AetheriumWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
-    dirty:
-      # version: 1.0
-      - <<: *quickClean
-        crc: 0xC2285F24
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 7
+    clean:
+      - crc: 0xFA7F23A7
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'aMidianBorn_ContentAddon(Light)?\.esp'
     url:
