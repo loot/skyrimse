@@ -15733,6 +15733,21 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 12
 
+  - name: 'More Thalmor Dossiers.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65059/'
+        name: 'More Thalmor Dossiers'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Helgen Reborn' ]
+        condition: 'active("Helgen Reborn.esp") and not active("More Thalmor Dossiers - Helgen Reborn.esp")'
+      - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("More Thalmor Dossiers - LotD.esp")'
+    clean:
+      - crc: 0xA057DD73
+        util: 'SSEEdit v4.0.4'
+
   - name: 'NarrativeLoot Complete.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12812/' ]
     msg:
