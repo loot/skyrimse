@@ -6276,19 +6276,17 @@ plugins:
     tag: [ Relev ]
 
   - name: 'HoH.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16918/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16918/'
+        name: 'TES V - Hunt of Hircine'
+    tag:
+      - C.Location
+      - Relations.Add
     dirty:
-      # version: 1.06
-      - <<: *reqManualFix
-        crc: 0x028A70D5
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 80
-        nav: 4
-      # version: 1.06
-      - <<: *reqManualFix
-        crc: 0x3EFB8CCB
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 4
+      - <<: *quickClean
+        crc: 0x5B49F883
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 116
 
   - name: 'KarstaagReborn.esp'
     url:
