@@ -11064,6 +11064,54 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17203/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
+  - name: 'Enchanting(Adjustments|PriceChargeBugFix).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8473/'
+        name: 'Enchanting Adjustments and Price-Charge Bug Fix'
+  - name: 'EnchantingAdjustments.esp'
+    req: [ *SKSE ]
+    msg: [ *requiresMCM ]
+    tag:
+      - Delev
+      - EffectStats
+      - Enchantments
+      - EnchantmentStats
+      - Graphics
+      - Keywords
+      - Names
+      - Stats
+      - Text
+    clean:
+      - crc: 0xD8C47D75
+        util: 'SSEEdit v4.0.4b'
+  - name: 'EnchantingAdjustments - Summermyst Patch.esp'
+    tag: [ EnchantmentStats ]
+    clean:
+      - crc: 0x129A4BD0
+        util: 'SSEEdit v4.0.4b'
+  - name: 'EnchantingAdjustments - VAE Patch.esp'
+    clean:
+      - crc: 0x400793DC
+        util: 'SSEEdit v4.0.4b'
+  - name: 'EnchantingAdjustments - WACCF Patch.esp'
+    tag:
+      - Graphics
+      - Keywords
+      - Names
+      - Stats
+    clean:
+      - crc: 0x87D28A15
+        util: 'SSEEdit v4.0.4b'
+  - name: 'EnchantingPriceChargeBugFix.esp'
+    clean:
+      - crc: 0x7FD1A618
+        util: 'SSEEdit v4.0.4b'
+  - name: 'EnchantingPriceChargeBugFix - Summermyst Enchantments.esp'
+    tag: [ EnchantmentStats ]
+    clean:
+      - crc: 0x2155638F
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Evenstar - Minimalistic Standing Stones of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/41256/' ]
     after:
