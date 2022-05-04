@@ -18685,10 +18685,11 @@ plugins:
         itm: 16
         udr: 28
 
-  - name: 'CollegeOfWinterholdImmersive.esp'
+  - name: '(CollegeOfWinterholdImmersive|CWI.*Patch.*|ICOW_(MOW|WICO)_Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17004/'
         name: 'Immersive College of Winterhold'
+  - name: 'CollegeOfWinterholdImmersive.esp'
     after:
       - name: 'Book Covers Skyrim.esp'
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("Book Covers Skyrim.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("Book Covers Skyrim.esp"))'
@@ -18712,11 +18713,12 @@ plugins:
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("TheWulfPanda - Faction Teleport Spells.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("TheWulfPanda - Faction Teleport Spells.esp"))'
       - name: 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp"))'
+    req: [ *SKSE ]
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Konahrik''s Accoutrements'
-          - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
+          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
         condition: 'active("konahrik_accoutrements.esp") and not active("ICOW_KA_Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty
         subs:
@@ -18725,9 +18727,19 @@ plugins:
         condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty
         subs:
+          - 'Skyrim Immersive Creatures'
+          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("ICOW - SIC Patch.esp") and not active("UltimateCollege.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'The Gray Cowl Returns! (Creation Club)'
-          - '[Immersive College of Winterhold - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/28687/)'
+          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
         condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp") and not active("UltimateCollege.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Wild Horses (Creation Club)'
+          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
+        condition: 'active("ccbgssse034-mntuni.esl") and not active("ICOW - CC - Wild Horses Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
       - <<: *patch3rdParty_RPC
@@ -18738,13 +18750,13 @@ plugins:
         condition: 'active("Better Dynamic Snow.esp") and not active("CWIBDSPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("CWICRFSEPatch.esp") and not active("UltimateCollege.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("CWICRFSEPatch.esp") and not active("ICOW - (AIO - )?CRF Patch\.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("CWIEnLFXSEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'M''rissi''s Tails of Troubles' ]
-        condition: 'active("MrissiTailOfTroubles.esp") and not active("CWIMTOTPatchSE.esp") and not active("UltimateCollege.esp")'
+        condition: 'active("MrissiTailOfTroubles.esp") and not active("CWIMTOTPatchSE.esp") and not active("ICOW - Mrissi Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("CWIOpenCitiesSEPatch.esp")'
@@ -18754,6 +18766,10 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp") and not active("UltimateCollege.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/) (Unofficial Immersive College of Winterhold Patch)' ]
+        condition: 'not active("ICOW Unofficial Patch.esp") and not active("UltimateCollege.esp")'
+      - *requiresMCM
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -18785,6 +18801,18 @@ plugins:
       - Text
     clean:
       - crc: 0x01E10725
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWICRFSEPatch.esp'
+    inc:
+      - 'ICOW - AIO - CRF Patch.esp'
+      - 'ICOW - CRF Patch.esp'
+    clean:
+      - crc: 0xE6B65E3B
+        util: 'SSEEdit v4.0.4b'
+  - name: 'CWIMTOTPatchSE.esp'
+    inc: [ 'ICOW - Mrissi Patch.esp' ]
+    clean:
+      - crc: 0x67B8CED1
         util: 'SSEEdit v4.0.4b'
 
   - name: 'COTN - Dawnstar.esp'
