@@ -13787,6 +13787,41 @@ plugins:
       - C.Climate
       - C.Water
 
+  - name: '(RL|LAL)?Daggerfall.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29416/'
+        name: 'Skygerfall -- Daggerfall''s Main Quest in TESV'
+  - name: 'Daggerfall.esp'
+    clean:
+      - crc: 0x010D3506
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Daggerfall - Update.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x124CDA18
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'DaggerfallPaperMap.esp'
+    clean:
+      - crc: 0x8709549E
+        util: 'SSEEdit v4.0.4b'
+  - name: 'LALDaggerfall.esp'
+    clean:
+      - crc: 0x03A89BBF
+        util: 'SSEEdit v4.0.4b'
+  - name: 'RLDaggerfall.esp'
+    clean:
+      - crc: 0xA3D1CF68
+        util: 'SSEEdit v4.0.4b'
+  - name: 'DaggerfallTraits.esp'
+    clean:
+      - crc: 0xFEBF8276
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Daggerfall - Imp Wings FIX.esp'
+    clean:
+      - crc: 0x558178F9
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Skyrim Unbound.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27962/' ]
     group: *altStartGroup
