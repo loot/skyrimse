@@ -18373,6 +18373,36 @@ plugins:
       - crc: 0x6D3D6301
         util: 'SSEEdit v4.0.2'
 
+  - name: 'sm_jobasha_(bookshop|WHrestore_patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13285/'
+        name: 'Jobasha''s Books'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Jobasha''s Books ESP' ]
+        condition: 'many("sm_jobasha_(bookshop|WHrestore_patch)\.esp")'
+    tag:
+      - Keywords
+      - Stats
+  - name: 'sm_jobasha_bookshop.esp'
+    msg:
+      - <<: *useInstead
+        subs: [ '[Jobasha''s Books and WinterHold Restored Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13285/) **sm_jobasha_WHrestore_patch.esp**' ]
+        condition: 'active("Winterhold Restored.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x3327F159
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 10
+  - name: 'sm_jobasha_WHrestore_patch.esp'
+    req: [ 'Winterhold Restored.esp' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xED930025
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+        udr: 1
+
   - name: 'SMMerchantCamp.esl'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26042/'
@@ -18382,13 +18412,6 @@ plugins:
         crc: 0xD6E8CE35
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
-
-  - name: 'sm_jobasha_bookshop.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13285/' ]
-    msg:
-      - <<: *useInstead
-        subs: [ '[Jobasha''s Books and WinterHold Restored Patch](https://www.nexusmods.com/skyrimspecialedition/mods/13285/) **sm_jobasha_WHrestore_patch.esp**' ]
-        condition: 'active("Winterhold Restored.esp")'
 
   - name: 'SolemnKeep.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11037/' ]
