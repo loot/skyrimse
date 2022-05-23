@@ -1784,8 +1784,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and active("WM Flora Fixes.esp")'
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Flora Fixes.esp")'
       - <<: *useVersion
         type: say
         subs: [ 'No Scripts' ]
@@ -6939,14 +6937,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_RSCPC
         condition: 'active("RSkyrimChildren.esm") and not active("RSC IncNPC.esp")'
-
-  - name: 'Immersive Patrols II.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/718/'
-        name: 'Immersive Patrols'
-    msg:
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Patrols.esp")'
 
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
@@ -14942,14 +14932,6 @@ plugins:
       # version: 1
       - crc: 0x6CE0A40A
         util: 'SSEEdit v4.0.3'
-
-  - name: 'Black Mage Armor SE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/356/'
-        name: 'Black Mage Armor'
-    msg:
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Black Mage Armor.esp")'
 
   - name: 'Black Thief.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/48252/' ]
