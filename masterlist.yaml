@@ -7396,7 +7396,9 @@ plugins:
         udr: 218
 
   - name: '(Skyrim )?Landscape and Water Fixes.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26138/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26138/'
+        name: 'Skyrim Landscape and Water Fixes'
   - name: 'Landscape and Water Fixes.esp'
     msg:
       - <<: *patchIncluded
@@ -7404,7 +7406,7 @@ plugins:
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Landscape and Water Fixes - Patch - CACO.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp")'
+        condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp") and not active("ELFX Shadows.esp")'
       - <<: *patchIncluded
         subs: [ 'Landscape Fixes For Grass Mods' ]
         condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("Landscape and Water Fixes - Patch - LFfGM.esp")'
@@ -7424,6 +7426,9 @@ plugins:
     clean:
       - crc: 0xCC137B4C
         util: 'SSEEdit v4.0.3g'
+  # Skyrim Landscape and Water Fixes Patches #
+  - name: 'Landscape and Water Fixes - Patch - ELFX.esp'
+    inc: [ 'ELFX Shadows.esp' ]
   - name: 'Landscape and Water Fixes - Patch - Relighting Skyrim.esp'
     req: [ 'RelightingSkyrim_SSE.esp' ]
 
