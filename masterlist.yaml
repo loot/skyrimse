@@ -724,8 +724,12 @@ groups:
     description: 'A group for modules that need to be loaded late to preserve worldspace settings.'
     after: [ *lvlListsGroup ]
 
-  - name: &dynamicPatchGroup Dynamic Patches
+  - name: &paperMapsGroup Paper Maps
+    description: 'A group for paper map mods that need to be loaded late to preserve worldspace settings.'
     after: [ *worldSettingsGroup ]
+
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *paperMapsGroup ]
 
   - name: &lateChangesGroup Late Fixes & Changes
     after: [ *dynamicPatchGroup ]
