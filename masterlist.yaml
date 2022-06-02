@@ -2060,17 +2060,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
 ###### AudioVisual - Interface ######
-  - name: 'Disease Descriptions.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992/' ]
-    msg:
-      - <<: *patchIncluded
-        type: warn
-        subs: [ 'Realistic Needs and Diseases' ]
-        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
-    clean:
-      - crc: 0xE26D04C8
-        util: 'SSEEdit v4.0.3'
-
   - name: 'EzEWorldMapSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
     group: *worldSettingsGroup
@@ -14543,6 +14532,24 @@ plugins:
     req: [ 'Better descriptions SSE.esp' ]
   - name: 'Better Descriptions SSE - YOT Patch.esp'
     req: [ 'YOT - Your Own Thoughts.esp' ]
+
+  - name: 'Disease Descriptions.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992/' ]
+    msg:
+      - <<: *patchIncluded
+        type: warn
+        subs: [ 'Realistic Needs and Diseases' ]
+        condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
+    tag:
+      - Names
+      - Text
+    clean:
+      - crc: 0xC60FECE5
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Disease Descriptions - RND Patch.esp'
+    tag:
+      - Names
+      - Text
 
   - name: 'Unique Region Names.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56452/' ]
