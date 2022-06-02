@@ -14513,23 +14513,6 @@ plugins:
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
 ###### Gameplay - User Interface - Map markers ######
-  - name: 'Atlas Map Markers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24104/' ]
-    group: *worldSettingsGroup
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'MLU.esp'
-      - 'SL01AmuletsSkyrim.esp'
-    inc:
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Cities Skyrim'
-          - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
-
   - name: 'Atlas (Legendary( OCS)?|Compass Tweaks)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14493/'
@@ -14558,6 +14541,23 @@ plugins:
         util: 'SSEEdit v4.0.4b'
       - crc: 0x3259520C
         util: 'SSEEdit v4.0.4'
+
+  - name: 'Atlas Map Markers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24104/' ]
+    group: *worldSettingsGroup
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'MLU.esp'
+      - 'SL01AmuletsSkyrim.esp'
+    inc:
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
 
   - name: 'coloredmapmarkers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3997/' ]
