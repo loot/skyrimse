@@ -1869,7 +1869,80 @@ plugins:
     url: [ 'https://github.com/z-edit/zedit' ]
     group: *dynamicPatchGroup
 
-###### AudioVisual - Fixes ######
+###### Resources & Frameworks ######
+  - name: 'Gamepad++.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
+    msg: [ *requiresMCM ]
+    req:
+      - *JContainers
+      - *SKSE
+
+  - name: 'iEquip.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
+    msg: [ *requiresMCM ]
+    req:
+      - *JContainers
+      - *SKSE
+
+  - name: 'NQS_NamedQuicksaves.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
+    msg: [ *requiresMCM ]
+    req:
+      - *SKSE
+      - *EngineFixes
+
+  - name: 'RaceMenu.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
+        name: 'RaceMenu Special Edition'
+    req: [ *SKSE ]
+    inc:
+      - 'CharacterMakingExtender.esp'
+      - 'EnhancedCharacterEdit.esp'
+    clean:
+      - crc: 0x7A89300E
+        util: 'SSEEdit v4.0.3'
+  - name: 'RaceMenuPlugin.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/' ]
+    req: [ 'RaceMenu.esp' ]
+    msg: [ *optional ]
+    clean:
+      - crc: 0x8FF336FE
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'SkyUI_SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
+    group: *fixesGroup
+    req: [ *SKSE ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
+        condition: 'file("SkyUI_SE.bsa") and not file("interface/quest_journal.swf")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
+        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
+        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
+        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
+        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+      - type: say
+        content:
+          - lang: en
+            text: 'BSA known to include files from an older version of this mod. %1%'
+        subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
+        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+    clean:
+      - crc: 0x79ACE179
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x074D8C60
+        util: 'SSEEdit v4.0.3'
+
+###### AudioVisual ######
   - name: '___SNOW_FIX.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19846/' ]
     group: *earlyLoadersGroup
@@ -2058,250 +2131,6 @@ plugins:
     clean:
       - crc: 0x48E03FD5
         util: 'SSEEdit v4.0.3'
-
-###### AudioVisual - Interface ######
-  - name: 'EzEWorldMapSE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
-    group: *worldSettingsGroup
-
-  - name: 'SkyUI_SE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
-    group: *fixesGroup
-    req: [ *SKSE ]
-    msg:
-      - <<: *alsoUseX
-        subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
-        condition: 'file("SkyUI_SE.bsa") and not file("interface/quest_journal.swf")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
-        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
-        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
-      - type: say
-        content:
-          - lang: en
-            text: 'BSA known to include files from an older version of this mod. %1%'
-        subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
-    clean:
-      - crc: 0x79ACE179
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x074D8C60
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'A Clear Map of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56367/' ]
-    group: *worldSettingsGroup
-    after: [ 'Atlas Map Markers.esp' ]
-
-  - name: 'Atlas Map Markers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24104/' ]
-    group: *worldSettingsGroup
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'MLU.esp'
-      - 'SL01AmuletsSkyrim.esp'
-    inc:
-      - name: 'Open Cities Skyrim.esp'
-        condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Open Cities Skyrim'
-          - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
-
-  - name: 'Atlas (Legendary( OCS)?|Compass Tweaks)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14493/'
-        name: 'Atlas Map Markers'
-  - name: 'Atlas Legendary( OCS)?\.esp'
-    group: *worldSettingsGroup
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'MLU.esp'
-  - name: 'Atlas (Legendary|Compass Tweaks)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20466/'
-        name: 'Atlas Map Markers DV'
-  - name: 'Atlas Legendary.esp'
-    inc: [ 'Open Cities Skyrim.esp' ]
-    clean:
-      - crc: 0xF9673261
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0xE1DB000E
-        util: 'SSEEdit v4.0.4'
-  - name: 'Atlas Legendary OCS.esp'
-    req: [ 'Open Cities Skyrim.esp' ]
-  - name: 'Atlas Compass Tweaks.esp'
-    clean:
-      - crc: 0x73556E7A
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0x3259520C
-        util: 'SSEEdit v4.0.4'
-
-  - name: 'coloredmapmarkers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3997/' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("coloredmapmarkers.esp", E4D0F057)'
-
-  - name: 'Dawnguard Map Markers.esp'
-    url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
-    group: *worldSettingsGroup
-    after:
-      - 'Atlas Legendary.esp'
-      - 'Atlas Legendary OCS.esp'
-      - 'Atlas Map Markers.esp'
-    clean:
-      - crc: 0xAA2F3309
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'Gamepad++.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
-    msg: [ *requiresMCM ]
-    req:
-      - *JContainers
-      - *SKSE
-
-  - name: 'iEquip.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
-    msg: [ *requiresMCM ]
-    req:
-      - *JContainers
-      - *SKSE
-
-  - name: 'Joy of Perspective.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358/' ]
-    after:
-      - 'Endgame NPC Overhaul.esp'
-      - 'UNP Vanilla Outfits.esp'
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Beyond Skyrim: Bruma'
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
-        condition: 'active("BSHeartland.esm") and not active("Jop - BrumaPatch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Common Clothes'
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
-        condition: 'active("CommonClothes.esp") and not active("Jop - CommonClothes.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive Armors'
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
-        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("JoP - Immersive Armors Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Final Cataclysm'
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
-        condition: 'active("INFERNAL FLAME.esp") and not active("Jop - INFL.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Legacy Of the Dragonborn'
-          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("Jop - LegacyOfDragonborn.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing and Clutter Fixes'
-          - '[QUARK - Qwinn''s Ultimate Amulet Restoration Kit](https://www.nexusmods.com/skyrimspecialedition/mods/18177/)'
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("AmuletsShowOnEverything-JOP.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'WACCF - Armor and Clothing Extension'
-          - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114/)'
-        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
-      - <<: *patcherScriptAvailable
-        subs:
-          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
-          - '[Auto Patching - VIS - JOP - Disenchant All - Weightless](https://www.nexusmods.com/skyrimspecialedition/mods/10959/)'
-        condition: 'active("Joy of Perspective.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x292F204E
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
-
-  - name: 'NQS_NamedQuicksaves.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
-    msg: [ *requiresMCM ]
-    req:
-      - *SKSE
-      - *EngineFixes
-
-  - name: 'RaceMenu.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
-        name: 'RaceMenu Special Edition'
-    req: [ *SKSE ]
-    inc:
-      - 'CharacterMakingExtender.esp'
-      - 'EnhancedCharacterEdit.esp'
-    clean:
-      - crc: 0x7A89300E
-        util: 'SSEEdit v4.0.3'
-  - name: 'RaceMenuPlugin.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/' ]
-    req: [ 'RaceMenu.esp' ]
-    msg: [ *optional ]
-    clean:
-      - crc: 0x8FF336FE
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'tdgsseActivateToInteract.esl'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35492/' ]
-    msg:
-      - <<: *useBashTweakInstead
-        subs: [ 'Tweak Settings -> Prompt: Activate' ]
-
-  - name: 'TESL-LS-.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40919/' ]
-  - name: 'TESL-LS-AddonMain.esp'
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Aetherius' ]
-        condition: 'active("Aetherius.esp") and not active("TESL-LS-AddonAetherius.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Apocalypse' ]
-        condition: 'active("Apocalypse - Magic of Skyrim.esp") and not active("TESL-LS-AddonApoc.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Imperious' ]
-        condition: 'active("Imperious - Races of Skyrim.esp") and not active("TESL-LS-AddonImperious.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Legacy - A Race Overhaul' ]
-        condition: 'active("legacy.esp") and not active("TESL-LS-AddonLegacy.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Sacrosanct' ]
-        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("TESL-LS-AddonSacrosanct.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Thunderchild' ]
-        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("TESL-LS-AddonThunderchild.esp")'
-    clean:
-      - crc: 0x09BB88B3
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x45B51807
-        util: 'SSEEdit v4.0.3'
-      - crc: 0xF84D6866
-        util: 'SSEEdit v4.0.3'
-  - name: 'TESL-LS-VanillaLSRemover.esp'
-    after:
-      - 'Crossbow Integration.esp'
-      - 'Crossbow Integration - USSEP.esp'
-      - 'Sacrosanct - Vampires of Skyrim.esp'
-
-  - name: 'ValdacilsItemSorting.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5224/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_VIS_Patch.esp")'
 
 ###### AudioVisual - Animations & Physics ######
   - name: 'AnimatedEatingRedux.esp'
@@ -8163,6 +7992,58 @@ plugins:
       # version: 2.3 - Dangerous Edition
       - crc: 0xF718BAC1
         util: 'SSEEdit v4.0.2f'
+
+  - name: 'Joy of Perspective.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9358/' ]
+    after:
+      - 'Endgame NPC Overhaul.esp'
+      - 'UNP Vanilla Outfits.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Beyond Skyrim: Bruma'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
+        condition: 'active("BSHeartland.esm") and not active("Jop - BrumaPatch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Common Clothes'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
+        condition: 'active("CommonClothes.esp") and not active("Jop - CommonClothes.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Immersive Armors'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("JoP - Immersive Armors Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Final Cataclysm'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
+        condition: 'active("INFERNAL FLAME.esp") and not active("Jop - INFL.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Legacy Of the Dragonborn'
+          - '[ Joy of Perspective Compatibility Patches ](https://www.nexusmods.com/skyrimspecialedition/mods/20009/)'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("Jop - LegacyOfDragonborn.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Weapons Armor Clothing and Clutter Fixes'
+          - '[QUARK - Qwinn''s Ultimate Amulet Restoration Kit](https://www.nexusmods.com/skyrimspecialedition/mods/18177/)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("AmuletsShowOnEverything-JOP.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'WACCF - Armor and Clothing Extension'
+          - '[Armor and clothing Extension Joy Of Perspective Patch](https://www.nexusmods.com/skyrimspecialedition/mods/20114/)'
+        condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("WACCF_ACE_JOP_Patch.esp")'
+      - <<: *patcherScriptAvailable
+        subs:
+          - '[SSEEdit](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+          - '[Auto Patching - VIS - JOP - Disenchant All - Weightless](https://www.nexusmods.com/skyrimspecialedition/mods/10959/)'
+        condition: 'active("Joy of Perspective.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x292F204E
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
   - name: 'Keep It Clean.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17846/' ]
@@ -14551,6 +14432,47 @@ plugins:
       - Names
       - Text
 
+  - name: 'tdgsseActivateToInteract.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35492/' ]
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Settings -> Prompt: Activate' ]
+
+  - name: 'TESL-LS-.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40919/' ]
+  - name: 'TESL-LS-AddonMain.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Aetherius' ]
+        condition: 'active("Aetherius.esp") and not active("TESL-LS-AddonAetherius.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Apocalypse' ]
+        condition: 'active("Apocalypse - Magic of Skyrim.esp") and not active("TESL-LS-AddonApoc.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Imperious' ]
+        condition: 'active("Imperious - Races of Skyrim.esp") and not active("TESL-LS-AddonImperious.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Legacy - A Race Overhaul' ]
+        condition: 'active("legacy.esp") and not active("TESL-LS-AddonLegacy.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Sacrosanct' ]
+        condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("TESL-LS-AddonSacrosanct.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Thunderchild' ]
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("TESL-LS-AddonThunderchild.esp")'
+    clean:
+      - crc: 0x09BB88B3
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x45B51807
+        util: 'SSEEdit v4.0.3'
+      - crc: 0xF84D6866
+        util: 'SSEEdit v4.0.3'
+  - name: 'TESL-LS-VanillaLSRemover.esp'
+    after:
+      - 'Crossbow Integration.esp'
+      - 'Crossbow Integration - USSEP.esp'
+      - 'Sacrosanct - Vampires of Skyrim.esp'
+
   - name: 'Unique Region Names.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56452/' ]
     msg:
@@ -14572,6 +14494,12 @@ plugins:
         subs: [ 'RealisticWaterTwo - Unique Region Names - MissingEZs_AllExteriors.esp' ]
         condition: 'active("RealisticWaterTwo - Unique Region Names - MissingEZs_AllExteriors.esp")'
 
+  - name: 'ValdacilsItemSorting.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5224/' ]
+    msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_VIS_Patch.esp")'
+
   - name: 'Yot -.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/762/'
@@ -14585,8 +14513,79 @@ plugins:
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
 ###### Gameplay - User Interface - Map markers ######
+  - name: 'Atlas (Legendary( OCS)?|Compass Tweaks)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14493/'
+        name: 'Atlas Map Markers'
+  - name: 'Atlas Legendary( OCS)?\.esp'
+    group: *worldSettingsGroup
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'MLU.esp'
+  - name: 'Atlas (Legendary|Compass Tweaks)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20466/'
+        name: 'Atlas Map Markers DV'
+  - name: 'Atlas Legendary.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
+    clean:
+      - crc: 0xF9673261
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0xE1DB000E
+        util: 'SSEEdit v4.0.4'
+  - name: 'Atlas Legendary OCS.esp'
+    req: [ 'Open Cities Skyrim.esp' ]
+  - name: 'Atlas Compass Tweaks.esp'
+    clean:
+      - crc: 0x73556E7A
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x3259520C
+        util: 'SSEEdit v4.0.4'
+
+  - name: 'Atlas Map Markers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24104/' ]
+    group: *worldSettingsGroup
+    after:
+      - 'Complete Alchemy & Cooking Overhaul.esp'
+      - 'MLU.esp'
+      - 'SL01AmuletsSkyrim.esp'
+    inc:
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Open Cities Skyrim'
+          - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
+        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
+
+  - name: 'coloredmapmarkers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3997/' ]
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("coloredmapmarkers.esp", E4D0F057)'
+
+  - name: 'Dawnguard Map Markers.esp'
+    url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
+    group: *worldSettingsGroup
+    after:
+      - 'Atlas Legendary.esp'
+      - 'Atlas Legendary OCS.esp'
+      - 'Atlas Map Markers.esp'
+    clean:
+      - crc: 0xAA2F3309
+        util: 'SSEEdit v4.0.3'
 
 ###### Gameplay - User Interface - Maps ######
+  - name: 'A Clear Map of Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56367/' ]
+    group: *worldSettingsGroup
+    after: [ 'Atlas Map Markers.esp' ]
+
+  - name: 'EzEWorldMapSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
+    group: *worldSettingsGroup
+
   - name: 'FWMF (SE (Marked|Unmarked) (Clean|Old) Map 4K|for Paper Map by Mirhayasu)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29932/'
