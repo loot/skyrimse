@@ -1870,6 +1870,77 @@ plugins:
     group: *dynamicPatchGroup
 
 ###### Resources & Frameworks ######
+  - name: 'Gamepad++.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
+    msg: [ *requiresMCM ]
+    req:
+      - *JContainers
+      - *SKSE
+
+  - name: 'iEquip.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
+    msg: [ *requiresMCM ]
+    req:
+      - *JContainers
+      - *SKSE
+
+  - name: 'NQS_NamedQuicksaves.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
+    msg: [ *requiresMCM ]
+    req:
+      - *SKSE
+      - *EngineFixes
+
+  - name: 'RaceMenu.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
+        name: 'RaceMenu Special Edition'
+    req: [ *SKSE ]
+    inc:
+      - 'CharacterMakingExtender.esp'
+      - 'EnhancedCharacterEdit.esp'
+    clean:
+      - crc: 0x7A89300E
+        util: 'SSEEdit v4.0.3'
+  - name: 'RaceMenuPlugin.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/' ]
+    req: [ 'RaceMenu.esp' ]
+    msg: [ *optional ]
+    clean:
+      - crc: 0x8FF336FE
+        util: 'SSEEdit v4.0.3'
+
+  - name: 'SkyUI_SE.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
+    group: *fixesGroup
+    req: [ *SKSE ]
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
+        condition: 'file("SkyUI_SE.bsa") and not file("interface/quest_journal.swf")'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
+        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
+        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
+      - type: warn
+        content:
+          - lang: en
+            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
+        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
+        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+      - type: say
+        content:
+          - lang: en
+            text: 'BSA known to include files from an older version of this mod. %1%'
+        subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
+        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+    clean:
+      - crc: 0x79ACE179
+        util: 'SSEEdit v4.0.3'
+      - crc: 0x074D8C60
+        util: 'SSEEdit v4.0.3'
 
 ###### AudioVisual - Fixes ######
   - name: '___SNOW_FIX.esp'
@@ -2062,77 +2133,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
 ###### AudioVisual - Interface ######
-  - name: 'SkyUI_SE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
-    group: *fixesGroup
-    req: [ *SKSE ]
-    msg:
-      - <<: *alsoUseX
-        subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
-        condition: 'file("SkyUI_SE.bsa") and not file("interface/quest_journal.swf")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
-        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Another mod seems to be overwriting one of this module''s essential files. Please ensure you''re using this module''s version of %1%.'
-        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
-      - type: say
-        content:
-          - lang: en
-            text: 'BSA known to include files from an older version of this mod. %1%'
-        subs: [ '**SofiaFollower.bsa**, **ConfigureCommentaryRate.bsa** and **Thunderchild - Epic Shout Package.bsa**.' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
-    clean:
-      - crc: 0x79ACE179
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x074D8C60
-        util: 'SSEEdit v4.0.3'
-
-  - name: 'Gamepad++.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
-    msg: [ *requiresMCM ]
-    req:
-      - *JContainers
-      - *SKSE
-
-  - name: 'iEquip.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
-    msg: [ *requiresMCM ]
-    req:
-      - *JContainers
-      - *SKSE
-
-  - name: 'NQS_NamedQuicksaves.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
-    msg: [ *requiresMCM ]
-    req:
-      - *SKSE
-      - *EngineFixes
-
-  - name: 'RaceMenu.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
-        name: 'RaceMenu Special Edition'
-    req: [ *SKSE ]
-    inc:
-      - 'CharacterMakingExtender.esp'
-      - 'EnhancedCharacterEdit.esp'
-    clean:
-      - crc: 0x7A89300E
-        util: 'SSEEdit v4.0.3'
-  - name: 'RaceMenuPlugin.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/' ]
-    req: [ 'RaceMenu.esp' ]
-    msg: [ *optional ]
-    clean:
-      - crc: 0x8FF336FE
-        util: 'SSEEdit v4.0.3'
 
 ###### AudioVisual - Animations & Physics ######
   - name: 'AnimatedEatingRedux.esp'
