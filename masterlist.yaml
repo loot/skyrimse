@@ -2075,22 +2075,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
     group: *worldSettingsGroup
 
-  - name: 'Paper World Map.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10836/' ]
-    group: *worldSettingsGroup
-    after:
-      - 'Atlas Legendary.esp'
-      - 'Atlas Legendary OCS.esp'
-      - 'Atlas Map Markers.esp'
-    inc: [ 'IcePenguinWorldMapPaper.esp' ]
-    msg:
-      - <<: *patchUnavailable
-        subs: [ 'Atlas Map Markers' ]
-        condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
-      - <<: *patchUnavailable
-        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
-        condition: 'active("ELE_SSE.esp")'
-
   - name: 'SkyUI_SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/' ]
     group: *fixesGroup
@@ -2187,8 +2171,6 @@ plugins:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
       - 'Atlas Map Markers.esp'
-      # For group, to prevent sorting errors
-      - 'Paper World Map.esp'
     clean:
       - crc: 0xAA2F3309
         util: 'SSEEdit v4.0.3'
@@ -14656,6 +14638,18 @@ plugins:
     clean:
       - crc: 0x09706810
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Paper World Map.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10836/' ]
+    group: *paperMapsGroup
+    inc: [ 'IcePenguinWorldMapPaper.esp' ]
+    msg:
+      - <<: *patchUnavailable
+        subs: [ 'Atlas Map Markers' ]
+        condition: 'active("Atlas Map Markers.esp") or active("Atlas Legendary.esp") or active("Atlas Legendary OCS.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
+        condition: 'active("ELE_SSE.esp")'
 
 ###### Items ######
   - name: 'AdditionalH(earthfireDolls|FDollsPassivesPatch)\.esp'
