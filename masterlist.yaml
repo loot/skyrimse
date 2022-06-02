@@ -14620,23 +14620,19 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
         name: 'A Quality World Map'
-  - name: 'IcePenguinWorldMap.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'A Quality World Map ESP' ]
+        condition: 'many("IcePenguinWorldMap(classic|Paper)?\.esp")'
+  - name: 'IcePenguinWorldMap(classic)?\.esp'
     after:
       - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
       - 'Cathedral Landscapes.esp'
-    inc:
-      - 'icepenguinworldmapclassic.esp'
-      - 'IcePenguinWorldMapPaper.esp'
+  - name: 'IcePenguinWorldMap.esp'
     clean:
       - crc: 0xAC5D1C02
         util: 'SSEEdit v4.0.3'
   - name: 'icepenguinworldmapclassic.esp'
-    after:
-      - 'Cathedral Concept - Lightweight Grass Overhaul.esp'
-      - 'Cathedral Landscapes.esp'
-    inc:
-      - 'IcePenguinWorldMap.esp'
-      - 'IcePenguinWorldMapPaper.esp'
     clean:
       - crc: 0xC1050661
         util: 'SSEEdit v4.0.3'
@@ -14646,10 +14642,7 @@ plugins:
       - 'Atlas Legendary.esp'
       - 'Atlas Legendary OCS.esp'
       - 'Atlas Map Markers.esp'
-    inc:
-      - 'IcePenguinWorldMap.esp'
-      - 'icepenguinworldmapclassic.esp'
-      - 'Paper World Map.esp'
+    inc: [ 'Paper World Map.esp' ]
     msg:
       - <<: *patch3rdParty
         subs:
