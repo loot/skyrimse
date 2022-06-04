@@ -12198,9 +12198,9 @@ plugins:
   - name: 'Immersive Citizens.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/173/'
-        name: 'Immersive Citizens AI Overhaul'
+        name: 'Immersive Citizens AI Overhaul (Nexus Mods)'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
-        name: 'Immersive Citizens AI Overhaul'
+        name: 'Immersive Citizens AI Overhaul (Bethesda.net Mods)'
   - name: 'Immersive Citizens - AI Overhaul.esp'
     group: *coreGroup
     after:
@@ -12248,14 +12248,11 @@ plugins:
         subs: [ 'The Useless Shop and Interior Overhaul **iWil_UselessShopOverhaul.esp**' ]
         condition: 'active("iWil_UselessShopOverhaul.esp")'
       - <<: *compatNotes
-        subs: [ 'https://ai-gamer.com/skyrim/ic-se/' ]
+        subs: [ 'http://ai-gamer.com/skyrim/ic-se/#compatibility' ]
       - <<: *patchIncluded
         type: error
         subs: [ 'Open Cities' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Touring Carriages' ]
-        condition: 'active("TouringCarriages.esp") and not active("Immersive Citizens - TC patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lighting for ENB' ]
         condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
@@ -12266,20 +12263,16 @@ plugins:
         subs: [ 'ELFX - Hardcore' ]
         condition: 'active("ELFXHardcore.esp") and not active("Immersive Citizens - ELFXHardcore patch.esp")'
     tag:
+      - Actors.AIPackages
       - C.Location
       - C.LockList
       - C.Owner
-    dirty:
-      - <<: *quickClean
-        crc: 0xA61F66AD
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
-  - name: 'Immersive Citizens - OCS patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x6227D18D
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 17
+      - Relations.Add
+      - Relations.Change
+      - Relations.Remove
+    clean:
+      - crc: 0x5A890755
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'ImprovedCompanionsBoogaloo.esp'
     url:
