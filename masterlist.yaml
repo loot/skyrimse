@@ -14413,23 +14413,24 @@ plugins:
   - name: 'Better Descriptions SSE - YOT Patch.esp'
     req: [ 'YOT - Your Own Thoughts.esp' ]
 
+  - name: 'Disease Descriptions( - RND Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26992/'
+        name: 'Disease Descriptions for the Immersive Adventurer'
+    tag:
+      - Names
+      - Text
   - name: 'Disease Descriptions.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26992/' ]
     msg:
       - <<: *patchIncluded
         type: warn
         subs: [ 'Realistic Needs and Diseases' ]
         condition: 'active("RealisticNeedsandDiseases.esp") and not active("Disease Descriptions - RND Patch.esp")'
-    tag:
-      - Names
-      - Text
     clean:
+      - crc: 0xFCFA119B
+        util: 'SSEEdit v4.0.4b'
       - crc: 0xC60FECE5
         util: 'SSEEdit v4.0.4b'
-  - name: 'Disease Descriptions - RND Patch.esp'
-    tag:
-      - Names
-      - Text
 
   - name: 'tdgsseActivateToInteract.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35492/' ]
