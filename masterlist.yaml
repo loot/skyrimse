@@ -3676,6 +3676,15 @@ plugins:
     tag: [ C.Light ]
   - name: 'Lux - Distinct Silver Blood inn patch.esp'
     req: [ 'Lux - Silver Blood inn overhaul.esp' ]
+  - name: 'Lux - Eli Breezehome patch.esp'
+    inc:
+      - name: 'Eli_Breezehome.esp'
+        display: 'Eli''s Breezehome Optimization'
+        condition: 'version("Eli_Breezehome.esp", "1.6.0", >=)'
+    msg:
+      - <<: *useInstead
+        subs: [ 'Eli_Breezehome [PATCH - Lux].esp' ]
+        condition: 'version("Eli_Breezehome.esp", "1.6.0", >=) and not active("Eli_Breezehome [PATCH - Lux].esp")'
   - name: 'Lux - Forgotten City.esp'
     tag:
       - C.ImageSpace
