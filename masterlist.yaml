@@ -5895,7 +5895,6 @@ plugins:
       - 'KS Dragon Overhaul.esp'
       - 'Serio''s Enhanced Dragons.esp'
     msg:
-      - *requiresMCM
       - <<: *compatIssuesWithX
         subs: [ 'Elemental Dragons' ]
         condition: 'active("Elemental_Dragons.esp")'
@@ -5916,6 +5915,7 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth Patch.esp")'
+      - *requiresMCM
     clean:
       - crc: 0x5061010B
         util: 'SSEEdit v4.0.3'
