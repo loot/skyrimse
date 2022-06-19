@@ -12985,15 +12985,26 @@ plugins:
       - crc: 0xBCB1C2DE
         util: 'SSEEdit v4.0.2f'
 
-  - name: 'Dawnguard - Radiant Quest Requirements.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16818/' ]
+  - name: 'Dawnguard - (Tweaks and Enhancements|TnE - Serana Necro Dialogue|Radiant Quest Requirements)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/53364/'
+        name: 'Dawnguard - Tweaks and Enhancements'
+  - name: 'Dawnguard - (Tweaks and Enhancements|Radiant Quest Requirements)\.esp'
     after: [ 'BetterQuestObjectives.esp' ]
+  - name: 'Dawnguard - Tweaks and Enhancements.esp'
+    req: [ *SilentVoice ]
     dirty:
-      # version: 0.1
       - <<: *quickClean
-        crc: 0x14593BAE
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 17
+        crc: 0xCD672885
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 15
+  # Obsolete #
+  - name: 'Dawnguard - Radiant Quest Requirements.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0560EE7F
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 15
 
   - name: 'DawnguardDragonbornTiming.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13834/' ]
