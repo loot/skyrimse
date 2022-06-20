@@ -3633,17 +3633,16 @@ plugins:
     msg: [ *obsolete ]
 
   - name: 'Lux.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/43158/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/43158/'
+        name: 'Lux'
     group: *interiorLightingGroup
     tag:
-      - C.Climate
-      - C.ImageSpace
-      - C.Light
       - C.Location
       - C.Water
     clean:
-      - crc: 0xE4D1FE26
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x47A2E16E
+        util: 'SSEEdit v4.0.4b'
   # Lux - Optional Content #
   - name: 'Lux - Mara Valentine patch.esp'
     after: [ 'Lux - Distinct Interiors patch.esp' ]
@@ -3716,6 +3715,11 @@ plugins:
     tag:
       - C.Climate
       - C.Light
+  - name: 'Lux - RWT Patch.esp'
+    req: [ 'RealisticWaterTwo.esp' ]
+    tag:
+      - C.Light
+      - C.Water
   - name: 'Lux - Silver Blood inn AIOverhaul patch.esp'
     req: [ 'Lux - Silver Blood inn overhaul.esp' ]
   - name: 'Lux - SoS compatibility patch.esp'
