@@ -17653,6 +17653,17 @@ plugins:
         name: 'Carriage and Ferry Travel Overhaul'
     after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Carriage and Ferry Travel Overhaul - Companions Radiant Quest Fix](https://www.nexusmods.com/skyrimspecialedition/mods/52353/)' ]
+        condition: 'not active("CFTO_fix.esp")'
+      - <<: *alsoUseX
+        subs: [ '[Carriage and Ferry Travel Overhaul - Fixes and Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/40651/)' ]
+        condition: 'version("CFTO.esp", "2.0", <=)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Creation Club Bittercup'
+          - '[CFTO Bittercup Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/60587/)'
+        conditions: 'active("cckrtsse001_altar.esl") and not active("CFTO_Bittercup_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Dawnstar' ]
         condition: 'active("Dawnstar.esp") and not active("CFTO - Arthmoor Danwstar Patch.esp")'
