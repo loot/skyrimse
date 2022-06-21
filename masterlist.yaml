@@ -1469,6 +1469,8 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch DV'
     group: *fixesGroup
     msg:
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *patch3rdParty
         subs:
           - 'Gemling Queen Jewelry SE'
@@ -1479,15 +1481,14 @@ plugins:
           - 'JS Circlet Replacer'
           - '[Circlet USSEP Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/35576/)'
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not file("meshes/uskp/armor/circlets/FemElfCirclets")'
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *versionXofYorGreaterRequired
         subs:
-          - '1.6.323.0'
+          - '1.6.353.0'
           - 'Skyrim Special Edition'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.323.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.6a", >=)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.353.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.7", >=)'
+    tag: [ R.Description ]
     clean:
-      - crc: 0x7B6EB54A
+      - crc: 0x8461C824
         util: 'SSEEdit v4.0.4b'
       - crc: 0xB3AB07FD
         util: 'SSEEdit v4.0.4'
