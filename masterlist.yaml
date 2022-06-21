@@ -17749,46 +17749,39 @@ plugins:
 
   - name: 'Cutting Room Floor.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
-      - 'https://www.afkmods.com/index.php?/files/file/978-cutting-room-floor/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350/'
+      - link: 'https://www.afkmods.com/index.php?/files/file/1894-cutting-room-floor/'
+        name: 'Cutting Room Floor (AFK Mods)'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2955350/'
+        name: 'Cutting Room Floor (Bethesda.net Mods)'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
+        name: 'Cutting Room Floor (Nexus Mods)'
     after:
       - name: 'TouringCarriages.esp'
         condition: '(is_master("Cutting Room Floor.esp") and is_master("TouringCarriages.esp")) or (not is_master("Cutting Room Floor.esp") and not is_master("TouringCarriages.esp"))'
     msg:
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Cutting Room Floor Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
+      - <<: *patch3rdParty_KPH_TCIY
+        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
+      - <<: *patch3rdParty_RSCPC
+        condition: 'active("RSkyrimChildren.esm") and not active("RealisticRSChildren.esp") and not active("RSC CRF Patch.esp") and not active("CRF_RSChildrenPatch.esp")'
+      - *patch3rdParty_SRPC
       - <<: *patch3rdParty
         subs:
           - 'No Snow Under the Roof **Prometheus_No_snow_Under_the_roof.esp**'
           - '[Cutting Room Floor - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
-      - <<: *patch3rdParty_AOOPH
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Cutting Room Floor Patch.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RealisticRSChildren.esp") and not active("RSC CRF Patch.esp") and not active("CRF_RSChildrenPatch.esp")'
-      - <<: *patch3rdParty_KPH_TCIY
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
-      - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
-      - *patch3rdParty_SRPC
     tag:
-      - -Actors.DeathItem
       - Actors.Voice
-      - -C.RecordFlags
-      - EffectStats
-      - EnchantmentStats
-      - Factions
-      - Invent.Add
-      - Invent.Remove
       - NPC.CrimeFaction
-      - NPC.DefaultOutfit
-      - Outfits.Add
-      - Outfits.Remove
-      - SpellStats
+      - R.ChangeSpells
     clean:
-      - crc: 0xC69E93C8
-        util: 'SSEEdit v4.0.3h'
+      - crc: 0xC0CFC737
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'danyanavysofskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13447/' ]
