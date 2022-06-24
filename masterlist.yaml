@@ -6430,19 +6430,13 @@ plugins:
         condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
       - name: 'Skytest Immersive Creatures.esp'
         condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
-    tag:
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
-      - Actors.Voice
-      - NPC.AttackRace
-      - NPC.DefaultOutfit
-      - ObjectBounds
-      - Outfits.Add
-      - Outfits.Remove
     msg:
       - <<: *obsolete
         subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
         condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.2", >=)'
+      - <<: *patch3rdParty_KPH_CACO
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
+      - *patch3rdParty_SRPC_Redux
       - <<: *patch3rdParty
         subs:
           - 'Better Spell Learning'
@@ -6474,9 +6468,6 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp")'
-      - <<: *patch3rdParty_KPH_CACO
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SkyrimImmersiveCreaturesSE_Patch.esp")'
-      - *patch3rdParty_SRPC_Redux
       - *requiresMCM
       - type: say
         content:
@@ -6490,6 +6481,15 @@ plugins:
           - lang: en
             text: 'Make sure you have completely uninstalled files included with old versions of this mod.'
         condition: 'file("scripts/scc_spelleater_script.pex") and version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+    tag:
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
+      - Actors.Voice
+      - NPC.AttackRace
+      - NPC.DefaultOutfit
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
     clean:
       - crc: 0xE92A5A2D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
