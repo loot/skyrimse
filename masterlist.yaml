@@ -9526,36 +9526,21 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35163/'
         name: 'Pirate''s Life for Me - A Creation Club Integration Mod'
-  - name: 'Dead Man''s Dread Distribution( - Pirates Wield Cutlasses Patch)?\.esp'
-    tag:
-      - Invent.Add
-      - Invent.Remove
-      - NPC.DefaultOutfit
   - name: 'Dead Man''s Dread Distribution.esp'
-    msg:
-      - <<: *patchIncluded
-        subs: [ 'Finding Velehk Sain' ]
-        condition: 'active("Finding_VelehkSain.esp") and not active("Dead Man''s Dread Distribution - Finding Velehk Sain Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Pirates Wield Cutlasses' ]
-        condition: 'active("Pirates Wield Cutlasses.esp") and not active("Dead Man''s Dread Distribution - Pirates Wield Cutlasses Patch.esp")'
+    req:
+      - <<: *SPID
+        condition: 'checksum("Dead Man''s Dread Distribution.esp", 6BA45FE0)'
     tag:
-      - Actors.DeathItem
-      - Names
-      - Sound
-    dirty:
-      - <<: *quickClean
-        crc: 0x5DF95909
-        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-  - name: 'Dead Man''s Dread Distribution - Finding Velehk Sain Patch.esp'
+      - name: -Invent.Add
+        condition: 'file("Dead Man''s Dread Distribution_DISTR.ini")'
+      - name: -Invent.Remove
+        condition: 'file("Dead Man''s Dread Distribution_DISTR.ini")'
+      - name: -NPC.DefaultOutfit
+        condition: 'file("Dead Man''s Dread Distribution_DISTR.ini")'
+      - name: -Relev
+        condition: 'file("Dead Man''s Dread Distribution_DISTR.ini")'
     clean:
-      - crc: 0xC1A20E44
-        util: 'SSEEdit v4.0.4b'
-  - name: 'Dead Man''s Dread Distribution - Pirates Wield Cutlasses Patch.esp'
-    tag: [ Delev ]
-    clean:
-      - crc: 0x9CC84024
+      - crc: 0x6BA45FE0
         util: 'SSEEdit v4.0.4b'
 
   - name: 'DLCIntegration.esp'
