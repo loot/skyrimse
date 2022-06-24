@@ -292,6 +292,10 @@ common:
     name: '../skse64_loader.exe'
     display: '**Skyrim Script Extender ([ SKSE 64 ](https://skse.silverlock.org))**'
 
+  - &SPID
+    name: 'skse/plugins/po3_SpellPerkItemDistributor.dll'
+    display: '[Spell Perk Item Distributor](https://www.nexusmods.com/skyrimspecialedition/mods/36869/)'
+
 # Sub-Anchors
   # &alreadyInX
   - &alreadyInLotD
@@ -6101,8 +6105,7 @@ plugins:
       - 'SkyTEST-HarderCreatures.esp'
     req:
       - *SKSE
-      - name: 'skse/plugins/po3_SpellPerkItemDistributor.dll'
-        display: '[Spell Perk Item Distributor](https://www.nexusmods.com/skyrimspecialedition/mods/36869/)'
+      - *SPID
     inc:
       - 'Dragon Combat Overhaul.esp'
       - 'KS Dragon Overhaul.esp'
@@ -10293,8 +10296,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31991/'
         name: 'The Vigilants'' New Clothes - A Creation Club Integration Mod'
     req:
-      - name: 'skse/plugins/po3_SpellPerkItemDistributor.dll'
-        display: '[Spell Perk Item Distributor (SPID)](https://www.nexusmods.com/skyrimspecialedition/mods/36869/)'
+      - <<: *SPID
         condition: 'checksum("Vigil Enforcer Distribution.esp", AE1949F3)'
     tag:
       - Actors.CombatStyle
@@ -16020,8 +16022,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56074/'
         name: 'Pirates Wield Cutlasses - SPID Addon'
     req:
-      - name: 'skse/plugins/po3_SpellPerkItemDistributor.dll'
-        display: '[Spell Perk Item Distributor (SPID)](https://www.nexusmods.com/skyrimspecialedition/mods/36869/)'
+      - <<: *SPID
         condition: 'checksum("Pirates Wield Cutlasses.esp", 16D4E235)'
     clean:
       - crc: 0x041C04B4
