@@ -7976,6 +7976,54 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp")'
       - *patch3rdParty_SRPC
 
+  - name: '(Ghosts of the Tribunal - Reduced Cut|GRC - .*)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/67019/'
+        name: 'Ghosts of the Tribunal - Reduced Cut'
+  - name: '(Ghosts of the Tribunal - Reduced Cut|GRC - No Quest)\.esp'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+      - Names
+      - NPC.DefaultOutfit
+  - name: 'Ghosts of the Tribunal - Reduced Cut.esp'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0x8CC8AA1A
+        util: 'SSEEdit v4.0.4b'
+  - name: 'GRC - Kthonia Patch.esp'
+    tag:
+      - Delev
+      - Invent.Add
+      - Names
+      - Relev
+    clean:
+      - crc: 0x28E66FB3
+        util: 'SSEEdit v4.0.4b'
+  - name: 'GRC - Moon and Star Patch.esp'
+    tag:
+      - Graphics
+      - Invent.Add
+      - Invent.Remove
+    clean:
+      - crc: 0x19B61A9F
+        util: 'SSEEdit v4.0.4b'
+  - name: 'GRC - New Temple Tiles.esp'
+    clean:
+      - crc: 0xE329085C
+        util: 'SSEEdit v4.0.4b'
+  - name: 'GRC - No Quest.esp'
+    tag: [ Actors.Stats ]
+    clean:
+      - crc: 0x38A3A7E8
+        util: 'SSEEdit v4.0.4b'
+  - name: 'GRC - Relighting Skyrim Patch.esp'
+    clean:
+      - crc: 0xDDFF974A
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'Immersive Needs.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29317/' ]
     msg:
