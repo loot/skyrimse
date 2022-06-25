@@ -10004,24 +10004,24 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/45352/'
         name: 'Morrowind Threads - A Creation Club Integration Mod'
+    req:
+      - <<: *SPID
+        condition: 'file("Netch Leather Distribution_DISTR.ini")'
     msg:
       - <<: *sortMasters
-        condition: 'checksum("Netch Leather Distribution.esp", 82AA1014)'
+        condition: 'checksum("Netch Leather Distribution.esp", 86D4DE30)'
     tag:
       - Delev
-      - Invent.Add
-      - Invent.Remove
-      - NPC.DefaultOutfit
+      - name: -Invent.Add
+        condition: 'file("Netch Leather Distribution_DISTR.ini")'
+      - name: -Invent.Remove
+        condition: 'file("Netch Leather Distribution_DISTR.ini")'
+      - name: -NPC.DefaultOutfit
+        condition: 'file("Netch Leather Distribution_DISTR.ini")'
       - ObjectBounds
       - Outfits.Add
       - Outfits.Remove
-      - Relev
       - Stats
-    clean:
-      - crc: 0x82AA1014
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0x9ACBD2E4
-        util: 'SSEEdit v4.0.4b'
 
   - name: 'Poverty.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24712/' ]
