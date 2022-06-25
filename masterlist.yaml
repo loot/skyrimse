@@ -16767,6 +16767,26 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
 
+###### Locations - New Dungeons ######
+  - name: '(CauseReducedCut(- Ayleid Gear Consistency Patch)?|Rielle - Vault of Meridia)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66676/'
+        name: 'The Cause - Reduced Cut'
+  - name: 'CauseReducedCut.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x6634DF7A
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 11
+  - name: 'CauseReducedCut- Ayleid Gear Consistency Patch.esp'
+    clean:
+      - crc: 0x51DD187F
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Rielle - Vault of Meridia.esp'
+    clean:
+      - crc: 0x114081E6
+        util: 'SSEEdit v4.0.4b'
+
 ###### Locations - New Lands ######
   - name: 'arnima.esm'
     url:
