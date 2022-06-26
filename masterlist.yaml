@@ -21829,6 +21829,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42990/'
         name: 'Capital Windhelm Expansion'
     after: [ 'WindhelmEntranceOverhaul.esp' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'City Entrances Overhaul - Windhelm'
+          - '[Capital Windhelm Expansion - City Entrances Overhaul Patch](https://www.nexusmods.com/skyrimspecialedition/mods/47186/)'
+        condition: 'active("WindhelmEntranceOverhaul.esp") and not active("WindhelmEntranceOverhaul WindhelmSSE Patch.esp")'
 
   - name: 'Winterhold College SSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11915/' ]
