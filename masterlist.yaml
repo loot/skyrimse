@@ -17831,19 +17831,18 @@ plugins:
         name: 'Carriage and Ferry Travel Overhaul'
     after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     msg:
-      - <<: *alsoUseX
-        subs: [ '[Carriage and Ferry Travel Overhaul - Companions Radiant Quest Fix](https://www.nexusmods.com/skyrimspecialedition/mods/52353/)' ]
-        condition: 'not active("CFTO_fix.esp")'
-      - <<: *alsoUseX
-        subs: [ '[Carriage and Ferry Travel Overhaul - Fixes and Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/40651/)' ]
-        condition: 'version("CFTO.esp", "2.0", <=)'
       - <<: *patch3rdParty
         subs:
           - 'Creation Club Bittercup'
-          - '[CFTO Bittercup Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/60587/)'
-        conditions: 'active("cckrtsse001_altar.esl") and not active("CFTO_Bittercup_Patch.esp")'
+          - '[Carriage Ferry Travel Overhaul (CFTO) Bittercup Fix](https://www.nexusmods.com/skyrimspecialedition/mods/60974/) or [CFTO Bittercup Compatibility Patch](https://www.nexusmods.com/skyrimspecialedition/mods/60587/)'
+        conditions: 'active("cckrtsse001_altar.esl") and not active("JKs Skyrim.esp") and not active("CFTO bittercup fix.esp") and not active("CFTO_Bittercup_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Creation Club Bittercup & JK''s Skyrim'
+          - '[CFTO Bittercup Compatibility Patch - JK''s Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/60588/)'
+        conditions: 'active("cckrtsse001_altar.esl") and active("JKs Skyrim.esp") and not active("CFTO_Bittercup_JKs_Skyrim_Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Dawnstar' ]
+        subs: [ 'Arthmoor''s Dawnstar' ]
         condition: 'active("Dawnstar.esp") and not active("CFTO - Arthmoor Danwstar Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Hearthfire Extended' ]
@@ -17851,10 +17850,18 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Immersive Citizens - AI Overhaul' ]
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("CFTO - Immersive Citizens Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'JK''s Skyrim' ]
+        condition: 'active("JKs Skyrim.esp") and not active("CFTO-JK-Patch.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Carriage and Ferry Travel Overhaul - Companions Radiant Quest Fix](https://www.nexusmods.com/skyrimspecialedition/mods/52353/)' ]
+        condition: 'not active("CFTO_fix.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Carriage and Ferry Travel Overhaul - Fixes and Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/40651/)' ]
+        condition: 'version("CFTO.esp", "2.0", <=)'
     clean:
-      # version: 2.0
       - crc: 0xD2FF9967
-        util: 'SSEEdit v4.0.2'
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'Chapels Of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15215/' ]
