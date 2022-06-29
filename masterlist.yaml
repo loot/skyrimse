@@ -9009,6 +9009,9 @@ plugins:
   - name: 'Apothecary.esp'
     after: [ 'TechnicolorAlchemy.esp' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/) **Poison Resistance** patch' ]
+        condition: 'not file("SKSE/Plugins/ScrambledBugs.dll")'
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("Apothecary - Bruma Patch.esp")'
