@@ -21596,12 +21596,22 @@ plugins:
         itm: 9
 
   - name: 'The Great City of Rorikstead.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20151/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20151/'
+        name: 'The Great City of Rorikstead'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/68559/'
+        name: 'Rob''s Bug Fixes - TGC Rorikstead'
+    after:
+      - name: 'Rorikstead.esp'
+        condition: 'active("The Great City of Rorikstead - JK''s + Arth''s Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x2C846503
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
+    clean:
+      - crc: 0x96DC80C3
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'The Great City of Solitude.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22243/' ]
