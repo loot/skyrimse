@@ -21567,10 +21567,19 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'The Great City of Dragon Bridge.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19962/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19962/'
+        name: 'The Great City of Dragon Bridge'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/68412/'
+        name: 'Rob''s Bug Fixes - TGC Dragon Bridge'
+    after:
+      - name: 'Dragon Bridge.esp'
+        condition: 'active("The Great City of Dragon Bridge - JK''s + Arth''s Patch.esp")'
     clean:
       - crc: 0xEFA73FDF
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x87283AFA
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'The Great City of Falkreath.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19709/' ]
@@ -24539,6 +24548,12 @@ plugins:
       - <<: *useVersion
         subs: [ 'The Great Cities of JK''s North - Full' ]
         condition: 'active("COTN - Winterhold.esp") and checksum("The Great Cities of JK''s North - Patch.esp", 17C7DEA5)'
+
+  - name: 'The Great City of Dragon Bridge - JK''s Skyrim Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/68412/'
+        name: 'Rob''s Bug Fixes - TGC Dragon Bridge'
+    after: [ 'The Great City of Dragon Bridge - USSEP Patch.esp' ]
 
   - name: 'The Great JK''s Cities.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25282/' ]
