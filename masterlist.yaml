@@ -312,7 +312,7 @@ common:
     <<: *alreadyInOrFixedByX
     type: say
     subs: [ 'Scrambled Bugs' ]
-    condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+    condition: 'file("SKSE/Plugins/ScrambledBugs.dll")'
 
   # &includesX
   - &includesMBBF
@@ -1798,7 +1798,7 @@ plugins:
       - <<: *useVersion
         type: say
         subs: [ 'No Scripts' ]
-        condition: 'file("NetScriptFramework/Plugins/ScrambledBugs.dll")'
+        condition: 'file("SKSE/Plugins/ScrambledBugs.dll")'
     clean:
       - crc: 0x8BC0D944
         util: 'SSEEdit v4.0.3'
@@ -8197,7 +8197,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '**[Bug Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/33261/)** OR **[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/)**' ]
-        condition: 'not file("SKSE/Plugins/BugFixesSSE.dll") and not file("DLLPlugins/ScrambledBugs.dll")'
+        condition: 'not file("SKSE/Plugins/BugFixesSSE.dll") and not file("SKSE/Plugins/ScrambledBugs.dll")'
       - <<: *compatNotes
         subs: [ 'https://wiki.fireundubh.com/mods/master-of-disguise#compatibility' ]
       - *missingRequirementAddrLibforPlugin
