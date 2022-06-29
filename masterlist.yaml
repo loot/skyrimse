@@ -19907,10 +19907,8 @@ plugins:
       - name: 'The Great Cities - Minor Cities and Towns.esp'
         condition: 'checksum("JKs Skyrim.esp", C8478AEC) or not active("The Great Cities of JK''s (North|Skyrim) - Patch.esp")'
       - 'The Great City of Dawnstar.esp'
-      - 'The Great City of Dragon Bridge.esp'
       - 'The Great City of Falkreath.esp'
       - 'The Great City of Morthal.esp'
-      - 'The Great City of Rorikstead.esp'
       - 'The Great City of Winterhold.esp'
     msg:
       - <<: *compatIssuesWithX
@@ -19988,6 +19986,41 @@ plugins:
           - 'The Great Cities & Cities of the North'
           - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
         condition: 'not checksum("JKs Skyrim.esp", C8478AEC) and active("The Great Cities - Minor Cities and Towns.esp") and active("COTN - Dawnstar.esp") and active("COTN - Morthal.esp") and not active("The Great Cities of JK''s North - Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great City of Dragon Bridge'
+          - '[Rob''s Bug Fixes - TGC Dragon Bridge](https://www.nexusmods.com/skyrimspecialedition/mods/68412/)'
+        condition: 'active("The Great City of Dragon Bridge.esp") and not active("The Great City of Dragon Bridge - JK''s Skyrim Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great City of Dragon Bridge & Arthmoor''s Dragon Bridge'
+          - '[Rob''s Bug Fixes - TGC Dragon Bridge](https://www.nexusmods.com/skyrimspecialedition/mods/68412/)'
+        condition: 'active("The Great City of Dragon Bridge.esp") and not active("The Great City of Dragon Bridge - JK''s + Arth''s Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great City of Rorikstead'
+          - '[Rob''s Bug Fixes - TGC Rorikstead](https://www.nexusmods.com/skyrimspecialedition/mods/68559/)'
+        condition: 'active("The Great City of Rorikstead.esp") and not active("The Great City of Rorikstead - JK''s Skyrim Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'The Great City of Rorikstead & Arthmoor''s Rorikstead'
+          - '[Rob''s Bug Fixes - TGC Rorikstead](https://www.nexusmods.com/skyrimspecialedition/mods/68559/)'
+        condition: 'active("The Great City of Rorikstead.esp") and not active("The Great City of Rorikstead - JK''s + Arth''s Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Dawnstar' ]
+        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_(Dawnstar|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Dragon Bridge' ]
+        condition: 'active("Dragon Bridge.esp") and not active("The Great City of Dragon Bridge.esp") and not active("JKs Skyrim_(Dragon Bridge|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Falkreath' ]
+        condition: 'active("Falkreath.esp") and not active("JKs Skyrim_(Falkreath|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Ivarstead' ]
+        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_(Ivarstead|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Rorikstead' ]
+        condition: 'active("Rorikstead.esp") and not active("The Great City of Rorikstead.esp") and not active("JKs Skyrim_(Rorikstead|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Better City Entrances' ]
         condition: 'active("Better City Entrances - All in one - SSE.esp") and not active("JKs Skyrim_Better City Entrances_Patch.esp")'
@@ -19999,7 +20032,7 @@ plugins:
         condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKs Skyrim Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Bring Out Your Dead' ]
-        condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_(BOYD)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_(BOYD|Arthmoor All)_Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Carriage and Ferry Travel Overhaul' ]
         condition: 'active("CFTO.esp") and not active("CFTO-JK-Patch.esp") and not active("ETaC - Complete.esp")'
@@ -20008,19 +20041,7 @@ plugins:
         condition: 'active("Clockwork.esp") and not active("JKs Skyrim_Clockwork_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("JKs Skyrim_(Cutting Room Floor)?(Arth CRF DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
-      - <<: *patchProvided
-        subs: [ 'Dawnstar' ]
-        condition: 'active("Dawnstar.esp") and not active("JKs Skyrim_(Dawnstar)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
-      - <<: *patchProvided
-        subs: [ 'Dragon Bridge' ]
-        condition: 'active("Dragon Bridge.esp") and not active("JKs Skyrim_(Dragon Bridge)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
-      - <<: *patchProvided
-        subs: [ 'Falkreath' ]
-        condition: 'active("Falkreath.esp") and not active("JKs Skyrim_(Falkreath)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
-      - <<: *patchProvided
-        subs: [ 'Ivarstead' ]
-        condition: 'active("Ivarstead.esp") and not active("JKs Skyrim_(Ivarstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Cutting Room Floor.esp") and not active("JKs Skyrim_(Cutting Room Floor|Arth CRF DA DB FA IV RO|Arthmoor All)_Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Holidays' ]
         condition: 'active("Holidays.esp") and not active("JKs Skyrim_Holidays_Patch.esp") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp")'
@@ -20029,7 +20050,7 @@ plugins:
         condition: 'active("zMirai.esp") and not active("JKs Skyrim_Mirai_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Oblivion Gates' ]
-        condition: 'active("Oblivion Gates in Cities.esp") and not active("JKs Skyrim_(Oblivion Gates)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Oblivion Gates in Cities.esp") and not active("JKs Skyrim_(Oblivion Gates|Arthmoor All)_Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp") and not active("JK - DoS - OCS Patch.esp")'
@@ -20037,11 +20058,8 @@ plugins:
         subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Rorikstead' ]
-        condition: 'active("Rorikstead.esp") and not active("JKs Skyrim_(Rorikstead)?(Arth( CRF)? DA DB FA IV RO)?(Arthmoor All)?_Patch?.*\.esp")'
-      - <<: *patchProvided
         subs: [ 'Storefront' ]
-        condition: 'active("Storefront.esp") and not active("JKs Skyrim_(Storefront)?(Arthmoor All)?_Patch?.*\.esp")'
+        condition: 'active("Storefront.esp") and not active("JKs Skyrim_(Storefront|Arthmoor All)_Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
@@ -20050,24 +20068,29 @@ plugins:
         util: 'SSEEdit v4.0.3g'
       - crc: 0xC8478AEC
         util: 'SSEEdit v4.0.3g'
-  - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
-    inc:
-      - 'Blues Skyrim.esp'
-      - 'ETaC - Complete.esp'
-  - name: 'CFTO-JK-Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
-    inc: [ 'ETaC - Complete.esp' ]
-  - name: 'JKs Skyrim_Holidays_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/' ]
-    inc:
-      - 'Blues Skyrim.esp'
-      - 'ETaC - Complete.esp'
-  - name: 'JKs[ _]Skyrim_.*_Patch\.esp'
+  # JK's Skyrim - Patches #
+  - name: '.*JKs[ _]Skyrim.*Patch\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/'
         name: 'JK''s Skyrim'
     after: [ 'JKs Skyrim - Rob''s Bug Fixes.esp' ]
+  - name: 'Blowing in the Wind - JKs Skyrim Patch.esp'
+    inc:
+      - 'Blues Skyrim.esp'
+      - 'ETaC - Complete.esp'
+  - name: 'CFTO-JK-Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6289/'
+        name: 'JK''s Skyrim'
+    inc: [ 'ETaC - Complete.esp' ]
+  - name: 'JKs Skyrim_(Dragon Bridge|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp'
+    inc: [ 'The Great City of Dragon Bridge - JK''s + Arth''s Patch.esp' ]
+  - name: 'JKs Skyrim_(Rorikstead|Arth( CRF)? DA DB FA IV RO|Arthmoor All)_Patch\.esp'
+    inc: [ 'The Great City of Rorikstead - JK''s + Arth''s Patch.esp' ]
+  - name: 'JKs Skyrim_Holidays_Patch.esp'
+    inc:
+      - 'Blues Skyrim.esp'
+      - 'ETaC - Complete.esp'
 
   - name: 'JK''s Temple of Talos.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56971/' ]
