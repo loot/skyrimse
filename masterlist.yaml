@@ -5396,9 +5396,40 @@ plugins:
   - name: '3DNPC.esp'
     url:
       - link: 'http://3dnpc.com/2017/11/20/3dnpc-v3-4-for-oldrim-and-sse/'
-        name: 'Interesting NPCs'
+        name: 'Interesting NPCs SSE Beta'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
-        name: 'Interesting NPCs SE (3DNPC)'
+        name: 'Interesting NPCs'
+    inc:
+      - name: 'Open Cities Skyrim.esp'
+        condition: 'not active("Open Cities - 3DNPC Patch.esp")'
+    msg:
+      - <<: *patch3rdParty_RSCPC
+        condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
+      - *patch3rdParty_SRPC_Redux
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("3DNPC - AI Overhaul Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Alternate Start' ]
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("3DNPC Alternative Locations.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Karthwasten' ]
+        condition: 'active("Karthwasten.esp") and not active("3DNPC - Arth Karthwasten Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Arthmoor''s Kynesgrove' ]
+        condition: 'active("Kynesgrove.esp") and not active("3DNPC - Arth Kynesgrove Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Cutting Room Floor' ]
+        condition: 'active("Cutting Room Floor.esp") and not active("3DNPC - CRF Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Extensible Follower Framework' ]
+        condition: 'active("EFFCore.esm") and not active("3DNPCEFF.esp")'
+      - <<: *patchProvided
+        subs: [ 'TK Children' ]
+        condition: 'active("TKChildren.esp") and not active("TKChildren+3DNPC.esp")'
+      - <<: *patchProvided
+        subs: [ 'Unplayable Faction Armors' ]
+        condition: 'active("DIS_Armor_Fractions.esp") and not active("DIS_Armor_Fractions_3DNPC.esp")'
     tag:
       - -C.Acoustic
       - -C.Climate
@@ -5412,49 +5443,14 @@ plugins:
       - Keywords
       - Invent.Add
       - -Invent.Remove
-    msg:
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
-      - *patch3rdParty_SRPC_Redux
-      - <<: *patchProvided
-        subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("3DNPC - AI Overhaul Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Alternate Start' ]
-        condition: 'active("Alternate Start - Live Another Life.esp") and not active("3DNPC Alternative Locations.esp")'
-      - <<: *patchProvided
-        subs: [ 'Cutting Room Floor' ]
-        condition: 'active("Cutting Room Floor.esp") and not active("3DNPC - CRF Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'EFF - Extensible Follower Framework' ]
-        condition: 'active("EFFCore.esm") and not active("3DNPCEFF.esp")'
-      - <<: *patchProvided
-        subs: [ 'Karthwasten' ]
-        condition: 'active("Karthwasten.esp") and not active("3DNPC - Arth Karthwasten Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Kynesgrove' ]
-        condition: 'active("Kynesgrove.esp") and not active("3DNPC - Arth Kynesgrove Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - 3DNPC Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'TK Children SE' ]
-        condition: 'active("TKChildren.esp") and not active("TKChildren+3DNPC.esp")'
-      - <<: *patchProvided
-        subs: [ 'Unplayable Faction Armors SSE' ]
-        condition: 'active("DIS_Armor_Fractions.esp") and not active("DIS_Armor_Fractions_3DNPC.esp")'
     clean:
       - crc: 0xC60DC7D3
         util: 'SSEEdit v4.0.3'
-  - name: '3DNPC Alternative Locations.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This plugin requires a new game.'
-          - lang: de
-            text: 'Dieses Plugin setzt einen neuen Spielstand voraus.'
+  - name: 'Open Cities - 3DNPC Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
+        name: 'Interesting NPCs'
+    msg: [ *patchOutdated ]
 
   - name: 'Ambriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/969/' ]
