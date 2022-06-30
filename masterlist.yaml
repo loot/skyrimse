@@ -9002,10 +9002,16 @@ plugins:
     after: [ 'SkyTEST-RealisticAnimals&Predators.esp' ]
     tag: [ Text ]
 
+  - name: 'Apothecary((Food)?( - .* Patch)?| - Food Duration Tweaks)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/52130/'
+        name: 'Apothecary - An Alchemy Overhaul'
   - name: 'Apothecary.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52130/' ]
     after: [ 'TechnicolorAlchemy.esp' ]
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/) **Poison Resistance** patch' ]
+        condition: 'not file("SKSE/Plugins/ScrambledBugs.dll")'
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("Apothecary - Bruma Patch.esp")'
@@ -9024,8 +9030,38 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("Apothecary - Wyrmstooth Patch.esp")'
+    tag:
+      - EffectStats
+      - Graphics
+      - -Invent.Remove
+      - Keywords
+      - Relev
+      - Sound
+      - Stats
+      - Text
+    clean:
+      - crc: 0x5554A264
+        util: 'SSEEdit v4.0.4b'
+  # Apothecary - Patches #
+  - name: 'Apothecary - Fishing Patch.esp'
+    tag: [ Delev ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x206FAEB9
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'Apothecary - Rare Curios Patch.esp'
+    tag:
+      - EffectStats
+      - Keywords
+      - Stats
+      - Text
+  - name: 'Apothecary - Saints & Seducers Patch.esp'
+    tag:
+      - EffectStats
+      - Keywords
+  # Apothecary - Food and Drink Addon #
   - name: 'ApothecaryFood.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/52130/' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim - Bruma' ]
@@ -9045,6 +9081,21 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("ApothecaryFood - Wyrmstooth Patch.esp")'
+    tag:
+      - Graphics
+      - Names
+      - Relev
+      - Stats
+    clean:
+      - crc: 0x8040AB87
+        util: 'SSEEdit v4.0.4b'
+  # Apothecary - Food and Drink Addon - Patches #
+  - name: 'ApothecaryFood - Fishing Patch.esp'
+    tag: [ Keywords ]
+  - name: 'ApothecaryFood - Survival Mode Patch.esp'
+    tag:
+      - Names
+      - Stats
 
   - name: 'Ars Metallica.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/321/' ]
