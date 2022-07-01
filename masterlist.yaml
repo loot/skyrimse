@@ -21262,13 +21262,30 @@ plugins:
         nav: 1
 
   - name: 'RedBag''s Solitude.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42052/' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xC025F482
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 95
-        udr: 79
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42052/'
+        name: 'RedBag''s Solitude'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64068/'
+        name: 'Rob''s Bug Fixes - RedBag''s Solitude'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Skyrim Project Optimization' ]
+        condition: 'active("Skyrim Project Optimization - Full ESL Version.esm") and checksum("RedBag''s Solitude.esp", 90AD69F2) and not active("RedBag''s Solitude - SPO Patch.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64068/)' ]
+        condition: 'checksum("RedBag''s Solitude.esp", A9A23AB8)'
+    clean:
+      - crc: 0xA9A23AB8
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x90AD69F2
+        util: 'SSEEdit v4.0.4b'
+  - name: 'RedBag''s Solitude - SPO Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64068/'
+        name: 'Rob''s Bug Fixes - RedBag''s Solitude'
+    clean:
+      - crc: 0xB4B8EE8D
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'River Rock Village.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19432/' ]
