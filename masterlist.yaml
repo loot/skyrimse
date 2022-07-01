@@ -19190,13 +19190,22 @@ plugins:
         util: 'SSEEdit v4.0.3g'
 
   - name: 'Dawn of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/'
+        name: 'Dawn of Skyrim (Director''s Cut) SE'
+      - Link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63486/'
+        name: 'Rob''s Bug Fixes - Dawn of Skryim'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DawnofSkyrimDC_Patch.esp") and not active("DBM_JKSkyrim_DawnOfSkyrimDC_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Dawn of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/63486/)' ]
+        condition: 'checksum("Dawn of Skyrim.esp", 77E14A2C)'
     clean:
       - crc: 0x77E14A2C
         util: 'SSEEdit v4.0.3'
+      - crc: 0xF0D1ED57
+        util: 'SSEEdit v4.0.4b'
   - name: 'Blues Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9074/' ]
     clean:
