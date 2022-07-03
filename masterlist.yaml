@@ -15402,23 +15402,11 @@ plugins:
       - crc: 0x9B3E1856
         util: 'SSEEdit v4.0.4'
 
+  - name: '(DawnguardArsenal|DGA-ArsMSE CompatPatch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/25094/'
+        name: 'Dawnguard Arsenal'
   - name: 'DawnguardArsenal.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25094/' ]
-    tag:
-      - Actors.CombatStyle
-      - Actors.Spells
-      - Actors.Stats
-      - Delev
-      - Factions
-      - Graphics
-      - Invent.Add
-      - Invent.Remove
-      - Keywords
-      - NPC.Class
-      - Outfits.Add
-      - Outfits.Remove
-      - Sound
-      - Stats
     msg:
       - <<: *patch3rdParty_KPH_ACE
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("DawnguardArsenal_WACCF-ACE_Patch.esp")'
@@ -15428,11 +15416,37 @@ plugins:
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DGA_Patch.esp") and (version("LegacyoftheDragonborn.esm", "5.0.24", >=) or (not checksum("LegacyoftheDragonborn.esm", 31563183) and not checksum("LegacyoftheDragonborn.esm", 6736FB94) and not checksum("LegacyoftheDragonborn.esm", CB82480D)))'
+      - <<: *patchProvided
+        subs: [ 'Ars Metallica - Smithing Enhancement' ]
+        condition: 'active("Ars Metallica.esp") and not active("DGA-ArsMSE CompatPatch.esp")'
       - *patch3rdParty_SRPC
+    tag:
+      - Actors.CombatStyle
+      - Actors.Factions
+      - Actors.Perks.Add
+      - Actors.Spells
+      - Actors.Stats
+      - Delev
+      - EffectStats
+      - Graphics
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+      - Outfits.Add
+      - Outfits.Remove
+      - Sound
+      - Stats
     clean:
-      # version: 1.0
       - crc: 0x3A701728
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.4b'
+  - name: 'DGA-ArsMSE CompatPatch.esp'
+    tag: [ Text ]
+    clean:
+      - crc: 0x0F6BC33B
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'DIS_Authentic_Legion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29559/' ]
