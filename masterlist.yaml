@@ -14958,8 +14958,14 @@ plugins:
       - crc: 0x6D5880CE
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'WACCF_Armor and Clothing Extension(_SPID)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/'
+        name: 'Armor and Clothing Extension'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
   - name: 'WACCF_Armor and Clothing Extension.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19002/' ]
     after:
       - 'AmuletsShowOnEverything.esp'
       - 'AmuletsShowOnClothes.esp'
@@ -14986,16 +14992,18 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp")'
       - *requiresMCM
     tag:
-      - -Invent.Add
       - -Invent.Remove
       - -Names
       - NPC.DefaultOutfit
-      - Outfits.Add
-      - Outfits.Remove
       - -Stats
     clean:
-      - crc: 0xA2137FCC
-        util: 'SSEEdit v4.0.3f'
+      - crc: 0xAFE71282
+        util: 'SSEEdit v4.0.4b'
+  - name: 'WACCF_Armor and Clothing Extension_SPID.esp'
+    req: [ *SPID ]
+    clean:
+      - crc: 0xC9EF92AB
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'AVExpansion.esp'
     url:
