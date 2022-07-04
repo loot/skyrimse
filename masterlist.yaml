@@ -13486,6 +13486,30 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 2
 
+  - name: 'Knight of the North( - LCO Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/45869/'
+        name: 'Knight of the North - A Creation Club Quest Overhaul (Nexus Mods)'
+      - link: 'https://github.com/TateTaylorOH/Knight-of-the-North/'
+        name: 'Knight of the North - A Creation Club Quest Overhaul (GitHub)'
+  - name: 'Knight of the North.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Lawbringer (Stendarr''s Beacon)' ]
+        condition: 'active("LCO_StendarrsBeacon.esp") and not active("Knight of the North - LCO Patch.esp")'
+    tag:
+      - Enchantments
+      - Keywords
+      - Names
+      - Stats
+    clean:
+      - crc: 0x48CA3704
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Knight of the North - LCO Patch.esp'
+    clean:
+      - crc: 0x05860680
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'konahrik_accoutrements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22206/' ]
     tag:
