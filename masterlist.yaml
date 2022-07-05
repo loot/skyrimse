@@ -4711,6 +4711,71 @@ plugins:
   - name: 'Killable Children - TK.esp'
     after: [ 'TKChildren.esp' ]
 
+  - name: '(PrinceandPauper|Prince and the Pauper SE - RS Children Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8354/'
+        name: 'Prince and The Pauper'
+  - name: 'PrinceandPauper(Refine.*)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70037/'
+        name: 'Prince and The Pauper Refine (Fixes - Improvements - New Child Outfits - No NPC Edits)'
+  - name: 'PrinceandPauper(Refine)?\.esp'
+    tag:
+      - Graphics
+      - Names
+      - Stats
+      - Text
+  - name: 'PrinceandPauper.esp'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Prince and The Pauper Refine (Fixes - Improvements - New Child Outfits - No NPC Edits)](https://www.nexusmods.com/skyrimspecialedition/mods/70037/)' ]
+        condition: 'not active("PrinceandPauperRefine.esp")'
+    tag:
+      - Invent.Add
+      - Keywords
+      - name: NPC.DefaultOutfit
+        condition: 'not file("PrinceandPauperRefine.esp")'
+    clean:
+      - crc: 0x216A012E
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x4F9AEBA7
+        util: 'SSEEdit v4.0.4b'
+  - name: 'Prince and the Pauper SE - RS Children Patch.esp'
+    tag:
+      - Actors.Stats
+      - NPC.AttackRace
+      - NPC.DefaultOutfit
+      - NPC.Race
+    clean:
+      - crc: 0x3A4DFEA7
+        util: 'SSEEdit v4.0.4b'
+  - name: 'PrinceandPauperRefine.esp'
+    req: [ *SPID ]
+    tag:
+      - Delev
+      - Keywords
+      - Outfits.Add
+      - Outfits.Remove
+    dirty:
+      - <<: *quickClean
+        crc: 0x4461B87C
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 51
+  - name: 'PrinceandPauperRefine_BYOHFixes.esp'
+    clean:
+      - crc: 0x0C8909A1
+        util: 'SSEEdit v4.0.4b'
+  - name: 'PrinceandPauperRefine_CC_Cave.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x654CCB95
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'PrinceandPauperRefine_MultipleAdoptions.esp'
+    clean:
+      - crc: 0x375D1FF5
+        util: 'SSEEdit v4.0.4b'
+
   - name: 'RealisticRSChildren.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39359/' ]
     after: [ 'RSChildren.esp' ]
