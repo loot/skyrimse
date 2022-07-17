@@ -13977,12 +13977,30 @@ plugins:
       - Actors.AIPackages
       - Factions
 
+  - name: 'SaveTheIcerunner(_HHITPC)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/34681/'
+        name: 'Save the Icerunner - Lights Out Alternate Routes'
   - name: 'SaveTheIcerunner.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34681/' ]
     after: [ 'TheChoiceIsYours.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'How Hard Is This Persuasion Check' ]
+        condition: 'active("How Hard Is This Persuasion Check.esp") and not active("SaveTheIcerunner_HHITPC.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.Perks.Add
+      - Invent.Add
+      - Invent.Remove
     clean:
       - crc: 0xF57050CB
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4b'
+  - name: 'SaveTheIcerunner_HHITPC.esp'
+    clean:
+      - crc: 0x5780DF02
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'SexLab-AmorousAdventures.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7305/' ]
