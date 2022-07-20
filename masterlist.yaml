@@ -3983,13 +3983,26 @@ plugins:
       - crc: 0x8FA2EB6E
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Obsidian In Cathedral.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831/' ]
+    after: [ 'SoS_Cathedral_Patch.esp' ]
+    clean:
+      - crc: 0x6866AB52
+        util: 'SSEEdit v4.0.3'
+  - name: 'DarkerNights-ObsidianInCathedral.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831/' ]
+    after: [ 'Obsidian In Cathedral.esp' ]
+
+  - name: '(True Storms - )?Obsidian Weathers( - Patch )?\.esp' # sic
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/'
+        name: 'Obsidian Weathers and Seasons'
   - name: 'Obsidian Weathers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
     group: *earlyLoadersGroup
     after:
       - 'Audio Overhaul Skyrim.esp'
       - name: 'TrueStormsSE.esp'
-        condition: 'not file("Obsidian Weathers - Wander Patch.esp") and not file("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp")'
+        condition: 'active("True Storms - Obsidian Weathers - Patch .esp")' # sic
     inc:
       - 'Aequinoctium.esp'
       - 'Autumn Skies.esp'
@@ -4000,54 +4013,40 @@ plugins:
       - 'Mythical Ages.esp'
       - 'NAT.esp'
       - 'NorthernSWS.esp'
-      - 'Obsidian Mountain Fogs.esp'
       - 'Obscura Weather and Lighting.esp'
       - 'Obscura Weather and Lighting - hazy.esp'
+      - 'Obscura Weather and Lighting - Skytoon.esp'
       - 'Obscura Weather and Lighting - Vibrant.esp'
       - 'Obscura Weather and Lighting - Vibrant with Haze.esp'
-      - 'Obscura Weather and Lighting - Skytoon.esp'
+      - 'Obsidian Mountain Fogs.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Rustic Weathers And Lighting.esp'
       - 'Skyrim Legendary Weathers.esp'
       - 'SolstitiumWeathersandSeasons.esp'
       - 'surreal lighting.esp'
-      - name: 'TrueStormsSE.esp'
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not active("Obsidian Wander TS Combined Patch.esp")'
-        display: 'True Storms Special Edition'
       - 'Vivid WeathersSE.esp'
     msg:
       - <<: *patchProvided
         subs: [ 'True Storms' ]
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not active("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp") and not active("Obsidian Wander TS Combined Patch.esp")' # sic
       - <<: *patch3rdParty
         subs:
           - 'True Storms'
           - '[Obsidian Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/17198/)'
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_(Luminous|Spectral)(_WaterFix)?\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not active("Obsidian Wander TS Combined Patch.esp")' # sic
       - <<: *patch3rdParty
         subs:
-          - 'VIGILANT SE'
-          - '[Obsidian Weathers Updated Vigilant Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24357/)'
+          - 'VIGILANT'
+          - '[Obsidian Weathers - Vigilant Integration](https://www.nexusmods.com/skyrimspecialedition/mods/24357/)'
         condition: 'active("Vigilant.esm") and not active("Obsidian Weathers for Vigilant.esp")'
     tag:
+      - Graphics
       - Sound
-      - Stats
     clean:
-      - crc: 0x3311AB64
-        util: 'SSEEdit v4.0.3'
-  - name:  'True Storms - Obsidian Weathers - Patch .esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
+      - crc: 0xA90371B1
+        util: 'SSEEdit v4.0.4b'
+  - name:  'True Storms - Obsidian Weathers - Patch .esp' # sic
     inc: [ 'Obsidian Weathers - Wander Patch.esp' ]
-
-  - name: 'Obsidian In Cathedral.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831/' ]
-    after: [ 'SoS_Cathedral_Patch.esp' ]
-    clean:
-      - crc: 0x6866AB52
-        util: 'SSEEdit v4.0.3'
-  - name: 'DarkerNights-ObsidianInCathedral.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27831/' ]
-    after: [ 'Obsidian In Cathedral.esp' ]
 
   - name: 'OriginWeathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20050/' ]
