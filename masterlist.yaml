@@ -4010,12 +4010,12 @@ plugins:
       - 'Mythical Ages.esp'
       - 'NAT.esp'
       - 'NorthernSWS.esp'
-      - 'Obsidian Mountain Fogs.esp'
       - 'Obscura Weather and Lighting.esp'
       - 'Obscura Weather and Lighting - hazy.esp'
+      - 'Obscura Weather and Lighting - Skytoon.esp'
       - 'Obscura Weather and Lighting - Vibrant.esp'
       - 'Obscura Weather and Lighting - Vibrant with Haze.esp'
-      - 'Obscura Weather and Lighting - Skytoon.esp'
+      - 'Obsidian Mountain Fogs.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Rustic Weathers And Lighting.esp'
       - 'Skyrim Legendary Weathers.esp'
@@ -4028,12 +4028,12 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'True Storms' ]
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")' # sic
       - <<: *patch3rdParty
         subs:
           - 'True Storms'
           - '[Obsidian Weathers - TrueStorms Merged Compatibility](https://www.nexusmods.com/skyrimspecialedition/mods/17198/)'
-        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")'
+        condition: 'active("TrueStormsSE.esp") and not active("Obsidian_TS_Patch_.*\.esp") and not active("True Storms - Obsidian Weathers - Patch .esp") and not file("Wander.esp")' # sic
       - <<: *patch3rdParty
         subs:
           - 'VIGILANT SE'
@@ -4045,7 +4045,7 @@ plugins:
     clean:
       - crc: 0x3311AB64
         util: 'SSEEdit v4.0.3'
-  - name:  'True Storms - Obsidian Weathers - Patch .esp'
+  - name:  'True Storms - Obsidian Weathers - Patch .esp' # sic
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12125/' ]
     inc: [ 'Obsidian Weathers - Wander Patch.esp' ]
 
