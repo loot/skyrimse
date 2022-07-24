@@ -24653,7 +24653,7 @@ plugins:
         condition: 'active("JKs Skyrim.esp") and not active("DoS_MP_Whiterun_JK.esp")'
       - <<: *patchIncluded
         subs: [ '***Legacy of the Dragonborn***' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_LOTD.esp") and not active("DoS_MP_Whiterun_CWE_LOTD.esp") and not active("DoS_MP_Whiterun_JK_LOTD.esp") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_(JK_)?(CWE_)?LOTD\.esp")'
   - name: 'DoS_MP_Whiterun_CWE.esp'
     msg:
       - <<: *patchIncluded
@@ -24664,7 +24664,7 @@ plugins:
         condition: 'active("WhiterunMarket.esp") and not active("DoS_MP_Whiterun_CWE_DWM.esp")'
       - <<: *patchIncluded
         subs: [ '***Legacy of the Dragonborn***' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_CWE_LOTD.esp") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_(JK_)?CWE_LOTD\.esp")'
   - name: 'DoS_MP_Whiterun_CWE_DWM.esp'
     msg:
       - <<: *patchIncluded
@@ -24690,7 +24690,7 @@ plugins:
         condition: 'active("ccBGSSSE001-Fish.esm") and not active("DoS_MP_Whiterun_JK_Fishing.esp")'
       - <<: *patchIncluded
         subs: [ '***Legacy of the Dragonborn***' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_JK_LOTD.esp") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_JK_(CWE_)?LOTD\.esp")'
   - name: 'DoS_MP_Whiterun_JK_CWE.esp'
     inc: [ 'JK - CWE Patch.esp' ]
     msg:
