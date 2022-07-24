@@ -24637,9 +24637,6 @@ plugins:
   - name: 'DoS_MP_Whiterun.esp'
     msg:
       - <<: *patchIncluded
-        subs: [ '***Interesting NPCs***' ]
-        condition: 'active("3DNPC.esp") and not active("DoS_MP_Whiterun_3DNPC.esp")'
-      - <<: *patchIncluded
         subs: [ '***Capital Whiterun Expansion***' ]
         condition: 'active("SurWR.esp") and not active("DoS_MP_Whiterun_CWE.esp")'
       - <<: *patchIncluded
@@ -24649,6 +24646,9 @@ plugins:
         subs: [ '***Fishing***' ]
         condition: 'active("ccBGSSSE001-Fish.esm") and not active("DoS_MP_Whiterun_Fishing.esp")'
       - <<: *patchIncluded
+        subs: [ '***Interesting NPCs***' ]
+        condition: 'active("3DNPC.esp") and not active("DoS_MP_Whiterun_3DNPC.esp")'
+      - <<: *patchIncluded
         subs: [ '***JKs Skyrim***' ]
         condition: 'active("JKs Skyrim.esp") and not active("DoS_MP_Whiterun_JK.esp")'
       - <<: *patchIncluded
@@ -24657,11 +24657,11 @@ plugins:
   - name: 'DoS_MP_Whiterun_CWE.esp'
     msg:
       - <<: *patchIncluded
-        subs: [ '***JKs Skyrim***' ]
-        condition: 'active("JKs Skyrim.esp") and not active("DoS_MP_Whiterun_JK_CWE.esp")'
-      - <<: *patchIncluded
         subs: [ '***Darks Whiterun Market***' ]
         condition: 'active("WhiterunMarket.esp") and not active("DoS_MP_Whiterun_CWE_DWM.esp")'
+      - <<: *patchIncluded
+        subs: [ '***JKs Skyrim***' ]
+        condition: 'active("JKs Skyrim.esp") and not active("DoS_MP_Whiterun_JK_CWE.esp")'
       - <<: *patchIncluded
         subs: [ '***Legacy of the Dragonborn***' ]
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_(JK_)?CWE_LOTD\.esp")'
@@ -24694,11 +24694,11 @@ plugins:
     inc: [ 'JK - CWE Patch.esp' ]
     msg:
       - <<: *patchIncluded
-        subs: [ '***Legacy of the Dragonborn***' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
-      - <<: *patchIncluded
         subs: [ '***Capital Whiterun Expansion NPC Sleep Fixes***' ]
         condition: 'active("Capital Whiterun Expansion v15 Sleep Fixes.esp") and not active("DoS_MP_Whiterun_JK_CWE_SleepFix.esp")'
+      - <<: *patchIncluded
+        subs: [ '***Legacy of the Dragonborn***' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
   - name: 'DoS_MP_Whiterun_JK_CWE_LOTD.esp'
     inc:
       - 'DoS_MP_Whiterun_CWE_LOTD.esp'
@@ -24718,11 +24718,11 @@ plugins:
         subs: [ '***DoS_MP_Whiterun_CWE_LOTD.esp***' ]
         condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_CWE_LOTD.esp")'
       - <<: *alreadyInX
-        subs: [ '***DoS_MP_Whiterun_JK_LOTD.esp***' ]
-        condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_JK_LOTD.esp")'
-      - <<: *alreadyInX
         subs: [ '***DoS_MP_Whiterun_JK_CWE_LOTD.esp***' ]
         condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_JK_CWE_LOTD.esp")'
+      - <<: *alreadyInX
+        subs: [ '***DoS_MP_Whiterun_JK_LOTD.esp***' ]
+        condition: 'active("DoS_MP_Whiterun_LOTD.esp") and active("DoS_MP_Whiterun_JK_LOTD.esp")'
 
   - name: 'ELE-ELFX (Cavern Worldspaces|Imagespace and LT tweaks|Light Records|More Light Sources|Patch AIO)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18634/' ]
