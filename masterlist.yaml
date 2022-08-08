@@ -17327,6 +17327,24 @@ plugins:
     clean:
       - crc: 0x51DD187F
         util: 'SSEEdit v4.0.4b'
+  - name: 'DeadMansRefuge.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66194'
+        name: 'Dead Man''s Refuge'
+    msg:
+      - <<: *patchIncluded
+        subs: [ '[Arena - An Encounter Zone Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/33487)' ]
+        condition: 'active("Arena.esp") and not active("DeadMansRefugeArenaPatch.esp")'
+    clean:
+      - crc: 0x683B8666
+        util: 'SSEEdit v4.0.4'
+  - name: 'DeadMansRefugeArenaPatch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66194'
+        name: 'Dead Man''s Refuge - Arena Patch'
+    clean:
+      - crc: 0x43F3A723
+        util: 'SSEEdit v4.0.4'
   - name: 'Rielle - Vault of Meridia.esp'
     clean:
       - crc: 0x114081E6
