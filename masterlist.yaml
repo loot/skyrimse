@@ -22000,6 +22000,7 @@ plugins:
 
   - name: 'The Great City of Dawnstar.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19491/' ]
+    msg: [ *alreadyInTGC ]
     clean:
       - crc: 0xBB653BFB
         util: 'SSEEdit v4.0.3'
@@ -22015,6 +22016,7 @@ plugins:
     after:
       - name: 'Dragon Bridge.esp'
         condition: 'active("TGCoDragon Bridge - Arthmoor DB Patch.esp") or active("The Great City of Dragon Bridge - JK''s + Arth''s Patch.esp")'
+    msg: [ *alreadyInTGC ]
     clean:
       - crc: 0xEFA73FDF
         util: 'SSEEdit v4.0.4b'
@@ -22028,12 +22030,14 @@ plugins:
 
   - name: 'The Great City of Falkreath.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19709/' ]
+    msg: [ *alreadyInTGC ]
     clean:
       - crc: 0x03553243
         util: 'SSEEdit v4.0.3'
 
   - name: 'The Great City of Morthal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19592/' ]
+    msg: [ *alreadyInTGC ]
     dirty:
       - <<: *quickClean
         crc: 0xECDC04AA
@@ -22049,6 +22053,7 @@ plugins:
     after:
       - name: 'Rorikstead.esp'
         condition: 'active("The Great City of Rorikstead - JK''s + Arth''s Patch.esp")'
+    msg: [ *alreadyInTGC ]
     dirty:
       - <<: *quickClean
         crc: 0x2C846503
@@ -22077,6 +22082,7 @@ plugins:
 
   - name: 'The Great City of Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17127/' ]
+    msg: [ *alreadyInTGC ]
     dirty:
       - <<: *quickClean
         crc: 0xFFDDDF03
