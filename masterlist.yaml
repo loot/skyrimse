@@ -19507,7 +19507,8 @@ plugins:
     after:
       - name: 'JKs Skyrim.esp'
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Morthal.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Morthal.esp") and not is_master("JKs Skyrim.esp")))'
-      - 'Landscape For Grass Mods JK''S Skyrim.esp'
+      - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
+        condition: 'not is_master("COTN - Morthal.esp")'
 
   - name: 'COTN - Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40088/' ]
