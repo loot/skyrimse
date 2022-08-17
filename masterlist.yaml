@@ -19476,7 +19476,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28952/' ]
     after:
       - name: 'JKs Skyrim.esp'
-        condition: '(is_master("COTN - Dawnstar.esp") and is_master("JKs Skyrim.esp") and active("The Great Cities of JK''s North - Patch.esp")) or (not is_master("COTN - Dawnstar.esp") and not is_master("JKs Skyrim.esp") and active("The Great Cities of JK''s North - Patch.esp"))'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Dawnstar.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Dawnstar.esp") and not is_master("JKs Skyrim.esp")))'
       - name: 'Landscape Fixes For Grass Mods.esp'
         condition: '(is_master("COTN - Dawnstar.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("COTN - Dawnstar.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
       - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
@@ -19493,15 +19493,15 @@ plugins:
   - name: 'COTN - Morthal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34168/' ]
     after:
-      - name: 'COTN - Dawnstar.esp'
-        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
+      - name: 'JKs Skyrim.esp'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Morthal.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Morthal.esp") and not is_master("JKs Skyrim.esp")))'
       - 'Landscape For Grass Mods JK''S Skyrim.esp'
 
   - name: 'COTN - Winterhold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40088/' ]
     after:
-      - name: 'COTN - Morthal.esp'
-        condition: 'active("The Great Cities of JK''s North - Patch.esp")'
+      - name: 'JKs Skyrim.esp'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Winterhold.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Winterhold.esp") and not is_master("JKs Skyrim.esp")))'
 
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
@@ -20294,7 +20294,7 @@ plugins:
       - name: 'S3DTrees NextGenerationForests.esp'
         condition: '(is_master("JKs Skyrim.esp") and is_master("S3DTrees NextGenerationForests.esp")) or (not is_master("JKs Skyrim.esp") and not is_master("S3DTrees NextGenerationForests.esp"))'
       - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: '(is_master("JKs Skyrim.esp") and is_master("The Great Cities - Minor Cities and Towns.esp") and active("The Great Cities of JK''s North - Patch.esp")) or (not is_master("JKs Skyrim.esp") and not is_master("The Great Cities - Minor Cities and Towns.esp") and active("The Great Cities of JK''s North - Patch.esp"))'
+        condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("JKs Skyrim.esp") and is_master("The Great Cities - Minor Cities and Towns.esp")) or (not is_master("JKs Skyrim.esp") and not is_master("The Great Cities - Minor Cities and Towns.esp")))'
       - name: 'UniqueLocationsRiverwoodForest.esp'
         condition: '(is_master("JKs Skyrim.esp") and is_master("UniqueLocationsRiverwoodForest.esp")) or (not is_master("JKs Skyrim.esp") and not is_master("UniqueLocationsRiverwoodForest.esp"))'
       - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
@@ -21991,7 +21991,7 @@ plugins:
   - name: 'The Great Cities - Minor Cities and Towns.esp'
     after:
       - name: 'JKs Skyrim.esp'
-        condition: 'active("The Great Cities of JK''s Skyrim - Patch.esp")'
+        condition: 'active("The Great Cities of JK''s Skyrim - Patch.esp") and ((is_master("The Great Cities - Minor Cities and Towns.esp") and is_master("JKs Skyrim.esp")) or (not is_master("The Great Cities - Minor Cities and Towns.esp") and not is_master("JKs Skyrim.esp")))'
     dirty:
       - <<: *quickClean
         crc: 0x2E50E9ED
