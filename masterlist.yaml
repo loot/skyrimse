@@ -2974,16 +2974,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/701/' ]
     group: *earlyLoadersGroup
     tag: [ Sound ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Alternate Start - Live Another Life' ]
-        condition: 'active("Alternate Start - Live Another Life.esp") and not active("RAO - Alternate Start Patch.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
-        condition: 'active("ELE_SSE.esp") and not active("RAO - ELE patch SSE.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xAA85D810
