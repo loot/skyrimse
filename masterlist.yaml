@@ -2971,24 +2971,33 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/701/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/701/'
+        name: 'Reverb and Ambiance Overhaul'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/53686/'
+        name: 'Reverb and Ambiance Overhaul UPDATED ESL'
     group: *earlyLoadersGroup
-    tag: [ Sound ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Alternate Start - Live Another Life' ]
-        condition: 'active("Alternate Start - Live Another Life.esp") and not active("RAO - Alternate Start Patch.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Lighting for ENB (ELE)' ]
-        condition: 'active("ELE_SSE.esp") and not active("RAO - ELE patch SSE.esp") and not active("RAO - ELE - Alternate Start Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("RAO - ELFX Patch.esp")'
+    tag:
+      - C.Acoustic
+      - Sound
     dirty:
       - <<: *quickClean
         crc: 0xAA85D810
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
+      - <<: *quickClean
+        crc: 0x478C45BD
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'RAO - ELE - Alternate Start Patch.esp'
+    after: [ 'RAO - ELE patch SSE.esp' ]
+  - name: 'RAO - ELFX Base Patch.esp'
+    req: [ 'EnhancedLightsandFX.esp' ]
+  - name: 'RAO - ELFX Patch.esp'
+    req: [ 'EnhancedLightsandFX.esp' ]
+    after:
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
 
   - name: 'Soulmancer Soundtrack - NoVindDun.esp'
     url:
