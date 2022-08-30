@@ -13199,8 +13199,10 @@ plugins:
 
   - name: 'BetterQuestObjectives.*\.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/159/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089/'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/159/'
+        name: 'Even Better Quest Objectives (Nexus Mods)'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089/'
+        name: 'Even Better Quest Objectives (Bethesda.net Mods)'
   - name: 'BetterQuestObjectives.esp'
     after:
       - 'QuestsAreInSkyrim.esp'
@@ -13212,7 +13214,7 @@ plugins:
           - '[Even Better Quest Objectives - Quests Are In Skyrim USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33659/)'
         condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("EBQO_QAIS-USSEP_Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Alternate Start' ]
+        subs: [ 'Alternate Start - Live Another Life' ]
         condition: 'active("Alternate Start - Live Another Life.esp") and not active("BetterQuestObjectives-AlternateStartPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Amazing Follower Tweaks or Immersive Amazing Follower Tweaks' ]
@@ -13225,7 +13227,7 @@ plugins:
         condition: 'active("Book Covers Skyrim.esp") and not active("BetterQuestObjectives - BCS Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Better Skill and Quest Books Names' ]
-        condition: 'active("Better Skill and Quest Books Names SE.esp") and not active("BetterQuestObjectives-BSaQBPatch.esp")'
+        condition: 'active("Better Skill and Quest Books Names SE.esp") and not active("BetterQuestObjectives-(BSaQB|BCS-BSaQB )Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("BetterQuestObjectives-CRFPatch.esp")'
@@ -13252,7 +13254,7 @@ plugins:
         condition: 'active("The Paarthurnax Dilemma.esp") and not active("BetterQuestObjectives-PaarDilemmaPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Thieves Guild For Good Guys' ]
-        condition: 'active("TCBM.esp") and not active("EvenBetterQuestObjectives - Thieves Guild For Good Guys Patch.esp")'
+        condition: 'active("TCBM.esp") and not active("BetterQuestObjectives - Thieves Guild For Good Guys Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Wintersun - Faiths of Skyrim' ]
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("BetterQuestObjectives - Wintersun Patch.esp")'
@@ -13261,12 +13263,14 @@ plugins:
         condition: 'active("YASH2.esp") and not active("BetterQuestObjectives - YASH Patch.esp")'
     tag: [ Text ]
     clean:
-      - crc: 0x272E1695
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x1D471A94
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x1FC5AB07
+        util: 'SSEEdit v4.0.4c'
   - name: 'BetterQuestObjectives-DBForevertoMisc.esp'
     clean:
-      - crc: 0xB7F49B9D
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x81F203A7
+        util: 'SSEEdit v4.0.4c'
   - name: 'BetterQuestObjectives-AlternateStartPatch.esp'
     after: [ 'BetterQuestObjectives.esp' ]
     clean:
@@ -13287,12 +13291,14 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives - BCS Patch.esp'
     after: [ 'BetterQuestObjectives.esp' ]
-    tag: [ Text ]
     clean:
       - crc: 0x49F6A550
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives-BSaQBPatch.esp'
-    tag: [ Text ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**BetterQuestObjectives-BCS-BSaQB Patch.esp**' ]
+        condition: 'active("BetterQuestObjectives-BCS-BSaQB Patch.esp")'
     clean:
       - crc: 0xF0E2EE4E
         util: 'SSEEdit v4.0.3'
@@ -13306,7 +13312,6 @@ plugins:
       - crc: 0xC15BAADF
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives-EFFPatch.esp'
-    req: [ 'EFFDialogue.esp' ]
     clean:
       - crc: 0x5D8F1625
         util: 'SSEEdit v4.0.3'
@@ -13328,7 +13333,6 @@ plugins:
       - crc: 0xAF2FB2E9
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives-PaarDilemmaPatch.esp'
-    after: [ 'BetterQuestObjectives.esp' ]
     clean:
       - crc: 0x291AA87B
         util: 'SSEEdit v4.0.3'
