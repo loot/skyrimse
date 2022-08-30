@@ -13291,6 +13291,10 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'BetterQuestObjectives - BCS Patch.esp'
     after: [ 'BetterQuestObjectives.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**BetterQuestObjectives-BCS-BSaQB Patch.esp**' ]
+        condition: 'active("BetterQuestObjectives-BCS-BSaQB Patch.esp")'
     clean:
       - crc: 0x49F6A550
         util: 'SSEEdit v4.0.3'
