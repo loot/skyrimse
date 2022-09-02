@@ -21739,6 +21739,25 @@ plugins:
       - crc: 0x3B9B5701
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Ryn''s Bleakfalls Tower.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72659/'
+        name: 'Ryn''s Bleak Falls Tower'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Lawbringer (Bleak Falls Tower)'
+          - '[Patches for Ryn''s](https://www.nexusmods.com/skyrimspecialedition/mods/74233/)'
+        condition: 'active("LCO_BleakFallsTower.esp") and not active("Ryn''s Bleakfalls Tower Lawbringer Basic Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Legend of the Eagles Nest SSE'
+          - '[Patches for Ryn''s](https://www.nexusmods.com/skyrimspecialedition/mods/74233/)'
+        condition: 'active("flaho_shi_eagles_nest_ENG.esp") and not active("Ryn''s Bleakfalls Tower - Eagle Nest.esp")'
+    clean:
+      - crc: 0x47A5430D
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Ryn''s Farms.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72305/'
