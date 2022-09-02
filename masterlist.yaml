@@ -21768,15 +21768,20 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65661/'
         name: 'Ryn''s Whiterun City Limits'
     msg:
-      - <<: *patchProvided
-        subs:
-          - 'Tundra Homestead'
-        condition: 'active("cceejsse001-hstead.esm") and not active("Ryn''s Whiterun City Limits_CC Tundra Homestead_PATCH.esp")'
       - <<: *patch3rdParty
         subs:
           - 'eFPS'
           - '[Unofficial eFPS patches](https://www.nexusmods.com/skyrimspecialedition/mods/70176/)'
         condition: 'active("Occ_Skyrim_Tamriel.esp") and not active("Occ_Skyrim_RynsWhiterunCityLimits_patch")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Ryn''s Halted Stream Camp'
+          - '[Ryn''s Skyrim Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/73778/)'
+        condition: 'active("Ryn''s Halted Stream Camp.esp") and not active("Ryn''s_Whiterun_City_Limits_Ryn''s_Bleakwind_Basin_Patch.esp")'
+      - <<: *patchProvided
+        subs:
+          - 'Tundra Homestead'
+        condition: 'active("cceejsse001-hstead.esm") and not active("Ryn''s Whiterun City Limits_CC Tundra Homestead_PATCH.esp")'
     clean:
       - crc: 0xCEAB3291
         util: 'SSEEdit v4.0.4'
