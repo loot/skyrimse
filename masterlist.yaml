@@ -15918,6 +15918,27 @@ plugins:
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Dr_Bandolier_CCOR_Patch.esp")'
 
+  - name: '(DwarvenEbony - )?HandHammers\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30707/'
+        name: 'Mauls - One Handed Hammers'
+  - name: 'HandHammers.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Dwarven Ebony' ]
+        condition: 'active("DwarvenEbony.esp") and not active("DwarvenEbony - HandHammers.esp")'
+    tag:
+      - Delev
+      - Invent.Add
+      - Invent.Remove
+    clean:
+      - crc: 0xAE5AC4F8
+        util: 'SSEEdit v4.0.4c'
+  - name: 'DwarvenEbony - HandHammers.esp'
+    clean:
+      - crc: 0xA86F3A0F
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'El_WayfarersCoatSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10194/' ]
     msg:
