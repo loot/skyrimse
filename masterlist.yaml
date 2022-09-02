@@ -21739,6 +21739,30 @@ plugins:
       - crc: 0x3B9B5701
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Ryn''s Farms.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72305/'
+        name: 'Ryn''s Farms'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Navigator - Navmesh Fixes (Rift Watchtower NavFix)'
+          - '[Patches for Ryn''s](https://www.nexusmods.com/skyrimspecialedition/mods/74233/)'
+        condition: 'active("RiftWatchtowerNavFix.esp") and not active("Ryn''s Farms - Riften Watchtower Nav Fix.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Ryn''s Standing Stones'
+          - '[Ryn''s Skyrim Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/73778/)'
+        condition: 'active("Ryn''s Standing Stones.esp") and not active("Ryn''s_Standing_Stones_Ryn''s_Farms_PATCH.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Sewers'
+          - '[Patches for Ryn''s](https://www.nexusmods.com/skyrimspecialedition/mods/74233/)'
+        condition: 'active("SkyrimSewers.esp") and not active("Ryn''s Farms - Skyrim Sewers.esp")'
+    clean:
+      - crc: 0x1BE50A99
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Sanctuary Reborn.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22070/'
