@@ -19752,6 +19752,25 @@ plugins:
       - crc: 0x9DA76663
         util: 'SSEEdit v4.0.3'
 
+  - name: 'DungeonsRevisited.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/51798/'
+        name: 'Dungeons - Revisited'
+    after:
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lights and FX Hardcore'
+          - '[PATCH for Dungeons Revisited - ELFX Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/59610/)'
+        condition: 'active("ELFX - Hardcore.esp") and not active("ELFX Shadows.esp") and not active("PATCH - ELFX Hardcore-Dungeons revisited.esp")'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x4248F7C4
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 2
+
   - name: 'EEKs Immersive Whiterun.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31214/' ]
     tag:
