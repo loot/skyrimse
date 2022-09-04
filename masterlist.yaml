@@ -19759,6 +19759,12 @@ plugins:
     after:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Enhanced Lights and FX Hardcore'
+          - '[PATCH for Dungeons Revisited - ELFX Hardcore](https://www.nexusmods.com/skyrimspecialedition/mods/59610/)'
+        condition: 'active("ELFX - Hardcore.esp") and not active("ELFX Shadows.esp") and not active("PATCH - ELFX Hardcore-Dungeons revisited.esp")'
 
   - name: 'EEKs Immersive Whiterun.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31214/' ]
