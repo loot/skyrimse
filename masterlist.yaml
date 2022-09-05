@@ -16676,12 +16676,13 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_HA_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_CCOR_Patch.esp") and not active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory(_AA)?_WACCF_Patch\.esp")'
     tag:
       - Delev
       - Invent.Add
