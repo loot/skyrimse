@@ -16666,23 +16666,24 @@ plugins:
       - crc: 0x3023FFC9
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: 'PrvtI_HeavyArmory.esp'
+  - name: 'PrvtI_(HeavyArmory.*|HA.*|Fishing_DraugrWeapons)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
         name: 'Heavy Armory - New Weapons'
+  - name: 'PrvtI_HeavyArmory.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_HA_Patch.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_CCOR_Patch.esp") and not active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
-      - <<: *sortMasters
-        condition: 'checksum("PrvtI_HeavyArmory.esp", E42DCB02)'
+      - <<: *patchIncluded
+        subs: [ 'Complete Crafting Overhaul Remastered' ]
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory(_AA)?_CCOR_Patch\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory(_AA)?_WACCF_Patch\.esp")'
     tag:
       - Delev
       - Invent.Add
@@ -16692,15 +16693,9 @@ plugins:
       - Relev
       - Stats
     clean:
-      # version: 3.3
-      - crc: 0xE42DCB02
-        util: 'SSEEdit v4.0.2f'
-      # version: 3.3 - masters sorted
-      - crc: 0x832DEAAB
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.0, kryptopyr's Patch Hub Replacer
-      - crc: 0x49C81ECC
-        util: 'SSEEdit v4.0.2f'
+      - crc: 0x89D66889
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'PrvtIRoyalArmory.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6994/' ]
     msg:
