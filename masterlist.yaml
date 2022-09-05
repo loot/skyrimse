@@ -14626,8 +14626,12 @@ plugins:
 
   - name: 'Ordinator - Perks of Skyrim.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
-      - 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036/'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1137/'
+        name: 'Ordinator - Perks of Skyrim (Nexus Mods)'
+      - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2980036/'
+        name: 'Ordinator - Perks of Skyrim (Bethesda.net Mods)'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63384/'
+        name: 'Vokrus - Vokrii Expanded'
     group: *perksGroup
     after:
       - name: 'PathOfSorcery.esp'
@@ -14670,15 +14674,26 @@ plugins:
         condition: 'active("Odin - Skyrim Magic Overhaul.esp") and not active("Odin - Ordinator Compatibility Patch.esp")'
     tag:
       - EffectStats
+      - name: -EffectStats
+        condition: 'active("Vokrus - Vokrii Expanded.esp")'
       - Graphics
+      - name: -Graphics
+        condition: 'active("Vokrus - Vokrii Expanded.esp")'
       - Keywords
       - Names
+      - name: -Names
+        condition: 'active("Vokrus - Vokrii Expanded.esp")'
       - Sound
       - SpellStats
       - Text
+      - name: -Text
+        condition: 'active("Vokrus - Vokrii Expanded.esp")'
     clean:
       - crc: 0x42352CAE
         util: 'SSEEdit v4.0.3'
+      # Vokrus Replacer
+      - crc: 0x400B4613
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Ordinator - More Enchanting Ranks.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9275/' ]
@@ -14821,6 +14836,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26176/' ]
     group: *perksGroup
     after:
+      - name: 'Ordinator - Perks of Skyrim.esp'
+        condition: 'file("Vokrus - Vokrii Expanded.esp")'
       - name: 'PathOfSorcery.esp'
         condition: 'file("Vokriinator( Black)?\.esp")'
     inc:
@@ -14881,6 +14898,20 @@ plugins:
         crc: 0x659969CD
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 7
+
+  - name: 'Vokrus - Vokrii Expanded.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63384/'
+        name: 'Vokrus - Vokrii Expanded'
+    inc:
+      - 'Path to Ordinance.esp'
+      - 'Vokriinator.esp'
+      - 'Vokriinator Black.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDB569E4F
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
 
   - name: 'WerewolfPerksExpanded.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1285/' ]
