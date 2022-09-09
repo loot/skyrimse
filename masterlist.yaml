@@ -17394,6 +17394,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("zimsimmersiveartifacts_waccf_patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and checksum("ZIA_Complete Pack.esp", C4A8C3D1) and not active("DBM_ZimsThaneWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     tag:
       - EffectStats
       - EnchantmentStats
