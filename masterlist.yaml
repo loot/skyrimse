@@ -7246,12 +7246,6 @@ plugins:
   - name: 'Enhanced Landscapes.esp'
     inc: [ 'tpos_ultimate_esm.esp' ]
     msg:
-      - <<: *compatIssuesWithX
-        subs: [ 'Simply Bigger Trees **SimplyBiggerTreesSE.esp**' ]
-        condition: 'active("SimplyBiggerTreesSE.esp")'
-      - <<: *compatIssuesWithX
-        subs: [ 'Skyrim 3D Trees and Plants **S3DTrees NextGenerationForests.esp**' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Enhanced_Landscapes.esp") and not active("DBM_EnhancedLandscapes_Patch.esp")'
     clean:
