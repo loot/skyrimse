@@ -17379,30 +17379,26 @@ plugins:
         itm: 25
         udr: 4
 
-  - name: 'ZIA_Ancient Pack_V4.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
-    msg:
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_ZIA Patch") and not active("ScopedBows_MLU_ZIA Patch.esp")'
+  - name: '(ZIA_(Ancient(_V4)?|Complete|Daedric) Pack|Z[A-Y]{2})\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/'
+        name: 'Zim''s Immersive Artifacts'
+  # Zim's Immersive Artifacts - Pack plugins
   - name: 'ZIA_(Ancient|Complete|Daedric) Pack\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
-    after: [ 'MLU.esp' ]
-  - name: '(ZAB|ZAS|ZAU|ZBB|ZBW|ZCH|ZCV|ZDB|ZEB|ZEM|ZGA|ZKN|ZKT|ZMB|ZMR|ZMS|ZNA|ZNB|ZNI|ZOI|ZRA|ZRH|ZRN|ZSB|ZSC|ZSH|ZSK|ZSM|ZSR|ZSY|ZTH|ZVD|ZWJ|ZWT)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
     after: [ 'MLU.esp' ]
   - name: 'ZIA_Ancient Pack.esp'
     clean:
-      - crc: 0x159CC94F
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x19D4478E
+        util: 'SSEEdit v4.0.4c'
   - name: 'ZIA_Complete Pack.esp'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Weapons Armor Clothing and Clutter Fixes'
-          - '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518)'
+      - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("zimsimmersiveartifacts_waccf_patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and checksum("ZIA_Complete Pack.esp", C4A8C3D1) and not active("DBM_ZimsThaneWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     tag:
       - EffectStats
+      - Enchantments
       - EnchantmentStats
       - Graphics
       - Keywords
@@ -17411,16 +17407,26 @@ plugins:
       - Stats
       - Text
     clean:
-      - crc: 0x94796086
-        util: 'SSEEdit v4.0.3'
+      # All artifacts
+      - crc: 0xC4A8C3D1
+        util: 'SSEEdit v4.0.4c'
+      # Not all artifacts
+      - crc: 0x1ED7B431
+        util: 'SSEEdit v4.0.4c'
   - name: 'ZIA_Daedric Pack.esp'
     clean:
-      - crc: 0x3A3B4F5D
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xC774099C
+        util: 'SSEEdit v4.0.4c'
+  # Zim's Immersive Artifacts - Individual plugins
+  - name: 'Z(AB|AS|AU|BB|BW|CH|CV|DB|EB|EM|GA|KN|KT|MB|MR|MS|NA|NB|NI|OI|RA|RH|RN|SB|SC|SH|SK|SM|SR|SY|TH|VD|WJ|WT)\.esp'
+    after: [ 'MLU.esp' ]
   - name: 'ZTH.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+  # Zim's Immersive Artifacts - Obsolete plugins
+  - name: 'ZIA_Ancient Pack_V4.esp'
+    msg: [ *obsolete ]
 
 ###### Locations - New Dungeons ######
   - name: '(CauseReducedCut(- Ayleid Gear Consistency Patch)?|Rielle - Vault of Meridia)\.esp'
