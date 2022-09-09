@@ -7244,47 +7244,22 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18162/'
         name: 'Enhanced Landscapes'
   - name: 'Enhanced Landscapes.esp'
-    inc: [ 'tpos_ultimate_esm.esp' ]
     msg:
-      - <<: *compatIssuesWithX
-        subs: [ 'Simply Bigger Trees **SimplyBiggerTreesSE.esp**' ]
-        condition: 'active("SimplyBiggerTreesSE.esp")'
-      - <<: *compatIssuesWithX
-        subs: [ 'Skyrim 3D Trees and Plants **S3DTrees NextGenerationForests.esp**' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Enhanced_Landscapes.esp") and not active("DBM_EnhancedLandscapes_Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Immersive Citizens' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("Enhanced Landscapes - IC Patch.esp")'
     clean:
-      - crc: 0x9B2A145A
-        util: 'SSEEdit v4.0.3'
-  - name: 'Enhanced Landscapes - Barren Marsh.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Enhanced Landscapes - Barren Marsh.esp", 7F364F31)'
-    clean:
-      - crc: 0xF79F7E8C
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x6FEF3122
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x6A1CBA7A
+        util: 'SSEEdit v4.0.4c'
   - name: 'Enhanced Landscapes - Dead Marsh.esp'
     after: [ 'Enhanced Landscapes - Barren Marsh.esp' ]
-    clean:
-      - crc: 0xC7FE363A
-        util: 'SSEEdit v4.0.3'
   - name: 'Enhanced Landscapes - (Grass|Green Fields)\.esp'
     after:
       - 'Enhanced Landscapes.esp'
       - 'Skyrim Flora Overhaul.esp'
-  - name: 'Enhanced Landscapes - Grass.esp'
-    clean:
-      - crc: 0xC0784AD8
-        util: 'SSEEdit v4.0.3'
   - name: 'Enhanced Landscapes - Green Fields.esp'
     after: [ 'Enhanced Landscapes - Grass.esp' ]
-    clean:
-      - crc: 0x1AD91157
-        util: 'SSEEdit v4.0.3'
 
   - name: '(Enhanced Vanilla Trees SSE|SRG Enhanced Trees Activator)\.esp'
     url:
@@ -7714,7 +7689,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18247/'
         name: 'Skyrim 3D Landscapes'
-    inc: [ 'Enhanced Landscapes.esp' ]
     clean:
       - crc: 0x369C481B
         util: 'SSEEdit v4.0.3'
