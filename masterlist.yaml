@@ -17379,15 +17379,8 @@ plugins:
         itm: 25
         udr: 4
 
-  - name: 'ZIA_Ancient Pack_V4.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
-    msg:
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_ZIA Patch") and not active("ScopedBows_MLU_ZIA Patch.esp")'
+  # Zim's Immersive Artifacts - Pack plugins
   - name: 'ZIA_(Ancient|Complete|Daedric) Pack\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
-    after: [ 'MLU.esp' ]
-  - name: '(ZAB|ZAS|ZAU|ZBB|ZBW|ZCH|ZCV|ZDB|ZEB|ZEM|ZGA|ZKN|ZKT|ZMB|ZMR|ZMS|ZNA|ZNB|ZNI|ZOI|ZRA|ZRH|ZRN|ZSB|ZSC|ZSH|ZSK|ZSM|ZSR|ZSY|ZTH|ZVD|ZWJ|ZWT)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
     after: [ 'MLU.esp' ]
   - name: 'ZIA_Ancient Pack.esp'
@@ -17417,10 +17410,20 @@ plugins:
     clean:
       - crc: 0x3A3B4F5D
         util: 'SSEEdit v4.0.3'
+  # Zim's Immersive Artifacts - Individual plugins
+  - name: '(ZAB|ZAS|ZAU|ZBB|ZBW|ZCH|ZCV|ZDB|ZEB|ZEM|ZGA|ZKN|ZKT|ZMB|ZMR|ZMS|ZNA|ZNB|ZNI|ZOI|ZRA|ZRH|ZRN|ZSB|ZSC|ZSH|ZSK|ZSM|ZSR|ZSY|ZTH|ZVD|ZWJ|ZWT)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
+    after: [ 'MLU.esp' ]
   - name: 'ZTH.esp'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ZimsThaneWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+  # Zim's Immersive Artifacts - Obsolete plugins
+  - name: 'ZIA_Ancient Pack_V4.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9138/' ]
+    msg:
+      - <<: *patch3rdParty_SBCK
+        condition: 'active("ScopedBows.esp") and not active("ScopedBows_ZIA Patch") and not active("ScopedBows_MLU_ZIA Patch.esp")'
 
 ###### Locations - New Dungeons ######
   - name: '(CauseReducedCut(- Ayleid Gear Consistency Patch)?|Rielle - Vault of Meridia)\.esp'
