@@ -24640,6 +24640,7 @@ plugins:
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494' ]
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not checksum("meshes/dbm resources/jadeclaw.nif", 1396FEDA)'
+    tag: [ ObjectBounds ]
     clean:
       - crc: 0xEA82EAD9
         util: 'SSEEdit v4.0.3'
@@ -24662,6 +24663,10 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Requiem - Legacy of the Dragonborn patch' ]
         condition: 'file("Requiem - Legacy of the Dragonborn.esp")'
+  - name: 'DBM_TreasureHunter_Patch.esp'
+    after: [ 'Treasure Hunter - Tweaks and Fixes.esp' ]
+  - name: 'DBM_UnlimitedBookshelves_Patch.esp'
+    tag: [ ObjectBounds ]
   - name: 'DBM_WACCF_Patch.esp'
     after:
       - 'DBM_CRF_Patch.esp'
