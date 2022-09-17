@@ -401,10 +401,10 @@ common:
     subs:
       - 'Spell Research v2.2+'
       - '[Spell Research - Patch Compendium Redux](https://www.nexusmods.com/skyrimspecialedition/mods/61177/)'
-    condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - (Even More Patches|Patch Compendium)\.esp")'
+    condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - (Even More Patches|Patch Compendium)\.esp") and not active("SpellResearchSynthesizer.esp")'
   - &patch3rdParty_SRPC_Redux
     <<: *patch3rdParty_SRPC
-    condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - Even More Patches.esp")'
+    condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - Even More Patches.esp") and not active("SpellResearchSynthesizer.esp")'
   - &patch3rdParty_STIP
     <<: *patch3rdParty
     subs:
@@ -25359,6 +25359,18 @@ plugins:
           - '2.2'
           - '[Spell Research](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
         condition: 'not file("SpellResearch.esp") or (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
+
+  - name: 'SpellResearchSynthesizer.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69103/'
+        name: 'Spell Research Synthesizer'
+    req: [ *JContainers ]
+    msg:
+      - <<: *versionXofYorGreaterRequired
+        subs:
+          - '2.2'
+          - '[Spell Research](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
+        condition: 'active("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
