@@ -25365,6 +25365,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69103/'
         name: 'Spell Research Synthesizer'
     req: [ *JContainers ]
+    msg:
+      - <<: *versionXofYorGreaterRequired
+        subs:
+          - '2.2'
+          - '[Spell Research](https://www.nexusmods.com/skyrimspecialedition/mods/20983/)'
+        condition: 'active("SpellResearch.esp") and (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D))'
 
   - name: '(Sum_WACCF_Patch|Weapon AF and Summermyst Patch)\.esp'
     url:
