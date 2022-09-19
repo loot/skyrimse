@@ -1458,6 +1458,8 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch (Bethesda.net Mods)'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/266/'
         name: 'Unofficial Skyrim Special Edition Patch (Nexus Mods)'
+      - link: 'https://www.moddb.com/mods/unofficial-skyrim-special-edition-patch/'
+        name: 'Unofficial Skyrim Special Edition Patch (Mod DB)'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65237/'
         name: 'Unofficial Skyrim Special Edition Patch DV'
     group: *fixesGroup
@@ -1476,15 +1478,13 @@ plugins:
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not file("meshes/uskp/armor/circlets/FemElfCirclets")'
       - <<: *versionXofYorGreaterRequired
         subs:
-          - '1.6.353.0'
+          - '1.6.629'
           - 'Skyrim Special Edition'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.353.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.7", >=)'
-    tag:
-      - Actors.Voice
-      - R.Description
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.8", >=)'
     clean:
-      - crc: 0x8461C824
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x6C8C3D78
+        util: 'SSEEdit v4.0.4c'
+      # German
       - crc: 0xB3AB07FD
         util: 'SSEEdit v4.0.4'
 
