@@ -25142,14 +25142,14 @@ plugins:
         subs: [ 'CACO_Survival Mode_Patch.esp' ]
         condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
   # KPH Patches - Complete Crafting Overhaul Remastered #
-  - name: 'Cloaks_CCOR_Patch.esp'
-    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
   - name: '1nivWICCloaks(_COS)?_CCOR_Patch\.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
     msg:
       - <<: *useOnlyOneX
         subs: [ 'CCOR & Winter Is Coming patch' ]
         condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
+  - name: 'Cloaks_CCOR_Patch.esp'
+    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
   - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -25183,6 +25183,11 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'DawnguardArsenal_CCOR_Patch.esp' ]
         condition: 'active("DawnguardArsenal_CCOR_Patch.esp")'
+  - name: 'Immersive Weapons_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Immersive Weapons_CCOR_Patch.esp' ]
+        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
   - name: '(imp_helm_legend_WACCF_Patch|ImprovedClosefacedHelmets_WACCF)\.esp'
     msg:
       - <<: *alreadyInX
@@ -25193,11 +25198,6 @@ plugins:
         condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
   - name: 'ImprovedClosefacedHelmets_WACCF.esp'
     msg: [ *obsolete ]
-  - name: 'Immersive Weapons_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Immersive Weapons_CCOR_Patch.esp' ]
-        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
   - name: 'KatanaCrafting_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
