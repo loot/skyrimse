@@ -25114,6 +25114,121 @@ plugins:
         subs: [ 'Wheels of Lull v5.0.0' ]
         condition: checksum("WheelsOfLull.esp", E6561EE8) or checksum("WheelsOfLull.esp", 5D3C1F44)
 
+  ### kryptopyr's Patch Hub ###
+  # KPH Patches - Complete Alchemy & Cooking Overhaul #
+  - name: 'AwesomePotions_CACO_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
+    after: [ 'Hunterborn_CACO-SE_Patch.esp' ]
+    tag: [ Graphics ]
+  - name: 'CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
+    req:
+      - name: 'Improved Fire Salts Frost Salts And Glow Dust.esp'
+        display: '[Improved Fire Salts Frost Salts and Glow Dust](https://www.nexusmods.com/skyrimspecialedition/mods/20572/)'
+  - name: 'CACO_Ordinator_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
+    clean:
+      # version: 1.0
+      - crc: 0x6B00626D
+        util: 'SSEEdit v4.0.2f'
+  - name: 'CACO Rare Curios Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CACO_Bruma_Rare Curios_Patch.esp' ]
+        condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
+  - name: 'CACO_USSEP_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CACO_Survival Mode_Patch.esp' ]
+        condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+  # KPH Patches - Complete Crafting Overhaul Remastered #
+  - name: 'Cloaks_CCOR_Patch.esp'
+    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
+  - name: '1nivWICCloaks(_COS)?_CCOR_Patch\.esp'
+    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'CCOR & Winter Is Coming patch' ]
+        condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
+  - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp' ]
+        condition: 'active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
+  # KPH Patches - Smithing Perks Overhaul #
+  - name: 'SPO_Ordinator_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
+    req:
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'Smithing Perks Overhaul SE.esp'
+      - 'Weapons Armor Clothing & Clutter Fixes.esp'
+  # KPH Patches - The Choice Is Yours #
+  - name: 'TCIY BCS Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
+    tag:
+      - Graphics
+      - Names
+    clean:
+      # version: 1.0
+      - crc: 0xA545660C
+        util: 'SSEEdit v4.0.2f'
+  - name: 'TCIY_Wintersun_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
+    after:
+      - 'BCS_TCIY_Patch.esp'
+      - 'TCIY BCS Patch.esp'
+  # KPH Patches - Weapons Armor Clothing and Clutter Fixes #
+  - name: 'DawnguardArsenal_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'DawnguardArsenal_CCOR_Patch.esp' ]
+        condition: 'active("DawnguardArsenal_CCOR_Patch.esp")'
+  - name: '(imp_helm_legend_WACCF_Patch|ImprovedClosefacedHelmets_WACCF)\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
+        condition: 'active("imp_helm_legend_WACCF_AMB_Patch.esp")'
+      - <<: *useInstead
+        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
+        condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
+  - name: 'ImprovedClosefacedHelmets_WACCF.esp'
+    msg: [ *obsolete ]
+  - name: 'Immersive Weapons_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Immersive Weapons_CCOR_Patch.esp' ]
+        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
+  - name: 'KatanaCrafting_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'KatanaCrafting_CCOR_Patch.esp' ]
+        condition: 'active("KatanaCrafting_CCOR_Patch.esp")'
+  - name: 'Ordinator_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'CCOR_Ordinator.esp' ]
+        condition: 'active("CCOR_Ordinator.esp")'
+  - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp' ]
+        condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
+  - name: 'Unique Uniques_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Unique Uniques_CCOR_Patch.esp' ]
+        condition: 'active("Unique Uniques_CCOR_Patch.esp")'
+  - name: 'WACCF_Elderly&Adults.esp'
+    tag:
+      - Delev
+      - Graphics
+  - name: 'WACCF_Survival Mode_Patch.esp'
+    inc: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch' ]
+        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
+
   - name: 'maplightfix.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30162/'
@@ -25595,121 +25710,6 @@ plugins:
     after:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
-
-  ### kryptopyr's Patch Hub ###
-  # KPH Patches - Complete Alchemy & Cooking Overhaul #
-  - name: 'AwesomePotions_CACO_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
-    after: [ 'Hunterborn_CACO-SE_Patch.esp' ]
-    tag: [ Graphics ]
-  - name: 'CACO_Improved Fire Salts Frost Salts and Glow Dust Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
-    req:
-      - name: 'Improved Fire Salts Frost Salts And Glow Dust.esp'
-        display: '[Improved Fire Salts Frost Salts and Glow Dust](https://www.nexusmods.com/skyrimspecialedition/mods/20572/)'
-  - name: 'CACO_Ordinator_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
-    clean:
-      # version: 1.0
-      - crc: 0x6B00626D
-        util: 'SSEEdit v4.0.2f'
-  - name: 'CACO Rare Curios Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'CACO_Bruma_Rare Curios_Patch.esp' ]
-        condition: 'active("CACO Rare Curios Patch.esp") and active("CACO_Bruma_Rare Curios_Patch.esp")'
-  - name: 'CACO_USSEP_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'CACO_Survival Mode_Patch.esp' ]
-        condition: 'active("CACO_USSEP_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
-  # KPH Patches - Complete Crafting Overhaul Remastered #
-  - name: 'Cloaks_CCOR_Patch.esp'
-    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
-  - name: '1nivWICCloaks(_COS)?_CCOR_Patch\.esp'
-    inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'CCOR & Winter Is Coming patch' ]
-        condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
-  - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp' ]
-        condition: 'active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
-  # KPH Patches - Smithing Perks Overhaul #
-  - name: 'SPO_Ordinator_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
-    req:
-      - 'Ordinator - Perks of Skyrim.esp'
-      - 'Smithing Perks Overhaul SE.esp'
-      - 'Weapons Armor Clothing & Clutter Fixes.esp'
-  # KPH Patches - The Choice Is Yours #
-  - name: 'TCIY BCS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
-    tag:
-      - Graphics
-      - Names
-    clean:
-      # version: 1.0
-      - crc: 0xA545660C
-        util: 'SSEEdit v4.0.2f'
-  - name: 'TCIY_Wintersun_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
-    after:
-      - 'BCS_TCIY_Patch.esp'
-      - 'TCIY BCS Patch.esp'
-  # KPH Patches - Weapons Armor Clothing and Clutter Fixes #
-  - name: 'DawnguardArsenal_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'DawnguardArsenal_CCOR_Patch.esp' ]
-        condition: 'active("DawnguardArsenal_CCOR_Patch.esp")'
-  - name: '(imp_helm_legend_WACCF_Patch|ImprovedClosefacedHelmets_WACCF)\.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
-        condition: 'active("imp_helm_legend_WACCF_AMB_Patch.esp")'
-      - <<: *useInstead
-        subs: [ 'imp_helm_legend_WACCF_AMB_Patch.esp' ]
-        condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
-  - name: 'ImprovedClosefacedHelmets_WACCF.esp'
-    msg: [ *obsolete ]
-  - name: 'Immersive Weapons_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Immersive Weapons_CCOR_Patch.esp' ]
-        condition: 'active("Immersive Weapons_CCOR_Patch.esp")'
-  - name: 'KatanaCrafting_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'KatanaCrafting_CCOR_Patch.esp' ]
-        condition: 'active("KatanaCrafting_CCOR_Patch.esp")'
-  - name: 'Ordinator_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'CCOR_Ordinator.esp' ]
-        condition: 'active("CCOR_Ordinator.esp")'
-  - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp' ]
-        condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
-  - name: 'Unique Uniques_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Unique Uniques_CCOR_Patch.esp' ]
-        condition: 'active("Unique Uniques_CCOR_Patch.esp")'
-  - name: 'WACCF_Elderly&Adults.esp'
-    tag:
-      - Delev
-      - Graphics
-  - name: 'WACCF_Survival Mode_Patch.esp'
-    inc: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Complete Alchemy & Cooking Overhaul - Survival Mode Patch' ]
-        condition: 'active("WACCF_Survival Mode_Patch.esp") and active("CACO_Survival Mode_Patch.esp")'
 
   ### (MPX) Modular PatchXpress ###
   # (MPX) Main Patches - Standard #
