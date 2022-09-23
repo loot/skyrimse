@@ -3389,8 +3389,6 @@ plugins:
     after:
       - name: 'AK - Placeable Statics SE.esp'
         condition: '(is_master("AK - Placeable Statics SE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("AK - Placeable Statics SE.esp") and not is_master("ELFX - Exteriors.esp"))'
-      - name: 'Blowing in the Wind SSE.esp'
-        condition: '(is_master("Blowing in the Wind SSE.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("Blowing in the Wind SSE.esp") and not is_master("ELFX - Exteriors.esp"))'
       - name: 'SMIM-SE-Merged-All.esp'
         condition: '(is_master("SMIM-SE-Merged-All.esp") and is_master("ELFX - Exteriors.esp")) or (not is_master("SMIM-SE-Merged-All.esp") and not is_master("ELFX - Exteriors.esp"))'
     msg:
@@ -7081,27 +7079,41 @@ plugins:
       - crc: 0x8C9C032E
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Blowing in the Wind.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5124/' ]
+  - name: 'Blowing in the Wind( - .* Patch)? SSE\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5124/'
+        name: 'Blowing in the Wind'
   - name: 'Blowing in the Wind SSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/61161/'
+        name: 'Blowing in the Wind Lite (moveable lanterns with Base Object Swapper)'
     group: *earlyLoadersGroup
     after:
       - 'AK - Placeable Statics SE.esp'
       - 'Destructible Skyrim.esp'
+    req:
+      - name: 'skse/plugins/po3_BaseObjectSwapper.dll'
+        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+        condition: 'file("Blowing in the Wind SSE_SWAP.ini")'
     msg:
+      - <<: *patchProvided
+        subs: [ 'JK''s Skyrim' ]
+        condition: 'active("JKs Skyrim.esp") and not file("Blowing in the Wind SSE JK_SWAP.ini")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Blowing in the Wind Lite](https://www.nexusmods.com/skyrimspecialedition/mods/61161/)' ]
+        condition: 'file("../skse64_loader.exe") and not file("Blowing in the Wind SSE_SWAP.ini")'
+      - <<: *requiresResources
+        subs: [ '[Blowing in the Wind](https://www.nexusmods.com/skyrimspecialedition/mods/5124/)' ]
+        condition: 'file("Blowing in the Wind SSE_SWAP.ini") and not file("meshes/sialivi/movablelantern01a.nif")'
       - <<: *useInstead
         subs: [ '[WiZkiD Signs](https://www.nexusmods.com/skyrimspecialedition/mods/30481/)' ]
         condition: 'active("Lanterns Of Skyrim II.esm")'
     clean:
-      # version: 2.04
       - crc: 0x8EF0F5D1
-        util: 'SSEEdit v4.0.0'
-  - name: 'Blowing in the Wind - ELFX Exterior patch.esp'
-    group: *earlyLoadersGroup
-    after:
-      - 'Blowing in the Wind - Lanterns of Skyrim Patch SSE.esp'
-      - 'Blowing in the Wind - Lanterns of Skyrim SE - MCM versionPatch.esp'
-      - 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
+        util: 'SSEEdit v4.0.4c'
+      # Lite
+      - crc: 0x6B71FB47
+        util: 'SSEEdit v4.0.4c'
   - name: 'Blowing in the Wind - ELFX Exteriors Patch SSE.esp'
     group: *earlyLoadersGroup
     after:
@@ -7109,8 +7121,6 @@ plugins:
       - 'Blowing in the Wind - Lanterns of Skyrim SE - MCM versionPatch.esp'
       - 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
   - name: 'Blowing in the Wind - Lanterns of Skyrim Patch SSE.esp'
-    group: *earlyLoadersGroup
-  - name: 'Blowing in the Wind - Lanterns of Skyrim SE - MCM versionPatch.esp'
     group: *earlyLoadersGroup
   - name: 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
     group: *earlyLoadersGroup
@@ -20457,7 +20467,7 @@ plugins:
         subs:
           - 'Blowing in the Wind & Dawn of Skyrim'
           - '[JK''s Skyrim - Dawn of Skyrim - Blowing in the Wind - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16852/)'
-        condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKS_DoS_Patch.esp")'
+        condition: 'active("Blowing in the Wind SSE.esp") and not file("Blowing in the Wind SSE_SWAP.ini") and active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKS_DoS_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Holidays & Dawn of Skyrim'
@@ -20472,12 +20482,12 @@ plugins:
         subs:
           - 'Blowing in the Wind & ETAC Complete'
           - '[ETaC Complete - JK''s Skyrim - Blowing in the Wind Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
-        condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp")'
+        condition: 'active("Blowing in the Wind SSE.esp") and not file("Blowing in the Wind SSE_SWAP.ini") and not active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_Blowing in the Wind_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Blowing in the Wind, Dawn of Skyrim & ETAC Complete'
           - '[JK''s Skyrim - Dawn of Skyrim - ETaC - Blowing in the Wind Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
-        condition: 'active("Blowing in the Wind SSE.esp") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Blowing in the Wind_Patch.esp")'
+        condition: 'active("Blowing in the Wind SSE.esp") and not file("Blowing in the Wind SSE_SWAP.ini") and active("Blues Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Blowing in the Wind_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Carriage and Ferry Travel Overhaul & ETAC Complete'
@@ -20556,7 +20566,7 @@ plugins:
         condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("JKs Skyrim_Better Docks_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Blowing in the Wind' ]
-        condition: 'active("Blowing in the Wind SSE.esp") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKs Skyrim Patch.esp")'
+        condition: 'active("Blowing in the Wind SSE.esp") and not file("Blowing in the Wind SSE_SWAP.ini") and not active("Blues Skyrim.esp") and not active("ETaC - Complete.esp") and not active("Blowing in the Wind - JKs Skyrim Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Bring Out Your Dead' ]
         condition: 'active("Bring Out Your Dead.esp") and not active("JKs Skyrim_(BOYD|Arthmoor All)_Patch\.esp")'
@@ -26168,6 +26178,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24046/'
         name: 'WiZkiD Patches Compendium'
     msg: [ *alreadyInOrFixedByBDSv3_0 ]
+  - name: 'Blowing in the Wind - ELFX Exterior patch.esp'
+    group: *earlyLoadersGroup
+    after:
+      - 'Blowing in the Wind - Lanterns of Skyrim Patch SSE.esp'
+      - 'Blowing in the Wind - Lanterns of Skyrim SE - MCM versionPatch.esp'
+      - 'Blowing in the Wind - SMIM Merged All Patch SSE.esp'
+  - name: 'Blowing in the Wind - Lanterns of Skyrim SE - MCM versionPatch.esp'
+    group: *earlyLoadersGroup
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
 
