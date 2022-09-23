@@ -7098,6 +7098,9 @@ plugins:
         display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
         condition: 'file("Blowing in the Wind SSE_SWAP.ini")'
     msg:
+      - <<: *patchProvided
+        subs: [ 'JK''s Skyrim' ]
+        condition: 'active("JKs Skyrim.esp") and not file("Blowing in the Wind SSE JK_SWAP.ini")'
       - <<: *useInstead
         subs: [ '[WiZkiD Signs](https://www.nexusmods.com/skyrimspecialedition/mods/30481/)' ]
         condition: 'active("Lanterns Of Skyrim II.esm")'
