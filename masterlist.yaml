@@ -25108,11 +25108,13 @@ plugins:
     after: [ 'SFCO - 3DNPC Patch.esp' ]
 
   - name: 'JRWheelsOfLullPatch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5245/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5245/'
+        name: 'Joseph Russell''s Writing Patches'
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [ 'Wheels of Lull v5.0.0' ]
-        condition: checksum("WheelsOfLull.esp", E6561EE8) or checksum("WheelsOfLull.esp", 5D3C1F44)
+        subs: [ 'Wheels of Lull v5.0.0+' ]
+        condition: 'version("WheelsOfLull.esp", "5.1.0", >=)'
 
   ### kryptopyr's Patch Hub ###
   # KPH Patches - Complete Alchemy & Cooking Overhaul #
