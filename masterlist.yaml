@@ -7104,6 +7104,9 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Blowing in the Wind Lite](https://www.nexusmods.com/skyrimspecialedition/mods/61161/)' ]
         condition: 'file("../skse64_loader.exe") and not file("Blowing in the Wind SSE_SWAP.ini")'
+      - <<: *requiresResources
+        subs: [ '[Blowing in the Wind](https://www.nexusmods.com/skyrimspecialedition/mods/5124/)' ]
+        condition: 'file("Blowing in the Wind SSE_SWAP.ini") and not file("meshes/sialivi/movablelantern01a.nif")'
       - <<: *useInstead
         subs: [ '[WiZkiD Signs](https://www.nexusmods.com/skyrimspecialedition/mods/30481/)' ]
         condition: 'active("Lanterns Of Skyrim II.esm")'
