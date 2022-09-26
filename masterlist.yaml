@@ -12697,15 +12697,30 @@ plugins:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
 
+  - name: '(RRR - )?More idle markers\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26397/'
+        name: 'More Tavern Idles for Realistic Room Rental Enhanced'
   - name: 'More idle markers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24859/' ]
-    dirty:
-      # version: 1.8.9.001
-      - <<: *quickClean
-        crc: 0x428F1BF6
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 13
-        udr: 1
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/16757/'
+        name: 'More Tavern Idles'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24859/'
+        name: 'Perseids Inns and Taverns - Realistic Room Rental Enhanced'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**RRR - More idle markers.esp**' ]
+        condition: 'active("RRR - More idle markers.esp")'
+      - <<: *useVersion
+        subs: [ '[Realistic Room Rental Enhanced](https://www.nexusmods.com/skyrimspecialedition/mods/26397/)' ]
+        condition: 'active("RealisticRoomRental.esp") and not active("RRR - More idle markers.esp")'
+    clean:
+      - crc: 0xD2BEB5ED
+        util: 'SSEEdit v4.0.4c'
+  - name: 'RRR - More idle markers.esp'
+    clean:
+      - crc: 0x4087C286
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'MoreToSay.esp'
     url:
