@@ -12711,6 +12711,9 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**RRR - More idle markers.esp**' ]
         condition: 'active("RRR - More idle markers.esp")'
+      - <<: *useVersion
+        subs: [ '[Realistic Room Rental Enhanced](https://www.nexusmods.com/skyrimspecialedition/mods/26397/)' ]
+        condition: 'active("RealisticRoomRental.esp") and not active("RRR - More idle markers.esp")'
     dirty:
       # version: 1.8.9.001
       - <<: *quickClean
