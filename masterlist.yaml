@@ -225,7 +225,7 @@ prelude:
       content: 'You have installed an %1% plugin but %1% was not found! See %1% download page: %2%.'
       subs:
         - 'SKSE'
-        - '[SKSE](https://skse.silverlock.org)'
+        - '[Skyrim Script Extender](https://skse.silverlock.org)'
       condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
 
     - &scriptExtenderRequiredScripts
@@ -529,7 +529,7 @@ globals:
   - <<: *scriptExtenderMissing
     subs:
       - 'SKSE'
-      - '[SKSE](https://skse.silverlock.org)'
+      - '[Skyrim Script Extender](https://skse.silverlock.org)'
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
 
   # Required Scripts
@@ -577,17 +577,17 @@ globals:
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)'
   # SKSE AE
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE AE](https://skse.silverlock.org))**' ]
+    subs: [ '**[SKSE Anniversary Edition](https://skse.silverlock.org)**' ]
     condition: 'version("../skse64_loader.exe", "0.2.2.2", <) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender (SKSE AE)**' ]
+    subs: [ '**SKSE Anniversary Edition**' ]
     condition: 'version("../skse64_loader.exe", "0.2.2.2", >=) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
   # SKSE SE
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
+    subs: [ '**[SKSE Special Edition](https://skse.silverlock.org)**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.20", <) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender (SKSE SE)**' ]
+    subs: [ '**SKSE Special Edition**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.20", ==) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
 
 # Version Compatibility
