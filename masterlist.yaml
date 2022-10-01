@@ -213,7 +213,7 @@ prelude:
     - &creationClubPlugins
       type: warn
       content: 'This version of LOOT has inferior handling of Creation Club plugins. Support for these are therefore limited in versions prior to LOOT 0.13.1. It is recommended to update as soon as possible.'
-      condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
+      condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE\d{3}.*\.es[lm]")'
 
     - &latestLOOTThread
       type: say
@@ -522,7 +522,7 @@ globals:
 
 # Creation Club Plugins
   - <<: *creationClubPlugins
-    condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)")'
+    condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE\d{3}.*\.es[lm]")'
 
 # SKSE
   # Missing
