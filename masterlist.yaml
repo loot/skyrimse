@@ -543,14 +543,14 @@ globals:
   # Fores New Idles
   - <<: *runAnimFramework
     subs:
-      - '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
+      - 'Fores New Idles in Skyrim SE'
       - 'GenerateFNISforUsers.exe'
       - 'FNIS'
     condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
   # Nemesis Unlimited Behavior Engine
   - <<: *runAnimFramework
     subs:
-      - '[Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
+      - 'Nemesis Unlimited Behavior Engine'
       - 'Nemesis Unlimited Behavior Engine.exe'
       - 'Nemesis'
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
@@ -580,14 +580,14 @@ globals:
     subs: [ '**Script Extender ([SKSE AE](https://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.2.2", <) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE AE](https://skse.silverlock.org))**' ]
+    subs: [ '**Script Extender (SKSE AE)**' ]
     condition: 'version("../skse64_loader.exe", "0.2.2.2", >=) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and file("../skse64_loader.exe")'
   # SKSE SE
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.20", <) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE SE](https://skse.silverlock.org))**' ]
+    subs: [ '**Script Extender (SKSE SE)**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.20", ==) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", <) and file("../skse64_loader.exe")'
 
 # Version Compatibility
@@ -632,23 +632,23 @@ globals:
   - <<: *missingRequirementXforY
     subs:
       - '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
-      - '[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)'
+      - 'ENB Helper SE'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and not file("../d3d11.dll")'
   # DLL Loaders
   - <<: *missingRequirementXforY
     subs:
       - '[SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
-      - '[SSE Engine Fixes - Part 1](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - 'SSE Engine Fixes - Part 1'
     condition: 'file("SKSE/Plugins/EngineFixes.dll") and (not file("../d3dx9_42.dll") or not file("../tbb.dll") or not file("../tbbmalloc.dll"))'
   - <<: *missingRequirementXforY
     subs:
-      - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
-      - '[SSE Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/10547/)'
+      - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546/) or [SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - 'SSE Fixes'
     condition: 'file("DLLPlugins/FPSFixPlugin.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
   - <<: *missingRequirementXforY
     subs:
-      - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546) or [SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
-      - '[.NET Script Framework](https://www.nexusmods.com/skyrimspecialedition/mods/21294/)'
+      - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546/) or [SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - '.NET Script Framework'
     condition: 'file("DLLPlugins/NetScriptFramework.Runtime.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
 
 groups:
