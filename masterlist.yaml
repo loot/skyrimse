@@ -16721,6 +16721,11 @@ plugins:
     clean:
       - crc: 0x89D66889
         util: 'SSEEdit v4.0.4c'
+  - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp' ]
+        condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
 
   - name: 'PrvtIRoyalArmory.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6994/' ]
@@ -25202,11 +25207,8 @@ plugins:
         condition: 'many("1nivWICCloaks(_COS)?_CCOR_Patch\.esp")'
   - name: 'Cloaks_CCOR_Patch.esp'
     inc: [ 'Survival Mode Patches - Winter Is Coming.esp' ]
-  - name: 'PrvtI_HeavyArmory_CCOR_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp' ]
-        condition: 'active("PrvtI_HeavyArmory_CCOR_AMB_Patch.esp")'
+  - name: 'PrvtI_HeavyArmory_CCOR_AMB_Patch.esp'
+    msg: [ *patchOutdated ]
   # KPH Patches - Smithing Perks Overhaul #
   - name: 'SPO_Ordinator_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19518/' ]
@@ -25260,11 +25262,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'CCOR_Ordinator.esp' ]
         condition: 'active("CCOR_Ordinator.esp")'
-  - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp' ]
-        condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
   - name: 'Unique Uniques_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
