@@ -24766,7 +24766,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
         name: 'Better Dynamic Majestic Mountains'
-    msg: [ *alreadyInOrFixedByBDSv3_0 ]
+    msg:
+      - *alreadyInOrFixedByBDSv3_0
+      - <<: *alreadyInX
+        subs: [ 'Majestic Mountains-BDS With LOD Fix' ]
+        condition: 'checksum("MajesticMountains.esp", DDAF34CC)'
     tag: [ Graphics ]
 
   - name: 'BDS_(BRE|FSK|NOR|RCY|WYR).*\.esp'
