@@ -1943,12 +1943,14 @@ plugins:
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Better Dynamic Snow( SE)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9121/'
+        name: 'Better Dynamic Snow'
     group: *earlyLoadersGroup
     after:
-      - '___SNOW_FIX.esp'
       - 'SMIM-SE.esp'
       - 'SMIM-SE-Merged-All.esp'
+      - '___SNOW_FIX.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Better Dynamic Snow ESP' ]
@@ -1964,12 +1966,15 @@ plugins:
         subs: [ '2.11' ]
         condition: 'file("skse/plugins/(SSE)?ShaderTools\.dll")'
     clean:
-      - crc: 0x1E8DF8AF
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-      - crc: 0xE23348BA
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-      - crc: 0xC092E1AF
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xE555B811
+        util: 'SSEEdit v4.0.4c'
+      # Brighter Materials
+      - crc: 0xD83CBE70
+        util: 'SSEEdit v4.0.4c'
+      # Brighter Materials - Vanilla UVs
+      - crc: 0xD83CBE70
+        util: 'SSEEdit v4.0.4c'
+  # Better Dynamic Snow - v2
   - name: 'Better Dynamic Snow( - NSUTR Patch)?\.esp'
     tag: [ Graphics ]
   - name: 'Better Dynamic Snow.esp'
@@ -1978,7 +1983,7 @@ plugins:
         subs:
           - 'Majestic Mountains'
           - '[Better Dynamic Majestic Mountains](https://www.nexusmods.com/skyrimspecialedition/mods/20102/)'
-        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", 166EA67B) and not checksum("MajesticMountains.esp", 9AACE8E2)'
+        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", DDAF34CC)'
       - <<: *patchIncluded
         subs: [ 'No Snow Under the Roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
@@ -24761,7 +24766,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20102/'
         name: 'Better Dynamic Majestic Mountains'
-    msg: [ *alreadyInOrFixedByBDSv3_0 ]
+    msg:
+      - *alreadyInOrFixedByBDSv3_0
+      - <<: *alreadyInX
+        subs: [ 'Majestic Mountains-BDS With LOD Fix' ]
+        condition: 'checksum("MajesticMountains.esp", DDAF34CC)'
     tag: [ Graphics ]
 
   - name: 'BDS_(BRE|FSK|NOR|RCY|WYR).*\.esp'
