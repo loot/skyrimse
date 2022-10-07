@@ -575,6 +575,13 @@ globals:
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
     condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", >=)'
+  # Skyrim SE EGS Game Runtime
+  - <<: *versionOldX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.678.0", <)'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.678.0", >=)'
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
