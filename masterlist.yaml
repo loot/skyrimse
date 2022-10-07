@@ -800,6 +800,20 @@ plugins:
         itm: 384
         udr: 92
         nav: 3
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0xC3E0D564
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 384
+        udr: 92
+        nav: 3
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0x0572C368
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 384
+        udr: 92
+        nav: 3
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -810,11 +824,11 @@ plugins:
       - Invent.Remove
       - Relev
     msg:
-      # (v1.5.97, 0xADFC1487) after QAC, (v1.6.640, 0x2FE9FD3B) after QAC
+      # (v1.5.97, 0xADFC1487) after QAC, (v1.6.640, 0x2FE9FD3B) after QAC, (GOG v1.6.659, 0x4B45E434) after QAC, (EGS v1.6.678, 0x63B4EBD1) after QAC
       - <<: *wildEdits
         type: say
         subs: [ '[**Dawnguard.esm** Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
-        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B)) and not active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B) or checksum("Dawnguard.esm", 4B45E434) or checksum("Dawnguard.esm", 63B4EBD1)) and not active("Unofficial Skyrim Special Edition Patch.esp")'
     dirty:
       # v1.5.97
       - <<: *quickClean
@@ -827,8 +841,22 @@ plugins:
       - <<: *quickClean
         crc: 0x641044FE
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 842
-        udr: 89
+        itm: 849
+        udr: 82
+        nav: 59
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0xC855C37C
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 849
+        udr: 82
+        nav: 59
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0x02A487C1
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 849
+        udr: 82
         nav: 59
   - name: 'HearthFires.esm'
     group: *dlcGroup
@@ -848,6 +876,20 @@ plugins:
       - <<: *quickClean
         crc: 0xA9910F5C
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0x073ECE89
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0x53C7FE02
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 221
         udr: 11
         nav: 5
@@ -874,6 +916,20 @@ plugins:
       - <<: *quickClean
         crc: 0xA959AA60
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 87
+        udr: 8
+        nav: 1
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0x7BE33EB9
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 87
+        udr: 8
+        nav: 1
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0xAF3D8E37
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 87
         udr: 8
         nav: 1
