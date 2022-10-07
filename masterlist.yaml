@@ -332,7 +332,7 @@ common:
   - &missingRequirementAddrLibforPlugin
     <<: *missingRequirementXforPlugin
     subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
-    condition: 'readable("../SkyrimSE.exe") and ((not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-317-0.bin") and product_version("../SkyrimSE.exe", "1.6.317.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-318-0.bin") and product_version("../SkyrimSE.exe", "1.6.318.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-323-0.bin") and product_version("../SkyrimSE.exe", "1.6.323.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-342-0.bin") and product_version("../SkyrimSE.exe", "1.6.342.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-353-0.bin") and product_version("../SkyrimSE.exe", "1.6.353.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-629-0.bin") and product_version("../SkyrimSE.exe", "1.6.629.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-640-0.bin") and product_version("../SkyrimSE.exe", "1.6.640.0", ==)))'
+    condition: 'readable("../SkyrimSE.exe") and ((not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-317-0.bin") and product_version("../SkyrimSE.exe", "1.6.317.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-318-0.bin") and product_version("../SkyrimSE.exe", "1.6.318.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-323-0.bin") and product_version("../SkyrimSE.exe", "1.6.323.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-342-0.bin") and product_version("../SkyrimSE.exe", "1.6.342.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-353-0.bin") and product_version("../SkyrimSE.exe", "1.6.353.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-629-0.bin") and product_version("../SkyrimSE.exe", "1.6.629.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-640-0.bin") and product_version("../SkyrimSE.exe", "1.6.640.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-659-0.bin") and product_version("../SkyrimSE.exe", "1.6.659.0", ==)))'
 
   # &patch3rdParty
   - &patch3rdParty_AOOPH
@@ -437,7 +437,7 @@ common:
     <<: *versionXIncY
     subs:
       - '**Skyrim Script Extender**'
-      - '**Skyrim AE**'
+      - '**Skyrim Anniversary Update**'
   - &versionSkseIncSSE
     <<: *versionXIncY
     subs:
@@ -563,11 +563,25 @@ globals:
 # Latest Version
   # Skyrim AE Game Runtime
   - <<: *versionOldX
-    subs: [ '**Skyrim AE**' ]
+    subs: [ '**Skyrim Anniversary Update**' ]
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and product_version("../SkyrimSE.exe", "1.6.640.0", <)'
   - <<: *versionUpToDateX
-    subs: [ '**Skyrim AE**' ]
+    subs: [ '**Skyrim Anniversary Update**' ]
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.640.0", >=)'
+  # Skyrim SE GOG Game Runtime
+  - <<: *versionOldX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", <)'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", >=)'
+  # Skyrim SE EGS Game Runtime
+  - <<: *versionOldX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.678.0", <)'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim SE**' ]
+    condition: 'file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.678.0", >=)'
   # Skyrim SE Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE**' ]
@@ -605,7 +619,13 @@ globals:
   - <<: *versionSkseIncSAE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", ==) and version("../skse64_loader.exe", "0.2.2.0", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSAE
-    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.640.0", ==) and version("../skse64_loader.exe", "0.2.2.1", <) and file("../skse64_loader.exe")'
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.640.0", ==) and not file("../skse64_1_6_640.dll") and file("../skse64_loader.exe")'
+  # SKSE AE GOG - Game Runtime
+  - <<: *versionSkseIncSSE
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", ==) and not file("../skse64_1_6_659.dll") and file("../skse64_loader.exe")'
+  # SKSE AE EGS - Game Runtime
+  - <<: *versionSkseIncSSE
+    condition: 'file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe")'
   # SKSE SE - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../skse(vr)?_loader.exe") and not file("../skse64_loader.exe")'
@@ -780,6 +800,20 @@ plugins:
         itm: 384
         udr: 92
         nav: 3
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0xC3E0D564
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 384
+        udr: 92
+        nav: 3
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0x0572C368
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 384
+        udr: 92
+        nav: 3
   - name: 'Dawnguard.esm'
     group: *dlcGroup
     tag:
@@ -790,11 +824,11 @@ plugins:
       - Invent.Remove
       - Relev
     msg:
-      # (v1.5.97, 0xADFC1487) after QAC, (v1.6.640, 0x2FE9FD3B) after QAC
+      # (v1.5.97, 0xADFC1487) after QAC, (v1.6.640, 0x2FE9FD3B) after QAC, (GOG v1.6.659, 0x4B45E434) after QAC, (EGS v1.6.678, 0x63B4EBD1) after QAC
       - <<: *wildEdits
         type: say
         subs: [ '[**Dawnguard.esm** Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
-        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B)) and not active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B) or checksum("Dawnguard.esm", 4B45E434) or checksum("Dawnguard.esm", 63B4EBD1)) and not active("Unofficial Skyrim Special Edition Patch.esp")'
     dirty:
       # v1.5.97
       - <<: *quickClean
@@ -807,8 +841,22 @@ plugins:
       - <<: *quickClean
         crc: 0x641044FE
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 842
-        udr: 89
+        itm: 849
+        udr: 82
+        nav: 59
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0xC855C37C
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 849
+        udr: 82
+        nav: 59
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0x02A487C1
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 849
+        udr: 82
         nav: 59
   - name: 'HearthFires.esm'
     group: *dlcGroup
@@ -828,6 +876,20 @@ plugins:
       - <<: *quickClean
         crc: 0xA9910F5C
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0x073ECE89
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0x53C7FE02
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 221
         udr: 11
         nav: 5
@@ -854,6 +916,20 @@ plugins:
       - <<: *quickClean
         crc: 0xA959AA60
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 87
+        udr: 8
+        nav: 1
+      # GOG v1.6.659
+      - <<: *quickClean
+        crc: 0x7BE33EB9
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 87
+        udr: 8
+        nav: 1
+      # EGS v1.6.678
+      - <<: *quickClean
+        crc: 0xAF3D8E37
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 87
         udr: 8
         nav: 1
