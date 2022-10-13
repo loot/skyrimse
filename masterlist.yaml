@@ -7747,9 +7747,11 @@ plugins:
       - 'WhiterunHoldForest.esp'
       - 'Whiterun Forest Borealis.esp'
     inc:
-      - 'Enhanced Vanilla Trees SSE.esp'
+      - name: 'Enhanced Vanilla Trees SSE.esp'
+        condition: 'not active("3dTree-OnlyPlant.esp")'
       - 'S3DPlants.esp'
-      - 'SimplyBiggerTreesSE.esp'
+      - name: 'SimplyBiggerTreesSE.esp'
+        condition: 'not active("3dTree-OnlyPlant.esp")'
       - 'Skyrim Flora Overhaul.esp'
       - 'SkyrimIsWindy.esp'
       - 'SRG Enhanced Trees Activator.esp'
