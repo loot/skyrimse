@@ -7347,6 +7347,7 @@ plugins:
         condition: 'active("Skyrim Flora Overhaul.esp") and (checksum("Skyrim Flora Overhaul.esp", 17415E34) or checksum("Skyrim Flora Overhaul.esp", 3BD2CC4C))'
     tag: [ Graphics ]
   - name: 'Enhanced Vanilla Trees SSE.esp'
+    after: [ '3dTree-OnlyPlant.esp' ]
     clean:
       - crc: 0x7B24EBE2
         util: 'SSEEdit v4.0.3'
@@ -7746,9 +7747,11 @@ plugins:
       - 'WhiterunHoldForest.esp'
       - 'Whiterun Forest Borealis.esp'
     inc:
-      - 'Enhanced Vanilla Trees SSE.esp'
+      - name: 'Enhanced Vanilla Trees SSE.esp'
+        condition: 'not active("3dTree-OnlyPlant.esp")'
       - 'S3DPlants.esp'
-      - 'SimplyBiggerTreesSE.esp'
+      - name: 'SimplyBiggerTreesSE.esp'
+        condition: 'not active("3dTree-OnlyPlant.esp")'
       - 'Skyrim Flora Overhaul.esp'
       - 'SkyrimIsWindy.esp'
       - 'SRG Enhanced Trees Activator.esp'
@@ -7786,6 +7789,7 @@ plugins:
 
   - name: 'SimplyBiggerTreesSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5281/' ]
+    after: [ '3dTree-OnlyPlant.esp' ]
     clean:
       - crc: 0xADC2F6AF
         util: 'SSEEdit v4.0.3'
@@ -24822,6 +24826,14 @@ plugins:
         util: 'SSEEdit v4.0.3f'
 
 ###### 3RD Party Patches ######
+  - name: '3dTree-OnlyPlant.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72999/'
+        name: '3D plants and trees plants only patch'
+    clean:
+      - crc: 0x5684F588
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Andromeda - Simply Knock Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38508/' ]
     msg:
