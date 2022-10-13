@@ -2058,8 +2058,8 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Majestic Mountains'
-          - '[Better Dynamic Majestic Mountains](https://www.nexusmods.com/skyrimspecialedition/mods/20102/)'
-        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and not checksum("Better Dynamic Snow.esp", 165C9A2F) and not checksum("MajesticMountains.esp", DDAF34CC)'
+          - '[Majestic Mountains-BDS With LOD Fix](https://www.nexusmods.com/skyrimspecialedition/mods/36248/)'
+        condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and checksum("Better Dynamic Snow.esp", 65408AA9) and checksum("MajesticMountains.esp", 63998BA2)'
       - <<: *patchIncluded
         subs: [ 'No Snow Under the Roof' ]
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
@@ -7550,20 +7550,25 @@ plugins:
   - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
     after: [ 'JKs Skyrim.esp' ]
 
-  - name: 'MajesticMountains.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
+  - name: '(MajesticMountains.*|SunDaytime(South|North_MM_default))\.es[mp]'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/'
+        name: 'Majestic Mountains'
   - name: 'MajesticMountains.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36248/'
+        name: 'Majestic Mountains-BDS With LOD Fix'
     after:
       - 'Dolomite Weathers.esp'
       - 'NAT.esp'
       - 'Skyrim Flora Overhaul.esp'
       - 'Tamriel Reloaded HD SE.esp'
       - 'ViscousGrass.esp'
-    tag: [ Graphics ]
     msg:
       - <<: *compatIssuesWithX
         subs: [ '[Moss Rocks](https://www.nexusmods.com/skyrimspecialedition/mods/8838/)' ]
         condition: 'active("MajesticMountains.esp") and active("Moss Rocks.esp")'
+    tag: [ Graphics ]
     clean:
       - crc: 0x17CBC52F
         util: 'SSEEdit v4.0.3'
@@ -7582,7 +7587,6 @@ plugins:
       - crc: 0x8C2C35F7
         util: 'SSEEdit v4.0.3'
   - name: 'SunDaytime(South|North_MM_default)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11052/' ]
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'ENBSeries' ]
@@ -24846,7 +24850,7 @@ plugins:
       - *alreadyInOrFixedByBDSv3_0
       - <<: *alreadyInX
         subs: [ 'Majestic Mountains-BDS With LOD Fix' ]
-        condition: 'checksum("MajesticMountains.esp", DDAF34CC)'
+        condition: 'checksum("MajesticMountains.esp", 1304DCCC)'
     tag: [ Graphics ]
 
   - name: 'BDS_(BRE|FSK|NOR|RCY|WYR).*\.esp'
