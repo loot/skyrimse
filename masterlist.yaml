@@ -5363,31 +5363,28 @@ plugins:
       - <<: *useBashTweakInstead
         subs: [ 'Tweak Actors: Opposite Gender Anims Female' ]
 
-  - name: '.*PAN_NPCs( Patch)?\.esp'
+  - name: 'PAN_NPCs.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/'
         name: 'Pandorable''s NPCs'
-  - name: 'PAN_NPCs.esp'
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Immersive Jewelry'
           - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
         condition: 'active("Immersive Jewelry.esp") and not active("Pan NPCs - Immersive Jewelry.esp")'
-      - <<: *patchIncluded
+      - <<: *useVersion
+        type: warn
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
-      - <<: *patchProvided
-        subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("PAN_NPCs - AI Overhaul SSE patch.esp")'
     tag:
       - Actors.ACBS
       - NPC.DefaultOutfit
     clean:
       - crc: 0x5550DC82
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4c'
       - crc: 0xA6E5020B
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+        util: 'SSEEdit v4.0.4c'
 
   - name: '.*PAN_NPCs_DB.*\.esp'
     url:
