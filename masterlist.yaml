@@ -897,8 +897,11 @@ plugins:
     group: *dlcGroup
     after: [ 'HearthFires.esm' ]
     msg:
-      - <<: *patch3rdParty_JSDCP
-        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not checksum("meshes/dlc02/clutter/dlc2leftclawamethyst.nif", AAFE2967)'
+      - <<: *patch3rdParty
+        subs:
+          - 'JS Dragon Claws'
+          - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/) (Amethyst Patch)'
+        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not file("meshes/dlc02/clutter/dlc2leftclawamethyst.nif")'
     tag:
       - C.Location
       - Invent.Add
@@ -13915,7 +13918,7 @@ plugins:
       - Graphics
     msg:
       - <<: *patch3rdParty_JSDCP
-        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not checksum("meshes/KonahAcc/misc/ruinsdragonclaw.nif", 49ABCC00)'
+        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and checksum("meshes/KonahAcc/misc/ruinsdragonclaw.nif", 30E9F549)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_KA_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patch3rdParty_KPH_WACCF
@@ -24776,7 +24779,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494' ]
       - <<: *patch3rdParty_JSDCP
-        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not checksum("meshes/dbm resources/jadeclaw.nif", 1396FEDA)'
+        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not file("meshes/dbm resources/jadeclaw.nif")'
     tag: [ ObjectBounds ]
     clean:
       - crc: 0xEA82EAD9
