@@ -15403,8 +15403,9 @@ plugins:
         name: 'Apophysis Dragon Priest Masks'
   - name: 'Apophysis_DPM_SE.esp'
     msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not file("meshes\armor\dragonpriesthelms\dragonhelm_steel_go.nif")'
+      - <<: *patchProvided
+        subs: [ 'Konahrik''s Accoutrements' ]
+        condition: 'active("konahrik_accoutrements.esp") and not active("Apophysis_KA_Patch.esp")'
 
   - name: 'Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2431/' ]
