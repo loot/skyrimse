@@ -897,8 +897,11 @@ plugins:
     group: *dlcGroup
     after: [ 'HearthFires.esm' ]
     msg:
-      - <<: *patch3rdParty_JSDCP
-        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not checksum("meshes/dlc02/clutter/dlc2leftclawamethyst.nif", AAFE2967)'
+      - <<: *patch3rdParty
+        subs:
+          - 'JS Dragon Claws'
+          - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/) (Amethyst Patch)'
+        condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not file("meshes/dlc02/clutter/dlc2leftclawamethyst.nif")'
     tag:
       - C.Location
       - Invent.Add
