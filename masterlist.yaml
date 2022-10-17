@@ -8929,7 +8929,10 @@ plugins:
         name: 'Woodworker''s Whim'
   - name: 'WoodworkersWhim.esp'
     group: *craftingGroup
-    after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+    after:
+      - 'Complete Crafting Overhaul_Remastered.esp'
+      # Group rules to avoid cyclic interactions
+      - 'CRAFT.esp'
     msg:
       - <<: *patchProvided
         subs: [ 'Campfire - Complete Camping System' ]
@@ -9432,6 +9435,21 @@ plugins:
     clean:
       - crc: 0xC57DC7ED
         util: 'SSEEdit v4.0.3'
+
+  - name: '(CRAFT.*|LOTD Replica Tweaks)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54900/'
+        name: 'CRAFT - Smarter LOTD Forge and OWL Patches'
+  - name: 'CRAFT.esp'
+    group: *craftingGroup
+    inc:
+      - 'Ars Metallica.esp'
+      - 'Complete Crafting Overhaul_Remastered.esp'
+      - 'LOTD Replica Tweaks.esp'
+      - 'Simple Smithing Overhaul.esp'
+    clean:
+      - crc: 0xBDE73613
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'HarvestOverhaul_Redone.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2398/' ]
