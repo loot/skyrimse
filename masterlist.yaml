@@ -8929,7 +8929,10 @@ plugins:
         name: 'Woodworker''s Whim'
   - name: 'WoodworkersWhim.esp'
     group: *craftingGroup
-    after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+    after:
+      - 'Complete Crafting Overhaul_Remastered.esp'
+      # Group rules to avoid cyclic interactions
+      - 'CRAFT.esp'
     msg:
       - <<: *patchProvided
         subs: [ 'Campfire - Complete Camping System' ]
