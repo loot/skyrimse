@@ -13,6 +13,8 @@ If you are new to contributing to projects on GitHub, the [How To Contribute](ht
 
 The format and syntax of the masterlist is [fully documented](https://loot-api.readthedocs.io/en/stable/metadata/introduction.html), and other information on how to edit the masterlist can be found on the [Masterlist Editing](https://loot.github.io/docs/contributing/Masterlist-Editing) wiki page.
 
+When submitting changes, please keep them as focused as possible. If you'd like to make several unrelated changes across multiple mods, open separate pull requests for each mod you edit. This makes reviewing your changes much easier, keeps the commit history organized and easier to navigate, and makes reverting changes easier when necessary. Note that if a mod contains multiple plugins, you can make changes to any of those plugins in the same pull request. If you want to make a change to a separate mod that is related to the mod you're editing (e.g., you're editing Mod A's metadata & Mod B should load after it), you can include that in the same pull request as well. You can also edit several unrelated mods if your changes are contained to a single topic, e.g., updating Bash Tags or cleaning data. If, for example, you're updating the Bash Tags of several mods and would like to add cleaning data for them as well, you should do that in a separate pull request.
+
 If you send a pull request, then discover that you have made a mistake, feel free to make additional commits to fix it. You don't need to squash your commits or open a new pull request to keep your commit history tidy; whoever merges your pull request can squash it for you. You can also mark your pull request as a draft if it isn't ready to be merged.
 
 ### Testing Changes
