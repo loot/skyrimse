@@ -8399,6 +8399,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29882/'
         name: 'Lawbringer'
   - name: 'LCO_Framework.esp'
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[JContainers](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
+        condition: 'active("SkyUI_SE.esp") and not file("SKSE/Plugins/JContainers64.dll")'
 
   - name: 'Marc.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30404/' ]
