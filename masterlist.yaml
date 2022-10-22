@@ -5380,6 +5380,9 @@ plugins:
         type: warn
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("PAN_NPCs - AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
     tag:
       - Actors.ACBS
       - NPC.DefaultOutfit
@@ -5407,7 +5410,7 @@ plugins:
         condition: 'active("EconomyOverhaulandSpeechcraftImprovements.esp") and not active("Pan NPCs DB - Economy Overhaul Speechcraft Improvements.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp") and not active("Bashed Patch.*\.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("PAN_NPCs_DB - AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
     clean:
       - crc: 0xCDE9B342
         util: 'SSEEdit v4.0.3'
@@ -5432,7 +5435,7 @@ plugins:
         condition: 'active("Legendary Skyrim Crossbows.esp") and not active("Pan NPCs DG - Legendary Skyrim Crossbows.esp") and not active("Pan NPCs DG - Dawnguard Arsenal - Legendary Skyrim Crossbows.esp")'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DG Patch.esp") and not active("Bashed Patch.*\.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("PAN_NPCs_DG - AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patchProvided
         subs: [ 'Morrowloot Ultimate' ]
         condition: 'active("MLU.esp") and not active("PAN_NPCs_DG_MLU_Patch.esp")'
