@@ -8647,16 +8647,18 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'SimplyKnock.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14098/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14098/'
+        name: 'Simply Knock'
     req: [ *SKSE ]
     msg:
       - <<: *alsoUseX
         subs: [ '[Simply Knock - Tower Stone Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41590/)' ]
-        condition: 'not file("Simply Knock - Tower Stone Fix.esp")'
+        condition: 'not active("Simply Knock - Tower Stone Fix.esp")'
       - <<: *patchUpdateAvailable
         type: error
-        subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/)' ]
-        condition: 'checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
+        subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/) **OR** [Simply Knock DLL for AE](https://www.nexusmods.com/skyrimspecialedition/mods/77283/)' ]
+        condition: 'version("../skse64_loader.exe", "0.2.0.7", >) and checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
       - <<: *requiresMCM
         type: error
       - <<: *requiresX
@@ -8665,7 +8667,7 @@ plugins:
         condition: 'checksum("SKSE/Plugins/PapyrusUtil.dll", 9BACEE98)'
     clean:
       - crc: 0x95029A30
-        util: 'SSEEdit v4.0.3g'
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'SkyTEST-Settings.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/796/' ]
