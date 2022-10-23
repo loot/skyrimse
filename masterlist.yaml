@@ -5408,6 +5408,10 @@ plugins:
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp") and not active("PAN_NPCs_DB - AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
+      - <<: *useVersion
+        type: warn
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DB.esp", CDE9B342)'
     clean:
       - crc: 0xCDE9B342
         util: 'SSEEdit v4.0.3'
