@@ -9355,9 +9355,6 @@ plugins:
 
   - name: 'Ars Metallica.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/321/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ArsMetallica_Patch.esp")'
     tag:
       - Invent.Add
       - -Invent.Remove
@@ -11877,10 +11874,7 @@ plugins:
 
   - name: 'ReachMage.esp'
     url: [ 'https://www.patreon.com/posts/reach-magic-v1-0-65777188/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ReachMage_Patch.esp")'
-      - *patch3rdParty_SRPC_Redux
+    msg: [ *patch3rdParty_SRPC_Redux ]
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -13475,9 +13469,6 @@ plugins:
 
   - name: 'Bloodworm.esp'
     url: [ 'https://www.patreon.com/posts/path-of-revenant-65789143/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PathoftheRevanant_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     dirty:
       # Version: 1.1
       - <<: *quickClean
@@ -14902,9 +14893,6 @@ plugins:
 
   - name: 'Simple Skill Books.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27186/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SimpleSkillBooks_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     clean:
       - crc: 0xE2334E08
         util: 'SSEEdit v4.0.3'
@@ -16934,9 +16922,6 @@ plugins:
 
   - name: 'RuinsEdge.esp'
     url: [ 'https://www.patreon.com/posts/ruins-edge-v1-2-65789547/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RuinsEdge_Patch.esp")'
     dirty:
       # version: 1.2
       - <<: *quickClean
@@ -17099,9 +17084,6 @@ plugins:
 
   - name: 'StaffOfSheogorath.esp'
     url: [ 'https://www.patreon.com/posts/staff-of-v1-0-1-65781526/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_StaffofSheogorath_Patch.esp")'
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -18013,9 +17995,6 @@ plugins:
 
   - name: 'StagPrinceBow.esp'
     url: [ 'https://www.patreon.com/posts/hunting-grounds-65785356/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DaedricRealms_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     dirty:
       # version: 1.0
       - <<: *quickClean
@@ -18259,9 +18238,6 @@ plugins:
 
   - name: 'AKSkyrimUnderground.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/131/' ]
-    msg:
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SkyrimUnderground_Patch.esp")'
     clean:
       - crc: 0xC9D34395
         util: 'SSEEdit v4.0.3'
