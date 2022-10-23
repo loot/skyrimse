@@ -8657,8 +8657,8 @@ plugins:
         condition: 'not active("Simply Knock - Tower Stone Fix.esp")'
       - <<: *patchUpdateAvailable
         type: error
-        subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/)' ]
-        condition: 'checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
+        subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/) **OR** [Simply Knock DLL for AE](https://www.nexusmods.com/skyrimspecialedition/mods/77283/)' ]
+        condition: 'version("../skse64_loader.exe", "0.2.0.7", >) and checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
       - <<: *requiresMCM
         type: error
       - <<: *requiresX
