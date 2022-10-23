@@ -12920,7 +12920,7 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
     msg:
       - <<: *patch3rdParty_AOOPH
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Relationship Dialogue Overhaul Patch.esp")'
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
         condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
@@ -12949,6 +12949,9 @@ plugins:
 
   - name: 'RDO Updated.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44601/' ]
+    msg:
+      - <<: *patch3rdParty_AOOPH
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - RDO Updated Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xB3AF66CD
@@ -24861,6 +24864,16 @@ plugins:
     clean:
       - crc: 0x5684F588
         util: 'SSEEdit v4.0.4c'
+
+  - name: 'AI Overhaul - (Cutting Room Floor|Distinct Interiors|Relationship Dialogue Overhaul|RDO Updated) Patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35823/'
+        name: 'AI Overhaul SSE - Official Patch Hub'
+  - name: 'AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'AI Overhaul & Relationship Dialogue Overhaul' ]
+        condition: 'many("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
 
   - name: 'Andromeda - Simply Knock Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38508/' ]
