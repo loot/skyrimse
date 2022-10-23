@@ -5389,7 +5389,7 @@ plugins:
       - crc: 0xA6E5020B
         util: 'SSEEdit v4.0.4c'
 
-  - name: '.*PAN_NPCs_DB.*\.esp'
+  - name: '(AI Overhaul - )?PAN_NPCs_DB( Patch)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30680/'
         name: 'Pandorable''s NPCs - Dragonborn'
@@ -5405,16 +5405,21 @@ plugins:
           - 'Economy Overhaul and Speechcraft Improvements'
           - '[kj''s Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/32046/)'
         condition: 'active("EconomyOverhaulandSpeechcraftImprovements.esp") and not active("Pan NPCs DB - Economy Overhaul Speechcraft Improvements.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'AI Overhaul'
-          - '[Pandorable''s NPCs and AI Overhaul SSE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/60566/)'
-        condition: 'active("AI Overhaul.esp") and not active("PAN_NPCs_DB - AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'AI Overhaul' ]
+        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - PAN_NPCs_DB Patch.esp") and not active("PAN_NPCs_DB - AI Overhaul Patch.esp") and not active("Bashed Patch.*\.esp")'
+      - <<: *useVersion
+        type: warn
+        subs: [ 'Unofficial Skyrim Special Edition Patch' ]
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DB.esp", CDE9B342)'
     clean:
       - crc: 0xCDE9B342
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4c'
+      # USSEP
       - crc: 0x995D939B
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4c'
+  - name: 'AI Overhaul - PAN_NPCs_DB Patch.esp'
+    inc: [ 'PAN_NPCs_DB - AI Overhaul Patch.esp' ]
 
   - name: '.*PAN_NPCs_DG.*\.esp'
     url:
