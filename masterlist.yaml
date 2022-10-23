@@ -2038,12 +2038,14 @@ plugins:
     inc:
       - name: 'SKSE/Plugins/ShaderTools.dll'
         display: 'SSE Parallax Shader Fix'
+        condition: 'file("skse/plugins/shaders/03[\dA-F]{6}_Parallax_Vc\w*_Snow(_Aam)?\.ps\.hlsl")'
       - name: 'SKSE/Plugins/SSEShaderTools.dll'
         display: 'SSE Parallax Shader Fix AE'
+        condition: 'file("skse/plugins/shaders/03[\dA-F]{6}_Parallax_Vc\w*_Snow(_Aam)?\.ps\.hlsl")'
     msg:
       - <<: *useVersion
         subs: [ '2.11' ]
-        condition: 'file("skse/plugins/(SSE)?ShaderTools\.dll")'
+        condition: 'file("skse/plugins/shaders/03[\dA-F]{6}_Parallax_Vc\w*_Snow(_Aam)?\.ps\.hlsl")'
     clean:
       - crc: 0xE555B811
         util: 'SSEEdit v4.0.4c'
