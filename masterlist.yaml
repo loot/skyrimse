@@ -2045,7 +2045,7 @@ plugins:
     msg:
       - <<: *useVersion
         subs: [ '2.11' ]
-        condition: 'file("skse/plugins/shaders/03[\dA-F]{6}_Parallax_Vc\w*_Snow(_Aam)?\.ps\.hlsl")'
+        condition: 'file("skse/plugins/(SSE)?ShaderTools\.dll") and file("skse/plugins/shaders/03[\dA-F]{6}_Parallax_Vc\w*_Snow(_Aam)?\.ps\.hlsl")'
     clean:
       - crc: 0xE555B811
         util: 'SSEEdit v4.0.4c'
