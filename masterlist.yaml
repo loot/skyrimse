@@ -7295,15 +7295,30 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'Destructible Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28291/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/28291/'
+        name: 'Destructible Skyrim - Breakable Objects'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/77568/'
+        name: 'Destructible Skyrim - Base Object Swapper'
     group: *earlyLoadersGroup
     after: [ 'AK - Placeable Statics SE.esp' ]
+    req:
+      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
+        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+        condition: 'file("Destructible Skyrim_SWAP.ini")'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Destructible Skyrim - Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/77568/)' ]
+        condition: 'file("../skse64_loader.exe") and not file("Destructible Skyrim_SWAP.ini")'
+    tag: [ Destructible ]
     dirty:
-      # version: 0.4
       - <<: *quickClean
         crc: 0xAF111F67
-        util: '[SSEEdit v4.0.2k](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 584
+    clean:
+      - crc: 0xA197BD0F
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'DestructibleDisplayCases.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13625/' ]
