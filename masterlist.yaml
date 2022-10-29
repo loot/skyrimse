@@ -7302,6 +7302,10 @@ plugins:
         name: 'Destructible Skyrim - Base Object Swapper'
     group: *earlyLoadersGroup
     after: [ 'AK - Placeable Statics SE.esp' ]
+    req:
+      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
+        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+        condition: 'file("Destructible Skyrim_SWAP.ini")'
     dirty:
       # version: 0.4
       - <<: *quickClean
