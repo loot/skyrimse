@@ -8812,29 +8812,21 @@ plugins:
 
   - name: 'TreasureHunter.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/'
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/31345/'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5789/'
+        name: 'Treasure Hunter'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31345/'
+        name: 'Treasure Hunter - fixed esp'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31574/'
+        name: 'Treasure Hunter - refix'
     msg:
+      - <<: *obsolete
+        subs: [ '[Treasure Hunter](https://www.nexusmods.com/skyrimspecialedition/mods/5789/)' ]
+        condition: 'version("TreasureHunter.esp", "1.2.1", <)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TreasureHunter_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0x615E9874
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 9
-        nav: 5
-      - <<: *reqManualFix
-        crc: 0xC63DD30E
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 5
-      # Fixed esp
-      - <<: *reqManualFix
-        crc: 0xCFAE157A
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 1
     clean:
-      - crc: 0x068D32DE
-        util: 'SSEEdit v4.0.3'
+      - crc: 0xC4F752C9
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'tpos_ultimate_esm.esp'
     url:
@@ -25825,6 +25817,15 @@ plugins:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Simply Knock - Tower Stone Fix' ]
         condition: 'file("Simply Knock - Tower Stone Fix.esp")'
+
+  - name: 'Treasure Hunter - Tweaks and Fixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31887/'
+        name: 'Treasure Hunter - Tweaks and Fixes'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Treasure Hunter v1.2+' ]
+        condition: 'version("TreasureHunter.esp", "1.2.1", >=)'
 
   - name: 'Undriel_QRR Nav Fixed Patch.esp'
     url:
