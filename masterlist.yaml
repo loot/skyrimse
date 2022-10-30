@@ -26560,24 +26560,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63355/'
         name: 'Rob''s Bug Fixes - Capital Whiterun Expansion'
     msg:
-      - <<: *patchIncluded
-        subs: [ 'Creation Club - Fishing' ]
-        condition: 'active("ccBGSSSE001-Fish.esm") and not active("SurWR - Fishing.esp") and checksum("SurWR.esp", C1861BE4)'
       - <<: *patchUpdateAvailable
         subs: [ '[Rob''s Bug Fixes - Capital Whiterun Expansion](https://www.nexusmods.com/skyrimspecialedition/mods/63355/)' ]
         condition: 'checksum("SurWR.esp", D96CF5BF)'
     clean:
       - crc: 0xD96CF5BF
         util: 'SSEEdit v4.0.4b'
-      - crc: 0xC1861BE4
-        util: 'SSEEdit v4.0.4b'
-  - name: 'SurWR - Fishing.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63355/'
-        name: 'Rob''s Bug Fixes - Capital Whiterun Expansion'
-    clean:
-      - crc: 0xA7A3B1AB
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x87CC3785
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'JKs Skyrim - Rob''s Bug Fixes.esp'
     url:
