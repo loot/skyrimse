@@ -524,42 +524,6 @@ globals:
   - <<: *creationClubPlugins
     condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE\d{3}.*\.es[lm]")'
 
-# SKSE
-  # Missing
-  - <<: *scriptExtenderMissing
-    subs:
-      - 'SKSE'
-      - '[Skyrim Script Extender](https://skse.silverlock.org)'
-    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
-
-  # Required Scripts
-  - <<: *scriptExtenderRequiredScripts
-    subs:
-      - 'Skyrim Script Extender'
-      - '[SKSE](https://skse.silverlock.org)'
-    condition: 'not file("scripts/skse.pex") and file("../skse64_loader.exe")'
-
-# Animation Frameworks
-  # Fores New Idles
-  - <<: *runAnimFramework
-    subs:
-      - 'Fores New Idles in Skyrim SE'
-      - 'GenerateFNISforUsers.exe'
-      - 'FNIS'
-    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
-  # Nemesis Unlimited Behavior Engine
-  - <<: *runAnimFramework
-    subs:
-      - 'Nemesis Unlimited Behavior Engine'
-      - 'Nemesis Unlimited Behavior Engine.exe'
-      - 'Nemesis'
-    condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
-  # Nemesis and FNIS compatibility
-  - <<: *useOnlyOneX
-    type: warn
-    subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
-    condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
-
 # Latest Version
   # Skyrim AE Game Runtime
   - <<: *versionOldX
@@ -648,6 +612,21 @@ globals:
       - '**[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)**'
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../d3d11.dll") and version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../d3d11.dll", "0.3.7.1", <)'
 
+# SKSE
+  # Missing
+  - <<: *scriptExtenderMissing
+    subs:
+      - 'SKSE'
+      - '[Skyrim Script Extender](https://skse.silverlock.org)'
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
+  # Required Scripts
+  - <<: *scriptExtenderRequiredScripts
+    subs:
+      - 'Skyrim Script Extender'
+      - '[SKSE](https://skse.silverlock.org)'
+    condition: 'not file("scripts/skse.pex") and file("../skse64_loader.exe")'
+
+# Missing Requirements
   # ENBSeries
   - <<: *missingRequirementXforY
     subs:
@@ -670,6 +649,27 @@ globals:
       - '[DLL Plugin Loader](https://www.nexusmods.com/skyrimspecialedition/mods/10546/) or [SSE Engine Fixes - Part 2](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
       - '.NET Script Framework'
     condition: 'file("DLLPlugins/NetScriptFramework.Runtime.dll") and ((not file("../binkw64_.dll") and not checksum("../binkw64.dll", 6C2F54AB)) and (not file("../d3dx9_42.dll")))'
+
+# Animation Frameworks
+  # Fores New Idles
+  - <<: *runAnimFramework
+    subs:
+      - 'Fores New Idles in Skyrim SE'
+      - 'GenerateFNISforUsers.exe'
+      - 'FNIS'
+    condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
+  # Nemesis Unlimited Behavior Engine
+  - <<: *runAnimFramework
+    subs:
+      - 'Nemesis Unlimited Behavior Engine'
+      - 'Nemesis Unlimited Behavior Engine.exe'
+      - 'Nemesis'
+    condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+  # Nemesis and FNIS compatibility
+  - <<: *useOnlyOneX
+    type: warn
+    subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
+    condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
 
 groups:
   - name: &dlcGroup DLC
