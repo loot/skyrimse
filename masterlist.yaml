@@ -613,12 +613,24 @@ globals:
     condition: 'file("SKSE/Plugins/ENBHelperSE.dll") and file("../d3d11.dll") and version("SKSE/Plugins/ENBHelperSE.dll", "1.3.1.0", ==) and product_version("../d3d11.dll", "0.3.7.1", <)'
 
 # SKSE
-  # Missing
+  # Missing AE
   - <<: *scriptExtenderMissing
     subs:
       - 'SKSE'
-      - '[Skyrim Script Extender](https://skse.silverlock.org)'
-    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse64_loader.exe")'
+      - '[Skyrim Script Extender](https://skse.silverlock.org) Anniversary Edition'
+    condition: 'readable("../SkyrimSE.exe") and not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and product_version("../SkyrimSE.exe", "1.6.317.0", >=) and not file("../skse64_loader.exe") and file("SKSE/Plugins/([^\.]+\.dll)")'
+  # Missing GOG AE
+  - <<: *scriptExtenderMissing
+    subs:
+      - 'SKSE'
+      - '[Skyrim Script Extender](https://skse.silverlock.org) GOG Anniversary Edition'
+    condition: 'file("../Galaxy64.dll") and not file("../skse64_loader.exe") and file("SKSE/Plugins/([^\.]+\.dll)")'
+  # Missing SE
+  - <<: *scriptExtenderMissing
+    subs:
+      - 'SKSE'
+      - '[Skyrim Script Extender](https://skse.silverlock.org) Special Edition'
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", <=) and not file("../skse64_loader.exe") and file("SKSE/Plugins/([^\.]+\.dll)")'
   # Required Scripts
   - <<: *scriptExtenderRequiredScripts
     subs:
