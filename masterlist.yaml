@@ -12636,30 +12636,42 @@ plugins:
         util: 'SSEEdit v4.0.4'
 
 ###### Gameplay - NPC Behaviour & Dialogue ######
-  - name: 'AI Overhaul.esp'
+  - name: 'AI Overhaul( Lite)?\.es[lp]'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654/'
-        name: 'AI Overhaul SSE'
-    after: [ 'Immersive Weapons.esp' ]
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.AIPackagesForceAdd
-      - Actors.CombatStyle
-      - Actors.Spells
-      - Actors.Stats
-      - Factions
-      - Invent.Add
-      - NPC.AIPackageOverrides
+        name: 'AI Overhaul'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'AI Overhaul plugin' ]
+        condition: 'many("AI Overhaul( Lite)?\.es[lp]")'
+  - name: 'AI Overhaul.esp'
     msg:
       - <<: *patch3rdParty
         subs:
           - 'JK''s Skyrim'
           - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194/)'
         condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackagesForceAdd
+      - Actors.Factions
+      - Invent.Add
+      - NPC.AIPackageOverrides
     clean:
-      - crc: 0x15F86D84
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x23B1EC05
+        util: 'SSEEdit v4.0.4c'
+      # Beta
+      - crc: 0x88DF1804
+        util: 'SSEEdit v4.0.4c'
+  - name: 'AI Overhaul Lite.esl'
+    clean:
+      - crc: 0x6ADA15C0
+        util: 'SSEEdit v4.0.4c'
+  - name: 'AI Overhaul Lite.esp'
+    clean:
+      - crc: 0x00C01CA5
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'BA_KhajiitSpeakRedux_MAIN.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37197/' ]
