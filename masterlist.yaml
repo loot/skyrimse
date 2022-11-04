@@ -12641,6 +12641,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21654/'
         name: 'AI Overhaul SSE'
     after: [ 'Immersive Weapons.esp' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'JK''s Skyrim'
+          - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194/)'
+        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -12651,12 +12657,6 @@ plugins:
       - Factions
       - Invent.Add
       - NPC.AIPackageOverrides
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'JK''s Skyrim'
-          - '[JKs Skyrim - AI Overhaul SSE Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34194/)'
-        condition: 'active("JKs Skyrim.esp") and not active("JKs Skyrim - AI Overhaul Patch.esp")'
     clean:
       - crc: 0x15F86D84
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
