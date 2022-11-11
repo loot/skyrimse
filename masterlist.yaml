@@ -2896,6 +2896,9 @@ plugins:
         display: '[Sound Record Distributor](https://www.nexusmods.com/skyrimspecialedition/mods/77815/)'
         condition: 'file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Engine Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)' ]
+        condition: 'not file("SKSE/Plugins/EngineFixes.dll")'
       - <<: *compatIssuesWithX
         subs: [ 'Lucidity Sound FX **LSFX-SSE-Audiosettings.esp**' ]
         condition: 'active("LSFX-SSE-Audiosettings.esp")'
