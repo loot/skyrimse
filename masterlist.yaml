@@ -2891,6 +2891,10 @@ plugins:
   - name: 'Audio Overhaul Skyrim.esp'
     group: *earlyLoadersGroup
     after: [ 'SoS - The Dungeons.esp' ]
+    req:
+      - name: 'SKSE/Plugins/SoundRecordDistributor.dll'
+        display: '[Sound Record Distributor](https://www.nexusmods.com/skyrimspecialedition/mods/77815/)'
+        condition: 'file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Lucidity Sound FX **LSFX-SSE-Audiosettings.esp**' ]
