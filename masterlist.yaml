@@ -7328,10 +7328,16 @@ plugins:
         display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
         condition: 'file("Destructible Skyrim_SWAP.ini")'
     msg:
+      - <<: *patchProvided
+        subs: [ 'skyBirds' ]
+        condition: 'active("skyBirds_SSE.esp") and not active("DestructibleSkyrim-skyBirds.esp") and file("Destructible Skyrim_SWAP.ini")'
       - <<: *patchUpdateAvailable
         subs: [ '[Destructible Skyrim - Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/77568/)' ]
         condition: 'file("../skse64_loader.exe") and not file("Destructible Skyrim_SWAP.ini")'
-    tag: [ Destructible ]
+    tag:
+      - Destructible
+      - Graphics
+      - ObjectBounds
     dirty:
       - <<: *quickClean
         crc: 0xAF111F67
@@ -7339,6 +7345,24 @@ plugins:
         itm: 584
     clean:
       - crc: 0xA197BD0F
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xB8A68630
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x04B686C3
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Destructible Skyrim Fix.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/28291/'
+        name: 'Destructible Skyrim - Breakable Objects'
+    clean:
+      - crc: 0x3DE6F779
+        util: 'SSEEdit v4.0.4c'
+  - name: 'DestructibleSkyrim-skyBirds.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/77568/'
+        name: 'Destructible Skyrim - Base Object Swapper'
+    clean:
+      - crc: 0x46852E91
         util: 'SSEEdit v4.0.4c'
 
   - name: 'DestructibleDisplayCases.esp'
