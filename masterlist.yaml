@@ -25024,6 +25024,26 @@ plugins:
         subs: [ 'AI Overhaul & Relationship Dialogue Overhaul' ]
         condition: 'many("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
 
+  - name: 'Amulets of Skyrim - (Tweaks and )?Fixes\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31814/'
+        name: 'Amulets of Skyrim - Tweaks and Fixes'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Amulets of Skyrim - Tweaks and Fixes ESP' ]
+        condition: 'many("Amulets of Skyrim - (Tweaks and )?Fixes\.esp")'
+  - name: 'Amulets of Skyrim - Fixes.esp'
+    clean:
+      - crc: 0x8759DBDA
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Amulets of Skyrim - Tweaks and Fixes.esp'
+    tag: [ Outfits.Add ]
+    clean:
+      - crc: 0xC3703E85
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x5F41E5B7
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Andromeda - Simply Knock Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38508/' ]
     msg:
