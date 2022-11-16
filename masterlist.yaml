@@ -14742,8 +14742,26 @@ plugins:
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'TSR_TeldrynSerious.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5541/' ]
-    msg: [ *patch3rdParty_SRPC_Redux ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5541/'
+        name: 'Teldryn Serious - A Teldryn Sero Backstory Quest'
+    msg:
+      - *patch3rdParty_SRPC_Redux
+      - <<: *patchUpdateAvailable
+        subs: [ '[Teldryn Serious Patch](https://www.nexusmods.com/skyrimspecialedition/mods/32415/)' ]
+        condition: 'not active("TSR_TeldrynSeriousPatch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.CombatStyle
+      - Actors.Perks.Add
+      - Actors.Spells
+      - Actors.Stats
+      - Invent.Change
+      - NPC.Class
+      - Outfits.Remove
+    clean:
+      - crc: 0x7B8A7D26
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'WARP.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28228/' ]
