@@ -2614,6 +2614,91 @@ plugins:
       - crc: 0x65625CA4
         util: 'SSEEdit v4.0.4b'
 
+  - name: 'man_DaedricShrines(_Wintersun_Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78772/'
+        name: 'Daedric Shrines - All in One'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78809/'
+        name: 'Daedric Shrines - All in One - My Patches by Xtudo'
+  - name: 'man_DaedricShrines.esp'
+    msg:
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Azura](https://www.nexusmods.com/skyrimspecialedition/mods/66776/)' ]
+        condition: 'active("man_azura.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Hermaeus Mora](https://www.nexusmods.com/skyrimspecialedition/mods/67590/)' ]
+        condition: 'active("man_HermaeusMora.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Hircine](https://www.nexusmods.com/skyrimspecialedition/mods/63155/)' ]
+        condition: 'active("man_Hircine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Malacath](https://www.nexusmods.com/skyrimspecialedition/mods/75762/)' ]
+        condition: 'active("man_malacathShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Mehrunes Dagon](https://www.nexusmods.com/skyrimspecialedition/mods/76898/)' ]
+        condition: 'active("man_MehrunesDagonShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Mephala](https://www.nexusmods.com/skyrimspecialedition/mods/63585/)' ]
+        condition: 'active("man_MephalaShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Meridia](https://www.nexusmods.com/skyrimspecialedition/mods/78428/)' ]
+        condition: 'active("man_MeridiaShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Molag Bal](https://www.nexusmods.com/skyrimspecialedition/mods/69667/)' ]
+        condition: 'active("man_molagBalShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Namira](https://www.nexusmods.com/skyrimspecialedition/mods/71758/)' ]
+        condition: 'active("man_namiraShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Nocturnal](https://www.nexusmods.com/skyrimspecialedition/mods/70696/)' ]
+        condition: 'active("man_nocturnalShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Peryite](https://www.nexusmods.com/skyrimspecialedition/mods/62666/)' ]
+        condition: 'active("man_PeryiteShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Sanguine](https://www.nexusmods.com/skyrimspecialedition/mods/64471/)' ]
+        condition: 'active("man_sanguineShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Sheogorath](https://www.nexusmods.com/skyrimspecialedition/mods/65489/)' ]
+        condition: 'active("man_sheogorathShrine.esp")'
+      - <<: *includesX
+        type: error
+        subs: [ '[Daedric Shrines - Vaermina](https://www.nexusmods.com/skyrimspecialedition/mods/68362/)' ]
+        condition: 'active("man_vaermina.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wintersun - Faiths of Skyrim' ]
+        condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("man_DaedricShrines_Wintersun_Patch.esp")'
+    tag:
+      - C.Water
+      - Graphics
+      - ObjectBounds
+    clean:
+      - crc: 0xE4FEE2F9
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x6D7C83F6
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x136BA05D
+        util: 'SSEEdit v4.0.4c'
+  - name: 'man_DaedricShrines_Wintersun_Patch.esp'
+    clean:
+      - crc: 0x94B7D9B9
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xEB544901
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'MLP(SoulGems| \+ GIST Patch).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/25709/'
