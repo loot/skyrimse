@@ -26903,6 +26903,31 @@ plugins:
         util: 'SSEEdit v4.0.4c'
       - crc: 0x76F44BFE
         util: 'SSEEdit v4.0.4c'
+        
+  - name: 'Solitude Docks.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13922/'
+        name: 'Solitude Docks'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/33777/'
+        name: 'Solitude Docks Updated'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64071/'
+        name: 'Rob''s Bug Fixes - Solitude Docks Updated'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Solitude Docks Updated](https://www.nexusmods.com/skyrimspecialedition/mods/64071/)' ]
+        condition: 'checksum("Solitude Docks.esp", 650E43BB) or checksum("Solitude Docks.esp", DDAD84FE)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x650E43BB
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 28
+      - <<: *quickClean
+        crc: 0xDDAD84FE
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x6574C43C
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'RedBag''s Solitude Docks Updated.esp'
     url:
