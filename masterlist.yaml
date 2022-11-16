@@ -22693,15 +22693,15 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22243/'
         name: 'The Great City of Solitude SSE'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72117/'
-        name:  'Rob''s Bug Fixes - TGC Solitude'
+        name: 'Rob''s Bug Fixes - TGC Solitude'
     after:
       - name: 'KvHarborside.esp'
         condition: 'file("TGCoS [PATCH - KvHarborside].esp") or file("TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp")'
-    tag: [ C.Location ]
     msg:
       - <<: *patchUpdateAvailable
         subs: [ '[Rob''s Bug Fixes - TGC Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/72117/)' ]
         condition: 'checksum("The Great City of Solitude.esp", BB0F093C)'
+    tag: [ C.Location ]
     dirty:
       - <<: *quickClean
         crc: 0xBB0F093C
@@ -22710,7 +22710,6 @@ plugins:
     clean:
       - crc: 0xB1FB18BA
         util: 'SSEEdit v4.0.4c'
-
   - name: 'USSEP - The Great City of Solitude Patch.esp'
     msg:
       - <<: *alreadyInOrFixedByX
