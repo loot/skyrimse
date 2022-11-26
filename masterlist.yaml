@@ -26970,3 +26970,22 @@ plugins:
         util: 'SSEEdit v4.0.4c'
       - crc: 0xE405E000
         util: 'SSEEdit v4.0.4c'
+
+  - name: 'WhiterunDefenses.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40094/'
+        name: 'Fortified Whiterun'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70186/'
+        name: 'Rob''s Bug Fixes - Fortified Whiterun'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Fortified Whiterun](https://www.nexusmods.com/skyrimspecialedition/mods/70186/)' ]
+        condition: 'checksum("WhiterunDefenses.esp", 9A3B2ACE)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x9A3B2ACE
+        util: 'SSEEdit v4.0.4c'
+        itm: 4
+        udr: 2
+      - crc: 0xFBB83F99
+        util: 'SSEEdit v4.0.4c'
