@@ -22514,10 +22514,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
       - crc: 0x0F1F05F4
         util: 'SSEEdit v4.0.3'
-  - name: 'SFCO - Castle Volkihar Rebuilt Patch.esp'
-    msg:
-      - <<: *useInstead
-        subs: [ '[what777''s Castle Volkihar Rebuilt Patches - SFCO Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)' ]
 
   - name: 'Solitude Expansion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8/' ]
@@ -23513,8 +23509,8 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Snazzy Furniture and Clutter Overhaul'
-          - '[what777''s Castle Volkihar Rebuilt Patches](https://www.nexusmods.com/skyrimspecialedition/mods/45796/)'
-        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("Castle Volkihar Rebuilt - SFCO Patch.esp")'
+          - '[Snazzy Furniture and Clutter Overhaul (SFCO) Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/62867/)'
+        condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("SFCO - Castle Volkihar Rebuilt Patch.esp") and not active("Castle Volkihar Rebuilt - SFCO Patch.esp")'
     tag: [ C.Owner ]
     clean:
       - crc: 0x69DC0BD9
@@ -25970,6 +25966,12 @@ plugins:
     tag:
       - Delev
       - Relev
+
+  - name: 'SFCO - Castle Volkihar Rebuilt Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/62867/'
+        name: 'Snazzy Furniture and Clutter Overhaul (SFCO) Patch Collection'
+    inc: [ 'Castle Volkihar Rebuilt - SFCO Patch.esp' ]
 
   - name: 'Spell Research - Even More Patches.esp'
     url:
