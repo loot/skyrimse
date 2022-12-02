@@ -21801,7 +21801,7 @@ plugins:
         condition: 'active("WZTamrielic Culture.esp") and not active("OCW_TC_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
       - <<: *patchIncluded
         subs: [ 'The Great Cities - Minor Cities and Towns' ]
-        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("OCW_TGCs_FEPatch.esp")'
+        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("OCW_TGCs_FEPatch.esp") and not active("The Great City of Winterhold v4.esp")'
       - <<: *patchIncluded
         subs: [ 'The Great City of Winterhold' ]
         condition: 'active("The Great City of Winterhold.esp") and not active("OCW_TGCoW_FEPatch.esp")'
@@ -21868,6 +21868,11 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.02+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
+  - name: 'OCW_TGCs_FEPatch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**TGC Winterhold - OCW Patch.esp**' ]
+        condition: 'active("TGC Winterhold - OCW Patch.esp") and active("The Great City of Winterhold v4.esp")'
   - name: 'OCW_WR2_FEPatch.esp'
     msg:
       - <<: *alreadyInX
@@ -22729,14 +22734,29 @@ plugins:
         subs: [ 'Modular PatchXpress TGCoS plugins' ]
         condition: 'active("The Great City of Solitude Unofficial Patch.esp") or active("TGCoS [PATCH - Open Cities Skyrim SE].esp") or active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
 
+  - name: 'The Great City of Winterhold( v4)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17127/'
+        name: 'The Great City Of Winterhold'
+  - name: 'The Great City of Winterhold v4.esp'
+    inc: [ 'The Great City of Winterhold.esp' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[The Great City of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/74560/)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("TGC Winterhold - OCW Patch.esp")'
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'The Great Cities - Minor Cities and Towns'
+          - '[The Great City of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/74560/)'
+        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("TGC Winterhold - The Great Cities patch.esp")'
+    clean:
+      - crc: 0xE42205FB
+        util: 'SSEEdit v4.0.4c'
   - name: 'The Great City of Winterhold.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17127/' ]
     msg: [ *alreadyInTGC ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xFFDDDF03
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
 
   - name: 'The Great Town of Ivarstead.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/34505/' ]
