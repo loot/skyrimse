@@ -22735,6 +22735,12 @@ plugins:
         name: 'The Great City Of Winterhold'
   - name: 'The Great City of Winterhold v4.esp'
     inc: [ 'The Great City of Winterhold.esp' ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[The Great City of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/74560/)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("TGC Winterhold - OCW Patch.esp")'
   - name: 'The Great City of Winterhold.esp'
     msg: [ *alreadyInTGC ]
     dirty:
