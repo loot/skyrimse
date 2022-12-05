@@ -10439,11 +10439,15 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_MorrowlootUltimate_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-      - <<: *patchProvided
-        subs: [ 'Ars Metallica - Smithing Enhancements' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Ars Metallica - Smithing Enhancements'
+          - '[Morrowloot Ultimate - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/76259/)'
         condition: 'active("Ars Metallica.esp") and not active("MLU - Ars Metallica Patch.esp") and not active("MLU Patches Merged.esp")'
-      - <<: *patchProvided
-        subs: [ 'Cutting Room Floor' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Cutting Room Floor'
+          - '[Morrowloot Ultimate - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/76259/)'
         condition: 'active("Cutting Room Floor.esp") and not active("MLU - CRF.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'INIGO' ]
