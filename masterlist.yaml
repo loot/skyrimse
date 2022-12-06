@@ -22232,6 +22232,11 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
+          - 'CC Tundra Homestead'
+          - '[Whiterun Exteriors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/78920/)'
+        condition: 'active("cceejsse001-hstead.esm") and not active("Ryns Whiterun City Limits - (Iggath )?Tundra Homestead Patch\.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'eFPS - Exterior FPS boost'
           - '[Unofficial eFPS patches](https://www.nexusmods.com/skyrimspecialedition/mods/70176/)'
         condition: 'active("Occ_Skyrim_Tamriel.esp") and not active("Occ_Skyrim_RynsWhiterunCityLimits_patch.esp")'
@@ -22245,9 +22250,6 @@ plugins:
           - 'Ryn''s Halted Stream Camp'
           - '[Ryn''s Skyrim Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/73778/)'
         condition: 'active("Ryn''s Halted Stream Camp.esp") and not active("Ryn''s_Whiterun_City_Limits_Ryn''s_Halted_Stream_Camp_PATCH.esp")'
-      - <<: *patchProvided
-        subs: [ 'CC Tundra Homestead' ]
-        condition: 'active("cceejsse001-hstead.esm") and not active("Ryn''s Whiterun City Limits_CC Tundra Homestead_PATCH.esp")'
     clean:
       - crc: 0xCEAB3291
         util: 'SSEEdit v4.0.4'
