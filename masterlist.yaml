@@ -6954,9 +6954,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SRCEO_Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Skyrim Immersive Creatures' ]
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SRCEO - SIC patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Skyrim Immersive Creatures'
+          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
+        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SIC - SRCEO Integration.esp")'
       - <<: *patchProvided
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
