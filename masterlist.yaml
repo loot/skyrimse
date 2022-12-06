@@ -10576,6 +10576,10 @@ plugins:
       - NPC.Class
       - Outfits.Remove
   - name: 'MLU - (SRCEO|WICO)\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**MLU - SRCEO + WICO.esp**' ]
+        condition: 'active("MLU - SRCEO + WICO.esp")'
   - name: 'MLU - Summermyst.esp'
     inc: [ 'MLU - Summermyst 2.0.esp' ]
     tag:
