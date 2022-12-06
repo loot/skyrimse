@@ -26483,20 +26483,23 @@ plugins:
   ### Ultimate College of Winterhold: Mod & Patches ###
   # Main Mod #
   - name: 'UltimateCollege.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44797/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/44797/'
+        name: 'Ultimate College of Winterhold'
     after:
-      - 'mihailspectres.esp'
-      - 'mihailbeholder.esp'
       - 'ImmersiveIntegrationSE15.esp'
+      - 'mihailbeholder.esp'
+      - 'mihailspectres.esp'
+      - 'UCOW Smash Fix.esp'
     inc:
       - 'CollegeModifications.esp'
       - 'MagicalCollegeofWinterhold.esp'
-      - 'OCW_LightingPatch_Brighter.esp'
-      - 'OCW_LightingPatch_Darker.esp'
-      - name: 'mihailspectres.esp'
-        condition: 'active("mihailspectres.esp") and checksum("mihailspectres.esp", 95F0F68D)'
       - name: 'mihailbeholder.esp'
         condition: 'active("mihailbeholder.esp") and checksum("mihailbeholder.esp", 447993FF)'
+      - name: 'mihailspectres.esp'
+        condition: 'active("mihailspectres.esp") and checksum("mihailspectres.esp", 95F0F68D)'
+      - 'OCW_LightingPatch_Brighter.esp'
+      - 'OCW_LightingPatch_Darker.esp'
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/2761']
@@ -26668,8 +26671,8 @@ plugins:
         subs: [ 'Your Choices Matter - A Dark Brotherhood Expansion' ]
         condition: 'active("ww_AlternateDBEnding.esp") and not active("UltimateCollege_YCMDarkBrotherhood_Patch.esp")'
     clean:
-      - crc: 0x6BD324B9
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x249E2B24
+        util: 'SSEEdit v4.0.4c'
 
   ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
   - name: 'Vokrii - WACCF Patch.esp'
