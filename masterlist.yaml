@@ -22981,17 +22981,27 @@ plugins:
         nav: 4
 
   - name: 'WindhelmEntranceOverhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19400/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19400/'
+        name: 'City Entrances Overhaul - Windhelm'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65092/'
+        name: 'Rob''s Bug Fixes - City Entrances Overhaul - Windhelm'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - City Entrances Overhaul - Windhelm](https://www.nexusmods.com/skyrimspecialedition/mods/65092/)' ]
+        condition: 'checksum("WindhelmEntranceOverhaul.esp", A91FF679) or checksum("WindhelmEntranceOverhaul.esp", 6972E572)'
     dirty:
-      # version: 1.3
       - <<: *quickClean
         crc: 0xA91FF679
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 13
       - <<: *quickClean
         crc: 0x6972E572
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 13
+    clean:
+      - crc: 0x9EF9FD47
+        util: 'SSEEdit v4.0.4c'
   - name: 'CEOWindhelm - .*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19400/' ]
   - name: 'CEOWindhelm - Windhelm Exterior Altered Patch.esp'
