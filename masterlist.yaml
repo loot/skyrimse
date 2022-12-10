@@ -2004,10 +2004,7 @@ plugins:
         condition: 'not file("interface/quest_journal.swf") or checksum("interface/quest_journal.swf", 44FB8C35)'
       - <<: *essentialFiles
         subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
-      - <<: *essentialFiles
-        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and (checksum("SofiaFollower.bsa", 2F513E13) or (checksum("ConfigureCommentaryRate.bsa", EF4CBA70) and file("ConfigureCommentaryRate.esp")) or checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))'
+        condition: 'checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B) or (not file("scripts/ski_playerloadgamealias.pex") and ((active("SofiaFollower.esp") and checksum("SofiaFollower.bsa", 2F513E13)) or (active("ConfigureCommentaryRate.esp") and checksum("ConfigureCommentaryRate.bsa", EF4CBA70)) or (active("Thunderchild - Epic Shout Package.esp") and checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))))'
       - type: say
         content:
           - lang: en
