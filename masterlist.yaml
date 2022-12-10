@@ -2001,7 +2001,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
-        condition: 'file("SkyUI_SE.bsa") and not file("interface/quest_journal.swf")'
+        condition: 'not file("interface/quest_journal.swf") or checksum("interface/quest_journal.swf", 44FB8C35)'
       - <<: *essentialFiles
         subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
         condition: 'file("scripts/ski_playerloadgamealias.pex") and checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B)'
