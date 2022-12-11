@@ -7171,6 +7171,18 @@ plugins:
         util: '[SSEEdit v4.0.0](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: 'MarkekrausSentientChairsOfSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/59604/' ]
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Immersive Citizens - OCS patch.esp'
+    req:
+      - <<: *SKSE
+        condition: 'version("MarkekrausSentientChairsOfSkyrim.esp", "4.1.0", >=)'
+    clean:
+      - crc: 0x96C5D33E
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Populated Cities Towns Villages Legendary.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2005/'
@@ -8614,6 +8626,35 @@ plugins:
   - name: 'Marc.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30404/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
+
+  - name: 'MarkekrausCheatJewelry.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58973/' ]
+    req: [ *SKSE ]
+    clean:
+      - crc: 0xDDE13D1B
+        util: 'SSEEdit v4.0.4'
+  - name: 'MarkekrausCheatJewelry.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58973/' ]
+    msg: [ *obsolete ]
+
+  - name: 'MarkekrausCheatPowers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58892/' ]
+    req: [ *SKSE ]
+    clean:
+      - crc: 0x0AABCA29
+        util: 'SSEEdit v4.0.4'
+  - name: 'MarkekrausCheatPowers.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58892/' ]
+    msg: [ *obsolete ]
+
+  - name: 'MarkekrausExitCombatPower.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58651/' ]
+    clean:
+      - crc: 0x92DB7B37
+        util: 'SSEEdit v4.0.4'
+  - name: 'MarkekrausExitCombatPower.esl'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58651/' ]
+    msg: [ *obsolete ]
 
   - name: 'Master of Disguise - Special Edition.esp'
     url: [ 'https://letsplaywithfire.com/releases/file/master-of-disguise/' ]
@@ -15827,6 +15868,17 @@ plugins:
       - crc: 0x153F7E3C
         util: 'SSEEdit v4.0.4'
 
+  - name: 'AzurasShield_SE_Eng.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12998/'
+        name: 'Azura''s Shield SE'
+    dirty:
+      - <<: *quickClean
+        crc: 0x368B3AE2
+        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+        udr: 3
+
   - name: 'BandolierForNPC.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19093/' ]
     tag:
@@ -16866,6 +16918,29 @@ plugins:
         crc: 0x182B6D93
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
+
+  - name: 'MarkekrausBarstoolBrawler.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61354/' ]
+    req: [ *SKSE ]
+    clean:
+      - crc: 0xC64C56A5
+        util: 'SSEEdit v4.0.4'
+
+  - name: 'MarkekrausChairhammers.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61304/' ]
+    req: [ *SKSE ]
+    clean:
+      - crc: 0xAB3D127D
+        util: 'SSEEdit v4.0.4'
+
+  - name: 'MarkekrausChairrows.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61168/' ]
+    req:
+      - <<: *SKSE
+        condition: 'version("MarkekrausChairrows.esp", "2.0.0", >=)'
+    clean:
+      - crc: 0x97C6EF29
+        util: 'SSEEdit v4.0.4'
 
   - name: 'mihaildwarvenpowerarmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30317/' ]
@@ -19500,6 +19575,31 @@ plugins:
         crc: 0x883638C7
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 14
+
+  - name: 'Solitude Docks.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13922/'
+        name: 'Solitude Docks'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/33777/'
+        name: 'Solitude Docks Updated'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64071/'
+        name: 'Rob''s Bug Fixes - Solitude Docks Updated'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Solitude Docks Updated](https://www.nexusmods.com/skyrimspecialedition/mods/64071/)' ]
+        condition: 'checksum("Solitude Docks.esp", 650E43BB) or checksum("Solitude Docks.esp", DDAD84FE)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x650E43BB
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 28
+      - <<: *quickClean
+        crc: 0xDDAD84FE
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+    clean:
+      - crc: 0x6574C43C
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Solitude Skyway SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8250/' ]
@@ -22548,6 +22648,22 @@ plugins:
       - crc: 0x5D72E944
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'SurWR.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37982/'
+        name: 'Capital Whiterun Expansion'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63355/'
+        name: 'Rob''s Bug Fixes - Capital Whiterun Expansion'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Capital Whiterun Expansion](https://www.nexusmods.com/skyrimspecialedition/mods/63355/)' ]
+        condition: 'checksum("SurWR.esp", D96CF5BF)'
+    clean:
+      - crc: 0xD96CF5BF
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x38E0471A
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'TacticalValtheim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9101/' ]
     inc: [ 'Druid Den Redux.esp' ]
@@ -22894,6 +23010,26 @@ plugins:
     clean:
       - crc: 0xABF1B47B
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
+
+  - name: 'WhiterunDefenses.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40094/'
+        name: 'Fortified Whiterun'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70186/'
+        name: 'Rob''s Bug Fixes - Fortified Whiterun'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Fortified Whiterun](https://www.nexusmods.com/skyrimspecialedition/mods/70186/)' ]
+        condition: 'checksum("WhiterunDefenses.esp", 9A3B2ACE)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x9A3B2ACE
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
+        udr: 2
+    clean:
+      - crc: 0xFBB83F99
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'WhiterunValley2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11917/' ]
@@ -24885,6 +25021,16 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 4
 
+  - name: 'TheScarlett.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2434/'
+        name: 'The Scarlett - A Buildable Ship'
+    dirty:
+      - <<: *quickClean
+        crc: 0xB86273B2
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 35
+
   - name: 'TWFortGS.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25693/' ]
     dirty:
@@ -25442,6 +25588,22 @@ plugins:
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: 'Dawn of RedBag''s Solitude.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54979/'
+        name: 'Dawn of RedBag''s Solitude'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64731/'
+        name: 'Rob''s Bug Fixes - Dawn of RedBag''s Solitude'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - Dawn of RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64731/)' ]
+        condition: 'checksum("Dawn of RedBag''s Solitude.esp", D1DD5679)'
+    clean:
+      - crc: 0xD1DD5679
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x76F44BFE
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'DiverseSkyimCivilWarFix.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/47939/'
@@ -25629,6 +25791,52 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35910/'
         name: 'JK''s Interiors Patch Collection'
     after: [ 'SFCO - 3DNPC Patch.esp' ]
+
+  - name: 'JK''s RedBag''s Solitude.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50131/'
+        name: 'JK''s RedBag''s Solitude'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64069/'
+        name: 'Rob''s Bug Fixes - JK''s RedBag''s Solitude'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - JK''s RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64069/)' ]
+        condition: 'checksum("JK''s RedBag''s Solitude.esp", C02B497D)'
+    clean:
+      - crc: 0xC02B497D
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x8EE3E790
+        util: 'SSEEdit v4.0.4c'
+  - name: 'JK''s RedBag''s Solitude - Dawn of Skyrim patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50131/'
+        name: 'JK''s RedBag''s Solitude'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64069/'
+        name: 'Rob''s Bug Fixes - JK''s RedBag''s Solitude'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - JK''s RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64069/)' ]
+        condition: 'checksum("JK''s RedBag''s Solitude - Dawn of Skyrim Patch.esp", 57A26548)'
+    clean:
+      - crc: 0x57A26548
+        util: 'SSEEdit v4.0.4b'
+      - crc: 0x28033725
+        util: 'SSEEdit v4.0.4c'
+
+  - name: 'JKs Skyrim - Rob''s Bug Fixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63379/'
+        name: 'Rob''s Bug Fixes - JK''s Skyrim'
+    clean:
+      - crc: 0x1C677C6F
+        util: 'SSEEdit v4.0.4c'
+  - name: 'JKs Skyrim - Farming Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63379/'
+        name: 'Rob''s Bug Fixes - JK''s Skyrim'
+    clean:
+      - crc: 0xA100F3FF
+        util: 'SSEEdit v4.0.4b'
 
   - name: 'JRWheelsOfLullPatch.esp'
     url:
@@ -25832,6 +26040,22 @@ plugins:
         type: say
         subs: [ '**RBB - JKs Skyrim Patch.esp**' ]
         condition: 'active("RBB - JKs Skyrim Patch.esp")'
+
+  - name: 'RedBag''s Solitude Docks Updated.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50626/'
+        name: 'RedBag''s Solitude Docks Updated'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64102/'
+        name: 'Rob''s Bug Fixes - RedBag''s Solitude Docks Updated'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - RedBag''s Solitude Docks Updated](https://www.nexusmods.com/skyrimspecialedition/mods/64102/)' ]
+        condition: 'checksum("RedBag''s Solitude Docks Updated.esp", FC4C5AEF)'
+    clean:
+      - crc: 0xFC4C5AEF
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xE405E000
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Requiem - Legacy of the Dragonborn.esp'
     url:
@@ -26745,70 +26969,6 @@ plugins:
         util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
 
-  - name: 'MarkekrausSentientChairsOfSkyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/59604/' ]
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Immersive Citizens - OCS patch.esp'
-    req:
-      - <<: *SKSE
-        condition: 'version("MarkekrausSentientChairsOfSkyrim.esp", "4.1.0", >=)'
-    clean:
-      - crc: 0x96C5D33E
-        util: 'SSEEdit v4.0.4'
-
-  - name: 'MarkekrausChairhammers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61304/' ]
-    req: [ *SKSE ]
-    clean:
-      - crc: 0xAB3D127D
-        util: 'SSEEdit v4.0.4'
-
-  - name: 'MarkekrausChairrows.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61168/' ]
-    req:
-      - <<: *SKSE
-        condition: 'version("MarkekrausChairrows.esp", "2.0.0", >=)'
-    clean:
-      - crc: 0x97C6EF29
-        util: 'SSEEdit v4.0.4'
-
-  - name: 'MarkekrausBarstoolBrawler.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61354/' ]
-    req: [ *SKSE ]
-    clean:
-      - crc: 0xC64C56A5
-        util: 'SSEEdit v4.0.4'
-
-  - name: 'MarkekrausCheatPowers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58892/' ]
-    req: [ *SKSE ]
-    clean:
-      - crc: 0x0AABCA29
-        util: 'SSEEdit v4.0.4'
-  - name: 'MarkekrausCheatPowers.esl'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58892/' ]
-    msg: [ *obsolete ]
-
-  - name: 'MarkekrausCheatJewelry.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58973/' ]
-    req: [ *SKSE ]
-    clean:
-      - crc: 0xDDE13D1B
-        util: 'SSEEdit v4.0.4'
-  - name: 'MarkekrausCheatJewelry.esl'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58973/' ]
-    msg: [ *obsolete ]
-
-  - name: 'MarkekrausExitCombatPower.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58651/' ]
-    clean:
-      - crc: 0x92DB7B37
-        util: 'SSEEdit v4.0.4'
-  - name: 'MarkekrausExitCombatPower.esl'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58651/' ]
-    msg: [ *obsolete ]
-
   - name: 'EdhildilsDMRAstore.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/39279/'
@@ -26818,163 +26978,3 @@ plugins:
         crc: 0x9E8F3CA5
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 17
-
-  - name: 'TheScarlett.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2434/'
-        name: 'The Scarlett - A Buildable Ship'
-    dirty:
-      - <<: *quickClean
-        crc: 0xB86273B2
-        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 35
-
-  - name: 'AzurasShield_SE_Eng.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12998/'
-        name: 'Azura''s Shield SE'
-    dirty:
-      - <<: *quickClean
-        crc: 0x368B3AE2
-        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-        udr: 3
-
-  - name: 'SurWR.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37982/'
-        name: 'Capital Whiterun Expansion'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63355/'
-        name: 'Rob''s Bug Fixes - Capital Whiterun Expansion'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - Capital Whiterun Expansion](https://www.nexusmods.com/skyrimspecialedition/mods/63355/)' ]
-        condition: 'checksum("SurWR.esp", D96CF5BF)'
-    clean:
-      - crc: 0xD96CF5BF
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0x38E0471A
-        util: 'SSEEdit v4.0.4c'
-
-  - name: 'JKs Skyrim - Rob''s Bug Fixes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63379/'
-        name: 'Rob''s Bug Fixes - JK''s Skyrim'
-    clean:
-      - crc: 0x1C677C6F
-        util: 'SSEEdit v4.0.4c'
-  - name: 'JKs Skyrim - Farming Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63379/'
-        name: 'Rob''s Bug Fixes - JK''s Skyrim'
-    clean:
-      - crc: 0xA100F3FF
-        util: 'SSEEdit v4.0.4b'
-
-  - name: 'JK''s RedBag''s Solitude.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50131/'
-        name: 'JK''s RedBag''s Solitude'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64069/'
-        name: 'Rob''s Bug Fixes - JK''s RedBag''s Solitude'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - JK''s RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64069/)' ]
-        condition: 'checksum("JK''s RedBag''s Solitude.esp", C02B497D)'
-    clean:
-      - crc: 0xC02B497D
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0x8EE3E790
-        util: 'SSEEdit v4.0.4c'
-  - name: 'JK''s RedBag''s Solitude - Dawn of Skyrim patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50131/'
-        name: 'JK''s RedBag''s Solitude'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64069/'
-        name: 'Rob''s Bug Fixes - JK''s RedBag''s Solitude'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - JK''s RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64069/)' ]
-        condition: 'checksum("JK''s RedBag''s Solitude - Dawn of Skyrim Patch.esp", 57A26548)'
-    clean:
-      - crc: 0x57A26548
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0x28033725
-        util: 'SSEEdit v4.0.4c'
-
-  - name: 'Dawn of RedBag''s Solitude.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54979/'
-        name: 'Dawn of RedBag''s Solitude'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64731/'
-        name: 'Rob''s Bug Fixes - Dawn of RedBag''s Solitude'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - Dawn of RedBag''s Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/64731/)' ]
-        condition: 'checksum("Dawn of RedBag''s Solitude.esp", D1DD5679)'
-    clean:
-      - crc: 0xD1DD5679
-        util: 'SSEEdit v4.0.4c'
-      - crc: 0x76F44BFE
-        util: 'SSEEdit v4.0.4c'
-
-  - name: 'Solitude Docks.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13922/'
-        name: 'Solitude Docks'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/33777/'
-        name: 'Solitude Docks Updated'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64071/'
-        name: 'Rob''s Bug Fixes - Solitude Docks Updated'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - Solitude Docks Updated](https://www.nexusmods.com/skyrimspecialedition/mods/64071/)' ]
-        condition: 'checksum("Solitude Docks.esp", 650E43BB) or checksum("Solitude Docks.esp", DDAD84FE)'
-    dirty:
-      - <<: *quickClean
-        crc: 0x650E43BB
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 28
-      - <<: *quickClean
-        crc: 0xDDAD84FE
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-    clean:
-      - crc: 0x6574C43C
-        util: 'SSEEdit v4.0.4c'
-
-  - name: 'RedBag''s Solitude Docks Updated.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50626/'
-        name: 'RedBag''s Solitude Docks Updated'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64102/'
-        name: 'Rob''s Bug Fixes - RedBag''s Solitude Docks Updated'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - RedBag''s Solitude Docks Updated](https://www.nexusmods.com/skyrimspecialedition/mods/64102/)' ]
-        condition: 'checksum("RedBag''s Solitude Docks Updated.esp", FC4C5AEF)'
-    clean:
-      - crc: 0xFC4C5AEF
-        util: 'SSEEdit v4.0.4c'
-      - crc: 0xE405E000
-        util: 'SSEEdit v4.0.4c'
-
-  - name: 'WhiterunDefenses.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40094/'
-        name: 'Fortified Whiterun'
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70186/'
-        name: 'Rob''s Bug Fixes - Fortified Whiterun'
-    msg:
-      - <<: *patchUpdateAvailable
-        subs: [ '[Rob''s Bug Fixes - Fortified Whiterun](https://www.nexusmods.com/skyrimspecialedition/mods/70186/)' ]
-        condition: 'checksum("WhiterunDefenses.esp", 9A3B2ACE)'
-    dirty:
-      - <<: *quickClean
-        crc: 0x9A3B2ACE
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
-        udr: 2
-    clean:
-      - crc: 0xFBB83F99
-        util: 'SSEEdit v4.0.4c'
