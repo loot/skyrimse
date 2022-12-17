@@ -22745,12 +22745,22 @@ plugins:
         itm: 26
 
   - name: 'The Great City of Dawnstar.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19491/' ]
-    msg: [ *alreadyInTGC ]
+    url: 
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19491/'
+        name: 'The Great City of Dawnstar SSE Edition'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66898/'
+        name: 'Rob''s Bug Fixes - TGC Dawnstar'
+    msg: 
+      - <<: *alreadyInTGC
+      - <<: *patchUpdateAvailable
+        subs: [ '[Rob''s Bug Fixes - TGC Dawnstar](https://www.nexusmods.com/skyrimspecialedition/mods/66898/)' ]
+        condition: 'checksum("The Great City of Dawnstar.esp", BB653BFB)'
     clean:
       - crc: 0xBB653BFB
         util: 'SSEEdit v4.0.3'
-
+      - crc: 0xEC69D3F3
+        util: 'SSEEdit v4.0.4d'
+        
   - name: '(The Great City of |TGCo)Dragon Bridge( - Arthmoor DB Patch)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19962/'
