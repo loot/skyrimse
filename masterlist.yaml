@@ -9059,9 +9059,15 @@ plugins:
         condition: 'version("TreasureHunter.esp", "1.2.1", <)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TreasureHunter_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-    clean:
-      - crc: 0xC4F752C9
-        util: 'SSEEdit v4.0.4c'
+      - <<: *wildEdits
+        subs: [ 'Remove **000CA448** from **TreasureHunter.esp**.' ]
+        condition: 'checksum("TreasureHunter.esp", C4F752C9)'
+    tag:
+      - C.Location
+      - Delev
+      - Invent.Add
+      - Invent.Remove
+      - ObjectBounds
 
   - name: 'tpos_ultimate_esm.esp'
     url:
