@@ -16303,19 +16303,51 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/51439/'
         name: 'C.O.I.N. - Coins of Interesting Natures'
   - name: 'C.O.I.N.esp'
+    req:
+      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
+        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+        condition: 'file("C.O.I.N_SWAP.ini")'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Beyond Skyrim - Bruma' ]
+        condition: 'active("BSAssets.esm") and not active("C.O.I.N. - Beyond Skyrim Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Saints & Seducers (Creation Club)' ]
+        condition: 'active("ccBGSSSE025-AdvDSGS.esm") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'The Cause (Creation Club)' ]
+        condition: 'active("ccbgssse067-daedinv.esm") and not active("C.O.I.N. - The Cause Patch.esp")'
     tag:
       - Delev
       - Names
+      - ObjectBounds
     clean:
-      - crc: 0x562EEE44
-        util: 'SSEEdit v4.0.4b'
-  - name: 'C.O.I.N. - USSEP Patch.esp'
+      - crc: 0xF982CC2C
+        util: 'SSEEdit v4.0.4c'
+  - name: 'C.O.I.N. - Beyond Skyrim Patch.esp'
+    tag:
+      - Graphics
+      - Keywords
+      - ObjectBounds
+      - Stats
+    clean:
+      - crc: 0xC90FC44E
+        util: 'SSEEdit v4.0.4c'
+  - name: 'C.O.I.N. - Saints and Seducers Patch.esp'
+    tag:
+      - Delev
+      - Invent.Add
+      - Invent.Remove
+    clean:
+      - crc: 0xE979FDEA
+        util: 'SSEEdit v4.0.4c'
+  - name: 'C.O.I.N. - The Cause Patch.esp'
     tag:
       - Invent.Add
       - Invent.Remove
     clean:
-      - crc: 0x66DCEF96
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x6D9EC36C
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Common Clothes and Armors.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21305/' ]
