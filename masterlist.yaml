@@ -16047,15 +16047,22 @@ plugins:
     req: [ 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp' ]
 
   - name: 'Better Skill and Quest Books Names SE.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5260/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5260/'
+        name: 'Better Skill and Quest Books Names'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("BCS_BSQBN _Patch.esp")'
-    tag: [ Names ]
+    tag:
+      - Deactivate
+      - Names
     clean:
-      # version: 1.0
-      - crc: 0xCF434879
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x6EF090B3
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xC638EA57
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xF520CBBF
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'BetterTreasuryHouse.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2485/' ]
