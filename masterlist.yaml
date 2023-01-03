@@ -10828,25 +10828,33 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: '(Reliquary of Myth|RoM - .*)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31612/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31612/'
+        name: 'Reliquary of Myth - Artifact Overhaul'
+  - name: '(Reliquary of Myth|RoM - Dragon Priest Masks Pack)\.esp'
+    tag:
+      - EffectStats
+      - Enchantments
+      - EnchantmentStats
+      - Sound
+      - SpellStats
   - name: 'Reliquary of Myth.esp'
     tag:
       - Actors.Perks.Add
       - Actors.Spells
-      - EffectStats
-      - EnchantmentStats
-      - Graphics
       - Invent.Remove
-      - Keywords
-      - Names
       - NPC.DefaultOutfit
-      - Sound
-      - SpellStats
-      - Stats
-      - Text
     clean:
-      - crc: 0x9B9F72F3
-        util: 'SSEEdit v4.0.3g'
+      - crc: 0x01EC13E9
+        util: 'SSEEdit v4.0.4c'
+  - name: 'RoM - Dragon Priest Masks Pack.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.Stats
+      - Graphics
+    clean:
+      - crc: 0x28BB988A
+        util: 'SSEEdit v4.0.4c'
   - name: 'RoM - ISC + MLU Patch.esp'
     req: [ 'MLU.esp' ]
 
