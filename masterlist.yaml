@@ -21930,7 +21930,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'OCW_.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20514/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20514/'
+        name: 'Obscure''s College of Winterhold'
   - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
     after:
       - name: '3DNPC.esp'
@@ -22218,9 +22220,13 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Winterhold Restored & WR JKs Skyrim Patch' ]
         condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
+    tag:
+      - -Actors.Factions
+      - -Invent.Add
+      - -Invent.Remove
     clean:
       - crc: 0x318C6177
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4c'
   - name: 'OCW_CellSettings.esp'
     group: *cellSettingsGroup
     after:
