@@ -13936,6 +13936,42 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
 
+  - name: '(College Of Winterhold - Quest Expansion|COW_(AtYourOwnPace|EasyEdition|RS|VR)(_)?Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66666/'
+        name: 'College of Winterhold - Quest Expansion'
+  - name: 'College Of Winterhold - Quest Expansion.esp'
+    after: [ 'CoW Entry Requirements.esp' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'At Your Own Pace - College of Winterhold' ]
+        condition: 'active("At Your Own Pace - College of Winterhold.esp") and not active("Cow_AtYourOwnPace_Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSkyrimChildren.esm") and not active("COW_RS_Patch.esp")'
+    clean:
+      - crc: 0xDB3F4996
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Cow_AtYourOwnPace_Patch.esp'
+    clean:
+      - crc: 0x6E06CCFE
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Cow_EasyEditionPatch.esp'
+    clean:
+      - crc: 0xDED7A4FF
+        util: 'SSEEdit v4.0.4c'
+  - name: 'COW_RS_Patch.esp'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0x3F4B5757
+        util: 'SSEEdit v4.0.4c'
+  - name: 'COW_VR_Patch.esp'
+    clean:
+      - crc: 0x7D9DE4C9
+        util: 'SSEEdit v4.0.4c'
+
   - name: '(CWRepairs|CW_Enjia|CWR_IC_Patch|CWR_OC_Patch|CWRepairSGW|CWRNimriel|CWR_JKTemple_Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20668/'
@@ -20241,6 +20277,8 @@ plugins:
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("Book Covers Skyrim.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("Book Covers Skyrim.esp"))'
       - name: 'CollegeEntry.esp'
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("CollegeEntry.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("CollegeEntry.esp"))'
+      - name: 'College Of Winterhold - Quest Expansion.esp'
+        condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("College Of Winterhold - Quest Expansion.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("College Of Winterhold - Quest Expansion.esp"))'
       - name: 'Cutting Room Floor.esp'
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("Cutting Room Floor.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("Cutting Room Floor.esp"))'
       - name: 'Enlightened College of Winterhold.esp'
