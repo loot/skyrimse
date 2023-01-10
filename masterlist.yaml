@@ -25540,19 +25540,23 @@ plugins:
 
 ###### Legacy of the Dragonborn ######
   - name: 'LegacyoftheDragonborn.esm'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
+        name: 'Legacy of the Dragonborn'
     after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
     msg:
       - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494' ]
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494/' ]
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not file("meshes/dbm resources/jadeclaw.nif")'
-    tag: [ ObjectBounds ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x55BD6CFC
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+    tag:
+      - Actors.ACBS
+      - ObjectBounds
+      - SpellStats
+      - Text
+    clean:
+      - crc: 0x1AEFC268
+        util: 'SSEEdit v4.0.4c'
   ### Legacy of the Dragonborn Patches ###
   - name: 'DBM_*.\.esp'
     url:
