@@ -17554,7 +17554,9 @@ plugins:
         condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
 
   - name: 'PrvtIRoyalArmory.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6994/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6994/'
+        name: 'Royal Armory - New Artifacts'
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_RoyalArmory_Patch.esp")'
@@ -17562,10 +17564,12 @@ plugins:
         condition: 'active("MLU.esp") and not active("MLU_RoyalArmory_patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Royal Armory.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Royal Armory Tweaks and Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/26398/)' ]
+        condition: 'not active("Royal Armory Tweaks(-ICoW)?\.esp")'
     clean:
-      # version: 2.2
       - crc: 0x06EC2D98
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'PsijicTeleportSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5643/' ]
