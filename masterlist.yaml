@@ -17867,6 +17867,47 @@ plugins:
       - crc: 0x1F17FC44
         util: 'SSEEdit v4.0.2f'
 
+  - name: 'SweetRollVariants.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71911/'
+        name: 'Actual Sweet Roll Variants (Base Object Swapper - New Flavours - High Poly)'
+  - name: 'SweetRollVariants.esp'
+    req:
+      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
+        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Pets of Skyrim (Creation Club)' ]
+        condition: 'active("ccvsvsse002-pets.esl") and not active("SweetRollVariants_CC_Pets.esp")'
+    tag:
+      - Delev
+      - Graphics
+    clean:
+      - crc: 0x94DB0A4C
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SweetRollVariants_ApothecaryFood.esp'
+    clean:
+      - crc: 0xBCFA63A0
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SweetRollVariants_BSBruma.esp'
+    clean:
+      - crc: 0xF20B4006
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SweetRollVariants_CC_Pets.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x904892A9
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+  - name: 'SweetRollVariants_Lucien.esp'
+    clean:
+      - crc: 0xA9488545
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SweetRollVariants_OrderMenu.esp'
+    clean:
+      - crc: 0xBA220ADF
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Tale of Two Mers.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/43074/'
