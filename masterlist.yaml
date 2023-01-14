@@ -15582,6 +15582,34 @@ plugins:
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_SPERG_Patch.esp")'
 
+  - name: 'Stealth Skills Rebalanced.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/52768/'
+        name: 'Stealth Skills Rebalanced'
+    req: [ *SKSE ]
+    msg:
+      - <<: *useVersion
+        subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and checksum("Stealth Skills Rebalanced.esp", 9380D88F)'
+    tag:
+      - EffectStats
+      - Enchantments
+      - EnchantmentStats
+      - Graphics
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - Names
+      - ObjectBounds
+      - SpellStats
+      - Stats
+      - Text
+    clean:
+      - crc: 0x9380D88F
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x9EF247B0
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Vampiric Thirst Redone.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/13549/'
