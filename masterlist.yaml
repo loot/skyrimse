@@ -13049,6 +13049,7 @@ plugins:
         subs: [ 'AI Overhaul plugin' ]
         condition: 'many("AI Overhaul( Lite)?\.es[lp]")'
   - name: 'AI Overhaul.esp'
+    after: [ 'Cutting Room Floor.esp' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -25849,6 +25850,12 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'AI Overhaul & Relationship Dialogue Overhaul' ]
         condition: 'many("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
+  - name: 'AI Overhaul - Relationship Dialogue Overhaul Patch.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("AI Overhaul - Relationship Dialogue Overhaul Patch.esp", 6A2F5E45)'
+  - name: 'AI Overhaul - RDO Updated Patch.esp'
+    req: [ 'RDO Updated.esp' ]
 
   - name: 'Amulets of Skyrim - (Tweaks and )?Fixes\.esp'
     url:
