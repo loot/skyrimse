@@ -8923,21 +8923,35 @@ plugins:
       - crc: 0x1D344547
         util: 'SSEEdit v4.0.4b'
 
+  - name: '(Open World Loot.*|OWL (Challenge Mode|No More Dungeon Gold|Randomized Special Loot))\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/49681/'
+        name: 'Open World Loot - Encounter Zone and Loot Overhaul'
   - name: 'Open World Loot.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49681/' ]
     after: [ 'Awesome Artifacts.esp' ]
     tag:
-      - Invent.Add
+      - Actors.ACBS
       - Invent.Change
-      - Invent.Remove
       - NPC.DefaultOutfit
       - Outfits.Add
       - Outfits.Remove
     dirty:
       - <<: *quickClean
-        crc: 0x1270129B
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 26
+        crc: 0x18D3FD5B
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+  - name: 'OWL Challenge Mode.esp'
+    clean:
+      - crc: 0x85EFA58A
+        util: 'SSEEdit v4.0.4c'
+  - name: 'OWL No More Dungeon Gold.esp'
+    clean:
+      - crc: 0xF310087B
+        util: 'SSEEdit v4.0.4c'
+  - name: 'OWL Randomized Special Loot.esp'
+    clean:
+      - crc: 0x179FB51D
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Pause after loading.esp'
     url:
