@@ -19419,10 +19419,10 @@ plugins:
     msg:
       - <<: *patch3rdParty_AOOPH
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Cutting Room Floor Patch.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_KPH_TCIY
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
       - <<: *patch3rdParty_RSCPC
@@ -19430,16 +19430,12 @@ plugins:
       - *patch3rdParty_SRPC
       - <<: *patch3rdParty
         subs:
-          - 'No Snow Under the Roof **Prometheus_No_snow_Under_the_roof.esp**'
+          - 'No Snow Under the Roof'
           - '[Cutting Room Floor - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
         condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
-    tag:
-      - Actors.Voice
-      - NPC.CrimeFaction
-      - R.ChangeSpells
     clean:
-      - crc: 0xC0CFC737
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x98C35BF6
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'danyanavysofskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13447/' ]
