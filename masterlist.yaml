@@ -3029,6 +3029,27 @@ plugins:
       - crc: 0x7B69E509
         util: 'SSEEdit v4.0.4b'
 
+  - name: '(PSI|Thunderbolt fix test)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83935/'
+        name: 'Parallax Spell Impacts'
+  - name: 'PSI.esp'
+    req: [ *ENBSeries ]
+    msg:
+      - <<: *includesX
+        subs: [ '[Deadly Spell Impacts Transparency Fix for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/41284/)' ]
+        condition: 'active("DeadlySpellImpacts Transparency Fix.esp")'
+    tag: [ Graphics ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x29F560FD
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+  - name: 'Thunderbolt fix test.esp'
+    clean:
+      - crc: 0xFBA5D8C0
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Saeri_AetherialCrown.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4309/'
