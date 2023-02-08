@@ -22193,6 +22193,8 @@ plugins:
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'CollegeEntry.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+      - name: 'CollegeOfWinterholdImmersive.esp'
+        condition: 'file("UltimateCollege.esp")'
       - name: 'CoW Bridge Fix.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Cutting Room Floor.esp'
@@ -22233,12 +22235,10 @@ plugins:
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'Undeath.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
-      - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
       - name: 'WACCF_Armor and Clothing Extension.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
-      - name: 'CollegeOfWinterholdImmersive.esp'
-        condition: 'file("UltimateCollege.esp")'
+      - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     inc:
       - 'accessible saarthal and labyrinthian.esp'
       - 'ApepiBetterCollege.esp'
@@ -22253,8 +22253,6 @@ plugins:
       - 'EspeciallySpecialWinterhold.esp'
       - 'FTWB - Fix that Winterhold Bridge.esp'
       - 'Followers.esp'
-      - name: 'mihailspectres.esp'
-        condition: 'checksum("mihailspectres.esp", 95F0F68D)'
       - 'MagicalCollegeofWinterhold.esp'
       - name: 'MagiCollege.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -22268,7 +22266,7 @@ plugins:
         subs: [ '[Guardian Spectres](https://www.nexusmods.com/skyrimspecialedition/mods/30772/)' ]
         condition: 'checksum("mihailspectres.esp", 95F0F68D)'
       - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787' ]
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/787/' ]
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
@@ -22290,34 +22288,34 @@ plugins:
         condition: 'active("Audio Overhaul Skyrim.esp") and not active("OCW_AO_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Better Dynamic Snow' ]
-        condition: 'active("Better Dynamic Snow.esp") and not active("OCW_BDS_FEPatch.esp")'
+        condition: 'active("Better Dynamic Snow.esp") and not active("OCW_BDS_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Better Spell Learning' ]
-        condition: 'active("Better Spell Learning.esp") and not active("OCW_BSL_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Better Spell Learning.esp") and not active("OCW_BSL_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Black Mage Armor' ]
         condition: 'active("Black Mage Armor SE.esp") and not active("OCW_BMA_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Blacksmith Forge Water Fix' ]
-        condition: 'active("Blacksmith Forge Water Fix SE USSEP.esp") and not active("OCW_BSFWF_FEPatch.esp")'
+        condition: 'active("Blacksmith Forge Water Fix SE USSEP.esp") and not active("OCW_BSFWF_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Book Covers Skyrim' ]
-        condition: 'active("Book Covers Skyrim.esp") and not active("OCW_BCS_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Book Covers Skyrim.esp") and not active("OCW_BCS_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Book Covers Skyrim - Lost Library' ]
-        condition: 'active("Book Covers Skyrim - Lost Library.esp") and not active("OCW_BCS-LL_FEPatch.esp")'
+        condition: 'active("Book Covers Skyrim - Lost Library.esp") and not active("OCW_BCS-LL_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Cathedral Character Overhaul - Humans Mer and Beastfolk' ]
-        condition: 'active("HMB TCC.esp") and not active("OCW_HMB_FEPatch.esp")'
+        condition: 'active("HMB TCC.esp") and not active("OCW_HMB_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'College Modifications' ]
-        condition: 'active("CollegeModifications.esp") and not active("OCW_CM_FEPatch.esp")'
+        condition: 'active("CollegeModifications.esp") and not active("OCW_CM_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Dynamic Firewood Stacks' ]
         condition: 'active("Dynamic Firewood Stacks.esp") and not active("OCW_DFS_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lighting for ENB (ELE)' ]
-        condition: 'active("ELE_SSE.esp") and not active("OCW_(ELE|ELEA)_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("ELE_SSE.esp") and not active("OCW_(ELE|ELEA)_FEPatch.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("OCW_ELFX_FEPatch.esp") and not active("UltimateCollege.esp")'
@@ -22326,37 +22324,34 @@ plugins:
         condition: 'active("ELFX - Exteriors.esp") and not active("OCW_ELFXE_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Enlightened College of Winterhold' ]
-        condition: 'active("Enlightened College of Winterhold.esp") and not active("OCW_ECW_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Enlightened College of Winterhold.esp") and not active("OCW_ECW_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Female Mannequins' ]
-        condition: 'active("female mannequins.esp") and not active("OCW_FM_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("female mannequins.esp") and not active("OCW_FM_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Flora Respawn Fix' ]
-        condition: 'active("FloraRespawnFix.esp") and not active("OCW_FRF_FEPatch.esp")'
+        condition: 'active("FloraRespawnFix.esp") and not active("OCW_FRF_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Improved College Entry' ]
-        condition: 'active("CollegeEntry.esp") and not active("OCW_ICE_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("CollegeEntry.esp") and not active("OCW_ICE_FEPatch.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Immersive College NPCs' ]
         condition: 'active("ICNs_ImmersiveCollegeNPCs.esp") and not active("OCW_ICNs_OE_FEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Immersive Laundry' ]
-        condition: 'active("Laundry.esp") and not active("OCW_IL_FEPatch.esp")'
+        condition: 'active("Laundry.esp") and not active("OCW_IL_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'iNeed' ]
-        condition: 'active("iNeed.esp") and not active("OCW_iN_FEPatch.esp")'
+        condition: 'active("iNeed.esp") and not active("OCW_iN_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'iNeed - Extended' ]
-        condition: 'active("iNeed - Extended.esp") and not active("OCW_iNE_FEPatch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Interesting NPCs' ]
-        condition: 'active("3dnpc.esp") and not active("OCW_3DNPC_FEPatch.esp")'
+        condition: 'active("iNeed - Extended.esp") and not active("OCW_iNE_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Konahrik''s Accoutrements' ]
         condition: 'active("konahrik_accoutrements.esp") and not active("OCW_KA_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Lanterns Of Skyrim II' ]
-        condition: 'active("LoS II - Tamriel Master Lights.esp") and not active("OCW_LoS2-TML_FEPatch.esp")'
+        condition: 'active("LoS II - Tamriel Master Lights.esp") and not active("OCW_LoS2-TML_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'LeanWolf''s Aemer''s Refuge' ]
         condition: 'active("LeanWolfs Aemers Refuge SE.esp") and not active("OCW_(AR_|AR_RoB_|LAR_|LAR_RoB_Merged)FEPatch.esp") and not active("UltimateCollege.esp")'
@@ -22368,25 +22363,25 @@ plugins:
         condition: 'active("BGCollectables.esp") and not active("OCW_BGC_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Lootable Woodpiles' ]
-        condition: 'active("LootableWoodpiles.esp") and not active("OCW_LWP_FEPatch.esp")'
+        condition: 'active("LootableWoodpiles.esp") and not active("OCW_LWP_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Luminosity Lighting Overhaul' ]
-        condition: 'active("Luminosity Lighting Overhaul.esp") and not active("OCW_LLO_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Luminosity Lighting Overhaul.esp") and not active("OCW_LLO_FEPatch.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'M''rissi''s Tails of Troubles SE' ]
         condition: 'active("MrissiTailOfTroubles.esp") and not active("OCW_MToT_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Magic College Music' ]
-        condition: 'active("MagiCollege.esp") and not active("OCW_(MCMSfA_|SoS_MCMSfA_Merged)FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("MagiCollege.esp") and not active("OCW_(MCMSfA_|SoS_MCMSfA_Merged)FEPatch.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Map Markers Complete' ]
-        condition: 'active("Map Markers Complete.esp") and not active("OCW_MMC_FEPatch.esp")'
+        condition: 'active("Map Markers Complete.esp") and not active("OCW_MMC_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Morrowloot' ]
         condition: 'active("Morrowloot.esp") and not active("OCW_ML_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Morrowloot Miscellania' ]
-        condition: 'active("Morrowloot Miscellania - Item Distribution.esp") and not active("OCW_MLM_FEPatch.esp")'
+        condition: 'active("Morrowloot Miscellania - Item Distribution.esp") and not active("OCW_MLM_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'MorrowLoot Ultimate' ]
         condition: 'active("MLU.esp") and not active("OCW_MLU_FEPatch.esp") and not active("UltimateCollege.esp")'
@@ -22401,49 +22396,49 @@ plugins:
         condition: 'active("QuestsAreInSkyrimUSSEP.esp") and not active("OCW_QaiS_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.03", >=)'
       - <<: *patchIncluded
         subs: [ 'Realistic Winterhold' ]
-        condition: 'active("RealisticWinterhold.esp") and not active("OCW_RW_FEPatch.esp")'
+        condition: 'active("RealisticWinterhold.esp") and not active("OCW_RW_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
-        condition: 'active("Rigmor.esp") and not active("OCW_(RoB_|AR_RoB_|LAR_RoB_Merged)FEPatch.esp")'
+        condition: 'active("Rigmor.esp") and not active("OCW_(RoB_|AR_RoB_|LAR_RoB_Merged)FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Scrollwriting in Skyrim' ]
-        condition: 'active("Scrollwriting.esp") and not active("OCW_SW_FEPatch.esp")'
+        condition: 'active("Scrollwriting.esp") and not active("OCW_SW_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Skyrim 3D Trees and Plants' ]
-        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("OCW_3DTaP_FEPatch.esp")'
+        condition: 'active("S3DTrees NextGenerationForests.esp") and not active("OCW_3DTaP_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization' ]
-        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("OCW_SPO_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", <)'
+        condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("OCW_SPO_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", <)'
       - <<: *patchIncluded
         subs: [ 'Snazzy Furniture and Clutter Overhaul' ]
         condition: 'active("Snazzy Furniture and Clutter Overhaul.esp") and not active("OCW_SFCO_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Soulmancer Music Merge' ]
-        condition: 'active("Soulmancer Soundtrack - NoVindDun.esp") and not active("(OCW_SoS_SmMM_MergedFEPatch|SoulMusic_OCoW_Patch)\.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Soulmancer Soundtrack - NoVindDun.esp") and not active("(OCW_SoS_SmMM_MergedFEPatch|SoulMusic_OCoW_Patch)\.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Sounds of Skyrim Complete' ]
-        condition: 'active("SoundsofSkyrimComplete.esp") and not active("OCW_SoS_((MCMSfA|SmMM)_Merged)?FEPatch.esp")'
+        condition: 'active("SoundsofSkyrimComplete.esp") and not active("OCW_SoS_((MCMSfA|SmMM)_Merged)?FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Sounds of Skyrim Complete Edition MCM' ]
-        condition: 'active("Sounds of Skyrim - Complete Edition.esp") and not active("OCW_SoS-A_FEPatch.esp")'
+        condition: 'active("Sounds of Skyrim - Complete Edition.esp") and not active("OCW_SoS-A_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Spell Crafting for Skyrim' ]
-        condition: 'active("_tck_SpellCrafting.esp") and not active("OCW_SC_FEPatch.esp")'
+        condition: 'active("_tck_SpellCrafting.esp") and not active("OCW_SC_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Spell Research' ]
-        condition: 'active("SpellResearch.esp") and not active("OCW_SR_FEPatch.esp")'
+        condition: 'active("SpellResearch.esp") and not active("OCW_SR_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Tailoring Workbench' ]
-        condition: 'active("Tailoring Workbench.esp") and not active("OCW_TW_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("Tailoring Workbench.esp") and not active("OCW_TW_FEPatch.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Tamrielic Culture' ]
-        condition: 'active("WZTamrielic Culture.esp") and not active("OCW_TC_FEPatch.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
+        condition: 'active("WZTamrielic Culture.esp") and not active("OCW_TC_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
       - <<: *patchIncluded
         subs: [ 'The Great Cities - Minor Cities and Towns' ]
-        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("OCW_TGCs_FEPatch.esp") and not active("The Great City of Winterhold v4.esp")'
+        condition: 'active("The Great Cities - Minor Cities and Towns.esp") and not active("OCW_TGCs_FEPatch.esp") and not active("The Great City of Winterhold v4.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'The Great City of Winterhold' ]
-        condition: 'active("The Great City of Winterhold.esp") and not active("OCW_TGCoW_FEPatch.esp")'
+        condition: 'active("The Great City of Winterhold.esp") and not active("OCW_TGCoW_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'The Midden - Expanded' ]
         condition: 'active("middenexpandedlitesse.esp") and not active("OCW_MEL_FEPatch.esp") and not active("UltimateCollege.esp")'
@@ -22452,7 +22447,7 @@ plugins:
         condition: 'active("Tools of Kagrenac.esp") and not active("OCW_ToK_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Viewable Faction Ranks' ]
-        condition: 'active("ViewableFactionRanks.esp") and file("Interface/Translations/ViewableFactionRanks_ENGLISH.txt") and checksum("Interface/Translations/ViewableFactionRanks_ENGLISH.txt", 7ED2755E)'
+        condition: 'active("ViewableFactionRanks.esp") and checksum("Interface/Translations/ViewableFactionRanks_ENGLISH.txt", 7ED2755E) and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing & Clutter Fixes 2.0+' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("OCW_WACCF_FEPatch.esp") and not active("UltimateCollege.esp") and version("Weapons Armor Clothing & Clutter Fixes.esp", "2.0", >=)'
@@ -22461,13 +22456,13 @@ plugins:
         condition: 'active("WACCF_Armor and Clothing Extension.esp") and not active("OCW_ACE_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Winterhold College Hideout' ]
-        condition: 'active("WinterholdCollegeHideout.esp") and not active("OCW_WCH_FEPatch.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'active("WinterholdCollegeHideout.esp") and not active("OCW_WCH_FEPatch.esp") and not active("UltimateCollege.esp") and not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
       - <<: *patchIncluded
         subs: [ 'Winterhold Restored' ]
-        condition: 'active("Winterhold Restored.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_FEPatch.esp")'
+        condition: 'active("Winterhold Restored.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_FEPatch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Winterhold Restored & WR JKs Skyrim Patch' ]
-        condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
+        condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp") and not active("UltimateCollege.esp")'
     tag:
       - -Actors.Factions
       - -Invent.Add
@@ -22476,6 +22471,9 @@ plugins:
       - crc: 0x318C6177
         util: 'SSEEdit v4.0.4c'
   - name: 'OCW_CellSettings.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/44797/'
+        name: 'Ultimate College of Winterhold - an ICOW and OCW Patch'
     group: *cellSettingsGroup
     after:
       - 'ELE_SSE.esp'
@@ -22500,16 +22498,18 @@ plugins:
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
     clean:
+      # OCW
       - crc: 0xB8CF33F0
-        util: 'SSEEdit v4.0.3'
-      - crc: 0xC87408AC
-        util: 'SSEEdit v4.0.3'
+        util: 'SSEEdit v4.0.4c'
+      # UCOW
+      - crc: 0x249E2B24
+        util: 'SSEEdit v4.0.4c'
   - name: 'OCW_BDS_FEPatch.esp'
     msg: [ *alreadyInOrFixedByBDSv3_0 ]
   - name: 'OCW_SPO_FEPatch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'OCW_Obscure''s_CollegeofWinterhold.esp v1.5.02+' ]
+        subs: [ 'Obscure''s College of Winterhold v1.5.02+' ]
         condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
   - name: 'OCW_TGCs_FEPatch.esp'
     msg:
@@ -22519,7 +22519,7 @@ plugins:
   - name: 'OCW_WR2_FEPatch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'OCW_WR2_JK_FEPatch.esp' ]
+        subs: [ '**OCW_WR2_JK_FEPatch.esp**' ]
         condition: 'active("Winterhold Restored.esp") and active("Winterhold Restored - JKs Skyrim Patch.esp") and not active("OCW_WR2_JK_FEPatch.esp")'
 
   - name: 'OldHroldanRuins.esp'
