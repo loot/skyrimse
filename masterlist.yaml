@@ -151,11 +151,6 @@ prelude:
       type: say
       content: 'If you add, remove, or update plugins that alter WRLD/CELL records, remember to update this module with **xLODGen**.'
 
-    - &sortMasters
-      type: say
-      content: 'Plugin''s Masters require sorting. %1%'
-      subs: [ '[xEdit - Sort Masters](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#SortingMasterFileLoadOrders)' ]
-
     - &useBashTweakInstead
       type: say
       content: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
@@ -3366,9 +3361,6 @@ plugins:
     group: *cellMusicGroup
     # Group rules to avoid cyclic interactions
     after: [ 'Soulmancer Soundtrack - NoVindDun.esp' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Player Home Tavern Music - Special Edition.esp", 92FF02EB)'
     tag: [ C.Music ]
 
   - name: 'Reverb and Ambiance Overhaul - Skyrim.esp'
@@ -8362,42 +8354,6 @@ plugins:
       - crc: 0x102BBC11
         util: 'SSEEdit v4.0.3'
 
-  - name: 'Verdant - Altered .*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14601/'
-        name: 'Verdant - Altered Forest Grass'
-  - name: 'Verdant - Altered Forest Grass.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Forest Grass.esp", F8924BF8)'
-    clean:
-      - crc: 0x8A07AE97
-        util: 'SSEEdit v4.0.3'
-  - name: 'Verdant - Altered Forest Grass Morthal.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Forest Grass Morthal.esp", 036C1DD8)'
-  - name: 'Verdant - Altered Forest Grass Only.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Forest Grass Only.esp", 7C5A93CF)'
-  - name: 'Verdant - Altered Forest Grass Rift Green.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Forest Grass Rift Green.esp", 78928890)'
-  - name: 'Verdant - Altered Forest Grass Tundra.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Forest Grass Tundra.esp", B28CDFF8)'
-  - name: 'Verdant - Altered Rift Grass.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Rift Grass.esp", E2F0529A)'
-  - name: 'Verdant - Altered Snow Grass.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Verdant - Altered Snow Grass.esp", FF6E98BE)'
-
   - name: 'Veydosebrom( Regions)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26293/'
@@ -10205,9 +10161,6 @@ plugins:
       - crc: 0x46488209
         util: 'SSEEdit v4.0.3'
   - name: 'SAFO - Adamant.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - Adamant.esp", 50A1C57E)'
     tag: [ Text ]
   - name: 'SAFO - Aetherius.esp'
     tag: [ Text ]
@@ -10215,42 +10168,15 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("SAFO - Another Sorting Mod.esp", EB023317)'
-  - name: 'SAFO - Awesome Potions.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - Awesome Potions.esp", 9A784820)'
   - name: 'SAFO - Flora Respawn Fix.esp'
     req: [ 'FloraRespawnFix.esp' ]
-  - name: 'SAFO - Frostfall.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - Frostfall.esp", 001B87AB)'
-  - name: 'SAFO - Imperious.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - Imperious.esp", D55BB733)'
-  - name: 'SAFO - iNeed.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - iNeed.esp", 6AECAE92)'
-  - name: 'SAFO - Ordinator.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - Ordinator.esp", DC2A6715)'
   - name: 'SAFO - RND.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - RND.esp", F6CE8560)'
     tag:
       - Delev
       - Relev
       - Stats
       - Keywords
       - Graphics
-  - name: 'SAFO - SkyTEST RAP.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - SkyTEST RAP.esp", 7FB6D019)'
   - name: 'SAFO - Valdacil.esp'
     msg:
       - type: warn
@@ -10260,10 +10186,6 @@ plugins:
           - lang: de
             text: 'Dieses Plugin scheint veraltet zu sein und ist möglicherweise nicht mehr kompatibel mit der aktuellsten Version seiner Master-Dateien.'
         condition: 'checksum("SAFO - Valdacil.esp", DE73CDD3)'
-  - name: 'SAFO - Vokrii.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("SAFO - Vokrii.esp", B65E79A7)'
   - name: 'SAFO - Wounds.esp'
     req: [ 'SAFO.esp' ]
   - name: 'SAFO Leveled Items Fix.esp'
@@ -10896,9 +10818,6 @@ plugins:
     req:
       - <<: *SPID
         condition: 'file("Netch Leather Distribution_DISTR.ini")'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Netch Leather Distribution.esp", 86D4DE30)'
     tag:
       - Delev
       - name: -Invent.Add
@@ -15966,12 +15885,6 @@ plugins:
           - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
         condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
 
-  - name: 'coloredmapmarkers.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3997/' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("coloredmapmarkers.esp", E4D0F057)'
-
   - name: 'Dawnguard Map Markers.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
     group: *worldSettingsGroup
@@ -17290,12 +17203,6 @@ plugins:
     tag:
       - Delev
       - Invent.Add
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("LADX_SSE.esp", 04B416E8)'
-    clean:
-      - crc: 0xACA8F513
-        util: 'SSEEdit v4.0.3'
 
   - name: 'LC_FieldGuardArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25481/' ]
@@ -17479,9 +17386,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/44039/'
         name: 'Netch Leather Armor on Solstheim'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Netch Leather on Solstheim.esp", 5499061E)'
     tag:
       - Delev
       - Invent.Add
@@ -17492,8 +17396,6 @@ plugins:
       - Relev
     clean:
       - crc: 0x5499061E
-        util: 'SSEEdit v4.0.4b'
-      - crc: 0xD1ADA3E8
         util: 'SSEEdit v4.0.4b'
 
   - name: 'NewArmoury.esp'
@@ -17895,15 +17797,10 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SL01AmuletsSkyrim_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AmuletsOfSkyrim_Patch.esp")'
-      - <<: *sortMasters
-        condition: 'checksum("SL01AmuletsSkyrim.esp", C77B2B42)'
     tag: [ Delev ]
     clean:
       # version: 4.061
       - crc: 0xC77B2B42
-        util: 'SSEEdit v4.0.2f'
-      # version: 4.061 - sorted
-      - crc: 0xA66ABCA9
         util: 'SSEEdit v4.0.2f'
 
   - name: 'SkyrimsUniqueTreasures.esp'
@@ -19002,11 +18899,9 @@ plugins:
       - <<: *patchUpdateAvailable
         subs: [ '[Undeath Classical Lichdom](https://www.nexusmods.com/skyrimspecialedition/mods/40802/)' ]
         condition: 'not active("UndeathFixes.esp") and not file("Undeath Ascension.esp") and not file("Undeath Immersive Lichdom.esp") and not file("Tainted_Blood.esp")'
-      - <<: *sortMasters
-        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 103B1E2B) or checksum("Undeath.esp", B4C16D72) or checksum("Undeath.esp", B98E4E0A) or checksum("Undeath.esp", 7740C0F5)'
       - <<: *wildEdits
         subs: [ '[Undeath Wild Edits Cleaning Guide](https://macsplody.github.io/xGuides/#-undeath-remastered-)' ]
-        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23) or checksum("Undeath.esp", 06E15812) or checksum("Undeath.esp", 8D7A8440)'
+        condition: 'checksum("Undeath.esp", EB75A960) or checksum("Undeath.esp", FDADED23)'
     tag:
       - Graphics
       - Relations.Add
@@ -19017,23 +18912,11 @@ plugins:
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 41
       - <<: *quickClean
-        crc: 0x06E15812
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 41
-      - <<: *quickClean
         crc: 0x103B1E2B
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 33
       - <<: *quickClean
-        crc: 0xB02C0236
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 33
-      - <<: *quickClean
         crc: 0x7740C0F5
-        util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 39
-      - <<: *quickClean
-        crc: 0xBE0CF101
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 39
 
@@ -19237,26 +19120,15 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2242/'
         name: 'Blackthorn - A Buildable Town in The Rift'
     inc: [ 'HoH.esp' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("BlackthornManor.esp", 7E530609) or checksum("BlackthornManor.esp", C44B6BF1) or checksum("BlackthornManor.esp", 33E9DBFD) or checksum("BlackthornManor.esp", F4622773)'
     dirty:
       # English
       - <<: *quickClean
         crc: 0x7E530609
         util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 17
-      - <<: *quickClean
-        crc: 0x4B29CD3B
-        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 17
       # German
       - <<: *quickClean
         crc: 0x33E9DBFD
-        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 17
-      - <<: *quickClean
-        crc: 0xBED541EE
         util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 17
 
@@ -24441,9 +24313,6 @@ plugins:
 
   - name: 'Eli_Halla.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Eli_Halla.esp", 9D21AAB4)'
     dirty:
       # version: 2.3
       - <<: *quickClean
@@ -24452,9 +24321,6 @@ plugins:
         itm: 9
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Eli_RiverwoodShack.esp", 4F7566D8)'
     dirty:
       # version: 1.2
       - <<: *quickClean
@@ -24463,9 +24329,6 @@ plugins:
         itm: 9
   - name: 'Eli_Routa( - Non-Stormcloak)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1193/' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Eli_Routa.esp", E3505570) or checksum("Eli_Routa - Non-Stormcloak.esp", E6250224)'
   - name: 'Eli_Routa.esp'
     dirty:
       # version: 1.0
@@ -25926,10 +25789,6 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'AI Overhaul & Relationship Dialogue Overhaul' ]
         condition: 'many("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
-  - name: 'AI Overhaul - Relationship Dialogue Overhaul Patch.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("AI Overhaul - Relationship Dialogue Overhaul Patch.esp", 6A2F5E45)'
   - name: 'AI Overhaul - RDO Updated Patch.esp'
     req: [ 'RDO Updated.esp' ]
 
@@ -26937,9 +26796,6 @@ plugins:
   - name: 'Weapon AF and Summermyst Patch.esp'
     req: [ 'Weapon AF.esp' ]
     inc: [ 'Summermyst - WACCF Patch.esp' ]
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Weapon AF and Summermyst Patch.esp", 09DFC386)'
     tag:
       - Delev
       - Relev
@@ -27308,8 +27164,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'The Halls of Rielle - Beyond Skyrim Bruma and The Cause Combined' ]
         condition: 'active("The Halls of Rielle.esp") and not active("The Cause - Rare Curios Halls Patch.esp")'
-      - <<: *sortMasters
-        condition: 'checksum("The Cause - Rare Curios Patch.esp", 258B8CEE)'
     tag:
       - Invent.Add
       - Invent.Remove
