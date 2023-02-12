@@ -21330,6 +21330,12 @@ plugins:
     after:
       - name: 'CollegeOfWinterholdImmersive.esp'
         condition: 'active("JKs College of Winterhold - ICOW Patch.esp")'
+    inc:
+      - name: 'CollegeOfWinterholdImmersive.esp'
+        condition: 'not active("JKs College of Winterhold - ICOW Patch.esp")'
+      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+        condition: 'not active("JKs College of Winterhold - OCW Patch.esp")'
+      - 'UltimateCollege.esp'
     msg:
       - <<: *patch3rdParty
         subs:
