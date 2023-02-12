@@ -21327,6 +21327,15 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65676/'
         name: 'JK''s College of Winterhold'
+    after:
+      - name: 'CollegeOfWinterholdImmersive.esp'
+        condition: 'active("JKs College of Winterhold - ICOW Patch.esp")'
+    inc:
+      - name: 'CollegeOfWinterholdImmersive.esp'
+        condition: 'not active("JKs College of Winterhold - ICOW Patch.esp")'
+      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
+        condition: 'not active("JKs College of Winterhold - OCW Patch.esp")'
+      - 'UltimateCollege.esp'
     msg:
       - <<: *patch3rdParty
         subs:
@@ -22142,7 +22151,7 @@ plugins:
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
-        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=) and not active("JKs College of Winterhold - OCW Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Arcanum - A New Age of Magic' ]
         condition: 'active("Arcanum.esp") and not active("OCW_A-aNAoM_FEPatch.esp") and not active("UltimateCollege.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
@@ -22361,6 +22370,9 @@ plugins:
       - name: 'UltimateCollege.esp'
         condition: 'not version("OCW_CellSettings.esp", "100.99.97", >=)'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**JKs College of Winterhold - OCW Patch.esp**' ]
+        condition: 'active("JKs College of Winterhold - OCW Patch.esp")'
       - <<: *useVersion
         subs: [ 'Ultimate College' ]
         condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
