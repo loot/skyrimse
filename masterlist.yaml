@@ -22370,6 +22370,9 @@ plugins:
       - name: 'UltimateCollege.esp'
         condition: 'not version("OCW_CellSettings.esp", "100.99.97", >=)'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**JKs College of Winterhold - OCW Patch.esp**' ]
+        condition: 'active("JKs College of Winterhold - OCW Patch.esp")'
       - <<: *useVersion
         subs: [ 'Ultimate College' ]
         condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
