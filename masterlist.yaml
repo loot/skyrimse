@@ -27020,15 +27020,16 @@ plugins:
       - 'mjhKhajiitSpeak.esp'
 
   - name: 'MPXP\d\.\d .*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/'
+        name: 'Modular PatchXPress (MPxP)'
   - name: 'MPXP1\.[1-3] .*\.esp'
   # [0.0] LOD Unlocker (SELUA) #
   - name: 'MPXP0\.0 \[SELUA-II?\]\.esp'
   # [1.1] Main Combo Overhaul #
   - name: 'MPXP1\.1 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\]\.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
   - name: 'MPXP1\.1 \[PATCH - (DBPT\.SSkwy|SSkwy\.TGCoS)\]\.esp'
-  - name: 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
@@ -27036,27 +27037,12 @@ plugins:
       - <<: *useInstead
         subs: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
         condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
-  - name: 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
-      - <<: *useInstead
-        subs: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
-  - name: 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
   # [1.2] Main Combo Overhaul (OCS) #
   - name: 'MPXP1\.2 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\] \(OCS\)\.esp'
-  - name: 'MPXP1\.2 \[PATCH - (DBPT\.SSkwy|SSkwy\.TGCoS)\] \(OCS\)\.esp'
-  - name: 'MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     inc:
-      - 'Solitude Skyway SE - Open Cities Patch.esp'
       - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
+      - 'Solitude Skyway SE - Open Cities Patch.esp'
+  - name: 'MPXP1\.2 \[PATCH - (DBPT\.SSkwy|SSkwy\.TGCoS)\] \(OCS\)\.esp'
     msg:
       - <<: *alreadyInX
         subs: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
@@ -27065,43 +27051,20 @@ plugins:
         subs: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
         condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
   - name: 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc:
-      - 'Solitude Skyway SE - Open Cities Patch.esp'
-      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
-      - <<: *useInstead
-        subs: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
-  - name: 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc:
-      - 'Solitude Skyway SE - Open Cities Patch.esp'
-      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
   # [1.3] Main Combo Overhaul (LotD Support) #
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp'
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]\.esp'
-  - name: 'MPXP1\.3 \[PATCH - SSkwy\.LotD\]( \(OCS\))?\.esp'
-  - name: 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    after: [ 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp' ]
-    inc:
-      - 'BluePalaceTerrace.esp'
-      - 'Open Cities Skyrim.esp'
-  - name: 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    after: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
     inc: [ 'Open Cities Skyrim.esp' ]
+  - name: 'MPXP1\.3 \[PATCH - SSkwy\.LotD\]( \(OCS\))?\.esp'
+    inc: [ 'BluePalaceTerrace.esp' ]
+  - name: 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
+    after: [ 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp' ]
+  - name: 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
+    after: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\] \(OCS\)\.esp'
   - name: 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     after: [ 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp' ]
-    inc: [ 'BluePalaceTerrace.esp' ]
   - name: 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     after: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
   # [1.4] Main Combo Overhaul (Additions++) #
   - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
@@ -27112,7 +27075,6 @@ plugins:
   - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.LotD.RBS].esp'
   # [2.0] Personal Creations #
   - name: 'SSkwy Estuary Fortress Extension.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     after:
       - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
       - 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp'
@@ -27124,20 +27086,15 @@ plugins:
       - 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp'
       - 'Open Cities Skyrim.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires one of these plugins: %1%.'
-          - lang: de
-            text: 'Benötigt eins dieser Plugins: %1%.'
-        subs: [ 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp or MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp or MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp or MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
-        condition: 'not active("MPXP1.1 [PATCH - SSkwy.TGCoS].esp") and not active("MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 **OR** 1.2 TGCoS ESP' ]
+        condition: 'not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
   - name: 'SSkwy Estuary Fortress Extension [PATCH - RBS].esp'
   # [3.0] Other Modules #
   - name: 'DBPT \[PATCH - LotD \(VER\.0[12]\)\]( \(OCS\))?\.esp'
   - name: 'DBPT \[PATCH - Personal Additions\]( \(OCS\))?\.esp'
   - name: 'DBPT [PATCH - TGCoS Mountain Edits].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
@@ -27148,32 +27105,24 @@ plugins:
   - name: 'Enhanced Landscapes [PATCH - SSkwy].esp'
   - name: 'KvHarborside \[PATCH - (SSkwy\.)?TGCoS\]\.esp'
   - name: 'KvHarborside [PATCH - TGCoS].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     inc: [ 'Solitude Skyway SE.esp' ]
   - name: 'KvHarborside [PATCH - SSkwy.TGCoS].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     after:
       - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
       - 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp'
       - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
       - 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires one of these plugins: %1%.'
-          - lang: de
-            text: 'Benötigt eins dieser Plugins: %1%.'
-        subs: [ 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp or MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp or MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp or MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
-        condition: 'not active("MPXP1.1 [PATCH - SSkwy.TGCoS].esp") and not active("MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 **OR** 1.2 TGCoS ESP' ]
+        condition: 'not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
   - name: 'OCS [PATCH - TGCoS].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Modular PatchXpress TGCoS Open Cities Skyrim plugins' ]
         condition: 'active("MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp") or active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
   - name: 'The Great City of Solitude Tweaks.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
     tag:
       - -C.Location
       - -C.Regions
