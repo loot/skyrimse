@@ -27051,6 +27051,7 @@ plugins:
         subs: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
         condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
   - name: 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
+    after: [ 'OCS + LOTD5 Patch.esp' ]
   # [1.3] Main Combo Overhaul (LotD Support) #
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp'
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]\.esp'
@@ -27069,10 +27070,19 @@ plugins:
   # [1.4] Main Combo Overhaul (Additions++) #
   - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
   - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.JKBP\]\.esp'
+    after:
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
   - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.JKBP\] \(OCS\)\.esp'
+    after:
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp'
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp'
   - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.LotD.RBS].esp'
+    after:
+      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
+      - 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
   # [2.0] Personal Creations #
   - name: 'SSkwy Estuary Fortress Extension.esp'
     after:
