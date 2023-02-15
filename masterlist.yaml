@@ -23284,8 +23284,14 @@ plugins:
   - name: 'USSEP - The Great City of Solitude Patch.esp'
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [ 'Modular PatchXpress TGCoS plugins' ]
-        condition: 'active("The Great City of Solitude Tweaks.esp") or active("OCS [PATCH - TGCoS].esp") or active("MPXP1.1 [PATCH - SSkwy.TGCoS].esp") or active("MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp") or active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp") or active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
+        subs: [ 'MPXP 1.1/1.2 TGCoS ESP' ]
+        condition: 'active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**OCS [PATCH - TGCoS].esp**' ]
+        condition: 'active("OCS [PATCH - TGCoS].esp")'
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**The Great City of Solitude Tweaks.esp**' ]
+        condition: 'active("The Great City of Solitude Tweaks.esp")'
 
   - name: 'The Great City of Winterhold( v4)?\.esp'
     url:
