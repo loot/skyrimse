@@ -8891,6 +8891,10 @@ plugins:
     clean:
       - crc: 0x1D344547
         util: 'SSEEdit v4.0.4b'
+  - name: 'OCS + LOTD5 Patch.esp'
+    after:
+      - name: 'BluePalaceTerrace-OCS-patch.esp'
+        condition: 'active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp")'
 
   - name: '(Open World Loot.*|OWL (Challenge Mode|No More Dungeon Gold|Randomized Special Loot))\.esp'
     url:
@@ -20035,38 +20039,24 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8250/' ]
     after:
       - name: 'KvHarborside.esp'
-        condition: 'file("TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp")'
+        condition: 'file("KvHarborside [PATCH - SSkwy.TGCoS].esp")'
     inc:
       - <<: *LotD_v5
-        condition: 'not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE [PATCH - LoTD] (OCS).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (OCS).esp")'
+        condition: 'not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp")'
     msg:
-      - <<: *patchProvided
-        subs: [ 'Legacy of the Dragonborn' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("Open Cities Skyrim.esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("Solitude Skyway SE [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Legacy of the Dragonborn'
-          - '[Modular PatchXpress](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) Solitude Skyway SE PATCH - Legacy of the Dragonborn (STD)'
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("Open Cities Skyrim.esp") and not active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Legacy of the Dragonborn & Open Cities Skyrim'
-          - '[Modular PatchXpress](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) Solitude Skyway SE PATCH - Legacy of the Dragonborn (OCS)'
-        condition: 'active("LegacyoftheDragonborn.esm") and active("Open Cities Skyrim.esp") and not active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE [PATCH - LoTD] (OCS).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Legacy of the Dragonborn & Drengin''s Blue Palace Terrace'
-          - '[Modular PatchXpress](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) Solitude Skyway SE - Drengin''s Blue Palace Terrace PATCH - Legacy of the Dragonborn (STD)'
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("Open Cities Skyrim.esp") and active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
+          - '[Modular PatchXPress (MPxP)](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) MPXP1.3 [PATCH - DBPT.SSkwy.LotD]'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("Open Cities Skyrim.esp") and active("BluePalaceTerrace.esp") and not active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Legacy of the Dragonborn & Drengin''s Blue Palace Terrace & Open Cities Skyrim'
-          - '[Modular PatchXpress](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) Solitude Skyway SE - Drengin''s Blue Palace Terrace PATCH - Legacy of the Dragonborn (OCS)'
-        condition: 'active("LegacyoftheDragonborn.esm") and active("Open Cities Skyrim.esp") and active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (OCS).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
-      - <<: *useOnlyOneX
-        type: warn
-        subs: [ 'Solitude Skyway & Legacy of the Dragonborn patch' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and many("(Solitude Skyway SE - Legacy of the Dragonborn Patch|Solitude Skyway SE \[PATCH - LoTD\] \((STD|OCS)\)|Solitude Skyway SE \+ BluePalaceTerrace \[PATCH - LoTD\] \((STD|OCS)\)).esp")'
+          - '[Modular PatchXPress (MPxP)](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS)'
+        condition: 'active("LegacyoftheDragonborn.esm") and active("Open Cities Skyrim.esp") and active("BluePalaceTerrace.esp") and not active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn' ]
+        condition: 'active("LegacyoftheDragonborn.esm") and active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp")'
     clean:
       - crc: 0x4C4ACF55
         util: 'SSEEdit v4.0.3'
@@ -22731,6 +22721,14 @@ plugins:
         util: 'SSEEdit v4.0.4b'
       - crc: 0xB9B5FB6A
         util: 'SSEEdit v4.0.4c'
+  - name: 'USSEP Patch for RedBag''s Solitude.esp'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'MPXP 1.4 RBS ESP' ]
+        condition: 'active("MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp")'
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**RedBag''s Solitude [PATCH - TGCoS].esp**' ]
+        condition: 'active("RedBag''s Solitude [PATCH - TGCoS].esp")'
 
   - name: 'River Rock Village.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19432/' ]
@@ -23269,7 +23267,7 @@ plugins:
         name: 'Rob''s Bug Fixes - TGC Solitude'
     after:
       - name: 'KvHarborside.esp'
-        condition: 'file("TGCoS [PATCH - KvHarborside].esp") or file("TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp")'
+        condition: 'file("KvHarborside \[PATCH - (SSkwy\.)?TGCoS\]\.esp")'
     msg:
       - <<: *patchUpdateAvailable
         subs: [ '[Rob''s Bug Fixes - TGC Solitude](https://www.nexusmods.com/skyrimspecialedition/mods/72117/)' ]
@@ -23286,8 +23284,14 @@ plugins:
   - name: 'USSEP - The Great City of Solitude Patch.esp'
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [ 'Modular PatchXpress TGCoS plugins' ]
-        condition: 'active("The Great City of Solitude Unofficial Patch.esp") or active("TGCoS [PATCH - Open Cities Skyrim SE].esp") or active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+        subs: [ 'MPXP 1.1/1.2 TGCoS ESP' ]
+        condition: 'active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**OCS [PATCH - TGCoS].esp**' ]
+        condition: 'active("OCS [PATCH - TGCoS].esp")'
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**The Great City of Solitude Tweaks.esp**' ]
+        condition: 'active("The Great City of Solitude Tweaks.esp")'
 
   - name: 'The Great City of Winterhold( v4)?\.esp'
     url:
@@ -27019,150 +27023,201 @@ plugins:
       - 'BA_KhajiitSpeakRedux_MAIN.esp'
       - 'mjhKhajiitSpeak.esp'
 
-  ### (MPX) Modular PatchXpress ###
-  # (MPX) Main Patches - Standard #
-  - name: 'BluePalaceTerrace [PATCH - Solitude Skyway SE] (STD).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-      - <<: *useInstead
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-  - name: 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-      - <<: *useInstead
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-  - name: 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc: [ 'Open Cities Skyrim.esp' ]
-  # (MPX) Main Patches - Open Cities #
-  - name: 'BluePalaceTerrace [PATCH - Solitude Skyway SE] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
+  - name: 'MPXP\d\.\d .*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/'
+        name: 'Modular PatchXPress (MPxP)'
+  - name: 'MPXP1\.[1-3] .*\.esp'
     inc:
-      - 'Solitude Skyway SE - Open Cities Patch.esp'
+      - 'BluePalaceTerrace-LoTD-Skyway-Patch (OCS).esp'
+      - 'DBPT [PATCH - LotD (VER.01)].esp'
+      - 'DBPT [PATCH - LotD (VER.01)] (OCS).esp'
+      - 'DBPT [PATCH - LotD (VER.02)] (OCS).esp'
+      - 'DBPT [PATCH - TGCoS Mountain Edits].esp'
+      - 'OCS [PATCH - JKBP].esp'
+      - 'OCS [PATCH - TGCoS].esp'
+      - 'RedBag''s Solitude [PATCH - TGCoS].esp'
+      - 'The Great City of Solitude Tweaks.esp'
+  # [0.0] LOD Unlocker (SELUA) #
+  - name: 'MPXP0\.0 \[SELUA-II?\]\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP SELUA ESP' ]
+        condition: 'many("MPXP0\.0 \[SELUA-II?\]\.esp")'
+  # [1.1] Main Combo Overhaul #
+  - name: 'MPXP1\.1 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\]\.esp'
+    inc: [ 'Open Cities Skyrim.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.1 ESP' ]
+        condition: 'many("MPXP1\.1 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\]\.esp")'
+  - name: 'MPXP1\.1 \[PATCH - (DBPT\.SSkwy|SSkwy\.TGCoS)\]\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp**' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
+      - <<: *useInstead
+        subs: [ '**MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp**' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
+  # [1.2] Main Combo Overhaul (OCS) #
+  - name: 'MPXP1\.2 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\] \(OCS\)\.esp'
+    inc:
       - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
+      - 'Solitude Skyway SE - Open Cities Patch.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.2 ESP' ]
+        condition: 'many("MPXP1\.2 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
+  - name: 'MPXP1\.2 \[PATCH - (DBPT\.SSkwy|SSkwy\.TGCoS)\] \(OCS\)\.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
+        subs: [ '**MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp**' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
       - <<: *useInstead
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
-  - name: 'TGCoS [PATCH - Solitude Skyway SE] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc:
-      - 'Solitude Skyway SE - Open Cities Patch.esp'
-      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
+        subs: [ '**MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp**' ]
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
+  - name: 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
+    after: [ 'OCS + LOTD5 Patch.esp' ]
+  # [1.3] Main Combo Overhaul (LotD Support) #
+  - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp'
+    inc: [ 'Solitude Skyway SE - Legacy of the Dragonborn Patch.esp' ]
     msg:
-      - <<: *alreadyInX
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
-      - <<: *useInstead
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
-  - name: 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    inc:
-      - 'Solitude Skyway SE - Open Cities Patch.esp'
-      - 'Solitude Skyway SE - Open Cities and Solitude Docks Patch.esp'
-  # (MPX) Legacy of the Dragonborn Patches - Standard #
-  - name: 'Solitude Skyway SE [PATCH - LoTD] (STD).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    after: [ 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp' ]
-    inc:
-      - 'BluePalaceTerrace.esp'
-      - 'Open Cities Skyrim.esp'
-  - name: 'Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    after: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.3 ESP' ]
+        condition: 'many("MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp")'
+  - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]\.esp'
     inc: [ 'Open Cities Skyrim.esp' ]
-  # (MPX) Legacy of the Dragonborn Patches - Open Cities #
-  - name: 'Solitude Skyway SE [PATCH - LoTD] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    after: [ 'TGCoS [PATCH - Solitude Skyway SE] (OCS).esp' ]
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 ESP' ]
+        condition: 'not active("MPXP1\.1 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\]\.esp")'
+  - name: 'MPXP1\.3 \[PATCH - SSkwy\.LotD\]( \(OCS\))?\.esp'
     inc: [ 'BluePalaceTerrace.esp' ]
-  - name: 'Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (OCS).esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    after: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-  # (MPX) Personal Creations #
-  - name: '(Solitude Skyway SE Estuary Fortress Extension|Solitude Skyway SE Estuary Fortress Access Extension)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
+  - name: 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
+    after: [ 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp' ]
+  - name: 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
+    after: [ 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp' ]
+  - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\] \(OCS\)\.esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.2 ESP' ]
+        condition: 'not active("MPXP1\.2 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
+  - name: 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp'
+    after: [ 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp' ]
+  - name: 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp'
+    after: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
+  # [1.4] Main Combo Overhaul (Additions++) #
+  - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.4 JKBP ESP' ]
+        condition: 'many("MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?(\.LotD)?\.JKBP\]( \(OCS\))?\.esp")'
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.JKBP\]\.esp'
     after:
-      - 'Open Cities Skyrim.esp'
-      - 'Solitude Skyway SE [PATCH - LoTD] (OCS).esp'
-      - 'Solitude Skyway SE [PATCH - LoTD] (STD).esp'
-      - 'Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (OCS).esp'
-      - 'Solitude Skyway SE + BluePalaceTerrace [PATCH - LoTD] (STD).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE] (OCS).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp'
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires one of these plugins: %1%.'
-          - lang: de
-            text: 'Benötigt eins dieser Plugins: %1%.'
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp or TGCoS [PATCH - Solitude Skyway SE] (OCS).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'not active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") and not active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-  # (MPX) Other Patches #
-  - name: 'BluePalaceTerrace [PATCH - TGCoS Amended Mountain Assets].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 DBPT ESP' ]
+        condition: 'not active("MPXP1\.1 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\]\.esp")'
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.JKBP\] \(OCS\)\.esp'
+    after:
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp'
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
     msg:
-      - <<: *alreadyInX
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp' ]
-        condition: 'active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-      - <<: *alreadyInX
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
-
-  - name: 'TGCoS [PATCH - KvHarborside].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.2 DBPT ESP' ]
+        condition: 'not active("MPXP1\.2 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
+  - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
+    inc: [ 'BluePalaceTerrace.esp' ]
+  - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 TGCoS ESP' ]
+        condition: 'not active("MPXP1\.1 \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]\.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.4 RBS ESP' ]
+        condition: 'many("MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp")'
+  - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.LotD.RBS].esp'
+    after:
+      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
+      - 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.3 non-OCS ESP' ]
+        condition: 'not active("MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]\.esp")'
+  # [2.0] Personal Creations #
+  - name: 'SSkwy Estuary Fortress Extension.esp'
+    after:
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
+      - 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp'
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
+      - 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
+      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
+      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp'
+      - 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
+      - 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 **OR** 1.2 TGCoS ESP' ]
+        condition: 'not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+  - name: 'SSkwy Estuary Fortress Extension [PATCH - RBS].esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.4 ESP' ]
+        condition: 'not active("MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp")'
+  # [3.0] Other Modules #
+  - name: 'DBPT \[PATCH - LotD \(VER\.0[12]\)\]( \(OCS\))?\.esp'
+    inc:
+      - 'BluePalaceTerrace-LegacyOfTheDragonborn-Patch.esp'
+      - 'Solitude Skyway SE.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 3.0 DBPT & LotD ESP' ]
+        condition: 'many("DBPT \[PATCH - LotD \(VER\.0[12]\)\]( \(OCS\))?\.esp")'
+  - name: 'DBPT \[PATCH - Personal Additions\]( \(OCS\))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 3.0 DBPT - Personal Additions ESP' ]
+        condition: 'many("DBPT \[PATCH - Personal Additions\]( \(OCS\))?\.esp")'
+  - name: 'Enhanced Landscapes [PATCH - SSkwy].esp'
+    inc: [ 'Solitude Skyway SE - Enhanced Landscapes Patch.esp' ]
+  - name: 'KvHarborside \[PATCH - (SSkwy\.)?TGCoS\]\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 3.0 KvHarborside ESP' ]
+        condition: 'many("KvHarborside \[PATCH - (SSkwy\.)?TGCoS\]\.esp")'
+  - name: 'KvHarborside [PATCH - TGCoS].esp'
     inc: [ 'Solitude Skyway SE.esp' ]
-  - name: 'TGCoS + Solitude Skyway SE [PATCH - KvHarborside].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
+  - name: 'KvHarborside [PATCH - SSkwy.TGCoS].esp'
     after:
-      - 'TGCoS [PATCH - Solitude Skyway SE] (OCS).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp'
-      - 'TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp'
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
+      - 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp'
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
+      - 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Requires one of these plugins: %1%.'
-          - lang: de
-            text: 'Benötigt eins dieser Plugins: %1%.'
-        subs: [ 'TGCoS [PATCH - Solitude Skyway SE] (STD).esp or TGCoS [PATCH - Solitude Skyway SE] (OCS).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp or TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp' ]
-        condition: 'not active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") and not active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp") and not active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp")'
-
-  - name: 'TGCoS [PATCH - Open Cities Skyrim SE].esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
-    msg:
-      - <<: *alreadyInOrFixedByX
-        subs: [ 'Modular PatchXpress TGCoS Open Cities Skyrim plugins' ]
-        condition: 'active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
-  - name: 'The Great City of Solitude Unofficial Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36116/' ]
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 **OR** 1.2 TGCoS ESP' ]
+        condition: 'not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+  - name: 'OCS [PATCH - TGCoS].esp'
+    inc:
+      - 'Solitude Skyway SE - Open Cities Patch.esp'
+      - 'The Great City of Solitude Tweaks.esp'
+  - name: 'The Great City of Solitude Tweaks.esp'
     tag:
       - -C.Location
       - -C.Regions
       - -C.Water
       - -Keywords
-    msg:
-      - <<: *alreadyInOrFixedByX
-        subs: [ 'Modular PatchXpress TGCoS plugins' ]
-        condition: 'active("TGCoS [PATCH - Open Cities Skyrim SE].esp") or active("TGCoS [PATCH - Solitude Skyway SE] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE] (OCS).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (STD).esp") or active("TGCoS [PATCH - Solitude Skyway SE + BluePalaceTerrace] (OCS).esp")'
 
   - name: 'The Cause - Rare Curios ((Crown |Halls )?Patch|Distributed Varla)\.esp'
     url:
