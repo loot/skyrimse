@@ -15769,21 +15769,17 @@ plugins:
         subs: [ 'Tweak Settings -> Prompt: Activate' ]
 
   - name: 'TESL-LS-.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/40919/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40919/'
+        name: 'TESL Loading Screens - Tweaks and Addons'
   - name: 'TESL-LS-AddonMain.esp'
     msg:
-      - <<: *patchIncluded
-        subs: [ 'Aetherius' ]
-        condition: 'active("Aetherius.esp") and not active("TESL-LS-AddonAetherius.esp")'
       - <<: *patchIncluded
         subs: [ 'Apocalypse' ]
         condition: 'active("Apocalypse - Magic of Skyrim.esp") and not active("TESL-LS-AddonApocalypse.esp")'
       - <<: *patchIncluded
         subs: [ 'Imperious' ]
         condition: 'active("Imperious - Races of Skyrim.esp") and not active("TESL-LS-AddonImperious.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Legacy - A Race Overhaul' ]
-        condition: 'active("legacy.esp") and not active("TESL-LS-AddonLegacy.esp")'
       - <<: *patchIncluded
         subs: [ 'Sacrosanct' ]
         condition: 'active("Sacrosanct - Vampires of Skyrim.esp") and not active("TESL-LS-AddonSacrosanct.esp")'
@@ -15798,10 +15794,7 @@ plugins:
       - crc: 0xF84D6866
         util: 'SSEEdit v4.0.3'
   - name: 'TESL-LS-VanillaLSRemover.esp'
-    after:
-      - 'Crossbow Integration.esp'
-      - 'Crossbow Integration - USSEP.esp'
-      - 'Sacrosanct - Vampires of Skyrim.esp'
+    groups: *lateLoadersGroup
 
   - name: 'Unique Region Names.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56452/' ]
