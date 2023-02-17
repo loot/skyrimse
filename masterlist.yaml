@@ -4941,6 +4941,10 @@ plugins:
     req: [ *BaseObjSwap ]
   - name: 'TruTorch Lighting - (All Torch Bulb Kind Baseforms|Torch Baseform )\.esp' # sic
     group: *lightingEnhancerGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'TruTorch Lighting ESP' ]
+        condition: 'many("TruTorch Lighting - (All Torch Bulb Kind Baseforms|Torch Baseform )\.esp")' # sic
 
   - name: 'Vivid Weathers(SE| SE -| - ).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/' ]
