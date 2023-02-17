@@ -4933,6 +4933,23 @@ plugins:
         subs: [ 'True Storms & Wet and Cold Compatibility' ]
         condition: 'many("(Aequinoctium_TS|Mythical_TS|Obsidian_TS|Rustic_TS|TrueStorms|Vivid_TS)_Wet&Cold_Patch\.esp")'
 
+  - name: 'TruTorch(esSE| Lighting - (All Torch Bulb Kind Baseforms|Torch Baseform ))\.esp' # sic
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71284/'
+        name: 'Tru-Torches'
+  - name: 'TruTorchesSE.esp'
+    req: [ *BaseObjSwap ]
+  - name: 'TruTorch Lighting - (All Torch Bulb Kind Baseforms|Torch Baseform )\.esp' # sic
+    group: *lightingEnhancerGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'TruTorch Lighting ESP' ]
+        condition: 'many("TruTorch Lighting - (All Torch Bulb Kind Baseforms|Torch Baseform )\.esp")' # sic
+    tag:
+      - Deactivate
+      - Graphics
+      - ObjectBounds
+
   - name: 'Vivid Weathers(SE| SE -| - ).*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2187/' ]
   - name: 'Vivid WeathersSE.esp'
