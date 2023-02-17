@@ -3944,7 +3944,9 @@ plugins:
         condition: 'not file("Realistic Lighting Overhaul - Major City Interiors.esp")'
 
   - name: 'Embers XD.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/37085/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37085/'
+        name: 'Embers XD'
   - name: 'Embers XD.esp'
     msg:
       - <<: *patch3rdParty
@@ -3957,6 +3959,9 @@ plugins:
           - 'InnCredible'
           - '[Miscellaneous Embers XD Patches](https://www.nexusmods.com/skyrimspecialedition/mods/50883/)'
         condition: 'active("InnCredible.esp") and not active("EmbersXD-InnCredible Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Eli''s Breezehome' ]
+        condition: 'active("Eli_Breezehome.esp") and not active("Embers XD - Patch - Elis Breezehome.esp")'
     tag:
       - Graphics
       - ObjectBounds
@@ -3965,6 +3970,8 @@ plugins:
         util: 'SSEEdit v4.0.3j (RC2 for 4.0.4)'
       - crc: 0x854C916F
         util: 'SSEEdit v4.0.3j (RC2 for 4.0.4)'
+  - name: 'Embers XD - Patch - Elis Breezehome.esp'
+    after: [ 'Lux - Embers XD patch.esp' ]
 
   - name: 'ENB Light.esp'
     url:
