@@ -7309,7 +7309,9 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'DIVERSE SKYRIM.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7707/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/7707/'
+        name: 'DIVERSE SKYRIM'
     after:
       - 'Kireina SSE.esl'
       - 'Kireina SSE.esp'
@@ -7318,12 +7320,19 @@ plugins:
         subs: [ '[Diverse Skyrim - Battle of Whiterun Fix](https://www.nexusmods.com/skyrimspecialedition/mods/47939/)' ]
         condition: 'not active("DiverseSkyimCivilWarFix.esp") and not active("Immersive Citizens - AI Overhaul.esp") and not active("Civil War Overhaul.esp")'
     tag:
+      - Actors.ACBS
+      - Actors.Factions
+      - Actors.Stats
+      - Actors.Voice
       - Delev
+      - Invent.Add
+      - Invent.Remove
+      - NPC.DefaultOutfit
+      - NPC.Race
       - Relev
     clean:
-      # version: 2.14
       - crc: 0xA6A5118F
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Ducks and Swans.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2149/' ]
