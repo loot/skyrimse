@@ -242,6 +242,10 @@ common:
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/) **OR** [Nemesis Unlimited Behavior Engine](https://github.com/ShikyoKira/Project-New-Reign---Nemesis-Main/releases/)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
 
+  - &BaseObjSwap
+    name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
+    display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+
   - &ENBSeries
     name: '../d3d11.dll'
     display: '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
@@ -7572,8 +7576,7 @@ plugins:
       - 'AK - Placeable Statics SE.esp'
       - 'Destructible Skyrim.esp'
     req:
-      - name: 'skse/plugins/po3_BaseObjectSwapper.dll'
-        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+      - <<: *BaseObjSwap
         condition: 'file("Blowing in the Wind SSE_SWAP.ini")'
     msg:
       - <<: *patchProvided
@@ -7687,8 +7690,7 @@ plugins:
     group: *earlyLoadersGroup
     after: [ 'AK - Placeable Statics SE.esp' ]
     req:
-      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
-        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+      - <<: *BaseObjSwap
         condition: 'file("Destructible Skyrim_SWAP.ini")'
     msg:
       - <<: *patchProvided
@@ -16553,8 +16555,7 @@ plugins:
         name: 'C.O.I.N. - Coins of Interesting Natures'
   - name: 'C.O.I.N.esp'
     req:
-      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
-        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+      - <<: *BaseObjSwap
         condition: 'file("C.O.I.N_SWAP.ini")'
     msg:
       - <<: *patchIncluded
@@ -17902,9 +17903,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71911/'
         name: 'Actual Sweet Roll Variants (Base Object Swapper - New Flavours - High Poly)'
   - name: 'SweetRollVariants.esp'
-    req:
-      - name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
-        display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
+    req: [ *BaseObjSwap ]
     msg:
       - <<: *patchProvided
         subs: [ 'Pets of Skyrim (Creation Club)' ]
