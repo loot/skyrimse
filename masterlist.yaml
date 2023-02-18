@@ -12970,6 +12970,63 @@ plugins:
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: 'King-Priest( - (Mysticism Add-On|Wyrmstooth Patch))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/59652/'
+        name: 'King-Priest - Enhanced Dragon Priests'
+  - name: 'King-Priest.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Mysticism - A Magic Overhaul' ]
+        condition: 'active("MysticismMagic.esp") and not active("King-Priest - Mysticism Add-On.esp")'
+      - <<: *patchProvided
+        subs: [ 'Wyrmstooth' ]
+        condition: 'active("Wyrmstooth.esp") and not active("King-Priest - Wyrmstooth Patch.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Factions
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
+      - Actors.RecordFlags
+      - Actors.Spells
+      - Actors.Stats
+      - Actors.Voice
+      - Delev
+      - Enchantments
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - Names
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.DefaultOutfit
+      - NPC.Race
+      - R.Stats
+      - SpellStats
+      - Stats
+    clean:
+      - crc: 0xDF0CF21B
+        util: 'SSEEdit v4.0.4c'
+  - name: 'King-Priest - Mysticism Add-On.esp'
+    tag: [ Actors.Spells ]
+    clean:
+      - crc: 0x2D498671
+        util: 'SSEEdit v4.0.4c'
+  - name: 'King-Priest - Wyrmstooth Patch.esp'
+    tag:
+      - Actors.ACBS
+      - Actors.DeathItem
+      - Actors.Factions
+      - Delev
+      - Graphics
+      - Keywords
+    clean:
+      - crc: 0xEA9A3E45
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Orcish Orc Strongholds.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/58662/'
