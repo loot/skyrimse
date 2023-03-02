@@ -13597,9 +13597,10 @@ plugins:
       - <<: *useBashTweakInstead
         subs: [ 'Tweak Settings -> Actor: Vertical Object Detection' ]
 
-  - name: '(SeranaDialogAddon|SDA).*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/' ]
   - name: 'SeranaDialogAddon.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/'
+        name: 'Serana Dialogue Add-On'
     inc: [ 'Marry Me Serana.esp' ]
     msg:
       - <<: *patchProvided
@@ -13630,6 +13631,10 @@ plugins:
     clean:
       - crc: 0x8680BB0E
         util: 'SSEEdit v4.0.4c'
+  - name: 'SDA.*Patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70782/'
+        name: 'Serana Dialogue Add-On Patch Hub'
   - name: 'SDA SDE Patch.esp'
     dirty:
       - <<: *quickClean
