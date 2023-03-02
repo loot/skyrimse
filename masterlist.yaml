@@ -13601,7 +13601,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/'
         name: 'Serana Dialogue Add-On'
-    inc: [ 'Marry Me Serana.esp' ]
+    inc:
+      - 'Marry Me Serana.esp'
+      - name: 'Serana Dialogue Edit.esp'
+        condition: 'version("SeranaDialogAddon.esp", "3.0.0", >=)'
     msg:
       - <<: *patch3rdParty
         subs:
