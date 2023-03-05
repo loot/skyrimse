@@ -9547,6 +9547,48 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 24
 
+  - name: 'DWKaPoTunRace.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40928/'
+        name: 'Races of Nirn - Kapo''tun SE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/77612/'
+        name: 'Races of Nirn - Kapotun Reborn'
+    inc:
+      - name: 'Kapotun SOS.esp'
+        condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
+      - name: 'Kapotun Vanilla Armor Patch.esp'
+        condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Races of Nirn - Kapotun Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/77612/)' ]
+        condition: 'version("DWKaPoTunRace.esp", "2.0", <) and not checksum("DWKaPoTunRace.esp", 672EB2D2)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Touched by Dibella'
+          - '[Races of Nirn - Kapotun Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/77612/)'
+        condition: 'active("TouchedbyDibella.esp") and checksum("DWKaPoTunRace.esp", 672EB2D2) and not active("Kapotun TBD Tail.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Schlongs of Skyrim' ]
+        condition: 'active("Schlongs of Skyrim - Core.esm") and version("DWKaPoTunRace.esp", "2.0", >=) and not active("SOS - Kapotun Addon.esp")'
+    clean:
+      # Original
+      - crc: 0x672EB2D2
+        util: 'SSEEdit v4.0.4'
+      # Reborn
+      - crc: 0x287A2A43
+        util: 'SSEEdit v4.0.4'
+  - name: 'Kapotun ARMA .+\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/77612/'
+        name: 'Races of Nirn - Kapotun Reborn'
+    inc:
+      - name: 'DWKaPoTunRace.esp'
+        condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
+  - name: 'SOS - Kapotun Addon.esp'
+    clean:
+      - crc: 0xFCE78411
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Imperious - Races of Skyrim.esp'
     url:
       - 'https://www.nexusmods.com/skyrimspecialedition/mods/1315/'
