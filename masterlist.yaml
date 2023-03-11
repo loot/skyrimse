@@ -17216,10 +17216,9 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IA_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Hothtrooper44_ArmorCompilation_CCOR_Patch.esp") and not active("IARR, CCOR Patch.esp")'
-      - <<: *requiresX
-        type: error
+      - <<: *requiresResources
         subs: [ '[Immersive Armors - Asdasfa Tweaks and Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/85433/)' ]
-        condition: 'version("Hothtrooper44_ArmorCompilation.esp", "1.2.0IARR", ==) and not active("Immersive Armors - Asdasfa Tweaks and Fixes.esp")'
+        condition: 'version("Hothtrooper44_ArmorCompilation.esp", "1.2.0IARR", ==) and not file("meshes/armor/ala")'
     tag:
       - Delev
       - Outfits.Add
@@ -17236,6 +17235,48 @@ plugins:
     msg: [ *requiresMCM ]
     clean:
       - crc: 0x561B126F
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, (ACE|ALMSIVI|CCOR|DBM|Levelled List|Owl) (Integration|Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85913/'
+        name: 'Immersive Armors Refitted and Reinforced'
+  - name: 'IARR, ACE Patch.esp'
+    clean:
+      - crc: 0x6F71C09A
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, ALMSIVI Integration.esp'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0x4BD68E4D
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, CCOR Patch.esp'
+    clean:
+      - crc: 0x38AE025D
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, DBM Integration.esp'
+    after: [ 'IARR, CCOR Patch.esp' ]
+    tag:
+      - -Invent.Add
+      - -Invent.Remove
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0xDF787225
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, Levelled List Integration.esp'
+    group: *lvlListsGroup
+    clean:
+      - crc: 0x476601BB
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, OWL Patch.esp'
+    group: *lvlListsGroup
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0xE235AD36
         util: 'SSEEdit v4.0.4c'
 
   - name: 'icebladeofthemonarch.esp'
@@ -26498,49 +26539,6 @@ plugins:
         subs: [ 'Armor and Clothing Extension v1.1+' ]
         condition: 'version("WACCF_Armor and Clothing Extension.esp", "1.1", >=)'
     tag: [ Relev ]
-
-  - name: 'IARR, (ACE|ALMSIVI|CCOR|DBM|Levelled List|Owl) (Integration|Patch)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85913/'
-        name: 'Immersive Armors Refitted and Reinforced'
-  - name: 'IARR, ACE Patch.esp'
-    clean:
-      - crc: 0x6F71C09A
-        util: 'SSEEdit v4.0.4c'
-  - name: 'IARR, ALMSIVI Integration.esp'
-    tag:
-      - Outfits.Add
-      - Outfits.Remove
-    clean:
-      - crc: 0x4BD68E4D
-        util: 'SSEEdit v4.0.4c'
-  - name: 'IARR, CCOR Patch.esp'
-    clean:
-      - crc: 0x38AE025D
-        util: 'SSEEdit v4.0.4c'
-  - name: 'IARR, DBM Integration.esp'
-    after: [ 'IARR, CCOR Patch.esp' ]
-    tag:
-      - -Invent.Add
-      - -Invent.Remove
-      - Outfits.Add
-      - Outfits.Remove
-    clean:
-      - crc: 0xDF787225
-        util: 'SSEEdit v4.0.4c'
-  - name: 'IARR, Levelled List Integration.esp'
-    group: *lvlListsGroup
-    clean:
-      - crc: 0x476601BB
-        util: 'SSEEdit v4.0.4c'
-  - name: 'IARR, OWL Patch.esp'
-    group: *lvlListsGroup
-    tag:
-      - Outfits.Add
-      - Outfits.Remove
-    clean:
-      - crc: 0xE235AD36
-        util: 'SSEEdit v4.0.4c'
 
   - name: '(ICOW.*Patch|.* - ICOW Patch)\.esp'
     url:
