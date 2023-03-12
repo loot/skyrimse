@@ -20698,31 +20698,14 @@ plugins:
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp"))'
     req: [ *SKSE ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Konahrik''s Accoutrements'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("konahrik_accoutrements.esp") and not active("ICOW_KA_Patch.esp") and not active("UltimateCollege.esp")'
+      - <<: *compatPatch
+        subs: [ '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)' ]
+        condition: 'not active("(ICOW.*Patch|.* - ICOW Patch)\.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Obscure''s College of Winterhold'
           - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
         condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Immersive Creatures'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("ICOW - SIC Patch.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Gray Cowl Returns! (Creation Club)'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wild Horses (Creation Club)'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("ccbgssse034-mntuni.esl") and not active("ICOW - CC - Wild Horses Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patch3rdParty_RPC
@@ -20749,9 +20732,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp") and not active("UltimateCollege.esp")'
-      - <<: *patchUpdateAvailable
-        subs: [ '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/) (Unofficial Immersive College of Winterhold Patch)' ]
-        condition: 'not active("ICOW Unofficial Patch.esp") and not active("UltimateCollege.esp")'
       - *requiresMCM
     tag:
       - Actors.ACBS
