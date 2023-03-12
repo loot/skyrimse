@@ -2546,6 +2546,15 @@ plugins:
       - crc: 0xF2E58AC1
         util: 'SSEEdit v4.0.4b'
 
+  - name: 'EbonyRetextureOblivionArtifactsPatch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83654/'
+        name: 'Ebony Armors and Weapons Retexture'
+    tag: [ Graphics ]
+    clean:
+      - crc: 0x1A52FD65
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Elemental_Staffs(_Patch_Mysticism)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5319/'
@@ -2654,6 +2663,24 @@ plugins:
     clean:
       - crc: 0xA6F1A3B3
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
+
+  - name: 'Imperial Armors and Weapons Retexture SE - (Falx Carius|Penitus Pants)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86097/'
+        name: 'Imperial Armors and Weapons Retexture'
+    tag: [ Graphics ]
+  - name: 'Imperial Armors and Weapons Retexture SE - Falx Carius.esp'
+    tag:
+      - Names
+      - ObjectBounds
+      - Stats
+    clean:
+      - crc: 0xFDA29875
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Imperial Armors and Weapons Retexture SE - Penitus Pants.esp'
+    clean:
+      - crc: 0x114167DB
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'JS Barenziah SE - Johnskyrim.esp'
     url:
@@ -7147,6 +7174,8 @@ plugins:
       - name: 'Skytest Immersive Creatures.esp'
         condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
     msg:
+      - <<: *compatPatch
+        subs: [ '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)' ]
       - <<: *obsolete
         subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
         condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.2", >=)'
@@ -7158,26 +7187,6 @@ plugins:
           - 'Better Spell Learning'
           - '[Better Spell Learning - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19960/)'
         condition: 'active("Better Spell Learning.esp") and not active("Better Spell Learning - SIC SE Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Crafting Overhaul Remastered'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SIC CCOR Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive Sounds - Compendium'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("Immersive Sounds - Compendium.esp") and not active("SIC - Immersive Sound Integration.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Improved Closefaced Helmets'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("imp_helm_legend.esp") and not active("SIC - ICH Patch.esp") and not active("SIC WACCF_ICH Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'SkyTEST Realistic Animals and Predators'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SIC - Skytest Integration.esp")'
       - <<: *patch3rdParty
         type: warn
         subs:
@@ -7192,11 +7201,6 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Make sure you have completely uninstalled files included with old versions of this mod.'
-        condition: 'file("scripts/scc_spelleater_script.pex") and version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
     tag:
       - Actors.Perks.Add
       - Actors.Perks.Remove
@@ -7208,7 +7212,7 @@ plugins:
       - Outfits.Remove
     clean:
       - crc: 0xE92A5A2D
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+        util: 'SSEEdit v4.0.4c'
 
   - name: '(Skyrim Revamped - Complete Enemy Overhaul|SRCEO - (SIC|WICO) Patch)\.esp'
     url:
@@ -7226,11 +7230,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SRCEO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Immersive Creatures'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SIC - SRCEO Integration.esp")'
       - <<: *patchProvided
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
@@ -17176,17 +17175,22 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/493/' ]
     group: *earlyLoadersGroup
 
-  - name: 'Hothtrooper44_Armor(Compilation|_Ecksstra).esp'
+  - name: 'Hothtrooper44_Armor(Compilation|_Ecksstra)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3479/'
         name: 'Immersive Armors'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85913/'
+        name: 'Immersive Armors Refitted and Reinforced'
   - name: 'Hothtrooper44_ArmorCompilation.esp'
     after: [ 'Ambriel.esp' ]
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IA_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Hothtrooper44_ArmorCompilation_CCOR_Patch.esp")'
+        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Hothtrooper44_ArmorCompilation_CCOR_Patch.esp") and not active("IARR, CCOR Patch.esp")'
+      - <<: *requiresResources
+        subs: [ '[Immersive Armors - Asdasfa Tweaks and Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/85433/)' ]
+        condition: 'version("Hothtrooper44_ArmorCompilation.esp", "1.2.0IARR", ==) and not file("meshes/armor/ala")'
     tag:
       - Delev
       - Outfits.Add
@@ -17196,9 +17200,56 @@ plugins:
       # version: 8.1
       - crc: 0x8A28DB11
         util: 'SSEEdit v4.0.2f'
+      - crc: 0x262A0248
+        util: 'SSEEdit v4.0.4c'
   - name: 'Hothtrooper44_Armor_Ecksstra.esp'
     req: [ 'Hothtrooper44_ArmorCompilation.esp' ]
     msg: [ *requiresMCM ]
+    clean:
+      - crc: 0x561B126F
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, (ACE|ALMSIVI|CCOR|DBM|Levelled List|Owl) (Integration|Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85913/'
+        name: 'Immersive Armors Refitted and Reinforced'
+  - name: 'IARR, ACE Patch.esp'
+    clean:
+      - crc: 0x6F71C09A
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, ALMSIVI Integration.esp'
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0x4BD68E4D
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, CCOR Patch.esp'
+    clean:
+      - crc: 0x38AE025D
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, DBM Integration.esp'
+    after: [ 'IARR, CCOR Patch.esp' ]
+    tag:
+      - -Invent.Add
+      - -Invent.Remove
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0xDF787225
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, Levelled List Integration.esp'
+    group: *lvlListsGroup
+    clean:
+      - crc: 0x476601BB
+        util: 'SSEEdit v4.0.4c'
+  - name: 'IARR, OWL Patch.esp'
+    group: *lvlListsGroup
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0xE235AD36
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'icebladeofthemonarch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/13972/' ]
@@ -18205,6 +18256,16 @@ plugins:
       - Text
   - name: 'ThaumaturgyJumpBoots.esp'
     tag: [ EnchantmentStats ]
+
+  - name: 'TheEggOfTime.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18667/'
+        name: 'The Egg Of Time - Dwemer artifacts from Morrowind'
+    dirty:
+      - <<: *quickClean
+        crc: 0xFF836439
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 14
 
   - name: 'The Infinity Gauntlet.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25556/' ]
