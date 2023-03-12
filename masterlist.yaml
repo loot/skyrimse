@@ -7174,6 +7174,8 @@ plugins:
       - name: 'Skytest Immersive Creatures.esp'
         condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
     msg:
+      - <<: *compatPatch
+        subs: [ '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)' ]
       - <<: *obsolete
         subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
         condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.2", >=)'
@@ -7185,26 +7187,6 @@ plugins:
           - 'Better Spell Learning'
           - '[Better Spell Learning - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/19960/)'
         condition: 'active("Better Spell Learning.esp") and not active("Better Spell Learning - SIC SE Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Complete Crafting Overhaul Remastered'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SIC CCOR Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Immersive Sounds - Compendium'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("Immersive Sounds - Compendium.esp") and not active("SIC - Immersive Sound Integration.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Improved Closefaced Helmets'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("imp_helm_legend.esp") and not active("SIC - ICH Patch.esp") and not active("SIC WACCF_ICH Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'SkyTEST Realistic Animals and Predators'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("SIC - Skytest Integration.esp")'
       - <<: *patch3rdParty
         type: warn
         subs:
@@ -7219,11 +7201,6 @@ plugins:
           - lang: de
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Make sure you have completely uninstalled files included with old versions of this mod.'
-        condition: 'file("scripts/scc_spelleater_script.pex") and version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
     tag:
       - Actors.Perks.Add
       - Actors.Perks.Remove
@@ -7235,7 +7212,7 @@ plugins:
       - Outfits.Remove
     clean:
       - crc: 0xE92A5A2D
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+        util: 'SSEEdit v4.0.4c'
 
   - name: '(Skyrim Revamped - Complete Enemy Overhaul|SRCEO - (SIC|WICO) Patch)\.esp'
     url:
@@ -7253,11 +7230,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_SRCEO_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Immersive Creatures'
-          - '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)'
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("SIC - SRCEO Integration.esp")'
       - <<: *patchProvided
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("SRCEO - WICO Patch.esp")'
