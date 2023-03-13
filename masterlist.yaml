@@ -20732,6 +20732,9 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Skyrim Project Optimization Full ESM' ]
         condition: 'active("Skyrim Project Optimization - Full Version.esm") and not active("CWISPOPatchSE.esp") and not active("UltimateCollege.esp")'
+      - <<: *patchUpdateAvailable
+        subs: [ '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/) (Unofficial Immersive College of Winterhold Patch)' ]
+        condition: 'not active("ICOW Unofficial Patch.esp") and not active("UltimateCollege.esp")'
       - *requiresMCM
     tag:
       - Actors.ACBS
