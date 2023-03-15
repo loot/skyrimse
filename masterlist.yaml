@@ -2477,7 +2477,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69568/'
         name: 'Book Covers Skyrim Updated REDUX'
   - name: 'Book Covers Skyrim Updated.esp'
-    inc: [ 'Book Covers Skyrim.esp' ]
+    inc:
+      - 'Book Covers Skyrim.esp'
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'not checksum("Book Covers Skyrim Updated.esp", 6D8408E1)'
     tag:
       - Graphics
       - Names
