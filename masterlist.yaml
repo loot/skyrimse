@@ -16639,13 +16639,17 @@ plugins:
 
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+      - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+        link: 'Book Covers Skyrim - Lost Library'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152/'
         name: 'BCS Lost Library - Original'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032/'
         name: 'BCS Lost Library - Desaturated'
+      - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/70272/'
+        link: 'Book Covers Skyrim - Lost Library REDUX'
     msg:
-      - *alreadyInLotD
+      - <<: *alreadyInLotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not checksum("Book Covers Skyrim - Lost Library.esp", 6D8408E1)'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
     tag: [ Delev ]
