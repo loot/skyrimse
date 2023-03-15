@@ -16648,7 +16648,8 @@ plugins:
       - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/70272/'
         link: 'Book Covers Skyrim - Lost Library REDUX'
     msg:
-      - *alreadyInLotD
+      - <<: *alreadyInLotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not checksum("Book Covers Skyrim - Lost Library.esp", 6D8408E1)'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
     tag: [ Delev ]
