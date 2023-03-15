@@ -2470,12 +2470,17 @@ plugins:
       - crc: 0xB9422B0D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: '(Book Covers Skyrim Updated|.* - BCSU Patch)\.esp'
+  - name: '(Book Covers Skyrim Updated|.+ - BCSU Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/58376/'
         name: 'Book Covers Skyrim Updated'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69568/'
+        name: 'Book Covers Skyrim Updated REDUX'
   - name: 'Book Covers Skyrim Updated.esp'
-    inc: [ 'Book Covers Skyrim.esp' ]
+    inc:
+      - 'Book Covers Skyrim.esp'
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'not checksum("Book Covers Skyrim Updated.esp", 6D8408E1)'
     tag:
       - Graphics
       - Names
@@ -2484,8 +2489,32 @@ plugins:
       - Stats
       - Text
     clean:
-      - crc: 0x10598A95
+      - crc: 0xC4FA74AC
         util: 'SSEEdit v4.0.4c'
+  # Book Covers Skyrim Updated - Patches #
+  - name: 'Apothecary - BCSU Patch.esp'
+    req: [ 'Apothecary.esp' ]
+    tag: [ Text ]
+  - name: 'Complete Alchemy And Cooking Overhaul - BCSU Patch.esp'
+    tag: [ Graphics ]
+  - name: 'Complete Crafting Overhaul Remastered - BCSU Patch.esp'
+    req: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+  - name: 'Cutting Room Floor - BCSU Patch.esp'
+    req: [ 'Cutting Room Floor.esp' ]
+    tag: [ Text ]
+  - name: 'Even Better Quest Objectives - BCSU Patch.esp'
+    req: [ 'BetterQuestObjectives.esp' ]
+    tag: [ Text ]
+  - name: 'H2H Trainers and Skill Books - BCSU Patch.esp'
+    req: [ 'H2HBooksandTrainers.esp' ]
+    tag: [ Graphics ]
+  - name: 'Puzzle Variations - BCSU Patch.esp'
+    req: [ 'PuzzleVariations.esl' ]
+    tag: [ Text ]
+  - name: 'Spiderbros - BCSU Patch.esp'
+    req: [ 'Spiderbros - Throwing Spider Overhaul.esp' ]
+  - name: 'Thugs Not Assassins - BCSU Patch.esp'
+    req: [ 'ThugsNotAssassins.esp' ]
 
   - name: 'CC''sEnhancedOreVeinsSSE-HearthfirePatch\.es(l|p)'
     url:
