@@ -4633,6 +4633,18 @@ plugins:
       - crc: 0x3ACE8690
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Paraphernalia Anti-Flicker( AIO)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/87015/'
+        name: 'Paraphernalia - Anti-Flicker'
+    msg:
+      - <<: *deleteOrDeactivateX
+        subs: [ 'This plugin deletes base records, resulting in undefined & potentially undesired behavior with other mods that reference or edit them.' ]
+  - name: 'Paraphernalia Anti-Flicker.esp'
+    msg:
+      - <<: *corrupt
+        condition: 'checksum("Paraphernalia Anti-Flicker.esp", 96087DB1) or checksum("Paraphernalia Anti-Flicker.esp", CB049EDF)'
+
   - name: 'RAID Weathers.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63116/'
