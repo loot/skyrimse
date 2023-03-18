@@ -18179,6 +18179,40 @@ plugins:
         itm: 18
         udr: 1
 
+  - name: 'SUDs([ _](Apothecary Food|CACO|InnSoaps|- RND)[ _]Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85824/'
+        name: 'SUDs - Skyrim''s Unique Drinks'
+  - name: 'SUDs.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove the XEZN subrecord from RiftenRatwayZone in 00016BCF.' ]
+        condition: 'checksum("SUDs.esp", A6E41470)'
+    tag:
+      - Graphics
+      - Invent.Add
+      - ObjectBounds
+      - Stats
+  - name: 'SUDS Apothecary Food Patch.esp'
+    clean:
+      - crc: 0xC1503C98
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SUDs_CACO_Patch.esp'
+    clean:
+      - crc: 0xC47C6FB6
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SUDS_InnSoaps_Patch.esp'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+    clean:
+      - crc: 0x8808B159
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SUDs - RND Patch.esp'
+    clean:
+      - crc: 0xFD173E4B
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Summermyst - Enchantments of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6285/' ]
     inc:
