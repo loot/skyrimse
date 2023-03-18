@@ -2470,12 +2470,17 @@ plugins:
       - crc: 0xB9422B0D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: '(Book Covers Skyrim Updated|.* - BCSU Patch)\.esp'
+  - name: '(Book Covers Skyrim Updated|.+ - BCSU Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/58376/'
         name: 'Book Covers Skyrim Updated'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69568/'
+        name: 'Book Covers Skyrim Updated REDUX'
   - name: 'Book Covers Skyrim Updated.esp'
-    inc: [ 'Book Covers Skyrim.esp' ]
+    inc:
+      - 'Book Covers Skyrim.esp'
+      - name: 'LegacyoftheDragonborn.esm'
+        condition: 'not checksum("Book Covers Skyrim Updated.esp", 6D8408E1)'
     tag:
       - Graphics
       - Names
@@ -2484,8 +2489,32 @@ plugins:
       - Stats
       - Text
     clean:
-      - crc: 0x10598A95
+      - crc: 0xC4FA74AC
         util: 'SSEEdit v4.0.4c'
+  # Book Covers Skyrim Updated - Patches #
+  - name: 'Apothecary - BCSU Patch.esp'
+    req: [ 'Apothecary.esp' ]
+    tag: [ Text ]
+  - name: 'Complete Alchemy And Cooking Overhaul - BCSU Patch.esp'
+    tag: [ Graphics ]
+  - name: 'Complete Crafting Overhaul Remastered - BCSU Patch.esp'
+    req: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+  - name: 'Cutting Room Floor - BCSU Patch.esp'
+    req: [ 'Cutting Room Floor.esp' ]
+    tag: [ Text ]
+  - name: 'Even Better Quest Objectives - BCSU Patch.esp'
+    req: [ 'BetterQuestObjectives.esp' ]
+    tag: [ Text ]
+  - name: 'H2H Trainers and Skill Books - BCSU Patch.esp'
+    req: [ 'H2HBooksandTrainers.esp' ]
+    tag: [ Graphics ]
+  - name: 'Puzzle Variations - BCSU Patch.esp'
+    req: [ 'PuzzleVariations.esl' ]
+    tag: [ Text ]
+  - name: 'Spiderbros - BCSU Patch.esp'
+    req: [ 'Spiderbros - Throwing Spider Overhaul.esp' ]
+  - name: 'Thugs Not Assassins - BCSU Patch.esp'
+    req: [ 'ThugsNotAssassins.esp' ]
 
   - name: 'CC''sEnhancedOreVeinsSSE-HearthfirePatch\.es(l|p)'
     url:
@@ -3243,7 +3272,7 @@ plugins:
         itm: 6
 
 ###### AudioVisual - Sound & Music ######
-  - name: '(Audio Overhaul Skyrim( - .* Patch)?|AOS_(Cathedral Weathers|EBT( LITE)?) Patch)\.esp'
+  - name: '(Audio Overhaul Skyrim( - .* Patch)?|AOS_(Cathedral Weathers|EBT( LITE)?) Patch|TrueStormsSE_AOS)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12466/'
         name: 'Audio Overhaul for Skyrim'
@@ -3273,11 +3302,11 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://forums.nexusmods.com/index.php?/topic/6016803-audio-overhaul-for-skyrim-se/?p=60245661/' ]
       - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AOS_Patch.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul Skyrim.esp")'
       - <<: *patch3rdParty_UVCPC
-        condition: 'not active("Vokrii - AOS Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
+        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - AOS Patch.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Sounds - Compendium'
@@ -3298,6 +3327,12 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'The Elder Scrolls Online Imports' ]
         condition: 'active("ESOimports.esp") and not active("Audio Overhaul Skyrim - ESO Imports Patch.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Blood Textures' ]
+        condition: 'active("dD - Enhanced Blood Main.esp") and not active("AOS_EBT Patch.esp") and not active("Audio Overhaul Skyrim - Enhanced Blood Patch.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Enhanced Blood Textures LITE' ]
+        condition: 'active("dD - Enhanced Blood Main LITE.esp") and not active("AOS_EBT LITE Patch.esp") and file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
       - <<: *patchIncluded
         subs: [ 'Hunterborn' ]
         condition: 'active("Hunterborn.esp") and not active("Audio Overhaul Skyrim - Hunterborn Patch.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
@@ -3321,16 +3356,10 @@ plugins:
         condition: 'active("Rustic Weathers And Lighting.esp") and not active("Audio Overhaul Skyrim - Rustic Weathers Patch.esp") and not active("Rustic_TS_Patch_.*\.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
       - <<: *patchIncluded
         subs: [ 'True Storms - Thunder, Rain & Weather Redone' ]
-        condition: 'active("TrueStormsSE.esp") and not active("Audio Overhaul Skyrim - True Storms Patch.esp") and not active("(Aequinoctium|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
+        condition: 'active("TrueStormsSE.esp") and not active("Audio Overhaul Skyrim - True Storms Patch.esp") and not active("(Aequinoctium|ELFXWeathers|Mythical|NAT|Obsidian|Rustic|Vivid)_TS_Patch_.*\.esp") and not active("TrueStormsSE_AOS.esp")'
       - <<: *patchIncluded
         subs: [ 'Vivid Weathers Definitive Edition' ]
         condition: 'active("Vivid WeathersSE.esp") and not active("Audio Overhaul Skyrim - Vivid Weathers Patch.esp") and not active("Vivid Weathers SE - AOS Patch.esp") and not active("Vivid_TS_Patch_.*\.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Blood Textures' ]
-        condition: 'active("dD - Enhanced Blood Main.esp") and not active("AOS_EBT Patch.esp") and not active("Audio Overhaul Skyrim - Enhanced Blood Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Blood Textures LITE' ]
-        condition: 'active("dD - Enhanced Blood Main LITE.esp") and not active("AOS_EBT LITE Patch.esp")'
     clean:
       - crc: 0x6F8EF0E9
         util: 'SSEEdit v4.0.3'
@@ -3779,7 +3808,7 @@ plugins:
       - crc: 0x59766837
         util: 'SSEEdit v4.0.3'
 
-  - name:  'Dolomite Weathers.esp'
+  - name: 'Dolomite Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7895/' ]
     group: *earlyLoadersGroup
     clean:
@@ -4440,7 +4469,7 @@ plugins:
       - 'Lux - SoS compatibility patch.esp'
       - 'Lux FR.esp'
 
-  - name:  'mintylightningmod.esp'
+  - name: 'mintylightningmod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8778/' ]
     msg:
       - <<: *obsolete
@@ -4463,7 +4492,7 @@ plugins:
       - crc: 0x97E61ECD
         util: 'SSEEdit v4.0.3'
 
-  - name:  'NAT.esp'
+  - name: 'NAT.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12842/'
         name: 'NAT - Natural and Atmospheric Tamriel'
@@ -4595,7 +4624,7 @@ plugins:
     clean:
       - crc: 0xA90371B1
         util: 'SSEEdit v4.0.4b'
-  - name:  'True Storms - Obsidian Weathers - Patch .esp' # sic
+  - name: 'True Storms - Obsidian Weathers - Patch .esp' # sic
     inc: [ 'Obsidian Weathers - Wander Patch.esp' ]
 
   - name: 'OriginWeathers.esp'
@@ -4603,6 +4632,18 @@ plugins:
     clean:
       - crc: 0x3ACE8690
         util: 'SSEEdit v4.0.3'
+
+  - name: 'Paraphernalia Anti-Flicker( AIO)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/87015/'
+        name: 'Paraphernalia - Anti-Flicker'
+    msg:
+      - <<: *deleteOrDeactivateX
+        subs: [ 'This plugin deletes base records, resulting in undefined & potentially undesired behavior with other mods that reference or edit them.' ]
+  - name: 'Paraphernalia Anti-Flicker.esp'
+    msg:
+      - <<: *corrupt
+        condition: 'checksum("Paraphernalia Anti-Flicker.esp", 96087DB1) or checksum("Paraphernalia Anti-Flicker.esp", CB049EDF)'
 
   - name: 'RAID Weathers.esp'
     url:
@@ -4774,7 +4815,7 @@ plugins:
       - crc: 0x033A1B0F
         util: 'SSEEdit v4.0.3'
 
-  - name:  'StormLightning.esp'
+  - name: 'StormLightning.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
     inc:
       - 'mintylightningmod.esp'
@@ -16610,13 +16651,17 @@ plugins:
 
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
-      - 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+      - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+        link: 'Book Covers Skyrim - Lost Library'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152/'
         name: 'BCS Lost Library - Original'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032/'
         name: 'BCS Lost Library - Desaturated'
+      - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/70272/'
+        link: 'Book Covers Skyrim - Lost Library REDUX'
     msg:
-      - *alreadyInLotD
+      - <<: *alreadyInLotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not checksum("Book Covers Skyrim - Lost Library.esp", 6D8408E1)'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
     tag: [ Delev ]
@@ -17412,6 +17457,23 @@ plugins:
       - Outfits.Remove
       - -Relev
 
+  - name: 'Inn Soaps.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29615/'
+        name: 'Inn Soaps'
+    tag:
+      - Invent.Add
+      - Text
+    clean:
+      - crc: 0x0B78B41A
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xD8CBA0EE
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x5239E722
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xAF721339
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'InsanitySorrow Weapons Pack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8206/' ]
     tag: [ Relev ]
@@ -18128,6 +18190,40 @@ plugins:
         util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 18
         udr: 1
+
+  - name: 'SUDs([ _](Apothecary Food|CACO|InnSoaps|- RND)[ _]Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85824/'
+        name: 'SUDs - Skyrim''s Unique Drinks'
+  - name: 'SUDs.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove the XEZN subrecord from RiftenRatwayZone in 00016BCF.' ]
+        condition: 'checksum("SUDs.esp", A6E41470)'
+    tag:
+      - Graphics
+      - Invent.Add
+      - ObjectBounds
+      - Stats
+  - name: 'SUDS Apothecary Food Patch.esp'
+    clean:
+      - crc: 0xC1503C98
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SUDs_CACO_Patch.esp'
+    clean:
+      - crc: 0xC47C6FB6
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SUDS_InnSoaps_Patch.esp'
+    tag:
+      - Invent.Add
+      - Invent.Remove
+    clean:
+      - crc: 0x8808B159
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SUDs - RND Patch.esp'
+    clean:
+      - crc: 0xFD173E4B
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Summermyst - Enchantments of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6285/' ]
@@ -20698,31 +20794,14 @@ plugins:
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp"))'
     req: [ *SKSE ]
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Konahrik''s Accoutrements'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("konahrik_accoutrements.esp") and not active("ICOW_KA_Patch.esp") and not active("UltimateCollege.esp")'
+      - <<: *compatPatch
+        subs: [ '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)' ]
+        condition: 'not active("(ICOW.*Patch|.* - ICOW Patch)\.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Obscure''s College of Winterhold'
           - '[Ultimate College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/44797/)'
         condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Skyrim Immersive Creatures'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("Skyrim Immersive Creatures Special Edition.esp") and not active("ICOW - SIC Patch.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'The Gray Cowl Returns! (Creation Club)'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("ccbgssse020-graycowl.esl") and not active("ICOW_GrayCowlCC_Patch.esp") and not active("UltimateCollege.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wild Horses (Creation Club)'
-          - '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/)'
-        condition: 'active("ccbgssse034-mntuni.esl") and not active("ICOW - CC - Wild Horses Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveCollegeofWinterhold_Patch.esp") and not active("UltimateCollege.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patch3rdParty_RPC
@@ -21527,6 +21606,92 @@ plugins:
         condition: 'not file("Meshes/1nivCloaks/BearClaw/BearClawA_GND.nif")'
   - name: 'Holds - Falkreath.esp'
     after: [ 'Landscape Fixes For Grass Mods.esp' ]
+
+  ### HS Interior Overhauls ###
+  - name: 'HSDragonBridge - Four Shields Tavern.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/73017/'
+        name: 'HS DragonBridge - Four Shields Tavern'
+  - name: 'HSMarkarth - Silver-Blood Inn.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78778/'
+        name: 'HS Markarth - Silver-Blood Inn'
+  - name: 'HSPlayerHomes - Breezehome.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/74184/'
+        name: 'HS PlayerHomes - Breezehome'
+  - name: 'HSPlayerHomes - Honeyside.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70968/'
+        name: 'HS PlayerHomes - Honeyside'
+  - name: 'HSPlayerHomes - Proudspire Manor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72313/'
+        name: 'HS PlayerHomes - Proudspire Manor'
+  - name: 'HSPlayerHomes - SeverinManor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69855/'
+        name: 'HS PlayerHomes - Severin Manor'
+  - name: 'HSPlayerHomes - Vlindrel Hall.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83170/'
+        name: 'HS PlayerHomes - Vlindrel Hall'
+  - name: 'HSRiverwood - Alvor and Sigrid''s House.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86088/'
+        name: 'HS Riverwood - Alvor and Sigrid''s House'
+  - name: 'HSRiverwood - Faendal''s House.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83574/'
+        name: 'HS Riverwood - Faendal''s House'
+  - name: 'HSRiverwood - Hod and Gerdur''s House.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/74491/'
+        name: 'HS Riverwood - Hod and Gerdur''s House'
+  - name: 'HSRiverwood - Riverwood Trader.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86090/'
+        name: 'HS Riverwood - Riverwood Trader'
+  - name: 'HSRiverwood - Sleeping Giant Inn.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86092/'
+        name: 'HS Riverwood - Sleeping Giant Inn'
+  - name: 'HSRiverwood - Sven and Hilde''s House.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86094/'
+        name: 'HS Riverwood - Sven and Hilde''s House'
+  - name: 'HSSolitude - Temple of the Divines.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/76056/'
+        name: 'HS Solitude - Temple of the Divines'
+  - name: 'HSSolitude - The Winking Skeever.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/82417/'
+        name: 'HS Solitude - The Winking Skeever'
+  - name: 'HSWhiterun - Arcadia''s Cauldron.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/75340/'
+        name: 'HS Whiterun - Arcadia''s Cauldron'
+  - name: 'HSWhiterun - Jorrvaskr.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/79389/'
+        name: 'HS Whiterun - Jorrvaskr'
+  - name: 'HSWhiterun - The Drunken Huntsman.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/74909/'
+        name: 'HS Whiterun - The Drunken Huntsman'
+  - name: 'HSWilderness - Anise''s Cabin.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86865/'
+        name: 'HS Wilderness - Anise''s Cabin'
+  - name: 'HS(DragonBridge|Markarth|PlayerHomes|Riverwood|Solitude|Whiterun|Wilderness|Winterhold) - (Four Shields Tavern|Silver-Blood Inn|Alvor and Sigrid''s House|Faendal''s House|Hod and Gerdur''s House|Riverwood Trader|Sleeping Giant Inn|Sven and Hilde''s House|Temple of the Divines|The Winking Skeever|Arcadia''s Cauldron|Jorrvaskr|The Drunken Huntsman|Anise''s Cabin|Breezehome|Honeyside|Proudspire Manor|SeverinManor|Vlindrel Hall)\.esp'
+    after:
+      - 'EnhancedLightsandFX.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Lux.esp'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/72307/?tab=forum&topic_id=12707772' ]
 
   - name: 'InnCredible.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/790/' ]
@@ -26023,10 +26188,15 @@ plugins:
       - crc: 0x1AEFC268
         util: 'SSEEdit v4.0.4c'
   ### Legacy of the Dragonborn Patches ###
-  - name: 'DBM_*.\.esp'
+  - name: 'DBM_.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30980/'
         name: 'Legacy of the Dragonborn Patches (Official)'
+  - name: 'DBM_AOS_Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Audio Overhaul for Skyrim v4.0.0+' ]
+        condition: 'file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
   - name: 'DBM_CloaksofSkyrim_Patch.esp'
     after:
       - 'Cloaks_CCOR_Patch.esp'
@@ -27842,6 +28012,12 @@ plugins:
         util: 'SSEEdit v4.0.4c'
 
   ### (UVCPC) Umgak's Vokrii Compatibility Patch Compendium ###
+  - name: 'Vokrii - AOS Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Audio Overhaul for Skyrim v3.9.0+' ]
+        condition: 'file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
   - name: 'Vokrii - WACCF Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26278/' ]
     msg:
