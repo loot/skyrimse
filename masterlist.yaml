@@ -15068,6 +15068,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72772/'
         name: 'Skyrim Extended Cut - Saints and Seducers'
   - name: 'Skyrim Extended Cut - Saints and Seducers.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Skies Above Weathers and ENB'
+          - '[Skies Above - Saints and Seducers Extended Cut](https://www.nexusmods.com/skyrimspecialedition/mods/87383/)'
+        condition: 'active("Skies Above.esp") and not active("Skies Above - ECSS Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
