@@ -7778,6 +7778,16 @@ plugins:
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 10
 
+  - name: 'Complementary Grass Fixes.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71562/'
+        name: 'Complementary Grass Fixes'
+    dirty:
+      - <<: *quickClean
+        crc: 0x42AF6348
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: 'Dark_Forests_FULL.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21934/'
@@ -15053,11 +15063,17 @@ plugins:
       - crc: 0x558178F9
         util: 'SSEEdit v4.0.4b'
 
-  - name: '(Skyrim Extended Cut - Saints and Seducers|ECSS - (Beyond Skyrim Music|Merlin|Ruin''s Edge|Shadowrend|Staff of Sheogorath) Patch)\.esp'
+  - name: '(Skyrim Extended Cut - Saints and Seducers|ECSS - (Beyond Skyrim Music|Book Covers Skyrim|Merlin|Ruin''s Edge|Shadowrend|Staff of Sheogorath) Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72772/'
         name: 'Skyrim Extended Cut - Saints and Seducers'
   - name: 'Skyrim Extended Cut - Saints and Seducers.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Skies Above Weathers and ENB'
+          - '[Skies Above - Saints and Seducers Extended Cut](https://www.nexusmods.com/skyrimspecialedition/mods/87383/)'
+        condition: 'active("Skies Above.esp") and not active("Skies Above - ECSS Patch.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -15083,13 +15099,13 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
       - R.Description
+      - R.Skills
       - Relations.Add
       - Relev
-      - R.Skills
       - SpellStats
       - Text
     clean:
-      - crc: 0xF3C8AB72
+      - crc: 0xBF1B318A
         util: 'SSEEdit v4.0.4c'
   - name: 'ECSS - Beyond Skyrim Music Patch.esp'
     clean:
