@@ -26210,6 +26210,9 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494/' ]
+      - <<: *compatPatch
+        subs: [ '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)' ]
+        condition: 'not active("DBM_.*\.esp")'
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not file("meshes/dbm resources/jadeclaw.nif")'
     tag:
