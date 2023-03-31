@@ -26013,6 +26013,25 @@ plugins:
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 35
 
+  - name: 'Thur Vonun Sanctum \[(CORE|PATCH)( - .+)?\]\.es[mp]'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71283/'
+        name: 'Thur Vonun Sanctum'
+  - name: 'Thur Vonun Sanctum [CORE].esp'
+    req:
+      - *PapyrusExtender
+      - *PapyrusUtil
+      - *SKSE
+    inc: [ 'MapleManor.esp' ]
+    msg: [ *requiresMCM ]
+    clean:
+      - crc: 0xA9C34FB0
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Thur Vonun Sanctum [CORE - Prime Overrides].esp'
+    after: [ 'Aspens Ablaze.esp' ]
+  - name: 'Thur Vonun Sanctum [PATCH - Laboratorium].esp'
+    after: [ 'Thur Vonun Sanctum [CORE - Prime Overrides].esp' ]
+
   - name: 'TWFortGS.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25693/' ]
     dirty:
