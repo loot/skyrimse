@@ -16562,7 +16562,9 @@ plugins:
         udr: 3
 
   - name: 'BandolierForNPC.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19093/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093/'
+        name: 'Bandolier - Bags and Pouches for NPC'
     tag:
       - Names
       - Stats
@@ -16570,7 +16572,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - Cloaks of Skyrim Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - (Winter is Coming and )?Cloaks of Skyrim Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("BandolierForNPC - Cutting Room Floor Patch.esp")'
@@ -16579,27 +16581,33 @@ plugins:
         condition: 'active("DawnguardArsenal.esp") and not active("BandolierForNPC - Dawnguard Arsenal.esp")'
       - <<: *patchIncluded
         subs: [ 'Immersive Armors' ]
-        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("BandolierForNPC - Immersive Armors Patch.esp")'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("BandolierForNPC - Immersive Armors( WiC CoS)? Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing & Clutter Fixes' ]
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp")'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("BandolierForNPC - (Weapons Armor Clothing Clutter|WACCF WiC CoS) Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Winter Is Coming Cloaks' ]
-        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming( and Cloaks of Skyrim)? Patch\.esp")'
   - name: 'BandolierForNPC - (Cloaks of Skyrim|Winter is Coming) Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        subs: [ '**BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp**' ]
         condition: 'active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
       - <<: *useInstead
-        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        subs: [ '**BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp**' ]
         condition: 'not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
+  - name: 'BandolierForNPC - Immersive Armors Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**BandolierForNPC - Immersive Armors WiC CoS Patch.esp**' ]
+        condition: 'active("BandolierForNPC - Immersive Armors WiC CoS Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
   - name: 'BandolierForNPC - Realistic Enchantements.esp'
     after: [ 'BandolierForNPC.esp' ]
-  - name: 'BandolierForNPC - Immersive Armors WiC CoS Patch.esp'
-    req: [ 'BandolierForNPC - Immersive Armors Patch.esp' ]
-  - name: 'BandolierForNPC - WACCF WiC CoS Patch.esp'
-    req: [ 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp' ]
+  - name: 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**BandolierForNPC - WACCF WiC CoS Patch.esp**' ]
+        condition: 'active("BandolierForNPC - WACCF WiC CoS Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
 
   - name: 'Better Skill and Quest Books Names SE.esp'
     url:
