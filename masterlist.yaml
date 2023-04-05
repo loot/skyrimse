@@ -16570,7 +16570,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - Cloaks of Skyrim Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - (Winter is Coming and )?Cloaks of Skyrim Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("BandolierForNPC - Cutting Room Floor Patch.esp")'
@@ -16585,19 +16585,19 @@ plugins:
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Winter Is Coming Cloaks' ]
-        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming( and Cloaks of Skyrim)? Patch\.esp")'
   - name: 'BandolierForNPC - (Cloaks of Skyrim|Winter is Coming) Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        subs: [ '**BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp**' ]
         condition: 'active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
       - <<: *useInstead
-        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        subs: [ '**BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp**' ]
         condition: 'not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
-  - name: 'BandolierForNPC - Realistic Enchantements.esp'
-    after: [ 'BandolierForNPC.esp' ]
   - name: 'BandolierForNPC - Immersive Armors WiC CoS Patch.esp'
     req: [ 'BandolierForNPC - Immersive Armors Patch.esp' ]
+  - name: 'BandolierForNPC - Realistic Enchantements.esp'
+    after: [ 'BandolierForNPC.esp' ]
   - name: 'BandolierForNPC - WACCF WiC CoS Patch.esp'
     req: [ 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp' ]
 
