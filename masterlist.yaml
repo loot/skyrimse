@@ -3643,6 +3643,23 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 5
 
+  - name: 'Natural Waterfalls.*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/87261/'
+        name: 'Natural Waterfalls'
+  - name: 'Natural Waterfalls.esp'
+    after:
+      - 'Landscape and Water Fixes.esp'
+      - 'RealisticWaterTwo - Resources.esm'
+      - 'Water for ENB.esm'
+    clean:
+      - crc: 0x00DF2364
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Natural Waterfalls - SLaWF Patch.esp'
+    req: [ 'Landscape and Water Fixes.esp' ]
+  - name: 'Natural Waterfalls - Water for ENB Patch (Wavy Rivers).esp'
+    req: [ 'Water for ENB (Wavy Rivers).esp' ]
+
   - name: 'RealisticWaterTwo.*\.es[mp]'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2182/'
@@ -9678,6 +9695,23 @@ plugins:
     clean:
       - crc: 0x324A7C96
         util: 'SSEEdit v4.0.3f'
+
+  - name: 'Mannaz - Integrated Races of Skyrim.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/87219/'
+        name: 'Mannaz - Integrated Races of Skyrim'
+    inc:
+      - 'Imperious - Races of Skyrim.esp'
+      - 'Morningstar - Minimalistic Races of Skyrim.esl'
+    tag:
+      - R.ChangeSpells
+      - R.Description
+      - R.Skills
+      - R.Stats
+      - Text
+    clean:
+      - crc: 0x1E04EF48
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Morningstar - Minimalistic Races of Skyrim.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22298/' ]
@@ -16528,7 +16562,9 @@ plugins:
         udr: 3
 
   - name: 'BandolierForNPC.*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19093/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19093/'
+        name: 'Bandolier - Bags and Pouches for NPC'
     tag:
       - Names
       - Stats
@@ -16536,7 +16572,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Cloaks of Skyrim' ]
-        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - Cloaks of Skyrim Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+        condition: 'active("Cloaks.esp") and not active("BandolierForNPC - (Winter is Coming and )?Cloaks of Skyrim Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and not active("BandolierForNPC - Cutting Room Floor Patch.esp")'
@@ -16545,27 +16581,33 @@ plugins:
         condition: 'active("DawnguardArsenal.esp") and not active("BandolierForNPC - Dawnguard Arsenal.esp")'
       - <<: *patchIncluded
         subs: [ 'Immersive Armors' ]
-        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("BandolierForNPC - Immersive Armors Patch.esp")'
+        condition: 'active("Hothtrooper44_ArmorCompilation.esp") and not active("BandolierForNPC - Immersive Armors( WiC CoS)? Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing & Clutter Fixes' ]
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp")'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("BandolierForNPC - (Weapons Armor Clothing Clutter|WACCF WiC CoS) Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Winter Is Coming Cloaks' ]
-        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming Patch.esp") and not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp")'
+        condition: 'active("1nivWICCloaks.esp") and not active("BandolierForNPC - Winter is Coming( and Cloaks of Skyrim)? Patch\.esp")'
   - name: 'BandolierForNPC - (Cloaks of Skyrim|Winter is Coming) Patch.esp'
     msg:
       - <<: *alreadyInX
-        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        subs: [ '**BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp**' ]
         condition: 'active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
       - <<: *useInstead
-        subs: [ 'BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp' ]
+        subs: [ '**BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp**' ]
         condition: 'not active("BandolierForNPC - Winter is Coming and Cloaks of Skyrim Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
+  - name: 'BandolierForNPC - Immersive Armors Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**BandolierForNPC - Immersive Armors WiC CoS Patch.esp**' ]
+        condition: 'active("BandolierForNPC - Immersive Armors WiC CoS Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
   - name: 'BandolierForNPC - Realistic Enchantements.esp'
     after: [ 'BandolierForNPC.esp' ]
-  - name: 'BandolierForNPC - Immersive Armors WiC CoS Patch.esp'
-    req: [ 'BandolierForNPC - Immersive Armors Patch.esp' ]
-  - name: 'BandolierForNPC - WACCF WiC CoS Patch.esp'
-    req: [ 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp' ]
+  - name: 'BandolierForNPC - Weapons Armor Clothing Clutter Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**BandolierForNPC - WACCF WiC CoS Patch.esp**' ]
+        condition: 'active("BandolierForNPC - WACCF WiC CoS Patch.esp") and active("Cloaks.esp") and active("1nivWICCloaks.esp")'
 
   - name: 'Better Skill and Quest Books Names SE.esp'
     url:
@@ -25979,6 +26021,25 @@ plugins:
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 35
 
+  - name: 'Thur Vonun Sanctum \[(CORE|PATCH)( - .+)?\]\.es[mp]'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71283/'
+        name: 'Thur Vonun Sanctum'
+  - name: 'Thur Vonun Sanctum [CORE].esp'
+    req:
+      - *PapyrusExtender
+      - *PapyrusUtil
+      - *SKSE
+    inc: [ 'MapleManor.esp' ]
+    msg: [ *requiresMCM ]
+    clean:
+      - crc: 0xA9C34FB0
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Thur Vonun Sanctum [CORE - Prime Overrides].esp'
+    after: [ 'Aspens Ablaze.esp' ]
+  - name: 'Thur Vonun Sanctum [PATCH - Laboratorium].esp'
+    after: [ 'Thur Vonun Sanctum [CORE - Prime Overrides].esp' ]
+
   - name: 'TWFortGS.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25693/' ]
     dirty:
@@ -26193,6 +26254,9 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494/' ]
+      - <<: *compatPatch
+        subs: [ '[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)' ]
+        condition: 'not active("DBM_.*\.esp")'
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not file("meshes/dbm resources/jadeclaw.nif")'
     tag:
