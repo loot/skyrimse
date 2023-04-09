@@ -16443,6 +16443,22 @@ plugins:
         subs: [ 'Konahrik''s Accoutrements' ]
         condition: 'active("konahrik_accoutrements.esp") and not active("Apophysis_KA_Patch.esp")'
 
+  - name: 'Armory( of Favored Soul|FSShields)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8667/'
+        name: 'Armory of The Favored Soul'
+  - name: 'Armory of Favored Soul.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove all records except for **Constructible Objects**, **Statics**, & **Weapons** from **Armory of Favored Soul.esp**.' ]
+        condition: 'checksum("Armory of Favored Soul.esp", 4626DB96) or checksum("Armory of Favored Soul.esp", F582126A) or checksum("Armory of Favored Soul.esp", 4AB82BC8)'
+  - name: 'ArmoryFSShields.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove **00033779** & it''s children from **ArmoryFSShields.esp**.' ]
+        condition: 'checksum("ArmoryFSShields.esp", E69FF5E0)'
+    tag: [ Invent.Add ]
+
   - name: 'Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2431/' ]
     msg:
