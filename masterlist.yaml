@@ -14329,9 +14329,11 @@ plugins:
   - name: 'College Of Winterhold - Quest Expansion.esp'
     after: [ 'CoW Entry Requirements.esp' ]
     msg:
-      - <<: *patchProvided
-        subs: [ 'At Your Own Pace - College of Winterhold' ]
-        condition: 'active("At Your Own Pace - College of Winterhold.esp") and not active("Cow_AtYourOwnPace_Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'At Your Own Pace - College of Winterhold'
+          - '[At Your Own Pace - College of Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/52704/)'
+        condition: 'active("At Your Own Pace - College of Winterhold.esp") and not active("At Your Own Pace - College Quest Expansion Patch.esp")'
       - <<: *patchProvided
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("COW_RS_Patch.esp")'
