@@ -11268,6 +11268,29 @@ plugins:
       - crc: 0xFCAE010E
         util: 'SSEEdit v4.0.3'
 
+  - name: 'sm_dragonbornpartofskyrim(staves|_scrolls)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14372/'
+        name: 'Dragonborn DLC is Part of Skyrim (DPOS)'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Dragonborn DLC is Part of Skyrim (DPOS) ESP' ]
+        condition: 'many("sm_dragonbornpartofskyrim(staves|_scrolls)\.esp")'
+    tag:
+      - Invent.Add
+      - Keywords
+      - NPC.DefaultOutfit
+  - name: 'sm_dragonbornpartofskyrimstaves.esp'
+    clean:
+      - crc: 0xB37C4C73
+        util: 'SSEEdit v4.0.4c'
+  - name: 'sm_dragonbornpartofskyrim_scrolls.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEF1FDAA0
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+
   - name: 'Tamrielic Distribution.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71372/'
