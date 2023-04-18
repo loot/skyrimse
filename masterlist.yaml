@@ -18936,12 +18936,8 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
         name: 'Beyond Skyrim - Bruma'
-  - name: 'BSAssets.esm'
-    dirty:
-      - <<: *quickClean
-        crc: 0x474F3340
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+  # - name: 'BSAssets.esm'
+    # Do not clean - Just GRUP ITMs. Reevaluate if other ITMs, UDRs, or deleted navmeshes are present.
   - name: 'BSHeartland.esm'
     msg:
       - <<: *patch3rdParty
@@ -18980,11 +18976,7 @@ plugins:
       - Names
       - ObjectBounds
       - Text
-    dirty:
-      - <<: *quickClean
-        crc: 0x0CCA1755
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 220
+    # Do not clean - Just GRUP ITMs & test cell defined in BSAssets.esm. Reevaluate if other ITMs, UDRs, or deleted navmeshes are present.
   - name: 'BS_DLC_patch.esp'
     tag:
       - Delev
