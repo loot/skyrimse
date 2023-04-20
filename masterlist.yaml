@@ -6928,14 +6928,13 @@ plugins:
         condition: 'active("UltimateDragons.esp") or file("SKSE/Plugins/UltimateDragons64.dll")'
       - <<: *patchIncluded
         subs: [ 'Deadly Dragons' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - DD( \+ UD)? Patch\.esp")'
+        condition: 'active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - Deadly Dragons Patch.esp")'
       - <<: *patchIncluded
-        # Script Patch for MQKillDragonScript.pex - KSDO2 CRC 0xC58C9B59, SUR CRC 0xC2CA6008.
         subs: [ 'Skyrim Unbound Reborn' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and (active("Skyrim Unbound.esp") and file("SKSE/Plugins/StorageUtilData/SkyrimUnbound")) and (checksum("Scripts/MQKillDragonScript.pex", C58C9B59) or checksum("Scripts/MQKillDragonScript.pex", C2CA6008))'
+        condition: 'active("Skyrim Unbound.esp") and file("SKSE/Plugins/SkyrimUnbound") and not active("KS Dragon Overhaul 2 - SUR( \+ TIE)? Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Thunderchild - Epic Shouts and Immersion' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - Thunderchild Patch.esp")'
       - <<: *patchUnavailable
         subs: [ 'Advanced Adversary Encounters' ]
         condition: 'active("AAE Ultimate Edition.esp")'
