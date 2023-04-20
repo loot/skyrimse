@@ -6898,7 +6898,7 @@ plugins:
       - crc: 0x7AF082B7
         util: 'SSEEdit v4.0.3'
 
-  - name: '(KS Dragon Overhaul 2( - .* Patch)?|DDCSE Add-On)\.esp'
+  - name: 'KS Dragon Overhaul 2( - .+ Patch)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/'
         name: 'KS Dragon Overhaul 2'
@@ -6908,25 +6908,39 @@ plugins:
       - 'Serio''s Enhanced Dragons.esp'
       - 'SkyTEST-HarderCreatures.esp'
     req:
+      - *PapyrusExtender
       - *SKSE
       - *SPID
+      - name: 'SKSE/Plugins/BehaviorDataInjector.dll'
+        display: '[Behavior Data Injector](https://www.nexusmods.com/skyrimspecialedition/mods/78159/)'
+      - name: 'skse/plugins/PAPER.dll'
+        display: '[PAPER](https://www.nexusmods.com/skyrimspecialedition/mods/73849/)'
     inc:
       - 'Dragon Combat Overhaul.esp'
+      - 'Dragon Stalking Fix.esp'
+      - 'InfiniteDragonVariants.esp'
+      - name: 'scripts/FNISCreatureVersion.pex'
+        display: 'FNIS Creature Pack'
       - 'Simply Stronger Dragons.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Talkative Dragons' ]
+        condition: 'active("DragonCombatDialogue.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Ultimate Dragons' ]
+        condition: 'active("UltimateDragons.esp") or file("SKSE/Plugins/UltimateDragons64.dll")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Zim''s Dragon Improvements' ]
+        condition: 'active("Zim''s Dragon Improvements.esp")'
       - <<: *patchIncluded
         subs: [ 'Deadly Dragons' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - DD( \+ UD)? Patch\.esp")'
+        condition: 'active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - Deadly Dragons Patch.esp")'
       - <<: *patchIncluded
-        # Script Patch for MQKillDragonScript.pex - KSDO2 CRC 0xC58C9B59, SUR CRC 0xC2CA6008.
         subs: [ 'Skyrim Unbound Reborn' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and (active("Skyrim Unbound.esp") and file("SKSE/Plugins/StorageUtilData/SkyrimUnbound")) and (checksum("Scripts/MQKillDragonScript.pex", C58C9B59) or checksum("Scripts/MQKillDragonScript.pex", C2CA6008))'
+        condition: 'active("Skyrim Unbound.esp") and file("SKSE/Plugins/SkyrimUnbound") and not active("KS Dragon Overhaul 2 - SUR( \+ TIE)? Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Thunderchild - Epic Shouts and Immersion' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Ultimate Dragons' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("UltimateDragons.esp") and not active("KS Dragon Overhaul 2 - (DD \+ )?UD Patch\.esp")'
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - Thunderchild Patch.esp")'
       - <<: *patchUnavailable
         subs: [ 'Advanced Adversary Encounters' ]
         condition: 'active("AAE Ultimate Edition.esp")'
@@ -6936,6 +6950,9 @@ plugins:
       - <<: *patchUnavailable
         subs: [ 'Enhanced Slightly Mighty Dragons' ]
         condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Serio''s Enhanced Dragons Redone' ]
+        condition: 'active("Serio''s Enhanced Dragons Redone.esp")'
       - *requiresMCM
     tag:
       - Actors.ACBS
@@ -6943,10 +6960,16 @@ plugins:
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
+      - EffectStats
+      - Keywords
+      - Names
       - NPC.Class
+      - R.AddSpells
+      - Sound
+      - SpellStats
     clean:
-      - crc: 0x4111A0E3
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x15FBB3A9
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'LessDragons(10|20|25|35|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
@@ -7209,9 +7232,6 @@ plugins:
         subs: [ 'Deadly Dragons' ]
         condition: 'active("DeadlyDragons.esp") and not active("SEDR Deadly Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'KS Dragon Overhaul 2' ]
-        condition: 'active("KS Dragon Overhaul 2.esp") and not active("SEDR KS Dragons 2 Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Ultimate Dragons SE' ]
         condition: 'active("UltimateDragons.esp") and not active("SEDR Ultimate Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
       - *requiresMCM
@@ -7223,6 +7243,11 @@ plugins:
         crc: 0xC3D70E5A
         util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
         itm: 22
+  - name: 'SEDR (KS Dragons 2|KSDO2 [DU]D|Ultimate Deadly Enhanced Dragons Overhaul)( Compatibility)? Patch.esp'
+    inc:
+      - name: 'KS Dragon Overhaul 2.esp'
+        display: 'KS Dragon Overhaul 2 v2.60+'
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.60", >=)'
 
   - name: 'Skyrim Immersive Creatures Special Edition.esp'
     url:
