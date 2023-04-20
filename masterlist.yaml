@@ -6923,6 +6923,9 @@ plugins:
         display: 'FNIS Creature Pack'
       - 'Simply Stronger Dragons.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Ultimate Dragons' ]
+        condition: 'active("UltimateDragons.esp") or file("SKSE/Plugins/UltimateDragons64.dll")'
       - <<: *patchIncluded
         subs: [ 'Deadly Dragons' ]
         condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - DD( \+ UD)? Patch\.esp")'
@@ -6933,9 +6936,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Thunderchild - Epic Shouts and Immersion' ]
         condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Ultimate Dragons' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("UltimateDragons.esp") and not active("KS Dragon Overhaul 2 - (DD \+ )?UD Patch\.esp")'
       - <<: *patchUnavailable
         subs: [ 'Advanced Adversary Encounters' ]
         condition: 'active("AAE Ultimate Edition.esp")'
