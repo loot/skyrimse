@@ -13976,6 +13976,44 @@ plugins:
       - crc: 0x5F9D4BF0
         util: 'SSEEdit v4.0.3'
 
+  - name: 'AlternatePerspective.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50307/'
+        name: 'Alternate Perspective - Alternate Start'
+    group: *altStartGroup
+    req:
+      - *PapyrusUtil
+      - *SilentVoice
+      - 'UIExtensions.esp'
+    inc:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Original Opening Scene.esp'
+      - 'QuickVanillaStart.esl'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp'
+      - 'Skyrim Unbound.esp'
+    msg:
+      - <<: *patchUnavailable
+        subs: [ 'Touring Carriages' ]
+        condition: 'active("TouringCarriages.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.Factions
+      - Actors.Stats
+      - Invent.Add
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+    dirty:
+      - <<: *quickClean
+        crc: 0x4C59EAA1
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 18
+        udr: 2
+
   - name: 'Alternate Start - Live Another Life.esp'
     url:
       - link: 'https://www.afkmods.com/index.php?/files/file/1889-alternate-start-live-another-life/'
