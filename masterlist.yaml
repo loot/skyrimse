@@ -6924,8 +6924,14 @@ plugins:
       - 'Simply Stronger Dragons.esp'
     msg:
       - <<: *compatIssuesWithX
+        subs: [ 'Talkative Dragons' ]
+        condition: 'active("DragonCombatDialogue.esp")'
+      - <<: *compatIssuesWithX
         subs: [ 'Ultimate Dragons' ]
         condition: 'active("UltimateDragons.esp") or file("SKSE/Plugins/UltimateDragons64.dll")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Zim''s Dragon Improvements' ]
+        condition: 'active("Zim''s Dragon Improvements.esp")'
       - <<: *patchIncluded
         subs: [ 'Deadly Dragons' ]
         condition: 'active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - Deadly Dragons Patch.esp")'
