@@ -1587,24 +1587,6 @@ plugins:
       - crc: 0xB3AB07FD
         util: 'SSEEdit v4.0.4'
 
-  - name: 'JRCCPatches.*\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12951/'
-        name: 'Unofficial Creation Club Updates - All-In-One'
-    group: *fixesGroup
-    inc: [ 'unofficial skyrim creation club content patch.esl' ]
-    msg:
-      - *patchOutdated
-      - <<: *useInstead
-        subs: [ '[Unofficial Skyrim Creation Club Content Patches](https://www.nexusmods.com/skyrimspecialedition/mods/18975/)' ]
-  - name: 'JR(SpellPack|ArcaneArcherPack|Chrysamere|KnightsOfTheNine|DwarvenMudcrab|Zombies|RuinsEdge|Shadowrend|StaffOfSheogorath|StendarrsHammer)(Patch)?\.esp'
-    group: *fixesGroup
-    inc: [ 'unofficial skyrim creation club content patch.esl' ]
-    msg:
-      - *patchOutdated
-      - <<: *useInstead
-        subs: [ '[Unofficial Skyrim Creation Club Content Patches](https://www.nexusmods.com/skyrimspecialedition/mods/18975/)' ]
-
   - name: 'Unofficial (Skyrim Creation Club Content|Arcane Accessories|Arcane Archer Pack|Arms of Chaos|Bone Wolf|Chrysamere|Civil War Champions|Daedric Mail Armor|Dawnfang and Duskfang|Dead Man''s Dread|Divine Crusader|Dragonscale Armor|Dwarven Armored Mudcrab|Dwarven Mail Armor|Ebony Plate Armor|Elite Crossbows|Elven Hunter Armor|Expanded Crossbow Pack|Forgotten Seasons|Goblins|Gray Cowl Returns|Hendraheim|Lord''s Mail|Myrwatch|Netch Leather Armors|Nix-Hound|Nordic Jewelry|Pets of Skyrim|Plague of the Dead|Rare Curios|Ruin''s Edge|Saints and Seducers|Saturalia Holiday Pack|Shadowfoot Sanctum|Shadowrend|Skyrim Survival|Spell Knight Armor|Staff of Hasedoki|Staff of Sheogorath|Stalhrim Fur Armor|Steel Soldier Armor|Stendarr''s Hammer|Sunder & Wraithguard|Tundra Homestead|Umbra|Vigil Enforcer Armor Set|Wild Horses) Patch.esl'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/'
@@ -1612,15 +1594,26 @@ plugins:
     group: *fixesGroup
   - name: 'Unofficial Skyrim Creation Club Content Patch.esl'
     tag:
+      - Actors.AIPackages
+      - Actors.Factions
+      - C.Encounter
       - C.Location
-      - Delev
+      - EffectStats
+      - Graphics
+      - Invent.Remove
       - Keywords
+      - Names
+      - NPC.DefaultOutfit
+      - Outfits.Add
+      - Outfits.Remove
+      - Relations.Add
+      - Sound
       - SpellStats
       - Stats
       - Text
     clean:
-      - crc: 0x6AD6F2AD
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x5B3ED3C5
+        util: 'SSEEdit v4.0.4c'
   - name: 'Unofficial Arcane Archer Pack Patch.esl'
     tag: [ SpellStats ]
   - name: 'Unofficial Elven Hunter Armor Patch.esl'
@@ -2681,17 +2674,18 @@ plugins:
         name: 'High Poly Project'
     tag: [ Graphics ]
   - name: 'HPP - Vaermina''s Torpor.esp'
+    tag: [ Deactivate ]
     clean:
       - crc: 0xC9452B45
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+        util: 'SSEEdit v4.0.4c'
   - name: 'HPP - FirewoodSnow.esp'
     clean:
       - crc: 0x414A538D
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+        util: 'SSEEdit v4.0.4c'
   - name: 'HPP - FirewoodSnow Campfire.esp'
     clean:
       - crc: 0xA6F1A3B3
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Imperial Armors and Weapons Retexture SE - (Falx Carius|Penitus Pants)\.esp'
     url:
@@ -2927,6 +2921,17 @@ plugins:
     clean:
       - crc: 0x2FA1C27D
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
+
+  - name: 'NewGlazedPottery.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69273/'
+        name: 'New Glazed Pots'
+    tag:
+      - Deactivate
+      - Graphics
+    clean:
+      - crc: 0xC28497E7
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'ORM-Arvak.esp'
     url:
@@ -3423,6 +3428,15 @@ plugins:
     clean:
       - crc: 0xD2B5EFA4
         util: 'SSEEdit v4.0.3'
+
+  - name: 'LabyrinthianPuzzleSoundFix.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/59278/'
+        name: 'Shalidor''s Maze Puzzle Sound Fix (Labyrinthian)'
+    tag: [ Sound ]
+    clean:
+      - crc: 0x6560786B
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'LSFX-SSE-Audiosettings.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1841/' ]
@@ -6698,9 +6712,7 @@ plugins:
         name: 'Deadly Dragons'
   - name: 'DeadlyDragons.esp'
     req: [ *SKSE ]
-    inc:
-      - 'KS Dragon Overhaul.esp'
-      - 'Serio''s Enhanced Dragons.esp'
+    inc: [ 'Serio''s Enhanced Dragons.esp' ]
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Elemental Dragons' ]
@@ -6895,7 +6907,7 @@ plugins:
       - crc: 0x7AF082B7
         util: 'SSEEdit v4.0.3'
 
-  - name: '(KS Dragon Overhaul 2( - .* Patch)?|DDCSE Add-On)\.esp'
+  - name: 'KS Dragon Overhaul 2( - .+ Patch)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19051/'
         name: 'KS Dragon Overhaul 2'
@@ -6905,26 +6917,39 @@ plugins:
       - 'Serio''s Enhanced Dragons.esp'
       - 'SkyTEST-HarderCreatures.esp'
     req:
+      - *PapyrusExtender
       - *SKSE
       - *SPID
+      - name: 'SKSE/Plugins/BehaviorDataInjector.dll'
+        display: '[Behavior Data Injector](https://www.nexusmods.com/skyrimspecialedition/mods/78159/)'
+      - name: 'skse/plugins/PAPER.dll'
+        display: '[PAPER](https://www.nexusmods.com/skyrimspecialedition/mods/73849/)'
     inc:
       - 'Dragon Combat Overhaul.esp'
-      - 'KS Dragon Overhaul.esp'
+      - 'Dragon Stalking Fix.esp'
+      - 'InfiniteDragonVariants.esp'
+      - name: 'scripts/FNISCreatureVersion.pex'
+        display: 'FNIS Creature Pack'
       - 'Simply Stronger Dragons.esp'
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Talkative Dragons' ]
+        condition: 'active("DragonCombatDialogue.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Ultimate Dragons' ]
+        condition: 'active("UltimateDragons.esp") or file("SKSE/Plugins/UltimateDragons64.dll")'
+      - <<: *compatIssuesWithX
+        subs: [ 'Zim''s Dragon Improvements' ]
+        condition: 'active("Zim''s Dragon Improvements.esp")'
       - <<: *patchIncluded
         subs: [ 'Deadly Dragons' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - DD( \+ UD)? Patch\.esp")'
+        condition: 'active("DeadlyDragons.esp") and not active("KS Dragon Overhaul 2 - Deadly Dragons Patch.esp")'
       - <<: *patchIncluded
-        # Script Patch for MQKillDragonScript.pex - KSDO2 CRC 0xC58C9B59, SUR CRC 0xC2CA6008.
         subs: [ 'Skyrim Unbound Reborn' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and (active("Skyrim Unbound.esp") and file("SKSE/Plugins/StorageUtilData/SkyrimUnbound")) and (checksum("Scripts/MQKillDragonScript.pex", C58C9B59) or checksum("Scripts/MQKillDragonScript.pex", C2CA6008))'
+        condition: 'active("Skyrim Unbound.esp") and file("SKSE/Plugins/SkyrimUnbound") and not active("KS Dragon Overhaul 2 - SUR( \+ TIE)? Patch\.esp")'
       - <<: *patchIncluded
         subs: [ 'Thunderchild - Epic Shouts and Immersion' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - TC Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'Ultimate Dragons' ]
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.50", >=) and active("UltimateDragons.esp") and not active("KS Dragon Overhaul 2 - (DD \+ )?UD Patch\.esp")'
+        condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("KS Dragon Overhaul 2 - Thunderchild Patch.esp")'
       - <<: *patchUnavailable
         subs: [ 'Advanced Adversary Encounters' ]
         condition: 'active("AAE Ultimate Edition.esp")'
@@ -6934,6 +6959,9 @@ plugins:
       - <<: *patchUnavailable
         subs: [ 'Enhanced Slightly Mighty Dragons' ]
         condition: 'active("ERSO 03 - Soft Slighty Mighty Dragons.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Serio''s Enhanced Dragons Redone' ]
+        condition: 'active("Serio''s Enhanced Dragons Redone.esp")'
       - *requiresMCM
     tag:
       - Actors.ACBS
@@ -6941,10 +6969,16 @@ plugins:
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
+      - EffectStats
+      - Keywords
+      - Names
       - NPC.Class
+      - R.AddSpells
+      - Sound
+      - SpellStats
     clean:
-      - crc: 0x4111A0E3
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x15FBB3A9
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'LessDragons(10|20|25|35|50)\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4858/' ]
@@ -7207,9 +7241,6 @@ plugins:
         subs: [ 'Deadly Dragons' ]
         condition: 'active("DeadlyDragons.esp") and not active("SEDR Deadly Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'KS Dragon Overhaul 2' ]
-        condition: 'active("KS Dragon Overhaul 2.esp") and not active("SEDR KS Dragons 2 Compatibility Patch.esp") and not active("SEDR KSDO2 DD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Ultimate Dragons SE' ]
         condition: 'active("UltimateDragons.esp") and not active("SEDR Ultimate Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
       - *requiresMCM
@@ -7221,6 +7252,11 @@ plugins:
         crc: 0xC3D70E5A
         util: '[SSEEdit v4.0.3f](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
         itm: 22
+  - name: 'SEDR (KS Dragons 2|KSDO2 [DU]D|Ultimate Deadly Enhanced Dragons Overhaul)( Compatibility)? Patch.esp'
+    inc:
+      - name: 'KS Dragon Overhaul 2.esp'
+        display: 'KS Dragon Overhaul 2 v2.60+'
+        condition: 'version("KS Dragon Overhaul 2.esp", "2.60", >=)'
 
   - name: 'Skyrim Immersive Creatures Special Edition.esp'
     url:
@@ -7422,7 +7458,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '[Diverse Skyrim - Battle of Whiterun Fix](https://www.nexusmods.com/skyrimspecialedition/mods/47939/)' ]
-        condition: 'not active("DiverseSkyimCivilWarFix.esp") and not active("Immersive Citizens - AI Overhaul.esp") and not active("Civil War Overhaul.esp")'
+        condition: 'not active("DiverseSkyimCivilWarFix.esp") and not active("Immersive Citizens - AI Overhaul.esp") and not active("Civil War Overhaul.esp") and not active("Diverse Skyrim - Voiced Addon.esp")'
     tag:
       - Actors.ACBS
       - Actors.Factions
@@ -10640,33 +10676,31 @@ plugins:
       - crc: 0x6BA45FE0
         util: 'SSEEdit v4.0.4b'
 
-  - name: 'DLCIntegration.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
+  - name: 'DLCIntegration( Beyond Skyrim Compatibility Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/'
+        name: 'DLC Integration'
     group: *earlyLoadersGroup
-    tag:
-      - EffectStats
-      - Invent.Add
-      - Invent.Change
-      - -Invent.Remove
-      - Keywords
+  - name: 'DLCIntegration.esp'
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim DLC Integration' ]
         condition: 'active("BS_DLC_patch.esp") and not active("DLCIntegration Beyond Skyrim Compatibility Patch.esp")'
+    tag:
+      - EffectStats
+      - Invent.Change
+      - -Invent.Remove
+      - Keywords
+      - Stats
     clean:
-      # version: 1.1
       - crc: 0xA3FB0FAD
-        util: 'SSEEdit v4.0.2f'
-      # version: 1.1 - No Crossbows
+        util: 'SSEEdit v4.0.4c'
       - crc: 0x651A9B3E
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.4c'
   - name: 'DLCIntegration Beyond Skyrim Compatibility Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8032/' ]
-    group: *earlyLoadersGroup
     clean:
-      # version: 1.1
       - crc: 0x32F4BBE5
-        util: 'SSEEdit v4.0.2f'
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'DynamicDungeonLoot.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10308/' ]
@@ -11257,6 +11291,29 @@ plugins:
       # version: 1.0
       - crc: 0xFCAE010E
         util: 'SSEEdit v4.0.3'
+
+  - name: 'sm_dragonbornpartofskyrim(staves|_scrolls)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14372/'
+        name: 'Dragonborn DLC is Part of Skyrim (DPOS)'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Dragonborn DLC is Part of Skyrim (DPOS) ESP' ]
+        condition: 'many("sm_dragonbornpartofskyrim(staves|_scrolls)\.esp")'
+    tag:
+      - Invent.Add
+      - Keywords
+      - NPC.DefaultOutfit
+  - name: 'sm_dragonbornpartofskyrimstaves.esp'
+    clean:
+      - crc: 0xB37C4C73
+        util: 'SSEEdit v4.0.4c'
+  - name: 'sm_dragonbornpartofskyrim_scrolls.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEF1FDAA0
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
 
   - name: 'Tamrielic Distribution.*\.esp'
     url:
@@ -13529,6 +13586,17 @@ plugins:
       - crc: 0x5A890755
         util: 'SSEEdit v4.0.4b'
 
+  - name: 'Immersive Speechcraft.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21296/'
+        name: 'Immersive Speechcraft'
+    req: [ *SKSE ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x2B1F2BB9
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+
   - name: 'ImprovedCompanionsBoogaloo.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/38473/'
@@ -13749,45 +13817,58 @@ plugins:
       - <<: *useBashTweakInstead
         subs: [ 'Tweak Settings -> Actor: Vertical Object Detection' ]
 
-  - name: '(SeranaDialogAddon|SDA).*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/' ]
   - name: 'SeranaDialogAddon.esp'
-    inc: [ 'Marry Me Serana.esp' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/32161/'
+        name: 'Serana Dialogue Add-On'
+    inc:
+      - 'Marry Me Serana.esp'
+      - name: 'Serana Dialogue Edit.esp'
+        condition: 'version("SeranaDialogAddon.esp", "3.0.0", >=)'
     msg:
-      - <<: *patchProvided
-        subs: [ 'Amorous Adventures' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Amorous Adventures'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("SexLab-AmorousAdventures.esp") and not active("SDA-AA Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'DX Crimson Blood Armor' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'DX Crimson Blood Armor'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("Crimson Blood Armor.esp") and not active("SDA DX Crimson Blood Patch.esp") and not active("SDA- DX CBlood Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Lustmord Vampire Armor' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Lustmord Vampire Armor'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("LustmordVampireArmor.esp") and not active("SDA Lustmord Patch.esp") and not active("SDA-LustmordPatch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Nether''s Follower Framework' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Nether''s Follower Framework'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("nwsFollowerFramework.esp") and not active("SDA NFF Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Relationship Dialogue Overhaul' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Relationship Dialogue Overhaul'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("SDA RDO Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Serana Dialogue Edit' ]
-        condition: 'active("Serana Dialogue Edit.esp") and not active("SDA SDE Patch.esp") and not active("SDA_SDE Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Wintersun - Faiths of Skyrim' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Wintersun'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Complete Alchemy & Cooking Overhaul.esp") and not active("SDA Wintersun Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Wintersun and CACO' ]
+      - <<: *patch3rdParty
+        subs:
+          - 'Wintersun and CACO'
+          - '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and active("Complete Alchemy & Cooking Overhaul.esp") and not active("SDA Wintersun Patch.esp")'
     tag: [ Keywords ]
     clean:
-      - crc: 0xB8B65EFF
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-  - name: 'SDA SDE Patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0xF50D6D35
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 5
+      - crc: 0x8680BB0E
+        util: 'SSEEdit v4.0.4c'
+  - name: 'SDA.*Patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70782/'
+        name: 'Serana Dialogue Add-On Patch Hub'
   - name: 'SDA Wintersun Patch.esp'
     msg:
       - <<: *useVersion
@@ -13939,6 +14020,44 @@ plugins:
       - crc: 0x5F9D4BF0
         util: 'SSEEdit v4.0.3'
 
+  - name: 'AlternatePerspective.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50307/'
+        name: 'Alternate Perspective - Alternate Start'
+    group: *altStartGroup
+    req:
+      - *PapyrusUtil
+      - *SilentVoice
+      - 'UIExtensions.esp'
+    inc:
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Original Opening Scene.esp'
+      - 'QuickVanillaStart.esl'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp'
+      - 'Skyrim Unbound.esp'
+    msg:
+      - <<: *patchUnavailable
+        subs: [ 'Touring Carriages' ]
+        condition: 'active("TouringCarriages.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.Factions
+      - Actors.Stats
+      - Invent.Add
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+    dirty:
+      - <<: *quickClean
+        crc: 0x4C59EAA1
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 18
+        udr: 2
+
   - name: 'Alternate Start - Live Another Life.esp'
     url:
       - link: 'https://www.afkmods.com/index.php?/files/file/1889-alternate-start-live-another-life/'
@@ -13983,6 +14102,10 @@ plugins:
       - 'CoW Entry Requirements.esp'
       - 'NotSoFast-MageGuild.esp'
       - 'MCWT_TheAugursAdmonishment.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'College of Winterhold - Quest Expansion' ]
+        condition: 'active("College Of Winterhold - Quest Expansion.esp") and not active("At Your Own Pace - College Quest Expansion Patch.esp")'
     clean:
       - crc: 0x48E15998
         util: 'SSEEdit v4.0.4b'
@@ -14329,9 +14452,6 @@ plugins:
   - name: 'College Of Winterhold - Quest Expansion.esp'
     after: [ 'CoW Entry Requirements.esp' ]
     msg:
-      - <<: *patchProvided
-        subs: [ 'At Your Own Pace - College of Winterhold' ]
-        condition: 'active("At Your Own Pace - College of Winterhold.esp") and not active("Cow_AtYourOwnPace_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("COW_RS_Patch.esp")'
@@ -14910,6 +15030,24 @@ plugins:
     clean:
       - crc: 0x13088DE4
         util: 'SSEEdit v4.0.3g'
+
+  - name: 'Paradigm - (A Quick Start Overhaul|Simonrim Edition)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85939/'
+        name: 'Paradigm - A Quick Start Overhaul'
+    group: *altStartGroup
+    inc:
+      - 'AlternatePerspective.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Original Opening Scene.esp'
+      - 'QuickVanillaStart.esl'
+      - 'Random Alternate Start Reborn SE.esp'
+      - 'Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp'
+      - 'Skyrim Unbound.esp'
+  - name: 'Paradigm - A Quick Start Overhaul.esp'
+    clean:
+      - crc: 0x69131899
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'PathOfMight.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22595/' ]
@@ -16443,6 +16581,22 @@ plugins:
         subs: [ 'Konahrik''s Accoutrements' ]
         condition: 'active("konahrik_accoutrements.esp") and not active("Apophysis_KA_Patch.esp")'
 
+  - name: 'Armory( of Favored Soul|FSShields)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8667/'
+        name: 'Armory of The Favored Soul'
+  - name: 'Armory of Favored Soul.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove all records except for **Constructible Objects**, **Statics**, & **Weapons** from **Armory of Favored Soul.esp**.' ]
+        condition: 'checksum("Armory of Favored Soul.esp", 4626DB96) or checksum("Armory of Favored Soul.esp", F582126A) or checksum("Armory of Favored Soul.esp", 4AB82BC8)'
+  - name: 'ArmoryFSShields.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Remove **00033779** & it''s children from **ArmoryFSShields.esp**.' ]
+        condition: 'checksum("ArmoryFSShields.esp", E69FF5E0)'
+    tag: [ Invent.Add ]
+
   - name: 'Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2431/' ]
     msg:
@@ -16883,7 +17037,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
-        condition: 'active("BSAssets.esm") and not active("C.O.I.N. - Beyond Skyrim Patch.esp")'
+        condition: 'active("BSHeartland.esm") and not active("C.O.I.N. - Beyond Skyrim Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Saints & Seducers (Creation Club)' ]
         condition: 'active("ccBGSSSE025-AdvDSGS.esm") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
@@ -18882,18 +19036,13 @@ plugins:
         util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 129
 
-  - name: 'BS(Assets|Heartland|_DLC_patch).es(m|p)'
+  - name: 'BS(Assets|Heartland|_DLC_patch)\.es[mp]'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10917/'
-        name: 'Beyond Skyrim - Bruma SE'
-  - name: 'BSAssets.esm'
-    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027835/' ]
-    clean:
-      # version: 1.3.3
-      - crc: 0x1D0648B6
-        util: 'SSEEdit v4.0.2'
+        name: 'Beyond Skyrim - Bruma'
+  # - name: 'BSAssets.esm'
+    # Do not clean - Just GRUP ITMs. Reevaluate if other ITMs, UDRs, or deleted navmeshes are present.
   - name: 'BSHeartland.esm'
-    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4027831/' ]
     msg:
       - <<: *patch3rdParty
         subs:
@@ -18922,38 +19071,26 @@ plugins:
         condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Actors.ACBS
-      - Actors.CombatStyle
       - Actors.DeathItem
+      - Actors.Factions
       - Actors.Stats
       - C.Regions
-      - Delev
-      - EffectStats
-      - Factions
       - Graphics
-      - Invent.Add
-      - Invent.Remove
       - Keywords
       - Names
       - ObjectBounds
       - Text
-    dirty:
-      # version: 1.3.3
-      - <<: *quickClean
-        crc: 0x0B12B4E7
-        util: '[SSEEdit v4.0.2](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 514
+    # Do not clean - Just GRUP ITMs & test cell defined in BSAssets.esm. Reevaluate if other ITMs, UDRs, or deleted navmeshes are present.
   - name: 'BS_DLC_patch.esp'
-    url: [ 'https://bethesda.net/en/mods/skyrim/mod-detail/4044167/' ]
     tag:
-      - C.Regions
       - Delev
       - Invent.Add
       - Invent.Remove
+      - Keywords
       - Relev
     clean:
-      # version: 1.1.2
-      - crc: 0x2BC2FECB
-        util: 'SSEEdit v4.0.2'
+      - crc: 0x3D74719B
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'bs bruma corrections (pc).esp'
     url:
@@ -21694,6 +21831,13 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83170/'
         name: 'HS PlayerHomes - Vlindrel Hall'
+  - name: 'HSResources.esl'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/72307/'
+        name: 'HS Resources'
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/72307/?tab=forum&topic_id=12707772' ]
   - name: 'HSRiverwood - Alvor and Sigrid''s House.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86088/'
@@ -21730,6 +21874,14 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/75340/'
         name: 'HS Whiterun - Arcadia''s Cauldron'
+  - name: 'HSWhiterun - Belethor''s General Goods.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/87317/'
+        name: 'HS Whiterun - Belethor''s General Goods'
+  - name: 'HSWhiterun - Dragonsreach.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/88753/'
+        name: 'HS Whiterun - Dragonsreach'
   - name: 'HSWhiterun - Jorrvaskr.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/79389/'
@@ -21738,18 +21890,19 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/74909/'
         name: 'HS Whiterun - The Drunken Huntsman'
+  - name: 'HSWhiterun - Ysolda''s House.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/89227/'
+        name: 'HS Whiterun - Ysolda''s House'
   - name: 'HSWilderness - Anise''s Cabin.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/86865/'
         name: 'HS Wilderness - Anise''s Cabin'
-  - name: 'HS(DragonBridge|Markarth|PlayerHomes|Riverwood|Solitude|Whiterun|Wilderness|Winterhold) - (Four Shields Tavern|Silver-Blood Inn|Alvor and Sigrid''s House|Faendal''s House|Hod and Gerdur''s House|Riverwood Trader|Sleeping Giant Inn|Sven and Hilde''s House|Temple of the Divines|The Winking Skeever|Arcadia''s Cauldron|Jorrvaskr|The Drunken Huntsman|Anise''s Cabin|Breezehome|Honeyside|Proudspire Manor|SeverinManor|Vlindrel Hall)\.esp'
+  - name: 'HS(DragonBridge|Markarth|PlayerHomes|Riverwood|Solitude|Whiterun|Wilderness) - (Four Shields Tavern|Silver-Blood Inn|Breezehome|Honeyside|Proudspire Manor|SeverinManor|Vlindrel Hall|Alvor and Sigrid''s House|Faendal''s House|Hod and Gerdur''s House|Riverwood Trader|Sleeping Giant Inn|Sven and Hilde''s House|Temple of the Divines|The Winking Skeever|Arcadia''s Cauldron|Belethor''s General Goods|Dragonsreach|Jorrvaskr|The Drunken Huntsman|Ysolda''s House|Anise''s Cabin)\.esp'
     after:
       - 'EnhancedLightsandFX.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Lux.esp'
-    msg:
-      - <<: *compatNotes
-        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/72307/?tab=forum&topic_id=12707772' ]
 
   - name: 'InnCredible.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/790/' ]
@@ -23310,6 +23463,37 @@ plugins:
     clean:
       - crc: 0x1BE50A99
         util: 'SSEEdit v4.0.4'
+
+  - name: 'Ryn''s Mehrunes Dagon Shrine.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/88451/'
+        name: 'Ryn''s Mehrunes Dagon''s Shrine'
+    tag:
+      - C.Acoustic
+      - C.ImageSpace
+      - C.Light
+      - C.Music
+    clean:
+      - crc: 0x3C6329BD
+        util: 'SSEEdit v4.0.4c'
+
+  - name: 'Ryn''s Saarthal.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/74785/'
+        name: 'Ryn''s Saarthal'
+    tag:
+      - Actors.ACBS
+      - Actors.Perks.Add
+      - Actors.Spells
+      - Actors.Stats
+      - Invent.Add
+      - Invent.Remove
+      - NPC.Class
+    clean:
+      - crc: 0x58FCD3F6
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0xFDC4E121
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'RynsWhiterunCityLimits.esp'
     url:
@@ -28143,3 +28327,54 @@ plugins:
         crc: 0x9E8F3CA5
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 17
+
+  - name: 'UnforgivingDevices - DD Patch.esp'
+    url:
+      - link: 'https://www.loverslab.com/files/file/16938-unforgiving-devices/'
+        name: 'Unforgiving Devices DD Patch'
+    after:
+      - 'Devious Devices - Lore Patch.esp'
+      - 'Devious Devices SE patch.esp'
+    clean:
+      - crc: 0xD32A2D77
+        util: 'SSEEdit v4.0.4'
+  - name: 'UnforgivingDevices - LBS Patch.esp'
+    url:
+      - link: 'https://www.loverslab.com/files/file/16938-unforgiving-devices/'
+        name: 'Unforgiving Devices Lauras Bondage Shop Patch'
+    after: [ 'UnforgivingDevices - DD Patch.esp' ]
+    clean:
+      - crc: 0x5EDE9478
+        util: 'SSEEdit v4.0.4'
+  - name: 'UnforgivingDevices - Pink Patch.esp'
+    url:
+      - link: 'https://www.loverslab.com/files/file/16938-unforgiving-devices/'
+        name: 'Unforgiving Devices Devious Pink Patch'
+    after: [ 'UnforgivingDevices - DD Patch.esp' ]
+    clean:
+      - crc: 0x907DCAE7
+        util: 'SSEEdit v4.0.4'
+  - name: 'UnforgivingDevices - Security Overhaul Patch.esp'
+    url:
+      - link: 'https://www.loverslab.com/files/file/16938-unforgiving-devices/'
+        name: 'Unforgiving Devices Security Overhaul Patch'
+    after: [ 'UnforgivingDevices - DD Patch.esp' ]
+    clean:
+      - crc: 0xB694000E
+        util: 'SSEEdit v4.0.4'
+  - name: 'UnforgivingDevices - DCL Patch.esp'
+    url:
+      - link: 'https://www.loverslab.com/files/file/16938-unforgiving-devices/'
+        name: 'Unforgiving Devices Devious Cursed Loot Patch'
+    after: [ 'UnforgivingDevices - DD Patch.esp' ]
+    clean:
+      - crc: 0x74C33D40
+        util: 'SSEEdit v4.0.4'
+  - name: 'UnforgivingDevices - CACO Patch.esp'
+    url:
+      - link: 'https://www.loverslab.com/files/file/16938-unforgiving-devices/'
+        name: 'Unforgiving Devices CACO Patch'
+    after: [ 'UnforgivingDevices - DD Patch.esp' ]
+    clean:
+      - crc: 0xC5B99C7E
+        util: 'SSEEdit v4.0.4'
