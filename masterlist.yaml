@@ -1587,12 +1587,19 @@ plugins:
       - crc: 0xB3AB07FD
         util: 'SSEEdit v4.0.4'
 
-  - name: 'Unofficial (Skyrim Creation Club Content|Arcane Accessories|Arcane Archer Pack|Arms of Chaos|Bone Wolf|Chrysamere|Civil War Champions|Daedric Mail Armor|Dawnfang and Duskfang|Dead Man''s Dread|Divine Crusader|Dragonscale Armor|Dwarven Armored Mudcrab|Dwarven Mail Armor|Ebony Plate Armor|Elite Crossbows|Elven Hunter Armor|Expanded Crossbow Pack|Forgotten Seasons|Goblins|Gray Cowl Returns|Hendraheim|Lord''s Mail|Myrwatch|Netch Leather Armors|Nix-Hound|Nordic Jewelry|Pets of Skyrim|Plague of the Dead|Rare Curios|Ruin''s Edge|Saints and Seducers|Saturalia Holiday Pack|Shadowfoot Sanctum|Shadowrend|Skyrim Survival|Spell Knight Armor|Staff of Hasedoki|Staff of Sheogorath|Stalhrim Fur Armor|Steel Soldier Armor|Stendarr''s Hammer|Sunder & Wraithguard|Tundra Homestead|Umbra|Vigil Enforcer Armor Set|Wild Horses) Patch.esl'
+  - name: 'Unofficial (Skyrim Creation Club Content|Arcane Accessories|(Arcane Archer|Expanded Crossbow|Saturalia Holiday) Pack|Arms of Chaos|Bittercup|Bloodchill Manor|Bone Wolf|Bow of Shadows|Chrysamere|Civil War Champions|(Daedric|Dragon|Dwarven|Ebony|Elven Hunter|Iron|Netch Leather|Orcish|Silver|Spell Knight|Stalhrim Fur|Steel Soldier|Vigil Enforcer) ?(Mail|Plate|Scaled?)? Armor(s| Set)?|Dawnfang and Duskfang|Dead Man''s Dread|Divine Crusader|Dwarven (Armored Mudcrab|Home)|Elite Crossbows|Farming|Forgotten Seasons|Gallows Hall|Ghosts of the Tribunal|Goblins|Goldbrand|Gray Cowl Returns|Headmans Cleaver|Hendraheim|Lord''s Mail|Myrwatch|Necromantic Grimoire|Nix-Hound|Nordic Jewelry|Pets of Skyrim|Plague of the Dead|Redguard Elite Armaments|Ruin''s Edge|Shadowfoot Sanctum|Shadowrend|Staff of Sheogorath|Stendarr''s Hammer|Sunder & Wraithguard|The (Cause|Contest)|Tundra Homestead|Umbra|Wild Horses) Patch\.esl'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/'
         name: 'Unofficial Skyrim Creation Club Content Patches'
     group: *fixesGroup
   - name: 'Unofficial Skyrim Creation Club Content Patch.esl'
+    req:
+      - 'ccbgssse041-netchleather.esl'
+      - 'ccbgssse052-ba_iron.esl'
+      - 'ccbgssse054-ba_orcish.esl'
+      - 'ccbgssse055-ba_orcishscaled.esl'
+      - 'ccbgssse057-ba_stalhrim.esl'
+      - 'ccbgssse063-ba_ebony.esl'
     tag:
       - Actors.AIPackages
       - Actors.Factions
@@ -1614,25 +1621,118 @@ plugins:
     clean:
       - crc: 0x5B3ED3C5
         util: 'SSEEdit v4.0.4c'
-  - name: 'Unofficial Arcane Archer Pack Patch.esl'
-    tag: [ SpellStats ]
-  - name: 'Unofficial Elven Hunter Armor Patch.esl'
-    tag: [ Delev ]
-  - name: 'Unofficial Forgotten Seasons Patch.esl'
-    tag: [ C.Location ]
-  - name: 'Unofficial Skyrim Survival Patch.esl'
+  - name: 'Unofficial Arcane Accessories Patch.esl'
     tag:
+      - EffectStats
       - Keywords
       - Text
-    clean:
-      - crc: 0xA83AA56A
-        util: 'SSEEdit v4.0.3'
-  - name: 'Unofficial Steel Soldier Armor Patch.esl'
-    tag: [ Delev ]
-  - name: 'Unofficial Umbra Patch.esl'
+  - name: 'Unofficial Arcane Archer Pack Patch.esl'
+    tag: [ Graphics ]
+  - name: 'Unofficial Bittercup Patch.esl'
+    tag: [ Stats ]
+  - name: 'Unofficial Bow of Shadows Patch.esl'
     tag:
-      - C.Location
+      - EffectStats
+      - Keywords
+  - name: 'Unofficial Chrysamere Patch.esl'
+    tag: [ Stats ]
+  - name: 'Unofficial Civil War Champions Patch.esl'
+    tag:
+      - Actors.Factions
+      - Keywords
+      - Outfits.Add
+      - Sound
       - Stats
+      - Text
+  - name: 'Unofficial Daedric Mail Armor Patch.esl'
+    tag:
+      - Delev
+      - Outfits.Add
+      - Outfits.Remove
+  - name: 'Unofficial Dawnfang and Duskfang Patch.esl'
+    tag: [ Text ]
+  - name: 'Unofficial Dead Man''s Dread Patch.esl'
+    tag:
+      - Sound
+      - Stats
+  - name: 'Unofficial Divine Crusader Patch.esl'
+    tag:
+      - Stats
+      - Text
+  - name: 'Unofficial Dragon Plate Armor Patch.esl'
+    tag:
+      - Sound
+      - Stats
+  - name: 'Unofficial Dragonscale Armor Patch.esl'
+    tag: [ Outfits.Remove ]
+  - name: 'Unofficial Elite Crossbows Patch.esl'
+    tag:
+      - Stats
+      - Text
+  - name: 'Unofficial Elven Hunter Armor Patch.esl'
+    tag:
+      - Delev
+      - Invent.Remove
+      - NPC.DefaultOutfit
+      - Outfits.Add
+  - name: 'Unofficial Expanded Crossbow Pack Patch.esl'
+    tag:
+      - Stats
+      - Text
+  - name: 'Unofficial Farming Patch.esl'
+    tag: [ C.Encounter ]
+  - name: 'Unofficial Ghosts of the Tribunal Patch.esl'
+    tag:
+      - EffectStats
+      - Keywords
+      - Names
+      - Outfits.Add
+      - Outfits.Remove
+      - Stats
+  - name: 'Unofficial Goblins Patch.esl'
+    tag:
+      - Actors.AIPackages
+      - Stats
+  - name: 'Unofficial Gray Cowl Returns Patch.esl'
+    tag: [ Keywords ]
+  - name: 'Unofficial Headmans Cleaver Patch.esl'
+    tag: [ Stats ]
+  - name: 'Unofficial Hendraheim Patch.esl'
+    tag: [ Sound ]
+  - name: 'Unofficial Iron Armor Patch.esl'
+    req: [ 'ccbgssse052-ba_iron.esl' ]
+  - name: 'Unofficial Myrwatch Patch.esl'
+    tag: [ C.Location ]
+  - name: 'Unofficial Plague of the Dead Patch.esl'
+    tag:
+      - SpellStats
+      - Stats
+  - name: 'Unofficial Redguard Elite Armaments Patch.esl'
+    tag: [ Graphics ]
+  - name: 'Unofficial Ruin''s Edge Patch.esl'
+    tag: [ Stats ]
+  - name: 'Unofficial Shadowrend Patch.esl'
+    tag:
+      - EffectStats
+      - Stats
+  - name: 'Unofficial Staff of Sheogorath Patch.esl'
+    tag:
+      - Sound
+      - Stats
+  - name: 'Unofficial Steel Soldier Armor Patch.esl'
+    tag: [ Graphics ]
+  - name: 'Unofficial Stendarr''s Hammer Patch.esl'
+    tag:
+      - Names
+      - Stats
+  - name: 'Unofficial The Cause Patch.esl'
+    tag: [ Relations.Add ]
+  - name: 'Unofficial The Contest Patch.esl'
+    tag: [ Names ]
+  - name: 'Unofficial Tundra Homestead Patch.esl'
+    tag: [ Sound ]
+  - name: 'Unofficial Umbra Patch.esl'
+    tag: [ Stats ]
 
 ###### Fixes ######
   - name: 'Allinonefpsfix.esp'
@@ -4381,6 +4481,20 @@ plugins:
       - <<: *useInstead
         subs: [ 'Eli_Breezehome [PATCH - Lux].esp' ]
         condition: 'version("Eli_Breezehome.esp", "1.6.0", >=) and not active("Eli_Breezehome [PATCH - Lux].esp")'
+  - name: 'Lux - Flat Maps generic patch.esp'
+    after:
+      - 'FWMF for Fantasy Paper Maps.esp'
+      - 'FWMF for Paper Map by Mirhayasu.esp'
+      - 'FWMF Geology Survey Map.esp'
+      - 'FWMF Marked Clean Map.esp'
+      - 'FWMF Marked Old Map.esp'
+      - 'FWMF SE Marked Clean Map 4K.esp'
+      - 'FWMF SE Marked Old Map 4K.esp'
+      - 'FWMF SE Unmarked Clean Map 4K.esp'
+      - 'FWMF SE Unmarked Old Map 4K.esp'
+      - 'FWMF Skyrim and Solstheim Satellite Maps.esp'
+      - 'FWMF Unmarked Clean Map.esp'
+      - 'FWMF Unmarked Old Map.esp'
   - name: 'Lux - Forgotten City.esp'
     tag:
       - C.ImageSpace
@@ -16372,23 +16486,11 @@ plugins:
     group: *worldSettingsGroup
     after: [ 'Atlas Map Markers.esp' ]
 
-  - name: 'Blackreach Paper Map for FWMF.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/53878/'
-        name: 'Paper Blackreach Map for FWMF'
-    group: *paperMapsGroup
-
   - name: 'EzEWorldMapSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7012/' ]
     group: *worldSettingsGroup
 
-  - name: 'Forgotten Vale Map for FWMF.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54628/'
-        name: 'Forgotten Vale Paper Map for FWMF'
-    group: *paperMapsGroup
-
-  - name: 'FWMF (for Fantasy Paper Maps|for Paper Map by Mirhayasu|Geology Survey Map|Skyrim and Solstheim Satellite Maps|(SE )?(Un)?Marked (Clean|Old) Map( 4K)?)\.esp'
+  - name: 'FWMF (for Fantasy Paper Maps|for Paper Map by Mirhayasu|Geology Survey Map|Skyrim and Solstheim Satellite Maps|(SE )?(Un)?Marked (Clean|Old) Map( 4K)?|Skygerfall)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29932/'
         name: 'Flat World Map Framework'
@@ -16407,6 +16509,7 @@ plugins:
       - 'FWMF Skyrim and Solstheim Satellite Maps.esp'
       - 'FWMF Unmarked Clean Map.esp'
       - 'FWMF Unmarked Old Map.esp'
+    inc: [ 'Lux - Flat Maps generic patch.esp' ]
   - name: 'Water for ENB - Patch - FWMF for Fantasy Paper Maps.esp'
     after: [ 'FWMF for Fantasy Paper Maps.esp' ]
   - name: 'Water for ENB - Patch - FWMF for Satellite Maps.esp'
@@ -16431,6 +16534,103 @@ plugins:
     after: [ 'FWMF Unmarked Old Map.esp' ]
   - name: 'Water for ENB - Patch - FWMF Unmarked Old Map 4K.esp'
     after: [ 'FWMF SE Unmarked Old Map 4K.esp' ]
+  # Standalone Skyrim Maps #
+  - name: '(Blackreach|Dayspring Canyon|Deepwood Vale|Forgotten Vale|Markarth|Skuldafn|Skyrim|Solstheim|Soul Cairn|Sovngarde)( Paper)? Map( by (FreelanceCartography|Geevee))? for FWMF\.esp'
+    group: *paperMapsGroup
+    after:
+      - 'FWMF for Fantasy Paper Maps.esp'
+      - 'FWMF for Paper Map by Mirhayasu.esp'
+      - 'FWMF Geology Survey Map.esp'
+      - 'FWMF Marked Clean Map.esp'
+      - 'FWMF Marked Old Map.esp'
+      - 'FWMF SE Marked Clean Map 4K.esp'
+      - 'FWMF SE Marked Old Map 4K.esp'
+      - 'FWMF SE Unmarked Clean Map 4K.esp'
+      - 'FWMF SE Unmarked Old Map 4K.esp'
+      - 'FWMF Skyrim and Solstheim Satellite Maps.esp'
+      - 'FWMF Unmarked Clean Map.esp'
+      - 'FWMF Unmarked Old Map.esp'
+  - name: 'Blackreach Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/53878/'
+        name: 'Blackreach Paper Map for FWMF'
+  - name: 'Dayspring Canyon Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/61917/'
+        name: 'Dayspring Canyon Paper Map for FWMF'
+  - name: 'Deepwood Vale Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/75155/'
+        name: 'Deepwood Vale Paper Map for FWMF'
+  - name: 'Forgotten Vale Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54628/'
+        name: 'Forgotten Vale Paper Map for FWMF'
+  - name: 'Markarth Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/62386/'
+        name: 'Markarth Paper Map by Mirhayasu for FWMF'
+  - name: 'Skuldafn Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/73489/'
+        name: 'Skuldafn Paper Map for FWMF'
+  - name: 'Skyrim Paper Map by FreelanceCartography for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78995/'
+        name: 'Skyrim Paper Map by FreelanceCartography for FWMF'
+  - name: 'Solstheim Map by Geevee for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/63086/'
+        name: 'Skyrim and Solstheim Paper Maps by Geevee for FWMF'
+  - name: 'Soul Cairn Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/55387/'
+        name: 'Soul Cairn Paper Map for FWMF'
+  - name: 'Sovngarde Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54255/'
+        name: 'Sovngarde Paper Map for FWMF'
+  # Standalone Add-On Maps #
+  - name: '(FWMF_(Akavir|Darkend)|(Beyond Bruma|Darkend|ECSS Shivering Isles|Falskaar|GCoN|Midwood Isle|Solstheim|Vigilant|Wyrmstooth)( Paper)?( Map)?( by (Duncan|Mirhayasu))? for FWMF)\.esp'
+    group: *paperMapsGroup
+  - name: 'Beyond Bruma by Mirhayasu for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64037/'
+        name: 'Beyond Skyrim Bruma Paper Map by Mirhayasu for FWMF'
+  - name: '(Beyond Bruma|Falskaar|GCoN|Solstheim|Wyrmstooth)( Map)?( by Duncan)? for FWMF\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/55025/'
+        name: 'Duncan''s Paper Maps for FWMF'
+  - name: '(Darkend|Vigilant) Paper Map for FWMF\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/84112/'
+        name: 'Updates to various maps for FWMF'
+  - name: 'ECSS Shivering Isles Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/88709/'
+        name: 'Extended Cut - Saints and Seducers Paper Map for FWMF'
+  - name: 'FWMF_Akavir.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/87874/'
+        name: 'Paper Akavir Map for FWMF'
+  - name: 'FWMF_Darkend.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/60691/'
+        name: 'Paper Darkend Map for FWMF'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Darkend Paper Map for FWMF.esp**' ]
+        condition: 'active("Darkend Paper Map for FWMF.esp")'
+  - name: 'FWMF Skygerfall.esp'
+    inc: [ 'DaggerfallPaperMap.esp' ]
+  - name: 'Midwood Isle Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66187/'
+        name: 'Midwood Isle Paper Map for FWMF'
+  - name: 'Vigilant Paper Map for FWMF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/59967/'
+        name: 'Paper Coldharbour Map for VIGILANT (FWMF)'
 
   - name: 'IcePenguinWorldMap(classic|Paper)?\.esp'
     url:
@@ -16486,18 +16686,6 @@ plugins:
       - <<: *patchUnavailable
         subs: [ 'Enhanced Lighting for ENB (ELE)' ]
         condition: 'active("ELE_SSE.esp")'
-
-  - name: 'Soul Cairn Paper Map for FWMF.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/55387/'
-        name: 'Soul Cairn Paper Map for FWMF'
-    group: *paperMapsGroup
-
-  - name: 'Sovngarde Map for FWMF.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54255/'
-        name: 'Paper Sovngarde Map for FWMF'
-    group: *paperMapsGroup
 
 ###### Items ######
   - name: 'AdditionalH(earthfireDolls|FDollsPassivesPatch)\.esp'
