@@ -955,6 +955,46 @@ plugins:
 ###### Creation Club ######
   - name: 'cc[A-Z]{3}SSE[0-9]{3}.*\.es(l|m)'
     group: *ccGroup
+  ### Base Game ###
+  # Fishing
+  - name: 'ccBGSSSE001-Fish.esm'
+    tag:
+      - Invent.Add
+      - NPC.DefaultOutfit
+      - ObjectBounds
+    dirty:
+      - <<: *quickClean
+        crc: 0x3F2DC672
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+        udr: 4
+  # Survival Mode
+  - name: 'ccQDRSSE001-SurvivalMode.esl'
+    tag:
+      - Keywords
+      - Text
+    dirty:
+      - <<: *quickClean
+        crc: 0x87023079
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  # Rare Curios
+  - name: 'ccBGSSSE037-Curios.esl'
+    clean:
+      - crc: 0xEA917D0B
+        util: 'SSEEdit v4.0.4c'
+  # Saints & Seducers
+  - name: 'ccBGSSSE025-AdvDSGS.esm'
+    msg: [ *patch3rdParty_SRPC_Redux ]
+    tag:
+      - C.Encounter
+      - C.Location
+    dirty:
+      - <<: *quickClean
+        crc: 0xA3D900E1
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 3
+  ### Anniversary Edition ###
   # Adventurer's Backpack
   - name: 'ccfsvsse001-backpacks.esl'
     clean:
@@ -1202,18 +1242,6 @@ plugins:
     clean:
       - crc: 0xB2682AA4
         util: 'SSEEdit v4.0.4'
-  # Fishing
-  - name: 'ccBGSSSE001-Fish.esm'
-    tag:
-      - Invent.Add
-      - NPC.DefaultOutfit
-      - ObjectBounds
-    dirty:
-      - <<: *quickClean
-        crc: 0x3F2DC672
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
-        udr: 4
   # Forgotten Seasons
   - name: 'cctwbsse001-puzzledungeon.esm'
     dirty:
@@ -1378,11 +1406,6 @@ plugins:
         crc: 0xFE6BE367
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
-  # Rare Curios
-  - name: 'ccBGSSSE037-Curios.esl'
-    clean:
-      - crc: 0xEA917D0B
-        util: 'SSEEdit v4.0.4c'
   # Redguard Elite Armaments
   - name: 'ccedhsse003-redguard.esl'
     dirty:
@@ -1397,17 +1420,6 @@ plugins:
         crc: 0x5EE1F7FA
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 2
-  # Saints & Seducers
-  - name: 'ccBGSSSE025-AdvDSGS.esm'
-    msg: [ *patch3rdParty_SRPC_Redux ]
-    tag:
-      - C.Encounter
-      - C.Location
-    dirty:
-      - <<: *quickClean
-        crc: 0xA3D900E1
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 3
   # Saturalia Holiday Pack
   - name: 'ccvsvsse001-winter.esl'
     clean:
@@ -1469,16 +1481,6 @@ plugins:
         crc: 0x2B01BC19
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 20
-  # Survival Mode
-  - name: 'ccQDRSSE001-SurvivalMode.esl'
-    tag:
-      - Keywords
-      - Text
-    dirty:
-      - <<: *quickClean
-        crc: 0x87023079
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
   # The Cause
   - name: 'ccbgssse067-daedinv.esm'
     msg: [ *patch3rdParty_SRPC_Redux ]
