@@ -687,10 +687,10 @@ globals:
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
 
 groups:
-  - name: &dlcGroup DLC
+  - name: &mainGroup Main Plugins
 
   - name: &ccGroup Creation Club
-    after: [ *dlcGroup ]
+    after: [ *mainGroup ]
 
   - name: &fixesGroup Fixes & Resources
     after: [ *ccGroup ]
@@ -791,7 +791,7 @@ groups:
 plugins:
 ###### Official Game Files ######
   - name: 'Update.esm'
-    group: *dlcGroup
+    group: *mainGroup
     tag:
       - C.Location
       - C.Regions
@@ -830,7 +830,7 @@ plugins:
         udr: 92
         nav: 3
   - name: 'Dawnguard.esm'
-    group: *dlcGroup
+    group: *mainGroup
     tag:
       - C.Location
       - C.Regions
@@ -874,7 +874,7 @@ plugins:
         udr: 82
         nav: 59
   - name: 'HearthFires.esm'
-    group: *dlcGroup
+    group: *mainGroup
     after: [ 'Dawnguard.esm' ]
     tag:
       - C.Location
@@ -909,7 +909,7 @@ plugins:
         udr: 11
         nav: 5
   - name: 'Dragonborn.esm'
-    group: *dlcGroup
+    group: *mainGroup
     after: [ 'HearthFires.esm' ]
     msg:
       - <<: *patch3rdParty
