@@ -971,6 +971,7 @@ plugins:
   # Survival Mode
   - name: 'ccqdrsse001-survivalmode.esl'
     tag:
+      - EffectStats
       - Keywords
       - Text
     dirty:
@@ -986,6 +987,9 @@ plugins:
   # Saints & Seducers
   - name: 'ccbgssse025-advdsgs.esm'
     msg: [ *patch3rdParty_SRPC_Redux ]
+    tag:
+      - Invent.Add
+      - Sound
     dirty:
       - <<: *quickClean
         crc: 0xA3D900E1
@@ -1144,7 +1148,10 @@ plugins:
         itm: 1
   # Bone Wolf
   - name: 'ccbgssse036-petbwolf.esl'
-    tag: [ Delev ]
+    tag:
+      - Delev
+      - Keywords
+      - R.Voice-M
     clean:
       - crc: 0xDF613F47
         util: 'SSEEdit v4.0.4'
@@ -1174,6 +1181,15 @@ plugins:
         itm: 6
   # Dawnfang & Duskfang
   - name: 'ccbgssse013-dawnfang.esl'
+    tag:
+      - C.Acoustic
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
+      - C.Water
     clean:
       - crc: 0xC4E35D25
         util: 'SSEEdit v4.0.4'
@@ -1203,6 +1219,8 @@ plugins:
       - C.Light
       - C.Music
       - C.Name
+      - Graphics
+      - Names
     dirty:
       - <<: *quickClean
         crc: 0x9F926A70
@@ -1274,6 +1292,7 @@ plugins:
       - C.LockList
       - C.Music
       - C.Name
+      - C.Water
     dirty:
       - <<: *quickClean
         crc: 0xD45403A6
@@ -1281,6 +1300,16 @@ plugins:
         itm: 1
   # Goblins
   - name: 'ccbgssse040-advobgobs.esl'
+    tag:
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
+      - C.Water
     dirty:
       - <<: *quickClean
         crc: 0x86A233E1
@@ -1310,7 +1339,15 @@ plugins:
         util: 'SSEEdit v4.0.4'
   # Hendhraheim
   - name: 'cceejsse004-hall.esl'
-    tag: [ C.Location ]
+    tag:
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
     dirty:
       - <<: *quickClean
         crc: 0xFBD7033E
@@ -1372,6 +1409,10 @@ plugins:
         itm: 3
   # Nix-Hound
   - name: 'ccbgssse035-petnhound.esl'
+    tag:
+      - Names
+      - R.Stats
+      - R.Voice-M
     clean:
       - crc: 0xDA4CBDA5
         util: 'SSEEdit v4.0.4'
@@ -1425,8 +1466,12 @@ plugins:
       - C.ImageSpace
       - C.Light
       - C.Location
+      - C.MiscFlags
       - C.Name
+      - C.Water
+      - Graphics
       - Keywords
+      - Names
     clean:
       - crc: 0xA7C5D720
         util: 'SSEEdit v4.0.4'
