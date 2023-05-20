@@ -12908,6 +12908,31 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/57377/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
+  - name: 'Stormcrown.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/90659/'
+        name: 'Stormcrown - A Shout Overhaul'
+    req:
+      - name: 'SKSE/Plugins/CustomSkills.dll'
+        display: '[Custom Skills Framework](https://www.nexusmods.com/skyrimspecialedition/mods/41780/)'
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Scrambled Bugs](https://www.nexusmods.com/skyrimspecialedition/mods/43532/)' ]
+        condition: 'not file("SKSE/Plugins/ScrambledBugs.dll")'
+    tag:
+      - EffectStats
+      - Graphics
+      - Keywords
+      - Names
+      - Sound
+      - SpellStats
+      - Text
+    dirty:
+      - <<: *quickClean
+        crc: 0x1B40B2EA
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 12
+
   - name: 'SuccubusWaifuSummons.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/60483/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
