@@ -22433,9 +22433,10 @@ plugins:
       - 'Paradise_City_MergedSummerWindhelm.esp'
       - 'Paradise_City_Rorikstead.esp'
       - name: 'The Great Cities - Minor Cities and Towns.esp'
-        condition: 'checksum("JKs Skyrim.esp", C8478AEC) or not active("The Great Cities of JK''s (North|Skyrim) - Patch.esp")'
+        condition: 'checksum("JKs Skyrim.esp", 932DCD5F) or not active("The Great Cities of JK''s (North|Skyrim) - Patch.esp")'
       - 'The Great City of Dawnstar.esp'
-      - 'The Great City of Falkreath.esp'
+      - name: 'The Great City of Falkreath.esp'
+        condition: 'not active("COTN Falkreath - JKs Skyrim - TGCF Patch.esp")'
       - 'The Great City of Morthal.esp'
       - 'The Great City of Winterhold.esp'
     msg:
@@ -22508,12 +22509,12 @@ plugins:
         subs:
           - 'The Great Cities - Minor Cities and Towns'
           - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
-        condition: 'not checksum("JKs Skyrim.esp", C8478AEC) and active("The Great Cities - Minor Cities and Towns.esp") and (not active("COTN - Dawnstar.esp") or not active("COTN - Morthal.esp")) and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
+        condition: 'checksum("JKs Skyrim.esp", C2ACB37F) and active("The Great Cities - Minor Cities and Towns.esp") and (not active("COTN - Dawnstar.esp") or not active("COTN - Morthal.esp")) and not active("The Great Cities of JK''s Skyrim - Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'The Great Cities & Cities of the North'
           - '[The Great Cities of JK''s North - Patch](https://www.nexusmods.com/skyrimspecialedition/mods/33687/)'
-        condition: 'not checksum("JKs Skyrim.esp", C8478AEC) and active("The Great Cities - Minor Cities and Towns.esp") and active("COTN - Dawnstar.esp") and active("COTN - Morthal.esp") and not active("The Great Cities of JK''s North - Patch.esp")'
+        condition: 'checksum("JKs Skyrim.esp", C2ACB37F) and active("The Great Cities - Minor Cities and Towns.esp") and active("COTN - Dawnstar.esp") and active("COTN - Morthal.esp") and not active("The Great Cities of JK''s North - Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'The Great City of Dragon Bridge'
@@ -22592,10 +22593,12 @@ plugins:
         subs: [ 'Thunderchild' ]
         condition: 'active("Thunderchild - Epic Shout Package.esp") and not active("JKs Skyrim_Thunderchild_Patch.esp")'
     clean:
+      # Original
       - crc: 0xC2ACB37F
-        util: 'SSEEdit v4.0.3g'
-      - crc: 0xC8478AEC
-        util: 'SSEEdit v4.0.3g'
+        util: 'SSEEdit v4.0.4c'
+      # ETaC Replacer
+      - crc: 0x932DCD5F
+        util: 'SSEEdit v4.0.4c'
   # JK's Skyrim - Patches #
   - name: '.*JKs[ _]Skyrim.*Patch\.esp'
     url:
