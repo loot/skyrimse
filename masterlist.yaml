@@ -22346,18 +22346,35 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65676/'
         name: 'JK''s College of Winterhold'
-    inc:
-      - name: 'CollegeOfWinterholdImmersive.esp'
-        condition: 'not active("JKs College of Winterhold - ICOW Patch.esp")'
-      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not active("JKs College of Winterhold - OCW Patch.esp")'
-      - 'UltimateCollege.esp'
+    inc: [ 'UltimateCollege.esp' ]
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Goldbrand (Creation Club)'
           - '[JK''s Guild HQ Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/61416/)'
         condition: 'active("ccbgssse005-goldbrand.esl") and not active("JKs College of Winterhold - CC - Goldbrand Patch.esp") and not (active("CollegeOfWinterholdImmersive.esp") or active("OCW_Obscure''s_CollegeofWinterhold.esp"))'
+      - <<: *patch3rdParty
+        subs:
+          - 'Goldbrand (Creation Club) & Immersive College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("ccbgssse005-goldbrand.esl") and active("CollegeOfWinterholdImmersive.esp") and not active("JKs CoW - ICOW - CC - Goldbrand Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Goldbrand (Creation Club) & Obscure''s College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("ccbgssse005-goldbrand.esl") and active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("JKs CoW - OCW - CC Goldbrand Patch.esp")'
+      - <<: *patch3rdParty
+        type: error
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("JKs College of Winterhold - ICOW Patch.esp")'
+      - <<: *patch3rdParty
+        type: error
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("JKs College of Winterhold - OCW Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
