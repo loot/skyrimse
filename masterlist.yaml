@@ -71,7 +71,7 @@ prelude:
 
     - &missingRequirementXforPlugin
       type: warn
-      content: 'Some of this plugins requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+      content: 'Some of this plugin''s requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
 
     - &moddingPlugin
       type: error
@@ -1602,6 +1602,8 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch DV'
     group: *fixesGroup
     msg:
+      - <<: *obsolete
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", >=) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.9", <)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *patch3rdParty
@@ -1620,7 +1622,7 @@ plugins:
           - 'Skyrim Special Edition'
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.8", >=)'
     clean:
-      - crc: 0x6C8C3D78
+      - crc: 0xFC18164A
         util: 'SSEEdit v4.0.4c'
       # German
       - crc: 0xB3AB07FD
@@ -5014,17 +5016,24 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'StormLightning.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/'
+        name: 'Storm Lightning'
+    req: [ *SKSE ]
     inc:
       - 'mintylightningmod.esp'
       - 'MPAB.esp'
-    msg: [ *requiresMCM ]
-    req: [ *SKSE ]
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
+      - *requiresMCM
     clean:
-      - crc: 0x08DF4CAE
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-      - crc: 0xCAB7D389
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      # ESL
+      - crc: 0xCF86C796
+        util: 'SSEEdit v4.0.4c'
+      # ESP
+      - crc: 0x0DEE58B1
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'surreal lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2770/' ]
@@ -9551,6 +9560,23 @@ plugins:
     tag:
       - SpellStats
       - Text
+
+  - name: 'SurvivalModeImproved.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78244/'
+        name: 'Survival Mode Improved - SKSE'
+    req: [ *SKSE ]
+    msg: [ *missingRequirementAddrLibforPlugin ]
+    tag:
+      - Keywords
+      - Names
+      - SpellStats
+      - Text
+    dirty:
+      - <<: *quickClean
+        crc: 0x7FDF3A9D
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
 
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
@@ -15792,8 +15818,11 @@ plugins:
       - crc: 0x06689998
         util: 'SSEEdit v4.0.3'
 
+  - name: '(Tools of Kagrenac|TOK_(AetheriumWeapons|CWI|EVGAT|ShalidorsMirror)_Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/'
+        name: 'The Tools of Kagrenac'
   - name: 'Tools of Kagrenac.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
     after:
       - name: 'MLU.esp'
         condition: '(is_master("MLU.esp") and is_master("Tools of Kagrenac.esp")) or (not is_master("MLU.esp") and not is_master("Tools of Kagrenac.esp"))'
@@ -15811,8 +15840,27 @@ plugins:
       - -C.Climate
       - Sound
     clean:
-      - crc: 0x7D576666
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xA9406D75
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_AetheriumWeapons_Patch.esp'
+    clean:
+      - crc: 0x8415BC26
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_CWI_Patch.esp'
+    clean:
+      - crc: 0x658C758F
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x22D9DF30
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_EVGAT_Patch.esp'
+    clean:
+      - crc: 0xFA0EE760
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_ShalidorsMirror_Patch.esp'
+    req: [ 'Shalidor''s Mirror.esp' ]
+    clean:
+      - crc: 0xE486857B
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'TSR_TeldrynSerious.esp'
     url:
@@ -22346,26 +22394,40 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65676/'
         name: 'JK''s College of Winterhold'
-    after:
-      - name: 'CollegeOfWinterholdImmersive.esp'
-        condition: 'active("JKs College of Winterhold - ICOW Patch.esp")'
-    inc:
-      - name: 'CollegeOfWinterholdImmersive.esp'
-        condition: 'not active("JKs College of Winterhold - ICOW Patch.esp")'
-      - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not active("JKs College of Winterhold - OCW Patch.esp")'
-      - 'UltimateCollege.esp'
+    inc: [ 'UltimateCollege.esp' ]
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Goldbrand (Creation Club)'
           - '[JK''s Guild HQ Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/61416/)'
-        condition: 'active("ccbgssse005-goldbrand.esl") and not active("JKs College of Winterhold - CC - Goldbrand Patch.esp")'
+        condition: 'active("ccbgssse005-goldbrand.esl") and not active("JKs College of Winterhold - CC - Goldbrand Patch.esp") and not (active("CollegeOfWinterholdImmersive.esp") or active("OCW_Obscure''s_CollegeofWinterhold.esp"))'
+      - <<: *patch3rdParty
+        subs:
+          - 'Goldbrand (Creation Club) & Immersive College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("ccbgssse005-goldbrand.esl") and active("CollegeOfWinterholdImmersive.esp") and not active("JKs CoW - ICOW - CC - Goldbrand Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Goldbrand (Creation Club) & Obscure''s College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("ccbgssse005-goldbrand.esl") and active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("JKs CoW - OCW - CC Goldbrand Patch.esp")'
+      - <<: *patch3rdParty
+        type: error
+        subs:
+          - 'Immersive College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("JKs College of Winterhold - ICOW Patch.esp")'
+      - <<: *patch3rdParty
+        type: error
+        subs:
+          - 'Obscure''s College of Winterhold'
+          - '[JK''s College of Winterhold (Immersive and Obscure) Combo Patches](https://www.nexusmods.com/skyrimspecialedition/mods/67820/)'
+        condition: 'active("OCW_Obscure''s_CollegeofWinterhold.esp") and not active("JKs College of Winterhold - OCW Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[JK''s Guild HQ Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/61416/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("JKs College of Winterhold - USSEP patch.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("JKs College of Winterhold - USSEP patch.esp") and not (active("CollegeOfWinterholdImmersive.esp") or active("OCW_Obscure''s_CollegeofWinterhold.esp"))'
     tag:
       - C.Light
       - C.Water
@@ -27363,6 +27425,29 @@ plugins:
       - <<: *useInstead
         subs: [ '[Requiem - Improved Closefaced Helmets.esp](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)' ]
         condition: 'active("Requiem.esp")'
+
+  ### JK's Guild HQ Interiors Patch Collection ###
+  # JK's College of Winterhold #
+  - name: 'JKs College of Winterhold - (CC - Goldbrand|USSEP) Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/61416/'
+        name: 'JK''s Guild HQ Interiors Patch Collection'
+  - name: 'JKs College of Winterhold - CC - Goldbrand Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**JKs CoW - ICOW - CC - Goldbrand Patch.esp**' ]
+        condition: 'active("JKs CoW - ICOW - CC - Goldbrand Patch.esp")'
+      - <<: *alreadyInX
+        subs: [ '**JKs CoW - OCW - CC Goldbrand Patch.esp**' ]
+        condition: 'active("JKs CoW - OCW - CC Goldbrand Patch.esp")'
+  - name: 'JKs College of Winterhold - USSEP patch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**JKs College of Winterhold - ICOW Patch.esp**' ]
+        condition: 'active("JKs College of Winterhold - ICOW Patch.esp")'
+      - <<: *alreadyInX
+        subs: [ '**JKs College of Winterhold - OCW Patch.esp**' ]
+        condition: 'active("JKs College of Winterhold - OCW Patch.esp")'
 
   ### JK's Interiors Patch Collection ###
   # JK's The Winking Skeever #
