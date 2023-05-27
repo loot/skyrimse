@@ -5016,17 +5016,24 @@ plugins:
         util: 'SSEEdit v4.0.3'
 
   - name: 'StormLightning.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/'
+        name: 'Storm Lightning'
+    req: [ *SKSE ]
     inc:
       - 'mintylightningmod.esp'
       - 'MPAB.esp'
-    msg: [ *requiresMCM ]
-    req: [ *SKSE ]
+    msg:
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
+      - *requiresMCM
     clean:
-      - crc: 0x08DF4CAE
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-      - crc: 0xCAB7D389
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      # ESL
+      - crc: 0xCF86C796
+        util: 'SSEEdit v4.0.4c'
+      # ESP
+      - crc: 0x0DEE58B1
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'surreal lighting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2770/' ]
