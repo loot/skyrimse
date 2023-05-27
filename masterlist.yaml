@@ -15818,8 +15818,11 @@ plugins:
       - crc: 0x06689998
         util: 'SSEEdit v4.0.3'
 
+  - name: '(Tools of Kagrenac|TOK_(AetheriumWeapons|CWI|EVGAT|ShalidorsMirror)_Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/'
+        name: 'The Tools of Kagrenac'
   - name: 'Tools of Kagrenac.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14168/' ]
     after:
       - name: 'MLU.esp'
         condition: '(is_master("MLU.esp") and is_master("Tools of Kagrenac.esp")) or (not is_master("MLU.esp") and not is_master("Tools of Kagrenac.esp"))'
@@ -15837,8 +15840,27 @@ plugins:
       - -C.Climate
       - Sound
     clean:
-      - crc: 0x7D576666
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0xA9406D75
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_AetheriumWeapons_Patch.esp'
+    clean:
+      - crc: 0x8415BC26
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_CWI_Patch.esp'
+    clean:
+      - crc: 0x658C758F
+        util: 'SSEEdit v4.0.4c'
+      - crc: 0x22D9DF30
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_EVGAT_Patch.esp'
+    clean:
+      - crc: 0xFA0EE760
+        util: 'SSEEdit v4.0.4c'
+  - name: 'TOK_ShalidorsMirror_Patch.esp'
+    req: [ 'Shalidor''s Mirror.esp' ]
+    clean:
+      - crc: 0xE486857B
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'TSR_TeldrynSerious.esp'
     url:
