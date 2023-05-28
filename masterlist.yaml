@@ -21525,6 +21525,9 @@ plugins:
     after:
       - name: 'JKs Skyrim.esp'
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Falkreath.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Falkreath.esp") and not is_master("JKs Skyrim.esp")))'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Falkreath Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/56734/)' ]
 
   - name: 'COTN - Morthal.esp'
     url:
@@ -21535,6 +21538,9 @@ plugins:
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Morthal.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Morthal.esp") and not is_master("JKs Skyrim.esp")))'
       - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
         condition: 'not is_master("COTN - Morthal.esp")'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Morthal Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/34228/)' ]
     clean:
       - crc: 0xB88858C6
         util: 'SSEEdit v4.0.4b'
@@ -21544,6 +21550,9 @@ plugins:
     after:
       - name: 'JKs Skyrim.esp'
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Winterhold.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Winterhold.esp") and not is_master("JKs Skyrim.esp")))'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/40181/)' ]
 
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
