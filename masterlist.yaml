@@ -1603,7 +1603,7 @@ plugins:
     group: *fixesGroup
     msg:
       - <<: *obsolete
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", >=) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.9", <)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", >=) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.9a", <)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *patch3rdParty
@@ -1622,7 +1622,7 @@ plugins:
           - 'Skyrim Special Edition'
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.8", >=)'
     clean:
-      - crc: 0xFC18164A
+      - crc: 0xF82ECF21
         util: 'SSEEdit v4.0.4c'
       # German
       - crc: 0xB3AB07FD
@@ -5042,6 +5042,20 @@ plugins:
         crc: 0x7925F0B7
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
+
+  - name: 'Torch Brightness Radius.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5101/'
+        name: 'Torch Brightness Radius'
+    after:
+      - 'ELE_SSE.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Lux.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RLO - Interiors.esp'
+    tag:
+      - Deactivate
+      - Graphics
 
   - name: 'TrueStormsSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2472/' ]
@@ -21496,6 +21510,9 @@ plugins:
         condition: 'not is_master("COTN - Dawnstar.esp")'
       - name: 'moretosaycityguards.esp'
         condition: 'not is_master("COTN - Dawnstar.esp") and not active("COTN Dawnstar - More to Say City Guards.esp")'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Dawnstar Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/30885/)' ]
     tag: [ C.Music ]
     clean:
       - crc: 0x679D5AEB
@@ -21508,6 +21525,9 @@ plugins:
     after:
       - name: 'JKs Skyrim.esp'
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Falkreath.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Falkreath.esp") and not is_master("JKs Skyrim.esp")))'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Falkreath Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/56734/)' ]
 
   - name: 'COTN - Morthal.esp'
     url:
@@ -21518,6 +21538,9 @@ plugins:
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Morthal.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Morthal.esp") and not is_master("JKs Skyrim.esp")))'
       - name: 'Landscape For Grass Mods JK''S Skyrim.esp'
         condition: 'not is_master("COTN - Morthal.esp")'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Morthal Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/34228/)' ]
     clean:
       - crc: 0xB88858C6
         util: 'SSEEdit v4.0.4b'
@@ -21527,6 +21550,9 @@ plugins:
     after:
       - name: 'JKs Skyrim.esp'
         condition: 'active("The Great Cities of JK''s North - Patch.esp") and ((is_master("COTN - Winterhold.esp") and is_master("JKs Skyrim.esp")) or (not is_master("COTN - Winterhold.esp") and not is_master("JKs Skyrim.esp")))'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Cities of the North - Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/40181/)' ]
 
   - name: 'CoW Bridge Fix.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17972/' ]
