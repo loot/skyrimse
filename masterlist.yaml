@@ -28319,7 +28319,24 @@ plugins:
   - name: 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp'
     after: [ 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp' ]
   # [1.4] Main Combo Overhaul (Additions++) #
+  - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?(\.LotD)?\.(JKBP|PCE)\]( \(OCS\))?\.esp'
+    inc:
+      - 'MPXP1.4 [PATCH - SSkwy.TGCoS.JKBP.PCE].esp'
+      - 'MPXP1.4 [PATCH - SSkwy.TGCoS.JKBP.PCE] (OCS).esp'
+  # [1.4] Main Combo Overhaul (Additions++) JKBP-PCE #
+  - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.JKBP\.PCE\]( \(OCS\))?\.esp'
+    inc: [ 'BluePalaceTerrace.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.4 JKBP-PCE ESP' ]
+        condition: 'many("MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.JKBP\.PCE\]( \(OCS\))?\.esp")'
+  - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.JKBP.PCE].esp'
+    after: [ 'MPXP1.3 [PATCH - SSkwy.LotD].esp' ]
+  - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.JKBP.PCE] (OCS).esp'
+    after: [ 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp' ]
+  # [1.4] Main Combo Overhaul (Additions++) JKBP #
   - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
+    inc: [ 'Palaces Castles Enhanced.esp' ]
     msg:
       - <<: *useOnlyOneX
         subs: [ 'MPXP 1.4 JKBP ESP' ]
@@ -28344,6 +28361,41 @@ plugins:
         condition: 'not active("MPXP1\.2 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.JKBP\]( \(OCS\))?\.esp'
     inc: [ 'BluePalaceTerrace.esp' ]
+  # [1.4] Main Combo Overhaul (Additions++) PCE #
+  - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.LotD|\.TGCoS)?\.PCE\]( \(OCS\))?\.esp'
+    inc: [ 'JK''s Blue Palace.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.4 PCE ESP' ]
+        condition: 'many("MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.LotD|\.TGCoS)?\.PCE\]( \(OCS\))?\.esp")'
+  - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE].esp'
+    after:
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
+      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.1 DBPT ESP' ]
+        condition: 'not active("MPXP1\.1 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\]\.esp")'
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.PCE\] \(OCS\)\.esp'
+    after:
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp'
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'MPXP 1.2 DBPT ESP' ]
+        condition: 'not active("MPXP1\.2 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
+  - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE] (OCS).esp'
+    after: [ 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp' ]
+  - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.PCE\]( \(OCS\))?\.esp'
+    inc: [ 'BluePalaceTerrace.esp' ]
+  - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.PCE].esp'
+    after: [ 'MPXP1.3 [PATCH - SSkwy.LotD].esp' ]
+  - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.PCE] (OCS).esp'
+    after: [ 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp' ]
+  # [1.4] Main Combo Overhaul (Additions++) RBS #
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp'
     msg:
       - <<: *requiresX
