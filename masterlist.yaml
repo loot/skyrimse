@@ -28326,6 +28326,10 @@ plugins:
   # [1.4] Main Combo Overhaul (Additions++) JKBP-PCE #
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.JKBP\.PCE\]( \(OCS\))?\.esp'
     inc: [ 'BluePalaceTerrace.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.4 JKBP-PCE ESP' ]
+        condition: 'many("MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.JKBP\.PCE\]( \(OCS\))?\.esp")'
   - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.JKBP.PCE].esp'
     after: [ 'MPXP1.3 [PATCH - SSkwy.LotD].esp' ]
   - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.JKBP.PCE] (OCS).esp'
@@ -28360,6 +28364,10 @@ plugins:
   # [1.4] Main Combo Overhaul (Additions++) PCE #
   - name: 'MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.LotD|\.TGCoS)?\.PCE\]( \(OCS\))?\.esp'
     inc: [ 'JK''s Blue Palace.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'MPXP 1.4 PCE ESP' ]
+        condition: 'many("MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.LotD|\.TGCoS)?\.PCE\]( \(OCS\))?\.esp")'
   - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE].esp'
     after:
       - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
