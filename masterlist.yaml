@@ -28400,11 +28400,12 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'MPXP 1.4 PCE ESP' ]
         condition: 'many("MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.LotD|\.TGCoS)?\.PCE\]( \(OCS\))?\.esp")'
-  - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE].esp'
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy\.PCE\]( \(OCS\))?\.esp'
+    inc: [ 'LegacyoftheDragonborn.esm' ]
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.PCE\]\.esp'
     after:
       - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
       - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
-      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
     msg:
       - <<: *requiresX
         type: error
@@ -28419,8 +28420,6 @@ plugins:
         type: error
         subs: [ 'MPXP 1.2 DBPT ESP' ]
         condition: 'not active("MPXP1\.2 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
-  - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE] (OCS).esp'
-    after: [ 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp' ]
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.PCE\]( \(OCS\))?\.esp'
     inc: [ 'BluePalaceTerrace.esp' ]
   - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.PCE].esp'
@@ -28466,7 +28465,7 @@ plugins:
     msg:
       - <<: *requiresX
         type: error
-        subs: [ 'MPXP 1.4 ESP' ]
+        subs: [ 'MPXP 1.4 RBS ESP' ]
         condition: 'not active("MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp")'
   # [3.0] Other Modules #
   - name: 'DBPT \[PATCH - LotD \(VER\.0[12]\)\]( \(OCS\))?\.esp'
