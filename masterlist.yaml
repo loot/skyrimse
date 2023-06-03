@@ -28,6 +28,10 @@ prelude:
       type: say
       content: 'It is recommended that you check the following compatibility patch compilation for this mod: %1%'
 
+    - &compatPatchForX
+      type: say
+      content: 'It is recommended that you check the following compatibility patch compilation for %1%: %2%'
+
     - &corrupt
       type: warn
       content: 'This file is corrupt and should not be used.'
@@ -685,6 +689,33 @@ globals:
     type: warn
     subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
+
+  # Mod Series Patch Collections
+  - <<: *compatPatchForX
+    subs:
+      - 'JK''s Interiors'
+      - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
+    condition: 'active("JK''?s (Angelines Aromatics|Arcadia''s Cauldron|Arnleif and Sons Trading Company|Bee and Barb|Belethor''s General Goods|Bits and Pieces|Candlehearth Hall|Elgrims Elixirs|Haelga''s Bunkhouse|New Gnisis Cornerclub|Radiant Raiment|Riverwood Trader|Sadris Used Wares|Septimus Signus''s Outpost|Silver-Blood Inn|Sinderion''s Field Laboratory|Sleeping Giant Inn|Temple of Dibella|Temple of Kynareth|Temple of Mara|Temple of Talos|Temple of the Divines|The Bannered Mare|The Drunken Huntsman|The Hag''s Cure|The Pawned Prawn|The Ragged Flagon|The Winking Skeever|Warmaiden''s|White Phial)\.esp") or active("JK''?s (Blue Palace|Dragonsreach|Mistveil Keep|Palace of the Kings|Understone Keep)\.esp") and not active("Palaces Castles Enhanced.esp")'
+  - <<: *compatPatchForX
+    subs:
+      - 'JK''s Guild HQ Interiors'
+      - '[JK''s Guild HQ Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/61416/)'
+    condition: 'active("JK''?s (The Bards College|High Hrothgar|Jorrvaskr|Sky Haven Temple)\.esp") or active("JK''s Castle Dour.esp") and not active("Palaces Castles Enhanced.esp") or active("JK''s College of Winterhold.esp") and not active("CollegeOfWinterholdImmersive.esp") and not active("OCW_Obscure''s_CollegeofWinterhold.esp")'
+  - <<: *compatPatchForX
+    subs:
+      - 'JK''s Palace Interiors + Palaces and Castles Enhanced'
+      - '[JK''s Interiors - Palaces and Castles Enhanced (PCE) Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/57714/)'
+    condition: 'active("JK''?s (Blue Palace|Castle Dour|Dragonsreach|Mistveil Keep|Palace of the Kings|Understone Keep)\.esp") and active("Palaces Castles Enhanced.esp")'
+  - <<: *compatPatchForX
+    subs:
+      - 'Ryn''s Riverwood Interiors'
+      - '[Ryn''s Riverwood Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/89511/)'
+    condition: 'active("Ryn''s (Alvor''s House|Faendal''s House|Gerdur''s House|Riverwood Trader|Sleeping Giant Inn|Sven''s House)\.esp")'
+  - <<: *compatPatchForX
+    subs:
+      - 'Snazzy Interiors'
+      - '[Snazzy Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/91604/)'
+    condition: 'active("Snazzy Interiors - (Riften Black-Briar Manor|Riften Snow-Shod Manor|Whiterun House Battleborn|Whiterun House Gray-mane)\.esp")'
 
 groups:
   - name: &mainGroup Main Plugins
@@ -14910,6 +14941,17 @@ plugins:
         util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 50
 
+  - name: 'Esterah Alternate Start.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56666/'
+        name: 'Esterah Alternate Start'
+    dirty:
+      - <<: *quickClean
+        crc: 0xF92859A4
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 208
+        udr: 1
+
   - name: 'Finding_Derkeethus.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19550/' ]
     after: [ 'Quest Markers Restored.esp' ]
@@ -23649,29 +23691,16 @@ plugins:
     group: *highPriorityGroup
     inc: [ 'Vaults of Skyrim 1.0 NEXUS.esp' ]
     msg:
+      - <<: *compatPatch
+        subs: [ '[Palaces and Castles Enhanced Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/33364/)' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-      - <<: *patchProvided
-        subs: [ 'Enhanced Lights and FX' ]
-        condition: 'active("EnhancedLightsandFX.esp") and not active("PCE - ELFX PATCH.esp")'
-      - <<: *patchProvided
-        subs: [ 'Immersive Citizens' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("PCE - Immersive Citizens AI Overhaul Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Interesting NPCs' ]
-        condition: 'active("3DNPC.esp") and not active("PCE - 3DNPC Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Open Cities' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("PCE - Relighting Skyrim.esp")'
-      - <<: *patchProvided
-        subs: [ 'Skyrim Project Optimization ESM' ]
-        condition: 'not active("PCE - SPO Patch.esp") and active("Skyrim Project Optimization - Full Version.esm")'
-      - <<: *patchProvided
-        subs: [ 'Skyrim Sewers' ]
-        condition: 'active("SkyrimSewers.esp") and not active("PCE - Skyrim Sewers Patch.esp")'
     tag:
       - C.Encounter
       - C.Light
@@ -24526,6 +24555,8 @@ plugins:
       - 'Undriel_Raven_of_RavenRock.esl'
       - 'Undriel_Raven_of_RavenRock.esp'
     msg:
+      - <<: *compatPatch
+        subs: [ '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)' ]
       - <<: *includesX
         subs: [ 'The Raven of Raven Rock SE' ]
         condition: 'active("Undriel_Raven_of_RavenRock.esp") or active("Undriel_Raven_of_RavenRock.esl")'
@@ -24534,16 +24565,6 @@ plugins:
           - 'Ghosts of the Tribunal (Creation Club)'
           - '[Quaint Raven Rock - Ghosts of the Tribunal Patch](https://www.nexusmods.com/skyrimspecialedition/mods/59172/)'
         condition: 'active("ccasvsse001-almsivi.esm") and not active("Quaint Raven Rock - (Ghosts of the Tribunal CC Patch|GotT - EL Patch)\.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Nordic Jewelry (Creation Club)'
-          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
-        condition: 'active("ccedhsse001-norjewel.esl") and not active("Quaint Raven Rock - Nordic Jewelry Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[Quaint Raven Rock Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35290/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Quaint Raven Rock - USSEP Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Clockwork' ]
         condition: 'active("Clockwork.esp") and not active("Undriel_QRR_Clockwork_Patch.esp")'
@@ -28368,11 +28389,12 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'MPXP 1.4 PCE ESP' ]
         condition: 'many("MPXP1\.4 \[PATCH - (DBPT\.)?SSkwy(\.LotD|\.TGCoS)?\.PCE\]( \(OCS\))?\.esp")'
-  - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE].esp'
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy\.PCE\]( \(OCS\))?\.esp'
+    inc: [ 'LegacyoftheDragonborn.esm' ]
+  - name: 'MPXP1\.4 \[PATCH - DBPT\.SSkwy(\.LotD)?\.PCE\]\.esp'
     after:
       - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
       - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
-      - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
     msg:
       - <<: *requiresX
         type: error
@@ -28387,8 +28409,6 @@ plugins:
         type: error
         subs: [ 'MPXP 1.2 DBPT ESP' ]
         condition: 'not active("MPXP1\.2 \[PATCH - DBPT\.SSkwy(\.TGCoS)?\] \(OCS\)\.esp")'
-  - name: 'MPXP1.4 [PATCH - DBPT.SSkwy.PCE] (OCS).esp'
-    after: [ 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp' ]
   - name: 'MPXP1\.4 \[PATCH - SSkwy\.TGCoS\.PCE\]( \(OCS\))?\.esp'
     inc: [ 'BluePalaceTerrace.esp' ]
   - name: 'MPXP1.4 [PATCH - SSkwy.TGCoS.PCE].esp'
@@ -28434,7 +28454,7 @@ plugins:
     msg:
       - <<: *requiresX
         type: error
-        subs: [ 'MPXP 1.4 ESP' ]
+        subs: [ 'MPXP 1.4 RBS ESP' ]
         condition: 'not active("MPXP1\.4 \[PATCH - SSkwy\.TGCoS(\.LotD)?\.RBS\]\.esp")'
   # [3.0] Other Modules #
   - name: 'DBPT \[PATCH - LotD \(VER\.0[12]\)\]( \(OCS\))?\.esp'
