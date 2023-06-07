@@ -11744,9 +11744,9 @@ plugins:
     msg:
       - <<: *patch3rdParty
         subs:
-          - 'Beyond Skyrim Bruma'
+          - 'Beyond Skyrim - Bruma'
           - '[Trade and Barter - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23220/)'
-        condition: 'active("BSHeartland.esm") and not active("Beyond Bruma - Trade and Barter Patch.esp")'
+        condition: 'active("BSHeartland.esm") and not (active("Beyond Bruma - Trade and Barter Patch.esp") or active("Ordinator - Perks of Skyrim.esp"))'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TradeBarter_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - *requiresMCM
