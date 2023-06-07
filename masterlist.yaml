@@ -28123,6 +28123,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23220/'
         name: 'Trade and Barter - Patches'
     req: [ 'Trade & Barter.esp' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**Ordinator - Beyond Skyrim Bruma Patch.esp**' ]
+        condition: 'active("BSHeartland.esm") and active("Ordinator - Perks of Skyrim.esp") and active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
 
   - name: 'Trade and Barter - USSEP Patch.esp'
     url:
