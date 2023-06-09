@@ -13540,15 +13540,15 @@ plugins:
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
-  - name: 'King-Priest( - (Mysticism Add-On|Wyrmstooth Patch))?\.esp'
+  - name: 'King-Priest( - (Abyss Addon|Wyrmstooth Patch))?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/59652/'
         name: 'King-Priest - Enhanced Dragon Priests'
   - name: 'King-Priest.esp'
     msg:
       - <<: *patchProvided
-        subs: [ 'Mysticism - A Magic Overhaul' ]
-        condition: 'active("MysticismMagic.esp") and not active("King-Priest - Mysticism Add-On.esp")'
+        subs: [ 'Abyss' ]
+        condition: 'active("Abyss.esp") and not active("King-Priest - Abyss Addon.esp")'
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("King-Priest - Wyrmstooth Patch.esp")'
@@ -13579,12 +13579,11 @@ plugins:
       - SpellStats
       - Stats
     clean:
-      - crc: 0xDF0CF21B
+      - crc: 0xEDB63E00
         util: 'SSEEdit v4.0.4c'
-  - name: 'King-Priest - Mysticism Add-On.esp'
-    tag: [ Actors.Spells ]
+  - name: 'King-Priest - Abyss Addon.esp'
     clean:
-      - crc: 0x2D498671
+      - crc: 0xC304318D
         util: 'SSEEdit v4.0.4c'
   - name: 'King-Priest - Wyrmstooth Patch.esp'
     tag:
@@ -13595,7 +13594,7 @@ plugins:
       - Graphics
       - Keywords
     clean:
-      - crc: 0xEA9A3E45
+      - crc: 0x6574A562
         util: 'SSEEdit v4.0.4c'
 
   - name: 'Orcish Orc Strongholds.esp'
