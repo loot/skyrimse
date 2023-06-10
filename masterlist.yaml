@@ -11948,6 +11948,25 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32077/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
+  - name: 'Abyss( - Adamant Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83329/'
+        name: 'Abyss'
+  - name: 'Abyss.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Adamant - A Perk Overhaul' ]
+        condition: 'active("Adamant.esp") and not active("Abyss - Adamant Patch.esp")'
+    tag: [ Invent.Add ]
+    clean:
+      - crc: 0x7B7A4764
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Abyss - Adamant Patch.esp'
+    tag: [ Keywords ]
+    clean:
+      - crc: 0x3979E4EC
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Ace Blood Magic SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16995/' ]
     msg: [ *patch3rdParty_SRPC ]
