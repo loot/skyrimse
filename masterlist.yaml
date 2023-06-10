@@ -12701,10 +12701,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3041/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
-  - name: 'MysticismMagic.esp'
+  - name: 'Mystic(ism)?(Magic|JumpSpells|Ordinator|Survival)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/27839/'
         name: 'Mysticism - A Magic Overhaul'
+  - name: 'MysticismMagic.esp'
     msg:
       - *patch3rdParty_SRPC_Redux
       - <<: *patch3rdParty
@@ -12712,6 +12713,9 @@ plugins:
           - 'FleshFX'
           - '[Mysticism - FleshFX Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46997/)'
         condition: 'active("FleshFX.esp") and not active("Mysticism_FleshFX_Patch.esp") and not active("Bashed Patch.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("MysticOrdinator.esp")'
     tag:
       - Actors.ACBS
       - Actors.Factions
@@ -12724,8 +12728,7 @@ plugins:
       - Enchantments
       - EnchantmentStats
       - Graphics
-      - Invent.Add
-      - Invent.Remove
+      - Invent.Change
       - Keywords
       - Relev
       - Sound
@@ -12733,6 +12736,26 @@ plugins:
       - Stats
       - Text
     # Do not clean - ITM is for users still on SSE patch v1.5
+  - name: 'MysticismJumpSpells.esp'
+    tag: [ EffectStats ]
+    clean:
+      - crc: 0x217DEC62
+        util: 'SSEEdit v4.0.4c'
+  - name: 'MysticOrdinator.esp'
+    tag:
+      - EffectStats
+      - Graphics
+      - Keywords
+      - Names
+      - Sound
+    clean:
+      - crc: 0x38B3CCED
+        util: 'SSEEdit v4.0.4c'
+  - name: 'MysticismSurvival.esp'
+    tag: [ Text ]
+    clean:
+      - crc: 0x030439E2
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'NecromageConjuration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18806/' ]
