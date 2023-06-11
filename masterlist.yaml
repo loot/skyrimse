@@ -715,7 +715,7 @@ globals:
     subs:
       - 'Snazzy Interiors'
       - '[Snazzy Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/91604/)'
-    condition: 'active("Snazzy Interiors - (Riften Black-Briar Manor|Riften Snow-Shod Manor|Whiterun House Battleborn|Whiterun House Gray-mane)\.esp")'
+    condition: 'active("Snazzy Interiors - (Riften Black-Briar Manor|Riften Snow-Shod Manor|Whiterun House Battleborn|Whiterun House Gray-mane|Windhelm House Clan Shattershield)\.esp")'
 
 groups:
   - name: &mainGroup Main Plugins
@@ -2731,6 +2731,17 @@ plugins:
         crc: 0xA1E42FC7
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         udr: 5
+
+  - name: 'DwemerRetextureOblivionArtifactsPatch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/93088/'
+        name: 'Dwemer Armors and Weapons Retexture'
+    tag:
+      - Deactivate
+      - Graphics
+    clean:
+      - crc: 0xAF0D6153
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'East Empire Strongbox Logo.esp'
     url:
@@ -11937,6 +11948,25 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/32077/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
+  - name: 'Abyss( - Adamant Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83329/'
+        name: 'Abyss'
+  - name: 'Abyss.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Adamant - A Perk Overhaul' ]
+        condition: 'active("Adamant.esp") and not active("Abyss - Adamant Patch.esp")'
+    tag: [ Invent.Add ]
+    clean:
+      - crc: 0x7B7A4764
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Abyss - Adamant Patch.esp'
+    tag: [ Keywords ]
+    clean:
+      - crc: 0x3979E4EC
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'Ace Blood Magic SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16995/' ]
     msg: [ *patch3rdParty_SRPC ]
@@ -12690,10 +12720,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3041/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
-  - name: 'MysticismMagic.esp'
+  - name: 'Mystic(ism)?(Magic|JumpSpells|Ordinator|Survival)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/27839/'
         name: 'Mysticism - A Magic Overhaul'
+  - name: 'MysticismMagic.esp'
     msg:
       - *patch3rdParty_SRPC_Redux
       - <<: *patch3rdParty
@@ -12701,6 +12732,9 @@ plugins:
           - 'FleshFX'
           - '[Mysticism - FleshFX Patch](https://www.nexusmods.com/skyrimspecialedition/mods/46997/)'
         condition: 'active("FleshFX.esp") and not active("Mysticism_FleshFX_Patch.esp") and not active("Bashed Patch.*\.esp")'
+      - <<: *patchProvided
+        subs: [ 'Ordinator - Perks of Skyrim' ]
+        condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("MysticOrdinator.esp")'
     tag:
       - Actors.ACBS
       - Actors.Factions
@@ -12713,8 +12747,7 @@ plugins:
       - Enchantments
       - EnchantmentStats
       - Graphics
-      - Invent.Add
-      - Invent.Remove
+      - Invent.Change
       - Keywords
       - Relev
       - Sound
@@ -12722,6 +12755,26 @@ plugins:
       - Stats
       - Text
     # Do not clean - ITM is for users still on SSE patch v1.5
+  - name: 'MysticismJumpSpells.esp'
+    tag: [ EffectStats ]
+    clean:
+      - crc: 0x217DEC62
+        util: 'SSEEdit v4.0.4c'
+  - name: 'MysticOrdinator.esp'
+    tag:
+      - EffectStats
+      - Graphics
+      - Keywords
+      - Names
+      - Sound
+    clean:
+      - crc: 0x38B3CCED
+        util: 'SSEEdit v4.0.4c'
+  - name: 'MysticismSurvival.esp'
+    tag: [ Text ]
+    clean:
+      - crc: 0x030439E2
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'NecromageConjuration.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18806/' ]
@@ -13529,15 +13582,15 @@ plugins:
         util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
-  - name: 'King-Priest( - (Mysticism Add-On|Wyrmstooth Patch))?\.esp'
+  - name: 'King-Priest( - (Abyss Addon|Wyrmstooth Patch))?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/59652/'
         name: 'King-Priest - Enhanced Dragon Priests'
   - name: 'King-Priest.esp'
     msg:
       - <<: *patchProvided
-        subs: [ 'Mysticism - A Magic Overhaul' ]
-        condition: 'active("MysticismMagic.esp") and not active("King-Priest - Mysticism Add-On.esp")'
+        subs: [ 'Abyss' ]
+        condition: 'active("Abyss.esp") and not active("King-Priest - Abyss Addon.esp")'
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("King-Priest - Wyrmstooth Patch.esp")'
@@ -13568,12 +13621,11 @@ plugins:
       - SpellStats
       - Stats
     clean:
-      - crc: 0xDF0CF21B
+      - crc: 0xEDB63E00
         util: 'SSEEdit v4.0.4c'
-  - name: 'King-Priest - Mysticism Add-On.esp'
-    tag: [ Actors.Spells ]
+  - name: 'King-Priest - Abyss Addon.esp'
     clean:
-      - crc: 0x2D498671
+      - crc: 0xC304318D
         util: 'SSEEdit v4.0.4c'
   - name: 'King-Priest - Wyrmstooth Patch.esp'
     tag:
@@ -13584,7 +13636,7 @@ plugins:
       - Graphics
       - Keywords
     clean:
-      - crc: 0xEA9A3E45
+      - crc: 0x6574A562
         util: 'SSEEdit v4.0.4c'
 
   - name: 'Orcish Orc Strongholds.esp'
@@ -13921,9 +13973,11 @@ plugins:
       - 'FCO - Follower Commentary Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
     tag: [ Actors.Voice ]
-    clean:
-      - crc: 0xFFFB3713
-        util: 'SSEEdit v4.0.3'
+    dirty:
+      - <<: *quickClean
+        crc: 0x82652DA7
+        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 39
 
   - name: 'Misc Dialogue Edits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28904/' ]
