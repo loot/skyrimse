@@ -36,6 +36,10 @@ prelude:
       type: warn
       content: 'This file is corrupt and should not be used.'
 
+    - &deactivateAfterCharacterCreation
+      type: say
+      content: 'Deactivate and/or uninstall this mod after character creation.'
+
     - &deleteOrDeactivateX
       type: error
       content: 'Delete or deactivate. %1%'
@@ -185,6 +189,10 @@ prelude:
     - &versionOldX
       type: say
       content: 'It appears you do not have the latest version of %1%. Some mods may require functionality added in the latest version of %1% to work.'
+
+    - &versionPrecedence
+      type: error
+      content: 'Delete %1% from %2%. %3%''s version must take precedence.'
 
     - &versionUpToDateX
       type: say
