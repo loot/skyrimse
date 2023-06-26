@@ -9641,7 +9641,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78244/'
         name: 'Survival Mode Improved - SKSE'
     req: [ *SKSE ]
-    msg: [ *missingRequirementAddrLibforPlugin ]
+    msg:
+      - *missingRequirementAddrLibforPlugin
+      - <<: *requiresX
+        type: say
+        subs: [ 'New save game, don''t use with an existing save.' ]
     tag:
       - Keywords
       - Names
@@ -14808,6 +14812,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18854/'
         name: 'Boethiah''s Bidding'
+    msg:
+      - <<: *requiresX
+        type: say
+        subs: [ 'New save game, don''t use with an existing save.' ]
     tag: [ Relations.Add ]
     clean:
       - crc: 0x6AE7F258
@@ -15702,6 +15710,9 @@ plugins:
           - 'Skies Above Weathers and ENB'
           - '[Skies Above - Saints and Seducers Extended Cut](https://www.nexusmods.com/skyrimspecialedition/mods/87383/)'
         condition: 'active("Skies Above.esp") and not active("Skies Above - ECSS Patch.esp")'
+      - <<: *requiresX
+        type: say
+        subs: [ 'New save game, don''t use with an existing save.' ]
     tag:
       - Actors.ACBS
       - Actors.AIData
