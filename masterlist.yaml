@@ -15208,23 +15208,52 @@ plugins:
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: '(Immersive Encounters( - (Open Cities|RS Children|The Great City of Solitude) Patch)?|WEHealingPotions Patch - CACO)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/'
+        name: 'Immersive World Encounters'
   - name: 'Immersive Encounters.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18330/' ]
     msg:
-      - *requiresMCM
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xF5869F97
-        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 1
+      - <<: *patchIncluded
+        subs: [ 'The Great City of Solitude' ]
+        condition: 'active("The Great City of Solitude.esp") and not active("Immersive Encounters - The Great City of Solitude Patch.esp")'
+      - *requiresMCM
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.Stats
+      - NPC.Class
+    clean:
+      - crc: 0x41D780DA
+        util: 'SSEEdit v4.0.4c'
   - name: 'Immersive Encounters - Open Cities Patch.esp'
     req: [ 'Open Cities Skyrim.esp' ]
+    clean:
+      - crc: 0x30FCA141
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Immersive Encounters - RS Children Patch.esp'
+    tag:
+      - Actors.Factions
+      - Actors.Stats
+      - NPC.DefaultOutfit
+    clean:
+      - crc: 0x7BFFE473
+        util: 'SSEEdit v4.0.4c'
+  - name: 'Immersive Encounters - The Great City of Solitude Patch.esp'
+    req: [ 'The Great City of Solitude.esp' ]
+    clean:
+      - crc: 0x7DCD9958
+        util: 'SSEEdit v4.0.4c'
+  - name: 'WEHealingPotions Patch - CACO.esp'
+    clean:
+      - crc: 0xD758507C
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'InnoLostAlt.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24236/' ]
