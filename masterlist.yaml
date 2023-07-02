@@ -5570,16 +5570,8 @@ plugins:
         name: 'Immersive Children SE - child mortality and burial and animation fixes'
     after: [ 'SimpleChildren.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Remember to run the included SSEEdit script **MXPF - One ImCh Patcher** every time you have installed or un-installed a mod. Use the recommended patch name **One ImCh Patch** or **One ImCh Patcher** for correct sorting. Instructions for running this patcher can be found on the [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001/) description page.'
-          - lang: de
-            text: 'Denken Sie daran, das SSEEdit Skript **MXPF - One ImCh Patcher** jedes mal auszuführen wenn Sie eine Mod installieren oder deinstallieren. Nutzen Sie den empfohlenen Patch **One ImCh Patch** oder **One ImCh Patcher** für eine korrekte Sortierung. Anleitungen zum Ausführen dieses Patchers können unter [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001/) Beschreibung gefunden werden.'
-          - lang: ja
-            text: 'modをインストールまたはアンインストールするたびに、必ず付属のSSEEditスクリプト**MXPF-ImCh Patcher**を毎回実行してください。正しくソートするためにパッチ名は**One ImCh Patch**または**One ImCh Patcher**を使用してください。このパッチの実行手順は[Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001/)の説明ページにあります。'
-          - lang: pt_PT
-            text: 'Recorde-se de executar o script SSEEdit incluído **MXPF - One ImCh Patcher** cada vez que você instale ou desinstale um mod. Use o nome recomendado de patch **One ImCh Patch** ou **One ImCh Patcher** para ordenação correta. Instruções para correr este patcher podem ser encontrada na página de descrição de [Immersive Children](https://www.nexusmods.com/skyrimspecialedition/mods/15001/). '
+      - <<: *compatNotes
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15001/' ]
   - name: 'One ImCh Patch.*\.esp'
     group: *dynamicPatchGroup
 
