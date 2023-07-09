@@ -25317,20 +25317,24 @@ plugins:
         itm: 14
 
   - name: 'CaranthirTowerReborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4269/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/4269/'
+        name: 'Caranthir Tower Reborn'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Bloodchill Manor (Creation Club)'
+          - '[Bloodchill manor - Caranthir Tower Reborn patch](https://www.nexusmods.com/skyrimspecialedition/mods/94021/)'
+        condition: 'active("cceejsse005-cave.esm") and not active("CTR_BloodchillManor_Patch.esp")'
       - *patch3rdParty_SRPC
       - <<: *patchUnavailable
         subs: [ 'Badersee SE' ]
         condition: 'active("Badersee.esp")'
-      - <<: *patchUnavailable
-        subs: [ 'Creation Club Bloodchill Manor' ]
-        condition: 'active("cceejsse005-cave.esm")'
     tag: [ C.Location ]
     dirty:
       - <<: *quickClean
         crc: 0xB762D4CE
-        util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 12
 
   - name: 'Caranthir Tower Reborn Expanded.esp'
