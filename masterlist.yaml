@@ -15893,6 +15893,28 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/20629/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
 
+  - name: 'The Heart Of Dibella( QE)? - (Quest Expansion|RS Children Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/94863/'
+        name: 'The Heart of Dibella - Quest Expansion'
+  - name: 'The Heart Of Dibella - Quest Expansion.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'RS Children Overhaul' ]
+        condition: 'active("RSkyrimChildren.esm") and not active("The Heart of Dibella QE - RS Children Patch.esp")'
+    tag: [ Text ]
+    clean:
+      - crc: 0x57B9C4F0
+        util: 'SSEEdit v4.0.4c'
+  - name: 'The Heart of Dibella QE - RS Children Patch.esp'
+    req: [ 'RSkyrimChildren.esm' ]
+    tag:
+      - Outfits.Add
+      - Outfits.Remove
+    clean:
+      - crc: 0xD90B0FAC
+        util: 'SSEEdit v4.0.4c'
+
   - name: 'The Last Dragonborn.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/90798/'
