@@ -9604,6 +9604,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78244/'
         name: 'Survival Mode Improved - SKSE'
+    group: *earlyLoadersGroup
     req: [ *SKSE ]
     msg:
       - *missingRequirementAddrLibforPlugin
@@ -9611,15 +9612,12 @@ plugins:
         type: say
         subs: [ 'New save game, don''t use with an existing save.' ]
     tag:
+      - EffectStats
       - Keywords
       - Names
       - SpellStats
       - Text
-    dirty:
-      - <<: *quickClean
-        crc: 0x7FDF3A9D
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+    # Do not clean - ITMs are intentional according to the author.
 
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
