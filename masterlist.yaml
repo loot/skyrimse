@@ -221,11 +221,6 @@ prelude:
       detail: 'It is strongly recommended not to use mods that contain **deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually (a complex process that should be done by the mod author). More information on **deleted navmeshes** is provided [here](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
 
   # Global Anchors
-    - &creationClubPlugins
-      type: warn
-      content: 'This version of LOOT has inferior handling of Creation Club plugins. Support for these are therefore limited in versions prior to LOOT 0.13.1. It is recommended to update as soon as possible.'
-      condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[A-Z]{3}SSE\d{3}.*\.es[lm]")'
-
     - &latestLOOTThread
       type: say
       content: '[Latest LOOT thread](%1%).'
@@ -534,10 +529,6 @@ bash_tags:
 globals:
 # Latest LOOT Thread
   - *latestLOOTThread
-
-# Creation Club Plugins
-  - <<: *creationClubPlugins
-    condition: 'file("LOOT") and version("LOOT", "0.13.1.0", <) and file("cc[a-z]{3}sse\d{3}[-_]\w+\.es[lm]")'
 
 # Latest Version
   # Skyrim AE Game Runtime
