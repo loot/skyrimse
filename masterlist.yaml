@@ -9931,6 +9931,9 @@ plugins:
       - name: 'Kapotun Vanilla Armor Patch.esp'
         condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Fixed Races of Nirn - Kapo''tun SE port](https://www.nexusmods.com/skyrimspecialedition/mods/66376/)' ]
+        condition: 'checksum("DWKaPoTunRace.esp", 672EB2D2)'
       - <<: *obsolete
         subs: [ '[Races of Nirn - Kapotun Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/77612/)' ]
         condition: 'version("DWKaPoTunRace.esp", "2.0", <) and not checksum("DWKaPoTunRace.esp", 672EB2D2)'
@@ -9942,9 +9945,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Schlongs of Skyrim' ]
         condition: 'active("Schlongs of Skyrim - Core.esm") and version("DWKaPoTunRace.esp", "2.0", >=) and not active("SOS - Kapotun Addon.esp")'
-      - <<: *alsoUseX
-        subs: [ '[Fixed Races of Nirn - Kapo''tun SE port](https://www.nexusmods.com/skyrimspecialedition/mods/66376/)' ]
-        condition: 'checksum("DWKaPoTunRace.esp", 672EB2D2)'
     clean:
       # Original
       - crc: 0x672EB2D2
