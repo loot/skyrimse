@@ -9911,19 +9911,23 @@ plugins:
         name: 'Races of Nirn - Kapo''tun SE'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/77612/'
         name: 'Races of Nirn - Kapotun Reborn'
+    group: *racesGroup
     inc:
       - name: 'Kapotun SOS.esp'
         condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
       - name: 'Kapotun Vanilla Armor Patch.esp'
         condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Fixed Races of Nirn - Kapo''tun SE port](https://www.nexusmods.com/skyrimspecialedition/mods/66376/)' ]
+        condition: 'checksum("DWKaPoTunRace.esp", 672EB2D2)'
       - <<: *obsolete
         subs: [ '[Races of Nirn - Kapotun Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/77612/)' ]
         condition: 'version("DWKaPoTunRace.esp", "2.0", <) and not checksum("DWKaPoTunRace.esp", 672EB2D2)'
       - <<: *patch3rdParty
         subs:
           - 'Touched by Dibella'
-          - '[Races of Nirn - Kapotun Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/77612/)'
+          - '[Fixed Races of Nirn - Kapo''tun SE port](https://www.nexusmods.com/skyrimspecialedition/mods/66376/)'
         condition: 'active("TouchedbyDibella.esp") and checksum("DWKaPoTunRace.esp", 672EB2D2) and not active("Kapotun TBD Tail.esp")'
       - <<: *patchIncluded
         subs: [ 'Schlongs of Skyrim' ]
@@ -9933,7 +9937,10 @@ plugins:
       - crc: 0x672EB2D2
         util: 'SSEEdit v4.0.4'
       # Reborn
-      - crc: 0x287A2A43
+      - crc: 0x99A9E276
+        util: 'SSEEdit v4.0.4'
+      # Original -> Reborn upgrade
+      - crc: 0xD34873CA
         util: 'SSEEdit v4.0.4'
   - name: 'Kapotun ARMA .+\.esp'
     url:
