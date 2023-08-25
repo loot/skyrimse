@@ -15770,7 +15770,9 @@ plugins:
         util: 'SSEEdit v4.0.4c'
 
   - name: 'Skyrim Unbound.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27962/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/27962/'
+        name: 'Skyrim Unbound Reborn (Alternate Start)'
     group: *altStartGroup
     inc:
       - 'Alternate Start - Live Another Life.esp'
@@ -15783,25 +15785,17 @@ plugins:
     req:
       - <<: *SKSE
         condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and not file("../skse64_loader.exe")'
-      - name: 'Unofficial Skyrim Special Edition Patch.esp'
-        display: '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)'
-        condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50)'
     tag:
       - Actors.Spells
       - Invent.Remove
       - Names
       - NPC.DefaultOutfit
     msg:
-      - <<: *obsolete
-        subs: [ '[Skyrim Unbound Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/27962/)' ]
-        condition: 'checksum("Skyrim Unbound.esp", 4C621C50) and active("Unofficial Skyrim Special Edition Patch.esp")'
       - <<: *requiresMCM
         condition: 'not checksum("Skyrim Unbound.esp", BF3A39A9) and not checksum("Skyrim Unbound.esp", 4C621C50) and not active("SkyUI_SE.esp")'
     clean:
-      - crc: 0x878AF41D
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-      - crc: 0x3882E08A
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      - crc: 0x37B28DD5
+        util: 'SSEEdit v4.0.4c'
 
   - name: 'Skyrim Unlocked.esp'
     url: [ 'https://github.com/Kaenguru-Knobel-Kette/skyrim-unlocked/releases/' ]
