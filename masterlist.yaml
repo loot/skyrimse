@@ -20046,7 +20046,9 @@ plugins:
         name: 'Undeath Remastered (Nexus Mods)'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3327746/'
         name: 'Undeath Remastered (Bethesda.net Mods)'
-    after: [ 'MoonAndStar_MAS.esp' ]
+    after:
+      - name: 'MoonAndStar_MAS.esp'
+        condition: 'not is_master("Undeath.esp")'
     inc: [ 'AuroraVillage.esp' ]
     msg:
       - <<: *alsoUseX
