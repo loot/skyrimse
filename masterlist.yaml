@@ -6636,6 +6636,41 @@ plugins:
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 5
 
+  - name: 'Pussycats.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/52075/'
+        name: 'Pussycats SSE'
+    msg:
+      - <<: *requiresMCM
+        condition: 'not active("SkyUI_SE.esp") and version("Pussycats.esp", "2.0.2", >=)'
+      - <<: *obsolete
+        subs: [ '[Pussycats SSE](https://www.nexusmods.com/skyrimspecialedition/mods/52075/)' ]
+        condition: 'version("Pussycats.esp", "2.0.2", <)'
+      - <<: *patchIncluded
+        subs: [ 'Fishing DLC' ]
+        condition: 'active("ccBGSSSE001-Fish.esm") and not active("CC Fish for Pusycats.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Improved Fish SE' ]
+        condition: 'active("ImprovedFishBASIC.esp") and not active("Improved Fish For Pussycats.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Improved Fish SE and Fishing DLC' ]
+        condition: 'active("ImprovedFishBASIC.esp") and active("ccBGSSSE001-Fish.esm") not active("CC Improved Fish for Pussycats.esp")'
+    clean:
+      - crc: 0xC52EC414
+        util: 'SSEEdit v4.0.4'
+  - name: 'CC Fish for Pusycats.esp'
+    clean:
+      - crc: 0x5D3A49E1
+        util: 'SSEEdit v4.0.4'
+  - name: 'CC Improved Fish for Pussycats.esp'
+    clean:
+      - crc: 0xE4E4DDAA
+        util: 'SSEEdit v4.0.4'
+  - name: 'Improved Fish For Pussycats.esp'
+    clean:
+      - crc: 0x9BC5AA45
+        util: 'SSEEdit v4.0.4'
+
   - name: 'Recorder Follower Base.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4718/' ]
     msg: [ *patch3rdParty_SRPC_Redux ]
