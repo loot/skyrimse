@@ -701,6 +701,12 @@ globals:
     subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe") and file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe") and not file("scripts/FNISCreatureVersion.pex")'
 
+  # OAR and DAR compatibility
+  - <<: *useOnlyOneX
+    type: error
+    subs: [ '**Dynamic Animation Replacer** or **Open Animation Replacer**' ]
+    condition: 'file("SKSE/Plugins/DynamicAnimationReplacer.dll") and file("SKSE/Plugins/OpenAnimationReplacer.dll")'
+
   # Mod Series Patch Collections
   - <<: *compatPatchForX
     subs:
