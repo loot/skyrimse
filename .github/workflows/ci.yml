@@ -14,8 +14,15 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
 
+      - name: Install metadata validator dependencies
+        run: |
+          wget https://github.com/unicode-org/icu/releases/download/release-71-1/icu4c-71_1-Ubuntu20.04-x64.tgz
+          tar -xf icu4c-71_1-Ubuntu20.04-x64.tgz
+
+          echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${{ github.workspace }}/icu/usr/local/lib" >> "$GITHUB_ENV"
+
       - name: Install metadata validator
-        run: wget https://github.com/loot/metadata-validator/releases/download/0.18.0/metadata-validator-0.18.0-0-g143cb72_0.18.0-Linux.tar.xz -O - | tar -xJ --strip-components=1
+        run: wget https://github.com/loot/metadata-validator/releases/download/0.21.0/metadata-validator-0.21.0-0-gd56177b_0.21.0-Linux.tar.xz -O - | tar -xJ --strip-components=1
 
       - name: Install parser
         run: npm install -g js-yaml
