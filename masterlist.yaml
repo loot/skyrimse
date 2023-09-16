@@ -6,31 +6,31 @@ prelude:
   # Message Anchors
     - &alreadyInX
       type: error
-      content: 'Delete. Already included in %1%.'
+      content: 'Delete. Already included in {0}.'
 
     - &alreadyInOrFixedByX
       type: error
-      content: 'Delete. Already included or otherwise fixed in %1%.'
+      content: 'Delete. Already included or otherwise fixed in {0}.'
 
     - &alsoUseX
       type: say
-      content: 'It''s highly recommended that you also use %1%.'
+      content: 'It''s highly recommended that you also use {0}.'
 
     - &compatIssuesWithX
       type: say
-      content: 'This plugin has compatibility issues with %1%. For more information, read this mod''s compatibility notes.'
+      content: 'This plugin has compatibility issues with {0}. For more information, read this mod''s compatibility notes.'
 
     - &compatNotes
       type: say
-      content: 'It is recommended that you read this mod''s [Compatibility Notes](%1%).'
+      content: 'It is recommended that you read this mod''s [Compatibility Notes]({0}).'
 
     - &compatPatch
       type: say
-      content: 'It is recommended that you check the following compatibility patch compilation for this mod: %1%'
+      content: 'It is recommended that you check the following compatibility patch compilation for this mod: {0}'
 
     - &compatPatchForX
       type: say
-      content: 'It is recommended that you check the following compatibility patch compilation for %1%: %2%'
+      content: 'It is recommended that you check the following compatibility patch compilation for {0}: %2%'
 
     - &corrupt
       type: warn
@@ -42,12 +42,12 @@ prelude:
 
     - &deleteOrDeactivateX
       type: error
-      content: 'Delete or deactivate. %1%'
+      content: 'Delete or deactivate. {0}'
       subs: [ '' ]
 
     - &deletePlugin
       type: warn
-      content: 'When using **%1%**, it''s recommended that you deactivate or delete this ESP file but keep the resources (e.g. meshes, textures) installed with this mod.'
+      content: 'When using **{0}**, it''s recommended that you deactivate or delete this ESP file but keep the resources (e.g. meshes, textures) installed with this mod.'
 
     - &deprecated
       type: warn
@@ -55,19 +55,19 @@ prelude:
 
     - &disableAfterGeneratingXwithY
       type: say
-      content: 'This plugin may be disabled after generating **%1%** with **%2%**.'
+      content: 'This plugin may be disabled after generating **{0}** with **%2%**.'
 
     - &essentialFiles
       type: warn
-      content: 'Another mod seems to be overwriting one of this mod''s essential files. Please ensure you''re using this mod''s version of %1% or a compatible version if available.'
+      content: 'Another mod seems to be overwriting one of this mod''s essential files. Please ensure you''re using this mod''s version of {0} or a compatible version if available.'
 
     - &includesX
       type: say
-      content: '%1% is included with this mod.'
+      content: '{0} is included with this mod.'
 
     - &languageX
       type: say
-      content: 'Language: %1%'
+      content: 'Language: {0}'
 
     - &mainQuestCompleted
       type: say
@@ -75,15 +75,15 @@ prelude:
 
     - &masterReassign
       type: say
-      content: 'The **%1%** master must be reassigned to **%2%**.'
+      content: 'The **{0}** master must be reassigned to **%2%**.'
 
     - &missingRequirementXforY
       type: warn
-      content: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+      content: 'It appears you have installed **%2%**, but some of its requirements seem to be missing. Please ensure you have correctly installed **{0}**.'
 
     - &missingRequirementXforPlugin
       type: warn
-      content: 'Some of this plugin''s requirements seem to be missing. Please ensure you have correctly installed **%1%**.'
+      content: 'Some of this plugin''s requirements seem to be missing. Please ensure you have correctly installed **{0}**.'
 
     - &moddingPlugin
       type: error
@@ -91,16 +91,16 @@ prelude:
 
     - &moveXFromYToZ
       type: say
-      content: 'Move %1% from %2% to %3%.'
+      content: 'Move {0} from %2% to {2}.'
 
     - &obsolete
       type: warn
-      content: 'Obsolete. Update to the latest version. %1%'
+      content: 'Obsolete. Update to the latest version. {0}'
       subs: [ '' ]
 
     - &onlyUseSmashOrBash
       type: say
-      content: 'Can be used with a %1% but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
+      content: 'Can be used with a {0} but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
 
     - &optional
       type: say
@@ -108,15 +108,15 @@ prelude:
 
     - &patch3rdParty
       type: say
-      content: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
+      content: 'You seem to be using **{0}**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
 
     - &patcherScriptAvailable
       type: say
-      content: '%1% patcher script available here: %2%'
+      content: '{0} patcher script available here: %2%'
 
     - &patchIncluded
       type: say
-      content: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
+      content: 'You seem to be using **{0}**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
 
     - &patchOutdated
       type: warn
@@ -124,40 +124,40 @@ prelude:
 
     - &patchProvided
       type: say
-      content: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+      content: 'You seem to be using **{0}**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
 
     - &patchUnavailable
       type: warn
-      content: 'A patch is required to make this mod fully compatible with %1%. None is currently available for download.'
+      content: 'A patch is required to make this mod fully compatible with {0}. None is currently available for download.'
 
     - &patchUpdateAvailable
       type: say
-      content: 'Update Patch available: %1%'
+      content: 'Update Patch available: {0}'
 
     - &renameFile
       type: say
-      content: 'Rename this file to %1%.'
+      content: 'Rename this file to {0}.'
 
     - &renameXtoY
       type: warn
-      content: 'You need to rename %1% to %2% or this mod won''t work.'
+      content: 'You need to rename {0} to %2% or this mod won''t work.'
 
     # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
     - &requiresMCM_X
       type: warn
-      content: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing %1%.'
+      content: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing {0}.'
 
     - &requiresResources
       type: warn
-      content: 'Requires resources (e.g. meshes, textures; not plugins) from %1%.'
+      content: 'Requires resources (e.g. meshes, textures; not plugins) from {0}.'
 
     - &requiresX
       type: warn
-      content: 'Requires: %1%'
+      content: 'Requires: {0}'
 
     - &runAnimFramework
       type: say
-      content: 'It appears you have **%1%** installed. Remember to run **%2%** every time you have installed or uninstalled %3%, or a %3%-based mod.'
+      content: 'It appears you have **{0}** installed. Remember to run **%2%** every time you have installed or uninstalled {2}, or a {2}-based mod.'
 
     - &runxLODGen
       type: say
@@ -165,54 +165,54 @@ prelude:
 
     - &useBashTweakInstead
       type: say
-      content: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
+      content: 'A Bashed Patch tweak can be used instead of this plugin. {0}'
       subs: [ '' ]
       condition: 'file("Bashed Patch.*\.esp")'
 
     - &useINITweakInstead
       type: say
-      content: 'An INI tweak can be used instead of this plugin. %1%'
+      content: 'An INI tweak can be used instead of this plugin. {0}'
       subs: [ '' ]
 
     - &useInstead
       type: warn
-      content: 'Use %1% instead.'
+      content: 'Use {0} instead.'
 
     - &useOnlyOneX
       type: error
-      content: 'Use only one %1%.'
+      content: 'Use only one {0}.'
 
     - &useVersion
       type: error
-      content: 'Use %1% version.'
+      content: 'Use {0} version.'
 
     - &useVersionNon
       type: error
-      content: 'Use non-%1% version.'
+      content: 'Use non-{0} version.'
 
     - &versionOldX
       type: say
-      content: 'It appears you do not have the latest version of %1%. Some mods may require functionality added in the latest version of %1% to work.'
+      content: 'It appears you do not have the latest version of {0}. Some mods may require functionality added in the latest version of {0} to work.'
 
     - &versionPrecedence
       type: error
-      content: 'Delete %1% from %2%. %3%''s version must take precedence.'
+      content: 'Delete {0} from %2%. {2}''s version must take precedence.'
 
     - &versionUpToDateX
       type: say
-      content: 'Your %1% is up-to-date.'
+      content: 'Your {0} is up-to-date.'
 
     - &versionXIncY
       type: error
-      content: 'Your installed version of %1% is not compatible with your version of %2%.'
+      content: 'Your installed version of {0} is not compatible with your version of %2%.'
 
     - &versionXofYorGreaterRequired
       type: error
-      content: 'Requires version **%1%** or greater of **%2%**.'
+      content: 'Requires version **{0}** or greater of **%2%**.'
 
     - &wildEdits
       type: warn
-      content: 'This plugin contains [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) and may require additional manual cleaning to not interfere with other mods. %1%'
+      content: 'This plugin contains [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) and may require additional manual cleaning to not interfere with other mods. {0}'
       subs: [ '' ]
 
   # Cleaning Data Anchors
@@ -227,12 +227,12 @@ prelude:
   # Global Anchors
     - &latestLOOTThread
       type: say
-      content: '[Latest LOOT thread](%1%).'
+      content: '[Latest LOOT thread]({0}).'
       subs: [ 'https://loot.github.io/latest-thread/' ]
 
     - &scriptExtenderMissing
       type: error
-      content: 'You have installed an %1% plugin but %1% was not found! See %1% download page: %2%.'
+      content: 'You have installed an {0} plugin but {0} was not found! See {0} download page: %2%.'
       subs:
         - 'SKSE'
         - '[Skyrim Script Extender](https://skse.silverlock.org)'
@@ -240,7 +240,7 @@ prelude:
 
     - &scriptExtenderRequiredScripts
       type: warn
-      content: 'It appears you have installed **%1%**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **%2%** installation archive.'
+      content: 'It appears you have installed **{0}**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **%2%** installation archive.'
       subs:
         - 'Skyrim Script Extender'
         - '[SKSE](https://skse.silverlock.org)'
@@ -2193,7 +2193,7 @@ plugins:
       - type: say
         content:
           - lang: en
-            text: 'BSAs known to include files from an older version of this mod: %1%.'
+            text: 'BSAs known to include files from an older version of this mod: {0}.'
         subs: [ '**ConfigureCommentaryRate.bsa**, **SofiaFollower.bsa**, **Thunderchild - Epic Shout Package.bsa**' ]
         condition: 'not file("scripts/ski_playerloadgamealias.pex") and ((active("SofiaFollower.esp") and checksum("SofiaFollower.bsa", 2F513E13)) or (active("ConfigureCommentaryRate.esp") and checksum("ConfigureCommentaryRate.bsa", EF4CBA70)) or (active("Thunderchild - Epic Shout Package.esp") and checksum("Thunderchild - Epic Shout Package.bsa", A599B10F)))'
     clean:
