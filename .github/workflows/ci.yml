@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
       - name: Install metadata validator
         run: wget https://github.com/loot/metadata-validator/releases/download/0.18.0/metadata-validator-0.18.0-0-g143cb72_0.18.0-Linux.tar.xz -O - | tar -xJ --strip-components=1
