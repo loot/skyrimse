@@ -261,6 +261,10 @@ common:
     name: 'SKSE/Plugins/po3_BaseObjectSwapper.dll'
     display: '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)'
 
+  - &CommunityShaders
+    name: 'SKSE/Plugins/CommunityShaders.dll'
+    display: '[Community Shaders](https://www.nexusmods.com/skyrimspecialedition/mods/86492/)'
+
   - &DAR
     name: 'skse/plugins/DynamicAnimationReplacer.dll'
     display: '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/)'
@@ -280,6 +284,11 @@ common:
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/3038/)'
+
+  - &GraphicsFramework
+    name: '../d3d11.dll'
+    display: '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm) **OR** [Community Shaders](https://www.nexusmods.com/skyrimspecialedition/mods/86492/)'
+    condition: 'not file("SKSE/Plugins/CommunityShaders.dll")'
 
   - &HDT_SMP
     name: 'SKSE/Plugins/hdtSMP64.dll'
@@ -3361,7 +3370,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83935/'
         name: 'Parallax Spell Impacts'
   - name: 'PSI.esp'
-    req: [ *ENBSeries ]
+    req:
+      - *GraphicsFramework
+      - name: 'Shaders/ComplexParallaxMaterials/ComplexParallaxMaterials.hlsli'
+        display: '[Complex Parallax Materials](https://www.nexusmods.com/skyrimspecialedition/mods/95134/)'
+        condition: 'not (file("../d3d11.dll")) and file("SKSE/Plugins/CommunityShaders.dll")'
     tag: [ Graphics ]
     # Do not clean - ITMs are intentional according to the author.
   - name: 'Thunderbolt fix test.esp'
@@ -4347,7 +4360,11 @@ plugins:
       - 'ELFX - Hardcore.esp'
       - 'Luminosity Lighting Overhaul.esp'
       - 'RLO - Interiors.esp'
-    req: [ *ENBSeries ]
+    req:
+      - *GraphicsFramework
+      - name: 'Shaders/LightLimitFix/LightLimitFix.hlsli'
+        display: '[Light Limit Fix](https://www.nexusmods.com/skyrimspecialedition/mods/99548/)'
+        condition: 'not (file("../d3d11.dll")) and file("SKSE/Plugins/CommunityShaders.dll")'
     msg:
       - <<: *requiresResources
         subs: [ '[Particle Patch for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/65720/)' ]
