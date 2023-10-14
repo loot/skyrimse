@@ -28727,19 +28727,28 @@ plugins:
   # [2.0] Personal Creations #
   - name: 'SSkwy Estuary Fortress Extension.esp'
     after:
+      - 'MPXP1.1 [PATCH - DBPT.SSkwy].esp'
       - 'MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp'
       - 'MPXP1.1 [PATCH - SSkwy.TGCoS].esp'
+      - 'MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp'
       - 'MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp'
       - 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
       - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp'
       - 'MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp'
       - 'MPXP1.3 [PATCH - SSkwy.LotD].esp'
       - 'MPXP1.3 [PATCH - SSkwy.LotD] (OCS).esp'
+    inc:
+      - name: 'The Great City of Solitude.esp'
+        condition: 'checksum("SSkwy Estuary Fortress Extension.esp", AF71B5A8)'
     msg:
       - <<: *requiresX
         type: error
         subs: [ 'MPXP 1.1 **OR** 1.2 TGCoS ESP' ]
-        condition: 'not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+        condition: 'checksum("SSkwy Estuary Fortress Extension.esp", 8A10F7E6) and not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+      - <<: *requiresX
+        type: error
+        subs: [ '**MPXP1.1 [PATCH - DBPT.SSkwy].esp** **OR** **MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp**' ]
+        condition: 'checksum("SSkwy Estuary Fortress Extension.esp", AF71B5A8) and not active("MPXP1\.[12] \[PATCH - DBPT\.SSkwy\]( \(OCS\))?\.esp")'
   - name: 'SSkwy Estuary Fortress Extension [PATCH - RBS].esp'
     msg:
       - <<: *requiresX
