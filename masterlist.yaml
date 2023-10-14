@@ -28745,6 +28745,10 @@ plugins:
         type: error
         subs: [ 'MPXP 1.1 **OR** 1.2 TGCoS ESP' ]
         condition: 'checksum("SSkwy Estuary Fortress Extension.esp", 8A10F7E6) and not active("MPXP1\.[12] \[PATCH - (DBPT\.)?SSkwy\.TGCoS\]( \(OCS\))?\.esp")'
+      - <<: *requiresX
+        type: error
+        subs: [ '**MPXP1.1 [PATCH - DBPT.SSkwy].esp** **OR** **MPXP1.2 [PATCH - DBPT.SSkwy] (OCS).esp**' ]
+        condition: 'checksum("SSkwy Estuary Fortress Extension.esp", AF71B5A8) and not active("MPXP1\.[12] \[PATCH - DBPT\.SSkwy\]( \(OCS\))?\.esp")'
   - name: 'SSkwy Estuary Fortress Extension [PATCH - RBS].esp'
     msg:
       - <<: *requiresX
