@@ -6543,6 +6543,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1461/'
         name: 'INIGO'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Bloodchill Manor (Creation Club)'
+          - '[Inigo - Bloodchill Manor patch](https://www.nexusmods.com/skyrimspecialedition/mods/58317/)'
+        condition: 'active("cceejsse005-cave.esm") and not active("Eli_InigoBloodchillPatch.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Inigo_CACO_Patch.esp")'
       - <<: *patch3rdParty_RPC
