@@ -6946,10 +6946,7 @@ plugins:
 
   - name: 'zMirai.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10908/' ]
-    after:
-      - 'DragonsKeep.esp'
-      - 'S3DTrees NextGenerationForests.esp'
-    inc: [ 'DragonsKeep.esp' ]
+    after: [ 'S3DTrees NextGenerationForests.esp' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
@@ -20714,6 +20711,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/271/'
         name: 'Dragons Keep'
   - name: 'DragonsKeep.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Mirai - the Girl with the Dragon Heart' ]
+        condition: 'active("zMirai.esp") and not active("DragonsKeep - Mirai Patch.esp")'
     dirty:
       # version: 1.9.7
       - <<: *reqManualFix
