@@ -9694,7 +9694,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '[Simply Knock - Tower Stone Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41590/)' ]
-        condition: 'not active("Simply Knock - Tower Stone Fix.esp")'
+        condition: 'not active("Simply Knock - Tower Stone Fix.esp") and not active("Simply DAK Knock Peek.esp")'
       - <<: *patchUpdateAvailable
         type: error
         subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/) **OR** [Simply Knock DLL for AE](https://www.nexusmods.com/skyrimspecialedition/mods/77283/)' ]
@@ -27438,6 +27438,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38508/' ]
     msg:
       - <<: *alreadyInOrFixedByX
+        subs: [ 'Just Knock - Simply Knock Dynamic Activation Key patch' ]
+        condition: 'file("DAK Knock - Andromeda Tower Stone.esp")'
+      - <<: *alreadyInOrFixedByX
         subs: [ 'Simply Knock - Tower Stone Fix' ]
         condition: 'file("Simply Knock - Tower Stone Fix.esp")'
 
@@ -28521,6 +28524,9 @@ plugins:
   - name: 'trawzifiedsSimplyKnockWintersunPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/38137/' ]
     msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Just Knock - Simply Knock Dynamic Activation Key patch' ]
+        condition: 'file("Simply DAK Knock Peek.esp")'
       - <<: *alreadyInOrFixedByX
         subs: [ 'Simply Knock - Tower Stone Fix' ]
         condition: 'file("Simply Knock - Tower Stone Fix.esp")'
