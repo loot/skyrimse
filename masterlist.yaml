@@ -18733,6 +18733,32 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 4
 
+  - name: 'NW_(Companions_Replacer_Light|Wolf_Armor_Standalone)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/109963/'
+        name: 'Legacy of Ysgramor'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/111121/'
+        name: 'Legacy of Ysgramor - My patches and fixes SE by Xtudo'
+  - name: 'NW_Companions_Replacer_Light.esp'
+    tag:
+      - Graphics
+      - Keywords
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+      - Stats
+    clean:
+      - crc: 0x6E94D7ED
+        util: 'SSEEdit v4.1.5c EXTREMELY EXPERIMENTAL'
+  - name: 'NW_Wolf_Armor_Standalone.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**NW_Companions_Replacer_Light.esp**' ]
+        condition: 'active("NW_Companions_Replacer_Light.esp")'
+    clean:
+      - crc: 0x8D62A261
+        util: 'SSEEdit v4.1.5c EXTREMELY EXPERIMENTAL'
+
   - name: 'NW_Sons_of_Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/68656/'
