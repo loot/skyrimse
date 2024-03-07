@@ -1730,6 +1730,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65237/'
         name: 'Unofficial Skyrim Special Edition Patch DV'
     group: *fixesGroup
+    after: [ 'BOS Master Occlusion.esm' ]
     msg:
       - <<: *obsolete
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.629.0", >=) and version("Unofficial Skyrim Special Edition Patch.esp", "4.2.9a", <)'
@@ -2224,6 +2225,16 @@ plugins:
     group: *dynamicPatchGroup
 
 ###### Resources & Frameworks ######
+  - name: 'BOS Master Occlusion.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/113023/'
+        name: 'Base Object Swapper - Master Occlusion'
+    group: *fixesGroup
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[Base Object Swapper](https://www.nexusmods.com/skyrimspecialedition/mods/60805/)' ]
+        condition: 'not file("SKSE/Plugins/po3_BaseObjectSwapper.dll")'
+
   - name: 'Gamepad++.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
     msg: [ *requiresMCM ]
