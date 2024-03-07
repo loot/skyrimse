@@ -772,8 +772,11 @@ groups:
   - name: &sewersGroup Skyrim Sewers
     after: [ default ]
 
-  - name: &citizensGroup Immersive Citizens
+  - name: &touringGroup Touring Carriages
     after: [ *sewersGroup ]
+
+  - name: &citizensGroup Immersive Citizens
+    after: [ *touringGroup ]
 
   - name: &tbooGroup The Brotherhood of Old
     after: [ *citizensGroup ]
@@ -9896,6 +9899,7 @@ plugins:
   - name: 'TouringCarriages.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
   - name: 'TouringCarriages.esp'
+    group: *touringGroup
     after:
       - name: 'MoreToSay.esp'
         condition: 'not is_master("TouringCarriages.esp")'
