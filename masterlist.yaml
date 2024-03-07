@@ -769,8 +769,11 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
-  - name: &citizensGroup Immersive Citizens
+  - name: &sewersGroup Skyrim Sewers
     after: [ default ]
+
+  - name: &citizensGroup Immersive Citizens
+    after: [ *sewersGroup ]
 
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *citizensGroup ]
@@ -21386,6 +21389,7 @@ plugins:
 
   - name: 'SkyrimSewers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/9320/' ]
+    group: *sewersGroup
     clean:
       - crc: 0xACB9FC00
         util: 'SSEEdit v4.0.3'
