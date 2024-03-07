@@ -784,8 +784,11 @@ groups:
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *ycmGroup ]
 
-  - name: &tciyGroup The Choice is Yours
+  - name: &gdoGroup Guard Dialogue Overhaul
     after: [ *rdoGroup ]
+
+  - name: &tciyGroup The Choice is Yours
+    after: [ *gdoGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
@@ -14068,6 +14071,7 @@ plugins:
         name: 'Guard Dialogue Overhaul Redux'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22075/'
         name: 'Guard Dialogue Overhaul SE'
+    group: *gdoGroup
     after:
       - 'Ambriel.esp'
       - 'Cutting Room Floor.esp'
