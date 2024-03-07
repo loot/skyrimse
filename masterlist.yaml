@@ -772,9 +772,12 @@ groups:
   - name: &citizensGroup Immersive Citizens
     after: [ default ]
 
+  - name: &rdoGroup Relationship Dialogue Overhaul
+    after: [ *citizensGroup ]
+
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
-    after: [ *citizensGroup ]
+    after: [ *rdoGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
@@ -14352,9 +14355,10 @@ plugins:
         name: 'Relationship Dialogue Overhaul - RDO SE'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42068/'
         name: 'Relationship Dialogue Overhaul Lite Fixed'
-    after:
-      - '018Auri.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
+    group: *rdoGroup
+    # after:
+    #   - '018Auri.esp'
+    #   - 'Immersive Citizens - AI Overhaul.esp'
     msg:
       - <<: *patch3rdParty_AOOPH
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
