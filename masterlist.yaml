@@ -775,11 +775,8 @@ groups:
   - name: &touringGroup Touring Carriages
     after: [ *sewersGroup ]
 
-  - name: &crfGroup Cutting Room Floor
-    after: [ *touringGroup ]
-
   - name: &citizensGroup Immersive Citizens
-    after: [ *crfGroup ]
+    after: [ *touringGroup ]
 
   - name: &tbooGroup The Brotherhood of Old
     after: [ *citizensGroup ]
@@ -790,8 +787,11 @@ groups:
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *ycmGroup ]
 
-  - name: &gdoGroup Guard Dialogue Overhaul
+  - name: &crfGroup Cutting Room Floor
     after: [ *rdoGroup ]
+
+  - name: &gdoGroup Guard Dialogue Overhaul
+    after: [ *crfGroup ]
 
   - name: &waccfGroup Weapons Armor Clothing & Clutter Fixes
     after: [ *gdoGroup ]
