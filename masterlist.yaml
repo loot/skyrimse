@@ -784,9 +784,12 @@ groups:
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *ycmGroup ]
 
+  - name: &tciyGroup The Choice is Yours
+    after: [ *rdoGroup ]
+
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
-    after: [ *rdoGroup ]
+    after: [ *tciyGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
@@ -16128,6 +16131,7 @@ plugins:
 
   - name: 'TheChoiceIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
+    group: *tciyGroup
     after:
       - 'BA_Sorting.esp'
       - 'BA_Sorting_BCS.esp'
