@@ -769,6 +769,9 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
+  - name: &ebqoGroup Even Better Quest Objectives
+    after: [ default ]
+
   - name: &bcsGroup Book Covers Skyrim
     after: [ default ]
 
@@ -14856,6 +14859,7 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089/'
         name: 'Even Better Quest Objectives (Bethesda.net Mods)'
   - name: 'BetterQuestObjectives.esp'
+    group: *ebqoGroup
     after:
       - 'QuestsAreInSkyrim.esp'
       - 'QuestsAreInSkyrimUSSEP.esp'
