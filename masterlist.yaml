@@ -769,9 +769,12 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
+  - name: &citizensGroup Immersive Citizens
+    after: [ default ]
+
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
-    after: [ default ]
+    after: [ *citizensGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
@@ -14103,7 +14106,7 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
         name: 'Immersive Citizens AI Overhaul (Bethesda.net Mods)'
   - name: 'Immersive Citizens - AI Overhaul.esp'
-    group: *coreGroup
+    group: *citizensGroup
     after:
       - name: '3DNPC.esp'
         condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("3DNPC.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("3DNPC.esp"))'
