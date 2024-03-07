@@ -769,8 +769,11 @@ groups:
   - name: default
     after: [ *earlyLoadersGroup ]
 
-  - name: &sewersGroup Skyrim Sewers
+  - name: &bcsGroup Book Covers Skyrim
     after: [ default ]
+
+  - name: &sewersGroup Skyrim Sewers
+    after: [ *bcsGroup ]
 
   - name: &touringGroup Touring Carriages
     after: [ *sewersGroup ]
@@ -17684,6 +17687,7 @@ plugins:
         name: 'Book Covers Skyrim - Desaturated'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10/'
         name: 'Another Sorting Mod - Replacer Plugin'
+    group: *bcsGroup
     msg:
       - *alreadyInLotD
       - <<: *patch3rdParty
