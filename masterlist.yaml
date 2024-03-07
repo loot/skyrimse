@@ -775,8 +775,11 @@ groups:
   - name: &touringGroup Touring Carriages
     after: [ *sewersGroup ]
 
-  - name: &citizensGroup Immersive Citizens
+  - name: &crfGroup Cutting Room Floor
     after: [ *touringGroup ]
+
+  - name: &citizensGroup Immersive Citizens
+    after: [ *crfGroup ]
 
   - name: &tbooGroup The Brotherhood of Old
     after: [ *citizensGroup ]
@@ -20774,6 +20777,7 @@ plugins:
         name: 'Cutting Room Floor (Mod DB)'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
         name: 'Cutting Room Floor (Nexus Mods)'
+    group: *crfGroup
     after:
       - name: 'TouringCarriages.esp'
         condition: '(is_master("Cutting Room Floor.esp") and is_master("TouringCarriages.esp")) or (not is_master("Cutting Room Floor.esp") and not is_master("TouringCarriages.esp"))'
