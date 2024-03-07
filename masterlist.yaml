@@ -790,7 +790,9 @@ groups:
     after: [ *citizensGroup ]
 
   - name: &ycmGroup Your Choices Matter
-    after: [ *tbooGroup ]
+    after:
+      - *ebqoGroup
+      - *tbooGroup
 
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *citizensGroup ]
@@ -807,7 +809,9 @@ groups:
     after: [ *gdoGroup ]
 
   - name: &tciyGroup The Choice is Yours
-    after: [ *crfGroup ]
+    after:
+      - *crfGroup
+      - *ebqoGroup
 
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
