@@ -773,13 +773,15 @@ groups:
     after: [ default ]
 
   - name: &sewersGroup Skyrim Sewers
-    after: [ *bcsGroup ]
+    after: [ default ]
 
   - name: &touringGroup Touring Carriages
-    after: [ *sewersGroup ]
+    after: [ default ]
 
   - name: &citizensGroup Immersive Citizens
-    after: [ *touringGroup ]
+    after:
+      - *sewersGroup
+      - *touringGroup
 
   - name: &tbooGroup The Brotherhood of Old
     after: [ *citizensGroup ]
@@ -788,10 +790,12 @@ groups:
     after: [ *tbooGroup ]
 
   - name: &rdoGroup Relationship Dialogue Overhaul
-    after: [ *ycmGroup ]
+    after: [ *citizensGroup ]
 
   - name: &crfGroup Cutting Room Floor
-    after: [ *rdoGroup ]
+    after:
+      - *rdoGroup
+      - *touringGroup
 
   - name: &gdoGroup Guard Dialogue Overhaul
     after: [ *crfGroup ]
@@ -800,11 +804,13 @@ groups:
     after: [ *gdoGroup ]
 
   - name: &tciyGroup The Choice is Yours
-    after: [ *waccfGroup ]
+    after: [ *crfGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
-    after: [ *tciyGroup ]
+    after:
+      - *tciyGroup
+      - *waccfGroup
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
