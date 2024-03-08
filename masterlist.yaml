@@ -14349,9 +14349,9 @@ plugins:
         name: 'Relationship Dialogue Overhaul - RDO SE'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42068/'
         name: 'Relationship Dialogue Overhaul Lite Fixed'
-    after:
-      - '018Auri.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
+    after: [ '018Auri.esp' ]
+    # Removed load after for Immersive Citizens, as it can lead to hoisting of too many other mods.
+    # Which may not work for every users load order. User can add the rule manually instead.
     msg:
       - <<: *patch3rdParty_AOOPH
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
