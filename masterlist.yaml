@@ -817,6 +817,9 @@ groups:
   - name: &waccfGroup Weapons Armor Clothing & Clutter Fixes
     after: [ *gdoGroup ]
 
+  - name: &aceGroup Armor and Clothing Extension
+    after: [ *waccfGroup ]
+
   - name: &tciyGroup The Choice is Yours
     after:
       - *crfGroup
@@ -17518,6 +17521,7 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
   - name: 'WACCF_Armor and Clothing Extension.esp'
+    group: *aceGroup
     after:
       - 'AmuletsShowOnEverything.esp'
       - 'AmuletsShowOnClothes.esp'
