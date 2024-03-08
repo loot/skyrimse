@@ -773,9 +773,12 @@ groups:
     description: 'A group for modules that must load after most other mods.'
     after: [ default ]
 
+  - name: &icaioGroup Immersive Citizens
+    after: [ *lowPriorityGroup ]
+
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after: [ *lowPriorityGroup ]
+    after: [ *icaioGroup ]
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
@@ -14103,18 +14106,7 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3016198/'
         name: 'Immersive Citizens AI Overhaul (Bethesda.net Mods)'
   - name: 'Immersive Citizens - AI Overhaul.esp'
-    group: *coreGroup
-    after:
-      - name: '3DNPC.esp'
-        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("3DNPC.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("3DNPC.esp"))'
-      - name: 'Landscape Fixes For Grass Mods.esp'
-        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
-      - name: 'SkyrimSewers.esp'
-        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("SkyrimSewers.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("SkyrimSewers.esp"))'
-      - name: 'Verdant - A Skyrim Grass Plugin SSE Version.esp'
-        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("Verdant - A Skyrim Grass Plugin SSE Version.esp"))'
-      - name: 'ViscousGrass.esp'
-        condition: '(is_master("Immersive Citizens - AI Overhaul.esp") and is_master("ViscousGrass.esp")) or (not is_master("Immersive Citizens - AI Overhaul.esp") and not is_master("ViscousGrass.esp"))'
+    group: *icaioGroup
     inc:
       - 'ASLAO - Front Porch (Breezehome).esp'
       - 'EEKs Arcadia''s Cauldron.esp'
@@ -14149,7 +14141,7 @@ plugins:
         subs: [ 'The Useless Shop and Interior Overhaul **iWil_UselessShopOverhaul.esp**' ]
         condition: 'active("iWil_UselessShopOverhaul.esp")'
       - <<: *compatNotes
-        subs: [ 'http://ai-gamer.com/skyrim/ic-se/#compatibility' ]
+        subs: [ 'http://ai4egames.com/skyrim/ic-se/#compatibility' ]
       - <<: *patchIncluded
         type: error
         subs: [ 'Open Cities' ]
@@ -14172,8 +14164,8 @@ plugins:
       - Relations.Change
       - Relations.Remove
     clean:
-      - crc: 0x5A890755
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x602F9D9B
+        util: 'SSEEdit v4.1.5c EXTREMELY EXPERIMENTAL'
 
   - name: 'Immersive Speechcraft.esp'
     url:
