@@ -825,9 +825,13 @@ groups:
     description: 'A group for modules that modify cell encounter zones.'
     after: [ *cellMusicGroup ]
 
+  - name: &cellWaterGroup Cell Water
+    description: 'A group for modules that modify cell water.'
+    after: [ *cellEncZonesGroup ]
+
   - name: &interiorLightingGroup Interior Lighting
     description: 'A group for modules that add/remove and/or fix light bulbs in interiors.'
-    after: [ *cellEncZonesGroup ]
+    after: [ *cellWaterGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *interiorLightingGroup ]
@@ -4071,7 +4075,7 @@ plugins:
       - crc: 0xC500C63B
         util: 'SSEEdit v4.0.4c'
   - name: 'RealisticWaterTwo.esp'
-    group: *lateLoadersGroup
+    group: *cellWaterGroup
     msg:
       - <<: *patchIncluded
         subs: [ 'Myrwatch (Creation Club)' ]
@@ -4104,7 +4108,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30571/'
         name: 'SkyVRaan - Shimmering VR Waters'
   - name: 'VRWaterColor.esp'
-    group: *lateLoadersGroup
+    group: *cellWaterGroup
     after: [ 'RealisticWaterTwo.esp' ]
   - name: 'VRWaterColor-(Blackreach|Volcanic)\.esp'
     after: [ 'VRWaterColor.esp' ]
@@ -4118,14 +4122,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/37061/'
         name: 'Water for ENB'
   - name: 'Water for ENB( \((Mineral Teal|Shades of Skyrim|Tropical Green|Wavy Rivers)\))?\.esp'
-    group: *lateLoadersGroup
+    group: *cellWaterGroup
     inc: [ 'RealisticWaterTwo.esp' ]
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Water for ENB Main ESP' ]
         condition: 'many("Water for ENB( \((Mineral Teal|Shades of Skyrim|Tropical Green|Wavy Rivers)\))?\.esp")'
   - name: 'Water for ENB - Patch - (Clear Underwater|Lakeview Manor Avant Garden EX|Volcanic Water)\.esp'
-    group: *lateLoadersGroup
+    group: *cellWaterGroup
   - name: 'Water for ENB - Patch - FWMF (Marked|Unmarked) (Clean|Dear Diary|Old)(-Dark)?\.esp'
     group: *worldSettingsGroup
 
