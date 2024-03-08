@@ -778,8 +778,11 @@ groups:
   - name: &sewersGroup Skyrim Sewers
     after: [ default ]
 
-  - name: &touringGroup Touring Carriages
+  - name: &lffgmGroup Landscape Fixes For Grass Mods
     after: [ default ]
+
+  - name: &touringGroup Touring Carriages
+    after: [ *lffgmGroup ]
 
   - name: &citizensGroup Immersive Citizens
     after:
@@ -8582,6 +8585,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
         name: 'Landscape Fixes For Grass Mods'
   - name: 'Landscape Fixes For Grass Mods.esp'
+    group: *lffgmGroup
     after:
       - name: 'Midsummer - Stylised Grass for Skyrim SE.esp'
         condition: '(is_master("Midsummer - Stylised Grass for Skyrim SE.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Midsummer - Stylised Grass for Skyrim SE.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
