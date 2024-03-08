@@ -825,9 +825,13 @@ groups:
     description: 'A group for modules that modify cell encounter zones.'
     after: [ *cellMusicGroup ]
 
+  - name: &cellWaterGroup Cell Water
+    description: 'A group for modules that modify cell water.'
+    after: [ *cellEncZonesGroup ]
+
   - name: &interiorLightingGroup Interior Lighting
     description: 'A group for modules that add/remove and/or fix light bulbs in interiors.'
-    after: [ *cellEncZonesGroup ]
+    after: [ *cellWaterGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *interiorLightingGroup ]
