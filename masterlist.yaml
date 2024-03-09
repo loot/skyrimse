@@ -840,12 +840,8 @@ groups:
   - name: &highPriorityGroup High Priority Overrides
     after: [ *interiorLightingGroup ]
 
-  - name: &cellSettingsGroup Cell Settings
-    description: 'A group for modules that only modify cell settings.'
-    after: [ *highPriorityGroup ]
-
   - name: &lateLoadersGroup Late Loaders
-    after: [ *cellSettingsGroup ]
+    after: [ *highPriorityGroup ]
 
   - name: &kSpeakGroup Khajiit Speak
     after: [ *lateLoadersGroup ]
