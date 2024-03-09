@@ -829,9 +829,13 @@ groups:
     description: 'A group for modules that modify cell water.'
     after: [ *cellEncZonesGroup ]
 
+  - name: &cellLightingGroup Cell Weather & Lighting
+    description: 'A group for modules that modify cell weather & lighting.'
+    after: [ *cellWaterGroup ]
+
   - name: &interiorLightingGroup Interior Lighting
     description: 'A group for modules that add/remove and/or fix light bulbs in interiors.'
-    after: [ *cellWaterGroup ]
+    after: [ *cellLightingGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after: [ *interiorLightingGroup ]
