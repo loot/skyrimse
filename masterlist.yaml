@@ -844,11 +844,8 @@ groups:
     description: 'A group for modules that only modify cell settings.'
     after: [ *highPriorityGroup ]
 
-  - name: &lightingEnhancerGroup Lighting Enhancers
-    after: [ *cellSettingsGroup ]
-
   - name: &lateLoadersGroup Late Loaders
-    after: [ *lightingEnhancerGroup ]
+    after: [ *cellSettingsGroup ]
 
   - name: &kSpeakGroup Khajiit Speak
     after: [ *lateLoadersGroup ]
