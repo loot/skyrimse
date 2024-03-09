@@ -833,12 +833,8 @@ groups:
     description: 'A group for modules that modify cell weather & lighting.'
     after: [ *cellWaterGroup ]
 
-  - name: &interiorLightingGroup Interior Lighting
-    description: 'A group for modules that add/remove and/or fix light bulbs in interiors.'
-    after: [ *cellLightingGroup ]
-
   - name: &highPriorityGroup High Priority Overrides
-    after: [ *interiorLightingGroup ]
+    after: [ *cellLightingGroup ]
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
