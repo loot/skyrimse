@@ -2054,6 +2054,13 @@ plugins:
       - crc: 0xBF9B55EB
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
+  - name: 'ScriptFixesCompilation.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/' ]
+    group: *fixesGroup
+    after: ['Unofficial Skyrim Special Edition Patch.esp']
+    req: [ *SKSE ]
+    msg: [ *requiresMCM ]
+
   - name: 'Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
@@ -2099,6 +2106,7 @@ plugins:
   - name: 'Unofficial Skyrim Modders Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49616/' ]
     group: *fixesGroup
+    after: [ 'ScriptFixesCompilation.esp' ]
     inc: [ 'Unofficial Skyrim Modders Patch VR.esp' ]
     tag:
       - Actors.ACBS
