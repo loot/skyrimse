@@ -4831,16 +4831,6 @@ plugins:
       - C.Climate
       - C.ImageSpace
       - C.Light
-  - name: 'Lux Orbis( - .*)?\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56095/'
-        name: 'Lux Orbis'
-  - name: 'Lux Orbis - Cutting Room Floor patch.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x86D0CC7F
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
   - name: 'Lux - RedBag''s Solitude patch.esp'
     tag: [ C.Light ]
   - name: 'Lux - Rodryk''s Dragonbridge patch.esp'
@@ -4905,6 +4895,22 @@ plugins:
       - C.Climate
       - C.ImageSpace
       - C.Light
+  - name: 'Great City of JK''s Redbag Solitude patch.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xAFCF09AF
+        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        nav: 14
+  ### Lux - Patch Hub ###
+  - name: 'Lux - Water for ENB patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/113002/'
+        name: 'Lux - Patch Hub'
+    after:
+      - 'Lux - USSEP patch.esp'
+      - 'Lux - CC Fish patch.esp'
+    tag: [ C.Water ]
+  ### Lux - 3rd party Patches ###
   - name: 'Lux x ICOW patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/81448/'
@@ -4915,50 +4921,17 @@ plugins:
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3655
         udr: 165
-  - name: 'Great City of JK''s Redbag Solitude patch.esp'
+
+  - name: 'Lux Orbis( - .*)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56095/'
+        name: 'Lux Orbis'
+  - name: 'Lux Orbis - Cutting Room Floor patch.esp'
     dirty:
-      - <<: *reqManualFix
-        crc: 0xAFCF09AF
-        util: '[SSEEdit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        nav: 14
-  # Lux - Language Packs
-  - name: 'Lux FR.esp'
-    after:
-      - 'Lux - BleakFalls Barrow patch.esp'
-      - 'Lux - Blue Palace Terrace patch 3.esp'
-      - 'Lux - Breezehome by Lupus patch.esp'
-      - 'Lux - Crimson Blood Armor patch.esp'
-      - 'Lux - Distinct Interiors patch.esp'
-      - 'Lux - Distinct Silver Blood inn patch.esp'
-      - 'Lux - Embershard Mine patch.esp'
-      - 'Lux - Halted Stream Camp patch.esp'
-      - 'Lux - HSTNF compatibility patch.esp'
-      - 'Lux - JK''s Angelines Aromatics patch.esp'
-      - 'Lux - JK''s Arcadia''s Cauldron patch.esp'
-      - 'Lux - JK''s Bannered Mare patch.esp'
-      - 'Lux - JK''s Bee and Barb patch.esp'
-      - 'Lux - JK''s Belethor''s General Goods patch.esp'
-      - 'Lux - JK''s Bits and Pieces patch.esp'
-      - 'Lux - JK''s Blue Palace patch.esp'
-      - 'Lux - JK''s Dragonsreach patch.esp'
-      - 'Lux - JK''s Drunken Huntsman patch.esp'
-      - 'Lux - JK''s New Gnisis Cornerclub patch.esp'
-      - 'Lux - JK''s Radiant Raiment patch.esp'
-      - 'Lux - JK''s Sadris Used Wares patch.esp'
-      - 'Lux - JK''s Sleeping Giant inn patch.esp'
-      - 'Lux - JK''s Warmaidens patch.esp'
-      - 'Lux - Mara Valentine patch.esp'
-      - 'Lux - RedBag''s Solitude patch.esp'
-      - 'Lux - Silver Blood inn overhaul.esp'
-      - 'Lux - SoS compatibility patch.esp'
-      - 'Lux - Steepfall Burrow patch.esp'
-      - 'Lux - Ustengrav Revisited patch.esp'
-      - 'Lux - WhiteRiver Watch patch.esp'
-    tag: [ C.Name ]
-  - name: 'Lux - SoS compatibility patch FR.esp'
-    after:
-      - 'Lux - SoS compatibility patch.esp'
-      - 'Lux FR.esp'
+      - <<: *quickClean
+        crc: 0x86D0CC7F
+        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 4
 
   - name: 'mintylightningmod.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8778/' ]
