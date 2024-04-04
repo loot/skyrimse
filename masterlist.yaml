@@ -3788,6 +3788,32 @@ plugins:
       - crc: 0xE0447A92
         util: 'SSEEdit v4.0.4b'
 
+  - name: 'TMDWinery.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/115363/'
+        name: 'TMD Winery'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/115716/'
+        name: 'Diverse Winery - TMD'
+    req:
+      - <<: *BaseObjSwap
+        condition: 'file("DiverseTMDWinery_SWAP.ini")'
+    msg:
+      - <<: *requiresResources
+        subs: [ '[TMD Winery](https://www.nexusmods.com/skyrimspecialedition/mods/115363/)' ]
+        condition: 'file("DiverseTMDWinery_SWAP.ini") and not file("Meshes/TheMilkDrinker/TMDWinery/winebottle01a.nif")'
+    tag:
+      - name: Deactivate
+        condition: 'not file("DiverseTMDWinery_SWAP.ini")'
+      - name: Graphics
+        condition: 'not file("DiverseTMDWinery_SWAP.ini")'
+      - name: ObjectBounds
+        condition: 'not file("DiverseTMDWinery_SWAP.ini")'
+    clean:
+      - crc: 0x6F26C4B6
+        util: 'SSEEdit v4.1.5d'
+      - crc: 0xB37E94A7
+        util: 'SSEEdit v4.1.5d'
+
   - name: 'Unique Uniques SE.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/47725/'
