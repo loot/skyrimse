@@ -15722,6 +15722,27 @@ plugins:
       - crc: 0xD758507C
         util: 'SSEEdit v4.0.4c'
 
+  - name: 'Infiltration (- Quest Expansion|QE - Bandit War Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/114054/'
+        name: 'Infiltration - Quest Expansion'
+  - name: 'Infiltration - Quest Expansion.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Lawless - A Bandit Overhaul' ]
+        condition: 'active("Bandit War.esp") and not active("Infiltration QE - Bandit War Patch.esp")'
+    tag:
+      - Actors.AIData
+      - Actors.AIPackages
+      - Relations.Change
+    clean:
+      - crc: 0xE9A16C76
+        util: 'SSEEdit v4.1.5d'
+  - name: 'Infiltration QE - Bandit War Patch.esp'
+    clean:
+      - crc: 0x6A37C456
+        util: 'SSEEdit v4.1.5d'
+
   - name: 'InnoLostAlt.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/24236/' ]
     after: [ 'TheChoiceIsYours.esp' ]
