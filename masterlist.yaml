@@ -18111,22 +18111,31 @@ plugins:
       - <<: *BaseObjSwap
         condition: 'file("C.O.I.N_SWAP.ini")'
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Inventory Interface Information Injector](https://www.nexusmods.com/skyrimspecialedition/mods/85702/)' ]
+        condition: 'file("SKSE/Plugins/InventoryInjector/C.O.I.N.json") and not file("SKSE/Plugins/InventoryInjector.dll")'
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("C.O.I.N. - Beyond Skyrim Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Description Framework' ]
+        condition: 'file("SKSE/Plugins/DescriptionFramework.dll") and not file("C.O.I.N_DESC.ini")'
+      - <<: *patchIncluded
         subs: [ 'Saints & Seducers (Creation Club)' ]
-        condition: 'active("ccbgssse025-advdsgs.esm") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
+        condition: 'active("ccbgssse025-advdsgs.esm") and not active("Skyrim Extended Cut - Saints and Seducers.esp") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'The Cause (Creation Club)' ]
         condition: 'active("ccbgssse067-daedinv.esm") and not active("C.O.I.N. - The Cause Patch.esp")'
+      - <<: *requiresMCM
+        type: say
     tag:
       - Delev
       - Names
       - ObjectBounds
+      - -Relev
     clean:
-      - crc: 0xF982CC2C
-        util: 'SSEEdit v4.0.4c'
+      - crc: 0x35E0DEB2
+        util: 'SSEEdit v4.1.5f'
   - name: 'C.O.I.N. - Beyond Skyrim Patch.esp'
     tag:
       - Graphics
@@ -18137,20 +18146,21 @@ plugins:
       - crc: 0xC90FC44E
         util: 'SSEEdit v4.0.4c'
   - name: 'C.O.I.N. - Saints and Seducers Patch.esp'
+    inc: [ 'Skyrim Extended Cut - Saints and Seducers.esp' ]
     tag:
       - Delev
       - Invent.Add
       - Invent.Remove
     clean:
       - crc: 0xE979FDEA
-        util: 'SSEEdit v4.0.4c'
+        util: 'SSEEdit v4.1.5f'
   - name: 'C.O.I.N. - The Cause Patch.esp'
     tag:
       - Invent.Add
       - Invent.Remove
     clean:
       - crc: 0x6D9EC36C
-        util: 'SSEEdit v4.0.4c'
+        util: 'SSEEdit v4.1.5f'
 
   - name: 'Common Clothes and Armors.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21305/' ]
