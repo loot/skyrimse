@@ -18111,6 +18111,9 @@ plugins:
       - <<: *BaseObjSwap
         condition: 'file("C.O.I.N_SWAP.ini")'
     msg:
+      - <<: *alsoUseX
+        subs: [ '[Inventory Interface Information Injector](https://www.nexusmods.com/skyrimspecialedition/mods/85702/)' ]
+        condition: 'file("SKSE/Plugins/InventoryInjector/C.O.I.N.json") and not file("SKSE/Plugins/InventoryInjector.dll")'
       - <<: *patchIncluded
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("C.O.I.N. - Beyond Skyrim Patch.esp")'
