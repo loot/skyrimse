@@ -18118,6 +18118,9 @@ plugins:
         subs: [ 'Beyond Skyrim - Bruma' ]
         condition: 'active("BSHeartland.esm") and not active("C.O.I.N. - Beyond Skyrim Patch.esp")'
       - <<: *patchIncluded
+        subs: [ 'Description Framework' ]
+        condition: 'file("SKSE/Plugins/DescriptionFramework.dll") and not file("C.O.I.N_DESC.ini")'
+      - <<: *patchIncluded
         subs: [ 'Saints & Seducers (Creation Club)' ]
         condition: 'active("ccbgssse025-advdsgs.esm") and not active("Skyrim Extended Cut - Saints and Seducers.esp") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
       - <<: *patchIncluded
