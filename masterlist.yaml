@@ -11193,12 +11193,7 @@ plugins:
       - Graphics
   - name: 'SAFO - Valdacil.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin seems to be outdated and may not be compatible with the latest version of its master files.'
-          - lang: de
-            text: 'Dieses Plugin scheint veraltet zu sein und ist möglicherweise nicht mehr kompatibel mit der aktuellsten Version seiner Master-Dateien.'
+      - <<: *patchOutdated
         condition: 'checksum("SAFO - Valdacil.esp", DE73CDD3)'
   - name: 'SAFO - Wounds.esp'
     req: [ 'SAFO.esp' ]
