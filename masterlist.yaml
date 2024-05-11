@@ -26259,14 +26259,6 @@ plugins:
       - name: 'ELFX Shadows.esp'
         condition: 'not active("Eli_Breezehome [ADDON - ELFX-FX].esp")'
       - 'JKs Whiterun.esp'
-    msg:
-      - <<: *patchUpdateAvailable
-        type: warn
-        subs: [ '[Eli''s Breezehome Optimization Packages and Affiliated Patches](https://www.nexusmods.com/skyrimspecialedition/mods/48931/)' ]
-        condition: 'active("Eli_Breezehome.esp") and not version("Eli_Breezehome.esp", "1.6.0", >=)'
-      - <<: *requiresResources
-        subs: [ '[Eli''s Breezehome Overhaul](https://www.nexusmods.com/skyrimspecialedition/mods/2829/)' ]
-        condition: 'not file("Eli_Breezehome.bsa") and not file("Eli_Breezehome - Textures.bsa") and not file("meshes/elianora/breezehome/eli_byohtowerfull.nif")'
     tag:
       - C.Light
       - C.Water
