@@ -10112,6 +10112,13 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66908/'
         name: 'Take a Peek - New Stealth Mechanic'
   - name: 'Take A Peek - New Stealth Mechanic.esp'
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[ConsoleUtilSSE](https://www.nexusmods.com/skyrimspecialedition/mods/24858/)' ]
+        condition: 'not file("SKSE/Plugins/ConsoleUtilSSE.dll")'
+      - <<: *alsoUseX
+        subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/)' ]
+        condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll")'
   - name: 'Take A Peek - Simply Knock Mini Patch.esp'
 
   - name: 'Tentapalooza.esp'
