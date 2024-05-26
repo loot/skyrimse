@@ -10107,6 +10107,28 @@ plugins:
       - Text
     # Do not clean - ITMs are intentional according to the author.
 
+  - name: 'Take A Peek - (New Stealth Mechanic|Simply Knock Mini Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/66908/'
+        name: 'Take a Peek - New Stealth Mechanic'
+  - name: 'Take A Peek - New Stealth Mechanic.esp'
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[ConsoleUtilSSE](https://www.nexusmods.com/skyrimspecialedition/mods/24858/)' ]
+        condition: 'not file("SKSE/Plugins/ConsoleUtilSSE.dll")'
+      - <<: *alsoUseX
+        subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/)' ]
+        condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll")'
+      - *requiresMCM
+    clean:
+      - crc: 0x02AC432B
+        util: 'SSEEdit v4.1.5f'
+  - name: 'Take A Peek - Simply Knock Mini Patch.esp'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ '**Simply DAK Knock Peek.esp**' ]
+        condition: 'active("Simply DAK Knock Peek.esp")'
+
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
     msg: [ *patch3rdParty_SRPC ]
