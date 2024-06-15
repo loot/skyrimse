@@ -19288,7 +19288,7 @@ plugins:
       - crc: 0x3023FFC9
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: 'PrvtI_(HeavyArmory.*|HA.*|Fishing_DraugrWeapons)\.esp'
+  - name: 'PrvtI_(HeavyArmory|HA).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/6308/'
         name: 'Heavy Armory - New Weapons'
@@ -19301,11 +19301,8 @@ plugins:
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
       - <<: *patchIncluded
-        subs: [ 'Complete Crafting Overhaul Remastered' ]
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory(_AA)?_CCOR_Patch\.esp")'
-      - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("PrvtI_HeavyArmory(_AA)?_WACCF_Patch\.esp")'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
     tag:
       - Delev
       - Invent.Add
@@ -19317,11 +19314,6 @@ plugins:
     clean:
       - crc: 0x89D66889
         util: 'SSEEdit v4.0.4c'
-  - name: 'PrvtI_HeavyArmory_WACCF_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'PrvtI_HeavyArmory_CCOR_Patch.esp' ]
-        condition: 'active("PrvtI_HeavyArmory_CCOR_Patch.esp")'
 
   - name: 'PrvtIRoyalArmory.esp'
     url:
