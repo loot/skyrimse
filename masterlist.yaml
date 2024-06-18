@@ -9458,9 +9458,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3484/'
         name: 'Civil War Aftermath'
-    clean:
-      - crc: 0x2AEF51C4
-        util: 'SSEEdit v4.1.5f'
+    dirty:
+      - <<: *quickClean
+      - crc: 0xD6093F62
+        util: '[SSEEdit v4.1.5f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 9
 
   - name: 'Creation Club Integration - Studded Dragonscale.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29020/' ]
@@ -14332,6 +14334,13 @@ plugins:
       - name: -Names
         condition: 'version("Guard Dialogue Overhaul.esp", "2.17", >=)'
     clean:
+      # Redux, True GDO Port
+      - crc: 0x6ABC1129
+        util: 'SSEEdit v4.0.2f'
+      # Redux
+      - crc: 0x82FE6344
+        util: 'SSEEdit v4.0.2f'
+      # SE
       - crc: 0x21C5C3DB
         util: 'SSEEdit v4.1.5f'
 
@@ -15128,8 +15137,12 @@ plugins:
         condition: 'active("YASH2.esp") and not active("BetterQuestObjectives - YASH Patch.esp")'
     tag: [ Text ]
     clean:
+      # USSEP
       - crc: 0xDF1DDA2D
         util: 'SSEEdit v4.1.5f'
+      # Non-USSEP
+      - crc: 0x1FC5AB07
+        util: 'SSEEdit v4.0.4c'
   - name: 'BetterQuestObjectives-DBForevertoMisc.esp'
     clean:
       - crc: 0x81F203A7
@@ -17291,8 +17304,15 @@ plugins:
     tag: [ Text ]
   - name: 'YOT - Your Own Thoughts.esp'
     clean:
+      # AE
       - crc: 0x2D1BF884
         util: 'SSEEdit v4.1.5f'
+      # SE
+      - crc: 0x63C713B2
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+      # SE, Alt. Game Mechanics Vanilla
+      - crc: 0x5518CDFF
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
 ###### Gameplay - User Interface - Map markers ######
   - name: 'Atlas (Legendary( OCS)?|Compass Tweaks)\.esp'
@@ -20872,6 +20892,9 @@ plugins:
     clean:
       - crc: 0xC536917E
         util: 'SSEEdit v4.1.5f'
+        # No Dragon Attack
+      - crc: 0x51F9FAE2
+        util: 'SSEEdit v4.0.3'
 
   - name: 'Bee Hives.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1891-bee-hives/' ]
