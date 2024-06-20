@@ -16596,18 +16596,18 @@ plugins:
 
   - name: 'WheelsOfLull.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748/' ]
+    inc:
+      - name: 'WoLStartAt40.esp'
+        condition: 'version("WheelsOfLull.esp", "5.1.0", >=)'
     msg:
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patchIncluded
         subs: [ 'Airship - Dev Aveza' ]
         condition: 'active("DA_Skyship.esm") and not active("WheelsofLull-Skyship.esp")'
       - <<: *patchProvided
         subs: [ 'High Poly Head' ]
         condition: 'active("High Poly Head.esm") and not active("High Poly NPCs - WheelsOfLull.esp")'
-      - <<: *patch3rdParty_LotD
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WheelsofLull_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-    inc:
-      - name: 'WoLStartAt40.esp'
-        condition: 'version("WheelsOfLull.esp", "5.1.0", >=)'
     clean:
       - crc: 0xE6561EE8
         util: 'SSEEdit v4.0.3'
