@@ -17232,6 +17232,24 @@ plugins:
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
+  - name: 'QuickLootEE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69980/'
+        name: 'QuickLoot EE'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <)'
+      - *requiresMCM
+      - <<: *versionXIncY
+        subs:
+          - 'QuickLoot EE'
+          - 'Skyrim'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <)'
+    clean:
+      - crc: 0x0F6F63D9
+        util: 'SSEEdit v4.1.5g'
+
   - name: 'tdgsseActivateToInteract.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35492/' ]
     msg:
