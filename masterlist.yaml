@@ -17238,8 +17238,8 @@ plugins:
         name: 'QuickLootIE'
     msg:
       - <<: *patchUpdateAvailable
-        subs: [ '[1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <)'
+        subs: [ '[QuickLootIE](https://www.nexusmods.com/skyrimspecialedition/mods/120075/) **OR** [1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
       - *requiresMCM
       - <<: *versionXIncY
         subs:
