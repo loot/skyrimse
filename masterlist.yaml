@@ -17234,25 +17234,25 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/69980/'
         name: 'QuickLoot EE'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/120075/'
+        name: 'QuickLootIE'
     msg:
       - <<: *patchUpdateAvailable
-        subs: [ '[1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <)'
+        subs: [ '[QuickLootIE](https://www.nexusmods.com/skyrimspecialedition/mods/120075/) **OR** [1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
       - *requiresMCM
+      - <<: *useOnlyOneX
+        subs: [ 'QuickLoot DLL' ]
+        condition: 'many("SKSE/Plugins/QuickLootEE(-NG)?\.dll")'
       - <<: *versionXIncY
         subs:
           - 'QuickLoot EE'
           - 'Skyrim'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
     clean:
       - crc: 0x0F6F63D9
         util: 'SSEEdit v4.1.5g'
 
-  - name: 'QuickLootIE.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/120075/'
-        name: 'QuickLoot IE'
-      
   - name: 'tdgsseActivateToInteract.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/35492/' ]
     msg:
