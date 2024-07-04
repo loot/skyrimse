@@ -26308,12 +26308,11 @@ plugins:
       - 'ELFX - NoPlayerHomes.esp'
       - name: 'ELFX Shadows.esp'
         condition: 'not active("Eli_Breezehome [ADDON - ELFX-FX].esp")'
-    clean:
-      - crc: 0x79156E8E
-        util: 'SSEEdit v4.1.5f'
-      # OCS
-      - crc: 0x63975CF4
-        util: 'SSEEdit v4.1.5f'
+    dirty:
+      - <<: *quickClean
+        crc: 0x9C90ACD4
+        util: '[SSEEdit v4.1.5g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
   - name: 'Eli_Breezehome [ADDON - ELFX-FX].esp'
     after: [ 'ELFX Shadows.esp' ]
 
