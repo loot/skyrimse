@@ -7489,15 +7489,33 @@ plugins:
   - name: 'Durnehviir God of Death.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12086/' ]
     after: [ 'KS Dragon Overhaul 2.esp' ]
+    inc: [ 'Durnehviir God of Death - Remastered.esp' ]
+    msg:
+      - <<: *obsolete
+        subs: [ '[DURNEHVIIR GOD OF DEATH - REMASTERED (Ultra HD Dragon Retexture)](https://www.nexusmods.com/skyrimspecialedition/mods/88140/)' ]
     tag:
       - Actors.ACBS
       - Actors.Spells
       - Actors.Stats
+
+  - name: 'Durnehviir God of Death - Remastered.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/88140/'
+        name: 'Edmond''s DURNEHVIIR GOD OF DEATH - REMASTERED (Ultra HD Dragon Retexture)'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Durnehviir Resurrected' ]
+        condition: 'active("DurnehviirResurrected.esp") and not active("Durnehviir Resurrected (Fast|Instant|Normal) - God Of Death Remastered Patch\.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.Perks.Add
+      - Actors.Spells
+      - Actors.Stats
+      - Graphics
+      - Keywords
     clean:
-      - crc: 0xE8EB056C
-        util: 'SSEEdit v4.0.3'
-      - crc: 0x498D2453
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x0C6A8983
+        util: 'SSEEdit v4.1.5g'
 
   - name: 'DwemerSpectresLegendary.esp'
     url:
