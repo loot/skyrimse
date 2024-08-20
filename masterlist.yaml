@@ -3092,6 +3092,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/'
         name: 'Deadly Spell Impacts'
   - name: 'DeadlySpellImpacts.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'ENBSeries SE v0.483 or less'
+          - '[Deadly Spell Impacts Transparency Fix for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/41284/)'
+        condition: 'file("../d3d11.dll") and product_version("../d3d11.dll", "0.4.8.4", <) and version("DeadlySpellImpacts.esp", "1.70", ==) and not active("DeadlySpellImpacts Transparency Fix.esp") and not active("PSI.esp")'
     tag: [ Graphics ]
     clean:
       - crc: 0x72B9103C
@@ -3100,6 +3106,21 @@ plugins:
     clean:
       - crc: 0x88A3564F
         util: 'SSEEdit v4.0.4c'
+  # Deadly Spell Impacts Transparency Fix for ENB #
+  - name: 'DeadlySpellImpacts Transparency Fix.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41284/'
+        name: 'Deadly Spell Impacts Transparency Fix for ENB'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Deadly Spell Impacts v1.8.0+' ]
+        condition: 'file("DeadlySpellImpacts.esp") and version("DeadlySpellImpacts.esp", "1.70", !=)'
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'ENBSeries v0.484+' ]
+        condition: 'product_version("../d3d11.dll", "0.4.8.4", >=)'
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Parallax Spell Impacts' ]
+        condition: 'active("PSI.esp")'
 
   - name: 'DibellaStatuesFixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51983/' ]
@@ -28190,15 +28211,6 @@ plugins:
         util: 'SSEEdit v4.0.4c'
       - crc: 0x76F44BFE
         util: 'SSEEdit v4.0.4c'
-
-  - name: 'DeadlySpellImpacts Transparency Fix.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41284/'
-        name: 'Deadly Spell Impacts Transparency Fix for ENB'
-    msg:
-      - <<: *alreadyInOrFixedByX
-        subs: [ 'Parallax Spell Impacts' ]
-        condition: 'active("PSI.esp")'
 
   - name: 'DiverseSkyimCivilWarFix.esp'
     url:
