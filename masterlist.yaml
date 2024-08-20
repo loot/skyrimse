@@ -3107,6 +3107,9 @@ plugins:
         name: 'Deadly Spell Impacts Transparency Fix for ENB'
     msg:
       - <<: *alreadyInOrFixedByX
+        subs: [ 'Deadly Spell Impacts v1.8.0+' ]
+        condition: 'file("DeadlySpellImpacts.esp") and version("DeadlySpellImpacts.esp", "1.70", !=)'
+      - <<: *alreadyInOrFixedByX
         subs: [ 'Parallax Spell Impacts' ]
         condition: 'active("PSI.esp")'
 
