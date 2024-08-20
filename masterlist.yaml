@@ -3092,6 +3092,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/'
         name: 'Deadly Spell Impacts'
   - name: 'DeadlySpellImpacts.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'ENBSeries SE v0.483 or less'
+          - '[Deadly Spell Impacts Transparency Fix for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/41284/)'
+        condition: 'file("../d3d11.dll") and product_version("../d3d11.dll", "0.4.8.4", <) and version("DeadlySpellImpacts.esp", "1.70", ==) and not active("DeadlySpellImpacts Transparency Fix.esp") and not active("PSI.esp")'
     tag: [ Graphics ]
     clean:
       - crc: 0x72B9103C
