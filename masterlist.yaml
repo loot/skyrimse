@@ -18284,12 +18284,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Description Framework' ]
         condition: 'file("SKSE/Plugins/DescriptionFramework.dll") and not file("C.O.I.N_DESC.ini")'
-      - <<: *patchIncluded
-        subs: [ 'Saints & Seducers (Creation Club)' ]
-        condition: 'active("ccbgssse025-advdsgs.esm") and not active("Skyrim Extended Cut - Saints and Seducers.esp") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The Cause (Creation Club)' ]
-        condition: 'active("ccbgssse067-daedinv.esm") and not active("C.O.I.N. - The Cause Patch.esp")'
       - <<: *requiresMCM
         type: say
     tag:
@@ -18298,8 +18292,8 @@ plugins:
       - ObjectBounds
       - -Relev
     clean:
-      - crc: 0x35E0DEB2
-        util: 'SSEEdit v4.1.5f'
+      - crc: 0xCAE77D1B
+        util: 'SSEEdit v4.0.4'
   - name: 'C.O.I.N. - Beyond Skyrim Patch.esp'
     tag:
       - Graphics
@@ -18309,22 +18303,6 @@ plugins:
     clean:
       - crc: 0xC90FC44E
         util: 'SSEEdit v4.0.4c'
-  - name: 'C.O.I.N. - Saints and Seducers Patch.esp'
-    inc: [ 'Skyrim Extended Cut - Saints and Seducers.esp' ]
-    tag:
-      - Delev
-      - Invent.Add
-      - Invent.Remove
-    clean:
-      - crc: 0xE979FDEA
-        util: 'SSEEdit v4.1.5f'
-  - name: 'C.O.I.N. - The Cause Patch.esp'
-    tag:
-      - Invent.Add
-      - Invent.Remove
-    clean:
-      - crc: 0x6D9EC36C
-        util: 'SSEEdit v4.1.5f'
 
   - name: 'Common Clothes and Armors.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21305/' ]
