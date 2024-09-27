@@ -22941,9 +22941,6 @@ plugins:
         subs: [ 'Immersive Patrols' ]
         condition: 'active("Immersive Patrols II.esp") and not active("IFDImmPatrolsIIPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Legacy of the Dragonborn' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("FDILOTDPatch.esp") and not active("FDILOTDBPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Medieval Lanterns of Skyrim' ]
         condition: 'active("Medieval Lanterns of Skyrim.esp") and not active("FDIMLOSPatch.esp")'
       - <<: *patchIncluded
@@ -22967,6 +22964,12 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing & Clutter Fixes' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("IFDWACCFPatch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveFortDawnguard_Patch.esp")'
+      - <<: *patchUpdateAvailable
+        subs: ['[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)']
+        condition: '(active("FDILOTDPatch.esp") or active("FDILOTDBPatch.esp")) and not active("DBM_ImmersiveFortDawnguard_Patch.esp")'
+
     tag:
       - Actors.AIPackages
       - Actors.Stats
