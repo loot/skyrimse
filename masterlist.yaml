@@ -3906,22 +3906,15 @@ plugins:
       - crc: 0x7B69E509
         util: 'SSEEdit v4.0.4c'
 
-  - name: '(PSI|Thunderbolt fix test)\.esp'
+  - name: 'PSI.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83935/'
         name: 'Parallax Spell Impacts'
-  - name: 'PSI.esp'
-    req:
-      - *GraphicsFramework
-      - name: 'Shaders/ComplexParallaxMaterials/ComplexParallaxMaterials.hlsli'
-        display: '[Complex Parallax Materials](https://www.nexusmods.com/skyrimspecialedition/mods/95134/)'
-        condition: 'not (file("../d3d11.dll")) and file("SKSE/Plugins/CommunityShaders.dll")'
+    req: [ *GraphicsFramework ]
     tag: [ Graphics ]
-    # Do not clean - ITMs are intentional according to the author.
-  - name: 'Thunderbolt fix test.esp'
     clean:
-      - crc: 0xFBA5D8C0
-        util: 'SSEEdit v4.0.4c'
+      - crc: 0xE8C19F74
+        util: 'SSEEdit v4.1.5k'
 
   - name: 'Resurgence - Deathbrand.esp'
     url:
