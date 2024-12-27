@@ -10347,20 +10347,23 @@ plugins:
   - name: 'Take A Peek - New Stealth Mechanic.esp'
     msg:
       - <<: *alsoUseX
-        subs: [ '[ConsoleUtilSSE](https://www.nexusmods.com/skyrimspecialedition/mods/24858/)' ]
+        subs: [ '[ConsoleUtilSSE NG](https://www.nexusmods.com/skyrimspecialedition/mods/76649/)' ]
         condition: 'not file("SKSE/Plugins/ConsoleUtilSSE.dll")'
       - <<: *alsoUseX
-        subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/)' ]
-        condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll")'
+        subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/) **OR** [Open Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/92109/)' ]
+        condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll") and not file("SKSE/Plugins/OpenAnimationReplacer.dll")'
       - *requiresMCM
     clean:
       - crc: 0x02AC432B
-        util: 'SSEEdit v4.1.5f'
+        util: 'SSEEdit v4.1.5k'
   - name: 'Take A Peek - Simply Knock Mini Patch.esp'
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [ '**Simply DAK Knock Peek.esp**' ]
-        condition: 'active("Simply DAK Knock Peek.esp")'
+        subs: [ '**Just Simply Peek.esp**' ]
+        condition: 'active("Just Simply Peek.esp")'
+    clean:
+      - crc: 0x084DD663
+        util: 'SSEEdit v4.1.5k'
 
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
