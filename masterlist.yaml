@@ -570,10 +570,10 @@ globals:
   # Skyrim SE GOG Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE GOG**' ]
-    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", <)'
+    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", <)'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE GOG**' ]
-    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", >=)'
+    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", >=)'
   # Skyrim SE EGS Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE Epic Games**' ]
@@ -626,6 +626,8 @@ globals:
   # SKSE AE GOG - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", ==) and not file("../skse64_1_6_659.dll") and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSSE
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", ==) and not file("../skse64_1_6_1179.dll") and file("../skse64_loader.exe")'
   # SKSE AE EGS - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe")'
