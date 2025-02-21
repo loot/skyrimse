@@ -371,7 +371,7 @@ common:
   - &missingRequirementAddrLibforPlugin
     <<: *missingRequirementXforPlugin
     subs: [ '[Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444/)' ]
-    condition: 'readable("../SkyrimSE.exe") and ((not file("SKSE/Plugins/version-1-5-16-0.bin") and product_version("../SkyrimSE.exe", "1.5.16.0", ==)) or (not file("SKSE/Plugins/version-1-5-23-0.bin") and product_version("../SkyrimSE.exe", "1.5.23.0", ==)) or (not file("SKSE/Plugins/version-1-5-3-0.bin") and product_version("../SkyrimSE.exe", "1.5.3.0", ==)) or (not file("SKSE/Plugins/version-1-5-39-0.bin") and product_version("../SkyrimSE.exe", "1.5.39.0", ==)) or (not file("SKSE/Plugins/version-1-5-50-0.bin") and product_version("../SkyrimSE.exe", "1.5.50.0", ==)) or (not file("SKSE/Plugins/version-1-5-53-0.bin") and product_version("../SkyrimSE.exe", "1.5.53.0", ==)) or (not file("SKSE/Plugins/version-1-5-62-0.bin") and product_version("../SkyrimSE.exe", "1.5.62.0", ==)) or (not file("SKSE/Plugins/version-1-5-73-0.bin") and product_version("../SkyrimSE.exe", "1.5.73.0", ==)) or (not file("SKSE/Plugins/version-1-5-80-0.bin") and product_version("../SkyrimSE.exe", "1.5.80.0", ==)) or (not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-317-0.bin") and product_version("../SkyrimSE.exe", "1.6.317.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-318-0.bin") and product_version("../SkyrimSE.exe", "1.6.318.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-323-0.bin") and product_version("../SkyrimSE.exe", "1.6.323.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-342-0.bin") and product_version("../SkyrimSE.exe", "1.6.342.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-353-0.bin") and product_version("../SkyrimSE.exe", "1.6.353.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-629-0.bin") and product_version("../SkyrimSE.exe", "1.6.629.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-640-0.bin") and product_version("../SkyrimSE.exe", "1.6.640.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-659-0.bin") and product_version("../SkyrimSE.exe", "1.6.659.0", ==)))'
+    condition: 'readable("../SkyrimSE.exe") and ((not file("SKSE/Plugins/version-1-5-97-0.bin") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-659-0.bin") and product_version("../SkyrimSE.exe", "1.6.659.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-1170-0.bin") and product_version("../SkyrimSE.exe", "1.6.1170.0", ==)) or (not file("SKSE/Plugins/versionlib-1-6-1179-0.bin") and product_version("../SkyrimSE.exe", "1.6.1179.0", ==)))'
 
   # &patch3rdParty
   - &patch3rdParty_AOOPH
@@ -570,10 +570,10 @@ globals:
   # Skyrim SE GOG Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE GOG**' ]
-    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", <)'
+    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", <)'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE GOG**' ]
-    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", >=)'
+    condition: 'file("../Galaxy64.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", >=)'
   # Skyrim SE EGS Game Runtime
   - <<: *versionOldX
     subs: [ '**Skyrim SE Epic Games**' ]
@@ -626,6 +626,8 @@ globals:
   # SKSE AE GOG - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", ==) and not file("../skse64_1_6_659.dll") and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSSE
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", ==) and not file("../skse64_1_6_1179.dll") and file("../skse64_loader.exe")'
   # SKSE AE EGS - Game Runtime
   - <<: *versionSkseIncSSE
     condition: 'file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe")'
@@ -761,17 +763,17 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *mainGroup ]
 
-  - name: &verifiedCreationsGroup Verified Creations
-    after: [ *ccGroup ]
-
   - name: &fixesGroup Fixes & Resources
-    after: [ *verifiedCreationsGroup ]
+    after: [ *ccGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
     after: [ *fixesGroup ]
 
-  - name: default
+  - name: &verifiedCreationsGroup Verified Creations
     after: [ *earlyLoadersGroup ]
+
+  - name: default
+    after: [ *verifiedCreationsGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
@@ -916,6 +918,13 @@ plugins:
         itm: 384
         udr: 92
         nav: 3
+      # GOG v1.6.1179.0
+      - <<: *quickClean
+        crc: 0x4EE745BF
+        util: '[SSEEdit v4.1.5m](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 415
+        udr: 93
+        nav: 3
       # EGS v1.6.678
       - <<: *quickClean
         crc: 0x0572C368
@@ -974,6 +983,13 @@ plugins:
         itm: 849
         udr: 82
         nav: 59
+      # GOG v1.6.1179.0
+      - <<: *quickClean
+        crc: 0x86B60529
+        util: '[SSEEdit v4.1.5m](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 846
+        udr: 82
+        nav: 59
       # EGS v1.6.678
       - <<: *quickClean
         crc: 0x02A487C1
@@ -1019,6 +1035,13 @@ plugins:
       - <<: *quickClean
         crc: 0x073ECE89
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      # GOG v1.6.1179.0
+      - <<: *quickClean
+        crc: 0xBC6F2948
+        util: '[SSEEdit v4.1.5m](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 221
         udr: 11
         nav: 5
@@ -1076,6 +1099,13 @@ plugins:
         crc: 0x7BE33EB9
         util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 87
+        udr: 8
+        nav: 1
+      # GOG v1.6.1179.0
+      - <<: *quickClean
+        crc: 0x211C4911
+        util: '[SSEEdit v4.1.5m](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 88
         udr: 8
         nav: 1
       # EGS v1.6.678
@@ -1875,8 +1905,52 @@ plugins:
 
 ###### Verified Creations ######
 
-  # Aldmeri Anti-Mage
+  # A Fortress of Ice
+  - name: 'fortressofice.esl'
+    group: *verifiedCreationsGroup
+
+  # A Tale of Blood and Snow
+  - name: 'dv01vampireclanwar.esm'
+    group: *verifiedCreationsGroup
+
+  # Aberrations of the Dwemer
+  - name: 'aberrationsofthedwemer.esp'
+    group: *verifiedCreationsGroup
+
+  # Abyss - The Lost Levels
+  - name: 'theabyssll.esp'
+    group: *verifiedCreationsGroup
+
+  # Aetherforged Gigamaul
+  - name: 'gigamaul.esp'
+    group: *verifiedCreationsGroup
+
+  # Albion Armor • Outpost Edition
+  - name: 'ccbgsssexxxalbionarmor.esp'
+    group: *verifiedCreationsGroup
+
+  # Aldmeri Anti-mage
   - name: 'ccrs001.esl'
+    group: *verifiedCreationsGroup
+
+  # Ancient Civilization Armory Collection
+  - name: 'gildancientcivfull.esp'
+    group: *verifiedCreationsGroup
+  
+  # ANCIENT COLDHARBOUR ARMOR
+  - name: 'ccbgsssexxxdaedralordarmor.esp'
+    group: *verifiedCreationsGroup
+
+  # Animated Weapon Series - Mehrunes Razor
+  - name: 'animatedweapon-mehrunes'' razor.esl'
+    group: *verifiedCreationsGroup
+
+  # Anise’s Cabin - Claim a New Home
+  - name: 'anisecabinplayerhome.esl'
+    group: *verifiedCreationsGroup
+
+  # Archer’s Armaments
+  - name: 'archersarmaments.esl'
     group: *verifiedCreationsGroup
 
   # Arquebus
@@ -1887,20 +1961,92 @@ plugins:
   - name: 'kinggathcreations_bard.esm'
     group: *verifiedCreationsGroup
 
+  # Black Glass
+  - name: 'black glass.esl'
+    group: *verifiedCreationsGroup
+
+  # Bloodlust - Elven Armor & Weapons
+  - name: 'elvenblood armorweapons.esp'
+    group: *verifiedCreationsGroup
+
   # Bthar Caverns
   - name: 'bthar caverns.esl'
     group: *verifiedCreationsGroup
 
+  # Bzalths Workshop
+  - name: 'otm03_bzalthworkshop.esm'
+    group: *verifiedCreationsGroup
+
+  # Capital Vaults
+  - name: 'capitalvaults.esp'
+    group: *verifiedCreationsGroup
+
+  # Cathedral - 3D Maple Vine
+  - name: 'cathedral - 3d maple vine.esp'
+    group: *verifiedCreationsGroup
+
   # Classic Dialog Menu
-  - name: 'ftadialoguemenu.esl'
+  - name: 'ftadialoguemenu.esp'
+    group: *verifiedCreationsGroup
+
+  # Coven of Crones
+  - name: 'cronemod.esm'
+    group: *verifiedCreationsGroup
+
+  # Dark and Light: Paladin Pack
+  - name: 'gilddarkandlight.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo`s 3D Autumn Ferns
+  - name: 'drjacopo''s - 3d autumn ferns.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo`s 3D Deathbell
+  - name: 'drjacopo''s - 3d deathbell.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo`s 3D Juniper
+  - name: 'drjacopo''s - 3d juniper.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo`s 3D Lavender
+  - name: 'dr jacopo''s - 3d lavender.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo`s 3D Plants - Volume I
+  - name: 'drjacopo''s 3d plants - volume i.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo's 3D Reach Shrubs
+  - name: 'drjacopo''s - 3d reach shrubs.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo's 3D Sword Ferns and Fiddleheads
+  - name: 'drjacopo''s - 3d sword ferns.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo's 3D Yellow Shrubs
+  - name: 'drjacopo''s 3d yellow shrub.esl'
     group: *verifiedCreationsGroup
 
   # East Empire Expansion
   - name: 'kinggathcreations_eastempirecompany.esp'
     group: *verifiedCreationsGroup
 
-  # Echos of the Vale
+  # Echoes of the Vale
   - name: 'echoesofthevale.esp'
+    group: *verifiedCreationsGroup
+
+  # Elsweyr Cabinets of Curiosities
+  - name: 'risaadscoc.esl'
+    group: *verifiedCreationsGroup
+
+  # Fallen Heroes: Death Knight Pack
+  - name: 'gilddeathknight.esp'
+    group: *verifiedCreationsGroup
+
+  # Forgotten Armory Collection
+  - name: 'gildforgottenarmorycollection.esp'
     group: *verifiedCreationsGroup
 
   # Katja The Thief
@@ -1915,8 +2061,56 @@ plugins:
   - name: 'legendarydungeons-nordic.esm'
     group: *verifiedCreationsGroup
 
+  # Listener’s Initiates
+  - name: 'listener''s initiates.esl'
+    group: *verifiedCreationsGroup
+
+  # Longtooth Lair - Vampire home
+  - name: ceejsse004_lair.esp
+    group: *verifiedCreationsGroup
+
+  # Magenit - Genesis
+  - name: 'mgnt_launchself.esl'
+    group: *verifiedCreationsGroup
+
+  # Magenit - Somber Tune
+  - name: 'magenits_blissless.esp'
+    group: *verifiedCreationsGroup
+
+  # Messages in Bottles
+  - name: 'messagesinbottles.esl'
+    group: *verifiedCreationsGroup
+
+  # Morning Stars
+  - name: 'morningstars_muoviori.esl'
+    group: *verifiedCreationsGroup
+
   # Morthal
   - name: 'morthal.esp'
+    group: *verifiedCreationsGroup
+
+  # Mysteries of Cloudreach Barrow
+  - name: 'rg439cloudreachbarrow.esp'
+    group: *verifiedCreationsGroup
+
+  # Northern Woods Tree House
+  - name: 'bmarnorthernwoodstreehouse.esp'
+    group: *verifiedCreationsGroup
+
+  # Rivershadow Retreat - Claim Narfi’s house
+  - name: 'narfisplayerhome.esl'
+    group: *verifiedCreationsGroup
+
+  # Scroll Craft
+  - name: 'scrolls.esp'
+    group: *verifiedCreationsGroup
+
+  # Secrets of Rkund
+  - name: 'rg439rkund.esp'
+    group: *verifiedCreationsGroup
+
+  # Seeking out Scarlet - A Quest
+  - name: 'sosvc02quest.esl'
     group: *verifiedCreationsGroup
 
   # Shadetree Lodge
@@ -1931,12 +2125,76 @@ plugins:
   - name: 'spelltomecrafting.esl'
     group: *verifiedCreationsGroup
 
+  # Survival Settings
+  - name: 'survivalsettings.esp'
+    group: *verifiedCreationsGroup
+
+  # Sword of Spirit - A Quest
+  - name: 'sosvcquest.esl'
+    group: *verifiedCreationsGroup
+
+  # Tel Mithryn Residence
+  - name: 'vcfl001_telmithrynhome.esl'
+    group: *verifiedCreationsGroup
+
+  # The End
+  - name: 'asetheend.esl'
+    group: *verifiedCreationsGroup
+
+  # The Hidden - Quests and A Dungeon
+  - name: 'thehidden.esp'
+    group: *verifiedCreationsGroup
+
+  # The Lost Doomstone
+  - name: 'doomstone.esp'
+    group: *verifiedCreationsGroup
+
+  # The Magic of Madness
+  - name: 'vclssse004_shiveringislesmagic.esm'
+    group: *verifiedCreationsGroup
+
   # Thief Hideouts
   - name: 'ceejsse001_hideouts.esl'
     group: *verifiedCreationsGroup
 
+  # Truth in Legends
+  - name: 'msjm02_thunder.esm'
+    group: *verifiedCreationsGroup
+
+  # Vampire Extension Framework
+  - name: 'vampire extension framework.esp'
+    group: *verifiedCreationsGroup
+
+  # Vvardenfell Arrows and Bolts Pack
+  - name: 'vclssse003_vvardenfellarrows.esl'
+    group: *verifiedCreationsGroup
+
   # Winterfrost Plus Edition
   - name: 'cbgs_tdowwinterfrost.esp'
+    group: *verifiedCreationsGroup
+
+  # Winterledge Manor, Coastal Player Home
+  - name: 'vclssse002_cozyhome.esm'
+    group: *verifiedCreationsGroup
+
+  # Witches Festival
+  - name: 'witchesfestival.esp'
+    group: *verifiedCreationsGroup
+
+  # Xila's Light Armor - Reworked and Expanded
+  - name: 'monstrrous light armor.esp'
+    group: *verifiedCreationsGroup
+
+  # Xila’s Monstrrous Dragons - A Terrifying Retexture
+  - name: 'monstrrous dragons.esl'
+    group: *verifiedCreationsGroup
+
+  # Xila’s Elven, Glass and Blood Glass Weapons
+  - name: 'blood glass weapons.esp'
+    group: *verifiedCreationsGroup
+
+  # Yorgrim Hall
+  - name: 'byohyorgrimhall.esp'
     group: *verifiedCreationsGroup
 
 ###### Base Game Patches ######
@@ -2442,6 +2700,10 @@ plugins:
     group: *dynamicLODGroup
     after: [ 'DynDOLOD.esp' ]
     msg: [ *runxLODGen ]
+
+  - name: 'ParallaxGen.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/120946/' ]
+    group: *lateChangesGroup
 
   - name: 'Smashed Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/90987/' ]
@@ -3092,6 +3354,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12939/'
         name: 'Deadly Spell Impacts'
   - name: 'DeadlySpellImpacts.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'ENBSeries SE v0.483 or less'
+          - '[Deadly Spell Impacts Transparency Fix for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/41284/)'
+        condition: 'file("../d3d11.dll") and product_version("../d3d11.dll", "0.4.8.4", <) and version("DeadlySpellImpacts.esp", "1.70", ==) and not active("DeadlySpellImpacts Transparency Fix.esp") and not active("PSI.esp")'
     tag: [ Graphics ]
     clean:
       - crc: 0x72B9103C
@@ -3100,6 +3368,21 @@ plugins:
     clean:
       - crc: 0x88A3564F
         util: 'SSEEdit v4.0.4c'
+  # Deadly Spell Impacts Transparency Fix for ENB #
+  - name: 'DeadlySpellImpacts Transparency Fix.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41284/'
+        name: 'Deadly Spell Impacts Transparency Fix for ENB'
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Deadly Spell Impacts v1.8.0+' ]
+        condition: 'file("DeadlySpellImpacts.esp") and version("DeadlySpellImpacts.esp", "1.70", !=)'
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'ENBSeries v0.484+' ]
+        condition: 'product_version("../d3d11.dll", "0.4.8.4", >=)'
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Parallax Spell Impacts' ]
+        condition: 'active("PSI.esp")'
 
   - name: 'DibellaStatuesFixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51983/' ]
@@ -3377,6 +3660,37 @@ plugins:
   - name: 'JS Unique Utopia SE - Rings - Johnskyrim.esp'
     tag: [ Graphics ]
 
+  - name: 'JS Vanilla Circlets (SE|- Requiem patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/131813/'
+        name: 'JS Vanilla Circlets'
+  - name: 'JS Vanilla Circlets SE.esp'
+    tag: [ Graphics ]
+    clean:
+      - crc: 0xE57BBEBB
+        util: 'SSEEdit v4.1.5k'
+  - name: 'JS Vanilla Circlets - Requiem patch.esp'
+    req: [ 'Requiem.esp' ]
+    clean:
+      - crc: 0x44803E23
+        util: 'SSEEdit v4.1.5k'
+
+  - name: 'Kanjs - AE Books Patch\.es[lp]'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/121356/'
+        name: 'Kanjs - AE Books All In One Animated'
+    tag:
+      - Deactivate
+      - Graphics
+  - name: 'Kanjs - AE Books Patch.esl'
+    clean:
+      - crc: 0x64343307
+        util: 'SSEEdit v4.1.5k'
+  - name: 'Kanjs - AE Books Patch.esp'
+    clean:
+      - crc: 0xD0F89F4B
+        util: 'SSEEdit v4.1.5k'
+
   - name: 'Kanjs - AIO Books Patch\.es[lp]'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/109877/'
@@ -3543,6 +3857,17 @@ plugins:
     clean:
       - crc: 0xC28497E7
         util: 'SSEEdit v4.0.4c'
+
+  - name: 'NewNordicPottery.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71513/'
+        name: 'New Nordic Pots'
+    tag:
+      - Deactivate
+      - Graphics
+    clean:
+      - crc: 0x97E60882
+        util: 'SSEEdit v4.1.5f'
 
   - name: 'ORM-Arvak.esp'
     url:
@@ -3723,22 +4048,15 @@ plugins:
       - crc: 0x7B69E509
         util: 'SSEEdit v4.0.4c'
 
-  - name: '(PSI|Thunderbolt fix test)\.esp'
+  - name: 'PSI.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/83935/'
         name: 'Parallax Spell Impacts'
-  - name: 'PSI.esp'
-    req:
-      - *GraphicsFramework
-      - name: 'Shaders/ComplexParallaxMaterials/ComplexParallaxMaterials.hlsli'
-        display: '[Complex Parallax Materials](https://www.nexusmods.com/skyrimspecialedition/mods/95134/)'
-        condition: 'not (file("../d3d11.dll")) and file("SKSE/Plugins/CommunityShaders.dll")'
+    req: [ *GraphicsFramework ]
     tag: [ Graphics ]
-    # Do not clean - ITMs are intentional according to the author.
-  - name: 'Thunderbolt fix test.esp'
     clean:
-      - crc: 0xFBA5D8C0
-        util: 'SSEEdit v4.0.4c'
+      - crc: 0xE8C19F74
+        util: 'SSEEdit v4.1.5k'
 
   - name: 'Resurgence - Deathbrand.esp'
     url:
@@ -3946,7 +4264,7 @@ plugins:
         subs: [ 'True 3D Sound for Headphones **x3daudio1_7.dll**' ]
         condition: 'file("../x3daudio1_7.dll")'
       - <<: *compatNotes
-        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6016803-audio-overhaul-for-skyrim-se/?p=60245661/' ]
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466?tab=posts&jump_to_comment=60245661' ]
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul Skyrim.esp")'
       - <<: *patch3rdParty_UVCPC
@@ -9530,7 +9848,7 @@ plugins:
         util: '[SSEEdit v4.0.3g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
 
-  - name: 'Crossbow Integration.*/.esp'
+  - name: 'Crossbow Integration.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28766/' ]
   - name: 'Crossbow Integration.esp'
     tag:
@@ -10049,7 +10367,7 @@ plugins:
       - <<: *requiresX
         type: error
         subs: [ '[PapyrusUtil v3.9+](https://www.nexusmods.com/skyrimspecialedition/mods/13048/)' ]
-        condition: 'checksum("SKSE/Plugins/PapyrusUtil.dll", 9BACEE98)'
+        condition: 'not file("SKSE/Plugins/PapyrusUtil.dll")'
     clean:
       - crc: 0x95029A30
         util: 'SSEEdit v4.0.4c'
@@ -10110,8 +10428,11 @@ plugins:
       - crc: 0x04D36F4B
         util: 'SSEEdit v4.0.2f'
 
+  - name: '(EWM_)?SunHelm(Survival|Diseases)(SE)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/39414/'
+        name: 'SunHelm Survival and needs'
   - name: 'SunHelmSurvival.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39414/' ]
     req:
       - <<: *PapyrusExtender
         condition: 'version("SunHelmSurvival.esp", "3.0.8", >=)'
@@ -10129,10 +10450,13 @@ plugins:
       - crc: 0x246915B2
         util: 'SSEEdit v4.0.4b'
   - name: 'EWM_SunhelmSurvivalSE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/96547/'
+        name: 'More Easy WheelMenu II Addons'
     req:
       - name: 'EasyWheel-AIO.esp'
-        display: '[Easy Wheelmenu - SSE Conversion](https://www.nexusmods.com/skyrimspecialedition/mods/22934/)'
-        condition: 'not file("EasyWheel.esp")'
+        display: '[Easy Wheelmenu - SSE Conversion](https://www.nexusmods.com/skyrimspecialedition/mods/22934/) **OR** [Easy WheelMenu II](https://www.nexusmods.com/skyrimspecialedition/mods/59799/)'
+        condition: 'not file("EasyWheel2 SSE.esp")'
       - 'SunHelmSurvival.esp'
   - name: 'SunHelmDiseases.esp'
     tag:
@@ -10165,20 +10489,23 @@ plugins:
   - name: 'Take A Peek - New Stealth Mechanic.esp'
     msg:
       - <<: *alsoUseX
-        subs: [ '[ConsoleUtilSSE](https://www.nexusmods.com/skyrimspecialedition/mods/24858/)' ]
+        subs: [ '[ConsoleUtilSSE NG](https://www.nexusmods.com/skyrimspecialedition/mods/76649/)' ]
         condition: 'not file("SKSE/Plugins/ConsoleUtilSSE.dll")'
       - <<: *alsoUseX
-        subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/)' ]
-        condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll")'
+        subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/) **OR** [Open Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/92109/)' ]
+        condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll") and not file("SKSE/Plugins/OpenAnimationReplacer.dll")'
       - *requiresMCM
     clean:
       - crc: 0x02AC432B
-        util: 'SSEEdit v4.1.5f'
+        util: 'SSEEdit v4.1.5k'
   - name: 'Take A Peek - Simply Knock Mini Patch.esp'
     msg:
       - <<: *alreadyInOrFixedByX
-        subs: [ '**Simply DAK Knock Peek.esp**' ]
-        condition: 'active("Simply DAK Knock Peek.esp")'
+        subs: [ '**Just Simply Peek.esp**' ]
+        condition: 'active("Just Simply Peek.esp")'
+    clean:
+      - crc: 0x084DD663
+        util: 'SSEEdit v4.1.5k'
 
   - name: 'Tentapalooza.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/652/' ]
@@ -10968,7 +11295,7 @@ plugins:
         subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
         condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
       - <<: *compatNotes
-        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6988461-caco-compatibility/?p=63575286' ]
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/?tab=forum&topic_id=6988461' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CACO_Patch.esp")'
       - <<: *patch3rdParty_ClockA
@@ -12407,7 +12734,7 @@ plugins:
       - Text
     msg:
       - <<: *compatNotes
-        subs: [ 'https://forums.nexusmods.com/index.php?/topic/6871717-waccf-compatibility/?p=62448162' ]
+        subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/?tab=forum&topic_id=6871717' ]
       - <<: *patch3rdParty
         subs:
           - 'Perks Unbound'
@@ -14938,7 +15265,6 @@ plugins:
     req:
       - *PapyrusUtil
       - *SilentVoice
-      - 'UIExtensions.esp'
     inc:
       - 'Alternate Start - Live Another Life.esp'
       - 'Original Opening Scene.esp'
@@ -18052,14 +18378,14 @@ plugins:
 
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
-      - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
-        link: 'Book Covers Skyrim - Lost Library'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/902/'
+        name: 'Book Covers Skyrim - Lost Library'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203152/'
         name: 'BCS Lost Library - Original'
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/3203032/'
         name: 'BCS Lost Library - Desaturated'
-      - name: 'https://www.nexusmods.com/skyrimspecialedition/mods/70272/'
-        link: 'Book Covers Skyrim - Lost Library REDUX'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/70272/'
+        name: 'Book Covers Skyrim - Lost Library REDUX'
     msg:
       - <<: *alreadyInLotD
         condition: 'active("LegacyoftheDragonborn.esm") and not checksum("Book Covers Skyrim - Lost Library.esp", 6D8408E1)'
@@ -18233,12 +18559,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Description Framework' ]
         condition: 'file("SKSE/Plugins/DescriptionFramework.dll") and not file("C.O.I.N_DESC.ini")'
-      - <<: *patchIncluded
-        subs: [ 'Saints & Seducers (Creation Club)' ]
-        condition: 'active("ccbgssse025-advdsgs.esm") and not active("Skyrim Extended Cut - Saints and Seducers.esp") and not active("C.O.I.N. - Saints and Seducers Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'The Cause (Creation Club)' ]
-        condition: 'active("ccbgssse067-daedinv.esm") and not active("C.O.I.N. - The Cause Patch.esp")'
       - <<: *requiresMCM
         type: say
     tag:
@@ -18247,8 +18567,8 @@ plugins:
       - ObjectBounds
       - -Relev
     clean:
-      - crc: 0x35E0DEB2
-        util: 'SSEEdit v4.1.5f'
+      - crc: 0xCAE77D1B
+        util: 'SSEEdit v4.0.4'
   - name: 'C.O.I.N. - Beyond Skyrim Patch.esp'
     tag:
       - Graphics
@@ -18258,22 +18578,6 @@ plugins:
     clean:
       - crc: 0xC90FC44E
         util: 'SSEEdit v4.0.4c'
-  - name: 'C.O.I.N. - Saints and Seducers Patch.esp'
-    inc: [ 'Skyrim Extended Cut - Saints and Seducers.esp' ]
-    tag:
-      - Delev
-      - Invent.Add
-      - Invent.Remove
-    clean:
-      - crc: 0xE979FDEA
-        util: 'SSEEdit v4.1.5f'
-  - name: 'C.O.I.N. - The Cause Patch.esp'
-    tag:
-      - Invent.Add
-      - Invent.Remove
-    clean:
-      - crc: 0x6D9EC36C
-        util: 'SSEEdit v4.1.5f'
 
   - name: 'Common Clothes and Armors.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/21305/' ]
@@ -18428,7 +18732,7 @@ plugins:
       - <<: *requiresX
         type: error
         subs: [ 'New Legion textures' ]
-        condition: 'not file("Textures/Armor_Replacer/2_Legion")'
+        condition: 'not file("Textures/Armor_Replacer/2_Legion") and not file("textures/pbr/Armor_Replacer/2_Legion")'
     tag:
       - Delev
       - Graphics
@@ -18817,13 +19121,10 @@ plugins:
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405/)'
         condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Requiem.esp") and version("imp_helm_legend.esp", "1.2", <)'
     tag: [ Graphics ]
-    dirty:
-      # Original
-      - <<: *quickClean
-        crc: 0x8491D752
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 5
     clean:
+      # Original
+      - crc: 0x8491D752
+        util: 'SSEEdit v4.1.5j'
       # Fixes
       - crc: 0x38529FE8
         util: 'SSEEdit v4.0.4c'
@@ -22911,9 +23212,6 @@ plugins:
         subs: [ 'Immersive Patrols' ]
         condition: 'active("Immersive Patrols II.esp") and not active("IFDImmPatrolsIIPatch.esp")'
       - <<: *patchIncluded
-        subs: [ 'Legacy of the Dragonborn' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("FDILOTDPatch.esp") and not active("FDILOTDBPatch.esp")'
-      - <<: *patchIncluded
         subs: [ 'Medieval Lanterns of Skyrim' ]
         condition: 'active("Medieval Lanterns of Skyrim.esp") and not active("FDIMLOSPatch.esp")'
       - <<: *patchIncluded
@@ -22937,6 +23235,12 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing & Clutter Fixes' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("IFDWACCFPatch.esp")'
+      - <<: *patch3rdParty_LotD
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveFortDawnguard_Patch.esp")'
+      - <<: *patchUpdateAvailable
+        subs: ['[Legacy of the Dragonborn Patches (Official)](https://www.nexusmods.com/skyrimspecialedition/mods/30980/)']
+        condition: '(active("FDILOTDPatch.esp") or active("FDILOTDBPatch.esp")) and not active("DBM_ImmersiveFortDawnguard_Patch.esp")'
+
     tag:
       - Actors.AIPackages
       - Actors.Stats
@@ -28060,6 +28364,7 @@ plugins:
       - crc: 0xB4C1E773
         util: 'SSEEdit v4.0.4b'
   - name: 'ClockworkSuperiorSorting.esp'
+    after: [ 'ClockworkBugFixes.esp' ]
     req:
       - *PapyrusExtender
       - *SKSE
@@ -28190,15 +28495,6 @@ plugins:
         util: 'SSEEdit v4.0.4c'
       - crc: 0x76F44BFE
         util: 'SSEEdit v4.0.4c'
-
-  - name: 'DeadlySpellImpacts Transparency Fix.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/41284/'
-        name: 'Deadly Spell Impacts Transparency Fix for ENB'
-    msg:
-      - <<: *alreadyInOrFixedByX
-        subs: [ 'Parallax Spell Impacts' ]
-        condition: 'active("PSI.esp")'
 
   - name: 'DiverseSkyimCivilWarFix.esp'
     url:
