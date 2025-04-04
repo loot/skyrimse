@@ -1905,6 +1905,10 @@ plugins:
 
 ###### Verified Creations ######
 
+  # A Classic Jail Experience
+  - name: 'classicjailtime.esl'
+    group: *verifiedCreationsGroup
+
   # A Fortress of Ice
   - name: 'fortressofice.esl'
     group: *verifiedCreationsGroup
@@ -1936,7 +1940,7 @@ plugins:
   # Ancient Civilization Armory Collection
   - name: 'gildancientcivfull.esp'
     group: *verifiedCreationsGroup
-  
+
   # ANCIENT COLDHARBOUR ARMOR
   - name: 'ccbgsssexxxdaedralordarmor.esp'
     group: *verifiedCreationsGroup
@@ -1994,7 +1998,11 @@ plugins:
     group: *verifiedCreationsGroup
 
   # Dark and Light: Paladin Pack
-  - name: 'gilddarkandlight.esl'
+  - name: 'gilddarkandlight.esp'
+    group: *verifiedCreationsGroup
+
+  # Dragonslayer - Quest and Fight Expansion
+  - name: 'js_dragonslayer_expansion.esp'
     group: *verifiedCreationsGroup
 
   # DrJacopo`s 3D Autumn Ferns
@@ -2119,6 +2127,10 @@ plugins:
 
   # Silent Moons Weapons
   - name: 'maar01_silentmoonsweapons.esp'
+    group: *verifiedCreationsGroup
+
+  # Southpine Forge
+  - name: 'crafting jobs.esp'
     group: *verifiedCreationsGroup
 
   # Spelltome Craft
@@ -6841,9 +6853,8 @@ plugins:
         util: '[SSEEdit v4.0.4b](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
 
-  - name: '.*(KaliliesNPC|Kalilies NPC)(?! WARP).*\.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
   - name: 'KaliliesNPCs.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
@@ -6861,6 +6872,7 @@ plugins:
       - crc: 0x9B789EF8
         util: 'SSEEdit v4.0.3f'
   - name: 'AI Overhaul - KaliliesNPCs Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
     req:
       - name: 'Cutting Room Floor.esp'
         condition: 'checksum("AI Overhaul - KaliliesNPCs Patch.esp", D063D027)'
@@ -6869,6 +6881,7 @@ plugins:
         subs: [ 'Cutting Room Floor' ]
         condition: 'active("Cutting Room Floor.esp") and checksum("AI Overhaul - KaliliesNPCs Patch.esp", 6A098011)'
   - name: 'CRF - Kalilies NPC''s Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
     req: [ 'Cutting Room Floor.esp' ]
     msg:
       - <<: *alreadyInX
@@ -15393,7 +15406,9 @@ plugins:
     msg: [ *obsolete ]
 
   - name: 'BardsRebornStudentofSong.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/47994/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/47994/'
+        name: 'Bards Reborn Student of Song'
     msg:
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
@@ -15405,9 +15420,6 @@ plugins:
         subs: [ 'Enhanced Solitude' ]
         condition: 'active("Enhanced Solitude SSE.esp") and not active("BRStudentofSong EnhancedSolitude Patch.esp")'
       - <<: *patchProvided
-        subs: [ 'Immersive Wenches' ]
-        condition: 'active("Immersive Wenches.esp") and not active("BardsRebornStudent Wenches Patch.esp")'
-      - <<: *patchProvided
         subs: [ 'Realistic Lighting Overhaul' ]
         condition: 'active("RLO - Interiors.esp") and not active("BardsRebornRLOpatch.esp")'
       - <<: *patchProvided
@@ -15415,12 +15427,12 @@ plugins:
         condition: 'active("Undeath.esp") and not active("BardsReborn Undeath Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("BardsRebornStudent USSEP Patch.esp")'
+        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("BardsRebornStudent USSEP Patch.esp") and not file("BardsRebornStudent AIOverhaul Patch.esp")'
     dirty:
       - <<: *quickClean
-        crc: 0x15455DFE
-        util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 4
+        crc: 0x30A8184C
+        util: '[SSEEdit v4.1.5m](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 18
 
   - name: 'BarenziahQuestMarkers.esp'
     url:
