@@ -946,7 +946,7 @@ plugins:
       - <<: *wildEdits
         type: say
         subs: [ '[**Dawnguard.esm** Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
-        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B) or checksum("Dawnguard.esm", 4B45E434) or checksum("Dawnguard.esm", 63B4EBD1)) and not active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B) or checksum("Dawnguard.esm", 4B45E434) or checksum("Dawnguard.esm", 63B4EBD1)) and not active("unofficial skyrim special edition patch.esp")'
     dirty:
       # v1.5.97
       - <<: *quickClean
@@ -2210,7 +2210,7 @@ plugins:
     group: *verifiedCreationsGroup
 
 ###### Base Game Patches ######
-  - name: 'Unofficial Skyrim Special Edition Patch.esp'
+  - name: 'unofficial skyrim special edition patch.esp'
     url:
       - link: 'https://www.afkmods.com/index.php?/files/file/1888-unofficial-skyrim-special-edition-patch/'
         name: 'Unofficial Skyrim Special Edition Patch (AFK Mods)'
@@ -2226,7 +2226,7 @@ plugins:
     after: [ 'BOS Master Occlusion.esm' ]
     msg:
       - <<: *obsolete
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", >=) and version("Unofficial Skyrim Special Edition Patch.esp", "4.3.1", <)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", >=) and version("unofficial skyrim special edition patch.esp", "4.3.1", <)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_USSEP_Patch.esp") and not active("ccqdrsse001-survivalmode.esl")'
       - <<: *patch3rdParty
@@ -2243,7 +2243,7 @@ plugins:
         subs:
           - '1.6.1130'
           - 'Skyrim Special Edition'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", <) and version("Unofficial Skyrim Special Edition Patch.esp", "4.3.1", >=)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", <) and version("unofficial skyrim special edition patch.esp", "4.3.1", >=)'
     clean:
       # Do not clean - 1 ITM that is likely not worth cleaning
       # German
@@ -2413,11 +2413,11 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp")'
       - <<: *useInstead
         type: error
         subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/) (see [this post](https://www.afkmods.com/index.php?/topic/4682-mods-made-obsolete-by-unofficial-skyrim-special-edition-patch/))' ]
-        condition: 'not active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: 'not active("unofficial skyrim special edition patch.esp")'
 
   - name: 'Butterflies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29434/' ]
@@ -2523,7 +2523,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x22C5A1C9
@@ -2551,7 +2551,7 @@ plugins:
   - name: 'ScriptFixesCompilation.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/' ]
     group: *fixesGroup
-    after: ['Unofficial Skyrim Special Edition Patch.esp']
+    after: ['unofficial skyrim special edition patch.esp']
     req: [ *SKSE ]
     msg: [ *requiresMCM ]
 
@@ -2560,7 +2560,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
         name: 'Skyrim Project Optimization SE'
     group: *fixesGroup
-    after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    after: [ 'unofficial skyrim special edition patch.esp' ]
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Skyrim Project Optimization' ]
@@ -3359,7 +3359,7 @@ plugins:
     msg:
       - <<: *useVersion
         subs: [ 'USSEP' ]
-        condition: 'checksum("Daedric Shrines - Azura - Replacer.esp", 37F0BF1E) and active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: 'checksum("Daedric Shrines - Azura - Replacer.esp", 37F0BF1E) and active("unofficial skyrim special edition patch.esp")'
 
   - name: 'DeadlySpellImpacts( - Two Fire)?\.esp'
     url:
@@ -4621,14 +4621,14 @@ plugins:
         condition: 'many("Blacksmith Forge Water Fix SE( USSEP)?.esp")'
     tag: [ C.Water ]
   - name: 'Blacksmith Forge Water Fix SE.esp'
-    inc: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    inc: [ 'unofficial skyrim special edition patch.esp' ]
     dirty:
       - <<: *quickClean
         crc: 0xB417D179
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 6
   - name: 'Blacksmith Forge Water Fix SE USSEP.esp'
-    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    req: [ 'unofficial skyrim special edition patch.esp' ]
     dirty:
       - <<: *quickClean
         crc: 0x05874BE7
@@ -6263,7 +6263,7 @@ plugins:
     msg:
       - <<: *alsoUseX
         subs: [ '[Unofficial Skyrim Special Edition Patch](https://www.nexusmods.com/skyrimspecialedition/mods/266/)' ]
-        condition: 'not active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: 'not active("unofficial skyrim special edition patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Weapons Armor Clothing and Clutter Fixes'
@@ -6359,9 +6359,9 @@ plugins:
   - name: 'Children.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2822/' ]
     inc:
-      - name: 'Unofficial Skyrim Special Edition Patch.esp'
-        display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
-        condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("Children.esp", EE60F522)'
+      - name: 'unofficial skyrim special edition patch.esp'
+        display: 'unofficial skyrim special edition patch.esp v4.1.8+'
+        condition: 'version("unofficial skyrim special edition patch.esp", "4.1.8", >) and checksum("Children.esp", EE60F522)'
     msg:
       - type: warn
         content:
@@ -6369,7 +6369,7 @@ plugins:
             text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **Children.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-children-)'
           - lang: de
             text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **Children.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-children-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("Children.esp", EE60F522)'
+        condition: '(file("unofficial skyrim special edition patch.esp") and version("unofficial skyrim special edition patch.esp", "4.1.8", >)) and checksum("Children.esp", EE60F522)'
 
   - name: 'ImCh.esm'
     url:
@@ -6522,9 +6522,9 @@ plugins:
   - name: 'FacegenForKids.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22789/' ]
     inc:
-      - name: 'Unofficial Skyrim Special Edition Patch.esp'
-        display: 'Unofficial Skyrim Special Edition Patch.esp v4.1.8+'
-        condition: 'version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >) and checksum("FacegenForKids.esp", DB8F0931)'
+      - name: 'unofficial skyrim special edition patch.esp'
+        display: 'unofficial skyrim special edition patch.esp v4.1.8+'
+        condition: 'version("unofficial skyrim special edition patch.esp", "4.1.8", >) and checksum("FacegenForKids.esp", DB8F0931)'
     msg:
       - type: warn
         content:
@@ -6532,7 +6532,7 @@ plugins:
             text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **FacegenForKids.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-simple-children-)'
           - lang: de
             text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **FacegenForKids.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-simple-children-) aufrufbar.'
-        condition: '(file("Unofficial Skyrim Special Edition Patch.esp") and version("Unofficial Skyrim Special Edition Patch.esp", "4.1.8", >)) and checksum("FacegenForKids.esp", DB8F0931)'
+        condition: '(file("unofficial skyrim special edition patch.esp") and version("unofficial skyrim special edition patch.esp", "4.1.8", >)) and checksum("FacegenForKids.esp", DB8F0931)'
 
   - name: 'TKAA.esp'
     url:
@@ -6858,7 +6858,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("KaliliesNPCs.esp", 9B789EF8)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and checksum("KaliliesNPCs.esp", 9B789EF8)'
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - KaliliesNPCs Patch.esp") and not active("Bashed Patch.*\.esp")'
@@ -6928,7 +6928,7 @@ plugins:
       - <<: *useVersion
         type: warn
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and checksum("PAN_NPCs.esp", 5550DC82)'
     tag:
       - Actors.ACBS
       - NPC.DefaultOutfit
@@ -6960,7 +6960,7 @@ plugins:
       - <<: *useVersion
         type: warn
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DB.esp", CDE9B342)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and checksum("PAN_NPCs_DB.esp", CDE9B342)'
     clean:
       - crc: 0xCDE9B342
         util: 'SSEEdit v4.0.4c'
@@ -6994,7 +6994,7 @@ plugins:
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
     clean:
       - crc: 0x6C01DB11
         util: 'SSEEdit v4.0.3'
@@ -8463,7 +8463,7 @@ plugins:
         subs:
           - 'The Unofficial Skyrim Special Edition Patch (USSEP)'
           - '[Zim''s Improved Dremora -- USSEP Patch](https://www.nexusmods.com/skyrimspecialedition/mods/45399/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Zim''s Improved Dremora -- USSEP patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("Zim''s Improved Dremora -- USSEP patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'No Animals Report Crimes (NARC)'
@@ -8671,7 +8671,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18866/' ]
     after:
       - 'BSHeartland.esm'
-      - 'Unofficial Skyrim Special Edition Patch.esp'
+      - 'unofficial skyrim special edition patch.esp'
     clean:
       # version: 1.0.5
       - crc: 0xBD798EA8
@@ -9395,7 +9395,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and (not active("RBB - USSEP Patch.esp") and not active("RBB - JKs Skyrim Patch.esp"))'
+        condition: 'active("unofficial skyrim special edition patch.esp") and (not active("RBB - USSEP Patch.esp") and not active("RBB - JKs Skyrim Patch.esp"))'
       - <<: *patch3rdParty
         subs:
           - 'Wyrmstooth'
@@ -9733,7 +9733,7 @@ plugins:
 
   - name: 'WhiterunHoldForest.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3212/' ]
-    after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    after: [ 'unofficial skyrim special edition patch.esp' ]
     inc:
       - 'Alpine Forest of Whiterun Valley.esp'
       - 'Whiterun Forest Borealis.esp'
@@ -10752,7 +10752,7 @@ plugins:
       - C.Regions
   - name: 'Worldspace Transition Tweaks - Skyrim To Solstheim.esp'
     group: *fixesGroup
-    after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    after: [ 'unofficial skyrim special edition patch.esp' ]
     clean:
       - crc: 0x189E8C0C
         util: 'SSEEdit v4.0.4c'
@@ -11208,7 +11208,7 @@ plugins:
         condition: 'active("S3DTrees NextGenerationForests.esp") and not active("ApothecaryFood - Skyrim 3D Trees and Plants Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("ApothecaryFood - USSEP Patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("ApothecaryFood - USSEP Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("ApothecaryFood - Wyrmstooth Patch.esp")'
@@ -15427,7 +15427,7 @@ plugins:
         condition: 'active("Undeath.esp") and not active("BardsReborn Undeath Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("BardsRebornStudent USSEP Patch.esp") and not file("BardsRebornStudent AIOverhaul Patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("BardsRebornStudent USSEP Patch.esp") and not file("BardsRebornStudent AIOverhaul Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x30A8184C
@@ -16446,11 +16446,11 @@ plugins:
         subs: [ 'Quests Are In Skyrim ESP' ]
         condition: 'many("QuestsAreInSkyrim(USSEP)?\.esp")'
   - name: 'QuestsAreInSkyrim.esp'
-    inc: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    inc: [ 'unofficial skyrim special edition patch.esp' ]
     msg:
       - <<: *useVersion
         subs: [ 'USSEP' ]
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp")'
     clean:
       - crc: 0x0981903E
         util: 'SSEEdit v4.0.3f'
@@ -16732,7 +16732,7 @@ plugins:
           - 'QF_MS11_0001F7A3.pex'
           - 'Thieves Guild For Good Guys'
           - 'USSEP'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and file("scripts/QF_MS11_0001F7A3.pex") and checksum("scripts/QF_MS11_0001F7A3.pex", 22A14151)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and file("scripts/QF_MS11_0001F7A3.pex") and checksum("scripts/QF_MS11_0001F7A3.pex", 22A14151)'
       - <<: *wildEdits
         subs: [ 'Remove all NPC records except 0002BA8E MallusMaccius from TCBM.esp. Remove RiftenRatwayZone [ECZN:0009FBB9] in Cell 00016BCF from TCBM.esp.' ]
         condition: 'checksum("TCBM.esp", 590CFFA2) or checksum("TCBM.esp", BB5A8ADD) or checksum("TCBM.esp", 48A0029F)'
@@ -19131,7 +19131,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Requiem.esp") and version("imp_helm_legend.esp", "1.2", <)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Requiem.esp") and version("imp_helm_legend.esp", "1.2", <)'
     tag: [ Graphics ]
     clean:
       # Original
@@ -23680,7 +23680,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[JK''s Guild HQ Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/61416/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("JKs College of Winterhold - USSEP patch.esp") and not (active("CollegeOfWinterholdImmersive.esp") or active("OCW_Obscure''s_CollegeofWinterhold.esp"))'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("JKs College of Winterhold - USSEP patch.esp") and not (active("CollegeOfWinterholdImmersive.esp") or active("OCW_Obscure''s_CollegeofWinterhold.esp"))'
     tag:
       - C.Light
       - C.Water
@@ -24011,7 +24011,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[JK''s Interiors Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35910/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("JKs Temple of Talos - USSEP patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("JKs Temple of Talos - USSEP patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Window Shadows RT'
@@ -24841,7 +24841,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Opulent Thieves Guild Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/35261/)'
-        condition: 'active("Unofficial Skyrim Special Edition Patch.esp") and not active("Opulent Thieves Guild - USSEP Patch.esp")'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("Opulent Thieves Guild - USSEP Patch.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[Opulent Thieves Guild - FPS Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41309/)' ]
         condition: 'active("SMIM-.*\.esp") and not active("Opulent Thieves Guild - FPS Fix.esp")'
@@ -28114,7 +28114,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11802/'
         name: 'Legacy of the Dragonborn'
-    after: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    after: [ 'unofficial skyrim special edition patch.esp' ]
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1494/' ]
@@ -28667,7 +28667,7 @@ plugins:
   - name: 'imp_helm_IDPM.esp'
     after: [ 'imp_helm_USSEP.esp' ]
   - name: 'imp_helm_USSEP.esp'
-    req: [ 'Unofficial Skyrim Special Edition Patch.esp' ]
+    req: [ 'unofficial skyrim special edition patch.esp' ]
     msg:
       - <<: *alreadyInX
         subs: [ 'imp_helm_legend_WACCF_Patch.esp' ]
