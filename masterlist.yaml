@@ -2630,7 +2630,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp")'
+        condition: 'active("open cities skyrim.esp")'
   - name: 'WindhelmGateFixes.esp'
     clean:
       - crc: 0x9193B434
@@ -4966,7 +4966,7 @@ plugins:
         subs:
           - 'Open Cities'
           - '[ELFX Exteriors Open Cities Patch](https://www.nexusmods.com/skyrimspecialedition/mods/16265/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("ELFX - Exteriors Open Cities Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("ELFX - Exteriors Open Cities Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ELFXExteriors_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patchUpdateAvailable
@@ -7125,7 +7125,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29194/'
         name: 'Interesting NPCs'
     inc:
-      - name: 'Open Cities Skyrim.esp'
+      - name: 'open cities skyrim.esp'
         condition: 'not active("Open Cities - 3DNPC Patch.esp")'
     msg:
       - <<: *patch3rdParty_RSCPC
@@ -7494,7 +7494,7 @@ plugins:
     msg:
       - <<: *patchUnavailable
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp")'
+        condition: 'active("open cities skyrim.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -7616,7 +7616,7 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("zMirai_OCS_Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("zMirai_OCS_Patch.esp")'
     clean:
       # version: 2.11
       - crc: 0xCA1F9565
@@ -10147,7 +10147,7 @@ plugins:
         subs: [ '**Jarl Balgruuf Dilemma Extended.esp**' ]
         condition: 'active("Jarl Balgruuf Dilemma Extended.esp")'
 
-  - name: 'Open Cities Skyrim.esp'
+  - name: 'open cities skyrim.esp'
     url:
       - 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2918135/'
@@ -14811,7 +14811,7 @@ plugins:
       - <<: *patchIncluded
         type: error
         subs: [ 'Open Cities' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("Immersive Citizens - OCS patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lighting for ENB' ]
         condition: 'active("ELE_SSE.esp") and not active("Immersive Citizens - ELE patch.esp")'
@@ -15691,7 +15691,7 @@ plugins:
         subs:
           - 'Open Cities Skyrim'
           - '[Blood on the Ice Redux Open Cities Patches](https://www.nexusmods.com/skyrimspecialedition/mods/27556/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("BOTI ESP OCS ESL Patch.esp") and not active("BOTI ESP-ESL OCS ESL Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("BOTI ESP OCS ESL Patch.esp") and not active("BOTI ESP-ESL OCS ESL Patch.esp")'
     clean:
       - crc: 0x0900486D
         util: 'SSEEdit v4.0.3'
@@ -15792,7 +15792,7 @@ plugins:
         condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("CWR_IC_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("CWR_OC_Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("CWR_OC_Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'The Second Great War' ]
         condition: 'active("GreatWarSkyrim.esp") and not active("CWRepairSGW.esp")'
@@ -15806,7 +15806,7 @@ plugins:
     msg:
       - <<: *useVersion
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and checksum("CW_Enjia.esp", F9313512)'
+        condition: 'active("open cities skyrim.esp") and checksum("CW_Enjia.esp", F9313512)'
     clean:
       - crc: 0xF9313512
         util: 'SSEEdit v4.0.4b'
@@ -16117,7 +16117,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("Immersive Encounters - Open Cities Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("Immersive Encounters - RS Children Patch.esp")'
@@ -16134,7 +16134,7 @@ plugins:
       - crc: 0x41D780DA
         util: 'SSEEdit v4.0.4c'
   - name: 'Immersive Encounters - Open Cities Patch.esp'
-    req: [ 'Open Cities Skyrim.esp' ]
+    req: [ 'open cities skyrim.esp' ]
     clean:
       - crc: 0x30FCA141
         util: 'SSEEdit v4.0.4c'
@@ -17737,14 +17737,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20466/'
         name: 'Atlas Map Markers DV'
   - name: 'Atlas Legendary.esp'
-    inc: [ 'Open Cities Skyrim.esp' ]
+    inc: [ 'open cities skyrim.esp' ]
     clean:
       - crc: 0xF9673261
         util: 'SSEEdit v4.0.4b'
       - crc: 0xE1DB000E
         util: 'SSEEdit v4.0.4'
   - name: 'Atlas Legendary OCS.esp'
-    req: [ 'Open Cities Skyrim.esp' ]
+    req: [ 'open cities skyrim.esp' ]
   - name: 'Atlas Compass Tweaks.esp'
     clean:
       - crc: 0x73556E7A
@@ -17760,14 +17760,14 @@ plugins:
       - 'MLU.esp'
       - 'SL01AmuletsSkyrim.esp'
     inc:
-      - name: 'Open Cities Skyrim.esp'
+      - name: 'open cities skyrim.esp'
         condition: 'not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
     msg:
       - <<: *patch3rdParty
         subs:
           - 'Open Cities Skyrim'
           - '[Open Cities & Atlas Map Markers Patch](https://www.nexusmods.com/skyrimspecialedition/mods/38878/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("Open Cities - Atlas Map Markers SE -- Patch v2.esp")'
 
   - name: 'Dawnguard Map Markers.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
@@ -20959,7 +20959,7 @@ plugins:
         subs:
           - 'Open Cities Skyrim'
           - '[Phenderix OCS Patch](https://www.nexusmods.com/skyrimspecialedition/mods/39637/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("Phenderix OCS Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("Phenderix OCS Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xE4CCCE2F
@@ -21889,7 +21889,7 @@ plugins:
     url:
       - 'https://www.afkmods.com/index.php?/files/file/1904-oblivion-gates-in-cities/'
       - 'https://bethesda.net/en/mods/skyrim/mod-detail/2964068/'
-    inc: [ 'Open Cities Skyrim.esp' ]
+    inc: [ 'open cities skyrim.esp' ]
     clean:
       # version: 2.0.2
       - crc: 0x618758ED
@@ -22229,12 +22229,12 @@ plugins:
         subs:
           - 'Legacy of the Dragonborn & Drengin''s Blue Palace Terrace'
           - '[Modular PatchXPress (MPxP)](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) MPXP1.3 [PATCH - DBPT.SSkwy.LotD]'
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("Open Cities Skyrim.esp") and active("BluePalaceTerrace.esp") and not active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("open cities skyrim.esp") and active("BluePalaceTerrace.esp") and not active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD].esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Legacy of the Dragonborn & Drengin''s Blue Palace Terrace & Open Cities Skyrim'
           - '[Modular PatchXPress (MPxP)](https://www.nexusmods.com/skyrimspecialedition/mods/36116/) MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS)'
-        condition: 'active("LegacyoftheDragonborn.esm") and active("Open Cities Skyrim.esp") and active("BluePalaceTerrace.esp") and not active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and active("open cities skyrim.esp") and active("BluePalaceTerrace.esp") and not active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Legacy of the Dragonborn' ]
         condition: 'active("LegacyoftheDragonborn.esm") and active("BluePalaceTerrace.esp") and not active("Solitude Skyway SE - Legacy of the Dragonborn Patch.esp") and not active("MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp")'
@@ -22615,7 +22615,7 @@ plugins:
         condition: 'active("MrissiTailOfTroubles.esp") and not active("CWIMTOTPatchSE.esp") and not active("ICOW - Mrissi Patch.esp") and not active("UltimateCollege.esp")'
       - <<: *patchIncluded
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("CWIOpenCitiesSEPatch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("CWIOpenCitiesSEPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Ordinator - Perks Of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("CWIOrdinatorPatchSSE.esp") and not active("UltimateCollege.esp")'
@@ -23741,7 +23741,7 @@ plugins:
       - name: 'Blues Skyrim.esp'
         display: 'Dawn of Skyrim (Director''s Cut)'
         condition: 'not active("JKs Skyrim_Dawn of Skyrim_Patch.esp")'
-      - name: 'Open Cities Skyrim.esp'
+      - name: 'open cities skyrim.esp'
         condition: 'not active("JKs Skyrim_Open Cities_Patch.esp") and not active("JK - DoS - OCS Patch.esp")'
       - 'Paradise_City_Merged.esp'
       - 'Paradise_City_MergedNoWindhelm.esp'
@@ -23899,7 +23899,7 @@ plugins:
         condition: 'active("Oblivion Gates in Cities.esp") and not active("JKs Skyrim_(Oblivion Gates|Arthmoor All)_Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp") and not active("JK - DoS - OCS Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("JKs Skyrim_Open Cities_Patch.esp") and not active("JK - DoS - OCS Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Realistic Water Two' ]
         condition: 'active("RealisticWaterTwo.esp") and not active("JKs Skyrim_RWT_Patch.esp")'
@@ -24033,7 +24033,7 @@ plugins:
         subs:
           - 'Open Cities Skyrim'
           - '[JK''s Interiors Patch Collection OCS](https://www.nexusmods.com/skyrimspecialedition/mods/46114/)'
-        condition: 'active("Open Cities Skyrim.esp") and not active("JK''s Bannered Mare OCS Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("JK''s Bannered Mare OCS Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Skyrim Project Optimization'
@@ -24874,7 +24874,7 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_PCE_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patchProvided
         subs: [ 'Open Cities' ]
-        condition: 'active("Open Cities Skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
+        condition: 'active("open cities skyrim.esp") and not active("PCE - Open Cities Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Relighting Skyrim' ]
         condition: 'active("RelightingSkyrim_SSE.esp") and not active("PCE - Relighting Skyrim.esp")'
@@ -25880,7 +25880,7 @@ plugins:
         condition: 'active("Immersive Citizens - AI Overhaul.esp")'
       - <<: *patchUnavailable
         subs: [ 'Open Cities Skyrim' ]
-        condition: 'active("Open Cities Skyrim.esp")'
+        condition: 'active("open cities skyrim.esp")'
       - <<: *patchUnavailable
         subs: [ 'The Great Cities: Minor Cities and Towns' ]
         condition: 'active("The Great Cities - Minor Cities and Towns.esp")'
@@ -29498,7 +29498,7 @@ plugins:
         condition: 'many("MPXP0\.0 \[SELUA-II?\]\.esp")'
   # [1.1] Main Combo Overhaul #
   - name: 'MPXP1\.1 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\]\.esp'
-    inc: [ 'Open Cities Skyrim.esp' ]
+    inc: [ 'open cities skyrim.esp' ]
     msg:
       - <<: *useOnlyOneX
         subs: [ 'MPXP 1.1 ESP' ]
@@ -29510,7 +29510,7 @@ plugins:
         condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
       - <<: *useInstead
         subs: [ '**MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp**' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("Open Cities Skyrim.esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and not active("open cities skyrim.esp") and not active("MPXP1.1 [PATCH - DBPT.SSkwy.TGCoS].esp")'
   # [1.2] Main Combo Overhaul (OCS) #
   - name: 'MPXP1\.2 \[PATCH - (DBPT\.)?SSkwy(\.TGCoS)?\] \(OCS\)\.esp'
     inc:
@@ -29527,7 +29527,7 @@ plugins:
         condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
       - <<: *useInstead
         subs: [ '**MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp**' ]
-        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("Open Cities Skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
+        condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("open cities skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
   - name: 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
     after: [ 'OCS + LOTD5 Patch.esp' ]
   # [1.3] Main Combo Overhaul (LotD Support) #
@@ -29538,7 +29538,7 @@ plugins:
         subs: [ 'MPXP 1.3 ESP' ]
         condition: 'many("MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp")'
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]\.esp'
-    inc: [ 'Open Cities Skyrim.esp' ]
+    inc: [ 'open cities skyrim.esp' ]
     msg:
       - <<: *requiresX
         type: error
