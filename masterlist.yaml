@@ -10155,24 +10155,24 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Bittercup' ]
-        condition: 'active("cckrtsse001_altar.esl") and not active("OCS + Bittercup Patch.esp")'
+        condition: 'active("cckrtsse001_altar.esl") and not active("ocs + bittercup patch.esp")'
       - <<: *patchProvided
         subs: [ 'Drinking fountains of Skyrim' ]
-        condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("OCS + DFoS Comp Patch.esp")'
+        condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("ocs + dfos comp patch.esp")'
       - <<: *patchProvided
         subs: [ 'Legacy of the Dragonborn v5' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("OCS + LOTD5 Patch.esp")'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("ocs + lotd5 patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
-        condition: 'active("SkyrimSewers.esp") and not active("OCS + Skyrim Sewers.esp")'
+        condition: 'active("SkyrimSewers.esp") and not active("ocs + skyrim sewers.esp")'
       - <<: *patchProvided
         subs: [ 'The Gray Cowl Returns!' ]
-        condition: 'active("ccbgssse020-graycowl.esl") and not active("OCS + Gray Cowl Returns Patch.esp")'
+        condition: 'active("ccbgssse020-graycowl.esl") and not active("ocs + gray cowl returns patch.esp")'
     tag: [ C.Owner ]
     clean:
       - crc: 0x1B9657CC
         util: 'SSEEdit v4.1.5c EXTREMELY EXPERIMENTAL'
-  - name: 'OCS + LOTD5 Patch.esp'
+  - name: 'ocs + lotd5 patch.esp'
     after:
       - name: 'BluePalaceTerrace-OCS-patch.esp'
         condition: 'active("MPXP1.3 [PATCH - DBPT.SSkwy.LotD] (OCS).esp")'
@@ -29529,7 +29529,7 @@ plugins:
         subs: [ '**MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp**' ]
         condition: 'active("BluePalaceTerrace.esp") and active("The Great City of Solitude.esp") and active("open cities skyrim.esp") and not active("MPXP1.2 [PATCH - DBPT.SSkwy.TGCoS] (OCS).esp")'
   - name: 'MPXP1.2 [PATCH - SSkwy.TGCoS] (OCS).esp'
-    after: [ 'OCS + LOTD5 Patch.esp' ]
+    after: [ 'ocs + lotd5 patch.esp' ]
   # [1.3] Main Combo Overhaul (LotD Support) #
   - name: 'MPXP1\.3 \[PATCH - (DBPT\.)?SSkwy\.LotD\]( \(OCS\))?\.esp'
     inc: [ 'Solitude Skyway SE - Legacy of the Dragonborn Patch.esp' ]
