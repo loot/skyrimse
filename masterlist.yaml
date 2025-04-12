@@ -15550,7 +15550,7 @@ plugins:
       - <<: *alreadyInX
         type: say
         subs: [ 'aMidianBorn Content Addon' ]
-        condition: 'active("aMidianBorn_ContentAddon.esp") and active("BetterQuestObjectives-AMBSkyforgePatch.esp")'
+        condition: 'active("amidianborn_contentaddon.esp") and active("BetterQuestObjectives-AMBSkyforgePatch.esp")'
     clean:
       - crc: 0xAB22406D
         util: 'SSEEdit v4.0.3'
@@ -18072,11 +18072,11 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'aMidianBorn Content Addon ESP' ]
         condition: 'many("aMidianBorn_ContentAddon(Light)?\.esp")'
-  - name: 'aMidianBorn_ContentAddon.esp'
+  - name: 'amidianborn_contentaddon.esp'
     msg:
       - <<: *obsolete
         subs: [ '[aMidianBorn Content Addon](https://www.nexusmods.com/skyrimspecialedition/mods/35390/)' ]
-        condition: 'not version("aMidianBorn_ContentAddon.esp", "2.2", >=) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
+        condition: 'not version("amidianborn_contentaddon.esp", "2.2", >=) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *renameXtoY
         subs:
           - '**aMidianBorn_ContentAddonLight.bsa**'
@@ -18092,7 +18092,7 @@ plugins:
         subs:
           - '**aMidianBorn_ContentAddon.bsa**'
           - '**aMidianBorn_ContentAddonLight.bsa**'
-        condition: 'not file("aMidianBorn_ContentAddonLight.bsa") and file("aMidianBorn_ContentAddon.bsa") and not file("aMidianBorn_ContentAddon.esp")'
+        condition: 'not file("aMidianBorn_ContentAddonLight.bsa") and file("aMidianBorn_ContentAddon.bsa") and not file("amidianborn_contentaddon.esp")'
     clean:
       - crc: 0xD8B69F8C
         util: 'SSEEdit v4.0.3g'
@@ -28709,7 +28709,7 @@ plugins:
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *useInstead
         subs: [ 'imp_helm_legend_amb_patch.esp' ]
-        condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "3.0", >=)'
+        condition: 'active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", "3.0", >=)'
       - <<: *useInstead
         subs: [ '[Requiem - Improved Closefaced Helmets.esp](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)' ]
         condition: 'active("Requiem.esp")'
@@ -28887,7 +28887,7 @@ plugins:
       - *obsolete
       - <<: *useInstead
         subs: [ 'imp_helm_legend_waccf_patch.esp and imp_helm_legend_amb_patch.esp' ]
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "3.0", >=)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", "3.0", >=)'
   - name: 'KatanaCrafting_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -29882,7 +29882,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'aMidianBorn Content Addon SE' ]
-        condition: 'active("aMidianBorn_ContentAddon.esp") and version("aMidianBorn_ContentAddon.esp", "2.0", >=)'
+        condition: 'active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", "2.0", >=)'
 
   ### Ultimate College of Winterhold: Mod & Patches ###
   # Main Mod #
