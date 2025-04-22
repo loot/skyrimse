@@ -679,6 +679,13 @@ globals:
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
+  # SKSE VR - Game Runtime
+  - <<: *versionSkseIncSVR
+    condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
+  - <<: *versionSkseIncSVR
+    condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
+  - <<: *versionSkseIncSVR
+    condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
   # ENBSeries
   - <<: *versionXIncY
     subs:
