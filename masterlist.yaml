@@ -607,6 +607,13 @@ globals:
   - <<: *versionUpToDateX
     subs: [ '**Skyrim SE**' ]
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", ==)'
+  # Skyrim VR Game Runtime
+  - <<: *versionOldX
+    subs: [ '**Skyrim VR**' ]
+    condition: 'readable("../SkyrimVR.exe") and product_version("../SkyrimVR.exe", "1.4.15.0", <)'
+  - <<: *versionUpToDateX
+    subs: [ '**Skyrim VR**' ]
+    condition: 'readable("../SkyrimVR.exe") and product_version("../SkyrimVR.exe", "1.4.15.0", >=)'
   # SKSE AE
   - <<: *versionOldX
     subs: [ '**[SKSE Anniversary Edition](https://skse.silverlock.org)**' ]
