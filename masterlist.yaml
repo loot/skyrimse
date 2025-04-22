@@ -691,6 +691,12 @@ globals:
       - 'SKSE'
       - '[Skyrim Script Extender](https://skse.silverlock.org) Special Edition'
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", <=) and not file("../skse64_loader.exe") and file("SKSE/Plugins/([^\.]+\.dll)")'
+  # Missing VR
+  - <<: *scriptExtenderMissing
+    subs:
+      - 'SKSE'
+      - '[Skyrim Script Extender](https://skse.silverlock.org) VR'
+    condition: 'readable("../SkyrimVR.exe") and not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and product_version("../SkyrimVR.exe", "1.4.15.0", >=) and not file("../sksevr_loader.exe") and file("SKSE/Plugins/([^\.]+\.dll)")'
   # Required Scripts
   - <<: *scriptExtenderRequiredScripts
     subs:
