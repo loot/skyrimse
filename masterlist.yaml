@@ -628,6 +628,13 @@ globals:
   - <<: *versionUpToDateX
     subs: [ '**SKSE Special Edition**' ]
     condition: 'version("../skse64_loader.exe", "0.2.0.20", ==) and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", <)'
+  # SKSE VR
+  - <<: *versionOldX
+    subs: [ '**[SKSE VR](https://skse.silverlock.org)**' ]
+    condition: 'readable("../SkyrimVR.exe") and version("../skseVR_loader.exe", "0.2.0.12", <) and file("../skseVR_loader.exe")'
+  - <<: *versionUpToDateX
+    subs: [ '**SKSE VR**' ]
+    condition: 'readable("../SkyrimVR.exe") and version("../skseVR_loader.exe", "0.2.0.12", >=) and file("../skseVR_loader.exe")'
 
 # Version Compatibility
   # SKSE AE - Game Runtime
