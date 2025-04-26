@@ -2321,6 +2321,11 @@ plugins:
           - 'JS Circlet Replacer'
           - '[Circlet USSEP Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/35576/)'
         condition: 'checksum("meshes/armor/circlets/circletf1.nif", BC2EE889) and not file("meshes/uskp/armor/circlets/FemElfCirclets")'
+      - <<: *versionXIncY
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - 'Skyrim VR'
+        condition: 'readable("../SkyrimVR.exe") and version("unofficial skyrim special edition patch.esp", "4.2.6", >=) or (version("unofficial skyrim special edition patch.esp", "4.2.6", <) and not active("Skyrim VR SSE USSEP Compatibility Mod.esp"))'
       - <<: *versionXofYorGreaterRequired
         subs:
           - '1.6.1130'
