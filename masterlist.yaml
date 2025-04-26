@@ -2688,9 +2688,16 @@ plugins:
 
   - name: 'Unofficial Skyrim Modders Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49616/' ]
-    group: *fixesGroup
     after: [ 'ScriptFixesCompilation.esp' ]
     inc: [ 'Unofficial Skyrim Modders Patch VR.esp' ]
+    clean:
+      - crc: 0x02271148
+        util: 'SSEEdit v4.0.3h (Hotfix 1)'
+  - name: 'Unofficial Skyrim Modders Patch VR.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51236/' ]
+    inc: [ 'Unofficial Skyrim Modders Patch.esp' ]
+  - name: 'Unofficial Skyrim Modders Patch( VR)?\.esp'
+    group: *fixesGroup
     tag:
       - Actors.ACBS
       - C.Acoustic
@@ -2702,9 +2709,6 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
       - SpellStats
-    clean:
-      - crc: 0x02271148
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
   - name: 'Vanilla Script MicroOptimizations.esl'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/54061/' ]
