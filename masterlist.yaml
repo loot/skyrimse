@@ -978,6 +978,12 @@ plugins:
         itm: 384
         udr: 92
         nav: 3
+      # VR v1.4.15.0
+      - <<: *quickClean
+        crc: 0xDE522C22
+        util: '[TES5VREdit v4.1.5n](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 232
+        udr: 91
   - name: 'Dawnguard.esm'
     group: *mainGroup
     tag:
@@ -988,11 +994,11 @@ plugins:
       - Invent.Remove
       - Relev
     msg:
-      # (v1.5.97, 0xADFC1487) after QAC, (v1.6.640, 0x2FE9FD3B) after QAC, (GOG v1.6.659, 0x4B45E434) after QAC, (EGS v1.6.678, 0x63B4EBD1) after QAC
+      # (v1.5.97, 0xADFC1487) after QAC, (v1.6.640, 0x2FE9FD3B) after QAC, (GOG v1.6.659, 0x4B45E434) after QAC, (EGS v1.6.678, 0x63B4EBD1) after QAC, (VR v1.4.15.0, 0xB07A8F39) after QAC
       - <<: *wildEdits
         type: say
         subs: [ '[**Dawnguard.esm** Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
-        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B) or checksum("Dawnguard.esm", 4B45E434) or checksum("Dawnguard.esm", 63B4EBD1)) and not active("unofficial skyrim special edition patch.esp")'
+        condition: '(checksum("Dawnguard.esm", ADFC1487) or checksum("Dawnguard.esm", 2FE9FD3B) or checksum("Dawnguard.esm", 4B45E434) or checksum("Dawnguard.esm", 63B4EBD1) or checksum("Dawnguard.esm", B07A8F39)) and not active("unofficial skyrim special edition patch.esp")'
     dirty:
       # v1.5.97
       - <<: *quickClean
@@ -1043,6 +1049,13 @@ plugins:
         itm: 849
         udr: 82
         nav: 59
+      # VR v1.4.15.0
+      - <<: *quickClean
+        crc: 0x85E4F13D
+        util: '[TES5VREdit v4.1.5n](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 770
+        udr: 82
+        nav: 57
   - name: 'HearthFires.esm'
     group: *mainGroup
     tag:
@@ -1095,6 +1108,13 @@ plugins:
       - <<: *quickClean
         crc: 0x53C7FE02
         util: '[SSEEdit v4.0.4](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 221
+        udr: 11
+        nav: 5
+      # VR v1.4.15.0
+      - <<: *quickClean
+        crc: 0xC9662E10
+        util: '[TES5VREdit v4.1.5n](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 221
         udr: 11
         nav: 5
@@ -1161,6 +1181,22 @@ plugins:
         itm: 87
         udr: 8
         nav: 1
+      # VR v1.4.15.0
+      - <<: *quickClean
+        crc: 0x0977457C
+        util: '[TES5VREdit v4.1.5n](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 82
+        udr: 8
+        nav: 1
+  - name: 'SkyrimVR.esm'
+    group: *mainGroup
+    after: [ 'Dragonborn.esm' ]
+    dirty:
+      # VR v1.4.15.0
+      - <<: *quickClean
+        crc: 0xD36F5D34
+        util: '[TES5VREdit v4.1.5n](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 6
 
 ###### Creation Club ######
   - name: 'cc[a-z]{3}sse\d{3}[-_]\w+\.es[lm]'
