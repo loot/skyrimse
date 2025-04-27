@@ -334,6 +334,12 @@ common:
   - &SKSE
     name: '../skse64_loader.exe'
     display: '[Skyrim Script Extender](https://skse.silverlock.org)'
+    condition: 'not file("../SkyrimVR.exe")'
+
+  - &SKSEVR
+    name: '../sksevr_loader.exe'
+    display: '[Skyrim Script Extender VR](https://skse.silverlock.org)'
+    condition: 'file("../SkyrimVR.exe")'
 
   - &SPID
     name: 'skse/plugins/po3_SpellPerkItemDistributor.dll'
