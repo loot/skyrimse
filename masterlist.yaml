@@ -7105,6 +7105,9 @@ plugins:
         subs: [ 'Skyrim Revamped - Complete Enemy Overhaul' ]
         condition: 'active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("PAN_NPCs_DG_SRCEO_Patch.esp")'
       - <<: *patchProvided
+        subs: [ 'VR' ]
+        condition: 'file("SkyrimVR.esm") and checksum("Meshes\Actors\Character\FaceGenData\FaceGeom\Skyrim.esm\000135E6.NIF", 1C7AB506)'
+      - <<: *patchProvided
         subs: [ 'Unofficial Skyrim Special Edition Patch' ]
         condition: 'active("unofficial skyrim special edition patch.esp") and checksum("PAN_NPCs_DG.esp", 6C01DB11)'
     clean:
