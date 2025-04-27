@@ -14317,8 +14317,11 @@ plugins:
         condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-      - <<: *requiresMCM
-        type: say
+      - <<: *patchProvided
+        subs: [ 'Skyrim VR' ]
+        condition: 'file("../SkyrimVR.exe") and active("Wintersun - VR Patch.esp")'
+      - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Delev
       - EffectStats
