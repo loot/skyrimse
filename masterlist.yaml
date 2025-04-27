@@ -2890,8 +2890,15 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/'
         name: 'SkyUI'
+      - link: 'https://github.com/Odie/skyui-vr/releases/'
+        name: 'SkyUI - VR (Github)'
     group: *fixesGroup
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
+      - name: 'SKSE/Plugins/skyrimvrtools.dll'
+        display: '[Skyrim VR Tools](https://www.nexusmods.com/skyrimspecialedition/mods/27782/)'
+        condition: 'file("../SkyrimVR.exe")'
     msg:
       - <<: *alsoUseX
         subs: [ '[SkyUI SE - Flashing Savegames Fix](https://www.nexusmods.com/skyrimspecialedition/mods/20406/)' ]
