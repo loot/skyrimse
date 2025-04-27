@@ -2332,7 +2332,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - 'Skyrim VR'
-        condition: 'file("../SkyrimVR.exe") and version("unofficial skyrim special edition patch.esp", "4.2.6", >=) or (version("unofficial skyrim special edition patch.esp", "4.2.6", <) and not active("Skyrim VR SSE USSEP Compatibility Mod.esp"))'
+        condition: 'file("../SkyrimVR.exe") and (version("unofficial skyrim special edition patch.esp", "4.2.6", >=) or (version("unofficial skyrim special edition patch.esp", "4.2.6", <) and not active("Skyrim VR SSE USSEP Compatibility Mod.esp")))'
       - <<: *versionXofYorGreaterRequired
         subs:
           - '1.6.1130'
