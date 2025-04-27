@@ -2648,8 +2648,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/' ]
     group: *fixesGroup
     after: ['unofficial skyrim special edition patch.esp']
-    req: [ *SKSE ]
-    msg: [ *requiresMCM ]
+    req:
+      - *SKSE
+      - *SKSEVR
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
 
   - name: 'Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm'
     url:
@@ -2742,7 +2746,9 @@ plugins:
 
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28197/' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc:
       - name: 'scripts/foxHarvestFix.pex'
         display: 'Brutal Flora Harvest Fix'
@@ -2849,30 +2855,41 @@ plugins:
 
   - name: 'Gamepad++.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     req:
       - *JContainers
       - *SKSE
+      - *SKSEVR
 
   - name: 'iEquip.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27008/' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     req:
       - *JContainers
       - *SKSE
+      - *SKSEVR
 
   - name: 'NQS_NamedQuicksaves.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/16840/' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     req:
       - *SKSE
+      - *SKSEVR
       - *EngineFixes
 
   - name: 'RaceMenu.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19080/'
         name: 'RaceMenu Special Edition'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc:
       - 'CharacterMakingExtender.esp'
       - 'EnhancedCharacterEdit.esp'
@@ -3075,6 +3092,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17763/' ]
     req:
       - *SKSE
+      - *SKSEVR
       - *JContainers
     inc:
       - 'Backshields.esl'
@@ -3083,6 +3101,7 @@ plugins:
         display: 'Simple Dual Sheath'
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *requiresX
         subs: [ '[XP32 Maximum Skeleton](https://www.nexusmods.com/skyrimspecialedition/mods/1988/)' ]
         condition: 'not file("XPMSE.esp")'
@@ -3172,6 +3191,7 @@ plugins:
     tag: [ Sound ]
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *patchIncluded
         type: warn
         subs: [ 'FNIS' ]
@@ -3228,6 +3248,7 @@ plugins:
     req: [ *NemesisEngine ]
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - type: say
         content:
           - lang: en
@@ -3746,7 +3767,9 @@ plugins:
 
   - name: 'JS Emissive Eyes SE - Johnskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/60108/' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.Spells
       - R.AddSpells
@@ -4322,7 +4345,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/40087/'
         name: 'Vibrant weapons - Fire Frost Shock'
   - name: 'Vibrant weapons.esl'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     msg:
       - <<: *patch3rdParty
         subs:
@@ -6000,7 +6025,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/'
         name: 'Storm Lightning'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc:
       - 'mintylightningmod.esp'
       - 'MPAB.esp'
@@ -6008,6 +6035,7 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29243/' ]
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       # ESL
       - crc: 0xCF86C796
@@ -6425,6 +6453,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31300/' ]
     req:
       - *SKSE
+      - *SKSEVR
       - *HDT_SMP
     msg:
       - <<: *requiresX
@@ -7697,8 +7726,12 @@ plugins:
 
   - name: 'Toccata.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12713/' ]
-    msg: [ *requiresMCM ]
-    req: [ *SKSE ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
+    req:
+      - *SKSE
+      - *SKSEVR
     clean:
       # version: 1.4.2
       - crc: 0xAA9D9F35
@@ -7890,7 +7923,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/23723/'
         name: 'Deadly Dragons'
   - name: 'DeadlyDragons.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc: [ 'Serio''s Enhanced Dragons.esp' ]
     msg:
       - <<: *compatIssuesWithX
@@ -7911,6 +7946,7 @@ plugins:
         subs: [ 'Wyrmstooth' ]
         condition: 'active("Wyrmstooth.esp") and not active("Deadly Dragons - Wyrmstooth.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.ACBS
       - Actors.Perks.Add
@@ -8161,6 +8197,7 @@ plugins:
         subs: [ 'Serio''s Enhanced Dragons Redone' ]
         condition: 'active("Serio''s Enhanced Dragons Redone.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.ACBS
       - Actors.DeathItem
@@ -8442,6 +8479,7 @@ plugins:
         subs: [ 'Ultimate Dragons SE' ]
         condition: 'active("UltimateDragons.esp") and not active("SEDR Ultimate Dragons Compatibility Patch.esp") and not active("SEDR DD UD Compatibility Patch.esp") and not active("SEDR KSDO2 UD Compatibility Patch.esp") and not active("SEDR Ultimate Deadly Enhanced Dragons Overhaul Patch.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.ACBS
       - SpellStats
@@ -8486,6 +8524,7 @@ plugins:
           - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp")'
       - *requiresMCM
+      - *requiresMCMVR
       - type: say
         content:
           - lang: en
@@ -10016,7 +10055,9 @@ plugins:
   - name: 'Dynamic Things Alternative.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49250/' ]
     req: [ *PapyrusExtender ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0xB8631D40
         util: 'SSEEdit v4.0.3'
@@ -10196,6 +10237,7 @@ plugins:
         subs: [ '[JContainers](https://www.nexusmods.com/skyrimspecialedition/mods/16495/)' ]
         condition: 'active("SkyUI_SE.esp") and not file("SKSE/Plugins/JContainers64.dll")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x0F22CA44
         util: 'SSEEdit v4.0.4c'
@@ -10215,7 +10257,9 @@ plugins:
 
   - name: 'MarkekrausCheatJewelry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58973/' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     clean:
       - crc: 0xDDE13D1B
         util: 'SSEEdit v4.0.4'
@@ -10225,7 +10269,9 @@ plugins:
 
   - name: 'MarkekrausCheatPowers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/58892/' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     clean:
       - crc: 0x0AABCA29
         util: 'SSEEdit v4.0.4'
@@ -10496,7 +10542,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14098/'
         name: 'Simply Knock'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     msg:
       - <<: *alsoUseX
         subs: [ '[Simply Knock - Tower Stone Fix](https://www.nexusmods.com/skyrimspecialedition/mods/41590/)' ]
@@ -10532,8 +10580,12 @@ plugins:
 
   - name: 'Snotgurg Simple Drop Lit Torches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14490/' ]
-    msg: [ *requiresMCM ]
-    req: [ *SKSE ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
+    req:
+      - *SKSE
+      - *SKSEVR
     clean:
       - crc: 0x376873D2
         util: 'SSEEdit v4.0.3'
@@ -10558,11 +10610,14 @@ plugins:
 
   - name: 'SwiftPotion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12293/' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     req:
       - <<: *JContainers
         condition: 'file("scripts/_AP_Main.pex")'
       - *SKSE
+      - *SKSEVR
     clean:
       # version: 3.1 - No JContainers
       - crc: 0x5DEC1D9A
@@ -10589,6 +10644,7 @@ plugins:
         subs: [ 'Reliquary of Myth' ]
         condition: 'active("Reliquary of Myth.esp") and not active("M_ROM__SunHelm.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x246915B2
         util: 'SSEEdit v4.0.4b'
@@ -10611,7 +10667,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/78244/'
         name: 'Survival Mode Improved - SKSE'
     group: *earlyLoadersGroup
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     msg:
       - *missingRequirementAddrLibforPlugin
       - <<: *requiresX
@@ -10638,6 +10696,7 @@ plugins:
         subs: [ '[Dynamic Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/33746/) **OR** [Open Animation Replacer](https://www.nexusmods.com/skyrimspecialedition/mods/92109/)' ]
         condition: 'not file("SKSE/Plugins/DynamicAnimationReplacer.dll") and not file("SKSE/Plugins/OpenAnimationReplacer.dll")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x02AC432B
         util: 'SSEEdit v4.1.5k'
@@ -11419,7 +11478,9 @@ plugins:
     after:
       - 'Complete Crafting Overhaul_Remastered.esp'
       - 'iNeed.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc:
       - 'BullseyePerkParalyzeBugFixSE.esp'
       - 'FloraRespawnFix.esp'
@@ -11434,6 +11495,7 @@ plugins:
       - Text
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *compatIssuesWithX
         subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
         condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
@@ -11456,13 +11518,16 @@ plugins:
     group: *craftingGroup
     after: [ 'waccf_armor and clothing extension.esp' ]
     inc: [ 'ars metallica.esp' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     tag:
       - Graphics
       - Keywords
       - Text
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *patch3rdParty
         subs:
           - 'Requiem - The Roleplaying Overhaul'
@@ -11836,7 +11901,9 @@ plugins:
   - name: 'Bounty Gold.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18571/' ]
     after: [ 'Requiem.esp' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
 
   - name: 'BuildWithGold.esp'
     url:
@@ -12417,7 +12484,9 @@ plugins:
         condition: 'checksum("Poverty.esp", BD49570C)'
       - name: 'WACCF_BashedPatchLvlListFix.esp'
         condition: 'checksum("Poverty.esp", BD49570C)'
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Delev
       - Invent.Add
@@ -12786,6 +12855,7 @@ plugins:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_TradeBarter_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Trade and Barter.esp")'
       - <<: *patch3rdParty_UVCPC
@@ -13001,7 +13071,9 @@ plugins:
     inc:
       - 'GIST soul trap.esp'
       - 'UFD Enhanced Soultrap.esp'
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x71F3F1A3
         util: 'SSEEdit v4.0.3'
@@ -13385,8 +13457,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/8473/'
         name: 'Enchanting Adjustments and Price-Charge Bug Fix'
   - name: 'EnchantingAdjustments.esp'
-    req: [ *SKSE ]
-    msg: [ *requiresMCM ]
+    req:
+      - *SKSE
+      - *SKSEVR
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Delev
       - EffectStats
@@ -13536,6 +13612,7 @@ plugins:
         subs: [ 'Rustic Soul Gems Unsorted' ]
         condition: 'file("RUSTIC SOULGEMS - Unsorted( - ESL)?\.esp") and not file("GIST-RusticSoulGems-patch.esp") and not file("RUSTIC SOULGEMS - (Sorted|Unsorted)( - ESL)? - GIST\.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0xC9D0A414
         util: 'SSEEdit v4.0.3g'
@@ -14254,7 +14331,9 @@ plugins:
     inc:
       - 'AcquisitiveSoulGemMultithreaded.esp'
       - 'GIST soul trap.esp'
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
   - name: 'UFD Enhanced Soultrap.esl'
     clean:
       - crc: 0x6631183A
@@ -14431,9 +14510,11 @@ plugins:
     req:
       - *PapyrusUtil
       - *SKSE
+      - *SKSEVR
     inc: [ 'Convenient Horses.esp' ]
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *patch3rdParty
         subs:
           - 'Beyond Skyrim - Bruma SE'
@@ -14505,7 +14586,9 @@ plugins:
         name: 'Nether''s Follower Framework (Nexus Mods)'
     group: *followerFrameworksGroup
     after: [ 'Qw_BeyondReach_USSEP Patch.esp' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc:
       - 'AmazingFollowerTweaks.esp'
       - 'EFFCore.esm'
@@ -14513,6 +14596,7 @@ plugins:
       - 'UFO - Ultimate Follower Overhaul.esp'
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *alsoUseX
         subs: [ '[Fuz Ro D-oh - Silent Voice](https://www.nexusmods.com/skyrimspecialedition/mods/15109/)' ]
         condition: 'not file("SKSE/Plugins/Fuz Ro D''oh.dll")'
@@ -14971,7 +15055,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/21296/'
         name: 'Immersive Speechcraft'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     dirty:
       - <<: *quickClean
         crc: 0x2B1F2BB9
@@ -15093,7 +15179,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/62127/'
         name: 'Nether''s Karliah'
   - name: 'NWS_Karliah.esp'
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -16259,6 +16347,7 @@ plugins:
         subs: [ 'The Great City of Solitude' ]
         condition: 'active("The Great City of Solitude.esp") and not active("Immersive Encounters - The Great City of Solitude Patch.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -17013,6 +17102,7 @@ plugins:
         subs: [ '[Sell Unusual Gems - Stones of Barenziah](https://www.nexusmods.com/skyrimspecialedition/mods/17605/)' ]
         condition: 'active("Sell Stones of Barenziah.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x4383E5A0
         util: 'SSEEdit v4.0.3'
@@ -17028,6 +17118,7 @@ plugins:
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Timing is Everything.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x06689998
         util: 'SSEEdit v4.0.3'
@@ -17129,6 +17220,7 @@ plugins:
         subs: [ 'Airship - Dev Aveza' ]
         condition: 'active("DA_Skyship.esm") and not active("WheelsofLull-Skyship.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x601BABC8
         util: 'SSEEdit v4.1.5g'
@@ -17149,7 +17241,9 @@ plugins:
       - 'Save the Dark Brotherhood!.esp'
       - 'SaveTheBrotherhood.esp'
       - 'The Brotherhood of Old.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     msg:
       - <<: *compatIssuesWithX
         subs: [ 'Dark Brotherhood for Good Guys - goodbrother.esp' ]
@@ -17319,6 +17413,7 @@ plugins:
         condition: 'checksum("Lock_Overhaul.esp", CD2D19F5)'
     msg:
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *useVersion
         type: warn
         subs: [ 'Ordinator - Perks of Skyrim' ]
@@ -17582,7 +17677,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/52768/'
         name: 'Stealth Skills Rebalanced'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     msg:
       - <<: *useVersion
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
@@ -17770,6 +17867,7 @@ plugins:
         subs: [ '[QuickLootIE](https://www.nexusmods.com/skyrimspecialedition/mods/120075/) **OR** [1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
       - *requiresMCM
+      - *requiresMCMVR
       - <<: *useOnlyOneX
         subs: [ 'QuickLoot DLL' ]
         condition: 'many("SKSE/Plugins/QuickLootEE(-NG)?\.dll")'
@@ -18356,6 +18454,7 @@ plugins:
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
         condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     tag:
       - -Invent.Remove
       - -Names
@@ -19140,7 +19239,9 @@ plugins:
         util: 'SSEEdit v4.0.4c'
   - name: 'Hothtrooper44_Armor_Ecksstra.esp'
     req: [ 'Hothtrooper44_ArmorCompilation.esp' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x561B126F
         util: 'SSEEdit v4.0.4c'
@@ -19576,14 +19677,18 @@ plugins:
 
   - name: 'MarkekrausBarstoolBrawler.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61354/' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     clean:
       - crc: 0xC64C56A5
         util: 'SSEEdit v4.0.4'
 
   - name: 'MarkekrausChairhammers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61304/' ]
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     clean:
       - crc: 0xAB3D127D
         util: 'SSEEdit v4.0.4'
@@ -22749,7 +22854,9 @@ plugins:
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("TheWulfPanda - Faction Teleport Spells.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("TheWulfPanda - Faction Teleport Spells.esp"))'
       - name: 'TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp'
         condition: '(is_master("CollegeOfWinterholdImmersive.esp") and is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp")) or (not is_master("CollegeOfWinterholdImmersive.esp") and not is_master("TheWulfPanda - Faction Teleport Spells Less Magicka Increased Cast Time.esp"))'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *SKSEVR
     inc: [ 'MagicalCollegeofWinterhold.esp' ]
     msg:
       - <<: *compatPatch
@@ -22790,6 +22897,7 @@ plugins:
         subs: [ '[Immersive College of Winterhold Patch Collection](https://www.nexusmods.com/skyrimspecialedition/mods/67358/) (Unofficial Immersive College of Winterhold Patch)' ]
         condition: 'not active("ICOW Unofficial Patch.esp") and not active("UltimateCollege.esp")'
       - *requiresMCM
+      - *requiresMCMVR
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -28058,8 +28166,11 @@ plugins:
       - *PapyrusExtender
       - *PapyrusUtil
       - *SKSE
+      - *SKSEVR
     inc: [ 'MapleManor.esp' ]
-    msg: [ *requiresMCM ]
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0xA9C34FB0
         util: 'SSEEdit v4.0.4c'
@@ -28355,6 +28466,7 @@ plugins:
     msg:
       - *patch3rdParty_SRPC_Redux
       - *requiresMCM
+      - *requiresMCMVR
     clean:
       - crc: 0x663FAB6A
         util: 'SSEEdit v4.0.3f'
@@ -28544,6 +28656,7 @@ plugins:
     req:
       - *PapyrusExtender
       - *SKSE
+      - *SKSEVR
     clean:
       - crc: 0xCB190694
         util: 'SSEEdit v4.0.4b'
