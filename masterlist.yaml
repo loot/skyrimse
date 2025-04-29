@@ -517,9 +517,6 @@ bash_tags:
   - 'Actors.CombatStyle'
   - 'Actors.DeathItem'
   - 'Actors.Factions'
-  - 'Actors.Perks.Add'
-  - 'Actors.Perks.Change'
-  - 'Actors.Perks.Remove'
   - 'Actors.RecordFlags'
   - 'Actors.Spells'
   - 'Actors.SpellsForceAdd'
@@ -547,6 +544,7 @@ bash_tags:
   - 'EffectStats'
   - 'Enchantments'
   - 'EnchantmentStats'
+  - 'Filter'
   - 'Graphics'
   - 'Invent.Add'
   - 'Invent.Change'
@@ -559,6 +557,9 @@ bash_tags:
   - 'NPC.Class'
   - 'NPC.CrimeFaction'
   - 'NPC.DefaultOutfit'
+  - 'NPC.Perks.Add'
+  - 'NPC.Perks.Change'
+  - 'NPC.Perks.Remove'
   - 'NPC.Race'
   - 'ObjectBounds'
   - 'Outfits.Add'
@@ -7556,13 +7557,13 @@ plugins:
       - 'UFO - Ultimate Follower Overhaul.esp'
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
       - Actors.Spells
       - Actors.Stats
       - Factions
       - Invent.Add
       - Invent.Remove
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
     clean:
       - crc: 0x338D2780
         util: 'SSEEdit v4.0.3g'
@@ -7678,13 +7679,13 @@ plugins:
     tag:
       - Actors.ACBS
       - Actors.AIData
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - Actors.Voice
       - Factions
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
     dirty:
       - <<: *quickClean
         crc: 0xDB0A5FC8
@@ -7876,8 +7877,6 @@ plugins:
       - Actors.ACBS
       - Actors.CombatStyle
       - Actors.DeathItem
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
@@ -7886,6 +7885,8 @@ plugins:
       - Invent.Remove
       - NPC.Class
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
     dirty:
       - <<: *quickClean
         crc: 0x65880CA7
@@ -7949,8 +7950,6 @@ plugins:
       - *requiresMCMVR
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
@@ -7960,6 +7959,8 @@ plugins:
       - Keywords
       - NPC.AttackRace
       - NPC.Class
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - Relations.Add
       - Relev
       - SpellStats
@@ -8033,11 +8034,11 @@ plugins:
         condition: 'active("DurnehviirResurrected.esp") and not active("Durnehviir Resurrected (Fast|Instant|Normal) - God Of Death Remastered Patch\.esp")'
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
       - Actors.Spells
       - Actors.Stats
       - Graphics
       - Keywords
+      - NPC.Perks.Add
     clean:
       - crc: 0x0C6A8983
         util: 'SSEEdit v4.1.5g'
@@ -8533,11 +8534,11 @@ plugins:
             text: 'Wenn DwemerSpectresLegendary.esp genutzt wird, setzen Sie "Creature Toggles Dwemer Spectre" auf Deaktiviert in den MCM Einstellungen.'
         condition: 'active("DwemerSpectresLegendary.esp")'
     tag:
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Voice
       - NPC.AttackRace
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - ObjectBounds
       - Outfits.Add
       - Outfits.Remove
@@ -12563,10 +12564,10 @@ plugins:
       - SpellStats
   - name: 'Reliquary of Myth.esp'
     tag:
-      - Actors.Perks.Add
       - Actors.Spells
       - Invent.Remove
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
     clean:
       - crc: 0x01EC13E9
         util: 'SSEEdit v4.0.4c'
@@ -12952,12 +12953,12 @@ plugins:
       - 'UnlimitedBookshelves.esp'
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
       - EnchantmentStats
       - Invent.Add
       - Invent.Change
       - Invent.Remove
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
       - NPC.Race
       - Outfits.Add
       - Outfits.Remove
@@ -13570,7 +13571,6 @@ plugins:
       - Actors.ACBS
       - Actors.AIData
       - Actors.CombatStyle
-      - Actors.Perks.Add
       - Actors.Spells
       - Actors.Stats
       - EffectStats
@@ -13582,6 +13582,7 @@ plugins:
       - NPC.AttackRace
       - NPC.Class
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
       - SpellStats
       - Text
     clean:
@@ -13853,7 +13854,6 @@ plugins:
     tag:
       - Actors.ACBS
       - Actors.Factions
-      - Actors.Perks.Add
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
@@ -13864,6 +13864,7 @@ plugins:
       - Graphics
       - Invent.Change
       - Keywords
+      - NPC.Perks.Add
       - Relev
       - Sound
       - SpellStats
@@ -13929,8 +13930,6 @@ plugins:
       - *patch3rdParty_SRPC_Redux
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
@@ -13940,6 +13939,8 @@ plugins:
       - Invent.Remove
       - Keywords
       - Names
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - ObjectBounds
       - Relev
       - Sound
@@ -14647,13 +14648,13 @@ plugins:
         condition: 'checksum("Better Hunters.esp", 78B50785) or checksum("Better Hunters.esp", 680D15F3) or checksum("Better Hunters.esp", 34241866) or checksum("Better Hunters.esp", 6043DA88)'
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
       - Actors.Stats
       - Factions
       - Invent.Add
       - Invent.Remove
       - NPC.Class
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
       - -Relev
     dirty:
       - <<: *quickClean
@@ -14683,8 +14684,6 @@ plugins:
     tag:
       - Actors.CombatStyle
       - Actors.DeathItem
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Voice
       - Delev
@@ -14693,6 +14692,8 @@ plugins:
       - Keywords
       - NPC.AttackRace
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - NPC.Race
       - Relev
     dirty:
@@ -14719,8 +14720,6 @@ plugins:
       - Actors.CombatStyle
       - Actors.DeathItem
       - Actors.Factions
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.RecordFlags
       - Actors.Spells
       - Actors.Stats
@@ -14734,6 +14733,8 @@ plugins:
       - NPC.AttackRace
       - NPC.Class
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - NPC.Race
       - Relev
       - R.Stats
@@ -14813,11 +14814,11 @@ plugins:
       - Actors.AIData
       - Actors.AIPackages
       - Actors.CombatStyle
-      - Actors.Perks.Add
       - Actors.Stats
       - Delev
       - Keywords
       - NPC.AttackRace
+      - NPC.Perks.Add
       - R.ChangeSpells
       - R.Stats
     clean:
@@ -14830,12 +14831,12 @@ plugins:
         name: 'Queen of the Damned - Deadlier Serana'
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - Invent.Add
       - Invent.Remove
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
     clean:
       - crc: 0x65FDD49A
         util: 'SSEEdit v4.0.4b'
@@ -15204,12 +15205,12 @@ plugins:
       - Actors.ACBS
       - Actors.AIData
       - Actors.CombatStyle
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - Invent.Add
       - NPC.Class
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - Outfits.Remove
     clean:
       - crc: 0xF4DBB705
@@ -16783,9 +16784,9 @@ plugins:
       - Actors.ACBS
       - Actors.AIData
       - Actors.AIPackages
-      - Actors.Perks.Add
       - Invent.Add
       - Invent.Remove
+      - NPC.Perks.Add
     clean:
       - crc: 0xF57050CB
         util: 'SSEEdit v4.0.4b'
@@ -16865,8 +16866,6 @@ plugins:
       - Actors.AIData
       - Actors.AIPackages
       - Actors.Factions
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - Actors.Voice
@@ -16880,6 +16879,8 @@ plugins:
       - Names
       - NPC.Class
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - NPC.Race
       - ObjectBounds
       - Outfits.Add
@@ -17197,11 +17198,11 @@ plugins:
     tag:
       - Actors.ACBS
       - Actors.CombatStyle
-      - Actors.Perks.Add
       - Actors.Spells
       - Actors.Stats
       - Invent.Change
       - NPC.Class
+      - NPC.Perks.Add
       - Outfits.Remove
     clean:
       - crc: 0x7B8A7D26
@@ -18973,7 +18974,6 @@ plugins:
     tag:
       - Actors.CombatStyle
       - Actors.Factions
-      - Actors.Perks.Add
       - Actors.Spells
       - Actors.Stats
       - Delev
@@ -18985,6 +18985,7 @@ plugins:
       - NPC.Class
       - NPC.CrimeFaction
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
       - Outfits.Add
       - Outfits.Remove
       - Sound
@@ -19857,7 +19858,6 @@ plugins:
   - name: 'OpulentOutfits_2017-SSE (AIO|Replacer)\.esp'
     inc: [ 'waccf_armor and clothing extension.esp' ]
     tag:
-      - Actors.Perks.Add
       - Actors.Spells
       - Delev
       - Graphics
@@ -19867,6 +19867,7 @@ plugins:
       - Keywords
       - Names
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
       - Outfits.Add
       - Outfits.Remove
       - Relev
@@ -22921,8 +22922,6 @@ plugins:
       - Actors.AIData
       - Actors.AIPackages
       - Actors.CombatStyle
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Spells
       - Actors.Stats
       - C.Climate
@@ -22942,6 +22941,8 @@ plugins:
       - NPC.AttackRace
       - NPC.Class
       - NPC.DefaultOutfit
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - Outfits.Add
       - Stats
       - Text
@@ -25421,12 +25422,12 @@ plugins:
         name: 'Ryn''s Saarthal'
     tag:
       - Actors.ACBS
-      - Actors.Perks.Add
       - Actors.Spells
       - Actors.Stats
       - Invent.Add
       - Invent.Remove
       - NPC.Class
+      - NPC.Perks.Add
     clean:
       - crc: 0x58FCD3F6
         util: 'SSEEdit v4.0.4c'
@@ -27728,8 +27729,6 @@ plugins:
       - Actors.ACBS
       - Actors.AIData
       - Actors.AIPackages
-      - Actors.Perks.Add
-      - Actors.Perks.Remove
       - Actors.Stats
       - Enchantments
       - EnchantmentStats
@@ -27737,6 +27736,8 @@ plugins:
       - Invent.Remove
       - Keywords
       - NPC.Class
+      - NPC.Perks.Add
+      - NPC.Perks.Remove
       - ObjectBounds
       - Outfits.Remove
       - Sound
