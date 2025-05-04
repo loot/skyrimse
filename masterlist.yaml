@@ -673,10 +673,10 @@ globals:
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", ==) and not file("../skse64_1_6_1179.dll") and file("../skse64_loader.exe")'
   # SKSE AE EGS - Game Runtime
   - <<: *versionSkseIncSSE
-    condition: 'file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe")'
+    condition: 'file("../SkyrimSE.exe") and file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe")'
   # SKSE SE - Game Runtime
   - <<: *versionSkseIncSSE
-    condition: 'file("../skse(vr)?_loader.exe") and not file("../skse64_loader.exe")'
+    condition: 'file("../SkyrimSE.exe") and file("../skse(vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.50.0", ==) and version("../skse64_loader.exe", "0.2.0.8", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
