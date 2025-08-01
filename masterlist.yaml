@@ -17423,6 +17423,12 @@ plugins:
       - name: 'Tainted_Blood.esp'
         condition: 'not file("Tainted_Blood_Growl_Compatibility_Patch.esp")'
     req: [ *VR_PerkExtender ]
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Growl](https://www.nexusmods.com/skyrimspecialedition/mods/72577/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Growl.esp")'
     tag:
       - EffectStats
       - Graphics
