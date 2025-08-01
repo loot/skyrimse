@@ -13206,6 +13206,11 @@ plugins:
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136/' ]
       - *includesMBBF
       - *patch3rdParty_SRPC
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Apocalypse - Magic of Skyrim patch](https://www.nexusmods.com/skyrimspecialedition/mods/78643/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Apocalypse Compatibility Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
