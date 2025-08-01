@@ -20379,6 +20379,14 @@ plugins:
     after:
       - 'Weapon AF.esp'
       - 'Weapons & Armor Fixes_Remade.esp'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Summermyst](https://www.nexusmods.com/skyrimspecialedition/mods/67594/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Summermyst.esp") and version("Requiem.esp", "5.3.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
     tag:
       - EffectStats
       - EnchantmentStats
