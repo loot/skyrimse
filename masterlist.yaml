@@ -20012,7 +20012,12 @@ plugins:
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp") and version("Requiem.esp", "5.3.0", <)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Heavy Armory Patch](https://www.nexusmods.com/skyrimspecialedition/mods/89009/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory Patch.esp") and version("Requiem.esp", "5.3.0", >=)'
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
