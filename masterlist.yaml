@@ -19568,12 +19568,15 @@ plugins:
   - name: 'KatanaCrafting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5306/' ]
     msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp") and version("Requiem.esp", "5.3.0", <)'
 
   - name: 'ktWeaponPackSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15050/' ]
