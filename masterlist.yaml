@@ -17692,7 +17692,15 @@ plugins:
       - Sound
       - SpellStats
       - Text
-    msg: [ *includesMBBF ]
+    msg:
+      - *includesMBBF
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Sacrilege](https://www.nexusmods.com/skyrimspecialedition/mods/72578/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrilege.esp") and version("Requiem.esp", "6.0.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
       - crc: 0x96E2166B
         util: 'SSEEdit v4.0.3f'
