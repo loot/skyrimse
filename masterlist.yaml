@@ -3369,8 +3369,11 @@ plugins:
         name: 'ArteFakes - Unique Artifacts Replacer'
   - name: 'ArteFake.esp'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp") and version("Requiem.esp", "6.0.0", <)'
     tag:
       - Actors.ACBS
       - Actors.DeathItem
