@@ -14391,6 +14391,13 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Adamant: A Perk Overhaul' ]
         condition: 'active("Adamant.esp") and not active("Triumvirate - Adamant Compatibility Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Triumvirate Mage Archetypes](https://www.nexusmods.com/skyrimspecialedition/mods/88561/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Triumvirate.esp") and version("Requiem.esp", "6.0.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
       - crc: 0x8949A9E7
         util: 'SSEEdit v4.0.3'
