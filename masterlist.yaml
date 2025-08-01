@@ -17703,6 +17703,13 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
       - *includesMBBF
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Sacrosanct Patch](https://www.nexusmods.com/skyrimspecialedition/mods/62406/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrosanct Patch.esp") and version("Requiem.esp", "6.0.0", <)' 
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Sacrosanct_CACO_Patch.esp")'
     clean:
