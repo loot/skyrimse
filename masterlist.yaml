@@ -477,6 +477,12 @@ common:
       - 'Vokrii - Minimalistic Perks of Skyrim'
       - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
 
+  # &patchUnavailable
+  - &patchUnavailableRequiem
+    <<: *patchUnavailable
+    subs: [ 'Requiem - The Roleplaying Overhaul' ]
+    condition: 'active("Requiem.esp")'
+
   # &requiresMCM_X
   - &requiresMCM
     <<: *requiresMCM_X
@@ -11557,9 +11563,11 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp") and version("Requiem.esp", "6.0.0", <)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CCOR_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patchUpdateAvailable
         type: warn
         subs: [ '[CCOR PRUFEI Chest CTD Hotfix](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)' ]
@@ -12983,7 +12991,7 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp") and version("Requiem.esp", "6.0.0", <)'
       - <<: *patch3rdParty
         subs:
           - 'Triss Armor Retextured'
@@ -12995,6 +13003,8 @@ plugins:
         condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - WACCF Patch.esp") and not active("Complete Crafting Overhaul_Remastered.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WACCF_Patch.esp")'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
       - crc: 0xA8EBA40E
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -18481,7 +18491,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp") and version("Requiem.esp", "6.0.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - *requiresMCM
       - *requiresMCMVR
     tag:
@@ -29438,6 +29450,32 @@ plugins:
         name: 'Requiem Patch Central'
     after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
     inc: [ 'Requiem - SkyTEST.esp' ]
+
+  ### Requiem - WACCF CCOR ACE Patches ###
+  - name: 'Requiem - WACCF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
+        name: 'Requiem - WACCF CCOR ACE Patches'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v6.0.0+'
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+  - name: 'Requiem - WACCF - ACE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
+        name: 'Requiem - WACCF CCOR ACE Patches'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v6.0.0+'
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+  - name: 'Requiem - CCOR.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
+        name: 'Requiem - WACCF CCOR ACE Patches'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v6.0.0+'
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
