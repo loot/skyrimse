@@ -18315,6 +18315,8 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("AetheriumSwordsnArmor_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AetheriumWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Aetherium Armor.esp")'
     clean:
       - crc: 0xFA7F23A7
         util: 'SSEEdit v4.0.4b'
@@ -29334,6 +29336,11 @@ plugins:
         condition: 'file("DBM_Requiem_Patch.esp")'
 
   ### Requiem Patch Central ###
+  - name: 'Requiem - Aetherium Armor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Requiem - Improved Closefaced Helmets.esp' ]
   - name: 'Requiem - ArteFakes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
