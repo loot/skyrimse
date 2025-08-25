@@ -751,6 +751,11 @@ globals:
   # DLL Loaders
   - <<: *missingRequirementXforY
     subs:
+      - '[(Part 2) Engine Fixes 7.0 - skse64 Preloader ONLY](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
+      - 'SSE Engine Fixes v7.0+'
+    condition: 'version("SKSE/Plugins/EngineFixes.dll", "7.0.0", >=) and not file("../d3dx9_42.dll")'
+  - <<: *missingRequirementXforY
+    subs:
       - '[(Part 2) Engine Fixes - skse64 Preloader and TBB Lib](https://www.nexusmods.com/skyrimspecialedition/mods/17230/)'
       - 'SSE Engine Fixes'
     condition: 'file("SKSE/Plugins/EngineFixes.dll") and version("SKSE/Plugins/EngineFixes.dll", "7.0.0", <) and (not file("../d3dx9_42.dll") or not file("../tbb.dll") or not file("../tbbmalloc.dll"))'
