@@ -6,7 +6,7 @@ prelude:
   # Message Anchors
     - &alreadyInX
       type: error
-      content: 'Delete. Already included in {0}.'
+      content: 'Delete. Already included in {0}.'  
 
     - &alreadyInOrFixedByX
       type: error
@@ -15650,14 +15650,14 @@ plugins:
       - 'Random Alternate Start Reborn SE.esp'
       - 'Skyrim Unbound.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Realm of Lorkhan - Freeform Alternate Start'
+          - '[Alternate Perspective - Realm of Lorkhan Patch](https://www.nexusmods.com/skyrimspecialedition/mods/104545/)'
+        condition: 'file("Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp") and not file("SHE_LorkhanPerspective.esp")'
       - <<: *patchUnavailable
         subs: [ 'Touring Carriages' ]
         condition: 'active("TouringCarriages.esp")'
-      - <<: *patch3rdParty
-        subs: 
-          - 'Realm of Lorkhan - Freeform Alternate Start'
-          - '[Alternate Perspective - Realm of Lorkhan Patch](https://www.nexusmods.com/skyrimspecialedition/mods/104545/)
-        condition: 'file("Realm of Lorkhan - Custom Alternate Start - Choose your own adventure.esp") and not file("SHE_LorkhanPerspective.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
