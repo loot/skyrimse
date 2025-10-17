@@ -6391,6 +6391,17 @@ plugins:
         display: '[Ambient Templates for Lighting Mods](https://www.nexusmods.com/skyrimspecialedition/mods/153425/)'
       - name: 'SKSE/Plugins/XEMIUtil.dll'
         display: '[XEMI Utility](https://www.nexusmods.com/skyrimspecialedition/mods/159084/)'
+    inc:
+      - 'ELFX Shadows.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Lux.esp'
+      # A05D4081: Full v3.0
+      # C5529E7D: Interiors only v3.0
+      - name: 'RelightingSkyrim_SSE.esp'
+        detail: 'Incompatible with interiors versions.'
+        condition: 'checksum("RelightingSkyrim_SSE.esp", A05D4081) or checksum("RelightingSkyrim_SSE.esp", C5529E7D)'
+      - 'Shadows.esp'
+      - 'Skyrim is Luminous.esp'
   - name: 'Window Shadows Ultimate Supplement.esp'
 
   - name: 'WinterOverhaul.esp'
