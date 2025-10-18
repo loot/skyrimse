@@ -6095,8 +6095,21 @@ plugins:
     group: *earlyLoadersGroup
   - name: 'TL Bulbs ISL.esp'
     group: *cellLightingGroup
+    req:
+      - *CommunityShaders
+      - name: 'SKSE/Plugins/LightingUtil.dll'
+        display: '[Ambient Templates for Lighting Mods](https://www.nexusmods.com/skyrimspecialedition/mods/153425/)'
+      - name: 'Shaders/InverseSquareLighting/InverseSquareLighting.hlsli'
+        display: '[Inverse Square Lighting](https://www.nexusmods.com/skyrimspecialedition/mods/153542/)'
+      - name: 'SKSE/Plugins/po3_LightPlacer.dll'
+        display: '[Light Placer](https://www.nexusmods.com/skyrimspecialedition/mods/127557/)'
+      - name: 'SKSE/Plugins/SkyPatcher.dll'
+        display: '[SkyPatcher](https://www.nexusmods.com/skyrimspecialedition/mods/106659/)'
   # True Light Patches
   - name: 'True Light - USSEP Patch.esp'
+    req:
+      - 'TL Bulbs ISL.esp'
+      - 'unofficial skyrim special edition patch.esp'
 
   - name: 'TrueStormsSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2472/' ]
