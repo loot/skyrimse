@@ -6105,6 +6105,17 @@ plugins:
         display: '[Light Placer](https://www.nexusmods.com/skyrimspecialedition/mods/127557/)'
       - name: 'SKSE/Plugins/SkyPatcher.dll'
         display: '[SkyPatcher](https://www.nexusmods.com/skyrimspecialedition/mods/106659/)'
+    inc:
+      - *ENBSeries
+      - 'ELFX Shadows.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Lux.esp'
+      # A05D4081: Full v3.0
+      # C5529E7D: Interiors only v3.0
+      - name: 'RelightingSkyrim_SSE.esp'
+        detail: 'Incompatible with interiors versions.'
+        condition: 'checksum("RelightingSkyrim_SSE.esp", A05D4081) or checksum("RelightingSkyrim_SSE.esp", C5529E7D)'
+      - 'Skyrim is Luminous.esp'
   # True Light Patches
   - name: 'True Light - USSEP Patch.esp'
     req:
