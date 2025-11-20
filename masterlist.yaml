@@ -15715,6 +15715,17 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/85908/'
         name: 'YoungLover''s - Voice Overhaul'
+    msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Nether''s Follower Framework'
+          - '[YoungLover''s - Voice Overhaul Patches](https://www.nexusmods.com/skyrimspecialedition/mods/164049/)'
+        condition: 'active("nwsFollowerFramework.esp") and not active("YoungLovers and NFF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Unofficial Skyrim Special Edition Patch'
+          - '[YoungLover''s - Voice Overhaul Patches](https://www.nexusmods.com/skyrimspecialedition/mods/164049/)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("YoungLovers and USSE Patch.esp")'
 
 ###### Gameplay - Quests ######
   - name: 'AgentOfRighteousMight.esp'
