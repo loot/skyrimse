@@ -15499,6 +15499,11 @@ plugins:
     msg:
       - <<: *patch3rdParty_AOOPH
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Sofia - The Funny Fully Voiced Follower'
+          - '[Sofia Bug and Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70950)'
+        condition: 'active("SofiaFollower.esp") and not active("Sofia - RDO Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
         condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
