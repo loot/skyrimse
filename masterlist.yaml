@@ -653,8 +653,8 @@ globals:
     subs: [ '**SKSE VR**' ]
     condition: 'readable("../SkyrimVR.exe") and version("../skseVR_loader.exe", "0.2.0.12", >=) and file("../skseVR_loader.exe")'
 
-# Version Compatibility
-  # SKSE AE - Game Runtime
+# SKSE - Runtime Compatibility
+  # SKSE AE
   - <<: *versionSkseIncSAE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.317.0", ==) and version("../skse64_loader.exe", "0.2.1.0", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSAE
@@ -673,15 +673,15 @@ globals:
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", ==) and not file("../skse64_1_6_1130.dll") and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSAE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1170.0", ==) and not file("../skse64_1_6_1170.dll") and file("../skse64_loader.exe")'
-  # SKSE AE GOG - Game Runtime
+  # SKSE AE GOG
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.659.0", ==) and not file("../skse64_1_6_659.dll") and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1179.0", ==) and not file("../skse64_1_6_1179.dll") and file("../skse64_loader.exe")'
-  # SKSE AE EGS - Game Runtime
+  # SKSE AE EGS
   - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe")'
-  # SKSE SE - Game Runtime
+  # SKSE SE
   - <<: *versionSkseIncSSE
     condition: 'file("../SkyrimSE.exe") and file("../skse(vr)?_loader.exe") and not file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
@@ -696,14 +696,15 @@ globals:
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.80.0", ==) and version("../skse64_loader.exe", "0.2.0.16", <) and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSSE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", ==) and version("../skse64_loader.exe", "0.2.0.17", <) and file("../skse64_loader.exe")'
-  # SKSE VR - Game Runtime
+  # SKSE VR
   - <<: *versionSkseIncSVR
     condition: 'file("../SkyrimVR.exe") and file("../skse(?:64)?_loader.exe") and not file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.3.64.0", ==) and version("../sksevr_loader.exe", "0.2.0.8", <) and file("../sksevr_loader.exe")'
   - <<: *versionSkseIncSVR
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and version("../sksevr_loader.exe", "0.2.0.9", <) and file("../sksevr_loader.exe")'
-  # ENBSeries
+
+# ENBSeries
   - <<: *versionXIncY
     subs:
       - '**[ENB Helper SE](https://www.nexusmods.com/skyrimspecialedition/mods/23174/)**'
