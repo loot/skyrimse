@@ -7066,9 +7066,6 @@ plugins:
 
   - name: 'Elderly&Adults.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/42335/' ]
-    msg:
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_Elderly&Adults.esp")'
     tag:
       - Graphics
       - Outfits.Add
@@ -13144,6 +13141,8 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/?tab=forum&topic_id=6871717' ]
+      - <<: *compatPatch
+        subs: [ '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)' ]
       - <<: *patch3rdParty
         subs:
           - 'Perks Unbound'
@@ -16702,8 +16701,6 @@ plugins:
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and checksum("meshes/KonahAcc/misc/ruinsdragonclaw.nif", 30E9F549)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_KA_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF_KonahriksAccoutrements.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x93449BB7
@@ -17740,8 +17737,6 @@ plugins:
           - 'Smithing Perks Overhaul'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518) or [ Smithing Perks Overhaul and Ordinator Mashup ](https://www.nexusmods.com/skyrimspecialedition/mods/20605/)'
         condition: 'active("Smithing Perks Overhaul SE.esp") and not active("SPO_Ordinator_Patch.esp") and not active("SPO_Ordinated.esp")'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Ordinator_WACCF_Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Odin - Skyrim Magic Overhaul' ]
         condition: 'active("Odin - Skyrim Magic Overhaul.esp") and not active("Odin - Ordinator Compatibility Patch.esp")'
@@ -19057,9 +19052,6 @@ plugins:
 
   - name: 'CL Chillrend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2916/' ]
-    msg:
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("WACCF CL Chillrend Patch.esp")'
 
   - name: 'C\.O\.I\.N.*\.esp'
     url:
@@ -19185,8 +19177,6 @@ plugins:
         name: 'Dawnguard Arsenal'
   - name: 'DawnguardArsenal.esp'
     msg:
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_DGA_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patchProvided
@@ -19584,8 +19574,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IW_Patch.esp")'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Weapons_WACCF_Patch.esp")'
       - <<: *patch3rdParty
         type: warn
         subs:
@@ -19613,8 +19601,6 @@ plugins:
         name: 'Improved Closefaced Helmets - Fixes'
     after: [ 'Circlets and Masks with all Robes and Hoods.esp' ]
     msg:
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("imp_helm_legend_(BMF_)?WACCF_(AMB_)?Patch\.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
       - <<: *patch3rdParty
@@ -19750,8 +19736,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
         condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp") and version("Requiem.esp", "5.3.0", <)'
 
@@ -20808,10 +20792,7 @@ plugins:
 
   - name: 'Unique Uniques.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3334/' ]
-    msg:
-      - *alreadyInLotD
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
+    msg: [ *alreadyInLotD ]
     clean:
       - crc: 0x31DB2011
         util: 'SSEEdit v4.0.3f'
@@ -20984,8 +20965,6 @@ plugins:
         util: 'SSEEdit v4.0.4c'
   - name: 'ZIA_Complete Pack.esp'
     msg:
-      - <<: *patch3rdParty_KPH_WACCF
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("zimsimmersiveartifacts_waccf_patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and checksum("ZIA_Complete Pack.esp", C4A8C3D1) and not active("DBM_ZimsThaneWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     tag:
