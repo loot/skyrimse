@@ -14611,8 +14611,6 @@ plugins:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Wintersun Patch SSE Plotinuz Update](https://www.nexusmods.com/skyrimspecialedition/mods/61069/)'
         condition: 'active("Requiem.esp") and not active("Requiem - Wintersun Patch SSE Plotinuz Update.esp")'
-      - <<: *patch3rdParty_KPH_TCIY
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_Wintersun_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_Wintersun_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patchProvided
@@ -16963,9 +16961,6 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/53248/'
         name: 'A Better Tomorrow - Replace Maven as Jarl'
-    msg:
-      - <<: *patch3rdParty_KPH_TCIY
-        condition: 'active("TheChoiceIsYours.esp") and not active("ReplaceMaven_TCIY_Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xD79A5E14
@@ -17265,6 +17260,8 @@ plugins:
       - name: 'Wintersun - Faiths of Skyrim.esp'
         condition: 'not file("TCIY_Wintersun_Patch.esp")'
     msg:
+      - <<: *compatPatch
+        subs: [ '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)' ]
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("BCS_TCIY_Patch.esp")'
     tag:
@@ -18882,8 +18879,6 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - BCS Patch.esp") and not active("Bashed Patch.*\.esp")'
-      - <<: *patch3rdParty_KPH_TCIY
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY( |_)BCS Patch\.esp") and not active("Bashed Patch.*\.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Book Covers Skyrim.esp")'
     after:
@@ -21979,8 +21974,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_AOOPH
         condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Cutting Room Floor Patch.esp")'
-      - <<: *patch3rdParty_KPH_TCIY
-        condition: 'active("TheChoiceIsYours.esp") and not active("TCIY_CRF_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CRF_Patch.esp")'
       - <<: *patch3rdParty_RPC
