@@ -10155,8 +10155,6 @@ plugins:
   - name: 'Campfire.esm'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/667/' ]
     msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Campfire_Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp")'
 
@@ -11716,6 +11714,8 @@ plugins:
       - Keywords
       - Text
     msg:
+      - <<: *compatPatch
+        subs: [ '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)' ]
       - *requiresMCM
       - *requiresMCMVR
       - <<: *patch3rdParty
@@ -17743,8 +17743,6 @@ plugins:
           - 'Smithing Perks Overhaul'
           - '[ kryptopyr''s Patch Hub ](https://www.nexusmods.com/skyrimspecialedition/mods/19518) or [ Smithing Perks Overhaul and Ordinator Mashup ](https://www.nexusmods.com/skyrimspecialedition/mods/20605/)'
         condition: 'active("Smithing Perks Overhaul SE.esp") and not active("SPO_Ordinator_Patch.esp") and not active("SPO_Ordinated.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Ordinator.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Ordinator_WACCF_Patch.esp")'
       - <<: *patchProvided
@@ -17996,8 +17994,6 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1174/' ]
       - *includesMBBF
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_Vokrii.esp")'
       - <<: *patchProvided
         subs: [ 'Mysticism - A Magic Overhaul' ]
         condition: 'active("MysticismMagic.esp") and not active("Mysticism - Vokrii Compatibility Patch.esp")'
@@ -18521,8 +18517,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2687/'
         name: 'Aetherium Armor and Weapons Compilation by lautasantenni'
     msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("AetheriumSwordsnArmor_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AetheriumWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
       - <<: *patch3rdParty_RPC
@@ -19020,8 +19014,6 @@ plugins:
     tag: [ Outfits.Add ]
   - name: 'Cloaks.esp'
     msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and active("Cloaks - Dawnguard.esp") and not active("Cloaks_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CloaksofSkyrim_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
     clean:
@@ -19198,8 +19190,6 @@ plugins:
         name: 'Dawnguard Arsenal'
   - name: 'DawnguardArsenal.esp'
     msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("DawnguardArsenal_WACCF_Patch.esp")'
       - <<: *patch3rdParty_LotD
@@ -19315,9 +19305,6 @@ plugins:
 
   - name: 'Dr_Bandolier.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2417/' ]
-    msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Dr_Bandolier_CCOR_Patch.esp")'
 
   - name: '(DwarvenEbony - )?HandHammers\.esp'
     url:
@@ -19342,9 +19329,6 @@ plugins:
 
   - name: 'El_WayfarersCoatSSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10194/' ]
-    msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("El_WayfarersCoatSSE_CCOR_Patch.esp")'
 
   - name: 'Equippable Tomes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/157/' ]
@@ -19357,8 +19341,6 @@ plugins:
   - name: 'Faction Crossbows.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/4047/' ]
     msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Faction Crossbows_CCOR_Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Faction Crossbows.esp")'
     clean:
@@ -19477,8 +19459,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IA_Patch.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Hothtrooper44_ArmorCompilation_CCOR_Patch.esp") and not active("IARR, CCOR Patch.esp")'
       - <<: *patchUnavailableRequiem
       - <<: *requiresResources
         subs: [ '[Immersive Armors - Asdasfa Tweaks and Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/85433/)' ]
@@ -19572,8 +19552,6 @@ plugins:
       - <<: *obsolete
         subs: [ 'Immersive Jewelry 1.06a' ]
         condition: 'version("Immersive Jewelry.esp", "1.05", ==)'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Jewelry_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_ImmersiveJewelry_Patch.esp")'
     tag:
@@ -19611,8 +19589,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IW_Patch.esp")'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Weapons_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Immersive Weapons_WACCF_Patch.esp")'
       - <<: *patch3rdParty
@@ -19684,9 +19660,6 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
   - name: '1nivWICCloaks.esp'
-    msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and ((active("Cloaks.esp") and not active("1nivWICCloaks_COS_CCOR_Patch.esp")) or (not active("Cloaks.esp") and not active("1nivWICCloaks_CCOR_Patch.esp")))'
     clean:
       - crc: 0x5D2443E8
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -19742,9 +19715,6 @@ plugins:
         subs: [ 'JaySuS Swords' ]
         condition: 'many("JSwords(D)?\.esm")'
   - name: 'JSwords.esm'
-    msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("CCOR_JSwords_Patch.esp")'
     clean:
       - crc: 0x3E768974
         util: 'SSEEdit v4.0.3'
@@ -19785,8 +19755,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
         condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
       - <<: *patch3rdParty_RPC
@@ -20446,8 +20414,6 @@ plugins:
   - name: 'SL01AmuletsSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/487/' ]
     msg:
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("SL01AmuletsSkyrim_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AmuletsOfSkyrim_Patch.esp")'
     tag: [ Delev ]
@@ -20849,8 +20815,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3334/' ]
     msg:
       - *alreadyInLotD
-      - <<: *patch3rdParty_KPH_CCOR
-        condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'checksum("Unique Uniques.esp", 31DB2011) and active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("Unique Uniques_WACCF_Patch.esp")'
     clean:
