@@ -2304,7 +2304,7 @@ plugins:
           - 'Skyrim Special Edition'
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", <) and version("unofficial skyrim special edition patch.esp", "4.3.1", >=)'
     clean:
-      # Do not clean - 1 ITM that is likely not worth cleaning
+      # Do not clean - Breaks dialogues due to xEdit mishandling PNAM subrecords.
       # German
       - crc: 0xB3AB07FD
         util: 'SSEEdit v4.0.4'
