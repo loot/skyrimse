@@ -2303,12 +2303,8 @@ plugins:
           - '1.6.1130'
           - 'Skyrim Special Edition'
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", <) and version("unofficial skyrim special edition patch.esp", "4.3.1", >=)'
-    dirty:
-      - <<: *quickClean
-        crc: 0xCE922FDA
-        util: '[SSEEdit v4.1.5p](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
-        itm: 78
     clean:
+      # Do not clean - 1 ITM that is likely not worth cleaning
       # German
       - crc: 0xB3AB07FD
         util: 'SSEEdit v4.0.4'
