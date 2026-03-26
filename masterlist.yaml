@@ -782,8 +782,12 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *mainGroup ]
 
-  - name: &fixesGroup Fixes & Resources
+  - name: &unofficialPatchesGroup Unofficial Patches
+    description: 'A group for mods that fix issues or bugs in the base game.'
     after: [ *ccGroup ]
+
+  - name: &fixesGroup Fixes & Resources
+    after: [ *unofficialPatchesGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
     after: [ *fixesGroup ]
