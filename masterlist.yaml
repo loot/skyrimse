@@ -785,8 +785,12 @@ groups:
   - name: &unofficialPatchesGroup Unofficial Patches
     after: [ *ccGroup ]
 
-  - name: &fixesGroup Fixes & Resources
+  - name: &scriptOptimizationGroup Script Fixes & Optimization
+    description: 'A group for mods that optimize or fix issues in the base game scripts.'
     after: [ *unofficialPatchesGroup ]
+
+  - name: &fixesGroup Fixes & Resources
+    after: [ *scriptOptimizationGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
     after: [ *fixesGroup ]
