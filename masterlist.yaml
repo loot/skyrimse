@@ -2798,12 +2798,20 @@ plugins:
     group: *scriptOptimizationGroup
     req: [ *PapyrusExtender ]
     after: [ 'Vanilla Script MicroOptimizations.esl' ]
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Ultimate Optimized Scripts Compilation' ]
+        condition: 'file("UOSC.esl")'
 
   - name: 'Vanilla Script MicroOptimizations.esl'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54061/'
         name: 'Vanilla Script (micro)Optimizations'
     group: *scriptOptimizationGroup
+    msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Ultimate Optimized Scripts Compilation' ]
+        condition: 'file("UOSC.esl")'
     clean:
       - crc: 0xB6C2AA7B
         util: 'SSEEdit v4.1.5p 32bit fix version'
