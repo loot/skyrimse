@@ -2813,6 +2813,9 @@ plugins:
     after: [ 'Vanilla Script MicroOptimizations.esl' ]
     msg:
       - <<: *alreadyInOrFixedByX
+        subs: [ 'Script Optimization and Fixes Compilation' ]
+        condition: 'file("ScriptFixesCompilation.esp")'
+      - <<: *alreadyInOrFixedByX
         subs: [ 'Ultimate Optimized Scripts Compilation' ]
         condition: 'file("UOSC.esl")'
 
@@ -2822,6 +2825,9 @@ plugins:
         name: 'Vanilla Script (micro)Optimizations'
     group: *scriptOptimizationGroup
     msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Script Optimization and Fixes Compilation' ]
+        condition: 'file("ScriptFixesCompilation.esp")'
       - <<: *alreadyInOrFixedByX
         subs: [ 'Ultimate Optimized Scripts Compilation' ]
         condition: 'file("UOSC.esl")'
