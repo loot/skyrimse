@@ -2658,17 +2658,6 @@ plugins:
       - crc: 0xBF9B55EB
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: 'ScriptFixesCompilation.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/' ]
-    group: *fixesGroup
-    after: ['unofficial skyrim special edition patch.esp']
-    req:
-      - *SKSE
-      - *SKSEVR
-    msg:
-      - *requiresMCM
-      - *requiresMCMVR
-
   - name: 'Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
@@ -2778,6 +2767,17 @@ plugins:
     msg: [ *alreadyInOrFixedByScrambledBugs ]
 
 ###### Fixes - Stability & Performance ######
+  - name: 'ScriptFixesCompilation.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/' ]
+    group: *fixesGroup
+    after: ['unofficial skyrim special edition patch.esp']
+    req:
+      - *SKSE
+      - *SKSEVR
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
+
   - name: 'SimplyOptimizedScripts.esl'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/97155/'
