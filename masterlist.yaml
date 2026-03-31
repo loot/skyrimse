@@ -9695,46 +9695,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/26080/'
         name: 'Realistic Boat Bobbing'
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Better Docks'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("BetterDocks-MP-DLC-Compatible.esp") and not active("RBB - Better Docks Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Falskaar'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("Falskaar.esm") and not active("RBB - Falskaar.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'JK''s Skyrim'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("JKs Skyrim.esp") and not active("RBB - JKs Skyrim Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Oakwood'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("oakwood.esp") and not active("RBB - Oakwood Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Quaint Raven Rock'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("Undriel_QuaintRavenRock.esp") and not active("RBB - Quaint Raven Rock Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Telengard'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("telengard.esp") and not active("RBB - Telengard Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Unofficial Skyrim Special Edition Patch'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("unofficial skyrim special edition patch.esp") and (not active("RBB - USSEP Patch.esp") and not active("RBB - JKs Skyrim Patch.esp"))'
-      - <<: *patch3rdParty
-        subs:
-          - 'Wyrmstooth'
-          - '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)'
-        condition: 'active("Wyrmstooth.esp") and not active("RBB - Wyrmstooth.esp")'
+      - <<: *compatPatch
+        subs: [ '[Realistic Boat Bobbing Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/44311/)' ]
+        condition: 'not active("RBB - .*\.esp")'
     clean:
       - crc: 0xA1052F5C
         util: 'SSEEdit v4.1.5p 32bit fix version'
