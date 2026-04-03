@@ -789,11 +789,17 @@ groups:
     description: 'A group for mods that optimize or fix issues in the base game scripts.'
     after: [ *unofficialPatchesGroup ]
 
-  - name: &fixesGroup Fixes & Resources
-    after: [ *scriptOptimizationGroup ]
+  - name: &fixesGroup Fixes
+    description: 'A group for modules that fix issues and bugs.'
+    after: [ *unofficialPatchesGroup ]
+
+  - name: &frameworksGroup Resources & Frameworks
+    description: 'A group for mods that provide resources and/or a framework for other mods to use.'
+    after: [ *fixesGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
-    after: [ *fixesGroup ]
+    description: 'A group for modules that should load early before most other mods.'
+    after: [ *frameworksGroup ]
 
   - name: &verifiedCreationsGroup Verified Creations
     after: [ *earlyLoadersGroup ]
