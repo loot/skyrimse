@@ -804,8 +804,16 @@ groups:
   - name: &verifiedCreationsGroup Verified Creations
     after: [ *earlyLoadersGroup ]
 
-  - name: default
+  - name: &newContentGroup New Content
+    description: 'A group for mods that only add new content (e.g. new locations, items or characters).'
     after: [ *verifiedCreationsGroup ]
+
+  - name: &underridesGroup Underrides
+    description: 'A group for early loaders that might still need to load after some files in the default group.'
+    after: [ *newContentGroup ]
+
+  - name: default
+    after: [ *underridesGroup ]
 
   - name: &lowPriorityGroup Low Priority Overrides
     description: 'A group for modules that must load after most other mods.'
