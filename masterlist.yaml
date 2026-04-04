@@ -431,11 +431,6 @@ common:
     subs:
       - 'SkyTEST - Realistic Animals and Predators'
       - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
-  - &patch3rdParty_UVCPC
-    <<: *patch3rdParty
-    subs:
-      - 'Vokrii - Minimalistic Perks of Skyrim'
-      - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
 
   # &patchUnavailable
   - &patchUnavailableRequiem
@@ -4488,8 +4483,6 @@ plugins:
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12466?tab=posts&jump_to_comment=60245661' ]
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul Skyrim.esp")'
-      - <<: *patch3rdParty_UVCPC
-        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - AOS Patch.esp") and not file("Audio Overhaul Skyrim\.esp_\w+_SRD\.yaml")'
       - <<: *patch3rdParty
         subs:
           - 'Immersive Sounds - Compendium'
@@ -11788,8 +11781,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("HOR_OrdinatorPatch.esp")'
-      - <<: *patch3rdParty_UVCPC
-        condition: 'not active("Vokrii - HOR Plants Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Delev
       - Invent.Add
@@ -13070,8 +13061,6 @@ plugins:
       - *requiresMCMVR
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Trade and Barter.esp")'
-      - <<: *patch3rdParty_UVCPC
-        condition: 'not active("Vokrii - Trade & Barter Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Invent.Add
       - Invent.Remove
@@ -13177,8 +13166,6 @@ plugins:
         condition: 'active("TrissArmorRetextured.esp") and not active("Triss Armor Retextured SE - WACCF Patch.esp")'
       - <<: *patch3rdParty_SBCK
         condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
-      - <<: *patch3rdParty_UVCPC
-        condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - WACCF Patch.esp") and not active("Complete Crafting Overhaul_Remastered.esp")'
       - <<: *patchUnavailableRequiem
         condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
@@ -17565,8 +17552,6 @@ plugins:
           - '[Elemental Destruction - Ordinator Patch](https://www.nexusmods.com/skyrimspecialedition/mods/3536/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Elemental Destruction - Ordinator Patch.esp")'
       - *patch3rdParty_SRPC
-      - <<: *patch3rdParty_UVCPC
-        condition: 'not active("Vokrii - Elemental Destruction Magic Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xA52F627E
@@ -18006,6 +17991,9 @@ plugins:
     msg:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/1174/' ]
+      - <<: *compatPatch
+        subs: [ '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)' ]
+        condition: 'not file("Vokrii - (ABT Ammo Recovery|AOS|Bruma|DawnguardArsenal - WACCF|DawnguardArsenal|EDM \+ SSP|Elemental Destruction Magic|Enchanting Adjustments|HOR Creatures|HOR Plants|PoisonMastery|Shadow Spell Package|Skyrim Alchemy Fixed|Tomebound|Trade & Barter|WACCF) Patch\.esp")'
       - *includesMBBF
       - <<: *patchProvided
         subs: [ 'Mysticism - A Magic Overhaul' ]
@@ -21087,8 +21075,6 @@ plugins:
           - '[Ordinator Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/10934/)'
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Ordinator - Beyond Skyrim Bruma Patch.esp")'
       - *patch3rdParty_SRPC_Redux
-      - <<: *patch3rdParty_UVCPC
-        condition: 'not active("Vokrii - Bruma Patch.esp") and active("Vokrii - Minimalistic Perks of Skyrim.esp")'
     tag:
       - Actors.ACBS
       - Actors.DeathItem
