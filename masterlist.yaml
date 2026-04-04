@@ -397,11 +397,6 @@ common:
     subs:
       - 'JS Dragon Claws'
       - '[JS Dragon Claws - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/23833/)'
-  - &patch3rdParty_MLU
-    <<: *patch3rdParty
-    subs:
-      - 'MorrowLoot Ultimate'
-      - '[MLU Community Patches](https://www.nexusmods.com/skyrimspecialedition/mods/10218/)'
   - &patch3rdParty_RPC
     <<: *patch3rdParty
     subs:
@@ -12527,6 +12522,9 @@ plugins:
     group: *economyGroup
     inc: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
+      - <<: *compatPatch
+        subs: [ '[Morrowloot Ultimate - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/76259/)' ]
+        condition: 'version("MLU.esp", "2.0a", >=)'
       - <<: *patch3rdParty
         subs:
           - 'Ars Metallica - Smithing Enhancements'
@@ -19823,9 +19821,6 @@ plugins:
 
   - name: 'LrsamwaysExpandedSkyrimWeaponry.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/2300/' ]
-    msg:
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU - Expanded Skyrim Weaponry Patch.esp")'
     clean:
       - crc: 0x12BB1808
         util: 'SSEEdit v4.0.3'
@@ -19934,9 +19929,6 @@ plugins:
 
   - name: 'NewArmoury.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15394/' ]
-    msg:
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU - Animated Armoury Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xBAEB5EAB
@@ -20119,8 +20111,6 @@ plugins:
         name: 'Heavy Armory - New Weapons'
   - name: 'PrvtI_HeavyArmory.esp'
     msg:
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp") and version("Requiem.esp", "5.3.0", <)'
       - <<: *patch3rdParty
@@ -20150,8 +20140,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/44392/'
         name: 'Royal Armory - New Artifacts Plugin Replacer'
     msg:
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU_RoyalArmory_patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Royal Armory.esp")'
     clean:
@@ -21047,8 +21035,6 @@ plugins:
           - 'Complete Alchemy & Cooking Overhaul'
           - '[CACO - Beyond Skyrim Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/24830/)'
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Beyond Skyrim Bruma_Patch.esp")'
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU_Bruma.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Flora Respawn Fix'
@@ -22788,9 +22774,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12186/' ]
     tag: [ C.Location ]
   - name: 'HammetDungeons.esp'
-    msg:
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU - HammetDungeons Patch.esp")'
     clean:
       - crc: 0x721BCED1
         util: 'SSEEdit v4.0.3'
@@ -24559,9 +24542,6 @@ plugins:
     after:
       - name: 'CollegeEntry.esp'
         condition: 'not is_master("MagicalCollegeofWinterhold.esp")'
-    msg:
-      - <<: *patch3rdParty_MLU
-        condition: 'active("MLU.esp") and not active("MLU - MagicalCollegeofWinterhold Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x9AA2E2D1
