@@ -402,11 +402,6 @@ common:
     subs:
       - 'Requiem - The Roleplaying Overhaul'
       - '[Requiem Patch Central](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)'
-  - &patch3rdParty_RSCPC
-    <<: *patch3rdParty
-    subs:
-      - 'RS Children Overhaul'
-      - '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)'
   - &patch3rdParty_SBCK
     <<: *patch3rdParty
     subs:
@@ -6788,6 +6783,9 @@ plugins:
         name: 'RS Children Overhaul'
   - name: 'RSkyrimChildren.esm'
     group: *fixesGroup
+    msg:
+      - <<: *compatPatch
+        subs: [ '[RS Children Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/13409/)' ]
     clean:
       - crc: 0xBDFAB2FA
         util: 'SSEEdit v4.0.3'
@@ -7417,8 +7415,6 @@ plugins:
       - name: 'open cities skyrim.esp'
         condition: 'not active("Open Cities - 3DNPC Patch.esp")'
     msg:
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RSC 3DNPC Patch.esp")'
       - *patch3rdParty_SRPC_Redux
       - <<: *patchProvided
         subs: [ 'AI Overhaul' ]
@@ -8876,9 +8872,6 @@ plugins:
 
   - name: 'Inconsequential NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/36334/' ]
-    msg:
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RSC IncNPC.esp")'
 
   - name: 'Immersive Wenches.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/595/' ]
@@ -16467,9 +16460,6 @@ plugins:
 
   - name: 'ForgottenCity.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1179/' ]
-    msg:
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RSC Forgotten City Patch.esp")'
     dirty:
       # version: 1.8
       - <<: *quickClean
@@ -21148,8 +21138,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2057/'
         name: 'Falskaar'
     msg:
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RSC Falskaar Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'Better Dynamic Snow'
@@ -21837,8 +21825,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
-      - <<: *patch3rdParty_RSCPC
-        condition: 'active("RSkyrimChildren.esm") and not active("RealisticRSChildren.esp") and not active("RSC CRF Patch.esp") and not active("CRF_RSChildrenPatch.esp")'
       - *patch3rdParty_SRPC
       - <<: *patch3rdParty
         subs:
