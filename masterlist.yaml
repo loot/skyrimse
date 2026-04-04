@@ -402,11 +402,6 @@ common:
     subs:
       - 'Requiem - The Roleplaying Overhaul'
       - '[Requiem Patch Central](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)'
-  - &patch3rdParty_SBCK
-    <<: *patch3rdParty
-    subs:
-      - 'Scoped Bows'
-      - '[Scoped Bows Compatibility Kit - SBCK](https://www.nexusmods.com/skyrimspecialedition/mods/19495/)'
 
   # &patchUnavailable
   - &patchUnavailableRequiem
@@ -6902,9 +6897,6 @@ plugins:
       - 'Bijin_AIO 2018.esp'
       - 'Bijin_AIO-SV 2018.esp'
       - 'Bijin Warmaidens.esp'
-    msg:
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_AelaStandalone Patch.esp")'
 
   - name: 'Bijin AIO.esp'
     url:
@@ -6921,9 +6913,6 @@ plugins:
     inc:
       - 'Bijin_AIO 2018.esp'
       - 'Bijin_AIO-SV 2018.esp'
-    msg:
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp") and not active("Bashed Patch.*\.esp")'
     clean:
       - crc: 0x9F6F1285
         util: 'SSEEdit v4.0.3'
@@ -6954,8 +6943,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Bijin AIO SSE' ]
         condition: 'active("Bijin Warmaidens.esp") and active("Bijin( AIO|_AIO 2018|_AIO-SV 2018)\.esp")'
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
     clean:
       - crc: 0x117A67EC
         util: 'SSEEdit v4.0.3'
@@ -7007,9 +6994,6 @@ plugins:
       - 'Immersive Weapons.esp'
       - 'ScopedBows.esp'
     inc: [ 'Bijin AIO.esp' ]
-    msg:
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and not active("ScopedBows_Bijin Patch.esp")'
   - name: 'Bijin_AIO 2018.esp'
     clean:
       - crc: 0x288ACC01
@@ -13086,8 +13070,6 @@ plugins:
           - 'Triss Armor Retextured'
           - '[Useless Patches Collection](https://www.nexusmods.com/skyrimspecialedition/mods/27667/)'
         condition: 'active("TrissArmorRetextured.esp") and not active("Triss Armor Retextured SE - WACCF Patch.esp")'
-      - <<: *patch3rdParty_SBCK
-        condition: 'active("ScopedBows.esp") and checksum("ScopedBows.esp", 5E29053A)'
       - <<: *patchUnavailableRequiem
         condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
