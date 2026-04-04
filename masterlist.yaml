@@ -392,11 +392,6 @@ common:
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and not file("SKSE/Plugins/version-1-4-15-0.csv")'
 
   # &patch3rdParty
-  - &patch3rdParty_AOOPH
-    <<: *patch3rdParty
-    subs:
-      - 'AI Overhaul'
-      - '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)'
   - &patch3rdParty_ClockA
     <<: *patch3rdParty
     subs:
@@ -15136,6 +15131,9 @@ plugins:
   - name: 'AI Overhaul.esp'
     after: [ 'cutting room floor.esp' ]
     msg:
+      - <<: *compatPatch
+        subs: [ '[AI Overhaul - Official Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/35823/)' ]
+        condition: 'not file("AI Overhaul - (Cutting Room Floor|Denizens of Morthal|Distinct Interiors|RDO Updated|Relationship Dialogue Overhaul) Patch\.esp")'
       - <<: *patch3rdParty
         subs:
           - 'JK''s Skyrim'
@@ -15506,8 +15504,6 @@ plugins:
     # Removed load after for Immersive Citizens, as it can lead to hoisting of too many other mods.
     # Which may not work for every users load order. User can add the rule manually instead.
     msg:
-      - <<: *patch3rdParty_AOOPH
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - (Relationship Dialogue Overhaul|RDO Updated) Patch\.esp")'
       - <<: *patchProvided
         subs: [ 'Amazing Follower Tweaks' ]
         condition: 'checksum("Relationship Dialogue Overhaul.esp", 20DC9B97) and (checksum("AmazingFollowerTweaks.esp", 88F9C8B8) or checksum("AmazingFollowerTweaks.esp", F43B6124)) and not active("RDO - AFT v1.66 Patch.esp")'
@@ -15536,9 +15532,6 @@ plugins:
 
   - name: 'RDO Updated.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/44601/' ]
-    msg:
-      - <<: *patch3rdParty_AOOPH
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - RDO Updated Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xB3AF66CD
@@ -21887,8 +21880,6 @@ plugins:
       - name: 'TouringCarriages.esp'
         condition: '(is_master("cutting room floor.esp") and is_master("TouringCarriages.esp")) or (not is_master("cutting room floor.esp") and not is_master("TouringCarriages.esp"))'
     msg:
-      - <<: *patch3rdParty_AOOPH
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Cutting Room Floor Patch.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
       - <<: *patch3rdParty_RSCPC
@@ -23246,8 +23237,6 @@ plugins:
           - lang: de
             text: 'Dieses Plugin enthält Einträge die von dessen Master-Dateien entfernt wurden. Eine englische Anleitung zum beheben befindet sich [hier](https://macsplody.github.io/xGuides/#-distinct-interiors-).'
         condition: 'checksum("Distinct Interiors.esp", 6977340A)'
-      - <<: *patch3rdParty_AOOPH
-        condition: 'active("AI Overhaul.esp") and not active("AI Overhaul - Distinct Interiors Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xCB0F62A8
