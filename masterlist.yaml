@@ -757,12 +757,9 @@ groups:
     description: 'A group for modules that should load early before most other mods.'
     after: [ *frameworksGroup ]
 
-  - name: &verifiedCreationsGroup Verified Creations
-    after: [ *earlyLoadersGroup ]
-
   - name: &newContentGroup New Content
     description: 'A group for mods that only add new content (e.g. new locations, items or characters).'
-    after: [ *verifiedCreationsGroup ]
+    after: [ *earlyLoadersGroup ]
 
   - name: &underridesGroup Underrides
     description: 'A group for early loaders that might still need to load after some files in the default group.'
