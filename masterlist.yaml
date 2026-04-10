@@ -844,9 +844,13 @@ groups:
   - name: &lvlListsGroup Leveled List Modifiers
     after: [ *kSpeakGroup ]
 
+  - name: &playerDialogueGroup Player Character Dialogue
+    description: 'A group for mods that modify the player character dialogue.'
+    after: [ *lvlListsGroup ]
+
   - name: &worldSettingsGroup Worldspace Settings
     description: 'A group for modules that need to be loaded late to preserve worldspace settings.'
-    after: [ *lvlListsGroup ]
+    after: [ *playerDialogueGroup ]
 
   - name: &paperMapsGroup Paper Maps
     description: 'A group for paper map mods that need to be loaded late to preserve worldspace settings.'
