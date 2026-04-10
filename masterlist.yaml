@@ -2587,6 +2587,14 @@ plugins:
         name: 'FenixDisenchanter'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/99323/'
         name: 'FenixDisenchanter NG'
+    req: [ *SKSE ]
+    msg:
+      - *missingRequirementAddrLibforPlugin
+      - <<: *scriptExtenderRequiredScripts
+        subs:
+          - 'FenixDisenchanter NG'
+          - '[FenixDisenchanter](https://www.nexusmods.com/skyrimspecialedition/mods/53144/)'
+        condition: 'not file("scripts/f314FD_DisenchanterScript.pex")'
 
   - name: 'Gamepad++.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/27007/' ]
