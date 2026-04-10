@@ -10797,10 +10797,8 @@ plugins:
         util: 'SSEEdit v4.0.4c'
   - name: 'WTT - Skyrim-Solstheim - Worldsettings.esp'
     group: *worldSettingsGroup
-    after:
-      # Group rules to avoid cyclic interactions
-      - 'A Clear Map of Skyrim.esp'
-      - 'atlas map markers.esp'
+    # Group rules to avoid cyclic interactions
+    after: [ 'A Clear Map of Skyrim.esp' ]
     # Do not clean - ITMs intentional according to author, presumably only border cells rarely touched by other mods
 
   - name: 'YASH2.esp'
@@ -17734,7 +17732,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14493/'
         name: 'Atlas Map Markers'
   - name: 'Atlas Legendary( OCS)?\.esp'
-    group: *worldSettingsGroup
     after:
       - 'Complete Alchemy & Cooking Overhaul.esp'
       - 'MLU.esp'
@@ -17743,6 +17740,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/20466/'
         name: 'Atlas Map Markers DV'
   - name: 'Atlas Legendary.esp'
+    group: *mapMarkersGroup
     inc: [ 'open cities skyrim.esp' ]
     clean:
       - crc: 0xF9673261
@@ -17762,11 +17760,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24104/'
         name: 'Atlas Map Markers SE - Updated with MCM'
-    group: *worldSettingsGroup
-    after:
-      - 'Complete Alchemy & Cooking Overhaul.esp'
-      - 'MLU.esp'
-      - 'SL01AmuletsSkyrim.esp'
+    group: *mapMarkersGroup
     inc:
       - name: 'open cities skyrim.esp'
         condition: 'not active("opencitiesskyrim_atlasmapmarkers_patch.esp")'
@@ -17779,11 +17773,7 @@ plugins:
 
   - name: 'dawnguard map markers.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/1896-dawnguard-map-markers/' ]
-    group: *worldSettingsGroup
-    after:
-      - 'Atlas Legendary.esp'
-      - 'Atlas Legendary OCS.esp'
-      - 'atlas map markers.esp'
+    group: *mapMarkersGroup
     clean:
       - crc: 0xAA2F3309
         util: 'SSEEdit v4.0.3'
@@ -17792,7 +17782,6 @@ plugins:
   - name: 'A Clear Map of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56367/' ]
     group: *worldSettingsGroup
-    after: [ 'atlas map markers.esp' ]
 
   - name: 'City Paper Maps for FWMF.esp'
     url:
