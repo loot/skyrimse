@@ -26570,6 +26570,10 @@ plugins:
         name: 'Halla - A Whiterun Player Home'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/38186/'
         name: 'Halla Redux'
+    msg:
+      - <<: *requiresResources
+        subs: [ '[Halla - A Whiterun Player Home](https://www.nexusmods.com/skyrimspecialedition/mods/1940/)' ]
+        condition: 'not file("Eli_Halla.bsa") and not file("meshes/elianora/halla/eli_wrhousewind.nif")'
     tag: [ C.Location ]
     dirty:
       - <<: *quickClean
