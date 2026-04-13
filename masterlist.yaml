@@ -2756,9 +2756,6 @@ plugins:
           - 'Majestic Mountains'
           - '[Majestic Mountains-BDS With LOD Fix](https://www.nexusmods.com/skyrimspecialedition/mods/36248/)'
         condition: 'active("MajesticMountains.esp") and not active("BDS - MM Patch.esp") and checksum("Better Dynamic Snow.esp", 65408AA9) and checksum("MajesticMountains.esp", 63998BA2)'
-      - <<: *patchIncluded
-        subs: [ 'No Snow Under the Roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Better Dynamic Snow - NSUTR Patch.esp")'
     clean:
       - crc: 0x65408AA9
         util: 'SSEEdit v4.0.3'
@@ -21446,11 +21443,6 @@ plugins:
     msg:
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'No Snow Under the Roof'
-          - '[Cutting Room Floor - No Snow Under the Roof](https://www.nexusmods.com/skyrimspecialedition/mods/5641/)'
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("No Snow Under The Roof - CRF Patch.esp")'
     clean:
       - crc: 0x98C35BF6
         util: 'SSEEdit v4.0.4c'
@@ -22028,9 +22020,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Legendary Cities - Modular: Amol' ]
         condition: 'active("TES Arena Amol.esp") and not active("Settlements Expanded SE - Legendary Cities Patch - Modular.esp")'
-      - <<: *patchProvided
-        subs: [ 'No Snow Under The Roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Settlements Expanded SE - No Snow Under the Roof Patch.esp")'
       - <<: *patchProvided
         subs: [ 'RS Children Overhaul' ]
         condition: 'active("RSkyrimChildren.esm") and not active("Settlements Expanded SE - RS Children Patch.esp")'
@@ -22965,9 +22954,6 @@ plugins:
         subs: [ 'Hunters Cabin of Riverwood' ]
         condition: 'active("RiverwoodHuntingCabinSE.esp") and not active("ETaC - Complete Hunting Cabin Patch.esp")'
       - <<: *patchIncluded
-        subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Complete No Snow Patch.esp") and not active("JKs Skyrim.esp")'
-      - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Complete Rigmor Patch.esp") and not active("ETaC - Complete RoB Patch.esp")'
       - <<: *patchIncluded
@@ -23024,9 +23010,6 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("ELFX - Exteriors.esp") and not active("ETaC - Dawnstar ELFX Patch.esp")'
-      - <<: *patchIncluded
-        subs: [ 'No snow under the roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("ETaC - Dawnstar No Snow Patch.esp")'
       - <<: *patchIncluded
         subs: [ 'Rigmor of Bruma' ]
         condition: 'active("Rigmor.esp") and not active("ETaC - Dawnstar Rigmor Patch.esp") and not active("ETaC - Dawnstar RoB Patch.esp")'
@@ -23744,16 +23727,6 @@ plugins:
           - 'Holidays, Dawn of Skyrim & ETAC Complete'
           - '[JK''s Skyrim - ETaC - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
         condition: 'active("Holidays.esp") and active("Dawn of Skyrim.esp") and active("ETaC - Complete.esp") and not active("JKS_DoS_ETaC_Holidays_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'No Snow Under the Roof'
-          - '[JK''s Skyrim - ETaC - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/17026/)'
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("JKs Skyrim_No Snow Under the Roof_Patch.esp") and not active("ETaC - Complete.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'No Snow Under the Roof & ETAC Complete'
-          - '[JK''s Skyrim - ETaC - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24416/)'
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and active("ETaC - Complete.esp") and not active("ETaC - Complete_JKs Skyrim_NSUTR_Patch.esp")'
       - <<: *patch3rdParty
         subs:
           - 'The Great Cities - Minor Cities and Towns'
@@ -25800,9 +25773,6 @@ plugins:
       - <<: *patchProvided
         subs: [ 'JK''s Skyrim' ]
         condition: 'active("JKs Skyrim.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'No Snow Under the Roof' ]
-        condition: 'active("Prometheus_No_snow_Under_the_roof.esp") and not active("Winterhold Restored - NSUTR Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Windyridge - Player Home In Winterhold' ]
         condition: 'active("windyridge.esp") and not active("Winterhold Restored - Windyridge Patch.esp")'
