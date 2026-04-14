@@ -852,9 +852,13 @@ groups:
     description: 'A group for mods that modify map markers and/or add new ones.'
     after: [ *lvlListsGroup ]
 
+  - name: &winterholdRestoredGroup Winterhold Restored
+    description: 'A group for the Winterhold Restored mod.'
+    after: [ *mapMarkersGroup ]
+
   - name: &playerDialogueGroup Player Character Dialogue
     description: 'A group for mods that modify the player character dialogue.'
-    after: [ *mapMarkersGroup ]
+    after: [ *winterholdRestoredGroup ]
 
   - name: &worldSettingsGroup Worldspace Settings
     description: 'A group for modules that need to be loaded late to preserve worldspace settings.'
