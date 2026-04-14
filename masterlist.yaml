@@ -1954,7 +1954,7 @@ plugins:
     group: *unofficialPatchesGroup
     msg:
       - <<: *obsolete
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", >=) and version("unofficial skyrim special edition patch.esp", "4.3.1", <)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.1130.0") and version("unofficial skyrim special edition patch.esp", <, "4.3.1")'
       - <<: *patch3rdParty
         subs:
           - 'Gemling Queen Jewelry SE'
@@ -1969,12 +1969,12 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - 'Skyrim VR'
-        condition: 'file("../SkyrimVR.exe") and (version("unofficial skyrim special edition patch.esp", "4.2.6", >=) or (version("unofficial skyrim special edition patch.esp", "4.2.6", <) and not active("Skyrim VR SSE USSEP Compatibility Mod.esp")))'
+        condition: 'file("../SkyrimVR.exe") and (version("unofficial skyrim special edition patch.esp", >=, "4.2.6") or (version("unofficial skyrim special edition patch.esp", <, "4.2.6") and not active("Skyrim VR SSE USSEP Compatibility Mod.esp")))'
       - <<: *versionXofYorGreaterRequired
         subs:
           - '1.6.1130'
           - 'Skyrim Special Edition'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", <) and version("unofficial skyrim special edition patch.esp", "4.3.1", >=)'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", <, "1.6.1130.0") and version("unofficial skyrim special edition patch.esp", >=, "4.3.1")'
     clean:
       # Do not clean - Breaks dialogues due to xEdit mishandling PNAM subrecords.
       # German
@@ -2550,7 +2550,7 @@ plugins:
     group: *dynamicLODGroup
     req:
       - <<: *PapyrusUtil
-        condition: 'version("DynDOLOD.esm", "2.45", >=) and not file("SKSE/Plugins/DynDOLOD.DLL")'
+        condition: 'version("DynDOLOD.esm", >=, "2.45") and not file("SKSE/Plugins/DynDOLOD.DLL")'
 
   - name: 'Occlusion.esp'
     url:
@@ -3115,9 +3115,9 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp") and version("Requiem.esp", <, "6.0.0")'
     tag:
       - Actors.ACBS
       - Actors.DeathItem
@@ -3265,7 +3265,7 @@ plugins:
         subs:
           - 'ENBSeries SE v0.483 or less'
           - '[Deadly Spell Impacts Transparency Fix for ENB](https://www.nexusmods.com/skyrimspecialedition/mods/41284/)'
-        condition: 'file("../enblocal.ini") and product_version("../d3d11.dll", "0.4.8.4", <) and version("DeadlySpellImpacts.esp", "1.70", ==) and not active("DeadlySpellImpacts Transparency Fix.esp") and not active("PSI.esp")'
+        condition: 'file("../enblocal.ini") and product_version("../d3d11.dll", <, "0.4.8.4") and version("DeadlySpellImpacts.esp", ==, "1.70") and not active("DeadlySpellImpacts Transparency Fix.esp") and not active("PSI.esp")'
     tag: [ Graphics ]
     clean:
       - crc: 0x72B9103C
@@ -3282,10 +3282,10 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Deadly Spell Impacts v1.8.0+' ]
-        condition: 'file("DeadlySpellImpacts.esp") and version("DeadlySpellImpacts.esp", "1.70", !=)'
+        condition: 'file("DeadlySpellImpacts.esp") and version("DeadlySpellImpacts.esp", !=, "1.70")'
       - <<: *alreadyInOrFixedByX
         subs: [ 'ENBSeries v0.484+' ]
-        condition: 'file("../enblocal.ini") and product_version("../d3d11.dll", "0.4.8.4", >=)'
+        condition: 'file("../enblocal.ini") and product_version("../d3d11.dll", >=, "0.4.8.4")'
       - <<: *alreadyInOrFixedByX
         subs: [ 'Parallax Spell Impacts' ]
         condition: 'active("PSI.esp")'
@@ -4674,7 +4674,7 @@ plugins:
         subs:
           - '0.379'
           - '[ENBSeries SE](http://enbdev.com/download_mod_tesskyrimse.htm)'
-        condition: 'product_version("../d3d11.dll", "0, 3, 7, 9", <) and file("../enblocal.ini")'
+        condition: 'product_version("../d3d11.dll", <, "0, 3, 7, 9") and file("../enblocal.ini")'
     req: [ *ENBSeries ]
     clean:
       - crc: 0xFD4F2E74
@@ -5335,11 +5335,11 @@ plugins:
     inc:
       - name: 'Eli_Breezehome.esp'
         display: 'Eli''s Breezehome Optimization'
-        condition: 'version("Eli_Breezehome.esp", "1.6.0", >=)'
+        condition: 'version("Eli_Breezehome.esp", >=, "1.6.0")'
     msg:
       - <<: *useInstead
         subs: [ 'Eli_Breezehome [PATCH - Lux].esp' ]
-        condition: 'version("Eli_Breezehome.esp", "1.6.0", >=) and not active("Eli_Breezehome [PATCH - Lux].esp")'
+        condition: 'version("Eli_Breezehome.esp", >=, "1.6.0") and not active("Eli_Breezehome [PATCH - Lux].esp")'
   - name: 'Lux - Flat Maps generic patch.esp'
     after:
       - 'FWMF for Fantasy Paper Maps.esp'
@@ -5746,22 +5746,22 @@ plugins:
     group: *cellLightingGroup
     after:
       - name: 'Lux.esp'
-        condition: 'version("RLO - Interiors.esp", "5.0.4", >=)'
+        condition: 'version("RLO - Interiors.esp", >=, "5.0.4")'
     inc:
       - name: 'EnhancedLightsandFX.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+        condition: 'not version("RLO - Interiors.esp", >=, "5.0.4")'
       - name: 'Lux.esp'
-        condition: 'not version("RLO - Interiors.esp", "5.0.4", >=)'
+        condition: 'not version("RLO - Interiors.esp", >=, "5.0.4")'
     tag:
       - C.ImageSpace
       - C.Light
     msg:
       - <<: *patchIncluded
         subs: [ 'Cutting Room Floor' ]
-        condition: 'active("cutting room floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
+        condition: 'active("cutting room floor.esp") and not active("RLO - CRF Patch.esp") and not version("RLO - Interiors.esp", >=, "5.0.4")'
       - <<: *patchIncluded
         subs: [ 'Immersive Citizens - AI Overhaul' ]
-        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", "5.0.4", >=)'
+        condition: 'active("Immersive Citizens - AI Overhaul.esp") and not active("RLO - IC Patch.esp") and not version("RLO - Interiors.esp", >=, "5.0.4")'
     clean:
       - crc: 0xA2034302
         util: 'SSEEdit v4.0.3g'
@@ -6398,7 +6398,7 @@ plugins:
     inc:
       - name: 'unofficial skyrim special edition patch.esp'
         display: 'unofficial skyrim special edition patch.esp v4.1.8+'
-        condition: 'version("unofficial skyrim special edition patch.esp", "4.1.8", >) and checksum("Children.esp", EE60F522)'
+        condition: 'version("unofficial skyrim special edition patch.esp", >, "4.1.8") and checksum("Children.esp", EE60F522)'
     msg:
       - type: warn
         content:
@@ -6406,7 +6406,7 @@ plugins:
             text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **Children.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-children-)'
           - lang: de
             text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **Children.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-children-) aufrufbar.'
-        condition: '(file("unofficial skyrim special edition patch.esp") and version("unofficial skyrim special edition patch.esp", "4.1.8", >)) and checksum("Children.esp", EE60F522)'
+        condition: '(file("unofficial skyrim special edition patch.esp") and version("unofficial skyrim special edition patch.esp", >, "4.1.8")) and checksum("Children.esp", EE60F522)'
 
   - name: 'ImCh.esm'
     url:
@@ -6561,7 +6561,7 @@ plugins:
     inc:
       - name: 'unofficial skyrim special edition patch.esp'
         display: 'unofficial skyrim special edition patch.esp v4.1.8+'
-        condition: 'version("unofficial skyrim special edition patch.esp", "4.1.8", >) and checksum("FacegenForKids.esp", DB8F0931)'
+        condition: 'version("unofficial skyrim special edition patch.esp", >, "4.1.8") and checksum("FacegenForKids.esp", DB8F0931)'
     msg:
       - type: warn
         content:
@@ -6569,7 +6569,7 @@ plugins:
             text: 'An unresolved reference to a package from an older version of USSEP, must be removed from record **00014132** in **FacegenForKids.esp**. A guide is available [here](https://macsplody.github.io/xGuides/#-simple-children-)'
           - lang: de
             text: 'Eine offene Referenz zu einem Packet von einer älteren Version des USSEP muss vom Eintrag **00014132** in **FacegenForKids.esp** entfernt werden. Eine englische Anleitung ist [hier](https://macsplody.github.io/xGuides/#-simple-children-) aufrufbar.'
-        condition: '(file("unofficial skyrim special edition patch.esp") and version("unofficial skyrim special edition patch.esp", "4.1.8", >)) and checksum("FacegenForKids.esp", DB8F0931)'
+        condition: '(file("unofficial skyrim special edition patch.esp") and version("unofficial skyrim special edition patch.esp", >, "4.1.8")) and checksum("FacegenForKids.esp", DB8F0931)'
 
   - name: 'TKAA.esp'
     url:
@@ -6897,7 +6897,7 @@ plugins:
     req:
       - name: 'cutting room floor.esp'
         display: 'a version of Cutting Room Floor older than v3.1.23'
-        constraint: 'version("cutting room floor.esp", "3.1.23", <)'
+        constraint: 'version("cutting room floor.esp", <, "3.1.23")'
         condition: 'checksum("AI Overhaul - KaliliesNPCs Patch.esp", D063D027)'
     msg:
       - <<: *useVersion
@@ -7452,10 +7452,10 @@ plugins:
         name: 'Pussycats SSE'
     msg:
       - <<: *requiresMCM
-        condition: 'not active("SkyUI_SE.esp") and version("Pussycats.esp", "2.0.2", >=)'
+        condition: 'not active("SkyUI_SE.esp") and version("Pussycats.esp", >=, "2.0.2")'
       - <<: *obsolete
         subs: [ '[Pussycats SSE](https://www.nexusmods.com/skyrimspecialedition/mods/52075/)' ]
-        condition: 'version("Pussycats.esp", "2.0.2", <)'
+        condition: 'version("Pussycats.esp", <, "2.0.2")'
       - <<: *patchIncluded
         subs: [ 'Fishing DLC' ]
         condition: 'active("ccBGSSSE001-Fish.esm") and not active("CC Fish for Pusycats.esp")'
@@ -8345,7 +8345,7 @@ plugins:
     inc:
       - name: 'KS Dragon Overhaul 2.esp'
         display: 'KS Dragon Overhaul 2 v2.60+'
-        condition: 'version("KS Dragon Overhaul 2.esp", "2.60", >=)'
+        condition: 'version("KS Dragon Overhaul 2.esp", >=, "2.60")'
 
   - name: 'Skyrim Immersive Creatures Special Edition.esp'
     url:
@@ -8353,15 +8353,15 @@ plugins:
         name: 'Skyrim Immersive Creatures Special Edition'
     inc:
       - name: 'Skytest Creature Extension.esp'
-        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", >=, "7.0.0")'
       - name: 'Skytest Immersive Creatures.esp'
-        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", >=, "7.0.0")'
     msg:
       - <<: *compatPatch
         subs: [ '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)' ]
       - <<: *obsolete
         subs: [ '[Skyrim Immersive Creatures Special Edition](https://www.nexusmods.com/skyrimspecialedition/mods/12680/)' ]
-        condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", "7.0.2", >=)'
+        condition: 'not version("Skyrim Immersive Creatures Special Edition.esp", >=, "7.0.2")'
       - <<: *patch3rdParty
         subs:
           - 'Better Spell Learning'
@@ -8638,7 +8638,7 @@ plugins:
       - 'Immersive Citizens - OCS patch.esp'
     req:
       - <<: *SKSE
-        condition: 'version("MarkekrausSentientChairsOfSkyrim.esp", "4.1.0", >=)'
+        condition: 'version("MarkekrausSentientChairsOfSkyrim.esp", >=, "4.1.0")'
     clean:
       - crc: 0x96C5D33E
         util: 'SSEEdit v4.0.4'
@@ -10476,7 +10476,7 @@ plugins:
       - <<: *patchUpdateAvailable
         type: error
         subs: [ '[Simply Knock SKSE64 DLL](https://www.nexusmods.com/skyrimspecialedition/mods/24297/) **OR** [Simply Knock DLL for AE](https://www.nexusmods.com/skyrimspecialedition/mods/77283/)' ]
-        condition: 'version("../skse64_loader.exe", "0.2.0.7", >) and checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
+        condition: 'version("../skse64_loader.exe", >, "0.2.0.7") and checksum("SKSE/Plugins/SimplyKnock.dll", A442045A)'
       - <<: *requiresMCM
         type: error
       - <<: *requiresX
@@ -10557,7 +10557,7 @@ plugins:
   - name: 'SunHelmSurvival.esp'
     req:
       - <<: *PapyrusExtender
-        condition: 'version("SunHelmSurvival.esp", "3.0.8", >=)'
+        condition: 'version("SunHelmSurvival.esp", >=, "3.0.8")'
     msg:
       - <<: *compatNotes
         subs: [ 'https://sites.google.com/view/colinswrathmods/sunhelm-survival/compatibility/' ]
@@ -10682,7 +10682,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Treasure Hunter](https://www.nexusmods.com/skyrimspecialedition/mods/5789/)' ]
-        condition: 'version("TreasureHunter.esp", "1.2.1", <)'
+        condition: 'version("TreasureHunter.esp", <, "1.2.1")'
       - <<: *wildEdits
         subs: [ 'Remove **000CA448** from **TreasureHunter.esp**.' ]
         condition: 'checksum("TreasureHunter.esp", C4F752C9)'
@@ -10927,16 +10927,16 @@ plugins:
     group: *racesGroup
     inc:
       - name: 'Kapotun SOS.esp'
-        condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
+        condition: 'version("DWKaPoTunRace.esp", >=, "2.0")'
       - name: 'Kapotun Vanilla Armor Patch.esp'
-        condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
+        condition: 'version("DWKaPoTunRace.esp", >=, "2.0")'
     msg:
       - <<: *alsoUseX
         subs: [ '[Fixed Races of Nirn - Kapo''tun SE port](https://www.nexusmods.com/skyrimspecialedition/mods/66376/)' ]
         condition: 'checksum("DWKaPoTunRace.esp", 672EB2D2)'
       - <<: *obsolete
         subs: [ '[Races of Nirn - Kapotun Reborn](https://www.nexusmods.com/skyrimspecialedition/mods/77612/)' ]
-        condition: 'version("DWKaPoTunRace.esp", "2.0", <) and not checksum("DWKaPoTunRace.esp", 672EB2D2)'
+        condition: 'version("DWKaPoTunRace.esp", <, "2.0") and not checksum("DWKaPoTunRace.esp", 672EB2D2)'
       - <<: *patch3rdParty
         subs:
           - 'Touched by Dibella'
@@ -10944,7 +10944,7 @@ plugins:
         condition: 'active("TouchedbyDibella.esp") and checksum("DWKaPoTunRace.esp", 672EB2D2) and not active("Kapotun TBD Tail.esp")'
       - <<: *patchIncluded
         subs: [ 'Schlongs of Skyrim' ]
-        condition: 'active("Schlongs of Skyrim - Core.esm") and version("DWKaPoTunRace.esp", "2.0", >=) and not active("SOS - Kapotun Addon.esp")'
+        condition: 'active("Schlongs of Skyrim - Core.esm") and version("DWKaPoTunRace.esp", >=, "2.0") and not active("SOS - Kapotun Addon.esp")'
     clean:
       # Original
       - crc: 0x672EB2D2
@@ -10961,7 +10961,7 @@ plugins:
         name: 'Races of Nirn - Kapotun Reborn'
     inc:
       - name: 'DWKaPoTunRace.esp'
-        condition: 'version("DWKaPoTunRace.esp", "2.0", >=)'
+        condition: 'version("DWKaPoTunRace.esp", >=, "2.0")'
   - name: 'SOS - Kapotun Addon.esp'
     clean:
       - crc: 0xFCE78411
@@ -11409,7 +11409,7 @@ plugins:
         subs: [ '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)' ]
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
-        condition: 'version("Complete Alchemy & Cooking Overhaul.esp", "2.0", ==) and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
+        condition: 'version("Complete Alchemy & Cooking Overhaul.esp", ==, "2.0") and active("Complete Crafting Overhaul_Remastered.esp") and not active("Complete Alchemy & Cooking Overhaul_CCOR_Patch.esp")'
     clean:
       - crc: 0x479F529D
         util: 'SSEEdit v4.0.3h'
@@ -11435,13 +11435,13 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp") and version("Requiem.esp", <, "6.0.0")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
       - <<: *patchUpdateAvailable
         type: warn
         subs: [ '[CCOR PRUFEI Chest CTD Hotfix](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)' ]
-        condition: 'not checksum("Scripts/prufiscript.pex", DAAA227E) and version("Complete Crafting Overhaul_Remastered.esp", "2.2", <=)'
+        condition: 'not checksum("Scripts/prufiscript.pex", DAAA227E) and version("Complete Crafting Overhaul_Remastered.esp", <=, "2.2")'
     clean:
       - crc: 0xC57DC7ED
         util: 'SSEEdit v4.0.3'
@@ -11579,7 +11579,7 @@ plugins:
     msg:
       - <<: *useInstead
         subs: [ '[iNeed - Food Water and Sleep - Continued](https://www.nexusmods.com/skyrimspecialedition/mods/19390/)' ]
-        condition: 'version("iNeed.esp", "1.90", <=)'
+        condition: 'version("iNeed.esp", <=, "1.90")'
     after: [ 'SkyUI_SE.esp' ]
     clean:
       - crc: 0x0AF4C3BD
@@ -12267,7 +12267,7 @@ plugins:
     msg:
       - <<: *compatPatch
         subs: [ '[Morrowloot Ultimate - Patches](https://www.nexusmods.com/skyrimspecialedition/mods/76259/)' ]
-        condition: 'version("MLU.esp", "2.0a", >=)'
+        condition: 'version("MLU.esp", >=, "2.0a")'
       - <<: *patch3rdParty
         subs:
           - 'Ars Metallica - Smithing Enhancements'
@@ -12286,13 +12286,13 @@ plugins:
         condition: 'active("Lore Weapon Expansion.esp") and not active("MLU - Lore Weapon Expansion.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Revamped - Complete Enemy Overhaul' ]
-        condition: 'version("MLU.esp", "2.0a", >=) and active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("WICO - Immersive People.esp") and not active("MLU - SRCEO.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'version("MLU.esp", >=, "2.0a") and active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("WICO - Immersive People.esp") and not active("MLU - SRCEO.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Revamped - Complete Enemy Overhaul & Windsong Immersive Character Overhaul' ]
-        condition: 'version("MLU.esp", "2.0a", >=) and active("Skyrim Revamped - Complete Enemy Overhaul.esp") and active("WICO - Immersive People.esp") and not active("MLU - SRCEO + WICO.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'version("MLU.esp", >=, "2.0a") and active("Skyrim Revamped - Complete Enemy Overhaul.esp") and active("WICO - Immersive People.esp") and not active("MLU - SRCEO + WICO.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Summermyst - Enchantments of Skyrim' ]
-        condition: 'version("MLU.esp", "2.0a", >=) and active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst 2.0.esp") and not active("MLU Patches Merged.esp")'
+        condition: 'version("MLU.esp", >=, "2.0a") and active("Summermyst - Enchantments of Skyrim.esp") and not active("MLU - Summermyst 2.0.esp") and not active("MLU Patches Merged.esp")'
       - <<: *patchProvided
         subs: [ 'Windsong Immersive Character Overhaul' ]
         condition: 'active("WICO - Immersive People.esp") and not active("Skyrim Revamped - Complete Enemy Overhaul.esp") and not active("MLU - WICO.esp") and not active("MLU Patches Merged.esp")'
@@ -12858,7 +12858,7 @@ plugins:
     inc: [ 'Race Scale Remover.esp' ]
     after:
       - name: 'Guard Dialogue Overhaul.esp'
-        condition: 'checksum("Guard Dialogue Overhaul.esp", 6ABC1129) or version("Guard Dialogue Overhaul.esp", "2.17", >=)'
+        condition: 'checksum("Guard Dialogue Overhaul.esp", 6ABC1129) or version("Guard Dialogue Overhaul.esp", >=, "2.17")'
       - 'TAR-GuildMaster1stPersonFix.esp'
       - name: 'Undeath.esp'
         condition: 'checksum("Undeath.esp", EB75A960)'
@@ -12891,14 +12891,14 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp") and version("Requiem.esp", <, "6.0.0")'
       - <<: *patch3rdParty
         subs:
           - 'Triss Armor Retextured'
           - '[Useless Patches Collection](https://www.nexusmods.com/skyrimspecialedition/mods/27667/)'
         condition: 'active("TrissArmorRetextured.esp") and not active("Triss Armor Retextured SE - WACCF Patch.esp")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
     clean:
       - crc: 0xA8EBA40E
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -14129,9 +14129,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Triumvirate Mage Archetypes](https://www.nexusmods.com/skyrimspecialedition/mods/88561/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - Triumvirate.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Triumvirate.esp") and version("Requiem.esp", <, "6.0.0")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
     clean:
       - crc: 0x8949A9E7
         util: 'SSEEdit v4.0.3'
@@ -14503,7 +14503,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3329/' ]
     msg:
       - <<: *requiresMCM
-        condition: 'not active("SkyUI_SE.esp") and version("Better Hunters.esp", "1.0.1", >=)'
+        condition: 'not active("SkyUI_SE.esp") and version("Better Hunters.esp", >=, "1.0.1")'
       - <<: *wildEdits
         subs: [ 'Remove **00006FBF**, **00009079**, **00009097**, **000093F5**, & **000097D9** from **Better Hunters.esp**.' ]
         condition: 'checksum("Better Hunters.esp", 78B50785) or checksum("Better Hunters.esp", 680D15F3) or checksum("Better Hunters.esp", 34241866) or checksum("Better Hunters.esp", 6043DA88)'
@@ -14814,7 +14814,7 @@ plugins:
     tag:
       - Keywords
       - name: -Names
-        condition: 'version("Guard Dialogue Overhaul.esp", "2.17", >=)'
+        condition: 'version("Guard Dialogue Overhaul.esp", >=, "2.17")'
     clean:
       # Redux, True GDO Port
       - crc: 0x6ABC1129
@@ -15166,7 +15166,7 @@ plugins:
     inc:
       - 'Marry Me Serana.esp'
       - name: 'Serana Dialogue Edit.esp'
-        condition: 'version("SeranaDialogAddon.esp", "3.0.0", >=)'
+        condition: 'version("SeranaDialogAddon.esp", >=, "3.0.0")'
     msg:
       - <<: *compatPatch
         subs: [ '[Serana Dialogue Add-On Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/70782/)' ]
@@ -15571,7 +15571,7 @@ plugins:
         condition: 'active("EFFCore.esm") and not active("BetterQuestObjectives-EFFPatch.esp")'
       - <<: *patchIncluded
         subs: [ 'Legacy of the Dragonborn v5+' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("BetterQuestObjectives - LOTD Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+        condition: 'active("LegacyoftheDragonborn.esm") and not active("BetterQuestObjectives - LOTD Patch.esp") and version("LegacyoftheDragonborn.esm", >=, "5.0.24")'
       - <<: *patchIncluded
         subs: [ 'Namira for Good Guys' ]
         condition: 'active("AK- Namira for Good Guys.esp") and not active("BetterQuestObjectives - Namira for Good Guys Patch.esp")'
@@ -16020,7 +16020,7 @@ plugins:
       - 'MCWT_ErratumEtc_Lite.esp'
       - 'MCWT_TheAugursAdmonishment.esp'
       - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not version("Finding_VelehkSain.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3))'
+        condition: 'not version("Finding_VelehkSain.esp", >=, "1.0.8") and (not checksum("Finding_VelehkSain.esp", 63CC1662) and not checksum("Finding_VelehkSain.esp", 596355B3))'
     msg:
       - <<: *patchIncluded
         subs: [ 'College of Winterhold The Missing Apprentices Quest Fix' ]
@@ -16046,7 +16046,7 @@ plugins:
   - name: 'Finding_VelehkSain_MAQF.esp'
     after:
       - name: 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not version("Finding_VelehkSain_MAQF.esp", "1.0.8", >=) and (not checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) and not checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) and not checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C))'
+        condition: 'not version("Finding_VelehkSain_MAQF.esp", >=, "1.0.8") and (not checksum("Finding_VelehkSain_MAQF.esp", 622EFFB6) and not checksum("Finding_VelehkSain_MAQF.esp", 4714F2F9) and not checksum("Finding_VelehkSain_MAQF.esp", 4BBC811C))'
     tag: [ Text ]
     clean:
       - crc: 0x8136C3E4
@@ -17046,7 +17046,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/748/' ]
     inc:
       - name: 'WoLStartAt40.esp'
-        condition: 'version("WheelsOfLull.esp", "5.1.0", >=)'
+        condition: 'version("WheelsOfLull.esp", >=, "5.1.0")'
     msg:
       - <<: *patchIncluded
         subs: [ 'Airship - Dev Aveza' ]
@@ -17061,7 +17061,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[High Poly NPCs - Wheels of Lull](https://www.nexusmods.com/skyrimspecialedition/mods/748/)' ]
-        condition: 'version("WheelsOfLull.esp", "5.1.0", >=) and not version("High Poly NPCs - WheelsOfLull.esp", "5.1.0", >=)'
+        condition: 'version("WheelsOfLull.esp", >=, "5.1.0") and not version("High Poly NPCs - WheelsOfLull.esp", >=, "5.1.0")'
 
   - name: 'ww_AlternateDBEnding.esp'
     url:
@@ -17434,9 +17434,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Sacrilege](https://www.nexusmods.com/skyrimspecialedition/mods/72578/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - Sacrilege.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrilege.esp") and version("Requiem.esp", <, "6.0.0")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
     clean:
       - crc: 0x96E2166B
         util: 'SSEEdit v4.0.3f'
@@ -17466,9 +17466,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Sacrosanct Patch](https://www.nexusmods.com/skyrimspecialedition/mods/62406/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - Sacrosanct Patch.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrosanct Patch.esp") and version("Requiem.esp", <, "6.0.0")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
     clean:
       - crc: 0x9570442B
         util: 'SSEEdit v4.0.3'
@@ -17700,7 +17700,7 @@ plugins:
     msg:
       - <<: *patchUpdateAvailable
         subs: [ '[QuickLootIE](https://www.nexusmods.com/skyrimspecialedition/mods/120075/) **OR** [1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and not version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", >=) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >, "1.5.97.0") and not version("SKSE/Plugins/QuickLootEE.dll", >=, "1.2.0.0") and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
       - *requiresMCM
       - *requiresMCMVR
       - <<: *useOnlyOneX
@@ -17710,7 +17710,7 @@ plugins:
         subs:
           - 'QuickLoot EE'
           - 'Skyrim'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and not version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", >=) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >, "1.5.97.0") and not version("SKSE/Plugins/QuickLootEE.dll", >=, "1.2.0.0") and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
     clean:
       - crc: 0x0F6F63D9
         util: 'SSEEdit v4.1.5g'
@@ -18143,7 +18143,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[aMidianBorn Content Addon](https://www.nexusmods.com/skyrimspecialedition/mods/35390/)' ]
-        condition: 'not version("amidianborn_contentaddon.esp", "2.2", >=) and active("Weapons Armor Clothing & Clutter Fixes.esp")'
+        condition: 'not version("amidianborn_contentaddon.esp", >=, "2.2") and active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *renameXtoY
         subs:
           - '**aMidianBorn_ContentAddonLight.bsa**'
@@ -18278,9 +18278,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp") and version("Requiem.esp", "6.0.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp") and version("Requiem.esp", <, "6.0.0")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
       - *requiresMCM
       - *requiresMCMVR
     tag:
@@ -19002,7 +19002,7 @@ plugins:
       - <<: *patchUnavailableRequiem
       - <<: *requiresResources
         subs: [ '[Immersive Armors - Asdasfa Tweaks and Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/85433/)' ]
-        condition: 'version("Hothtrooper44_ArmorCompilation.esp", "1.2.0IARR", ==) and not file("meshes/armor/ala")'
+        condition: 'version("Hothtrooper44_ArmorCompilation.esp", ==, "1.2.0IARR") and not file("meshes/armor/ala")'
     tag:
       - Delev
       - Outfits.Add
@@ -19088,7 +19088,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ 'Immersive Jewelry 1.06a' ]
-        condition: 'version("Immersive Jewelry.esp", "1.05", ==)'
+        condition: 'version("Immersive Jewelry.esp", ==, "1.05")'
     tag:
       - Delev
       - Graphics
@@ -19165,7 +19165,7 @@ plugins:
         subs:
           - 'Unofficial Skyrim Special Edition Patch'
           - '[Improved Closedfaced Helmets Patches](https://www.nexusmods.com/skyrimspecialedition/mods/12405/)'
-        condition: 'active("unofficial skyrim special edition patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Requiem.esp") and version("imp_helm_legend.esp", "1.2", <)'
+        condition: 'active("unofficial skyrim special edition patch.esp") and not active("imp_helm_USSEP.esp") and not active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Requiem.esp") and version("imp_helm_legend.esp", <, "1.2")'
     tag: [ Graphics ]
     clean:
       # Original
@@ -19281,9 +19281,9 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "5.3.0")'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp") and version("Requiem.esp", "5.3.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp") and version("Requiem.esp", <, "5.3.0")'
 
   - name: 'ktWeaponPackSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15050/' ]
@@ -19454,7 +19454,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/61168/' ]
     req:
       - <<: *SKSE
-        condition: 'version("MarkekrausChairrows.esp", "2.0.0", >=)'
+        condition: 'version("MarkekrausChairrows.esp", >=, "2.0.0")'
     clean:
       - crc: 0x97C6EF29
         util: 'SSEEdit v4.0.4'
@@ -19702,12 +19702,12 @@ plugins:
   - name: 'PrvtI_HeavyArmory.esp'
     msg:
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp") and version("Requiem.esp", "5.3.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp") and version("Requiem.esp", <, "5.3.0")'
       - <<: *patch3rdParty
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Heavy Armory Patch](https://www.nexusmods.com/skyrimspecialedition/mods/89009/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory Patch.esp") and version("Requiem.esp", "5.3.0", >=)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory Patch.esp") and version("Requiem.esp", >=, "5.3.0")'
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
@@ -20062,9 +20062,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Summermyst](https://www.nexusmods.com/skyrimspecialedition/mods/67594/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - Summermyst.esp") and version("Requiem.esp", "5.3.0", <)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Summermyst.esp") and version("Requiem.esp", <, "5.3.0")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "5.3.0")'
     clean:
       # version: 3.07SSE
       - crc: 0x1F17FC44
@@ -21121,7 +21121,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Wyrmstooth](https://www.nexusmods.com/skyrimspecialedition/mods/45565/)' ]
-        condition: 'version("Wyrmstooth.esp", "1.19.2", <) and not file("interface/translations/wyrmstooth_german.txt")'
+        condition: 'version("Wyrmstooth.esp", <, "1.19.2") and not file("interface/translations/wyrmstooth_german.txt")'
       - <<: *patch3rdParty_JSDCP
         condition: 'checksum("meshes/clutter/ruins/ruinsdragonclaw01.nif", 34F46214) and not active("JS Dragon Claws - Wyrmstooth Patch.esp")'
     clean:
@@ -21273,7 +21273,7 @@ plugins:
     msg:
       - <<: *patchUpdateAvailable
         subs: [ '[Books of Skyrim SE - Redux](https://www.nexusmods.com/skyrimspecialedition/mods/46991/)' ]
-        condition: 'active("BooksOfSkyrim.esp") and not version("BooksOfSkyrim.esp", "5.0.0", >=)'
+        condition: 'active("BooksOfSkyrim.esp") and not version("BooksOfSkyrim.esp", >=, "5.0.0")'
       - <<: *requiresResources
         subs: [ '[Books of Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/4115/)' ]
         condition: 'not file("BooksOfSkyrim.bsa") and not file("BooksOfSkyrim - Textures.bsa") and not file("textures/manny/librarian/manny_librarian_sign.dds")'
@@ -21373,7 +21373,7 @@ plugins:
         condition: 'not active("CFTO_fix.esp")'
       - <<: *patchUpdateAvailable
         subs: [ '[Carriage and Ferry Travel Overhaul - Fixes and Winterhold](https://www.nexusmods.com/skyrimspecialedition/mods/40651/)' ]
-        condition: 'version("CFTO.esp", "2.0", <=)'
+        condition: 'version("CFTO.esp", <=, "2.0")'
     clean:
       - crc: 0xD2FF9967
         util: 'SSEEdit v4.0.4b'
@@ -24114,7 +24114,7 @@ plugins:
       - 'Followers.esp'
       - 'MagicalCollegeofWinterhold.esp'
       - name: 'MagiCollege.esp'
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", >=, "1.5.00")'
       - 'Toblerone Winterhold College.esp'
       - 'Winterhold College SSE.esp'
     msg:
@@ -24129,7 +24129,7 @@ plugins:
       - <<: *missingRequirementXforPlugin
         type: error
         subs: [ 'OCW_CellSettings.esp' ]
-        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=) and not active("JKs College of Winterhold - OCW Patch.esp")'
+        condition: 'not active("OCW_CellSettings.esp") and version("OCW_Obscure''s_CollegeofWinterhold.esp", >=, "1.5.00") and not active("JKs College of Winterhold - OCW Patch.esp")'
     tag:
       - -Actors.Factions
       - -Invent.Add
@@ -24144,19 +24144,19 @@ plugins:
     group: *highPriorityGroup
     inc:
       - name: 'UltimateCollege.esp'
-        condition: 'not version("OCW_CellSettings.esp", "100.99.97", >=)'
+        condition: 'not version("OCW_CellSettings.esp", >=, "100.99.97")'
     msg:
       - <<: *alreadyInX
         subs: [ '**JKs College of Winterhold - OCW Patch.esp**' ]
         condition: 'active("JKs College of Winterhold - OCW Patch.esp")'
       - <<: *useVersion
         subs: [ 'Ultimate College' ]
-        condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", "100.99.97", >=)'
+        condition: 'active("UltimateCollege.esp") and not version("OCW_CellSettings.esp", >=, "100.99.97")'
       - <<: *versionXofYorGreaterRequired
         subs:
           - '1.5.00'
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
+        condition: 'not version("OCW_Obscure''s_CollegeofWinterhold.esp", >=, "1.5.00")'
     clean:
       # OCW
       - crc: 0xB8CF33F0
@@ -24170,7 +24170,7 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ 'Obscure''s College of Winterhold v1.5.02+' ]
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.02", >=)'
+        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", >=, "1.5.02")'
   - name: 'OCW_TGCs_FEPatch.esp'
     msg:
       - <<: *alreadyInX
@@ -27690,10 +27690,10 @@ plugins:
         name: 'Legacy of the Dragonborn: The Curators Companion'
     req:
       - <<: *PapyrusUtil
-        condition: 'checksum("DBM_RelicNotifications.esp", 663FAB6A) or version("DBM_RelicNotifications.esp", "5.1.1", >=)'
+        condition: 'checksum("DBM_RelicNotifications.esp", 663FAB6A) or version("DBM_RelicNotifications.esp", >=, "5.1.1")'
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts (FISSES)](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
-        condition: 'not checksum("DBM_RelicNotifications.esp", 663FAB6A) and not version("DBM_RelicNotifications.esp", "5.1.1", >=)'
+        condition: 'not checksum("DBM_RelicNotifications.esp", 663FAB6A) and not version("DBM_RelicNotifications.esp", >=, "5.1.1")'
     tag: [ Text ]
     msg:
       - *requiresMCM
@@ -28148,7 +28148,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Armor and Clothing Extension v1.1+' ]
-        condition: 'version("waccf_armor and clothing extension.esp", "1.1", >=)'
+        condition: 'version("waccf_armor and clothing extension.esp", >=, "1.1")'
     tag: [ Relev ]
 
   - name: '(ICOW.*Patch|.* - ICOW Patch)\.esp'
@@ -28200,7 +28200,7 @@ plugins:
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp")'
       - <<: *useInstead
         subs: [ 'imp_helm_legend_amb_patch.esp' ]
-        condition: 'active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", "3.0", >=)'
+        condition: 'active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", >=, "3.0")'
       - <<: *useInstead
         subs: [ '[Requiem - Improved Closefaced Helmets.esp](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)' ]
         condition: 'active("Requiem.esp")'
@@ -28304,7 +28304,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Wheels of Lull v5.0.0+' ]
-        condition: 'version("WheelsOfLull.esp", "5.1.0", >=)'
+        condition: 'version("WheelsOfLull.esp", >=, "5.1.0")'
 
   - name: 'KD Realistic Fireplaces - Fixes.esp'
     url:
@@ -28387,7 +28387,7 @@ plugins:
       - *obsolete
       - <<: *useInstead
         subs: [ 'imp_helm_legend_waccf_patch.esp and imp_helm_legend_amb_patch.esp' ]
-        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", "3.0", >=)'
+        condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", >=, "3.0")'
   - name: 'KatanaCrafting_WACCF_Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -28531,7 +28531,7 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
 
   ### Requiem Patch Central ###
   - name: 'Requiem - Aetherium Armor.esp'
@@ -28554,7 +28554,7 @@ plugins:
     after:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
       - name: 'Requiem - Cutting Room Floor.esp'
-        condition: 'version("Requiem - Audio Overhaul Skyrim.esp", "5.06", <)'
+        condition: 'version("Requiem - Audio Overhaul Skyrim.esp", <, "5.06")'
   - name: 'Requiem - Book Covers Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -28583,7 +28583,7 @@ plugins:
         name: 'Requiem Patch Central'
     after:
       - name: 'Requiem - Minor Arcana - Roleplaying.esp'
-        condition: 'version("Requiem - ESF Companions.esp", "5.02", <)'
+        condition: 'version("Requiem - ESF Companions.esp", <, "5.02")'
   - name: 'Requiem - Flora Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -28627,7 +28627,7 @@ plugins:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
       - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
       - name: 'Requiem - Warmonger Armory.esp'
-        condition: 'version("Requiem - Royal Armory.esp", "5.02", <)'
+        condition: 'version("Requiem - Royal Armory.esp", <, "5.02")'
   - name: 'Requiem - Scoped Bows.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -28677,7 +28677,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/113346/' ]
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
 
   ### Requiem - WACCF CCOR ACE Patches ###
   - name: 'Requiem - WACCF.esp'
@@ -28686,45 +28686,45 @@ plugins:
         name: 'Requiem - WACCF CCOR ACE Patches'
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
   - name: 'Requiem - WACCF - ACE.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
         name: 'Requiem - WACCF CCOR ACE Patches'
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
   - name: 'Requiem - CCOR.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
         name: 'Requiem - WACCF CCOR ACE Patches'
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
 
   - name: 'Requiem - Sacrilege.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/72578/' ]
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
 
   - name: 'Requiem - Sacrosanct Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/62406/' ]
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
 
   - name: 'Requiem - Summermyst.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/67594/' ]
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "5.3.0", >=)'
+        condition: 'version("Requiem.esp", >=, "5.3.0")'
 
   - name: 'Requiem - Triumvirate.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/88561/' ]
     msg:
       - <<: *patchOutdated
-        condition: 'version("Requiem.esp", "6.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "6.0.0")'
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
@@ -28942,7 +28942,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'Treasure Hunter v1.2+' ]
-        condition: 'version("TreasureHunter.esp", "1.2.1", >=)'
+        condition: 'version("TreasureHunter.esp", >=, "1.2.1")'
 
   - name: 'Undriel_QRR Nav Fixed Patch.esp'
     url:
@@ -29437,7 +29437,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[SIC SE - Add-Ons and Patches](https://www.nexusmods.com/skyrimspecialedition/mods/54930/)' ]
-        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", "7.0.0", >=)'
+        condition: 'version("Skyrim Immersive Creatures Special Edition.esp", >=, "7.0.0")'
 
   ### Survival Mode Patch Collection ###
   - name: 'Survival Mode Patches - AMB Content Addon.esp'
@@ -29447,7 +29447,7 @@ plugins:
     msg:
       - <<: *alreadyInOrFixedByX
         subs: [ 'aMidianBorn Content Addon SE' ]
-        condition: 'active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", "2.0", >=)'
+        condition: 'active("amidianborn_contentaddon.esp") and version("amidianborn_contentaddon.esp", >=, "2.0")'
 
   ### Ultimate College of Winterhold: Mod & Patches ###
   # Main Mod #
@@ -29765,7 +29765,7 @@ plugins:
     msg:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
 
   - name: 'Tonal Architect.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51199/' ]
