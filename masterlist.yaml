@@ -856,9 +856,13 @@ groups:
     description: 'A group for the Winterhold Restored mod.'
     after: [ *mapMarkersGroup ]
 
+  - name: &torchLightingGroup Torch Lighting
+    description: 'A group for mods that alter torch lighting.'
+    after: [ *winterholdRestoredGroup ]
+
   - name: &playerDialogueGroup Player Character Dialogue
     description: 'A group for mods that modify the player character dialogue.'
-    after: [ *winterholdRestoredGroup ]
+    after: [ *torchLightingGroup ]
 
   - name: &worldSettingsGroup Worldspace Settings
     description: 'A group for modules that need to be loaded late to preserve worldspace settings.'
