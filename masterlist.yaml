@@ -852,13 +852,25 @@ groups:
     description: 'A group for mods that modify map markers and/or add new ones.'
     after: [ *lvlListsGroup ]
 
+  - name: &luxInteriorsGroup Lux Interior Lighting
+    description: 'A group for the interiors version of Lux.'
+    after: [ *mapMarkersGroup ]
+
+  - name: &cityWorldMoversGroup City Worldspace Movers
+    description: 'A group for mods that move city worldspaces to the tamriel worldspace.'
+    after: [ *luxInteriorsGroup ]
+
   - name: &winterholdRestoredGroup Winterhold Restored
     description: 'A group for the Winterhold Restored mod.'
-    after: [ *mapMarkersGroup ]
+    after: [ *cityWorldMoversGroup ]
+
+  - name: &waterOverhaulsGroup Water Overhauls
+    description: 'A group for mods that have extensive changes to water.'
+    after: [ *winterholdRestoredGroup ]
 
   - name: &torchLightingGroup Torch Lighting
     description: 'A group for mods that alter torch lighting.'
-    after: [ *winterholdRestoredGroup ]
+    after: [ *waterOverhaulsGroup ]
 
   - name: &playerDialogueGroup Player Character Dialogue
     description: 'A group for mods that modify the player character dialogue.'
