@@ -10275,19 +10275,25 @@ plugins:
     group: *cityWorldMoversGroup
     msg:
       - <<: *patchProvided
-        subs: [ 'Bittercup' ]
+        subs: [ 'Bittercup (Creation Club)' ]
         condition: 'active("cckrtsse001_altar.esl") and not active("ocs + bittercup patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Dawnfang & Duskfang (Creation Club)' ]
+        condition: 'active("ccbgssse013-dawnfang.esl") and not active("ocs + dawnfang patch.esp")'
       - <<: *patchProvided
         subs: [ 'Drinking fountains of Skyrim' ]
         condition: 'active("Drinking Fountains of Skyrim for SSE.esp") and not active("ocs + dfos comp patch.esp")'
       - <<: *patchProvided
         subs: [ 'Legacy of the Dragonborn v5' ]
-        condition: 'active("LegacyoftheDragonborn.esm") and not active("LOTD5+OCS Patch.esp") and not active("ocs + lotd5 patch.esp")'
+        condition: 'version("LegacyoftheDragonborn.esm", >=, "5.6.5") and active("LegacyoftheDragonborn.esm") and not active("ocs + lotd5 patch.esp")'
+      - <<: *patchProvided
+        subs: [ 'Legacy of the Dragonborn v6' ]
+        condition: 'version("LegacyoftheDragonborn.esm", >=, "6.7.0") and active("LegacyoftheDragonborn.esm") and not active("ocs + lotd6 patch.esp")'
       - <<: *patchProvided
         subs: [ 'Skyrim Sewers' ]
         condition: 'active("SkyrimSewers.esp") and not active("ocs + skyrim sewers.esp")'
       - <<: *patchProvided
-        subs: [ 'The Gray Cowl Returns!' ]
+        subs: [ 'The Gray Cowl Returns! (Creation Club)' ]
         condition: 'active("ccbgssse020-graycowl.esl") and not active("ocs + gray cowl returns patch.esp")'
     tag: [ C.Owner ]
     clean:
