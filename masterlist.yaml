@@ -872,9 +872,13 @@ groups:
     description: 'A group for mods that have extensive changes to water.'
     after: [ *winterholdRestoredGroup ]
 
+  - name: &noGrassGroup No Grass
+    description: 'A group for mods that remove grass.'
+    after: [ *waterOverhaulsGroup ]
+
   - name: &torchLightingGroup Torch Lighting
     description: 'A group for mods that alter torch lighting.'
-    after: [ *waterOverhaulsGroup ]
+    after: [ *noGrassGroup ]
 
   - name: &playerDialogueGroup Player Character Dialogue
     description: 'A group for mods that modify the player character dialogue.'
