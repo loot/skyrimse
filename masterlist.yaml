@@ -15619,9 +15619,6 @@ plugins:
       - link: 'https://bethesda.net/en/mods/skyrim/mod-detail/2954089/'
         name: 'Even Better Quest Objectives (Bethesda.net Mods)'
   - name: 'BetterQuestObjectives.esp'
-    after:
-      - 'QuestsAreInSkyrim.esp'
-      - 'QuestsAreInSkyrimUSSEP.esp'
     tag: [ Text ]
     clean:
       - crc: 0x270A1868
@@ -15635,7 +15632,6 @@ plugins:
         subs: [ 'aMidianBorn Content Addon' ]
         condition: 'active("amidianborn_contentaddon.esp") and active("BetterQuestObjectives-AMBSkyforgePatch.esp")'
   - name: 'BetterQuestObjectives - BCS Patch.esp'
-    after: [ 'BetterQuestObjectives.esp' ]
     msg:
       - <<: *alreadyInX
         subs: [ '**BetterQuestObjectives-BCS-BSaQB Patch.esp**' ]
@@ -15645,8 +15641,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**BetterQuestObjectives-BCS-BSaQB Patch.esp**' ]
         condition: 'active("BetterQuestObjectives-BCS-BSaQB Patch.esp")'
-  - name: 'BetterQuestObjectives-CRFPatch.esp'
-    after: [ 'BetterQuestObjectives.esp' ]
   - name: 'BetterQuestObjectives - LOTD Patch.esp'
     tag: [ Text ]
 
