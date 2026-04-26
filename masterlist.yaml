@@ -9100,6 +9100,17 @@ plugins:
       - crc: 0xFF60C24A
         util: 'SSEEdit v4.0.3'
 
+  - name: 'FarmhouseChimneys.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8766/' ]
+    msg:
+      - <<: *requiresMCM
+        condition: 'file("scripts/FarmhouseChimneysMCM.pex") and not active("SkyUI_SE.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x9BE9AC68
+        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 2
+
   - name: 'Faultier''s PBR landscapes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/125308/' ]
     after:
@@ -23231,17 +23242,6 @@ plugins:
     clean:
       - crc: 0x7D237336
         util: 'SSEEdit v4.0.3g'
-
-  - name: 'FarmhouseChimneys.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8766/' ]
-    msg:
-      - <<: *requiresMCM
-        condition: 'file("scripts/FarmhouseChimneysMCM.pex") and not active("SkyUI_SE.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x9BE9AC68
-        util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
 
   - name: '(fortdawnguardimmersive|FDI.*|IFD.*)\.esp'
     url:
