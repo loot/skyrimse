@@ -782,8 +782,13 @@ groups:
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *icaioGroup ]
 
+  - name: &crfGroup Cutting Room Floor
+    after: [ default ]
+
   - name: &gdoGroup Guard Dialogue Overhaul
-    after: [ *rdoGroup ]
+    after:
+      - *crfGroup
+      - *rdoGroup
 
   - name: &miscDialEditsGroup Misc Dialogue Edits
     after: [ *rdoGroup ]
@@ -14950,7 +14955,6 @@ plugins:
     group: *gdoGroup
     after:
       - 'Ambriel.esp'
-      - 'cutting room floor.esp'
       - 'Hothtrooper44_ArmorCompilation.esp'
     tag:
       - Keywords
@@ -21609,6 +21613,7 @@ plugins:
         name: 'Cutting Room Floor (Mod DB)'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
         name: 'Cutting Room Floor (Nexus Mods)'
+    group: *crfGroup
     after:
       - name: 'TouringCarriages.esp'
         condition: '(is_master("cutting room floor.esp") and is_master("TouringCarriages.esp")) or (not is_master("cutting room floor.esp") and not is_master("TouringCarriages.esp"))'
