@@ -782,6 +782,9 @@ groups:
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *icaioGroup ]
 
+  - name: &gdoGroup Guard Dialogue Overhaul
+    after: [ *rdoGroup ]
+
   - name: &miscDialEditsGroup Misc Dialogue Edits
     after: [ *rdoGroup ]
 
@@ -844,6 +847,7 @@ groups:
 
   - name: &highPriorityGroup High Priority Overrides
     after:
+      - *gdoGroup
       - *miscDialEditsGroup
       - *ocsGroup
 
@@ -14943,6 +14947,7 @@ plugins:
         name: 'Guard Dialogue Overhaul Redux'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22075/'
         name: 'Guard Dialogue Overhaul SE'
+    group: *gdoGroup
     after:
       - 'Ambriel.esp'
       - 'cutting room floor.esp'
