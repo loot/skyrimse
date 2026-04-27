@@ -779,6 +779,9 @@ groups:
   - name: &bookCoversGroup Book Covers Skyrim
     after: [ default ]
 
+  - name: &wintersunGroup Wintersun
+    after: [ *lowPriorityGroup ]
+
   - name: &icaioGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
@@ -859,6 +862,7 @@ groups:
       - *gdoGroup
       - *miscDialEditsGroup
       - *ocsGroup
+      - *wintersunGroup
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -14330,6 +14334,7 @@ plugins:
 
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22506/' ]
+    group: *wintersunGroup
     inc: [ 'Religion.esp' ]
     msg:
       - <<: *compatIssuesWithX
