@@ -805,6 +805,15 @@ groups:
       - *crfGroup
       - *rdoGroup
 
+  - name: &tciyGroup The Choice Is Yours
+    after:
+      - *biblioArcanaeumGroup
+      - *bookCoversGroup
+      - *ebqoGroup
+      - *crfGroup
+      - *rdoGroup
+      - *skillBookNamesGroup
+
   - name: &miscDialEditsGroup Misc Dialogue Edits
     after: [ *rdoGroup ]
 
@@ -867,13 +876,10 @@ groups:
 
   - name: &highPriorityGroup High Priority Overrides
     after:
-      - *biblioArcanaeumGroup
-      - *bookCoversGroup
-      - *ebqoGroup
       - *gdoGroup
       - *miscDialEditsGroup
       - *ocsGroup
-      - *skillBookNamesGroup
+      - *tciyGroup
       - *wintersunGroup
 
   - name: &lateLoadersGroup Late Loaders
@@ -16934,18 +16940,8 @@ plugins:
 
   - name: 'TheChoiceIsYours.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3850/' ]
+    group: *tciyGroup
     after:
-      - 'BA_Sorting.esp'
-      - 'BA_Sorting_BCS.esp'
-      - 'BetterQuestObjectives.esp'
-      - 'BetterQuestObjectives - BCS Patch.esp'
-      - 'BetterQuestObjectives-BSaQBPatch.esp'
-      - 'BetterQuestObjectives - LOTD Patch.esp'
-      - 'Better Skill and Quest Books Names SE.esp'
-      - 'Book Covers Skyrim.esp'
-      - 'cutting room floor.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'Relationship Dialogue Overhaul.esp'
       - name: 'Wintersun - Faiths of Skyrim.esp'
         condition: 'not file("TCIY_Wintersun_Patch.esp")'
     msg:
