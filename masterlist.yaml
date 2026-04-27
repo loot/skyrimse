@@ -884,16 +884,16 @@ groups:
     after: [ *cellWaterGroup ]
 
   - name: &ocsGroup Open Cities Skyrim
-    after: [ *cellLightingGroup ]
+    after: [ *pceGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
     after:
+      - *cellLightingGroup
       - *findingHelgiGroup
       - *gdoGroup
       - *landscapeFixesGroup
       - *miscDialEditsGroup
       - *ocsGroup
-      - *pceGroup
       - *roadToMorthalGroup
       - *tciyGroup
       - *wintersunGroup
