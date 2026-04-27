@@ -779,8 +779,11 @@ groups:
   - name: &icaioGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
-  - name: &miscDialEditsGroup Misc Dialogue Edits
+  - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *icaioGroup ]
+
+  - name: &miscDialEditsGroup Misc Dialogue Edits
+    after: [ *rdoGroup ]
 
   - name: &pceGroup Palaces Castles Enhanced
     after: [ *icaioGroup ]
@@ -15087,8 +15090,6 @@ plugins:
   - name: 'Misc Dialogue Edits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28904/' ]
     group: *miscDialEditsGroup
-    after:
-      - 'Relationship Dialogue Overhaul.esp'
     tag: [ Actors.Factions ]
     clean:
       - crc: 0x4B9BF8A1
@@ -15235,6 +15236,7 @@ plugins:
         name: 'Relationship Dialogue Overhaul - RDO SE'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42068/'
         name: 'Relationship Dialogue Overhaul Lite Fixed'
+    group: *rdoGroup
     after: [ '018Auri.esp' ]
     # Removed load after for Immersive Citizens, as it can lead to hoisting of too many other mods.
     # Which may not work for every users load order. User can add the rule manually instead.
