@@ -782,6 +782,9 @@ groups:
   - name: &skillBookNamesGroup Better Skill and Quest Books Names
     after: [ default ]
 
+  - name: &biblioArcanaeumGroup Bibliophile''s Arcanaeum
+    after: [ default ]
+
   - name: &ebqoGroup Even Better Quest Objectives
     after: [ default ]
 
@@ -864,6 +867,7 @@ groups:
 
   - name: &highPriorityGroup High Priority Overrides
     after:
+      - *biblioArcanaeumGroup
       - *bookCoversGroup
       - *ebqoGroup
       - *gdoGroup
@@ -9962,6 +9966,7 @@ plugins:
 
   - name: 'BA_Bibliophile''s_Arcanaeum.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/26772/' ]
+    group: *biblioArcanaeumGroup
     msg:
       - <<: *patchIncluded
         subs: [ 'Apepi''s Better College of Winterhold' ]
