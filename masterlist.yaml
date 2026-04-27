@@ -797,6 +797,9 @@ groups:
   - name: &roadToMorthalGroup Road to Morthal
     after: [ default ]
 
+  - name: &tourCarriagesGroup Touring Carriages
+    after: [ default ]
+
   - name: &icaioGroup Immersive Citizens
     after: [ default ]
 
@@ -804,7 +807,7 @@ groups:
     after: [ *icaioGroup ]
 
   - name: &crfGroup Cutting Room Floor
-    after: [ default ]
+    after: [ *tourCarriagesGroup ]
 
   - name: &gdoGroup Guard Dialogue Overhaul
     after:
@@ -10838,6 +10841,7 @@ plugins:
   - name: 'TouringCarriages.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15948/' ]
   - name: 'TouringCarriages.esp'
+    group: *tourCarriagesGroup
     after:
       - name: 'MoreToSay.esp'
         condition: 'not is_master("TouringCarriages.esp")'
@@ -21649,9 +21653,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/276/'
         name: 'Cutting Room Floor (Nexus Mods)'
     group: *crfGroup
-    after:
-      - name: 'TouringCarriages.esp'
-        condition: '(is_master("cutting room floor.esp") and is_master("TouringCarriages.esp")) or (not is_master("cutting room floor.esp") and not is_master("TouringCarriages.esp"))'
     msg:
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
