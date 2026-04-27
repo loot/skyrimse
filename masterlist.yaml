@@ -779,6 +779,9 @@ groups:
   - name: &icaioGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
+  - name: &miscDialEditsGroup Misc Dialogue Edits
+    after: [ *icaioGroup ]
+
   - name: &pceGroup Palaces Castles Enhanced
     after: [ *icaioGroup ]
 
@@ -837,7 +840,9 @@ groups:
     after: [ *cellLightingGroup ]
 
   - name: &highPriorityGroup High Priority Overrides
-    after: [ *ocsGroup ]
+    after:
+      - *miscDialEditsGroup
+      - *ocsGroup
 
   - name: &lateLoadersGroup Late Loaders
     after: [ *highPriorityGroup ]
@@ -15081,8 +15086,8 @@ plugins:
 
   - name: 'Misc Dialogue Edits.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28904/' ]
+    group: *miscDialEditsGroup
     after:
-      - 'Immersive Citizens - AI Overhaul.esp'
       - 'Relationship Dialogue Overhaul.esp'
     tag: [ Actors.Factions ]
     clean:
