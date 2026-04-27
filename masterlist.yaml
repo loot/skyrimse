@@ -872,6 +872,11 @@ groups:
   - name: &atlasMapMarkersGroup Atlas Map Markers
     after: [ *cacoGroup ]
 
+  - name: &ocsGroup Open Cities Skyrim
+    after:
+      - *altStartLALGroup
+      - *pceGroup
+
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
     after: [ *lowPriorityGroup ]
@@ -922,11 +927,6 @@ groups:
   - name: &cellLightingGroup Cell Weather & Lighting
     description: 'A group for modules that modify cell weather & lighting.'
     after: [ *cellWaterGroup ]
-
-  - name: &ocsGroup Open Cities Skyrim
-    after:
-      - *altStartLALGroup
-      - *pceGroup
 
   - name: &highPriorityGroup High Priority Overrides
     after:
