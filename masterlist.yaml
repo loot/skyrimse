@@ -786,10 +786,12 @@ groups:
     after: [ default ]
 
   - name: &ebqoGroup Even Better Quest Objectives
-    after: [ default ]
+    after:
+      - *bookCoversGroup
+      - *skillBookNamesGroup
 
   - name: &wintersunGroup Wintersun
-    after: [ default ]
+    after: [ *bookCoversGroup ]
 
   - name: &landscapeFixesGroup Landscape Fixes
     after: [ default ]
@@ -808,16 +810,15 @@ groups:
 
   - name: &crfGroup Cutting Room Floor
     after:
-      - *landscapeFixesGroup
-      - *tourCarriagesGroup
+      - *rdoGroup
+      - *bookCoversGroup
+      - *ebqoGroup
 
   - name: &gdoGroup Guard Dialogue Overhaul
-    after:
-      - *crfGroup
-      - *rdoGroup
+    after: [ *crfGroup ]
 
   - name: &waccfGroup Weapons Armor Clothing and Clutter Fixes
-    after: [ *crfGroup ]
+    after: [ *gdoGroup ]
 
   - name: &aceGroup Armor and Clothing Extension
     after: [ *waccfGroup ]
@@ -854,7 +855,6 @@ groups:
       - *bookCoversGroup
       - *ebqoGroup
       - *crfGroup
-      - *rdoGroup
       - *skillBookNamesGroup
 
   - name: &findingHelgiGroup Finding Helgi and Laelette
