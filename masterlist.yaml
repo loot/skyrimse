@@ -811,6 +811,11 @@ groups:
       - *crfGroup
       - *rdoGroup
 
+  - name: &altStartLALGroup Alt Start LAL
+    after:
+      - *ebqoGroup
+      - *gdoGroup
+
   - name: &tciyGroup The Choice Is Yours
     after:
       - *biblioArcanaeumGroup
@@ -888,6 +893,7 @@ groups:
 
   - name: &highPriorityGroup High Priority Overrides
     after:
+      - *altStartLALGroup
       - *cellLightingGroup
       - *findingHelgiGroup
       - *gdoGroup
@@ -15576,12 +15582,10 @@ plugins:
         name: 'Alternate Start - Live Another Life (Mod DB)'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/272/'
         name: 'Alternate Start - Live Another Life (Nexus Mods)'
-    group: *altStartGroup
+    group: *altStartLALGroup
     after:
       - 'Ambriel.esp'
       - 'BecomeKingofSkyrim.esp'
-      - 'BetterQuestObjectives.esp'
-      - 'Guard Dialogue Overhaul.esp'
     inc:
       - 'Original Opening Scene.esp'
       - 'QuickVanillaStart.esl'
