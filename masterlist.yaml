@@ -924,7 +924,9 @@ groups:
     after: [ *cellWaterGroup ]
 
   - name: &ocsGroup Open Cities Skyrim
-    after: [ *pceGroup ]
+    after:
+      - *altStartLALGroup
+      - *pceGroup
 
   - name: &highPriorityGroup High Priority Overrides
     after:
