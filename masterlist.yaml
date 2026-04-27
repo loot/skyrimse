@@ -789,16 +789,16 @@ groups:
     after: [ default ]
 
   - name: &wintersunGroup Wintersun
-    after: [ *lowPriorityGroup ]
+    after: [ default ]
 
   - name: &landscapeFixesGroup Landscape Fixes
-    after: [ *lowPriorityGroup ]
+    after: [ default ]
 
   - name: &roadToMorthalGroup Road to Morthal
     after: [ default ]
 
   - name: &icaioGroup Immersive Citizens
-    after: [ *lowPriorityGroup ]
+    after: [ default ]
 
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *icaioGroup ]
@@ -828,7 +828,7 @@ groups:
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
-    after: [ *pceGroup ]
+    after: [ *lowPriorityGroup ]
 
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
@@ -886,6 +886,7 @@ groups:
       - *landscapeFixesGroup
       - *miscDialEditsGroup
       - *ocsGroup
+      - *pceGroup
       - *roadToMorthalGroup
       - *tciyGroup
       - *wintersunGroup
