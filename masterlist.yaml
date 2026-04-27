@@ -776,6 +776,9 @@ groups:
     description: 'A group for modules that must load after most other mods.'
     after: [ default ]
 
+  - name: &bookCoversGroup Book Covers Skyrim
+    after: [ default ]
+
   - name: &icaioGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
@@ -852,6 +855,7 @@ groups:
 
   - name: &highPriorityGroup High Priority Overrides
     after:
+      - *bookCoversGroup
       - *gdoGroup
       - *miscDialEditsGroup
       - *ocsGroup
@@ -18626,6 +18630,7 @@ plugins:
         name: 'Book Covers Skyrim - Desaturated'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/10/'
         name: 'Another Sorting Mod - Replacer Plugin'
+    group: *bookCoversGroup
     msg:
       - *alreadyInLotD
       - <<: *patch3rdParty
