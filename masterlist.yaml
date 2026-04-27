@@ -794,6 +794,9 @@ groups:
   - name: &landscapeFixesGroup Landscape Fixes
     after: [ *lowPriorityGroup ]
 
+  - name: &roadToMorthalGroup Road to Morthal
+    after: [ default ]
+
   - name: &icaioGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
@@ -883,6 +886,7 @@ groups:
       - *landscapeFixesGroup
       - *miscDialEditsGroup
       - *ocsGroup
+      - *roadToMorthalGroup
       - *tciyGroup
       - *wintersunGroup
 
@@ -9605,6 +9609,7 @@ plugins:
 
   - name: 'Road to Morthal.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12472/' ]
+    group: *roadToMorthalGroup
     clean:
       # version: 2.1.1
       - crc: 0x76FD4667
