@@ -801,13 +801,15 @@ groups:
     after: [ default ]
 
   - name: &icaioGroup Immersive Citizens
-    after: [ default ]
+    after: [ *landscapeFixesGroup ]
 
   - name: &rdoGroup Relationship Dialogue Overhaul
     after: [ *icaioGroup ]
 
   - name: &crfGroup Cutting Room Floor
-    after: [ *tourCarriagesGroup ]
+    after:
+      - *landscapeFixesGroup
+      - *tourCarriagesGroup
 
   - name: &gdoGroup Guard Dialogue Overhaul
     after:
@@ -815,7 +817,7 @@ groups:
       - *rdoGroup
 
   - name: &waccfGroup Weapons Armor Clothing and Clutter Fixes
-    after: [ default ]
+    after: [ *crfGroup ]
 
   - name: &aceGroup Armor and Clothing Extension
     after: [ *waccfGroup ]
