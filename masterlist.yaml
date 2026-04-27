@@ -814,6 +814,33 @@ groups:
       - *crfGroup
       - *rdoGroup
 
+  - name: &waccfGroup Weapons Armor Clothing and Clutter Fixes
+    after: [ default ]
+
+  - name: &aceGroup Armor and Clothing Extension
+    after: [ *waccfGroup ]
+
+  - name: &mluGroup Morrowloot Ultimate
+    after: [ *waccfGroup ]
+
+  - name: &ccorGroup Complete Crafting Overhaul Remastered
+    after: [ *aceGroup ]
+
+  - name: &cacoGroup Complete Alchemy & Cooking Overhaul
+    after: [ *ccorGroup ]
+
+  - name: &ambContentGroup aMidianBorn Content Addon
+    after: [ *ccorGroup ]
+
+  - name: &stealthSkillsGroup Stealth Skills Rebalanced
+    after: [ *ambContentGroup ]
+
+  - name: &smithPerkGroup Smithing Perk Overhaul
+    after: [ *ccorGroup ]
+
+  - name: &tradeBarterGroup Trade and Barter
+    after: [ *mluGroup ]
+
   - name: &altStartLALGroup Alt Start LAL
     after:
       - *ebqoGroup
@@ -839,6 +866,9 @@ groups:
 
   - name: &pceGroup Palaces Castles Enhanced
     after: [ *icaioGroup ]
+
+  - name: &atlasMapMarkersGroup Atlas Map Markers
+    after: [ *cacoGroup ]
 
   - name: &racesGroup Races & Classes
     description: 'A group for modules that modify character Races & Classes.'
@@ -904,7 +934,9 @@ groups:
       - *miscDialEditsGroup
       - *ocsGroup
       - *roadToMorthalGroup
+      - *smithPerkGroup
       - *tciyGroup
+      - *tradeBarterGroup
       - *wintersunGroup
 
   - name: &lateLoadersGroup Late Loaders
@@ -11571,7 +11603,7 @@ plugins:
 
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/' ]
-    group: *alchemyOverhaulsGroup
+    group: *cacoGroup
     after:
       - 'Complete Crafting Overhaul_Remastered.esp'
       - 'iNeed.esp'
@@ -11607,7 +11639,7 @@ plugins:
 
   - name: 'Complete Crafting Overhaul_Remastered.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/28608/' ]
-    group: *craftingGroup
+    group: *ccorGroup
     after: [ 'waccf_armor and clothing extension.esp' ]
     inc: [ 'ars metallica.esp' ]
     req:
@@ -12453,7 +12485,7 @@ plugins:
         name: 'Another Sorting Mod - MLU.esp Replacer'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/17653/'
         name: '(SJG) OMEGA - The Modular Gameplay Overhaul'
-    group: *economyGroup
+    group: *mluGroup
     inc: [ 'WACCF_BashedPatchLvlListFix.esp' ]
     msg:
       - <<: *compatPatch
@@ -12970,11 +13002,10 @@ plugins:
 
   - name: 'trade & barter.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/23081/' ]
-    group: *economyGroup
+    group: *tradeBarterGroup
     after:
       - 'Containers and Leveled Lists Fixes.esp'
       - 'EconomyOverhaulandSpeechcraftImprovements.esp'
-      - 'MLU.esp'
     msg:
       - <<: *patch3rdParty
         subs:
@@ -13046,6 +13077,7 @@ plugins:
 
   - name: 'Weapons Armor Clothing & Clutter Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18994/' ]
+    group: *waccfGroup
     inc: [ 'Race Scale Remover.esp' ]
     after:
       - name: 'Guard Dialogue Overhaul.esp'
@@ -17586,7 +17618,7 @@ plugins:
 
   - name: 'Smithing Perks Overhaul SE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19246/' ]
-    after: [ 'Complete Crafting Overhaul_Remastered.esp' ]
+    group: *smithPerkGroup
     inc:
       - 'PathOfMight.esp'
       - 'PerkusMaximus_Warrior.esp'
@@ -17609,6 +17641,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/52768/'
         name: 'Stealth Skills Rebalanced'
+    group: *stealthSkillsGroup
     req:
       - *SKSE
       - *SKSEVR
@@ -17921,7 +17954,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/24104/'
         name: 'Atlas Map Markers SE - Updated with MCM'
-    group: *mapMarkersGroup
+    group: *atlasMapMarkersGroup
     inc:
       - name: 'open cities skyrim.esp'
         condition: 'not active("opencitiesskyrim_atlasmapmarkers_patch.esp")'
@@ -18333,6 +18366,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/35390/'
         name: 'aMidianBorn Content Addon'
+    group: *ambContentGroup
     after:
       - 'aMidianBorn_Book of Silence.esp'
       - 'BetterQuestObjectives.esp'
@@ -18474,6 +18508,7 @@ plugins:
       - Outfits.Add
       - Outfits.Remove
   - name: 'waccf_armor and clothing extension.esp'
+    group: *aceGroup
     after:
       - 'AmuletsShowOnEverything.esp'
       - 'AmuletsShowOnClothes.esp'
