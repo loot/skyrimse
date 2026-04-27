@@ -791,6 +791,9 @@ groups:
   - name: &wintersunGroup Wintersun
     after: [ *lowPriorityGroup ]
 
+  - name: &landscapeFixesGroup Landscape Fixes
+    after: [ *lowPriorityGroup ]
+
   - name: &icaioGroup Immersive Citizens
     after: [ *lowPriorityGroup ]
 
@@ -877,6 +880,7 @@ groups:
   - name: &highPriorityGroup High Priority Overrides
     after:
       - *gdoGroup
+      - *landscapeFixesGroup
       - *miscDialEditsGroup
       - *ocsGroup
       - *tciyGroup
@@ -9360,6 +9364,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9005/'
         name: 'Landscape Fixes For Grass Mods'
   - name: 'Landscape Fixes For Grass Mods.esp'
+    group: *landscapeFixesGroup
     after:
       - name: 'Midsummer - Stylised Grass for Skyrim SE.esp'
         condition: '(is_master("Midsummer - Stylised Grass for Skyrim SE.esp") and is_master("Landscape Fixes For Grass Mods.esp")) or (not is_master("Midsummer - Stylised Grass for Skyrim SE.esp") and not is_master("Landscape Fixes For Grass Mods.esp"))'
