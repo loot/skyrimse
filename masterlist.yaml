@@ -18445,10 +18445,13 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - WACCF ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Armor and Clothing Extension( SPID)?\.esp") and version("Requiem.esp", >=, "6.0.0")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
         condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp") and version("Requiem.esp", <, "6.0.0")'
-      - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
       - *requiresMCM
       - *requiresMCMVR
     tag:
