@@ -838,20 +838,20 @@ groups:
   - name: &ccorGroup Complete Crafting Overhaul Remastered
     after: [ *aceGroup ]
 
-  - name: &cacoGroup Complete Alchemy & Cooking Overhaul
+  - name: &nightHallRestoredGroup Nightingale Hall Restored
     after: [ *ccorGroup ]
 
-  - name: &nightHallRestoredGroup Nightingale Hall Restored
-    after: [ *cacoGroup ]
-
   - name: &ambContentGroup aMidianBorn Content Addon
-    after: [ *cacoGroup ]
+    after: [ *ccorGroup ]
 
   - name: &stealthSkillsGroup Stealth Skills Rebalanced
     after: [ *ambContentGroup ]
 
   - name: &smithPerkGroup Smithing Perk Overhaul
     after: [ *waccfGroup ]
+
+  - name: &cacoGroup Complete Alchemy & Cooking Overhaul
+    after: [ *ccorGroup ]
 
   - name: &tradeBarterGroup Trade and Barter
     after: [ *mluGroup ]
@@ -939,6 +939,7 @@ groups:
     after:
       - *atlasMapMarkersGroup
       - *betterStealthAIGroup
+      - *cacoGroup
       - *cellLightingGroup
       - *findingHelgiGroup
       - *miscDialEditsGroup
