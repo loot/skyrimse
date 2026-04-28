@@ -793,6 +793,9 @@ groups:
   - name: &betterStealthAIGroup Better Stealth AI for Followers
     after: [ *ebqoGroup ]
 
+  - name: &thievesGuildReqGroup Thieves Guild Requirements
+    after: [ *ebqoGroup ]
+
   - name: &wintersunGroup Wintersun
     after: [ *bookCoversGroup ]
 
@@ -945,6 +948,7 @@ groups:
       - *stealthSkillsGroup
       - *tciyGroup
       - *terrainFixesCCGroup
+      - *thievesGuildReqGroup
       - *tradeBarterGroup
       - *wintersunGroup
 
@@ -17067,7 +17071,7 @@ plugins:
 
   - name: 'Thieves Guild Requirements.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33256/' ]
-    after: [ 'BetterQuestObjectives.esp' ]
+    group: *thievesGuildReqGroup
     req:
       - name: 'FISS.esp'
         display: '[FileAccess Interface for Skyrim SE Scripts - FISSES](https://www.nexusmods.com/skyrimspecialedition/mods/13956/)'
