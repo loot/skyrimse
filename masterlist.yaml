@@ -786,6 +786,10 @@ groups:
     description: 'A group for modules that modify character Races & Classes.'
     after: [ *pceGroup ]
 
+  - name: &standingStoneEffectsGroup Standing Stone Effects
+    description: 'A group for modules that modify effects of Standing stones.'
+    after: [ *racesGroup ]
+
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
     after: [ *racesGroup ]
@@ -807,7 +811,9 @@ groups:
     after: [ *perksGroup ]
 
   - name: &coreGroup Core Mods
-    after: [ *vampireGameplayGroup ]
+    after:
+      - *standingStoneEffectsGroup
+      - *vampireGameplayGroup
 
   - name: &altStartGroup Alternate Start
     description: 'A group for mods that provide alternative starting choices.'
