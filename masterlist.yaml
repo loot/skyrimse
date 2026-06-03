@@ -21054,7 +21054,17 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Beyond Skyrim - Bruma SE' ]
-        condition: 'active("BSHeartland.esm") and not active("BS Bruma Patch.esp")'
+        condition: 'active("BSHeartland.esm") and not active("BS Bruma Patch.esp") and version("Identity Crisis.esp", <, "1.5")'
+
+  - name: 'BS Bruma Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39634/' ]
+    inc:
+      - name: 'Identity Crisis.esp'
+        display: 'Identity Crisis'
+    msg:
+      - <<: *patchOutdated
+        condition: 'active("BS Bruma Patch.esp") and version("Identity Crisis.esp", >=, "1.5")'
+        
 
   - name: 'Maslea.esm'
     url:
