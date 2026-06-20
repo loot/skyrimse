@@ -21045,17 +21045,6 @@ plugins:
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 21
 
-  - name: 'Identity Crisis.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39634/' ]
-    inc:
-      - name: 'BSHeartland.esm'
-        display: 'Beyond Skyrim - Bruma SE'
-        condition: 'not active("BS Bruma Patch.esp")'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Beyond Skyrim - Bruma SE' ]
-        condition: 'active("BSHeartland.esm") and not active("BS Bruma Patch.esp") and version("Identity Crisis.esp", <, "1.5")'
-
   - name: 'BS Bruma Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/39634/' ]
     inc:
@@ -21063,9 +21052,8 @@ plugins:
         display: 'Identity Crisis'
     msg:
       - <<: *patchOutdated
-        condition: 'active("BS Bruma Patch.esp") and version("Identity Crisis.esp", >=, "1.5")'
+        condition: 'active("BS Bruma Patch.esp")'
         
-
   - name: 'Maslea.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18327/'
