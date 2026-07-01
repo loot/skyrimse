@@ -26430,6 +26430,9 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Eli_Breezehome [PATCH - RS + ELE].esp' ]
         condition: 'file("Eli_Breezehome [PATCH - RS + ELE].esp") and file("ELE_SSE.esp") and file("RelightingSkyrim_SSE.esp")'
+      - <<: *useInstead
+        subs: [ 'Eli_Breezehome [PATCH - RS + ELE].esp' ]
+        condition: 'not file("Eli_Breezehome [PATCH - RS + ELE].esp") and file("ELE_SSE.esp") and file("RelightingSkyrim_SSE.esp")'
 
   - name: 'Eli_Halla.esp'
     url:
