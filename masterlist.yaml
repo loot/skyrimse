@@ -372,6 +372,12 @@ common:
     subs: [ 'Scrambled Bugs' ]
     condition: 'file("SKSE/Plugins/ScrambledBugs.dll")'
 
+  # &deletePlugin
+  - &deletePluginPanAIO
+    <<: *deletePlugin
+    subs: [ '**PAN_AIO_big.esp**' ]
+    condition: 'file("PAN_AIO_big.esp")'
+
   # &includesX
   - &includesMBBF
     <<: *includesX
