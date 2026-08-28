@@ -534,10 +534,10 @@ globals:
   # Skyrim AE
   - <<: *versionOldX
     subs: [ '**Skyrim Anniversary Edition**' ]
-    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.317.0") and product_version("../SkyrimSE.exe", <, "1.6.1130.0")'
+    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.317.0") and product_version("../SkyrimSE.exe", <, "1.7.104.0")'
   - <<: *versionUpToDateX
     subs: [ '**Skyrim Anniversary Edition**' ]
-    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.1130.0")'
+    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.7.104.0")'
   # Skyrim SE GOG
   - <<: *versionOldX
     subs: [ '**Skyrim SE GOG**' ]
@@ -570,10 +570,10 @@ globals:
   # SKSE AE
   - <<: *versionOldX
     subs: [ '**[SKSE Anniversary Edition](https://skse.silverlock.org)**' ]
-    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe") and version("../skse64_loader.exe", <, "0.2.2.6") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.317.0")'
+    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and file("../skse64_loader.exe") and version("../skse64_loader.exe", <, "0.2.3.1") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.317.0")'
   - <<: *versionUpToDateX
     subs: [ '**SKSE Anniversary Edition**' ]
-    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and version("../skse64_loader.exe", >=, "0.2.2.6") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.317.0")'
+    condition: 'not file("../Galaxy64.dll") and not file("../EOSSDK-Win64-Shipping.dll") and version("../skse64_loader.exe", >=, "0.2.3.1") and readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", >=, "1.6.317.0")'
   # SKSE SE
   - <<: *versionOldX
     subs: [ '**[SKSE Special Edition](https://skse.silverlock.org)**' ]
@@ -591,6 +591,10 @@ globals:
 
 # SKSE - Runtime Compatibility
   # SKSE AE
+  - <<: *versionSkseIncSAE
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", ==, "1.7.104.0") and not file("../skse64_1_7_104.dll") and file("../skse64_loader.exe")'
+  - <<: *versionSkseIncSAE
+    condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", ==, "1.7.99.0") and not file("../skse64_1_7_99.dll") and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSAE
     condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", ==, "1.6.1170.0") and not file("../skse64_1_6_1170.dll") and file("../skse64_loader.exe")'
   - <<: *versionSkseIncSAE
