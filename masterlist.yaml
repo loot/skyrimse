@@ -24927,6 +24927,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/167698/'
         name: 'Skybound'
   - name: 'Skybound.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'HAG - Occult Orphan Rock' ]
+        condition: 'file("HAG - Occult Orphan Rock.esp") and not file("HAG - Skybound Patch.esp")'
 
   - name: 'SkyHavenTempleRestored.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10647/' ]
