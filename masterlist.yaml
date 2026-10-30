@@ -7632,6 +7632,11 @@ plugins:
       - name: 'Immersive Citizens - AI Overhaul.esp'
         condition: 'not is_master("Rigmor.esp")'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Heartbow Ranger Guildhall'
+          - '[Heartbow Ranger Guildhall - Rigmor of Bruma Patch](https://www.nexusmods.com/skyrimspecialedition/mods/197288/)'
+        condition: 'file("Coldsun Heartbow Guildhall.esp") and not file("Coldsun Heartbow Guildhall - Rigmor Patch.esp")'
       - <<: *patchUnavailable
         subs: [ 'Open Cities Skyrim' ]
         condition: 'active("open cities skyrim.esp")'
