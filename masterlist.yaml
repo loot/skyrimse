@@ -17465,6 +17465,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/145240/'
         name: 'Line and Lure - Fishing Perks'
   - name: 'LLFP.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Simple Fishing Overhaul' ]
+        condition: 'active("Simple Fishing Overhaul.esp") and not active("LLFP_SFO_patch.esp")'
 
   - name: 'Lock_Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14927/' ]
