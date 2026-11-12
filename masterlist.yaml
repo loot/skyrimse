@@ -4508,6 +4508,13 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/174949/'
         name: 'Skyrim''s Submerged Audio Fixed - Underwater Audio Fixed'
   - name: 'Skyrim''s Submerged Audio Fixed.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul for Skyrim' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Skyrim''s Submerged Audio Fixed - Audio Overhaul Skyrim.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Sounds - Compendium' ]
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Skyrim''s Submerged Audio Fixed - Immersive Sounds - Compendium.esp")'
 
   - name: 'Soulmancer Soundtrack - NoVindDun.esp'
     url:
