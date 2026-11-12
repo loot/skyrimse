@@ -10161,15 +10161,21 @@ plugins:
   - name: 'Crossbow Integration - USSEP.esp'
     tag: [ Text ]
 
-  - name: 'CutContentRestoration.esp'
+  - name: '(CutContentRestoration|SCCR)( - .+)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/90744/'
         name: 'Skyrim Cut Content Restoration'
+  - name: 'CutContentRestoration.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Dungeons of Interest: Falkreath' ]
+        condition: 'active("ccitbsse001-falkreath.esp") and not active("SCCR - Dungeons of Interest Falkreath Patch.esp")'
     dirty:
+      # 2.4.4
       - <<: *quickClean
-        crc: 0x0636DE21
-        util: '[SSEEdit v4.0.4c](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
-        itm: 2
+        crc: 0x93A5BFF2
+        util: '[SSEEdit v4.1.5q](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 5
 
   - name: 'Dynamic Things Alternative.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/49250/' ]
