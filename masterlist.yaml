@@ -10166,6 +10166,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/90744/'
         name: 'Skyrim Cut Content Restoration'
   - name: 'CutContentRestoration.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Dungeons of Interest: Falkreath' ]
+        condition: 'active("ccitbsse001-falkreath.esp") and not active("SCCR - Dungeons of Interest Falkreath Patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x0636DE21
