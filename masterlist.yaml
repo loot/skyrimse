@@ -4503,6 +4503,23 @@ plugins:
       - 'ELFXEnhancer.esp'
       - 'ELFX - Hardcore.esp'
 
+  - name: 'Skyrim''s Submerged Audio Fixed( - .+)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/174949/'
+        name: 'Skyrim''s Submerged Audio Fixed - Underwater Audio Fixed'
+  - name: 'Skyrim''s Submerged Audio Fixed.esp'
+    msg:
+      - <<: *patchIncluded
+        subs: [ 'Audio Overhaul for Skyrim' ]
+        condition: 'active("Audio Overhaul Skyrim.esp") and not active("Skyrim''s Submerged Audio Fixed - Audio Overhaul Skyrim.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Immersive Sounds - Compendium' ]
+        condition: 'active("Immersive Sounds - Compendium.esp") and not active("Skyrim''s Submerged Audio Fixed - Immersive Sounds - Compendium.esp")'
+    clean:
+      # 1.4
+      - crc: 0xA84053AA
+        util: 'SSEEdit v4.1.5q'
+
   - name: 'Soulmancer Soundtrack - NoVindDun.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/22551/'
